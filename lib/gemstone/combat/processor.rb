@@ -43,7 +43,12 @@ module Lich
                   apply_status_to_target(status_result[:status], status_result[:target], nil, status_result[:action])
                 elsif (line_target = Parser.extract_target_from_line(line))
                   # Status on same line as target
-                  apply_status_to_target(status_result[:status] || status_result, line_target[:name], line_target[:id], status_result[:action])
+                  if status_result.is_a?(Hash)
+                    apply_status_to_target(status_result[:status], line_target[:name], line_target[:id], status_result[:action])
+                  else
+                    # Legacy format - status_result is just the status symbol
+                    apply_status_to_target(status_result, line_target[:name], line_target[:id], :add)
+                  end
                 end
                 puts "[Combat] Found status effect: #{status_result}" if Tracker.debug?
               end
@@ -195,6 +200,12 @@ module Lich
                 else
                   puts "  !unknown body part: #{crit[:location]}" if Tracker.debug?
                 end
+              end
+
+              # Check for fatal critical hit
+              if crit[:fatal]
+                creature.mark_fatal_crit!
+                puts "  +FATAL CRIT: #{crit[:location]} - creature died from crit, not HP loss" if Tracker.debug?
               end
             end
           end

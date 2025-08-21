@@ -14,76 +14,84 @@ module Lich
 
           # Core status effects with both add and remove patterns
           STATUS_EFFECTS = [
-            StatusDef.new(:blind, 
-              [/You blinded (?<target>[^!]+)!/].freeze,
-              [
-                /(?<target>.+?) regains .+? sight\./,
-                /(?<target>.+?) can see again\./,
-                /(?<target>.+?) blinks .+? eyes rapidly\./
-              ].freeze
-            ),
-            StatusDef.new(:immobilized, 
-              [/(?<target>.+?) form is entangled in an unseen force that restricts .+? movement\./].freeze,
-              [
-                /(?<target>.+?) breaks free from the entangling force\./,
-                /(?<target>.+?) is no longer immobilized\./,
-                /The moonbeam fades away\./
-              ].freeze
-            ),
-            StatusDef.new(:prone, 
-              [
-                /It is knocked to the ground!/,
-                /(?<target>.+?) is knocked to the ground!/,
-                /(?<target>.+?) falls to the ground!/
-              ].freeze,
-              [
-                /(?<target>.+?) stands back up\./,
-                /(?<target>.+?) gets back to .+? feet\./,
-                /(?<target>.+?) rises to .+? feet\./,
-                /(?<target>.+?) stands up\./
-              ].freeze
-            ),
-            StatusDef.new(:stunned, 
-              [/The (?<target>.+?) is stunned!/].freeze,
-              [
-                /(?<target>.+?) shakes off the stun effect\./,
-                /(?<target>.+?) regains .+? composure\./,
-                /(?<target>.+?) is no longer stunned\./
-              ].freeze
-            ),
-            StatusDef.new(:sunburst, 
-              [/(?<target>.+?) reels and stumbles under the intense flare!/].freeze,
-              [
-                /(?<target>.+?) recovers from the intense flare\./,
-                /(?<target>.+?) shakes off the blinding light\./
-              ].freeze
-            ),
-            StatusDef.new(:webbed, 
-              [/(?<target>.+?) becomes ensnared in thick strands of webbing!/].freeze,
-              [
-                /(?<target>.+?) breaks free of the webs\./,
-                /(?<target>.+?) struggles free of the webs\./,
-                /(?<target>.+?) tears through the webbing\./
-              ].freeze
-            ),
-            StatusDef.new(:sleeping, 
-              [
-                /(?<target>.+?) falls into a deep slumber\./,
-                /(?<target>.+?) falls asleep\./
-              ].freeze,
-              [
-                /(?<target>.+?) wakes up\./,
-                /(?<target>.+?) awakens\./,
-                /(?<target>.+?) opens .+? eyes\./
-              ].freeze
-            ),
-            StatusDef.new(:poisoned, 
-              [/(?<target>.+?) appears to be suffering from a poison\./].freeze,
-              [
-                /(?<target>.+?) looks much better\./,
-                /(?<target>.+?) recovers from the poison\./
-              ].freeze
-            )
+            StatusDef.new(:blind,
+                          [/You blinded (?<target>[^!]+)!/].freeze,
+                          [/(?<target>.+?) vision clears\./].freeze),
+            StatusDef.new(:immobilized,
+                          [/(?<target>.+?) form is entangled in an unseen force that restricts .+? movement\./].freeze,
+                          [
+                            /(?<target>.+?) movements no longer appear hampered as the lunar light encircling .+? fades away\./,
+                            /The restricting force enveloping (?<target>.+?) fades away./,
+                          ].freeze),
+            StatusDef.new(:prone,
+                          [
+                            /It is knocked to the ground!/,
+                            /(?<target>.+?) is knocked to the ground!/,
+                            /(?<target>.+?) falls to the ground!/
+                          ].freeze,
+                          [
+                            /(?<target>.+?) stands back up\./,
+                            /(?<target>.+?) gets back to .+? feet\./,
+                            /(?<target>.+?) rises to .+? feet\./,
+                            /(?<target>.+?) stands up\./
+                          ].freeze),
+            StatusDef.new(:stunned,
+                          [/The (?<target>.+?) is stunned!/].freeze,
+                          [
+                            /(?<target>.+?) shakes off the stun effect\./,
+                            /(?<target>.+?) regains .+? composure\./,
+                            /(?<target>.+?) is no longer stunned\./
+                          ].freeze),
+            StatusDef.new(:sunburst,
+                          [/(?<target>.+?) reels and stumbles under the intense flare!/].freeze,
+                          [/(?<target>.+?) blinks a few times, regaining a sense of balance\./].freeze),
+            StatusDef.new(:webbed,
+                          [/(?<target>.+?) becomes ensnared in thick strands of webbing!/].freeze,
+                          [
+                            /(?<target>.+?) breaks free of the webs\./,
+                            /(?<target>.+?) struggles free of the webs\./,
+                            /(?<target>.+?) tears through the webbing\./
+                          ].freeze),
+            StatusDef.new(:sleeping,
+                          [
+                            /(?<target>.+?) falls into a deep slumber\./,
+                            /(?<target>.+?) falls asleep\./
+                          ].freeze,
+                          [
+                            /(?<target>.+?) wakes up\./,
+                            /(?<target>.+?) awakens\./,
+                            /(?<target>.+?) opens .+? eyes\./
+                          ].freeze),
+            StatusDef.new(:poisoned,
+                          [/(?<target>.+?) appears to be suffering from a poison\./].freeze,
+                          [
+                            /(?<target>.+?) looks much better\./,
+                            /(?<target>.+?) recovers from the poison\./
+                          ].freeze),
+            StatusDef.new(:roundtime,
+                          [/(?<target>.+?) struggles momentarily with the gale\./].freeze,
+                          [].freeze),
+            StatusDef.new(:sounds,
+                          [/(?<target>.+?) seems to be distracted by something\./].freeze,
+                          [].frreze),
+            StatusDef.new(:calm,
+                          [/A calm washes over (?<target>.+?)\./].freeze,
+                          [
+                            /The calmed look leaves (?<target>.+?)\./,
+                            /(?<target>.+?) is enraged by your attack\!/
+                          ].freeze),
+            StatusDef.new(:natures_decay,
+                          [
+                            /An earthy, sweet aroma clings to (?<target>.+?) in a murky haze, accompanied by soot brown specks of leaf mold\./,
+                            /An earthy, sweet aroma wafts from (?<target>.+?) in a murky haze\./,
+                            /The earthy, sweet aroma clinging to (?<target>.+?) grows more pervasive\./
+                          ].freeze,
+                          [
+                            /The earthy, sweet aroma surrounding (?<target>.+?) dwindles as the murky haze disperses./,
+                          ].freeze),
+            StatusDef.new(:tangleweed,
+                          [/You notice .+? scrape into (?<target>.+?) skin. .+? suddenly looks very weak!/].freeze,
+                          [/(?<target>.+?) appears to recover some strength\./].freeze)
           ].freeze
 
           # Create lookup tables for fast pattern matching
@@ -104,9 +112,9 @@ module Lich
           def self.parse(line)
             ALL_LOOKUP.each do |pattern, name, action|
               if (match = pattern.match(line))
-                result = { 
-                  status: name, 
-                  action: action  # :add or :remove
+                result = {
+                  status: name,
+                  action: action # :add or :remove
                 }
                 result[:target] = match[:target] if match.names.include?('target') && match[:target]
                 return result
@@ -119,3 +127,8 @@ module Lich
     end
   end
 end
+
+# wall of thorns poison
+# One of the vines surrounding you lashes out at the `ebon swine`, scraping a thorn across `his` body!  `The ebon swine` flinches slightly.
+#
+#

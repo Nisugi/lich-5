@@ -136,7 +136,7 @@ module Lich
       @@max_size = 1000
       @@auto_register = true
 
-      attr_accessor :id, :noun, :name, :status, :injuries, :health, :damage_taken, :created_at
+      attr_accessor :id, :noun, :name, :status, :injuries, :health, :damage_taken, :created_at, :fatal_crit
 
       BODY_PARTS = %w[abdomen back chest head leftArm leftEye leftFoot leftHand leftLeg neck nerves rightArm rightEye rightFoot rightHand rightLeg]
 
@@ -149,6 +149,7 @@ module Lich
         @health = nil
         @damage_taken = 0
         @created_at = Time.now
+        @fatal_crit = false
       end
 
       # Get the template for this creature
@@ -182,6 +183,16 @@ module Lich
       # Check if injured at location
       def injured?(location, threshold = 1)
         @injuries[location.to_sym] >= threshold
+      end
+
+      # Mark creature as killed by fatal critical hit
+      def mark_fatal_crit!
+        @fatal_crit = true
+      end
+
+      # Check if creature died from fatal crit
+      def fatal_crit?
+        @fatal_crit
       end
 
       # Get all injured locations
@@ -316,6 +327,120 @@ module Lich
           cutoff = Time.now - max_age_seconds
           @@instances.reject! { |_id, instance| instance.created_at < cutoff }
         end
+
+        # Generate damage report for HP analysis
+        def damage_report(options = {})
+          min_samples = options[:min_samples] || 2
+          sort_by = options[:sort_by] || :name  # :name, :max_damage, :avg_damage
+          include_fatal = options[:include_fatal] || false
+          
+          # Group creatures by name and collect damage data
+          creature_data = {}
+          fatal_crit_data = {}
+          
+          @@instances.values.each do |instance|
+            next if instance.damage_taken <= 0
+            
+            name = instance.name
+            
+            if instance.fatal_crit?
+              # Track fatal crit deaths separately
+              fatal_crit_data[name] ||= []
+              fatal_crit_data[name] << instance.damage_taken
+              
+              # Include in main data only if requested
+              next unless include_fatal
+            end
+            
+            creature_data[name] ||= []
+            creature_data[name] << instance.damage_taken
+          end
+          
+          # Calculate statistics for each creature type
+          results = []
+          creature_data.each do |name, damages|
+            next if damages.size < min_samples
+            
+            damages.sort!
+            count = damages.size
+            min_dmg = damages.first
+            max_dmg = damages.last
+            avg_dmg = damages.sum.to_f / count
+            median_dmg = if count.odd?
+              damages[count / 2]
+            else
+              (damages[count / 2 - 1] + damages[count / 2]) / 2.0
+            end
+            
+            # Count fatal crit deaths for this creature type
+            fatal_count = fatal_crit_data[name]&.size || 0
+            
+            results << {
+              name: name,
+              count: count,
+              min_damage: min_dmg,
+              max_damage: max_dmg,
+              avg_damage: avg_dmg.round(1),
+              median_damage: median_dmg.round(1),
+              fatal_crits: fatal_count
+            }
+          end
+          
+          # Sort results
+          case sort_by
+          when :max_damage
+            results.sort_by! { |r| -r[:max_damage] }
+          when :avg_damage
+            results.sort_by! { |r| -r[:avg_damage] }
+          else
+            results.sort_by! { |r| r[:name] }
+          end
+          
+          results
+        end
+        
+        # Print formatted damage report
+        def print_damage_report(options = {})
+          results = damage_report(options)
+          
+          if results.empty?
+            puts "No damage data available (need at least #{options[:min_samples] || 2} samples per creature)"
+            return
+          end
+          
+          puts
+          puts "=" * 90
+          puts "CREATURE DAMAGE ANALYSIS REPORT"
+          puts "=" * 90
+          puts "Total creature instances tracked: #{@@instances.size}"
+          puts "Creature types with damage data: #{results.size}"
+          puts "Fatal crits excluded from analysis (they skew max HP calculations)"
+          puts
+          
+          # Print header
+          puts "%-35s %5s %5s %5s %7s %7s %6s" % ["Creature Name", "Count", "Min", "Max", "Avg", "Median", "Fatal"]
+          puts "-" * 90
+          
+          # Print data rows
+          results.each do |data|
+            puts "%-35s %5d %5d %5d %7.1f %7.1f %6d" % [
+              data[:name].length > 35 ? data[:name][0, 32] + "..." : data[:name],
+              data[:count],
+              data[:min_damage],
+              data[:max_damage],
+              data[:avg_damage],
+              data[:median_damage],
+              data[:fatal_crits]
+            ]
+          end
+          
+          puts "-" * 90
+          puts "Max damage likely indicates creature's max HP (fatal crits excluded)"
+          puts "Fatal = number of creatures killed by fatal crits (not HP loss)"
+          puts "Use ;creature_report sort:max to sort by highest max damage"
+          puts "Use ;creature_report include_fatal to include fatal crit deaths in analysis"
+          puts
+        end
       end
     end
 
@@ -354,6 +479,21 @@ module Lich
       # Cleanup old instances
       def self.cleanup_old(**options)
         CreatureInstance.cleanup_old(**options)
+      end
+
+      # Generate damage report for HP analysis
+      def self.damage_report(**options)
+        CreatureInstance.damage_report(**options)
+      end
+
+      # Print formatted damage report
+      def self.print_damage_report(**options)
+        CreatureInstance.print_damage_report(**options)
+      end
+
+      # Get all creature instances
+      def self.all
+        CreatureInstance.all
       end
     end
 
