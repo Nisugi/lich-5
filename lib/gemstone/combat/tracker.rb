@@ -17,7 +17,6 @@ module Lich
         @settings = {}
         @async_processor = nil
         @buffer = []
-        @creature_detected = false
 
         # Default settings for combat tracking
         DEFAULT_SETTINGS = {
@@ -177,23 +176,17 @@ module Lich
             segment_buffer = proc do |server_string|
               @buffer << server_string
 
-              # Check for creature presence (bold wrapper pattern)
-              unless @creature_detected
-                @creature_detected = server_string.match?(/<pushBold\/>.+?<a exist="[^"]+"[^>]*>.+?<\/a>.+?<popBold\/>/)
-              end
-
               # Process on prompt (natural break in game flow)
               if server_string.include?('<prompt time=')
                 chunk = @buffer.slice!(0, @buffer.size)
-                
-                if @creature_detected
+
+                # Check if THIS chunk contains creatures (no persistent state)
+                if chunk.any? { |line| line.match?(/<pushBold\/>.+?<a exist="[^"]+"[^>]*>.+?<\/a><popBold\/>/) }
                   process(chunk) unless chunk.empty?
                   puts "[Combat] Processed chunk with creatures (#{chunk.size} lines)" if debug?
                 else
                   puts "[Combat] Discarded non-combat chunk (#{chunk.size} lines)" if debug?
                 end
-                
-                @creature_detected = false  # Reset for next chunk
               end
 
               # Prevent buffer overflow

@@ -136,9 +136,30 @@ module Lich
       @@max_size = 1000
       @@auto_register = true
 
-      attr_accessor :id, :noun, :name, :status, :injuries, :health, :damage_taken, :created_at, :fatal_crit
+      attr_accessor :id, :noun, :name, :status, :injuries, :health, :damage_taken, :created_at, :fatal_crit, :status_timestamps
 
       BODY_PARTS = %w[abdomen back chest head leftArm leftEye leftFoot leftHand leftLeg neck nerves rightArm rightEye rightFoot rightHand rightLeg]
+
+      # Status effect durations (in seconds) for auto-cleanup
+      # nil = no auto-cleanup (waits for removal message)
+      STATUS_DURATIONS = {
+        'breeze' => 6,          # 6 seconds roundtime
+        'bind' => 10,           # 10 seconds typical
+        'web' => 8,             # 8 seconds typical
+        'entangle' => 10,       # 10 seconds typical
+        'hypnotism' => 12,      # 12 seconds typical
+        'calm' => 15,           # 15 seconds typical
+        'mass_calm' => 15,      # 15 seconds typical
+        'sleep' => 8,           # 8 seconds typical (can wake early)
+        # Statuses with reliable removal messages - no duration needed
+        'stunned' => nil,       # Has removal messages
+        'immobilized' => nil,   # Has removal messages  
+        'prone' => nil,         # Has removal messages
+        'blind' => nil,         # Has removal messages
+        'sunburst' => nil,      # Has removal messages
+        'webbed' => nil,        # Has removal messages
+        'poisoned' => nil       # Has removal messages
+      }.freeze
 
       def initialize(id, noun, name)
         @id = id.to_i
@@ -150,6 +171,7 @@ module Lich
         @damage_taken = 0
         @created_at = Time.now
         @fatal_crit = false
+        @status_timestamps = {}
       end
 
       # Get the template for this creature
@@ -163,13 +185,39 @@ module Lich
       end
 
       # Add status to creature
-      def add_status(status)
-        @status << status unless @status.include?(status)
+      def add_status(status, duration = nil)
+        return if @status.include?(status)
+        
+        @status << status
+        
+        # Set expiration timestamp for timed statuses
+        status_key = status.to_s.downcase
+        duration ||= STATUS_DURATIONS[status_key]
+        if duration
+          @status_timestamps[status] = Time.now + duration
+          puts "  +status: #{status} (expires in #{duration}s)" if $creature_debug
+        else
+          puts "  +status: #{status} (no auto-expiry)" if $creature_debug
+        end
       end
 
       # Remove status from creature
       def remove_status(status)
         @status.delete(status)
+        @status_timestamps.delete(status)
+        puts "  -status: #{status}" if $creature_debug
+      end
+
+      # Clean up expired status effects
+      def cleanup_expired_statuses
+        return unless @status_timestamps && !@status_timestamps.empty?
+        
+        now = Time.now
+        @status_timestamps.select { |status, expires_at| expires_at <= now }.keys.each do |expired_status|
+          @status.delete(expired_status)
+          @status_timestamps.delete(expired_status)
+          puts "  ~status: #{expired_status} (auto-expired)" if $creature_debug
+        end
       end
 
       # Add injury to body part
