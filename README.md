@@ -123,3 +123,120 @@
   # Cleanup old creature instances
   Creature.cleanup_old(max_age_seconds: 3600)  # Remove creatures older than 1 hour
   Creature.cleanup_old(max_instances: 500)     # Keep only 500 most recent creatures
+```
+
+  # Template System Usage
+
+  Loading & Accessing Templates
+
+  Templates auto-load from lib/gemstone/creatures/*.rb\
+  Template files must follow format: creature_name.rb (underscored)
+```ruby
+  # Get template by name
+  template = CreatureTemplate["savage fork-tongued wendigo"]\
+  template = CreatureTemplate["wendigo"]  # Strips boon adjectives automatically
+
+  # Access template data
+  template.max_hp          # 600\
+  template.level           # 105\
+  template.family          # "humanoid"\
+  template.undead          # false\
+  template.attack_attributes.physical_attacks  # Array of attacks with AS ranges
+
+  # From a creature instance
+  creature = Creature[12345]\
+  if creature.has_template?\
+    max_hp = creature.template.max_hp\
+    puts "This #{creature.name} has #{max_hp} max HP"\
+  end
+
+  # Get all templates
+  CreatureTemplate.all  # Returns array of all loaded templates
+
+  Template File Format
+
+  # File: lib/gemstone/creatures/creature_name.rb
+  {\
+    # REQUIRED Fields\
+    name: "creature name",        # lowercase, exact name\
+    level: 105,                   # integer or nil\
+    family: "humanoid",           # string: humanoid/undead/elemental/etc\
+    type: "biped",                # biped/quadruped/avian/reptilian/etc\
+    undead: false,                # boolean (not string!)\
+
+    # Optional Physical Stats
+    max_hp: 600,                  # integer or nil (NOT string)
+    speed: nil,                   # integer/string or nil
+    height: 8,                    # integer feet or nil
+    size: "large",                # small/medium/large/huge or nil
+    bcs: true,                    # boolean or nil
+
+    # Combat Attributes
+    attack_attributes: {
+      physical_attacks: [
+        { name: "attack", as: 530..630 },  # AS as Range or integer
+        { name: "bite", as: 505..605 }
+      ],
+      bolt_spells: [
+        { name: "Minor Cold (1709)", cs: 410..420 }
+      ],
+      warding_spells: [
+        { name: "frenzy (216)", cs: 438..450 }
+      ],
+      maneuvers: ["shield bash", "disarm"],
+      special_abilities: [
+        { name: "frenzy", description: "Goes into frenzy below 50% HP" }
+      ]
+    },
+
+    # Defense Attributes
+    defense_attributes: {
+      ds: 300..400,
+      td: 350..450,
+      armor: "scale",
+      defensive_spells: ["Spirit Defense (103)", "Elemental Defense I (401)"],
+      special_defenses: ["immunity to cold", "resistance to stun"]
+    },
+
+    # Other
+    areas: ["hinterwilds", "frozen battlefield"],
+    treasure: { tier: 3, items: ["gems", "skins"] },
+    messaging: { death: "collapses with a final howl" }
+  }
+
+  Common Usage Patterns
+
+  # Check creature's max HP from template
+  creature = Creature[12345]\
+  if creature.has_template? && creature.template.max_hp\
+    hp_percentage = (creature.damage_taken.to_f / creature.template.max_hp * 100).round\
+    puts "Creature at #{100 - hp_percentage}% health"\
+  else\
+    # Use fallback HP if no template\
+    max_hp = Tracker.fallback_hp  # Default: 350\
+    hp_percentage = (creature.damage_taken.to_f / max_hp * 100).round\
+    puts "Creature at ~#{100 - hp_percentage}% health (estimated)"\
+  end
+
+  # Find all undead creatures
+  undead_templates = CreatureTemplate.all.select(&:undead)\
+
+  # Get attack info
+  template = CreatureTemplate["wendigo"]\
+  template.attack_attributes.physical_attacks.each do |attack|\
+    puts "#{attack[:name]}: AS #{attack[:as]}"\
+  end
+
+  Boon Adjectives
+
+  The system automatically strips these prefixes when looking up templates:
+  - savage, menacing, shimmering, luminous, ancient, weathered, grizzled, etc.
+
+  So CreatureTemplate["savage fork-tongued wendigo"] and CreatureTemplate["fork-tongued wendigo"] both work.       
+
+  Template Loading
+
+  - Templates load automatically on first access
+  - Files in lib/gemstone/creatures/ are loaded (except _creature_template.rb)
+  - File names use underscores: savage_fork_tongued_wendigo.rb
+  - Template names use spaces: "savage fork-tongued wendigo"
