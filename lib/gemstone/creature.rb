@@ -1,0 +1,538 @@
+require 'singleton'
+require 'ostruct'
+
+module Lich
+  module Gemstone
+    # Static creature template data (ID-less reference information)
+    class CreatureTemplate
+      @@templates = {}
+      @@loaded = false
+
+      attr_reader :name, :url, :picture, :level, :family, :type,
+                  :undead, :otherclass, :areas, :bcs, :max_hp,
+                  :speed, :height, :size, :attack_attributes,
+                  :defense_attributes, :treasure, :messaging,
+                  :special_other, :abilities, :alchemy
+
+      BOON_ADJECTIVES = %w[
+        adroit afflicted apt barbed belligerent blurry canny combative dazzling deft diseased drab
+        dreary ethereal flashy flexile flickering flinty frenzied ghastly ghostly gleaming glittering
+        glorious glowing grotesque hardy illustrious indistinct keen lanky luminous lustrous muculent
+        nebulous oozing pestilent radiant raging ready resolute robust rune-covered shadowy shifting
+        shimmering shining sickly green sinous slimy sparkling spindly spiny stalwart steadfast stout
+        tattoed tenebrous tough twinkling unflinching unyielding wavering wispy
+      ]
+
+      def initialize(data)
+        @name = data[:name]
+        @url = data[:url]
+        @picture = data[:picture]
+        @level = data[:level].to_i
+        @family = data[:family]
+        @type = data[:type]
+        @undead = data[:undead]
+        @otherclass = data[:otherclass] || []
+        @areas = data[:areas] || []
+        @bcs = data[:bcs]
+        @max_hp = data[:max_hp]&.to_i || data[:hitpoints]&.to_i
+        @speed = data[:speed]
+        @height = data[:height].to_i
+        @size = data[:size]
+
+        atk = data[:attack_attributes] || {}
+        @attack_attributes = OpenStruct.new(
+          physical_attacks: atk[:physical_attacks] || [],
+          bolt_spells: atk[:bolt_spells] || [],
+          warding_spells: normalize_spells(atk[:warding_spells]),
+          offensive_spells: normalize_spells(atk[:offensive_spells]),
+          maneuvers: atk[:maneuvers] || [],
+          special_abilities: (atk[:special_abilities] || []).map { |s| SpecialAbility.new(s) }
+        )
+
+        @defense_attributes = DefenseAttributes.new(data[:defense_attributes] || {})
+        @treasure = Treasure.new(data[:treasure] || {})
+        @messaging = Messaging.new(data[:messaging] || {})
+        @special_other = data[:special_other]
+        @abilities = data[:abilities] || []
+        @alchemy = data[:alchemy] || []
+      end
+
+      # Load all templates from files
+      def self.load_all
+        return if @@loaded
+
+        templates_dir = File.join(File.dirname(__FILE__), 'creatures')
+        return unless File.directory?(templates_dir)
+
+        Dir[File.join(templates_dir, '*.rb')].each do |path|
+          next if File.basename(path) == '_creature_template.rb'
+
+          template_name = File.basename(path, '.rb').tr('_', ' ')
+          normalized_name = fix_template_name(template_name)
+
+          begin
+            data = eval(File.read(path))
+            data[:name] = template_name
+            template = new(data)
+            @@templates[normalized_name] = template
+            @@templates[template_name] = template # Also store original name
+          rescue => e
+            puts "--- error loading template #{template_name}: #{e.message}" if $creature_debug
+          end
+        end
+
+        @@loaded = true
+      end
+
+      # Clean creature name by removing boon adjectives
+      def self.fix_template_name(template_name)
+        name = template_name.dup.downcase
+        BOON_ADJECTIVES.each { |adj| name.sub!(/^#{Regexp.escape(adj)}\s+/i, '') }
+        name.strip
+      end
+
+      # Lookup template by name
+      def self.[](name)
+        load_all unless @@loaded
+        return nil unless name
+
+        # Try exact match first
+        template = @@templates[name.downcase]
+        return template if template
+
+        # Try with boon adjectives removed
+        normalized_name = fix_template_name(name)
+        @@templates[normalized_name]
+      end
+
+      # Get all loaded templates
+      def self.all
+        load_all unless @@loaded
+        @@templates.values.uniq
+      end
+
+      private
+
+      def normalize_spells(spells)
+        (spells || []).map do |s|
+          {
+            name: s[:name].to_s.strip,
+            cs: parse_td(s[:cs])
+          }
+        end
+      end
+
+      def parse_td(val)
+        return nil if val.nil?
+        return val if val.is_a?(Range)
+        return eval(val) if val.is_a?(String) && val.match?(/\A\d+\.\.\d+\z/)
+        val
+      end
+    end
+
+    # Individual creature instance (runtime tracking with ID)
+    class CreatureInstance
+      @@instances = {}
+      @@max_size = 1000
+      @@auto_register = true
+
+      attr_accessor :id, :noun, :name, :status, :injuries, :health, :damage_taken, :created_at
+
+      BODY_PARTS = %w[abdomen back chest head leftArm leftEye leftFoot leftHand leftLeg neck nerves rightArm rightEye rightFoot rightHand rightLeg]
+
+      def initialize(id, noun, name)
+        @id = id.to_i
+        @noun = noun
+        @name = name
+        @status = []
+        @injuries = Hash.new(0)
+        @health = nil
+        @damage_taken = 0
+        @created_at = Time.now
+      end
+
+      # Get the template for this creature
+      def template
+        @template ||= CreatureTemplate[@name]
+      end
+
+      # Check if creature has template data
+      def has_template?
+        !template.nil?
+      end
+
+      # Add status to creature
+      def add_status(status)
+        @status << status unless @status.include?(status)
+      end
+
+      # Remove status from creature
+      def remove_status(status)
+        @status.delete(status)
+      end
+
+      # Add injury to body part
+      def add_injury(body_part, amount = 1)
+        unless BODY_PARTS.include?(body_part.to_s)
+          raise ArgumentError, "Invalid body part: #{body_part}"
+        end
+        @injuries[body_part.to_sym] += amount
+      end
+
+      # Check if injured at location
+      def injured?(location, threshold = 1)
+        @injuries[location.to_sym] >= threshold
+      end
+
+      # Get all injured locations
+      def injured_locations(threshold = 1)
+        @injuries.select { |_, value| value >= threshold }.keys
+      end
+
+      # Add damage to creature
+      def add_damage(amount)
+        @damage_taken += amount.to_i
+      end
+
+      # Get maximum HP from template, with fallback
+      def max_hp
+        # Try template first
+        hp = template&.max_hp
+        return hp if hp && hp > 0
+        
+        # Fall back to combat tracker setting if available
+        begin
+          if defined?(Lich::Gemstone::Combat::Tracker) && 
+             Lich::Gemstone::Combat::Tracker.respond_to?(:fallback_hp)
+            fallback = Lich::Gemstone::Combat::Tracker.fallback_hp
+            return fallback if fallback && fallback > 0
+          end
+        rescue
+          # Ignore errors accessing tracker
+        end
+        
+        # Last resort: hardcoded fallback
+        400
+      end
+
+      # Calculate current HP (max_hp - damage_taken)
+      def current_hp
+        return nil unless max_hp
+        [max_hp - @damage_taken, 0].max
+      end
+
+      # Calculate HP percentage (0-100)
+      def hp_percent
+        return nil unless max_hp && max_hp > 0
+        ((current_hp.to_f / max_hp) * 100).round(1)
+      end
+
+      # Check if creature is below HP threshold
+      def low_hp?(threshold = 25)
+        return false unless hp_percent
+        hp_percent <= threshold
+      end
+
+      # Check if creature is dead (0 HP)
+      def dead?
+        current_hp == 0
+      end
+
+      # Reset damage (creature healed or respawned)
+      def reset_damage
+        @damage_taken = 0
+      end
+
+      # Essential data for this instance
+      def essential_data
+        {
+          id: @id,
+          noun: @noun,
+          name: @name,
+          status: @status,
+          injuries: @injuries,
+          health: @health,
+          damage_taken: @damage_taken,
+          max_hp: max_hp,
+          current_hp: current_hp,
+          hp_percent: hp_percent,
+          has_template: has_template?,
+          created_at: @created_at
+        }
+      end
+
+      # Class methods for registry management
+      class << self
+        # Configure registry
+        def configure(max_size: 1000, auto_register: true)
+          @@max_size = max_size
+          @@auto_register = auto_register
+        end
+
+        # Check if auto-registration is enabled
+        def auto_register?
+          @@auto_register
+        end
+
+        # Get current registry size
+        def size
+          @@instances.size
+        end
+
+        # Check if registry is full
+        def full?
+          size >= @@max_size
+        end
+
+        # Register a new creature instance
+        def register(name, id, noun = nil)
+          return nil unless auto_register?
+          return @@instances[id.to_i] if @@instances[id.to_i] # Already exists
+          return nil if full?
+
+          instance = new(id, noun, name)
+          @@instances[id.to_i] = instance
+          puts "--- Creature registered: #{name} (#{id})" if $creature_debug
+          instance
+        end
+
+        # Lookup creature by ID
+        def [](id)
+          @@instances[id.to_i]
+        end
+
+        # Get all registered instances
+        def all
+          @@instances.values
+        end
+
+        # Clear all instances (session reset)
+        def clear
+          @@instances.clear
+        end
+
+        # Remove old instances (cleanup)
+        def cleanup_old(max_age_seconds = 3600)
+          cutoff = Time.now - max_age_seconds
+          @@instances.reject! { |_id, instance| instance.created_at < cutoff }
+        end
+      end
+    end
+
+    # Main Creature module - provides the public API
+    module Creature
+      # Lookup creature instance by ID
+      def self.[](id)
+        CreatureInstance[id]
+      end
+
+      # Register a new creature
+      def self.register(name, id, noun = nil)
+        CreatureInstance.register(name, id, noun)
+      end
+
+      # Configure the system
+      def self.configure(**options)
+        CreatureInstance.configure(**options)
+      end
+
+      # Get registry stats
+      def self.stats
+        {
+          instances: CreatureInstance.size,
+          templates: CreatureTemplate.all.size,
+          max_size: CreatureInstance.class_variable_get(:@@max_size),
+          auto_register: CreatureInstance.auto_register?
+        }
+      end
+
+      # Clear all instances
+      def self.clear
+        CreatureInstance.clear
+      end
+
+      # Cleanup old instances
+      def self.cleanup_old(**options)
+        CreatureInstance.cleanup_old(**options)
+      end
+    end
+
+    # Keep the supporting classes from the original system
+    class SpecialAbility
+      attr_accessor :name, :note
+
+      def initialize(data)
+        @name = data[:name]
+        @note = data[:note]
+      end
+    end
+
+    class Treasure
+      def initialize(data = {})
+        @data = {
+          coins: false,
+          gems: false,
+          boxes: false,
+          skin: nil,
+          magic_items: nil,
+          other: nil,
+          blunt_required: false
+        }.merge(data)
+      end
+
+      def has_coins? = !!@data[:coins]
+      def has_gems? = !!@data[:gems]
+      def has_boxes? = !!@data[:boxes]
+      def has_skin? = !!@data[:skin]
+      def blunt_required? = !!@data[:blunt_required]
+
+      def to_h = @data
+    end
+
+    class Messaging
+      attr_accessor :description, :arrival, :flee, :death,
+                    :spell_prep, :frenzy, :sympathy, :bite,
+                    :claw, :attack, :enrage, :mstrike
+
+      PLACEHOLDER_MAP = {
+        Pronoun: %w[He Her His It She],
+        pronoun: %w[he her his it she],
+        direction: %w[north south east west up down northeast northwest southeast southwest],
+        weapon: %w[RAW:.+?]
+      }
+
+      def initialize(data)
+        data.each do |key, value|
+          instance_variable_set("@#{key}", normalize(value))
+        end
+      end
+
+      def normalize(value)
+        if value.is_a?(Array)
+          value.map { |v| normalize(v) }
+        elsif value.is_a?(String) && value.match?(/\{[a-zA-Z_]+\}/)
+          phs = value.scan(/\{([a-zA-Z_]+)\}/).flatten.map(&:to_sym)
+          placeholders = phs.map { |ph| [ph, PLACEHOLDER_MAP[ph] || []] }.to_h
+          PlaceholderTemplate.new(value, placeholders)
+        else
+          value
+        end
+      end
+
+      def display(field, subs = {})
+        msg = send(field)
+        if msg.is_a?(Array)
+          msg.map { |m| m.is_a?(PlaceholderTemplate) ? m.to_display(subs) : m }.join("\n")
+        elsif msg.is_a?(PlaceholderTemplate)
+          msg.to_display(subs)
+        else
+          msg
+        end
+      end
+
+      def match(field, str)
+        msg = send(field)
+        if msg.is_a?(PlaceholderTemplate)
+          msg.match(str)
+        else
+          msg == str ? {} : nil
+        end
+      end
+    end
+
+    class DefenseAttributes
+      attr_accessor :asg, :melee, :ranged, :bolt, :udf,
+                    :bar_td, :cle_td, :emp_td, :pal_td,
+                    :ran_td, :sor_td, :wiz_td, :mje_td, :mne_td,
+                    :mjs_td, :mns_td, :mnm_td, :immunities,
+                    :defensive_spells, :defensive_abilities, :special_defenses
+
+      def initialize(data)
+        @asg = data[:asg]
+        @melee = parse_td(data[:melee])
+        @ranged = parse_td(data[:ranged])
+        @bolt = parse_td(data[:bolt])
+        @udf = parse_td(data[:udf])
+
+        %i[bar_td cle_td emp_td pal_td ran_td sor_td wiz_td mje_td mne_td mjs_td mns_td mnm_td].each do |key|
+          instance_variable_set("@#{key}", parse_td(data[key]))
+        end
+
+        @immunities = data[:immunities] || []
+        @defensive_spells = data[:defensive_spells] || []
+        @defensive_abilities = data[:defensive_abilities] || []
+        @special_defenses = data[:special_defenses] || []
+      end
+
+      private
+
+      def parse_td(val)
+        return nil if val.nil?
+        return val if val.is_a?(Range)
+        return eval(val) if val.is_a?(String) && val.match?(/\A\d+\.\.\d+\z/)
+        val
+      end
+    end
+
+    class PlaceholderTemplate
+      def initialize(template, placeholders = {})
+        @template = template
+        @placeholders = placeholders
+      end
+
+      def template
+        @template
+      end
+
+      def placeholders
+        @placeholders
+      end
+
+      def to_display(subs = {})
+        line = @template.dup
+        @placeholders.each do |key, options|
+          value = subs[key] || options.sample || ""
+          line.gsub!("{#{key}}", value.to_s)
+        end
+        line
+      end
+
+      def to_regex(literals = {})
+        if @template.is_a?(Array)
+          regexes = @template.map { |t| self.class.new(t, @placeholders).to_regex(literals) }
+          Regexp.union(*regexes)
+        else
+          pattern = Regexp.escape(@template)
+          @placeholders.each do |key, options|
+            if options == [:wildcard] || options.first&.start_with?('RAW:')
+              raw = options.first.start_with?('RAW:') ? options.first[4..-1] : options.first
+              pattern.gsub!(/\\\{#{key}\\\}/, raw)
+            else
+              regex_group = "(?<#{key}>#{(literals[key] || options).map { |opt| Regexp.escape(opt) }.join('|')})"
+              pattern.gsub!(/\\\{#{key}\\\}/, regex_group)
+            end
+          end
+          Regexp.new("#{pattern}")
+        end
+      end
+
+      def match(str, literals = {})
+        regex = to_regex(literals)
+        m = regex.match(str)
+        return nil unless m
+        m.names.any? ? m.named_captures.transform_keys(&:to_sym) : m.captures
+      end
+    end
+  end
+end
+
+# Configuration helper
+def configure_creatures(max_size: 1000, auto_register: true, debug: false)
+  Lich::Gemstone::Creature.configure(max_size: max_size, auto_register: auto_register)
+  $creature_debug = debug
+  puts "--- Creature system configured: max_size=#{max_size}, auto_register=#{auto_register}, debug=#{debug}"
+end
+
+# Convenient aliases
+Creature = Lich::Gemstone::Creature
+CreatureTemplate = Lich::Gemstone::CreatureTemplate

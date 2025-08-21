@@ -22,7 +22,7 @@ module Lich
         require File.join(LIB_DIR, 'attributes', 'stats.rb')
         require File.join(LIB_DIR, 'attributes', 'spells.rb')
         require File.join(LIB_DIR, 'attributes', 'skills.rb')
-        require File.join(LIB_DIR, 'gemstone', 'society.rb')
+        require File.join(LIB_DIR, 'attributes', 'society.rb')
         require File.join(LIB_DIR, 'gemstone', 'infomon', 'status.rb')
         require File.join(LIB_DIR, 'gemstone', 'experience.rb')
         require File.join(LIB_DIR, 'attributes', 'spellsong.rb')
@@ -38,6 +38,8 @@ module Lich
         require File.join(LIB_DIR, 'gemstone', 'gift.rb')
         require File.join(LIB_DIR, 'gemstone', 'readylist.rb')
         require File.join(LIB_DIR, 'gemstone', 'stowlist.rb')
+        require File.join(LIB_DIR, 'gemstone', 'creature.rb')
+        require File.join(LIB_DIR, 'gemstone', 'combat', 'tracker.rb')
         ActiveSpell.watch!
         self.common_after
       end
