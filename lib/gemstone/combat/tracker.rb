@@ -17,17 +17,16 @@ module Lich
         @settings = {}
         @async_processor = nil
         @buffer = []
+        @creature_detected = false
 
         # Default settings for combat tracking
         DEFAULT_SETTINGS = {
           enabled: true,            # Enable by default for testing
           track_damage: true,
           track_wounds: true,
-          track_flares: false,      # Performance impact
           track_statuses: true,     # Enable for testing
-          track_sequences: false,   # Heavy processing
           max_threads: 2,           # Keep threading for performance
-          debug: true,              # Enable debug for testing
+          debug: false,             # Enable debug for testing
           buffer_size: 200,         # Increase for large combat chunks
           fallback_max_hp: 350      # Default max HP when template unavailable
         }.freeze
@@ -178,10 +177,23 @@ module Lich
             segment_buffer = proc do |server_string|
               @buffer << server_string
 
+              # Check for creature presence (bold wrapper pattern)
+              unless @creature_detected
+                @creature_detected = server_string.match?(/<pushBold\/>.+?<a exist="[^"]+"[^>]*>.+?<\/a>.+?<popBold\/>/)
+              end
+
               # Process on prompt (natural break in game flow)
               if server_string.include?('<prompt time=')
                 chunk = @buffer.slice!(0, @buffer.size)
-                process(chunk) unless chunk.empty?
+                
+                if @creature_detected
+                  process(chunk) unless chunk.empty?
+                  puts "[Combat] Processed chunk with creatures (#{chunk.size} lines)" if debug?
+                else
+                  puts "[Combat] Discarded non-combat chunk (#{chunk.size} lines)" if debug?
+                end
+                
+                @creature_detected = false  # Reset for next chunk
               end
 
               # Prevent buffer overflow

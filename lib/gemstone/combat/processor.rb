@@ -56,18 +56,18 @@ module Lich
 
             # Extract target from current line (for multi-target attacks like volley)
             line_target = Parser.extract_target_from_line(line)
-            
+
             # If we found a new target and we're in combat, handle target switching
             if line_target && parse_state != :seeking_attack
               # Check if this is a real target switch (different creature)
               if current_target && current_target[:id] != line_target[:id]
                 # Save previous event if it has data
-                if current_event && current_event[:target][:id] && 
+                if current_event && current_event[:target][:id] &&
                    (!current_event[:damages].empty? || !current_event[:crits].empty? || !current_event[:statuses].empty?)
                   events << current_event
                   puts "[Combat] Saved event for #{current_event[:target][:name]}: #{current_event[:damages].size} damages, #{current_event[:crits].size} crits, #{current_event[:statuses].size} statuses" if Tracker.debug?
                 end
-                
+
                 # Create new event for this target (inherit attack name from previous)
                 current_event = {
                   name: current_event ? current_event[:name] : :unknown,
@@ -78,7 +78,7 @@ module Lich
                 }
                 current_target = line_target
                 puts "[Combat] Switched to target: #{line_target[:name]} (#{line_target[:id]})" if Tracker.debug?
-                
+
               elsif current_target.nil?
                 # First target for current event - just set it, don't discard data
                 current_event[:target] = line_target
@@ -109,26 +109,26 @@ module Lich
 
             when :seeking_damage
               # Once in damage phase, check EVERY line for damage and status
-              
+
               # Always check for damage (accumulate all damage lines)
               if (damage = Parser.parse_damage(line))
                 current_event[:damages] << damage
                 puts "[Combat] Found damage: #{damage}" if Tracker.debug?
-                
+
                 # When we find damage, look ahead 2-3 lines for related crit
                 if Tracker.settings[:track_wounds]
                   (1..3).each do |offset|
                     next_line_index = index + offset
                     break if next_line_index >= lines.size
-                    
+
                     next_line = lines[next_line_index]
-                    
+
                     # Stop looking if we hit another damage line (belongs to next damage)
                     if Parser.parse_damage(next_line)
                       puts "[Combat] Stopped crit search - found next damage line" if Tracker.debug?
                       break
                     end
-                    
+
                     # Look for crit on this line
                     if (c = CritRanks.parse(next_line.gsub(/<.+?>/, '')).values.first)
                       current_event[:crits] << {
@@ -144,13 +144,13 @@ module Lich
                   end
                 end
               end
-              
+
               # Note: Status effects are now checked globally on every line above
 
               # Check for new attack (means we're done with previous)
               if Parser.parse_attack(line)
                 # Save current event before starting new attack
-                if current_event && current_event[:target][:id] && 
+                if current_event && current_event[:target][:id] &&
                    (!current_event[:damages].empty? || !current_event[:crits].empty?)
                   events << current_event
                   puts "[Combat] Completed event for #{current_event[:target][:name]}: #{current_event[:damages].size} damages, #{current_event[:crits].size} crits" if Tracker.debug?
@@ -220,7 +220,7 @@ module Lich
 
           puts "  Total damage applied: #{total_damage}" if total_damage > 0 && Tracker.debug?
         end
-        
+
         # Apply status effect directly to a creature (outside combat events)
         def apply_status_to_target(status, target_name_or_id, target_id = nil, action = :add)
           # Handle both name lookup and direct ID
@@ -233,7 +233,7 @@ module Lich
             creatures = Creature.all.select { |c| c.name&.downcase&.include?(target_name_or_id.downcase) }
             creature = creatures.first if creatures.size == 1
           end
-          
+
           if creature
             if action == :remove
               creature.remove_status(status)
@@ -246,11 +246,11 @@ module Lich
             puts "[Combat] Could not find creature for status: #{status} -> #{target_name_or_id}" if Tracker.debug?
           end
         end
-        
+
         # Map CritRanks location strings to creature body part constants
         def map_critranks_to_body_part(location)
           return nil unless location
-          
+
           case location.to_s.downcase.gsub(/[^a-z]/, '')
           when 'leftarm', 'larm' then 'leftArm'
           when 'rightarm', 'rarm' then 'rightArm'

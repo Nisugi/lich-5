@@ -6,7 +6,6 @@
 #
 
 require_relative 'defs/attacks'
-require_relative 'defs/flares'
 require_relative 'defs/damage'
 require_relative 'defs/statuses'
 
@@ -45,23 +44,6 @@ module Lich
             result ? result[:damage] : nil
           end
 
-          # Parse flare effects (optional - performance setting)
-          def parse_flare(line)
-            return nil unless Tracker.settings[:track_flares]
-            return nil unless flare_detector.match?(line)
-
-            flare_lookup.each do |pattern, name, damaging, aoe|
-              if pattern.match?(line)
-                return {
-                  name: name,
-                  damaging: damaging,
-                  aoe: aoe
-                }
-              end
-            end
-            nil
-          end
-
           # Parse status effects (optional - performance setting)
           def parse_status(line)
             return nil unless Tracker.settings[:track_statuses]
@@ -90,7 +72,6 @@ module Lich
               name: link_match[:name]
             }
           end
-
 
           # Try to extract target from regex match first, then from line
           def extract_target_from_match(match)
@@ -130,30 +111,10 @@ module Lich
             @attack_detector ||= Definitions::Attacks::ATTACK_DETECTOR
           end
 
-          def flare_lookup
-            @flare_lookup ||= begin
-              flare_set = Tracker.settings[:track_flares] ?
-                         Definitions::Flares.all_flares :
-                         Definitions::Flares.basic_flares
-              Definitions::Flares.create_lookup(flare_set)
-            end
-          end
-
-          def flare_detector
-            @flare_detector ||= begin
-              flare_set = Tracker.settings[:track_flares] ?
-                         Definitions::Flares.all_flares :
-                         Definitions::Flares.basic_flares
-              Definitions::Flares.create_detector(flare_set)
-            end
-          end
-
           # Clear cached patterns when settings change
           def reset_cache!
             @attack_lookup = nil
             @attack_detector = nil
-            @flare_lookup = nil
-            @flare_detector = nil
           end
         end
       end

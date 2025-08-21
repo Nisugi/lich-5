@@ -70,18 +70,6 @@ module Lich
 
           SHIELD_ATTACKS = [].freeze
 
-          # Multi-strike sequences
-          SEQUENCE_ATTACKS = [
-            AttackDef.new(:barrage, [/Nocking another arrow to your bowstring, you swiftly draw back and loose again!/].freeze),
-            AttackDef.new(:flurry, [
-              /Flowing with deadly grace, you smoothly reverse the direction of your blades and slash again!/,
-              /With fluid motion, you guide your flashing blades, slicing toward (?<target>.+?) at the apex of their deadly arc!/
-            ].freeze),
-            AttackDef.new(:volley, [
-              /Raising your .+ high, you loose arrow after arrow as fast as you can, filling the sky with a volley of deadly projectiles!/,
-              /An ominous shadow falls over your surroundings as a whistling hail of arrows arcs down from above!/
-            ].freeze)
-          ].freeze
 
           # Companion/pet attacks
           COMPANION_ATTACKS = [
@@ -97,7 +85,7 @@ module Lich
 
           # All attack definitions combined
           ALL_ATTACKS = (BASIC_ATTACKS + SPELL_ATTACKS + MANEUVER_ATTACKS + WEAPON_ATTACKS +
-                        SHIELD_ATTACKS + SEQUENCE_ATTACKS + COMPANION_ATTACKS + ENVIRONMENTAL_ATTACKS).freeze
+                        SHIELD_ATTACKS + COMPANION_ATTACKS + ENVIRONMENTAL_ATTACKS).freeze
 
           # Create lookup table for fast pattern matching
           ATTACK_LOOKUP = ALL_ATTACKS.flat_map do |attack_def|

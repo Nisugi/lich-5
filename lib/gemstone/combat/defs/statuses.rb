@@ -73,7 +73,7 @@ module Lich
                           [].freeze),
             StatusDef.new(:sounds,
                           [/(?<target>.+?) seems to be distracted by something\./].freeze,
-                          [].frreze),
+                          [].freeze),
             StatusDef.new(:calm,
                           [/A calm washes over (?<target>.+?)\./].freeze,
                           [
@@ -128,7 +128,3 @@ module Lich
   end
 end
 
-# wall of thorns poison
-# One of the vines surrounding you lashes out at the `ebon swine`, scraping a thorn across `his` body!  `The ebon swine` flinches slightly.
-#
-#
