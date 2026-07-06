@@ -39,6 +39,12 @@
 #         --keep            keep the temp dir for inspection
 ######
 
+# This file is a CLI harness that parses ARGV at load time. If the repo root
+# ends up on $LOAD_PATH, a `require "benchmark"` intended for the benchmark
+# gem can resolve HERE instead and blow up on Lich's command-line flags
+# mid-boot. Refuse to execute unless run directly.
+return unless __FILE__ == $PROGRAM_NAME
+
 require 'socket'
 require 'open3'
 require 'fileutils'
