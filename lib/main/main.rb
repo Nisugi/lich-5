@@ -1049,6 +1049,9 @@ reconnect_if_wanted = proc {
     shutdown_step.call('$_CLIENT_.close') { $_CLIENT_&.close }
     shutdown_step.call('Lich.db.close') { Lich.db.close }
     Lich::Common::ShutdownLog.info('unregistering session...')
+    shutdown_step.call('WebUI stop') do
+      Lich::WebUI.stop_service! if defined?(Lich::WebUI)
+    end
     shutdown_step.call('ActiveSessions lifecycle stop') do
       Lich::InternalAPI::ActiveSessions::Lifecycle.stop if defined?(Lich::InternalAPI::ActiveSessions::Lifecycle)
     end

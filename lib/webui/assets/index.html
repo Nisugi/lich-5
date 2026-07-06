@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lich WebUI</title>
+  <link rel="stylesheet" href="/assets/app.css">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    (function () {
+      var saved = localStorage.getItem('lich-webui-theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+  <header id="topbar">
+    <span id="session-label">Lich WebUI</span>
+    <span id="conn-status" class="status connecting">connecting…</span>
+    <button id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">◐</button>
+  </header>
+  <main id="app">
+    <section id="landing">
+      <h1 id="session-title">Connecting to Lich…</h1>
+      <div id="notices"></div>
+      <h2>Pages</h2>
+      <ul id="page-list" class="card-list"></ul>
+      <p id="no-pages" class="muted">No script pages are registered yet.</p>
+      <div id="siblings-block" hidden>
+        <h2>Other sessions</h2>
+        <ul id="sibling-list" class="card-list"></ul>
+      </div>
+    </section>
+    <section id="page-view" hidden></section>
+  </main>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
