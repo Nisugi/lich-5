@@ -37,7 +37,7 @@ UI.page("hunt", title: "Hunt Panel") do |ui|
   ui.table(ui.state[:log] || [], headings: ["Time", "Creature"])
 end
 
-watchfor(/dies with a groan/) do
+Watchfor.new(/dies with a groan/) do
   UI.state("hunt")[:kills] = (UI.state("hunt")[:kills] || 0) + 1
   UI.refresh("hunt")
 end
