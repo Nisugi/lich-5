@@ -6,6 +6,7 @@ require 'tmpdir'
 require 'fileutils'
 
 require_relative 'server'
+require_relative 'registry'
 
 module Lich
   # Browser-based script UI service ("WebUI").
@@ -69,7 +70,7 @@ module Lich
           session_info: -> { session_info },
           pages_provider: -> { pages_snapshot },
           siblings_provider: -> { sibling_sessions },
-          message_handler: nil
+          message_handler: method(:handle_client_message)
         )
         unless @server.start
           @server = nil
@@ -92,6 +93,7 @@ module Lich
         @server = nil
       end
       server&.stop
+      Registry.clear!
       delete_discovery_file
     end
 
@@ -137,12 +139,61 @@ module Lich
       false
     end
 
-    # Registered page descriptors for the hello/pages envelopes. M1 has no
-    # page registry yet; M2 replaces this with Registry.pages_snapshot.
-    #
-    # @return [Array<Hash>]
+    # @return [Array<Hash>] registered page descriptors for the hello/pages
+    #   envelopes
     def self.pages_snapshot
-      []
+      Registry.pages_snapshot
+    end
+
+    # Registers a page for the calling script, starting the service on
+    # first use. Called via the public UI facade (lib/api/webui.rb).
+    #
+    # @param name [String] page name, unique within the calling script
+    # @param title [String, nil]
+    # @yieldparam ui [Builder]
+    # @return [Page, nil] nil when disabled or called outside a script
+    def self.register_page(name, title: nil, &block)
+      return nil unless ensure_service!
+
+      script = Script.current if defined?(Script) && Script.respond_to?(:current)
+      unless script
+        Lich.log("warning: WebUI page #{name.inspect} registered outside a script; ignored") if defined?(Lich) && Lich.respond_to?(:log)
+        return nil
+      end
+
+      page = Page.new(
+        id: "#{script.name}/#{name}",
+        title: title ? title.to_s : name.to_s,
+        script: script,
+        block: block
+      )
+      Registry.register(page)
+    end
+
+    # Broadcasts the current page list to every connected browser. Called
+    # by the Registry whenever pages register/unregister.
+    #
+    # @return [void]
+    def self.notify_pages_changed
+      @server&.broadcast(Protocol.pages(pages_snapshot))
+    end
+
+    # Routes one parsed browser message (see Protocol::CLIENT_MESSAGE_TYPES)
+    # to its page. Unknown pages are ignored - the browser may race a page
+    # removal.
+    #
+    # @param connection [Server::Connection]
+    # @param message [Hash]
+    # @return [void]
+    def self.handle_client_message(connection, message)
+      page = Registry.find(message[:page].to_s)
+      return unless page
+
+      case message[:type]
+      when 'subscribe'   then page.subscribe(connection)
+      when 'unsubscribe' then page.unsubscribe(connection)
+      when 'event'       then page.handle_event(message[:cid].to_s, message[:value])
+      end
     end
 
     # @return [Hash] session identity for the hello envelope

@@ -124,3 +124,91 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
 }
 .notice.warn { border-left-color: var(--warn); }
 .notice.error { border-left-color: var(--error); }
+
+/* ---------- page view / components ---------- */
+
+.page-nav { margin-bottom: 1em; }
+.page-nav a { color: var(--muted); text-decoration: none; }
+.page-nav a:hover { color: var(--accent); }
+
+.page-body > * { margin: 0 0 0.8em; }
+
+.c-header { font-size: 1.2em; color: var(--text); margin: 0.8em 0 0.4em; }
+.c-text, .c-markdown { margin: 0.3em 0; }
+.c-markdown code {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.25em;
+  padding: 0 0.3em;
+}
+
+.c-button {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 0.4em;
+  padding: 0.45em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.c-button:hover:not(:disabled) { filter: brightness(1.1); }
+.c-button:disabled { opacity: 0.5; cursor: default; }
+.c-button.danger { background: var(--error); color: #fff; }
+
+.c-field {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+.c-label { color: var(--muted); min-width: 8em; }
+
+.c-field input[type="text"], .c-field select {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 0.4em;
+  padding: 0.35em 0.6em;
+  font-size: 1em;
+  flex: 1;
+  max-width: 20em;
+}
+.c-field input[type="text"]:focus, .c-field select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.c-checkbox input { width: 1.1em; height: 1.1em; accent-color: var(--accent); }
+
+.c-slider input[type="range"] { flex: 1; max-width: 20em; accent-color: var(--accent); }
+.c-slider-value { color: var(--text); min-width: 2.5em; text-align: right; }
+
+.c-progress .c-label { display: block; margin-bottom: 0.25em; }
+.c-progress-track {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1em;
+  height: 0.7em;
+  overflow: hidden;
+}
+.c-progress-fill {
+  background: var(--accent);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.c-table-wrap { overflow-x: auto; }
+.c-table {
+  border-collapse: collapse;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5em;
+}
+.c-table th, .c-table td {
+  text-align: left;
+  padding: 0.45em 0.8em;
+  border-bottom: 1px solid var(--border);
+}
+.c-table th { color: var(--muted); font-weight: 600; font-size: 0.9em; }
+.c-table tbody tr:last-child td { border-bottom: none; }

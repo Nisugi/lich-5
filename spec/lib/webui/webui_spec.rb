@@ -2,6 +2,8 @@
 
 require 'json'
 require 'fileutils'
+require 'socket'
+require 'timeout'
 
 require_relative '../../spec_helper'
 require_relative '../../../lib/webui/webui'
@@ -54,6 +56,78 @@ RSpec.describe Lich::WebUI do
 
     it 'is safe to call when never started' do
       expect { described_class.stop_service! }.not_to raise_error
+    end
+  end
+
+  describe 'end-to-end page flow over a live WebSocket' do
+    # has_thread? => true makes the production dispatcher run callbacks
+    # inline on the calling thread, so no real Script engine is needed.
+    let(:fake_script) do
+      Struct.new(:name) do
+        def has_thread?(_thread)
+          true
+        end
+      end.new('demo')
+    end
+
+    def read_message(socket)
+      frame = Timeout.timeout(3) { Lich::WebUI::WebSocket.read_frame(socket, require_mask: false) }
+      JSON.parse(frame.payload, symbolize_names: true)
+    end
+
+    def read_message_of_type(socket, type)
+      5.times do
+        message = read_message(socket)
+        return message if message[:type] == type
+      end
+      raise "no #{type} message received"
+    end
+
+    it 'subscribes, renders, dispatches a click, and re-renders' do
+      allow(described_class).to receive(:enabled?).and_return(true)
+      expect(described_class.ensure_service!).to be(true)
+
+      page = Lich::WebUI::Page.new(
+        id: 'demo/counter',
+        title: 'Counter',
+        script: fake_script,
+        block: proc { |ui|
+          ui.text "count: #{ui.state[:count] || 0}"
+          ui.button('Bump') { ui.state[:count] = (ui.state[:count] || 0) + 1 }
+        }
+      )
+      Lich::WebUI::Registry.register(page)
+
+      token = described_class.auth_url[/token=(\h+)/, 1]
+      socket = TCPSocket.new('127.0.0.1', described_class.port)
+      socket.write(
+        "GET /ws HTTP/1.1\r\nHost: 127.0.0.1:#{described_class.port}\r\n" \
+        "Upgrade: websocket\r\nConnection: Upgrade\r\n" \
+        "Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==\r\n" \
+        "Origin: http://127.0.0.1:#{described_class.port}\r\n" \
+        "Cookie: lich_webui=#{token}\r\n\r\n"
+      )
+      head = +''
+      head << socket.read(1) until head.end_with?("\r\n\r\n")
+      expect(head).to include('101 Switching Protocols')
+
+      hello = read_message_of_type(socket, 'hello')
+      expect(hello[:pages]).to eq([{ id: 'demo/counter', title: 'Counter', script: 'demo' }])
+
+      socket.write(Lich::WebUI::WebSocket.encode_client_frame(
+                     JSON.generate(type: 'subscribe', page: 'demo/counter')
+                   ))
+      render = read_message_of_type(socket, 'render')
+      expect(render[:tree][:children].first[:text]).to eq('count: 0')
+
+      socket.write(Lich::WebUI::WebSocket.encode_client_frame(
+                     JSON.generate(type: 'event', page: 'demo/counter', cid: 'button:1', event: 'click', value: nil)
+                   ))
+      rerender = read_message_of_type(socket, 'render')
+      expect(rerender[:tree][:children].first[:text]).to eq('count: 1')
+      expect(rerender[:seq]).to eq(2)
+
+      socket.close
     end
   end
 
