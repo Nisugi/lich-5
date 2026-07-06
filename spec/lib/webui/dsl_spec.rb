@@ -60,4 +60,58 @@ RSpec.describe Lich::WebUI::Builder do
     state[:kills] = 7
     expect(builder.state[:kills]).to eq(7)
   end
+
+  describe 'containers' do
+    it 'nests expander children with prefixed cids and hoists their callbacks' do
+      builder.text 'before'
+      builder.expander('Settings', open: true) do |section|
+        section.checkbox('Loot') { |v| v }
+        section.text 'inside'
+      end
+
+      node = builder.nodes.last
+      expect(node[:t]).to eq('expander')
+      expect(node[:cid]).to eq('expander:1')
+      expect(node[:open]).to be(true)
+      expect(node[:children].map { |child| child[:cid] }).to eq(['expander:1.checkbox:0', 'expander:1.text:1'])
+      expect(builder.callbacks).to have_key('expander:1.checkbox:0')
+    end
+
+    it 'yields one builder per column' do
+      builder.columns(2) do |left, right|
+        left.text 'L'
+        right.button('R') { :r }
+      end
+
+      node = builder.nodes.last
+      expect(node[:t]).to eq('columns')
+      expect(node[:children].length).to eq(2)
+      expect(node[:children][0][:children].first[:text]).to eq('L')
+      expect(node[:children][1][:children].first[:cid]).to eq('columns:0.c1.button:0')
+      expect(builder.callbacks).to have_key('columns:0.c1.button:0')
+    end
+
+    it 'yields one builder per tab with labels' do
+      builder.tabs(%w[Loot Stats]) do |loot, stats|
+        loot.text 'loot here'
+        stats.text 'stats here'
+      end
+
+      node = builder.nodes.last
+      expect(node[:t]).to eq('tabs')
+      expect(node[:children].map { |tab| tab[:label] }).to eq(%w[Loot Stats])
+      expect(node[:children][1][:children].first[:text]).to eq('stats here')
+    end
+
+    it 'accepts only http(s) and data URIs for images' do
+      builder.image('https://example.com/map.png', alt: 'map')
+      builder.image('data:image/png;base64,AAAA')
+      builder.image('file:///etc/passwd')
+      builder.image('C:/secrets.png')
+
+      images = builder.nodes.select { |node| node[:t] == 'image' }
+      expect(images.length).to eq(2)
+      expect(images.first).to include(src: 'https://example.com/map.png', alt: 'map')
+    end
+  end
 end

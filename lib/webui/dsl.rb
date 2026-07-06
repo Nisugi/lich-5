@@ -26,10 +26,15 @@ module Lich
       attr_reader :state
 
       # @param state [PageState]
-      def initialize(state)
+      # @param callbacks [Hash] shared across nested builders so every
+      #   callback in the tree lands in one per-render map
+      # @param prefix [String] cid prefix for components inside containers
+      #   (e.g. "expander:5.")
+      def initialize(state, callbacks: {}, prefix: '')
         @state = state
         @nodes = []
-        @callbacks = {}
+        @callbacks = callbacks
+        @prefix = prefix
         @index = 0
       end
 
@@ -124,7 +129,89 @@ module Lich
              rows: rows.map { |row| Array(row).map(&:to_s) })
       end
 
+      # Collapsible section; the block receives a nested builder.
+      #
+      #   ui.expander("Settings") { |e| e.checkbox("Loot") { |v| ... } }
+      #
+      # @param label [#to_s]
+      # @param open [Boolean] expanded by default
+      # @yieldparam section [Builder]
+      # @return [void]
+      def expander(label, open: false, key: nil)
+        cid = claim_cid('expander', key)
+        child = child_builder(cid)
+        yield child
+        @nodes << { t: 'expander', cid: cid, label: label.to_s, open: !!open, children: child.nodes }
+      end
+
+      # Side-by-side columns; the block receives one nested builder per
+      # column.
+      #
+      #   ui.columns(2) { |left, right| left.text "a"; right.text "b" }
+      #
+      # @param count [Integer]
+      # @yieldparam columns [Builder] one argument per column
+      # @return [void]
+      def columns(count = 2, key: nil)
+        cid = claim_cid('columns', key)
+        children = Array.new(count) { |i| child_builder("#{cid}.c#{i}") }
+        yield(*children)
+        @nodes << {
+          t: 'columns', cid: cid,
+          children: children.each_with_index.map do |column, i|
+            { t: 'col', cid: "#{cid}.c#{i}", children: column.nodes }
+          end
+        }
+      end
+
+      # Tabbed sections; the block receives one nested builder per tab, in
+      # the order of +names+. Tab switching is purely client-side.
+      #
+      #   ui.tabs(%w[Loot Stats]) { |loot, stats| loot.table(...) }
+      #
+      # @param names [Array<#to_s>]
+      # @yieldparam tabs [Builder] one argument per tab
+      # @return [void]
+      def tabs(names, key: nil)
+        cid = claim_cid('tabs', key)
+        children = Array.new(names.length) { |i| child_builder("#{cid}.t#{i}") }
+        yield(*children)
+        @nodes << {
+          t: 'tabs', cid: cid,
+          children: names.each_with_index.map do |name, i|
+            { t: 'tab', cid: "#{cid}.t#{i}", label: name.to_s, children: children[i].nodes }
+          end
+        }
+      end
+
+      # Displays an image from an http(s) URL or data: URI. Local file paths
+      # are not supported - the browser, not Lich, fetches the source.
+      #
+      # @param source [String]
+      # @param alt [#to_s, nil]
+      # @return [void]
+      def image(source, alt: nil, key: nil)
+        source = source.to_s
+        return unless source =~ %r{\Ahttps?://|\Adata:image/}
+
+        emit('image', key: key, src: source, alt: alt&.to_s)
+      end
+
       private
+
+      # Reserves a positional/keyed cid without emitting a node yet (used by
+      # containers, whose node is appended after the block runs).
+      def claim_cid(type, key)
+        cid = key ? "#{@prefix}#{type}:#{key}" : "#{@prefix}#{type}:#{@index}"
+        @index += 1
+        cid
+      end
+
+      # @param parent_cid [String]
+      # @return [Builder] sharing state and the callback map
+      def child_builder(parent_cid)
+        Builder.new(@state, callbacks: @callbacks, prefix: "#{parent_cid}.")
+      end
 
       # Appends one component node, assigning its positional (or keyed) id
       # and capturing its callback when given.
@@ -134,8 +221,7 @@ module Lich
       # @param attrs [Hash]
       # @return [void]
       def emit(type, key: nil, **attrs, &block)
-        cid = key ? "#{type}:#{key}" : "#{type}:#{@index}"
-        @index += 1
+        cid = claim_cid(type, key)
         @callbacks[cid] = block if block
         node = { t: type, cid: cid }
         attrs.each { |name, value| node[name] = value unless value.nil? }

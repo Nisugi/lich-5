@@ -212,3 +212,33 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
 }
 .c-table th { color: var(--muted); font-weight: 600; font-size: 0.9em; }
 .c-table tbody tr:last-child td { border-bottom: none; }
+
+.c-image { max-width: 100%; border-radius: 0.5em; }
+
+.c-expander {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5em;
+  padding: 0.5em 0.9em;
+}
+.c-expander summary { cursor: pointer; color: var(--muted); font-weight: 600; }
+.c-expander-body { padding-top: 0.6em; }
+.c-expander-body > * { margin: 0 0 0.8em; }
+
+.c-columns { display: flex; gap: 1em; flex-wrap: wrap; }
+.c-col { flex: 1; min-width: 12em; }
+.c-col > * { margin: 0 0 0.8em; }
+
+.c-tab-bar { display: flex; gap: 0.25em; border-bottom: 1px solid var(--border); }
+.c-tab-button {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  padding: 0.4em 0.9em;
+  font-size: 1em;
+  cursor: pointer;
+}
+.c-tab-button.active { color: var(--accent); border-bottom-color: var(--accent); }
+.c-tab-panel { padding-top: 0.8em; }
+.c-tab-panel > * { margin: 0 0 0.8em; }

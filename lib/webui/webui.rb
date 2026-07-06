@@ -150,9 +150,10 @@ module Lich
     #
     # @param name [String] page name, unique within the calling script
     # @param title [String, nil]
+    # @param every [Numeric, nil] optional re-render polling interval
     # @yieldparam ui [Builder]
     # @return [Page, nil] nil when disabled or called outside a script
-    def self.register_page(name, title: nil, &block)
+    def self.register_page(name, title: nil, every: nil, &block)
       return nil unless ensure_service!
 
       script = Script.current if defined?(Script) && Script.respond_to?(:current)
@@ -165,7 +166,8 @@ module Lich
         id: "#{script.name}/#{name}",
         title: title ? title.to_s : name.to_s,
         script: script,
-        block: block
+        block: block,
+        every: every
       )
       Registry.register(page)
     end

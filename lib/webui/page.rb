@@ -101,16 +101,19 @@ module Lich
       # @param title [String]
       # @param script [Script] the owning script (thread dispatch + cleanup)
       # @param block [Proc] render block, yielded a Builder
+      # @param every [Numeric, nil] optional polling interval in seconds -
+      #   the page re-renders on this cadence while browsers are subscribed
       # @param dispatcher [#call, nil] injectable for specs; see
       #   DEFAULT_DISPATCHER for the (script, timeout, on_timeout, work)
       #   contract
-      def initialize(id:, title:, script:, block:, dispatcher: nil)
+      def initialize(id:, title:, script:, block:, every: nil, dispatcher: nil)
         @id = id
         @title = title
         @script = script
         @script_name = script.respond_to?(:name) ? script.name.to_s : 'lich'
         @owner_id = script.object_id
         @block = block
+        @every = every&.to_f
         @dispatcher = dispatcher || DEFAULT_DISPATCHER
         @state = PageState.new
         @callbacks = {}
@@ -120,6 +123,8 @@ module Lich
         @dirty = false
         @seq = 0
         @last_render_json = nil
+        @closed = false
+        @poll_thread = nil
       end
 
       # @return [Hash] descriptor for the hello/pages envelopes
@@ -140,6 +145,7 @@ module Lich
         else
           request_render
         end
+        ensure_polling
       end
 
       # @param connection [Server::Connection]
@@ -193,10 +199,36 @@ module Lich
       # @return [void]
       def closed(reason)
         broadcast(Protocol.notice(reason, level: 'warn'))
-        @mutex.synchronize { @subscribers.clear }
+        @mutex.synchronize do
+          @subscribers.clear
+          @closed = true
+        end
       end
 
       private
+
+      # Starts the every: poller on first subscribe. The thread re-renders
+      # on the configured cadence while subscribers exist and exits within
+      # one interval of the page closing or emptying out; a fresh subscribe
+      # restarts it.
+      def ensure_polling
+        return unless @every && @every.positive?
+
+        @mutex.synchronize do
+          return if @closed
+          return if @poll_thread&.alive?
+
+          @poll_thread = Thread.new do
+            loop do
+              sleep @every
+              stop = @mutex.synchronize { @closed || @subscribers.empty? }
+              break if stop
+
+              request_render
+            end
+          end
+        end
+      end
 
       # Runs on a thread inside the script's group. Loops while refresh
       # requests arrived during the pass; subsequent passes run inline since

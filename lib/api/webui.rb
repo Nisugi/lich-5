@@ -20,13 +20,15 @@ module UI
   #
   # @param name [String] page name, unique within the calling script
   # @param title [String, nil] browser-facing title (defaults to the name)
+  # @param every [Numeric, nil] optional polling interval in seconds; the
+  #   page re-renders on this cadence while a browser is viewing it
   # @yieldparam ui [Lich::WebUI::Builder] emit components on each render
   # @return [Lich::WebUI::Page, nil] nil when disabled or not in a script
-  def self.page(name, title: nil, &block)
+  def self.page(name, title: nil, every: nil, &block)
     return nil unless available?
     raise ArgumentError, 'UI.page requires a block' unless block
 
-    Lich::WebUI.register_page(name, title: title, &block)
+    Lich::WebUI.register_page(name, title: title, every: every, &block)
   end
 
   # Schedules a re-render push to any browsers viewing the page. Callable

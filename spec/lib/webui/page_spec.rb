@@ -168,6 +168,34 @@ RSpec.describe Lich::WebUI::Page do
     expect(connection.sent.length).to eq(sent_before)
   end
 
+  describe 'every: polling' do
+    it 're-renders on the cadence while subscribed and stops when closed' do
+      passes = 0
+      page = described_class.new(
+        id: 'demo/poll', title: 'Poll', script: fake_script,
+        block: proc { |ui| passes += 1; ui.text 'tick' },
+        every: 0.05, dispatcher: inline_dispatcher
+      )
+
+      page.subscribe(connection)
+      initial = passes
+      Timeout.timeout(2) { sleep 0.02 until passes > initial }
+      expect(passes).to be > initial
+
+      page.closed('done')
+      sleep 0.15
+      settled = passes
+      sleep 0.15
+      expect(passes).to eq(settled) # poller has stopped
+    end
+
+    it 'does not start a poller without every:' do
+      page = build_page { |ui| ui.text 'x' }
+      page.subscribe(connection)
+      expect(page.instance_variable_get(:@poll_thread)).to be_nil
+    end
+  end
+
   describe Lich::WebUI::PageState do
     it 'behaves as a small thread-safe hash' do
       state = described_class.new
