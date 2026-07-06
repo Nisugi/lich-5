@@ -484,7 +484,7 @@ module Lich
         <body style="font-family: sans-serif; margin: 4em auto; max-width: 30em; text-align: center;">
         <h2>Not authorized</h2>
         <p>This page requires a session link. In the game, type:</p>
-        <p><code style="font-size: 1.3em;">;webui</code></p>
+        <p><code style="font-size: 1.3em;">;ui</code></p>
         </body></html>
       HTML
 

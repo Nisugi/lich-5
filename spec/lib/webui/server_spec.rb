@@ -88,7 +88,7 @@ RSpec.describe Lich::WebUI::Server do
     it 'requires the auth cookie' do
       status, _, body = http_request('/')
       expect(status).to eq(403)
-      expect(body).to include(';webui')
+      expect(body).to include(';ui')
     end
 
     it 'serves the landing page with an ETag when authorized' do

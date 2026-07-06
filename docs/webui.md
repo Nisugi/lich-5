@@ -10,13 +10,13 @@ should target the WebUI.
 ## Player usage
 
 ```
-;webui on     enable the feature (persists; default off)
-;webui        start the service if needed, open the browser
-;webui url    print the authorization link instead of opening a browser
-;webui off    disable and stop
+;ui on     enable the feature (persists; default off)
+;ui        start the service if needed, open the browser
+;ui url    print the authorization link instead of opening a browser
+;ui off    disable and stop
 ```
 
-Try it: `;webui on`, `;webui-demo`, then `;webui`.
+Try it: `;ui on`, `;webui-demo`, then `;ui`.
 
 ## Script API
 
@@ -108,12 +108,12 @@ Consequences:
 ## Security model
 
 - The server binds `127.0.0.1` only and every request must carry a session
-  token, delivered to the browser once via the `;webui` link and stored as an
+  token, delivered to the browser once via the `;ui` link and stored as an
   `HttpOnly` cookie. `Host` and `Origin` headers are validated (DNS-rebinding
   defense) and token comparison is constant-time.
 - **A browser tab with the token has script-level power** — callbacks run
   arbitrary Ruby in your session. That is the design: the tab is the player.
-  Don't paste your `;webui url` link anywhere.
+  Don't paste your `;ui url` link anywhere.
 - Component text renders via `textContent` (never HTML), so game/script
   strings cannot inject markup; markdown supports only a safe inline subset.
 

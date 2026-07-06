@@ -13,7 +13,7 @@
 #   UI.refresh("hunt")   # push an update after game events
 #
 # Every method is an inert no-op while the :webui feature flag is off
-# (`;webui on` enables it), so scripts can call UI.* unconditionally.
+# (`;ui on` enables it), so scripts can call UI.* unconditionally.
 module UI
   # Registers (or replaces) a page for the calling script and starts the
   # WebUI service on first use.

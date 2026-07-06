@@ -18,7 +18,7 @@ module Lich
   # cross-platform browser opener.
   #
   # The whole feature is dormant unless the :webui feature flag is enabled
-  # (`;webui on`). Mirrors the ownership shape of
+  # (`;ui on`). Mirrors the ownership shape of
   # Lich::InternalAPI::ActiveSessions.
   module WebUI
     FEATURE_FLAG = :webui
@@ -27,7 +27,7 @@ module Lich
 
     # Sibling-session discovery files live here; they contain no secrets
     # (name, game, port, pid only) - each browser tab must still be blessed
-    # by its own session's `;webui`.
+    # by its own session's `;ui`.
     DISCOVERY_DIR = File.join(Dir.tmpdir, 'simutronics', 'webui')
 
     @server = nil
@@ -52,7 +52,7 @@ module Lich
     end
 
     # Starts the server if the feature is enabled and it is not already
-    # running. Safe to call repeatedly; used by `;webui` and (in M2) by the
+    # running. Safe to call repeatedly; used by `;ui` and (in M2) by the
     # first UI.page registration.
     #
     # @return [Boolean] true when the service is available
