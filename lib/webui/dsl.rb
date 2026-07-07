@@ -232,14 +232,21 @@ module Lich
       #                markers: [{ id: 'current', x1: 10, y1: 20, x2: 30, y2: 40, kind: 'current' }],
       #                scroll_to: 'current') { |click| ... }
       #
+      # popup: names a page ("script/page") that right-click opens as a
+      # small supplemental browser window (popup_size: [w, h]) - the natural
+      # home for a display's settings. Without popup:, right-clicks arrive
+      # in the block with :right => true.
+      #
       # @param src [String] http(s), data:, or /files/ source
       # @param scale [Numeric] display zoom factor
       # @param markers [Array<Hash>] {id:, x1:, y1:, x2:, y2:, kind:, label:}
       #   kinds: 'current' | 'marker' | 'pin'
       # @param scroll_to [String, nil] marker id to center on change
+      # @param popup [String, nil] page id right-click opens in a popup
+      # @param popup_size [Array(Integer, Integer), nil]
       # @yieldparam click [Hash]
       # @return [void]
-      def image_map(src, scale: 1.0, markers: [], scroll_to: nil, key: nil, &block)
+      def image_map(src, scale: 1.0, markers: [], scroll_to: nil, popup: nil, popup_size: nil, key: nil, &block)
         src = src.to_s
         return unless src =~ %r{\Ahttps?://|\Adata:image/|\A/files/}
 
@@ -247,6 +254,8 @@ module Lich
                           src: src,
                           scale: scale.to_f,
                           scroll_to: scroll_to&.to_s,
+                          popup: popup&.to_s,
+                          popup_size: (popup_size.is_a?(Array) ? popup_size.first(2).map(&:to_i) : nil),
                           markers: markers.map { |marker|
                             node = {
                               id: marker[:id].to_s,

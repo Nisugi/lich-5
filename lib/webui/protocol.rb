@@ -16,7 +16,7 @@ module Lich
       SCHEMA_VERSION = 1
 
       # Browser->server message types the server accepts.
-      CLIENT_MESSAGE_TYPES = %w[subscribe unsubscribe event].freeze
+      CLIENT_MESSAGE_TYPES = %w[subscribe unsubscribe event geometry].freeze
 
       # Builds the first message sent on every accepted WebSocket connection.
       #

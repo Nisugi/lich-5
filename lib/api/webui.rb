@@ -36,16 +36,23 @@ module UI
   # floating window (Edge/Chrome app mode) - the right choice for bare
   # pages like a map; falls back to a normal tab.
   #
+  # size: [w, h] and position: [x, y] set the app window's initial outer
+  # geometry. Bare pages report their live geometry back into
+  # state[:_window_geometry] ({w:, h:, x:, y:}) so a script can persist it
+  # (Settings) and reopen the window exactly where the player left it.
+  #
   # @param name [String] page name or full "script/page" id
   # @param app [Boolean]
+  # @param size [Array(Integer, Integer), nil]
+  # @param position [Array(Integer, Integer), nil]
   # @return [Boolean]
-  def self.open(name, app: false)
+  def self.open(name, app: false, size: nil, position: nil)
     return false unless available?
 
     page = find(name)
     return false unless page
 
-    Lich::WebUI.open_page(page.id, app: app)
+    Lich::WebUI.open_page(page.id, app: app, size: size, position: position)
   end
 
   # Schedules a re-render push to any browsers viewing the page. Callable

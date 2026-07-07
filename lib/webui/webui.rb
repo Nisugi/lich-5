@@ -129,9 +129,9 @@ module Lich
     # @param target [String]
     # @param app [Boolean]
     # @return [Boolean] true when a launcher was invoked
-    def self.open_browser(target, app: false)
+    def self.open_browser(target, app: false, size: nil, position: nil)
       return false if target.nil? || target.empty?
-      return true if app && open_app_window(target)
+      return true if app && open_app_window(target, size: size, position: position)
 
       if defined?(Win32) && Win32.respond_to?(:ShellExecute)
         Win32.ShellExecute(:lpOperation => 'open', :lpFile => target)
@@ -153,20 +153,25 @@ module Lich
     #
     # @param target [String]
     # @return [Boolean]
-    def self.open_app_window(target)
+    def self.open_app_window(target, size: nil, position: nil)
+      flags = "--app=#{target}"
+      flags += " --window-size=#{size[0].to_i},#{size[1].to_i}" if size.is_a?(Array) && size.length == 2
+      flags += " --window-position=#{position[0].to_i},#{position[1].to_i}" if position.is_a?(Array) && position.length == 2
+
       if defined?(Win32) && Win32.respond_to?(:ShellExecute)
         # ShellExecute resolves msedge/chrome via the App Paths registry.
         %w[msedge.exe chrome.exe].each do |exe|
-          result = Win32.ShellExecute(:lpOperation => 'open', :lpFile => exe, :lpParameters => "--app=#{target}")
+          result = Win32.ShellExecute(:lpOperation => 'open', :lpFile => exe, :lpParameters => flags)
           return true if result.to_i > 32 # per ShellExecute docs, >32 = success
         end
         false
       elsif RUBY_PLATFORM =~ /darwin/i
-        system('open', '-na', 'Google Chrome', '--args', "--app=#{target}") ||
-          system('open', '-na', 'Microsoft Edge', '--args', "--app=#{target}")
+        system('open', '-na', 'Google Chrome', '--args', *flags.split(' ')) ||
+          system('open', '-na', 'Microsoft Edge', '--args', *flags.split(' '))
       else
+        args = flags.split(' ').map { |arg| shell_quote(arg) }.join(' ')
         %w[google-chrome chromium chromium-browser microsoft-edge].any? do |exe|
-          system("#{exe} --app=#{shell_quote(target)} >/dev/null 2>&1 &")
+          system("#{exe} #{args} >/dev/null 2>&1 &")
         end
       end
     rescue StandardError
@@ -187,12 +192,12 @@ module Lich
     # @param page_id [String, nil] full "script/page" id
     # @param app [Boolean]
     # @return [Boolean]
-    def self.open_page(page_id = nil, app: false)
+    def self.open_page(page_id = nil, app: false, size: nil, position: nil)
       return false unless ensure_service!
 
       target = auth_url
       target += "&to=#{encode_component("/#/#{page_id}")}" if page_id
-      open_browser(target, app: app)
+      open_browser(target, app: app, size: size, position: position)
     end
 
     # Minimal percent-encoder for the auth redirect target.
@@ -263,6 +268,7 @@ module Lich
       when 'subscribe'   then page.subscribe(connection)
       when 'unsubscribe' then page.unsubscribe(connection)
       when 'event'       then page.handle_event(message[:cid].to_s, message[:value])
+      when 'geometry'    then page.record_geometry(message[:value])
       end
     end
 

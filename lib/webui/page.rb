@@ -193,6 +193,23 @@ module Lich
         @dispatcher.call(@script, DISPATCH_TIMEOUT, method(:render_timed_out), method(:render_loop))
       end
 
+      # Records the browser window's outer geometry, reported by the client
+      # for bare pages. Exposed to the script as state[:_window_geometry]
+      # ({w:, h:, x:, y:}) so it can persist via Settings and pass size:/
+      # position: back to UI.open next launch. No re-render.
+      #
+      # @param value [Hash]
+      # @return [void]
+      def record_geometry(value)
+        return unless value.is_a?(Hash)
+
+        geometry = {
+          w: value[:w].to_i, h: value[:h].to_i,
+          x: value[:x].to_i, y: value[:y].to_i
+        }
+        @state[:_window_geometry] = geometry if geometry[:w].positive? && geometry[:h].positive?
+      end
+
       # Notifies subscribers the page is gone (script exited or page
       # replaced/removed) and drops them.
       #

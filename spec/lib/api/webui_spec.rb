@@ -73,7 +73,7 @@ RSpec.describe UI do
 
     it 'opens the browser directly on a page' do
       described_class.page('hunt') { |ui| ui.text 'x' }
-      expect(Lich::WebUI).to receive(:open_page).with('huntbuddy/hunt', app: true).and_return(true)
+      expect(Lich::WebUI).to receive(:open_page).with('huntbuddy/hunt', app: true, size: nil, position: nil).and_return(true)
       expect(described_class.open('hunt', app: true)).to be(true)
       expect(described_class.open('missing')).to be(false)
     end

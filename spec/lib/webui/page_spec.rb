@@ -137,6 +137,21 @@ RSpec.describe Lich::WebUI::Page do
     expect(other.renders.first[:tree]).not_to have_key(:bare)
   end
 
+  it 'records reported window geometry into state without re-rendering' do
+    page = build_page { |ui| ui.text 'x' }
+    page.subscribe(connection)
+    renders_before = connection.renders.length
+
+    page.record_geometry(w: 520, h: 560, x: 100, y: 50)
+    expect(page.state[:_window_geometry]).to eq(w: 520, h: 560, x: 100, y: 50)
+    expect(connection.renders.length).to eq(renders_before)
+
+    page.record_geometry(w: 0, h: 0, x: 1, y: 1) # nonsense sizes ignored
+    expect(page.state[:_window_geometry]).to eq(w: 520, h: 560, x: 100, y: 50)
+    page.record_geometry('junk')
+    expect(page.state[:_window_geometry]).to eq(w: 520, h: 560, x: 100, y: 50)
+  end
+
   it 'renders an error node when the page block raises' do
     page = build_page { |_ui| raise 'boom' }
     page.subscribe(connection)

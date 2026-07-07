@@ -155,5 +155,12 @@ RSpec.describe Lich::WebUI::Builder do
       expect(builder.nodes.last[:t]).to eq('image_map') # unchanged - rejected source emits nothing
       expect(builder.nodes.count { |n| n[:t] == 'image_map' }).to eq(1)
     end
+
+    it 'carries popup wiring on image_map' do
+      builder.image_map('/files/maps/a.png', popup: 'map/settings', popup_size: [430, 460]) { |c| c }
+      node = builder.nodes.last
+      expect(node[:popup]).to eq('map/settings')
+      expect(node[:popup_size]).to eq([430, 460])
+    end
   end
 end
