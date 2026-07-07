@@ -56,6 +56,20 @@ RSpec.describe Lich::WebUI::Builder do
     expect(builder.nodes[1][:rows]).to eq([['', '42']])
   end
 
+  it 'supports sortable, clickable tables with selection and a row callback' do
+    received = nil
+    builder.table([%w[a 1], %w[b 2]], headings: %w[Name N], sortable: true, selected: 1) { |index| received = index }
+    node = builder.nodes.last
+    expect(node[:sortable]).to be(true)
+    expect(node[:clickable]).to be(true)
+    expect(node[:selected]).to eq(1)
+    builder.callbacks.fetch(node[:cid]).call(0)
+    expect(received).to eq(0)
+
+    builder.table([['plain']])
+    expect(builder.nodes.last.keys).not_to include(:sortable, :clickable, :selected)
+  end
+
   it 'exposes the page state to the block' do
     state[:kills] = 7
     expect(builder.state[:kills]).to eq(7)

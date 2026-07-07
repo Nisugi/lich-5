@@ -212,6 +212,12 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
 }
 .c-table th { color: var(--muted); font-weight: 600; font-size: 0.9em; }
 .c-table tbody tr:last-child td { border-bottom: none; }
+.c-table th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+.c-table th.sortable:hover { color: var(--accent); }
+.c-table tr.clickable { cursor: pointer; }
+.c-table tr.clickable:hover td { background: var(--bg); }
+.c-table tr.selected td { background: var(--bg); }
+.c-table tr.selected td:first-child { box-shadow: inset 3px 0 var(--accent); }
 
 .c-image { max-width: 100%; border-radius: 0.5em; }
 

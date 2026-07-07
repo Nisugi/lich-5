@@ -118,15 +118,30 @@ module Lich
         emit('progress', value: value.to_f.clamp(0.0, 1.0), label: label&.to_s)
       end
 
-      # Read-only data table.
+      # Data table. Read-only by default; pass sortable: true for
+      # client-side column sorting, and a block to make rows clickable -
+      # it receives the clicked row's index into +rows+ (stable regardless
+      # of the browser's current sort order). Use selected: to highlight
+      # the row your state considers chosen.
+      #
+      #   ui.table(rows, headings: %w[Script Author], sortable: true,
+      #            selected: ui.state[:pick]) { |i| ui.state[:pick] = i }
       #
       # @param rows [Array<Array<#to_s>>]
       # @param headings [Array<#to_s>, nil]
+      # @param sortable [Boolean]
+      # @param selected [Integer, nil] row index to highlight
+      # @yieldparam index [Integer] clicked row index
       # @return [void]
-      def table(rows, headings: nil)
-        emit('table',
-             headings: headings&.map(&:to_s),
-             rows: rows.map { |row| Array(row).map(&:to_s) })
+      def table(rows, headings: nil, sortable: false, selected: nil, key: nil, &block)
+        node_attrs = {
+          headings: headings&.map(&:to_s),
+          rows: rows.map { |row| Array(row).map(&:to_s) }
+        }
+        node_attrs[:sortable] = true if sortable
+        node_attrs[:clickable] = true if block
+        node_attrs[:selected] = selected.to_i if selected
+        emit('table', key: key, **node_attrs, &block)
       end
 
       # Collapsible section; the block receives a nested builder.
