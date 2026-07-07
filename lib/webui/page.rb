@@ -237,6 +237,10 @@ module Lich
         return unless geometry[:x].abs < 30_000 && geometry[:y].abs < 30_000
 
         @state[:_window_geometry] = geometry
+        # keep the page's own geometry current so a window reopened later in
+        # the same session (settings popup) restores to the latest spot
+        @size = [geometry[:w], geometry[:h]]
+        @position = [geometry[:x], geometry[:y]]
       end
 
       # Notifies subscribers the page is gone (script exited or page
@@ -296,8 +300,11 @@ module Lich
             @seq += 1
             tree = { t: 'page', title: @title, children: builder.nodes }
             tree[:bare] = true if @bare
-            tree[:size] = @size if @bare && @size
-            tree[:position] = @position if @bare && @position
+            # geometry rides on every page's tree (not just bare) - popup
+            # windows (map settings) restore from it too. The client only
+            # acts on it in standalone windows, never regular tabs.
+            tree[:size] = @size if @size
+            tree[:position] = @position if @position
             json = Protocol.render(page: @id, seq: @seq, tree: tree)
             @last_render_json = json
           end

@@ -84,6 +84,18 @@ module UI
     nil
   end
 
+  # Whether any live browser window/tab is currently showing the page.
+  # Lets a script treat its floating window's X as quit:
+  #
+  #   exit if opened_once && !UI.viewers?('map')
+  #
+  # @param name [String] page name (or full "script/page" id)
+  # @return [Boolean]
+  def self.viewers?(name)
+    page = find(name)
+    page ? page.live_subscribers? : false
+  end
+
   # Serves a local directory of images at /files/<alias>/... for use with
   # ui.image and ui.image_map. Owned by the calling script and removed
   # automatically when it exits. Only image extensions are servable, and

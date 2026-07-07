@@ -59,4 +59,22 @@ RSpec.describe Lich::WebUI::Registry do
     described_class.register(build_page('scripta/main', script_a))
     described_class.remove('scripta/main')
   end
+
+  it 'tells windows to close on remove and script death, but never on replace' do
+    allow(Lich::WebUI).to receive(:notify_pages_changed)
+    allow(Lich::WebUI).to receive(:notify_page_close)
+
+    described_class.register(build_page('scripta/main', script_a))
+    described_class.register(build_page('scripta/main', script_a)) # replace
+    expect(Lich::WebUI).not_to have_received(:notify_page_close)
+
+    described_class.remove('scripta/main')
+    expect(Lich::WebUI).to have_received(:notify_page_close).with('scripta/main').once
+
+    described_class.register(build_page('scripta/one', script_a))
+    described_class.register(build_page('scripta/two', script_a))
+    described_class.cleanup_for(script_a)
+    expect(Lich::WebUI).to have_received(:notify_page_close).with('scripta/one').once
+    expect(Lich::WebUI).to have_received(:notify_page_close).with('scripta/two').once
+  end
 end

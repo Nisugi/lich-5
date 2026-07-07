@@ -41,7 +41,9 @@ module Lich
         @mutex.synchronize { @pages[id.to_s] }
       end
 
-      # Removes one page by id.
+      # Removes one page by id. Standalone windows showing the page close
+      # themselves (the close broadcast); replace via register does NOT
+      # close windows - the re-registered page keeps them.
       #
       # @param id [String]
       # @return [Page, nil] the removed page
@@ -49,13 +51,15 @@ module Lich
         removed = @mutex.synchronize { @pages.delete(id.to_s) }
         if removed
           removed.closed("page #{removed.id} was removed")
+          WebUI.notify_page_close(removed.id)
           WebUI.notify_pages_changed
         end
         removed
       end
 
       # Removes every page owned by a dying script. Wired into
-      # ScriptDeath so it runs from Script#kill cleanup.
+      # ScriptDeath so it runs from Script#kill cleanup - killing ;map
+      # closes the map window.
       #
       # @param script [Script]
       # @return [void]
@@ -68,7 +72,10 @@ module Lich
         end
         return if removed.empty?
 
-        removed.each { |page| page.closed("script #{page.script_name} exited") }
+        removed.each { |page|
+          page.closed("script #{page.script_name} exited")
+          WebUI.notify_page_close(page.id)
+        }
         WebUI.notify_pages_changed
       end
 
