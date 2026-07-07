@@ -2971,6 +2971,7 @@ module ElanthiaMap
       @map = nil        # current map image filename (basename)
       @current_id = nil # room id for the current-room marker
       @find_id = nil    # room id highlighted by find
+      @show_settings = false # toggled by right-click, like the GTK menu
 
       UI.serve('maps', MAP_DIR)
       @dark_dir = File.join(File.dirname(MAP_DIR), 'maps-dark')
@@ -2992,7 +2993,9 @@ module ElanthiaMap
       end
 
       register_page
-      respond "--- map: live map ready - open it with #{$clean_lich_char}ui#{" (#{UI.url}#/map/map)" if UI.url}"
+      unless UI.open('map', app: true)
+        respond "--- map: live map ready - open it with #{$clean_lich_char}ui#{" (#{UI.url}#/map/map)" if UI.url}"
+      end
       follow_loop
     ensure
       UI.remove('map')
@@ -3003,37 +3006,36 @@ module ElanthiaMap
     private
 
     def register_page
-      UI.page('map', title: "Map - #{XMLData.name}") do |ui|
-        ui.columns(4, compact: true, key: :controls) do |c_map, c_follow, c_dark, c_fix|
-          c_map.select('Map', options: map_files, value: @map, key: :map_pick) { |v|
-            @map = v
-            @fix_click = nil
-            @find_id = nil
-          }
-          c_follow.checkbox('Follow', checked: @follow, key: :follow) { |v| @follow = v }
-          c_dark.checkbox('Dark map', checked: @dark, key: :dark) { |v| @dark = v } if @have_dark
-          c_fix.checkbox('Fix mode', checked: @fix_mode, key: :fix) { |v|
-            @fix_mode = v
-            @fix_click = nil
-          }
-        end
-        ui.columns(2, compact: true, key: :controls2) do |c_scale, c_find|
-          c_scale.select('Scale', options: SCALES.map { |s| "#{(s * 100).to_i}%" },
-                         value: "#{(@scale * 100).to_i}%", key: :scale) { |v| @scale = v.to_i / 100.0 }
-          c_find.text_input('Find room', placeholder: 'room id, u<uid>, or search text', key: :find) { |v| find_room(v) }
+      UI.page('map', title: "Map: #{XMLData.name}", bare: true) do |ui|
+        # settings live behind right-click, like the GTK context menu
+        if @show_settings
+          ui.columns(4, compact: true, key: :controls) do |c_map, c_follow, c_dark, c_fix|
+            c_map.select('Map', options: map_files, value: @map, key: :map_pick) { |v|
+              @map = v
+              @fix_click = nil
+              @find_id = nil
+            }
+            c_follow.checkbox('Follow', checked: @follow, key: :follow) { |v| @follow = v }
+            c_dark.checkbox('Dark map', checked: @dark, key: :dark) { |v| @dark = v } if @have_dark
+            c_fix.checkbox('Fix mode', checked: @fix_mode, key: :fix) { |v|
+              @fix_mode = v
+              @fix_click = nil
+            }
+          end
+          ui.columns(3, compact: true, key: :controls2) do |c_scale, c_find, c_close|
+            c_scale.select('Scale', options: SCALES.map { |s| "#{(s * 100).to_i}%" },
+                           value: "#{(@scale * 100).to_i}%", key: :scale) { |v| @scale = v.to_i / 100.0 }
+            c_find.text_input('Find room', placeholder: 'room id, u<uid>, or search text', key: :find) { |v| find_room(v) }
+            c_close.button('Close map', variant: :danger, key: :close) { @done = true }
+          end
         end
 
         if @map
           ui.image_map(map_src, scale: @scale, markers: markers,
                        scroll_to: (@find_id ? 'find' : 'current'), key: :map_view) { |click| handle_click(click) }
         else
-          ui.text 'The current room has no map. Pick one above.'
+          ui.text 'The current room has no map. Right-click to pick one.'
         end
-
-        ui.divider
-        ui.text 'click: travel there / follow map link - shift-click: room info - ctrl-click: coordinates' \
-                "#{' - ctrl+shift-click: fix mode corners' if @fix_mode}"
-        ui.button('Close', key: :close) { @done = true }
       end
     end
 
@@ -3099,11 +3101,14 @@ module ElanthiaMap
       nil
     end
 
-    # Mirrors Window#handle_click branch for branch.
+    # Mirrors Window#handle_click branch for branch; right-click toggles the
+    # settings strip (the GTK version's context menu).
     def handle_click(click)
       x = click[:x].to_i
       y = click[:y].to_i
-      if click[:ctrl] && click[:shift] && @fix_mode
+      if click[:right]
+        @show_settings = !@show_settings
+      elsif click[:ctrl] && click[:shift] && @fix_mode
         fix_click(x, y)
       elsif click[:ctrl]
         respond "x: #{x}, y: #{y}"
