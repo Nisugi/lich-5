@@ -42,6 +42,24 @@ RSpec.describe Lich::WebUI do
     end
   end
 
+  describe '.refresh_hello' do
+    it 'rewrites the discovery file with the post-login session identity' do
+      allow(described_class).to receive(:enabled?).and_return(true)
+      described_class.ensure_service!
+      allow(described_class).to receive(:session_info).and_return({ name: 'Nisugi', game: 'GSIV' })
+
+      described_class.refresh_hello
+
+      entry = JSON.parse(File.read(File.join(described_class::DISCOVERY_DIR, "#{Process.pid}.json")), symbolize_names: true)
+      expect(entry[:name]).to eq('Nisugi')
+      expect(entry[:game]).to eq('GSIV')
+    end
+
+    it 'is a no-op when the service is not running' do
+      expect { described_class.refresh_hello }.not_to raise_error
+    end
+  end
+
   describe '.stop_service!' do
     it 'stops the server and removes the discovery file' do
       allow(described_class).to receive(:enabled?).and_return(true)

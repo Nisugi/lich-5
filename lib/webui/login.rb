@@ -18,6 +18,15 @@ module Lich
 
       FEATURE_FLAG = :webui_login
 
+      # Window watchdog: closing the login window must exit Lich just like
+      # closing the GTK launcher window - otherwise an invisible rubyw
+      # process waits on the queue forever. Ping/prune marks a closed
+      # browser's connection dead within one keepalive interval; the grace
+      # period sits above that so reloads and reconnects never false-fire.
+      WATCHDOG_POLL = 5            # seconds between checks
+      WATCHDOG_GRACE = 45          # window gone this long => quit
+      WATCHDOG_NEVER_OPENED = 600  # no browser ever connected => quit
+
       GAME_CODES = {
         'GS4 Prime'     => 'GS3',
         'GS4 Platinum'  => 'GSX',
@@ -91,7 +100,9 @@ module Lich
         end
         Lich.log("info: WebUI login waiting at #{WebUI.auth_url}") if defined?(Lich) && Lich.respond_to?(:log)
 
+        watchdog = start_window_watchdog(page)
         result = @queue.pop
+        watchdog&.kill
         # One character per launch: tell the browser window to close itself
         # before the page disappears from the registry.
         WebUI.notify_page_close('lich/login')
@@ -100,6 +111,35 @@ module Lich
       end
 
       private
+
+      # GTK parity for closing the launcher window: once a browser has
+      # connected and then stays gone past the grace period (or never
+      # connects at all), quit as if the player closed the GTK window.
+      def start_window_watchdog(page)
+        Thread.new do
+          connected_once = false
+          gone_since = nil
+          started = Time.now
+          loop do
+            sleep WATCHDOG_POLL
+            if page.live_subscribers?
+              connected_once = true
+              gone_since = nil
+            elsif connected_once
+              gone_since ||= Time.now
+              if Time.now - gone_since > WATCHDOG_GRACE
+                Lich.log('info: WebUI login window closed; exiting like the GTK launcher') if defined?(Lich) && Lich.respond_to?(:log)
+                @queue << nil
+                break
+              end
+            elsif Time.now - started > WATCHDOG_NEVER_OPENED
+              Lich.log('info: WebUI login never opened in a browser; giving up') if defined?(Lich) && Lich.respond_to?(:log)
+              @queue << nil
+              break
+            end
+          end
+        end
+      end
 
       def default_entries
         require File.join(LIB_DIR, 'common', 'authentication', 'entry_store') unless defined?(Lich::Common::Authentication::EntryStore)

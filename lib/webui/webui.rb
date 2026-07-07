@@ -291,10 +291,15 @@ module Lich
 
     # Re-broadcasts the hello envelope (session identity + pages) to every
     # connected browser - call after login completes so a pre-login tab
-    # picks up the character name without a reload.
+    # picks up the character name without a reload. Also rewrites the
+    # discovery file: it was first written pre-login with an empty name,
+    # and sibling session lists read the name from there.
     #
     # @return [void]
     def self.refresh_hello
+      return unless running?
+
+      write_discovery_file
       @server&.broadcast(Protocol.hello(session: session_info, pages: pages_snapshot, siblings: sibling_sessions))
     end
 

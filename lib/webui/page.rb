@@ -166,6 +166,18 @@ module Lich
         @mutex.synchronize { @subscribers.delete(connection) }
       end
 
+      # Whether any subscribed browser connection is still alive. Dead
+      # connections are only pruned lazily (on a failed send), so this
+      # checks liveness directly - the login launcher's window watchdog
+      # uses it to notice its window closed without a Quit.
+      #
+      # @return [Boolean]
+      def live_subscribers?
+        @mutex.synchronize {
+          @subscribers.any? { |connection| !connection.respond_to?(:alive?) || connection.alive? }
+        }
+      end
+
       # Routes one browser event to its component callback in the owning
       # script's context, then re-renders. Events for component ids not in
       # the current tree generation are dropped silently (stale clicks

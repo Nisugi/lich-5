@@ -282,6 +282,24 @@ RSpec.describe Lich::WebUI::Login do
       expect(toggled).to eq(['Nisugi'])
     end
 
+    it 'quits when the login window closes without Quit (window watchdog)' do
+      stub_const('Lich::WebUI::Login::WATCHDOG_POLL', 0.05)
+      stub_const('Lich::WebUI::Login::WATCHDOG_GRACE', 0.1)
+      stub_const('Lich::WebUI::Login::WATCHDOG_NEVER_OPENED', 2) # backstop so a missed poll can't hit the real 600s timer
+      authenticator = ->(**_) { raise 'auth should not be reached' }
+
+      result = run_login(authenticator: authenticator) do |page|
+        conn = Struct.new(:sent, :alive) {
+          def send_text(json) = (sent << json)
+          def alive? = alive
+        }.new([], true)
+        page.subscribe(conn)
+        sleep 0.3 # let the watchdog observe the live window across several polls
+        conn.alive = false # browser window closed; no Quit clicked
+      end
+      expect(result).to be_nil
+    end
+
     it 'reports auth failures inline and keeps waiting; Quit returns nil' do
       authenticator = ->(**_) { raise 'REJECT' }
 
