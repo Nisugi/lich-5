@@ -50,9 +50,10 @@ module Lich
       # @param entries_loader [#call] injectable for specs
       # @param authenticator [#call] (account:, password:, character:, game_code:) -> auth data
       # @param launch_preparer [#call] (auth_data, frontend, custom_launch, dir) -> Array
+      # @param session_launcher [#call] (launch_data, launch_context:) -> {ok:, pid:|error:}
       # @return [Array<String>, :fallback, nil] launch_data; :fallback when
       #   the server could not start; nil when the player quit
-      def run(data_dir:, entries_loader: nil, authenticator: nil, launch_preparer: nil, account_lister: nil)
+      def run(data_dir:, entries_loader: nil, authenticator: nil, launch_preparer: nil, account_lister: nil, session_launcher: nil)
         @account_lister = account_lister || lambda { |account:, password:|
           Lich::Common::Authentication.authenticate(account: account, password: password, legacy: true)
         }
@@ -64,10 +65,15 @@ module Lich
         @launch_preparer = launch_preparer || lambda { |auth, frontend, custom_launch, dir|
           Lich::Common::Authentication::LaunchData.prepare(auth, frontend, custom_launch, dir)
         }
+        @session_launcher = session_launcher || lambda { |launch_data, launch_context:|
+          require File.join(LIB_DIR, 'common', 'session_launcher') unless defined?(Lich::Common::SessionLauncher)
+          Lich::Common::SessionLauncher.launch(launch_data, launch_context: launch_context)
+        }
         @data_dir = data_dir
         @queue = Queue.new
         @error = nil
         @busy = nil
+        @status = nil
 
         page = WebUI.register_core_page('login', title: "Lich #{defined?(LICH_VERSION) ? LICH_VERSION : ''}".strip, bare: true, size: [560, 580]) { |ui| render(ui) }
         return :fallback unless page
@@ -102,6 +108,7 @@ module Lich
         end
         ui.text @busy if @busy
         ui.text "!! #{@error}" if @error
+        ui.text @status if @status
 
         entries = @entries_loader.call
         saved = entries.select { |entry| entry.is_a?(Hash) && entry[:char_name] }
@@ -127,6 +134,11 @@ module Lich
               end
             end
           end
+          # Multi-Launch mirrors the GTK launcher's global-settings switch
+          # (Lich.track_persistent_launcher_mode): saved-entry Play spawns a
+          # detached child Lich session and this launcher stays open.
+          saved_tab.checkbox('Multi-Launch (spawn sessions, keep this launcher open)',
+                             checked: multi_launch?, key: :multi_launch) { |v| self.multi_launch = v }
           saved_tab.button('Refresh Entries', key: :refresh) { nil } # rerender reloads from disk
 
           manual_tab.text_input('User ID', value: ui.state[:account], key: :account) { |v| ui.state[:account] = v.strip }
@@ -183,6 +195,7 @@ module Lich
       # its own thread so the page stays responsive.
       def play_saved(entry)
         set_busy("Authenticating #{entry[:char_name]}...")
+        multi = multi_launch? # read at click time; the checkbox may change between renders
         Thread.new do
           password = entry[:password].to_s
           if password.empty?
@@ -192,7 +205,7 @@ module Lich
               account: (entry[:username] || entry[:user_id]).to_s, password: password,
               character: entry[:char_name], game_code: entry[:game_code],
               frontend: entry[:frontend], custom_launch: entry[:custom_launch],
-              custom_launch_dir: entry[:custom_launch_dir]
+              custom_launch_dir: entry[:custom_launch_dir], multi: multi
             )
           end
         end
@@ -255,17 +268,51 @@ module Lich
         end
       end
 
-      def authenticate_and_finish(account:, password:, character:, game_code:, frontend:, custom_launch:, custom_launch_dir:, game_name: nil, save: false)
+      def authenticate_and_finish(account:, password:, character:, game_code:, frontend:, custom_launch:, custom_launch_dir:, game_name: nil, save: false, multi: false)
         auth = @authenticator.call(account: account, password: password, character: character, game_code: game_code)
         launch_data = @launch_preparer.call(auth, frontend, custom_launch, custom_launch_dir)
-        if launch_data.is_a?(Array) && launch_data.any?
-          save_entry(account: account, password: password, char_name: character, game_code: game_code, game_name: game_name, frontend: frontend) if save
-          @queue << launch_data
+        return fail_login('Authentication succeeded but no launch data was produced.') unless launch_data.is_a?(Array) && launch_data.any?
+
+        save_entry(account: account, password: password, char_name: character, game_code: game_code, game_name: game_name, frontend: frontend) if save
+        if multi
+          spawn_child(launch_data, character: character, game_code: game_code, frontend: frontend, custom_launch: custom_launch)
         else
-          fail_login('Authentication succeeded but no launch data was produced.')
+          @queue << launch_data
         end
       rescue StandardError => e
         fail_login("Login failed: #{e.message}")
+      end
+
+      # Multi-Launch Play: hand the prepared launch_data to SessionLauncher,
+      # which spawns a detached child Lich process (the child re-authenticates
+      # from the saved entry via --login). This launcher page stays open.
+      def spawn_child(launch_data, character:, game_code:, frontend:, custom_launch:)
+        context = { char_name: character, game_code: game_code, frontend: frontend, custom_launch: custom_launch }
+        # Propagate the theme like the GTK launcher does for child startup.
+        context[:dark_mode] = Lich.track_dark_mode if defined?(Lich) && Lich.respond_to?(:track_dark_mode)
+        result = @session_launcher.call(launch_data, launch_context: context)
+        @busy = nil
+        if result.is_a?(Hash) && result[:ok]
+          @error = nil
+          @status = "Launched #{character} (pid #{result[:pid]}). Play another, or Quit when done."
+        else
+          @error = "Failed to launch session: #{result.is_a?(Hash) ? result[:error] : 'unknown error'}"
+        end
+        Registry.find('lich/login')&.request_render
+      end
+
+      # The GTK launcher's "Multi-Launch" switch, shared via lich_settings so
+      # both launchers honor the same preference.
+      def multi_launch?
+        defined?(Lich) && Lich.respond_to?(:track_persistent_launcher_mode) && Lich.track_persistent_launcher_mode == true
+      rescue StandardError
+        false
+      end
+
+      def multi_launch=(value)
+        Lich.track_persistent_launcher_mode = value if defined?(Lich) && Lich.respond_to?(:track_persistent_launcher_mode=)
+      rescue StandardError
+        nil
       end
 
       # Persists a successful manual login the way the GTK launcher's "save
@@ -304,11 +351,13 @@ module Lich
       def set_busy(message)
         @busy = message
         @error = nil
+        @status = nil
         Registry.find('lich/login')&.request_render
       end
 
       def fail_login(message)
         @busy = nil
+        @status = nil
         @error = message
         Lich.log("warning: WebUI login: #{message}") if defined?(Lich) && Lich.respond_to?(:log)
         Registry.find('lich/login')&.request_render

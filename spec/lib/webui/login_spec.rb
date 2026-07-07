@@ -37,7 +37,7 @@ RSpec.describe Lich::WebUI::Login do
          custom_launch: nil, custom_launch_dir: nil }]
     end
 
-    def run_login(authenticator:, entries_loader: -> { entries })
+    def run_login(authenticator:, entries_loader: -> { entries }, session_launcher: nil)
       allow(Lich::WebUI).to receive(:open_page).and_return(true)
       result = nil
       runner = Thread.new do
@@ -45,7 +45,8 @@ RSpec.describe Lich::WebUI::Login do
           data_dir: Dir.tmpdir,
           entries_loader: entries_loader,
           authenticator: authenticator,
-          launch_preparer: ->(auth, _fe, _cl, _dir) { auth }
+          launch_preparer: ->(auth, _fe, _cl, _dir) { auth },
+          session_launcher: session_launcher
         )
       end
       sleep 0.05 until Lich::WebUI::Registry.find('lich/login') || !runner.alive?
@@ -68,6 +69,30 @@ RSpec.describe Lich::WebUI::Login do
         page.handle_event(play_cid, nil)
       end
       expect(result).to eq(['GAMECODE=GS3', 'GAMEHOST=host', 'GAMEPORT=1', 'GAME=STORM'])
+    end
+
+    it 'Multi-Launch spawns a child session and keeps the launcher open' do
+      allow(Lich).to receive(:track_persistent_launcher_mode).and_return(true)
+      launched = []
+      session_launcher = lambda { |launch_data, launch_context:|
+        launched << [launch_data, launch_context]
+        { ok: true, pid: 4242 }
+      }
+      authenticator = ->(**_) { ['GAMECODE=GS3', 'GAMEHOST=host', 'GAMEPORT=1', 'GAME=STORM'] }
+
+      result = run_login(authenticator: authenticator, session_launcher: session_launcher) do |page|
+        fake_conn = Struct.new(:sent) { def send_text(json) = (sent << json) }.new([])
+        page.subscribe(fake_conn)
+        play_cid = fake_conn.sent.last[/"cid":"([^"]*button:play_[^"]+)"/, 1]
+        page.handle_event(play_cid, nil)
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('Launched Nisugi (pid 4242)') } }
+        quit_cid = fake_conn.sent.last[/"cid":"([^"]*button:quit)"/, 1]
+        page.handle_event(quit_cid, nil)
+      end
+      expect(result).to be_nil # launcher stayed open until Quit
+      expect(launched.length).to eq(1)
+      expect(launched.first[0]).to include('GAMECODE=GS3')
+      expect(launched.first[1]).to include(char_name: 'Nisugi', game_code: 'GS3', frontend: 'wrayth')
     end
 
     it 'reports auth failures inline and keeps waiting; Quit returns nil' do
