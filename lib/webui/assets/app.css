@@ -221,6 +221,33 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
 
 .c-image { max-width: 100%; border-radius: 0.5em; }
 
+.c-image-map {
+  overflow: auto;
+  max-height: 75vh;
+  border: 1px solid var(--border);
+  border-radius: 0.5em;
+  background: var(--surface);
+}
+.c-image-map-inner { position: relative; width: max-content; }
+.c-image-map-inner img { display: block; }
+.c-image-map-layer { position: absolute; inset: 0; pointer-events: none; }
+.c-im-marker {
+  position: absolute;
+  pointer-events: auto;
+  border: 2px solid var(--accent);
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.c-im-marker.current {
+  border-color: var(--error);
+  background: color-mix(in srgb, var(--error) 25%, transparent);
+}
+.c-im-marker.pin {
+  border-radius: 50%;
+  background: var(--warn);
+  border-color: var(--warn);
+}
+
 .c-expander {
   background: var(--surface);
   border: 1px solid var(--border);

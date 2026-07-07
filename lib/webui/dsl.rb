@@ -205,17 +205,58 @@ module Lich
         }
       end
 
-      # Displays an image from an http(s) URL or data: URI. Local file paths
-      # are not supported - the browser, not Lich, fetches the source.
+      # Displays an image from an http(s) URL, data: URI, or a /files/ path
+      # registered via UI.serve. Raw local file paths are not supported.
       #
       # @param source [String]
       # @param alt [#to_s, nil]
       # @return [void]
       def image(source, alt: nil, key: nil)
         source = source.to_s
-        return unless source =~ %r{\Ahttps?://|\Adata:image/}
+        return unless source =~ %r{\Ahttps?://|\Adata:image/|\A/files/}
 
         emit('image', key: key, src: source, alt: alt&.to_s)
+      end
+
+      # Interactive image with positioned overlays (the map component).
+      #
+      # The image renders at natural size * scale inside a scrollable
+      # container. Markers are boxes in UNSCALED image-pixel coordinates.
+      # The block receives every click as a symbol-keyed Hash: :x/:y
+      # (unscaled image coords), :shift/:ctrl booleans, and :marker (the id
+      # of the clicked marker, or nil) - hit-testing against your own data
+      # (rooms) stays in your script. scroll_to: centers the container on
+      # the named marker whenever its value changes.
+      #
+      #   ui.image_map("/files/maps/map1.png", scale: 1.5,
+      #                markers: [{ id: 'current', x1: 10, y1: 20, x2: 30, y2: 40, kind: 'current' }],
+      #                scroll_to: 'current') { |click| ... }
+      #
+      # @param src [String] http(s), data:, or /files/ source
+      # @param scale [Numeric] display zoom factor
+      # @param markers [Array<Hash>] {id:, x1:, y1:, x2:, y2:, kind:, label:}
+      #   kinds: 'current' | 'marker' | 'pin'
+      # @param scroll_to [String, nil] marker id to center on change
+      # @yieldparam click [Hash]
+      # @return [void]
+      def image_map(src, scale: 1.0, markers: [], scroll_to: nil, key: nil, &block)
+        src = src.to_s
+        return unless src =~ %r{\Ahttps?://|\Adata:image/|\A/files/}
+
+        emit('image_map', key: key,
+                          src: src,
+                          scale: scale.to_f,
+                          scroll_to: scroll_to&.to_s,
+                          markers: markers.map { |marker|
+                            node = {
+                              id: marker[:id].to_s,
+                              x1: marker[:x1].to_i, y1: marker[:y1].to_i,
+                              x2: marker[:x2].to_i, y2: marker[:y2].to_i,
+                              kind: (marker[:kind] || 'marker').to_s
+                            }
+                            node[:label] = marker[:label].to_s if marker[:label]
+                            node
+                          }, &block)
       end
 
       private

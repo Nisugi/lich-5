@@ -123,15 +123,37 @@ RSpec.describe Lich::WebUI::Builder do
       expect(node[:children][1][:children].first[:text]).to eq('stats here')
     end
 
-    it 'accepts only http(s) and data URIs for images' do
+    it 'accepts http(s), data, and /files sources for images' do
       builder.image('https://example.com/map.png', alt: 'map')
       builder.image('data:image/png;base64,AAAA')
+      builder.image('/files/maps/map1.png')
       builder.image('file:///etc/passwd')
       builder.image('C:/secrets.png')
 
       images = builder.nodes.select { |node| node[:t] == 'image' }
-      expect(images.length).to eq(2)
+      expect(images.length).to eq(3)
       expect(images.first).to include(src: 'https://example.com/map.png', alt: 'map')
+    end
+
+    it 'builds image_map nodes with normalized markers and a click callback' do
+      received = nil
+      builder.image_map('/files/maps/map1.png', scale: 1.5, scroll_to: 'current',
+                        markers: [{ id: :current, x1: 10.9, y1: 20, x2: 30, y2: 40, kind: :current, label: 'You are here' },
+                                  { id: 'bank', x1: 1, y1: 2, x2: 3, y2: 4 }]) { |click| received = click }
+
+      node = builder.nodes.last
+      expect(node[:t]).to eq('image_map')
+      expect(node[:scale]).to eq(1.5)
+      expect(node[:scroll_to]).to eq('current')
+      expect(node[:markers][0]).to eq(id: 'current', x1: 10, y1: 20, x2: 30, y2: 40, kind: 'current', label: 'You are here')
+      expect(node[:markers][1]).to eq(id: 'bank', x1: 1, y1: 2, x2: 3, y2: 4, kind: 'marker')
+
+      builder.callbacks.fetch(node[:cid]).call(x: 5, y: 6, marker: nil)
+      expect(received).to eq(x: 5, y: 6, marker: nil)
+
+      builder.image_map('C:/secrets.png') { |c| c }
+      expect(builder.nodes.last[:t]).to eq('image_map') # unchanged - rejected source emits nothing
+      expect(builder.nodes.count { |n| n[:t] == 'image_map' }).to eq(1)
     end
   end
 end

@@ -60,6 +60,34 @@ module UI
     nil
   end
 
+  # Serves a local directory of images at /files/<alias>/... for use with
+  # ui.image and ui.image_map. Owned by the calling script and removed
+  # automatically when it exits. Only image extensions are servable, and
+  # requests cannot escape the directory.
+  #
+  #   UI.serve('maps', MAP_DIR)
+  #   ui.image_map("/files/maps/#{room.image}", ...)
+  #
+  # @param alias_name [String] letters/digits/underscore/hyphen
+  # @param directory [String]
+  # @return [Boolean]
+  def self.serve(alias_name, directory)
+    return false unless available?
+
+    script = Script.current if defined?(Script) && Script.respond_to?(:current)
+    Lich::WebUI.ensure_service!
+    Lich::WebUI::FileRoutes.register(alias_name, directory, owner: script)
+  end
+
+  # Removes a served directory registered with UI.serve.
+  #
+  # @param alias_name [String]
+  # @return [void]
+  def self.unserve(alias_name)
+    Lich::WebUI::FileRoutes.unregister(alias_name) if defined?(Lich::WebUI::FileRoutes)
+    nil
+  end
+
   # @return [String, nil] the landing page URL when the service is running
   def self.url
     return nil unless defined?(Lich::WebUI)

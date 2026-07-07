@@ -7,6 +7,7 @@ require 'fileutils'
 
 require_relative 'server'
 require_relative 'registry'
+require_relative 'file_routes'
 
 module Lich
   # Browser-based script UI service ("WebUI").
@@ -70,7 +71,8 @@ module Lich
           session_info: -> { session_info },
           pages_provider: -> { pages_snapshot },
           siblings_provider: -> { sibling_sessions },
-          message_handler: method(:handle_client_message)
+          message_handler: method(:handle_client_message),
+          file_resolver: FileRoutes.method(:resolve)
         )
         unless @server.start
           @server = nil
@@ -94,6 +96,7 @@ module Lich
       end
       server&.stop
       Registry.clear!
+      FileRoutes.clear!
       delete_discovery_file
     end
 

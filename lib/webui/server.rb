@@ -44,9 +44,12 @@ module Lich
       # @param siblings_provider [#call] -> Array<Hash> of other sessions
       # @param message_handler [#call, nil] (connection, message_hash) called
       #   for each parsed browser message; nil drops them (M1 default)
+      # @param file_resolver [#call, nil] (alias, relpath) -> [path, type]
+      #   for /files/<alias>/<relpath>; nil disables the route
       def initialize(auth_token:, assets_dir:, host: '127.0.0.1', port: 0,
                      session_info: -> { {} }, pages_provider: -> { [] },
                      siblings_provider: -> { [] }, message_handler: nil,
+                     file_resolver: nil,
                      server_factory: nil, accept_thread_factory: nil,
                      client_thread_factory: nil)
         @host = host
@@ -57,6 +60,7 @@ module Lich
         @pages_provider = pages_provider
         @siblings_provider = siblings_provider
         @message_handler = message_handler
+        @file_resolver = file_resolver
         @server_factory = server_factory || ->(bind_host, bind_port) { TCPServer.new(bind_host, bind_port) }
         @accept_thread_factory = accept_thread_factory || ->(&block) { Thread.new(&block) }
         @client_thread_factory = client_thread_factory || ->(socket, &block) { Thread.new(socket, &block) }
@@ -247,6 +251,8 @@ module Lich
         when '/auth'         then handle_auth(socket, request)
         when '/ws'           then return handle_websocket(socket, request)
         when '/', '/assets/app.js', '/assets/app.css' then handle_asset(socket, request)
+        when %r{\A/files/([A-Za-z0-9_\-]+)/(.+)\z}
+          handle_file(socket, request, Regexp.last_match(1), Regexp.last_match(2))
         else
           respond_error(socket, 404, 'Not Found')
         end
@@ -381,6 +387,32 @@ module Lich
         end
       end
 
+      # GET /files/<alias>/<relpath> - script-registered image directories.
+      # All path validation (containment, extension whitelist) lives in the
+      # injected resolver (FileRoutes); this route only handles HTTP.
+      def handle_file(socket, request, alias_name, relpath)
+        return respond_error(socket, 405, 'Method Not Allowed') unless request[:method] == 'GET'
+        return respond_unauthorized_page(socket) unless authorized?(request)
+        return respond_error(socket, 404, 'Not Found') unless @file_resolver
+
+        resolved = @file_resolver.call(alias_name, relpath)
+        return respond_error(socket, 404, 'Not Found') unless resolved
+
+        path, content_type = resolved
+        body = File.binread(path)
+        etag = %("#{Digest::SHA1.hexdigest(body)}")
+        if request[:headers]['if-none-match'] == etag
+          respond(socket, 304, 'Not Modified', '', extra_headers: ["ETag: #{etag}"])
+        else
+          respond(socket, 200, 'OK', body, content_type: content_type,
+                                           cache_control: 'private, max-age=60',
+                                           extra_headers: ["ETag: #{etag}"])
+        end
+      rescue StandardError => e
+        log("warning: WebUI /files error: #{e.class}: #{e.message}")
+        respond_error(socket, 404, 'Not Found')
+      end
+
       # GET /ws - validates cookie + Origin, completes the RFC 6455 upgrade,
       # sends the hello envelope, then reads frames for the connection's
       # lifetime on this thread.
@@ -464,12 +496,12 @@ module Lich
         end
       end
 
-      def respond(socket, status, reason, body, content_type: 'text/plain; charset=utf-8', extra_headers: [])
+      def respond(socket, status, reason, body, content_type: 'text/plain; charset=utf-8', cache_control: 'no-store', extra_headers: [])
         head = ["HTTP/1.1 #{status} #{reason}"]
         head << "Content-Type: #{content_type}" unless body.empty?
         head << "Content-Length: #{body.bytesize}"
         head << 'Connection: close'
-        head << 'Cache-Control: no-store' unless status == 304
+        head << "Cache-Control: #{cache_control}" unless status == 304
         head.concat(extra_headers)
         socket.write(head.join("\r\n") + "\r\n\r\n" + body)
       end

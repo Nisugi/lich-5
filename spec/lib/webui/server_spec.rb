@@ -3,9 +3,12 @@
 require 'socket'
 require 'json'
 require 'timeout'
+require 'fileutils'
+require 'tmpdir'
 
 require_relative '../../spec_helper'
 require_relative '../../../lib/webui/server'
+require_relative '../../../lib/webui/file_routes'
 
 # These specs exercise the real transport end-to-end on an ephemeral loopback
 # port: raw HTTP requests over TCPSocket, including a full RFC 6455 upgrade
@@ -21,7 +24,8 @@ RSpec.describe Lich::WebUI::Server do
       session_info: -> { { name: 'Testchar', game: 'GSIV' } },
       pages_provider: -> { [] },
       siblings_provider: -> { [] },
-      message_handler: ->(_conn, message) { received_messages << message }
+      message_handler: ->(_conn, message) { received_messages << message },
+      file_resolver: Lich::WebUI::FileRoutes.method(:resolve)
     )
   end
 
@@ -116,6 +120,46 @@ RSpec.describe Lich::WebUI::Server do
 
       status, = http_request('/etc/passwd', headers: auth_cookie)
       expect(status).to eq(404)
+    end
+  end
+
+  describe 'GET /files' do
+    let(:files_root) do
+      dir = File.join(Dir.tmpdir, "webui-files-spec-#{Process.pid}")
+      FileUtils.mkdir_p(dir)
+      File.binwrite(File.join(dir, 'map1.png'), 'PNGDATA')
+      dir
+    end
+
+    before do
+      Lich::WebUI::FileRoutes.register('maps', files_root)
+    end
+
+    after do
+      Lich::WebUI::FileRoutes.clear!
+      FileUtils.rm_rf(files_root)
+    end
+
+    it 'serves registered images with caching headers' do
+      status, headers, body = http_request('/files/maps/map1.png', headers: auth_cookie)
+      expect(status).to eq(200)
+      expect(headers['content-type']).to eq('image/png')
+      expect(headers['cache-control']).to include('max-age=60')
+      expect(body).to eq('PNGDATA')
+
+      status, = http_request('/files/maps/map1.png', headers: auth_cookie.merge('If-None-Match' => headers['etag']))
+      expect(status).to eq(304)
+    end
+
+    it 'requires auth and 404s traversal, unknown aliases, and non-images' do
+      status, = http_request('/files/maps/map1.png')
+      expect(status).to eq(403)
+
+      ['/files/maps/../server.rb', '/files/maps/%2e%2e/secrets.png',
+       '/files/other/map1.png', '/files/maps/notes.txt'].each do |path|
+        status, = http_request(path, headers: auth_cookie)
+        expect(status).to eq(404), "expected 404 for #{path}, got #{status}"
+      end
     end
   end
 
