@@ -198,14 +198,12 @@ module Lich
     def self.open_page(page_id = nil, app: false, size: nil, position: nil)
       return false unless ensure_service!
 
-      # The window's last-known geometry beats caller defaults, so floating
-      # windows come back exactly where the player left them. window_geometry
-      # may return size only (off-screen position dropped) - then keep the
-      # caller's position rather than opening off-screen.
-      if page_id && (stored = window_geometry(page_id))
-        size = [stored['w'], stored['h']] if stored['w'] && stored['h']
-        position = [stored['x'], stored['y']] if stored['x'] && stored['y']
-      end
+      # Launch with the caller's default flags only. Stored geometry is NOT
+      # forced onto the browser command line: passing --window-position (or
+      # an oversized --window-size) to an already-running Edge/Chrome makes
+      # it drop the --app window request, so nothing opens. The remembered
+      # geometry is applied client-side instead (resizeTo/moveTo), driven by
+      # the page's size/position in its render tree.
       target = auth_url
       target += "&to=#{encode_component("/#/#{page_id}")}" if page_id
       open_browser(target, app: app, size: size, position: position)

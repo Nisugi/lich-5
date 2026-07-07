@@ -46,22 +46,17 @@ RSpec.describe Lich::WebUI do
     before { described_class.instance_variable_set(:@geometry_store, {}) }
     after { described_class.instance_variable_set(:@geometry_store, nil) }
 
-    it 'remembers reported geometry and reopens the window there' do
+    it 'remembers reported geometry for client-side restore' do
       described_class.remember_window_geometry('map/map', { w: 640, h: 480, x: 100, y: 60 })
       expect(described_class.window_geometry('map/map')).to eq({ 'w' => 640, 'h' => 480, 'x' => 100, 'y' => 60 })
-
-      allow(described_class).to receive(:enabled?).and_return(true)
-      allow(described_class).to receive(:open_browser).and_return(true)
-      described_class.ensure_service!
-      described_class.open_page('map/map', app: true, size: [520, 560])
-      expect(described_class).to have_received(:open_browser)
-        .with(anything, app: true, size: [640, 480], position: [100, 60])
     end
 
-    it 'falls back to caller defaults with nothing stored' do
+    it 'launches with caller default flags, NOT stored geometry (stored geometry breaks --app on a running browser)' do
+      described_class.remember_window_geometry('map/map', { w: 640, h: 480, x: 100, y: 60 })
       allow(described_class).to receive(:enabled?).and_return(true)
       allow(described_class).to receive(:open_browser).and_return(true)
       described_class.ensure_service!
+
       described_class.open_page('map/map', app: true, size: [520, 560])
       expect(described_class).to have_received(:open_browser)
         .with(anything, app: true, size: [520, 560], position: nil)
@@ -89,14 +84,21 @@ RSpec.describe Lich::WebUI do
       described_class.instance_variable_get(:@geometry_store)['m/m'] =
         { 'w' => 600, 'h' => 400, 'x' => -32000, 'y' => -32000 } # simulate old poisoned data
       expect(described_class.window_geometry('m/m')).to eq({ 'w' => 600, 'h' => 400 })
+    end
 
+    it 'a registered core page carries stored geometry in its render tree (drives client restore)' do
+      described_class.remember_window_geometry('lich/probe', { w: 700, h: 500, x: 40, y: 30 })
       allow(described_class).to receive(:enabled?).and_return(true)
-      allow(described_class).to receive(:open_browser).and_return(true)
       described_class.ensure_service!
-      described_class.open_page('m/m', app: true, size: [520, 560], position: [10, 10])
-      # off-screen position ignored, caller position kept; size from store
-      expect(described_class).to have_received(:open_browser)
-        .with(anything, app: true, size: [600, 400], position: [10, 10])
+
+      page = described_class.register_core_page('probe', bare: true, size: [300, 300]) { |ui| ui.text 'hi' }
+      conn = Struct.new(:sent) { def send_text(json) = (sent << json) }.new([])
+      page.subscribe(conn)
+      tree = JSON.parse(conn.sent.last)['tree']
+      expect(tree['size']).to eq([700, 500])
+      expect(tree['position']).to eq([40, 30])
+    ensure
+      Lich::WebUI::Registry.clear!
     end
   end
 
