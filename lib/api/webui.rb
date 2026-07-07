@@ -86,6 +86,22 @@ module UI
     nil
   end
 
+  # Sends an OS-level notification to every connected browser (hunt
+  # warnings, whispers, timers); browsers without Notification permission
+  # show an in-page toast instead. Safe no-op when the WebUI is off.
+  #
+  #   UI.notify("Voln favor complete", title: "Nisugi")
+  #
+  # @param text [String]
+  # @param title [String, nil]
+  # @return [Boolean] whether a running service accepted it
+  def self.notify(text, title: nil)
+    return false unless defined?(Lich::WebUI) && Lich::WebUI.running?
+
+    Lich::WebUI.notify(text, title: title)
+    true
+  end
+
   # Whether any live browser window/tab is currently showing the page.
   # Lets a script treat its floating window's X as quit:
   #

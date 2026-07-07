@@ -114,6 +114,31 @@ RSpec.describe Lich::WebUI do
     end
   end
 
+  describe 'preferred port' do
+    it 'binds the preferred port when available' do
+      probe = TCPServer.new('127.0.0.1', 0)
+      free_port = probe.addr[1]
+      probe.close
+
+      allow(described_class).to receive(:enabled?).and_return(true)
+      allow(described_class).to receive(:preferred_port).and_return(free_port)
+      expect(described_class.ensure_service!).to be(true)
+      expect(described_class.port).to eq(free_port)
+    end
+  end
+
+  describe '.reset_window_geometry!' do
+    it 'forgets every remembered window and reports the count' do
+      described_class.instance_variable_set(:@geometry_store, {})
+      described_class.remember_window_geometry('a/b', { w: 300, h: 200, x: 10, y: 10 })
+      described_class.remember_window_geometry('c/d', { w: 400, h: 300, x: 20, y: 20 })
+
+      expect(described_class.reset_window_geometry!).to eq(2)
+      expect(described_class.window_geometry('a/b')).to be_nil
+      described_class.instance_variable_set(:@geometry_store, nil)
+    end
+  end
+
   describe '.handshake_payload' do
     it 'reports stopped when not running and a parseable descriptor when running' do
       expect(described_class.handshake_payload).to eq('<LichWebUI status="stopped"/>')

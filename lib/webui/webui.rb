@@ -72,24 +72,86 @@ module Lich
         return true if @server&.running?
 
         @auth_token ||= SecureRandom.hex(32)
-        @server = Server.new(
-          auth_token: @auth_token,
-          assets_dir: File.join(__dir__, 'assets'),
-          host: HOST,
-          session_info: -> { session_info },
-          pages_provider: -> { pages_snapshot },
-          siblings_provider: -> { sibling_sessions },
-          message_handler: method(:handle_client_message),
-          file_resolver: FileRoutes.method(:resolve)
-        )
+        wanted = preferred_port
+        @server = build_server(wanted)
         unless @server.start
-          @server = nil
-          return false
+          # a fixed port can be taken (another session, another app) -
+          # fall back to an ephemeral one rather than failing the service
+          if wanted.positive?
+            Lich.log("warning: WebUI preferred port #{wanted} unavailable; using an ephemeral port") if defined?(Lich) && Lich.respond_to?(:log)
+            @server = build_server(0)
+          end
+          unless @server.start
+            @server = nil
+            return false
+          end
         end
 
         write_discovery_file
         true
       end
+    end
+
+    # @param port [Integer] 0 for ephemeral
+    # @return [Server]
+    def self.build_server(port)
+      Server.new(
+        auth_token: @auth_token,
+        assets_dir: File.join(__dir__, 'assets'),
+        host: HOST,
+        port: port,
+        session_info: -> { session_info },
+        pages_provider: -> { pages_snapshot },
+        siblings_provider: -> { sibling_sessions },
+        message_handler: method(:handle_client_message),
+        file_resolver: FileRoutes.method(:resolve)
+      )
+    end
+    private_class_method :build_server
+
+    # Preferred fixed port (bookmarkable URLs, FE panel configs); 0 means
+    # ephemeral. Persisted in lich_settings via ;ui port <n|auto>.
+    PREFERRED_PORT_SETTING = 'webui_preferred_port'
+
+    # @return [Integer]
+    def self.preferred_port
+      raw = Lich.db.get_first_value('SELECT value FROM lich_settings WHERE name=?;', [PREFERRED_PORT_SETTING]) if defined?(Lich) && Lich.respond_to?(:db) && Lich.db
+      value = raw.to_i
+      value.between?(1, 65_535) ? value : 0
+    rescue StandardError
+      0
+    end
+
+    # @param value [Integer] 0 restores ephemeral ports
+    # @return [void]
+    def self.preferred_port=(value)
+      return unless defined?(Lich) && Lich.respond_to?(:db) && Lich.db
+
+      Lich.db.execute('INSERT OR REPLACE INTO lich_settings(name,value) values(?,?);',
+                      [PREFERRED_PORT_SETTING, value.to_i.to_s])
+    rescue StandardError => e
+      Lich.log("warning: WebUI preferred port persist failed: #{e.class}: #{e.message}") if defined?(Lich) && Lich.respond_to?(:log)
+    end
+
+    # Forgets every remembered window geometry (;ui geometry reset) - the
+    # escape hatch when a window insists on reopening somewhere unwanted.
+    #
+    # @return [Integer] how many windows were forgotten
+    def self.reset_window_geometry!
+      count = geometry_store.size
+      geometry_store.clear
+      persist_geometry_store
+      count
+    end
+
+    # Broadcasts an OS-level notification request to every connected
+    # browser (they fall back to an in-page toast without permission).
+    #
+    # @param text [String]
+    # @param title [String, nil]
+    # @return [void]
+    def self.notify(text, title: nil)
+      @server&.broadcast(Protocol.notify_user(text.to_s, title: title&.to_s))
     end
 
     # Stops the server and removes this session's discovery file. Called from

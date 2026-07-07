@@ -2639,6 +2639,51 @@ def do_client(client_string)
         # <LichWebUI .../> line, always.
         Lich::WebUI.ensure_service! if Lich::WebUI.enabled?
         respond(Lich::WebUI.enabled? || Lich::WebUI.running? ? Lich::WebUI.handshake_payload : '<LichWebUI status="disabled"/>')
+      when 'list'
+        if Lich::WebUI.running?
+          pages = Lich::WebUI.pages_snapshot
+          if pages.empty?
+            respond '--- Lich: no WebUI pages registered.'
+          else
+            respond '--- Lich: WebUI pages:'
+            pages.each { |page| respond "   #{page[:id]}#{" (#{page[:kind]})" if page[:kind]} - #{page[:title]}" }
+          end
+        else
+          respond '--- Lich: WebUI is not running.'
+        end
+      when 'open'
+        if webui_arg2.nil?
+          respond "--- Lich: usage: #{$clean_lich_char}ui open <script/page>"
+        elsif Lich::WebUI.running? || Lich::WebUI.enabled?
+          page_ids = Lich::WebUI.pages_snapshot.map { |page| page[:id] }
+          target = page_ids.find { |id| id.downcase == webui_arg2 || id.downcase.end_with?("/#{webui_arg2}") }
+          if target
+            Lich::WebUI.open_page(target, app: true) or respond "--- Lich: could not open a browser; link: #{Lich::WebUI.auth_url_for(target)}"
+          else
+            respond "--- Lich: no page matching '#{webui_arg2}' (see #{$clean_lich_char}ui list)"
+          end
+        else
+          respond "--- Lich: WebUI is disabled. Enable it with #{$clean_lich_char}ui on"
+        end
+      when 'geometry'
+        if webui_arg2 == 'reset'
+          count = Lich::WebUI.reset_window_geometry!
+          respond "--- Lich: forgot remembered geometry for #{count} window(s)."
+        else
+          respond "--- Lich: usage: #{$clean_lich_char}ui geometry reset"
+        end
+      when 'port'
+        case webui_arg2
+        when /^\d+$/
+          Lich::WebUI.preferred_port = webui_arg2.to_i
+          respond "--- Lich: WebUI will prefer port #{webui_arg2} the next time it starts (falls back to ephemeral if taken)."
+        when 'auto'
+          Lich::WebUI.preferred_port = 0
+          respond '--- Lich: WebUI will pick an ephemeral port the next time it starts.'
+        else
+          current_port = Lich::WebUI.preferred_port
+          respond "--- Lich: WebUI preferred port: #{current_port.zero? ? 'auto (ephemeral)' : current_port}. Usage: #{$clean_lich_char}ui port <number|auto>"
+        end
       when 'url', nil
         if !Lich::WebUI.enabled?
           respond "--- Lich: WebUI is disabled. Enable it with #{$clean_lich_char}ui on"
@@ -2653,7 +2698,7 @@ def do_client(client_string)
           respond '--- Lich: WebUI failed to start; check the debug log.'
         end
       else
-        respond "--- Lich: usage: #{$clean_lich_char}ui [on|off|url|handshake]"
+        respond "--- Lich: usage: #{$clean_lich_char}ui [on|off|url|list|open <page>|geometry reset|port <n|auto>|handshake]"
       end
     elsif cmd =~ /^help$/i
       respond
@@ -2706,6 +2751,10 @@ def do_client(client_string)
       respond "   #{$clean_lich_char}debuglogs <number>        set how many debug logs to keep (default: #{Lich::MAX_DEBUG_LOGS_DEFAULT})"
       respond
       respond "   #{$clean_lich_char}ui [on|off|url]           browser-based script UI (open, enable/disable, or show link)"
+      respond "   #{$clean_lich_char}ui list                   show registered WebUI pages"
+      respond "   #{$clean_lich_char}ui open <page>            open a WebUI page in its own window"
+      respond "   #{$clean_lich_char}ui geometry reset         forget remembered window sizes/positions"
+      respond "   #{$clean_lich_char}ui port <number|auto>     prefer a fixed port (bookmarkable URLs)"
       respond "   #{$clean_lich_char}ui login [on|off]         use the browser login page instead of the GTK launcher"
       respond "   #{$clean_lich_char}lich5-update --<command>  Lich5 ecosystem management "
       respond "                              see #{$clean_lich_char}lich5-update --help"

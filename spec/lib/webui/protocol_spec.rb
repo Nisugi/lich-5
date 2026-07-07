@@ -30,6 +30,13 @@ RSpec.describe Lich::WebUI::Protocol do
       notice = JSON.parse(described_class.notice('script exited', level: 'warn'), symbolize_names: true)
       expect(notice).to eq(type: 'notice', level: 'warn', text: 'script exited')
     end
+
+    it 'builds close and notify envelopes' do
+      expect(JSON.parse(described_class.close('map/map'), symbolize_names: true)).to eq(type: 'close', page: 'map/map')
+
+      notify = JSON.parse(described_class.notify_user('favor complete', title: 'Nisugi'), symbolize_names: true)
+      expect(notify).to eq(type: 'notify', title: 'Nisugi', text: 'favor complete')
+    end
   end
 
   describe '.parse_client_message' do

@@ -61,6 +61,16 @@ module Lich
         JSON.generate(type: 'close', page: page)
       end
 
+      # OS-level notification request (UI.notify); browsers without
+      # Notification permission fall back to an in-page toast.
+      #
+      # @param text [String]
+      # @param title [String, nil]
+      # @return [String] JSON
+      def self.notify_user(text, title: nil)
+        JSON.generate(type: 'notify', title: title, text: text)
+      end
+
       # Builds a user-facing notice (script exited, dispatch timed out, ...).
       #
       # @param text [String]
