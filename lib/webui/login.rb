@@ -75,6 +75,7 @@ module Lich
         @busy = nil
         @status = nil
         @unlocked_master = nil
+        @confirm_remove = nil
 
         page = WebUI.register_core_page('login', title: "Lich #{defined?(LICH_VERSION) ? LICH_VERSION : ''}".strip, bare: true, size: [560, 580]) { |ui| render(ui) }
         return :fallback unless page
@@ -140,16 +141,21 @@ module Lich
         ui.text "!! #{@error}" if @error
         ui.text @status if @status
 
-        # Mirror the GTK launcher: Saved Entry / Manual Entry tabs, entries
-        # grouped under centered "Account:" headers, Play per row.
-        # key: keeps the tabs' cid stable even as the busy/error text nodes
-        # above come and go - without it the browser sees a "new" tabs
-        # component on every busy transition and resets to the first tab.
-        ui.tabs(['Saved Entry', 'Manual Entry'], key: :main) do |saved_tab, manual_tab|
-          if saved_locked?
+        locked = saved_locked?
+        saved = locked ? [] : (@entries_loader.call || []).select { |entry| entry.is_a?(Hash) && entry[:char_name] }
+
+        # Mirror the GTK launcher: Saved Entry / Manual Entry / Account
+        # Management tabs. key: keeps the tabs' cid stable even as the
+        # busy/error text nodes above come and go - without it the browser
+        # sees a "new" tabs component on every busy transition and resets
+        # to the first tab.
+        ui.tabs(['Saved Entry', 'Manual Entry', 'Account Management'], key: :main) do |saved_tab, manual_tab, mgmt_tab|
+          if locked
             render_master_gate(saved_tab)
+            mgmt_tab.text 'Unlock your saved logins on the Saved Entry tab first.'
           else
-            render_saved_entries(saved_tab)
+            render_saved_entries(saved_tab, saved)
+            render_account_management(mgmt_tab, saved)
           end
 
           manual_tab.text_input('User ID', value: ui.state[:account], key: :account) { |v| ui.state[:account] = v.strip }
@@ -169,25 +175,45 @@ module Lich
             manual_tab.table(rows, headings: %w[Game Character], sortable: true,
                              selected: ui.state[:sel_char], key: :char_table) { |index| ui.state[:sel_char] = index }
             manual_tab.select('Frontend', options: FRONTENDS, value: ui.state[:frontend] || 'wrayth', key: :frontend) { |v| ui.state[:frontend] = v }
-            manual_tab.checkbox('Save this entry', checked: !!ui.state[:save_entry], key: :save_entry) { |v| ui.state[:save_entry] = v }
+            render_manual_options(manual_tab, ui)
             manual_tab.button('Play', key: :list_play) { play_from_list(ui.state) }
           else
             manual_tab.markdown '*Connect to pick from your characters, or log in directly:*'
             manual_tab.select('Game', options: GAME_CODES.keys, value: ui.state[:game] || 'GS4 Prime', key: :game) { |v| ui.state[:game] = v }
             manual_tab.text_input('Character', value: ui.state[:character], key: :character) { |v| ui.state[:character] = v.strip }
             manual_tab.select('Frontend', options: FRONTENDS, value: ui.state[:frontend] || 'wrayth', key: :frontend) { |v| ui.state[:frontend] = v }
-            manual_tab.checkbox('Save this entry', checked: !!ui.state[:save_entry], key: :save_entry) { |v| ui.state[:save_entry] = v }
+            render_manual_options(manual_tab, ui)
             manual_tab.button('Play', key: :manual_play) { play_manual(ui.state) }
           end
         end
       end
 
+      # The GTK manual tab's option checkboxes, shared by both Play flows:
+      # custom launch command, save-for-next-time, mark as favorite.
+      def render_manual_options(manual_tab, ui)
+        manual_tab.checkbox('Custom launch command', checked: !!ui.state[:custom_enabled], key: :custom_enabled) { |v| ui.state[:custom_enabled] = v }
+        if ui.state[:custom_enabled]
+          manual_tab.text_input('Launch command', value: ui.state[:custom_launch],
+                                placeholder: 'e.g. C:\\frontend\\wrayth.exe %port%', key: :custom_launch) { |v| ui.state[:custom_launch] = v }
+          manual_tab.text_input('Working directory', value: ui.state[:custom_launch_dir], key: :custom_launch_dir) { |v| ui.state[:custom_launch_dir] = v }
+        end
+        manual_tab.checkbox('Save this entry', checked: !!ui.state[:save_entry], key: :save_entry) { |v| ui.state[:save_entry] = v }
+        manual_tab.checkbox('Mark as favorite', checked: !!ui.state[:mark_favorite], key: :mark_favorite) { |v| ui.state[:mark_favorite] = v }
+      end
+
+      # @return [Array(String|nil, String|nil)] custom launch command and
+      #   working directory when enabled and non-blank
+      def manual_custom_launch(state)
+        return [nil, nil] unless state[:custom_enabled]
+
+        command = state[:custom_launch].to_s.strip
+        directory = state[:custom_launch_dir].to_s.strip
+        [command.empty? ? nil : command, directory.empty? ? nil : directory]
+      end
+
       # The Saved Entry tab body: entries as a flat grouped list or (Tab
       # Layout) per-account tabs, then the GUI Settings row and Refresh.
-      def render_saved_entries(saved_tab)
-        entries = @entries_loader.call
-        saved = entries.select { |entry| entry.is_a?(Hash) && entry[:char_name] }
-
+      def render_saved_entries(saved_tab, saved)
         saved_tab.text 'No saved characters yet - use Manual Entry.' if saved.empty?
         if tab_layout? && !saved.empty?
           render_account_tabs(saved_tab, saved)
@@ -213,7 +239,7 @@ module Lich
         favorites = saved.select { |entry| entry[:is_favorite] }
         names = favorites.empty? ? [] : ['* Favorites']
         names.concat(groups.keys.map(&:downcase))
-        tab.tabs(names, key: :accounts) do |*account_tabs|
+        tab.tabs(names, vertical: true, key: :accounts) do |*account_tabs|
           offset = 0
           unless favorites.empty?
             favorites.each { |entry| render_entry_row(account_tabs[0], entry, 'favorites') }
@@ -235,6 +261,111 @@ module Lich
             c_play.button('Play', key: "play_#{row_key}") { play_saved(entry) }
             c_remove.button('X', variant: :danger, key: "rm_#{row_key}") { remove_entry(entry) }
           end
+        end
+      end
+
+      # The Account Management tab (GTK parity, browser-sized): one sidebar
+      # tab per account with its characters, change-password, fetch-and-add
+      # missing characters, and a two-step account removal. Adding a whole
+      # new account lives in Manual Entry (Connect + Save this entry);
+      # encryption-mode changes stay in the GTK launcher.
+      def render_account_management(tab, saved)
+        groups = saved.group_by { |entry| (entry[:username] || entry[:user_id]).to_s }
+        if groups.empty?
+          tab.text 'No saved accounts yet - add one via Manual Entry (Connect, then Save this entry).'
+          return
+        end
+
+        tab.tabs(groups.keys.map(&:downcase), vertical: true, key: :mgmt_accounts) do |*account_tabs|
+          groups.each_with_index do |(account, chars), index|
+            acct_tab = account_tabs[index]
+            rows = chars.map { |entry|
+              [entry[:char_name].to_s, (entry[:game_name] || entry[:game_code]).to_s,
+               entry[:frontend].to_s, entry[:is_favorite] ? '*' : '']
+            }
+            acct_tab.table(rows, headings: %w[Character Game Frontend Fav], key: "chars_#{account}")
+            acct_tab.button('Fetch & Add Missing Characters', key: "fetch_#{account}") { fetch_account_characters(account, chars) }
+            acct_tab.password_input('New password', key: "np_#{account}") { |v| acct_tab.state["np_#{account}"] = v }
+            acct_tab.columns(2, compact: true, key: "acts_#{account}") do |c_pass, c_remove|
+              c_pass.button('Change Password', key: "cp_#{account}") { change_account_password(account, acct_tab.state) }
+              if @confirm_remove == account
+                c_remove.button('Confirm Remove', variant: :danger, key: "ra_#{account}") { remove_account_entries(account) }
+              else
+                c_remove.button('Remove Account', variant: :danger, key: "ra_#{account}") { @confirm_remove = account }
+              end
+            end
+          end
+        end
+        tab.markdown '*Encryption settings are managed in the GTK launcher (start Lich with --gtk-login).*'
+      end
+
+      # Updates the stored (re-encrypted per the file mode) password for one
+      # account - the GTK Change Password action.
+      def change_account_password(account, state)
+        key = "np_#{account}"
+        new_password = state[key].to_s
+        state[key] = nil
+        return fail_login('Enter the new password first.') if new_password.empty?
+
+        require File.join(LIB_DIR, 'common', 'gui', 'account_manager') unless defined?(Lich::Common::GUI::AccountManager)
+        if Lich::Common::GUI::AccountManager.change_password(@data_dir, account, new_password)
+          @error = nil
+          @status = "Password updated for #{account.downcase}."
+        else
+          @error = "Password change failed for #{account.downcase}."
+        end
+      rescue ScriptError, StandardError => e
+        fail_login("Password change failed: #{e.message}")
+      end
+
+      # Second click of the two-step Remove Account button.
+      def remove_account_entries(account)
+        @confirm_remove = nil
+        require File.join(LIB_DIR, 'common', 'gui', 'account_manager') unless defined?(Lich::Common::GUI::AccountManager)
+        if Lich::Common::GUI::AccountManager.remove_account(@data_dir, account)
+          @error = nil
+          @status = "Removed account #{account.downcase} and its characters."
+        else
+          @error = "Could not remove account #{account.downcase}."
+        end
+      rescue ScriptError, StandardError => e
+        fail_login("Account removal failed: #{e.message}")
+      end
+
+      # The GTK Add Character flow, automated: EAccess-list the account with
+      # its stored password and save any characters not in the store yet
+      # (frontend defaults to wrayth; change per entry via Manual Entry).
+      def fetch_account_characters(account, chars)
+        stored_password = chars.first && chars.first[:password].to_s
+        return fail_login('No stored password for this account.') if stored_password.nil? || stored_password.empty?
+
+        set_busy("Fetching characters for #{account.downcase}...")
+        Thread.new do
+          begin
+            list = @account_lister.call(account: account, password: stored_password)
+            list = list.is_a?(Array) ? list : []
+            known = chars.map { |entry| [entry[:char_name].to_s.capitalize, entry[:game_code]] }
+            fresh = list.reject { |char| known.include?([char[:char_name].to_s.capitalize, char[:game_code]]) }
+            @busy = nil
+            if fresh.empty?
+              @status = "No new characters found for #{account.downcase}."
+            else
+              require File.join(LIB_DIR, 'common', 'gui', 'account_manager') unless defined?(Lich::Common::GUI::AccountManager)
+              added = fresh.count { |char|
+                Lich::Common::GUI::AccountManager.add_character(
+                  @data_dir, account,
+                  { char_name: char[:char_name], game_code: char[:game_code],
+                    game_name: char[:game_name], frontend: 'wrayth',
+                    custom_launch: nil, custom_launch_dir: nil }
+                )[:success]
+              }
+              @status = "Added #{added} character(s) to #{account.downcase}."
+            end
+          rescue ScriptError, StandardError => e
+            @busy = nil
+            @error = "Character fetch failed: #{e.message}"
+          end
+          Registry.find('lich/login')&.request_render
         end
       end
 
@@ -415,12 +546,14 @@ module Lich
         return fail_login('Pick a character from the list first.') unless entry
 
         set_busy("Authenticating #{entry[:char_name]}...")
+        custom_launch, custom_launch_dir = manual_custom_launch(state)
         Thread.new do
           authenticate_and_finish(
             account: state[:account].to_s, password: state[:password].to_s,
             character: entry[:char_name], game_code: entry[:game_code],
-            frontend: (state[:frontend] || 'wrayth'), custom_launch: nil, custom_launch_dir: nil,
-            game_name: entry[:game_name], save: !!state[:save_entry]
+            frontend: (state[:frontend] || 'wrayth'),
+            custom_launch: custom_launch, custom_launch_dir: custom_launch_dir,
+            game_name: entry[:game_name], save: !!state[:save_entry], favorite: !!state[:mark_favorite]
           )
         end
       end
@@ -433,22 +566,28 @@ module Lich
         return fail_login('Account, password, and character are all required.') if account.empty? || password.empty? || character.empty?
 
         set_busy("Authenticating #{character}...")
+        custom_launch, custom_launch_dir = manual_custom_launch(state)
         Thread.new do
           authenticate_and_finish(
             account: account, password: password, character: character,
             game_code: game_code, frontend: (state[:frontend] || 'wrayth'),
-            custom_launch: nil, custom_launch_dir: nil,
-            game_name: state[:game] || 'GS4 Prime', save: !!state[:save_entry]
+            custom_launch: custom_launch, custom_launch_dir: custom_launch_dir,
+            game_name: state[:game] || 'GS4 Prime', save: !!state[:save_entry], favorite: !!state[:mark_favorite]
           )
         end
       end
 
-      def authenticate_and_finish(account:, password:, character:, game_code:, frontend:, custom_launch:, custom_launch_dir:, game_name: nil, save: false, multi: false)
+      def authenticate_and_finish(account:, password:, character:, game_code:, frontend:, custom_launch:, custom_launch_dir:, game_name: nil, save: false, favorite: false, multi: false)
         auth = @authenticator.call(account: account, password: password, character: character, game_code: game_code)
         launch_data = @launch_preparer.call(auth, frontend, custom_launch, custom_launch_dir)
         return fail_login('Authentication succeeded but no launch data was produced.') unless launch_data.is_a?(Array) && launch_data.any?
 
-        save_entry(account: account, password: password, char_name: character, game_code: game_code, game_name: game_name, frontend: frontend) if save
+        if save
+          save_entry(account: account, password: password, char_name: character, game_code: game_code,
+                     game_name: game_name, frontend: frontend,
+                     custom_launch: custom_launch, custom_launch_dir: custom_launch_dir)
+        end
+        mark_favorite(account, character, game_code, frontend) if favorite
         if multi
           spawn_child(launch_data, character: character, game_code: game_code, frontend: frontend, custom_launch: custom_launch)
         else
@@ -511,7 +650,7 @@ module Lich
       # account + frontend), same field names, and save_entries re-encrypts
       # per the file's existing encryption_mode (entries in memory hold
       # plaintext passwords).
-      def save_entry(account:, password:, char_name:, game_code:, game_name:, frontend:)
+      def save_entry(account:, password:, char_name:, game_code:, game_name:, frontend:, custom_launch: nil, custom_launch_dir: nil)
         require File.join(LIB_DIR, 'common', 'authentication', 'entry_store') unless defined?(Lich::Common::Authentication::EntryStore)
         store = Lich::Common::Authentication::EntryStore
         entries = store.load_saved_entries(@data_dir, false) || []
@@ -521,22 +660,35 @@ module Lich
           candidate[:char_name].to_s.capitalize == normalized_character &&
             candidate[:game_code] == game_code &&
             candidate[:user_id].to_s.upcase == normalized_account &&
-            candidate[:frontend] == frontend
+            candidate[:frontend] == frontend &&
+            candidate[:custom_launch] == custom_launch
         }
         if existing
           existing[:game_name] = game_name
           existing[:password] = password
+          existing[:custom_launch_dir] = custom_launch_dir
         else
           entries.push(
             :char_name => normalized_character, :game_code => game_code, :game_name => game_name,
             :user_id => normalized_account, :password => password, :frontend => frontend,
-            :custom_launch => nil, :custom_launch_dir => nil,
+            :custom_launch => custom_launch, :custom_launch_dir => custom_launch_dir,
             :encryption_mode => (entries.first&.[](:encryption_mode) || :plaintext)
           )
         end
         store.save_entries(@data_dir, entries)
       rescue StandardError => e
         Lich.log("warning: WebUI login: could not save entry: #{e.class}: #{e.message}") if defined?(Lich) && Lich.respond_to?(:log)
+      end
+
+      # Mark as favorite after a manual Play (effective when the entry is
+      # saved - favorites live on saved entries, as in GTK).
+      def mark_favorite(account, char_name, game_code, frontend)
+        require File.join(LIB_DIR, 'common', 'gui', 'favorites_manager') unless defined?(Lich::Common::GUI::FavoritesManager)
+        Lich::Common::GUI::FavoritesManager.add_favorite(
+          @data_dir, account.to_s.upcase, char_name.to_s.capitalize, game_code, frontend
+        )
+      rescue ScriptError, StandardError => e
+        Lich.log("warning: WebUI login: could not mark favorite: #{e.class}: #{e.message}") if defined?(Lich) && Lich.respond_to?(:log)
       end
 
       def set_busy(message)

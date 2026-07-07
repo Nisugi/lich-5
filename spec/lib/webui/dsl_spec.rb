@@ -129,6 +129,12 @@ RSpec.describe Lich::WebUI::Builder do
       expect(node[:t]).to eq('tabs')
       expect(node[:children].map { |tab| tab[:label] }).to eq(%w[Loot Stats])
       expect(node[:children][1][:children].first[:text]).to eq('stats here')
+      expect(node).not_to have_key(:vertical)
+    end
+
+    it 'flags vertical tabs for the sidebar layout' do
+      builder.tabs(%w[A B], vertical: true) { |a, b| a.text 'a'; b.text 'b' }
+      expect(builder.nodes.last[:vertical]).to be(true)
     end
 
     it 'accepts http(s), data, and /files sources for images' do

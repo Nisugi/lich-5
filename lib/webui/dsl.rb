@@ -199,22 +199,27 @@ module Lich
 
       # Tabbed sections; the block receives one nested builder per tab, in
       # the order of +names+. Tab switching is purely client-side.
+      # vertical: true renders the tab bar as a left sidebar (accounts in
+      # the login launcher) instead of a horizontal strip.
       #
       #   ui.tabs(%w[Loot Stats]) { |loot, stats| loot.table(...) }
       #
       # @param names [Array<#to_s>]
+      # @param vertical [Boolean]
       # @yieldparam tabs [Builder] one argument per tab
       # @return [void]
-      def tabs(names, key: nil)
+      def tabs(names, vertical: false, key: nil)
         cid = claim_cid('tabs', key)
         children = Array.new(names.length) { |i| child_builder("#{cid}.t#{i}") }
         yield(*children)
-        @nodes << {
+        node = {
           t: 'tabs', cid: cid,
           children: names.each_with_index.map do |name, i|
             { t: 'tab', cid: "#{cid}.t#{i}", label: name.to_s, children: children[i].nodes }
           end
         }
+        node[:vertical] = true if vertical
+        @nodes << node
       end
 
       # Displays an image from an http(s) URL, data: URI, or a /files/ path

@@ -297,6 +297,29 @@ body.bare-page .c-image-map {
 .c-tab-panel { padding-top: 0.8em; }
 .c-tab-panel > * { margin: 0 0 0.8em; }
 
+/* vertical variant: the tab bar becomes a left sidebar (GTK launcher's
+ * tabbed account layout) so many tabs never overflow horizontally */
+.c-tabs.vertical { display: flex; align-items: flex-start; gap: 0.9em; }
+.c-tabs.vertical > .c-tab-bar {
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 0;
+  min-width: 9em;
+  max-height: 26em;
+  overflow-y: auto;
+  border-bottom: none;
+  border-right: 1px solid var(--border);
+}
+.c-tabs.vertical > .c-tab-bar .c-tab-button {
+  text-align: center;
+  border-bottom: none;
+  border-right: 2px solid transparent;
+  padding: 0.5em 0.8em;
+}
+.c-tabs.vertical > .c-tab-bar .c-tab-button.active { border-right-color: var(--accent); }
+.c-tabs.vertical > .c-tab-panels { flex: 1 1 auto; min-width: 0; }
+.c-tabs.vertical .c-tab-panel { padding-top: 0; }
+
 /* login-style bare pages: GTK-launcher density */
 body.bare-page { font-size: 14px; }
 body.bare-page .page-body { padding: 0.4em 0.8em; }

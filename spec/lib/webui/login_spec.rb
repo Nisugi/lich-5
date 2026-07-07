@@ -37,7 +37,7 @@ RSpec.describe Lich::WebUI::Login do
          custom_launch: nil, custom_launch_dir: nil }]
     end
 
-    def run_login(authenticator:, entries_loader: -> { entries }, session_launcher: nil)
+    def run_login(authenticator:, entries_loader: -> { entries }, session_launcher: nil, launch_preparer: nil)
       allow(Lich::WebUI).to receive(:open_page).and_return(true)
       result = nil
       runner = Thread.new do
@@ -45,7 +45,7 @@ RSpec.describe Lich::WebUI::Login do
           data_dir: Dir.tmpdir,
           entries_loader: entries_loader,
           authenticator: authenticator,
-          launch_preparer: ->(auth, _fe, _cl, _dir) { auth },
+          launch_preparer: launch_preparer || ->(auth, _fe, _cl, _dir) { auth },
           session_launcher: session_launcher
         )
       end
@@ -145,6 +145,65 @@ RSpec.describe Lich::WebUI::Login do
         page.handle_event(play_cid, nil)
       end
       expect(result).to eq(['GAMECODE=GS3', 'GAMEHOST=host', 'GAMEPORT=1', 'GAME=STORM'])
+    end
+
+    it 'manual Play honors custom launch, save, and favorite options' do
+      saves = []
+      favorites = []
+      allow(described_class).to receive(:save_entry) { |**kw| saves << kw }
+      allow(described_class).to receive(:mark_favorite) { |*args| favorites << args }
+      prepared = []
+      launch_preparer = ->(auth, fe, cl, dir) { prepared << [fe, cl, dir]; auth }
+      authenticator = ->(**_) { ['GAMECODE=GS3', 'GAMEHOST=host', 'GAMEPORT=1', 'GAME=STORM'] }
+
+      result = run_login(authenticator: authenticator, launch_preparer: launch_preparer) do |page|
+        fake_conn = Struct.new(:sent) { def send_text(json) = (sent << json) }.new([])
+        page.subscribe(fake_conn)
+        tree = fake_conn.sent.last
+        page.handle_event(tree[/"cid":"([^"]*text_input:account)"/, 1], 'account1')
+        page.handle_event(tree[/"cid":"([^"]*password_input:password)"/, 1], 'sekrit')
+        page.handle_event(tree[/"cid":"([^"]*text_input:character)"/, 1], 'Nisugi')
+        page.handle_event(tree[/"cid":"([^"]*checkbox:custom_enabled)"/, 1], true)
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('text_input:custom_launch') } }
+        tree = fake_conn.sent.last
+        page.handle_event(tree[/"cid":"([^"]*text_input:custom_launch)"/, 1], 'C:\\wrayth\\wrayth.exe %port%')
+        page.handle_event(tree[/"cid":"([^"]*text_input:custom_launch_dir)"/, 1], 'C:\\wrayth')
+        page.handle_event(tree[/"cid":"([^"]*checkbox:save_entry)"/, 1], true)
+        page.handle_event(tree[/"cid":"([^"]*checkbox:mark_favorite)"/, 1], true)
+        page.handle_event(tree[/"cid":"([^"]*button:manual_play)"/, 1], nil)
+      end
+      expect(result).to eq(['GAMECODE=GS3', 'GAMEHOST=host', 'GAMEPORT=1', 'GAME=STORM'])
+      expect(prepared.last).to eq(['wrayth', 'C:\\wrayth\\wrayth.exe %port%', 'C:\\wrayth'])
+      expect(saves.last).to include(char_name: 'Nisugi', game_code: 'GS3',
+                                    custom_launch: 'C:\\wrayth\\wrayth.exe %port%', custom_launch_dir: 'C:\\wrayth')
+      expect(favorites.last).to eq(['account1', 'Nisugi', 'GS3', 'wrayth'])
+    end
+
+    it 'account management changes passwords and removes accounts with confirm' do
+      account_manager = double('AccountManager', change_password: true, remove_account: true)
+      stub_const('Lich::Common::GUI::AccountManager', account_manager)
+      authenticator = ->(**_) { raise 'auth should not be reached' }
+
+      result = run_login(authenticator: authenticator) do |page|
+        fake_conn = Struct.new(:sent) { def send_text(json) = (sent << json) }.new([])
+        page.subscribe(fake_conn)
+        tree = fake_conn.sent.last
+        expect(tree).to include('"label":"Account Management"')
+
+        page.handle_event(tree[/"cid":"([^"]*password_input:np_account1)"/, 1], 'newpass')
+        page.handle_event(tree[/"cid":"([^"]*button:cp_account1)"/, 1], nil)
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('Password updated for account1') } }
+        expect(account_manager).to have_received(:change_password).with(Dir.tmpdir, 'account1', 'newpass')
+
+        page.handle_event(tree[/"cid":"([^"]*button:ra_account1)"/, 1], nil)
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('Confirm Remove') } }
+        page.handle_event(tree[/"cid":"([^"]*button:ra_account1)"/, 1], nil)
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('Removed account account1') } }
+        expect(account_manager).to have_received(:remove_account).with(Dir.tmpdir, 'account1')
+
+        page.handle_event(fake_conn.sent.last[/"cid":"([^"]*button:quit)"/, 1], nil)
+      end
+      expect(result).to be_nil
     end
 
     it 'wires the Fav button to the favorites toggle' do

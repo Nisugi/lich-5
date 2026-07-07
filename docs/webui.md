@@ -33,8 +33,15 @@ always printed to the log in case no browser opens).
   child sessions; the browser page follows the browser theme), Tab Layout,
   AutoSort, Multi-Launch — so the two launchers stay in sync.
 - **Manual Entry** — enter account credentials and either `Connect` to pick
-  from the account's character list or fill in the character directly. Tick
-  *Save this entry* to add it to Saved Entry for next time.
+  from the account's character list or fill in the character directly.
+  Options: *Custom launch command* (command + working directory), *Save this
+  entry* (adds it to Saved Entry for next time), *Mark as favorite*.
+- **Account Management** — one sidebar tab per saved account: its
+  characters, *Fetch & Add Missing Characters* (EAccess-lists the account
+  with its stored password and saves anything new), *Change Password*, and a
+  two-click *Remove Account*. Adding a brand-new account is Manual Entry's
+  job (Connect + Save this entry); encryption-mode changes stay in the GTK
+  launcher (`--gtk-login`).
 - **Multi-Launch** — mirrors the GTK launcher's switch (same persisted
   setting). Off: Play turns this launcher into the session and the window
   closes. On: each saved-entry Play spawns a separate detached Lich session
@@ -115,6 +122,7 @@ right for row-action button groups):
 ui.expander("Settings", open: false) { |section| section.checkbox("Loot") { |v| ... } }
 ui.columns(2) { |left, right| left.button("Go") { ... }; right.text "status" }
 ui.tabs(%w[Loot Stats]) { |loot, stats| loot.table(...); stats.text(...) }
+ui.tabs(names, vertical: true) { |*tabs| ... }   # tab bar as a left sidebar
 ```
 
 Tables become interactive with `sortable:` (client-side column sort), a
