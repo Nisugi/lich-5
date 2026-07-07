@@ -99,7 +99,7 @@ module Lich
         if @unlocked_master && keychain_master.nil?
           load_entries_with_master(@unlocked_master)
         else
-          Lich::Common::Authentication::EntryStore.load_saved_entries(@data_dir, true) || []
+          Lich::Common::Authentication::EntryStore.load_saved_entries(@data_dir, autosort?) || []
         end
       rescue StandardError => e
         @error = "Could not load saved logins: #{e.message}"
@@ -182,34 +182,80 @@ module Lich
         end
       end
 
-      # The Saved Entry tab body: grouped entries with Fav/Play/X per row,
-      # the Multi-Launch toggle, and Refresh.
+      # The Saved Entry tab body: entries as a flat grouped list or (Tab
+      # Layout) per-account tabs, then the GUI Settings row and Refresh.
       def render_saved_entries(saved_tab)
         entries = @entries_loader.call
         saved = entries.select { |entry| entry.is_a?(Hash) && entry[:char_name] }
 
         saved_tab.text 'No saved characters yet - use Manual Entry.' if saved.empty?
+        if tab_layout? && !saved.empty?
+          render_account_tabs(saved_tab, saved)
+        else
+          render_account_list(saved_tab, saved)
+        end
+        render_settings(saved_tab)
+        saved_tab.button('Refresh Entries', key: :refresh) { nil } # rerender reloads from disk
+      end
+
+      # Flat layout: entries grouped under "Account:" headers.
+      def render_account_list(tab, saved)
         saved.group_by { |entry| (entry[:username] || entry[:user_id]).to_s }.each do |account, chars|
-          saved_tab.markdown "**Account: #{account.downcase}**"
-          chars.each do |entry|
-            frontend_label = entry[:frontend].to_s.empty? ? '' : ", #{entry[:frontend].to_s.capitalize}"
-            row_key = "#{entry[:char_name]}_#{entry[:game_code]}_#{account}"
-            saved_tab.columns(2, key: "row_#{row_key}") do |main, actions|
-              main.text "#{entry[:is_favorite] ? '* ' : ''}#{entry[:char_name]} (#{entry[:game_name] || entry[:game_code]}#{frontend_label})"
-              actions.columns(3, compact: true, key: "act_#{row_key}") do |c_fav, c_play, c_remove|
-                c_fav.button(entry[:is_favorite] ? 'Unfav' : 'Fav', key: "fav_#{row_key}") { toggle_favorite(entry) }
-                c_play.button('Play', key: "play_#{row_key}") { play_saved(entry) }
-                c_remove.button('X', variant: :danger, key: "rm_#{row_key}") { remove_entry(entry) }
-              end
-            end
+          tab.markdown "**Account: #{account.downcase}**"
+          chars.each { |entry| render_entry_row(tab, entry, account) }
+        end
+      end
+
+      # Tab Layout (the GTK sidebar mode): a Favorites tab when any exist,
+      # then one tab per account, each listing only that account's entries.
+      def render_account_tabs(tab, saved)
+        groups = saved.group_by { |entry| (entry[:username] || entry[:user_id]).to_s }
+        favorites = saved.select { |entry| entry[:is_favorite] }
+        names = favorites.empty? ? [] : ['* Favorites']
+        names.concat(groups.keys.map(&:downcase))
+        tab.tabs(names, key: :accounts) do |*account_tabs|
+          offset = 0
+          unless favorites.empty?
+            favorites.each { |entry| render_entry_row(account_tabs[0], entry, 'favorites') }
+            offset = 1
+          end
+          groups.each_with_index do |(account, chars), index|
+            chars.each { |entry| render_entry_row(account_tabs[offset + index], entry, account) }
           end
         end
-        # Multi-Launch mirrors the GTK launcher's global-settings switch
-        # (Lich.track_persistent_launcher_mode): saved-entry Play spawns a
-        # detached child Lich session and this launcher stays open.
-        saved_tab.checkbox('Multi-Launch (spawn sessions, keep this launcher open)',
+      end
+
+      def render_entry_row(tab, entry, account)
+        frontend_label = entry[:frontend].to_s.empty? ? '' : ", #{entry[:frontend].to_s.capitalize}"
+        row_key = "#{entry[:char_name]}_#{entry[:game_code]}_#{account}"
+        tab.columns(2, key: "row_#{row_key}") do |main, actions|
+          main.text "#{entry[:is_favorite] ? '* ' : ''}#{entry[:char_name]} (#{entry[:game_name] || entry[:game_code]}#{frontend_label})"
+          actions.columns(3, compact: true, key: "act_#{row_key}") do |c_fav, c_play, c_remove|
+            c_fav.button(entry[:is_favorite] ? 'Unfav' : 'Fav', key: "fav_#{row_key}") { toggle_favorite(entry) }
+            c_play.button('Play', key: "play_#{row_key}") { play_saved(entry) }
+            c_remove.button('X', variant: :danger, key: "rm_#{row_key}") { remove_entry(entry) }
+          end
+        end
+      end
+
+      # The GTK launcher's GUI Settings row: every toggle reads and writes
+      # the same persisted lich_settings the GTK launcher uses, so the two
+      # launchers stay in sync. Dark Theme applies to GTK windows and is
+      # passed to Multi-Launch children; the browser page itself follows the
+      # browser theme.
+      def render_settings(tab)
+        tab.expander('GUI Settings', key: :settings) do |section|
+          section.checkbox('Dark Theme (GTK and child sessions)',
+                           checked: lich_setting?(:track_dark_mode), key: :dark_theme) { |v| set_lich_setting(:track_dark_mode, v) }
+          section.checkbox('Tab Layout (one tab per account)',
+                           checked: tab_layout?, key: :tab_layout) { |v| set_lich_setting(:track_layout_state, v) }
+          section.checkbox('AutoSort (favorites first)',
+                           checked: autosort?, key: :autosort) { |v| set_lich_setting(:track_autosort_state, v) }
+          # Multi-Launch: saved-entry Play spawns a detached child Lich
+          # session and this launcher stays open.
+          section.checkbox('Multi-Launch (spawn sessions, keep this launcher open)',
                            checked: multi_launch?, key: :multi_launch) { |v| self.multi_launch = v }
-        saved_tab.button('Refresh Entries', key: :refresh) { nil } # rerender reloads from disk
+        end
       end
 
       # Enhanced-encryption gate: shown instead of the saved list when the
@@ -430,18 +476,34 @@ module Lich
         Registry.find('lich/login')&.request_render
       end
 
-      # The GTK launcher's "Multi-Launch" switch, shared via lich_settings so
-      # both launchers honor the same preference.
-      def multi_launch?
-        defined?(Lich) && Lich.respond_to?(:track_persistent_launcher_mode) && Lich.track_persistent_launcher_mode == true
+      # Shared launcher preferences (lich_settings): the same persisted
+      # toggles the GTK launcher reads, so both launchers stay in sync.
+      def lich_setting?(name)
+        defined?(Lich) && Lich.respond_to?(name) && Lich.public_send(name) == true
       rescue StandardError
         false
       end
 
-      def multi_launch=(value)
-        Lich.track_persistent_launcher_mode = value if defined?(Lich) && Lich.respond_to?(:track_persistent_launcher_mode=)
+      def set_lich_setting(name, value)
+        Lich.public_send("#{name}=", value) if defined?(Lich) && Lich.respond_to?("#{name}=")
       rescue StandardError
         nil
+      end
+
+      def multi_launch?
+        lich_setting?(:track_persistent_launcher_mode)
+      end
+
+      def multi_launch=(value)
+        set_lich_setting(:track_persistent_launcher_mode, value)
+      end
+
+      def tab_layout?
+        lich_setting?(:track_layout_state)
+      end
+
+      def autosort?
+        lich_setting?(:track_autosort_state)
       end
 
       # Persists a successful manual login the way the GTK launcher's "save

@@ -26,9 +26,12 @@ overrides: `--webui-login` forces the browser login, `--gtk-login` forces the
 GTK window (the escape hatch if the browser flow breaks — the URL is also
 always printed to the log in case no browser opens).
 
-- **Saved Entry** — your saved characters grouped by account, favorites
-  first. Per row: `Fav`/`Unfav` toggles the favorite star, `Play` launches,
-  `X` deletes the entry.
+- **Saved Entry** — your saved characters grouped by account (or one tab per
+  account with *Tab Layout*). Per row: `Fav`/`Unfav` toggles the favorite
+  star, `Play` launches, `X` deletes the entry. The *GUI Settings* section
+  holds the same persisted toggles as the GTK launcher — Dark Theme (GTK and
+  child sessions; the browser page follows the browser theme), Tab Layout,
+  AutoSort, Multi-Launch — so the two launchers stay in sync.
 - **Manual Entry** — enter account credentials and either `Connect` to pick
   from the account's character list or fill in the character directly. Tick
   *Save this entry* to add it to Saved Entry for next time.

@@ -129,6 +129,24 @@ RSpec.describe Lich::WebUI::Login do
       expect(loads).to be >= 1 # unlocked renders load entries again
     end
 
+    it 'renders per-account tabs when Tab Layout is on and still plays' do
+      allow(Lich).to receive(:track_layout_state).and_return(true)
+      authenticator = lambda { |account:, password:, character:, game_code:|
+        expect([account, password, character, game_code]).to eq(%w[account1 sekrit Nisugi GS3])
+        ['GAMECODE=GS3', 'GAMEHOST=host', 'GAMEPORT=1', 'GAME=STORM']
+      }
+
+      result = run_login(authenticator: authenticator) do |page|
+        fake_conn = Struct.new(:sent) { def send_text(json) = (sent << json) }.new([])
+        page.subscribe(fake_conn)
+        expect(fake_conn.sent.last).to include('"tabs:main.t0.tabs:accounts"')
+        expect(fake_conn.sent.last).to include('"label":"account1"')
+        play_cid = fake_conn.sent.last[/"cid":"([^"]*button:play_[^"]+)"/, 1]
+        page.handle_event(play_cid, nil)
+      end
+      expect(result).to eq(['GAMECODE=GS3', 'GAMEHOST=host', 'GAMEPORT=1', 'GAME=STORM'])
+    end
+
     it 'wires the Fav button to the favorites toggle' do
       toggled = []
       allow(described_class).to receive(:toggle_favorite) { |entry| toggled << entry[:char_name] }
