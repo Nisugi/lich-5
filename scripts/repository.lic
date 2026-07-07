@@ -10,9 +10,13 @@
           game: any
           tags: core
       required: Lich > 5.0.1
-       version: 2.74
+       version: 2.75
 
   changelog:
+    2.75 (2026-07-06):
+      WebUI browser page reworked to the GTK window layout: scrolling table
+      (pinned headings) on the left, download/comments detail panel on the
+      right, Close at the bottom. No more page-length table.
     2.74 (2026-07-06):
       ;repository gui renders in the browser via the Lich WebUI when enabled (;ui on):
       sortable table, keyword search, row selection with comments and download.
@@ -2795,32 +2799,38 @@ module RepositoryTillmen
         end
       }
 
+      # GTK-window layout: scrolling table on the left, detail panel
+      # (download + comments) on the right, Close at the bottom.
       UI.page('browser', title: 'Repository Search') do |ui|
         ui.header 'Repository Search'
-        ui.text_input('Keyword search', value: ui.state[:search], placeholder: 'matches any column',
-                      key: :search) { |v| ui.state[:search] = v; ui.state[:selected] = nil }
 
         entries = filter_data.call(ui.state[:search])
         selected = ui.state[:selected]
         selected = nil if selected && entries[selected].nil?
-        ui.text "#{entries.length} script(s)"
-        ui.table(format_rows.call(entries),
-                 headings: ['File Name', 'Game', 'Size', 'Last Updated', 'Author', 'DLs', 'Rating', 'Votes', 'Tags'],
-                 sortable: true, selected: selected, key: :repo) { |index| ui.state[:selected] = index }
 
-        ui.divider
-        if selected && (item = entries[selected])
-          ui.button("Download #{item[0]}", key: :download) {
-            Script.run('repository', "download #{item[0]} --author=#{item[4]} --game=#{item[1]}", force: true)
-          }
-          comments = item[9].to_s.strip
-          if comments.empty?
-            ui.text 'No comments for this script.'
+        ui.columns(2, weights: [7, 3], key: :body) do |listing, detail|
+          listing.text_input('Keyword search', value: ui.state[:search], placeholder: 'matches any column',
+                             key: :search) { |v| ui.state[:search] = v; ui.state[:selected] = nil }
+          listing.text "#{entries.length} script(s)"
+          listing.table(format_rows.call(entries),
+                        headings: ['File Name', 'Game', 'Size', 'Last Updated', 'Author', 'DLs', 'Rating', 'Votes', 'Tags'],
+                        sortable: true, selected: selected, max_height: 520,
+                        key: :repo) { |index| ui.state[:selected] = index }
+
+          if selected && (item = entries[selected])
+            detail.button("Download #{item[0]}", key: :download) {
+              Script.run('repository', "download #{item[0]} --author=#{item[4]} --game=#{item[1]}", force: true)
+            }
+            detail.markdown "**#{item[0]}** by #{item[4]}"
+            comments = item[9].to_s.strip
+            if comments.empty?
+              detail.text 'No comments for this script.'
+            else
+              comments.split("\n").each { |line| detail.text line }
+            end
           else
-            comments.split("\n").each { |line| ui.text line }
+            detail.text 'Click a row to see comments and download.'
           end
-        else
-          ui.text 'Click a row to see comments and download.'
         end
 
         ui.divider
