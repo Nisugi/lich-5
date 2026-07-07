@@ -183,6 +183,34 @@ Consequences:
 - State you want across sessions still goes through `Settings[]` — save in
   callbacks or `before_dying`, load at registration.
 
+## Frontend integration (embedding pages in your FE)
+
+WebUI pages are ordinary local web pages, so a frontend can host them
+directly. Three integration tiers:
+
+1. **Webview panels** (Electron/Tauri-family FEs like VellumFE): dock a
+   webview at a page URL. Handshake: send `;ui handshake` through Lich; the
+   reply is exactly one line -
+   `<LichWebUI status="ok" port="..." url="..." auth="..." schema="1"/>`
+   (or `status="disabled"|"stopped"`). Load `auth` once per webview session
+   to set the cookie, then navigate panels to
+   `<url>?embedded=1#/script/page`. `embedded=1` (or being in an iframe)
+   tells the page its lifecycle belongs to the FE: bare-page density always
+   applies, and it never reports window geometry or closes itself.
+2. **Native rendering**: subscribe to `/ws` (same cookie) and render the
+   JSON component trees (`schema_version`) with your own widgets - the
+   fully theme-matched path.
+3. **Bridge for closed FEs** (Wrayth): a Lich-side translator can subscribe
+   to a page in-process and re-render a reduced widget set as `dialogData`
+   windows (planned; see the roadmap).
+
+The `pages` list in the hello envelope carries embedding hints: pages
+registered with `kind: :panel` (dock me) or `kind: :window` (float me),
+plus `bare` and preferred `size` - enough to build an "Add panel" menu.
+Trust note: the handshake hands the FE the session token, which is
+script-level power; the FE is the player's agent and already carries the
+account password and every game line.
+
 ## Security model
 
 - The server binds `127.0.0.1` only and every request must carry a session

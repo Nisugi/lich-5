@@ -139,6 +139,20 @@ module Lich
       "#{base}&to=#{encode_component("/#/#{page_id}")}"
     end
 
+    # Machine-readable service descriptor for frontends that embed WebUI
+    # pages as panels (";ui handshake"): exactly one parseable line with
+    # the tokenized auth URL. Handing the FE the token is not a privilege
+    # escalation - the FE is the player's agent and already carries the
+    # account password and every game line. Panel URLs append
+    # "?embedded=1#/script/page" (see docs/webui.md, Frontend integration).
+    #
+    # @return [String]
+    def self.handshake_payload
+      return '<LichWebUI status="stopped"/>' unless running?
+
+      %(<LichWebUI status="ok" port="#{port}" url="#{url}" auth="#{auth_url}" schema="#{Protocol::SCHEMA_VERSION}"/>)
+    end
+
     # Opens a URL in the player's browser, falling back silently - callers
     # should always print the URL too.
     #
@@ -249,9 +263,11 @@ module Lich
     # @param every [Numeric, nil] optional re-render polling interval
     # @param bare [Boolean] chromeless page (no topbar/nav/padding) - for
     #   floating displays like the map
+    # @param kind [Symbol, String, nil] hint for embedding frontends:
+    #   :panel (dock me) or :window (float me); advertised in the page list
     # @yieldparam ui [Builder]
     # @return [Page, nil] nil when disabled or called outside a script
-    def self.register_page(name, title: nil, every: nil, bare: false, size: nil, &block)
+    def self.register_page(name, title: nil, every: nil, bare: false, size: nil, kind: nil, &block)
       return nil unless ensure_service!
 
       script = Script.current if defined?(Script) && Script.respond_to?(:current)
@@ -270,7 +286,8 @@ module Lich
         every: every,
         bare: bare,
         size: size,
-        position: position
+        position: position,
+        kind: kind
       )
       Registry.register(page)
     end

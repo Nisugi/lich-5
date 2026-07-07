@@ -22,13 +22,15 @@ module UI
   # @param title [String, nil] browser-facing title (defaults to the name)
   # @param every [Numeric, nil] optional polling interval in seconds; the
   #   page re-renders on this cadence while a browser is viewing it
+  # @param kind [Symbol, nil] embedding hint for frontends: :panel (dock
+  #   me, e.g. a status bar) or :window (float me, e.g. the map)
   # @yieldparam ui [Lich::WebUI::Builder] emit components on each render
   # @return [Lich::WebUI::Page, nil] nil when disabled or not in a script
-  def self.page(name, title: nil, every: nil, bare: false, size: nil, &block)
+  def self.page(name, title: nil, every: nil, bare: false, size: nil, kind: nil, &block)
     return nil unless available?
     raise ArgumentError, 'UI.page requires a block' unless block
 
-    Lich::WebUI.register_page(name, title: title, every: every, bare: bare, size: size, &block)
+    Lich::WebUI.register_page(name, title: title, every: every, bare: bare, size: size, kind: kind, &block)
   end
 
   # Opens the player's browser directly on one of the calling script's

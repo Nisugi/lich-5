@@ -2634,6 +2634,11 @@ def do_client(client_string)
         else
           respond "--- Lich: usage: #{$clean_lich_char}ui login on|off"
         end
+      when 'handshake'
+        # Machine-readable, for frontends embedding WebUI pages: exactly one
+        # <LichWebUI .../> line, always.
+        Lich::WebUI.ensure_service! if Lich::WebUI.enabled?
+        respond(Lich::WebUI.enabled? || Lich::WebUI.running? ? Lich::WebUI.handshake_payload : '<LichWebUI status="disabled"/>')
       when 'url', nil
         if !Lich::WebUI.enabled?
           respond "--- Lich: WebUI is disabled. Enable it with #{$clean_lich_char}ui on"
@@ -2648,7 +2653,7 @@ def do_client(client_string)
           respond '--- Lich: WebUI failed to start; check the debug log.'
         end
       else
-        respond "--- Lich: usage: #{$clean_lich_char}ui [on|off|url]"
+        respond "--- Lich: usage: #{$clean_lich_char}ui [on|off|url|handshake]"
       end
     elsif cmd =~ /^help$/i
       respond

@@ -160,6 +160,19 @@ RSpec.describe Lich::WebUI::Page do
     expect(tree[:position]).to eq([100, 50])
   end
 
+  it 'advertises embedding hints in its descriptor' do
+    plain = build_page { |ui| ui.text 'x' }
+    expect(plain.descriptor).to eq(id: 'demo/hunt', title: 'Hunt', script: 'demo')
+
+    panel = described_class.new(
+      id: 'demo/bar', title: 'Bar', script: fake_script,
+      block: proc { |ui| ui.text 'x' }, bare: true, size: [300, 120],
+      kind: :panel, dispatcher: inline_dispatcher
+    )
+    expect(panel.descriptor).to eq(id: 'demo/bar', title: 'Bar', script: 'demo',
+                                   kind: 'panel', bare: true, size: [300, 120])
+  end
+
   it 'renders an error node when the page block raises' do
     page = build_page { |_ui| raise 'boom' }
     page.subscribe(connection)

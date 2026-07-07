@@ -114,6 +114,18 @@ RSpec.describe Lich::WebUI do
     end
   end
 
+  describe '.handshake_payload' do
+    it 'reports stopped when not running and a parseable descriptor when running' do
+      expect(described_class.handshake_payload).to eq('<LichWebUI status="stopped"/>')
+
+      allow(described_class).to receive(:enabled?).and_return(true)
+      described_class.ensure_service!
+      expect(described_class.handshake_payload).to match(
+        %r{\A<LichWebUI status="ok" port="\d+" url="http://127\.0\.0\.1:\d+/" auth="http://127\.0\.0\.1:\d+/auth\?token=[0-9a-f]{64}" schema="\d+"/>\z}
+      )
+    end
+  end
+
   describe '.refresh_hello' do
     it 'rewrites the discovery file with the post-login session identity' do
       allow(described_class).to receive(:enabled?).and_return(true)

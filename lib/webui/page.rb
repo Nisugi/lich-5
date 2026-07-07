@@ -113,7 +113,7 @@ module Lich
       # @param dispatcher [#call, nil] injectable for specs; see
       #   DEFAULT_DISPATCHER for the (script, timeout, on_timeout, work)
       #   contract
-      def initialize(id:, title:, script:, block:, every: nil, bare: false, size: nil, position: nil, dispatcher: nil)
+      def initialize(id:, title:, script:, block:, every: nil, bare: false, size: nil, position: nil, kind: nil, dispatcher: nil)
         @id = id
         @title = title
         @script = script
@@ -127,6 +127,7 @@ module Lich
         @bare = !!bare
         @size = (size.is_a?(Array) ? size.first(2).map(&:to_i) : nil)
         @position = (position.is_a?(Array) ? position.first(2).map(&:to_i) : nil)
+        @kind = (%w[panel window].include?(kind.to_s) ? kind.to_s : nil)
         @dispatcher = dispatcher || DEFAULT_DISPATCHER
         @state = PageState.new
         @callbacks = {}
@@ -140,9 +141,15 @@ module Lich
         @poll_thread = nil
       end
 
-      # @return [Hash] descriptor for the hello/pages envelopes
+      # @return [Hash] descriptor for the hello/pages envelopes. The
+      #   optional embedding hints (kind/bare/size) let a frontend build an
+      #   "Add panel" menu without loading each page first.
       def descriptor
-        { id: @id, title: @title, script: @script_name }
+        d = { id: @id, title: @title, script: @script_name }
+        d[:kind] = @kind if @kind
+        d[:bare] = true if @bare
+        d[:size] = @size if @size
+        d
       end
 
       # Adds a browser connection and immediately sends the current tree
