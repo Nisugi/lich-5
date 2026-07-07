@@ -134,18 +134,21 @@ module Lich
       # client-side column sorting, and a block to make rows clickable -
       # it receives the clicked row's index into +rows+ (stable regardless
       # of the browser's current sort order). Use selected: to highlight
-      # the row your state considers chosen.
+      # the row your state considers chosen. max_height: (pixels) caps the
+      # table's height and scrolls the rows inside it - headings stay
+      # pinned - so a large table never stretches the whole page.
       #
       #   ui.table(rows, headings: %w[Script Author], sortable: true,
-      #            selected: ui.state[:pick]) { |i| ui.state[:pick] = i }
+      #            selected: ui.state[:pick], max_height: 400) { |i| ui.state[:pick] = i }
       #
       # @param rows [Array<Array<#to_s>>]
       # @param headings [Array<#to_s>, nil]
       # @param sortable [Boolean]
       # @param selected [Integer, nil] row index to highlight
+      # @param max_height [Integer, nil] pixel cap; rows scroll within it
       # @yieldparam index [Integer] clicked row index
       # @return [void]
-      def table(rows, headings: nil, sortable: false, selected: nil, key: nil, &block)
+      def table(rows, headings: nil, sortable: false, selected: nil, max_height: nil, key: nil, &block)
         node_attrs = {
           headings: headings&.map(&:to_s),
           rows: rows.map { |row| Array(row).map(&:to_s) }
@@ -153,6 +156,7 @@ module Lich
         node_attrs[:sortable] = true if sortable
         node_attrs[:clickable] = true if block
         node_attrs[:selected] = selected.to_i if selected
+        node_attrs[:max_height] = max_height.to_i if max_height
         emit('table', key: key, **node_attrs, &block)
       end
 
@@ -178,12 +182,16 @@ module Lich
       #
       # compact: true sizes each column to its content instead of equal
       # widths - use it for small button groups (row actions).
+      # weights: gives columns proportional widths instead of equal ones -
+      # weights: [7, 3] is a 70/30 split (master list next to a detail
+      # panel). Ignored when compact.
       #
       # @param count [Integer]
       # @param compact [Boolean]
+      # @param weights [Array<Numeric>, nil] one relative width per column
       # @yieldparam columns [Builder] one argument per column
       # @return [void]
-      def columns(count = 2, compact: false, key: nil)
+      def columns(count = 2, compact: false, weights: nil, key: nil)
         cid = claim_cid('columns', key)
         children = Array.new(count) { |i| child_builder("#{cid}.c#{i}") }
         yield(*children)
@@ -194,6 +202,7 @@ module Lich
           end
         }
         node[:compact] = true if compact
+        node[:weights] = weights.first(count).map(&:to_f) if !compact && weights.is_a?(Array)
         @nodes << node
       end
 

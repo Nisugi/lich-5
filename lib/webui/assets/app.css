@@ -210,7 +210,17 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
   padding: 0.45em 0.8em;
   border-bottom: 1px solid var(--border);
 }
-.c-table th { color: var(--muted); font-weight: 600; font-size: 0.9em; }
+.c-table th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9em;
+  /* pinned headings for max_height scrolling tables; solid background so
+   * rows never show through while scrolling */
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  z-index: 1;
+}
 .c-table tbody tr:last-child td { border-bottom: none; }
 .c-table th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
 .c-table th.sortable:hover { color: var(--accent); }

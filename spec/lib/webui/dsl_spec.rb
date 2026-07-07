@@ -119,6 +119,22 @@ RSpec.describe Lich::WebUI::Builder do
       expect(builder.nodes.last[:compact]).to be(true)
     end
 
+    it 'carries proportional column weights, ignored when compact' do
+      builder.columns(2, weights: [7, 3]) { |a, b| a.text 'wide'; b.text 'narrow' }
+      expect(builder.nodes.last[:weights]).to eq([7.0, 3.0])
+
+      builder.columns(2, compact: true, weights: [7, 3]) { |a, b| a.text 'x'; b.text 'y' }
+      expect(builder.nodes.last).not_to have_key(:weights)
+    end
+
+    it 'carries a max_height cap for scrolling tables' do
+      builder.table([%w[a b]], headings: %w[C1 C2], max_height: 400)
+      expect(builder.nodes.last[:max_height]).to eq(400)
+
+      builder.table([%w[a b]])
+      expect(builder.nodes.last).not_to have_key(:max_height)
+    end
+
     it 'yields one builder per tab with labels' do
       builder.tabs(%w[Loot Stats]) do |loot, stats|
         loot.text 'loot here'

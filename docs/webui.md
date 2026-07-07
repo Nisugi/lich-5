@@ -124,17 +124,20 @@ right for row-action button groups):
 ```ruby
 ui.expander("Settings", open: false) { |section| section.checkbox("Loot") { |v| ... } }
 ui.columns(2) { |left, right| left.button("Go") { ... }; right.text "status" }
+ui.columns(2, weights: [7, 3]) { |list, detail| ... }   # 70/30 master-detail split
 ui.tabs(%w[Loot Stats]) { |loot, stats| loot.table(...); stats.text(...) }
 ui.tabs(names, vertical: true) { |*tabs| ... }   # tab bar as a left sidebar
 ```
 
 Tables become interactive with `sortable:` (client-side column sort), a
 row-click block (receives the clicked row's index into your original rows,
-regardless of sort order), and `selected:` for highlighting:
+regardless of sort order), and `selected:` for highlighting. `max_height:`
+(pixels) scrolls a big table inside a fixed cap with pinned headings instead
+of stretching the page:
 
 ```ruby
 ui.table(rows, headings: %w[Script Author], sortable: true,
-         selected: ui.state[:pick]) { |i| ui.state[:pick] = i }
+         selected: ui.state[:pick], max_height: 400) { |i| ui.state[:pick] = i }
 ```
 
 ### Local images and live maps
