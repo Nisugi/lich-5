@@ -14,9 +14,13 @@ Tracks your current room on visual maps
       game: Gemstone
       tags: core, movement, mapping
       required: Lich >= 5.13.0
-      version: 2.3.0
+      version: 2.3.1
 
   changelog:
+    v2.3.1 (2026-07-07)
+      * Window lifecycle parity: closing the map window (X) exits the script,
+        and killing the script (;k map) closes the map and settings windows.
+        The right-click settings popup remembers its size and position.
     v2.3.0 (2026-07-06)
       * WebUI map settings close the gap to the GTK context menu: categorized
         map picker with friendly names (meta:mapcategory/mapshortname), tag and
@@ -3342,11 +3346,20 @@ module ElanthiaMap
       end
     end
 
+    # Closing the map window should kill the script, like closing the GTK
+    # window. Dead connections are detected within one server keepalive
+    # (~30s); the grace on top tolerates reloads and reconnects.
+    WINDOW_GRACE = 15
+
     # Same room-change tracking loop as ElanthiaMap.run, driving UI.refresh
-    # instead of GTK widget updates.
+    # instead of GTK widget updates - plus the window watchdog.
     def follow_loop
+      connected_once = false
+      gone_since = nil
+      last_count = nil
       until @done
-        if @follow
+        if @follow && last_count != $room_count
+          last_count = $room_count
           current = Room.current
           if current && current.image
             changed = (@map != current.image) || (@current_id != current.id)
@@ -3356,9 +3369,21 @@ module ElanthiaMap
             UI.refresh('map') if changed
           end
         end
-        count = $room_count
-        sleep 0.2 while count == $room_count && !@done
-        sleep 0.1 while !@follow && !@done
+
+        # X on the map window = quit (GTK parity)
+        if UI.respond_to?(:viewers?)
+          if UI.viewers?('map')
+            connected_once = true
+            gone_since = nil
+          elsif connected_once
+            gone_since ||= Time.now
+            if Time.now - gone_since > WINDOW_GRACE
+              respond '[map: window closed - exiting]'
+              @done = true
+            end
+          end
+        end
+        sleep 0.2
       end
     end
   end
