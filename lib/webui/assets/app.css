@@ -239,8 +239,23 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
   box-sizing: border-box;
 }
 .c-im-marker.current {
-  border-color: var(--error);
-  background: color-mix(in srgb, var(--error) 25%, transparent);
+  border: 3px solid #e51616;
+  border-radius: 50%;
+  background: rgba(229, 22, 22, 0.18);
+  box-shadow: 0 0 6px 1px rgba(229, 22, 22, 0.9);
+}
+
+/* bare pages: no topbar, no nav, no padding - a floating display (map) */
+body.bare-page #topbar { display: none; }
+body.bare-page main { max-width: none; padding: 0; }
+body.bare-page .page-nav { display: none; }
+body.bare-page .page-body > * { margin: 0; }
+body.bare-page .page-body > .c-columns { padding: 0.4em; }
+body.bare-page .c-image-map {
+  max-height: 100vh;
+  height: 100vh;
+  border: none;
+  border-radius: 0;
 }
 .c-im-marker.pin {
   border-radius: 50%;

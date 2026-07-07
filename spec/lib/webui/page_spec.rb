@@ -122,6 +122,21 @@ RSpec.describe Lich::WebUI::Page do
     expect(connection.renders.last[:seq]).to eq(2)
   end
 
+  it 'marks bare pages in the render tree' do
+    page = described_class.new(
+      id: 'demo/map', title: 'Map', script: fake_script,
+      block: proc { |ui| ui.text 'x' },
+      bare: true, dispatcher: inline_dispatcher
+    )
+    page.subscribe(connection)
+    expect(connection.renders.first[:tree][:bare]).to be(true)
+
+    normal = build_page { |ui| ui.text 'x' }
+    other = fake_connection_class.new
+    normal.subscribe(other)
+    expect(other.renders.first[:tree]).not_to have_key(:bare)
+  end
+
   it 'renders an error node when the page block raises' do
     page = build_page { |_ui| raise 'boom' }
     page.subscribe(connection)

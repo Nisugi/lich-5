@@ -119,13 +119,19 @@ module Lich
       "http://#{HOST}:#{port}/"
     end
 
-    # Opens a URL in the player's default browser, falling back silently -
-    # callers should always print the URL too.
+    # Opens a URL in the player's browser, falling back silently - callers
+    # should always print the URL too.
+    #
+    # app: true asks for a chromeless "app mode" window (no tabs/URL bar -
+    # a floating, draggable, resizable window) via Edge or Chrome; when
+    # neither launches, falls back to the default browser.
     #
     # @param target [String]
+    # @param app [Boolean]
     # @return [Boolean] true when a launcher was invoked
-    def self.open_browser(target)
+    def self.open_browser(target, app: false)
       return false if target.nil? || target.empty?
+      return true if app && open_app_window(target)
 
       if defined?(Win32) && Win32.respond_to?(:ShellExecute)
         Win32.ShellExecute(:lpOperation => 'open', :lpFile => target)
@@ -142,6 +148,62 @@ module Lich
       false
     end
 
+    # Attempts a chromeless app-mode window. Returns false when no known
+    # chromium-family browser could be started.
+    #
+    # @param target [String]
+    # @return [Boolean]
+    def self.open_app_window(target)
+      if defined?(Win32) && Win32.respond_to?(:ShellExecute)
+        # ShellExecute resolves msedge/chrome via the App Paths registry.
+        %w[msedge.exe chrome.exe].each do |exe|
+          result = Win32.ShellExecute(:lpOperation => 'open', :lpFile => exe, :lpParameters => "--app=#{target}")
+          return true if result.to_i > 32 # per ShellExecute docs, >32 = success
+        end
+        false
+      elsif RUBY_PLATFORM =~ /darwin/i
+        system('open', '-na', 'Google Chrome', '--args', "--app=#{target}") ||
+          system('open', '-na', 'Microsoft Edge', '--args', "--app=#{target}")
+      else
+        %w[google-chrome chromium chromium-browser microsoft-edge].any? do |exe|
+          system("#{exe} --app=#{shell_quote(target)} >/dev/null 2>&1 &")
+        end
+      end
+    rescue StandardError
+      false
+    end
+
+    # @param value [String]
+    # @return [String]
+    def self.shell_quote(value)
+      "'#{value.gsub("'", "'\\\\''")}'"
+    end
+    private_class_method :shell_quote
+
+    # Opens the browser straight to a page (or the landing page), riding the
+    # /auth redirect so the tab is authorized on arrival. app: true requests
+    # a chromeless floating window - right for bare pages like the map.
+    #
+    # @param page_id [String, nil] full "script/page" id
+    # @param app [Boolean]
+    # @return [Boolean]
+    def self.open_page(page_id = nil, app: false)
+      return false unless ensure_service!
+
+      target = auth_url
+      target += "&to=#{encode_component("/#/#{page_id}")}" if page_id
+      open_browser(target, app: app)
+    end
+
+    # Minimal percent-encoder for the auth redirect target.
+    #
+    # @param value [String]
+    # @return [String]
+    def self.encode_component(value)
+      value.gsub(%r{[^A-Za-z0-9\-_.~/]}) { |char| format('%%%02X', char.ord) }
+    end
+    private_class_method :encode_component
+
     # @return [Array<Hash>] registered page descriptors for the hello/pages
     #   envelopes
     def self.pages_snapshot
@@ -154,9 +216,11 @@ module Lich
     # @param name [String] page name, unique within the calling script
     # @param title [String, nil]
     # @param every [Numeric, nil] optional re-render polling interval
+    # @param bare [Boolean] chromeless page (no topbar/nav/padding) - for
+    #   floating displays like the map
     # @yieldparam ui [Builder]
     # @return [Page, nil] nil when disabled or called outside a script
-    def self.register_page(name, title: nil, every: nil, &block)
+    def self.register_page(name, title: nil, every: nil, bare: false, &block)
       return nil unless ensure_service!
 
       script = Script.current if defined?(Script) && Script.respond_to?(:current)
@@ -170,7 +234,8 @@ module Lich
         title: title ? title.to_s : name.to_s,
         script: script,
         block: block,
-        every: every
+        every: every,
+        bare: bare
       )
       Registry.register(page)
     end

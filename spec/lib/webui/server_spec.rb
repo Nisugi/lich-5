@@ -86,6 +86,19 @@ RSpec.describe Lich::WebUI::Server do
       expect(headers['set-cookie']).to be_nil
       expect(body).not_to include(token)
     end
+
+    it 'honors a local deep-link target' do
+      status, headers, = http_request("/auth?token=#{token}&to=/%23/map/map")
+      expect(status).to eq(302)
+      expect(headers['location']).to eq('/#/map/map')
+    end
+
+    it 'refuses open-redirect targets' do
+      ['//evil.example.com', 'https://evil.example.com', '/%0d%0aSet-Cookie:%20x'].each do |target|
+        _, headers, = http_request("/auth?token=#{token}&to=#{target}")
+        expect(headers['location']).to eq('/'), "expected / for #{target}, got #{headers['location']}"
+      end
+    end
   end
 
   describe 'asset routes' do

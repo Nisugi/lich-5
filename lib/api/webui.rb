@@ -24,11 +24,28 @@ module UI
   #   page re-renders on this cadence while a browser is viewing it
   # @yieldparam ui [Lich::WebUI::Builder] emit components on each render
   # @return [Lich::WebUI::Page, nil] nil when disabled or not in a script
-  def self.page(name, title: nil, every: nil, &block)
+  def self.page(name, title: nil, every: nil, bare: false, &block)
     return nil unless available?
     raise ArgumentError, 'UI.page requires a block' unless block
 
-    Lich::WebUI.register_page(name, title: title, every: every, &block)
+    Lich::WebUI.register_page(name, title: title, every: every, bare: bare, &block)
+  end
+
+  # Opens the player's browser directly on one of the calling script's
+  # pages (no landing-page detour). app: true requests a chromeless
+  # floating window (Edge/Chrome app mode) - the right choice for bare
+  # pages like a map; falls back to a normal tab.
+  #
+  # @param name [String] page name or full "script/page" id
+  # @param app [Boolean]
+  # @return [Boolean]
+  def self.open(name, app: false)
+    return false unless available?
+
+    page = find(name)
+    return false unless page
+
+    Lich::WebUI.open_page(page.id, app: app)
   end
 
   # Schedules a re-render push to any browsers viewing the page. Callable

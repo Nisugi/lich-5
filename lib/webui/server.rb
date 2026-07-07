@@ -355,11 +355,21 @@ module Lich
           return respond_error(socket, 403, 'Forbidden')
         end
 
+        # `to` allows deep-linking straight to a page after the cookie is
+        # set; only local absolute paths are honored (no scheme-relative
+        # //host, no full URLs, no header injection - no open redirect).
+        target = percent_decode(query_params(request)['to'].to_s)
+        target = '/' unless target.start_with?('/') && !target.start_with?('//') && !target.match?(/[\r\n]/)
+
         headers = [
-          'Location: /',
+          "Location: #{target}",
           "Set-Cookie: #{COOKIE_NAME}=#{@auth_token}; HttpOnly; SameSite=Strict; Path=/"
         ]
         respond(socket, 302, 'Found', '', extra_headers: headers)
+      end
+
+      def percent_decode(raw)
+        raw.gsub(/%([0-9A-Fa-f]{2})/) { [Regexp.last_match(1)].pack('H2') }
       end
 
       # Serves the static bundle from a fixed whitelist - no path is ever

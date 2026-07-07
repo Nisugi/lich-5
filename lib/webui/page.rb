@@ -106,7 +106,7 @@ module Lich
       # @param dispatcher [#call, nil] injectable for specs; see
       #   DEFAULT_DISPATCHER for the (script, timeout, on_timeout, work)
       #   contract
-      def initialize(id:, title:, script:, block:, every: nil, dispatcher: nil)
+      def initialize(id:, title:, script:, block:, every: nil, bare: false, dispatcher: nil)
         @id = id
         @title = title
         @script = script
@@ -114,6 +114,7 @@ module Lich
         @owner_id = script.object_id
         @block = block
         @every = every&.to_f
+        @bare = !!bare
         @dispatcher = dispatcher || DEFAULT_DISPATCHER
         @state = PageState.new
         @callbacks = {}
@@ -247,7 +248,9 @@ module Lich
           @mutex.synchronize do
             @callbacks = builder.callbacks
             @seq += 1
-            json = Protocol.render(page: @id, seq: @seq, tree: { t: 'page', title: @title, children: builder.nodes })
+            tree = { t: 'page', title: @title, children: builder.nodes }
+            tree[:bare] = true if @bare
+            json = Protocol.render(page: @id, seq: @seq, tree: tree)
             @last_render_json = json
           end
           broadcast(json)
