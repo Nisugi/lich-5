@@ -65,10 +65,10 @@ module Lich
         @error = nil
         @busy = nil
 
-        page = WebUI.register_core_page('login', title: "Lich #{defined?(LICH_VERSION) ? LICH_VERSION : ''}".strip, bare: true) { |ui| render(ui) }
+        page = WebUI.register_core_page('login', title: "Lich #{defined?(LICH_VERSION) ? LICH_VERSION : ''}".strip, bare: true, size: [560, 580]) { |ui| render(ui) }
         return :fallback unless page
 
-        unless WebUI.open_page('lich/login', app: true, size: [480, 640])
+        unless WebUI.open_page('lich/login', app: true, size: [560, 580])
           puts "Lich WebUI login: #{WebUI.auth_url}" rescue nil
         end
         Lich.log("info: WebUI login waiting at #{WebUI.auth_url}") if defined?(Lich) && Lich.respond_to?(:log)
@@ -98,25 +98,30 @@ module Lich
 
         entries = @entries_loader.call
         saved = entries.select { |entry| entry.is_a?(Hash) && entry[:char_name] }
-        unless saved.empty?
-          ui.header 'Saved characters'
-          saved.each do |entry|
-            label = "#{entry[:char_name]} - #{entry[:game_name] || entry[:game_code]} (#{entry[:user_id] || entry[:username]})"
-            ui.columns(2, key: "row_#{entry[:char_name]}_#{entry[:game_code]}_#{entry[:username]}") do |main, actions|
-              main.text label
-              actions.button('Play', key: "play_#{entry[:char_name]}_#{entry[:game_code]}_#{entry[:username]}") { play_saved(entry) }
+
+        # Mirror the GTK launcher: Saved Entry / Manual Entry tabs, entries
+        # grouped under centered "Account:" headers, Play per row.
+        ui.tabs(['Saved Entry', 'Manual Entry']) do |saved_tab, manual_tab|
+          saved_tab.text 'No saved characters yet - use Manual Entry.' if saved.empty?
+          saved.group_by { |entry| (entry[:username] || entry[:user_id]).to_s }.each do |account, chars|
+            saved_tab.markdown "**Account: #{account.downcase}**"
+            chars.each do |entry|
+              frontend_label = entry[:frontend].to_s.empty? ? '' : ", #{entry[:frontend].to_s.capitalize}"
+              row_key = "#{entry[:char_name]}_#{entry[:game_code]}_#{account}"
+              saved_tab.columns(2, key: "row_#{row_key}") do |main, actions|
+                main.text "#{entry[:char_name]} (#{entry[:game_name] || entry[:game_code]}#{frontend_label})"
+                actions.button('Play', key: "play_#{row_key}") { play_saved(entry) }
+              end
             end
           end
-        end
+          saved_tab.button('Refresh Entries', key: :refresh) { nil } # rerender reloads from disk
 
-        ui.divider
-        ui.expander('Manual login', open: saved.empty?) do |form|
-          form.text_input('Account', value: ui.state[:account], key: :account) { |v| ui.state[:account] = v.strip }
-          form.password_input('Password', key: :password) { |v| ui.state[:password] = v }
-          form.select('Game', options: GAME_CODES.keys, value: ui.state[:game] || 'GS4 Prime', key: :game) { |v| ui.state[:game] = v }
-          form.text_input('Character', value: ui.state[:character], key: :character) { |v| ui.state[:character] = v.strip }
-          form.select('Frontend', options: FRONTENDS, value: ui.state[:frontend] || 'wrayth', key: :frontend) { |v| ui.state[:frontend] = v }
-          form.button('Log in', key: :manual_play) { play_manual(ui.state) }
+          manual_tab.text_input('User ID', value: ui.state[:account], key: :account) { |v| ui.state[:account] = v.strip }
+          manual_tab.password_input('Password', key: :password) { |v| ui.state[:password] = v }
+          manual_tab.select('Game', options: GAME_CODES.keys, value: ui.state[:game] || 'GS4 Prime', key: :game) { |v| ui.state[:game] = v }
+          manual_tab.text_input('Character', value: ui.state[:character], key: :character) { |v| ui.state[:character] = v.strip }
+          manual_tab.select('Frontend', options: FRONTENDS, value: ui.state[:frontend] || 'wrayth', key: :frontend) { |v| ui.state[:frontend] = v }
+          manual_tab.button('Play', key: :manual_play) { play_manual(ui.state) }
         end
       end
 

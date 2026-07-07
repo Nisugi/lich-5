@@ -24,11 +24,11 @@ module UI
   #   page re-renders on this cadence while a browser is viewing it
   # @yieldparam ui [Lich::WebUI::Builder] emit components on each render
   # @return [Lich::WebUI::Page, nil] nil when disabled or not in a script
-  def self.page(name, title: nil, every: nil, bare: false, &block)
+  def self.page(name, title: nil, every: nil, bare: false, size: nil, &block)
     return nil unless available?
     raise ArgumentError, 'UI.page requires a block' unless block
 
-    Lich::WebUI.register_page(name, title: title, every: every, bare: bare, &block)
+    Lich::WebUI.register_page(name, title: title, every: every, bare: bare, size: size, &block)
   end
 
   # Opens the player's browser directly on one of the calling script's

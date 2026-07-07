@@ -296,3 +296,11 @@ body.bare-page .c-image-map {
 .c-tab-button.active { color: var(--accent); border-bottom-color: var(--accent); }
 .c-tab-panel { padding-top: 0.8em; }
 .c-tab-panel > * { margin: 0 0 0.8em; }
+
+/* login-style bare pages: GTK-launcher density */
+body.bare-page { font-size: 14px; }
+body.bare-page .page-body { padding: 0.4em 0.8em; }
+body.bare-page .page-body .c-columns:not(.compact) { gap: 0.4em; }
+body.bare-page .page-body .c-columns:not(.compact) .c-col > * { margin: 0 0 0.15em; }
+body.bare-page .c-markdown { margin: 0.5em 0 0.15em; text-align: center; }
+body.bare-page .c-button { padding: 0.2em 0.9em; font-size: 0.95em; }

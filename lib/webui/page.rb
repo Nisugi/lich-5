@@ -113,7 +113,7 @@ module Lich
       # @param dispatcher [#call, nil] injectable for specs; see
       #   DEFAULT_DISPATCHER for the (script, timeout, on_timeout, work)
       #   contract
-      def initialize(id:, title:, script:, block:, every: nil, bare: false, dispatcher: nil)
+      def initialize(id:, title:, script:, block:, every: nil, bare: false, size: nil, dispatcher: nil)
         @id = id
         @title = title
         @script = script
@@ -125,6 +125,7 @@ module Lich
         @block = block
         @every = every&.to_f
         @bare = !!bare
+        @size = (size.is_a?(Array) ? size.first(2).map(&:to_i) : nil)
         @dispatcher = dispatcher || DEFAULT_DISPATCHER
         @state = PageState.new
         @callbacks = {}
@@ -277,6 +278,7 @@ module Lich
             @seq += 1
             tree = { t: 'page', title: @title, children: builder.nodes }
             tree[:bare] = true if @bare
+            tree[:size] = @size if @bare && @size
             json = Protocol.render(page: @id, seq: @seq, tree: tree)
             @last_render_json = json
           end

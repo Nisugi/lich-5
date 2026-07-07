@@ -228,7 +228,7 @@ module Lich
     #   floating displays like the map
     # @yieldparam ui [Builder]
     # @return [Page, nil] nil when disabled or called outside a script
-    def self.register_page(name, title: nil, every: nil, bare: false, &block)
+    def self.register_page(name, title: nil, every: nil, bare: false, size: nil, &block)
       return nil unless ensure_service!
 
       script = Script.current if defined?(Script) && Script.respond_to?(:current)
@@ -243,7 +243,8 @@ module Lich
         script: script,
         block: block,
         every: every,
-        bare: bare
+        bare: bare,
+        size: size
       )
       Registry.register(page)
     end
@@ -255,7 +256,7 @@ module Lich
     #
     # @param name [String]
     # @return [Page, nil]
-    def self.register_core_page(name, title: nil, bare: false, every: nil, &block)
+    def self.register_core_page(name, title: nil, bare: false, size: nil, every: nil, &block)
       return nil unless ensure_service!(force: true)
 
       page = Page.new(
@@ -264,7 +265,8 @@ module Lich
         script: nil,
         block: block,
         every: every,
-        bare: bare
+        bare: bare,
+        size: size
       )
       Registry.register(page)
     end
