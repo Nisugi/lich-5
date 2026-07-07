@@ -61,6 +61,11 @@ module Lich
     #
     # @return [Boolean] true when the service is available
     def self.ensure_service!(force: false)
+      # An already-running service is available no matter what the flag
+      # says - the flag gates STARTING the server, not using it. The
+      # pre-login launcher force-starts it under its own :webui_login flag,
+      # and open_page must keep working even when :webui itself is off.
+      return true if running?
       return false unless force || enabled?
 
       @mutex.synchronize do
@@ -120,6 +125,18 @@ module Lich
       return nil unless running?
 
       "http://#{HOST}:#{port}/"
+    end
+
+    # Tokenized URL that lands directly on a page after the auth redirect -
+    # for logs, so a manually-followed link opens the page, not the landing.
+    #
+    # @param page_id [String, nil]
+    # @return [String, nil]
+    def self.auth_url_for(page_id)
+      base = auth_url
+      return base unless base && page_id
+
+      "#{base}&to=#{encode_component("/#/#{page_id}")}"
     end
 
     # Opens a URL in the player's browser, falling back silently - callers

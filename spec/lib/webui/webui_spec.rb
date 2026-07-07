@@ -22,6 +22,18 @@ RSpec.describe Lich::WebUI do
       expect(described_class.auth_url).to be_nil
     end
 
+    it 'stays available while running even when the flag is off (pre-login launcher)' do
+      # the login launcher force-starts the server under :webui_login; a
+      # disabled :webui flag must not break open_page afterwards
+      allow(described_class).to receive(:enabled?).and_return(false)
+      expect(described_class.ensure_service!(force: true)).to be(true)
+
+      allow(described_class).to receive(:open_browser).and_return(true)
+      expect(described_class.ensure_service!).to be(true)
+      expect(described_class.open_page('lich/login', app: true, size: [560, 580])).to be(true)
+      expect(described_class.auth_url_for('lich/login')).to match(%r{/auth\?token=[0-9a-f]{64}&to=/%23/lich/login\z})
+    end
+
     it 'starts the server, exposes URLs, and writes a discovery file when enabled' do
       allow(described_class).to receive(:enabled?).and_return(true)
 

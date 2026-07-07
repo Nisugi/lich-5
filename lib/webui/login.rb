@@ -95,10 +95,14 @@ module Lich
         page = WebUI.register_core_page('login', title: "Lich #{defined?(LICH_VERSION) ? LICH_VERSION : ''}".strip, bare: true, size: [560, 580]) { |ui| render(ui) }
         return :fallback unless page
 
-        unless WebUI.open_page('lich/login', app: true, size: [560, 580])
-          puts "Lich WebUI login: #{WebUI.auth_url}" rescue nil
+        login_url = WebUI.auth_url_for('lich/login')
+        if WebUI.open_page('lich/login', app: true, size: [560, 580])
+          Lich.log("info: WebUI login window opened (#{login_url})") if defined?(Lich) && Lich.respond_to?(:log)
+        else
+          # rubyw has no console, so the log is the only visible place
+          Lich.log("warning: WebUI login: browser did NOT open automatically - open this link manually: #{login_url}") if defined?(Lich) && Lich.respond_to?(:log)
+          puts "Lich WebUI login: #{login_url}" rescue nil
         end
-        Lich.log("info: WebUI login waiting at #{WebUI.auth_url}") if defined?(Lich) && Lich.respond_to?(:log)
 
         watchdog = start_window_watchdog(page)
         result = @queue.pop
