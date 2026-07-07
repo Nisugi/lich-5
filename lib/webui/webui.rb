@@ -199,10 +199,12 @@ module Lich
       return false unless ensure_service!
 
       # The window's last-known geometry beats caller defaults, so floating
-      # windows come back exactly where the player left them.
+      # windows come back exactly where the player left them. window_geometry
+      # may return size only (off-screen position dropped) - then keep the
+      # caller's position rather than opening off-screen.
       if page_id && (stored = window_geometry(page_id))
-        size = [stored['w'], stored['h']]
-        position = [stored['x'], stored['y']]
+        size = [stored['w'], stored['h']] if stored['w'] && stored['h']
+        position = [stored['x'], stored['y']] if stored['x'] && stored['y']
       end
       target = auth_url
       target += "&to=#{encode_component("/#/#{page_id}")}" if page_id
@@ -259,13 +261,17 @@ module Lich
     end
 
     # Remembered geometry (engine store) beats the author's default size.
+    # A size-only stored hash (off-screen position dropped) contributes its
+    # size but no position.
     #
     # @return [Array(Array|nil, Array|nil)] [size, position]
     def self.geometry_defaults(page_id, size)
       stored = window_geometry(page_id)
       return [size, nil] unless stored
 
-      [[stored['w'], stored['h']], [stored['x'], stored['y']]]
+      resolved_size = stored['w'] && stored['h'] ? [stored['w'], stored['h']] : size
+      resolved_position = stored['x'] && stored['y'] ? [stored['x'], stored['y']] : nil
+      [resolved_size, resolved_position]
     end
     private_class_method :geometry_defaults
 
@@ -354,11 +360,25 @@ module Lich
 
     GEOMETRY_SETTING = 'webui_window_geometry'
 
+    # Coordinates at or beyond this magnitude are never a real window
+    # placement: Windows reports a minimized window's position as
+    # -32000,-32000, and no monitor arrangement legitimately puts a window
+    # this far out. Restoring such a position opens the window off-screen
+    # ("nothing happened" on double-click), so we reject it on both write
+    # and read - while still allowing ordinary negative coords for monitors
+    # arranged left of / above the primary.
+    OFFSCREEN_LIMIT = 30_000
+
     # @param page_id [String]
-    # @return [Hash{String=>Integer}, nil] {'w','h','x','y'} or nil
+    # @return [Hash{String=>Integer}, nil] {'w','h','x','y'} or nil.
+    #   Drops a stored off-screen position defensively (old poisoned data),
+    #   keeping the size so the window still opens at a sane size.
     def self.window_geometry(page_id)
       geometry = geometry_store[page_id.to_s]
-      geometry.is_a?(Hash) ? geometry : nil
+      return nil unless geometry.is_a?(Hash)
+      return geometry if onscreen?(geometry['x'], geometry['y'])
+
+      { 'w' => geometry['w'], 'h' => geometry['h'] }
     end
 
     # @param page_id [String]
@@ -369,14 +389,22 @@ module Lich
 
       width = (geo[:w] || geo['w']).to_i
       height = (geo[:h] || geo['h']).to_i
+      x = (geo[:x] || geo['x']).to_i
+      y = (geo[:y] || geo['y']).to_i
       return unless width.positive? && height.positive?
+      # A minimized window reports -32000,-32000; don't overwrite the last
+      # good geometry with it - keep where the window really was.
+      return unless onscreen?(x, y)
 
-      geometry_store[page_id.to_s] = {
-        'w' => width, 'h' => height,
-        'x' => (geo[:x] || geo['x']).to_i, 'y' => (geo[:y] || geo['y']).to_i
-      }
+      geometry_store[page_id.to_s] = { 'w' => width, 'h' => height, 'x' => x, 'y' => y }
       persist_geometry_store
     end
+
+    # @return [Boolean] whether (x, y) is a plausible on-screen placement
+    def self.onscreen?(x, y)
+      x.to_i.abs < OFFSCREEN_LIMIT && y.to_i.abs < OFFSCREEN_LIMIT
+    end
+    private_class_method :onscreen?
 
     # @return [Hash] in-memory store, loaded from lich_settings once
     def self.geometry_store

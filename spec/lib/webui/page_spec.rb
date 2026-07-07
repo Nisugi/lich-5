@@ -150,6 +150,8 @@ RSpec.describe Lich::WebUI::Page do
     expect(page.state[:_window_geometry]).to eq(w: 520, h: 560, x: 100, y: 50)
     page.record_geometry('junk')
     expect(page.state[:_window_geometry]).to eq(w: 520, h: 560, x: 100, y: 50)
+    page.record_geometry(w: 520, h: 560, x: -32000, y: -32000) # minimized sentinel ignored
+    expect(page.state[:_window_geometry]).to eq(w: 520, h: 560, x: 100, y: 50)
   end
 
   it 'renders an error node when the page block raises' do

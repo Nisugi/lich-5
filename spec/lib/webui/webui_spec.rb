@@ -72,6 +72,32 @@ RSpec.describe Lich::WebUI do
       described_class.remember_window_geometry('a/b', 'nonsense')
       expect(described_class.window_geometry('a/b')).to be_nil
     end
+
+    it 'keeps ordinary negative coords (monitors left of / above primary)' do
+      described_class.remember_window_geometry('m/m', { w: 600, h: 400, x: -1200, y: -500 })
+      expect(described_class.window_geometry('m/m')).to eq({ 'w' => 600, 'h' => 400, 'x' => -1200, 'y' => -500 })
+    end
+
+    it 'never records a minimized window (the -32000 sentinel)' do
+      described_class.remember_window_geometry('m/m', { w: 600, h: 400, x: 100, y: 80 })
+      described_class.remember_window_geometry('m/m', { w: 600, h: 400, x: -32000, y: -32000 })
+      # last good geometry preserved, not overwritten by the minimized report
+      expect(described_class.window_geometry('m/m')).to eq({ 'w' => 600, 'h' => 400, 'x' => 100, 'y' => 80 })
+    end
+
+    it 'drops an off-screen stored position on read but keeps the size' do
+      described_class.instance_variable_get(:@geometry_store)['m/m'] =
+        { 'w' => 600, 'h' => 400, 'x' => -32000, 'y' => -32000 } # simulate old poisoned data
+      expect(described_class.window_geometry('m/m')).to eq({ 'w' => 600, 'h' => 400 })
+
+      allow(described_class).to receive(:enabled?).and_return(true)
+      allow(described_class).to receive(:open_browser).and_return(true)
+      described_class.ensure_service!
+      described_class.open_page('m/m', app: true, size: [520, 560], position: [10, 10])
+      # off-screen position ignored, caller position kept; size from store
+      expect(described_class).to have_received(:open_browser)
+        .with(anything, app: true, size: [600, 400], position: [10, 10])
+    end
   end
 
   describe '.refresh_hello' do

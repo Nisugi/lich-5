@@ -231,7 +231,12 @@ module Lich
           w: value[:w].to_i, h: value[:h].to_i,
           x: value[:x].to_i, y: value[:y].to_i
         }
-        @state[:_window_geometry] = geometry if geometry[:w].positive? && geometry[:h].positive?
+        return unless geometry[:w].positive? && geometry[:h].positive?
+        # a minimized window reports -32000,-32000; don't persist that as a
+        # position or the window reopens off-screen next launch
+        return unless geometry[:x].abs < 30_000 && geometry[:y].abs < 30_000
+
+        @state[:_window_geometry] = geometry
       end
 
       # Notifies subscribers the page is gone (script exited or page
