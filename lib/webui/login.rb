@@ -110,7 +110,10 @@ module Lich
               row_key = "#{entry[:char_name]}_#{entry[:game_code]}_#{account}"
               saved_tab.columns(2, key: "row_#{row_key}") do |main, actions|
                 main.text "#{entry[:char_name]} (#{entry[:game_name] || entry[:game_code]}#{frontend_label})"
-                actions.button('Play', key: "play_#{row_key}") { play_saved(entry) }
+                actions.columns(2, compact: true, key: "act_#{row_key}") do |c_play, c_remove|
+                  c_play.button('Play', key: "play_#{row_key}") { play_saved(entry) }
+                  c_remove.button('X', variant: :danger, key: "rm_#{row_key}") { remove_entry(entry) }
+                end
               end
             end
           end
@@ -123,6 +126,24 @@ module Lich
           manual_tab.select('Frontend', options: FRONTENDS, value: ui.state[:frontend] || 'wrayth', key: :frontend) { |v| ui.state[:frontend] = v }
           manual_tab.button('Play', key: :manual_play) { play_manual(ui.state) }
         end
+      end
+
+      # Deletes one saved entry (the GTK X button) and lets the rerender
+      # reload the list from disk.
+      def remove_entry(entry)
+        require File.join(LIB_DIR, 'common', 'authentication', 'entry_store') unless defined?(Lich::Common::Authentication::EntryStore)
+        store = Lich::Common::Authentication::EntryStore
+        entries = store.load_saved_entries(@data_dir, false) || []
+        entries.reject! { |candidate|
+          candidate[:char_name] == entry[:char_name] &&
+            candidate[:game_code] == entry[:game_code] &&
+            candidate[:username] == entry[:username] &&
+            candidate[:frontend] == entry[:frontend]
+        }
+        store.save_entries(@data_dir, entries)
+        @error = nil
+      rescue StandardError => e
+        @error = "Remove failed: #{e.message}"
       end
 
       # Saved-entry Play: decrypt with the stored mode, authenticate, hand
