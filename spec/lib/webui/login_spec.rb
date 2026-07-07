@@ -56,7 +56,6 @@ RSpec.describe Lich::WebUI::Login do
     end
 
     it 'authenticates a saved entry and returns launch data' do
-      allow(described_class).to receive(:decrypt_password).and_return('sekrit')
       authenticator = lambda { |account:, password:, character:, game_code:|
         expect([account, password, character, game_code]).to eq(%w[account1 sekrit Nisugi GS3])
         ['GAMECODE=GS3', 'GAMEHOST=host', 'GAMEPORT=1', 'GAME=STORM']
@@ -72,7 +71,6 @@ RSpec.describe Lich::WebUI::Login do
     end
 
     it 'reports auth failures inline and keeps waiting; Quit returns nil' do
-      allow(described_class).to receive(:decrypt_password).and_return('sekrit')
       authenticator = ->(**_) { raise 'REJECT' }
 
       result = run_login(authenticator: authenticator) do |page|

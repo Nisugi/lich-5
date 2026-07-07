@@ -279,6 +279,16 @@ module Lich
       @server&.broadcast(Protocol.pages(pages_snapshot))
     end
 
+    # Tells browsers showing +page_id+ that the page is done; a bare app
+    # window closes itself, a regular tab returns to the landing page. Used
+    # by one-shot pages like the login launcher after Play.
+    #
+    # @param page_id [String]
+    # @return [void]
+    def self.notify_page_close(page_id)
+      @server&.broadcast(Protocol.close(page_id))
+    end
+
     # Re-broadcasts the hello envelope (session identity + pages) to every
     # connected browser - call after login completes so a pre-login tab
     # picks up the character name without a reload.

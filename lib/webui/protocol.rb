@@ -52,6 +52,15 @@ module Lich
         JSON.generate(type: 'render', page: page, seq: seq, tree: tree)
       end
 
+      # Tells any browser showing +page+ that it is finished; bare app
+      # windows respond by closing themselves (the login window after Play).
+      #
+      # @param page [String] page id ("script/page")
+      # @return [String] JSON
+      def self.close(page)
+        JSON.generate(type: 'close', page: page)
+      end
+
       # Builds a user-facing notice (script exited, dispatch timed out, ...).
       #
       # @param text [String]

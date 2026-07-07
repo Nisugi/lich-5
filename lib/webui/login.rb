@@ -78,6 +78,9 @@ module Lich
         Lich.log("info: WebUI login waiting at #{WebUI.auth_url}") if defined?(Lich) && Lich.respond_to?(:log)
 
         result = @queue.pop
+        # One character per launch: tell the browser window to close itself
+        # before the page disappears from the registry.
+        WebUI.notify_page_close('lich/login')
         Registry.remove('lich/login')
         result
       end
@@ -105,7 +108,10 @@ module Lich
 
         # Mirror the GTK launcher: Saved Entry / Manual Entry tabs, entries
         # grouped under centered "Account:" headers, Play per row.
-        ui.tabs(['Saved Entry', 'Manual Entry']) do |saved_tab, manual_tab|
+        # key: keeps the tabs' cid stable even as the busy/error text nodes
+        # above come and go - without it the browser sees a "new" tabs
+        # component on every busy transition and resets to the first tab.
+        ui.tabs(['Saved Entry', 'Manual Entry'], key: :main) do |saved_tab, manual_tab|
           saved_tab.text 'No saved characters yet - use Manual Entry.' if saved.empty?
           saved.group_by { |entry| (entry[:username] || entry[:user_id]).to_s }.each do |account, chars|
             saved_tab.markdown "**Account: #{account.downcase}**"
@@ -140,12 +146,14 @@ module Lich
             manual_tab.table(rows, headings: %w[Game Character], sortable: true,
                              selected: ui.state[:sel_char], key: :char_table) { |index| ui.state[:sel_char] = index }
             manual_tab.select('Frontend', options: FRONTENDS, value: ui.state[:frontend] || 'wrayth', key: :frontend) { |v| ui.state[:frontend] = v }
+            manual_tab.checkbox('Save this entry', checked: !!ui.state[:save_entry], key: :save_entry) { |v| ui.state[:save_entry] = v }
             manual_tab.button('Play', key: :list_play) { play_from_list(ui.state) }
           else
             manual_tab.markdown '*Connect to pick from your characters, or log in directly:*'
             manual_tab.select('Game', options: GAME_CODES.keys, value: ui.state[:game] || 'GS4 Prime', key: :game) { |v| ui.state[:game] = v }
             manual_tab.text_input('Character', value: ui.state[:character], key: :character) { |v| ui.state[:character] = v.strip }
             manual_tab.select('Frontend', options: FRONTENDS, value: ui.state[:frontend] || 'wrayth', key: :frontend) { |v| ui.state[:frontend] = v }
+            manual_tab.checkbox('Save this entry', checked: !!ui.state[:save_entry], key: :save_entry) { |v| ui.state[:save_entry] = v }
             manual_tab.button('Play', key: :manual_play) { play_manual(ui.state) }
           end
         end
@@ -160,7 +168,7 @@ module Lich
         entries.reject! { |candidate|
           candidate[:char_name] == entry[:char_name] &&
             candidate[:game_code] == entry[:game_code] &&
-            candidate[:username] == entry[:username] &&
+            candidate[:user_id] == entry[:user_id] &&
             candidate[:frontend] == entry[:frontend]
         }
         store.save_entries(@data_dir, entries)
@@ -169,18 +177,19 @@ module Lich
         @error = "Remove failed: #{e.message}"
       end
 
-      # Saved-entry Play: decrypt with the stored mode, authenticate, hand
-      # launch_data to the waiting boot thread. Auth runs on its own thread
-      # so the page stays responsive.
+      # Saved-entry Play: authenticate and hand launch_data to the waiting
+      # boot thread. EntryStore.load_saved_entries already decrypted the
+      # password (and entries carry :user_id, not :username). Auth runs on
+      # its own thread so the page stays responsive.
       def play_saved(entry)
         set_busy("Authenticating #{entry[:char_name]}...")
         Thread.new do
-          password = decrypt_password(entry)
-          if password.nil?
-            fail_login('Could not decrypt the saved password (master-password mode is not supported in the browser login yet - use --gtk-login).')
+          password = entry[:password].to_s
+          if password.empty?
+            fail_login('Could not read the saved password (master-password mode is not supported in the browser login yet - use --gtk-login).')
           else
             authenticate_and_finish(
-              account: entry[:username], password: password,
+              account: (entry[:username] || entry[:user_id]).to_s, password: password,
               character: entry[:char_name], game_code: entry[:game_code],
               frontend: entry[:frontend], custom_launch: entry[:custom_launch],
               custom_launch_dir: entry[:custom_launch_dir]
@@ -222,7 +231,8 @@ module Lich
           authenticate_and_finish(
             account: state[:account].to_s, password: state[:password].to_s,
             character: entry[:char_name], game_code: entry[:game_code],
-            frontend: (state[:frontend] || 'wrayth'), custom_launch: nil, custom_launch_dir: nil
+            frontend: (state[:frontend] || 'wrayth'), custom_launch: nil, custom_launch_dir: nil,
+            game_name: entry[:game_name], save: !!state[:save_entry]
           )
         end
       end
@@ -239,15 +249,17 @@ module Lich
           authenticate_and_finish(
             account: account, password: password, character: character,
             game_code: game_code, frontend: (state[:frontend] || 'wrayth'),
-            custom_launch: nil, custom_launch_dir: nil
+            custom_launch: nil, custom_launch_dir: nil,
+            game_name: state[:game] || 'GS4 Prime', save: !!state[:save_entry]
           )
         end
       end
 
-      def authenticate_and_finish(account:, password:, character:, game_code:, frontend:, custom_launch:, custom_launch_dir:)
+      def authenticate_and_finish(account:, password:, character:, game_code:, frontend:, custom_launch:, custom_launch_dir:, game_name: nil, save: false)
         auth = @authenticator.call(account: account, password: password, character: character, game_code: game_code)
         launch_data = @launch_preparer.call(auth, frontend, custom_launch, custom_launch_dir)
         if launch_data.is_a?(Array) && launch_data.any?
+          save_entry(account: account, password: password, char_name: character, game_code: game_code, game_name: game_name, frontend: frontend) if save
           @queue << launch_data
         else
           fail_login('Authentication succeeded but no launch data was produced.')
@@ -256,16 +268,37 @@ module Lich
         fail_login("Login failed: #{e.message}")
       end
 
-      def decrypt_password(entry)
+      # Persists a successful manual login the way the GTK launcher's "save
+      # this entry" checkbox does: same uniqueness key (character + game +
+      # account + frontend), same field names, and save_entries re-encrypts
+      # per the file's existing encryption_mode (entries in memory hold
+      # plaintext passwords).
+      def save_entry(account:, password:, char_name:, game_code:, game_name:, frontend:)
         require File.join(LIB_DIR, 'common', 'authentication', 'entry_store') unless defined?(Lich::Common::Authentication::EntryStore)
         store = Lich::Common::Authentication::EntryStore
-        yaml = YAML.safe_load_file(store.yaml_file_path(@data_dir), permitted_classes: [Symbol]) rescue {}
-        mode = ((yaml && yaml['encryption_mode']) || 'plaintext').to_sym
-        return nil if mode == :master_password
-
-        store.decrypt_password(entry[:password], mode: mode, account_name: entry[:username])
-      rescue StandardError
-        nil
+        entries = store.load_saved_entries(@data_dir, false) || []
+        normalized_account = account.to_s.upcase
+        normalized_character = char_name.to_s.capitalize
+        existing = entries.find { |candidate|
+          candidate[:char_name].to_s.capitalize == normalized_character &&
+            candidate[:game_code] == game_code &&
+            candidate[:user_id].to_s.upcase == normalized_account &&
+            candidate[:frontend] == frontend
+        }
+        if existing
+          existing[:game_name] = game_name
+          existing[:password] = password
+        else
+          entries.push(
+            :char_name => normalized_character, :game_code => game_code, :game_name => game_name,
+            :user_id => normalized_account, :password => password, :frontend => frontend,
+            :custom_launch => nil, :custom_launch_dir => nil,
+            :encryption_mode => (entries.first&.[](:encryption_mode) || :plaintext)
+          )
+        end
+        store.save_entries(@data_dir, entries)
+      rescue StandardError => e
+        Lich.log("warning: WebUI login: could not save entry: #{e.class}: #{e.message}") if defined?(Lich) && Lich.respond_to?(:log)
       end
 
       def set_busy(message)
