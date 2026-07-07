@@ -42,6 +42,38 @@ RSpec.describe Lich::WebUI do
     end
   end
 
+  describe 'window geometry memory' do
+    before { described_class.instance_variable_set(:@geometry_store, {}) }
+    after { described_class.instance_variable_set(:@geometry_store, nil) }
+
+    it 'remembers reported geometry and reopens the window there' do
+      described_class.remember_window_geometry('map/map', { w: 640, h: 480, x: 100, y: 60 })
+      expect(described_class.window_geometry('map/map')).to eq({ 'w' => 640, 'h' => 480, 'x' => 100, 'y' => 60 })
+
+      allow(described_class).to receive(:enabled?).and_return(true)
+      allow(described_class).to receive(:open_browser).and_return(true)
+      described_class.ensure_service!
+      described_class.open_page('map/map', app: true, size: [520, 560])
+      expect(described_class).to have_received(:open_browser)
+        .with(anything, app: true, size: [640, 480], position: [100, 60])
+    end
+
+    it 'falls back to caller defaults with nothing stored' do
+      allow(described_class).to receive(:enabled?).and_return(true)
+      allow(described_class).to receive(:open_browser).and_return(true)
+      described_class.ensure_service!
+      described_class.open_page('map/map', app: true, size: [520, 560])
+      expect(described_class).to have_received(:open_browser)
+        .with(anything, app: true, size: [520, 560], position: nil)
+    end
+
+    it 'rejects junk geometry' do
+      described_class.remember_window_geometry('a/b', { w: 0, h: 0, x: 5, y: 5 })
+      described_class.remember_window_geometry('a/b', 'nonsense')
+      expect(described_class.window_geometry('a/b')).to be_nil
+    end
+  end
+
   describe '.refresh_hello' do
     it 'rewrites the discovery file with the post-login session identity' do
       allow(described_class).to receive(:enabled?).and_return(true)

@@ -198,6 +198,12 @@ module Lich
     def self.open_page(page_id = nil, app: false, size: nil, position: nil)
       return false unless ensure_service!
 
+      # The window's last-known geometry beats caller defaults, so floating
+      # windows come back exactly where the player left them.
+      if page_id && (stored = window_geometry(page_id))
+        size = [stored['w'], stored['h']]
+        position = [stored['x'], stored['y']]
+      end
       target = auth_url
       target += "&to=#{encode_component("/#/#{page_id}")}" if page_id
       open_browser(target, app: app, size: size, position: position)
@@ -237,17 +243,31 @@ module Lich
         return nil
       end
 
+      page_id = "#{script.name}/#{name}"
+      size, position = geometry_defaults(page_id, size)
       page = Page.new(
-        id: "#{script.name}/#{name}",
+        id: page_id,
         title: title ? title.to_s : name.to_s,
         script: script,
         block: block,
         every: every,
         bare: bare,
-        size: size
+        size: size,
+        position: position
       )
       Registry.register(page)
     end
+
+    # Remembered geometry (engine store) beats the author's default size.
+    #
+    # @return [Array(Array|nil, Array|nil)] [size, position]
+    def self.geometry_defaults(page_id, size)
+      stored = window_geometry(page_id)
+      return [size, nil] unless stored
+
+      [[stored['w'], stored['h']], [stored['x'], stored['y']]]
+    end
+    private_class_method :geometry_defaults
 
     # Registers a page owned by core Lich rather than a script (login,
     # launcher). Core pages dispatch inline, survive ScriptDeath cleanup,
@@ -259,14 +279,17 @@ module Lich
     def self.register_core_page(name, title: nil, bare: false, size: nil, every: nil, &block)
       return nil unless ensure_service!(force: true)
 
+      page_id = "lich/#{name}"
+      size, position = geometry_defaults(page_id, size)
       page = Page.new(
-        id: "lich/#{name}",
+        id: page_id,
         title: title ? title.to_s : name.to_s,
         script: nil,
         block: block,
         every: every,
         bare: bare,
-        size: size
+        size: size,
+        position: position
       )
       Registry.register(page)
     end
@@ -318,9 +341,65 @@ module Lich
       when 'subscribe'   then page.subscribe(connection)
       when 'unsubscribe' then page.unsubscribe(connection)
       when 'event'       then page.handle_event(message[:cid].to_s, message[:value])
-      when 'geometry'    then page.record_geometry(message[:value])
+      when 'geometry'
+        page.record_geometry(message[:value])
+        remember_window_geometry(message[:page].to_s, message[:value])
       end
     end
+
+    # ---- floating-window geometry memory -----------------------------
+    # Every bare/app window reports its outer geometry; the engine keeps
+    # the last known geometry per page id in lich_settings so windows
+    # reopen exactly where they were closed - no per-script code needed.
+
+    GEOMETRY_SETTING = 'webui_window_geometry'
+
+    # @param page_id [String]
+    # @return [Hash{String=>Integer}, nil] {'w','h','x','y'} or nil
+    def self.window_geometry(page_id)
+      geometry = geometry_store[page_id.to_s]
+      geometry.is_a?(Hash) ? geometry : nil
+    end
+
+    # @param page_id [String]
+    # @param geo [Hash] {w:, h:, x:, y:} from the browser
+    # @return [void]
+    def self.remember_window_geometry(page_id, geo)
+      return unless geo.is_a?(Hash)
+
+      width = (geo[:w] || geo['w']).to_i
+      height = (geo[:h] || geo['h']).to_i
+      return unless width.positive? && height.positive?
+
+      geometry_store[page_id.to_s] = {
+        'w' => width, 'h' => height,
+        'x' => (geo[:x] || geo['x']).to_i, 'y' => (geo[:y] || geo['y']).to_i
+      }
+      persist_geometry_store
+    end
+
+    # @return [Hash] in-memory store, loaded from lich_settings once
+    def self.geometry_store
+      @geometry_store ||= begin
+        raw = Lich.db.get_first_value('SELECT value FROM lich_settings WHERE name=?;', [GEOMETRY_SETTING]) if defined?(Lich) && Lich.respond_to?(:db) && Lich.db
+        parsed = raw ? JSON.parse(raw) : {}
+        parsed.is_a?(Hash) ? parsed : {}
+      rescue StandardError
+        {}
+      end
+    end
+    private_class_method :geometry_store
+
+    # @return [void]
+    def self.persist_geometry_store
+      return unless defined?(Lich) && Lich.respond_to?(:db) && Lich.db
+
+      Lich.db.execute('INSERT OR REPLACE INTO lich_settings(name,value) values(?,?);',
+                      [GEOMETRY_SETTING, JSON.generate(@geometry_store)])
+    rescue StandardError => e
+      Lich.log("warning: WebUI geometry persist failed: #{e.class}: #{e.message}") if defined?(Lich) && Lich.respond_to?(:log)
+    end
+    private_class_method :persist_geometry_store
 
     # @return [Hash] session identity for the hello envelope
     def self.session_info
