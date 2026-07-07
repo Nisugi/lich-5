@@ -153,6 +153,42 @@ RSpec.describe Lich::WebUI::Builder do
       expect(builder.nodes.last[:vertical]).to be(true)
     end
 
+    it 'carries a confirm label on two-step buttons' do
+      builder.button('Remove', variant: :danger, confirm: 'Really remove?') {}
+      node = builder.nodes.last
+      expect(node[:confirm]).to eq('Really remove?')
+
+      builder.button('Plain') {}
+      expect(builder.nodes.last).not_to have_key(:confirm)
+    end
+
+    it 'emits number inputs and radio groups with callbacks' do
+      got = []
+      builder.number_input('Count', min: 0, max: 10, step: 2, value: 4) { |v| got << v }
+      node = builder.nodes.last
+      expect(node[:t]).to eq('number_input')
+      expect([node[:min], node[:max], node[:step], node[:value]]).to eq([0, 10, 2, 4])
+      builder.callbacks[node[:cid]].call(6)
+
+      builder.radio('Mode', options: %i[fast safe], value: :safe) { |v| got << v }
+      node = builder.nodes.last
+      expect(node[:t]).to eq('radio')
+      expect(node[:options]).to eq(%w[fast safe])
+      expect(node[:value]).to eq('safe')
+      builder.callbacks[node[:cid]].call('fast')
+
+      expect(got).to eq([6, 'fast'])
+    end
+
+    it 'emits logs with capped string lines and a scroll height' do
+      builder.log(['one', :two, '{{red:hit}} for 30'], max_height: 150)
+      node = builder.nodes.last
+      expect(node[:t]).to eq('log')
+      expect(node[:lines]).to eq(['one', 'two', '{{red:hit}} for 30'])
+      expect(node[:max_height]).to eq(150)
+      expect(builder.callbacks).to be_empty
+    end
+
     it 'accepts http(s), data, and /files sources for images' do
       builder.image('https://example.com/map.png', alt: 'map')
       builder.image('data:image/png;base64,AAAA')

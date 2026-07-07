@@ -231,6 +231,35 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
 
 .c-image { max-width: 100%; border-radius: 0.5em; }
 
+/* scrolling log: streams (kill feeds, loot, activity) */
+.c-log {
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5em;
+  padding: 0.4em 0.6em;
+  font-size: 0.92em;
+  line-height: 1.35;
+}
+.c-log > div { margin: 0; }
+
+/* radio groups */
+.c-radio-group { display: flex; flex-wrap: wrap; gap: 0.3em 1em; }
+.c-radio-option { display: inline-flex; align-items: center; gap: 0.35em; cursor: pointer; }
+
+/* armed confirm buttons */
+.c-button.confirming { background: #c0392b; color: #fff; }
+
+/* {{color:...}} span palette - mid-tones readable on light and dark */
+.md-red { color: #d64545; }
+.md-green { color: #3d9a50; }
+.md-blue { color: #4a7fd4; }
+.md-yellow { color: #b8960c; }
+.md-orange { color: #d07822; }
+.md-cyan { color: #2b9aa8; }
+.md-magenta { color: #b653b6; }
+.md-gray { color: var(--muted); }
+
 .c-image-map {
   overflow: auto;
   max-height: 75vh;

@@ -52,6 +52,11 @@ module Lich
 
       # Markdown limited to a safe inline subset the browser renders as DOM
       # nodes (bold, italic, code, http/https links) - never raw HTML.
+      # Colored spans use {{color:text}} with a fixed palette (red, green,
+      # blue, yellow, orange, cyan, magenta, gray); unknown colors render
+      # as plain text.
+      #
+      #   ui.markdown "{{red:**HURT**}} vs {{green:fine}}"
       #
       # @param text [#to_s]
       # @return [void]
@@ -67,11 +72,16 @@ module Lich
       # @param label [#to_s]
       # @param variant [Symbol] :default or :danger
       # @param disabled [Boolean]
+      # @param confirm [#to_s, nil] two-step confirmation: the first click
+      #   swaps the label to this text, only a second click (within a few
+      #   seconds) fires the handler - for destructive actions
       # @param key [String, Symbol, nil] stable id override
       # @yield click handler, run in the owning script's context
       # @return [void]
-      def button(label, variant: :default, disabled: false, key: nil, &block)
-        emit('button', key: key, label: label.to_s, variant: variant.to_s, disabled: !!disabled, &block)
+      def button(label, variant: :default, disabled: false, confirm: nil, key: nil, &block)
+        attrs = { label: label.to_s, variant: variant.to_s, disabled: !!disabled }
+        attrs[:confirm] = confirm.to_s if confirm
+        emit('button', key: key, **attrs, &block)
       end
 
       # @param label [#to_s]
@@ -121,6 +131,46 @@ module Lich
       # @return [void]
       def slider(label, min:, max:, step: 1, value: nil, key: nil, &block)
         emit('slider', key: key, label: label.to_s, min: min, max: max, step: step, value: value || min, &block)
+      end
+
+      # Numeric entry field (spinner).
+      #
+      # @param label [#to_s]
+      # @param min [Numeric, nil]
+      # @param max [Numeric, nil]
+      # @param step [Numeric]
+      # @param value [Numeric, nil]
+      # @yieldparam value [Numeric]
+      # @return [void]
+      def number_input(label, min: nil, max: nil, step: 1, value: nil, key: nil, &block)
+        emit('number_input', key: key, label: label.to_s, min: min, max: max, step: step, value: value, &block)
+      end
+
+      # Radio group: one choice from a small set, all options visible.
+      #
+      # @param label [#to_s]
+      # @param options [Array<#to_s>]
+      # @param value [#to_s, nil] currently selected option
+      # @yieldparam value [String] the chosen option
+      # @return [void]
+      def radio(label, options:, value: nil, key: nil, &block)
+        emit('radio', key: key, label: label.to_s, options: options.map(&:to_s), value: value&.to_s, &block)
+      end
+
+      # Scrolling text log for streams (kill feeds, loot, activity). Pass
+      # the whole backlog each render (keep it in ui.state and cap it
+      # yourself); the browser sticks to the newest line unless the player
+      # has scrolled up to read. Lines render with the same safe inline
+      # markdown as +markdown+, including {{color:...}} spans.
+      #
+      #   ui.state[:feed] = (ui.state[:feed] || []).last(200)
+      #   ui.log(ui.state[:feed], max_height: 220)
+      #
+      # @param lines [Array<#to_s>]
+      # @param max_height [Integer] pixel height of the scroll region
+      # @return [void]
+      def log(lines, max_height: 200, key: nil)
+        emit('log', key: key, max_height: max_height.to_i, lines: Array(lines).map(&:to_s))
       end
 
       # @param value [Float] 0.0..1.0
