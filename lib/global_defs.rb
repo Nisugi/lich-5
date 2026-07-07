@@ -2611,9 +2611,10 @@ def do_client(client_string)
       end
     elsif cmd =~ /^magic$/ && XMLData.game =~ /^GS/
       Effects.display
-    elsif cmd =~ /^ui(?:\s+(\S+))?(?:\s+(\S+))?$/i
+    elsif cmd =~ /^ui(?:\s+(\S+))?(?:\s+(\S+))?(?:\s+(\S+))?$/i
       webui_arg = $1&.downcase
       webui_arg2 = $2&.downcase
+      webui_arg3 = $3&.downcase
       case webui_arg
       when 'on'
         Lich::Common::FeatureFlags.set(Lich::WebUI::FEATURE_FLAG, true)
@@ -2665,6 +2666,25 @@ def do_client(client_string)
         else
           respond "--- Lich: WebUI is disabled. Enable it with #{$clean_lich_char}ui on"
         end
+      when 'bridge'
+        # Render a page inside Wrayth/Stormfront as a dialogData window
+        # (glanceable panels; text entry stays browser-only).
+        if webui_arg2.nil?
+          bridged = Lich::WebUI::Bridge.attached
+          respond(bridged.empty? ? "--- Lich: no dialog bridges active. Usage: #{$clean_lich_char}ui bridge <page> [off]" : "--- Lich: dialog bridges: #{bridged.join(', ')}")
+        else
+          bridge_ids = Lich::WebUI.pages_snapshot.map { |page| page[:id] }
+          bridge_target = bridge_ids.find { |id| id.downcase == webui_arg2 || id.downcase.end_with?("/#{webui_arg2}") }
+          if bridge_target.nil?
+            respond "--- Lich: no page matching '#{webui_arg2}' (see #{$clean_lich_char}ui list)"
+          elsif webui_arg3 == 'off'
+            respond(Lich::WebUI::Bridge.detach(bridge_target) ? "--- Lich: dialog bridge for #{bridge_target} closed." : "--- Lich: #{bridge_target} is not bridged.")
+          elsif Lich::WebUI::Bridge.attach(bridge_target)
+            respond "--- Lich: #{bridge_target} is now a dialog window (#{$clean_lich_char}ui bridge #{webui_arg2} off to close)."
+          else
+            respond "--- Lich: could not bridge #{bridge_target}."
+          end
+        end
       when 'geometry'
         if webui_arg2 == 'reset'
           count = Lich::WebUI.reset_window_geometry!
@@ -2698,7 +2718,7 @@ def do_client(client_string)
           respond '--- Lich: WebUI failed to start; check the debug log.'
         end
       else
-        respond "--- Lich: usage: #{$clean_lich_char}ui [on|off|url|list|open <page>|geometry reset|port <n|auto>|handshake]"
+        respond "--- Lich: usage: #{$clean_lich_char}ui [on|off|url|list|open <page>|bridge <page> [off]|geometry reset|port <n|auto>|handshake]"
       end
     elsif cmd =~ /^help$/i
       respond
@@ -2753,6 +2773,7 @@ def do_client(client_string)
       respond "   #{$clean_lich_char}ui [on|off|url]           browser-based script UI (open, enable/disable, or show link)"
       respond "   #{$clean_lich_char}ui list                   show registered WebUI pages"
       respond "   #{$clean_lich_char}ui open <page>            open a WebUI page in its own window"
+      respond "   #{$clean_lich_char}ui bridge <page> [off]    show a page as a Wrayth dialog window instead of a browser"
       respond "   #{$clean_lich_char}ui geometry reset         forget remembered window sizes/positions"
       respond "   #{$clean_lich_char}ui port <number|auto>     prefer a fixed port (bookmarkable URLs)"
       respond "   #{$clean_lich_char}ui login [on|off]         use the browser login page instead of the GTK launcher"

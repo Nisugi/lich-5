@@ -8,6 +8,7 @@ require 'fileutils'
 require_relative 'server'
 require_relative 'registry'
 require_relative 'file_routes'
+require_relative 'bridge'
 
 module Lich
   # Browser-based script UI service ("WebUI").
@@ -403,12 +404,14 @@ module Lich
     end
 
     # Tells browsers showing +page_id+ that the page is done; a bare app
-    # window closes itself, a regular tab returns to the landing page. Used
-    # by one-shot pages like the login launcher after Play.
+    # window closes itself, a regular tab returns to the landing page, and
+    # a bridged dialog window closes. Used by one-shot pages (login after
+    # Play) and page removal (script killed).
     #
     # @param page_id [String]
     # @return [void]
     def self.notify_page_close(page_id)
+      Bridge.page_closed(page_id)
       @server&.broadcast(Protocol.close(page_id))
     end
 

@@ -15,6 +15,7 @@ should target the WebUI.
 ;ui url             print the authorization link instead of opening a browser
 ;ui list            show registered pages
 ;ui open <page>     open a page in its own window
+;ui bridge <page>   show a page as a Wrayth dialog window ([off] closes)
 ;ui geometry reset  forget remembered window sizes/positions
 ;ui port <n|auto>   prefer a fixed port (bookmarkable URLs)
 ;ui handshake       machine-readable descriptor (for frontends)
@@ -217,9 +218,15 @@ directly. Three integration tiers:
 2. **Native rendering**: subscribe to `/ws` (same cookie) and render the
    JSON component trees (`schema_version`) with your own widgets - the
    fully theme-matched path.
-3. **Bridge for closed FEs** (Wrayth): a Lich-side translator can subscribe
-   to a page in-process and re-render a reduced widget set as `dialogData`
-   windows (planned; see the roadmap).
+3. **Bridge for closed FEs** (Wrayth/Stormfront): `;ui bridge <page>`
+   renders a page as a `dialogData` window inside the FE - the bridge
+   subscribes to the page in-process (it is just another subscriber
+   receiving render JSON) and translates a reduced widget set: labels,
+   progress bars, and links (buttons, checkbox toggles, select/radio
+   cycling). Text entry, images, and sliders stay browser-only and the
+   dialog notes how many widgets it skipped. Right for glanceable panels;
+   `;ui bridge <page> off` closes it, and killing the owning script closes
+   it too.
 
 The `pages` list in the hello envelope carries embedding hints: pages
 registered with `kind: :panel` (dock me) or `kind: :window` (float me),
