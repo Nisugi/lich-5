@@ -16,6 +16,7 @@ require_relative '../../../lib/webui/file_routes'
 RSpec.describe Lich::WebUI::Server do
   let(:token) { 'a' * 64 }
   let(:received_messages) { Queue.new }
+  let(:received_connections) { Queue.new }
   let(:server) do
     described_class.new(
       auth_token: token,
@@ -24,7 +25,10 @@ RSpec.describe Lich::WebUI::Server do
       session_info: -> { { name: 'Testchar', game: 'GSIV' } },
       pages_provider: -> { [] },
       siblings_provider: -> { [] },
-      message_handler: ->(_conn, message) { received_messages << message },
+      message_handler: ->(conn, message) {
+        received_connections << conn
+        received_messages << message
+      },
       file_resolver: Lich::WebUI::FileRoutes.method(:resolve)
     )
   end
@@ -263,6 +267,21 @@ RSpec.describe Lich::WebUI::Server do
     it 'rejects upgrades with a foreign Origin' do
       _, status, = start_upgrade(upgrade_headers(origin: 'http://evil.example.com'))
       expect(status).to eq(403)
+    end
+
+    it 'marks the connection dead as soon as the browser goes away (window watchdogs)' do
+      socket, status, = start_upgrade(upgrade_headers)
+      expect(status).to eq(101)
+      Lich::WebUI::WebSocket.read_frame(socket, require_mask: false) # hello
+
+      socket.write(Lich::WebUI::WebSocket.encode_client_frame('{"type":"subscribe","page":"demo/hunt"}'))
+      Timeout.timeout(2) { received_messages.pop }
+      connection = Timeout.timeout(2) { received_connections.pop }
+      expect(connection).to be_alive
+
+      socket.close # the window closed
+      Timeout.timeout(3) { sleep 0.05 while connection.alive? }
+      expect(connection).not_to be_alive
     end
 
     it 'broadcasts to connected clients' do

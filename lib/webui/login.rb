@@ -20,11 +20,11 @@ module Lich
 
       # Window watchdog: closing the login window must exit Lich just like
       # closing the GTK launcher window - otherwise an invisible rubyw
-      # process waits on the queue forever. Ping/prune marks a closed
-      # browser's connection dead within one keepalive interval; the grace
-      # period sits above that so reloads and reconnects never false-fire.
+      # process waits on the queue forever. The server marks a closed
+      # browser's connection dead within one read-poll; the grace period
+      # only needs to cover reloads and reconnects.
       WATCHDOG_POLL = 5            # seconds between checks
-      WATCHDOG_GRACE = 45          # window gone this long => quit
+      WATCHDOG_GRACE = 15          # window gone this long => quit
       WATCHDOG_NEVER_OPENED = 600  # no browser ever connected => quit
 
       GAME_CODES = {

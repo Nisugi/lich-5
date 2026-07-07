@@ -456,6 +456,15 @@ module Lich
         websocket_read_loop(connection)
       ensure
         untrack_connection(connection) if connection
+        # mark the connection dead, not just untracked: pages hold it in
+        # their subscriber lists and only prune lazily on a failed send -
+        # live_subscribers? (window watchdogs: login quit, ;map exit) must
+        # see the browser's departure immediately, not on the next render
+        begin
+          connection&.close
+        rescue StandardError
+          nil
+        end
         socket.close rescue nil
       end
 
