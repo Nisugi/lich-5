@@ -14,9 +14,14 @@ Tracks your current room on visual maps
       game: Gemstone
       tags: core, movement, mapping
       required: Lich >= 5.13.0
-      version: 2.2.0
+      version: 2.3.0
 
   changelog:
+    v2.3.0 (2026-07-06)
+      * WebUI map settings close the gap to the GTK context menu: categorized
+        map picker with friendly names (meta:mapcategory/mapshortname), tag and
+        location markers filtered to the current map, Keep Centered toggle,
+        and Global-vs-per-map scale remembered across sessions.
     v2.2.0 (2026-07-06)
       * Live browser map via the Lich WebUI when enabled (;ui on): follow mode,
         click-to-travel (go2), map links, shift-click room info, ctrl-click
@@ -2446,7 +2451,7 @@ module ElanthiaMap
 
             # pin in the top-right corner of the room as a visual indicator
             pin = Gtk::Label.new
-            pin.markup = "<span size=\"xx-large\">\u{1F4CC}</span>"
+            pin.markup = "<span size=\"xx-large\">\u{1F4CC}</span>" # rubocop:disable Custom/AsciiOnlySource
             pin.tooltip_text = note_text
             pin.has_tooltip = true
             @layout.put(pin, box_x + box_w - 10, box_y - 10)
@@ -2959,18 +2964,25 @@ module ElanthiaMap
   module WebMap
     extend self
 
-    SCALES = [0.25, 0.33, 0.5, 0.66, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0].freeze
+    SCALES = [0.1, 0.25, 0.33, 0.5, 0.66, 0.75, 0.9, 1.0, 1.1, 1.25, 1.33, 1.5, 1.66, 1.75, 1.9, 2.0].freeze
 
     def run(script)
       @done = false
       @follow = true
+      @centered = true  # GTK "Keep Centered"
       @dark = false
       @fix_mode = false
       @fix_click = nil
-      @scale = 1.0
       @map = nil        # current map image filename (basename)
       @current_id = nil # room id for the current-room marker
       @find_id = nil    # room id highlighted by find
+      @active_tag = nil       # tag whose rooms are marked on the map
+      @active_location = nil  # location whose rooms are marked on the map
+      # Scale prefs mirror the GTK window: one global scale, or remembered
+      # per map when Global scale is off.
+      @scale = Settings['webmap_scale'].is_a?(Numeric) ? Settings['webmap_scale'].to_f : 1.0
+      @scales = Settings['webmap_scales'].is_a?(Hash) ? Settings['webmap_scales'] : {}
+      @global_scale_mode = Settings['webmap_scale_global'] == true
 
       UI.serve('maps', MAP_DIR)
       @dark_dir = File.join(File.dirname(MAP_DIR), 'maps-dark')
@@ -3005,6 +3017,9 @@ module ElanthiaMap
       # persist the floating window's last geometry for next launch
       geometry = UI.state('map') && UI.state('map')[:_window_geometry]
       Settings['webmap_geometry'] = geometry if geometry.is_a?(Hash)
+      Settings['webmap_scale_global'] = @global_scale_mode
+      Settings['webmap_scale'] = @scale
+      Settings['webmap_scales'] = @scales
       UI.remove('map')
       UI.remove('settings')
       UI.unserve('maps')
@@ -3016,9 +3031,9 @@ module ElanthiaMap
     def register_page
       UI.page('map', title: "Map: #{XMLData.name}", bare: true) do |ui|
         if @map
-          ui.image_map(map_src, scale: @scale, markers: markers,
-                       scroll_to: (@find_id ? 'find' : 'current'),
-                       popup: 'map/settings', popup_size: [430, 460],
+          ui.image_map(map_src, scale: effective_scale, markers: markers,
+                       scroll_to: (@centered ? (@find_id ? 'find' : 'current') : nil),
+                       popup: 'map/settings', popup_size: [430, 620],
                        key: :map_view) { |click| handle_click(click) }
         else
           ui.text 'The current room has no map. Right-click to pick one.'
@@ -3032,23 +3047,55 @@ module ElanthiaMap
       refresh_map = proc { UI.refresh('map') }
       UI.page('settings', title: 'Map Settings') do |ui|
         ui.header 'Map Settings'
-        ui.select('Map', options: map_files, value: @map, key: :map_pick) { |v|
-          @map = v
-          @fix_click = nil
-          @find_id = nil
+        ui.columns(2, compact: true, key: :toggles) do |c_follow, c_center|
+          c_follow.checkbox('Follow', checked: @follow, key: :follow) { |v| @follow = v }
+          c_center.checkbox('Keep centered', checked: @centered, key: :centered) { |v| @centered = v; refresh_map.call }
+        end
+        ui.checkbox('Dark map', checked: @dark, key: :dark) { |v| @dark = v; refresh_map.call } if @have_dark
+
+        # Categorized picker built from the same meta:mapcategory /
+        # mapshortname tags the GTK Maps submenu uses.
+        catalog = map_catalog
+        category = ui.state[:map_cat]
+        category = category_of(@map) unless category && catalog.key?(category)
+        ui.select('Category', options: catalog.keys, value: category, key: :map_cat) { |v| ui.state[:map_cat] = v }
+        labels = catalog[category] ? catalog[category].map(&:first) : []
+        current_label = catalog[category]&.find { |_label, filename| File.basename(filename) == @map }&.first
+        ui.select('Map', options: labels, value: current_label || labels.first, key: :map_pick) { |v|
+          entry = map_catalog[ui.state[:map_cat] || category_of(@map)]&.find { |label, _filename| label == v }
+          if entry
+            change_map(File.basename(entry[1]))
+            refresh_map.call
+          end
+        }
+
+        ui.checkbox('Global scale (one scale for every map)', checked: @global_scale_mode, key: :global_scale) { |v|
+          @global_scale_mode = v
           refresh_map.call
         }
         ui.select('Scale', options: SCALES.map { |s| "#{(s * 100).to_i}%" },
-                  value: "#{(@scale * 100).to_i}%", key: :scale) { |v|
-          @scale = v.to_i / 100.0
+                  value: "#{(effective_scale * 100).to_i}%", key: :scale) { |v|
+          set_scale(v.to_i / 100.0)
           refresh_map.call
         }
+
+        # Tag / location markers, filtered to the current map like the GTK
+        # submenus; picking one marks every matching room.
+        tag_options = ['- none -'] + tags_on_map
+        ui.select('Tag markers', options: tag_options, value: @active_tag || '- none -', key: :tag) { |v|
+          @active_tag = (v == '- none -' ? nil : v)
+          refresh_map.call
+        }
+        location_options = ['- none -'] + locations_on_map
+        ui.select('Location markers', options: location_options, value: @active_location || '- none -', key: :location) { |v|
+          @active_location = (v == '- none -' ? nil : v)
+          refresh_map.call
+        }
+
         ui.text_input('Find room', placeholder: 'room id, u<uid>, or search text', key: :find) { |v|
           find_room(v)
           refresh_map.call
         }
-        ui.checkbox('Follow', checked: @follow, key: :follow) { |v| @follow = v }
-        ui.checkbox('Dark map', checked: @dark, key: :dark) { |v| @dark = v; refresh_map.call } if @have_dark
         ui.checkbox('Fix mode (ctrl+shift-click corners)', checked: @fix_mode, key: :fix) { |v|
           @fix_mode = v
           @fix_click = nil
@@ -3059,8 +3106,98 @@ module ElanthiaMap
       end
     end
 
-    def map_files
-      @map_files ||= Room.list.map(&:image).compact.uniq.sort_by(&:downcase)
+    # Switch maps, dropping per-map artifacts (find highlight, half-done fix
+    # clicks). Tag/location caches key off @map and refresh themselves.
+    def change_map(basename)
+      @map = basename
+      @find_id = nil
+      @fix_click = nil
+    end
+
+    def effective_scale
+      return @scale if @global_scale_mode
+
+      value = @scales[@map]
+      value.is_a?(Numeric) ? value.to_f : @scale
+    end
+
+    def set_scale(value)
+      if @global_scale_mode
+        @scale = value
+      else
+        @scales[@map] = value
+      end
+    end
+
+    # {category => [[label, filename], ...]} from room meta tags, mirroring
+    # the GTK Maps submenu: per-category sublabels when tagged, then All
+    # Maps and Uncategorized buckets.
+    def map_catalog
+      @map_catalog ||= begin
+        catalog = {}
+        every = []
+        ElanthiaMap::MapData.data.each_value do |info|
+          next unless info[:filename]
+
+          shortname = info[:shortname] || info[:name] || info[:filename]
+          every << [shortname, info[:filename]]
+          if info[:categories].empty?
+            (catalog['Uncategorized Maps'] ||= []) << [shortname, info[:filename]]
+          else
+            info[:categories].each { |cat, sublabel|
+              (catalog[cat] ||= []) << [(sublabel || shortname), info[:filename]]
+            }
+          end
+        end
+        sorted = catalog.keys.reject { |k| k == 'Uncategorized Maps' }.sort_by(&:downcase)
+        result = {}
+        sorted.each { |cat| result[cat] = catalog[cat].uniq.sort_by { |label, _| label.downcase } }
+        result['All Maps'] = every.uniq.sort_by { |label, _| label.downcase }
+        result['Uncategorized Maps'] = catalog['Uncategorized Maps'].uniq.sort_by { |label, _| label.downcase } if catalog['Uncategorized Maps']
+        result
+      end
+    end
+
+    # First category containing the current map, for the picker's default.
+    def category_of(basename)
+      map_catalog.each { |cat, maps|
+        next if cat == 'All Maps'
+        return cat if maps.any? { |_label, filename| File.basename(filename) == basename }
+      }
+      'All Maps'
+    end
+
+    # Tag / location vocab for the current map, cached per map (Room.list
+    # scans are too heavy to run on every render).
+    def tags_on_map
+      scan_map_vocab
+      @tags_cache
+    end
+
+    def locations_on_map
+      scan_map_vocab
+      @locations_cache
+    end
+
+    def scan_map_vocab
+      return if @vocab_map == @map
+
+      @vocab_map = @map
+      rooms = rooms_on_map
+      @tags_cache = rooms.flat_map { |room| room.tags || [] }.compact
+                         .reject { |tag| tag =~ /^(silver-cost|meta:)/ }
+                         .uniq.sort_by(&:downcase)
+      @locations_cache = rooms.map(&:location).compact
+                              .reject { |location| location == false }
+                              .map(&:to_s).uniq.sort_by(&:downcase)
+    end
+
+    def rooms_on_map
+      if @rooms_map != @map
+        @rooms_map = @map
+        @rooms_cache = Room.list.select { |room| room.image == @map }
+      end
+      @rooms_cache
     end
 
     def map_src
@@ -3092,6 +3229,22 @@ module ElanthiaMap
       if @find_id && (room = Room[@find_id]) && room.image == @map && (box = coords(room))
         list << { id: 'find', x1: box[0], y1: box[1], x2: box[2], y2: box[3],
                   kind: 'marker', label: "Found room #{room.id}" }
+      end
+      if @active_tag
+        rooms_on_map.each { |room|
+          next unless room.tags&.include?(@active_tag) && (box = coords(room))
+
+          list << { id: "tag_#{room.id}", x1: box[0], y1: box[1], x2: box[2], y2: box[3],
+                    kind: 'pin', label: "#{@active_tag} (room #{room.id})" }
+        }
+      end
+      if @active_location
+        rooms_on_map.each { |room|
+          next unless room.location.to_s == @active_location && (box = coords(room))
+
+          list << { id: "loc_#{room.id}", x1: box[0], y1: box[1], x2: box[2], y2: box[3],
+                    kind: 'marker', label: "#{@active_location} (room #{room.id})" }
+        }
       end
       list
     end
@@ -3141,8 +3294,7 @@ module ElanthiaMap
           respond '[map: no matching room found]'
         end
       elsif (target_map = link_at(x, y))
-        @map = File.basename(target_map)
-        @find_id = nil
+        change_map(File.basename(target_map))
       elsif (room = room_at(x, y))
         Script.start('go2', "#{room.id} _disable_confirm_")
       else
