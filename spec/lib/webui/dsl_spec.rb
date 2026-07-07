@@ -89,6 +89,12 @@ RSpec.describe Lich::WebUI::Builder do
       expect(node[:children][0][:children].first[:text]).to eq('L')
       expect(node[:children][1][:children].first[:cid]).to eq('columns:0.c1.button:0')
       expect(builder.callbacks).to have_key('columns:0.c1.button:0')
+      expect(node).not_to have_key(:compact)
+    end
+
+    it 'marks compact columns for content-sized layout' do
+      builder.columns(3, compact: true) { |a, b, c| a.button('U') {}; b.button('D') {}; c.button('X') {} }
+      expect(builder.nodes.last[:compact]).to be(true)
     end
 
     it 'yields one builder per tab with labels' do

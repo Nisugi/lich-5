@@ -149,19 +149,25 @@ module Lich
       #
       #   ui.columns(2) { |left, right| left.text "a"; right.text "b" }
       #
+      # compact: true sizes each column to its content instead of equal
+      # widths - use it for small button groups (row actions).
+      #
       # @param count [Integer]
+      # @param compact [Boolean]
       # @yieldparam columns [Builder] one argument per column
       # @return [void]
-      def columns(count = 2, key: nil)
+      def columns(count = 2, compact: false, key: nil)
         cid = claim_cid('columns', key)
         children = Array.new(count) { |i| child_builder("#{cid}.c#{i}") }
         yield(*children)
-        @nodes << {
+        node = {
           t: 'columns', cid: cid,
           children: children.each_with_index.map do |column, i|
             { t: 'col', cid: "#{cid}.c#{i}", children: column.nodes }
           end
         }
+        node[:compact] = true if compact
+        @nodes << node
       end
 
       # Tabbed sections; the block receives one nested builder per tab, in

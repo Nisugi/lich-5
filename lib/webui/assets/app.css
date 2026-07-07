@@ -229,6 +229,12 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
 .c-col { flex: 1; min-width: 12em; }
 .c-col > * { margin: 0 0 0.8em; }
 
+/* compact columns: content-sized, for row-action button groups */
+.c-columns.compact { gap: 0.4em; flex-wrap: nowrap; align-items: center; }
+.c-columns.compact .c-col { flex: 0 0 auto; min-width: 0; }
+.c-columns.compact .c-col > * { margin: 0; }
+.c-columns.compact .c-button { padding: 0.25em 0.7em; font-size: 0.9em; }
+
 .c-tab-bar { display: flex; gap: 0.25em; border-bottom: 1px solid var(--border); }
 .c-tab-button {
   background: none;
