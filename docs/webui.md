@@ -10,10 +10,15 @@ should target the WebUI.
 ## Player usage
 
 ```
-;ui on     enable the feature (persists; default off)
-;ui        start the service if needed, open the browser
-;ui url    print the authorization link instead of opening a browser
-;ui off    disable and stop
+;ui on              enable the feature (persists; default off)
+;ui                 start the service if needed, open the browser
+;ui url             print the authorization link instead of opening a browser
+;ui list            show registered pages
+;ui open <page>     open a page in its own window
+;ui geometry reset  forget remembered window sizes/positions
+;ui port <n|auto>   prefer a fixed port (bookmarkable URLs)
+;ui handshake       machine-readable descriptor (for frontends)
+;ui off             disable and stop
 ```
 
 Try it: `;ui on`, `;webui-demo`, then `;ui`.
@@ -106,17 +111,29 @@ Emitters on the builder, in one line each:
 ```ruby
 ui.header "Section title"
 ui.text "plain text"
-ui.markdown "**bold**, *italic*, `code`, [links](https://gswiki.play.net)"
+ui.markdown "**bold**, *italic*, `code`, [links](https://gswiki.play.net), {{red:colored}}"
 ui.divider
 ui.button("Label", variant: :danger, disabled: false) { ... }
+ui.button("Remove", confirm: "Really remove?") { ... }   # two-step for destructive actions
 ui.text_input("Label", value: current, placeholder: "hint") { |text| ... }
+ui.number_input("Rest at mana", min: 0, max: 100, step: 5, value: current) { |n| ... }
 ui.select("Label", options: %w[a b c], value: current) { |choice| ... }
+ui.radio("Pace", options: %w[cautious steady reckless], value: current) { |choice| ... }
 ui.checkbox("Label", checked: bool) { |checked| ... }
 ui.slider("Label", min: 0, max: 100, step: 5, value: current) { |number| ... }
 ui.progress(0.42, label: "XP")
 ui.table(rows, headings: %w[Time Creature Loot])
+ui.log(ui.state[:feed], max_height: 200)   # scrolling stream, sticks to newest line
 ui.image("https://.../map.png", alt: "the map")   # http(s) or data: URIs only
 ```
+
+Colored spans use `{{color:text}}` with a fixed palette (red, green, blue,
+yellow, orange, cyan, magenta, gray), work inside `markdown` and `log`
+lines, and can wrap bold/italic/code. For streams, keep the backlog in
+`ui.state` (capped) and pass it whole each render — the log sticks to the
+newest line unless the player has scrolled up. `UI.notify("text",
+title: "...")` sends an OS notification to every connected browser
+(in-page toast until the player grants permission).
 
 Containers nest via builders (`compact: true` sizes columns to content —
 right for row-action button groups):

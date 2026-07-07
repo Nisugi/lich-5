@@ -35,6 +35,15 @@ UI.page('demo', title: 'WebUI Demo', every: 5) do |ui|
 
   ui.progress(((ui.state[:clicks] || 0) % 10) / 10.0, label: 'Progress to next 10 clicks')
 
+  ui.markdown 'Colored spans: {{green:healthy}}, {{yellow:wounded}}, {{red:**bleeding**}}, {{cyan:spell up}}, {{gray:idle}}'
+  ui.button('Dangerous thing', variant: :danger, confirm: 'Click again to confirm') {
+    ui.state[:feed] = (ui.state[:feed] || []) << "#{Time.now.strftime('%H:%M:%S')} {{red:dangerous thing confirmed!}}"
+  }
+
+  # scrolling stream: keep the backlog in state, capped, newest last
+  ui.state[:feed] = (ui.state[:feed] || []).last(100)
+  ui.log(ui.state[:feed], max_height: 140) unless (ui.state[:feed] || []).empty?
+
   ui.expander('Settings', open: false) do |section|
     section.text_input('Your name', value: ui.state[:name], placeholder: 'type and press Enter') do |value|
       ui.state[:name] = value
@@ -43,8 +52,11 @@ UI.page('demo', title: 'WebUI Demo', every: 5) do |ui|
     section.select('Favorite stance', options: %w[offensive advance forward neutral guarded defensive], value: ui.state[:stance]) do |value|
       ui.state[:stance] = value
     end
+    section.radio('Hunting pace', options: %w[cautious steady reckless], value: ui.state[:pace] || 'steady') { |value| ui.state[:pace] = value }
+    section.number_input('Rest at mana', min: 0, max: 100, step: 5, value: ui.state[:rest_mana] || 20) { |value| ui.state[:rest_mana] = value }
     section.checkbox('Enable the log tab', checked: ui.state[:log_tab]) { |value| ui.state[:log_tab] = value }
     section.slider('Volume', min: 0, max: 100, value: ui.state[:volume] || 50) { |value| ui.state[:volume] = value }
+    section.button('Send a notification', key: :notify) { UI.notify("Volume is #{ui.state[:volume] || 50}", title: 'webui-demo') }
   end
 
   tab_names = ui.state[:log_tab] ? %w[About Log] : %w[About]
