@@ -1,0 +1,71 @@
+=begin
+  webui-demo.lic - demonstrates the Lich WebUI script API.
+
+  Requires the WebUI feature: ;ui on
+  Then: ;webui-demo and ;ui (opens your browser)
+
+  Shows every component and the three ways pages update:
+    1. automatically after any control's callback runs
+    2. UI.refresh from anywhere in the script (watchfor, loops)
+    3. every: polling for dashboard-style pages
+
+  author: elanthia-online
+  game: any
+  tags: webui, demo, example
+=end
+
+unless defined?(UI) && UI.available?
+  respond '--- webui-demo: the WebUI is disabled. Enable it with ;ui on, then rerun.'
+  exit
+end
+
+UI.page('demo', title: 'WebUI Demo', every: 5) do |ui|
+  ui.header 'Lich WebUI Demo'
+  ui.markdown 'Every widget here is declared in **plain Ruby** - see `scripts/webui-demo.lic`. ' \
+              'This page also polls every 5 seconds (`every: 5`).'
+  ui.divider
+
+  ui.text "Server time: #{Time.now.strftime('%H:%M:%S')} (updates via polling)"
+  ui.text "Button clicks: #{ui.state[:clicks] || 0}"
+
+  ui.columns(2) do |left, right|
+    left.button('Click me') { ui.state[:clicks] = (ui.state[:clicks] || 0) + 1 }
+    right.button('Reset', variant: :danger) { ui.state[:clicks] = 0 }
+  end
+
+  ui.progress(((ui.state[:clicks] || 0) % 10) / 10.0, label: 'Progress to next 10 clicks')
+
+  ui.expander('Settings', open: false) do |section|
+    section.text_input('Your name', value: ui.state[:name], placeholder: 'type and press Enter') do |value|
+      ui.state[:name] = value
+      echo "webui-demo: hello, #{value}!"
+    end
+    section.select('Favorite stance', options: %w[offensive advance forward neutral guarded defensive], value: ui.state[:stance]) do |value|
+      ui.state[:stance] = value
+    end
+    section.checkbox('Enable the log tab', checked: ui.state[:log_tab]) { |value| ui.state[:log_tab] = value }
+    section.slider('Volume', min: 0, max: 100, value: ui.state[:volume] || 50) { |value| ui.state[:volume] = value }
+  end
+
+  tab_names = ui.state[:log_tab] ? %w[About Log] : %w[About]
+  ui.tabs(tab_names) do |about, log|
+    about.markdown 'The page block re-runs on every update; controls fire callbacks ' \
+                   'inside *your script* - `Script.current`, `Settings[]`, `echo`, and `put` all work.'
+    log&.table((ui.state[:log] || []).last(10).reverse, headings: %w[Time Event])
+  end
+end
+
+# game-event-driven updates: a watchfor pushes straight to the browser
+Watchfor.new(/^You (?:also see|notice)/) do
+  log = (UI.state('demo')[:log] ||= [])
+  log << [Time.now.strftime('%H:%M:%S'), 'room description noticed']
+  UI.refresh('demo')
+end
+
+before_dying do
+  respond '--- webui-demo: exiting; the page will disappear from your browser.'
+end
+
+respond "--- webui-demo: page registered. Open it with ;ui (or visit #{UI.url})"
+
+loop { sleep 60 } # the page lives as long as the script does
