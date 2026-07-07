@@ -2971,7 +2971,6 @@ module ElanthiaMap
       @map = nil        # current map image filename (basename)
       @current_id = nil # room id for the current-room marker
       @find_id = nil    # room id highlighted by find
-      @show_settings = false # toggled by right-click, like the GTK menu
 
       UI.serve('maps', MAP_DIR)
       @dark_dir = File.join(File.dirname(MAP_DIR), 'maps-dark')
@@ -2993,12 +2992,21 @@ module ElanthiaMap
       end
 
       register_page
-      unless UI.open('map', app: true)
+      register_settings_page
+
+      saved = Settings['webmap_geometry']
+      size = saved.is_a?(Hash) ? [saved[:w], saved[:h]] : [520, 560]
+      position = saved.is_a?(Hash) ? [saved[:x], saved[:y]] : nil
+      unless UI.open('map', app: true, size: size, position: position)
         respond "--- map: live map ready - open it with #{$clean_lich_char}ui#{" (#{UI.url}#/map/map)" if UI.url}"
       end
       follow_loop
     ensure
+      # persist the floating window's last geometry for next launch
+      geometry = UI.state('map') && UI.state('map')[:_window_geometry]
+      Settings['webmap_geometry'] = geometry if geometry.is_a?(Hash)
       UI.remove('map')
+      UI.remove('settings')
       UI.unserve('maps')
       UI.unserve('mapsdark') if @have_dark
     end
@@ -3007,35 +3015,47 @@ module ElanthiaMap
 
     def register_page
       UI.page('map', title: "Map: #{XMLData.name}", bare: true) do |ui|
-        # settings live behind right-click, like the GTK context menu
-        if @show_settings
-          ui.columns(4, compact: true, key: :controls) do |c_map, c_follow, c_dark, c_fix|
-            c_map.select('Map', options: map_files, value: @map, key: :map_pick) { |v|
-              @map = v
-              @fix_click = nil
-              @find_id = nil
-            }
-            c_follow.checkbox('Follow', checked: @follow, key: :follow) { |v| @follow = v }
-            c_dark.checkbox('Dark map', checked: @dark, key: :dark) { |v| @dark = v } if @have_dark
-            c_fix.checkbox('Fix mode', checked: @fix_mode, key: :fix) { |v|
-              @fix_mode = v
-              @fix_click = nil
-            }
-          end
-          ui.columns(3, compact: true, key: :controls2) do |c_scale, c_find, c_close|
-            c_scale.select('Scale', options: SCALES.map { |s| "#{(s * 100).to_i}%" },
-                           value: "#{(@scale * 100).to_i}%", key: :scale) { |v| @scale = v.to_i / 100.0 }
-            c_find.text_input('Find room', placeholder: 'room id, u<uid>, or search text', key: :find) { |v| find_room(v) }
-            c_close.button('Close map', variant: :danger, key: :close) { @done = true }
-          end
-        end
-
         if @map
           ui.image_map(map_src, scale: @scale, markers: markers,
-                       scroll_to: (@find_id ? 'find' : 'current'), key: :map_view) { |click| handle_click(click) }
+                       scroll_to: (@find_id ? 'find' : 'current'),
+                       popup: 'map/settings', popup_size: [430, 460],
+                       key: :map_view) { |click| handle_click(click) }
         else
           ui.text 'The current room has no map. Right-click to pick one.'
         end
+      end
+    end
+
+    # The supplemental settings window (right-click on the map), standing in
+    # for the GTK context menu. Every change refreshes the map page too.
+    def register_settings_page
+      refresh_map = proc { UI.refresh('map') }
+      UI.page('settings', title: 'Map Settings') do |ui|
+        ui.header 'Map Settings'
+        ui.select('Map', options: map_files, value: @map, key: :map_pick) { |v|
+          @map = v
+          @fix_click = nil
+          @find_id = nil
+          refresh_map.call
+        }
+        ui.select('Scale', options: SCALES.map { |s| "#{(s * 100).to_i}%" },
+                  value: "#{(@scale * 100).to_i}%", key: :scale) { |v|
+          @scale = v.to_i / 100.0
+          refresh_map.call
+        }
+        ui.text_input('Find room', placeholder: 'room id, u<uid>, or search text', key: :find) { |v|
+          find_room(v)
+          refresh_map.call
+        }
+        ui.checkbox('Follow', checked: @follow, key: :follow) { |v| @follow = v }
+        ui.checkbox('Dark map', checked: @dark, key: :dark) { |v| @dark = v; refresh_map.call } if @have_dark
+        ui.checkbox('Fix mode (ctrl+shift-click corners)', checked: @fix_mode, key: :fix) { |v|
+          @fix_mode = v
+          @fix_click = nil
+        }
+        ui.divider
+        ui.markdown 'On the map - **click**: travel there / follow map link, **shift-click**: room info, **ctrl-click**: coordinates.'
+        ui.button('Close map', variant: :danger, key: :close) { @done = true }
       end
     end
 
@@ -3101,13 +3121,13 @@ module ElanthiaMap
       nil
     end
 
-    # Mirrors Window#handle_click branch for branch; right-click toggles the
-    # settings strip (the GTK version's context menu).
+    # Mirrors Window#handle_click branch for branch. Right-clicks open the
+    # settings popup client-side and never reach here (popup: on image_map).
     def handle_click(click)
       x = click[:x].to_i
       y = click[:y].to_i
       if click[:right]
-        @show_settings = !@show_settings
+        nil # unreachable while popup: is set; reserved
       elsif click[:ctrl] && click[:shift] && @fix_mode
         fix_click(x, y)
       elsif click[:ctrl]
