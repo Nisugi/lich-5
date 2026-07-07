@@ -31,6 +31,12 @@ module Lich
 
       FRONTENDS = %w[wrayth stormfront profanity wizard avalon].freeze
 
+      ENCRYPTION_MODE_LABELS = {
+        :plaintext => 'Plaintext',
+        :standard  => 'Standard (account-derived key)',
+        :enhanced  => 'Enhanced (master password)'
+      }.freeze
+
       # Should boot use the web login instead of GTK?
       # --gtk-login always wins; --webui-login forces web; otherwise a bare
       # double-click (empty ARGV) honors the :webui_login feature flag.
@@ -296,7 +302,78 @@ module Lich
             end
           end
         end
-        tab.markdown '*Encryption settings are managed in the GTK launcher (start Lich with --gtk-login).*'
+        render_encryption_section(tab)
+      end
+
+      # Encryption Management (GTK parity): change how saved passwords are
+      # stored. EntryStore.change_encryption_mode does the heavy lifting -
+      # backup, decrypt-all, re-encrypt-all, keychain store/delete, and
+      # rollback from backup on any failure.
+      def render_encryption_section(tab)
+        current = entry_meta[:mode]
+        tab.expander('Encryption', key: :encryption) do |section|
+          section.text "Current mode: #{ENCRYPTION_MODE_LABELS[current] || current}"
+          selected = section.state[:enc_mode] || ENCRYPTION_MODE_LABELS[current] || 'Plaintext'
+          section.select('New mode', options: ENCRYPTION_MODE_LABELS.values, value: selected, key: :enc_mode) { |v| section.state[:enc_mode] = v }
+          if ENCRYPTION_MODE_LABELS.key(selected) == :enhanced
+            section.text 'If you forget the master password, your saved passwords are unrecoverable.'
+            section.password_input('New master password', key: :enc_mp1) { |v| section.state[:enc_mp1] = v }
+            section.password_input('Confirm master password', key: :enc_mp2) { |v| section.state[:enc_mp2] = v }
+          end
+          section.button('Apply Encryption Mode', key: :enc_apply) { change_encryption(section.state) }
+        end
+      end
+
+      def change_encryption(state)
+        target = ENCRYPTION_MODE_LABELS.key(state[:enc_mode].to_s) || entry_meta[:mode]
+        current = entry_meta[:mode]
+        if target == current
+          @status = "Already using #{ENCRYPTION_MODE_LABELS[current]}."
+          return
+        end
+
+        new_master = nil
+        if target == :enhanced
+          first = state[:enc_mp1].to_s
+          second = state[:enc_mp2].to_s
+          state[:enc_mp1] = nil
+          state[:enc_mp2] = nil
+          return fail_login('Enter the new master password twice.') if first.empty? || second.empty?
+          return fail_login('Master passwords do not match.') unless first == second
+          return fail_login('No system keychain available - Enhanced mode needs one to store the master password.') unless keychain_available?
+
+          new_master = first
+        end
+        # Leaving enhanced needs the master password in the keychain; if we
+        # unlocked from memory this session, heal it first.
+        heal_keychain(@unlocked_master) if current == :enhanced && @unlocked_master
+
+        set_busy('Re-encrypting saved entries...')
+        Thread.new do
+          begin
+            require File.join(LIB_DIR, 'common', 'authentication', 'entry_store') unless defined?(Lich::Common::Authentication::EntryStore)
+            ok = Lich::Common::Authentication::EntryStore.change_encryption_mode(@data_dir, target, new_master)
+            @busy = nil
+            if ok
+              @unlocked_master = nil # keychain (or plaintext) now covers loads
+              @error = nil
+              @status = "Encryption mode changed to #{ENCRYPTION_MODE_LABELS[target]}."
+            else
+              @error = 'Encryption mode change failed - entries restored from backup (see the Lich log).'
+            end
+          rescue ScriptError, StandardError => e
+            @busy = nil
+            @error = "Encryption mode change failed: #{e.message}"
+          end
+          Registry.find('lich/login')&.request_render
+        end
+      end
+
+      def keychain_available?
+        require File.join(LIB_DIR, 'common', 'gui', 'master_password_manager') unless defined?(Lich::Common::GUI::MasterPasswordManager)
+        Lich::Common::GUI::MasterPasswordManager.keychain_available?
+      rescue ScriptError, StandardError
+        false
       end
 
       # Updates the stored (re-encrypted per the file mode) password for one

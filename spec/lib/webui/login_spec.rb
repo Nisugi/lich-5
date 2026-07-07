@@ -206,6 +206,41 @@ RSpec.describe Lich::WebUI::Login do
       expect(result).to be_nil
     end
 
+    it 'changes the encryption mode from the browser' do
+      allow(described_class).to receive(:entry_meta).and_return({ mode: :plaintext, validation: nil })
+      allow(described_class).to receive(:keychain_available?).and_return(true)
+      entry_store = double('EntryStore', change_encryption_mode: true)
+      stub_const('Lich::Common::Authentication::EntryStore', entry_store)
+      authenticator = ->(**_) { raise 'auth should not be reached' }
+
+      result = run_login(authenticator: authenticator) do |page|
+        fake_conn = Struct.new(:sent) { def send_text(json) = (sent << json) }.new([])
+        page.subscribe(fake_conn)
+        tree = fake_conn.sent.last
+        expect(tree).to include('Current mode: Plaintext')
+
+        page.handle_event(tree[/"cid":"([^"]*select:enc_mode)"/, 1], 'Enhanced (master password)')
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('password_input:enc_mp1') } }
+        tree = fake_conn.sent.last
+
+        # mismatched confirmation is rejected before any re-encryption
+        page.handle_event(tree[/"cid":"([^"]*password_input:enc_mp1)"/, 1], 'hunter2')
+        page.handle_event(tree[/"cid":"([^"]*password_input:enc_mp2)"/, 1], 'different')
+        page.handle_event(tree[/"cid":"([^"]*button:enc_apply)"/, 1], nil)
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('Master passwords do not match') } }
+        expect(entry_store).not_to have_received(:change_encryption_mode)
+
+        page.handle_event(tree[/"cid":"([^"]*password_input:enc_mp1)"/, 1], 'hunter2')
+        page.handle_event(tree[/"cid":"([^"]*password_input:enc_mp2)"/, 1], 'hunter2')
+        page.handle_event(tree[/"cid":"([^"]*button:enc_apply)"/, 1], nil)
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('Encryption mode changed to Enhanced') } }
+        expect(entry_store).to have_received(:change_encryption_mode).with(Dir.tmpdir, :enhanced, 'hunter2')
+
+        page.handle_event(fake_conn.sent.last[/"cid":"([^"]*button:quit)"/, 1], nil)
+      end
+      expect(result).to be_nil
+    end
+
     it 'wires the Fav button to the favorites toggle' do
       toggled = []
       allow(described_class).to receive(:toggle_favorite) { |entry| toggled << entry[:char_name] }

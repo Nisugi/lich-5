@@ -39,9 +39,10 @@ always printed to the log in case no browser opens).
 - **Account Management** — one sidebar tab per saved account: its
   characters, *Fetch & Add Missing Characters* (EAccess-lists the account
   with its stored password and saves anything new), *Change Password*, and a
-  two-click *Remove Account*. Adding a brand-new account is Manual Entry's
-  job (Connect + Save this entry); encryption-mode changes stay in the GTK
-  launcher (`--gtk-login`).
+  two-click *Remove Account*. The *Encryption* section switches how saved
+  passwords are stored (Plaintext / Standard / Enhanced with a master
+  password) with automatic backup and rollback. Adding a brand-new account
+  is Manual Entry's job (Connect + Save this entry).
 - **Multi-Launch** — mirrors the GTK launcher's switch (same persisted
   setting). Off: Play turns this launcher into the session and the window
   closes. On: each saved-entry Play spawns a separate detached Lich session
