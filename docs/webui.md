@@ -76,13 +76,45 @@ ui.table(rows, headings: %w[Time Creature Loot])
 ui.image("https://.../map.png", alt: "the map")   # http(s) or data: URIs only
 ```
 
-Containers nest via builders:
+Containers nest via builders (`compact: true` sizes columns to content —
+right for row-action button groups):
 
 ```ruby
 ui.expander("Settings", open: false) { |section| section.checkbox("Loot") { |v| ... } }
 ui.columns(2) { |left, right| left.button("Go") { ... }; right.text "status" }
 ui.tabs(%w[Loot Stats]) { |loot, stats| loot.table(...); stats.text(...) }
 ```
+
+Tables become interactive with `sortable:` (client-side column sort), a
+row-click block (receives the clicked row's index into your original rows,
+regardless of sort order), and `selected:` for highlighting:
+
+```ruby
+ui.table(rows, headings: %w[Script Author], sortable: true,
+         selected: ui.state[:pick]) { |i| ui.state[:pick] = i }
+```
+
+### Local images and live maps
+
+`UI.serve(alias, directory)` exposes a directory of images (png/jpg/gif/webp
+only, traversal-proof) at `/files/<alias>/...`, owned by your script and
+removed when it exits. `ui.image_map` renders an image with overlay markers
+and reports clicks in unscaled image coordinates - hit-testing against your
+own data stays in your script:
+
+```ruby
+UI.serve('maps', MAP_DIR)
+ui.image_map("/files/maps/#{room.image}", scale: 1.5, scroll_to: 'current',
+             markers: [{ id: 'current', x1: 10, y1: 20, x2: 30, y2: 40, kind: 'current' }]) do |click|
+  # click => { x:, y:, shift:, ctrl:, marker: }
+  target = my_room_at(click[:x], click[:y])
+  Script.start('go2', target.id.to_s) if target && !click[:shift]
+end
+```
+
+`scroll_to:` re-centers the scrollable container on the named marker whenever
+it moves - that is "keep centered" for a live map. Marker kinds: `current`
+(highlighted), `marker`, `pin`.
 
 ### The rendering model (what you must know)
 
