@@ -12,6 +12,29 @@ module Lich
       # Provides a more maintainable alternative to the Marshal-based state system
       # Enhanced with password encryption support
       module EntryStore
+        @master_password_prompt = nil
+
+        # Injectable master-password recovery prompt, so recovery does not
+        # hard-depend on GTK. The callable receives the validation_test Hash
+        # and returns { password:, continue_session: } or nil (cancelled).
+        # Defaults to the GTK recovery dialog when GTK is loaded; nil when it
+        # is not, in which case recovery is unavailable and decryption errors
+        # surface to the caller. A future browser-based prompt registers
+        # itself here.
+        #
+        # @param callable [#call, nil]
+        def self.master_password_prompt=(callable)
+          @master_password_prompt = callable
+        end
+
+        # @return [#call, nil]
+        def self.master_password_prompt
+          return @master_password_prompt if @master_password_prompt
+          return nil unless defined?(Gtk) && defined?(Lich::Common::GUI::MasterPasswordPromptUI)
+
+          ->(validation_test) { Lich::Common::GUI::MasterPasswordPromptUI.show_password_for_data_access(validation_test) }
+        end
+
         # Generates the full path to the entry.yaml file.
         #
         # @param data_dir [String] The directory where the entry.yaml file is located.
@@ -270,14 +293,23 @@ module Lich
         rescue StandardError => e
           # Only attempt recovery for enhanced mode with missing master password
           if mode.to_sym == :enhanced && e.message.include?("Master password not found") && validation_test && !validation_test.empty?
+            # The prompt is injectable (master_password_prompt=) so recovery
+            # does not hard-depend on GTK; without any prompt, surface the
+            # original error to the caller.
+            prompt = master_password_prompt
+            if prompt.nil?
+              Lich.log "warning: Master password missing from Keychain and no recovery prompt is available"
+              raise
+            end
+
             Lich.log "info: Master password missing from Keychain, attempting recovery via user prompt"
 
             # Show appropriate dialog based on context - use data access for conversion, recovery for actual recovery
-            recovery_result = Lich::Common::GUI::MasterPasswordPromptUI.show_password_for_data_access(validation_test)
+            recovery_result = prompt.call(validation_test)
 
             if recovery_result.nil? || recovery_result[:password].nil?
               Lich.log "info: User cancelled master password recovery"
-              Lich::Common.quit_gtk_main_loop
+              quit_main_loop_if_gtk
               return nil
             end
 
@@ -297,7 +329,7 @@ module Lich
             if !continue_session
               Lich.log "info: User chose to close application after password recovery"
               # Exit the application gracefully
-              Lich::Common.quit_gtk_main_loop
+              quit_main_loop_if_gtk
             end
 
             # Retry decryption with recovered password
@@ -306,6 +338,12 @@ module Lich
             # Re-raise if not recoverable
             raise
           end
+        end
+
+        # The recovery dialog's cancel/close paths shut the GTK main loop
+        # down; without GTK there is no loop to quit.
+        def self.quit_main_loop_if_gtk
+          Lich::Common.quit_gtk_main_loop if defined?(Gtk) && Lich::Common.respond_to?(:quit_gtk_main_loop)
         end
 
         # Encrypts all passwords in yaml_data structure

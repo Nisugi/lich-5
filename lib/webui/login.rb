@@ -220,6 +220,7 @@ module Lich
       # The Saved Entry tab body: entries as a flat grouped list or (Tab
       # Layout) per-account tabs, then the GUI Settings row and Refresh.
       def render_saved_entries(saved_tab, saved)
+        render_legacy_banner(saved_tab) if legacy_pending?
         saved_tab.text 'No saved characters yet - use Manual Entry.' if saved.empty?
         if tab_layout? && !saved.empty?
           render_account_tabs(saved_tab, saved)
@@ -464,6 +465,45 @@ module Lich
           section.checkbox('Multi-Launch (spawn sessions, keep this launcher open)',
                            checked: multi_launch?, key: :multi_launch) { |v| self.multi_launch = v }
         end
+      end
+
+      # @return [Boolean] whether a legacy entry.dat exists with no
+      #   entry.yaml yet (the first-run conversion GTK used to prompt for)
+      def legacy_pending?
+        require File.join(LIB_DIR, 'common', 'authentication', 'entry_store') unless defined?(Lich::Common::Authentication::EntryStore)
+        !File.exist?(Lich::Common::Authentication::EntryStore.yaml_file_path(@data_dir)) &&
+          File.exist?(File.join(@data_dir, 'entry.dat'))
+      rescue ScriptError, StandardError
+        false
+      end
+
+      # First-run conversion from the legacy Marshal entry.dat (the GTK
+      # ConversionUI flow, browser-sized). The legacy list still renders and
+      # plays without converting; converting enables saving, favorites, and
+      # account management. Enhanced mode is deliberately not offered here -
+      # its master-password creation lives in the Encryption section, one
+      # mode change away, keeping this flow prompt-free.
+      def render_legacy_banner(saved_tab)
+        saved_tab.markdown '**Legacy saved-login file detected (entry.dat).**'
+        saved_tab.text 'Convert it to the current format to enable saving, favorites, and account management.'
+        choice = saved_tab.state[:mig_mode] || 'Plaintext'
+        saved_tab.select('Store passwords as', options: [ENCRYPTION_MODE_LABELS[:plaintext], ENCRYPTION_MODE_LABELS[:standard]],
+                         value: choice, key: :mig_mode) { |v| saved_tab.state[:mig_mode] = v }
+        saved_tab.button('Convert Saved Logins', key: :mig_convert) { migrate_legacy(saved_tab.state) }
+        saved_tab.divider
+      end
+
+      def migrate_legacy(state)
+        mode = ENCRYPTION_MODE_LABELS.key(state[:mig_mode].to_s) || :plaintext
+        require File.join(LIB_DIR, 'common', 'authentication', 'entry_store') unless defined?(Lich::Common::Authentication::EntryStore)
+        if Lich::Common::Authentication::EntryStore.migrate_from_legacy(@data_dir, encryption_mode: mode)
+          @error = nil
+          @status = "Converted entry.dat to entry.yaml (#{ENCRYPTION_MODE_LABELS[mode]}). Enhanced mode is available under Account Management > Encryption."
+        else
+          @error = 'Conversion failed - entry.dat is unchanged (see the Lich log).'
+        end
+      rescue ScriptError, StandardError => e
+        fail_login("Conversion failed: #{e.message}")
       end
 
       # Enhanced-encryption gate: shown instead of the saved list when the

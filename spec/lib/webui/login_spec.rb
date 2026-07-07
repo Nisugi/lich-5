@@ -209,7 +209,8 @@ RSpec.describe Lich::WebUI::Login do
     it 'changes the encryption mode from the browser' do
       allow(described_class).to receive(:entry_meta).and_return({ mode: :plaintext, validation: nil })
       allow(described_class).to receive(:keychain_available?).and_return(true)
-      entry_store = double('EntryStore', change_encryption_mode: true)
+      entry_store = double('EntryStore', change_encryption_mode: true,
+                                         yaml_file_path: File.join(Dir.tmpdir, 'no-such-entry.yaml'))
       stub_const('Lich::Common::Authentication::EntryStore', entry_store)
       authenticator = ->(**_) { raise 'auth should not be reached' }
 
@@ -235,6 +236,29 @@ RSpec.describe Lich::WebUI::Login do
         page.handle_event(tree[/"cid":"([^"]*button:enc_apply)"/, 1], nil)
         Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('Encryption mode changed to Enhanced') } }
         expect(entry_store).to have_received(:change_encryption_mode).with(Dir.tmpdir, :enhanced, 'hunter2')
+
+        page.handle_event(fake_conn.sent.last[/"cid":"([^"]*button:quit)"/, 1], nil)
+      end
+      expect(result).to be_nil
+    end
+
+    it 'offers legacy entry.dat conversion and converts with the chosen mode' do
+      allow(described_class).to receive(:legacy_pending?).and_return(true)
+      entry_store = double('EntryStore', migrate_from_legacy: true,
+                                         yaml_file_path: File.join(Dir.tmpdir, 'no-such-entry.yaml'))
+      stub_const('Lich::Common::Authentication::EntryStore', entry_store)
+      authenticator = ->(**_) { raise 'auth should not be reached' }
+
+      result = run_login(authenticator: authenticator) do |page|
+        fake_conn = Struct.new(:sent) { def send_text(json) = (sent << json) }.new([])
+        page.subscribe(fake_conn)
+        tree = fake_conn.sent.last
+        expect(tree).to include('Legacy saved-login file detected')
+
+        page.handle_event(tree[/"cid":"([^"]*select:mig_mode)"/, 1], 'Standard (account-derived key)')
+        page.handle_event(tree[/"cid":"([^"]*button:mig_convert)"/, 1], nil)
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('Converted entry.dat to entry.yaml') } }
+        expect(entry_store).to have_received(:migrate_from_legacy).with(Dir.tmpdir, encryption_mode: :standard)
 
         page.handle_event(fake_conn.sent.last[/"cid":"([^"]*button:quit)"/, 1], nil)
       end

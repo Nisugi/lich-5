@@ -27,6 +27,54 @@ RSpec.describe Lich::Common::Authentication::EntryStore do
 
   after { FileUtils.remove_entry(temp_dir) if Dir.exist?(temp_dir) }
 
+  describe '.decrypt_password_with_recovery prompt seam' do
+    let(:validation_test) { { 'validation_salt' => 'x', 'validation_hash' => 'y' } }
+    let(:missing_error) { 'Master password not found in Keychain - cannot decrypt' }
+
+    after { described_class.master_password_prompt = nil }
+
+    it 'has no default prompt without GTK' do
+      hide_const('Gtk')
+      expect(described_class.master_password_prompt).to be_nil
+    end
+
+    it 'surfaces the original error when no prompt is available' do
+      allow(described_class).to receive(:decrypt_password).and_raise(StandardError, missing_error)
+      allow(described_class).to receive(:master_password_prompt).and_return(nil)
+
+      expect {
+        described_class.decrypt_password_with_recovery('enc', mode: :enhanced, validation_test: validation_test)
+      }.to raise_error(/Master password not found/)
+    end
+
+    it 'recovers via an injected (non-GTK) prompt' do
+      allow(described_class).to receive(:decrypt_password) do |_enc, **kwargs|
+        raise StandardError, missing_error if kwargs[:master_password].nil?
+
+        'secret'
+      end
+      allow(Lich::Common::GUI::MasterPasswordManager).to receive(:store_master_password).and_return(true)
+      prompts = []
+      described_class.master_password_prompt = lambda { |test|
+        prompts << test
+        { password: 'mp', continue_session: true }
+      }
+
+      result = described_class.decrypt_password_with_recovery('enc', mode: :enhanced, validation_test: validation_test)
+      expect(result).to eq('secret')
+      expect(prompts).to eq([validation_test])
+      expect(Lich::Common::GUI::MasterPasswordManager).to have_received(:store_master_password).with('mp')
+    end
+
+    it 'treats a cancelled injected prompt as nil without touching GTK' do
+      allow(described_class).to receive(:decrypt_password).and_raise(StandardError, missing_error)
+      described_class.master_password_prompt = ->(_test) { nil }
+
+      result = described_class.decrypt_password_with_recovery('enc', mode: :enhanced, validation_test: validation_test)
+      expect(result).to be_nil
+    end
+  end
+
   describe '.migrate_from_legacy with enhanced mode' do
     before do
       # Create a dummy entry.dat file for each test

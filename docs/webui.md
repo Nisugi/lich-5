@@ -55,8 +55,10 @@ always printed to the log in case no browser opens).
 
 Notes: account passwords transit loopback HTTP once, token-gated, into the
 same Lich process that handles them today — equivalent exposure to typing
-them into the GTK window. First-run migration from the legacy `entry.dat`
-format is GTK-only; convert by running the GTK login once.
+them into the GTK window. A legacy `entry.dat` still displays and plays
+as-is; a banner on Saved Entry converts it to the current format
+(Plaintext or Standard — switch to Enhanced afterward via the Encryption
+section). The full login launcher works without GTK loaded.
 
 ## Script API
 
