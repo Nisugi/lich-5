@@ -8,10 +8,14 @@
           game: gs
           tags: magic, utility, spell
       required: Lich >= 5.9.0
-       version: 2.2.0
+       version: 2.2.1
 
   Version Control:
     Major_change.feature_addition.bugfix
+  2.2.1 (2026-07-06)
+    Setup page density: casting-order and not-cast rows are compact
+    (name + small buttons together, tight stacking) instead of one
+    page-wide row per spell.
   2.2.0 (2026-07-06)
     - ;ewaggle setup renders in the browser via the Lich WebUI when enabled (;ui on):
       casting order with up/down/remove controls, options gated by class/society,
@@ -265,7 +269,7 @@ module Ewaggle
         spells.header 'Casting order'
         spells.text '(nothing selected to cast yet)' if settings[:cast_list].empty?
         settings[:cast_list].each_with_index do |entry, index|
-          spells.columns(2, key: "cast_#{entry}") do |main, actions|
+          spells.columns(2, compact: true, key: "cast_#{entry}") do |main, actions|
             main.text "#{index + 1}.  #{entry}"
             actions.columns(3, compact: true, key: "castact_#{entry}") do |up, down, remove|
               up.button('up', key: "up_#{entry}", disabled: index.zero?) {
@@ -289,7 +293,7 @@ module Ewaggle
         spells.header 'Known spells not being cast'
         spells.text '(every known spell is in the casting order)' if settings[:not_to_cast].empty?
         settings[:not_to_cast].each do |entry|
-          spells.columns(2, key: "skip_#{entry}") do |main, actions|
+          spells.columns(2, compact: true, key: "skip_#{entry}") do |main, actions|
             main.text entry
             actions.button('add', key: "add_#{entry}") {
               settings[:not_to_cast].delete(entry)
