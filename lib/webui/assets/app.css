@@ -163,7 +163,7 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
 }
 .c-label { color: var(--muted); min-width: 8em; }
 
-.c-field input[type="text"], .c-field select {
+.c-field input[type="text"], .c-field input[type="password"], .c-field select {
   background: var(--surface);
   color: var(--text);
   border: 1px solid var(--border);
@@ -173,7 +173,7 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
   flex: 1;
   max-width: 20em;
 }
-.c-field input[type="text"]:focus, .c-field select:focus {
+.c-field input[type="text"]:focus, .c-field input[type="password"]:focus, .c-field select:focus {
   outline: 2px solid var(--accent);
   outline-offset: -1px;
 }

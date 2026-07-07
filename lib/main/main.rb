@@ -135,6 +135,21 @@ reconnect_if_wanted = proc {
 
   ## GUI starts here
 
+  elsif defined?(Lich::WebUI::Login) && Lich::WebUI::Login.wanted?
+    # Browser-based login launcher (:webui_login flag or --webui-login).
+    # Blocks like gui_login; produces the same launch_data contract.
+    webui_login_result = Lich::WebUI::Login.run(data_dir: DATA_DIR)
+    if webui_login_result.is_a?(Array)
+      @launch_data = webui_login_result
+    elsif webui_login_result == :fallback && defined?(Gtk)
+      Lich.log 'warning: WebUI login unavailable; falling back to GTK login'
+      require File.join(LIB_DIR, 'common', 'gui_login.rb')
+      gui_login
+    else
+      Lich.log 'info: WebUI login quit by user'
+      exit
+    end
+
   elsif defined?(Gtk) and (ARGV.empty? or @argv_options[:gui])
     require File.join(LIB_DIR, 'common', 'gui_login.rb')
     gui_login
@@ -716,6 +731,9 @@ reconnect_if_wanted = proc {
     detachable_client_port: @argv_options[:detachable_client_port]
   )
   Lich::InternalAPI::ActiveSessions::Lifecycle.start(session_name: session_name, role: session_role)
+
+  # a pre-login WebUI tab (login launcher) picks up the character name
+  Lich::WebUI.refresh_hello if defined?(Lich::WebUI) && Lich::WebUI.running?
 
   unless @argv_options[:detachable_client_port].nil?
     detachable_client_thread = Thread.new {

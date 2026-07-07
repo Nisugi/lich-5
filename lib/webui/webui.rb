@@ -56,9 +56,12 @@ module Lich
     # running. Safe to call repeatedly; used by `;ui` and (in M2) by the
     # first UI.page registration.
     #
+    # force: true starts the server even when the :webui flag is off - used
+    # by the pre-login launcher, whose own :webui_login flag is the opt-in.
+    #
     # @return [Boolean] true when the service is available
-    def self.ensure_service!
-      return false unless enabled?
+    def self.ensure_service!(force: false)
+      return false unless force || enabled?
 
       @mutex.synchronize do
         return true if @server&.running?
@@ -245,12 +248,42 @@ module Lich
       Registry.register(page)
     end
 
+    # Registers a page owned by core Lich rather than a script (login,
+    # launcher). Core pages dispatch inline, survive ScriptDeath cleanup,
+    # and are removed explicitly. Not exposed on the UI facade - scripts
+    # must not create immortal pages.
+    #
+    # @param name [String]
+    # @return [Page, nil]
+    def self.register_core_page(name, title: nil, bare: false, every: nil, &block)
+      return nil unless ensure_service!(force: true)
+
+      page = Page.new(
+        id: "lich/#{name}",
+        title: title ? title.to_s : name.to_s,
+        script: nil,
+        block: block,
+        every: every,
+        bare: bare
+      )
+      Registry.register(page)
+    end
+
     # Broadcasts the current page list to every connected browser. Called
     # by the Registry whenever pages register/unregister.
     #
     # @return [void]
     def self.notify_pages_changed
       @server&.broadcast(Protocol.pages(pages_snapshot))
+    end
+
+    # Re-broadcasts the hello envelope (session identity + pages) to every
+    # connected browser - call after login completes so a pre-login tab
+    # picks up the character name without a reload.
+    #
+    # @return [void]
+    def self.refresh_hello
+      @server&.broadcast(Protocol.hello(session: session_info, pages: pages_snapshot, siblings: sibling_sessions))
     end
 
     # Routes one parsed browser message (see Protocol::CLIENT_MESSAGE_TYPES)

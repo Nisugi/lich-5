@@ -71,7 +71,14 @@ module Lich
       # +on_timeout+ instead if the context cannot be entered by the
       # deadline. Threads already in the script's group run inline.
       DEFAULT_DISPATCHER = lambda do |script, timeout, on_timeout, work|
-        if script.respond_to?(:has_thread?) && script.has_thread?(Thread.current)
+        if script.nil?
+          # core page (no owning script): run inline on the calling thread
+          begin
+            work.call
+          rescue StandardError => e
+            Lich.log("error: WebUI core dispatch: #{e.class}: #{e.message}") if defined?(Lich) && Lich.respond_to?(:log)
+          end
+        elsif script.respond_to?(:has_thread?) && script.has_thread?(Thread.current)
           work.call
         elsif script.respond_to?(:thread_group) && script.thread_group
           worker = Thread.new do
@@ -111,7 +118,10 @@ module Lich
         @title = title
         @script = script
         @script_name = script.respond_to?(:name) ? script.name.to_s : 'lich'
-        @owner_id = script.object_id
+        # nil-script (core) pages get a nil owner_id, which no dying script's
+        # object_id can equal - they are removed explicitly, never by
+        # ScriptDeath cleanup.
+        @owner_id = script&.object_id
         @block = block
         @every = every&.to_f
         @bare = !!bare

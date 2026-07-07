@@ -2611,8 +2611,9 @@ def do_client(client_string)
       end
     elsif cmd =~ /^magic$/ && XMLData.game =~ /^GS/
       Effects.display
-    elsif cmd =~ /^ui(?:\s+(\S+))?$/i
+    elsif cmd =~ /^ui(?:\s+(\S+))?(?:\s+(\S+))?$/i
       webui_arg = $1&.downcase
+      webui_arg2 = $2&.downcase
       case webui_arg
       when 'on'
         Lich::Common::FeatureFlags.set(Lich::WebUI::FEATURE_FLAG, true)
@@ -2621,6 +2622,18 @@ def do_client(client_string)
         Lich::Common::FeatureFlags.set(Lich::WebUI::FEATURE_FLAG, false)
         Lich::WebUI.stop_service!
         respond '--- Lich: WebUI disabled and stopped.'
+      when 'login'
+        case webui_arg2
+        when 'on'
+          Lich::Common::FeatureFlags.set(Lich::WebUI::Login::FEATURE_FLAG, true)
+          Lich::Common::FeatureFlags.set(Lich::WebUI::FEATURE_FLAG, true)
+          respond '--- Lich: browser login enabled. The next plain launch of Lich opens the login page instead of the GTK window (--gtk-login overrides).'
+        when 'off'
+          Lich::Common::FeatureFlags.set(Lich::WebUI::Login::FEATURE_FLAG, false)
+          respond '--- Lich: browser login disabled; GTK login restored.'
+        else
+          respond "--- Lich: usage: #{$clean_lich_char}ui login on|off"
+        end
       when 'url', nil
         if !Lich::WebUI.enabled?
           respond "--- Lich: WebUI is disabled. Enable it with #{$clean_lich_char}ui on"
@@ -2688,6 +2701,7 @@ def do_client(client_string)
       respond "   #{$clean_lich_char}debuglogs <number>        set how many debug logs to keep (default: #{Lich::MAX_DEBUG_LOGS_DEFAULT})"
       respond
       respond "   #{$clean_lich_char}ui [on|off|url]           browser-based script UI (open, enable/disable, or show link)"
+      respond "   #{$clean_lich_char}ui login [on|off]         use the browser login page instead of the GTK launcher"
       respond "   #{$clean_lich_char}lich5-update --<command>  Lich5 ecosystem management "
       respond "                              see #{$clean_lich_char}lich5-update --help"
       respond "   #{$clean_lich_char}hmr <regex filepath>      Hot module reload a Ruby or Lich5 file without relogging, uses Regular Expression matching"

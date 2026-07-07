@@ -70,6 +70,14 @@ RSpec.describe Lich::WebUI::Builder do
     expect(builder.nodes.last.keys).not_to include(:sortable, :clickable, :selected)
   end
 
+  it 'never carries a value on password inputs' do
+    builder.password_input('Password', placeholder: 'hunter2') { |v| v }
+    node = builder.nodes.last
+    expect(node[:t]).to eq('password_input')
+    expect(node.keys).not_to include(:value)
+    expect(builder.callbacks).to have_key(node[:cid])
+  end
+
   it 'exposes the page state to the block' do
     state[:kills] = 7
     expect(builder.state[:kills]).to eq(7)

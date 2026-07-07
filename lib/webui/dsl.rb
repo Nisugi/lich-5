@@ -83,6 +83,18 @@ module Lich
         emit('text_input', key: key, label: label.to_s, value: value&.to_s, placeholder: placeholder&.to_s, &block)
       end
 
+      # Masked input for credentials. The value is NEVER echoed back into
+      # the render tree - it exists only in the browser field and the single
+      # change event your block receives. Do not log it.
+      #
+      # @param label [#to_s]
+      # @param placeholder [#to_s, nil]
+      # @yieldparam value [String]
+      # @return [void]
+      def password_input(label, placeholder: nil, key: nil, &block)
+        emit('password_input', key: key, label: label.to_s, placeholder: placeholder&.to_s, &block)
+      end
+
       # @param label [#to_s]
       # @param options [Array<#to_s>]
       # @param value [#to_s, nil] currently selected option
