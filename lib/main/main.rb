@@ -147,7 +147,10 @@ reconnect_if_wanted = proc {
       gui_login
     else
       Lich.log 'info: WebUI login quit by user'
-      exit
+      # plain exit only raises SystemExit in this boot thread; the process
+      # main thread is parked in Gtk.main and would keep Lich alive
+      Lich::WebUI.stop_service! rescue nil
+      exit!(0)
     end
 
   elsif defined?(Gtk) and (ARGV.empty? or @argv_options[:gui])
