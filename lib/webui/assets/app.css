@@ -292,6 +292,10 @@ body.bare-page .c-image-map {
 .c-columns.compact .c-col { flex: 0 0 auto; min-width: 0; }
 .c-columns.compact .c-col > * { margin: 0; }
 .c-columns.compact .c-button { padding: 0.25em 0.7em; font-size: 0.9em; }
+/* compact rows used as list items stack tightly (overrides the generic
+ * 0.8em child margin, which suits prose more than 18-row lists) */
+.page-body > .c-columns.compact,
+.c-tab-panel > .c-columns.compact { margin-bottom: 0.35em; }
 
 .c-tab-bar { display: flex; gap: 0.25em; border-bottom: 1px solid var(--border); }
 .c-tab-button {
