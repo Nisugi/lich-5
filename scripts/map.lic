@@ -14,9 +14,12 @@ Tracks your current room on visual maps
       game: Gemstone
       tags: core, movement, mapping
       required: Lich >= 5.13.0
-      version: 2.3.1
+      version: 2.3.2
 
   changelog:
+    v2.3.2 (2026-07-07)
+      * Closing the map window (X) now reliably exits the script within a few
+        seconds (engine marks closed browser connections dead immediately).
     v2.3.1 (2026-07-07)
       * Window lifecycle parity: closing the map window (X) exits the script,
         and killing the script (;k map) closes the map and settings windows.
@@ -3347,9 +3350,9 @@ module ElanthiaMap
     end
 
     # Closing the map window should kill the script, like closing the GTK
-    # window. Dead connections are detected within one server keepalive
-    # (~30s); the grace on top tolerates reloads and reconnects.
-    WINDOW_GRACE = 15
+    # window. The server notices the closed window within a fraction of a
+    # second; the grace only needs to cover a reload/reconnect.
+    WINDOW_GRACE = 5
 
     # Same room-change tracking loop as ElanthiaMap.run, driving UI.refresh
     # instead of GTK widget updates - plus the window watchdog.
