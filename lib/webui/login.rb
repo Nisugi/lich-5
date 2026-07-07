@@ -52,7 +52,11 @@ module Lich
       # @param launch_preparer [#call] (auth_data, frontend, custom_launch, dir) -> Array
       # @return [Array<String>, :fallback, nil] launch_data; :fallback when
       #   the server could not start; nil when the player quit
-      def run(data_dir:, entries_loader: nil, authenticator: nil, launch_preparer: nil)
+      def run(data_dir:, entries_loader: nil, authenticator: nil, launch_preparer: nil, account_lister: nil)
+        @account_lister = account_lister || lambda { |account:, password:|
+          Lich::Common::Authentication.authenticate(account: account, password: password, legacy: true)
+        }
+        @char_list = nil
         @entries_loader = entries_loader || method(:default_entries)
         @authenticator = authenticator || lambda { |account:, password:, character:, game_code:|
           Lich::Common::Authentication.authenticate(account: account, password: password, character: character, game_code: game_code)
@@ -121,10 +125,29 @@ module Lich
 
           manual_tab.text_input('User ID', value: ui.state[:account], key: :account) { |v| ui.state[:account] = v.strip }
           manual_tab.password_input('Password', key: :password) { |v| ui.state[:password] = v }
-          manual_tab.select('Game', options: GAME_CODES.keys, value: ui.state[:game] || 'GS4 Prime', key: :game) { |v| ui.state[:game] = v }
-          manual_tab.text_input('Character', value: ui.state[:character], key: :character) { |v| ui.state[:character] = v.strip }
-          manual_tab.select('Frontend', options: FRONTENDS, value: ui.state[:frontend] || 'wrayth', key: :frontend) { |v| ui.state[:frontend] = v }
-          manual_tab.button('Play', key: :manual_play) { play_manual(ui.state) }
+          manual_tab.columns(2, compact: true, key: :connect_row) do |c_connect, c_disconnect|
+            c_connect.button('Connect', key: :connect) { connect_account(ui.state) }
+            if @char_list
+              c_disconnect.button('Disconnect', key: :disconnect) {
+                @char_list = nil
+                ui.state[:sel_char] = nil
+              }
+            end
+          end
+
+          if @char_list
+            rows = @char_list.map { |char| [char[:game_name].to_s, char[:char_name].to_s] }
+            manual_tab.table(rows, headings: %w[Game Character], sortable: true,
+                             selected: ui.state[:sel_char], key: :char_table) { |index| ui.state[:sel_char] = index }
+            manual_tab.select('Frontend', options: FRONTENDS, value: ui.state[:frontend] || 'wrayth', key: :frontend) { |v| ui.state[:frontend] = v }
+            manual_tab.button('Play', key: :list_play) { play_from_list(ui.state) }
+          else
+            manual_tab.markdown '*Connect to pick from your characters, or log in directly:*'
+            manual_tab.select('Game', options: GAME_CODES.keys, value: ui.state[:game] || 'GS4 Prime', key: :game) { |v| ui.state[:game] = v }
+            manual_tab.text_input('Character', value: ui.state[:character], key: :character) { |v| ui.state[:character] = v.strip }
+            manual_tab.select('Frontend', options: FRONTENDS, value: ui.state[:frontend] || 'wrayth', key: :frontend) { |v| ui.state[:frontend] = v }
+            manual_tab.button('Play', key: :manual_play) { play_manual(ui.state) }
+          end
         end
       end
 
@@ -163,6 +186,44 @@ module Lich
               custom_launch_dir: entry[:custom_launch_dir]
             )
           end
+        end
+      end
+
+      # Connect: account-only (legacy) EAccess auth returns every playable
+      # character; render them as the GTK Manual Entry table.
+      def connect_account(state)
+        account = state[:account].to_s
+        password = state[:password].to_s
+        return fail_login('User ID and password are required to connect.') if account.empty? || password.empty?
+
+        set_busy('Fetching character list...')
+        Thread.new do
+          begin
+            list = @account_lister.call(account: account, password: password)
+            @char_list = list.is_a?(Array) ? list : []
+            @busy = nil
+            @error = 'No characters found on that account.' if @char_list.empty?
+          rescue StandardError => e
+            @char_list = nil
+            @busy = nil
+            @error = "Connect failed: #{e.message}"
+          end
+          Registry.find('lich/login')&.request_render
+        end
+      end
+
+      def play_from_list(state)
+        index = state[:sel_char]
+        entry = index && @char_list && @char_list[index]
+        return fail_login('Pick a character from the list first.') unless entry
+
+        set_busy("Authenticating #{entry[:char_name]}...")
+        Thread.new do
+          authenticate_and_finish(
+            account: state[:account].to_s, password: state[:password].to_s,
+            character: entry[:char_name], game_code: entry[:game_code],
+            frontend: (state[:frontend] || 'wrayth'), custom_launch: nil, custom_launch_dir: nil
+          )
         end
       end
 
