@@ -74,6 +74,7 @@ module Lich
         @error = nil
         @busy = nil
         @status = nil
+        @unlocked_master = nil
 
         page = WebUI.register_core_page('login', title: "Lich #{defined?(LICH_VERSION) ? LICH_VERSION : ''}".strip, bare: true, size: [560, 580]) { |ui| render(ui) }
         return :fallback unless page
@@ -95,10 +96,39 @@ module Lich
 
       def default_entries
         require File.join(LIB_DIR, 'common', 'authentication', 'entry_store') unless defined?(Lich::Common::Authentication::EntryStore)
-        Lich::Common::Authentication::EntryStore.load_saved_entries(@data_dir, true) || []
+        if @unlocked_master && keychain_master.nil?
+          load_entries_with_master(@unlocked_master)
+        else
+          Lich::Common::Authentication::EntryStore.load_saved_entries(@data_dir, true) || []
+        end
       rescue StandardError => e
         @error = "Could not load saved logins: #{e.message}"
         []
+      end
+
+      # Fallback loader for enhanced mode when the keychain could not be
+      # healed: decrypt with the in-memory master password. EntryStore's
+      # normal load path would pop GTK recovery dialogs on every render.
+      def load_entries_with_master(master_password)
+        store = Lich::Common::Authentication::EntryStore
+        yaml = YAML.safe_load_file(store.yaml_file_path(@data_dir), permitted_classes: [Symbol])
+        entries = []
+        (yaml['accounts'] || {}).each do |username, account|
+          next unless account['characters']
+
+          password = store.decrypt_password(account['password'], mode: :enhanced,
+                                            account_name: username, master_password: master_password)
+          account['characters'].each do |character|
+            entries.push(
+              :user_id => username, :password => password,
+              :char_name => character['char_name'], :game_code => character['game_code'],
+              :game_name => character['game_name'], :frontend => character['frontend'],
+              :custom_launch => character['custom_launch'], :custom_launch_dir => character['custom_launch_dir'],
+              :is_favorite => character['is_favorite'] || false, :encryption_mode => :enhanced
+            )
+          end
+        end
+        entries.sort_by { |entry| [entry[:is_favorite] ? 0 : 1, entry[:char_name].to_s] }
       end
 
       def render(ui)
@@ -110,36 +140,17 @@ module Lich
         ui.text "!! #{@error}" if @error
         ui.text @status if @status
 
-        entries = @entries_loader.call
-        saved = entries.select { |entry| entry.is_a?(Hash) && entry[:char_name] }
-
         # Mirror the GTK launcher: Saved Entry / Manual Entry tabs, entries
         # grouped under centered "Account:" headers, Play per row.
         # key: keeps the tabs' cid stable even as the busy/error text nodes
         # above come and go - without it the browser sees a "new" tabs
         # component on every busy transition and resets to the first tab.
         ui.tabs(['Saved Entry', 'Manual Entry'], key: :main) do |saved_tab, manual_tab|
-          saved_tab.text 'No saved characters yet - use Manual Entry.' if saved.empty?
-          saved.group_by { |entry| (entry[:username] || entry[:user_id]).to_s }.each do |account, chars|
-            saved_tab.markdown "**Account: #{account.downcase}**"
-            chars.each do |entry|
-              frontend_label = entry[:frontend].to_s.empty? ? '' : ", #{entry[:frontend].to_s.capitalize}"
-              row_key = "#{entry[:char_name]}_#{entry[:game_code]}_#{account}"
-              saved_tab.columns(2, key: "row_#{row_key}") do |main, actions|
-                main.text "#{entry[:char_name]} (#{entry[:game_name] || entry[:game_code]}#{frontend_label})"
-                actions.columns(2, compact: true, key: "act_#{row_key}") do |c_play, c_remove|
-                  c_play.button('Play', key: "play_#{row_key}") { play_saved(entry) }
-                  c_remove.button('X', variant: :danger, key: "rm_#{row_key}") { remove_entry(entry) }
-                end
-              end
-            end
+          if saved_locked?
+            render_master_gate(saved_tab)
+          else
+            render_saved_entries(saved_tab)
           end
-          # Multi-Launch mirrors the GTK launcher's global-settings switch
-          # (Lich.track_persistent_launcher_mode): saved-entry Play spawns a
-          # detached child Lich session and this launcher stays open.
-          saved_tab.checkbox('Multi-Launch (spawn sessions, keep this launcher open)',
-                             checked: multi_launch?, key: :multi_launch) { |v| self.multi_launch = v }
-          saved_tab.button('Refresh Entries', key: :refresh) { nil } # rerender reloads from disk
 
           manual_tab.text_input('User ID', value: ui.state[:account], key: :account) { |v| ui.state[:account] = v.strip }
           manual_tab.password_input('Password', key: :password) { |v| ui.state[:password] = v }
@@ -171,6 +182,124 @@ module Lich
         end
       end
 
+      # The Saved Entry tab body: grouped entries with Fav/Play/X per row,
+      # the Multi-Launch toggle, and Refresh.
+      def render_saved_entries(saved_tab)
+        entries = @entries_loader.call
+        saved = entries.select { |entry| entry.is_a?(Hash) && entry[:char_name] }
+
+        saved_tab.text 'No saved characters yet - use Manual Entry.' if saved.empty?
+        saved.group_by { |entry| (entry[:username] || entry[:user_id]).to_s }.each do |account, chars|
+          saved_tab.markdown "**Account: #{account.downcase}**"
+          chars.each do |entry|
+            frontend_label = entry[:frontend].to_s.empty? ? '' : ", #{entry[:frontend].to_s.capitalize}"
+            row_key = "#{entry[:char_name]}_#{entry[:game_code]}_#{account}"
+            saved_tab.columns(2, key: "row_#{row_key}") do |main, actions|
+              main.text "#{entry[:is_favorite] ? '* ' : ''}#{entry[:char_name]} (#{entry[:game_name] || entry[:game_code]}#{frontend_label})"
+              actions.columns(3, compact: true, key: "act_#{row_key}") do |c_fav, c_play, c_remove|
+                c_fav.button(entry[:is_favorite] ? 'Unfav' : 'Fav', key: "fav_#{row_key}") { toggle_favorite(entry) }
+                c_play.button('Play', key: "play_#{row_key}") { play_saved(entry) }
+                c_remove.button('X', variant: :danger, key: "rm_#{row_key}") { remove_entry(entry) }
+              end
+            end
+          end
+        end
+        # Multi-Launch mirrors the GTK launcher's global-settings switch
+        # (Lich.track_persistent_launcher_mode): saved-entry Play spawns a
+        # detached child Lich session and this launcher stays open.
+        saved_tab.checkbox('Multi-Launch (spawn sessions, keep this launcher open)',
+                           checked: multi_launch?, key: :multi_launch) { |v| self.multi_launch = v }
+        saved_tab.button('Refresh Entries', key: :refresh) { nil } # rerender reloads from disk
+      end
+
+      # Enhanced-encryption gate: shown instead of the saved list when the
+      # master password is missing from the system keychain. Entering it
+      # here mirrors the GTK recovery dialog - validate against the yaml's
+      # validation test, then heal the keychain so every other flow
+      # (including Multi-Launch children) can decrypt again.
+      def render_master_gate(saved_tab)
+        saved_tab.markdown '**Saved logins are protected by a master password.**'
+        saved_tab.text 'It was not found in the system keychain. Enter it to unlock your saved entries.'
+        saved_tab.password_input('Master Password', key: :master_password) { |v| saved_tab.state[:master_pw] = v }
+        saved_tab.button('Unlock', key: :unlock) { unlock_master(saved_tab.state) }
+      end
+
+      def unlock_master(state)
+        entered = state[:master_pw].to_s
+        state[:master_pw] = nil
+        return fail_login('Enter your master password.') if entered.empty?
+
+        if master_password_valid?(entered, entry_meta[:validation])
+          @unlocked_master = entered
+          healed = heal_keychain(entered)
+          @busy = nil
+          @error = nil
+          @status = healed ? 'Unlocked. Master password restored to the system keychain.' : 'Unlocked for this launcher session only (keychain unavailable).'
+          Registry.find('lich/login')&.request_render
+        else
+          fail_login('Master password incorrect.')
+        end
+      end
+
+      # @return [Boolean] whether the saved list must stay hidden behind the
+      #   master-password gate. Never calls EntryStore.load_saved_entries -
+      #   that path pops GTK recovery dialogs when the keychain is empty.
+      def saved_locked?
+        return false if @unlocked_master
+
+        meta = entry_meta
+        return false unless meta[:mode] == :enhanced
+
+        keychain_master.nil?
+      rescue StandardError
+        false
+      end
+
+      # Cheap read of entry.yaml's encryption metadata (no decryption).
+      #
+      # @return [Hash] {mode: Symbol, validation: Hash|nil}
+      def entry_meta
+        require File.join(LIB_DIR, 'common', 'authentication', 'entry_store') unless defined?(Lich::Common::Authentication::EntryStore)
+        yaml_path = Lich::Common::Authentication::EntryStore.yaml_file_path(@data_dir)
+        yaml = File.exist?(yaml_path) ? YAML.safe_load_file(yaml_path, permitted_classes: [Symbol]) : nil
+        return { mode: :plaintext, validation: nil } unless yaml.is_a?(Hash)
+
+        { mode: (yaml['encryption_mode'] || 'plaintext').to_sym, validation: yaml['master_password_validation_test'] }
+      rescue StandardError
+        { mode: :plaintext, validation: nil }
+      end
+
+      def keychain_master
+        require File.join(LIB_DIR, 'common', 'gui', 'master_password_manager') unless defined?(Lich::Common::GUI::MasterPasswordManager)
+        Lich::Common::GUI::MasterPasswordManager.retrieve_master_password
+      rescue ScriptError, StandardError
+        nil
+      end
+
+      def master_password_valid?(entered, validation_test)
+        require File.join(LIB_DIR, 'common', 'gui', 'master_password_manager') unless defined?(Lich::Common::GUI::MasterPasswordManager)
+        Lich::Common::GUI::MasterPasswordManager.validate_master_password(entered, validation_test)
+      rescue ScriptError, StandardError
+        false
+      end
+
+      def heal_keychain(master_password)
+        Lich::Common::GUI::MasterPasswordManager.store_master_password(master_password)
+      rescue ScriptError, StandardError
+        false
+      end
+
+      def toggle_favorite(entry)
+        require File.join(LIB_DIR, 'common', 'gui', 'favorites_manager') unless defined?(Lich::Common::GUI::FavoritesManager)
+        Lich::Common::GUI::FavoritesManager.toggle_favorite(
+          @data_dir, (entry[:username] || entry[:user_id]).to_s,
+          entry[:char_name], entry[:game_code], entry[:frontend]
+        )
+        @error = nil
+      rescue ScriptError, StandardError => e
+        @error = "Favorite toggle failed: #{e.message}"
+      end
+
       # Deletes one saved entry (the GTK X button) and lets the rerender
       # reload the list from disk.
       def remove_entry(entry)
@@ -199,7 +328,7 @@ module Lich
         Thread.new do
           password = entry[:password].to_s
           if password.empty?
-            fail_login('Could not read the saved password (master-password mode is not supported in the browser login yet - use --gtk-login).')
+            fail_login('Could not read the saved password for this entry (try --gtk-login if this persists).')
           else
             authenticate_and_finish(
               account: (entry[:username] || entry[:user_id]).to_s, password: password,

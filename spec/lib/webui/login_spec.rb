@@ -95,6 +95,57 @@ RSpec.describe Lich::WebUI::Login do
       expect(launched.first[1]).to include(char_name: 'Nisugi', game_code: 'GS3', frontend: 'wrayth')
     end
 
+    it 'gates saved entries behind the master password in enhanced mode' do
+      allow(described_class).to receive(:entry_meta).and_return({ mode: :enhanced, validation: { 'validation_salt' => 'x' } })
+      allow(described_class).to receive(:keychain_master).and_return(nil)
+      allow(described_class).to receive(:heal_keychain).and_return(true)
+      allow(described_class).to receive(:master_password_valid?) { |entered, _validation| entered == 'open-sesame' }
+
+      loads = 0
+      entries_loader = -> { loads += 1; entries }
+      authenticator = ->(**_) { raise 'auth should not be reached' }
+
+      result = run_login(authenticator: authenticator, entries_loader: entries_loader) do |page|
+        fake_conn = Struct.new(:sent) { def send_text(json) = (sent << json) }.new([])
+        page.subscribe(fake_conn)
+        expect(fake_conn.sent.last).to include('Master Password')
+        expect(fake_conn.sent.last).not_to include('Nisugi')
+        expect(loads).to eq(0) # the gate must never touch the entry loader
+
+        pw_cid = fake_conn.sent.last[/"cid":"([^"]*password_input:master_password)"/, 1]
+        unlock_cid = fake_conn.sent.last[/"cid":"([^"]*button:unlock)"/, 1]
+        page.handle_event(pw_cid, 'wrong')
+        page.handle_event(unlock_cid, nil)
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('Master password incorrect') } }
+
+        page.handle_event(pw_cid, 'open-sesame')
+        page.handle_event(unlock_cid, nil)
+        Timeout.timeout(3) { sleep 0.05 until fake_conn.sent.any? { |m| m.include?('Nisugi') } }
+
+        quit_cid = fake_conn.sent.last[/"cid":"([^"]*button:quit)"/, 1]
+        page.handle_event(quit_cid, nil)
+      end
+      expect(result).to be_nil
+      expect(loads).to be >= 1 # unlocked renders load entries again
+    end
+
+    it 'wires the Fav button to the favorites toggle' do
+      toggled = []
+      allow(described_class).to receive(:toggle_favorite) { |entry| toggled << entry[:char_name] }
+      authenticator = ->(**_) { raise 'auth should not be reached' }
+
+      result = run_login(authenticator: authenticator) do |page|
+        fake_conn = Struct.new(:sent) { def send_text(json) = (sent << json) }.new([])
+        page.subscribe(fake_conn)
+        fav_cid = fake_conn.sent.last[/"cid":"([^"]*button:fav_[^"]+)"/, 1]
+        page.handle_event(fav_cid, nil)
+        quit_cid = fake_conn.sent.last[/"cid":"([^"]*button:quit)"/, 1]
+        page.handle_event(quit_cid, nil)
+      end
+      expect(result).to be_nil
+      expect(toggled).to eq(['Nisugi'])
+    end
+
     it 'reports auth failures inline and keeps waiting; Quit returns nil' do
       authenticator = ->(**_) { raise 'REJECT' }
 

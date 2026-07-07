@@ -18,6 +18,35 @@ should target the WebUI.
 
 Try it: `;ui on`, `;webui-demo`, then `;ui`.
 
+## Login launcher
+
+`;ui login on` replaces the GTK login window: double-clicking lich.rbw opens
+a small browser window instead (`;ui login off` to revert). Command-line
+overrides: `--webui-login` forces the browser login, `--gtk-login` forces the
+GTK window (the escape hatch if the browser flow breaks — the URL is also
+always printed to the log in case no browser opens).
+
+- **Saved Entry** — your saved characters grouped by account, favorites
+  first. Per row: `Fav`/`Unfav` toggles the favorite star, `Play` launches,
+  `X` deletes the entry.
+- **Manual Entry** — enter account credentials and either `Connect` to pick
+  from the account's character list or fill in the character directly. Tick
+  *Save this entry* to add it to Saved Entry for next time.
+- **Multi-Launch** — mirrors the GTK launcher's switch (same persisted
+  setting). Off: Play turns this launcher into the session and the window
+  closes. On: each saved-entry Play spawns a separate detached Lich session
+  and the launcher stays open so you can play several characters. Manual
+  logins always single-launch.
+- **Master password** — if your saved passwords use enhanced encryption and
+  the master password is missing from the system keychain, the saved list is
+  gated behind a master-password prompt; unlocking restores it to the
+  keychain (like the GTK recovery dialog).
+
+Notes: account passwords transit loopback HTTP once, token-gated, into the
+same Lich process that handles them today — equivalent exposure to typing
+them into the GTK window. First-run migration from the legacy `entry.dat`
+format is GTK-only; convert by running the GTK login once.
+
 ## Script API
 
 Everything lives on the top-level `UI` module and is a safe no-op while the
@@ -159,6 +188,7 @@ lib/webui/webui.rb       lifecycle: token, lazy start, discovery, browser open
 lib/webui/registry.rb    page registry, ScriptDeath cleanup
 lib/webui/page.rb        render loop, callback dispatch, state, polling
 lib/webui/dsl.rb         the component builder
+lib/webui/login.rb       pre-login browser launcher (core page, no script)
 lib/webui/assets/        vanilla-JS client (factories + keyed DOM morph)
 lib/api/webui.rb         the public UI facade
 ```
