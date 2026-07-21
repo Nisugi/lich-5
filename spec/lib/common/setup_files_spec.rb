@@ -119,6 +119,23 @@ RSpec.describe Lich::Common::SetupFiles do
         setup_files.reload
         expect(setup_files.get_data('spells').spell_data).to eq({ 'Shield' => { 'mana' => 3 } })
       end
+
+      it 'falls back after removal even when both files share an mtime' do
+        # A copied override (cp -p) or fast test writes give the custom and
+        # base files identical timestamps; reload must still notice that the
+        # winning *path* changed when the override disappears.
+        custom_file = File.join(custom_data_dir, 'base-spells.yaml')
+        base_file = File.join(data_dir, 'base-spells.yaml')
+        File.write(custom_file, { spell_data: { 'Shield' => { 'mana' => 99 } } }.to_yaml)
+        same_time = Time.now - 60
+        File.utime(same_time, same_time, custom_file)
+        File.utime(same_time, same_time, base_file)
+        expect(setup_files.get_data('spells').spell_data).to eq({ 'Shield' => { 'mana' => 99 } })
+
+        File.delete(custom_file)
+        setup_files.reload
+        expect(setup_files.get_data('spells').spell_data).to eq({ 'Shield' => { 'mana' => 3 } })
+      end
     end
   end
 
