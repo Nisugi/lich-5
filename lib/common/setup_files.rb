@@ -259,7 +259,7 @@ module Lich
             safe_log "#{self.class}::#{__callee__} filepath=#{filepath}, last_modified_date=#{last_modified_date}, cached_file=#{cached_file.inspect}" if @debug
             # Re-read when the file changed, and also when the *winning path*
             # for this basename changed (a deleted custom override falling
-            # back to the base file) — the two files' mtimes can be equal,
+            # back to the base file) -- the two files' mtimes can be equal,
             # which would otherwise keep serving the removed override's data.
             if cached_file.nil? || cached_file.mtime != last_modified_date ||
                cached_file.path != File.dirname(filepath)
