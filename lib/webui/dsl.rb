@@ -143,7 +143,11 @@ module Lich
       # @yieldparam value [Numeric]
       # @return [void]
       def number_input(label, min: nil, max: nil, step: 1, value: nil, key: nil, &block)
-        emit('number_input', key: key, label: label.to_s, min: min, max: max, step: step, value: value, &block)
+        # Always emit a concrete value: a nil value drops the field entirely,
+        # and a frontend that assumes a numeric value (e.g. toFixed) can choke
+        # on the missing key. Fall back to min, else 0 - mirrors #slider.
+        resolved = value.nil? ? (min || 0) : value
+        emit('number_input', key: key, label: label.to_s, min: min, max: max, step: step, value: resolved, &block)
       end
 
       # Radio group: one choice from a small set, all options visible.
@@ -274,7 +278,13 @@ module Lich
         node = {
           t: 'tabs', cid: cid,
           children: names.each_with_index.map do |name, i|
-            { t: 'tab', cid: "#{cid}.t#{i}", label: name.to_s, children: children[i].nodes }
+            kids = children[i].nodes
+            # A tab whose content was all conditional (e.g. spell-gated
+            # widgets a low-level character doesn't have) can render empty.
+            # An empty children array trips some frontends' tab renderers, so
+            # substitute a placeholder note - the tab stays selectable and inert.
+            kids = [{ t: 'text', cid: "#{cid}.t#{i}.empty", text: '(nothing to configure here for this character)' }] if kids.empty?
+            { t: 'tab', cid: "#{cid}.t#{i}", label: name.to_s, children: kids }
           end
         }
         node[:vertical] = true if vertical
