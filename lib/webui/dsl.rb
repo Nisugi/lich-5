@@ -280,16 +280,22 @@ module Lich
       # @return [void]
       def columns(count = 2, compact: false, weights: nil, key: nil)
         cid = claim_cid('columns', key)
-        children = Array.new(count) { |i| child_builder("#{cid}.c#{i}") }
-        yield(*children)
+        builders = Array.new(count) { |i| child_builder("#{cid}.c#{i}") }
+        yield(*builders)
+        # Drop trailing empty columns: a caller that slices an odd-length list
+        # into fixed-width rows (each_slice(2) -> columns(2)) leaves the last
+        # cell empty on the short row, and an empty column can crash some
+        # frontend grid renderers. Emitting fewer columns is harmless.
+        builders.pop while builders.length > 1 && builders.last.nodes.empty?
+        emitted = builders.length
         node = {
           t: 'columns', cid: cid,
-          children: children.each_with_index.map do |column, i|
+          children: builders.each_with_index.map do |column, i|
             { t: 'col', cid: "#{cid}.c#{i}", children: column.nodes }
           end
         }
         node[:compact] = true if compact
-        node[:weights] = weights.first(count).map(&:to_f) if !compact && weights.is_a?(Array)
+        node[:weights] = weights.first(emitted).map(&:to_f) if !compact && weights.is_a?(Array)
         @nodes << node
       end
 
