@@ -84,7 +84,7 @@ eval expressions.
   "value": "line one\nline two", "placeholder": "...", "rows": 5 }
 ```
 - `value` may contain newlines; preserve them.
-- `rows`: visible height hint.
+- `rows_hint`: visible height hint (integer). NOT `rows` - see the field-naming rule below; `table` uses `rows` for its data (array-of-arrays).
 
 ## Rendering
 - Render as a multi-line text box (HTML `<textarea>`). Label above or beside.
@@ -96,3 +96,29 @@ eval expressions.
 ## Reference
 Browser: `app.js` factories.textarea; CSS `.c-textarea`;
 DSL `Builder#textarea(label, value:, placeholder:, rows:, key:)`.
+
+---
+
+# Protocol rule: field names must be unique-per-shape (schema stability)
+
+`schema="1"` is a stability contract, so this is a hard rule, not a style
+preference:
+
+**A given wire field name must have the SAME type/shape across every node
+type that uses it.**
+
+A duck-typed renderer (the browser) reads `node.rows` and does not care
+whether it is an int or an array - but a strictly-typed renderer (VellumFE)
+binds each field to a type. Reusing one name for two shapes forces a
+per-node special case in every typed client, and a strict decoder would
+reject the whole render envelope the first time the second shape appears.
+
+Concrete case that prompted this: `table` uses `rows` for its data
+(array-of-arrays); `textarea` originally reused `rows` for an integer
+height hint. That was renamed to `rows_hint` (int) so the two never
+collide. VellumFE already worked around the original collision with a
+polymorphic accessor (table_rows() / rows_hint()); that workaround can be
+dropped once decoders target `rows_hint`.
+
+Going forward: when adding a node field, grep existing node specs for the
+name; if it exists with a different shape, pick a new name.

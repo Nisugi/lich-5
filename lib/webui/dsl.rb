@@ -121,9 +121,15 @@ module Lich
       # @param key [Object, nil]
       # @yieldparam value [String] the edited text
       # @return [void]
+      #
+      # Wire field is `rows_hint` (an integer), deliberately NOT `rows`:
+      # the `table` node already uses `rows` for its data (array-of-arrays).
+      # A typed renderer (e.g. VellumFE) cannot share one field name across
+      # node types with different shapes, so protocol field names must be
+      # unique-per-shape even though the Ruby keyword stays the friendly `rows:`.
       def textarea(label, value: nil, placeholder: nil, rows: 4, key: nil, &block)
         emit('textarea', key: key, label: label.to_s, value: value&.to_s,
-                         placeholder: placeholder&.to_s, rows: [rows.to_i, 1].max, &block)
+                         placeholder: placeholder&.to_s, rows_hint: [rows.to_i, 1].max, &block)
       end
 
       # Masked input for credentials. The value is NEVER echoed back into
