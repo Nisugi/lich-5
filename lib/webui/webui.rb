@@ -27,6 +27,34 @@ module Lich
 
     HOST = '127.0.0.1'
 
+    # Container/headless overrides (desktop defaults are unchanged:
+    # loopback bind, lich_settings preferred port, loopback URLs):
+    #   LICH_WEBUI_BIND          listen address (e.g. 0.0.0.0 behind a
+    #                            Docker port publish)
+    #   LICH_WEBUI_PORT          fixed port, overrides the lich_settings
+    #                            preferred port (a port mapping needs a
+    #                            stable target; publish the same port)
+    #   LICH_WEBUI_ALLOWED_HOSTS comma-separated hostnames/IPs (no port)
+    #                            accepted by the Host/Origin checks; the
+    #                            first entry also names the host in URLs
+    def self.bind_host
+      value = ENV['LICH_WEBUI_BIND'].to_s
+      value.empty? ? HOST : value
+    end
+
+    def self.extra_allowed_hosts
+      ENV['LICH_WEBUI_ALLOWED_HOSTS'].to_s.split(',').map(&:strip).reject(&:empty?)
+    end
+
+    def self.url_host
+      extra_allowed_hosts.first || (bind_host == '0.0.0.0' ? HOST : bind_host)
+    end
+
+    def self.env_port
+      value = ENV['LICH_WEBUI_PORT'].to_i
+      value.between?(1, 65_535) ? value : nil
+    end
+
     # Sibling-session discovery files live here; they contain no secrets
     # (name, game, port, pid only) - each browser tab must still be blessed
     # by its own session's `;ui`.
@@ -99,7 +127,7 @@ module Lich
       Server.new(
         auth_token: @auth_token,
         assets_dir: File.join(__dir__, 'assets'),
-        host: HOST,
+        host: bind_host,
         port: port,
         session_info: -> { session_info },
         pages_provider: -> { pages_snapshot },
@@ -116,6 +144,8 @@ module Lich
 
     # @return [Integer]
     def self.preferred_port
+      return env_port if env_port
+
       raw = Lich.db.get_first_value('SELECT value FROM lich_settings WHERE name=?;', [PREFERRED_PORT_SETTING]) if defined?(Lich) && Lich.respond_to?(:db) && Lich.db
       value = raw.to_i
       value.between?(1, 65_535) ? value : 0
@@ -178,7 +208,7 @@ module Lich
     def self.auth_url
       return nil unless running?
 
-      "http://#{HOST}:#{port}/auth?token=#{@auth_token}"
+      "http://#{url_host}:#{port}/auth?token=#{@auth_token}"
     end
 
     # The plain (already-authorized) landing URL, for display.
@@ -187,7 +217,7 @@ module Lich
     def self.url
       return nil unless running?
 
-      "http://#{HOST}:#{port}/"
+      "http://#{url_host}:#{port}/"
     end
 
     # Tokenized URL that lands directly on a page after the auth redirect -

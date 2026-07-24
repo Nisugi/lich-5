@@ -18,6 +18,22 @@ module Lich
     # Settings writes) belong in callbacks, which run on the owning script's
     # threads.
     class Builder
+      # Node types the user can interact with. A tab/section containing none
+      # of these (only headers/dividers/markdown/text/image) is inert and can
+      # crash some frontend tab renderers - see #tabs.
+      INTERACTIVE_TYPES = %w[
+        checkbox text_input password_input number_input slider select radio
+        button columns tabs table image_map log
+      ].freeze
+
+      # True if +nodes+ or any descendant is an interactive component.
+      def self.interactive_nodes?(nodes)
+        Array(nodes).any? do |n|
+          INTERACTIVE_TYPES.include?(n[:t] || n['t']) ||
+            interactive_nodes?(n[:children] || n['children'])
+        end
+      end
+
       # @return [Array<Hash>] JSON-ready component nodes, in emission order
       attr_reader :nodes
       # @return [Hash{String => Proc}] event callbacks keyed by component id
@@ -93,6 +109,29 @@ module Lich
         emit('text_input', key: key, label: label.to_s, value: value&.to_s, placeholder: placeholder&.to_s, &block)
       end
 
+      # Multi-line text field (GTK GtkTextView equivalent), for notes, regex
+      # lists, eval expressions - anything that spans several lines. Same
+      # event contract as #text_input: the callback fires with the full
+      # (multi-line) string on edit.
+      #
+      # @param label [#to_s]
+      # @param value [#to_s, nil] current text (may contain newlines)
+      # @param placeholder [#to_s, nil]
+      # @param rows [Integer] visible row height hint (default 4)
+      # @param key [Object, nil]
+      # @yieldparam value [String] the edited text
+      # @return [void]
+      #
+      # Wire field is `rows_hint` (an integer), deliberately NOT `rows`:
+      # the `table` node already uses `rows` for its data (array-of-arrays).
+      # A typed renderer (e.g. VellumFE) cannot share one field name across
+      # node types with different shapes, so protocol field names must be
+      # unique-per-shape even though the Ruby keyword stays the friendly `rows:`.
+      def textarea(label, value: nil, placeholder: nil, rows: 4, key: nil, &block)
+        emit('textarea', key: key, label: label.to_s, value: value&.to_s,
+                         placeholder: placeholder&.to_s, rows_hint: [rows.to_i, 1].max, &block)
+      end
+
       # Masked input for credentials. The value is NEVER echoed back into
       # the render tree - it exists only in the browser field and the single
       # change event your block receives. Do not log it.
@@ -143,7 +182,11 @@ module Lich
       # @yieldparam value [Numeric]
       # @return [void]
       def number_input(label, min: nil, max: nil, step: 1, value: nil, key: nil, &block)
-        emit('number_input', key: key, label: label.to_s, min: min, max: max, step: step, value: value, &block)
+        # Always emit a concrete value: a nil value drops the field entirely,
+        # and a frontend that assumes a numeric value (e.g. toFixed) can choke
+        # on the missing key. Fall back to min, else 0 - mirrors #slider.
+        resolved = value.nil? ? (min || 0) : value
+        emit('number_input', key: key, label: label.to_s, min: min, max: max, step: step, value: resolved, &block)
       end
 
       # Radio group: one choice from a small set, all options visible.
@@ -243,16 +286,60 @@ module Lich
       # @return [void]
       def columns(count = 2, compact: false, weights: nil, key: nil)
         cid = claim_cid('columns', key)
-        children = Array.new(count) { |i| child_builder("#{cid}.c#{i}") }
-        yield(*children)
+        builders = Array.new(count) { |i| child_builder("#{cid}.c#{i}") }
+        yield(*builders)
+        # Drop trailing empty columns: a caller that slices an odd-length list
+        # into fixed-width rows (each_slice(2) -> columns(2)) leaves the last
+        # cell empty on the short row, and an empty column can crash some
+        # frontend grid renderers. Emitting fewer columns is harmless.
+        builders.pop while builders.length > 1 && builders.last.nodes.empty?
+        emitted = builders.length
         node = {
           t: 'columns', cid: cid,
-          children: children.each_with_index.map do |column, i|
+          children: builders.each_with_index.map do |column, i|
             { t: 'col', cid: "#{cid}.c#{i}", children: column.nodes }
           end
         }
         node[:compact] = true if compact
-        node[:weights] = weights.first(count).map(&:to_f) if !compact && weights.is_a?(Array)
+        node[:weights] = weights.first(emitted).map(&:to_f) if !compact && weights.is_a?(Array)
+        @nodes << node
+      end
+
+      # A uniform aligned grid (CSS grid), for matrices where every column
+      # must line up across rows - unlike #columns, whose per-row widths do
+      # not align. Cells hold arbitrary child nodes (labels, checkboxes,
+      # dropdowns). Pass the total number of columns; the block is yielded a
+      # cell builder per cell, filled row-major left-to-right, top-to-bottom.
+      # Empty cells are permitted (they render as spacers), so a ragged
+      # matrix stays aligned.
+      #
+      #   ui.grid(cols: 3, cells: rows * 3) do |cell, index|
+      #     # fill cell #index
+      #   end
+      #
+      # Or drive it from data:
+      #   ui.grid(cols: towns.size + 1, cells: (towns.size + 1) * (towns.size + 1)) { |cell, i| ... }
+      #
+      # @param cols [Integer] number of columns
+      # @param cells [Integer] total cell count (rows = ceil(cells/cols))
+      # @param compact [Boolean] tighter cell padding
+      # @param key [Object, nil]
+      # @yieldparam cell [Builder] the cell's builder
+      # @yieldparam index [Integer] 0-based cell index (row-major)
+      # @return [void]
+      def grid(cols:, cells:, compact: false, key: nil)
+        cols = [cols.to_i, 1].max
+        cells = [cells.to_i, 0].max
+        cid = claim_cid('grid', key)
+        cell_builders = Array.new(cells) { |i| child_builder("#{cid}.g#{i}") }
+        cell_builders.each_with_index { |cell, i| yield(cell, i) }
+        node = {
+          t: 'grid', cid: cid, cols: cols,
+          children: cell_builders.each_with_index.map do |cell, i|
+            { t: 'cell', cid: "#{cid}.g#{i}", children: cell.nodes }
+          end
+        }
+        node[:compact] = true if compact
         @nodes << node
       end
 
@@ -274,7 +361,16 @@ module Lich
         node = {
           t: 'tabs', cid: cid,
           children: names.each_with_index.map do |name, i|
-            { t: 'tab', cid: "#{cid}.t#{i}", label: name.to_s, children: children[i].nodes }
+            kids = children[i].nodes
+            # A tab whose interactive widgets were all conditional (e.g.
+            # spell-gated checkboxes a low-level character doesn't have) can
+            # render down to nothing but headers/dividers/markdown. Some
+            # frontend tab renderers choke on a tab with no interactive
+            # content, so append a placeholder note keeping the tab inert but
+            # renderable. Checks descendants, since widgets may sit in nested
+            # columns.
+            kids += [{ t: 'text', cid: "#{cid}.t#{i}.empty", text: '(nothing to configure here for this character)' }] unless self.class.interactive_nodes?(kids)
+            { t: 'tab', cid: "#{cid}.t#{i}", label: name.to_s, children: kids }
           end
         }
         node[:vertical] = true if vertical

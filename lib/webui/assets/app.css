@@ -180,6 +180,22 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
 
 .c-checkbox input { width: 1.1em; height: 1.1em; accent-color: var(--accent); }
 
+/* multi-line text: label stacks above a full-width resizable box */
+.c-field:has(> .c-textarea) { flex-direction: column; align-items: stretch; }
+.c-field .c-textarea {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 0.4em;
+  padding: 0.35em 0.6em;
+  font-size: 1em;
+  font-family: inherit;
+  width: 100%;
+  resize: vertical;
+  box-sizing: border-box;
+}
+.c-field .c-textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+
 .c-slider input[type="range"] { flex: 1; max-width: 20em; accent-color: var(--accent); }
 .c-slider-value { color: var(--text); min-width: 2.5em; text-align: right; }
 
@@ -283,6 +299,13 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
   background: rgba(229, 22, 22, 0.18);
   box-shadow: 0 0 6px 1px rgba(229, 22, 22, 0.9);
 }
+/* CreatureBar wound markers: solid dots colored by severity */
+.c-im-marker.wound1, .c-im-marker.wound2, .c-im-marker.wound3 {
+  border: none; border-radius: 50%;
+}
+.c-im-marker.wound1 { background: rgba(230, 200, 30, 0.9); }   /* yellow */
+.c-im-marker.wound2 { background: rgba(230, 130, 30, 0.9); }   /* orange */
+.c-im-marker.wound3 { background: rgba(220, 40, 40, 0.95); }   /* red */
 
 /* bare pages: no topbar, no nav, no padding - a floating display (map) */
 body.bare-page #topbar { display: none; }
@@ -325,6 +348,16 @@ body.bare-page .c-image-map {
  * 0.8em child margin, which suits prose more than 18-row lists) */
 .page-body > .c-columns.compact,
 .c-tab-panel > .c-columns.compact { margin-bottom: 0.35em; }
+
+/* aligned grid: uniform columns across all rows (matrices). Cells inherit
+ * grid-template-columns from the inline style the renderer sets. */
+.c-grid { display: grid; gap: 0.4em 0.8em; align-items: center; margin-bottom: 0.6em; }
+.c-grid.compact { gap: 0.2em 0.5em; }
+.c-cell { min-width: 0; }
+.c-cell > * { margin: 0; }
+/* checkbox cells: center the box, hide the (usually empty) label so matrix
+ * cells stay tight; the row/column headers carry the meaning */
+.c-grid .c-cell > .c-checkbox { display: flex; justify-content: center; }
 
 .c-tab-bar { display: flex; gap: 0.25em; border-bottom: 1px solid var(--border); }
 .c-tab-button {

@@ -6,6 +6,7 @@ require 'digest/sha1'
 
 require_relative 'websocket'
 require_relative 'protocol'
+require_relative File.join('..', 'common', 'reusable_tcp_server')
 
 module Lich
   module WebUI
@@ -61,7 +62,16 @@ module Lich
         @siblings_provider = siblings_provider
         @message_handler = message_handler
         @file_resolver = file_resolver
-        @server_factory = server_factory || ->(bind_host, bind_port) { TCPServer.new(bind_host, bind_port) }
+        # SO_REUSEADDR must be set BEFORE bind (a plain TCPServer.new binds
+        # during construction, so a later setsockopt is too late). Without it,
+        # a fixed port (LICH_WEBUI_PORT) left in TIME_WAIT by a just-stopped
+        # process fails to rebind and the service silently falls back to an
+        # unreachable ephemeral port. ReusableTCPServer returns a bound,
+        # listening Socket (NOT a TCPServer) - the port and accept helpers
+        # below handle either object shape.
+        @server_factory = server_factory || lambda do |bind_host, bind_port|
+          Lich::Common::ReusableTCPServer.create(bind_host, bind_port, backlog: 16)
+        end
         @accept_thread_factory = accept_thread_factory || ->(&block) { Thread.new(&block) }
         @client_thread_factory = client_thread_factory || ->(socket, &block) { Thread.new(socket, &block) }
         @server = nil
@@ -82,8 +92,12 @@ module Lich
 
           @stopping = false
           @server = @server_factory.call(@host, @port)
+          # ReusableTCPServer already set SO_REUSEADDR before bind; the spec
+          # factory injects a plain TCPServer, so this is harmless there.
           @server.setsockopt(Socket::SOL_SOCKET, Socket::SO_REUSEADDR, 1) rescue nil
-          @port = @server.addr[1]
+          # Resolve the bound port from either a Socket (#local_address) or a
+          # TCPServer (#addr) - the injected spec factory uses the latter.
+          @port = @server.respond_to?(:local_address) ? @server.local_address.ip_port : @server.addr[1]
           @thread = @accept_thread_factory.call do
             log("info: WebUI accept thread started pid=#{Process.pid} port=#{@port}")
             accept_loop
@@ -215,7 +229,8 @@ module Lich
 
           socket = nil
           begin
-            socket = server.accept
+            accepted = server.accept
+            socket = accepted.is_a?(Array) ? accepted.first : accepted
             client_thread = @client_thread_factory.call(socket) { |client| handle_tracked_client(client) }
             track_client_thread(client_thread)
           rescue IOError, Errno::EBADF => e
@@ -313,7 +328,13 @@ module Lich
       end
 
       def allowed_hosts
-        ["127.0.0.1:#{@port}", "localhost:#{@port}"]
+        hosts = ["127.0.0.1:#{@port}", "localhost:#{@port}"]
+        # Container access comes in under the published host/IP; accept the
+        # operator-declared names too (comma-separated, no port).
+        ENV['LICH_WEBUI_ALLOWED_HOSTS'].to_s.split(',').map(&:strip).reject(&:empty?).each do |name|
+          hosts << "#{name}:#{@port}"
+        end
+        hosts
       end
 
       def origin_allowed?(request)
