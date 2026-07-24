@@ -6,6 +6,7 @@ require 'digest/sha1'
 
 require_relative 'websocket'
 require_relative 'protocol'
+require_relative File.join('..', 'common', 'reusable_tcp_server')
 
 module Lich
   module WebUI
@@ -61,7 +62,17 @@ module Lich
         @siblings_provider = siblings_provider
         @message_handler = message_handler
         @file_resolver = file_resolver
-        @server_factory = server_factory || ->(bind_host, bind_port) { TCPServer.new(bind_host, bind_port) }
+        # SO_REUSEADDR must be set BEFORE bind (a plain TCPServer.new binds
+        # during construction, so a later setsockopt is too late). Without it,
+        # a fixed port (LICH_WEBUI_PORT) left in TIME_WAIT by a just-stopped
+        # container fails to rebind and the service silently falls back to an
+        # unreachable ephemeral port. Build a reuseaddr Socket, then wrap it as
+        # a TCPServer (via #for_fd) so the rest of this class keeps the
+        # TCPServer API (#addr, #accept returning a bare socket).
+        @server_factory = server_factory || lambda do |bind_host, bind_port|
+          sock = Lich::Common::ReusableTCPServer.create(bind_host, bind_port, backlog: 16)
+          TCPServer.for_fd(sock.fileno).tap { |ts| ts.instance_variable_set(:@_reusable_sock, sock) }
+        end
         @accept_thread_factory = accept_thread_factory || ->(&block) { Thread.new(&block) }
         @client_thread_factory = client_thread_factory || ->(socket, &block) { Thread.new(socket, &block) }
         @server = nil
@@ -82,6 +93,9 @@ module Lich
 
           @stopping = false
           @server = @server_factory.call(@host, @port)
+          # ReusableTCPServer already set SO_REUSEADDR before bind; keep this
+          # for the injected TCPServer factory used in specs (harmless if the
+          # socket is already bound).
           @server.setsockopt(Socket::SOL_SOCKET, Socket::SO_REUSEADDR, 1) rescue nil
           @port = @server.addr[1]
           @thread = @accept_thread_factory.call do
@@ -215,7 +229,8 @@ module Lich
 
           socket = nil
           begin
-            socket = server.accept
+            accepted = server.accept
+            socket = accepted.is_a?(Array) ? accepted.first : accepted
             client_thread = @client_thread_factory.call(socket) { |client| handle_tracked_client(client) }
             track_client_thread(client_thread)
           rescue IOError, Errno::EBADF => e
