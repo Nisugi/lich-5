@@ -299,6 +299,13 @@ h2 { font-size: 1.05em; margin: 1.4em 0 0.5em; color: var(--muted); }
   background: rgba(229, 22, 22, 0.18);
   box-shadow: 0 0 6px 1px rgba(229, 22, 22, 0.9);
 }
+/* CreatureBar wound markers: solid dots colored by severity */
+.c-im-marker.wound1, .c-im-marker.wound2, .c-im-marker.wound3 {
+  border: none; border-radius: 50%;
+}
+.c-im-marker.wound1 { background: rgba(230, 200, 30, 0.9); }   /* yellow */
+.c-im-marker.wound2 { background: rgba(230, 130, 30, 0.9); }   /* orange */
+.c-im-marker.wound3 { background: rgba(220, 40, 40, 0.95); }   /* red */
 
 /* bare pages: no topbar, no nav, no padding - a floating display (map) */
 body.bare-page #topbar { display: none; }
