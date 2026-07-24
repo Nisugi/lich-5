@@ -18,6 +18,22 @@ module Lich
     # Settings writes) belong in callbacks, which run on the owning script's
     # threads.
     class Builder
+      # Node types the user can interact with. A tab/section containing none
+      # of these (only headers/dividers/markdown/text/image) is inert and can
+      # crash some frontend tab renderers - see #tabs.
+      INTERACTIVE_TYPES = %w[
+        checkbox text_input password_input number_input slider select radio
+        button columns tabs table image_map log
+      ].freeze
+
+      # True if +nodes+ or any descendant is an interactive component.
+      def self.interactive_nodes?(nodes)
+        Array(nodes).any? do |n|
+          INTERACTIVE_TYPES.include?(n[:t] || n['t']) ||
+            interactive_nodes?(n[:children] || n['children'])
+        end
+      end
+
       # @return [Array<Hash>] JSON-ready component nodes, in emission order
       attr_reader :nodes
       # @return [Hash{String => Proc}] event callbacks keyed by component id
@@ -279,11 +295,14 @@ module Lich
           t: 'tabs', cid: cid,
           children: names.each_with_index.map do |name, i|
             kids = children[i].nodes
-            # A tab whose content was all conditional (e.g. spell-gated
-            # widgets a low-level character doesn't have) can render empty.
-            # An empty children array trips some frontends' tab renderers, so
-            # substitute a placeholder note - the tab stays selectable and inert.
-            kids = [{ t: 'text', cid: "#{cid}.t#{i}.empty", text: '(nothing to configure here for this character)' }] if kids.empty?
+            # A tab whose interactive widgets were all conditional (e.g.
+            # spell-gated checkboxes a low-level character doesn't have) can
+            # render down to nothing but headers/dividers/markdown. Some
+            # frontend tab renderers choke on a tab with no interactive
+            # content, so append a placeholder note keeping the tab inert but
+            # renderable. Checks descendants, since widgets may sit in nested
+            # columns.
+            kids += [{ t: 'text', cid: "#{cid}.t#{i}.empty", text: '(nothing to configure here for this character)' }] unless self.class.interactive_nodes?(kids)
             { t: 'tab', cid: "#{cid}.t#{i}", label: name.to_s, children: kids }
           end
         }
