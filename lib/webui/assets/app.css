@@ -326,6 +326,16 @@ body.bare-page .c-image-map {
 .page-body > .c-columns.compact,
 .c-tab-panel > .c-columns.compact { margin-bottom: 0.35em; }
 
+/* aligned grid: uniform columns across all rows (matrices). Cells inherit
+ * grid-template-columns from the inline style the renderer sets. */
+.c-grid { display: grid; gap: 0.4em 0.8em; align-items: center; margin-bottom: 0.6em; }
+.c-grid.compact { gap: 0.2em 0.5em; }
+.c-cell { min-width: 0; }
+.c-cell > * { margin: 0; }
+/* checkbox cells: center the box, hide the (usually empty) label so matrix
+ * cells stay tight; the row/column headers carry the meaning */
+.c-grid .c-cell > .c-checkbox { display: flex; justify-content: center; }
+
 .c-tab-bar { display: flex; gap: 0.25em; border-bottom: 1px solid var(--border); }
 .c-tab-button {
   background: none;

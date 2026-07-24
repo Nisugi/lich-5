@@ -276,6 +276,44 @@ module Lich
         @nodes << node
       end
 
+      # A uniform aligned grid (CSS grid), for matrices where every column
+      # must line up across rows - unlike #columns, whose per-row widths do
+      # not align. Cells hold arbitrary child nodes (labels, checkboxes,
+      # dropdowns). Pass the total number of columns; the block is yielded a
+      # cell builder per cell, filled row-major left-to-right, top-to-bottom.
+      # Empty cells are permitted (they render as spacers), so a ragged
+      # matrix stays aligned.
+      #
+      #   ui.grid(cols: 3, cells: rows * 3) do |cell, index|
+      #     # fill cell #index
+      #   end
+      #
+      # Or drive it from data:
+      #   ui.grid(cols: towns.size + 1, cells: (towns.size + 1) * (towns.size + 1)) { |cell, i| ... }
+      #
+      # @param cols [Integer] number of columns
+      # @param cells [Integer] total cell count (rows = ceil(cells/cols))
+      # @param compact [Boolean] tighter cell padding
+      # @param key [Object, nil]
+      # @yieldparam cell [Builder] the cell's builder
+      # @yieldparam index [Integer] 0-based cell index (row-major)
+      # @return [void]
+      def grid(cols:, cells:, compact: false, key: nil)
+        cols = [cols.to_i, 1].max
+        cells = [cells.to_i, 0].max
+        cid = claim_cid('grid', key)
+        cell_builders = Array.new(cells) { |i| child_builder("#{cid}.g#{i}") }
+        cell_builders.each_with_index { |cell, i| yield(cell, i) }
+        node = {
+          t: 'grid', cid: cid, cols: cols,
+          children: cell_builders.each_with_index.map do |cell, i|
+            { t: 'cell', cid: "#{cid}.g#{i}", children: cell.nodes }
+          end
+        }
+        node[:compact] = true if compact
+        @nodes << node
+      end
+
       # Tabbed sections; the block receives one nested builder per tab, in
       # the order of +names+. Tab switching is purely client-side.
       # vertical: true renders the tab bar as a left sidebar (accounts in
