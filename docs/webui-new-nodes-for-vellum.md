@@ -1,3 +1,24 @@
+# WebUI: new component nodes for VellumFE to implement
+
+VellumFE renders WebUI page trees natively. These node types were added
+after Vellum's renderer was written, so Vellum currently shows
+`[unsupported component: <type>]` for them. Each renders correctly in the
+plain browser today (see the referenced app.js factory as a working model).
+Implement these to reach full parity.
+
+Summary of what's new:
+- `grid`   - aligned matrix (uniform columns). Escort from x to grid.
+- `textarea` - multi-line text field (GtkTextView equivalent).
+- `image_map` marker `kind`s `wound1|wound2|wound3` - colored dots for the
+  CreatureBar silhouette (image_map itself already exists; only the new
+  marker kinds are additive - render them as small filled circles,
+  yellow/orange/red, no border).
+
+All three fire the standard event envelope
+`{type:"event", cid:<node cid>, value:<...>}`; there are no new event shapes.
+
+---
+
 # WebUI `grid` node - renderer spec (for VellumFE)
 
 A new component node type, `grid`, for aligned matrices (e.g. the ebounty
