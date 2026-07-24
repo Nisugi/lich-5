@@ -65,13 +65,12 @@ module Lich
         # SO_REUSEADDR must be set BEFORE bind (a plain TCPServer.new binds
         # during construction, so a later setsockopt is too late). Without it,
         # a fixed port (LICH_WEBUI_PORT) left in TIME_WAIT by a just-stopped
-        # container fails to rebind and the service silently falls back to an
-        # unreachable ephemeral port. Build a reuseaddr Socket, then wrap it as
-        # a TCPServer (via #for_fd) so the rest of this class keeps the
-        # TCPServer API (#addr, #accept returning a bare socket).
+        # process fails to rebind and the service silently falls back to an
+        # unreachable ephemeral port. ReusableTCPServer returns a bound,
+        # listening Socket (NOT a TCPServer) - the port and accept helpers
+        # below handle either object shape.
         @server_factory = server_factory || lambda do |bind_host, bind_port|
-          sock = Lich::Common::ReusableTCPServer.create(bind_host, bind_port, backlog: 16)
-          TCPServer.for_fd(sock.fileno).tap { |ts| ts.instance_variable_set(:@_reusable_sock, sock) }
+          Lich::Common::ReusableTCPServer.create(bind_host, bind_port, backlog: 16)
         end
         @accept_thread_factory = accept_thread_factory || ->(&block) { Thread.new(&block) }
         @client_thread_factory = client_thread_factory || ->(socket, &block) { Thread.new(socket, &block) }
@@ -93,11 +92,12 @@ module Lich
 
           @stopping = false
           @server = @server_factory.call(@host, @port)
-          # ReusableTCPServer already set SO_REUSEADDR before bind; keep this
-          # for the injected TCPServer factory used in specs (harmless if the
-          # socket is already bound).
+          # ReusableTCPServer already set SO_REUSEADDR before bind; the spec
+          # factory injects a plain TCPServer, so this is harmless there.
           @server.setsockopt(Socket::SOL_SOCKET, Socket::SO_REUSEADDR, 1) rescue nil
-          @port = @server.addr[1]
+          # Resolve the bound port from either a Socket (#local_address) or a
+          # TCPServer (#addr) - the injected spec factory uses the latter.
+          @port = @server.respond_to?(:local_address) ? @server.local_address.ip_port : @server.addr[1]
           @thread = @accept_thread_factory.call do
             log("info: WebUI accept thread started pid=#{Process.pid} port=#{@port}")
             accept_loop
