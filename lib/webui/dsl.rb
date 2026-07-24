@@ -109,6 +109,23 @@ module Lich
         emit('text_input', key: key, label: label.to_s, value: value&.to_s, placeholder: placeholder&.to_s, &block)
       end
 
+      # Multi-line text field (GTK GtkTextView equivalent), for notes, regex
+      # lists, eval expressions - anything that spans several lines. Same
+      # event contract as #text_input: the callback fires with the full
+      # (multi-line) string on edit.
+      #
+      # @param label [#to_s]
+      # @param value [#to_s, nil] current text (may contain newlines)
+      # @param placeholder [#to_s, nil]
+      # @param rows [Integer] visible row height hint (default 4)
+      # @param key [Object, nil]
+      # @yieldparam value [String] the edited text
+      # @return [void]
+      def textarea(label, value: nil, placeholder: nil, rows: 4, key: nil, &block)
+        emit('textarea', key: key, label: label.to_s, value: value&.to_s,
+                         placeholder: placeholder&.to_s, rows: [rows.to_i, 1].max, &block)
+      end
+
       # Masked input for credentials. The value is NEVER echoed back into
       # the render tree - it exists only in the browser field and the single
       # change event your block receives. Do not log it.

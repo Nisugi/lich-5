@@ -49,3 +49,29 @@ across all rows. `columns` does NOT align across rows; `grid` does.
 - Sample payload: `webui-grid-node-sample.json` (a 3-col, 6-cell grid).
 - DSL: `Lich::WebUI::Builder#grid(cols:, cells:, compact:, key:)` in
   `lib/webui/dsl.rb`.
+
+---
+
+# WebUI `textarea` node - renderer spec (for VellumFE)
+
+Multi-line text field (GTK GtkTextView equivalent) for notes, regex lists,
+eval expressions.
+
+## Node shape
+```json
+{ "t": "textarea", "cid": "textarea:notes", "label": "Notes",
+  "value": "line one\nline two", "placeholder": "...", "rows": 5 }
+```
+- `value` may contain newlines; preserve them.
+- `rows`: visible height hint.
+
+## Rendering
+- Render as a multi-line text box (HTML `<textarea>`). Label above or beside.
+- Fire the normal `{type:"event", cid, value:<full string>}` on commit
+  (blur), NOT on every keystroke. Enter inserts a newline, does not commit.
+- On a re-render while the field is focused, do NOT overwrite the user's
+  in-progress text (see isEditing in app.js - it now includes TEXTAREA).
+
+## Reference
+Browser: `app.js` factories.textarea; CSS `.c-textarea`;
+DSL `Builder#textarea(label, value:, placeholder:, rows:, key:)`.
