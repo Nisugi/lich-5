@@ -201,6 +201,30 @@ RSpec.describe Lich::WebUI::Builder do
       expect(images.first).to include(src: 'https://example.com/map.png', alt: 'map')
     end
 
+    it 'builds image_button nodes with a click callback and lean state flags' do
+      fired = nil
+      builder.image_button('/files/icons/attack.png', size: 48, label: 'Atk',
+                           tooltip: 'Attack', selected: true) { fired = :hit }
+      builder.image_button('data:image/png;base64,AAA', width: 32, height: 64, disabled: true)
+      builder.image_button('file:///etc/passwd') { :nope }
+
+      buttons = builder.nodes.select { |node| node[:t] == 'image_button' }
+      expect(buttons.length).to eq(2) # bad source rejected
+      expect(buttons[0]).to include(src: '/files/icons/attack.png', w: 48, h: 48,
+                                    label: 'Atk', tooltip: 'Attack', selected: true)
+      expect(buttons[0]).not_to have_key(:disabled) # unset flags dropped from wire
+      expect(buttons[1]).to include(w: 32, h: 64, disabled: true)
+      expect(buttons[1]).not_to have_key(:selected)
+
+      builder.callbacks.fetch(buttons[0][:cid]).call
+      expect(fired).to eq(:hit)
+    end
+
+    it 'treats an image_button-only page as interactive' do
+      builder.image_button('/files/icons/go.png') { :go }
+      expect(described_class.interactive_nodes?(builder.nodes)).to be(true)
+    end
+
     it 'builds image_map nodes with normalized markers and a click callback' do
       received = nil
       builder.image_map('/files/maps/map1.png', scale: 1.5, scroll_to: 'current',

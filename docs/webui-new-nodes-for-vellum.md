@@ -9,12 +9,14 @@ Implement these to reach full parity.
 Summary of what's new:
 - `grid`   - aligned matrix (uniform columns). Escort from x to grid.
 - `textarea` - multi-line text field (GtkTextView equivalent).
+- `image_button` - a picture that is a button (action-bar icons, icon
+  toolbars). BarBar's action bars are grids of these.
 - `image_map` marker `kind`s `wound1|wound2|wound3` - colored dots for the
   CreatureBar silhouette (image_map itself already exists; only the new
   marker kinds are additive - render them as small filled circles,
   yellow/orange/red, no border).
 
-All three fire the standard event envelope
+All fire the standard event envelope
 `{type:"event", cid:<node cid>, value:<...>}`; there are no new event shapes.
 
 ---
@@ -96,6 +98,53 @@ eval expressions.
 ## Reference
 Browser: `app.js` factories.textarea; CSS `.c-textarea`;
 DSL `Builder#textarea(label, value:, placeholder:, rows:, key:)`.
+
+---
+
+# WebUI `image_button` node - renderer spec (for VellumFE)
+
+A clickable image: a button whose face is an image. Used for action-bar
+icons and icon toolbars (BarBar renders a `grid` of these). The picture is
+served via `/files/` (registered with `UI.serve`), a data: URI, or an
+http(s) URL - the same source rules as `image`.
+
+## Node shape
+```json
+{
+  "t": "image_button",
+  "cid": "image_button:attack",
+  "src": "/files/barbaricons/attack-normal.png",
+  "w": 48,
+  "h": 48,
+  "label": "Attack",
+  "tooltip": "cast 901",
+  "selected": true,
+  "disabled": null
+}
+```
+- `src` (string, required): http(s) / data: / /files/ path. Same validation as `image`.
+- `w`, `h` (int, optional): pixel size of the icon. May be absent (natural size).
+- `label` (string, optional): caption under the icon. Absent = no caption.
+- `tooltip` (string, optional): hover text (HTML `title`).
+- `selected` (bool, optional): draw an active/highlighted state (accent
+  ring). **Only present when true** - absent means not selected.
+- `disabled` (bool, optional): dimmed, non-clickable. **Only present when
+  true** - absent means enabled.
+
+Note: `selected`/`disabled` follow the lean-flag convention - the field is
+omitted entirely when false, never sent as `false`. Treat absent as false.
+
+## Rendering
+- A `<button>` containing the image (and the optional label beneath it).
+- Click fires the normal `{type:"event", cid, value:null}` - same envelope
+  as `button`. No click when `disabled`.
+- `selected` -> visible active state (browser: accent border + ring).
+- `disabled` -> dimmed + non-interactive.
+
+## Reference
+Browser: `app.js` factories.image_button; CSS `.c-image-button` /
+`.c-ib-img` / `.c-ib-label`;
+DSL `Builder#image_button(src, size:, width:, height:, label:, tooltip:, selected:, disabled:, key:)`.
 
 ---
 

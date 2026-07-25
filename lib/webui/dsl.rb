@@ -23,7 +23,7 @@ module Lich
       # crash some frontend tab renderers - see #tabs.
       INTERACTIVE_TYPES = %w[
         checkbox text_input password_input number_input slider select radio
-        button columns tabs table image_map log
+        button image_button columns tabs table image_map log
       ].freeze
 
       # True if +nodes+ or any descendant is an interactive component.
@@ -98,6 +98,35 @@ module Lich
         attrs = { label: label.to_s, variant: variant.to_s, disabled: !!disabled }
         attrs[:confirm] = confirm.to_s if confirm
         emit('button', key: key, **attrs, &block)
+      end
+
+      # A clickable image - a button whose face is an image (action-bar
+      # icons, icon toolbars, image tiles). The +src+ is an http(s) URL,
+      # data: URI, or a /files/ path registered via UI.serve.
+      #
+      #   ui.image_button('/files/icons/attack.png', size: 48, tooltip: 'Attack') { put 'attack' }
+      #
+      # @param src [String]
+      # @param size [Integer, nil] square pixel size (sets both w/h); use
+      #   width:/height: for a non-square icon
+      # @param width [Integer, nil]
+      # @param height [Integer, nil]
+      # @param label [#to_s, nil] caption under the icon
+      # @param tooltip [#to_s, nil] hover text
+      # @param selected [Boolean] draw a highlighted/active state
+      # @param disabled [Boolean] non-clickable, dimmed
+      # @param key [Object, nil]
+      # @yield click handler, run in the owning script's context
+      # @return [void]
+      def image_button(src, size: nil, width: nil, height: nil, label: nil,
+                       tooltip: nil, selected: false, disabled: false, key: nil, &block)
+        src = src.to_s
+        return unless src =~ %r{\Ahttps?://|\Adata:image/|\A/files/}
+
+        emit('image_button', key: key, src: src,
+                             w: (width || size)&.to_i, h: (height || size)&.to_i,
+                             label: label&.to_s, tooltip: tooltip&.to_s,
+                             selected: (!!selected || nil), disabled: (!!disabled || nil), &block)
       end
 
       # @param label [#to_s]
