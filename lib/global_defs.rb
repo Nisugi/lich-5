@@ -2639,7 +2639,11 @@ def do_client(client_string)
         # Machine-readable, for frontends embedding WebUI pages: exactly one
         # <LichWebUI .../> line, always.
         Lich::WebUI.ensure_service! if Lich::WebUI.enabled?
-        respond(Lich::WebUI.enabled? || Lich::WebUI.running? ? Lich::WebUI.handshake_payload : '<LichWebUI status="disabled"/>')
+        # Must go out raw (_respond): respond escapes XML for mono frontends,
+        # which turns the tag into &lt;...&gt; text the frontend's parser
+        # never sees. Regressed once already via a repo sync - see
+        # spec/lib/webui/handshake_delivery_spec.rb.
+        _respond(Lich::WebUI.enabled? || Lich::WebUI.running? ? Lich::WebUI.handshake_payload : '<LichWebUI status="disabled"/>')
       when 'list'
         if Lich::WebUI.running?
           pages = Lich::WebUI.pages_snapshot
