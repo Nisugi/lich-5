@@ -73,6 +73,21 @@ RSpec.describe Lich::Common::MapEngine::Strategies do
     end
   end
 
+  describe Lich::Common::MapEngine::UniqueCrossings do
+    it 'carries the relocated one-off crossings' do
+      expect(described_class::REGISTRY.size).to be >= 139
+      expect(described_class.known?('crossing_6274_11032')).to be(true)
+    end
+
+    it 'validates unique_crossing strategy references' do
+      validator = Lich::Common::MapEngine::Validator
+      expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing', 'name' => 'crossing_6274_11032' }))
+        .to be_empty
+      expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing' }).join)
+        .to include('missing required param')
+    end
+  end
+
   describe Lich::Common::MapEngine::Strategies::GuidedRoute do
     it 'builds commands from the verb' do
       route = described_class.new('target' => 12677, 'verb' => 'swim', 'dirs' => { '12662' => 'south' })

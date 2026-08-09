@@ -3101,6 +3101,638 @@
       {
         "do": "fill_hand"
       }
-    ]
+    ],
+    "7:3668": {
+      "strategy": "unique_crossing",
+      "name": "crossing_7_3668"
+    },
+    "339:24768": {
+      "strategy": "unique_crossing",
+      "name": "crossing_339_24768"
+    },
+    "1042:1041": {
+      "strategy": "unique_crossing",
+      "name": "crossing_1042_1041"
+    },
+    "2636:2579": {
+      "strategy": "unique_crossing",
+      "name": "crossing_2636_2579"
+    },
+    "2636:12093": {
+      "strategy": "unique_crossing",
+      "name": "crossing_2636_12093"
+    },
+    "2636:12118": {
+      "strategy": "unique_crossing",
+      "name": "crossing_2636_12118"
+    },
+    "2658:2647": {
+      "strategy": "unique_crossing",
+      "name": "crossing_2658_2647"
+    },
+    "2658:2659": {
+      "strategy": "unique_crossing",
+      "name": "crossing_2658_2659"
+    },
+    "2658:2660": {
+      "strategy": "unique_crossing",
+      "name": "crossing_2658_2660"
+    },
+    "2658:2661": {
+      "strategy": "unique_crossing",
+      "name": "crossing_2658_2661"
+    },
+    "2677:2675": {
+      "strategy": "unique_crossing",
+      "name": "crossing_2677_2675"
+    },
+    "3239:3264": {
+      "strategy": "unique_crossing",
+      "name": "crossing_3239_3264"
+    },
+    "3264:3239": {
+      "strategy": "unique_crossing",
+      "name": "crossing_3239_3264"
+    },
+    "3495:18041": {
+      "strategy": "unique_crossing",
+      "name": "crossing_3495_18041"
+    },
+    "3509:17805": {
+      "strategy": "unique_crossing",
+      "name": "crossing_3509_17805"
+    },
+    "4140:4141": {
+      "strategy": "unique_crossing",
+      "name": "crossing_4140_4141"
+    },
+    "4141:4140": {
+      "strategy": "unique_crossing",
+      "name": "crossing_4141_4140"
+    },
+    "4344:7298": {
+      "strategy": "unique_crossing",
+      "name": "crossing_4344_7298"
+    },
+    "6135:6136": {
+      "strategy": "unique_crossing",
+      "name": "crossing_6135_6136"
+    },
+    "6274:11032": {
+      "strategy": "unique_crossing",
+      "name": "crossing_6274_11032"
+    },
+    "6486:6487": {
+      "strategy": "unique_crossing",
+      "name": "crossing_6486_6487"
+    },
+    "6897:6928": {
+      "strategy": "unique_crossing",
+      "name": "crossing_6897_6928"
+    },
+    "6955:6985": {
+      "strategy": "unique_crossing",
+      "name": "crossing_6955_6985"
+    },
+    "7046:3705": {
+      "strategy": "unique_crossing",
+      "name": "crossing_7046_3705"
+    },
+    "7046:7047": {
+      "strategy": "unique_crossing",
+      "name": "crossing_7046_7047"
+    },
+    "7046:7083": {
+      "strategy": "unique_crossing",
+      "name": "crossing_7046_7083"
+    },
+    "7046:7099": {
+      "strategy": "unique_crossing",
+      "name": "crossing_7046_7099"
+    },
+    "7046:7144": {
+      "strategy": "unique_crossing",
+      "name": "crossing_7046_7144"
+    },
+    "7318:7319": {
+      "strategy": "unique_crossing",
+      "name": "crossing_7318_7319"
+    },
+    "7324:4541": {
+      "strategy": "unique_crossing",
+      "name": "crossing_7324_4541"
+    },
+    "7331:7315": {
+      "strategy": "unique_crossing",
+      "name": "crossing_7331_7315"
+    },
+    "8373:8374": {
+      "strategy": "unique_crossing",
+      "name": "crossing_8373_8374"
+    },
+    "9784:9734": {
+      "strategy": "unique_crossing",
+      "name": "crossing_9784_9734"
+    },
+    "9788:9734": {
+      "strategy": "unique_crossing",
+      "name": "crossing_9784_9734"
+    },
+    "9808:9734": {
+      "strategy": "unique_crossing",
+      "name": "crossing_9784_9734"
+    },
+    "9818:9734": {
+      "strategy": "unique_crossing",
+      "name": "crossing_9784_9734"
+    },
+    "9823:9734": {
+      "strategy": "unique_crossing",
+      "name": "crossing_9784_9734"
+    },
+    "10781:18150": {
+      "strategy": "unique_crossing",
+      "name": "crossing_10781_18150"
+    },
+    "11032:6274": {
+      "strategy": "unique_crossing",
+      "name": "crossing_11032_6274"
+    },
+    "11355:11357": {
+      "strategy": "unique_crossing",
+      "name": "crossing_11355_11357"
+    },
+    "11357:11358": {
+      "strategy": "unique_crossing",
+      "name": "crossing_11357_11358"
+    },
+    "11753:11749": {
+      "strategy": "unique_crossing",
+      "name": "crossing_11753_11749"
+    },
+    "14060:20430": {
+      "strategy": "unique_crossing",
+      "name": "crossing_14060_20430"
+    },
+    "14726:18172": {
+      "strategy": "unique_crossing",
+      "name": "crossing_14726_18172"
+    },
+    "15571:17721": {
+      "strategy": "unique_crossing",
+      "name": "crossing_15571_17721"
+    },
+    "15950:7989": {
+      "strategy": "unique_crossing",
+      "name": "crossing_15950_7989"
+    },
+    "26919:24055": {
+      "strategy": "unique_crossing",
+      "name": "crossing_15950_7989"
+    },
+    "16011:11022": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16011_11022"
+    },
+    "16011:16256": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16011_16256"
+    },
+    "16011:16270": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16011_16270"
+    },
+    "16122:11612": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16122_11612"
+    },
+    "16122:11618": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16122_11618"
+    },
+    "16165:16064": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16165_16064"
+    },
+    "16193:16192": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16193_16192"
+    },
+    "16196:22225": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16196_22225"
+    },
+    "16744:24675": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16744_24675"
+    },
+    "16806:4160": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16806_4160"
+    },
+    "16806:4162": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16806_4162"
+    },
+    "16806:4164": {
+      "strategy": "unique_crossing",
+      "name": "crossing_16806_4164"
+    },
+    "17493:3235": {
+      "strategy": "unique_crossing",
+      "name": "crossing_17493_3235"
+    },
+    "17665:11433": {
+      "strategy": "unique_crossing",
+      "name": "crossing_17665_11433"
+    },
+    "18043:18052": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18043_18052"
+    },
+    "18052:18054": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18043_18052"
+    },
+    "18054:18068": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18043_18052"
+    },
+    "18052:18043": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18052_18043"
+    },
+    "18054:18052": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18052_18043"
+    },
+    "18068:18054": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18052_18043"
+    },
+    "18178:18179": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18178_18179"
+    },
+    "18180:18181": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18180_18181"
+    },
+    "18181:18182": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18181_18182"
+    },
+    "18186:451": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18186_451"
+    },
+    "18186:18187": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18186_18187"
+    },
+    "18187:451": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18187_451"
+    },
+    "18243:22550": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18243_22550"
+    },
+    "18677:11749": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18677_11749"
+    },
+    "18700:18250": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18700_18250"
+    },
+    "18748:18747": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18748_18747"
+    },
+    "18822:18823": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18822_18823"
+    },
+    "23525:23526": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18822_18823"
+    },
+    "18823:18822": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18823_18822"
+    },
+    "18893:13441": {
+      "strategy": "unique_crossing",
+      "name": "crossing_18893_13441"
+    },
+    "19377:25691": {
+      "strategy": "unique_crossing",
+      "name": "crossing_19377_25691"
+    },
+    "19543:1102": {
+      "strategy": "unique_crossing",
+      "name": "crossing_19543_1102"
+    },
+    "19657:20012": {
+      "strategy": "unique_crossing",
+      "name": "crossing_19657_20012"
+    },
+    "19727:19990": {
+      "strategy": "unique_crossing",
+      "name": "crossing_19727_19990"
+    },
+    "19728:19992": {
+      "strategy": "unique_crossing",
+      "name": "crossing_19728_19992"
+    },
+    "19992:19728": {
+      "strategy": "unique_crossing",
+      "name": "crossing_19992_19728"
+    },
+    "20008:20011": {
+      "strategy": "unique_crossing",
+      "name": "crossing_20008_20011"
+    },
+    "20012:19657": {
+      "strategy": "unique_crossing",
+      "name": "crossing_20012_19657"
+    },
+    "21386:23157": {
+      "strategy": "unique_crossing",
+      "name": "crossing_21386_23157"
+    },
+    "21960:21961": {
+      "strategy": "unique_crossing",
+      "name": "crossing_21960_21961"
+    },
+    "21961:21960": {
+      "strategy": "unique_crossing",
+      "name": "crossing_21960_21961"
+    },
+    "21964:21967": {
+      "strategy": "unique_crossing",
+      "name": "crossing_21964_21967"
+    },
+    "21965:21967": {
+      "strategy": "unique_crossing",
+      "name": "crossing_21965_21967"
+    },
+    "22007:21967": {
+      "strategy": "unique_crossing",
+      "name": "crossing_22007_21967"
+    },
+    "22218:11612": {
+      "strategy": "unique_crossing",
+      "name": "crossing_22218_11612"
+    },
+    "22218:11617": {
+      "strategy": "unique_crossing",
+      "name": "crossing_22218_11617"
+    },
+    "22218:11618": {
+      "strategy": "unique_crossing",
+      "name": "crossing_22218_11618"
+    },
+    "22219:11653": {
+      "strategy": "unique_crossing",
+      "name": "crossing_22218_11618"
+    },
+    "22219:11622": {
+      "strategy": "unique_crossing",
+      "name": "crossing_22219_11622"
+    },
+    "22349:22444": {
+      "strategy": "unique_crossing",
+      "name": "crossing_22349_22444"
+    },
+    "22666:24233": {
+      "strategy": "unique_crossing",
+      "name": "crossing_22666_24233"
+    },
+    "23282:23282": {
+      "strategy": "unique_crossing",
+      "name": "crossing_23282_23282"
+    },
+    "23338:23339": {
+      "strategy": "unique_crossing",
+      "name": "crossing_23338_23339"
+    },
+    "23496:19109": {
+      "strategy": "unique_crossing",
+      "name": "crossing_23496_19109"
+    },
+    "23526:23525": {
+      "strategy": "unique_crossing",
+      "name": "crossing_23526_23525"
+    },
+    "23845:23926": {
+      "strategy": "unique_crossing",
+      "name": "crossing_23845_23926"
+    },
+    "24158:24159": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24158_24159"
+    },
+    "24238:21557": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24238_21557"
+    },
+    "24239:24240": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24239_24240"
+    },
+    "24241:313": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24241_313"
+    },
+    "24241:20233": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24241_20233"
+    },
+    "24516:15651": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24516_15651"
+    },
+    "24675:7892": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24675_7892"
+    },
+    "24675:16744": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24675_16744"
+    },
+    "24695:24696": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24695_24696"
+    },
+    "24696:24695": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24696_24695"
+    },
+    "24715:24716": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24715_24716"
+    },
+    "24716:24715": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24716_24715"
+    },
+    "24729:24730": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24729_24730"
+    },
+    "24730:24729": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24730_24729"
+    },
+    "24752:20423": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24752_20423"
+    },
+    "24837:24967": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24837_24967"
+    },
+    "24963:7602": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24963_7602"
+    },
+    "24976:24979": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24976_24979"
+    },
+    "24980:24804": {
+      "strategy": "unique_crossing",
+      "name": "crossing_24980_24804"
+    },
+    "25148:221": {
+      "strategy": "unique_crossing",
+      "name": "crossing_25148_221"
+    },
+    "25148:3904": {
+      "strategy": "unique_crossing",
+      "name": "crossing_25148_3904"
+    },
+    "25172:25231": {
+      "strategy": "unique_crossing",
+      "name": "crossing_25172_25231"
+    },
+    "25183:25145": {
+      "strategy": "unique_crossing",
+      "name": "crossing_25183_25145"
+    },
+    "25185:25145": {
+      "strategy": "unique_crossing",
+      "name": "crossing_25183_25145"
+    },
+    "25231:25172": {
+      "strategy": "unique_crossing",
+      "name": "crossing_25231_25172"
+    },
+    "25985:26834": {
+      "strategy": "unique_crossing",
+      "name": "crossing_25985_26834"
+    },
+    "26765:27623": {
+      "strategy": "unique_crossing",
+      "name": "crossing_26765_27623"
+    },
+    "27638:27639": {
+      "strategy": "unique_crossing",
+      "name": "crossing_27638_27639"
+    },
+    "27639:27638": {
+      "strategy": "unique_crossing",
+      "name": "crossing_27638_27639"
+    },
+    "28885:29773": {
+      "strategy": "unique_crossing",
+      "name": "crossing_28885_29773"
+    },
+    "30115:29861": {
+      "strategy": "unique_crossing",
+      "name": "crossing_30115_29861"
+    },
+    "30115:29867": {
+      "strategy": "unique_crossing",
+      "name": "crossing_30115_29867"
+    },
+    "30581:30582": {
+      "strategy": "unique_crossing",
+      "name": "crossing_30581_30582"
+    },
+    "30582:30581": {
+      "strategy": "unique_crossing",
+      "name": "crossing_30581_30582"
+    },
+    "30582:30583": {
+      "strategy": "unique_crossing",
+      "name": "crossing_30582_30583"
+    },
+    "30583:30581": {
+      "strategy": "unique_crossing",
+      "name": "crossing_30582_30583"
+    },
+    "30850:30851": {
+      "strategy": "unique_crossing",
+      "name": "crossing_30850_30851"
+    },
+    "31286:31345": {
+      "strategy": "unique_crossing",
+      "name": "crossing_31286_31345"
+    },
+    "31427:31428": {
+      "strategy": "unique_crossing",
+      "name": "crossing_31427_31428"
+    },
+    "31428:31427": {
+      "strategy": "unique_crossing",
+      "name": "crossing_31427_31428"
+    },
+    "32873:13532": {
+      "strategy": "unique_crossing",
+      "name": "crossing_32873_13532"
+    },
+    "33350:33351": {
+      "strategy": "unique_crossing",
+      "name": "crossing_33350_33351"
+    },
+    "33365:33366": {
+      "strategy": "unique_crossing",
+      "name": "crossing_33365_33366"
+    },
+    "34434:34435": {
+      "strategy": "unique_crossing",
+      "name": "crossing_34434_34435"
+    },
+    "34435:34434": {
+      "strategy": "unique_crossing",
+      "name": "crossing_34434_34435"
+    },
+    "34509:7927": {
+      "strategy": "unique_crossing",
+      "name": "crossing_34509_7927"
+    },
+    "35902:35901": {
+      "strategy": "unique_crossing",
+      "name": "crossing_35902_35901"
+    },
+    "36166:36167": {
+      "strategy": "unique_crossing",
+      "name": "crossing_36166_36167"
+    },
+    "36416:36412": {
+      "strategy": "unique_crossing",
+      "name": "crossing_36416_36412"
+    },
+    "36419:36440": {
+      "strategy": "unique_crossing",
+      "name": "crossing_36419_36440"
+    },
+    "36440:36419": {
+      "strategy": "unique_crossing",
+      "name": "crossing_36440_36419"
+    }
   }
 }

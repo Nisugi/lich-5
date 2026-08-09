@@ -12,6 +12,7 @@
 # a re-route or report. Bad data may waste a route; it can never hang Lich.
 
 require_relative 'map_engine'
+require_relative 'map_crossings' if File.exist?(File.join(__dir__, 'map_crossings.rb'))
 
 module Lich
   module Common
@@ -728,6 +729,19 @@ module Lich
           end
         end
         register 'rogue_guild_door', RogueGuildDoor
+
+        # One-off crossings relocated verbatim from mapdb StringProcs into
+        # lib/common/map/map_crossings.rb (generated, reviewed code).
+        class UniqueCrossing
+          def initialize(params)
+            @name = params['name']
+          end
+
+          def run
+            UniqueCrossings.run(@name)
+          end
+        end
+        register 'unique_crossing', UniqueCrossing, %w[name]
       end
     end
   end
