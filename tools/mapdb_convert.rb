@@ -887,7 +887,19 @@ class MapdbConverter
 
   def convert_edges!(room, field)
     (room[field] || {}).each do |dest, value|
-      next unless value.is_a?(String) && value.start_with?(';e ')
+      unless value.is_a?(String) && value.start_with?(';e ')
+        # Manual entries are authoritative over any edge type: a hand-authored
+        # fix can also repair a plain edge the upstream map got wrong (e.g.
+        # locker rooms whose exit needs `close locker` first).
+        if (schema = manual_for(field, room['id'], dest)) && schema != value
+          schema = guard_trailing_replan(schema, dest) if field == 'wayto'
+          if validate(field, schema).empty?
+            room[field][dest] = schema
+            @stats["#{field}:manual"] += 1
+          end
+        end
+        next
+      end
 
       body = value[3..]
       result = yield(body)

@@ -3716,6 +3716,236 @@
     "36440:36419": {
       "strategy": "unique_crossing",
       "name": "crossing_36440_36419"
-    }
+    },
+    "5203:24247": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go brown curtain"
+      }
+    ],
+    "23238:23214": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain opening"
+      }
+    ],
+    "29563:29562": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "32850:16852": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "32861:32860": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "32960:32958": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go silver door"
+      }
+    ],
+    "33005:23214": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtained opening"
+      }
+    ],
+    "33026:33025": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "33045:33044": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "33131:33130": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "33138:33137": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "33158:33157": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "33179:33178": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "33193:33192": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "33200:33199": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "33741:33740": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "35202:35201": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "35223:35222": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go beaded curtain"
+      }
+    ],
+    "35983:4664": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go brown curtain"
+      }
+    ],
+    "35994:35993": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "36087:33207": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "36143:36142": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go curtain"
+      }
+    ],
+    "35474:35472": [
+      {
+        "do": "send",
+        "cmd": "close locker"
+      },
+      {
+        "do": "move",
+        "cmd": "go gold tapestry"
+      }
+    ]
   }
 }
