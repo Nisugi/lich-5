@@ -5,8 +5,8 @@
 # slopes, private tables, the Rogue Guild). Generic mechanisms (guided
 # routes, patrols, shifting mazes) live in lib/common/map/map_strategies.rb.
 
-require_relative "../common/map/map_engine"
-require_relative "../common/map/map_strategies"
+require_relative "../../common/map/map_engine"
+require_relative "../../common/map/map_strategies"
 
 module Lich
   module Common

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Generates lib/common/map/map_crossings.rb from the StringProcs that neither
+# Generates lib/<game>/map/map_crossings.rb from the StringProcs that neither
 # the recognizers nor the manual schema cover: each remaining proc body is
 # relocated VERBATIM into a named block in reviewed Lich code, and a matching
 # {"strategy" => "unique_crossing", "name" => ...} entry is merged into the
@@ -33,7 +33,7 @@ name_prefix = options[:game] == 'gs' ? 'crossing' : 'crossing_dr'
 manual_name = options[:game] == 'gs' ? 'mapdb_manual_conversions.json' : 'mapdb_manual_conversions_dr.json'
 manual_path = File.expand_path(manual_name, __dir__)
 File.write(manual_path, JSON.generate({ 'wayto' => {}, 'timeto' => {} })) unless File.exist?(manual_path)
-crossings_path = File.expand_path("../lib/#{game_dir}/map_crossings.rb", __dir__)
+crossings_path = File.expand_path("../lib/#{game_dir}/map/map_crossings.rb", __dir__)
 
 converter = MapdbConverter.new
 converter.load_manual(manual_path)
