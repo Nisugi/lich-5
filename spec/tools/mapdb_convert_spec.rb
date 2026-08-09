@@ -151,6 +151,22 @@ RSpec.describe MapdbConverter do
       expect(r.schema.last).to eq({ 'do' => 'wait_rt' })
     end
 
+    it 'converts buff-cast moves without capture drift' do
+      r = wayto('if resolve = Spell[9704] and resolve.known? and resolve.affordable? and ' \
+                "not resolve.active?; resolve.cast; end; move 'climb wall'; waitrt?")
+      expect(r.schema).to eq([{ 'do' => 'cast_buff', 'spell' => 9704 },
+                              { 'do' => 'move', 'cmd' => 'climb wall' },
+                              { 'do' => 'wait_rt' }])
+    end
+
+    it 'converts buff-cast branches without capture drift' do
+      r = wayto('if resolve = Spell[9704] and resolve.known? and resolve.affordable? and ' \
+                "not resolve.active?; resolve.cast; end; fput (Spell[112].active? ? 'go out' : 'swim out')")
+      expect(r.schema.last).to eq({ 'do' => 'if', 'when' => 'spell:112',
+                                    'then' => [{ 'do' => 'send', 'cmd' => 'go out' }],
+                                    'else' => [{ 'do' => 'send', 'cmd' => 'swim out' }] })
+    end
+
     it 'converts bounded walk loops to repeat' do
       r = wayto("30.times { move 'north'; break if Room.current.id == 13183 }")
       expect(r.schema).to eq([{ 'do' => 'repeat', 'times' => 30, 'until_room' => 13183,

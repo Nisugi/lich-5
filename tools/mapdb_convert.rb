@@ -644,19 +644,22 @@ class MapdbConverter
                            'then' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] },
                          { 'do' => 'move', 'cmd' => m[4] || m[5] }])
     end
+    # NOTE: CAST_BUFF carries one capture group of its own, so groups after
+    # the (?:...)+ wrapper start at m[3], not m[2] (live regression: edges
+    # moved to '9704').
     if (m = body.match(/\A((?:#{CAST_BUFF})+)move\s+#{QUOTED};\s*waitrt\?;?\z/))
       spells = m[1].scan(CAST_BUFF).flatten.map(&:to_i)
       steps = spells.map { |s| { 'do' => 'cast_buff', 'spell' => s } }
-      steps << { 'do' => 'move', 'cmd' => m[2] || m[3] }
+      steps << { 'do' => 'move', 'cmd' => m[3] || m[4] }
       steps << { 'do' => 'wait_rt' }
       return Result.new('cast_buff_move', steps)
     end
     if (m = body.match(/\A((?:#{CAST_BUFF})+)fput\s+\(Spell\[(\d+)\]\.active\?\s*\?\s*#{QUOTED}\s*:\s*#{QUOTED}\);?\z/))
       spells = m[1].scan(CAST_BUFF).flatten.map(&:to_i)
       steps = spells.map { |s| { 'do' => 'cast_buff', 'spell' => s } }
-      steps << { 'do' => 'if', 'when' => "spell:#{m[2]}",
-                 'then' => [{ 'do' => 'send', 'cmd' => m[3] || m[4] }],
-                 'else' => [{ 'do' => 'send', 'cmd' => m[5] || m[6] }] }
+      steps << { 'do' => 'if', 'when' => "spell:#{m[3]}",
+                 'then' => [{ 'do' => 'send', 'cmd' => m[4] || m[5] }],
+                 'else' => [{ 'do' => 'send', 'cmd' => m[6] || m[7] }] }
       return Result.new('cast_buff_branch', steps)
     end
     if (m = body.match(/\Agroup_members\s*=\s*nil;\s*clear\.reverse\.each\s*\{.*?followed.*?\};\s*
