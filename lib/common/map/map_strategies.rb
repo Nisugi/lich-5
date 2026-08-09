@@ -359,6 +359,94 @@ module Lich
           end
         end
         register 'shifting_maze', ShiftingMaze, %w[target rooms]
+
+        # Voln symbol-of-seeking travel: cycle the symbol's random destination
+        # until the offered room's name matches the target room's title, then
+        # confirm the teleport. Ported from the shared proc at room 3600.
+        #
+        #   { "strategy" => "voln_seeking", "target" => 12603 }
+        class VolnSeeking
+          ROOMNAME_PATTERN = %r{<style id="roomName" />(.*?)$}
+          MAX_ATTEMPTS = 20
+
+          def initialize(params)
+            @target = params['target'].to_i
+          end
+
+          def run
+            raise StepFailed, 'voln_seeking requires a target' if @target.zero?
+            destination = Map[@target]
+            raise StepFailed, "voln_seeking: unknown room #{@target}" unless destination
+
+            need_roomname_off = ensure_roomnames_on
+            script = Script.current
+            save_downstream = script.want_downstream
+            save_downstream_xml = script.want_downstream_xml
+            script.want_downstream = false
+            script.want_downstream_xml = true
+
+            first_roomname = nil
+            found = false
+            begin
+              MAX_ATTEMPTS.times do
+                waitcastrt?
+                put 'symbol of seeking'
+                matchtimeout(6, 'Your vision is pulled away from you...')
+                result = matchtimeout(6, ROOMNAME_PATTERN)
+                next unless result
+
+                offered = result.match(ROOMNAME_PATTERN)&.captures&.first
+                next unless offered
+                if offered[0] == '<'
+                  need_roomname_off = true
+                  fput 'flag roomname on'
+                  next
+                end
+                offered.slice!(::Regexp.last_match(1)) if offered =~ /( \(\d+\))$/
+
+                break if first_roomname == offered # cycled all the way around
+
+                first_roomname ||= offered
+                if destination.title.include?(offered)
+                  found = true
+                  break
+                end
+              end
+            ensure
+              script.want_downstream_xml = save_downstream_xml
+              script.want_downstream = save_downstream
+              fput 'set roomname off' if need_roomname_off
+            end
+
+            raise StepFailed, "voln_seeking: destination #{@target} never offered" unless found
+
+            note_redforest_side if @target == 24_715
+            dothistimeout('symbol of seeking confirm', 6, /^Your surroundings blur into a white fog/)
+            true
+          end
+
+          private
+
+          def ensure_roomnames_on
+            last_roomdesc = $_SERVERBUFFER_.reverse.find do |line|
+              line =~ %r{<resource picture="\d+"/><style id="roomName" ?/>\[[^\]]+\]} ||
+                line =~ /You will no longer see room names\./
+            end
+            if last_roomdesc =~ /You will no longer see room names\./
+              fput 'set roomname on'
+              return true
+            end
+            false
+          end
+
+          # The Red Forest exists in two variants; remember which side this
+          # character entered from so the return gates can cost correctly.
+          def note_redforest_side
+            UserVars.mapdb_redforest_location = 'WL' if Map.current.id == 3600
+            UserVars.mapdb_redforest_location = 'EN' if Map.current.id == 10_125
+          end
+        end
+        register 'voln_seeking', VolnSeeking, %w[target]
       end
     end
   end

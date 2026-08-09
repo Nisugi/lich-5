@@ -92,6 +92,23 @@ class MapdbConverter
     if (m = body.match(/\ATime\.now\.month\s*==\s*(\d+)\s*\?\s*(#{NUM})\s*:\s*nil;?\z/))
       return Result.new('month_gate', { 'cost' => numeric(m[2]), 'requires' => ["month:#{m[1]}"] })
     end
+    if (m = body.match(/\Aif\s+Society\.status\s*==\s*'([^']+)'\s+and\s+Society\.rank\s*==\s*(\d+)\s+and\s+
+                        \$go2_use_seeking;\s*(#{NUM});\s*else;\s*nil;\s*end;?\z/x))
+      return Result.new('society_gate',
+                        { 'cost' => numeric(m[3]), 'requires' => ["society:#{m[1]}+#{m[2]}", 'seeking_enabled'] })
+    end
+    if (m = body.match(/\Achecksitting\s*&&\s*Room\.current\.climate\s*==\s*'([^']+)'\s*\?\s*nil\s*:\s*(#{NUM});?\z/))
+      return Result.new('climate_block_gate',
+                        { 'cost' => nil, 'requires' => ['is:sitting', "climate:#{m[1]}"],
+                          'else' => { 'cost' => numeric(m[2]) } })
+    end
+    if (m = body.match(%r{\Aif\s+Spell\['Haste'\]\.active\?;\s*\((#{NUM})\s*\*\s*\[\(\(80\s*-\s*
+                          \(\[Spells\.majorelemental,Stats\.level\]\.min/5\)\s*-\s*
+                          \(Skills\.elair/5\)\)\s*/\s*100\.0\),\s*0\.4\]\.max\)\.floor\s*\+\s*0\.2;\s*
+                          else;\s*(#{NUM});\s*end;?\z}x))
+      return Result.new('haste_formula',
+                        { 'formula' => 'haste_scaled', 'base' => numeric(m[1]), 'else' => numeric(m[2]) })
+    end
     nil
   end
 
@@ -153,6 +170,9 @@ class MapdbConverter
     if (m = body.match(/\A\$mapdb_confluence_target\s*=\s*(?:(\d+)|'tranquility');\s*Room\[23282\]\.wayto\['23282'\]\.call\z/))
       target = m[1] ? m[1].to_i : 'tranquility'
       return Result.new('confluence', { 'strategy' => 'confluence_explorer', 'target' => target })
+    end
+    if (m = body.match(/\A\$mapdb_seeking_destination\s*=\s*(\d+);\s*Map\[3600\]\.wayto\['3600'\]\.call;?\z/))
+      return Result.new('voln_seeking', { 'strategy' => 'voln_seeking', 'target' => m[1].to_i })
     end
     if (m = body.match(/\Atarget_room_id\s*=\s*(\d+);\s*maze_rooms\s*=\s*(#{INT_LIST});\s*
                         \$minotaur_maze_dirs\s*\|\|=\s*Hash\.new;\s*loop\s*\{.*\}\z/xm))
@@ -232,6 +252,33 @@ class MapdbConverter
       steps << { 'do' => 'move', 'cmd' => m[2] || m[3] }
       steps << { 'do' => 'wait_rt' }
       return Result.new('cast_buff_move', steps)
+    end
+    if (m = body.match(/\A((?:#{CAST_BUFF})+)fput\s+\(Spell\[(\d+)\]\.active\?\s*\?\s*#{QUOTED}\s*:\s*#{QUOTED}\);?\z/))
+      spells = m[1].scan(CAST_BUFF).flatten.map(&:to_i)
+      steps = spells.map { |s| { 'do' => 'cast_buff', 'spell' => s } }
+      steps << { 'do' => 'if', 'when' => "spell:#{m[2]}",
+                 'then' => [{ 'do' => 'send', 'cmd' => m[3] || m[4] }],
+                 'else' => [{ 'do' => 'send', 'cmd' => m[5] || m[6] }] }
+      return Result.new('cast_buff_branch', steps)
+    end
+    if (m = body.match(/\Agroup_members\s*=\s*nil;\s*clear\.reverse\.each\s*\{.*?followed.*?\};\s*
+                        move\s+#{QUOTED};\s*if\s+group_members;\s*echo\s+#{QUOTED};\s*
+                        begin;\s*if\s+get\s*=~.*?end\s+while\s+group_members\.length\s*>\s*0;\s*end;\s*waitrt\?;?\z/xm))
+      return Result.new('group_move', [{ 'do' => 'move_with_group', 'cmd' => m[1] || m[2] }])
+    end
+    if (m = body.match(/\Awaitrt\?;\s*(\d+)\.times\s*\{\s*if\s+standing\?;\s*break;\s*else;\s*fput\s+'stand';\s*
+                        sleep\s+0\.2;\s*waitrt\?;\s*end\s*\};\s*move\s+#{QUOTED};\s*sleep\s+0\.2;\s*waitrt\?;\s*
+                        \1\.times\s*\{\s*if\s+standing\?;\s*break;\s*else;\s*fput\s+'stand';\s*
+                        sleep\s+0\.2;\s*waitrt\?;\s*end\s*\};\s*waitrt\?;?\z/x))
+      stand_up = { 'do' => 'repeat', 'times' => m[1].to_i, 'until' => 'status:standing',
+                   'steps' => [{ 'do' => 'send', 'cmd' => 'stand' },
+                               { 'do' => 'sleep', 'seconds' => 0.2 },
+                               { 'do' => 'wait_rt' }] }
+      return Result.new('stand_retry_move',
+                        [{ 'do' => 'wait_rt' }, stand_up,
+                         { 'do' => 'move', 'cmd' => m[2] || m[3] },
+                         { 'do' => 'sleep', 'seconds' => 0.2 }, { 'do' => 'wait_rt' },
+                         stand_up, { 'do' => 'wait_rt' }])
     end
     if (m = body.match(/\AMap\[(\d+)\]\.wayto\[#{QUOTED}\]\.call;?\s*(?:#.*)?\z/))
       return Result.new('cross_delegation', [{ 'do' => 'cross', 'room' => m[1].to_i, 'dest' => m[2] || m[3] }])

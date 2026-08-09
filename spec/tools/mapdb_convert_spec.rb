@@ -62,6 +62,25 @@ RSpec.describe MapdbConverter do
         .to eq({ 'cost' => 0.1, 'requires' => ['var:duskruin_origin=7'] })
     end
 
+    it 'converts society seeking gates' do
+      body = "if Society.status == 'Order of Voln' and Society.rank == 26 and $go2_use_seeking; 2.8; else; nil; end"
+      expect(timeto(body).schema)
+        .to eq({ 'cost' => 2.8, 'requires' => ['society:Order of Voln+26', 'seeking_enabled'] })
+    end
+
+    it 'converts inverted climate gates to explicit null costs' do
+      r = timeto("checksitting && Room.current.climate == 'freshwater' ? nil : 0.2")
+      expect(r.schema).to eq({ 'cost' => nil, 'requires' => ['is:sitting', 'climate:freshwater'],
+                               'else' => { 'cost' => 0.2 } })
+      expect(Lich::Common::MapEngine::Validator.errors_for_timeto(r.schema)).to be_empty
+    end
+
+    it 'converts the haste travel formula' do
+      body = "if Spell['Haste'].active?; (15 * [((80 - ([Spells.majorelemental,Stats.level].min/5) - " \
+             '(Skills.elair/5)) / 100.0), 0.4].max).floor + 0.2; else; 15.2; end'
+      expect(timeto(body).schema).to eq({ 'formula' => 'haste_scaled', 'base' => 15, 'else' => 15.2 })
+    end
+
     it 'leaves unrecognized bodies alone' do
       expect(timeto("key=GameObj.inv.find{|k| k.name=='ruby'}; key ? 1 : nil")).to be_nil
     end
@@ -143,8 +162,13 @@ RSpec.describe MapdbConverter do
                                'hands_free_in' => [12662, 20786] })
     end
 
-    it 'leaves unrecognized stateful services alone' do
-      expect(wayto("$mapdb_seeking_destination = 12603;Map[3600].wayto['3600'].call;")).to be_nil
+    it 'converts seeking dispatch edges to the voln_seeking strategy' do
+      expect(wayto("$mapdb_seeking_destination = 12603;Map[3600].wayto['3600'].call;").schema)
+        .to eq({ 'strategy' => 'voln_seeking', 'target' => 12603 })
+    end
+
+    it 'leaves unrecognized bodies alone' do
+      expect(wayto('day_pass_program_of_ninety_lines(:wl, :imt)')).to be_nil
     end
 
     it 'converts the ice-caution gate to a named condition' do

@@ -79,9 +79,32 @@ module Lich
             return table && table[entry['key']]
           end
 
+          if (formula = entry['formula'])
+            return resolve_formula(formula, entry)
+          end
+
           ok = Array(entry['requires']).all? { |req| requirement?(req) }
+          # An explicit null cost with passing requirements disables the edge
+          # (the `cond ? nil : x` proc idiom); else-branches still apply when
+          # the requirements fail.
           return entry['cost'] if ok
           entry['else'] ? resolve_cost(entry['else'], seen) : nil
+        end
+
+        # Named cost formulas for the handful of skill-scaled travel times.
+        def resolve_formula(name, entry)
+          case name
+          when 'haste_scaled'
+            # Haste-assisted crossing: walk time scales down with elemental
+            # lore and MjE/level, floored at 40% of base.
+            if defined?(Spell) && Spell['Haste'].active?
+              base = entry['base'].to_f
+              factor = [((80 - ([Spells.majorelemental, Stats.level].min / 5) - (Skills.elair / 5)) / 100.0), 0.4].max
+              (base * factor).floor + 0.2
+            else
+              entry['else'].is_a?(Hash) ? resolve_cost(entry['else']) : entry['else']
+            end
+          end
         end
 
         def requirement?(req)
@@ -124,6 +147,12 @@ module Lich
             name, expected = arg.to_s.split('=', 2)
             value = uservar("mapdb_#{name}")
             expected ? value.to_s == expected : !value.nil? && value != false
+          when 'society'
+            society, rank = arg.to_s.split('+', 2)
+            defined?(Society) && Society.status == society && Society.rank == rank.to_i
+          when 'seeking_enabled'
+            # go2's opt-in flag for symbol-of-seeking travel
+            $go2_use_seeking ? true : false
           else
             false # unknown vocabulary => not routable
           end
@@ -185,9 +214,40 @@ module Lich
             spell.cast if spell && spell.known? && spell.affordable? && !spell.active?
           when 'cross'
             run_cross_edge(step)
+          when 'move_with_group'
+            run_move_with_group(step)
           else
             raise StepFailed, "unknown step #{step['do'].inspect}"
           end
+        end
+
+        # Group-leader crossing: note who is following (from the room's
+        # "X, Y and Z followed." line), make the move, then wait until every
+        # follower has joined before continuing. Ported from the group-wait
+        # proc family.
+        def run_move_with_group(step)
+          members = nil
+          clear.reverse.each do |line|
+            case line
+            when /^Obvious (?:paths|exits)/
+              break
+            when /^([A-Za-z ,]+) followed\.$/
+              members = ::Regexp.last_match(1).split(/, | and /)
+              members.delete_if { |m| m =~ /^[Yy]our / }
+              members = nil if members.empty?
+              break
+            end
+          end
+          move step['cmd']
+          if members
+            echo 'Waiting for your group...'
+            while members.length.positive?
+              if (get) =~ /^(?:You reach out and hold )?([A-Z][a-z]+)(?:'s hand| joins your group)\.$/
+                members.delete(::Regexp.last_match(1))
+              end
+            end
+          end
+          waitrt?
         end
 
         # Follow another room's edge (the proc idiom Map[N].wayto['D'].call),
@@ -210,6 +270,7 @@ module Lich
           times.times do
             break if step['until_room'] && XMLData.room_id == step['until_room'].to_i
             break if step['until_room_change'] && XMLData.room_id != start
+            break if step['until'] && condition?(step['until'])
             Array(step['steps']).each { |s| run_step(s) }
           end
         end
@@ -417,8 +478,10 @@ module Lich
       # regex compilation. Suitable for submission CI and a local lint command.
       module Validator
         STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat
-                        set echo cast_buff cross].freeze
-        REQUIREMENT_KINDS = %w[setting grant not is pass prof race gender citizenship spell climate month var].freeze
+                        set echo cast_buff cross move_with_group].freeze
+        REQUIREMENT_KINDS = %w[setting grant not is pass prof race gender citizenship spell climate month var
+                               society seeking_enabled].freeze
+        FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
@@ -435,7 +498,16 @@ module Lich
             errors << 'event entry requires a key' unless value.key?('key')
             return errors
           end
-          errors << 'cost entry requires a numeric cost' unless value['cost'].is_a?(Numeric)
+          if (formula = value['formula'])
+            errors << "unknown formula #{formula.inspect}" unless FORMULA_NAMES.include?(formula)
+            errors << 'formula entry requires a numeric base' unless value['base'].is_a?(Numeric)
+            return errors
+          end
+          # An explicit null cost (edge disabled when requirements pass) is
+          # legal; a missing cost key is not.
+          unless value.key?('cost') && (value['cost'].is_a?(Numeric) || value['cost'].nil?)
+            errors << 'cost entry requires a numeric or explicit null cost'
+          end
           Array(value['requires']).each do |req|
             kind = req.to_s.split(':', 2).first
             errors << "unknown requirement kind #{kind.inspect}" unless REQUIREMENT_KINDS.include?(kind)
@@ -493,10 +565,16 @@ module Lich
             errors << 'cross requires room and dest' unless step['room'].is_a?(Integer) && step['dest']
           when 'repeat'
             errors << 'repeat requires steps' if Array(step['steps']).empty?
-            unless step['until_room'] || step['until_room_change'] || step['times'].is_a?(Numeric)
-              errors << 'repeat requires times, until_room, or until_room_change'
+            unless step['until_room'] || step['until_room_change'] || step['until'] || step['times'].is_a?(Numeric)
+              errors << 'repeat requires times, until, until_room, or until_room_change'
+            end
+            if step['until']
+              kind = step['until'].to_s.sub(/\Anot:/, '').split(':', 2).first
+              errors << "unknown condition kind #{kind.inspect}" unless CONDITION_KINDS.include?(kind)
             end
             errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
+          when 'move_with_group'
+            errors << 'move_with_group requires cmd' unless step['cmd'].is_a?(String)
           end
           errors
         end
