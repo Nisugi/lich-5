@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'map_base'
+require_relative 'map_engine'
 
 module Lich
   module Common
@@ -471,13 +472,17 @@ module Lich
             File.open(filename) do |f|
               JSON.parse(f.read).each do |room|
                 room['wayto'].keys.each do |k|
-                  if room['wayto'][k][0..2] == ';e '
+                  if room['wayto'][k].is_a?(String) && room['wayto'][k][0..2] == ';e '
                     room['wayto'][k] = StringProc.new(room['wayto'][k][3..])
+                  else
+                    room['wayto'][k] = MapEngine.build_wayto(room['wayto'][k])
                   end
                 end
                 room['timeto'].keys.each do |k|
                   if room['timeto'][k].is_a?(String) && room['timeto'][k][0..2] == ';e '
                     room['timeto'][k] = StringProc.new(room['timeto'][k][3..])
+                  else
+                    room['timeto'][k] = MapEngine.build_timeto(room['timeto'][k])
                   end
                 end
                 room['tags'] ||= []

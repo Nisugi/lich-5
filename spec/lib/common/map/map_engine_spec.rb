@@ -1,0 +1,217 @@
+# frozen_string_literal: true
+
+require_relative '../../../spec_helper'
+require 'json'
+require 'common/map/map_engine'
+
+MapEngine = Lich::Common::MapEngine unless defined?(MapEngine)
+
+RSpec.describe Lich::Common::MapEngine do
+  describe '.build_timeto' do
+    it 'wraps schema hashes in a Cost' do
+      expect(described_class.build_timeto({ 'cost' => 0.2 })).to be_a(described_class::Cost)
+    end
+
+    it 'passes numerics through untouched' do
+      expect(described_class.build_timeto(0.2)).to eq(0.2)
+    end
+  end
+
+  # Crossing masquerades as Proc (kind_of?/class), so identity checks must
+  # bypass the overrides via the unbound Object#class.
+  def real_class(obj)
+    Object.instance_method(:class).bind(obj).call
+  end
+
+  describe '.build_wayto' do
+    it 'wraps step arrays in a Crossing' do
+      built = described_class.build_wayto([{ 'do' => 'move', 'cmd' => 'go gate' }])
+      expect(real_class(built)).to eq(described_class::Crossing)
+    end
+
+    it 'wraps strategy hashes in a Crossing' do
+      built = described_class.build_wayto({ 'strategy' => 'table_join', 'table' => 'hammer' })
+      expect(real_class(built)).to eq(described_class::Crossing)
+    end
+
+    it 'passes plain movement strings through untouched' do
+      expect(described_class.build_wayto('go gate')).to eq('go gate')
+    end
+  end
+
+  describe 'Crossing' do
+    it 'masquerades as a Proc for go2 dispatch' do
+      crossing = described_class::Crossing.new([])
+      expect(crossing).to be_kind_of(Proc)
+      expect(crossing.class).to eq(Proc)
+    end
+
+    it 'serializes back to its schema JSON' do
+      raw = [{ 'do' => 'move', 'cmd' => 'go gate' }]
+      expect(JSON.parse(described_class::Crossing.new(raw).to_json)).to eq(raw)
+    end
+  end
+
+  describe 'Cost' do
+    it 'serializes back to its schema JSON' do
+      raw = { 'cost' => 0.2, 'requires' => ['setting:urchins'] }
+      expect(JSON.parse(described_class::Cost.new(raw).to_json)).to eq(raw)
+    end
+  end
+
+  describe '.resolve_cost' do
+    before do
+      stub_const('UserVars', double('UserVars'))
+    end
+
+    it 'returns plain numerics' do
+      expect(described_class.resolve_cost(1.5)).to eq(1.5)
+    end
+
+    it 'returns the cost when all requirements pass' do
+      allow(UserVars).to receive(:respond_to?).and_return(true)
+      allow(UserVars).to receive(:mapdb_use_urchins).and_return(true)
+      entry = { 'cost' => 0.1, 'requires' => ['setting:urchins'] }
+      expect(described_class.resolve_cost(entry)).to eq(0.1)
+    end
+
+    it 'returns nil (not routable) when a requirement fails' do
+      allow(UserVars).to receive(:respond_to?).and_return(true)
+      allow(UserVars).to receive(:mapdb_use_urchins).and_return(nil)
+      entry = { 'cost' => 0.1, 'requires' => ['setting:urchins'] }
+      expect(described_class.resolve_cost(entry)).to be_nil
+    end
+
+    it 'falls through to the else branch' do
+      entry = { 'cost' => 0.8, 'requires' => ['pass:A+B'], 'else' => { 'cost' => 4.4 } }
+      expect(described_class.resolve_cost(entry)).to eq(4.4)
+    end
+
+    it 'treats unknown requirement kinds as not routable' do
+      entry = { 'cost' => 0.1, 'requires' => ['quantum:flux'] }
+      expect(described_class.resolve_cost(entry)).to be_nil
+    end
+
+    it 'honors timed grants' do
+      allow(UserVars).to receive(:respond_to?).and_return(true)
+      allow(UserVars).to receive(:mapdb_urchins_expire).and_return(Time.now.to_i + 600)
+      entry = { 'cost' => 0.1, 'requires' => ['grant:urchins_expire'] }
+      expect(described_class.resolve_cost(entry)).to eq(0.1)
+    end
+
+    it 'rejects expired grants' do
+      allow(UserVars).to receive(:respond_to?).and_return(true)
+      allow(UserVars).to receive(:mapdb_urchins_expire).and_return(Time.now.to_i - 600)
+      entry = { 'cost' => 0.1, 'requires' => ['grant:urchins_expire'] }
+      expect(described_class.resolve_cost(entry)).to be_nil
+    end
+
+    it 'resolves event tables through the registry' do
+      $mapdb_instability_timeto = { 2300 => 3.5 }
+      expect(described_class.resolve_cost({ 'event' => 'instability', 'key' => 2300 })).to eq(3.5)
+    ensure
+      $mapdb_instability_timeto = nil
+    end
+
+    it 'returns nil for event tables that are not populated' do
+      expect(described_class.resolve_cost({ 'event' => 'instability', 'key' => 2300 })).to be_nil
+    end
+
+    it 'does not loop on same_as cycles' do
+      entry = { 'same_as' => '1:2' }
+      room = double('room', timeto: { '2' => described_class::Cost.new(entry) })
+      stub_const('Lich::Common::Map', double('Map'))
+      allow(Lich::Common::Map).to receive(:[]).with(1).and_return(room)
+      expect(described_class.resolve_cost(entry)).to be_nil
+    end
+  end
+
+  describe '.compile_pattern' do
+    it 'compiles valid patterns once' do
+      pattern = described_class.compile_pattern('A crew member escorts you')
+      expect(pattern).to be_a(Regexp)
+      expect(described_class.compile_pattern('A crew member escorts you')).to equal(pattern)
+    end
+
+    it 'returns nil for invalid patterns instead of raising' do
+      expect(described_class.compile_pattern('[unclosed')).to be_nil
+    end
+  end
+
+  describe Lich::Common::MapEngine::Strategies do
+    it 'registers table_join' do
+      expect(described_class.known?('table_join')).to be(true)
+    end
+
+    it 'raises StepFailed for unknown strategies' do
+      expect { described_class.run({ 'strategy' => 'warp_drive' }) }
+        .to raise_error(Lich::Common::MapEngine::StepFailed, /unknown strategy/)
+    end
+  end
+
+  describe Lich::Common::MapEngine::Validator do
+    describe '.errors_for_timeto' do
+      it 'accepts a well-formed gate' do
+        entry = { 'cost' => 0.1, 'requires' => ['setting:urchins', 'not:hidden'] }
+        expect(described_class.errors_for_timeto(entry)).to be_empty
+      end
+
+      it 'rejects unknown requirement kinds' do
+        entry = { 'cost' => 0.1, 'requires' => ['quantum:flux'] }
+        expect(described_class.errors_for_timeto(entry).join).to include('quantum')
+      end
+
+      it 'rejects a missing cost' do
+        expect(described_class.errors_for_timeto({ 'requires' => ['setting:urchins'] })).not_to be_empty
+      end
+
+      it 'validates same_as references' do
+        expect(described_class.errors_for_timeto({ 'same_as' => '7:30714' })).to be_empty
+        expect(described_class.errors_for_timeto({ 'same_as' => 'bogus' })).not_to be_empty
+      end
+
+      it 'validates else branches recursively' do
+        entry = { 'cost' => 0.8, 'requires' => ['pass:A+B'], 'else' => { 'requires' => ['setting:x'] } }
+        expect(described_class.errors_for_timeto(entry)).not_to be_empty
+      end
+    end
+
+    describe '.errors_for_wayto' do
+      it 'accepts a well-formed step list' do
+        steps = [
+          { 'do' => 'send', 'cmd' => 'ask portmaster about travel 2' },
+          { 'do' => 'await', 'cmd' => 'ask portmaster about travel 2',
+            'for' => 'A crew member escorts you off the ship\\.', 'timeout' => 30 }
+        ]
+        expect(described_class.errors_for_wayto(steps)).to be_empty
+      end
+
+      it 'accepts a known strategy' do
+        expect(described_class.errors_for_wayto({ 'strategy' => 'table_join', 'table' => 'hammer' })).to be_empty
+      end
+
+      it 'rejects unknown strategies' do
+        expect(described_class.errors_for_wayto({ 'strategy' => 'warp_drive' })).not_to be_empty
+      end
+
+      it 'rejects unknown steps' do
+        expect(described_class.errors_for_wayto([{ 'do' => 'teleport' }]).join).to include('teleport')
+      end
+
+      it 'rejects invalid await regexes' do
+        steps = [{ 'do' => 'await', 'cmd' => 'search', 'for' => '[unclosed' }]
+        expect(described_class.errors_for_wayto(steps).join).to include('invalid regex')
+      end
+
+      it 'rejects unknown on_timeout policies' do
+        steps = [{ 'do' => 'await', 'cmd' => 'search', 'for' => 'ok', 'on_timeout' => 'explode' }]
+        expect(described_class.errors_for_wayto(steps).join).to include('on_timeout')
+      end
+
+      it 'validates if branches recursively' do
+        steps = [{ 'do' => 'if', 'when' => 'spell:506', 'then' => [{ 'do' => 'bogus' }] }]
+        expect(described_class.errors_for_wayto(steps).join).to include('bogus')
+      end
+    end
+  end
+end

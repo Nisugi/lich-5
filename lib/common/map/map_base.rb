@@ -99,7 +99,8 @@ module Lich
             room = array.shift
             t = self[room].timeto[array.first.to_s]
             if t
-              time += t.is_a?(StringProc) ? t.call.to_f : t.to_f
+              t = t.call if t.respond_to?(:call)
+              time += t.to_f
             else
               time += 0.2
             end
@@ -358,11 +359,8 @@ module Lich
               adj_room_i = adj_room.to_i
               next if visited[adj_room_i]
 
-              edge_weight = if self.class.list[v].timeto[adj_room].is_a?(StringProc)
-                              self.class.list[v].timeto[adj_room].call
-                            else
-                              self.class.list[v].timeto[adj_room]
-                            end
+              edge_weight = self.class.list[v].timeto[adj_room]
+              edge_weight = edge_weight.call if edge_weight.respond_to?(:call)
 
               next unless edge_weight
 
