@@ -500,9 +500,10 @@ module Lich
             $mapdb_day_passes ||= {}
           end
 
-          # Pure: does the cache hold a live pass for this town pair?
+          # Pure: does the cache hold a live pass for this town pair? The
+          # monitor hook is installed by scan! (crossing time), never here —
+          # cost evaluation must not write state.
           def usable?(town_a, town_b)
-            ensure_monitor
             passes.any? do |_id, h|
               h[:towns].include?(town_a) && h[:towns].include?(town_b) &&
                 h[:expires] && h[:expires] > (Time.now + 10)
