@@ -422,8 +422,16 @@ class MapdbConverter
     end
     if (m = body.match(/\Adoor=#{QUOTED};key=GameObj\.inv\.find\{\|k\|\ k\.name==#{QUOTED};?\};\s*
                         if\s+!key\.nil\?\s+then\s+multifput\s+(#{QUOTED}(?:\s*,\s*#{QUOTED})*);\s*end;?\z/x))
-      sends = m[5].scan(QUOTED).map { |a, b| { 'do' => 'send', 'cmd' => a || b } }
-      return Result.new('key_door', [{ 'do' => 'if', 'when' => "has_item:#{m[3] || m[4]}", 'then' => sends }])
+      door = m[1] || m[2]
+      key_name = m[3] || m[4]
+      # Substitute the bound door name now; the key's object id is a runtime
+      # value and becomes an {item_id:...} token expanded at crossing time.
+      sends = m[5].scan(QUOTED).map do |a, b|
+        cmd = (a || b).gsub('#{door}', door) # rubocop:disable Lint/InterpolationCheck -- literal proc source
+              .gsub('##{key.id}', "{item_id:#{key_name}}") # rubocop:disable Lint/InterpolationCheck
+        { 'do' => 'send', 'cmd' => cmd }
+      end
+      return Result.new('key_door', [{ 'do' => 'if', 'when' => "has_item:#{key_name}", 'then' => sends }])
     end
     if (m = body.match(/\Aunless\s+\(?move\s+#{QUOTED}\)?;\s*echo\s+#{QUOTED};\s*
                         waitfor\s+#{QUOTED};\s*move\s+#{QUOTED};\s*end;?\z/x))
@@ -739,9 +747,12 @@ class MapdbConverter
                           dothistimeout\s+#{QUOTED},\s*(\d+),\s*/(.+)/(i)?\s+
                           while\s+Room\.current\.id\s*==\s*start;?\z}x))
       pattern = m[7] ? "(?i)#{m[6]}" : m[6]
+      # The proc binds a local (direction='west') and interpolates it into the
+      # command; substitute it now so no #{...} reaches the map data.
+      cmd = (m[3] || m[4]).gsub('#{direction}', m[1] || m[2]) # rubocop:disable Lint/InterpolationCheck -- literal proc source
       return Result.new('await_until_moved',
                         [{ 'do' => 'repeat', 'until_room_change' => true,
-                           'steps' => [{ 'do' => 'await', 'cmd' => m[3] || m[4], 'for' => pattern,
+                           'steps' => [{ 'do' => 'await', 'cmd' => cmd, 'for' => pattern,
                                          'timeout' => m[5].to_i }] }])
     end
     if (m = body.match(/\Amultifput\s+(#{QUOTED}(?:\s*,\s*#{QUOTED})*);?\z/))
@@ -760,9 +771,11 @@ class MapdbConverter
 
     cmds = m[1].scan(QUOTED).map { |a, b| a || b }
     target = m[-2] || m[-1]
-    steps = cmds[0..-2].map { |c| { 'do' => 'send', 'cmd' => c } }
-    steps << { 'do' => 'send', 'cmd' => cmds.last }
-    steps << { 'do' => 'await', 'cmd' => cmds.last, 'for' => Regexp.escape(target), 'timeout' => 600, 'on_timeout' => 'fail' }
+    # Each command is sent exactly once (multifput semantics); the wait is
+    # passive - an await with cmd would re-send, and confirm-style commands
+    # (portmaster travel) are not idempotent once aboard.
+    steps = cmds.map { |c| { 'do' => 'send', 'cmd' => c } }
+    steps << { 'do' => 'await', 'for' => Regexp.escape(target), 'timeout' => 600, 'on_timeout' => 'fail' }
     Result.new('multifput_waitfor', steps)
   end
 

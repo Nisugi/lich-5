@@ -453,11 +453,18 @@ module Lich
         #   {char}          -> character name (regex-escaped)
         #   {map_id}        -> current mapdb room id
         #   {uservar:name}  -> UserVars.name
+        #   {item_id:name}  -> #<id> of the named inventory item (raises if absent)
         def expand_tokens(source)
           return source unless source.is_a?(String)
           source.gsub('{char}', defined?(Char) ? Regexp.escape(Char.name.to_s) : '{char}')
                 .gsub('{map_id}') { (defined?(Map) && Map.current&.id).to_s }
                 .gsub(/\{uservar:(\w+)\}/) { uservar(::Regexp.last_match(1)).to_s }
+                .gsub(/\{item_id:([^}]+)\}/) do
+                  name = ::Regexp.last_match(1)
+                  item = GameObj.inv.find { |obj| obj.name == name || obj.noun == name }
+                  raise StepFailed, "item not in inventory: #{name}" unless item
+                  "##{item.id}"
+                end
         end
 
         # Follow another room's edge (the proc idiom Map[N].wayto['D'].call),
@@ -769,6 +776,14 @@ module Lich
           errors = []
           name = step['do']
           return ["unknown step #{name.inspect}"] unless STEP_NAMES.include?(name)
+          # A literal #{...} in a command is an interpolation leak from
+          # conversion - the proc's variable never made it into the data.
+          # ({token} forms are ours and fine.)
+          %w[cmd verb prefix].each do |key|
+            if step[key].is_a?(String) && step[key].include?('#{')
+              errors << "#{name || 'step'} #{key} contains unexpanded interpolation: #{step[key]}"
+            end
+          end
           case name
           when 'send', 'move'
             errors << "#{name} requires cmd" unless step['cmd'].is_a?(String)
