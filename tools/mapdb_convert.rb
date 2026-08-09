@@ -24,11 +24,8 @@ $LOAD_PATH.unshift(lib_dir) unless $LOAD_PATH.include?(lib_dir)
 module Lich; module Common; end; end
 require 'common/map/map_engine'
 require 'common/map/map_strategies'
-require File.expand_path('../lib/gemstone/map/map_strategies', __dir__)
-%w[gemstone dragonrealms].each do |game|
-  crossings = File.expand_path("../lib/#{game}/map/map_crossings.rb", __dir__)
-  require crossings if File.exist?(crossings)
-end
+crossings = File.expand_path('../lib/common/map/map_crossings.rb', __dir__)
+require crossings if File.exist?(crossings)
 
 class MapdbConverter
   Result = Struct.new(:idiom, :schema)
@@ -433,7 +430,7 @@ class MapdbConverter
       return Result.new('move_fallback',
                         [{ 'do' => 'try_move', 'cmd' => m[1] || m[2], 'check' => 'move_result',
                            'fallback' => [{ 'do' => 'echo', 'msg' => m[3] || m[4] },
-                                          { 'do' => 'await', 'for' => Regexp.escape(m[5] || m[6]), 'timeout' => 30 },
+                                          { 'do' => 'await', 'for' => Regexp.escape(m[5] || m[6]), 'timeout' => 600, 'on_timeout' => 'fail' },
                                           { 'do' => 'move', 'cmd' => m[7] || m[8] }] }])
     end
     if (m = body.match(/\A(?:cur_stance|save_stance)\s*=\s*XMLData\.stance_text;\s*(empty_hands;)?\s*
@@ -552,7 +549,7 @@ class MapdbConverter
       return Result.new('stamina_climb',
                         [{ 'do' => 'wait_until', 'when' => "stamina:>#{m[1]}" },
                          { 'do' => 'send', 'cmd' => m[2] || m[3] },
-                         { 'do' => 'await', 'for' => Regexp.escape(m[4] || m[5]), 'timeout' => 30 }])
+                         { 'do' => 'await', 'for' => Regexp.escape(m[4] || m[5]), 'timeout' => 600, 'on_timeout' => 'fail' }])
     end
     if (m = body.match(/\AUserVars\.(\w+)\s*=\s*(nil|#{QUOTED})\s*;\s*move\s+#{QUOTED}\z/))
       value = m[2] == 'nil' ? nil : (m[3] || m[4])
@@ -591,7 +588,7 @@ class MapdbConverter
                          { 'do' => 'if', 'when' => "in_room:#{m[3]}",
                            'then' => [{ 'do' => 'echo', 'msg' => m[4] || m[5] },
                                       { 'do' => 'send', 'cmd' => m[6] || m[7] }] },
-                         { 'do' => 'await', 'for' => Regexp.escape(m[8] || m[9]), 'timeout' => 600 },
+                         { 'do' => 'await', 'for' => Regexp.escape(m[8] || m[9]), 'timeout' => 600, 'on_timeout' => 'fail' },
                          { 'do' => 'move', 'cmd' => m[10] || m[11] }])
     end
     if (m = body.match(/\Awaitrt\?;pause;(\d+)\.times\{fput\s+#{QUOTED};pause;waitcastrt\?;pause;fput\s+#{QUOTED}\};move\s+#{QUOTED}\z/))
@@ -712,7 +709,7 @@ class MapdbConverter
     if (m = body.match(/\Afput\s*\(?#{QUOTED}\)?[;\s]+waitfor\s*\(?#{QUOTED}\)?;?\z/m))
       return Result.new('send_waitfor',
                         [{ 'do' => 'await', 'cmd' => m[1] || m[2],
-                           'for' => Regexp.escape(m[3] || m[4]), 'timeout' => 30 }])
+                           'for' => Regexp.escape(m[3] || m[4]), 'timeout' => 600, 'on_timeout' => 'fail' }])
     end
     nil
   end
@@ -765,7 +762,7 @@ class MapdbConverter
     target = m[-2] || m[-1]
     steps = cmds[0..-2].map { |c| { 'do' => 'send', 'cmd' => c } }
     steps << { 'do' => 'send', 'cmd' => cmds.last }
-    steps << { 'do' => 'await', 'cmd' => cmds.last, 'for' => Regexp.escape(target), 'timeout' => 30 }
+    steps << { 'do' => 'await', 'cmd' => cmds.last, 'for' => Regexp.escape(target), 'timeout' => 600, 'on_timeout' => 'fail' }
     Result.new('multifput_waitfor', steps)
   end
 
@@ -795,7 +792,7 @@ class MapdbConverter
     },
     /\Awaitfor\s+(#{QUOTED}(?:\s*,\s*#{QUOTED})*)\z/                                                                                                              => lambda { |m|
       targets = m[1].scan(QUOTED).map { |a, b| Regexp.escape(a || b) }
-      { 'do' => 'await', 'for' => targets.join('|'), 'timeout' => 30 }
+      { 'do' => 'await', 'for' => targets.join('|'), 'timeout' => 600, 'on_timeout' => 'fail' }
     },
     /\A(?:fput|put)\s+#{QUOTED}\s+if\s+(?:invisible|hidden)\?\z/                                                                                                  => lambda { |m|
       { 'do' => 'if', 'when' => 'status:invisible', 'then' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] }
@@ -824,7 +821,7 @@ class MapdbConverter
     },
     /\Await(?:for)?\s*\(\s*(#{QUOTED}(?:\s*,\s*#{QUOTED})*)\s*\)\z/                                                                                               => lambda { |m|
       targets = m[1].scan(QUOTED).map { |a, b| Regexp.escape(a || b) }
-      { 'do' => 'await', 'for' => targets.join('|'), 'timeout' => 30 }
+      { 'do' => 'await', 'for' => targets.join('|'), 'timeout' => 600, 'on_timeout' => 'fail' }
     },
     /\Amultimove\s+(#{QUOTED}(?:\s*,\s*#{QUOTED})*)\z/                                                                                                            => lambda { |m|
       m[1].scan(QUOTED).map { |a, b| { 'do' => 'move', 'cmd' => a || b } }

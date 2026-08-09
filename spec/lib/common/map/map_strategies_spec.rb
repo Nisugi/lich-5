@@ -3,8 +3,7 @@
 require_relative '../../../spec_helper'
 require 'common/map/map_engine'
 require 'common/map/map_strategies'
-require 'gemstone/map/map_strategies'
-require 'gemstone/map/map_crossings'
+require 'common/map/map_crossings'
 
 RSpec.describe Lich::Common::MapEngine::Strategies do
   it 'registers the strategy set with required params' do

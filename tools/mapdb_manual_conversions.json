@@ -1305,7 +1305,8 @@
           {
             "do": "await",
             "for": "Your eyes have recovered from the poor light within the niche\\.",
-            "timeout": 30
+            "timeout": 30,
+            "on_timeout": "fail"
           },
           {
             "do": "move",
@@ -1619,7 +1620,8 @@
           {
             "do": "await",
             "for": "give it a good yank!|since it is underneath|what were you referring to|that was fun\\.",
-            "timeout": 1
+            "timeout": 1,
+            "on_timeout": "fail"
           },
           {
             "do": "if",
@@ -1726,7 +1728,8 @@
           {
             "do": "await",
             "for": "the black mein door has opened",
-            "timeout": 30
+            "timeout": 30,
+            "on_timeout": "fail"
           },
           {
             "do": "send",
@@ -1756,7 +1759,8 @@
           {
             "do": "await",
             "for": "the black mein door has opened",
-            "timeout": 30
+            "timeout": 30,
+            "on_timeout": "fail"
           },
           {
             "do": "send",
@@ -2287,7 +2291,8 @@
           {
             "do": "await",
             "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
-            "timeout": 600
+            "timeout": 600,
+            "on_timeout": "fail"
           },
           {
             "do": "move",
@@ -2298,7 +2303,8 @@
       {
         "do": "await",
         "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
-        "timeout": 600
+        "timeout": 600,
+        "on_timeout": "fail"
       },
       {
         "do": "move",
@@ -2321,7 +2327,8 @@
           {
             "do": "await",
             "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
-            "timeout": 600
+            "timeout": 600,
+            "on_timeout": "fail"
           },
           {
             "do": "move",
@@ -2332,7 +2339,8 @@
       {
         "do": "await",
         "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
-        "timeout": 600
+        "timeout": 600,
+        "on_timeout": "fail"
       },
       {
         "do": "move",
@@ -2824,7 +2832,8 @@
       {
         "do": "await",
         "for": "The crew hurriedly puts out the gangplank\\.|River's Rest\\.\\.\\..+ ashore!",
-        "timeout": 600
+        "timeout": 600,
+        "on_timeout": "fail"
       },
       {
         "do": "send",
@@ -2835,7 +2844,8 @@
       {
         "do": "await",
         "for": "The crew hurriedly puts out the gangplank\\.|Solhaven\\.\\.\\..+ ashore!",
-        "timeout": 600
+        "timeout": 600,
+        "on_timeout": "fail"
       },
       {
         "do": "send",
@@ -2853,7 +2863,8 @@
       {
         "do": "await",
         "for": "You feel the presence of cold hard stone underneath you\\.",
-        "timeout": 30
+        "timeout": 30,
+        "on_timeout": "fail"
       },
       {
         "do": "sleep",
@@ -3314,14 +3325,6 @@
       "strategy": "unique_crossing",
       "name": "crossing_16165_16064"
     },
-    "16193:16192": {
-      "strategy": "unique_crossing",
-      "name": "crossing_16193_16192"
-    },
-    "16196:22225": {
-      "strategy": "unique_crossing",
-      "name": "crossing_16196_22225"
-    },
     "16744:24675": {
       "strategy": "unique_crossing",
       "name": "crossing_16744_24675"
@@ -3410,14 +3413,6 @@
       "strategy": "unique_crossing",
       "name": "crossing_18748_18747"
     },
-    "18822:18823": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18822_18823"
-    },
-    "23525:23526": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18822_18823"
-    },
     "18823:18822": {
       "strategy": "unique_crossing",
       "name": "crossing_18823_18822"
@@ -3449,10 +3444,6 @@
     "19992:19728": {
       "strategy": "unique_crossing",
       "name": "crossing_19992_19728"
-    },
-    "20008:20011": {
-      "strategy": "unique_crossing",
-      "name": "crossing_20008_20011"
     },
     "20012:19657": {
       "strategy": "unique_crossing",
@@ -3713,14 +3704,6 @@
     "34509:7927": {
       "strategy": "unique_crossing",
       "name": "crossing_34509_7927"
-    },
-    "35902:35901": {
-      "strategy": "unique_crossing",
-      "name": "crossing_35902_35901"
-    },
-    "36166:36167": {
-      "strategy": "unique_crossing",
-      "name": "crossing_36166_36167"
     },
     "36416:36412": {
       "strategy": "unique_crossing",
