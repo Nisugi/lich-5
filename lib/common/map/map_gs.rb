@@ -3,6 +3,8 @@
 require_relative 'map_base'
 require_relative 'map_engine'
 require_relative 'map_strategies'
+require_relative '../../gemstone/map_strategies'
+require_relative '../../gemstone/map_crossings' if File.exist?(File.join(__dir__, '..', '..', 'gemstone', 'map_crossings.rb'))
 
 module Lich
   module Common

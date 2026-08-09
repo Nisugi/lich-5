@@ -207,6 +207,30 @@ module Lich
             room_id, dest = arg.to_s.split(/[:+]/, 2)
             room = Map[room_id.to_i]
             !room.nil? && !resolve_cost(unwrap(room.timeto[dest])).nil?
+          when 'drskill'
+            # drskill:Athletics>=100 (DRSkill.getmodrank)
+            name, op_value = arg.to_s.split(/(?=[<>])/, 2)
+            defined?(DRSkill) && compare_number(DRSkill.getmodrank(name), op_value)
+          when 'guild'
+            defined?(DRStats) && DRStats.guild == arg
+          when 'circle'
+            defined?(DRStats) && compare_number(DRStats.circle, arg)
+          when 'premium'
+            # DR premium access: paid subscription, the premium flag, or a
+            # test instance named in the arg list (premium:DRT,DRX)
+            (defined?(Account) && Account.respond_to?(:subscription) && Account.subscription.to_s.casecmp('premium').zero?) ||
+              (uservar('premium') ? true : false) ||
+              arg.to_s.split(',').map(&:strip).include?(XMLData.game)
+          when 'script_exists'
+            defined?(Script) && Script.respond_to?(:exists?) && Script.exists?(arg)
+          when 'game'
+            arg.to_s.split(',').map(&:strip).include?(XMLData.game)
+          when 'dr_setting'
+            defined?(get_settings) && get_settings.respond_to?(arg) && get_settings.send(arg) ? true : false
+          when 'dr_spell_known'
+            defined?(DRSpells) && DRSpells.known_spells[arg] ? true : false
+          when 'stamina'
+            compare_number(stamina, arg)
           else
             false # unknown vocabulary => not routable
           end
@@ -274,7 +298,9 @@ module Lich
           when 'set'
             value = step['value'].is_a?(String) ? expand_tokens(step['value']) : step['value']
             value = value.to_i if step['value'] == '{map_id}'
-            UserVars.send("mapdb_#{step['var']}=", value)
+            # raw: legacy UserVars outside the mapdb_ namespace (DR portals)
+            name = step['raw'] ? step['var'].to_s : "mapdb_#{step['var']}"
+            UserVars.send("#{name}=", value)
           when 'echo'
             echo step['msg'].to_s
           when 'cast_buff'
@@ -303,6 +329,18 @@ module Lich
             raise BreakLoop if @loop_rooms&.any? && XMLData.room_id != @loop_rooms.last
           when 'set_global'
             run_set_global(step)
+          when 'run_script'
+            # DR travel delegation: run a named helper script to completion
+            # (the start_script + wait_while idiom).
+            start_script(step['script'], Array(step['args']).map(&:to_s))
+            wait_while { running?(step['script']) }
+          when 'wait_until'
+            # Block until a condition holds, bounded like every other wait.
+            deadline = Time.now + (step['timeout'] || 120).to_f
+            sleep 0.25 until condition?(step['when']) || Time.now > deadline
+            raise StepFailed, "wait_until timed out: #{step['when']}" unless condition?(step['when'])
+          when 'wait_castrt'
+            waitcastrt?
           when 'try_move'
             # Attempt a crossing command; when the room does not change, run
             # the fallback steps (the locked-door / blocked-way proc idiom).
@@ -654,26 +692,6 @@ module Lich
           raise StepFailed, "unknown strategy #{params['strategy'].inspect}" unless klass
           klass.new(params).run
         end
-
-        # Replaces the 479 per-table StringProcs: go to a private table,
-        # accepting the invitation when the response asks for one.
-        class TableJoin
-          HEAD_OVER = /You (?:and your group )?head over to/
-          INVITED   = /waves.*you.*(?:invites|inviting) you(?: and your group)? to (?:join|come sit at)/
-
-          def initialize(params)
-            @table = params['table']
-          end
-
-          def run
-            raise StepFailed, 'table_join requires a table name' unless @table
-            cmd = "go #{@table} table"
-            hit = dothistimeout(cmd, 25, Regexp.union(HEAD_OVER, INVITED))
-            fput cmd if hit && hit =~ INVITED
-            !hit.nil?
-          end
-        end
-        register 'table_join', TableJoin, %w[table]
       end
 
       # Pure, offline validation of schema entries: structure, vocabulary, and
@@ -681,11 +699,13 @@ module Lich
       module Validator
         STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat
                         set echo cast_buff cross move_with_group try_move cast move_random empty_hand fill_hand
-                        preserve_stance escort_wait break break_if_moved set_global].freeze
+                        preserve_stance escort_wait break break_if_moved set_global run_script wait_until
+                        wait_castrt].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
                                month var var_raw society seeking_enabled has_item no_script spell_known level
                                skill climb_vs_encumbrance global room_name location script_running subscription
-                               edge].freeze
+                               edge drskill guild circle premium script_exists game dr_setting dr_spell_known
+                               stamina].freeze
         FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match
                              in_room platinum].freeze
@@ -790,6 +810,13 @@ module Lich
           when 'try_move'
             errors << 'try_move requires cmd' unless step['cmd'].is_a?(String)
             errors.concat(Array(step['fallback']).flat_map { |s| errors_for_step(s) })
+          when 'run_script'
+            errors << 'run_script requires script' unless step['script'].is_a?(String)
+          when 'wait_until'
+            kind = step['when'].to_s.sub(/\Anot:/, '').split(':', 2).first
+            unless CONDITION_KINDS.include?(kind) || REQUIREMENT_KINDS.include?(kind)
+              errors << "unknown condition kind #{kind.inspect}"
+            end
           when 'cast'
             errors << 'cast requires a numeric spell' unless step['spell'].is_a?(Integer)
           when 'move_random'

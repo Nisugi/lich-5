@@ -14,7 +14,7 @@ module Lich
   module Common
     module MapEngine
       module UniqueCrossings
-        REGISTRY = {}
+        REGISTRY = {} unless const_defined?(:REGISTRY, false)
 
         def self.define(name, &block)
           REGISTRY[name.to_s] = block

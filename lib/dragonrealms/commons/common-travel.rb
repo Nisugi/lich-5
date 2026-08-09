@@ -197,13 +197,15 @@ module Lich
           room = rooms.first
           return true if room_num == room.id
 
-          if room.wayto[room_num.to_s]
-            move room.wayto[room_num.to_s]
+          if (direct = room.wayto[room_num.to_s])
+            # An edge may be a plain command, a StringProc, or a MapEngine
+            # schema Crossing; anything callable executes itself.
+            direct.respond_to?(:call) ? direct.call : move(direct)
             return room_num == room.id
           end
           path = Map.findpath(room, Map[room_num])
           way = room.wayto[path.first.to_s]
-          if way.is_a?(StringProc)
+          if way.respond_to?(:call)
             way.call
           else
             move way

@@ -1,0 +1,81 @@
+{
+  "wayto": {
+    "473:1375": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_473_1375"
+    },
+    "1375:473": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_1375_473"
+    },
+    "2249:2904": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_2249_2904"
+    },
+    "2904:2249": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_2904_2249"
+    },
+    "4540:4543": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_4540_4543"
+    },
+    "4543:4540": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_4543_4540"
+    },
+    "5072:4794": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_5072_4794"
+    },
+    "5191:12660": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_5191_12660"
+    },
+    "7633:7647": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_7633_7647"
+    },
+    "7639:7643": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_7639_7643"
+    },
+    "7651:7658": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_7651_7658"
+    },
+    "8060:8082": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_8060_8082"
+    },
+    "8837:8841": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_8837_8841"
+    },
+    "8841:8837": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_8841_8837"
+    },
+    "12132:12131": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_12132_12131"
+    },
+    "19075:19389": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_19075_19389"
+    },
+    "19389:19075": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_19389_19075"
+    },
+    "34400:34404": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_34400_34404"
+    },
+    "34404:34400": {
+      "strategy": "unique_crossing",
+      "name": "crossing_dr_34400_34404"
+    }
+  },
+  "timeto": {}
+}

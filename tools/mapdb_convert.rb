@@ -24,6 +24,11 @@ $LOAD_PATH.unshift(lib_dir) unless $LOAD_PATH.include?(lib_dir)
 module Lich; module Common; end; end
 require 'common/map/map_engine'
 require 'common/map/map_strategies'
+require File.expand_path('../lib/gemstone/map_strategies', __dir__)
+%w[gemstone dragonrealms].each do |game|
+  crossings = File.expand_path("../lib/#{game}/map_crossings.rb", __dir__)
+  require crossings if File.exist?(crossings)
+end
 
 class MapdbConverter
   Result = Struct.new(:idiom, :schema)
@@ -62,7 +67,79 @@ class MapdbConverter
     if (r = convert_day_pass_timeto(body))
       return r
     end
-    convert_timeto_char_gates(body) || convert_timeto_var_gates(body)
+    convert_timeto_char_gates(body) || convert_timeto_var_gates(body) || convert_timeto_dr(body)
+  end
+
+  # DragonRealms cost gates: DRSkill/DRStats, premium portals, helper-script
+  # availability, and legacy raw UserVars.
+  def convert_timeto_dr(body)
+    if (m = body.match(/\Aunless\s+DRSkill\.getmodrank\(#{QUOTED}\)\s*(>=?)\s*(\d+)\s+then\s+nil\s+else\s+(#{NUM})\s+end;?\z/))
+      return Result.new('drskill_gate',
+                        { 'cost' => numeric(m[5]), 'requires' => ["drskill:#{m[1] || m[2]}#{m[3]}#{m[4]}"] })
+    end
+    if (m = body.match(/\Aunless\s+DRSkill\.getmodrank\(#{QUOTED}\)\s*(>=?)\s*(\d+)\s*&&\s*
+                        Script\.exists\?\(#{QUOTED}\)\s+then\s+nil\s+else\s+(#{NUM})\s+end;?\z/x))
+      return Result.new('drskill_gate',
+                        { 'cost'     => numeric(m[7]),
+                          'requires' => ["drskill:#{m[1] || m[2]}#{m[3]}#{m[4]}", "script_exists:#{m[5] || m[6]}"] })
+    end
+    if (m = body.match(/\A\(DRStats\.guild\s*==\s*#{QUOTED}\s*&&\s*DRStats\.circle\s*(>=?)\s*(\d+)\)\s*\?\s*(#{NUM})\s*:\s*nil;?\z/))
+      return Result.new('guild_gate',
+                        { 'cost' => numeric(m[5]), 'requires' => ["guild:#{m[1] || m[2]}", "circle:#{m[3]}#{m[4]}"] })
+    end
+    if (m = body.match(/\A\(DRStats\.guild\s*==\s*#{QUOTED}\s*&&\s*DRSkill\.getmodrank\(#{QUOTED}\)\s*(>=?)\s*(\d+)\)\s*\?\s*(#{NUM})\s*:\s*nil;?\z/))
+      return Result.new('guild_gate',
+                        { 'cost'     => numeric(m[7]),
+                          'requires' => ["guild:#{m[1] || m[2]}", "drskill:#{m[3] || m[4]}#{m[5]}#{m[6]}"] })
+    end
+    if (m = body.match(/\Aif\s+\(DRStats\.guild\s*==\s*#{QUOTED}\s*&&\s*DRSpells\.known_spells\[#{QUOTED}\]\)\s+then\s+(#{NUM})\s+else\s+nil\s+end;?\z/))
+      return Result.new('guild_gate',
+                        { 'cost'     => numeric(m[5]),
+                          'requires' => ["guild:#{m[1] || m[2]}", "dr_spell_known:#{m[3] || m[4]}"] })
+    end
+    if (m = body.match(/\A(?:Scripting::)?DRStats\.circle\s*(>=?)\s*(\d+)\s*\?\s*(#{NUM})\s*:\s*nil(?:\s+rescue\s+nil)?;?\z/))
+      return Result.new('guild_gate', { 'cost' => numeric(m[3]), 'requires' => ["circle:#{m[1]}#{m[2]}"] })
+    end
+    if (m = body.match(/\Aunless\s+\(Account\.subscription\s*==\s*'PREMIUM'\s*\|\|\s*UserVars\.premium\s*\|\|\s*
+                        \[#{QUOTED}(?:,\s*#{QUOTED})*\]\.include\?\(XMLData\.game\)\)\s+then\s+nil\s+else\s+(#{NUM})\s+end;?\z/xi))
+      games = body.scan(/'(DR\w*)'/).flatten.uniq
+      return Result.new('premium_gate', { 'cost' => numeric(m[-1]), 'requires' => ["premium:#{games.join(',')}"] })
+    end
+    if (m = body.match(/\Aunless\s+UserVars\.(\w+)\s*==\s*#{QUOTED}\s+then\s+nil\s+else\s+(#{NUM})\s+end;?\z/))
+      return Result.new('var_raw_gate',
+                        { 'cost' => numeric(m[4]), 'requires' => ["var_raw:#{m[1]}=#{m[2] || m[3]}"] })
+    end
+    if (m = body.match(/\Aunless\s+UserVars\.(\w+)\s+then\s+nil\s+else\s+(#{NUM})\s+end;?\z/))
+      return Result.new('var_raw_gate', { 'cost' => numeric(m[2]), 'requires' => ["var_raw:#{m[1]}"] })
+    end
+    if (m = body.match(/\Aif\s+UserVars\.(\w+)\s*==\s*(true|#{QUOTED})\s+then\s+(#{NUM})\s+else\s+nil\s+end;?\z/))
+      expected = m[2] == 'true' ? 'true' : (m[3] || m[4])
+      return Result.new('var_raw_gate',
+                        { 'cost' => numeric(m[5]), 'requires' => ["var_raw:#{m[1]}=#{expected}"] })
+    end
+    if (m = body.match(/\Aif\s+Script\.exists\?\(#{QUOTED}\)\s*&&\s*UserVars\.citizenship\s*==\s*#{QUOTED}\s+then\s+(#{NUM})\s+else\s+nil\s+end;?\z/))
+      return Result.new('dr_citizenship_gate',
+                        { 'cost'     => numeric(m[5]),
+                          'requires' => ["script_exists:#{m[1] || m[2]}", "var_raw:citizenship=#{m[3] || m[4]}"] })
+    end
+    if (m = body.match(/\Aif\s+Script\.exists\?\(#{QUOTED}\)\s+then\s+(#{NUM})\s+else\s+nil\s+end;?\z/))
+      return Result.new('script_gate', { 'cost' => numeric(m[3]), 'requires' => ["script_exists:#{m[1] || m[2]}"] })
+    end
+    if (m = body.match(/\AXMLData\.game\s*==\s*#{QUOTED}\s*\?\s*(#{NUM})\s*:\s*nil;?\z/))
+      return Result.new('game_gate', { 'cost' => numeric(m[3]), 'requires' => ["game:#{m[1] || m[2]}"] })
+    end
+    if (m = body.match(/\AXMLData\.game\s*==\s*#{QUOTED}\s*\?\s*nil\s*:\s*(#{NUM});?\z/))
+      return Result.new('game_gate',
+                        { 'cost' => nil, 'requires' => ["game:#{m[1] || m[2]}"], 'else' => { 'cost' => numeric(m[3]) } })
+    end
+    if (m = body.match(/\Aunless\s+get_settings\.(\w+)\s+then\s+nil\s+else\s+(#{NUM})\s+end;?\z/))
+      return Result.new('dr_setting_gate', { 'cost' => numeric(m[2]), 'requires' => ["dr_setting:#{m[1]}"] })
+    end
+    if (m = body.match(/\Aif\s+invisible\?\s+then\s+nil\s+else\s+(#{NUM})\s+end;?\z/))
+      return Result.new('invisible_block',
+                        { 'cost' => nil, 'requires' => ['is:invisible'], 'else' => { 'cost' => numeric(m[1]) } })
+    end
+    nil
   end
 
   # The day-pass timeto procs install the pass monitor and scan the sack
@@ -178,6 +255,9 @@ class MapdbConverter
       return r
     end
     if (r = convert_wayto_loops(body))
+      return r
+    end
+    if (r = convert_wayto_dr(body))
       return r
     end
     if (r = convert_wayto_special(body))
@@ -432,6 +512,107 @@ class MapdbConverter
     nil
   end
 
+  RUN_SCRIPT = /start_script\s*\(\s*#{QUOTED}\s*(?:,\s*\[\s*(#{QUOTED}(?:\s*,\s*#{QUOTED})*)\s*\]\s*)?\)\s*;?\s*
+                wait_while\s*\{\s*running\?\s*\(?\s*#{QUOTED}\s*\)?\s*\}\s*;?/x
+
+  def run_script_step(match_str)
+    m = match_str.match(RUN_SCRIPT)
+    step = { 'do' => 'run_script', 'script' => m[1] || m[2] }
+    step['args'] = m[3].scan(QUOTED).map { |a, b| a || b } if m[3]
+    step
+  end
+
+  # DragonRealms crossing families: helper-script delegation, stamina waits,
+  # premium portal bookkeeping, and password doors.
+  def convert_wayto_dr(body)
+    if (body.match(/\A(?:#{QUOTED}\s*;\s*)?(?:echo\s+#{QUOTED}\s*;\s*)?#{RUN_SCRIPT}\z/))
+      return Result.new('run_script', [run_script_step(body)])
+    end
+    if (m = body.match(/\Aif\s+Script\.exists\?\(#{QUOTED}\)\s*(?:;|\s+then\s+)\s*(#{RUN_SCRIPT})\s*;?\s*
+                        (?:else;?\s*(.*?))?\s*;?\s*end;?\z/xm))
+      then_steps = [run_script_step(m[3])]
+      else_src = m[-1].to_s.strip
+      else_steps = []
+      unless else_src.empty?
+        if (e = else_src.match(/\Aecho\s+#{QUOTED}\s*;\s*/))
+          else_steps << { 'do' => 'echo', 'msg' => e[1] || e[2] }
+          else_src = else_src.sub(e[0], '')
+        end
+        if else_src =~ /\A#{RUN_SCRIPT}\z/
+          else_steps << run_script_step(else_src)
+        elsif !else_src.empty?
+          return nil # unrecognized else tail: whole proc stays residue
+        end
+      end
+      step = { 'do' => 'if', 'when' => "script_exists:#{m[1] || m[2]}", 'then' => then_steps }
+      step['else'] = else_steps unless else_steps.empty?
+      return Result.new('run_script_branch', [step])
+    end
+    if (m = body.match(/\Await_until\s*\{\s*stamina\s*>\s*(\d+)\s*\};\s*fput\s+#{QUOTED};\s*waitfor\s+#{QUOTED}\z/))
+      return Result.new('stamina_climb',
+                        [{ 'do' => 'wait_until', 'when' => "stamina:>#{m[1]}" },
+                         { 'do' => 'send', 'cmd' => m[2] || m[3] },
+                         { 'do' => 'await', 'for' => Regexp.escape(m[4] || m[5]), 'timeout' => 30 }])
+    end
+    if (m = body.match(/\AUserVars\.(\w+)\s*=\s*(nil|#{QUOTED})\s*;\s*move\s+#{QUOTED}\z/))
+      value = m[2] == 'nil' ? nil : (m[3] || m[4])
+      return Result.new('portal_set',
+                        [{ 'do' => 'set', 'var' => m[1], 'raw' => true, 'value' => value },
+                         { 'do' => 'move', 'cmd' => m[5] || m[6] }])
+    end
+    if (m = body.match(/\Aunless\s+UserVars\.(\w+)\s+then\s+echo\(#{QUOTED}\)\s*&&\s*nil\s+else\s+
+                        fput\(#{QUOTED}\);\s*pause\s+(\d+);\s*fput\(#{QUOTED}\);\s*pause\s+(\d+);\s*
+                        fput\("whisper\ (\w+)\ \#\{UserVars\.(\w+)\}"\)\s+end;?\z/x))
+      return Result.new('password_door',
+                        [{ 'do' => 'if', 'when' => "var_raw:#{m[1]}",
+                           'then' => [{ 'do' => 'send', 'cmd' => m[4] || m[5] },
+                                      { 'do' => 'sleep', 'seconds' => m[6].to_i },
+                                      { 'do' => 'send', 'cmd' => m[7] || m[8] },
+                                      { 'do' => 'sleep', 'seconds' => m[9].to_i },
+                                      { 'do' => 'send', 'cmd' => "whisper #{m[10]} {uservar:#{m[11]}}" }],
+                           'else' => [{ 'do' => 'echo', 'msg' => m[2] || m[3] }] }])
+    end
+    if (m = body.match(/\A\(move\(#{QUOTED}\);\s*waitrt\?\)\s+until\s+Map\.current\.id\s*==\s*(\d+);?\z/))
+      return Result.new('move_until_room',
+                        [{ 'do' => 'repeat', 'until_room' => m[3].to_i,
+                           'steps' => [{ 'do' => 'move', 'cmd' => m[1] || m[2] }, { 'do' => 'wait_rt' }] }])
+    end
+    if (m = body.match(/\Afput\s+#{QUOTED};\s*pause\s+(#{NUM})\s+until\s+Room\.current\.id\s*==\s*(\d+);?\z/))
+      return Result.new('move_until_room',
+                        [{ 'do' => 'repeat', 'until_room' => m[4].to_i,
+                           'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] },
+                                       { 'do' => 'sleep', 'seconds' => m[3].to_f }] }])
+    end
+    if (m = body.match(/\Amove\s+#{QUOTED}\s+if\s+Room\.current\.id\s*==\s*(\d+)\s+
+                        echo\s+#{QUOTED}\s+fput\s+#{QUOTED}\s+end\s+
+                        waitfor\s+#{QUOTED}\s+move\s+#{QUOTED}\z/xm))
+      return Result.new('dr_ferry',
+                        [{ 'do' => 'move', 'cmd' => m[1] || m[2] },
+                         { 'do' => 'if', 'when' => "in_room:#{m[3]}",
+                           'then' => [{ 'do' => 'echo', 'msg' => m[4] || m[5] },
+                                      { 'do' => 'send', 'cmd' => m[6] || m[7] }] },
+                         { 'do' => 'await', 'for' => Regexp.escape(m[8] || m[9]), 'timeout' => 600 },
+                         { 'do' => 'move', 'cmd' => m[10] || m[11] }])
+    end
+    if (m = body.match(/\Awaitrt\?;pause;(\d+)\.times\{fput\s+#{QUOTED};pause;waitcastrt\?;pause;fput\s+#{QUOTED}\};move\s+#{QUOTED}\z/))
+      return Result.new('dr_cast_door',
+                        [{ 'do' => 'wait_rt' }, { 'do' => 'sleep', 'seconds' => 1 },
+                         { 'do' => 'repeat', 'times' => m[1].to_i,
+                           'steps' => [{ 'do' => 'send', 'cmd' => m[2] || m[3] }, { 'do' => 'sleep', 'seconds' => 1 },
+                                       { 'do' => 'wait_castrt' }, { 'do' => 'sleep', 'seconds' => 1 },
+                                       { 'do' => 'send', 'cmd' => m[4] || m[5] }] },
+                         { 'do' => 'move', 'cmd' => m[6] || m[7] }])
+    end
+    if (m = body.match(/\Afput\(#{QUOTED}\);\s*pause;\s*unless\s+checkstanding\s+then\s+fput\(#{QUOTED}\);\s*move\(#{QUOTED}\);\s*end;?\z/))
+      return Result.new('dr_posture',
+                        [{ 'do' => 'send', 'cmd' => m[1] || m[2] }, { 'do' => 'sleep', 'seconds' => 1 },
+                         { 'do' => 'if', 'when' => 'not:status:standing',
+                           'then' => [{ 'do' => 'send', 'cmd' => m[3] || m[4] },
+                                      { 'do' => 'move', 'cmd' => m[5] || m[6] }] }])
+    end
+    nil
+  end
+
   # Conditional-wait, buff-cast, delegation, and posture families.
   def convert_wayto_conditionals(body)
     if (m = body.match(ICE_GATE))
@@ -528,7 +709,7 @@ class MapdbConverter
     if (m = body.match(/\AMap\[(\d+)\]\.wayto\[#{QUOTED}\]\.call;?\s*(?:#.*)?\z/))
       return Result.new('cross_delegation', [{ 'do' => 'cross', 'room' => m[1].to_i, 'dest' => m[2] || m[3] }])
     end
-    if (m = body.match(/\Afput\s+#{QUOTED}[;\s]+waitfor\s+#{QUOTED};?\z/))
+    if (m = body.match(/\Afput\s*\(?#{QUOTED}\)?[;\s]+waitfor\s*\(?#{QUOTED}\)?;?\z/m))
       return Result.new('send_waitfor',
                         [{ 'do' => 'await', 'cmd' => m[1] || m[2],
                            'for' => Regexp.escape(m[3] || m[4]), 'timeout' => 30 }])
@@ -633,6 +814,26 @@ class MapdbConverter
     },
     /\Aif\s+(?:\w+\s*=\s*)?Spell\[(\d+)\]\s+and\s+\w+\.known\?\s+and\s+\w+\.affordable\?\s+and\s+not\s+\w+\.active\?\s*(?:;\s*|\s+)\w+\.cast\s*(?:;\s*|\s+)end\z/ => lambda { |m|
       { 'do' => 'cast_buff', 'spell' => m[1].to_i }
+    },
+    /\A(?:fput|put)\s*\(\s*#{QUOTED}\s*\)\z/                                                                                                                      => ->(m) { { 'do' => 'send', 'cmd' => m[1] || m[2] } },
+    /\Apause\z/                                                                                                                                                   => ->(_) { { 'do' => 'sleep', 'seconds' => 1 } },
+    /\Await(?:cast)?rt\?\z/                                                                                                                                       => ->(_) { { 'do' => 'wait_rt' } },
+    /\Aecho\s*\(?#{QUOTED}\)?\z/                                                                                                                                  => ->(m) { { 'do' => 'echo', 'msg' => m[1] || m[2] } },
+    /\Amultifput\s*\(\s*(#{QUOTED}(?:\s*,\s*#{QUOTED})*)\s*\)\z/                                                                                                  => lambda { |m|
+      m[1].scan(QUOTED).map { |a, b| { 'do' => 'send', 'cmd' => a || b } }
+    },
+    /\Await(?:for)?\s*\(\s*(#{QUOTED}(?:\s*,\s*#{QUOTED})*)\s*\)\z/                                                                                               => lambda { |m|
+      targets = m[1].scan(QUOTED).map { |a, b| Regexp.escape(a || b) }
+      { 'do' => 'await', 'for' => targets.join('|'), 'timeout' => 30 }
+    },
+    /\Amultimove\s+(#{QUOTED}(?:\s*,\s*#{QUOTED})*)\z/                                                                                                            => lambda { |m|
+      m[1].scan(QUOTED).map { |a, b| { 'do' => 'move', 'cmd' => a || b } }
+    },
+    /\A(\d+)\.times\s*\{\s*fput\s+#{QUOTED};\s*pause;\s*waitcastrt\?;\s*pause;\s*fput\s+#{QUOTED}\s*\}\z/                                                         => lambda { |m|
+      { 'do' => 'repeat', 'times' => m[1].to_i,
+        'steps' => [{ 'do' => 'send', 'cmd' => m[2] || m[3] }, { 'do' => 'sleep', 'seconds' => 1 },
+                    { 'do' => 'wait_castrt' }, { 'do' => 'sleep', 'seconds' => 1 },
+                    { 'do' => 'send', 'cmd' => m[4] || m[5] }] }
     }
   }.freeze
 

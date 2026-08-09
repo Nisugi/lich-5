@@ -16,14 +16,24 @@ require 'json'
 require 'optparse'
 require_relative 'mapdb_convert'
 
-options = {}
+options = { game: 'gs' }
 OptionParser.new do |opts|
   opts.on('--in FILE') { |v| options[:in] = v }
+  opts.on('--game GAME', 'gs (default) or dr - selects output file, name prefix, and manual file') do |v|
+    options[:game] = v
+  end
 end.parse!
 abort 'missing --in' unless options[:in]
+abort 'game must be gs or dr' unless %w[gs dr].include?(options[:game])
 
-manual_path = File.expand_path('mapdb_manual_conversions.json', __dir__)
-crossings_path = File.expand_path('../lib/common/map/map_crossings.rb', __dir__)
+# GS keeps the original unprefixed names (already referenced by published
+# data); DR names carry a prefix since GS and DR room ids overlap.
+game_dir = { 'gs' => 'gemstone', 'dr' => 'dragonrealms' }.fetch(options[:game])
+name_prefix = options[:game] == 'gs' ? 'crossing' : 'crossing_dr'
+manual_name = options[:game] == 'gs' ? 'mapdb_manual_conversions.json' : 'mapdb_manual_conversions_dr.json'
+manual_path = File.expand_path(manual_name, __dir__)
+File.write(manual_path, JSON.generate({ 'wayto' => {}, 'timeto' => {} })) unless File.exist?(manual_path)
+crossings_path = File.expand_path("../lib/#{game_dir}/map_crossings.rb", __dir__)
 
 converter = MapdbConverter.new
 converter.load_manual(manual_path)
@@ -42,7 +52,7 @@ end
 manual = JSON.parse(File.read(manual_path))
 defs = +''
 bodies.each do |body, edges|
-  name = "crossing_#{edges.first.sub(':', '_')}"
+  name = "#{name_prefix}_#{edges.first.sub(':', '_')}"
   edges.each { |key| manual['wayto'][key] = { 'strategy' => 'unique_crossing', 'name' => name } }
   defs << "\n        define('#{name}') do # #{edges.join(' ')}\n"
   defs << body.gsub(/^/, '          ').rstrip
@@ -66,7 +76,7 @@ File.write(crossings_path, <<~'HEADER' + defs + <<~'FOOTER')
     module Common
       module MapEngine
         module UniqueCrossings
-          REGISTRY = {}
+          REGISTRY = {} unless const_defined?(:REGISTRY, false)
 
           def self.define(name, &block)
             REGISTRY[name.to_s] = block
