@@ -38,7 +38,8 @@ rooms =
     JSON.parse(File.read(options[:in]))
   else
     Dir.glob(File.join(options[:rooms], '**', 'room.json')).sort.map do |file|
-      JSON.parse(File.read(file))
+      data = JSON.parse(File.read(file))
+      data.key?('room') ? data['room'] : data # cartographer wraps rooms in a checksum envelope
     end
   end
 
