@@ -171,6 +171,44 @@ RSpec.describe MapdbConverter do
       expect(wayto('day_pass_program_of_ninety_lines(:wl, :imt)')).to be_nil
     end
 
+    it 'converts blocked-way retries to try_move' do
+      r = wayto("room = Room.current.id;fput 'go gate'; if ( room == Room.current.id ); " \
+                "fput 'knock gate';move 'go gate'; end; $go2_restart = true")
+      expect(r.schema.first['do']).to eq('try_move')
+      expect(r.schema.first['fallback'].length).to eq(2)
+      expect(r.schema.last).to eq({ 'do' => 'replan' })
+    end
+
+    it 'converts path-conditional moves' do
+      expect(wayto("move 'east' while checkpaths.include?('east')").schema.first['until'])
+        .to eq('not:path:east')
+      r = wayto("move 'north'; move 'east' unless checkpaths.include?('north')")
+      expect(r.schema.last['when']).to eq('not:path:north')
+    end
+
+    it 'converts patrol variants with arbitrary simple entry tails' do
+      body = "start_room = [ 2579, 2580 ]; dirs = [ 'east', 'west' ]; " \
+             'if index = start_room.index(Room.current.id); ' \
+             "until checkloot.include?('maw'); move dirs[index]; index += 1; " \
+             'index = 0 if index >= dirs.length; end; ' \
+             "move 'go maw'; else; echo 'error: mini-script expected a different room'; end; \$go2_restart = true"
+      r = wayto(body)
+      expect(r.schema['objects']).to eq(['maw'])
+      expect(r.schema['enter']).to eq([{ 'do' => 'move', 'cmd' => 'go maw' }])
+    end
+
+    it 'converts the ice slope descent to its strategy' do
+      body = "resolve=Spell['Sigil of Resolve']\nhaste=Spell['Haste']\n" \
+             "if UserVars.mapdb_ice_mode == 'wait' || Skills.survival < 50 || XMLData.encumbrance_value >= 50\n" \
+             "echo 'trying not to slip...'; sleep 6\n" \
+             "elsif resolve.known? && resolve.affordable? && !resolve.active?\nresolve.cast\nend\n" \
+             "result = fput 'down'\n" \
+             "if result =~ /^Rushing heedlessly/\n" \
+             "haste.cast if haste.known? && haste.affordable? && !haste.active?\nfput 'stand'\n" \
+             "$go2_restart = true\nend"
+      expect(wayto(body).schema).to eq({ 'strategy' => 'ice_slope', 'cmd' => 'down' })
+    end
+
     it 'converts the ice-caution gate to a named condition' do
       body = "if (UserVars.mapdb_ice_mode == 'wait') or ((UserVars.mapdb_ice_mode != 'run') and " \
              "((XMLData.encumbrance_value > 50) or ((Skills.survival < 50) and not Spell['Haste'].active?))); " \

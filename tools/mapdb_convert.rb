@@ -191,25 +191,62 @@ class MapdbConverter
                         { 'strategy' => 'guided_route', 'target' => m[3].to_i, 'verb' => 'swim',
                           'dirs' => dirs, 'hands_free_in' => m[1].scan(/\d+/).map(&:to_i) })
     end
+    if (m = body.match(/\Aempty_hand\s+if\s+(#{INT_LIST})\.include\?\(Room\.current\.id\);\s*
+                        swim_dir\s*=\s*\{([^}]+)\};\s*
+                        child\s*=\s*\(bounty\?\s*=~\s*\/\^You\ have\ made\ contact\ with\ the\ child\/\)\s*&&\s*
+                        GameObj\.npcs\.find\s*\{\s*\|npc\|\s*npc\.noun\s*==\s*'child'\s*\};\s*
+                        while\s+\(Room\.current\.id\s*!=\s*(\d+)\);?\s*
+                        if\s+swim_dir\[Room\.current\.id\];\s*put\s+"swim\ \#\{swim_dir\[Room\.current\.id\]\}";\s*
+                        else;\s*echo\s+#{QUOTED};\s*put\s+"swim\ \#\{checkpaths\[rand\(checkpaths\.length\)\]\}";\s*end;\s*
+                        sleep\ 1;\s*waitrt\?;\s*
+                        50\.times\s*\{\s*break\ if\ GameObj\.npcs\.any\?\s*\{\s*\|npc\|\s*npc\.id\s*==\s*child\.id\s*\};\s*
+                        sleep\ 0\.1\s*\}\s+if\ child;\s*end;\s*fill_hand\z/x))
+      dirs = m[2].scan(/(\d+)\s*=>\s*'([^']+)'/).to_h
+      return Result.new('guided_route',
+                        { 'strategy' => 'guided_route', 'target' => m[3].to_i, 'verb' => 'swim',
+                          'dirs' => dirs, 'hands_free_in' => m[1].scan(/\d+/).map(&:to_i),
+                          'escort_wait' => 'bounty_child' })
+    end
+    if (m = body.match(/\Aresolve=Spell\['Sigil\ of\ Resolve'\]\s+haste=Spell\['Haste'\]\s+
+                        if\s+UserVars\.mapdb_ice_mode\s*==\s*'wait'\s*\|\|\s*Skills\.survival\s*<\s*50\s*\|\|\s*
+                        XMLData\.encumbrance_value\s*>=\s*50\s+
+                        echo\s+#{QUOTED};\s*sleep\s+6\s+
+                        elsif\s+resolve\.known\?.*?resolve\.cast\s+end\s+
+                        result\s*=\s*fput\s+#{QUOTED}\s+
+                        if\s+result\s*=~\s*\/\^Rushing\ heedlessly\/.*\z/xm))
+      return Result.new('ice_slope', { 'strategy' => 'ice_slope', 'cmd' => m[3] || m[4] })
+    end
     if (m = body.match(/\Astart_room\s*=\s*(#{NILINT_LIST});\s*dirs\s*=\s*\[([^\]]+)\];\s*
                         if\s+index\s*=\s*start_room\.index\(Room\.current\.id\);\s*
                         until\s+(checkloot\.include\?\('\w+'\)(?:\s+or\s+checkloot\.include\?\('\w+'\))*);\s*
                         move\s+dirs\[index\];\s*index\s*\+=\s*1;\s*index\s*=\s*0\s+if\s+index\s*>=\s*dirs\.length;\s*end;\s*
-                        (?:(if\s+checkloot.*?end)|move\s+'(climb\ \w+)';\s*waitrt\?;\s*fput\s+'stand');;?\s*
+                        (.*?);?;?\s*
                         else;\s*echo\s+#{QUOTED};\s*end;?\s*\$go2_restart\s*=\s*true\z/xm))
-      objects = m[3].scan(/checkloot\.include\?\('(\w+)'\)/).flatten
+      enter = patrol_enter_steps(m[4], m[3])
+      return nil if enter.nil?
+
       schema = { 'strategy' => 'patrol_search',
                  'rooms'    => m[1].scan(/\d+|nil/).map { |t| t == 'nil' ? nil : t.to_i },
                  'dirs'     => m[2].scan(/'([^']+)'/).flatten,
-                 'objects'  => objects }
-      if m[5] # climb-in tail (spider thread / staircase family)
-        schema['enter'] = [{ 'do' => 'move', 'cmd' => m[5] },
-                           { 'do' => 'wait_rt' },
-                           { 'do' => 'send', 'cmd' => 'stand' }]
-      end
+                 'objects'  => m[3].scan(/checkloot\.include\?\('(\w+)'\)/).flatten }
+      schema['enter'] = enter unless enter == :default
       return Result.new('patrol_search', schema)
     end
     nil
+  end
+
+  # The patrol loop's entry tail is a small command program of its own.
+  # Returns :default when the tail is exactly the strategy's built-in
+  # go-<found> behavior, a step list when the sequence tokens cover it, or
+  # nil (whole proc stays residue) when neither applies.
+  def patrol_enter_steps(tail, until_cond)
+    objects = until_cond.scan(/checkloot\.include\?\('(\w+)'\)/).flatten
+    if tail =~ /\Aif\s+checkloot.*?end\z/m
+      branches = tail.scan(/checkloot\.include\?\('(\w+)'\);\s*move\s+'go\ (\w+)'/)
+      return nil unless branches.any? && branches.all? { |o, target| o == target && objects.include?(o) }
+      return :default
+    end
+    convert_command_sequence(tail)
   end
 
   ICE_GATE = /\Aif\s+\(UserVars\.mapdb_ice_mode\s*==\s*'wait'\)\s+or\s+
@@ -265,6 +302,39 @@ class MapdbConverter
                         move\s+#{QUOTED};\s*if\s+group_members;\s*echo\s+#{QUOTED};\s*
                         begin;\s*if\s+get\s*=~.*?end\s+while\s+group_members\.length\s*>\s*0;\s*end;\s*waitrt\?;?\z/xm))
       return Result.new('group_move', [{ 'do' => 'move_with_group', 'cmd' => m[1] || m[2] }])
+    end
+    if (m = body.match(/\Aroom\s*=\s*Room\.current\.id;\s*fput\s+#{QUOTED};\s*
+                        if\s+\(\s*room\s*==\s*Room\.current\.id\s*\);\s*
+                        fput\s+#{QUOTED};\s*move\s+#{QUOTED};\s*end
+                        (;\s*\$go2_restart\s*=\s*true)?\z/x))
+      steps = [{ 'do' => 'try_move', 'cmd' => m[1] || m[2],
+                 'fallback' => [{ 'do' => 'send', 'cmd' => m[3] || m[4] },
+                                { 'do' => 'move', 'cmd' => m[5] || m[6] }] }]
+      steps << { 'do' => 'replan' } if m[7]
+      return Result.new('try_move', steps)
+    end
+    if (m = body.match(/\Amove\s+#{QUOTED}\s+while\s+checkpaths\.include\?\(#{QUOTED}\);?\z/))
+      return Result.new('path_loop',
+                        [{ 'do' => 'repeat', 'until' => "not:path:#{m[3] || m[4]}",
+                           'steps' => [{ 'do' => 'move', 'cmd' => m[1] || m[2] }] }])
+    end
+    if (m = body.match(/\Amove\s+#{QUOTED};\s*move\s+#{QUOTED}\s+(unless|if)\s+checkpaths\.include\?\(#{QUOTED}\);?\z/))
+      cond = "path:#{m[6] || m[7]}"
+      cond = "not:#{cond}" if m[5] == 'unless'
+      return Result.new('path_branch',
+                        [{ 'do' => 'move', 'cmd' => m[1] || m[2] },
+                         { 'do' => 'if', 'when' => cond,
+                           'then' => [{ 'do' => 'move', 'cmd' => m[3] || m[4] }] }])
+    end
+    if (m = body.match(/\Aid\s*=\s*Room\.current\.id;\s*move\s+#{QUOTED}\s+until\s+Room\.current\.id\s*!=\s*id
+                        (;\s*\$go2_restart\s*=\s*true)?;?\z/x))
+      steps = [{ 'do' => 'repeat', 'until_room_change' => true,
+                 'steps' => [{ 'do' => 'move', 'cmd' => m[1] || m[2] }] }]
+      steps << { 'do' => 'replan' } if m[3]
+      return Result.new('move_until_changed', steps)
+    end
+    if body.match(/\Await_until\s*\{\s*Map\.current\.id\s*!=\s*\d+\s*\};?\z/)
+      return Result.new('carried_wait', [{ 'do' => 'wait_room_change' }])
     end
     if (m = body.match(/\Awaitrt\?;\s*(\d+)\.times\s*\{\s*if\s+standing\?;\s*break;\s*else;\s*fput\s+'stand';\s*
                         sleep\s+0\.2;\s*waitrt\?;\s*end\s*\};\s*move\s+#{QUOTED};\s*sleep\s+0\.2;\s*waitrt\?;\s*

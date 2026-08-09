@@ -216,6 +216,12 @@ module Lich
             run_cross_edge(step)
           when 'move_with_group'
             run_move_with_group(step)
+          when 'try_move'
+            # Attempt a crossing command; when the room does not change, run
+            # the fallback steps (the locked-door / blocked-way proc idiom).
+            start = XMLData.room_id
+            fput step['cmd']
+            Array(step['fallback']).each { |s| run_step(s) } if XMLData.room_id == start
           else
             raise StepFailed, "unknown step #{step['do'].inspect}"
           end
@@ -310,6 +316,8 @@ module Lich
           when 'race_match'
             re = compile_pattern(arg)
             !re.nil? && defined?(Stats) && Stats.race.to_s =~ re ? true : false
+          when 'path'
+            checkpaths.include?(arg)
           when 'ice_caution'
             ice_caution?
           else
@@ -478,11 +486,11 @@ module Lich
       # regex compilation. Suitable for submission CI and a local lint command.
       module Validator
         STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat
-                        set echo cast_buff cross move_with_group].freeze
+                        set echo cast_buff cross move_with_group try_move].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass prof race gender citizenship spell climate month var
                                society seeking_enabled].freeze
         FORMULA_NAMES = %w[haste_scaled].freeze
-        CONDITION_KINDS = %w[spell status setting race_match ice_caution].freeze
+        CONDITION_KINDS = %w[spell status setting race_match ice_caution path].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function
@@ -575,6 +583,9 @@ module Lich
             errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
           when 'move_with_group'
             errors << 'move_with_group requires cmd' unless step['cmd'].is_a?(String)
+          when 'try_move'
+            errors << 'try_move requires cmd' unless step['cmd'].is_a?(String)
+            errors.concat(Array(step['fallback']).flat_map { |s| errors_for_step(s) })
           end
           errors
         end

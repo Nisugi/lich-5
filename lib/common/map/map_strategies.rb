@@ -447,6 +447,38 @@ module Lich
           end
         end
         register 'voln_seeking', VolnSeeking, %w[target]
+
+        # Icy slope descent (Pinefar/glacier family): wait out the ice when
+        # unprepared, otherwise lean on Sigil of Resolve; on a slip ("Rushing
+        # heedlessly"), cast Haste, stand, and ask go2 to re-route.
+        #
+        #   { "strategy" => "ice_slope", "cmd" => "down" }
+        class IceSlope
+          def initialize(params)
+            @cmd = params['cmd']
+          end
+
+          def run
+            raise StepFailed, 'ice_slope requires cmd' unless @cmd
+            resolve = Spell['Sigil of Resolve']
+            haste = Spell['Haste']
+            if MapEngine.uservar('mapdb_ice_mode') == 'wait' || Skills.survival < 50 ||
+               XMLData.encumbrance_value >= 50
+              echo 'trying not to slip...'
+              sleep 6
+            elsif resolve.known? && resolve.affordable? && !resolve.active?
+              resolve.cast
+            end
+            result = fput @cmd
+            if result =~ /^Rushing heedlessly/
+              haste.cast if haste.known? && haste.affordable? && !haste.active?
+              fput 'stand'
+              $go2_restart = true
+            end
+            true
+          end
+        end
+        register 'ice_slope', IceSlope, %w[cmd]
       end
     end
   end
