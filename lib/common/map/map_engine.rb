@@ -476,10 +476,12 @@ module Lich
         def run_repeat(step)
           times = step['times'].to_i
           times = MAX_LOOP_ITERATIONS if times < 1 || times > MAX_LOOP_ITERATIONS
+          # Change detection compares game uids (works even in unmapped rooms);
+          # until_room targets are mapdb ids and must compare against Map.current.
           start = XMLData.room_id
           (@loop_rooms ||= []).push(start)
           times.times do
-            break if step['until_room'] && XMLData.room_id == step['until_room'].to_i
+            break if step['until_room'] && current_map_id == step['until_room'].to_i
             break if step['until_room_change'] && XMLData.room_id != start
             break if step['until'] && condition?(step['until'])
             Array(step['steps']).each { |s| run_step(s) }
@@ -488,6 +490,12 @@ module Lich
           nil
         ensure
           @loop_rooms&.pop
+        end
+
+        # The current room's mapdb id (schema room references are always mapdb
+        # ids, never game uids).
+        def current_map_id
+          defined?(Map) && Map.respond_to?(:current) ? Map.current&.id : nil
         end
 
         def run_await(step)
@@ -537,7 +545,7 @@ module Lich
             re = compile_pattern(expand_tokens(arg))
             !re.nil? && GameObj.loot.any? { |obj| obj.name =~ re }
           when 'in_room'
-            XMLData.room_id == arg.to_i || (defined?(Map) && Map.respond_to?(:current) && Map.current&.id == arg.to_i)
+            current_map_id == arg.to_i
           when 'platinum'
             $platinum ? true : false
           when 'ice_caution'

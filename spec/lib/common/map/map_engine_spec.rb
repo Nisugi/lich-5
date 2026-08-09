@@ -144,6 +144,20 @@ RSpec.describe Lich::Common::MapEngine do
     end
   end
 
+  describe '.run_repeat' do
+    it 'compares until_room against the mapdb id, not the game uid' do
+      # Live regression (5868->5867): XMLData.room_id is the game uid
+      # (u14008034); until_room targets are mapdb ids. The loop must stop on
+      # arrival even though the uid never equals the target.
+      stub_const('XMLData', double('XMLData', room_id: 14_008_034))
+      stub_const('Lich::Common::Map', double('Map', current: double('room', id: 5867)))
+      step = { 'do' => 'repeat', 'until_room' => 5867,
+               'steps' => [{ 'do' => 'send', 'cmd' => 'south' }] }
+      # If the loop body ran, the send step would blow up on undefined fput.
+      expect { described_class.run_repeat(step) }.not_to raise_error
+    end
+  end
+
   describe '.compile_pattern' do
     it 'compiles valid patterns once' do
       pattern = described_class.compile_pattern('A crew member escorts you')
