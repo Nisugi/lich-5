@@ -101,6 +101,29 @@ module Lich
             towns = arg.to_s.split('+').sort
             expires = @pass_cache[towns]
             !expires.nil? && expires > (Time.now + 10)
+          when 'prof'
+            # Permissive when Stats is unavailable, mirroring the corpus's
+            # (!defined?(Stats.prof) or Stats.prof == '...') idiom.
+            stat = char_stat(:prof)
+            stat.nil? || stat == arg
+          when 'race'
+            stat = char_stat(:race)
+            stat.nil? || stat == arg
+          when 'gender'
+            stat = char_stat(:gender)
+            stat.nil? || stat == arg
+          when 'citizenship'
+            defined?(Char) && Char.respond_to?(:citizenship) && Char.citizenship == arg
+          when 'spell'
+            defined?(Spell) && Spell[arg =~ /^\d+$/ ? arg.to_i : arg].active?
+          when 'climate'
+            defined?(Room) && Room.current&.climate == arg
+          when 'month'
+            Time.now.month == arg.to_i
+          when 'var'
+            name, expected = arg.to_s.split('=', 2)
+            value = uservar("mapdb_#{name}")
+            expected ? value.to_s == expected : !value.nil? && value != false
           else
             false # unknown vocabulary => not routable
           end
@@ -147,8 +170,25 @@ module Lich
             fill_hands
           when 'replan'
             $go2_restart = true
+          when 'repeat'
+            run_repeat(step)
           else
             raise StepFailed, "unknown step #{step['do'].inspect}"
+          end
+        end
+
+        # Bounded loop: runs its steps up to `times` iterations (hard-capped),
+        # stopping early when `until_room` is reached or, with
+        # `until_room_change`, when the room differs from the one at loop
+        # entry. Bad data can waste a route, never hang Lich.
+        def run_repeat(step)
+          times = step['times'].to_i
+          times = MAX_LOOP_ITERATIONS if times < 1 || times > MAX_LOOP_ITERATIONS
+          start = XMLData.room_id
+          times.times do
+            break if step['until_room'] && XMLData.room_id == step['until_room'].to_i
+            break if step['until_room_change'] && XMLData.room_id != start
+            Array(step['steps']).each { |s| run_step(s) }
           end
         end
 
@@ -218,6 +258,11 @@ module Lich
           when 'sitting'   then defined?(sitting?) ? sitting? : false
           else false
           end
+        end
+
+        def char_stat(name)
+          return nil unless defined?(Stats) && Stats.respond_to?(name)
+          Stats.send(name)
         end
 
         def uservar(name)
@@ -329,8 +374,8 @@ module Lich
       # Pure, offline validation of schema entries: structure, vocabulary, and
       # regex compilation. Suitable for submission CI and a local lint command.
       module Validator
-        STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan].freeze
-        REQUIREMENT_KINDS = %w[setting grant not is pass].freeze
+        STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat].freeze
+        REQUIREMENT_KINDS = %w[setting grant not is pass prof race gender citizenship spell climate month var].freeze
         CONDITION_KINDS = %w[spell status setting].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
@@ -391,6 +436,12 @@ module Lich
             errors << "unknown condition kind #{kind.inspect}" unless CONDITION_KINDS.include?(kind)
             errors.concat(Array(step['then']).flat_map { |s| errors_for_step(s) })
             errors.concat(Array(step['else']).flat_map { |s| errors_for_step(s) })
+          when 'repeat'
+            errors << 'repeat requires steps' if Array(step['steps']).empty?
+            unless step['until_room'] || step['until_room_change'] || step['times'].is_a?(Numeric)
+              errors << 'repeat requires times, until_room, or until_room_change'
+            end
+            errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
           end
           errors
         end

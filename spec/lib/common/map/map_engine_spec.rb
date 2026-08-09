@@ -99,6 +99,24 @@ RSpec.describe Lich::Common::MapEngine do
       expect(described_class.resolve_cost(entry)).to eq(0.1)
     end
 
+    it 'gates on profession, permissively when Stats is unavailable' do
+      entry = { 'cost' => 0.2, 'requires' => ['prof:Rogue'] }
+      expect(described_class.resolve_cost(entry)).to eq(0.2) # no Stats defined here
+
+      stub_const('Stats', double('Stats', prof: 'Wizard'))
+      expect(described_class.resolve_cost(entry)).to be_nil
+      stub_const('Stats', double('Stats', prof: 'Rogue'))
+      expect(described_class.resolve_cost(entry)).to eq(0.2)
+    end
+
+    it 'gates on var equality and truthiness' do
+      allow(UserVars).to receive(:respond_to?).and_return(true)
+      allow(UserVars).to receive(:mapdb_duskruin_origin).and_return(7)
+      expect(described_class.resolve_cost({ 'cost' => 1, 'requires' => ['var:duskruin_origin=7'] })).to eq(1)
+      expect(described_class.resolve_cost({ 'cost' => 1, 'requires' => ['var:duskruin_origin=8'] })).to be_nil
+      expect(described_class.resolve_cost({ 'cost' => 1, 'requires' => ['var:duskruin_origin'] })).to eq(1)
+    end
+
     it 'rejects expired grants' do
       allow(UserVars).to receive(:respond_to?).and_return(true)
       allow(UserVars).to receive(:mapdb_urchins_expire).and_return(Time.now.to_i - 600)
@@ -211,6 +229,16 @@ RSpec.describe Lich::Common::MapEngine do
       it 'validates if branches recursively' do
         steps = [{ 'do' => 'if', 'when' => 'spell:506', 'then' => [{ 'do' => 'bogus' }] }]
         expect(described_class.errors_for_wayto(steps).join).to include('bogus')
+      end
+
+      it 'accepts bounded repeat steps and rejects unbounded ones' do
+        good = [{ 'do' => 'repeat', 'times' => 30, 'until_room' => 13183,
+                  'steps' => [{ 'do' => 'move', 'cmd' => 'north' }] }]
+        expect(described_class.errors_for_wayto(good)).to be_empty
+        unbounded = [{ 'do' => 'repeat', 'steps' => [{ 'do' => 'wait_rt' }] }]
+        expect(described_class.errors_for_wayto(unbounded).join).to include('repeat requires')
+        empty = [{ 'do' => 'repeat', 'times' => 3, 'steps' => [] }]
+        expect(described_class.errors_for_wayto(empty).join).to include('repeat requires steps')
       end
     end
   end
