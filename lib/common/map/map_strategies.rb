@@ -693,6 +693,41 @@ module Lich
           end
         end
         register 'chronomage_day_pass', ChronomageDayPass, %w[towns npc ask enter exit]
+
+        # Send each element of a user-configured UserVars list (the Mularos
+        # lover ritual: personal command sequences stored per character).
+        class UservarSends
+          def initialize(params)
+            @var = params['var']
+          end
+
+          def run
+            list = UserVars.respond_to?(@var) ? UserVars.send(@var) : nil
+            Array(list).each { |cmd| fput cmd.to_s }
+            true
+          end
+        end
+        register 'uservar_sends', UservarSends, %w[var]
+
+        # Rogue Guild entrance: lean on the door, perform the character's
+        # secret knock from UserVars.rogue_password, and enter.
+        class RogueGuildDoor
+          def initialize(_params); end
+
+          def run
+            password = UserVars.respond_to?(:rogue_password) ? UserVars.rogue_password : nil
+            if password.nil? || password.empty?
+              echo 'No Rogue Guild password has been set.'
+              echo 'example:  ;vars set rogue_password=kick, slap, turn, scratch, kick, slap'
+              raise StepFailed, 'rogue_guild_door: no password set'
+            end
+            fput 'lean door'
+            password.split(/, */).each { |verb| fput "#{verb} door" }
+            fput 'go door'
+            true
+          end
+        end
+        register 'rogue_guild_door', RogueGuildDoor
       end
     end
   end

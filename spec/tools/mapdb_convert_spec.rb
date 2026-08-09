@@ -109,10 +109,11 @@ RSpec.describe MapdbConverter do
   end
 
   describe 'wayto recognizers' do
-    it 'classifies virtual edges without converting' do
+    it 'converts virtual edges to explicit no-op crossings' do
       r = wayto('true')
       expect(r.idiom).to eq('virtual')
-      expect(r.schema).to be_nil
+      expect(r.schema).to eq([])
+      expect(Lich::Common::MapEngine::Validator.errors_for_wayto(r.schema)).to be_empty
     end
 
     # rubocop:disable Lint/InterpolationCheck -- bodies are literal proc source
@@ -286,7 +287,7 @@ RSpec.describe MapdbConverter do
                  'wayto'  => { '2' => ';e true', '3' => ";e fput 'open gate'; move 'go gate'", '4' => ';e mystery_code' },
                  'timeto' => { '2' => 0.2, '3' => ";e Map[7].timeto['30714'].call;" } }]
       converter.convert_map!(rooms)
-      expect(rooms[0]['wayto']['2']).to eq(';e true') # virtual: classified, unchanged
+      expect(rooms[0]['wayto']['2']).to eq([]) # virtual: explicit no-op crossing
       expect(rooms[0]['wayto']['3']).to be_an(Array)
       expect(rooms[0]['wayto']['4']).to eq(';e mystery_code')
       expect(rooms[0]['timeto']['3']).to eq({ 'same_as' => '7:30714' })

@@ -1,0 +1,3106 @@
+{
+  "timeto": {
+    "7:3668": {
+      "cost": 15.0,
+      "requires": [
+        "var:fwi_trinket"
+      ]
+    },
+    "167:36170": {
+      "cost": 0.2,
+      "requires": [
+        "no_script:bigshot,wander"
+      ]
+    },
+    "4952:36165": {
+      "cost": 0.2,
+      "requires": [
+        "no_script:bigshot,wander"
+      ]
+    },
+    "5205:24431": {
+      "cost": 0.2,
+      "requires": [
+        "no_script:bigshot,wander"
+      ]
+    },
+    "10780:27635": {
+      "cost": 0.2,
+      "requires": [
+        "no_script:bigshot,wander"
+      ]
+    },
+    "314:3890": {
+      "cost": 0.2,
+      "requires": [
+        "var:prestidigitorium"
+      ]
+    },
+    "420:291": {
+      "cost": 0.2,
+      "requires": [
+        "citizenship:Wehnimer's Landing"
+      ]
+    },
+    "992:1013": {
+      "cost": 180.0,
+      "requires": [
+        "no_script:ego2"
+      ]
+    },
+    "1266:1261": {
+      "cost": 180.0,
+      "requires": [
+        "no_script:ego2"
+      ]
+    },
+    "1457:33283": {
+      "cost": 10.0,
+      "requires": [
+        "citizenship:Solhaven"
+      ],
+      "else": {
+        "cost": 10.0,
+        "requires": [
+          "var:allow_vornavis"
+        ]
+      }
+    },
+    "1507:33280": {
+      "cost": 10.0,
+      "requires": [
+        "citizenship:Solhaven"
+      ],
+      "else": {
+        "cost": 10.0,
+        "requires": [
+          "var:allow_vornavis"
+        ]
+      }
+    },
+    "1522:33276": {
+      "cost": 10.0,
+      "requires": [
+        "citizenship:Solhaven"
+      ],
+      "else": {
+        "cost": 10.0,
+        "requires": [
+          "var:allow_vornavis"
+        ]
+      }
+    },
+    "5576:33305": {
+      "cost": 10.0,
+      "requires": [
+        "citizenship:Solhaven"
+      ],
+      "else": {
+        "cost": 10.0,
+        "requires": [
+          "var:allow_vornavis"
+        ]
+      }
+    },
+    "1834:27470": {
+      "cost": 0.2,
+      "requires": [
+        "var_raw:Mularos_Lover"
+      ]
+    },
+    "27470:1834": {
+      "cost": 0.2,
+      "requires": [
+        "var_raw:Mularos_Lover"
+      ]
+    },
+    "3030:16034": {
+      "cost": 0.2,
+      "requires": [
+        "var:annoy_ylandra=yes"
+      ]
+    },
+    "3091:31352": {
+      "cost": 0.2,
+      "requires": [
+        "var_raw:sunset_cabin"
+      ]
+    },
+    "3369:3561": {
+      "cost": 0.2,
+      "requires": [
+        "society:Order of Voln"
+      ]
+    },
+    "3684:3685": {
+      "cost": 0.2,
+      "requires": [
+        "society:+26"
+      ]
+    },
+    "22004:3685": {
+      "cost": 0.2,
+      "requires": [
+        "society:+26"
+      ]
+    },
+    "4109:18694": {
+      "cost": 0.2,
+      "requires": [
+        "no_script:bigshot,wander"
+      ]
+    },
+    "4140:4141": {
+      "cost": 0.6,
+      "requires": [
+        "spell_known:407,1604,304,1207"
+      ],
+      "else": {
+        "cost": 120.0,
+        "requires": [
+          "climb_vs_encumbrance:12"
+        ],
+        "else": {
+          "cost": 5.2,
+          "requires": [
+            "prof:Warrior",
+            "level:>=15"
+          ],
+          "else": {
+            "cost": 30.0
+          }
+        }
+      }
+    },
+    "4140:16392": {
+      "cost": 3.0,
+      "requires": [
+        "climb_vs_encumbrance:12"
+      ]
+    },
+    "4141:4140": {
+      "cost": 0.6,
+      "requires": [
+        "spell_known:407,1604,304,1207"
+      ],
+      "else": {
+        "cost": 5.2,
+        "requires": [
+          "prof:Warrior",
+          "level:>=15"
+        ],
+        "else": {
+          "cost": 30.0
+        }
+      }
+    },
+    "5830:23525": {
+      "cost": 0.2,
+      "requires": [
+        "skill:perception>=30"
+      ]
+    },
+    "23525:5830": {
+      "cost": 0.2,
+      "requires": [
+        "skill:perception>=30"
+      ]
+    },
+    "6486:6487": {
+      "cost": 20,
+      "requires": [
+        "spell_known:920"
+      ]
+    },
+    "6955:6985": {
+      "cost": 33.2,
+      "requires": [
+        "level:>19"
+      ]
+    },
+    "6955:22229": {
+      "cost": 0.2,
+      "requires": [
+        "level:>19"
+      ]
+    },
+    "7157:36342": {
+      "cost": 0.2,
+      "requires": [
+        "var:black_swan"
+      ]
+    },
+    "7917:7918": {
+      "cost": 0.2,
+      "requires": [
+        "skill:climbing>99"
+      ]
+    },
+    "11006:10840": {
+      "cost": 0.2,
+      "requires": [
+        "citizenship:River's Rest"
+      ],
+      "else": {
+        "cost": 0.2,
+        "requires": [
+          "is:invisible"
+        ]
+      }
+    },
+    "11442:11485": {
+      "cost": 0.2,
+      "requires": [
+        "skill:climbing>14"
+      ]
+    },
+    "12582:28709": {
+      "cost": 0.2,
+      "requires": [
+        "citizenship:Teras Isle"
+      ]
+    },
+    "13532:8695": {
+      "cost": 0.2,
+      "requires": [
+        "global:SILVERWOOD_TOWN=wl"
+      ]
+    },
+    "13532:8696": {
+      "cost": 0.2,
+      "requires": [
+        "global:SILVERWOOD_TOWN=imt"
+      ]
+    },
+    "13532:14659": {
+      "cost": 0.2,
+      "requires": [
+        "global:SILVERWOOD_TOWN=va"
+      ]
+    },
+    "13532:32873": {
+      "cost": 0.2,
+      "requires": [
+        "global:SILVERWOOD_TOWN=zul"
+      ]
+    },
+    "15626:33715": {
+      "cost": 0.2,
+      "requires": [
+        "var_raw:Elaienaran_Haven=true"
+      ]
+    },
+    "23462:23460": {
+      "cost": 0.2,
+      "requires": [
+        "race:Halfling"
+      ]
+    },
+    "23518:23427": {
+      "cost": 0.2,
+      "requires": [
+        "prof:Wizard"
+      ]
+    },
+    "23525:23526": {
+      "cost": 3.2,
+      "requires": [
+        "skill:swimming>=30"
+      ]
+    },
+    "24675:7892": {
+      "cost": 0.2,
+      "requires": [
+        "room_name:^\\[Red Forest",
+        "var:redforest_location=WL"
+      ]
+    },
+    "24675:16744": {
+      "cost": 0.2,
+      "requires": [
+        "room_name:^\\[Red Forest",
+        "var:redforest_location=EN"
+      ]
+    },
+    "25834:36175": {
+      "cost": 6.0,
+      "requires": [
+        "no_script:bigshot,wander"
+      ]
+    },
+    "27860:27864": {
+      "cost": 5,
+      "requires": [
+        "has_item:cord-strung delicate brass key"
+      ]
+    },
+    "27864:27860": {
+      "cost": 5,
+      "requires": [
+        "has_item:cord-strung delicate brass key"
+      ]
+    },
+    "27864:27865": {
+      "cost": 5,
+      "requires": [
+        "has_item:cord-strung delicate brass key"
+      ]
+    },
+    "27865:27864": {
+      "cost": 5,
+      "requires": [
+        "has_item:cord-strung delicate brass key"
+      ]
+    },
+    "27865:27866": {
+      "cost": 5,
+      "requires": [
+        "has_item:cord-strung delicate brass key"
+      ]
+    },
+    "27865:27868": {
+      "cost": 5,
+      "requires": [
+        "has_item:cord-strung delicate brass key"
+      ]
+    },
+    "27866:27865": {
+      "cost": 5,
+      "requires": [
+        "has_item:cord-strung delicate brass key"
+      ]
+    },
+    "27868:27865": {
+      "cost": 5,
+      "requires": [
+        "has_item:cord-strung delicate brass key"
+      ]
+    },
+    "29865:2487": {
+      "cost": 240,
+      "requires": [
+        "var:hinterwilds_location=IM",
+        "location:the Hinterwilds"
+      ]
+    },
+    "29865:31069": {
+      "cost": 240,
+      "requires": [
+        "var:hinterwilds_location=EN",
+        "location:the Hinterwilds"
+      ]
+    },
+    "30714:7": {
+      "cost": 0.1,
+      "requires": [
+        "script_running:go2,route2"
+      ]
+    },
+    "30714:21": {
+      "cost": 0.1,
+      "requires": [
+        "not:subscription:premium",
+        "edge:30714+7"
+      ]
+    },
+    "30714:20707": {
+      "cost": 0.1,
+      "requires": [
+        "subscription:premium",
+        "edge:30714+7"
+      ]
+    },
+    "31427:31428": {
+      "cost": 0.2,
+      "requires": [
+        "var_raw:Shivergale"
+      ]
+    },
+    "33277:34440": {
+      "cost": 0.2,
+      "requires": [
+        "var_raw:Oleander_House=true"
+      ]
+    },
+    "34434:34435": {
+      "cost": 0.2,
+      "requires": [
+        "var_raw:Cuddfan_Hollow=true"
+      ]
+    },
+    "34435:34434": {
+      "cost": 0.2,
+      "requires": [
+        "var_raw:Cuddfan_Hollow=true"
+      ]
+    }
+  },
+  "wayto": {
+    "785:784": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "move",
+            "cmd": "east"
+          },
+          {
+            "do": "move",
+            "cmd": "north"
+          }
+        ],
+        "until": "not:path:n"
+      }
+    ],
+    "785:786": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "move",
+            "cmd": "south"
+          },
+          {
+            "do": "move",
+            "cmd": "west"
+          }
+        ],
+        "until": "not:path:s"
+      }
+    ],
+    "1216:1217": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "don't find anything|discover a small footpath|Round ?time|\\.\\.\\.[Ww]ait",
+            "timeout": 5,
+            "if_match": {
+              "pattern": "discover a small footpath",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "times": 10
+      },
+      {
+        "do": "move",
+        "cmd": "go footpath"
+      }
+    ],
+    "1230:30523": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "don't find anything|discover.*?crack|Round ?time|\\.\\.\\.[Ww]ait",
+            "timeout": 5,
+            "if_match": {
+              "pattern": "discover.*?crack",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "move",
+        "cmd": "go crack"
+      }
+    ],
+    "1232:1231": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "don't find anything|discover.*?crack|Round ?time|\\.\\.\\.[Ww]ait",
+            "timeout": 5,
+            "if_match": {
+              "pattern": "discover.*?crack",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "move",
+        "cmd": "go crack"
+      }
+    ],
+    "1231:1230": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "don't find anything|discover.*?opening|Round ?time|\\.\\.\\.[Ww]ait",
+            "timeout": 5,
+            "if_match": {
+              "pattern": "discover.*?opening",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "move",
+        "cmd": "go opening"
+      }
+    ],
+    "1242:1241": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "try_move",
+            "cmd": "go path",
+            "check": "move_result",
+            "fallback": [
+              {
+                "do": "send",
+                "cmd": "search"
+              }
+            ]
+          },
+          {
+            "do": "break_if_moved"
+          }
+        ],
+        "times": 5
+      }
+    ],
+    "1070:1071": [
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "move_with_group",
+        "cmd": "climb ladder"
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "1074:1073": [
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "move_with_group",
+        "cmd": "climb ladder"
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "1071:1070": [
+      {
+        "do": "move_with_group",
+        "cmd": "climb down"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "1073:1074": [
+      {
+        "do": "move_with_group",
+        "cmd": "climb up"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "1223:1224": [
+      {
+        "do": "cast_buff",
+        "spell": 9704
+      },
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "if",
+        "when": "skill:climbing<20",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "stance offensive"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "climb boulder"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "send",
+        "cmd": "stance defensive"
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "1224:1223": [
+      {
+        "do": "cast_buff",
+        "spell": 9704
+      },
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "if",
+        "when": "skill:climbing<20",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "stance offensive"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "climb boulder"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "send",
+        "cmd": "stance defensive"
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "1834:27470": {
+      "strategy": "uservar_sends",
+      "var": "Mularos_Lover"
+    },
+    "27470:1834": {
+      "strategy": "uservar_sends",
+      "var": "Mularos_Lover"
+    },
+    "2208:2209": [
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "climb fissure",
+            "for": "Round ?time|find yourself|Crawlway",
+            "timeout": 2,
+            "if_match": {
+              "pattern": "find yourself|Crawlway",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "2642:2640": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "move_random",
+            "among": [
+              "northwest",
+              "northeast"
+            ],
+            "prefix": "swim ",
+            "send": true
+          }
+        ],
+        "until": "path:up"
+      }
+    ],
+    "2642:2645": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "move_random",
+            "among": [
+              "southwest",
+              "southeast"
+            ],
+            "prefix": "swim ",
+            "send": true
+          }
+        ],
+        "until": "path:up"
+      }
+    ],
+    "2675:2677": [
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "pull ring",
+            "for": "begins to rise|will not budge an inch|manage to pull it downward",
+            "timeout": 8,
+            "if_match": {
+              "pattern": "begins to rise|will not budge an inch",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "fill_hands"
+      },
+      {
+        "do": "move",
+        "cmd": "go door"
+      }
+    ],
+    "2679:2678": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "cast_buff",
+            "spell": 506
+          },
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "discover a narrow icy ledge!|don't find anything of interest",
+            "timeout": 3
+          },
+          {
+            "do": "move",
+            "cmd": "go ledge"
+          },
+          {
+            "do": "break_if_moved"
+          }
+        ],
+        "times": 8
+      }
+    ],
+    "2925:2924": [
+      {
+        "do": "send",
+        "cmd": "north"
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "move",
+            "cmd": "north"
+          }
+        ],
+        "until_room_change": true
+      }
+    ],
+    "2925:2926": [
+      {
+        "do": "send",
+        "cmd": "south"
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "move",
+            "cmd": "south"
+          }
+        ],
+        "until_room_change": true
+      }
+    ],
+    "3035:3034": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "move",
+            "cmd": "south"
+          }
+        ],
+        "until_room_change": true
+      }
+    ],
+    "3091:31352": [
+      {
+        "do": "if",
+        "when": "has_item:key",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "go snow cabin"
+          }
+        ],
+        "else": [
+          {
+            "do": "empty_hand"
+          },
+          {
+            "do": "send",
+            "cmd": "get my key from my {uservar:key_sack}"
+          },
+          {
+            "do": "send",
+            "cmd": "go snow cabin"
+          },
+          {
+            "do": "send",
+            "cmd": "put my key in my {uservar:key_sack}"
+          },
+          {
+            "do": "fill_hand"
+          }
+        ]
+      }
+    ],
+    "3492:10329": [
+      {
+        "do": "if",
+        "when": "platinum",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "go furrier"
+          }
+        ],
+        "else": [
+          {
+            "do": "move",
+            "cmd": "go warehouse"
+          }
+        ]
+      }
+    ],
+    "3513:10396": [
+      {
+        "do": "if",
+        "when": "platinum",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "go shop"
+          }
+        ],
+        "else": [
+          {
+            "do": "move",
+            "cmd": "go building"
+          }
+        ]
+      }
+    ],
+    "3600:3600": [
+      {
+        "do": "replan"
+      }
+    ],
+    "3727:26905": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "event transport duskruin"
+          }
+        ],
+        "times": 2
+      },
+      {
+        "do": "set",
+        "var": "duskruin_origin",
+        "value": "{map_id}"
+      }
+    ],
+    "3727:31558": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "event transport ebon gate"
+          }
+        ],
+        "times": 2
+      },
+      {
+        "do": "set",
+        "var": "ebon_gate_origin",
+        "value": "{map_id}"
+      }
+    ],
+    "3837:3831": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "search"
+          },
+          {
+            "do": "move",
+            "cmd": "go fissure"
+          }
+        ],
+        "until": "not:path:e"
+      }
+    ],
+    "4029:4027": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "move",
+            "cmd": "north"
+          }
+        ],
+        "until_room": 4027
+      }
+    ],
+    "4029:4030": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "move",
+            "cmd": "south"
+          }
+        ],
+        "until_room": 4030
+      }
+    ],
+    "4154:4168": [
+      {
+        "do": "if",
+        "when": "not:loot_match:stairway",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "turn torch"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go stairway"
+      }
+    ],
+    "4172:4171": [
+      {
+        "do": "if",
+        "when": "not:loot_match:door",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "south"
+          },
+          {
+            "do": "send",
+            "cmd": "search"
+          },
+          {
+            "do": "move",
+            "cmd": "go stair"
+          },
+          {
+            "do": "move",
+            "cmd": "southwest"
+          },
+          {
+            "do": "move",
+            "cmd": "southwest"
+          },
+          {
+            "do": "move",
+            "cmd": "southeast"
+          },
+          {
+            "do": "move",
+            "cmd": "go crack"
+          },
+          {
+            "do": "move",
+            "cmd": "north"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go door"
+      }
+    ],
+    "4172:4173": [
+      {
+        "do": "if",
+        "when": "not:loot_match:door",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "south"
+          },
+          {
+            "do": "send",
+            "cmd": "search"
+          },
+          {
+            "do": "move",
+            "cmd": "go stair"
+          },
+          {
+            "do": "move",
+            "cmd": "southwest"
+          },
+          {
+            "do": "move",
+            "cmd": "southwest"
+          },
+          {
+            "do": "move",
+            "cmd": "southeast"
+          },
+          {
+            "do": "move",
+            "cmd": "go crack"
+          },
+          {
+            "do": "move",
+            "cmd": "north"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "south"
+      }
+    ],
+    "4537:7389": [
+      {
+        "do": "await",
+        "cmd": "push circular depression",
+        "for": "\\*[A-Z]+\\*$",
+        "timeout": 3
+      },
+      {
+        "do": "await",
+        "cmd": "push triangular depression",
+        "for": "\\*[A-Z]+\\*$",
+        "timeout": 3
+      },
+      {
+        "do": "await",
+        "cmd": "push square depression",
+        "for": "\\*[A-Z]+\\*$",
+        "timeout": 3
+      },
+      {
+        "do": "await",
+        "cmd": "push rectangular depression",
+        "for": "\\*[A-Z]+\\*$",
+        "timeout": 3
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      }
+    ],
+    "5830:23525": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "don't find anything|discover a rocky trail|Round ?time|\\.\\.\\.[Ww]ait",
+            "timeout": 5,
+            "if_match": {
+              "pattern": "discover a rocky trail",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "times": 10
+      },
+      {
+        "do": "move",
+        "cmd": "go rocky trail"
+      }
+    ],
+    "23525:5830": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "don't find anything|discover a rocky trail|Round ?time|\\.\\.\\.[Ww]ait",
+            "timeout": 5,
+            "if_match": {
+              "pattern": "discover a rocky trail",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "times": 10
+      },
+      {
+        "do": "move",
+        "cmd": "go rocky trail"
+      }
+    ],
+    "5868:5869": [
+      {
+        "do": "move",
+        "cmd": "north"
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:5869",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "south"
+          },
+          {
+            "do": "move",
+            "cmd": "south"
+          },
+          {
+            "do": "move",
+            "cmd": "south"
+          }
+        ]
+      }
+    ],
+    "5868:5893": [
+      {
+        "do": "move",
+        "cmd": "south"
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:5893",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "north"
+          },
+          {
+            "do": "move",
+            "cmd": "north"
+          },
+          {
+            "do": "move",
+            "cmd": "north"
+          }
+        ]
+      }
+    ],
+    "5922:10476": [
+      {
+        "do": "move",
+        "cmd": "go niche"
+      },
+      {
+        "do": "if",
+        "when": "in_room:5922",
+        "then": [
+          {
+            "do": "await",
+            "for": "Your eyes have recovered from the poor light within the niche\\.",
+            "timeout": 30
+          },
+          {
+            "do": "move",
+            "cmd": "go niche"
+          }
+        ]
+      }
+    ],
+    "6016:18748": [
+      {
+        "do": "cast",
+        "spell": 704,
+        "target": "shadow"
+      }
+    ],
+    "6201:6202": [
+      {
+        "do": "move_random",
+        "except": [
+          "southeast"
+        ]
+      }
+    ],
+    "6211:6212": [
+      {
+        "do": "move_random",
+        "except": [
+          "northeast"
+        ]
+      }
+    ],
+    "6221:6222": [
+      {
+        "do": "move_random",
+        "except": [
+          "west"
+        ]
+      }
+    ],
+    "6481:6484": [
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "swim opening"
+          },
+          {
+            "do": "sleep",
+            "seconds": 1
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "until_room_change": true
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "6484:6481": [
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "swim opening"
+          },
+          {
+            "do": "sleep",
+            "seconds": 1
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "until_room_change": true
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "6487:6486": [
+      {
+        "do": "try_move",
+        "cmd": "go doors",
+        "check": "move_result",
+        "fallback": [
+          {
+            "do": "await",
+            "cmd": "pull lever",
+            "for": "the stone doors swing silently open",
+            "timeout": 3
+          },
+          {
+            "do": "move",
+            "cmd": "go doors"
+          }
+        ]
+      }
+    ],
+    "6626:7436": [
+      {
+        "do": "if",
+        "when": "not:loot_match:stairs",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "push medium moon"
+          },
+          {
+            "do": "send",
+            "cmd": "pull relief"
+          },
+          {
+            "do": "send",
+            "cmd": "push letter u"
+          },
+          {
+            "do": "send",
+            "cmd": "push letter t"
+          },
+          {
+            "do": "send",
+            "cmd": "push letter h"
+          },
+          {
+            "do": "send",
+            "cmd": "push letter e"
+          },
+          {
+            "do": "send",
+            "cmd": "push letter x"
+          },
+          {
+            "do": "send",
+            "cmd": "pull globe"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go stair"
+      }
+    ],
+    "6630:6631": [
+      {
+        "do": "cast_buff",
+        "spell": 506
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "anything of interest|rough hole",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "rough hole",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "move",
+        "cmd": "go hole"
+      }
+    ],
+    "6631:6632": [
+      {
+        "do": "cast_buff",
+        "spell": 506
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "anything of interest|concealed door",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "concealed door",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "move",
+        "cmd": "go door"
+      }
+    ],
+    "6632:6631": [
+      {
+        "do": "cast_buff",
+        "spell": 506
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "anything of interest|concealed door",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "concealed door",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "move",
+        "cmd": "go door"
+      }
+    ],
+    "6634:6633": [
+      {
+        "do": "move",
+        "cmd": "go door"
+      },
+      {
+        "do": "if",
+        "when": "path:n",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "north"
+          },
+          {
+            "do": "move",
+            "cmd": "northeast"
+          },
+          {
+            "do": "move",
+            "cmd": "west"
+          }
+        ]
+      }
+    ],
+    "6634:6636": [
+      {
+        "do": "move",
+        "cmd": "go door"
+      },
+      {
+        "do": "if",
+        "when": "path:e",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "east"
+          },
+          {
+            "do": "move",
+            "cmd": "southeast"
+          },
+          {
+            "do": "move",
+            "cmd": "south"
+          }
+        ]
+      }
+    ],
+    "6997:6998": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "if",
+            "when": "race_match:(?i)halfling|dwarf|burghal gnome|forest gnome",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "jump"
+              }
+            ],
+            "else": [
+              {
+                "do": "send",
+                "cmd": "pull rope"
+              }
+            ]
+          },
+          {
+            "do": "await",
+            "for": "give it a good yank!|since it is underneath|what were you referring to|that was fun\\.",
+            "timeout": 1
+          },
+          {
+            "do": "if",
+            "when": "not:status:standing",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "stand"
+              }
+            ]
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "move",
+        "cmd": "go drawbridge"
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:6998",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
+    "6998:6997": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "push lever",
+            "for": "won't budge|Now what|lower a wooden drawbridge",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "Now what|lower a wooden drawbridge",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "move",
+        "cmd": "go drawbridge"
+      }
+    ],
+    "6998:6999": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "pull lever",
+            "for": "won't budge|Now what|raise a wooden drawbridge",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "Now what|raise a wooden drawbridge",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "move",
+        "cmd": "go white portcullis"
+      }
+    ],
+    "7036:7154": [
+      {
+        "do": "try_move",
+        "cmd": "go door",
+        "check": "move_result",
+        "fallback": [
+          {
+            "do": "send",
+            "cmd": "kneel"
+          },
+          {
+            "do": "send",
+            "cmd": "touch statue"
+          },
+          {
+            "do": "await",
+            "for": "the black mein door has opened",
+            "timeout": 30
+          },
+          {
+            "do": "send",
+            "cmd": "stand"
+          },
+          {
+            "do": "move",
+            "cmd": "go door"
+          }
+        ]
+      }
+    ],
+    "7154:7036": [
+      {
+        "do": "try_move",
+        "cmd": "go door",
+        "check": "move_result",
+        "fallback": [
+          {
+            "do": "send",
+            "cmd": "kneel"
+          },
+          {
+            "do": "send",
+            "cmd": "touch jackal"
+          },
+          {
+            "do": "await",
+            "for": "the black mein door has opened",
+            "timeout": 30
+          },
+          {
+            "do": "send",
+            "cmd": "stand"
+          },
+          {
+            "do": "move",
+            "cmd": "go door"
+          }
+        ]
+      }
+    ],
+    "7313:7312": [
+      {
+        "do": "move",
+        "cmd": "southwest"
+      },
+      {
+        "do": "if",
+        "when": "in_room:7313",
+        "then": [
+          {
+            "do": "escort_wait"
+          },
+          {
+            "do": "move",
+            "cmd": "southwest"
+          }
+        ]
+      }
+    ],
+    "7313:22426": [
+      {
+        "do": "move",
+        "cmd": "northeast"
+      },
+      {
+        "do": "if",
+        "when": "in_room:7313",
+        "then": [
+          {
+            "do": "escort_wait"
+          },
+          {
+            "do": "move",
+            "cmd": "northeast"
+          }
+        ]
+      }
+    ],
+    "7393:7328": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "crawl hole",
+            "for": "^You crawl under the low overhang",
+            "timeout": 3
+          }
+        ],
+        "until_room_change": true
+      },
+      {
+        "do": "repeat",
+        "until": "not:status:stunned",
+        "steps": [
+          {
+            "do": "sleep",
+            "seconds": 0.5
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      }
+    ],
+    "7436:6626": [
+      {
+        "do": "if",
+        "when": "not:loot_match:stairs",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "turn stalactite"
+          },
+          {
+            "do": "send",
+            "cmd": "turn stalagmite"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go stair"
+      }
+    ],
+    "7458:7459": [
+      {
+        "do": "cast_buff",
+        "spell": 506
+      },
+      {
+        "do": "send",
+        "cmd": "search"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "move",
+        "cmd": "go crack"
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "7477:7478": [
+      {
+        "do": "cast_buff",
+        "spell": 506
+      },
+      {
+        "do": "send",
+        "cmd": "search"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "move",
+        "cmd": "go crack"
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "7478:7477": [
+      {
+        "do": "cast_buff",
+        "spell": 506
+      },
+      {
+        "do": "send",
+        "cmd": "search"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "move",
+        "cmd": "go crack"
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "7477:7476": [
+      {
+        "do": "if",
+        "when_all": [
+          "not:status:kneeling",
+          "not:race_match:(?i)dwarf|halfling|gnome"
+        ],
+        "then": [
+          {
+            "do": "send",
+            "cmd": "kneel"
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "southeast"
+      }
+    ],
+    "7517:8686": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "climb ladder",
+            "for": "a rung breaks under your weight|You carefully make your way up",
+            "timeout": 10,
+            "if_match": {
+              "pattern": "You carefully make your way up",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          },
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ],
+        "times": 50
+      }
+    ],
+    "7664:7669": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "if",
+            "when": "not:status:standing",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "stand"
+              }
+            ]
+          },
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "await",
+            "cmd": "climb stone",
+            "for": "slide back down|You dance lightly up",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "You dance lightly up",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 3
+      }
+    ],
+    "7892:24675": [
+      {
+        "do": "set",
+        "var": "redforest_location",
+        "value": "WL"
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "repeat",
+            "until": "status:standing",
+            "steps": [
+              {
+                "do": "send",
+                "cmd": "stand"
+              }
+            ]
+          },
+          {
+            "do": "await",
+            "cmd": "go fog",
+            "for": "get turned around and come right back out|Obvious paths: northeast, southeast",
+            "timeout": 5,
+            "if_match": {
+              "pattern": "Obvious paths: northeast, southeast",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          },
+          {
+            "do": "sleep",
+            "seconds": 0.5
+          },
+          {
+            "do": "wait_rt"
+          }
+        ],
+        "times": 50
+      }
+    ],
+    "7983:7984": [
+      {
+        "do": "if",
+        "when": "spell:916",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "unhide"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go gate"
+      }
+    ],
+    "8141:7905": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "kneel"
+          }
+        ],
+        "until": "status:kneeling"
+      },
+      {
+        "do": "send",
+        "cmd": "crawl crack"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      }
+    ],
+    "8227:8245": [
+      {
+        "do": "move",
+        "cmd": "go second iron door"
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:8245",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "go iron door"
+          },
+          {
+            "do": "move",
+            "cmd": "go first iron door"
+          }
+        ]
+      }
+    ],
+    "8227:8247": [
+      {
+        "do": "move",
+        "cmd": "go first iron door"
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:8247",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "go iron door"
+          },
+          {
+            "do": "move",
+            "cmd": "go second iron door"
+          }
+        ]
+      }
+    ],
+    "8544:8546": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "search"
+          },
+          {
+            "do": "sleep",
+            "seconds": 1
+          },
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "move",
+            "cmd": "go crevice"
+          }
+        ],
+        "until": "not:path:nw"
+      }
+    ],
+    "8695:13532": [
+      {
+        "do": "set_global",
+        "var": "SILVERWOOD_TOWN",
+        "value": "wl"
+      },
+      {
+        "do": "move",
+        "cmd": "go door"
+      }
+    ],
+    "8696:13532": [
+      {
+        "do": "set_global",
+        "var": "SILVERWOOD_TOWN",
+        "value": "imt"
+      },
+      {
+        "do": "move",
+        "cmd": "go door"
+      }
+    ],
+    "14659:13532": [
+      {
+        "do": "set_global",
+        "var": "SILVERWOOD_TOWN",
+        "value": "va"
+      },
+      {
+        "do": "move",
+        "cmd": "go door"
+      }
+    ],
+    "9651:6135": [
+      {
+        "do": "move",
+        "cmd": "jump ledge"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "repeat",
+        "until": "not:status:stunned",
+        "steps": [
+          {
+            "do": "sleep",
+            "seconds": 0.5
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:status:standing",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "9767:9804": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "touch green leaf",
+            "for": "^You touch the|You shouldn't mess with that",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "^You touch the",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          },
+          {
+            "do": "sleep",
+            "seconds": 3
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "send",
+        "cmd": "touch gold leaf"
+      },
+      {
+        "do": "send",
+        "cmd": "touch red leaf"
+      },
+      {
+        "do": "send",
+        "cmd": "touch blighted leaf"
+      },
+      {
+        "do": "send",
+        "cmd": "touch outstretched hand"
+      },
+      {
+        "do": "send",
+        "cmd": "recite Listen to the wind in the forest,;That which whispers the words of the lady of the tower.;She of old who is called Maaghara."
+      },
+      {
+        "do": "wait_room_change",
+        "timeout": 20
+      }
+    ],
+    "10117:10119": [
+      {
+        "do": "move",
+        "cmd": "go gangplank"
+      },
+      {
+        "do": "if",
+        "when": "in_room:10117",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Waiting for ferry... "
+          },
+          {
+            "do": "await",
+            "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
+            "timeout": 600
+          },
+          {
+            "do": "move",
+            "cmd": "go gangplank"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
+        "timeout": 600
+      },
+      {
+        "do": "move",
+        "cmd": "out"
+      }
+    ],
+    "10119:10117": [
+      {
+        "do": "move",
+        "cmd": "go gangplank"
+      },
+      {
+        "do": "if",
+        "when": "in_room:10119",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Waiting for ferry... "
+          },
+          {
+            "do": "await",
+            "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
+            "timeout": 600
+          },
+          {
+            "do": "move",
+            "cmd": "go gangplank"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
+        "timeout": 600
+      },
+      {
+        "do": "move",
+        "cmd": "out"
+      }
+    ],
+    "10440:12415": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "touch teeth"
+          },
+          {
+            "do": "sleep",
+            "seconds": 1
+          },
+          {
+            "do": "repeat",
+            "until": "not:status:stunned",
+            "steps": [
+              {
+                "do": "sleep",
+                "seconds": 0.5
+              }
+            ]
+          }
+        ],
+        "times": 2
+      },
+      {
+        "do": "send",
+        "cmd": "touch left wing"
+      },
+      {
+        "do": "send",
+        "cmd": "touch right wing"
+      },
+      {
+        "do": "wait_room_change",
+        "timeout": 60
+      }
+    ],
+    "10815:10821": [
+      {
+        "do": "cast_buff",
+        "spell": 9704
+      },
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "move",
+        "cmd": "go water"
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "10817:10821": [
+      {
+        "do": "cast_buff",
+        "spell": 9704
+      },
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "move",
+        "cmd": "go water"
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "10821:10815": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "swim"
+          },
+          {
+            "do": "sleep",
+            "seconds": 1
+          },
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "if",
+            "when": "path:west",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "if",
+            "when": "path:east",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "10821:10817": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "swim"
+          },
+          {
+            "do": "sleep",
+            "seconds": 1
+          },
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "if",
+            "when": "path:west",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "if",
+            "when": "path:east",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          }
+        ],
+        "times": 50
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "10844:10845": [
+      {
+        "do": "if",
+        "when": "spell:invisibility",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "unhide"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go rope"
+      }
+    ],
+    "11068:11069": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "swim tunnel"
+          },
+          {
+            "do": "sleep",
+            "seconds": 0.2
+          }
+        ],
+        "until_room": 11069
+      }
+    ],
+    "11069:11068": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "swim tunnel"
+          },
+          {
+            "do": "sleep",
+            "seconds": 0.2
+          }
+        ],
+        "until_room": 11068
+      }
+    ],
+    "11357:11355": [
+      {
+        "do": "preserve_stance",
+        "stance": "offensive",
+        "steps": [
+          {
+            "do": "move",
+            "cmd": "climb wall"
+          }
+        ]
+      },
+      {
+        "do": "replan"
+      }
+    ],
+    "11432:11433": [
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "if",
+        "when": "spell:invisibility",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "unhide"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go river"
+      }
+    ],
+    "11630:11612": [
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "southwest"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "northwest"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "northwest"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "southwest"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "northwest"
+      },
+      {
+        "do": "escort_wait"
+      }
+    ],
+    "11630:11617": [
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "southeast"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "southwest"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "northwest"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "northwest"
+      },
+      {
+        "do": "escort_wait"
+      }
+    ],
+    "11630:11618": [
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "southeast"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "northwest"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "southeast"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "southwest"
+      },
+      {
+        "do": "escort_wait"
+      }
+    ],
+    "11653:11620": [
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "southeast"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "northwest"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "southeast"
+      },
+      {
+        "do": "escort_wait"
+      },
+      {
+        "do": "move",
+        "cmd": "southwest"
+      },
+      {
+        "do": "escort_wait"
+      }
+    ],
+    "11667:11675": [
+      {
+        "do": "move",
+        "cmd": "out"
+      },
+      {
+        "do": "if",
+        "when": "path:ne",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "northeast"
+          },
+          {
+            "do": "move",
+            "cmd": "east"
+          }
+        ]
+      }
+    ],
+    "11668:11675": [
+      {
+        "do": "move",
+        "cmd": "down"
+      },
+      {
+        "do": "move",
+        "cmd": "out"
+      },
+      {
+        "do": "if",
+        "when": "path:ne",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "northeast"
+          },
+          {
+            "do": "move",
+            "cmd": "east"
+          }
+        ],
+        "else": [
+          {
+            "do": "if",
+            "when": "not:path:e",
+            "then": [
+              {
+                "do": "move",
+                "cmd": "west"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "11687:11688": [
+      {
+        "do": "if",
+        "when": "spell:112",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "north"
+          }
+        ],
+        "else": [
+          {
+            "do": "empty_hands"
+          },
+          {
+            "do": "move",
+            "cmd": "swim north"
+          },
+          {
+            "do": "fill_hands"
+          }
+        ]
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "11688:11687": [
+      {
+        "do": "if",
+        "when": "spell:112",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "south"
+          }
+        ],
+        "else": [
+          {
+            "do": "empty_hands"
+          },
+          {
+            "do": "move",
+            "cmd": "swim south"
+          },
+          {
+            "do": "fill_hands"
+          }
+        ]
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "11749:10838": [
+      {
+        "do": "await",
+        "for": "The crew hurriedly puts out the gangplank\\.|River's Rest\\.\\.\\..+ ashore!",
+        "timeout": 600
+      },
+      {
+        "do": "send",
+        "cmd": "out"
+      }
+    ],
+    "11749:11753": [
+      {
+        "do": "await",
+        "for": "The crew hurriedly puts out the gangplank\\.|Solhaven\\.\\.\\..+ ashore!",
+        "timeout": 600
+      },
+      {
+        "do": "send",
+        "cmd": "out"
+      }
+    ],
+    "12421:14089": {
+      "strategy": "rogue_guild_door"
+    },
+    "12589:12593": [
+      {
+        "do": "send",
+        "cmd": "jump"
+      },
+      {
+        "do": "await",
+        "for": "You feel the presence of cold hard stone underneath you\\.",
+        "timeout": 30
+      },
+      {
+        "do": "sleep",
+        "seconds": 0.1
+      },
+      {
+        "do": "if",
+        "when": "not:status:standing",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "move",
+            "cmd": "west"
+          }
+        ],
+        "until_room": 12593
+      }
+    ],
+    "12604:12605": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "cast_buff",
+            "spell": 506
+          },
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "search|don't find anything|find nothing else",
+            "timeout": 3
+          },
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "await",
+            "cmd": "get rock",
+            "for": "I could not find|You reach out|Get what",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "You reach out",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 10
+      },
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "move",
+        "cmd": "climb wall"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "12605:12606": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "cast_buff",
+            "spell": 506
+          },
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "search|don't find anything|find nothing else",
+            "timeout": 3
+          },
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "await",
+            "cmd": "get handhold",
+            "for": "I could not find|You reach out|Get what",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "You reach out",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 10
+      },
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "move",
+        "cmd": "climb face"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "12606:12607": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "cast_buff",
+            "spell": 506
+          },
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "search|don't find anything|find nothing else",
+            "timeout": 3
+          },
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "await",
+            "cmd": "get crack",
+            "for": "I could not find|You reach out|Get what",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "You reach out",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 10
+      },
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "move",
+        "cmd": "climb face"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "12607:12608": [
+      {
+        "do": "repeat",
+        "steps": [
+          {
+            "do": "cast_buff",
+            "spell": 506
+          },
+          {
+            "do": "await",
+            "cmd": "search",
+            "for": "search|don't find anything|find nothing else",
+            "timeout": 3
+          },
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "await",
+            "cmd": "get root",
+            "for": "I could not find|You reach out|Get what",
+            "timeout": 3,
+            "if_match": {
+              "pattern": "You reach out",
+              "steps": [
+                {
+                  "do": "break"
+                }
+              ]
+            }
+          }
+        ],
+        "times": 10
+      },
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "move",
+        "cmd": "climb face"
+      },
+      {
+        "do": "wait_rt"
+      },
+      {
+        "do": "fill_hands"
+      }
+    ],
+    "13966:13923": [
+      {
+        "do": "if",
+        "when": "status:sitting",
+        "then": [
+          {
+            "do": "repeat",
+            "steps": [
+              {
+                "do": "send",
+                "cmd": "row southwest"
+              },
+              {
+                "do": "wait_rt"
+              }
+            ],
+            "until_room_change": true
+          }
+        ],
+        "else": [
+          {
+            "do": "move",
+            "cmd": "swim southwest"
+          }
+        ]
+      },
+      {
+        "do": "fill_hand"
+      }
+    ]
+  }
+}

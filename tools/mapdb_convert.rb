@@ -162,7 +162,8 @@ class MapdbConverter
 
   def convert_wayto(body)
     body = body.strip
-    return Result.new('virtual', nil) if body == 'true'
+    # Virtual pass-through edge (phantom waypoint room): a no-op crossing.
+    return Result.new('virtual', []) if body == 'true'
 
     if (m = body.match(TABLE_JOIN))
       return Result.new('table_join', { 'strategy' => 'table_join', 'table' => m[1] })
@@ -416,6 +417,7 @@ class MapdbConverter
       targets = m[3].scan(QUOTED).map { |a, b| Regexp.escape(a || b) }
       return Result.new('search_until',
                         [{ 'do'    => 'repeat',
+                           'times' => 50,
                            'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] },
                                        { 'do' => 'await', 'for' => targets.join('|'), 'timeout' => 30,
                                          'if_match' => { 'pattern' => m[-3], 'steps' => [{ 'do' => 'break' }] } },

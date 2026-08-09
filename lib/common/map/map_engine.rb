@@ -118,7 +118,10 @@ module Lich
             t = uservar("mapdb_#{arg}")
             !t.nil? && Time.now.to_i < t.to_i
           when 'not'
-            !status?(arg)
+            # Bare names negate statuses (not:hidden); qualified requirements
+            # negate recursively (not:subscription:premium).
+            rest = req[4..]
+            rest.include?(':') ? !requirement?(rest) : !status?(arg)
           when 'is'
             status?(arg)
           when 'pass'
@@ -148,8 +151,7 @@ module Lich
             Time.now.month == arg.to_i
           when 'var'
             name, expected = arg.to_s.split('=', 2)
-            value = uservar("mapdb_#{name}")
-            expected ? value.to_s == expected : !value.nil? && value != false
+            var_check(uservar("mapdb_#{name}"), expected)
           when 'has_item'
             GameObj.inv.any? { |obj| obj.noun == arg || obj.name == arg }
           when 'no_script'
@@ -158,15 +160,67 @@ module Lich
             # Raw UserVars name (legacy variables outside the mapdb_ namespace)
             name, expected = arg.to_s.split('=', 2)
             value = defined?(UserVars) && UserVars.respond_to?(name) ? UserVars.send(name) : nil
-            expected ? value.to_s == expected : !value.nil? && value != false
+            var_check(value, expected)
           when 'society'
+            # society:NAME+RANK, society:NAME (any rank), society:+RANK (any society)
             society, rank = arg.to_s.split('+', 2)
-            defined?(Society) && Society.status == society && Society.rank == rank.to_i
+            return false unless defined?(Society)
+            (society.to_s.empty? || Society.status == society) &&
+              (rank.nil? || rank.empty? || Society.rank == rank.to_i)
           when 'seeking_enabled'
             # go2's opt-in flag for symbol-of-seeking travel
             $go2_use_seeking ? true : false
+          when 'spell_known'
+            arg.to_s.split(',').any? { |num| Spell[num.strip.to_i].known? }
+          when 'level'
+            compare_number(defined?(Stats) ? Stats.level : XMLData.level, arg)
+          when 'skill'
+            # skill:climbing>=30 - permissive when Skills is unavailable,
+            # mirroring the corpus's defined? guards.
+            name, op_value = arg.to_s.split(/(?=[<>])/, 2)
+            return true unless defined?(Skills) && Skills.respond_to?(name)
+            compare_number(Skills.send(name), op_value)
+          when 'climb_vs_encumbrance'
+            # Skills.climbing >= max(encumbrance/1.25, MIN)
+            Skills.climbing >= [XMLData.encumbrance_value / 1.25, arg.to_i].max
+          when 'global'
+            name, expected = arg.to_s.split('=', 2)
+            return false unless SETTABLE_GLOBALS.include?(name)
+            value = name == 'SILVERWOOD_TOWN' ? $SILVERWOOD_TOWN : nil
+            expected ? value.to_s == expected : !value.nil?
+          when 'room_name'
+            re = compile_pattern(arg)
+            !re.nil? && checkroom.to_s =~ re ? true : false
+          when 'location'
+            re = compile_pattern(arg)
+            !re.nil? && Map.current&.location.to_s =~ re ? true : false
+          when 'script_running'
+            arg.to_s.split(',').any? { |name| Script.running?(name.strip) }
+          when 'subscription'
+            if defined?(Account) && Account.respond_to?(:subscription)
+              Account.subscription.to_s.downcase == arg
+            else
+              # Legacy fallback: a set fwi trinket implies premium
+              arg == 'premium' && uservar('mapdb_fwi_trinket').to_s != ''
+            end
+          when 'edge'
+            room_id, dest = arg.to_s.split(/[:+]/, 2)
+            room = Map[room_id.to_i]
+            !room.nil? && !resolve_cost(unwrap(room.timeto[dest])).nil?
           else
             false # unknown vocabulary => not routable
+          end
+        end
+
+        # Compare a number against an op-prefixed bound: '>=30', '>19', '<50'.
+        def compare_number(value, spec)
+          op, bound = spec.to_s.match(/\A(>=|<=|>|<|=)?\s*(\d+)\z/)&.captures
+          return false unless bound
+          case op
+          when '>' then value.to_i > bound.to_i
+          when '<' then value.to_i < bound.to_i
+          when '<=' then value.to_i <= bound.to_i
+          when nil, '=', '>=' then op == '>=' || op.nil? ? value.to_i >= bound.to_i : value.to_i == bound.to_i
           end
         end
 
@@ -187,9 +241,9 @@ module Lich
 
           case step['do']
           when 'send'
-            fput step['cmd']
+            fput expand_tokens(step['cmd'])
           when 'move'
-            move step['cmd']
+            move expand_tokens(step['cmd'])
           when 'await'
             run_await(step)
           when 'wait_rt'
@@ -218,7 +272,9 @@ module Lich
           when 'repeat'
             run_repeat(step)
           when 'set'
-            UserVars.send("mapdb_#{step['var']}=", step['value'])
+            value = step['value'].is_a?(String) ? expand_tokens(step['value']) : step['value']
+            value = value.to_i if step['value'] == '{map_id}'
+            UserVars.send("mapdb_#{step['var']}=", value)
           when 'echo'
             echo step['msg'].to_s
           when 'cast_buff'
@@ -308,11 +364,16 @@ module Lich
         # Move through a random obvious path, honoring optional include /
         # exclude filters (the fixed-maze wander idiom).
         def run_move_random(step)
-          options = checkpaths.dup
-          options &= Array(step['among']) if step['among']
+          options = (step['among'] ? Array(step['among']) : checkpaths.dup)
           options -= Array(step['except']) if step['except']
           raise StepFailed, 'move_random: no eligible paths' if options.empty?
-          move options[rand(options.length)]
+          choice = "#{step['prefix']}#{options[rand(options.length)]}"
+          if step['send']
+            fput choice
+            waitrt?
+          else
+            move choice
+          end
         end
 
         # Capture the current stance, run the nested steps, restore it after
@@ -349,11 +410,16 @@ module Lich
           end
         end
 
-        # Substitute {char} with the character's name inside stored patterns,
-        # so map data never embeds a specific character.
-        def expand_char_tokens(source)
+        # Substitute tokens inside stored commands and patterns so map data
+        # never embeds a specific character or setup:
+        #   {char}          -> character name (regex-escaped)
+        #   {map_id}        -> current mapdb room id
+        #   {uservar:name}  -> UserVars.name
+        def expand_tokens(source)
           return source unless source.is_a?(String)
           source.gsub('{char}', defined?(Char) ? Regexp.escape(Char.name.to_s) : '{char}')
+                .gsub('{map_id}') { (defined?(Map) && Map.current&.id).to_s }
+                .gsub(/\{uservar:(\w+)\}/) { uservar(::Regexp.last_match(1)).to_s }
         end
 
         # Follow another room's edge (the proc idiom Map[N].wayto['D'].call),
@@ -430,12 +496,18 @@ module Lich
           when 'has_item'
             GameObj.inv.any? { |obj| obj.noun == arg || obj.name == arg }
           when 'loot_match'
-            re = compile_pattern(expand_char_tokens(arg))
+            re = compile_pattern(expand_tokens(arg))
             !re.nil? && GameObj.loot.any? { |obj| obj.name =~ re }
+          when 'in_room'
+            XMLData.room_id == arg.to_i || (defined?(Map) && Map.respond_to?(:current) && Map.current&.id == arg.to_i)
+          when 'platinum'
+            $platinum ? true : false
           when 'ice_caution'
             ice_caution?
           else
-            false
+            # Conditions are a superset of requirements: skill/level/
+            # citizenship/etc. work in if steps too.
+            requirement?(cond)
           end
         end
 
@@ -479,6 +551,7 @@ module Lich
           when 'sitting'   then defined?(sitting?) ? sitting? : false
           when 'kneeling'  then defined?(kneeling?) ? kneeling? : false
           when 'standing'  then defined?(standing?) ? standing? : false
+          when 'stunned'   then defined?(stunned?) ? stunned? : false
           else false
           end
         end
@@ -491,6 +564,13 @@ module Lich
         def uservar(name)
           return nil unless defined?(UserVars)
           UserVars.respond_to?(name) ? UserVars.send(name) : nil
+        end
+
+        # Truthiness for user variables: nil/false and the strings a user
+        # types to mean "off" are all falsy.
+        def var_check(value, expected)
+          return value.to_s == expected if expected
+          !value.nil? && value != false && value.to_s !~ /\A(?:no|false|)\z/i
         end
 
         def unwrap(value)
@@ -603,9 +683,12 @@ module Lich
                         set echo cast_buff cross move_with_group try_move cast move_random empty_hand fill_hand
                         preserve_stance escort_wait break break_if_moved set_global].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
-                               month var var_raw society seeking_enabled has_item no_script].freeze
+                               month var var_raw society seeking_enabled has_item no_script spell_known level
+                               skill climb_vs_encumbrance global room_name location script_running subscription
+                               edge].freeze
         FORMULA_NAMES = %w[haste_scaled].freeze
-        CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match].freeze
+        CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match
+                             in_room platinum].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function
@@ -646,6 +729,8 @@ module Lich
             missing = Strategies::REQUIRED_PARAMS[name].reject { |p| value.key?(p) }
             return missing.map { |p| "strategy #{name} missing required param #{p.inspect}" }
           end
+          # An explicit empty array is a valid no-op crossing (virtual edge).
+          return [] if value.is_a?(Array) && value.empty?
           steps = value.is_a?(Array) ? value : Array(value.is_a?(Hash) ? value['steps'] : nil)
           return ['wayto schema entry must be a step list or strategy'] if steps.empty?
           steps.flat_map { |step| errors_for_step(step) }
@@ -676,7 +761,9 @@ module Lich
             conds = step['when_all'] ? Array(step['when_all']) : [step['when']]
             conds.each do |cond|
               kind = cond.to_s.sub(/\Anot:/, '').split(':', 2).first
-              errors << "unknown condition kind #{kind.inspect}" unless CONDITION_KINDS.include?(kind)
+              unless CONDITION_KINDS.include?(kind) || REQUIREMENT_KINDS.include?(kind)
+                errors << "unknown condition kind #{kind.inspect}"
+              end
             end
             errors.concat(Array(step['then']).flat_map { |s| errors_for_step(s) })
             errors.concat(Array(step['else']).flat_map { |s| errors_for_step(s) })
@@ -693,7 +780,9 @@ module Lich
             end
             if step['until']
               kind = step['until'].to_s.sub(/\Anot:/, '').split(':', 2).first
-              errors << "unknown condition kind #{kind.inspect}" unless CONDITION_KINDS.include?(kind)
+              unless CONDITION_KINDS.include?(kind) || REQUIREMENT_KINDS.include?(kind)
+                errors << "unknown condition kind #{kind.inspect}"
+              end
             end
             errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
           when 'move_with_group'
