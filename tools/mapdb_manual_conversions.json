@@ -1305,7 +1305,7 @@
           {
             "do": "await",
             "for": "Your eyes have recovered from the poor light within the niche\\.",
-            "timeout": 30,
+            "timeout": 1800,
             "on_timeout": "fail"
           },
           {
@@ -1620,7 +1620,7 @@
           {
             "do": "await",
             "for": "give it a good yank!|since it is underneath|what were you referring to|that was fun\\.",
-            "timeout": 1,
+            "timeout": 1800,
             "on_timeout": "fail"
           },
           {
@@ -1728,7 +1728,7 @@
           {
             "do": "await",
             "for": "the black mein door has opened",
-            "timeout": 30,
+            "timeout": 1800,
             "on_timeout": "fail"
           },
           {
@@ -1759,7 +1759,7 @@
           {
             "do": "await",
             "for": "the black mein door has opened",
-            "timeout": 30,
+            "timeout": 1800,
             "on_timeout": "fail"
           },
           {
@@ -2291,7 +2291,7 @@
           {
             "do": "await",
             "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
-            "timeout": 600,
+            "timeout": 1800,
             "on_timeout": "fail"
           },
           {
@@ -2303,7 +2303,7 @@
       {
         "do": "await",
         "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
-        "timeout": 600,
+        "timeout": 1800,
         "on_timeout": "fail"
       },
       {
@@ -2327,7 +2327,7 @@
           {
             "do": "await",
             "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
-            "timeout": 600,
+            "timeout": 1800,
             "on_timeout": "fail"
           },
           {
@@ -2339,7 +2339,7 @@
       {
         "do": "await",
         "for": "An elven crewmember scrambles back onto the boat and lowers the gangplank\\.",
-        "timeout": 600,
+        "timeout": 1800,
         "on_timeout": "fail"
       },
       {
@@ -2832,7 +2832,7 @@
       {
         "do": "await",
         "for": "The crew hurriedly puts out the gangplank\\.|River's Rest\\.\\.\\..+ ashore!",
-        "timeout": 600,
+        "timeout": 1800,
         "on_timeout": "fail"
       },
       {
@@ -2844,7 +2844,7 @@
       {
         "do": "await",
         "for": "The crew hurriedly puts out the gangplank\\.|Solhaven\\.\\.\\..+ ashore!",
-        "timeout": 600,
+        "timeout": 1800,
         "on_timeout": "fail"
       },
       {
@@ -2863,7 +2863,7 @@
       {
         "do": "await",
         "for": "You feel the presence of cold hard stone underneath you\\.",
-        "timeout": 30,
+        "timeout": 1800,
         "on_timeout": "fail"
       },
       {

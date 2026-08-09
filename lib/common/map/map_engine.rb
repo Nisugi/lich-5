@@ -524,12 +524,13 @@ module Lich
           # Passive form (no cmd): wait for the line without sending anything.
           hit = step['cmd'] ? dothistimeout(step['cmd'], timeout, pattern) : matchtimeout(timeout, pattern)
           unless hit
+            what = step['cmd'] || "for #{step['for'].inspect}"
             case step['on_timeout'] || 'continue'
             when 'fail'
-              raise StepFailed, "await timed out: #{step['cmd']}"
+              raise StepFailed, "await timed out: #{what}"
             when 'retry'
               hit = dothistimeout(step['cmd'], timeout, pattern)
-              raise StepFailed, "await retry timed out: #{step['cmd']}" unless hit
+              raise StepFailed, "await retry timed out: #{what}" unless hit
             end
           end
           if hit && (br = step['if_match'])
