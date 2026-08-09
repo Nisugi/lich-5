@@ -29,14 +29,15 @@ require crossings if File.exist?(crossings)
 options = { forbid_procs: false }
 OptionParser.new do |opts|
   opts.banner = 'Usage: ruby tools/mapdb_validate.rb (--in MAP.json | --rooms DIR) ' \
-                '[--forbid-procs] [--lint-commands [ALLOWLIST.json]]'
+                '[--forbid-procs] [--lint-commands ALLOWLIST.json]'
   opts.on('--in FILE', 'full mapdb JSON to validate') { |v| options[:in] = v }
   opts.on('--rooms DIR', 'directory of per-room room.json files') { |v| options[:rooms] = v }
   opts.on('--forbid-procs', 'treat any ;e StringProc as an error') { options[:forbid_procs] = true }
-  opts.on('--lint-commands [FILE]',
-          'flag risk-verb commands (give/put/drop/...) not in the allowlist JSON ' \
-          '(default: tools/mapdb_command_allowlist.json)') do |v|
-    options[:lint] = v || File.expand_path('mapdb_command_allowlist.json', __dir__)
+  opts.on('--lint-commands FILE',
+          'flag risk-verb commands (give/put/drop/...) not in the allowlist JSON. ' \
+          'Allowlist ownership lives with the map submission pipeline (cartographer), ' \
+          'not lich-5, so approvals never wait on a Lich release.') do |v|
+    options[:lint] = v
   end
 end.parse!
 abort 'need --in or --rooms' unless options[:in] || options[:rooms]
