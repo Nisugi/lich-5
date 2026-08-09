@@ -50,6 +50,13 @@ RSpec.describe Lich::Common::MapEngine do
       raw = [{ 'do' => 'move', 'cmd' => 'go gate' }]
       expect(JSON.parse(described_class::Crossing.new(raw).to_json)).to eq(raw)
     end
+
+    it 'answers _dump for proc-introspecting scripts (mapmap room merge)' do
+      raw = [{ 'do' => 'cross', 'room' => 284, 'dest' => '3668' }]
+      dump = described_class::Crossing.new(raw)._dump
+      expect(dump).to include('3668') # id-searchable, like StringProc source
+      expect(JSON.parse(dump)).to eq(raw)
+    end
   end
 
   describe 'Cost' do

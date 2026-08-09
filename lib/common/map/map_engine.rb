@@ -700,6 +700,17 @@ module Lich
           Proc
         end
 
+        # Ecosystem scripts introspect proc-like edges via _dump (mapmap's
+        # room merge does `way.class == Proc and way._dump =~ ...`). Return
+        # the schema JSON so display and id-searching work instead of
+        # crashing. A script that rebuilds an edge from this text produces a
+        # StringProc of JSON - harmless at runtime and caught by the
+        # forbid-procs validator on submission; renumbering rooms inside
+        # schema (cross/same_as/in_room ids) is a hand edit.
+        def _dump(_level = nil)
+          @raw.to_json
+        end
+
         def to_json(*args)
           @raw.to_json(*args)
         end
