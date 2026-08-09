@@ -55,6 +55,24 @@ RSpec.describe Lich::Common::MapEngine::Strategies do
     end
   end
 
+  describe Lich::Common::MapEngine::Strategies::DayPass do
+    before { described_class.passes.clear }
+
+    it 'reports a live pass for its town pair only' do
+      described_class.passes['123'] = { :towns   => ["Wehnimer's Landing", 'Icemule Trace'],
+                                        :expires => Time.now + 3600 }
+      expect(described_class.usable?("Wehnimer's Landing", 'Icemule Trace')).to be(true)
+      expect(described_class.usable?('Icemule Trace', "Wehnimer's Landing")).to be(true)
+      expect(described_class.usable?('Solhaven', "Wehnimer's Landing")).to be(false)
+    end
+
+    it 'rejects expired and expiry-less passes' do
+      described_class.passes['1'] = { :towns => %w[A B], :expires => Time.now - 5 }
+      described_class.passes['2'] = { :towns => %w[A B] } # look seen, expiry line not yet
+      expect(described_class.usable?('A', 'B')).to be(false)
+    end
+  end
+
   describe Lich::Common::MapEngine::Strategies::GuidedRoute do
     it 'builds commands from the verb' do
       route = described_class.new('target' => 12677, 'verb' => 'swim', 'dirs' => { '12662' => 'south' })

@@ -33,12 +33,8 @@ module Lich
         'instability' => proc { $mapdb_instability_timeto }
       }
 
-      # Pass caches for 'pass:A+B' requirements, populated by strategies as an
-      # explicit pre-trip phase; cost evaluation only reads them.
-      @pass_cache = {}
-
       class << self
-        attr_reader :event_tables, :pass_cache
+        attr_reader :event_tables
 
         def register_event_table(name, &block)
           @event_tables[name.to_s] = block
@@ -121,9 +117,11 @@ module Lich
           when 'is'
             status?(arg)
           when 'pass'
-            towns = arg.to_s.split('+').sort
-            expires = @pass_cache[towns]
-            !expires.nil? && expires > (Time.now + 10)
+            towns = arg.to_s.split('+')
+            defined?(Strategies::DayPass) && towns.length == 2 &&
+              Strategies::DayPass.usable?(towns[0], towns[1])
+          when 'pass_buyable'
+            uservar('mapdb_buy_day_pass').to_s =~ /^(?:yes|true)$|\b#{Regexp.escape(arg.to_s)}\b/i ? true : false
           when 'prof'
             # Permissive when Stats is unavailable, mirroring the corpus's
             # (!defined?(Stats.prof) or Stats.prof == '...') idiom.
@@ -487,8 +485,8 @@ module Lich
       module Validator
         STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat
                         set echo cast_buff cross move_with_group try_move].freeze
-        REQUIREMENT_KINDS = %w[setting grant not is pass prof race gender citizenship spell climate month var
-                               society seeking_enabled].freeze
+        REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
+                               month var society seeking_enabled].freeze
         FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution path].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze

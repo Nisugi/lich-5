@@ -479,6 +479,220 @@ module Lich
           end
         end
         register 'ice_slope', IceSlope, %w[cmd]
+
+        # Shared Chronomage day-pass state: a downstream hook that learns pass
+        # ids, town pairs, and expiries from "look pass" text, plus the sack
+        # scan that refreshes the cache. The proc original ran the scan inside
+        # timeto evaluation (game commands during pathfinding); here the cost
+        # gate only reads the cache and the crossing strategy owns the scan.
+        module DayPass
+          HOOK_NAME = 'mapdb_day_pass_monitor'
+          MONTH_NUM = { 'Jan' => 1, 'Feb' => 2, 'Mar' => 3, 'Apr' => 4, 'May' => 5, 'Jun' => 6,
+                        'Jul' => 7, 'Aug' => 8, 'Sep' => 9, 'Oct' => 10, 'Nov' => 11, 'Dec' => 12 }.freeze
+          OPEN_REGEX = /^You open|^That is already open\.$|^There doesn't seem to be any way to do that\.$|^What were you referring to\?|^I could not find what you were referring to\./
+          GET_REGEX = /^You (?:shield the opening of .*? from view as you |discreetly |carefully |deftly )?(?:remove|draw|grab|reach|slip|tuck|retrieve|already have|unsheathe|detach)|^Get what\?$|^Why don't you leave some for others\?$|^You need a free hand|^You already have that/
+          PUT_REGEX = /^You (?:attempt to shield .*? from view as you |discreetly |carefully |absent-mindedly )?(?:put|place|slip|tuck|add|hang|drop|untie your|find an incomplete bundle|wipe off .*? and sheathe)|^A sigh of grateful pleasure can be heard as you feed .*? to your|^As you place|^I could not find what you were referring to\.$|^Your bundle would be too large|^The .+ is too large to be bundled\.|^As you place your|^The .*? is already a bundle|^Your .*? won't fit in .*?\.$|^You can't .+ It's closed!$|^You can't put/
+
+          module_function
+
+          def passes
+            $mapdb_day_passes ||= {}
+          end
+
+          # Pure: does the cache hold a live pass for this town pair?
+          def usable?(town_a, town_b)
+            ensure_monitor
+            passes.any? do |_id, h|
+              h[:towns].include?(town_a) && h[:towns].include?(town_b) &&
+                h[:expires] && h[:expires] > (Time.now + 10)
+            end
+          end
+
+          def find_pass(town_a, town_b)
+            passes.keys.find do |id|
+              h = passes[id]
+              h[:towns].include?(town_a) && h[:towns].include?(town_b) &&
+                h[:expires] && h[:expires] > (Time.now + 10)
+            end
+          end
+
+          # Installs the downstream hook that keeps the cache fresh from
+          # "look pass" output. No game IO; safe from cost evaluation.
+          def ensure_monitor
+            return unless defined?(DownstreamHook) && DownstreamHook.respond_to?(:list)
+            return if DownstreamHook.list.include?(HOOK_NAME)
+            last_id = nil
+            hook = proc do |s|
+              if s =~ %r{^Bold calligraphy states simply, "This <a exist="(-?[0-9]+)" noun="pass">pass</a> entitles the original purchaser to one \(1\) day of unlimited travel between the towns of (.+?) and (.+?), commencing}
+                last_id = ::Regexp.last_match(1)
+                passes[last_id] = { :towns => [::Regexp.last_match(2), ::Regexp.last_match(3)] }
+              elsif s =~ %r{^Bold red block letters spelling out "EXPIRED" appear to have been stamped across the face and reverse of the <a exist="(-?\d+)" noun="pass">pass}
+                passes[::Regexp.last_match(1)] = { :towns => [], :expires => Time.now }
+              elsif s =~ /^\[Your pass will expire on \w+ (\w+) *(\d+) (\d+):(\d+):(\d+) ET (\d+)\./
+                if last_id
+                  m = ::Regexp.last_match
+                  passes[last_id][:expires] = Time.at(Time.new(m[6], MONTH_NUM[m[1]], m[2], m[3], m[4], m[5], '-05:00').to_i)
+                  last_id = nil
+                end
+              elsif s =~ /quickly hands you a Chronomage day pass/
+                UserVars.mapdb_find_day_pass = 'yes'
+              end
+              s
+            end
+            DownstreamHook.add(HOOK_NAME, hook)
+            UserVars.mapdb_find_day_pass = 'yes'
+          end
+
+          def find_sack
+            sack_name = UserVars.day_pass_sack
+            return nil unless sack_name
+            GameObj.inv.find { |obj| obj.noun == sack_name } ||
+              GameObj.inv.find { |obj| obj.name == sack_name } ||
+              GameObj.inv.find { |obj| obj.name =~ /\b#{Regexp.escape(sack_name)}$/i } ||
+              GameObj.inv.find { |obj| obj.name =~ /\b#{sack_name.split(' ').collect { |n| Regexp.escape(n) }.join('.*\\b')}/i }
+          end
+
+          # Game IO: open the sack if needed, look at unknown passes so the
+          # monitor learns them, prune ids no longer present. The crossing
+          # strategy calls this; cost evaluation never does.
+          def scan!
+            ensure_monitor
+            return unless UserVars.mapdb_find_day_pass == 'yes'
+            sack = find_sack
+            unless sack
+              echo 'warning: day_pass_sack is not set or not found; cannot scan Chronomage day passes.'
+              return
+            end
+            close_sack = false
+            if sack.contents.nil?
+              open_result = dothistimeout "open ##{sack.id}", 10, OPEN_REGEX
+              if open_result =~ /^You open/
+                close_sack = true
+              else
+                dothistimeout "look in ##{sack.id}", 10, /In the .*? you see/
+              end
+            end
+            if sack.contents
+              passes.keys.each do |id|
+                passes.delete(id) unless sack.contents.any? { |obj| obj.id == id }
+              end
+              sack.contents.find_all { |obj| obj.name == 'Chronomage day pass' }.each do |pass|
+                next if passes[pass.id]
+                dothistimeout "look ##{pass.id}", 10,
+                              /^Bold calligraphy states simply|^Bold red block letters spelling out "EXPIRED"|^I could not find/
+              end
+              UserVars.mapdb_find_day_pass = 'no'
+            end
+            dothistimeout "close ##{sack.id}", 3, /^You close/ if close_sack
+          end
+        end
+
+        # Chronomage day-pass travel between town pairs. Parameters carry the
+        # per-booth differences (NPC, ask keyword, booth moves, bank walk);
+        # the shared program lives here once.
+        #
+        #   { "strategy" => "chronomage_day_pass",
+        #     "towns" => ["Wehnimer's Landing", "Icemule Trace"],
+        #     "buy_token" => "wl,imt", "npc" => "clerk", "ask" => "icemule",
+        #     "enter" => "south", "exit" => "north",
+        #     "bank_to" => ["up", "north", ...], "bank_from" => [...] }
+        class ChronomageDayPass
+          def initialize(params)
+            @towns = Array(params['towns'])
+            @buy_token = params['buy_token']
+            @npc = params['npc']
+            @ask = params['ask']
+            @enter = params['enter']
+            @exit = params['exit']
+            @bank_to = Array(params['bank_to'])
+            @bank_from = Array(params['bank_from'])
+            @withdraw = params['withdraw'] || 5000
+          end
+
+          def buy_enabled?
+            UserVars.mapdb_buy_day_pass.to_s =~ /^(?:yes|true)$|\b#{Regexp.escape(@buy_token.to_s)}\b/i
+          end
+
+          def run
+            raise StepFailed, 'chronomage_day_pass requires two towns' unless @towns.length == 2
+            DayPass.scan!
+            sack = DayPass.find_sack
+            raise StepFailed, 'chronomage_day_pass: day_pass_sack not found' unless sack
+
+            close_sack = false
+            if sack.contents.nil?
+              open_result = dothistimeout "open ##{sack.id}", 10, DayPass::OPEN_REGEX
+              if open_result =~ /^You open/
+                close_sack = true
+              else
+                dothistimeout "look in ##{sack.id}", 10, /In the .*? you see/
+              end
+            end
+            empty_hand
+            drop_expired
+            pass_id = DayPass.find_pass(@towns[0], @towns[1])
+            if pass_id
+              dothistimeout "get ##{pass_id}", 10, DayPass::GET_REGEX
+            else
+              pass_id = buy_pass
+            end
+            if pass_id
+              dothistimeout "raise ##{pass_id}", 10,
+                            /whirlwind of color subsides|pass is expired|not valid for departures|As you go to raise your pass, you realize|Raise what/
+              dothistimeout "_drag ##{pass_id} ##{sack.id}", 10, DayPass::PUT_REGEX
+            else
+              DayPass.passes.clear
+              UserVars.mapdb_find_day_pass = 'yes'
+              $restart_go2 = true
+            end
+            fill_hand
+            dothistimeout "close ##{sack.id}", 2, /^You close/ if close_sack
+            !pass_id.nil?
+          end
+
+          private
+
+          def drop_expired
+            DayPass.passes.keys.each do |id|
+              next unless DayPass.passes[id][:expires] && DayPass.passes[id][:expires] < (Time.now - 10)
+              dothistimeout "_drag ##{id} drop", 2, /^As you let go|^You drop/
+              DayPass.passes.delete(id)
+            end
+          end
+
+          # Visit the booth NPC, banking for silvers when short (and allowed).
+          # Returns the purchased pass id, or nil.
+          def buy_pass
+            return nil unless buy_enabled?
+            move @enter
+            fput 'unhide' if hidden? || invisible?
+            ask_cmd = "ask #{@npc} for #{@ask}"
+            dothistimeout ask_cmd, 10, /says to you/
+            result = dothistimeout ask_cmd, 10, /don't have enough|quickly hands you/
+            if result =~ /don't have enough/ && $go2_get_silvers && @bank_to.any?
+              @bank_to.each { |dir| move dir }
+              dothistimeout "withdraw #{@withdraw}", 10, /carefully records|through the books/
+              @bank_from.each { |dir| move dir }
+              fput 'unhide' if hidden? || invisible?
+              result = dothistimeout ask_cmd, 10, /says to you|don't have enough|quickly hands you/
+              result = dothistimeout ask_cmd, 10, /don't have enough|quickly hands you/ if result =~ /says to you/
+            end
+            if result =~ /quickly hands you/
+              pass_id = GameObj.right_hand.noun == 'pass' ? GameObj.right_hand.id : nil
+              pass_id ||= GameObj.left_hand.noun == 'pass' ? GameObj.left_hand.id : nil
+              fput "look ##{pass_id}" # teaches the monitor this pass
+              move @exit
+              return pass_id
+            end
+            if result =~ /don't have enough/
+              echo 'error: You are too poor to buy Chronomage day passes.  Turning off buy_day_pass setting.'
+              sleep 3
+              UserVars.mapdb_buy_day_pass = 'no'
+            end
+            nil
+          end
+        end
+        register 'chronomage_day_pass', ChronomageDayPass, %w[towns npc ask enter exit]
       end
     end
   end

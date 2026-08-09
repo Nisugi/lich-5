@@ -59,7 +59,32 @@ class MapdbConverter
                         { 'cost'     => numeric(m[3]),
                           'requires' => ["setting:#{m[1]}", "grant:#{m[2]}", 'not:hidden', 'not:invisible'] })
     end
+    if (r = convert_day_pass_timeto(body))
+      return r
+    end
     convert_timeto_char_gates(body) || convert_timeto_var_gates(body)
+  end
+
+  # The day-pass timeto procs install the pass monitor and scan the sack
+  # during cost evaluation; under the schema the monitor/scan belong to the
+  # crossing strategy, and only the pure cost gate is converted.
+  def convert_day_pass_timeto(body)
+    return nil unless body.include?('mapdb_day_pass_monitor')
+
+    towns = nil
+    if (m = body.match(/h\[:towns\]\.include\?\((['"])(.+?)\1\)\s+and\s+h\[:towns\]\.include\?\((['"])(.+?)\3\)/))
+      towns = [m[2], m[4]]
+    end
+    live_cost = body[/\}\s*\n\s*(#{NUM})\s*\n\s*elsif UserVars\.mapdb_buy_day_pass/m, 1]
+    buy_token = body[/mapdb_buy_day_pass\.to_s\s*=~\s*\/\^\(yes\|true\)\$\|\\b([a-z,]+)\\b\/i/, 1]
+    buy_cost = body[/\n\s*(#{NUM})\s*\n\s*else\s*\n\s*nil\s*\n/m, 1]
+    return nil unless towns && live_cost && buy_token && buy_cost
+
+    Result.new('day_pass_gate',
+               { 'cost'     => numeric(live_cost),
+                 'requires' => ['setting:day_pass', "pass:#{towns[0]}+#{towns[1]}"],
+                 'else'     => { 'cost'     => numeric(buy_cost),
+                                 'requires' => ['setting:day_pass', "pass_buyable:#{buy_token}"] } })
   end
 
   NUM = /\d+(?:\.\d+)?/
@@ -174,6 +199,9 @@ class MapdbConverter
     if (m = body.match(/\A\$mapdb_seeking_destination\s*=\s*(\d+);\s*Map\[3600\]\.wayto\['3600'\]\.call;?\z/))
       return Result.new('voln_seeking', { 'strategy' => 'voln_seeking', 'target' => m[1].to_i })
     end
+    if (r = convert_day_pass_wayto(body))
+      return r
+    end
     if (m = body.match(/\Atarget_room_id\s*=\s*(\d+);\s*maze_rooms\s*=\s*(#{INT_LIST});\s*
                         \$minotaur_maze_dirs\s*\|\|=\s*Hash\.new;\s*loop\s*\{.*\}\z/xm))
       return Result.new('shifting_maze',
@@ -247,6 +275,33 @@ class MapdbConverter
       return :default
     end
     convert_command_sequence(tail)
+  end
+
+  # The six Chronomage day-pass programs share one body parameterized by
+  # booth. Rather than one giant regex, extract each parameter with its own
+  # anchor and emit only when every extraction succeeds.
+  def convert_day_pass_wayto(body)
+    return nil unless body.include?('$mapdb_day_passes') && body =~ /raise\s+\#\#?\{pass_id\}/
+
+    towns = body.match(/pass_route\s*=\s*\[\s*"([^"]+)"\s*,\s*"([^"]+)"\s*,?\s*\]/)&.captures
+    if towns.nil? && (m = body.match(/\[:towns\]\.include\?\((['"])(.+?)\1\)\s+and\s+
+                                      \$mapdb_day_passes\[id\]\[:towns\]\.include\?\((['"])(.+?)\3\)/x))
+      towns = [m[2], m[4]]
+    end
+    buy_token = body[/mapdb_buy_day_pass\.to_s\s*=~\s*\/\^\(yes\|true\)\$\|\\b([a-z,]+)\\b\/i/, 1]
+    enter = body[/elsif\s+UserVars\.mapdb_buy_day_pass.*?\n\s*move '([^']+)'/m, 1]
+    npc, ask = body.match(/ask (\w+) for (\w+)/)&.captures
+    exits = body[/fput "look \#\#\{pass_id\}"\s*\n\s*move '([^']+)'/m, 1]
+    walks = body.scan(/\[\s*((?:'[^']+',?\s*)+)\]\.each\s*\{\s*\|dir\|\s*move dir\s*\}/).map { |w| w[0].scan(/'([^']+)'/).flatten }
+    withdraw = body[/withdraw (\d+)/, 1]
+    return nil unless towns && buy_token && enter && npc && ask && exits && walks.length == 2 && withdraw
+
+    Result.new('chronomage_day_pass',
+               { 'strategy' => 'chronomage_day_pass', 'towns' => towns,
+                 'buy_token' => buy_token, 'npc' => npc, 'ask' => ask,
+                 'enter' => enter, 'exit' => exits,
+                 'bank_to' => walks[0], 'bank_from' => walks[1],
+                 'withdraw' => withdraw.to_i })
   end
 
   ICE_GATE = /\Aif\s+\(UserVars\.mapdb_ice_mode\s*==\s*'wait'\)\s+or\s+

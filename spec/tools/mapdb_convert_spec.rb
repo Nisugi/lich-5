@@ -81,6 +81,28 @@ RSpec.describe MapdbConverter do
       expect(timeto(body).schema).to eq({ 'formula' => 'haste_scaled', 'base' => 15, 'else' => 15.2 })
     end
 
+    it 'converts day-pass gates to pure pass requirements' do
+      body = <<~PROC
+        if UserVars.mapdb_use_day_pass == true
+           unless DownstreamHook.list.include?('mapdb_day_pass_monitor')
+           end
+           if $mapdb_day_passes.any? { |id,h| h[:towns].include?("Solhaven") and h[:towns].include?("Wehnimer's Landing") and h[:expires] > (Time.now + 10) }
+              0.8
+           elsif UserVars.mapdb_buy_day_pass.to_s =~ /^(yes|true)$|\\bsol,wl\\b/i
+              4.4
+           else
+              nil
+           end
+        else
+           nil
+        end
+      PROC
+      r = timeto(body)
+      expect(r.idiom).to eq('day_pass_gate')
+      expect(r.schema['requires']).to eq(['setting:day_pass', "pass:Solhaven+Wehnimer's Landing"])
+      expect(r.schema['else']['requires']).to eq(['setting:day_pass', 'pass_buyable:sol,wl'])
+    end
+
     it 'leaves unrecognized bodies alone' do
       expect(timeto("key=GameObj.inv.find{|k| k.name=='ruby'}; key ? 1 : nil")).to be_nil
     end
