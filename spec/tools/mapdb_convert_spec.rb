@@ -146,6 +146,53 @@ RSpec.describe MapdbConverter do
     it 'leaves unrecognized stateful services alone' do
       expect(wayto("$mapdb_seeking_destination = 12603;Map[3600].wayto['3600'].call;")).to be_nil
     end
+
+    it 'converts the ice-caution gate to a named condition' do
+      body = "if (UserVars.mapdb_ice_mode == 'wait') or ((UserVars.mapdb_ice_mode != 'run') and " \
+             "((XMLData.encumbrance_value > 50) or ((Skills.survival < 50) and not Spell['Haste'].active?))); " \
+             "sleep 0.2; echo 'trying not to slip...'; sleep 4; end; move 'west'"
+      r = wayto(body)
+      expect(r.idiom).to eq('ice_gate')
+      expect(r.schema.first['when']).to eq('ice_caution')
+      expect(r.schema.last).to eq({ 'do' => 'move', 'cmd' => 'west' })
+    end
+
+    it 'converts posture branches to when_all conditions' do
+      r = wayto("fput 'stand' unless kneeling? or (Stats.race =~ /Dwarf|Halfling|Gnome/); move 'north'")
+      expect(r.schema.first['when_all']).to eq(['not:status:kneeling', 'not:race_match:Dwarf|Halfling|Gnome'])
+    end
+
+    it 'converts sitting branches to a repeat-until-moved' do
+      r = wayto("if checksitting;while Room.current.id == 13966;fput('swim north');waitrt?;end;else;move('north');end;")
+      expect(r.idiom).to eq('sitting_branch')
+      expect(r.schema.first['then'].first['do']).to eq('repeat')
+    end
+
+    it 'converts wayto delegation to a cross step' do
+      r = wayto("Map[284].wayto['3668'].call;")
+      expect(r.schema).to eq([{ 'do' => 'cross', 'room' => 284, 'dest' => '3668' }])
+    end
+
+    it 'converts uservar sets and command repeats inside sequences' do
+      r = wayto("2.times{fput 'event transport duskruin'};UserVars.mapdb_duskruin_origin = 7;")
+      expect(r.schema).to eq([{ 'do' => 'repeat', 'times' => 2,
+                                'steps' => [{ 'do' => 'send', 'cmd' => 'event transport duskruin' }] },
+                              { 'do' => 'set', 'var' => 'duskruin_origin', 'value' => 7 }])
+    end
+
+    it 'converts the climb-tail patrol variant with enter steps' do
+      body = "start_room = [ 2579, nil, 2581 ]; dirs = [ 'east', 'west' ]; " \
+             'if index = start_room.index(Room.current.id); ' \
+             "until checkloot.include?('thread'); move dirs[index]; index += 1; " \
+             'index = 0 if index >= dirs.length; end; ' \
+             "move 'climb thread'; waitrt?; fput 'stand'; " \
+             "else; echo 'error: mini-script expected a different room'; end; $go2_restart = true"
+      r = wayto(body)
+      expect(r.schema['rooms']).to eq([2579, nil, 2581])
+      expect(r.schema['enter']).to eq([{ 'do' => 'move', 'cmd' => 'climb thread' },
+                                       { 'do' => 'wait_rt' },
+                                       { 'do' => 'send', 'cmd' => 'stand' }])
+    end
     # rubocop:enable Lint/InterpolationCheck
   end
 

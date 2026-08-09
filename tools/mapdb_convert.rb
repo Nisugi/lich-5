@@ -131,6 +131,9 @@ class MapdbConverter
     if (r = convert_wayto_strategy(body))
       return r
     end
+    if (r = convert_wayto_conditionals(body))
+      return r
+    end
     if (r = convert_wayto_special(body))
       return r
     end
@@ -143,6 +146,7 @@ class MapdbConverter
   end
 
   INT_LIST = /\[\s*\d+(?:\s*,\s*\d+)*\s*\]/
+  NILINT_LIST = /\[\s*(?:\d+|nil)(?:\s*,\s*(?:\d+|nil))*\s*\]/
 
   # Stateful service families that reference strategy classes.
   def convert_wayto_strategy(body)
@@ -167,18 +171,75 @@ class MapdbConverter
                         { 'strategy' => 'guided_route', 'target' => m[3].to_i, 'verb' => 'swim',
                           'dirs' => dirs, 'hands_free_in' => m[1].scan(/\d+/).map(&:to_i) })
     end
-    if (m = body.match(/\Astart_room\s*=\s*(#{INT_LIST});\s*dirs\s*=\s*\[([^\]]+)\];\s*
+    if (m = body.match(/\Astart_room\s*=\s*(#{NILINT_LIST});\s*dirs\s*=\s*\[([^\]]+)\];\s*
                         if\s+index\s*=\s*start_room\.index\(Room\.current\.id\);\s*
                         until\s+(checkloot\.include\?\('\w+'\)(?:\s+or\s+checkloot\.include\?\('\w+'\))*);\s*
                         move\s+dirs\[index\];\s*index\s*\+=\s*1;\s*index\s*=\s*0\s+if\s+index\s*>=\s*dirs\.length;\s*end;\s*
-                        (if\s+checkloot.*?end);;?\s*
+                        (?:(if\s+checkloot.*?end)|move\s+'(climb\ \w+)';\s*waitrt\?;\s*fput\s+'stand');;?\s*
                         else;\s*echo\s+#{QUOTED};\s*end;?\s*\$go2_restart\s*=\s*true\z/xm))
       objects = m[3].scan(/checkloot\.include\?\('(\w+)'\)/).flatten
-      return Result.new('patrol_search',
-                        { 'strategy' => 'patrol_search',
-                          'rooms'    => m[1].scan(/\d+/).map(&:to_i),
-                          'dirs'     => m[2].scan(/'([^']+)'/).flatten,
-                          'objects'  => objects })
+      schema = { 'strategy' => 'patrol_search',
+                 'rooms'    => m[1].scan(/\d+|nil/).map { |t| t == 'nil' ? nil : t.to_i },
+                 'dirs'     => m[2].scan(/'([^']+)'/).flatten,
+                 'objects'  => objects }
+      if m[5] # climb-in tail (spider thread / staircase family)
+        schema['enter'] = [{ 'do' => 'move', 'cmd' => m[5] },
+                           { 'do' => 'wait_rt' },
+                           { 'do' => 'send', 'cmd' => 'stand' }]
+      end
+      return Result.new('patrol_search', schema)
+    end
+    nil
+  end
+
+  ICE_GATE = /\Aif\s+\(UserVars\.mapdb_ice_mode\s*==\s*'wait'\)\s+or\s+
+              \(\(UserVars\.mapdb_ice_mode\s*!=\s*'run'\)\s+and\s+
+              \(\(XMLData\.encumbrance_value\s*>\s*50\)\s+or\s+
+              \(\(Skills\.survival\s*<\s*50\)\s+and\s+not\s+Spell\['Haste'\]\.active\?\)\)\);\s*
+              sleep\s+0\.2;\s*echo\s+#{QUOTED};\s*sleep\s+4;\s*end;\s*move\s+#{QUOTED}\z/x
+
+  CAST_BUFF = /if\s+\w+\s*=\s*Spell\[(\d+)\]\s+and\s+\w+\.known\?\s+and\s+\w+\.affordable\?\s+and\s+not\s+\w+\.active\?;\s*\w+\.cast;\s*end;\s*/
+
+  # Conditional-wait, buff-cast, delegation, and posture families.
+  def convert_wayto_conditionals(body)
+    if (m = body.match(ICE_GATE))
+      return Result.new('ice_gate',
+                        [{ 'do' => 'if', 'when' => 'ice_caution',
+                           'then' => [{ 'do' => 'sleep', 'seconds' => 0.2 },
+                                      { 'do' => 'echo', 'msg' => m[1] || m[2] },
+                                      { 'do' => 'sleep', 'seconds' => 4 }] },
+                         { 'do' => 'move', 'cmd' => m[3] || m[4] }])
+    end
+    if (m = body.match(/\Aif\s+checksitting;\s*while\s+Room\.current\.id\s*==\s*\d+;\s*
+                        fput\(#{QUOTED}\);\s*waitrt\?;\s*end;\s*else;\s*move\(#{QUOTED}\);\s*end;?\z/x))
+      return Result.new('sitting_branch',
+                        [{ 'do' => 'if', 'when' => 'status:sitting',
+                           'then' => [{ 'do' => 'repeat', 'until_room_change' => true,
+                                        'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] },
+                                                    { 'do' => 'wait_rt' }] }],
+                           'else' => [{ 'do' => 'move', 'cmd' => m[3] || m[4] }] }])
+    end
+    if (m = body.match(/\Afput\s+#{QUOTED}\s+unless\s+kneeling\?\s+or\s+
+                        \(Stats\.race\s*=~\s*\/([^\/]+)\/\);\s*move\s+#{QUOTED}\z/x))
+      return Result.new('posture_branch',
+                        [{ 'do' => 'if', 'when_all' => ['not:status:kneeling', "not:race_match:#{m[3]}"],
+                           'then' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] },
+                         { 'do' => 'move', 'cmd' => m[4] || m[5] }])
+    end
+    if (m = body.match(/\A((?:#{CAST_BUFF})+)move\s+#{QUOTED};\s*waitrt\?;?\z/))
+      spells = m[1].scan(CAST_BUFF).flatten.map(&:to_i)
+      steps = spells.map { |s| { 'do' => 'cast_buff', 'spell' => s } }
+      steps << { 'do' => 'move', 'cmd' => m[2] || m[3] }
+      steps << { 'do' => 'wait_rt' }
+      return Result.new('cast_buff_move', steps)
+    end
+    if (m = body.match(/\AMap\[(\d+)\]\.wayto\[#{QUOTED}\]\.call;?\s*(?:#.*)?\z/))
+      return Result.new('cross_delegation', [{ 'do' => 'cross', 'room' => m[1].to_i, 'dest' => m[2] || m[3] }])
+    end
+    if (m = body.match(/\Afput\s+#{QUOTED}[;\s]+waitfor\s+#{QUOTED};?\z/))
+      return Result.new('send_waitfor',
+                        [{ 'do' => 'await', 'cmd' => m[1] || m[2],
+                           'for' => Regexp.escape(m[3] || m[4]), 'timeout' => 30 }])
     end
     nil
   end
@@ -237,12 +298,21 @@ class MapdbConverter
 
   # Sequences built only from fput/put/move/waitrt?/sleep, ';'-separated.
   SEQ_TOKENS = {
-    /\A(?:fput|put)\s+#{QUOTED}\z/ => ->(m) { { 'do' => 'send', 'cmd' => m[1] || m[2] } },
-    /\Amove\s+#{QUOTED}\z/         => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
-    /\Amove\(#{QUOTED}\)\z/        => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
-    /\Awaitrt\?\z/                 => ->(_) { { 'do' => 'wait_rt' } },
-    /\Asleep\s+(\d+(?:\.\d+)?)\z/  => ->(m) { { 'do' => 'sleep', 'seconds' => m[1].to_f } },
-    /\Apause\s+(\d+(?:\.\d+)?)\z/  => ->(m) { { 'do' => 'sleep', 'seconds' => m[1].to_f } }
+    /\A(?:fput|put)\s+#{QUOTED}\z/                  => ->(m) { { 'do' => 'send', 'cmd' => m[1] || m[2] } },
+    /\Amove\s+#{QUOTED}\z/                          => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
+    /\Amove\(#{QUOTED}\)\z/                         => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
+    /\Awaitrt\?\z/                                  => ->(_) { { 'do' => 'wait_rt' } },
+    /\Asleep\s+(\d+(?:\.\d+)?)\z/                   => ->(m) { { 'do' => 'sleep', 'seconds' => m[1].to_f } },
+    /\Apause\s+(\d+(?:\.\d+)?)\z/                   => ->(m) { { 'do' => 'sleep', 'seconds' => m[1].to_f } },
+    /\Aempty_hands\z/                               => ->(_) { { 'do' => 'empty_hands' } },
+    /\Afill_hands\z/                                => ->(_) { { 'do' => 'fill_hands' } },
+    /\A\$go2_restart\s*=\s*true\z/                  => ->(_) { { 'do' => 'replan' } },
+    /\AUserVars\.mapdb_(\w+)\s*=\s*(\d+|nil)\z/     => lambda { |m|
+      { 'do' => 'set', 'var' => m[1], 'value' => m[2] == 'nil' ? nil : m[2].to_i }
+    },
+    /\A(\d+)\.times\s*\{\s*fput\s+#{QUOTED}\s*\}\z/ => lambda { |m|
+      { 'do' => 'repeat', 'times' => m[1].to_i, 'steps' => [{ 'do' => 'send', 'cmd' => m[2] || m[3] }] }
+    }
   }.freeze
 
   def convert_command_sequence(body)

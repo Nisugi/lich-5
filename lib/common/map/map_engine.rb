@@ -162,8 +162,12 @@ module Lich
             sleep 0.1 while XMLData.room_id == start && Time.now < deadline
             raise StepFailed, 'wait_room_change timed out' if XMLData.room_id == start
           when 'if'
-            branch = condition?(step['when']) ? step['then'] : step['else']
-            Array(branch).each { |s| run_step(s) }
+            met = if step['when_all']
+                    Array(step['when_all']).all? { |c| condition?(c) }
+                  else
+                    condition?(step['when'])
+                  end
+            Array(met ? step['then'] : step['else']).each { |s| run_step(s) }
           when 'empty_hands'
             empty_hands
           when 'fill_hands'
@@ -172,9 +176,27 @@ module Lich
             $go2_restart = true
           when 'repeat'
             run_repeat(step)
+          when 'set'
+            UserVars.send("mapdb_#{step['var']}=", step['value'])
+          when 'echo'
+            echo step['msg'].to_s
+          when 'cast_buff'
+            spell = Spell[step['spell']]
+            spell.cast if spell && spell.known? && spell.affordable? && !spell.active?
+          when 'cross'
+            run_cross_edge(step)
           else
             raise StepFailed, "unknown step #{step['do'].inspect}"
           end
+        end
+
+        # Follow another room's edge (the proc idiom Map[N].wayto['D'].call),
+        # so shared crossings are stored once and referenced.
+        def run_cross_edge(step)
+          room = Map[step['room'].to_i]
+          way = room && room.wayto[step['dest'].to_s]
+          raise StepFailed, "cross: no edge #{step['room']} -> #{step['dest']}" if way.nil?
+          way.respond_to?(:call) ? way.call : move(way)
         end
 
         # Bounded loop: runs its steps up to `times` iterations (hard-capped),
@@ -215,6 +237,7 @@ module Lich
 
         def condition?(cond)
           return false unless cond.is_a?(String)
+          return !condition?(cond[4..]) if cond.start_with?('not:')
           kind, arg = cond.split(':', 2)
           case kind
           when 'spell'
@@ -223,9 +246,24 @@ module Lich
             status?(arg)
           when 'setting'
             setting_on?(arg)
+          when 'race_match'
+            re = compile_pattern(arg)
+            !re.nil? && defined?(Stats) && Stats.race.to_s =~ re ? true : false
+          when 'ice_caution'
+            ice_caution?
           else
             false
           end
+        end
+
+        # The uniform icy-terrain caution gate from the Icemule approach procs:
+        # wait out the ice unless the character is equipped to run it.
+        def ice_caution?
+          mode = uservar('mapdb_ice_mode')
+          return true if mode == 'wait'
+          return false if mode == 'run'
+          XMLData.encumbrance_value > 50 ||
+            (Skills.survival < 50 && !Spell['Haste'].active?)
         end
 
         # Pattern cache: compiled once per unique source; a pattern that fails
@@ -256,6 +294,8 @@ module Lich
           when 'hidden'    then defined?(hidden?) ? hidden? : false
           when 'invisible' then defined?(invisible?) ? invisible? : false
           when 'sitting'   then defined?(sitting?) ? sitting? : false
+          when 'kneeling'  then defined?(kneeling?) ? kneeling? : false
+          when 'standing'  then defined?(standing?) ? standing? : false
           else false
           end
         end
@@ -376,9 +416,10 @@ module Lich
       # Pure, offline validation of schema entries: structure, vocabulary, and
       # regex compilation. Suitable for submission CI and a local lint command.
       module Validator
-        STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat].freeze
+        STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat
+                        set echo cast_buff cross].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass prof race gender citizenship spell climate month var].freeze
-        CONDITION_KINDS = %w[spell status setting].freeze
+        CONDITION_KINDS = %w[spell status setting race_match ice_caution].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function
@@ -437,10 +478,19 @@ module Lich
           when 'sleep'
             errors << 'sleep requires numeric seconds' unless step['seconds'].is_a?(Numeric)
           when 'if'
-            kind = step['when'].to_s.split(':', 2).first
-            errors << "unknown condition kind #{kind.inspect}" unless CONDITION_KINDS.include?(kind)
+            conds = step['when_all'] ? Array(step['when_all']) : [step['when']]
+            conds.each do |cond|
+              kind = cond.to_s.sub(/\Anot:/, '').split(':', 2).first
+              errors << "unknown condition kind #{kind.inspect}" unless CONDITION_KINDS.include?(kind)
+            end
             errors.concat(Array(step['then']).flat_map { |s| errors_for_step(s) })
             errors.concat(Array(step['else']).flat_map { |s| errors_for_step(s) })
+          when 'set'
+            errors << 'set requires var' unless step['var'].is_a?(String)
+          when 'cast_buff'
+            errors << 'cast_buff requires a numeric spell' unless step['spell'].is_a?(Integer)
+          when 'cross'
+            errors << 'cross requires room and dest' unless step['room'].is_a?(Integer) && step['dest']
           when 'repeat'
             errors << 'repeat requires steps' if Array(step['steps']).empty?
             unless step['until_room'] || step['until_room_change'] || step['times'].is_a?(Numeric)

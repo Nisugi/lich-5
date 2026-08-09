@@ -262,9 +262,10 @@ module Lich
           MAX_MOVES = 200
 
           def initialize(params)
-            @rooms = Array(params['rooms']).map(&:to_i)
+            @rooms = Array(params['rooms']).map { |r| r&.to_i } # nil = unmapped loop slot
             @dirs = Array(params['dirs'])
             @objects = Array(params['objects'])
+            @enter = params['enter'] # optional step list; default is go <found>
           end
 
           def run
@@ -281,7 +282,11 @@ module Lich
               index = 0 if index >= @dirs.length
             end
             raise StepFailed, 'patrol_search never found its exit object' unless found
-            move "go #{found}"
+            if @enter
+              @enter.each { |s| MapEngine.run_step(s) }
+            else
+              move "go #{found}"
+            end
             $go2_restart = true
             true
           end
