@@ -97,8 +97,10 @@ module Lich
           case name
           when 'haste_scaled'
             # Haste-assisted crossing: walk time scales down with elemental
-            # lore and MjE/level, floored at 40% of base.
-            if defined?(Spell) && Spell['Haste'].active?
+            # lore and MjE/level, floored at 40% of base. Spell lookup can
+            # return nil (test instances, partial spell lists) - that means
+            # the base cost, not an error.
+            if defined?(Spell) && Spell['Haste']&.active?
               base = entry['base'].to_f
               factor = [((80 - ([Spells.majorelemental, Stats.level].min / 5) - (Skills.elair / 5)) / 100.0), 0.4].max
               (base * factor).floor + 0.2
@@ -106,6 +108,16 @@ module Lich
               entry['else'].is_a?(Hash) ? resolve_cost(entry['else']) : entry['else']
             end
           end
+        end
+
+        # Log each distinct failing cost entry once per session, so a broken
+        # requirement is discoverable without spamming every dijkstra pass.
+        def note_cost_error(raw, error)
+          @cost_errors ||= {}
+          key = raw.inspect
+          return if @cost_errors[key]
+          @cost_errors[key] = true
+          echo "MapEngine: cost evaluation failed (edge treated as not routable): #{error.class}: #{error.message} for #{key}" if defined?(echo)
         end
 
         def requirement?(req)
@@ -144,7 +156,7 @@ module Lich
           when 'citizenship'
             defined?(Char) && Char.respond_to?(:citizenship) && Char.citizenship == arg
           when 'spell'
-            defined?(Spell) && Spell[arg =~ /^\d+$/ ? arg.to_i : arg].active?
+            defined?(Spell) && Spell[arg =~ /^\d+$/ ? arg.to_i : arg]&.active? ? true : false
           when 'climate'
             defined?(Room) && Room.current&.climate == arg
           when 'month'
@@ -171,7 +183,7 @@ module Lich
             # go2's opt-in flag for symbol-of-seeking travel
             $go2_use_seeking ? true : false
           when 'spell_known'
-            arg.to_s.split(',').any? { |num| Spell[num.strip.to_i].known? }
+            arg.to_s.split(',').any? { |num| Spell[num.strip.to_i]&.known? }
           when 'level'
             compare_number(defined?(Stats) ? Stats.level : XMLData.level, arg)
           when 'skill'
@@ -533,7 +545,7 @@ module Lich
           kind, arg = cond.split(':', 2)
           case kind
           when 'spell'
-            Spell[arg =~ /^\d+$/ ? arg.to_i : arg].active?
+            Spell[arg =~ /^\d+$/ ? arg.to_i : arg]&.active? ? true : false
           when 'status'
             status?(arg)
           when 'setting'
@@ -571,7 +583,7 @@ module Lich
           return true if mode == 'wait'
           return false if mode == 'run'
           XMLData.encumbrance_value > 50 ||
-            (Skills.survival < 50 && !Spell['Haste'].active?)
+            (Skills.survival < 50 && !Spell['Haste']&.active?)
         end
 
         # Pattern cache: compiled once per unique source; a pattern that fails
@@ -642,6 +654,12 @@ module Lich
 
         def call(*_args)
           MapEngine.resolve_cost(@raw)
+        rescue StandardError => e
+          # A raising cost inside dijkstra would abort the entire search and
+          # fail every route. The contract is: evaluation errors mean this
+          # edge is not routable, nothing more.
+          MapEngine.note_cost_error(@raw, e)
+          nil
         end
 
         def to_json(*args)
