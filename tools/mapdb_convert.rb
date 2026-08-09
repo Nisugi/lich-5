@@ -23,6 +23,7 @@ $LOAD_PATH.unshift(lib_dir) unless $LOAD_PATH.include?(lib_dir)
 
 module Lich; module Common; end; end
 require 'common/map/map_engine'
+require 'common/map/map_strategies'
 
 class MapdbConverter
   Result = Struct.new(:idiom, :schema)
@@ -127,6 +128,9 @@ class MapdbConverter
     if (r = convert_multifput_waitfor(body))
       return r
     end
+    if (r = convert_wayto_strategy(body))
+      return r
+    end
     if (r = convert_wayto_special(body))
       return r
     end
@@ -134,6 +138,47 @@ class MapdbConverter
       # A lone move is expressible as the plain string edge it always was.
       return Result.new('plain_move', steps.first['cmd']) if steps.length == 1 && steps.first['do'] == 'move'
       return Result.new('command_sequence', steps)
+    end
+    nil
+  end
+
+  INT_LIST = /\[\s*\d+(?:\s*,\s*\d+)*\s*\]/
+
+  # Stateful service families that reference strategy classes.
+  def convert_wayto_strategy(body)
+    if (m = body.match(/\A\$mapdb_confluence_target\s*=\s*(?:(\d+)|'tranquility');\s*Room\[23282\]\.wayto\['23282'\]\.call\z/))
+      target = m[1] ? m[1].to_i : 'tranquility'
+      return Result.new('confluence', { 'strategy' => 'confluence_explorer', 'target' => target })
+    end
+    if (m = body.match(/\Atarget_room_id\s*=\s*(\d+);\s*maze_rooms\s*=\s*(#{INT_LIST});\s*
+                        \$minotaur_maze_dirs\s*\|\|=\s*Hash\.new;\s*loop\s*\{.*\}\z/xm))
+      return Result.new('shifting_maze',
+                        { 'strategy' => 'shifting_maze', 'target' => m[1].to_i,
+                          'rooms' => m[2].scan(/\d+/).map(&:to_i) })
+    end
+    if (m = body.match(/\Aempty_hand\s+if\s+(#{INT_LIST})\.include\?\(Room\.current\.id\);\s*
+                        swim_dir\s*=\s*\{([^}]+)\};\s*
+                        while\s+Room\.current\.id\s*!=\s*(\d+);?\s*
+                        if\s+swim_dir\[Room\.current\.id\];\s*put\s+"swim\ \#\{swim_dir\[Room\.current\.id\]\}";\s*
+                        else;\s*echo\s+#{QUOTED};\s*put\s+"swim\ \#\{checkpaths\[rand\(checkpaths\.length\)\]\}";\s*end;\s*
+                        sleep\ 1;\s*waitrt\?;\s*end;\s*fill_hand\z/x))
+      dirs = m[2].scan(/(\d+)\s*=>\s*'([^']+)'/).to_h
+      return Result.new('guided_route',
+                        { 'strategy' => 'guided_route', 'target' => m[3].to_i, 'verb' => 'swim',
+                          'dirs' => dirs, 'hands_free_in' => m[1].scan(/\d+/).map(&:to_i) })
+    end
+    if (m = body.match(/\Astart_room\s*=\s*(#{INT_LIST});\s*dirs\s*=\s*\[([^\]]+)\];\s*
+                        if\s+index\s*=\s*start_room\.index\(Room\.current\.id\);\s*
+                        until\s+(checkloot\.include\?\('\w+'\)(?:\s+or\s+checkloot\.include\?\('\w+'\))*);\s*
+                        move\s+dirs\[index\];\s*index\s*\+=\s*1;\s*index\s*=\s*0\s+if\s+index\s*>=\s*dirs\.length;\s*end;\s*
+                        (if\s+checkloot.*?end);;?\s*
+                        else;\s*echo\s+#{QUOTED};\s*end;?\s*\$go2_restart\s*=\s*true\z/xm))
+      objects = m[3].scan(/checkloot\.include\?\('(\w+)'\)/).flatten
+      return Result.new('patrol_search',
+                        { 'strategy' => 'patrol_search',
+                          'rooms'    => m[1].scan(/\d+/).map(&:to_i),
+                          'dirs'     => m[2].scan(/'([^']+)'/).flatten,
+                          'objects'  => objects })
     end
     nil
   end

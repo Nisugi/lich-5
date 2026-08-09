@@ -335,9 +335,11 @@ module Lich
       # Lich code, referenced from map data by name + parameters.
       module Strategies
         REGISTRY = {}
+        REQUIRED_PARAMS = {}
 
-        def self.register(name, klass)
+        def self.register(name, klass, required_params = [])
           REGISTRY[name.to_s] = klass
+          REQUIRED_PARAMS[name.to_s] = required_params
         end
 
         def self.known?(name)
@@ -368,7 +370,7 @@ module Lich
             !hit.nil?
           end
         end
-        register 'table_join', TableJoin
+        register 'table_join', TableJoin, %w[table]
       end
 
       # Pure, offline validation of schema entries: structure, vocabulary, and
@@ -403,7 +405,10 @@ module Lich
 
         def errors_for_wayto(value)
           if value.is_a?(Hash) && value['strategy']
-            return Strategies.known?(value['strategy']) ? [] : ["unknown strategy #{value['strategy'].inspect}"]
+            name = value['strategy']
+            return ["unknown strategy #{name.inspect}"] unless Strategies.known?(name)
+            missing = Strategies::REQUIRED_PARAMS[name].reject { |p| value.key?(p) }
+            return missing.map { |p| "strategy #{name} missing required param #{p.inspect}" }
           end
           steps = value.is_a?(Array) ? value : Array(value.is_a?(Hash) ? value['steps'] : nil)
           return ['wayto schema entry must be a step list or strategy'] if steps.empty?

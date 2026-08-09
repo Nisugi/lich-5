@@ -1,0 +1,69 @@
+# frozen_string_literal: true
+
+require_relative '../../../spec_helper'
+require 'common/map/map_engine'
+require 'common/map/map_strategies'
+
+RSpec.describe Lich::Common::MapEngine::Strategies do
+  it 'registers the strategy set with required params' do
+    %w[table_join confluence_explorer guided_route patrol_search shifting_maze].each do |name|
+      expect(described_class.known?(name)).to be(true), "expected #{name} to be registered"
+      expect(described_class::REQUIRED_PARAMS[name]).not_to be_empty
+    end
+  end
+
+  it 'fails validation when required params are missing' do
+    validator = Lich::Common::MapEngine::Validator
+    expect(validator.errors_for_wayto({ 'strategy' => 'guided_route' }).join)
+      .to include('missing required param')
+    expect(validator.errors_for_wayto(
+             { 'strategy' => 'guided_route', 'target' => 12677, 'dirs' => { '12662' => 'south' } }
+           )).to be_empty
+  end
+
+  describe Lich::Common::MapEngine::Strategies::ConfluenceExplorer do
+    describe '.dir_toward' do
+      # Learned graph: 1 -[n]-> 2 -[e]-> 3; room 1 also has an unexplored exit.
+      let(:learned) do
+        { 1 => { 'north' => 2, 'west' => nil },
+          2 => { 'east' => 3, 'south' => 1 },
+          3 => { 'west' => 2 } }
+      end
+
+      it 'finds a direct exit toward the target' do
+        expect(described_class.dir_toward(learned, 2, [3])).to eq('east')
+      end
+
+      it 'chains backward through rooms known to reach the target' do
+        expect(described_class.dir_toward(learned, 1, [3])).to eq('north')
+      end
+
+      it 'finds the nearest unexplored exit when targeting nil' do
+        expect(described_class.dir_toward(learned, 1, [nil])).to eq('west')
+      end
+
+      it 'returns nil when the target is unreachable in the learned graph' do
+        expect(described_class.dir_toward(learned, 3, [99])).to be_nil
+      end
+    end
+
+    it 'keeps hot and cold zones disjoint and complete' do
+      hot = described_class::HOT_ROOMS
+      cold = described_class::COLD_ROOMS
+      expect(hot & cold).to be_empty
+      expect(hot.length + cold.length).to eq(53)
+    end
+  end
+
+  describe Lich::Common::MapEngine::Strategies::GuidedRoute do
+    it 'builds commands from the verb' do
+      route = described_class.new('target' => 12677, 'verb' => 'swim', 'dirs' => { '12662' => 'south' })
+      expect(route.command_for('south')).to eq('swim south')
+    end
+
+    it 'passes bare commands through without a verb' do
+      route = described_class.new('target' => 5, 'dirs' => { '4' => 'go bridge' })
+      expect(route.command_for('go bridge')).to eq('go bridge')
+    end
+  end
+end

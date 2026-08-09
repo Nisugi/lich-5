@@ -34,7 +34,7 @@ RSpec.describe MapdbConverter do
       body = "UserVars.mapdb_use_urchins == true and !UserVars.mapdb_urchins_expire.nil? and " \
              "Time.now.to_i < UserVars.mapdb_urchins_expire and !hidden? and !invisible? ? 0.1 : nil;"
       r = timeto(body)
-      expect(r.schema).to eq({ 'cost' => 0.1,
+      expect(r.schema).to eq({ 'cost'     => 0.1,
                                'requires' => ['setting:urchins', 'grant:urchins_expire',
                                               'not:hidden', 'not:invisible'] })
     end
@@ -74,6 +74,7 @@ RSpec.describe MapdbConverter do
       expect(r.schema).to be_nil
     end
 
+    # rubocop:disable Lint/InterpolationCheck -- bodies are literal proc source
     it 'converts table joins to the strategy' do
       body = 'table = "Ant Hill"; fput "go #{table} table" if dothistimeout("go #{table} table", 25, ' \
              '/You (?:and your group )?head over to|waves.*you.*(?:invites|inviting) you' \
@@ -114,15 +115,44 @@ RSpec.describe MapdbConverter do
                                 'steps' => [{ 'do' => 'move', 'cmd' => 'north' }] }])
     end
 
-    it 'leaves stateful services alone' do
-      expect(wayto("$mapdb_confluence_target = 23329; Room[23282].wayto['23282'].call")).to be_nil
+    it 'converts confluence dispatch edges to the explorer strategy' do
+      expect(wayto("$mapdb_confluence_target = 23329; Room[23282].wayto['23282'].call").schema)
+        .to eq({ 'strategy' => 'confluence_explorer', 'target' => 23329 })
+      expect(wayto("$mapdb_confluence_target = 'tranquility'; Room[23282].wayto['23282'].call").schema)
+        .to eq({ 'strategy' => 'confluence_explorer', 'target' => 'tranquility' })
     end
+
+    it 'converts minotaur maze procs to shifting_maze' do
+      body = 'target_room_id = 6192; maze_rooms = [6191, 6254, 6252]; ' \
+             "$minotaur_maze_dirs ||= Hash.new; loop { move 'north' }"
+      r = wayto(body)
+      expect(r.schema).to eq({ 'strategy' => 'shifting_maze', 'target' => 6192,
+                               'rooms' => [6191, 6254, 6252] })
+    end
+
+    it 'converts swim gauntlets to guided_route' do
+      body = "empty_hand if [ 12662, 20786 ].include?(Room.current.id); " \
+             "swim_dir = { 20786 => 'down', 12662 => 'whirlpool' }; " \
+             'while Room.current.id != 12677; if swim_dir[Room.current.id]; ' \
+             'put "swim #{swim_dir[Room.current.id]}"; ' \
+             'else; echo "Oh crap.. I\'m lost.."; put "swim #{checkpaths[rand(checkpaths.length)]}"; end; ' \
+             'sleep 1; waitrt?; end; fill_hand'
+      r = wayto(body)
+      expect(r.schema).to eq({ 'strategy' => 'guided_route', 'target' => 12677, 'verb' => 'swim',
+                               'dirs' => { '20786' => 'down', '12662' => 'whirlpool' },
+                               'hands_free_in' => [12662, 20786] })
+    end
+
+    it 'leaves unrecognized stateful services alone' do
+      expect(wayto("$mapdb_seeking_destination = 12603;Map[3600].wayto['3600'].call;")).to be_nil
+    end
+    # rubocop:enable Lint/InterpolationCheck
   end
 
   describe '#convert_map!' do
     it 'rewrites recognized procs, skips the rest, and every emit validates' do
-      rooms = [{ 'id' => 1,
-                 'wayto' => { '2' => ';e true', '3' => ";e fput 'open gate'; move 'go gate'", '4' => ';e mystery_code' },
+      rooms = [{ 'id'     => 1,
+                 'wayto'  => { '2' => ';e true', '3' => ";e fput 'open gate'; move 'go gate'", '4' => ';e mystery_code' },
                  'timeto' => { '2' => 0.2, '3' => ";e Map[7].timeto['30714'].call;" } }]
       converter.convert_map!(rooms)
       expect(rooms[0]['wayto']['2']).to eq(';e true') # virtual: classified, unchanged
