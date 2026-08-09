@@ -908,16 +908,31 @@ class MapdbConverter
         @stats["#{field}:#{result.idiom}"] += 1
         next
       end
-      errors = validate(field, result.schema)
+      schema = result.schema
+      schema = guard_trailing_replan(schema, dest) if field == 'wayto'
+      errors = validate(field, schema)
       unless errors.empty?
         @stats["#{field}:invalid_emit"] += 1
         warn "BUG: emitted invalid schema for room #{room['id']} -> #{dest}: #{errors.join('; ')}"
         @residue[field][cluster_key(body)] << [room['id'], dest]
         next
       end
-      room[field][dest] = result.schema
+      room[field][dest] = schema
       @stats["#{field}:#{result.idiom}"] += 1
     end
+  end
+
+  # Procs end crossings with $go2_restart because outcomes vary (a jump can
+  # land anywhere) - but a restart is pure waste when the crossing landed
+  # exactly where the edge says it goes, and go2's restart path errors when
+  # that room was the final destination. Guard every trailing replan: it
+  # fires only when the crossing landed somewhere other than the edge's
+  # mapped destination.
+  def guard_trailing_replan(schema, dest)
+    return schema unless schema.is_a?(Array) && schema.last == { 'do' => 'replan' }
+
+    schema[0..-2] + [{ 'do' => 'if', 'when' => "not:in_room:#{dest}",
+                       'then' => [{ 'do' => 'replan' }] }]
   end
 
   def validate(field, schema)

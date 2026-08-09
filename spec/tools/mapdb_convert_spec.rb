@@ -282,6 +282,18 @@ RSpec.describe MapdbConverter do
   end
 
   describe '#convert_map!' do
+    it 'guards trailing replans behind arrival at the edge destination' do
+      rooms = [{ 'id'     => 30815,
+                 'wayto'  => { '30816' => ";e fput 'stand' unless standing?;move('jump'); $go2_restart=true" },
+                 'timeto' => {} }]
+      converter.convert_map!(rooms)
+      steps = rooms[0]['wayto']['30816']
+      expect(steps.last).to eq({ 'do' => 'if', 'when' => 'not:in_room:30816',
+                                 'then' => [{ 'do' => 'replan' }] })
+      expect(steps).not_to include({ 'do' => 'replan' })
+    end
+
+
     it 'rewrites recognized procs, skips the rest, and every emit validates' do
       rooms = [{ 'id'     => 1,
                  'wayto'  => { '2' => ';e true', '3' => ";e fput 'open gate'; move 'go gate'", '4' => ';e mystery_code' },
