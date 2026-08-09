@@ -176,6 +176,9 @@ class MapdbConverter
     if (r = convert_wayto_conditionals(body))
       return r
     end
+    if (r = convert_wayto_loops(body))
+      return r
+    end
     if (r = convert_wayto_special(body))
       return r
     end
@@ -274,6 +277,15 @@ class MapdbConverter
       return nil unless branches.any? && branches.all? { |o, target| o == target && objects.include?(o) }
       return :default
     end
+    if (m = tail.match(FISSURE_TAIL))
+      return [{ 'do' => 'repeat', 'times' => m[1].to_i,
+                'steps' => STAND_UNLESS_STEPS +
+                           [{ 'do' => 'await', 'cmd' => m[2] || m[3], 'for' => m[5],
+                              'timeout' => m[4].to_i,
+                              'if_match' => { 'pattern' => m[6], 'steps' => [{ 'do' => 'break' }] } }] +
+                           STAND_UNLESS_STEPS },
+              { 'do' => 'move', 'cmd' => m[7] || m[8] }]
+    end
     convert_command_sequence(tail)
   end
 
@@ -311,6 +323,112 @@ class MapdbConverter
               sleep\s+0\.2;\s*echo\s+#{QUOTED};\s*sleep\s+4;\s*end;\s*move\s+#{QUOTED}\z/x
 
   CAST_BUFF = /if\s+\w+\s*=\s*Spell\[(\d+)\]\s+and\s+\w+\.known\?\s+and\s+\w+\.affordable\?\s+and\s+not\s+\w+\.active\?;\s*\w+\.cast;\s*end;\s*/
+
+  STAND_UNLESS = /waitrt\?;\s*fput\s+'stand'\s+unless\s+standing\?;\s*waitrt\?/
+  FISSURE_TAIL = /\A(\d+)\.times\s*\{\s*#{STAND_UNLESS};\s*
+                  result\s*=\s*dothistimeout\s+#{QUOTED},\s*(\d+),\s*\/(.+?)\/;\s*#{STAND_UNLESS};\s*
+                  break\ if\ result\s*=~\s*\/(.+?)\/\s*\};\s*move\s+#{QUOTED}\z/x
+
+  STAND_UNLESS_STEPS = [
+    { 'do' => 'wait_rt' },
+    { 'do' => 'if', 'when' => 'not:status:standing', 'then' => [{ 'do' => 'send', 'cmd' => 'stand' }] },
+    { 'do' => 'wait_rt' }
+  ].freeze
+
+  # Loop-and-branch families that need the repeat/break vocabulary.
+  def convert_wayto_loops(body)
+    if (m = body.match(/\Aloop\s*\{\s*wait_until\s*\{\s*Spell\[(\d+)\]\.affordable\?\s*\};\s*
+                        result\s*=\s*cast\((\d+),\s*#{QUOTED}\);\s*
+                        break\ unless\ result\s*=~\s*\/Spell\ Hindrance\/\s*\};?\z/x))
+      return Result.new('cast_loop', [{ 'do' => 'cast', 'spell' => m[2].to_i, 'target' => m[3] || m[4] }])
+    end
+    if (m = body.match(/\Adoor=#{QUOTED};key=GameObj\.inv\.find\{\|k\|\ k\.name==#{QUOTED};?\};\s*
+                        if\s+!key\.nil\?\s+then\s+multifput\s+(#{QUOTED}(?:\s*,\s*#{QUOTED})*);\s*end;?\z/x))
+      sends = m[5].scan(QUOTED).map { |a, b| { 'do' => 'send', 'cmd' => a || b } }
+      return Result.new('key_door', [{ 'do' => 'if', 'when' => "has_item:#{m[3] || m[4]}", 'then' => sends }])
+    end
+    if (m = body.match(/\Aunless\s+\(?move\s+#{QUOTED}\)?;\s*echo\s+#{QUOTED};\s*
+                        waitfor\s+#{QUOTED};\s*move\s+#{QUOTED};\s*end;?\z/x))
+      return Result.new('move_fallback',
+                        [{ 'do' => 'try_move', 'cmd' => m[1] || m[2], 'check' => 'move_result',
+                           'fallback' => [{ 'do' => 'echo', 'msg' => m[3] || m[4] },
+                                          { 'do' => 'await', 'for' => Regexp.escape(m[5] || m[6]), 'timeout' => 30 },
+                                          { 'do' => 'move', 'cmd' => m[7] || m[8] }] }])
+    end
+    if (m = body.match(/\A(?:cur_stance|save_stance)\s*=\s*XMLData\.stance_text;\s*(empty_hands;)?\s*
+                        fput\s*\(?'stance\ (\w+)'\)?\s+if\s+\w+\s*!=\s*'\w+';\s*
+                        move\s*\(?#{QUOTED}\)?;\s*(fill_hands;)?\s*
+                        fput\s*\(?'stance\ '\s*\+\s*\w+\)?\s+if\s+\w+\s*!=\s*(?:'\w+'|XMLData\.stance_text);;?\s*
+                        (\$go2_restart\s*=\s*true)?;?\z/x))
+      inner = [{ 'do' => 'move', 'cmd' => m[3] || m[4] }]
+      inner = [{ 'do' => 'empty_hands' }] + inner + [{ 'do' => 'fill_hands' }] if m[1] && m[5]
+      steps = [{ 'do' => 'preserve_stance', 'stance' => m[2], 'steps' => inner }]
+      steps << { 'do' => 'replan' } if m[6]
+      return Result.new('stance_move', steps)
+    end
+    if (m = body.match(/\Awhile\s+checkpaths\s*==\s*\[([^\]]+)\];\s*move\s+\[([^\]]+)\]\[rand\(\d+\)\];\s*end;?\s*(.*)\z/m)) ||
+       (m = body.match(/\Amove\s+\[([^\]]+)\]\[rand\(\d+\)\]\s+while\s+checkpaths\s*==\s*\[([^\]]+)\];?\s*(.*)\z/m))
+      all_paths = (body.start_with?('while') ? m[1] : m[2]).scan(/'([^']+)'/).flatten
+      among = (body.start_with?('while') ? m[2] : m[1]).scan(/'([^']+)'/).flatten
+      steps = [{ 'do' => 'repeat', 'until' => "not:paths_are:#{all_paths.join(',')}",
+                 'steps' => [{ 'do' => 'move_random', 'among' => among }] }]
+      tail = m[3].to_s.strip
+      unless tail.empty?
+        tail_result = convert_wayto_conditionals(tail) || (s = convert_command_sequence(tail)) && Result.new('seq', s)
+        tail_result ||= convert_wayto_special(tail)
+        return nil unless tail_result
+        steps.concat(tail_result.schema)
+      end
+      return Result.new('random_wander', steps)
+    end
+    if (m = body.match(/\Aloop\s*\{\s*move\s+#{QUOTED};\s*break\ if\ Room\.current\.id\s*!=\s*(\d+);\s*
+                        move\s+#{QUOTED};\s*break\ if\ Room\.current\.id\s*!=\s*\3;\s*\};?\z/x))
+      return Result.new('alternate_moves',
+                        [{ 'do' => 'repeat', 'until_room_change' => true,
+                           'steps' => [{ 'do' => 'move', 'cmd' => m[1] || m[2] },
+                                       { 'do' => 'break_if_moved' },
+                                       { 'do' => 'move', 'cmd' => m[4] || m[5] }] }])
+    end
+    if (m = body.match(/\A(?:begin\s+fput\s+#{QUOTED}\s+waitrt\?\s+end|begin;?\s*fput\s+#{QUOTED};\s*waitrt\?;?\s*end)\s+
+                        until\s+Room\.current\.id\s*==\s*(\d+);?\z/x))
+      return Result.new('send_until_room',
+                        [{ 'do' => 'repeat', 'until_room' => m[5].to_i,
+                           'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] || m[3] || m[4] },
+                                       { 'do' => 'wait_rt' }] }])
+    end
+    if (m = body.match(/\Awhile\s+Room\.current\.id\s*==\s*\d+;\s*fput\s+#{QUOTED};\s*waitrt\?;\s*end;?\z/))
+      return Result.new('send_until_moved',
+                        [{ 'do' => 'repeat', 'until_room_change' => true,
+                           'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }, { 'do' => 'wait_rt' }] }])
+    end
+    if (m = body.match(/\Amove\s+#{QUOTED}\s+until\s+Room\.current\.id\s*==\s*(\d+);?\z/))
+      return Result.new('move_until_room',
+                        [{ 'do' => 'repeat', 'until_room' => m[3].to_i,
+                           'steps' => [{ 'do' => 'move', 'cmd' => m[1] || m[2] }] }])
+    end
+    if (m = body.match(/\Ax\s*=\s*XMLData\.room_count;\s*fput\s+#{QUOTED}\s+until\s+XMLData\.room_count\s*>\s*x;?\z/))
+      return Result.new('send_until_moved',
+                        [{ 'do' => 'repeat', 'until_room_change' => true,
+                           'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] }])
+    end
+    if (m = body.match(/\Abegin;\s*fput\s+#{QUOTED};\s*search_result\s*=\s*waitfor\s+(#{QUOTED}(?:\s*,\s*#{QUOTED})*);\s*
+                        waitrt\?;\s*end\s+until\s+search_result\s*=~\s*\/([^\/]+)\/;\s*move\s+#{QUOTED}\z/x))
+      targets = m[3].scan(QUOTED).map { |a, b| Regexp.escape(a || b) }
+      return Result.new('search_until',
+                        [{ 'do'    => 'repeat',
+                           'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] },
+                                       { 'do' => 'await', 'for' => targets.join('|'), 'timeout' => 30,
+                                         'if_match' => { 'pattern' => m[-3], 'steps' => [{ 'do' => 'break' }] } },
+                                       { 'do' => 'wait_rt' }] },
+                         { 'do' => 'move', 'cmd' => m[-2] || m[-1] }])
+    end
+    if (m = body.match(/\Amove\s+checkpaths\[rand\(checkpaths\.length\)\]\s+until\s+checkpaths\.include\?\(#{QUOTED}\);?\z/))
+      return Result.new('random_wander',
+                        [{ 'do' => 'repeat', 'until' => "path:#{m[1] || m[2]}",
+                           'steps' => [{ 'do' => 'move_random' }] }])
+    end
+    nil
+  end
 
   # Conditional-wait, buff-cast, delegation, and posture families.
   def convert_wayto_conditionals(body)
@@ -470,20 +588,49 @@ class MapdbConverter
 
   # Sequences built only from fput/put/move/waitrt?/sleep, ';'-separated.
   SEQ_TOKENS = {
-    /\A(?:fput|put)\s+#{QUOTED}\z/                  => ->(m) { { 'do' => 'send', 'cmd' => m[1] || m[2] } },
-    /\Amove\s+#{QUOTED}\z/                          => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
-    /\Amove\(#{QUOTED}\)\z/                         => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
-    /\Awaitrt\?\z/                                  => ->(_) { { 'do' => 'wait_rt' } },
-    /\Asleep\s+(\d+(?:\.\d+)?)\z/                   => ->(m) { { 'do' => 'sleep', 'seconds' => m[1].to_f } },
-    /\Apause\s+(\d+(?:\.\d+)?)\z/                   => ->(m) { { 'do' => 'sleep', 'seconds' => m[1].to_f } },
-    /\Aempty_hands\z/                               => ->(_) { { 'do' => 'empty_hands' } },
-    /\Afill_hands\z/                                => ->(_) { { 'do' => 'fill_hands' } },
-    /\A\$go2_restart\s*=\s*true\z/                  => ->(_) { { 'do' => 'replan' } },
-    /\AUserVars\.mapdb_(\w+)\s*=\s*(\d+|nil)\z/     => lambda { |m|
+    /\A(?:fput|put)\s+#{QUOTED}\z/                                                                                                                                => ->(m) { { 'do' => 'send', 'cmd' => m[1] || m[2] } },
+    /\Amove\s+#{QUOTED}\z/                                                                                                                                        => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
+    /\Amove\(#{QUOTED}\)\z/                                                                                                                                       => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
+    /\Awaitrt\?\z/                                                                                                                                                => ->(_) { { 'do' => 'wait_rt' } },
+    /\Asleep\s+(\d+(?:\.\d+)?)\z/                                                                                                                                 => ->(m) { { 'do' => 'sleep', 'seconds' => m[1].to_f } },
+    /\Apause\s+(\d+(?:\.\d+)?)\z/                                                                                                                                 => ->(m) { { 'do' => 'sleep', 'seconds' => m[1].to_f } },
+    /\Aempty_hands\z/                                                                                                                                             => ->(_) { { 'do' => 'empty_hands' } },
+    /\Afill_hands\z/                                                                                                                                              => ->(_) { { 'do' => 'fill_hands' } },
+    /\A\$go2_restart\s*=\s*true\z/                                                                                                                                => ->(_) { { 'do' => 'replan' } },
+    /\AUserVars\.mapdb_(\w+)\s*=\s*(\d+|nil)\z/                                                                                                                   => lambda { |m|
       { 'do' => 'set', 'var' => m[1], 'value' => m[2] == 'nil' ? nil : m[2].to_i }
     },
-    /\A(\d+)\.times\s*\{\s*fput\s+#{QUOTED}\s*\}\z/ => lambda { |m|
+    /\A(\d+)\.times\s*\{\s*fput\s+#{QUOTED}\s*\}\z/                                                                                                               => lambda { |m|
       { 'do' => 'repeat', 'times' => m[1].to_i, 'steps' => [{ 'do' => 'send', 'cmd' => m[2] || m[3] }] }
+    },
+    /\Awaitrt\z/                                                                                                                                                  => ->(_) { { 'do' => 'wait_rt' } },
+    /\Aempty_hand\z/                                                                                                                                              => ->(_) { { 'do' => 'empty_hand' } },
+    /\Afill_hand\z/                                                                                                                                               => ->(_) { { 'do' => 'fill_hand' } },
+    /\Amove\s+\(#{QUOTED}\)\z/                                                                                                                                    => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
+    /\Amultifput\s+(#{QUOTED}(?:\s*,\s*#{QUOTED})*)\z/                                                                                                            => lambda { |m|
+      m[1].scan(QUOTED).map { |a, b| { 'do' => 'send', 'cmd' => a || b } }
+    },
+    /\Awaitfor\s+(#{QUOTED}(?:\s*,\s*#{QUOTED})*)\z/                                                                                                              => lambda { |m|
+      targets = m[1].scan(QUOTED).map { |a, b| Regexp.escape(a || b) }
+      { 'do' => 'await', 'for' => targets.join('|'), 'timeout' => 30 }
+    },
+    /\A(?:fput|put)\s+#{QUOTED}\s+if\s+(?:invisible|hidden)\?\z/                                                                                                  => lambda { |m|
+      { 'do' => 'if', 'when' => 'status:invisible', 'then' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] }
+    },
+    /\A(?:fput|put)\s+#{QUOTED}\s+unless\s+standing\?\z/                                                                                                          => lambda { |m|
+      { 'do' => 'if', 'when' => 'not:status:standing', 'then' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] }
+    },
+    /\A(?:fput|put)\s+#{QUOTED}\s+until\s+standing\?\z/                                                                                                           => lambda { |m|
+      { 'do' => 'repeat', 'until' => 'status:standing', 'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] }
+    },
+    /\Await_while\s*\{\s*Room\.current\.id\s*==\s*\d+\s*\}\z/                                                                                                     => ->(_) { { 'do' => 'wait_room_change' } },
+    /\Await_until\s*\{\s*(?:Map|Room)\.current\.id\s*!=\s*\d+\s*\}\z/                                                                                             => ->(_) { { 'do' => 'wait_room_change' } },
+    /\A\$SILVERWOOD_TOWN\s*=\s*nil\z/                                                                                                                             => ->(_) { { 'do' => 'set_global', 'var' => 'SILVERWOOD_TOWN', 'value' => nil } },
+    /\AUserVars\.mapdb_(\w+)\s*=\s*#{QUOTED}\z/                                                                                                                   => lambda { |m|
+      { 'do' => 'set', 'var' => m[1], 'value' => m[2] || m[3] }
+    },
+    /\Aif\s+(?:\w+\s*=\s*)?Spell\[(\d+)\]\s+and\s+\w+\.known\?\s+and\s+\w+\.affordable\?\s+and\s+not\s+\w+\.active\?\s*(?:;\s*|\s+)\w+\.cast\s*(?:;\s*|\s+)end\z/ => lambda { |m|
+      { 'do' => 'cast_buff', 'spell' => m[1].to_i }
     }
   }.freeze
 
@@ -491,12 +638,28 @@ class MapdbConverter
     tokens = body.split(/;|\n/).map(&:strip).reject(&:empty?)
     return nil if tokens.empty?
 
-    steps = tokens.map do |token|
-      _, builder = SEQ_TOKENS.find { |pattern, _| token.match?(pattern) }
+    steps = tokens.flat_map do |token|
+      pattern, builder = SEQ_TOKENS.find { |p, _| token.match?(p) }
       return nil unless builder
-      builder.call(token.match(SEQ_TOKENS.keys.find { |p| token.match?(p) }))
+      built = builder.call(token.match(pattern))
+      built.is_a?(Array) ? built : [built]
     end
     steps
+  end
+
+  # --- manual conversions ---------------------------------------------------
+
+  # Hand-curated conversions for one-off procs no recognizer covers:
+  #   { "wayto":  { "ROOM:DEST": <schema>, ... },
+  #     "timeto": { "ROOM:DEST": <schema>, ... } }
+  # Each entry applies only when the edge still holds a StringProc, and is
+  # validated exactly like recognizer output.
+  def load_manual(path)
+    @manual = JSON.parse(File.read(path))
+  end
+
+  def manual_for(field, room_id, dest)
+    @manual&.dig(field, "#{room_id}:#{dest}")
   end
 
   # --- driver ---------------------------------------------------------------
@@ -515,6 +678,9 @@ class MapdbConverter
 
       body = value[3..]
       result = yield(body)
+      if result.nil? && (schema = manual_for(field, room['id'], dest))
+        result = Result.new('manual', schema)
+      end
       if result.nil?
         @stats["#{field}:unconverted"] += 1
         @residue[field][cluster_key(body)] << [room['id'], dest]
@@ -584,11 +750,13 @@ if $PROGRAM_NAME == __FILE__
     opts.on('--in FILE', 'map JSON to read (required)') { |v| options[:in] = v }
     opts.on('--out FILE', 'write converted map JSON (omit for dry run)') { |v| options[:out] = v }
     opts.on('--report FILE', 'write residue report (default: stdout)') { |v| options[:report] = v }
+    opts.on('--manual FILE', 'hand-curated conversions for one-off procs') { |v| options[:manual] = v }
   end.parse!
   abort 'missing --in' unless options[:in]
 
   rooms = JSON.parse(File.read(options[:in]))
   converter = MapdbConverter.new
+  converter.load_manual(options[:manual]) if options[:manual]
   converter.convert_map!(rooms)
 
   if options[:out]

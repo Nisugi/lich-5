@@ -22,9 +22,14 @@ module Lich
   module Common
     module MapEngine
       StepFailed = Class.new(StandardError)
+      BreakLoop = Class.new(StandardError) # control flow: break out of the innermost repeat
 
       DEFAULT_AWAIT_TIMEOUT = 10
       MAX_LOOP_ITERATIONS   = 50
+
+      # Legacy event globals a handful of edges write. Closed whitelist:
+      # growing it is a reviewed Lich change, never a map-data change.
+      SETTABLE_GLOBALS = %w[SILVERWOOD_TOWN].freeze
 
       # Event cost tables, name -> callable returning the table (or nil while
       # the event script is not running). Registered here rather than read
@@ -145,6 +150,15 @@ module Lich
             name, expected = arg.to_s.split('=', 2)
             value = uservar("mapdb_#{name}")
             expected ? value.to_s == expected : !value.nil? && value != false
+          when 'has_item'
+            GameObj.inv.any? { |obj| obj.noun == arg || obj.name == arg }
+          when 'no_script'
+            arg.to_s.split(',').map(&:strip).none? { |name| Script.running?(name) }
+          when 'var_raw'
+            # Raw UserVars name (legacy variables outside the mapdb_ namespace)
+            name, expected = arg.to_s.split('=', 2)
+            value = defined?(UserVars) && UserVars.respond_to?(name) ? UserVars.send(name) : nil
+            expected ? value.to_s == expected : !value.nil? && value != false
           when 'society'
             society, rank = arg.to_s.split('+', 2)
             defined?(Society) && Society.status == society && Society.rank == rank.to_i
@@ -214,12 +228,36 @@ module Lich
             run_cross_edge(step)
           when 'move_with_group'
             run_move_with_group(step)
+          when 'cast'
+            run_cast(step)
+          when 'move_random'
+            run_move_random(step)
+          when 'empty_hand'
+            empty_hand
+          when 'fill_hand'
+            fill_hand
+          when 'preserve_stance'
+            run_preserve_stance(step)
+          when 'escort_wait'
+            run_escort_wait
+          when 'break'
+            raise StepFailed, 'break outside repeat' unless @loop_rooms&.any?
+            raise BreakLoop
+          when 'break_if_moved'
+            raise BreakLoop if @loop_rooms&.any? && XMLData.room_id != @loop_rooms.last
+          when 'set_global'
+            run_set_global(step)
           when 'try_move'
             # Attempt a crossing command; when the room does not change, run
             # the fallback steps (the locked-door / blocked-way proc idiom).
-            start = XMLData.room_id
-            fput step['cmd']
-            Array(step['fallback']).each { |s| run_step(s) } if XMLData.room_id == start
+            # With check: move, uses move()'s own failure detection instead.
+            if step['check'] == 'move_result'
+              Array(step['fallback']).each { |s| run_step(s) } if move(step['cmd']) == false
+            else
+              start = XMLData.room_id
+              fput step['cmd']
+              Array(step['fallback']).each { |s| run_step(s) } if XMLData.room_id == start
+            end
           else
             raise StepFailed, "unknown step #{step['do'].inspect}"
           end
@@ -254,6 +292,70 @@ module Lich
           waitrt?
         end
 
+        # Cast a spell at an optional target, waiting for mana and retrying
+        # through spell hindrance (the sanctum casting-loop idiom).
+        def run_cast(step)
+          spell = Spell[step['spell']]
+          raise StepFailed, "cast: unknown spell #{step['spell'].inspect}" unless spell
+          MAX_LOOP_ITERATIONS.times do
+            wait_until { spell.affordable? }
+            result = cast(step['spell'], step['target'])
+            return true unless result =~ /Spell Hindrance/
+          end
+          raise StepFailed, 'cast: spell hindrance persisted'
+        end
+
+        # Move through a random obvious path, honoring optional include /
+        # exclude filters (the fixed-maze wander idiom).
+        def run_move_random(step)
+          options = checkpaths.dup
+          options &= Array(step['among']) if step['among']
+          options -= Array(step['except']) if step['except']
+          raise StepFailed, 'move_random: no eligible paths' if options.empty?
+          move options[rand(options.length)]
+        end
+
+        # Capture the current stance, run the nested steps, restore it after
+        # (the stance save/restore crossing idiom). `stance` names the stance
+        # to hold during the steps.
+        def run_preserve_stance(step)
+          saved = XMLData.stance_text
+          wanted = step['stance'] || 'defensive'
+          fput "stance #{wanted}" if saved.downcase != wanted.downcase
+          Array(step['steps']).each { |s| run_step(s) }
+          fput "stance #{saved.downcase}" if saved.downcase != wanted.downcase
+        end
+
+        # Wait for a bounty/task escortee NPC to follow into the room.
+        def run_escort_wait
+          npc = nil
+          if defined?(bounty?) && bounty? =~ /^You have made contact with the child/
+            npc = GameObj.npcs.find { |n| n.noun == 'child' }
+          elsif defined?(Society) && Society.respond_to?(:task) &&
+                Society.task.to_s =~ /find and rescue an official/
+            npc = GameObj.npcs.find { |n| n.noun == 'official' }
+          end
+          return unless npc
+          50.times do
+            break if GameObj.npcs.any? { |n| n.id == npc.id }
+            sleep 0.1
+          end
+        end
+
+        def run_set_global(step)
+          case step['var'].to_s
+          when 'SILVERWOOD_TOWN' then $SILVERWOOD_TOWN = step['value']
+          else raise StepFailed, "set_global: #{step['var'].inspect} not whitelisted"
+          end
+        end
+
+        # Substitute {char} with the character's name inside stored patterns,
+        # so map data never embeds a specific character.
+        def expand_char_tokens(source)
+          return source unless source.is_a?(String)
+          source.gsub('{char}', defined?(Char) ? Regexp.escape(Char.name.to_s) : '{char}')
+        end
+
         # Follow another room's edge (the proc idiom Map[N].wayto['D'].call),
         # so shared crossings are stored once and referenced.
         def run_cross_edge(step)
@@ -271,19 +373,25 @@ module Lich
           times = step['times'].to_i
           times = MAX_LOOP_ITERATIONS if times < 1 || times > MAX_LOOP_ITERATIONS
           start = XMLData.room_id
+          (@loop_rooms ||= []).push(start)
           times.times do
             break if step['until_room'] && XMLData.room_id == step['until_room'].to_i
             break if step['until_room_change'] && XMLData.room_id != start
             break if step['until'] && condition?(step['until'])
             Array(step['steps']).each { |s| run_step(s) }
           end
+        rescue BreakLoop
+          nil
+        ensure
+          @loop_rooms&.pop
         end
 
         def run_await(step)
           pattern = compile_pattern(step['for'])
           raise StepFailed, "bad pattern #{step['for'].inspect}" unless pattern
           timeout = (step['timeout'] || DEFAULT_AWAIT_TIMEOUT).to_f
-          hit = dothistimeout(step['cmd'], timeout, pattern)
+          # Passive form (no cmd): wait for the line without sending anything.
+          hit = step['cmd'] ? dothistimeout(step['cmd'], timeout, pattern) : matchtimeout(timeout, pattern)
           unless hit
             case step['on_timeout'] || 'continue'
             when 'fail'
@@ -316,6 +424,14 @@ module Lich
             !re.nil? && defined?(Stats) && Stats.race.to_s =~ re ? true : false
           when 'path'
             checkpaths.include?(arg)
+          when 'paths_are'
+            # Exact obvious-paths set, order-insensitive: paths_are:north,south
+            checkpaths.sort == arg.to_s.split(',').map(&:strip).sort
+          when 'has_item'
+            GameObj.inv.any? { |obj| obj.noun == arg || obj.name == arg }
+          when 'loot_match'
+            re = compile_pattern(expand_char_tokens(arg))
+            !re.nil? && GameObj.loot.any? { |obj| obj.name =~ re }
           when 'ice_caution'
             ice_caution?
           else
@@ -484,11 +600,12 @@ module Lich
       # regex compilation. Suitable for submission CI and a local lint command.
       module Validator
         STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat
-                        set echo cast_buff cross move_with_group try_move].freeze
+                        set echo cast_buff cross move_with_group try_move cast move_random empty_hand fill_hand
+                        preserve_stance escort_wait break break_if_moved set_global].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
-                               month var society seeking_enabled].freeze
+                               month var var_raw society seeking_enabled has_item no_script].freeze
         FORMULA_NAMES = %w[haste_scaled].freeze
-        CONDITION_KINDS = %w[spell status setting race_match ice_caution path].freeze
+        CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function
@@ -543,7 +660,7 @@ module Lich
           when 'send', 'move'
             errors << "#{name} requires cmd" unless step['cmd'].is_a?(String)
           when 'await'
-            errors << 'await requires cmd' unless step['cmd'].is_a?(String)
+            errors << 'await cmd must be a string when present' if step.key?('cmd') && !step['cmd'].is_a?(String)
             errors << 'await requires a pattern (for)' unless step['for'].is_a?(String)
             errors << "invalid regex #{step['for'].inspect}" if step['for'].is_a?(String) && !compilable?(step['for'])
             if step['on_timeout'] && !ON_TIMEOUT.include?(step['on_timeout'])
@@ -584,6 +701,19 @@ module Lich
           when 'try_move'
             errors << 'try_move requires cmd' unless step['cmd'].is_a?(String)
             errors.concat(Array(step['fallback']).flat_map { |s| errors_for_step(s) })
+          when 'cast'
+            errors << 'cast requires a numeric spell' unless step['spell'].is_a?(Integer)
+          when 'move_random'
+            if step['among'] && !step['among'].is_a?(Array)
+              errors << 'move_random among must be an array'
+            end
+          when 'preserve_stance'
+            errors << 'preserve_stance requires steps' if Array(step['steps']).empty?
+            errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
+          when 'set_global'
+            unless MapEngine::SETTABLE_GLOBALS.include?(step['var'].to_s)
+              errors << "set_global var #{step['var'].inspect} is not whitelisted"
+            end
           end
           errors
         end
