@@ -501,7 +501,7 @@ module Lich
           end
 
           # Pure: does the cache hold a live pass for this town pair? The
-          # monitor hook is installed by scan! (crossing time), never here —
+          # monitor hook is installed by scan! (crossing time), never here -
           # cost evaluation must not write state.
           def usable?(town_a, town_b)
             passes.any? do |_id, h|
