@@ -299,7 +299,7 @@ module Lich
             @target = params['target']
           end
 
-          def run
+          def run(dest = nil)
             klass = self.class
             klass.learned ||= {}
             klass.wander ||= []
@@ -316,7 +316,7 @@ module Lich
               note_landmarks(start_room, hot)
               if @target == 'tranquility' && GameObj.loot.any? { |o| o.name == 'point of elemental tranquility' }
                 move 'go tranquility'
-                $go2_restart = true
+                $go2_restart = true unless dest && Room.current.id == dest.to_i
                 return true
               end
               next unless sync_learned_exits(start_room)
@@ -516,25 +516,26 @@ module Lich
         #   { "strategy" => "ice_slope", "cmd" => "down" }
         class IceSlope
           def initialize(params)
-            @cmd = params['cmd']
+            @cmd = params["cmd"]
           end
 
-          def run
-            raise StepFailed, 'ice_slope requires cmd' unless @cmd
-            resolve = Spell['Sigil of Resolve']
-            haste = Spell['Haste']
-            if MapEngine.uservar('mapdb_ice_mode') == 'wait' || Skills.survival < 50 ||
+          def run(dest = nil)
+            raise StepFailed, "ice_slope requires cmd" unless @cmd
+            resolve = Spell["Sigil of Resolve"]
+            haste = Spell["Haste"]
+            if MapEngine.uservar("mapdb_ice_mode") == "wait" || Skills.survival < 50 ||
                XMLData.encumbrance_value >= 50
-              echo 'trying not to slip...'
+              echo "trying not to slip..."
               sleep 6
-            elsif resolve.known? && resolve.affordable? && !resolve.active?
+            elsif resolve&.known? && resolve.affordable? && !resolve.active?
               resolve.cast
             end
             result = fput @cmd
             if result =~ /^Rushing heedlessly/
-              haste.cast if haste.known? && haste.affordable? && !haste.active?
-              fput 'stand'
-              $go2_restart = true
+              haste.cast if haste&.known? && haste.affordable? && !haste.active?
+              fput "stand"
+              # A slip can still land at the mapped destination - continue then.
+              $go2_restart = true unless dest && Room.current.id == dest.to_i
             end
             true
           end
