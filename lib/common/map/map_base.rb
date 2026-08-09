@@ -661,6 +661,68 @@ module Lich
         # accessing room data, consistent with other ClassMethods.
         #
         # @return [void]
+        # Convert a StringProc body (with or without a leading ';e ') into
+        # MapEngine schema, echoing the result. Mapper helper:
+        #   ;e echo Map.convert_string("fput 'open gate'; move 'go gate'")
+        # @param text [String] proc source
+        # @param type [Symbol] :wayto (default) or :timeto
+        # @return [Hash, Array, String, nil] the schema (or plain command), nil if unrecognized
+        def convert_string(text, type: :wayto)
+          require_relative 'map_convert' unless Lich::Common.const_defined?(:MapConvert)
+          body = text.to_s.sub(/\A;e\s+/, '').strip
+          converter = MapConvert.new
+          result = type.to_sym == :timeto ? converter.convert_timeto(body) : converter.convert_wayto(body)
+          if result.nil?
+            respond '--- Map.convert_string: not recognized. Match a canonical idiom (see the mapping guide phrasebook) or write schema by hand.' if defined?(respond)
+            return nil
+          end
+          schema = result.schema
+          errors = if schema.is_a?(Hash) || schema.is_a?(Array)
+                     type.to_sym == :timeto ? MapEngine::Validator.errors_for_timeto(schema) : MapEngine::Validator.errors_for_wayto(schema)
+                   else
+                     []
+                   end
+          if defined?(respond)
+            respond "--- Map.convert_string [#{result.idiom}]:"
+            respond schema.is_a?(String) ? schema.inspect : JSON.generate(schema)
+            respond(errors.empty? ? '--- validates OK' : "--- INVALID: #{errors.join('; ')}")
+          end
+          schema
+        end
+
+        # Convert an existing StringProc edge in the loaded map to schema,
+        # in place, echoing the JSON to paste into a submission. The mapper
+        # flow: author the ;e proc locally as always, test it, then
+        #   ;e Map.convert_edge(1230, '30523')
+        # and re-test the converted edge with Room[1230].wayto['30523'].call.
+        # @return [Hash] converted fields, e.g. { wayto: [...], timeto: {...} }
+        def convert_edge(room_id, dest)
+          require_relative 'map_convert' unless Lich::Common.const_defined?(:MapConvert)
+          room = self[room_id]
+          raise ArgumentError, "unknown room #{room_id.inspect}" unless room
+          dest = dest.to_s
+          converter = MapConvert.new
+          out = {}
+          { wayto: :convert_wayto, timeto: :convert_timeto }.each do |field, meth|
+            value = room.send(field)[dest]
+            next unless value.is_a?(StringProc)
+            result = converter.send(meth, value._dump)
+            if result.nil? || result.schema.nil?
+              respond "--- Map.convert_edge: #{field} proc not recognized; left unchanged." if defined?(respond)
+              next
+            end
+            schema = result.schema
+            room.send(field)[dest] =
+              field == :wayto ? MapEngine.build_wayto(schema, dest) : MapEngine.build_timeto(schema)
+            out[field] = schema
+            if defined?(respond)
+              respond "--- #{field} [#{result.idiom}]: #{schema.is_a?(String) ? schema.inspect : JSON.generate(schema)}"
+            end
+          end
+          respond '--- Map.convert_edge: no StringProcs on that edge.' if out.empty? && defined?(respond)
+          out
+        end
+
         def apply_wayto_overrides
           self.load unless loaded?
           settings = get_settings

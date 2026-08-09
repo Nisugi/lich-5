@@ -165,6 +165,37 @@ RSpec.describe Lich::Common::MapEngine do
     end
   end
 
+  describe 'dual-currency room references' do
+    it 'resolves uNNN through the uid index, conservatively on ambiguity' do
+      map = double('Map')
+      stub_const('Lich::Common::Map', map)
+      room = double('room', id: 5867)
+      allow(map).to receive(:respond_to?).and_return(true)
+      allow(map).to receive(:ids_from_uid).with(14_008_034).and_return([5867])
+      allow(map).to receive(:[]).with(5867).and_return(room)
+      expect(described_class.resolve_room_ref('u14008034')).to eq(room)
+      allow(map).to receive(:ids_from_uid).with(99).and_return([1, 2]) # ambiguous
+      expect(described_class.resolve_room_ref('u99')).to be_nil
+      allow(map).to receive(:[]).with(5867).and_return(room)
+      expect(described_class.resolve_room_ref(5867)).to eq(room)
+    end
+
+    it 'compares uid refs against the live game stream in at_room_ref?' do
+      stub_const('XMLData', double('XMLData', room_id: 14_008_034))
+      stub_const('Lich::Common::Map', double('Map', current: double(id: 5867), respond_to?: true))
+      expect(described_class.at_room_ref?('u14008034')).to be(true)
+      expect(described_class.at_room_ref?('u14008035')).to be(false)
+      expect(described_class.at_room_ref?(5867)).to be(true)
+    end
+
+    it 'validates uid forms in same_as and cross' do
+      v = described_class::Validator
+      expect(v.errors_for_timeto({ 'same_as' => 'u7000:30714' })).to be_empty
+      expect(v.errors_for_wayto([{ 'do' => 'cross', 'room' => 'u7000', 'dest' => '3668' }])).to be_empty
+      expect(v.errors_for_wayto([{ 'do' => 'cross', 'room' => 'nonsense', 'dest' => '3668' }])).not_to be_empty
+    end
+  end
+
   describe '.compile_pattern' do
     it 'compiles valid patterns once' do
       pattern = described_class.compile_pattern('A crew member escorts you')

@@ -68,8 +68,8 @@ module Lich
             seen ||= []
             return nil if seen.include?(ref)
             seen << ref
-            room_id, dest = ref.split(':', 2)
-            room = Map[room_id.to_i]
+            room_ref, dest = ref.split(':', 2)
+            room = resolve_room_ref(room_ref)
             return nil unless room
             return resolve_cost(unwrap(room.timeto[dest]), seen)
           end
@@ -216,8 +216,8 @@ module Lich
               arg == 'premium' && uservar('mapdb_fwi_trinket').to_s != ''
             end
           when 'edge'
-            room_id, dest = arg.to_s.split(/[:+]/, 2)
-            room = Map[room_id.to_i]
+            room_ref, dest = arg.to_s.split(/[:+]/, 2)
+            room = resolve_room_ref(room_ref)
             !room.nil? && !resolve_cost(unwrap(room.timeto[dest])).nil?
           when 'drskill'
             # drskill:Athletics>=100 (DRSkill.getmodrank)
@@ -482,7 +482,7 @@ module Lich
         # Follow another room's edge (the proc idiom Map[N].wayto['D'].call),
         # so shared crossings are stored once and referenced.
         def run_cross_edge(step)
-          room = Map[step['room'].to_i]
+          room = resolve_room_ref(step['room'])
           way = room && room.wayto[step['dest'].to_s]
           raise StepFailed, "cross: no edge #{step['room']} -> #{step['dest']}" if way.nil?
           way.respond_to?(:call) ? way.call : move(way)
@@ -500,7 +500,7 @@ module Lich
           start = XMLData.room_id
           (@loop_rooms ||= []).push(start)
           times.times do
-            break if step['until_room'] && current_map_id == step['until_room'].to_i
+            break if step['until_room'] && at_room_ref?(step['until_room'])
             break if step['until_room_change'] && XMLData.room_id != start
             break if step['until'] && condition?(step['until'])
             Array(step['steps']).each { |s| run_step(s) }
@@ -511,10 +511,34 @@ module Lich
           @loop_rooms&.pop
         end
 
-        # The current room's mapdb id (schema room references are always mapdb
-        # ids, never game uids).
+        # The current room's mapdb id.
         def current_map_id
           defined?(Map) && Map.respond_to?(:current) ? Map.current&.id : nil
+        end
+
+        # Room references are dual-currency: an integer/digits string is a
+        # mapdb id; a "uNNN" string is a game uid (the game's ground truth,
+        # stable across mapdb renumbering). Ambiguity resolves conservatively:
+        # a uid mapping to zero or many mapdb rooms yields nil (not routable).
+        def resolve_room_ref(ref)
+          s = ref.to_s
+          if s =~ /\Au(\d+)\z/i
+            ids = Map.respond_to?(:ids_from_uid) ? Map.ids_from_uid(::Regexp.last_match(1).to_i) : []
+            ids.length == 1 ? Map[ids.first] : nil
+          else
+            Map[s.to_i]
+          end
+        end
+
+        # Is the character currently in the referenced room? Uid refs compare
+        # against the live game stream directly - no mapdb lookup at all.
+        def at_room_ref?(ref)
+          s = ref.to_s
+          if s =~ /\Au(\d+)\z/i
+            XMLData.room_id == ::Regexp.last_match(1).to_i
+          else
+            current_map_id == s.to_i
+          end
         end
 
         def run_await(step)
@@ -565,7 +589,7 @@ module Lich
             re = compile_pattern(expand_tokens(arg))
             !re.nil? && GameObj.loot.any? { |obj| obj.name =~ re }
           when 'in_room'
-            current_map_id == arg.to_i
+            at_room_ref?(arg)
           when 'platinum'
             $platinum ? true : false
           when 'ice_caution'
@@ -768,7 +792,7 @@ module Lich
           return [] unless value.is_a?(Hash)
           errors = []
           if (ref = value['same_as'])
-            errors << "same_as must look like 'room:dest', got #{ref.inspect}" unless ref.is_a?(String) && ref =~ /^\d+:\d+$/
+            errors << "same_as must look like 'room:dest' (room may be uNNN), got #{ref.inspect}" unless ref.is_a?(String) && ref =~ /\A(?:u)?\d+:\d+\z/i
             return errors
           end
           if value['event']
@@ -851,7 +875,9 @@ module Lich
           when 'cast_buff'
             errors << 'cast_buff requires a numeric spell' unless step['spell'].is_a?(Integer)
           when 'cross'
-            errors << 'cross requires room and dest' unless step['room'].is_a?(Integer) && step['dest']
+            unless (step['room'].is_a?(Integer) || step['room'].to_s =~ /\A(?:u)?\d+\z/i) && step['dest']
+              errors << 'cross requires room (id or uNNN) and dest'
+            end
           when 'repeat'
             errors << 'repeat requires steps' if Array(step['steps']).empty?
             unless step['until_room'] || step['until_room_change'] || step['until'] || step['times'].is_a?(Numeric)
