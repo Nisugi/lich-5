@@ -100,7 +100,7 @@ module Lich
             @enter = params['enter'] # optional step list; default is go <found>
           end
 
-          def run
+          def run(dest = nil)
             raise StepFailed, 'patrol_search requires rooms, dirs, and objects' if @dirs.empty? || @objects.empty?
             index = @rooms.index(Room.current.id)
             raise StepFailed, "patrol_search started off-route in room #{Room.current.id}" if index.nil?
@@ -119,7 +119,10 @@ module Lich
             else
               move "go #{found}"
             end
-            $go2_restart = true
+            # The loop's exits lead to different rooms (door vs mirror), so the
+            # proc always replanned. Landing on this edge's mapped destination
+            # is the one case where the planned path simply continues.
+            $go2_restart = true unless dest && Room.current.id == dest.to_i
             true
           end
         end

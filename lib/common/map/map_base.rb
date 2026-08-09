@@ -378,7 +378,7 @@ module Lich
                 if room['wayto'][k].is_a?(String) && room['wayto'][k][0..2] == ';e '
                   room['wayto'][k] = StringProc.new(room['wayto'][k][3..])
                 else
-                  room['wayto'][k] = MapEngine.build_wayto(room['wayto'][k])
+                  room['wayto'][k] = MapEngine.build_wayto(room['wayto'][k], k)
                 end
               end
               room['timeto'].keys.each do |k|

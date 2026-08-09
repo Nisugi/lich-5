@@ -51,8 +51,8 @@ module Lich
           value.is_a?(Hash) ? Cost.new(value) : value
         end
 
-        def build_wayto(value)
-          (value.is_a?(Hash) || value.is_a?(Array)) ? Crossing.new(value) : value
+        def build_wayto(value, dest = nil)
+          (value.is_a?(Hash) || value.is_a?(Array)) ? Crossing.new(value, dest) : value
         end
 
         # timeto evaluation ---------------------------------------------------
@@ -250,9 +250,9 @@ module Lich
 
         # Crossing execution --------------------------------------------------
 
-        def cross(raw)
+        def cross(raw, dest = nil)
           if raw.is_a?(Hash) && raw['strategy']
-            Strategies.run(raw)
+            Strategies.run(raw, dest)
           else
             steps = raw.is_a?(Array) ? raw : Array(raw['steps'])
             steps.each { |step| run_step(step) }
@@ -657,14 +657,17 @@ module Lich
       # StringProc's Proc masquerade so go2's `when Proc then way.call`
       # dispatch executes schema edges without modification.
       class Crossing
-        attr_reader :raw
+        attr_reader :raw, :dest
 
-        def initialize(raw)
+        # dest is the edge's destination room (mapdb id) as loaded, letting
+        # strategies skip a replan when the crossing landed exactly there.
+        def initialize(raw, dest = nil)
           @raw = raw
+          @dest = dest
         end
 
         def call(*_args)
-          MapEngine.cross(@raw)
+          MapEngine.cross(@raw, @dest)
         rescue StepFailed => e
           respond "--- MapEngine: crossing failed: #{e.message}" if defined?(respond)
           false
@@ -702,10 +705,13 @@ module Lich
           REGISTRY.key?(name.to_s)
         end
 
-        def self.run(params)
+        def self.run(params, dest = nil)
           klass = REGISTRY[params['strategy'].to_s]
           raise StepFailed, "unknown strategy #{params['strategy'].inspect}" unless klass
-          klass.new(params).run
+          instance = klass.new(params)
+          # Strategies that care about the edge destination declare run(dest);
+          # the rest keep their zero-arg signature.
+          instance.method(:run).arity.zero? ? instance.run : instance.run(dest)
         end
       end
 
