@@ -314,10 +314,23 @@ RSpec.describe Lich::Common::MapEngine do
         described_class.send(:run_travel_to, { 'room' => 400 })
       end
 
+      it 'routes to the nearest room with a tag' do
+        # Which bank is right depends on where you are, so services are named
+        # by tag rather than by a fixed id.
+        current = double('room', find_nearest_by_tag: 399)
+        stub_const('Lich::Common::Map', double('Map', current: current))
+        allow(described_class).to receive(:resolve_room_ref).with(399).and_return(double(id: 399))
+        allow(described_class).to receive(:at_room_ref?).with(399).and_return(true)
+
+        expect(current).to receive(:find_nearest_by_tag).with('bank')
+        described_class.send(:run_travel_to, { 'tag' => 'bank' })
+      end
+
       it 'validates the room reference' do
         v = described_class::Validator
         expect(v.errors_for_wayto([{ 'do' => 'travel_to', 'room' => 400 }])).to be_empty
         expect(v.errors_for_wayto([{ 'do' => 'travel_to', 'room' => 'u123' }])).to be_empty
+        expect(v.errors_for_wayto([{ 'do' => 'travel_to', 'tag' => 'bank' }])).to be_empty
         expect(v.errors_for_wayto([{ 'do' => 'travel_to' }]).join).to include('requires room')
       end
     end

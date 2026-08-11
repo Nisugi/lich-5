@@ -3336,10 +3336,175 @@
       "strategy": "unique_crossing",
       "name": "crossing_6135_6136"
     },
-    "6274:11032": {
-      "strategy": "unique_crossing",
-      "name": "crossing_6274_11032"
-    },
+    "6274:11032": [
+      {
+        "do": "if",
+        "when": "citizenship:River's Rest",
+        "then": [
+          {
+            "do": "find_item",
+            "nouns": [
+              "driftwood"
+            ],
+            "verify": "look {item}",
+            "timeout": 3,
+            "matching": "sun-washed driftwood",
+            "settles": "^You see nothing unusual\\.|^I could not find|^What were you referring to"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:capture:item",
+        "then": [
+          {
+            "do": "find_item",
+            "nouns": [
+              "amulet"
+            ],
+            "verify": "look {item}",
+            "timeout": 3,
+            "matching": "crystal amulet",
+            "settles": "^You see nothing unusual\\.|^I could not find|^What were you referring to"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:capture:item",
+        "then": [
+          {
+            "do": "travel_to",
+            "tag": "bank"
+          },
+          {
+            "do": "if",
+            "when": "status:hidden",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "unhide"
+              }
+            ]
+          },
+          {
+            "do": "await",
+            "cmd": "withdraw 2000 silvers",
+            "timeout": 10,
+            "on_timeout": "continue",
+            "bind": {
+              "withdrew": 0
+            },
+            "for": "hands you|don't seem to have that much"
+          },
+          {
+            "do": "if",
+            "when": "not:capture_match:withdrew=hands you",
+            "then": [
+              {
+                "do": "echo",
+                "msg": "Too poor to go to River's Rest."
+              },
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "travel_to",
+            "tag": "alchemist"
+          },
+          {
+            "do": "if",
+            "when": "status:hidden",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "unhide"
+              }
+            ]
+          },
+          {
+            "do": "send",
+            "cmd": "order 10"
+          },
+          {
+            "do": "await",
+            "cmd": "buy",
+            "timeout": 10,
+            "on_timeout": "continue",
+            "for": "hands you a crystal amulet|Looks like you might buckle under this weight",
+            "bind": {
+              "bought": 0
+            }
+          },
+          {
+            "do": "if",
+            "when": "not:capture_match:bought=hands you a crystal amulet",
+            "then": [
+              {
+                "do": "echo",
+                "msg": "Too encumbered to go to River's Rest."
+              },
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "travel_to",
+            "tag": "bank"
+          },
+          {
+            "do": "send",
+            "cmd": "deposit all"
+          },
+          {
+            "do": "find_item",
+            "nouns": [
+              "amulet"
+            ],
+            "verify": "look {item}",
+            "timeout": 3,
+            "matching": "crystal amulet",
+            "settles": "^You see nothing unusual\\.|^I could not find|^What were you referring to"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:capture:item",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "You have no crystal amulet."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "put {capture:item} in giant's boot"
+      },
+      {
+        "do": "move",
+        "cmd": "go giant's boot"
+      },
+      {
+        "do": "fill_hands"
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:11032",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
     "6486:6487": {
       "strategy": "unique_crossing",
       "name": "crossing_6486_6487"
@@ -3583,10 +3748,175 @@
       "strategy": "unique_crossing",
       "name": "crossing_10781_18150"
     },
-    "11032:6274": {
-      "strategy": "unique_crossing",
-      "name": "crossing_11032_6274"
-    },
+    "11032:6274": [
+      {
+        "do": "if",
+        "when": "citizenship:River's Rest",
+        "then": [
+          {
+            "do": "find_item",
+            "nouns": [
+              "driftwood"
+            ],
+            "verify": "look {item}",
+            "timeout": 3,
+            "matching": "sun-washed driftwood",
+            "settles": "^You see nothing unusual\\.|^I could not find|^What were you referring to"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:capture:item",
+        "then": [
+          {
+            "do": "find_item",
+            "nouns": [
+              "amulet"
+            ],
+            "verify": "look {item}",
+            "timeout": 3,
+            "matching": "crystal amulet",
+            "settles": "^You see nothing unusual\\.|^I could not find|^What were you referring to"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:capture:item",
+        "then": [
+          {
+            "do": "travel_to",
+            "tag": "bank"
+          },
+          {
+            "do": "if",
+            "when": "status:hidden",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "unhide"
+              }
+            ]
+          },
+          {
+            "do": "await",
+            "cmd": "withdraw 2000 silvers",
+            "timeout": 10,
+            "on_timeout": "continue",
+            "bind": {
+              "withdrew": 0
+            },
+            "for": "hands you|don't seem to have that much"
+          },
+          {
+            "do": "if",
+            "when": "not:capture_match:withdrew=hands you",
+            "then": [
+              {
+                "do": "echo",
+                "msg": "Too poor to go to River's Rest."
+              },
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "travel_to",
+            "tag": "alchemist"
+          },
+          {
+            "do": "if",
+            "when": "status:hidden",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "unhide"
+              }
+            ]
+          },
+          {
+            "do": "send",
+            "cmd": "order 10"
+          },
+          {
+            "do": "await",
+            "cmd": "buy",
+            "timeout": 10,
+            "on_timeout": "continue",
+            "for": "hands you a crystal amulet|Looks like you might buckle under this weight",
+            "bind": {
+              "bought": 0
+            }
+          },
+          {
+            "do": "if",
+            "when": "not:capture_match:bought=hands you a crystal amulet",
+            "then": [
+              {
+                "do": "echo",
+                "msg": "Too encumbered to go to River's Rest."
+              },
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "travel_to",
+            "tag": "bank"
+          },
+          {
+            "do": "send",
+            "cmd": "deposit all"
+          },
+          {
+            "do": "find_item",
+            "nouns": [
+              "amulet"
+            ],
+            "verify": "look {item}",
+            "timeout": 3,
+            "matching": "crystal amulet",
+            "settles": "^You see nothing unusual\\.|^I could not find|^What were you referring to"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:capture:item",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "You have no crystal amulet."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "put {capture:item} in giant's boot"
+      },
+      {
+        "do": "move",
+        "cmd": "go giant's boot"
+      },
+      {
+        "do": "fill_hands"
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:6274",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
     "11355:11357": {
       "strategy": "unique_crossing",
       "name": "crossing_11355_11357"
@@ -3744,10 +4074,132 @@
       "strategy": "unique_crossing",
       "name": "crossing_14060_20430"
     },
-    "14726:18172": {
-      "strategy": "unique_crossing",
-      "name": "crossing_14726_18172"
-    },
+    "14726:18172": [
+      {
+        "do": "await",
+        "cmd": "go bridge",
+        "timeout": 3,
+        "for": "which is presently pulled open",
+        "on_timeout": "continue",
+        "bind": {
+          "blocked": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:blocked",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "go opening"
+          },
+          {
+            "do": "repeat",
+            "times": 5,
+            "steps": [
+              {
+                "do": "wait_rt"
+              },
+              {
+                "do": "await",
+                "cmd": "climb platform",
+                "timeout": 2,
+                "on_timeout": "continue",
+                "for": "You decide to climb back down|you were able to pull yourself up|I could not find what you were referring to|You figure freeing up both hands might help\\.",
+                "bind": {
+                  "result": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:result=freeing up both hands",
+                "then": [
+                  {
+                    "do": "empty_hands"
+                  }
+                ]
+              },
+              {
+                "do": "if",
+                "when": "capture_match:result=pull yourself up|could not find what you were referring to",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "do": "fill_hands"
+          },
+          {
+            "do": "repeat",
+            "times": 2,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "turn wheel",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "The wheel begins to move|you just don't have enough strength to budge it|already been turned and a locking bar is holding it in place\\.",
+                "bind": {
+                  "turned": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:turned=wheel begins to move|locking bar is holding it",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ],
+                "else": [
+                  {
+                    "do": "cast_buff",
+                    "spell": 606
+                  },
+                  {
+                    "do": "cast_buff",
+                    "spell": 509
+                  },
+                  {
+                    "do": "cast_buff",
+                    "spell": 9605
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "do": "if",
+            "when": "not:capture_match:turned=wheel begins to move|locking bar is holding it",
+            "then": [
+              {
+                "do": "echo",
+                "msg": "You don't have the strength to turn the wheel on your own."
+              },
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "move",
+            "cmd": "down"
+          },
+          {
+            "do": "move",
+            "cmd": "out"
+          },
+          {
+            "do": "move",
+            "cmd": "go bridge"
+          }
+        ]
+      }
+    ],
     "15571:17721": {
       "strategy": "unique_crossing",
       "name": "crossing_15571_17721"

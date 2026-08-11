@@ -459,13 +459,22 @@ module Lich
         # itself travel_to, so bad data wastes one route instead of looping
         # forever (MAX_TRAVEL_DEPTH is 1 for that reason).
         def run_travel_to(step)
-          room = resolve_room_ref(step['room'])
-          raise StepFailed, "travel_to: unknown room #{step['room'].inspect}" unless room
-          return if at_room_ref?(step['room'])
+          # A tag ("bank", "alchemist") routes to the nearest such room, which
+          # is how the procs navigated to services - the right one depends on
+          # where you are, so it cannot be a fixed id.
+          ref = step['room']
+          if (tag = step['tag'])
+            ref = Map.current&.find_nearest_by_tag(tag.to_s)
+            raise StepFailed, "travel_to: no room tagged #{tag.inspect} nearby" unless ref
+          end
+
+          room = resolve_room_ref(ref)
+          raise StepFailed, "travel_to: unknown room #{ref.inspect}" unless room
+          return if at_room_ref?(ref)
 
           @travel_depth ||= 0
           if @travel_depth >= MAX_TRAVEL_DEPTH
-            raise StepFailed, "travel_to: nested routing refused (room #{step['room']})"
+            raise StepFailed, "travel_to: nested routing refused (room #{ref})"
           end
 
           @travel_depth += 1
@@ -480,7 +489,7 @@ module Lich
             started = Time.now
             sleep 0.1 until Script.running.count { |s| s.name == 'go2' } > before || Time.now - started > 5
             wait_while { Script.running.count { |s| s.name == 'go2' } > before }
-            unless at_room_ref?(step['room'])
+            unless at_room_ref?(ref)
               raise StepFailed, "travel_to: did not reach room #{room.id}"
             end
           ensure
@@ -531,8 +540,11 @@ module Lich
           nouns = Array(step['nouns']).map(&:to_s)
           raise StepFailed, 'find_item requires nouns' if nouns.empty?
 
+          # `as` names the binding, for edges that look for more than one thing
+          # and need to tell the results apart.
+          slot = (step['as'] || 'item').to_s
           @captures ||= {}
-          @captures['item'] = nil
+          @captures[slot] = nil
           pattern = compile_pattern(expand_tokens(step['matching'].to_s))
           raise StepFailed, 'find_item requires a matching pattern' unless pattern
 
@@ -556,7 +568,7 @@ module Lich
             empty_hand if GameObj.right_hand.id && GameObj.left_hand.id
             fput "get ##{found.id}"
           end
-          @captures['item'] = "##{found.id}"
+          @captures[slot] = "##{found.id}"
         end
 
         # Look inside containers whose contents we cannot already see, leaving
@@ -1283,8 +1295,10 @@ module Lich
           when 'set'
             errors << 'set requires var' unless step['var'].is_a?(String)
           when 'travel_to'
-            unless step['room'].is_a?(Integer) || step['room'].to_s =~ /\A(?:u)?\d+\z/i
-              errors << 'travel_to requires room (id or uNNN)'
+            if step['tag']
+              errors << 'travel_to tag must be a string' unless step['tag'].is_a?(String)
+            elsif !(step['room'].is_a?(Integer) || step['room'].to_s =~ /\A(?:u)?\d+\z/i)
+              errors << 'travel_to requires room (id or uNNN) or tag'
             end
           when 'search_rooms'
             rooms = step['rooms']
