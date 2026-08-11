@@ -263,6 +263,7 @@ module Lich
         # Crossing execution --------------------------------------------------
 
         def cross(raw, dest = nil)
+          clear_captures
           if raw.is_a?(Hash) && raw['strategy']
             Strategies.run(raw, dest)
           else
@@ -471,6 +472,7 @@ module Lich
           source.gsub('{char}', defined?(Char) ? Regexp.escape(Char.name.to_s) : '{char}')
                 .gsub('{map_id}') { (defined?(Map) && Map.current&.id).to_s }
                 .gsub(/\{uservar:(\w+)\}/) { uservar(::Regexp.last_match(1)).to_s }
+                .gsub(/\{capture:(\w+)\}/) { captures[::Regexp.last_match(1)].to_s }
                 .gsub(/\{item_id:([^}]+)\}/) do
                   name = ::Regexp.last_match(1)
                   item = GameObj.inv.find { |obj| obj.name == name || obj.noun == name }
@@ -557,11 +559,61 @@ module Lich
               raise StepFailed, "await retry timed out: #{what}" unless hit
             end
           end
+          bind_captures(step, hit, pattern)
           if hit && (br = step['if_match'])
             sub = compile_pattern(br['pattern'])
             Array(br['steps']).each { |s| run_step(s) } if sub && hit =~ sub
           end
           hit
+        end
+
+        # Bind pieces of a matched line for later steps to interpolate:
+        #   { "do": "await", "cmd": "look trail", "for": "heads off to the (\\w+)",
+        #     "bind": { "dir": 1 } }        -> {capture:dir} == the captured word
+        #   "bind": { "dir": "wall" }        -> named group (?<wall>...)
+        # Bindings live for the current crossing only; an unbound name
+        # interpolates as empty, which fails the command visibly rather than
+        # sending a half-formed one silently.
+        def bind_captures(step, hit, pattern)
+          spec = step['bind']
+          return unless spec.is_a?(Hash)
+          @captures ||= {}
+          md = hit && pattern ? pattern.match(hit) : nil
+          spec.each do |name, group|
+            @captures[name.to_s] =
+              case group
+              when Integer then md && md[group]
+              when String then md && md[group]
+              when Hash then bind_ordinal(md, group)
+              end
+          end
+        end
+
+        # Ordinal binding: the rotating-staircase shape. A room line lists N
+        # things; find which occurrence matches `equals` and bind the word for
+        # that position from `words` (1st -> "steps", 2nd -> "second steps").
+        #   "bind": { "which": { "group": "wall", "equals": "northern",
+        #                        "words": ["steps", "second steps", ...] } }
+        def bind_ordinal(md, spec)
+          return nil unless md
+          names = md.names
+          group = spec['group'].to_s
+          # Collect every occurrence of the repeated group, in order.
+          values = if names.include?(group)
+                     md.captures.each_with_index.select { |_, i| md.names[i] == group }.map(&:first)
+                   else
+                     md.captures
+                   end
+          index = values.index(spec['equals'])
+          index && Array(spec['words'])[index]
+        end
+
+        def captures
+          @captures ||= {}
+        end
+
+        def clear_captures
+          @captures = {}
         end
 
         def condition?(cond)
@@ -588,6 +640,11 @@ module Lich
           when 'loot_match'
             re = compile_pattern(expand_tokens(arg))
             !re.nil? && GameObj.loot.any? { |obj| obj.name =~ re }
+          when 'capture'
+            # capture:NAME (bound and non-empty) or capture:NAME=VALUE
+            name, expected = arg.to_s.split('=', 2)
+            value = captures[name]
+            expected ? value.to_s == expected : !value.to_s.empty?
           when 'in_room'
             at_room_ref?(arg)
           when 'platinum'
@@ -783,7 +840,7 @@ module Lich
                                stamina].freeze
         FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match
-                             in_room platinum].freeze
+                             in_room platinum capture].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function
@@ -857,6 +914,17 @@ module Lich
             if (br = step['if_match'])
               errors << "invalid if_match regex #{br['pattern'].inspect}" unless br.is_a?(Hash) && compilable?(br['pattern'])
               errors.concat(Array(br.is_a?(Hash) ? br['steps'] : nil).flat_map { |s| errors_for_step(s) })
+            end
+            if step.key?('bind')
+              if step['bind'].is_a?(Hash)
+                step['bind'].each_value do |group|
+                  ok = group.is_a?(Integer) || group.is_a?(String) ||
+                       (group.is_a?(Hash) && group['group'] && group['equals'] && group['words'].is_a?(Array))
+                  errors << "bind target must be a group number, group name, or ordinal spec: #{group.inspect}" unless ok
+                end
+              else
+                errors << 'bind must be an object of name => group'
+              end
             end
           when 'sleep'
             errors << 'sleep requires numeric seconds' unless step['seconds'].is_a?(Numeric)

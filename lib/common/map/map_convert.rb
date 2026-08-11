@@ -240,6 +240,12 @@ module Lich
         if (r = convert_wayto_dr(body))
           return r
         end
+        if (r = convert_wayto_captures(body))
+          return r
+        end
+        if (r = convert_wayto_group(body))
+          return r
+        end
         if (r = convert_wayto_special(body))
           return r
         end
@@ -599,6 +605,85 @@ module Lich
                                           { 'do' => 'move', 'cmd' => m[5] || m[6] }] }])
         end
         nil
+      end
+
+      # Capture families: procs that match a game line, keep part of it, and
+      # use that part in a later command. These became expressible once await
+      # gained `bind` + the {capture:name} token.
+      def convert_wayto_captures(body)
+        # matchfindword: capture a direction word from a prompt line, move it.
+        if (m = body.match(/\Amove\s+#{QUOTED}\s+fput\s+#{QUOTED}\s+
+                            dir\s*=\s*matchfindword\s+#{QUOTED}\s+
+                            move\s+#{QUOTED}\s+
+                            sleep\s+(#{NUM})\s+if\s+running\?\(#{QUOTED}\)\s+
+                            move\s+dir\z/xm))
+          prompt = (m[5] || m[6]).sub(/\s*\?\s*\z/, '')
+          return Result.new('capture_direction',
+                            [{ 'do' => 'move', 'cmd' => m[1] || m[2] },
+                             { 'do' => 'await', 'cmd' => m[3] || m[4],
+                               'for' => "#{Regexp.escape(prompt)}\\s*(\\w+)",
+                               'bind' => { 'dir' => 1 }, 'timeout' => 10 },
+                             { 'do' => 'move', 'cmd' => m[7] || m[8] },
+                             { 'do' => 'move', 'cmd' => '{capture:dir}' }])
+        end
+        # Rotating staircases: four positions in one line; climb the Nth whose
+        # wall matches the target.
+        if (m = body.match(/\Aclear\s+put\s+'look'\s+loop\s*\{\s*line\s*=\s*get\s+
+                            if\s+line\s*=~\s*\/(.+?)\/\s+
+                            if\s+\$3\s*==\s*'(\w+)'.*?\}\z/xm))
+          words = body.scan(/move\s+'climb ([^']+)'/).flatten
+          return nil unless words.length == 4
+          pattern = m[1].gsub('(northern|eastern|southern|western)', '(?<wall>northern|eastern|southern|western)')
+          return Result.new('capture_ordinal',
+                            [{ 'do' => 'send', 'cmd' => 'look' },
+                             { 'do' => 'await', 'for' => pattern, 'timeout' => 10,
+                               'bind' => { 'which' => { 'group' => 'wall', 'equals' => m[2], 'words' => words } } },
+                             { 'do' => 'move', 'cmd' => 'climb {capture:which}' }])
+        end
+        # Language swap: capture current language, speak the passphrase in
+        # Guildspeak, restore.
+        if (m = body.match(/\Afput\s+'speak';\s*language\s*=\s*\/You are currently speaking \(\.\*\?\)\\\.\/\.match\(get\)\.captures\.first\s+until\s+language;+\s*
+                            fput\('speak (\w+)'\)\s+unless\s+language\s*==\s*'(\w+)';\s*
+                            fput\('unhide'\)\s+if\s+hidden\?\s+or\s+invisible\?;\s*
+                            move\s+#{QUOTED};\s*
+                            fput\('speak '\s*\+\s*language\.to_s\)\s+unless\s+language\s*==\s*'\2'\z/xm))
+          return Result.new('capture_language',
+                            [{ 'do' => 'await', 'cmd' => 'speak',
+                               'for' => 'You are currently speaking (.*?)\\.',
+                               'bind' => { 'lang' => 1 }, 'timeout' => 10 },
+                             { 'do' => 'if', 'when' => "not:capture:lang=#{m[2]}",
+                               'then' => [{ 'do' => 'send', 'cmd' => "speak #{m[1]}" }] },
+                             { 'do' => 'if', 'when' => 'status:hidden',
+                               'then' => [{ 'do' => 'send', 'cmd' => 'unhide' }] },
+                             { 'do' => 'move', 'cmd' => m[3] || m[4] },
+                             { 'do' => 'if', 'when' => "not:capture:lang=#{m[2]}",
+                               'then' => [{ 'do' => 'send', 'cmd' => 'speak {capture:lang}' }] }])
+        end
+        nil
+      end
+
+      # The group-wait preamble: scan the room's "X, Y and Z followed." line
+      # into a member list. Every crossing carrying it is move_with_group with
+      # decoration. Anchored on the preamble's own terminator, since its body
+      # contains inner braces.
+      GROUP_SCAN = /\Agroup_members\s*=\s*nil;\s*clear\.reverse\.each\s*\{.*?
+                    group_members\s*=\s*nil\s+if\s+group_members\.empty\?;\s*break;\s*end\s*\};\s*/xm
+
+      def convert_wayto_group(body)
+        return nil unless body =~ /\Agroup_members\s*=\s*nil;\s*clear\.reverse\.each/
+        rest = body.sub(GROUP_SCAN, '')
+        # Remaining shapes: [empty_hands;] move 'CMD'; [waitrt?;] [fill_hands;]
+        # then the wait-for-group tail (any of its spellings).
+        m = rest.match(/\A(empty_hands;\s*)?move\s+#{QUOTED};\s*(waitrt\?;\s*)?(fill_hands;\s*)?
+                        if\s+\(?group_members/xm)
+        return nil unless m
+
+        steps = []
+        steps << { 'do' => 'empty_hands' } if m[1]
+        steps << { 'do' => 'move_with_group', 'cmd' => m[2] || m[3] }
+        steps << { 'do' => 'wait_rt' } if m[4]
+        steps << { 'do' => 'fill_hands' } if m[5]
+        Result.new('group_move', steps)
       end
 
       # Conditional-wait, buff-cast, delegation, and posture families.

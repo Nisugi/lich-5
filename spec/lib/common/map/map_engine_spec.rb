@@ -165,6 +165,45 @@ RSpec.describe Lich::Common::MapEngine do
     end
   end
 
+  describe 'capture binding' do
+    after { described_class.clear_captures }
+
+    it 'binds a numbered group and interpolates it into later commands' do
+      pattern = described_class.compile_pattern('heads off to the (\\w+)')
+      described_class.send(:bind_captures, { 'bind' => { 'dir' => 1 } },
+                           'the trail heads off to the north', pattern)
+      expect(described_class.captures['dir']).to eq('north')
+      expect(described_class.expand_tokens('move {capture:dir}')).to eq('move north')
+    end
+
+    it 'binds an ordinal position (rotating staircase shape)' do
+      # The real proc's pattern repeats an unnamed alternation once per
+      # staircase; ordinal binding finds which occurrence matches and yields
+      # that position's word.
+      pattern = described_class.compile_pattern(
+        '(northern|eastern) wall, a flight of steps (northern|eastern) wall'
+      )
+      spec = { 'bind' => { 'which' => { 'group' => 'wall', 'equals' => 'eastern',
+                                        'words' => ['steps', 'second steps'] } } }
+      described_class.send(:bind_captures, spec,
+                           'northern wall, a flight of steps eastern wall', pattern)
+      expect(described_class.captures['which']).to eq('second steps')
+    end
+
+    it 'treats an unbound capture as empty and false' do
+      expect(described_class.expand_tokens('move {capture:missing}')).to eq('move ')
+      expect(described_class.condition?('capture:missing')).to be(false)
+    end
+
+    it 'validates bind specs' do
+      v = described_class::Validator
+      good = [{ 'do' => 'await', 'cmd' => 'look', 'for' => '(\\w+)', 'bind' => { 'dir' => 1 } }]
+      expect(v.errors_for_wayto(good)).to be_empty
+      bad = [{ 'do' => 'await', 'cmd' => 'look', 'for' => '(\\w+)', 'bind' => { 'dir' => [] } }]
+      expect(v.errors_for_wayto(bad).join).to include('bind target')
+    end
+  end
+
   describe 'dual-currency room references' do
     it 'resolves uNNN through the uid index, conservatively on ambiguity' do
       map = double('Map')
