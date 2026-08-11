@@ -509,41 +509,75 @@ module Lich
       # for it, then steer" - the water tunnels, where each landmark cues the
       # next lean. Every waitfor becomes a bounded await, since waitfor itself
       # has no timeout and a missed cue would otherwise hang the crossing.
+      # Consume `len` characters and any separators that follow, so the next
+      # token match can anchor at \A.
+      def advance(text, len)
+        text[len..].to_s.sub(/\A[;\s]+/, '')
+      end
+
       def convert_wayto_piloted_ride(body)
         # Strip the timing bookkeeping, which is diagnostic only.
         text = body.gsub(/start_time\s*=\s*Time\.now\.to_i;?\s*/, '')
                    .gsub(/_respond\s+"[^"]*water tunnel time[^"]*";?\s*/, '')
-        return nil unless text.scan(/waitfor\s+#{QUOTED}/).length >= 2
+        return nil unless text =~ /waitfor\s+#{QUOTED}/
 
         steps = []
-        rest = text
-        until rest.strip.empty?
-          rest = rest.sub(/\A;\s*/, '')
-          if (m = rest.match(/\A_respond\s+"[^"]*?monsterbold_start\}(.+?)\#\{monsterbold_end[^"]*";\s*/m))
+        # These bodies are multi-line and indented; clear leading separators
+        # so each token match can anchor at \A.
+        rest = text.sub(/\A[;\s]+/, '')
+        until rest.empty?
+          if (m = rest.match(/\Aif\s*!GameObj\.loot\.find\s*\{\s*\|\w+\|\s*\w+\.name\s*==\s*#{QUOTED}\s*\};\s*(.+?);?\s*end;\s*/m))
+            # "Only wait for the ride if it is not already here."
+            inner = convert_wayto_piloted_ride(m[3])
+            return nil unless inner
+
+            steps << { 'do' => 'if', 'when' => "not:loot_match:#{escape_literal(m[1] || m[2])}",
+                       'then' => inner.schema }
+            rest = advance(rest, m[0].length)
+          elsif (m = rest.match(/\Adothistimeout\s+#{QUOTED},\s*(\d+),\s*\/(.+?)\/;?\s*/m))
+            steps << { 'do' => 'await', 'cmd' => m[1] || m[2], 'timeout' => m[3].to_i,
+                       'on_timeout' => 'continue', 'for' => m[4] }
+            rest = advance(rest, m[0].length)
+          elsif (m = rest.match(/\Asleep\(?([\d.]+)\)?;?\s*/m))
+            steps << { 'do' => 'sleep', 'seconds' => m[1].to_f }
+            rest = advance(rest, m[0].length)
+          elsif (m = rest.match(/\Awaitrt\?;?\s*/m))
+            steps << { 'do' => 'wait_rt' }
+            rest = advance(rest, m[0].length)
+          elsif (m = rest.match(/\Amove\(?#{QUOTED}\)?;?\s*/m))
+            steps << { 'do' => 'move', 'cmd' => m[1] || m[2] }
+            rest = advance(rest, m[0].length)
+          elsif (m = rest.match(/\A_respond\s+"[^"]*?monsterbold_start\}(.+?)\#\{monsterbold_end[^"]*";\s*/m))
             steps << { 'do' => 'echo', 'msg' => m[1].strip }
-            rest = rest[m[0].length..]
+            rest = advance(rest, m[0].length)
           elsif (m = rest.match(/\Awaitfor\s+#{QUOTED};?\s*/m))
             steps << { 'do' => 'await', 'timeout' => 600, 'on_timeout' => 'fail',
                        'for' => escape_literal(m[1] || m[2]) }
-            rest = rest[m[0].length..]
+            rest = advance(rest, m[0].length)
           elsif (m = rest.match(/\A(?:fput|put)\s+#{QUOTED};?\s*/m))
             steps << { 'do' => 'send', 'cmd' => m[1] || m[2] }
-            rest = rest[m[0].length..]
+            rest = advance(rest, m[0].length)
           elsif (m = rest.match(/\Arefill_hands\s*=\s*false;?\s*/m))
-            rest = rest[m[0].length..]
+            rest = advance(rest, m[0].length)
           elsif (m = rest.match(/\A\(refill_hands\s*=\s*true;\s*empty_hands;\s*\)\s*if\s+
                                   GameObj\.right_hand\.id\s+or\s+GameObj\.left_hand\.id;?\s*/xm))
             # empty_hands is already a no-op with empty hands.
             steps << { 'do' => 'empty_hands' }
-            rest = rest[m[0].length..]
+            rest = advance(rest, m[0].length)
           elsif (m = rest.match(/\Afill_hands(?:\s+if\s+refill_hands)?;?\s*/m))
             steps << { 'do' => 'fill_hands' }
-            rest = rest[m[0].length..]
+            rest = advance(rest, m[0].length)
           else
             return nil # something we do not model; leave the whole body alone
           end
         end
-        return nil if steps.none? { |s| s['do'] == 'await' }
+        # The wait may sit inside a conditional ("only wait if the ride is not
+        # already here"), so look through branches rather than at the top level.
+        has_await = false
+        Lich::Common::MapEngine::Validator.each_step(steps) do |s|
+          has_await = true if s['do'] == 'await'
+        end
+        return nil unless has_await
 
         Result.new('piloted_ride', steps)
       end

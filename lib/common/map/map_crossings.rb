@@ -357,21 +357,6 @@ module Lich
           move("go staircase");
         end
 
-        define('crossing_18180_18181') do # 18180:18181
-          sleep(0.2);
-          refill_hands=false;(refill_hands = true;empty_hands;) if GameObj.right_hand.id or GameObj.left_hand.id;
-          if !GameObj.loot.find{|o| o.name=='wooden cab'};
-            dothistimeout "close dam",3,/You push hard on the wooden dam slat and it slides closed.|It is already closed./;
-            _respond "#{monsterbold_start}Waiting for 'riding on the trellis'.  This may take around four and a half minutes.#{monsterbold_end}  #{Time.now}";
-            waitfor "riding on the trellis, crawls down the side of the mountain and comes to a clunky stop";
-          end;
-          fput "open dam";
-          sleep(0.5);
-          waitrt?;
-          fill_hands if refill_hands;
-          move('go cab');
-        end
-
         define('crossing_18700_18250') do # 18700:18250
           if !GameObj.loot.find{|o| o.name =~ /ruined cell door/}.nil?;
             move ('go door');
