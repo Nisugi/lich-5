@@ -3830,10 +3830,148 @@
       "strategy": "unique_crossing",
       "name": "crossing_7331_7315"
     },
-    "8373:8374": {
-      "strategy": "unique_crossing",
-      "name": "crossing_8373_8374"
-    },
+    "8373:8374": [
+      {
+        "do": "repeat",
+        "times": 20,
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "look northern wedge",
+            "timeout": 5,
+            "on_timeout": "continue",
+            "for": "The stone ring's northern wedge is currently pointed at a sigil of (a large thick torus surrounded by nine tiny circles|two crossed upside-down hammers circumscribed by a rounded arc|a jagged triangular arch bisected by a vertical line|three pairs of obliquely intersecting parallel lines)\\.",
+            "bind": {
+              "sigil": 1
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture_match:sigil=a large thick torus surrounded by nine tiny circles",
+            "then": [
+              {
+                "do": "break"
+              }
+            ],
+            "else": [
+              {
+                "do": "send",
+                "cmd": "turn ring"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "push northern wedge"
+      },
+      {
+        "do": "repeat",
+        "times": 20,
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "look eastern wedge",
+            "timeout": 5,
+            "on_timeout": "continue",
+            "for": "The stone ring's eastern wedge is currently pointed at a sigil of (a large thick torus surrounded by nine tiny circles|two crossed upside-down hammers circumscribed by a rounded arc|a jagged triangular arch bisected by a vertical line|three pairs of obliquely intersecting parallel lines)\\.",
+            "bind": {
+              "sigil": 1
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture_match:sigil=two crossed upside-down hammers circumscribed by a rounded arc",
+            "then": [
+              {
+                "do": "break"
+              }
+            ],
+            "else": [
+              {
+                "do": "send",
+                "cmd": "turn ring"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "push eastern wedge"
+      },
+      {
+        "do": "repeat",
+        "times": 20,
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "look western wedge",
+            "timeout": 5,
+            "on_timeout": "continue",
+            "for": "The stone ring's western wedge is currently pointed at a sigil of (a large thick torus surrounded by nine tiny circles|two crossed upside-down hammers circumscribed by a rounded arc|a jagged triangular arch bisected by a vertical line|three pairs of obliquely intersecting parallel lines)\\.",
+            "bind": {
+              "sigil": 1
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture_match:sigil=a jagged triangular arch bisected by a vertical line",
+            "then": [
+              {
+                "do": "break"
+              }
+            ],
+            "else": [
+              {
+                "do": "send",
+                "cmd": "turn ring"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "push western wedge"
+      },
+      {
+        "do": "repeat",
+        "times": 20,
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "look southern wedge",
+            "timeout": 5,
+            "on_timeout": "continue",
+            "for": "The stone ring's southern wedge is currently pointed at a sigil of (a large thick torus surrounded by nine tiny circles|two crossed upside-down hammers circumscribed by a rounded arc|a jagged triangular arch bisected by a vertical line|three pairs of obliquely intersecting parallel lines)\\.",
+            "bind": {
+              "sigil": 1
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture_match:sigil=three pairs of obliquely intersecting parallel lines",
+            "then": [
+              {
+                "do": "break"
+              }
+            ],
+            "else": [
+              {
+                "do": "send",
+                "cmd": "turn ring"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "push southern wedge"
+      }
+    ],
     "9784:9734": [
       {
         "do": "repeat",
@@ -5069,10 +5207,240 @@
       "strategy": "unique_crossing",
       "name": "crossing_30582_30583"
     },
-    "30850:30851": {
-      "strategy": "unique_crossing",
-      "name": "crossing_30850_30851"
-    },
+    "30850:30851": [
+      {
+        "do": "if",
+        "when": "room_object_match:blue barrier",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "n"
+          },
+          {
+            "do": "move",
+            "cmd": "sw"
+          },
+          {
+            "do": "move",
+            "cmd": "sw"
+          },
+          {
+            "do": "move",
+            "cmd": "go grotto"
+          },
+          {
+            "do": "send",
+            "cmd": "touch crystal"
+          },
+          {
+            "do": "move",
+            "cmd": "out"
+          },
+          {
+            "do": "move",
+            "cmd": "ne"
+          },
+          {
+            "do": "move",
+            "cmd": "ne"
+          },
+          {
+            "do": "move",
+            "cmd": "s"
+          },
+          {
+            "do": "move",
+            "cmd": "go barrier"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "room_object_match:black barrier",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "n"
+          },
+          {
+            "do": "move",
+            "cmd": "sw"
+          },
+          {
+            "do": "move",
+            "cmd": "sw"
+          },
+          {
+            "do": "move",
+            "cmd": "sw"
+          },
+          {
+            "do": "move",
+            "cmd": "s"
+          },
+          {
+            "do": "move",
+            "cmd": "se"
+          },
+          {
+            "do": "move",
+            "cmd": "go grotto"
+          },
+          {
+            "do": "send",
+            "cmd": "touch crystal"
+          },
+          {
+            "do": "move",
+            "cmd": "out"
+          },
+          {
+            "do": "move",
+            "cmd": "nw"
+          },
+          {
+            "do": "move",
+            "cmd": "n"
+          },
+          {
+            "do": "move",
+            "cmd": "ne"
+          },
+          {
+            "do": "move",
+            "cmd": "ne"
+          },
+          {
+            "do": "move",
+            "cmd": "ne"
+          },
+          {
+            "do": "move",
+            "cmd": "s"
+          },
+          {
+            "do": "move",
+            "cmd": "go barrier"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "room_object_match:red barrier",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "n"
+          },
+          {
+            "do": "move",
+            "cmd": "se"
+          },
+          {
+            "do": "move",
+            "cmd": "se"
+          },
+          {
+            "do": "move",
+            "cmd": "go grotto"
+          },
+          {
+            "do": "send",
+            "cmd": "touch crystal"
+          },
+          {
+            "do": "move",
+            "cmd": "out"
+          },
+          {
+            "do": "move",
+            "cmd": "nw"
+          },
+          {
+            "do": "move",
+            "cmd": "nw"
+          },
+          {
+            "do": "move",
+            "cmd": "s"
+          },
+          {
+            "do": "move",
+            "cmd": "go barrier"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "room_object_match:yellow barrier",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "n"
+          },
+          {
+            "do": "move",
+            "cmd": "se"
+          },
+          {
+            "do": "move",
+            "cmd": "se"
+          },
+          {
+            "do": "move",
+            "cmd": "se"
+          },
+          {
+            "do": "move",
+            "cmd": "s"
+          },
+          {
+            "do": "move",
+            "cmd": "sw"
+          },
+          {
+            "do": "move",
+            "cmd": "go grotto"
+          },
+          {
+            "do": "send",
+            "cmd": "touch crystal"
+          },
+          {
+            "do": "move",
+            "cmd": "out"
+          },
+          {
+            "do": "move",
+            "cmd": "ne"
+          },
+          {
+            "do": "move",
+            "cmd": "n"
+          },
+          {
+            "do": "move",
+            "cmd": "nw"
+          },
+          {
+            "do": "move",
+            "cmd": "nw"
+          },
+          {
+            "do": "move",
+            "cmd": "nw"
+          },
+          {
+            "do": "move",
+            "cmd": "s"
+          },
+          {
+            "do": "move",
+            "cmd": "go barrier"
+          }
+        ]
+      }
+    ],
     "31286:31345": {
       "strategy": "unique_crossing",
       "name": "crossing_31286_31345"

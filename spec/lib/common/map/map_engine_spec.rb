@@ -462,6 +462,15 @@ RSpec.describe Lich::Common::MapEngine do
         .to raise_error(described_class::StepFailed, /not in this room/)
     end
 
+    it 'matches room scenery by full name when it varies by adjective' do
+      barrier = double('barrier', name: 'a blue barrier', noun: 'barrier')
+      stub_const('Lich::Common::GameObj', double('GameObj', room_desc: [barrier]))
+      expect(described_class.condition?('room_object_match:blue barrier')).to be(true)
+      expect(described_class.condition?('room_object_match:red barrier')).to be(false)
+      # the bare-noun form cannot tell the colours apart
+      expect(described_class.condition?('room_object:barrier')).to be(true)
+    end
+
     it 'matches npcs separately from loot' do
       # GameObj.loot is items; a bandit is an npc and would never appear there.
       bandit = double('bandit', name: 'a burly bandit', noun: 'bandit')

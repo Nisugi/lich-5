@@ -990,6 +990,11 @@ module Lich
             # Scenery named in the room description, which is a different
             # registry from loot (things lying on the ground).
             GameObj.room_desc.any? { |obj| obj.noun == expand_tokens(arg) }
+          when 'room_object_match'
+            # Same registry, matched by full name: scenery that varies by
+            # adjective ("a blue barrier" vs "a red barrier").
+            re = compile_pattern(expand_tokens(arg))
+            !re.nil? && GameObj.room_desc.any? { |obj| obj.name =~ re }
           when 'npc_match'
             # A creature in the room matches: loot is items, npcs are not.
             re = compile_pattern(expand_tokens(arg))
@@ -1208,7 +1213,7 @@ module Lich
         FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match
                              in_room platinum capture capture_match room_loaded loot_noun
-                             npc_match room_object].freeze
+                             npc_match room_object room_object_match].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function

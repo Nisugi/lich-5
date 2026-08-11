@@ -278,20 +278,6 @@ module Lich
           group_members = nil; clear.reverse.each { |line| if line =~ /^Obvious (paths|exits)/; break; elsif line =~ /^([A-Za-z ,]+) followed\.$/; group_members = $1.split(/, | and /); group_members.delete_if { |m| m =~ /^[Yy]our / }; group_members = nil if group_members.empty?; break; end }; fput 'stand' unless standing?; fput 'jump abyss'; wait_until { stunned? }; wait_while { stunned? }; fput 'stand'; if (group_members.to_a.length > 0); echo 'Waiting for your group... To ditch them, ;send go'; wait_until { (group_members.to_a - GameObj.pcs.to_a.delete_if { |pc| not pc.status.nil? }.collect { |pc| pc.name }).empty? or clear.find { |line| line == 'go' } }; end
         end
 
-        define('crossing_8373_8374') do # 8373:8374
-          
-          wedge_list = { 'northern' => 'a large thick torus surrounded by nine tiny circles', 'eastern' => 'two crossed upside-down hammers circumscribed by a rounded arc', 'western' => 'a jagged triangular arch bisected by a vertical line', 'southern' => 'three pairs of obliquely intersecting parallel lines' }
-          
-           wedge_list.each_pair { |direction,position|
-          	 loop {
-          		wedge_look = dothis "look #{direction} wedge", /^The stone ring's #{direction} wedge is currently pointed at a sigil of (three pairs of obliquely intersecting parallel lines|two crossed upside-down hammers circumscribed by a rounded arc|a jagged triangular arch bisected by a vertical line|a large thick torus surrounded by nine tiny circles)\./
-          		break if wedge_look =~ /#{position}/
-          		fput 'turn ring'
-          	 }
-          	 fput "push #{direction} wedge"
-           }
-        end
-
         define('crossing_10781_18150') do # 10781:18150
           result = dothistimeout 'look deep pillar', 5, /dark cloud|dark eye|hazy black|slate grey|blood-drop|dark cloud|radiating circle|consist of/;if result =~ /dark eye/;	loop{;		wait_until{(XMLData.mana > (17 * 3))};		result = cast(717, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /hazy black/;	loop{;		wait_until{(XMLData.mana > (4 * 3))};		result = cast(704, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /slate grey/;	loop{;		wait_until{(XMLData.mana > (5 * 3))};		result = cast(705, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /blood-drop/;	loop{;		wait_until{(XMLData.mana > (1 * 3))};		result = cast(701, 'deep pillar');		if result =~ /Cast Roundtime/;			break		end;	};elsif result =~ /radiating circle/;	loop{;		wait_until{(XMLData.mana > (2 * 3))};		result = cast(702, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /dark cloud/;	loop{;		wait_until{(XMLData.mana > (3 * 3))};		result = cast(703, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};end;result = dothistimeout 'look black pillar', 5, /dark cloud|dark eye|hazy black|slate grey|blood-drop|dark cloud|radiating circle|consist of/;if result =~ /dark eye/;	loop{;		wait_until{(XMLData.mana > (17 * 3))};		result = cast(717, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /hazy black/;	loop{;		wait_until{(XMLData.mana > (4 * 3))};		result = cast(704, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /slate grey/;	loop{;		wait_until{(XMLData.mana > (5 * 3))};		result = cast(705, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /blood-drop/;	loop{;		wait_until{(XMLData.mana > (1 * 3))};		result = cast(701, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /radiating circle/;	loop{;		wait_until{(XMLData.mana > (2 * 3))};		result = cast(702, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /dark cloud/;	loop{;		wait_until{(XMLData.mana > (3 * 3))};		result = cast(703, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};end;result = dothistimeout 'look dark pillar', 5, /dark cloud|dark eye|hazy black|slate grey|blood-drop|dark cloud|radiating circle|consist of/;if result =~ /dark eye/;	loop{;		wait_until{(XMLData.mana > (17 * 3))};		result = cast(717, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /hazy black/;	loop{;		wait_until{(XMLData.mana > (4 * 3))};		result = cast(704, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /slate grey/;	loop{;		wait_until{(XMLData.mana > (5 * 3))};		result = cast(705, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /blood-drop/;	loop{;		wait_until{(XMLData.mana > (1 * 3))};		result = cast(701, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /radiating circle/;	loop{;		wait_until{(XMLData.mana > (2 * 3))};		result = cast(702, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /dark cloud/;	loop{;		wait_until{(XMLData.mana > (3 * 3))};		result = cast(703, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};end
         end
@@ -541,10 +527,6 @@ module Lich
 
         define('crossing_30115_29861') do # 30115:29861
           while Room.current.id == 30115; fput 'south'; waitrt; end;
-        end
-
-        define('crossing_30850_30851') do # 30850:30851
-          color_moves = {'blue' => 'n,sw,sw', 'black' => 'n,sw,sw,sw,s,se', 'red' => 'n,se,se', 'yellow' => 'n,se,se,se,s,sw'};GameObj.room_desc.find { |o| o.name =~ /(blue|black|yellow|red) barrier/ };color = $1;move_order = color_moves[color].split(',');move_order.each { |w| move(w) };move('go grotto');fput 'touch crystal';move('out');move_order.reverse.each { |w| move(reverse_direction(w)) };move('go barrier')
         end
         # ===== END gs crossings =====
         # ===== BEGIN dr crossings (generated) =====
