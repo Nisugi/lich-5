@@ -1052,18 +1052,6 @@ module Lich
           waitrt?; fput 'search'; waitrt?; fput 'kneel' unless kneeling?; move 'go hole'; fput 'stand'; waitrt?
         end
 
-        define('crossing_21964_21967') do # 21964:21967
-          empty_hands; 3.times { move 'climb wall' }; fill_hands
-        end
-
-        define('crossing_21965_21967') do # 21965:21967
-          empty_hands; 2.times { move 'climb wall' }; fill_hands
-        end
-
-        define('crossing_22007_21967') do # 22007:21967
-          waitrt?; empty_hands; 4.times { move 'climb wall' }; fill_hands
-        end
-
         define('crossing_22218_11612') do # 22218:11612
           if ((bounty? =~ /^You have made contact with the child/)||(Society.task =~ /You have been tasked to find and rescue an official who was captured/)); mynpc = GameObj.npcs.find { |npc| npc.noun =~ /child|official/ }; else;  mynpc = nil; end;  50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southeast'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'northwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'northwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc;
         end
@@ -1117,20 +1105,12 @@ module Lich
           end
         end
 
-        define('crossing_23496_19109') do # 23496:19109
-          move "knock wall"; fput"stand"
-        end
-
         define('crossing_23526_23525') do # 23526:23525
           if checksitting;while Room.current.id == 23526;fput('row shore');waitrt?;end;else;move('climb shore');end;fill_hand;
         end
 
         define('crossing_23845_23926') do # 23845:23926
           if celerity = Spell[506] and celerity.known? and celerity.affordable? and not celerity.active?; celerity.cast; end; fput 'search'; waitrt?; fput 'go wooden trapdoor'
-        end
-
-        define('crossing_24158_24159') do # 24158:24159
-          x=XMLData.room_count+2;fput "n" until XMLData.room_count == x
         end
 
         define('crossing_24238_21557') do # 24238:21557
@@ -1143,14 +1123,6 @@ module Lich
 
         define('crossing_24241_313') do # 24241:313
           (fput 'stand' until standing?;fput 'climb root') until Room.current.id != 24241;wait_until{Room.current.id == 313}
-        end
-
-        define('crossing_24241_20233') do # 24241:20233
-          fput "climb root" until Room.current.id != 24241
-        end
-
-        define('crossing_24516_15651') do # 24516:15651
-          fput 'kneel' until kneeling?; move 'go opening'
         end
 
         define('crossing_24675_7892') do # 24675:7892
@@ -1171,10 +1143,6 @@ module Lich
 
         define('crossing_24837_24967') do # 24837:24967
           line = fput "search" until line =~ /You discover a shallow crevice while searching the area!/;move 'go crevice'
-        end
-
-        define('crossing_24963_7602') do # 24963:7602
-          fput 'swim downstream' until Room.current.id == 7602
         end
 
         define('crossing_24976_24979') do # 24976:24979

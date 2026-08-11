@@ -297,6 +297,66 @@ RSpec.describe MapdbConverter do
     # rubocop:enable Lint/InterpolationCheck
   end
 
+  describe 'simple movement loops' do
+    def schema_for(body)
+      result = converter.convert_wayto(body)
+      expect(result).not_to be_nil, "no recognizer matched: #{body}"
+      expect(Lich::Common::MapEngine::Validator.errors_for_wayto(result.schema)).to be_empty
+      result.schema
+    end
+
+    it 'converts a counted repeat, preserving the hand juggling around it' do
+      expect(schema_for("empty_hands; 3.times { move 'climb wall' }; fill_hands"))
+        .to eq([{ 'do' => 'empty_hands' },
+                { 'do' => 'repeat', 'times' => 3, 'steps' => [{ 'do' => 'move', 'cmd' => 'climb wall' }] },
+                { 'do' => 'fill_hands' }])
+    end
+
+    it 'keeps a trailing command after the crossing' do
+      expect(schema_for(%(move "knock wall"; fput"stand")))
+        .to eq([{ 'do' => 'move', 'cmd' => 'knock wall' },
+                { 'do' => 'send', 'cmd' => 'stand' }])
+    end
+
+    it 'converts posture-then-move into a status-gated repeat' do
+      expect(schema_for("fput 'kneel' until kneeling?; move 'go opening'"))
+        .to eq([{ 'do' => 'repeat', 'until' => 'status:kneeling',
+                  'steps' => [{ 'do' => 'send', 'cmd' => 'kneel' }] },
+                { 'do' => 'move', 'cmd' => 'go opening' }])
+    end
+
+    it 'leaves postures the engine cannot answer to relocation' do
+      # status? has no 'prone' - converting would emit an always-false gate.
+      expect(converter.convert_wayto("fput 'lie' until prone?; move 'go gap'")).to be_nil
+    end
+
+    it 'keeps a leading roundtime wait rather than dropping it' do
+      expect(schema_for("waitrt?; empty_hands; 4.times { move 'climb wall' }; fill_hands").first)
+        .to eq({ 'do' => 'wait_rt' })
+    end
+
+    it 'converts leave-this-room into a room-change loop' do
+      # "until id != N" from room N is "until the room changes", which also
+      # holds in unmapped rooms where Map.current is nil.
+      expect(schema_for('fput "climb root" until Room.current.id != 24241'))
+        .to eq([{ 'do' => 'repeat', 'until_room_change' => true,
+                  'steps' => [{ 'do' => 'send', 'cmd' => 'climb root' }] }])
+    end
+
+    it 'converts send-until-room into until_room, which compares mapdb ids' do
+      expect(schema_for("fput 'swim downstream' until Room.current.id == 7602"))
+        .to eq([{ 'do' => 'repeat', 'until_room' => 7602,
+                  'steps' => [{ 'do' => 'send', 'cmd' => 'swim downstream' }] }])
+    end
+
+    it 'converts a room_count delta into that many moves' do
+      # room_count + N counts rooms actually traversed; move retries until the
+      # room changes, so N moves advances exactly N rooms.
+      expect(schema_for('x=XMLData.room_count+2;fput "n" until XMLData.room_count == x'))
+        .to eq([{ 'do' => 'repeat', 'times' => 2, 'steps' => [{ 'do' => 'move', 'cmd' => 'n' }] }])
+    end
+  end
+
   describe '#convert_map!' do
     it 'guards trailing replans behind arrival at the edge destination' do
       rooms = [{ 'id'     => 30815,

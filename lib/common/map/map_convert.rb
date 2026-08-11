@@ -255,12 +255,102 @@ module Lich
         if (r = convert_wayto_special(body))
           return r
         end
+        if (r = convert_wayto_simple_loops(body))
+          return r
+        end
         if (steps = convert_command_sequence(body))
           # A lone move is expressible as the plain string edge it always was.
           return Result.new('plain_move', steps.first['cmd']) if steps.length == 1 && steps.first['do'] == 'move'
           return Result.new('command_sequence', steps)
         end
         nil
+      end
+
+      # Optional roundtime wait and hand juggling wrapped around a crossing.
+      HANDS = /\A(waitrt\?;\s*)?(empty_hands?;\s*)?(.*?)(;\s*fill_hands?)?;?\z/m
+
+      # Small movement loops that earlier recognizers skip because of a
+      # trailing command or a counted repeat. Each maps onto repeat/move with
+      # existing vocabulary - no new engine primitives.
+      def convert_wayto_simple_loops(body)
+        convert_repeat_times(body) ||
+          convert_posture_then_move(body) ||
+          convert_send_until_room(body) ||
+          convert_send_until_count(body) ||
+          convert_move_then_send(body)
+      end
+
+      # N.times { move 'CMD' }, optionally between empty_hands/fill_hands.
+      def convert_repeat_times(body)
+        hands = body.match(HANDS)
+        core = hands[3]
+        m = core.match(/\A(\d+)\.times\s*\{\s*move\s+#{QUOTED}\s*\}\z/)
+        return nil unless m
+
+        cmd = m[2] || m[3]
+        steps = []
+        steps << { 'do' => 'wait_rt' } if hands[1]
+        steps << { 'do' => 'empty_hands' } if hands[2]
+        steps << { 'do' => 'repeat', 'times' => m[1].to_i,
+                   'steps' => [{ 'do' => 'move', 'cmd' => cmd }] }
+        steps << { 'do' => 'fill_hands' } if hands[4]
+        Result.new('repeat_move', steps)
+      end
+
+      # fput 'kneel' until kneeling?; move 'go opening'
+      # Only postures the engine's status? actually answers; anything else
+      # falls through to relocation rather than to an always-false condition.
+      POSTURES = %w[kneeling standing sitting hidden invisible].freeze
+      def convert_posture_then_move(body)
+        m = body.match(/\Afput\s+#{QUOTED}\s+until\s+(\w+)\?;\s*move\s+#{QUOTED}\z/)
+        return nil unless m && POSTURES.include?(m[3])
+
+        Result.new('posture_then_move',
+                   [{ 'do' => 'repeat', 'until' => "status:#{m[3]}",
+                      'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] },
+                    { 'do' => 'move', 'cmd' => m[4] || m[5] }])
+      end
+
+      # fput 'swim downstream' until Room.current.id == 7602  (arrive at)
+      # fput 'climb root'      until Room.current.id != 24241 (leave here)
+      def convert_send_until_room(body)
+        m = body.match(/\Afput\s+#{QUOTED}\s+until\s+
+                        (?:Room\.current\.id|Map\.current\.id)\s*(==|!=)\s*(\d+)\z/x)
+        return nil unless m
+
+        send_step = [{ 'do' => 'send', 'cmd' => m[1] || m[2] }]
+        loop_step =
+          if m[3] == '=='
+            { 'do' => 'repeat', 'until_room' => m[4].to_i, 'steps' => send_step }
+          else
+            # "until we are no longer in room N" - from room N that is simply
+            # "until the room changes", which also works in unmapped rooms.
+            { 'do' => 'repeat', 'until_room_change' => true, 'steps' => send_step }
+          end
+        Result.new('send_until_room', [loop_step])
+      end
+
+      # x = XMLData.room_count + N; fput "n" until XMLData.room_count == x
+      # i.e. "send this until the room changes N times".
+      def convert_send_until_count(body)
+        m = body.match(/\A(\w+)\s*=\s*XMLData\.room_count\s*\+\s*(\d+);\s*
+                        fput\s+#{QUOTED}\s+until\s+XMLData\.room_count\s*==\s*\1\z/x)
+        return nil unless m
+
+        cmd = m[3] || m[4]
+        Result.new('send_until_count',
+                   [{ 'do' => 'repeat', 'times' => m[2].to_i,
+                      'steps' => [{ 'do' => 'move', 'cmd' => cmd }] }])
+      end
+
+      # move "knock wall"; fput "stand"  - a crossing with a trailing command.
+      def convert_move_then_send(body)
+        m = body.match(/\Amove\s*#{QUOTED};\s*fput\s*#{QUOTED}\z/)
+        return nil unless m
+
+        Result.new('move_then_send',
+                   [{ 'do' => 'move', 'cmd' => m[1] || m[2] },
+                    { 'do' => 'send', 'cmd' => m[3] || m[4] }])
       end
 
       INT_LIST = /\[\s*\d+(?:\s*,\s*\d+)*\s*\]/
