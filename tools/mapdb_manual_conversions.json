@@ -5213,44 +5213,16 @@
         "when": "room_object_match:blue barrier",
         "then": [
           {
-            "do": "move",
-            "cmd": "n"
-          },
-          {
-            "do": "move",
-            "cmd": "sw"
-          },
-          {
-            "do": "move",
-            "cmd": "sw"
-          },
-          {
-            "do": "move",
-            "cmd": "go grotto"
+            "do": "travel_to",
+            "tag": "atoll blue crystal"
           },
           {
             "do": "send",
             "cmd": "touch crystal"
           },
           {
-            "do": "move",
-            "cmd": "out"
-          },
-          {
-            "do": "move",
-            "cmd": "ne"
-          },
-          {
-            "do": "move",
-            "cmd": "ne"
-          },
-          {
-            "do": "move",
-            "cmd": "s"
-          },
-          {
-            "do": "move",
-            "cmd": "go barrier"
+            "do": "travel_to",
+            "room": 30850
           }
         ]
       },
@@ -5259,68 +5231,16 @@
         "when": "room_object_match:black barrier",
         "then": [
           {
-            "do": "move",
-            "cmd": "n"
-          },
-          {
-            "do": "move",
-            "cmd": "sw"
-          },
-          {
-            "do": "move",
-            "cmd": "sw"
-          },
-          {
-            "do": "move",
-            "cmd": "sw"
-          },
-          {
-            "do": "move",
-            "cmd": "s"
-          },
-          {
-            "do": "move",
-            "cmd": "se"
-          },
-          {
-            "do": "move",
-            "cmd": "go grotto"
+            "do": "travel_to",
+            "tag": "atoll black crystal"
           },
           {
             "do": "send",
             "cmd": "touch crystal"
           },
           {
-            "do": "move",
-            "cmd": "out"
-          },
-          {
-            "do": "move",
-            "cmd": "nw"
-          },
-          {
-            "do": "move",
-            "cmd": "n"
-          },
-          {
-            "do": "move",
-            "cmd": "ne"
-          },
-          {
-            "do": "move",
-            "cmd": "ne"
-          },
-          {
-            "do": "move",
-            "cmd": "ne"
-          },
-          {
-            "do": "move",
-            "cmd": "s"
-          },
-          {
-            "do": "move",
-            "cmd": "go barrier"
+            "do": "travel_to",
+            "room": 30850
           }
         ]
       },
@@ -5329,44 +5249,16 @@
         "when": "room_object_match:red barrier",
         "then": [
           {
-            "do": "move",
-            "cmd": "n"
-          },
-          {
-            "do": "move",
-            "cmd": "se"
-          },
-          {
-            "do": "move",
-            "cmd": "se"
-          },
-          {
-            "do": "move",
-            "cmd": "go grotto"
+            "do": "travel_to",
+            "tag": "atoll red crystal"
           },
           {
             "do": "send",
             "cmd": "touch crystal"
           },
           {
-            "do": "move",
-            "cmd": "out"
-          },
-          {
-            "do": "move",
-            "cmd": "nw"
-          },
-          {
-            "do": "move",
-            "cmd": "nw"
-          },
-          {
-            "do": "move",
-            "cmd": "s"
-          },
-          {
-            "do": "move",
-            "cmd": "go barrier"
+            "do": "travel_to",
+            "room": 30850
           }
         ]
       },
@@ -5375,70 +5267,22 @@
         "when": "room_object_match:yellow barrier",
         "then": [
           {
-            "do": "move",
-            "cmd": "n"
-          },
-          {
-            "do": "move",
-            "cmd": "se"
-          },
-          {
-            "do": "move",
-            "cmd": "se"
-          },
-          {
-            "do": "move",
-            "cmd": "se"
-          },
-          {
-            "do": "move",
-            "cmd": "s"
-          },
-          {
-            "do": "move",
-            "cmd": "sw"
-          },
-          {
-            "do": "move",
-            "cmd": "go grotto"
+            "do": "travel_to",
+            "tag": "atoll yellow crystal"
           },
           {
             "do": "send",
             "cmd": "touch crystal"
           },
           {
-            "do": "move",
-            "cmd": "out"
-          },
-          {
-            "do": "move",
-            "cmd": "ne"
-          },
-          {
-            "do": "move",
-            "cmd": "n"
-          },
-          {
-            "do": "move",
-            "cmd": "nw"
-          },
-          {
-            "do": "move",
-            "cmd": "nw"
-          },
-          {
-            "do": "move",
-            "cmd": "nw"
-          },
-          {
-            "do": "move",
-            "cmd": "s"
-          },
-          {
-            "do": "move",
-            "cmd": "go barrier"
+            "do": "travel_to",
+            "room": 30850
           }
         ]
+      },
+      {
+        "do": "move",
+        "cmd": "go barrier"
       }
     ],
     "31286:31345": {
