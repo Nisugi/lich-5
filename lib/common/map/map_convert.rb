@@ -240,6 +240,12 @@ module Lich
         if (r = convert_wayto_dr(body))
           return r
         end
+        if (r = convert_wayto_keyed_door(body))
+          return r
+        end
+        if (r = convert_wayto_retry_paths(body))
+          return r
+        end
         if (r = convert_wayto_captures(body))
           return r
         end
@@ -605,6 +611,54 @@ module Lich
                                           { 'do' => 'move', 'cmd' => m[5] || m[6] }] }])
         end
         nil
+      end
+
+      # Keyed doors: walk through if the key is already in hand, otherwise
+      # fetch it from the configured sack, cross, and put it back. The key
+      # item and sack are per-character UserVars, so they stay tokens.
+      def convert_wayto_keyed_door(body)
+        m = body.match(/\Aif\s+GameObj\.inv\.find\s*\{\|obj\|\s*obj\.noun\s*(?:==\s*"(\w+)"|=~\s*\/([^\/]+)\/)\s*\};\s*
+                        fput\s+"go\ ([^"]+)";\s*else;\s*empty_hand;\s*
+                        multifput\s+"get\ my\ ([^"]+)\ from\ my\ \#\{UserVars\.(\w+)\}",\s*
+                        "go\ ([^"]+)",\s*"put\ my\ (\w+)\ in\ my\ \#\{UserVars\.(\w+)\}";\s*
+                        fill_hand;\s*end;?\z/xm)
+        return nil unless m
+
+        noun = m[1] || m[2]
+        key_ref = m[4].start_with?('#{') ? m[4] : m[4]
+        get_cmd = "get my #{key_ref.sub(/\A\#\{UserVars\.(\w+)\}\z/) { "{uservar:#{Regexp.last_match(1)}}" }} " \
+                  "from my {uservar:#{m[5]}}"
+        Result.new('keyed_door',
+                   [{ 'do' => 'if', 'when' => "has_item:#{noun}",
+                      'then' => [{ 'do' => 'send', 'cmd' => "go #{m[3]}" }],
+                      'else' => [{ 'do' => 'empty_hand' },
+                                 { 'do' => 'send', 'cmd' => get_cmd },
+                                 { 'do' => 'send', 'cmd' => "go #{m[6]}" },
+                                 { 'do' => 'send', 'cmd' => "put my #{m[7]} in my {uservar:#{m[8]}}" },
+                                 { 'do' => 'fill_hand' }] }])
+      end
+
+      # Retry-until-paths (Red Forest fog and relatives): stand, try the
+      # crossing command, and repeat until the room's obvious paths match the
+      # expected exit set. Optionally records an origin UserVar first.
+      def convert_wayto_retry_paths(body)
+        m = body.match(/\A(?:UserVars\.mapdb_(\w+)\s*=\s*'([^']+)';)?\s*result\s*=\s*nil;\s*
+                        until\s+result\s*=~\s*\/Obvious\ paths:\ ([^\/]+)\/;\s*
+                        fput\s+"stand"\s+until\s+standing\?;\s*
+                        result\s*=\s*dothistimeout\s+"([^"]+)",\s*(\d+),\s*\/(.+?)\/;\s*
+                        (?:if\s+result\s*=~.*?end;)?\s*end;?\z/xm)
+        return nil unless m
+
+        expected = m[3].strip
+        steps = []
+        steps << { 'do' => 'set', 'var' => m[1], 'value' => m[2] } if m[1]
+        steps << { 'do' => 'repeat', 'until' => "paths_are:#{expected}",
+                   'steps' => [{ 'do' => 'repeat', 'until' => 'status:standing',
+                                 'steps' => [{ 'do' => 'send', 'cmd' => 'stand' }] },
+                               { 'do' => 'await', 'cmd' => m[4], 'timeout' => m[5].to_i, 'for' => m[6] },
+                               { 'do' => 'sleep', 'seconds' => 0.5 },
+                               { 'do' => 'wait_rt' }] }
+        Result.new('retry_until_paths', steps)
       end
 
       # Capture families: procs that match a game line, keep part of it, and
