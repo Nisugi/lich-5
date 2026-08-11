@@ -1054,9 +1054,6 @@ module Lich
           when 'sitting'   then defined?(sitting?) ? sitting? : false
           when 'kneeling'  then defined?(kneeling?) ? kneeling? : false
           when 'standing'  then defined?(standing?) ? standing? : false
-          # The other postures have `?` aliases; prone never got one, so this
-          # names the check directly. All of them read XMLData.indicator, and
-          # none are on the Char.* deprecation path.
           when 'prone'     then defined?(checkprone) ? checkprone : false
           when 'stunned'   then defined?(stunned?) ? stunned? : false
           else false

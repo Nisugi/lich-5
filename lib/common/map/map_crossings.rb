@@ -603,18 +603,16 @@ module Lich
           res = choice = nil;res = dothistimeout "inquire", 5, /(\d)\) the Sea of Fire/;if res =~ /(\d)\) the Sea of Fire/;choice = $1;end;dothistimeout "order #{choice}", 5, /You inquire with a caravan conductor about the price of a trip to the Sea of Fire\.  S?[Hh]e says, "That will be [,\d]+ silvers/;res = dothistimeout "order confirm", 5, /It doesn't look like you have enough silver to ride\.|We'll be taking that payment in silver, then\./;if res =~ /It doesn't look like you have enough silver to ride\./;5.times do;echo "Didn't have enough silver!";exit;end;end;wait_until { XMLData.room_title =~ /Caravan, Wagon/ };sleep 1;wait_until{ XMLData.room_title !~ /Caravan, Wagon/ };if GameObj.npcs.any? { |npc| npc.name =~ /thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber/ };3.times do;_respond "<pushBold/>BANDITS!!! BANDITS!!! BANDITS!!!<popBold/>";end;exit;end;$go2_restart=true
         end
 
+        define('crossing_27638_27639') do # 27638:27639 27639:27638
+          if UserVars.Peregrine; UserVars.Peregrine.each{|c| fput "#{c}" } end
+        end
+
         define('crossing_30115_29861') do # 30115:29861
           while Room.current.id == 30115; fput 'south'; waitrt; end;
         end
 
         define('crossing_30850_30851') do # 30850:30851
           color_moves = {'blue' => 'n,sw,sw', 'black' => 'n,sw,sw,sw,s,se', 'red' => 'n,se,se', 'yellow' => 'n,se,se,se,s,sw'};GameObj.room_desc.find { |o| o.name =~ /(blue|black|yellow|red) barrier/ };color = $1;move_order = color_moves[color].split(',');move_order.each { |w| move(w) };move('go grotto');fput 'touch crystal';move('out');move_order.reverse.each { |w| move(reverse_direction(w)) };move('go barrier')
-        end
-
-        # --- Player-configured command replays: these stay code by design. ---
-
-        define('crossing_27638_27639') do # 27638:27639 27639:27638
-          if UserVars.Peregrine; UserVars.Peregrine.each{|c| fput "#{c}" } end
         end
         # ===== END gs crossings =====
         # ===== BEGIN dr crossings (generated) =====

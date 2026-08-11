@@ -59,23 +59,8 @@ map.each do |room|
   end
 end
 
-# Crossings that replay a player's own configured commands cannot become
-# schema by design - the whole point is that the content is theirs. Sort them
-# last so the blocks still being worked on stay together at the top.
-USER_SPECIFIC = /UserVars\.\w+\.each|UserVars\.Peregrine/
-
-# sort_by is not stable in Ruby, and reshuffling the rest would make every
-# regeneration a noisy diff - partition instead.
-regular, user_specific = bodies.partition { |body, _| body !~ USER_SPECIFIC }
-ordered = regular + user_specific
-
 defs = +''
-user_section_started = false
-ordered.each do |body, info|
-  if body =~ USER_SPECIFIC && !user_section_started
-    user_section_started = true
-    defs << "\n        # --- Player-configured command replays: these stay code by design. ---\n"
-  end
+bodies.each do |body, info|
   info[:name] ||= "#{name_prefix}_#{info[:edges].first.sub(':', '_')}"
   info[:edges].each do |key|
     manual['wayto'][key] = { 'strategy' => 'unique_crossing', 'name' => info[:name] }
