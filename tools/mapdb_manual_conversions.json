@@ -3113,10 +3113,42 @@
         "do": "fill_hand"
       }
     ],
-    "7:3668": {
-      "strategy": "unique_crossing",
-      "name": "crossing_7_3668"
-    },
+    "7:3668": [
+      {
+        "do": "if",
+        "when": "not:location:Isle of Four Winds|Mist Harbor",
+        "then": [
+          {
+            "do": "set",
+            "var": "fwi_return_room",
+            "value": "{map_id}"
+          }
+        ],
+        "else": [
+          {
+            "do": "set",
+            "var": "fwi_return_room",
+            "value": null
+          }
+        ]
+      },
+      {
+        "do": "use_item",
+        "item": "{uservar:fwi_trinket}",
+        "verb": "turn",
+        "for": "You get the feeling|<nav rm=",
+        "timeout": 5
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:3668",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
     "339:24768": {
       "strategy": "unique_crossing",
       "name": "crossing_339_24768"

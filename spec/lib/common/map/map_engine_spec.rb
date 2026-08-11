@@ -195,6 +195,68 @@ RSpec.describe Lich::Common::MapEngine do
       expect(described_class.condition?('capture:missing')).to be(false)
     end
 
+    describe 'use_item' do
+      let(:trinket) { double('trinket', id: 12_345) }
+
+      before do
+        allow(described_class).to receive(:fput)
+        allow(described_class).to receive(:dothistimeout).and_return('You get the feeling')
+        allow(described_class).to receive(:empty_hand)
+        allow(described_class).to receive(:fill_hand)
+      end
+
+      it 'uses an item already in hand without putting it away' do
+        stub_const('Lich::Common::GameObj', double('GameObj').tap { |g|
+          allow(g).to receive(:[]).with('trinket').and_return(trinket)
+        })
+        expect(described_class).not_to receive(:fput).with(/stow|put /)
+        described_class.send(:run_use_item, { 'item' => 'trinket', 'verb' => 'turn' })
+      end
+
+      it 'returns a borrowed item to the container it came from' do
+        gameobj = double('GameObj')
+        # absent at first (so it must be fetched), present afterwards
+        allow(gameobj).to receive(:[]).with('trinket').and_return(nil, trinket, trinket)
+        allow(gameobj).to receive(:left_hand).and_return(double(id: nil))
+        allow(gameobj).to receive(:right_hand).and_return(double(id: nil))
+        stub_const('Lich::Common::GameObj', gameobj)
+        allow(described_class).to receive(:fetch_item).and_return('999')
+
+        expect(described_class).to receive(:fput).with('put #12345 in #999')
+        described_class.send(:run_use_item, { 'item' => 'trinket', 'verb' => 'turn' })
+      end
+
+      it 'stows a borrowed item when the container is unknown' do
+        gameobj = double('GameObj')
+        allow(gameobj).to receive(:[]).with('trinket').and_return(nil, trinket, trinket)
+        allow(gameobj).to receive(:left_hand).and_return(double(id: nil))
+        allow(gameobj).to receive(:right_hand).and_return(double(id: nil))
+        stub_const('Lich::Common::GameObj', gameobj)
+        allow(described_class).to receive(:fetch_item).and_return(nil)
+
+        expect(described_class).to receive(:fput).with('stow #12345')
+        described_class.send(:run_use_item, { 'item' => 'trinket', 'verb' => 'turn' })
+      end
+
+      it 'fails the crossing when the item cannot be found' do
+        gameobj = double('GameObj')
+        allow(gameobj).to receive(:[]).with('trinket').and_return(nil)
+        allow(gameobj).to receive(:left_hand).and_return(double(id: nil))
+        allow(gameobj).to receive(:right_hand).and_return(double(id: nil))
+        stub_const('Lich::Common::GameObj', gameobj)
+        allow(described_class).to receive(:fetch_item).and_return(nil)
+
+        expect { described_class.send(:run_use_item, { 'item' => 'trinket' }) }
+          .to raise_error(described_class::StepFailed, /could not find/)
+      end
+
+      it 'validates item and verb' do
+        v = described_class::Validator
+        expect(v.errors_for_wayto([{ 'do' => 'use_item', 'item' => 'x' }])).to be_empty
+        expect(v.errors_for_wayto([{ 'do' => 'use_item' }]).join).to include('requires item')
+      end
+    end
+
     it 'branches on which alternative a bound line matched' do
       described_class.captures['outcome'] = 'It appears to be locked.'
       expect(described_class.condition?('capture_match:outcome=It appears to be locked')).to be(true)

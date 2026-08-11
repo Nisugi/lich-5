@@ -33,35 +33,6 @@ module Lich
 
         # ===== BEGIN gs crossings (generated) =====
 
-        define('crossing_7_3668') do # 7:3668
-          worn = !GameObj[UserVars.mapdb_fwi_trinket].nil?;
-          return_to_container_id = nil;
-          flip_tags = !Script.current.want_downstream_xml;
-          status_tags if flip_tags;
-          unless worn then;
-            refill_hands = (!GameObj.left_hand.id.nil? and !GameObj.right_hand.id.nil?);
-            empty_hand if refill_hands;
-            trinket_pattern = /#{UserVars.mapdb_fwi_trinket.split(' ').join('.*')}/;
-            trinket_get_pattern = /You.*?#{UserVars.mapdb_fwi_trinket.split(' ').join('.*')}/;
-            link_pattern = /<a exist="(?<exist>-?\d+)" noun="(?<noun>[^"]+)">(?<name>[^<]+)<\/a>/;
-            get_result = dothistimeout "get my #{UserVars.mapdb_fwi_trinket}", 5, Regexp.union(trinket_get_pattern,/^Get what/);
-            (status_tags if flip_tags;fail "could not find your fwi trinket: #{UserVars.mapdb_fwi_trinket.inspect}") if GameObj[UserVars.mapdb_fwi_trinket].nil? or get_result =~ /Get what/;
-            return_to_container_id = get_result.split('</inv>').last.scan(link_pattern).find{|exist,noun,name| !name.match(trinket_pattern)}.first;
-          end;
-          UserVars.mapdb_fwi_return_room = (Map.current.location =~ /Isle of Four Winds|Mist Harbor/ ? nil : Map.current.id);
-          turn_result = dothistimeout "turn ##{GameObj[UserVars.mapdb_fwi_trinket].id}", 5, /You get the feeling|<nav rm=/;
-          status_tags if flip_tags;
-          unless worn then;
-            if return_to_container_id.nil?;
-              fput "stow ##{GameObj[UserVars.mapdb_fwi_trinket].id}";
-            else;
-              fput "put ##{GameObj[UserVars.mapdb_fwi_trinket].id} in ##{return_to_container_id}";
-            end;
-            fill_hands if refill_hands;
-          end;
-          $go2_restart=true;
-        end
-
         define('crossing_339_24768') do # 339:24768
           query = "ivy-covered grey stone building with a sturdy cross-gabled roof";shop = GameObj.loot.find { |i| i.name.eql?(query) };shop or fail "could not locate: #{query}";fput "go ##{shop.id}"
         end
