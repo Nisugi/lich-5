@@ -281,6 +281,8 @@ module Lich
           convert_wayto_preserve_stance(body) ||
           convert_wayto_sit_branch(body) ||
           convert_wayto_escort(body) ||
+          convert_wayto_wait_until_gone(body) ||
+          convert_wayto_send_then_repeat(body) ||
           convert_wayto_try_then_clear(body) ||
           convert_wayto_speak_language(body) ||
           convert_wayto_walk_until_loot(body) ||
@@ -350,6 +352,35 @@ module Lich
         Result.new('send_until_count',
                    [{ 'do' => 'repeat', 'times' => m[2].to_i,
                       'steps' => [{ 'do' => 'move', 'cmd' => cmd }] }])
+      end
+
+      # Ride-out edges: something else moves you (a lift, a current), so just
+      # wait until you are no longer here and let the router take over.
+      def convert_wayto_wait_until_gone(body)
+        m = body.match(/\Await_while\s*\{\s*(?:Map|Room)\.current\.id\s*==\s*\d+\s*\};?\s*
+                        (\$go2_restart\s*=\s*true;?)?\s*\z/xm)
+        return nil unless m
+
+        steps = [{ 'do' => 'wait_room_change', 'timeout' => 300 }]
+        steps << { 'do' => 'replan' } if m[1]
+        Result.new('wait_until_gone', steps)
+      end
+
+      # A first command, then repeat a second until the room changes.
+      def convert_wayto_send_then_repeat(body)
+        m = body.match(/\Afput\s+#{QUOTED};\s*
+                        while\s+Room\.current\.id\s*==\s*\d+;\s*
+                        fput\s+#{QUOTED};\s*waitrt\??;\s*end;\s*
+                        (?:if\s+Room\.current\.id\s*!=\s*\d+;\s*
+                        (\$go2_restart\s*=\s*true);?\s*end;?)?\s*\z/xm)
+        return nil unless m
+
+        steps = [{ 'do' => 'send', 'cmd' => m[1] || m[2] },
+                 { 'do' => 'repeat', 'until_room_change' => true,
+                   'steps' => [{ 'do' => 'send', 'cmd' => m[3] || m[4] },
+                               { 'do' => 'wait_rt' }] }]
+        steps << { 'do' => 'replan' } if m[5]
+        Result.new('send_then_repeat', steps)
       end
 
       # Blocked-way retries: note the room, try the crossing, and if it did not

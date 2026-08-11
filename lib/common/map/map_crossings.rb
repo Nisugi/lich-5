@@ -724,10 +724,6 @@ module Lich
           move 'go arches'; wait_until { checkpaths.include?('e') }
         end
 
-        define('crossing_17665_11433') do # 17665:11433
-          wait_while{Map.current.id == 17665};$go2_restart=true;
-        end
-
         define('crossing_18043_18052') do # 18043:18052 18052:18054 18054:18068
           40.times { sleep 0.1; break if GameObj.loot.any? { |obj| obj.name =~ /#{Char.name} disk$/ } }; unless GameObj.loot.any? { |obj| obj.name =~ /#{Char.name} disk$/ }; disk = Spell[511]; wait_until { disk.affordable? }; disk.cast; end; move 'up'
         end
@@ -849,10 +845,6 @@ module Lich
           waitfor "Obvious paths: southwest";
           _respond "#{monsterbold_start}water tunnel time: #{Time.now.to_i - start_time} seconds.#{monsterbold_end}";
           fill_hands;
-        end
-
-        define('crossing_18243_22550') do # 18243:22550
-          %w(18245 20321 20319 20318 20317 20316 20315 20278 20279 20327 20328 20325 20329 20330 20333 20336 20339 20177 20347 20348 20350 20352 20353 20122 20108 20107 20085 20106 20111 20117 20121 20324 20323 20322 20263 20264 20266 20269 20126 20125 20123 20109 20140 20192 20190 20189 20184 20178 20175 20307 20305 20304 20303 20300 20298 20275 20288 20291 20292 20295 20297 20272 20165 20256 20260 20143 20141 20128 20145 20151 20156 20160 20164 20170 20193 20196 20198 20167 20208 20210 20213 20255 21386).each{|id| force_start_script('go2', [id]);wait_while{Script.running.count{|s| s.name == 'go2'} == 2};break if GameObj.loot.collect{|i| i.noun}.include?('doorframe')};move 'go doorframe'
         end
 
         define('crossing_18700_18250') do # 18700:18250
@@ -980,10 +972,6 @@ module Lich
           while Room.current.id == 30115; fput 'south'; waitrt; end;
         end
 
-        define('crossing_30115_29867') do # 30115:29867
-          fput 'west'; while Room.current.id == 30115; fput 'north'; waitrt; end; if Room.current.id != 29867; $go2_restart = true; end;
-        end
-
         define('crossing_30581_30582') do # 30581:30582 30582:30581
           fput 'lie' until checkprone; result = dothistimeout 'search',3, /staircase/ until result;waitrt?;fput 'stand' until standing?;waitrt?;fput 'go staircase'
         end
@@ -1002,20 +990,6 @@ module Lich
 
         define('crossing_32873_13532') do # 32873:13532
           $SILVERWOOD_TOWN=:zul;move 'go door'
-        end
-
-        define('crossing_34509_7927') do # 34509:7927
-          bleak_rooms = [474204, 474205, 474206, 474207, 474208, 474209, 474210, 474211, 474212, 474213, 474214, 474215, 474216, 474218, 474219, 474220, 474221, 474222, 474224, 474225, 474226, 474227, 474228, 474229, 474200, 474201, 474202, 474203]
-          ;bleak_rooms.map! { |r| Room["u#{r}"].id }
-          ;bleak_rooms.each { |r|
-          ;  options = {'force': true}
-          ;  Script.run('go2', "#{r}", options) unless Room.current.id == r
-          ;  if GameObj.loot.any? { |o| o.name == 'rippling ethereal green portal' }
-          ;    break
-          ;  end
-          ;}
-          ;move("go ethereal portal")
-          ;$go2_restart = true
         end
 
         define('crossing_36416_36412') do # 36416:36412

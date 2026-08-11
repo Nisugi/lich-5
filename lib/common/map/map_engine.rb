@@ -335,6 +335,8 @@ module Lich
             run_find_item(step)
           when 'travel_to'
             run_travel_to(step)
+          when 'search_rooms'
+            run_search_rooms(step)
           when 'return_item'
             run_return_item(step)
           when 'cross'
@@ -484,6 +486,35 @@ module Lich
           ensure
             @travel_depth -= 1
           end
+        end
+
+        # Visit rooms in turn until something shows up, then stop.
+        #
+        #   { "do": "search_rooms", "rooms": [18245, 20321, ...],
+        #     "until": "loot_noun:doorframe" }
+        #
+        # The exit from these mazes appears in a room that varies per instance,
+        # so the map lists where to look and the router does the walking - the
+        # procs already did this, one force_start_script at a time.
+        def run_search_rooms(step)
+          rooms = Array(step['rooms'])
+          raise StepFailed, 'search_rooms requires rooms' if rooms.empty?
+          cond = step['until'].to_s
+          raise StepFailed, 'search_rooms requires until' if cond.empty?
+
+          return true if condition?(cond)
+
+          rooms.each do |ref|
+            next if at_room_ref?(ref)
+
+            begin
+              run_travel_to({ 'room' => ref })
+            rescue StepFailed
+              next # unreachable right now; try the next one
+            end
+            return true if condition?(cond)
+          end
+          raise StepFailed, "search_rooms: #{cond} not found in #{rooms.length} rooms"
         end
 
         # Find an item you own that satisfies a check, and get it into hand.
@@ -1141,7 +1172,8 @@ module Lich
         STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat
                         set echo cast_buff cross move_with_group try_move cast move_random empty_hand fill_hand
                         preserve_stance escort_wait break break_if_moved set_global run_script wait_until
-                        wait_castrt use_item borrow_item return_item find_item travel_to].freeze
+                        wait_castrt use_item borrow_item return_item find_item travel_to
+                        search_rooms].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
                                month var var_raw society seeking_enabled has_item no_script spell_known level
                                skill climb_vs_encumbrance climb_bonus global room_name location script_running subscription
@@ -1253,6 +1285,19 @@ module Lich
           when 'travel_to'
             unless step['room'].is_a?(Integer) || step['room'].to_s =~ /\A(?:u)?\d+\z/i
               errors << 'travel_to requires room (id or uNNN)'
+            end
+          when 'search_rooms'
+            rooms = step['rooms']
+            ok = rooms.is_a?(Array) && !rooms.empty? &&
+                 rooms.all? { |r| r.is_a?(Integer) || r.to_s =~ /\A(?:u)?\d+\z/i }
+            errors << 'search_rooms requires rooms (ids or uNNN)' unless ok
+            if step['until']
+              kind = step['until'].to_s.sub(/\Anot:/, '').split(':', 2).first
+              unless CONDITION_KINDS.include?(kind) || REQUIREMENT_KINDS.include?(kind)
+                errors << "unknown condition kind #{kind.inspect}"
+              end
+            else
+              errors << 'search_rooms requires until'
             end
           when 'find_item'
             errors << 'find_item requires nouns' unless step['nouns'].is_a?(Array) && !step['nouns'].empty?

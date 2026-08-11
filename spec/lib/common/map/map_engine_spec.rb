@@ -322,6 +322,45 @@ RSpec.describe Lich::Common::MapEngine do
       end
     end
 
+    describe 'search_rooms' do
+      it 'stops as soon as the condition holds, without walking anywhere' do
+        allow(described_class).to receive(:condition?).with('loot_noun:doorframe').and_return(true)
+        expect(described_class).not_to receive(:run_travel_to)
+        expect(described_class.send(:run_search_rooms,
+                                    { 'rooms' => [1, 2], 'until' => 'loot_noun:doorframe' })).to be(true)
+      end
+
+      it 'skips rooms it cannot reach rather than giving up' do
+        # false on entry, false after reaching room 2's predecessor, true once
+        # we actually arrive somewhere useful.
+        visited = []
+        allow(described_class).to receive(:condition?) { visited.include?(2) }
+        allow(described_class).to receive(:at_room_ref?).and_return(false)
+        allow(described_class).to receive(:run_travel_to) do |step|
+          raise described_class::StepFailed, 'unreachable' if step['room'] == 1
+          visited << step['room']
+        end
+        expect(described_class.send(:run_search_rooms,
+                                    { 'rooms' => [1, 2], 'until' => 'loot_noun:x' })).to be(true)
+      end
+
+      it 'fails when the whole list is exhausted' do
+        allow(described_class).to receive(:condition?).and_return(false)
+        allow(described_class).to receive(:at_room_ref?).and_return(false)
+        allow(described_class).to receive(:run_travel_to)
+        expect { described_class.send(:run_search_rooms, { 'rooms' => [1], 'until' => 'loot_noun:x' }) }
+          .to raise_error(described_class::StepFailed, /not found in 1 rooms/)
+      end
+
+      it 'validates rooms and until, accepting uids' do
+        v = described_class::Validator
+        good = { 'do' => 'search_rooms', 'rooms' => [1, 'u474204'], 'until' => 'loot_noun:x' }
+        expect(v.errors_for_wayto([good])).to be_empty
+        expect(v.errors_for_wayto([good.merge('rooms' => [])]).join).to include('requires rooms')
+        expect(v.errors_for_wayto([good.reject { |k, _| k == 'until' }]).join).to include('requires until')
+      end
+    end
+
     describe 'find_item' do
       it 'verifies candidates and binds the one that matches' do
         mine = double('mine', id: 111, noun: 'scrip')
