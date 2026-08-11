@@ -41,10 +41,6 @@ module Lich
           unless (move 'go door'); push_result = dothistimeout 'push tine', 10, /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the|^You grasp the top tine and try to turn it, but it won't even budge.$/ until push_result =~ /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the (?:reflective glass stone aligned with the word 'Honor'|clear crystal stone aligned with the word 'Truth'|milky white stone aligned with the word 'Piety'|dull grey stone aligned with the word 'Humility'|flawless silver stone aligned with the word 'Faith'|veil iron stone aligned with the word 'Courage').$|^You grasp the top tine and try to turn it, but it won't even budge.$/; unless push_result.nil? or push_result == 'You grasp the top tine and try to turn it, but it won\'t even budge.'; unless mana < 100; castables = [ 110, 120, 140, 210, 216, 230, 420, 425, 430, 520, 540, 620, 625, 650, 1040, 1110, 1115, 1601, 1602, 1603, 1604, 1607, 1613, 1614, 1615 ].sort { |a,b| a.to_s[-2..-1] <=> b.to_s[-2..-1] }.reverse.collect { |n| Spell[n] }; castables.delete_if { |spell| spell.nil? or !spell.known? }; mana5spells = [105, 205, 305, 405, 505, 605, 705, 905, 1005, 1105, 1205, 1605].collect { |n| Spell[n] }; mana5spells.delete_if { |spell| spell.nil? or !spell.known? }; mana_needed = 100; while (mana_needed > 0) and ((Spell[515].active? and (spell = mana5spells.find { |s| s.known? })) or (spell = castables.find { |s| s.mana_cost <= mana_needed }) or (spell = castables.reverse.find { |s| s.mana_cost >= mana_needed })); loop { cast_result = spell.cast('crown'); break unless cast_result =~ /^\[Spell Hindrance for/ }; mana_needed -= spell.mana_cost; sleep 0.1; end; end; fput 'release' if Spell[515].active? and (checkprep != 'None'); fput 'touch crown'; fput 'say Aenatumgana'; sleep 0.5; end; move 'go door'; end
         end
 
-        define('crossing_3509_17805') do # 3509:17805
-          status_tags; get_result = dothis 'get my lockpick', /You remove|detach .*?<a exist="(?:[0-9]+)".*?from.*?<a exist="(?:[0-9]+)"/; status_tags; lockpick, container = /You remove|detach .*?<a exist="([0-9]+)".*?from.*?<a exist="([0-9]+)"/.match(get_result).captures[0..1]; fput 'pick shed'; fput "_drag ##{lockpick} ##{container}"; fput 'open shed'; move 'go shed'
-        end
-
         define('crossing_4140_4141') do # 4140:4141
           spell_list = [407, 1604, 304, 1207];until dothistimeout('go gate', 5, /^The bronze gate appears to be closed\.$|^Obvious (?:paths|exits)\: northeast, northwest, up$/) =~ /^Obvious/;  if spell_num = spell_list.find { |num| Spell[num].known? };    spell = Spell[spell_num];    loop {;      unless spell.affordable?;        echo 'waiting for mana...';        wait_until { spell.affordable? };      end;      break unless spell.cast('gate') =~ /^\[Spell Hindrance/;    };  else;    empty_hands;    dothistimeout('push bronze gate', 16, /^(?:With a shocking lack of resistance, t|T)he (?:huge )?(?:bronze )?gate .* open|^The ancient hinges of the gate creak loudly as they give way|^Summoning the power .*? gate opens|the gate slowly opens wide enough to allow passage|The bronze gate pops open|^It's opened wide enough to slip through now\.  That thick chain won't let it open any farther\.$|just (came|went) through a massive bronze gate\.$/);    fill_hands;  end;end
         end
@@ -944,31 +940,6 @@ module Lich
 
         define('crossing_23282_23282') do # 23282:23282
           hot_rooms = [23282,23283,23284,23285,23286,23287,23288,23289,23290,23291,23292,23293,23294,23295,23296,23297,23298,23299,23300,23301,23302,23303,23329,23330,23331,23332,23333,23334]; cold_rooms = [23304,23305,23306,23307,23308,23309,23310,23311,23312,23313,23314,23315,23316,23317,23318,23319,23320,23321,23322,23323,23324,23325,23326,23327,23328]; $mapdb_confluence_wayto ||= Hash.new; $mapdb_confluence_wander ||= Array.new; loop { start_room = Room.current; break if start_room.id == $mapdb_confluence_target; if hot_rooms.include?(start_room.id); hot = true; elsif cold_rooms.include?(start_room.id); hot = false; else; $go2_restart = true; break; end; if GameObj.loot.any? { |o| o.name == 'point of elemental tranquility' }; if hot; $mapdb_confluence_hot_tranquility = start_room.id; else; $mapdb_confluence_cold_tranquility = start_room.id; end; elsif $mapdb_confluence_hot_tranquility == start_room.id; $mapdb_confluence_hot_tranquility = nil; elsif $mapdb_confluence_cold_tranquility == start_room.id; $mapdb_confluence_cold_tranquility = nil; end; if GameObj.loot.any? { |o| o.name == 'gaping bottomless pit' }; if hot; $mapdb_confluence_hot_pit = start_room.id; else; $mapdb_confluence_cold_pit = start_room.id; end; elsif $mapdb_confluence_hot_pit == start_room.id; $mapdb_confluence_hot_pit = nil; elsif $mapdb_confluence_cold_pit == start_room.id; $mapdb_confluence_cold_pit = nil; end; if $mapdb_confluence_wayto[start_room.id].nil?; wayto = Hash.new; XMLData.room_exits.each { |d| wayto[d] = nil }; redo if Room.current != start_room; $mapdb_confluence_wayto[start_room.id] = wayto; end; if ($mapdb_confluence_wayto[start_room.id].keys != XMLData.room_exits); redo if Room.current != start_room; $mapdb_confluence_wayto = Hash.new; redo; end; child = ((bounty? =~ /^You have made contact with the child/) ? GameObj.npcs.find { |npc| npc.noun == 'child' } : nil); dir_to = proc { |targets| dir = nil; tried = Array.new; 30.times { break if dir = $mapdb_confluence_wayto[start_room.id].keys.find { |d| targets.include?($mapdb_confluence_wayto[start_room.id][d]) }; targets.each { |i| tried.push(i) unless tried.include?(i) }; ot = targets; targets = $mapdb_confluence_wayto.keys.find_all { |k| $mapdb_confluence_wayto[k].values.any? { |i| ot.include?(i) } and not tried.include?(k) }; break if targets.empty? }; dir }; dir = nil; if $mapdb_confluence_target == 'tranquility'; if GameObj.loot.any? { |o| o.name == 'point of elemental tranquility' }; move 'go tranquility'; $go2_restart = true; break; end; if hot and $mapdb_confluence_hot_tranquility; dir = dir_to.call([$mapdb_confluence_hot_tranquility]); elsif not hot and $mapdb_confluence_cold_tranquility; dir = dir_to.call([$mapdb_confluence_cold_tranquility]); end; else; if hot and cold_rooms.include?($mapdb_confluence_target); if GameObj.loot.any? { |o| o.name == 'gaping bottomless pit' }; move 'go pit'; redo; end; dir = dir_to.call([$mapdb_confluence_hot_pit]) if $mapdb_confluence_hot_pit; elsif not hot and hot_rooms.include?($mapdb_confluence_target); if GameObj.loot.any? { |o| o.name == 'gaping bottomless pit' }; move 'go pit'; redo; end; dir = dir_to.call([$mapdb_confluence_cold_pit]) if $mapdb_confluence_cold_pit; else; dir = dir_to.call([$mapdb_confluence_target]); end; end; dir ||= dir_to.call([nil]); dir ||= $mapdb_confluence_wayto[start_room.id].keys.find { |d| not $mapdb_confluence_wander.include?($mapdb_confluence_wayto[start_room.id][d]) }; if dir.nil?; next_id = $mapdb_confluence_wander.find { |i| $mapdb_confluence_wayto[start_room.id].values.include?(i) }; dir = $mapdb_confluence_wayto[start_room.id].keys.find { |d| $mapdb_confluence_wayto[start_room.id][d] == next_id }; end; r = move(dir.dup); 50.times { break if GameObj.npcs.any? { |npc| npc.id == child.id }; sleep 0.1 } if child; if r == false; status_tags; result = dothistimeout 'look', 5, /<compass>/; status_tags; options = result.scan(/<dir value="(.*?)"/).flatten; move options[rand(options.length)]; else; end_room = Room.current; redo if end_room.id == start_room.id; $mapdb_confluence_wayto[start_room.id][dir] = end_room.id; $mapdb_confluence_wander.delete(end_room.id); $mapdb_confluence_wander.push(end_room.id); end }
-        end
-
-        define('crossing_23338_23339') do # 23338:23339
-          
-          status_tags
-          put "get my heavy key"
-          while line = get
-          	if line =~ /^You remove .+heavy iron key<\/a> from in your <a exist="(.+)"/
-          		container = $1
-          		break
-          	elsif line =~ /^Get what\?$/
-          		container = nil
-          		break
-          	end
-          end
-          status_tags
-          if container
-          	fput "unlock spiked gate with my heavy key"
-          	fput "put my heavy key in ##{container}"
-          	move "go spiked gate"
-          else
-          	echo "** You do not have the key! **"
-          	echo "You will have to do the puzzle on the table!"
-          	exit
-          end
         end
 
         define('crossing_23845_23926') do # 23845:23926

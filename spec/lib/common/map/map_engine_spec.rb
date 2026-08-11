@@ -213,6 +213,42 @@ RSpec.describe Lich::Common::MapEngine do
         described_class.send(:run_use_item, { 'item' => 'trinket', 'verb' => 'turn' })
       end
 
+      it 'binds the item and container for the steps between borrow and return' do
+        gameobj = double('GameObj')
+        allow(gameobj).to receive(:[]).with('lockpick').and_return(nil, trinket, trinket)
+        allow(gameobj).to receive(:left_hand).and_return(double(id: nil))
+        allow(gameobj).to receive(:right_hand).and_return(double(id: nil))
+        stub_const('Lich::Common::GameObj', gameobj)
+        allow(described_class).to receive(:fetch_item).and_return('999')
+
+        described_class.send(:run_borrow_item, { 'item' => 'lockpick' })
+        # An edge composes its own middle out of these two captures.
+        expect(described_class.expand_tokens('_drag {capture:item} {capture:container}'))
+          .to eq('_drag #12345 #999')
+      end
+
+      it 'leaves container unbound when it could not be read' do
+        gameobj = double('GameObj')
+        allow(gameobj).to receive(:[]).with('key').and_return(nil, trinket, trinket)
+        allow(gameobj).to receive(:left_hand).and_return(double(id: nil))
+        allow(gameobj).to receive(:right_hand).and_return(double(id: nil))
+        stub_const('Lich::Common::GameObj', gameobj)
+        allow(described_class).to receive(:fetch_item).and_return(nil)
+
+        described_class.send(:run_borrow_item, { 'item' => 'key' })
+        # So an edge can guard on it rather than send a half-formed command.
+        expect(described_class.condition?('capture:container')).to be(false)
+      end
+
+      it 'return_item is a no-op for an item that was already in hand' do
+        stub_const('Lich::Common::GameObj', double('GameObj').tap { |g|
+          allow(g).to receive(:[]).with('trinket').and_return(trinket)
+        })
+        described_class.send(:run_borrow_item, { 'item' => 'trinket' })
+        expect(described_class).not_to receive(:fput)
+        described_class.send(:run_return_item)
+      end
+
       it 'returns a borrowed item to the container it came from' do
         gameobj = double('GameObj')
         # absent at first (so it must be fetched), present afterwards

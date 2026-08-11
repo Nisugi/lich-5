@@ -3291,10 +3291,39 @@
         ]
       }
     ],
-    "3509:17805": {
-      "strategy": "unique_crossing",
-      "name": "crossing_3509_17805"
-    },
+    "3509:17805": [
+      {
+        "do": "borrow_item",
+        "item": "lockpick"
+      },
+      {
+        "do": "send",
+        "cmd": "pick shed"
+      },
+      {
+        "do": "if",
+        "when": "capture:container",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "_drag {capture:item} {capture:container}"
+          }
+        ],
+        "else": [
+          {
+            "do": "return_item"
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "open shed"
+      },
+      {
+        "do": "move",
+        "cmd": "go shed"
+      }
+    ],
     "4140:4141": {
       "strategy": "unique_crossing",
       "name": "crossing_4140_4141"
@@ -3730,10 +3759,23 @@
       "strategy": "unique_crossing",
       "name": "crossing_23282_23282"
     },
-    "23338:23339": {
-      "strategy": "unique_crossing",
-      "name": "crossing_23338_23339"
-    },
+    "23338:23339": [
+      {
+        "do": "borrow_item",
+        "item": "heavy key"
+      },
+      {
+        "do": "send",
+        "cmd": "unlock spiked gate with my heavy key"
+      },
+      {
+        "do": "return_item"
+      },
+      {
+        "do": "move",
+        "cmd": "go spiked gate"
+      }
+    ],
     "23845:23926": {
       "strategy": "unique_crossing",
       "name": "crossing_23845_23926"

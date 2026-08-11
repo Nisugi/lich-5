@@ -326,6 +326,10 @@ module Lich
             run_cast_buff(step)
           when 'use_item'
             run_use_item(step)
+          when 'borrow_item'
+            run_borrow_item(step)
+          when 'return_item'
+            run_return_item(step)
           when 'cross'
             run_cross_edge(step)
           when 'move_with_group'
@@ -433,40 +437,78 @@ module Lich
         # raw tag stream, so that work lives here in reviewed code rather than
         # in map data: the schema names the item and the verb, nothing else.
         # An item already in hand (or worn) is used in place and not put away.
-        def run_use_item(step)
+        # Get the item into hand and remember where it came from. Binds
+        # {capture:item} and {capture:container} for the steps that follow, so
+        # an edge can compose whatever it needs between borrow and return:
+        #
+        #   { "do": "borrow_item", "item": "lockpick" },
+        #   { "do": "send", "cmd": "pick shed" },
+        #   { "do": "send", "cmd": "_drag #{capture:item} #{capture:container}" },
+        #   { "do": "return_item" }
+        #
+        # An item already in hand is used in place: nothing is fetched and
+        # return_item leaves it alone.
+        def run_borrow_item(step)
           name = expand_tokens(step['item'].to_s)
-          raise StepFailed, 'use_item requires an item' if name.empty?
+          raise StepFailed, 'borrow_item requires an item' if name.empty?
 
+          @captures ||= {}
+          @borrowed = nil
           held = GameObj[name]
-          borrowed = held.nil?
-          container_id = nil
-          refill = false
-
-          if borrowed
-            refill = !GameObj.left_hand.id.nil? && !GameObj.right_hand.id.nil?
-            empty_hand if refill
-            container_id = fetch_item(name)
-            held = GameObj[name]
-            raise StepFailed, "use_item: could not find #{name.inspect}" if held.nil?
+          if held
+            @captures['item'] = "##{held.id}"
+            @captures['container'] = nil
+            return
           end
 
-          verb = step['verb'] || 'turn'
-          pattern = step['for'] ? compile_pattern(step['for']) : nil
-          timeout = (step['timeout'] || DEFAULT_AWAIT_TIMEOUT).to_f
-          if pattern
-            dothistimeout("#{verb} ##{held.id}", timeout, pattern)
-          else
-            fput "#{verb} ##{held.id}"
+          refill = !GameObj.left_hand.id.nil? && !GameObj.right_hand.id.nil?
+          empty_hand if refill
+          container_id = fetch_item(name)
+          held = GameObj[name]
+          if held.nil?
+            fill_hand if refill
+            # Not routable rather than a raised diagnostic: an edge you cannot
+            # cross without the item is simply not crossable right now.
+            raise StepFailed, "borrow_item: could not find #{name.inspect}"
           end
 
-          return unless borrowed
-          # The item's id can change across a teleport; re-resolve before
-          # putting it away, and skip silently if it is gone.
-          back = GameObj[name]
+          @borrowed = { 'name' => name, 'container' => container_id, 'refill' => refill }
+          @captures['item'] = "##{held.id}"
+          @captures['container'] = container_id ? "##{container_id}" : nil
+        end
+
+        # Put a borrowed item back where it came from (stowing when the
+        # container is unknown) and refill the hand we emptied. A no-op when
+        # the item was already in hand.
+        def run_return_item(_step = nil)
+          info = @borrowed
+          @borrowed = nil
+          return unless info
+
+          # Ids are stable until logoff, but locker rooms reissue them freely,
+          # so re-resolve rather than trusting the id we took on the way in.
+          back = GameObj[info['name']]
           if back
-            container_id ? fput("put ##{back.id} in ##{container_id}") : fput("stow ##{back.id}")
+            if info['container']
+              fput "put ##{back.id} in ##{info['container']}"
+            else
+              fput "stow ##{back.id}"
+            end
           end
-          fill_hand if refill
+          fill_hand if info['refill']
+        end
+
+        # The common case - borrow, use once, return - as a single step.
+        def run_use_item(step)
+          run_borrow_item(step)
+          verb = step['verb'] || 'turn'
+          cmd = "#{verb} #{@captures['item']}"
+          if (pattern = step['for'] ? compile_pattern(step['for']) : nil)
+            dothistimeout(cmd, (step['timeout'] || DEFAULT_AWAIT_TIMEOUT).to_f, pattern)
+          else
+            fput cmd
+          end
+          run_return_item
         end
 
         # Get an item into hand, returning the id of the container it came out
@@ -953,7 +995,7 @@ module Lich
         STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat
                         set echo cast_buff cross move_with_group try_move cast move_random empty_hand fill_hand
                         preserve_stance escort_wait break break_if_moved set_global run_script wait_until
-                        wait_castrt use_item].freeze
+                        wait_castrt use_item borrow_item return_item].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
                                month var var_raw society seeking_enabled has_item no_script spell_known level
                                skill climb_vs_encumbrance climb_bonus global room_name location script_running subscription
@@ -1061,9 +1103,9 @@ module Lich
             errors.concat(Array(step['else']).flat_map { |s| errors_for_step(s) })
           when 'set'
             errors << 'set requires var' unless step['var'].is_a?(String)
-          when 'use_item'
-            errors << 'use_item requires item' unless step['item'].is_a?(String)
-            errors << 'use_item verb must be a string' if step['verb'] && !step['verb'].is_a?(String)
+          when 'use_item', 'borrow_item'
+            errors << "#{name} requires item" unless step['item'].is_a?(String)
+            errors << "#{name} verb must be a string" if step['verb'] && !step['verb'].is_a?(String)
           when 'cast_buff'
             unless step['spell'].is_a?(Integer) || step['spell'].is_a?(String)
               errors << 'cast_buff requires a spell number or name'
