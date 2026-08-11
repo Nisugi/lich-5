@@ -934,6 +934,10 @@ module Lich
             # checkloot's exact test: an item in the room has this noun. Not
             # loot_match, which is a regex over full names and matches wider.
             GameObj.loot.any? { |obj| obj.noun == expand_tokens(arg) }
+          when 'npc_match'
+            # A creature in the room matches: loot is items, npcs are not.
+            re = compile_pattern(expand_tokens(arg))
+            !re.nil? && GameObj.npcs.any? { |obj| obj.name =~ re }
           when 'capture'
             # capture:NAME (bound and non-empty) or capture:NAME=VALUE
             name, expected = arg.to_s.split('=', 2)
@@ -1145,7 +1149,8 @@ module Lich
                                stamina].freeze
         FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match
-                             in_room platinum capture capture_match room_loaded loot_noun].freeze
+                             in_room platinum capture capture_match room_loaded loot_noun
+                             npc_match].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function

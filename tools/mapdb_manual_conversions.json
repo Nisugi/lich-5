@@ -4094,14 +4094,124 @@
       "strategy": "unique_crossing",
       "name": "crossing_24980_24804"
     },
-    "25148:221": {
-      "strategy": "unique_crossing",
-      "name": "crossing_25148_221"
-    },
-    "25148:3904": {
-      "strategy": "unique_crossing",
-      "name": "crossing_25148_3904"
-    },
+    "25148:221": [
+      {
+        "do": "await",
+        "cmd": "inquire",
+        "timeout": 5,
+        "for": "(\\d)\\) Wehnimer's Landing",
+        "on_timeout": "fail",
+        "bind": {
+          "choice": 1
+        }
+      },
+      {
+        "do": "await",
+        "cmd": "order {capture:choice}",
+        "timeout": 5,
+        "for": "The cost has already been covered",
+        "on_timeout": "continue"
+      },
+      {
+        "do": "send",
+        "cmd": "order confirm"
+      },
+      {
+        "do": "wait_until",
+        "when": "room_name:Caravan, Wagon",
+        "timeout": 120
+      },
+      {
+        "do": "sleep",
+        "seconds": 1
+      },
+      {
+        "do": "wait_until",
+        "when": "not:room_name:Caravan, Wagon",
+        "timeout": 1800
+      },
+      {
+        "do": "if",
+        "when": "npc_match:thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "BANDITS!!! BANDITS!!! BANDITS!!!"
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:221",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
+    "25148:3904": [
+      {
+        "do": "await",
+        "cmd": "inquire",
+        "timeout": 5,
+        "for": "(\\d)\\) Vornavis",
+        "on_timeout": "fail",
+        "bind": {
+          "choice": 1
+        }
+      },
+      {
+        "do": "await",
+        "cmd": "order {capture:choice}",
+        "timeout": 5,
+        "for": "The cost has already been covered",
+        "on_timeout": "continue"
+      },
+      {
+        "do": "send",
+        "cmd": "order confirm"
+      },
+      {
+        "do": "wait_until",
+        "when": "room_name:Caravan, Wagon",
+        "timeout": 120
+      },
+      {
+        "do": "sleep",
+        "seconds": 1
+      },
+      {
+        "do": "wait_until",
+        "when": "not:room_name:Caravan, Wagon",
+        "timeout": 1800
+      },
+      {
+        "do": "if",
+        "when": "npc_match:thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "BANDITS!!! BANDITS!!! BANDITS!!!"
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:3904",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
     "25183:25145": {
       "strategy": "unique_crossing",
       "name": "crossing_25183_25145"

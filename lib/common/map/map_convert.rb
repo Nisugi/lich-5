@@ -281,6 +281,7 @@ module Lich
           convert_wayto_preserve_stance(body) ||
           convert_wayto_sit_branch(body) ||
           convert_wayto_escort(body) ||
+          convert_wayto_try_then_clear(body) ||
           convert_wayto_speak_language(body) ||
           convert_wayto_walk_until_loot(body) ||
           convert_wayto_random_wander_gated(body) ||
@@ -349,6 +350,25 @@ module Lich
         Result.new('send_until_count',
                    [{ 'do' => 'repeat', 'times' => m[2].to_i,
                       'steps' => [{ 'do' => 'move', 'cmd' => cmd }] }])
+      end
+
+      # Blocked-way retries: note the room, try the crossing, and if it did not
+      # change, clear the obstruction and go again. The locker rooms are the
+      # common case (your open locker blocks the exit).
+      def convert_wayto_try_then_clear(body)
+        m = body.match(/\Aroom\s*=\s*Room\.current\.id;\s*
+                        fput\s+#{QUOTED};\s*
+                        if\s*\(?\s*room\s*==\s*Room\.current\.id\s*\)?;\s*
+                        (.*?);?\s*end\s*;?\s*
+                        (\$go2_restart\s*=\s*true;?)?\s*\z/xm)
+        return nil unless m
+
+        fallback = convert_command_sequence(m[3])
+        return nil unless fallback
+
+        steps = [{ 'do' => 'try_move', 'cmd' => m[1] || m[2], 'fallback' => fallback }]
+        steps << { 'do' => 'replan' } if m[4]
+        Result.new('try_then_clear', steps)
       end
 
       # Guild doors that only answer Guildspeak: note the language you are

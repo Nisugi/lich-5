@@ -343,6 +343,16 @@ RSpec.describe MapdbConverter do
                   'steps' => [{ 'do' => 'send', 'cmd' => 'climb root' }] }])
     end
 
+    it 'converts try-then-clear blocked exits' do
+      # Your own open locker blocks the way out; close it and go again.
+      body = "room = Room.current.id; fput 'go opening'; " \
+             "if ( room == Room.current.id ); fput 'close locker'; move 'go opening'; end"
+      expect(schema_for(body))
+        .to eq([{ 'do' => 'try_move', 'cmd' => 'go opening',
+                  'fallback' => [{ 'do' => 'send', 'cmd' => 'close locker' },
+                                 { 'do' => 'move', 'cmd' => 'go opening' }] }])
+    end
+
     it 'converts checkloot waits with loot_noun, not loot_match' do
       # checkloot compares nouns exactly; loot_match is a regex over full
       # names and would also match "pathway".

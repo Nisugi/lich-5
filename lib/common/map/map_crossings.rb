@@ -708,10 +708,6 @@ module Lich
           }
         end
 
-        define('crossing_15950_7989') do # 15950:7989 26919:24055
-          room = Room.current.id;fput 'go opening'; if ( room == Room.current.id ); fput 'close locker';move 'go opening'; end ; $go2_restart = true
-        end
-
         define('crossing_16011_11022') do # 16011:11022
           walk until GameObj.room_desc.find { |obj| obj.noun == 'ferns' }; move 'go ferns'
         end
@@ -966,14 +962,6 @@ module Lich
 
         define('crossing_24980_24804') do # 24980:24804
           echo '** Please wait.  Waiting for the stain to show up **';line=get until line =~ /dark stains/;fput "get stain";fput "lie" if standing?;line = fput "search" until line =~ /descending slope/;dothistimeout 'go slope', 3, /You gradually make your way down the descending slope/;line = fput "search" until line =~ /opening/;dothistimeout 'go opening', 3, /You duck down low and half-crawl into the opening/;fput "stand" until standing?
-        end
-
-        define('crossing_25148_221') do # 25148:221
-          res = choice = nil;res = dothistimeout "inquire", 5, /(\d)\) Wehnimer's Landing/;if res =~ /(\d)\) Wehnimer's Landing/;choice = $1;end;dothistimeout "order #{choice}", 5, /The cost has already been covered/;put "order confirm";wait_until { XMLData.room_title =~ /Caravan, Wagon/ };sleep 1;wait_until{ XMLData.room_title !~ /Caravan, Wagon/ };if GameObj.npcs.any? { |npc| npc.name =~ /thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber/ };3.times do;_respond "BANDITS!!! BANDITS!!! BANDITS!!!";end;exit;end;$go2_restart=true
-        end
-
-        define('crossing_25148_3904') do # 25148:3904
-          res = choice = nil;res = dothistimeout "inquire", 5, /(\d)\) Vornavis/;if res =~ /(\d)\) Vornavis/;choice = $1;end;dothistimeout "order #{choice}", 5, /The cost has already been covered/;put "order confirm";wait_until { XMLData.room_title =~ /Caravan, Wagon/ };sleep 1;wait_until{ XMLData.room_title !~ /Caravan, Wagon/ };if GameObj.npcs.any? { |npc| npc.name =~ /thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber/ };3.times do;_respond "<pushBold/>BANDITS!!! BANDITS!!! BANDITS!!!<popBold/>";end;exit;end;$go2_restart=true
         end
 
         define('crossing_25183_25145') do # 25183:25145 25185:25145

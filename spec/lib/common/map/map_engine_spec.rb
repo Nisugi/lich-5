@@ -401,6 +401,14 @@ RSpec.describe Lich::Common::MapEngine do
       expect(described_class.condition?('capture_match:outcome=You open')).to be(false)
     end
 
+    it 'matches npcs separately from loot' do
+      # GameObj.loot is items; a bandit is an npc and would never appear there.
+      bandit = double('bandit', name: 'a burly bandit', noun: 'bandit')
+      stub_const('Lich::Common::GameObj', double('GameObj', npcs: [bandit], loot: []))
+      expect(described_class.condition?('npc_match:bandit|thief')).to be(true)
+      expect(described_class.condition?('loot_match:bandit')).to be(false)
+    end
+
     it 'matches loot by exact noun, not by name regex' do
       item = double('item', noun: 'path', name: 'a winding pathway')
       # The engine resolves GameObj inside Lich::Common, so stub it there.
