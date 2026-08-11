@@ -395,14 +395,6 @@ module Lich
           move 'northwest'; unless checkpaths.include?('w'); move 'east'; move 'east'; end
         end
 
-        define('crossing_18043_18052') do # 18043:18052 18052:18054 18054:18068
-          40.times { sleep 0.1; break if GameObj.loot.any? { |obj| obj.name =~ /#{Char.name} disk$/ } }; unless GameObj.loot.any? { |obj| obj.name =~ /#{Char.name} disk$/ }; disk = Spell[511]; wait_until { disk.affordable? }; disk.cast; end; move 'up'
-        end
-
-        define('crossing_18052_18043') do # 18052:18043 18054:18052 18068:18054
-          40.times { sleep 0.1; break if GameObj.loot.any? { |obj| obj.name =~ /#{Char.name} disk$/ } }; unless GameObj.loot.any? { |obj| obj.name =~ /#{Char.name} disk$/ }; disk = Spell[511]; wait_until { disk.affordable? }; disk.cast; end; move 'down'
-        end
-
         define('crossing_18178_18179') do # 18178:18179
           refill_hands = false;
           done = false;
@@ -493,10 +485,6 @@ module Lich
           fill_hands if refill_hands;
         end
 
-        define('crossing_18186_18187') do # 18186:18187
-          empty_hands if GameObj.right_hand.id or GameObj.left_hand.id;move('go opening')
-        end
-
         define('crossing_18187_451') do # 18187:451
           ;
           start_time = Time.now.to_i;
@@ -547,10 +535,6 @@ module Lich
           move 'southeast'; move 'northeast'; move checkpaths[rand(checkpaths.length)] while checkpaths.length > 2
         end
 
-        define('crossing_19728_19992') do # 19728:19992
-          if GameObj.loot.find{|item| item.noun == "door"};fput "go door";else;fput "push stone";fput "stand" until standing?;fput "go door";end
-        end
-
         define('crossing_19992_19728') do # 19992:19728
           fput 'open door';while line = get;if line == "It's locked, Blazyn!";empty_hand;fput 'turn lock';fput 'open door';fput 'go door';fill_hand;break;else;fput 'go door';break;end;end
         end
@@ -585,10 +569,6 @@ module Lich
 
         define('crossing_24730_24729') do # 24730:24729
           while Room.current.id == 24730 do;fput "stand" until standing?;success = /^Rows upon rows of oak trees/;fail = /^You attempt to navigate/;result = dothistimeout "go fog", 5, Regexp.union(success, fail);if result =~ fail;sleep 0.5;waitrt?;end;end
-        end
-
-        define('crossing_24752_20423') do # 24752:20423
-          ['west','west','northwest'].each{|d| move(d)};fput 'rub blood';['southeast','east','east'].each{|d| move(d)};fput 'rub hatch';move('go hatch');
         end
 
         define('crossing_24976_24979') do # 24976:24979

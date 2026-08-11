@@ -360,6 +360,28 @@ RSpec.describe MapdbConverter do
                 { 'do' => 'move', 'cmd' => 'go ferns' }])
     end
 
+    it 'converts disk summoning, keeping the name check per-character' do
+      body = '40.times { sleep 0.1; break if GameObj.loot.any? { |obj| obj.name =~ /#{Char.name} disk$/ } }; ' \
+             'unless GameObj.loot.any? { |obj| obj.name =~ /#{Char.name} disk$/ }; ' \
+             'disk = Spell[511]; wait_until { disk.affordable? }; disk.cast; end; ' \
+             "move 'up'"
+      schema = schema_for(body)
+      # {char} stays a token so the pattern is per-character at run time.
+      expect(schema[0]).to eq({ 'do' => 'wait_until', 'when' => 'loot_match:{char} disk$', 'timeout' => 4 })
+      expect(schema[1]['then']).to eq([{ 'do' => 'cast_buff', 'spell' => 511 }])
+      expect(schema[2]).to eq({ 'do' => 'move', 'cmd' => 'up' })
+    end
+
+    it 'converts fixed move lists' do
+      body = "['west','west','northwest'].each{|d| move(d)};fput 'rub blood';move('go hatch');"
+      expect(schema_for(body))
+        .to eq([{ 'do' => 'move', 'cmd' => 'west' },
+                { 'do' => 'move', 'cmd' => 'west' },
+                { 'do' => 'move', 'cmd' => 'northwest' },
+                { 'do' => 'send', 'cmd' => 'rub blood' },
+                { 'do' => 'move', 'cmd' => 'go hatch' }])
+    end
+
     it 'converts buff-then-cross' do
       body = 'if celerity = Spell[506] and celerity.known? and celerity.affordable? and ' \
              "not celerity.active?; celerity.cast; end; fput 'search'; move 'go opening'"

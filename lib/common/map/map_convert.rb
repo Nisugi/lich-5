@@ -364,11 +364,80 @@ module Lich
           convert_search_until_object(body) ||
           convert_walk_until_object(body) ||
           convert_set_global_move(body) ||
+          convert_summon_disk(body) ||
+          convert_loot_branch(body) ||
+          convert_move_list(body) ||
+          convert_conditional_hands(body) ||
           convert_search_until_name(body) ||
           convert_celerity_then(body) ||
           convert_lie_search_stand(body) ||
           convert_reveal_then_move(body) ||
           convert_send_until_text(body)
+      end
+
+      # Wait briefly for your own disk to arrive, summoning one if it does not.
+      def convert_summon_disk(body)
+        m = body.match(/\A(\d+)\.times\s*\{\s*sleep\s+[\d.]+;\s*break\s+if\s+
+                        GameObj\.loot\.any\?.*?\};\s*
+                        unless\s+GameObj\.loot\.any\?.*?;\s*
+                        disk\s*=\s*Spell\[(\d+)\];\s*wait_until\s*\{\s*disk\.affordable\?\s*\};\s*
+                        disk\.cast;\s*end;\s*move\s+#{QUOTED}\z/xm)
+        return nil unless m
+
+        Result.new('summon_disk',
+                   [{ 'do' => 'wait_until', 'when' => 'loot_match:{char} disk$',
+                      'timeout' => (m[1].to_i * 0.1).ceil },
+                    { 'do' => 'if', 'when' => 'not:loot_match:{char} disk$',
+                      'then' => [{ 'do' => 'cast_buff', 'spell' => m[2].to_i }] },
+                    { 'do' => 'move', 'cmd' => m[3] || m[4] }])
+      end
+
+      # Take the exit if it is already there, otherwise reveal it first.
+      def convert_loot_branch(body)
+        m = body.match(/\Aif\s+GameObj\.loot\.find\s*\{\s*\|\w+\|\s*\w+\.noun\s*==\s*#{QUOTED}\s*\};\s*
+                        fput\s+#{QUOTED};\s*else;\s*(.+?);?\s*end;?\z/xm)
+        return nil unless m
+
+        alt = convert_command_sequence(m[5])
+        return nil unless alt
+
+        Result.new('loot_branch',
+                   [{ 'do' => 'if', 'when' => "loot_noun:#{m[1] || m[2]}",
+                      'then' => [{ 'do' => 'send', 'cmd' => m[3] || m[4] }],
+                      'else' => alt }])
+      end
+
+      # ['west','west','northwest'].each { |d| move(d) } - a fixed walk, often
+      # out to a lever and back.
+      def convert_move_list(body)
+        clauses = split_top_level(body)
+        steps = clauses.map do |clause|
+          if (m = clause.match(/\A\[(.+?)\]\.each\s*\{\s*\|\w+\|\s*move\(?\w+\)?\s*\}\z/))
+            m[1].scan(QUOTED).map { |a, b| { 'do' => 'move', 'cmd' => a || b } }
+          elsif (m = clause.match(/\Afput\s+#{QUOTED}\z/))
+            [{ 'do' => 'send', 'cmd' => m[1] || m[2] }]
+          elsif (m = clause.match(/\Amove\(?#{QUOTED}\)?\z/))
+            [{ 'do' => 'move', 'cmd' => m[1] || m[2] }]
+          end
+        end
+        return nil if steps.any?(&:nil?)
+        # Only worth it when a list was actually expanded.
+        return nil unless body.include?('.each')
+
+        Result.new('move_list', steps.flatten)
+      end
+
+      # empty_hands only when a hand is actually full, then cross.
+      def convert_conditional_hands(body)
+        m = body.match(/\Aempty_hands?\s+if\s+GameObj\.right_hand\.id\s+or\s+GameObj\.left_hand\.id;\s*
+                        move\(?#{QUOTED}\)?\z/xm)
+        return nil unless m
+
+        # empty_hands is already a no-op with empty hands, so the guard is
+        # implicit in the step.
+        Result.new('conditional_hands',
+                   [{ 'do' => 'empty_hands' },
+                    { 'do' => 'move', 'cmd' => m[1] || m[2] }])
       end
 
       # fput 'search' until <object by name>; then take it.
