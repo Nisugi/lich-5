@@ -812,6 +812,15 @@ module Lich
                   raise StepFailed, "item not in inventory: #{name}" unless item
                   "##{item.id}"
                 end
+                .gsub(/\{room_id:([^}]+)\}/) do
+                  # Something in the room rather than something you own: shop
+                  # fronts and other scenery you enter by id.
+                  name = ::Regexp.last_match(1)
+                  obj = (GameObj.loot.to_a + GameObj.room_desc.to_a)
+                        .find { |o| o.name == name || o.noun == name }
+                  raise StepFailed, "not in this room: #{name}" unless obj
+                  "##{obj.id}"
+                end
         end
 
         # Follow another room's edge (the proc idiom Map[N].wayto['D'].call),

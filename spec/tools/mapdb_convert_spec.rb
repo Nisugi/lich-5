@@ -360,6 +360,7 @@ RSpec.describe MapdbConverter do
                 { 'do' => 'move', 'cmd' => 'go ferns' }])
     end
 
+    # rubocop:disable Lint/InterpolationCheck -- bodies are literal proc source
     it 'converts disk summoning, keeping the name check per-character' do
       body = '40.times { sleep 0.1; break if GameObj.loot.any? { |obj| obj.name =~ /#{Char.name} disk$/ } }; ' \
              'unless GameObj.loot.any? { |obj| obj.name =~ /#{Char.name} disk$/ }; ' \
@@ -382,6 +383,7 @@ RSpec.describe MapdbConverter do
       expect(schema[1]).to include('timeout' => 1800, 'on_timeout' => 'fail')
       expect(schema[2]).to eq({ 'do' => 'move', 'cmd' => 'out' })
     end
+    # rubocop:enable Lint/InterpolationCheck
 
     it 'keeps the commands that precede a long wait' do
       # Boarding the raft has to happen before waiting for the geyser.

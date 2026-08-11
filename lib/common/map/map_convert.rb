@@ -364,6 +364,10 @@ module Lich
           convert_search_until_object(body) ||
           convert_walk_until_object(body) ||
           convert_set_global_move(body) ||
+          convert_fog_retry_loop(body) ||
+          convert_shop_by_name(body) ||
+          convert_sleep_wake(body) ||
+          convert_search_branch(body) ||
           convert_repeat_until_left(body) ||
           convert_wait_for_line(body) ||
           convert_scheduled_ride(body) ||
@@ -378,6 +382,83 @@ module Lich
           convert_lie_search_stand(body) ||
           convert_reveal_then_move(body) ||
           convert_send_until_text(body)
+      end
+
+      # Fog retries with named success/failure patterns: stand, try, and pause
+      # before going again if the attempt failed.
+      def convert_fog_retry_loop(body)
+        m = body.match(/\Awhile\s+Room\.current\.id\s*==\s*\d+\s*do;\s*
+                        fput\s+#{QUOTED}\s+until\s+standing\?;\s*
+                        success\s*=\s*\/(.+?)\/;\s*fail\s*=\s*\/(.+?)\/;\s*
+                        result\s*=\s*dothistimeout\s+#{QUOTED},\s*(\d+),\s*
+                        Regexp\.union\(success,\s*fail\);\s*
+                        if\s+result\s*=~\s*fail;\s*sleep\s+[\d.]+;\s*waitrt\??;\s*end;?\s*end;?\s*\z/xm)
+        return nil unless m
+
+        Result.new('fog_retry_loop',
+                   [{ 'do' => 'repeat', 'until_room_change' => true,
+                      'steps' => [{ 'do' => 'repeat', 'until' => 'status:standing',
+                                    'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] },
+                                  { 'do' => 'await', 'cmd' => m[5] || m[6],
+                                    'timeout' => m[7].to_i, 'on_timeout' => 'continue',
+                                    'for' => "#{m[3]}|#{m[4]}", 'bind' => { 'result' => 0 } },
+                                  { 'do' => 'if', 'when' => "capture_match:result=#{m[4]}",
+                                    'then' => [{ 'do' => 'sleep', 'seconds' => 0.5 },
+                                               { 'do' => 'wait_rt' }] }] }])
+      end
+
+      # Find a shop by its full description and go in by id.
+      def convert_shop_by_name(body)
+        m = body.match(/\Aquery\s*=\s*#{QUOTED};\s*
+                        shop\s*=\s*GameObj\.loot\.find\s*\{\s*\|\w+\|\s*\w+\.name\.eql\?\(query\)\s*\};\s*
+                        shop\s+or\s+fail\s+"[^"]*";\s*
+                        fput\s+"go\s+\#?\#\{shop\.id\}"\z/xm)
+        return nil unless m
+
+        # Room scenery, not something you own, so this is a plain command
+        # against the {room_id:} token rather than a find_item.
+        name = m[1] || m[2]
+        Result.new('shop_by_name',
+                   [{ 'do' => 'send', 'cmd' => "go {room_id:#{name}}" }])
+      end
+
+      # Lie down and sleep through a transition, waking on the far side.
+      def convert_sleep_wake(body)
+        m = body.match(/\Afput\s+#{QUOTED};\s*
+                        dothistimeout\s+#{QUOTED},\s*(\d+),\s*\/(.+?)\/;\s*
+                        wait_until\s*\{\s*stunned\?\s*\};\s*
+                        (?:echo\s+#{QUOTED};\s*)?
+                        wait_until\s*\{\s*!stunned\?\s*\};\s*
+                        fput\s+#{QUOTED}\s+until\s+standing\?\z/xm)
+        return nil unless m
+
+        steps = [{ 'do' => 'send', 'cmd' => m[1] || m[2] },
+                 { 'do' => 'await', 'cmd' => m[3] || m[4], 'timeout' => m[5].to_i,
+                   'for' => m[6], 'on_timeout' => 'continue' },
+                 { 'do' => 'wait_until', 'when' => 'status:stunned', 'timeout' => 60 }]
+        steps << { 'do' => 'echo', 'msg' => m[7] || m[8] } if m[7] || m[8]
+        steps << { 'do' => 'wait_until', 'when' => 'not:status:stunned', 'timeout' => 300 }
+        steps << { 'do' => 'repeat', 'until' => 'status:standing',
+                   'steps' => [{ 'do' => 'send', 'cmd' => m[9] || m[10] }] }
+        Result.new('sleep_wake', steps)
+      end
+
+      # Search repeatedly, ignoring the junk you turn up, until the exit shows.
+      def convert_search_branch(body)
+        m = body.match(/\Aput\s+#{QUOTED};\s*while\s+line\s*=\s*get;\s*
+                        if\s+line\s*=~\s*\/(.+?)\/;\s*put\s+#{QUOTED};\s*
+                        elsif\s+line\s*=~\s*\/(.+?)\/;\s*put\s+#{QUOTED};\s*break;\s*end;?\s*end;?\s*\z/xm)
+        return nil unless m
+
+        Result.new('search_branch',
+                   [{ 'do' => 'repeat', 'times' => 30,
+                      'steps' => [{ 'do' => 'await', 'cmd' => m[1] || m[2], 'timeout' => 5,
+                                    'on_timeout' => 'continue',
+                                    'for' => "#{m[3]}|#{m[6]}", 'bind' => { 'found' => 0 } },
+                                  { 'do' => 'if', 'when' => "capture_match:found=#{m[6]}",
+                                    'then' => [{ 'do' => 'break' }] },
+                                  { 'do' => 'wait_rt' }] },
+                    { 'do' => 'send', 'cmd' => m[7] || m[8] }])
       end
 
       # Stand and try the crossing until you are out of this room. Some of

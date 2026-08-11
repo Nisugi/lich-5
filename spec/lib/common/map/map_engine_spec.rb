@@ -453,6 +453,15 @@ RSpec.describe Lich::Common::MapEngine do
       expect(described_class.condition?('capture_match:outcome=You open')).to be(false)
     end
 
+    it 'expands room_id from things in the room, not your inventory' do
+      shop = double('shop', id: 4242, name: 'an ivy-covered building', noun: 'building')
+      stub_const('Lich::Common::GameObj',
+                 double('GameObj', loot: [shop], room_desc: [], inv: []))
+      expect(described_class.expand_tokens('go {room_id:an ivy-covered building}')).to eq('go #4242')
+      expect { described_class.expand_tokens('go {room_id:a missing thing}') }
+        .to raise_error(described_class::StepFailed, /not in this room/)
+    end
+
     it 'matches npcs separately from loot' do
       # GameObj.loot is items; a bandit is an npc and would never appear there.
       bandit = double('bandit', name: 'a burly bandit', noun: 'bandit')
