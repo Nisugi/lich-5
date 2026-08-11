@@ -1026,19 +1026,6 @@ module Lich
           $SILVERWOOD_TOWN=:zul;move 'go door'
         end
 
-        define('crossing_34434_34435') do # 34434:34435 34435:34434
-          refill_hand = false;key_worn = false;
-            (refill_hand = true;empty_hand) if !checkleft.nil? and !checkright.nil?;
-            key_worn = true if GameObj.inv.find {|obj| obj.name =~ /#{UserVars.key.split(' ').join('.*?')}/};
-            fput "remove my #{UserVars.key}" if key_worn;
-            fput "get my #{UserVars.key} from my #{UserVars.key_sack}" if !key_worn;
-            door = 'bright door';
-            multifput "unlock #{door}","open #{door}","go #{door}","close #{door}","lock #{door}";
-            fput "wear my #{UserVars.key}" if key_worn;
-            fput "put my #{UserVars.key} in my #{UserVars.key_sack}" if !key_worn;
-            fill_hand if refill_hand;
-        end
-
         define('crossing_34509_7927') do # 34509:7927
           bleak_rooms = [474204, 474205, 474206, 474207, 474208, 474209, 474210, 474211, 474212, 474213, 474214, 474215, 474216, 474218, 474219, 474220, 474221, 474222, 474224, 474225, 474226, 474227, 474228, 474229, 474200, 474201, 474202, 474203]
           ;bleak_rooms.map! { |r| Room["u#{r}"].id }

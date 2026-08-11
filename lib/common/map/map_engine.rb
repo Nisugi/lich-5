@@ -454,9 +454,28 @@ module Lich
 
           @captures ||= {}
           @borrowed = nil
-          held = GameObj[name]
+
+          # Already in a hand: use it in place. GameObj[] searches worn items
+          # too, so match on the hands rather than trusting a bare lookup - a
+          # worn key still has to be removed before it can be used.
+          held = [GameObj.right_hand, GameObj.left_hand].compact.find do |obj|
+            obj.id && (obj.noun == name || obj.name == name)
+          end
           if held
             @captures['item'] = "##{held.id}"
+            @captures['container'] = nil
+            return
+          end
+
+          # Worn or carried (GameObj.inv is that registry, hands excluded):
+          # remove it, and remember to wear it again on return.
+          worn = GameObj.inv.find { |obj| obj.noun == name || obj.name == name }
+          if worn
+            refill_worn = !GameObj.left_hand.id.nil? && !GameObj.right_hand.id.nil?
+            empty_hand if refill_worn
+            fput "remove ##{worn.id}"
+            @borrowed = { 'name' => name, 'container' => nil, 'refill' => refill_worn, 'worn' => true }
+            @captures['item'] = "##{worn.id}"
             @captures['container'] = nil
             return
           end
@@ -489,7 +508,9 @@ module Lich
           # so re-resolve rather than trusting the id we took on the way in.
           back = GameObj[info['name']]
           if back
-            if info['container']
+            if info['worn']
+              fput "wear ##{back.id}"
+            elsif info['container']
               fput "put ##{back.id} in ##{info['container']}"
             else
               fput "stow ##{back.id}"

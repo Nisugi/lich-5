@@ -3876,14 +3876,64 @@
       "strategy": "unique_crossing",
       "name": "crossing_32873_13532"
     },
-    "34434:34435": {
-      "strategy": "unique_crossing",
-      "name": "crossing_34434_34435"
-    },
-    "34435:34434": {
-      "strategy": "unique_crossing",
-      "name": "crossing_34434_34435"
-    },
+    "34434:34435": [
+      {
+        "do": "borrow_item",
+        "item": "{uservar:key}"
+      },
+      {
+        "do": "send",
+        "cmd": "unlock bright door"
+      },
+      {
+        "do": "send",
+        "cmd": "open bright door"
+      },
+      {
+        "do": "move",
+        "cmd": "go bright door"
+      },
+      {
+        "do": "send",
+        "cmd": "close bright door"
+      },
+      {
+        "do": "send",
+        "cmd": "lock bright door"
+      },
+      {
+        "do": "return_item"
+      }
+    ],
+    "34435:34434": [
+      {
+        "do": "borrow_item",
+        "item": "{uservar:key}"
+      },
+      {
+        "do": "send",
+        "cmd": "unlock bright door"
+      },
+      {
+        "do": "send",
+        "cmd": "open bright door"
+      },
+      {
+        "do": "move",
+        "cmd": "go bright door"
+      },
+      {
+        "do": "send",
+        "cmd": "close bright door"
+      },
+      {
+        "do": "send",
+        "cmd": "lock bright door"
+      },
+      {
+        "do": "return_item"
+      }
+    ],
     "34509:7927": {
       "strategy": "unique_crossing",
       "name": "crossing_34509_7927"

@@ -196,7 +196,7 @@ RSpec.describe Lich::Common::MapEngine do
     end
 
     describe 'use_item' do
-      let(:trinket) { double('trinket', id: 12_345) }
+      let(:trinket) { double('trinket', id: 12_345, noun: 'trinket', name: 'a jade trinket') }
 
       before do
         allow(described_class).to receive(:fput)
@@ -205,20 +205,38 @@ RSpec.describe Lich::Common::MapEngine do
         allow(described_class).to receive(:fill_hand)
       end
 
+      # Builds a coherent GameObj: hands, the worn/carried registry, and the
+      # id lookup that spans both.
+      def stub_gameobj(right: nil, left: nil, inv: [], lookup: nil)
+        empty = double(id: nil, noun: nil, name: nil)
+        gameobj = double('GameObj',
+                         right_hand: right || empty,
+                         left_hand: left || empty,
+                         inv: inv)
+        allow(gameobj).to receive(:[]) { |_| lookup }
+        stub_const('Lich::Common::GameObj', gameobj)
+        gameobj
+      end
+
       it 'uses an item already in hand without putting it away' do
-        stub_const('Lich::Common::GameObj', double('GameObj').tap { |g|
-          allow(g).to receive(:[]).with('trinket').and_return(trinket)
-        })
-        expect(described_class).not_to receive(:fput).with(/stow|put /)
+        stub_gameobj(right: trinket, lookup: trinket)
+        expect(described_class).not_to receive(:fput).with(/stow|put |wear /)
         described_class.send(:run_use_item, { 'item' => 'trinket', 'verb' => 'turn' })
       end
 
+      it 'removes a worn item and wears it again afterwards' do
+        # GameObj[] finds worn items too, so a bare lookup would have used the
+        # key while it was still on the belt.
+        key = double('key', id: 555, noun: 'key', name: 'a brass key')
+        stub_gameobj(inv: [key], lookup: key)
+        expect(described_class).to receive(:fput).with('remove #555').ordered
+        expect(described_class).to receive(:fput).with('wear #555').ordered
+        described_class.send(:run_borrow_item, { 'item' => 'key' })
+        described_class.send(:run_return_item)
+      end
+
       it 'binds the item and container for the steps between borrow and return' do
-        gameobj = double('GameObj')
-        allow(gameobj).to receive(:[]).with('lockpick').and_return(nil, trinket, trinket)
-        allow(gameobj).to receive(:left_hand).and_return(double(id: nil))
-        allow(gameobj).to receive(:right_hand).and_return(double(id: nil))
-        stub_const('Lich::Common::GameObj', gameobj)
+        stub_gameobj(lookup: trinket)
         allow(described_class).to receive(:fetch_item).and_return('999')
 
         described_class.send(:run_borrow_item, { 'item' => 'lockpick' })
@@ -228,11 +246,7 @@ RSpec.describe Lich::Common::MapEngine do
       end
 
       it 'leaves container unbound when it could not be read' do
-        gameobj = double('GameObj')
-        allow(gameobj).to receive(:[]).with('key').and_return(nil, trinket, trinket)
-        allow(gameobj).to receive(:left_hand).and_return(double(id: nil))
-        allow(gameobj).to receive(:right_hand).and_return(double(id: nil))
-        stub_const('Lich::Common::GameObj', gameobj)
+        stub_gameobj(lookup: trinket)
         allow(described_class).to receive(:fetch_item).and_return(nil)
 
         described_class.send(:run_borrow_item, { 'item' => 'key' })
@@ -241,21 +255,15 @@ RSpec.describe Lich::Common::MapEngine do
       end
 
       it 'return_item is a no-op for an item that was already in hand' do
-        stub_const('Lich::Common::GameObj', double('GameObj').tap { |g|
-          allow(g).to receive(:[]).with('trinket').and_return(trinket)
-        })
+        stub_gameobj(right: trinket, lookup: trinket)
         described_class.send(:run_borrow_item, { 'item' => 'trinket' })
         expect(described_class).not_to receive(:fput)
         described_class.send(:run_return_item)
       end
 
       it 'returns a borrowed item to the container it came from' do
-        gameobj = double('GameObj')
-        # absent at first (so it must be fetched), present afterwards
-        allow(gameobj).to receive(:[]).with('trinket').and_return(nil, trinket, trinket)
-        allow(gameobj).to receive(:left_hand).and_return(double(id: nil))
-        allow(gameobj).to receive(:right_hand).and_return(double(id: nil))
-        stub_const('Lich::Common::GameObj', gameobj)
+        # Not in hand and not worn, so it has to be fetched.
+        stub_gameobj(lookup: trinket)
         allow(described_class).to receive(:fetch_item).and_return('999')
 
         expect(described_class).to receive(:fput).with('put #12345 in #999')
@@ -263,11 +271,7 @@ RSpec.describe Lich::Common::MapEngine do
       end
 
       it 'stows a borrowed item when the container is unknown' do
-        gameobj = double('GameObj')
-        allow(gameobj).to receive(:[]).with('trinket').and_return(nil, trinket, trinket)
-        allow(gameobj).to receive(:left_hand).and_return(double(id: nil))
-        allow(gameobj).to receive(:right_hand).and_return(double(id: nil))
-        stub_const('Lich::Common::GameObj', gameobj)
+        stub_gameobj(lookup: trinket)
         allow(described_class).to receive(:fetch_item).and_return(nil)
 
         expect(described_class).to receive(:fput).with('stow #12345')
@@ -275,11 +279,7 @@ RSpec.describe Lich::Common::MapEngine do
       end
 
       it 'fails the crossing when the item cannot be found' do
-        gameobj = double('GameObj')
-        allow(gameobj).to receive(:[]).with('trinket').and_return(nil)
-        allow(gameobj).to receive(:left_hand).and_return(double(id: nil))
-        allow(gameobj).to receive(:right_hand).and_return(double(id: nil))
-        stub_const('Lich::Common::GameObj', gameobj)
+        stub_gameobj(lookup: nil)
         allow(described_class).to receive(:fetch_item).and_return(nil)
 
         expect { described_class.send(:run_use_item, { 'item' => 'trinket' }) }
