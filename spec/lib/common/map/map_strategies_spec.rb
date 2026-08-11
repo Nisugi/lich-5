@@ -75,19 +75,27 @@ RSpec.describe Lich::Common::MapEngine::Strategies do
   end
 
   describe Lich::Common::MapEngine::UniqueCrossings do
+    # Naming a specific crossing here pins a moving target: every block is a
+    # candidate to become schema, and this spec has already had to be
+    # repointed twice. Take whatever is registered instead.
+    let(:a_gs_crossing) do
+      described_class::REGISTRY.keys.find { |k| k.start_with?('crossing_') && !k.start_with?('crossing_dr_') }
+    end
+
     it 'carries the relocated one-off crossings' do
       # Deliberately not a size floor: this registry is meant to shrink as
       # recognizers learn each idiom family. Assert both game sections loaded
       # and that a named block is callable.
       expect(described_class::REGISTRY).not_to be_empty
-      expect(described_class.known?('crossing_339_24768')).to be(true)
+      expect(a_gs_crossing).not_to be_nil
+      expect(described_class.known?(a_gs_crossing)).to be(true)
       expect(described_class::REGISTRY.keys).to include(a_string_starting_with('crossing_dr_'))
-      expect(described_class::REGISTRY['crossing_339_24768']).to be_a(Proc)
+      expect(described_class::REGISTRY[a_gs_crossing]).to be_a(Proc)
     end
 
     it 'validates unique_crossing strategy references' do
       validator = Lich::Common::MapEngine::Validator
-      expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing', 'name' => 'crossing_339_24768' }))
+      expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing', 'name' => a_gs_crossing }))
         .to be_empty
       expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing' }).join)
         .to include('missing required param')

@@ -3834,26 +3834,186 @@
       "strategy": "unique_crossing",
       "name": "crossing_8373_8374"
     },
-    "9784:9734": {
-      "strategy": "unique_crossing",
-      "name": "crossing_9784_9734"
-    },
-    "9788:9734": {
-      "strategy": "unique_crossing",
-      "name": "crossing_9784_9734"
-    },
-    "9808:9734": {
-      "strategy": "unique_crossing",
-      "name": "crossing_9784_9734"
-    },
-    "9818:9734": {
-      "strategy": "unique_crossing",
-      "name": "crossing_9784_9734"
-    },
-    "9823:9734": {
-      "strategy": "unique_crossing",
-      "name": "crossing_9784_9734"
-    },
+    "9784:9734": [
+      {
+        "do": "repeat",
+        "times": 20,
+        "until": "room_name:\\AMaaghara Tower, Refuse Heap\\z",
+        "steps": [
+          {
+            "do": "try_move",
+            "cmd": "go root",
+            "fallback": [
+              {
+                "do": "move_random"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "wait_until",
+        "when": "room_name:\\AMaaghara Tower, Refuse Heap\\z",
+        "timeout": 60
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "9788:9734": [
+      {
+        "do": "repeat",
+        "times": 20,
+        "until": "room_name:\\AMaaghara Tower, Refuse Heap\\z",
+        "steps": [
+          {
+            "do": "try_move",
+            "cmd": "go root",
+            "fallback": [
+              {
+                "do": "move_random"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "wait_until",
+        "when": "room_name:\\AMaaghara Tower, Refuse Heap\\z",
+        "timeout": 60
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "9808:9734": [
+      {
+        "do": "repeat",
+        "times": 20,
+        "until": "room_name:\\AMaaghara Tower, Refuse Heap\\z",
+        "steps": [
+          {
+            "do": "try_move",
+            "cmd": "go root",
+            "fallback": [
+              {
+                "do": "move_random"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "wait_until",
+        "when": "room_name:\\AMaaghara Tower, Refuse Heap\\z",
+        "timeout": 60
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "9818:9734": [
+      {
+        "do": "repeat",
+        "times": 20,
+        "until": "room_name:\\AMaaghara Tower, Refuse Heap\\z",
+        "steps": [
+          {
+            "do": "try_move",
+            "cmd": "go root",
+            "fallback": [
+              {
+                "do": "move_random"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "wait_until",
+        "when": "room_name:\\AMaaghara Tower, Refuse Heap\\z",
+        "timeout": 60
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
+    "9823:9734": [
+      {
+        "do": "repeat",
+        "times": 20,
+        "until": "room_name:\\AMaaghara Tower, Refuse Heap\\z",
+        "steps": [
+          {
+            "do": "try_move",
+            "cmd": "go root",
+            "fallback": [
+              {
+                "do": "move_random"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "wait_until",
+        "when": "room_name:\\AMaaghara Tower, Refuse Heap\\z",
+        "timeout": 60
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "wait_rt"
+      }
+    ],
     "10781:18150": {
       "strategy": "unique_crossing",
       "name": "crossing_10781_18150"
