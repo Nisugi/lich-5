@@ -3125,18 +3125,140 @@
       "strategy": "unique_crossing",
       "name": "crossing_2677_2675"
     },
-    "3239:3264": {
-      "strategy": "unique_crossing",
-      "name": "crossing_3239_3264"
-    },
-    "3264:3239": {
-      "strategy": "unique_crossing",
-      "name": "crossing_3239_3264"
-    },
-    "3495:18041": {
-      "strategy": "unique_crossing",
-      "name": "crossing_3495_18041"
-    },
+    "3239:3264": [
+      {
+        "do": "await",
+        "cmd": "open rolaren gate",
+        "timeout": 10,
+        "for": "^You open|^That is already open|^It appears to be locked",
+        "on_timeout": "continue",
+        "bind": {
+          "outcome": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:outcome=It appears to be locked",
+        "then": [
+          {
+            "do": "if",
+            "when": "climb_bonus:50",
+            "then": [
+              {
+                "do": "cast_buff",
+                "spell": "sigil of resolve",
+                "stamina": true,
+                "unless": [
+                  "POPed muscles"
+                ]
+              },
+              {
+                "do": "move",
+                "cmd": "climb rolaren gate"
+              }
+            ],
+            "else": [
+              {
+                "do": "cast",
+                "spell": [
+                  704,
+                  407,
+                  1207
+                ],
+                "target": "rolaren gate",
+                "retry_on": "^The gate vibrates slightly but nothing else happens|^A translucent force slams into the gate, but it remains unaffected"
+              },
+              {
+                "do": "move",
+                "cmd": "go rolaren gate"
+              }
+            ]
+          }
+        ],
+        "else": [
+          {
+            "do": "move",
+            "cmd": "go rolaren gate"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:3264",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
+    "3264:3239": [
+      {
+        "do": "await",
+        "cmd": "open rolaren gate",
+        "timeout": 10,
+        "for": "^You open|^That is already open|^It appears to be locked",
+        "on_timeout": "continue",
+        "bind": {
+          "outcome": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:outcome=It appears to be locked",
+        "then": [
+          {
+            "do": "if",
+            "when": "climb_bonus:50",
+            "then": [
+              {
+                "do": "cast_buff",
+                "spell": "sigil of resolve",
+                "stamina": true,
+                "unless": [
+                  "POPed muscles"
+                ]
+              },
+              {
+                "do": "move",
+                "cmd": "climb rolaren gate"
+              }
+            ],
+            "else": [
+              {
+                "do": "cast",
+                "spell": [
+                  704,
+                  407,
+                  1207
+                ],
+                "target": "rolaren gate",
+                "retry_on": "^The gate vibrates slightly but nothing else happens|^A translucent force slams into the gate, but it remains unaffected"
+              },
+              {
+                "do": "move",
+                "cmd": "go rolaren gate"
+              }
+            ]
+          }
+        ],
+        "else": [
+          {
+            "do": "move",
+            "cmd": "go rolaren gate"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:3239",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
     "3509:17805": {
       "strategy": "unique_crossing",
       "name": "crossing_3509_17805"
@@ -3169,26 +3291,201 @@
       "strategy": "unique_crossing",
       "name": "crossing_6955_6985"
     },
-    "7046:3705": {
-      "strategy": "unique_crossing",
-      "name": "crossing_7046_3705"
-    },
-    "7046:7047": {
-      "strategy": "unique_crossing",
-      "name": "crossing_7046_7047"
-    },
-    "7046:7083": {
-      "strategy": "unique_crossing",
-      "name": "crossing_7046_7083"
-    },
-    "7046:7099": {
-      "strategy": "unique_crossing",
-      "name": "crossing_7046_7099"
-    },
-    "7046:7144": {
-      "strategy": "unique_crossing",
-      "name": "crossing_7046_7144"
-    },
+    "7046:3705": [
+      {
+        "do": "repeat",
+        "until": "not:paths_are:out",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "search"
+          },
+          {
+            "do": "send",
+            "cmd": "turn bent spike"
+          },
+          {
+            "do": "sleep",
+            "seconds": 0.2
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:3705",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
+    "7046:7047": [
+      {
+        "do": "repeat",
+        "until": "not:paths_are:out",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "search"
+          },
+          {
+            "do": "send",
+            "cmd": "turn bent spike"
+          },
+          {
+            "do": "sleep",
+            "seconds": 0.2
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:7047",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
+    "7046:7083": [
+      {
+        "do": "repeat",
+        "until": "not:paths_are:out",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "search"
+          },
+          {
+            "do": "send",
+            "cmd": "turn bent spike"
+          },
+          {
+            "do": "sleep",
+            "seconds": 0.2
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:7083",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
+    "7046:7099": [
+      {
+        "do": "repeat",
+        "until": "not:paths_are:out",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "search"
+          },
+          {
+            "do": "send",
+            "cmd": "turn bent spike"
+          },
+          {
+            "do": "sleep",
+            "seconds": 0.2
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:7099",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
+    "7046:7144": [
+      {
+        "do": "repeat",
+        "until": "not:paths_are:out",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "search"
+          },
+          {
+            "do": "send",
+            "cmd": "turn bent spike"
+          },
+          {
+            "do": "sleep",
+            "seconds": 0.2
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:7144",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
     "7324:4541": {
       "strategy": "unique_crossing",
       "name": "crossing_7324_4541"
@@ -3264,22 +3561,6 @@
     "16011:11022": {
       "strategy": "unique_crossing",
       "name": "crossing_16011_11022"
-    },
-    "16011:16256": {
-      "strategy": "unique_crossing",
-      "name": "crossing_16011_16256"
-    },
-    "16011:16270": {
-      "strategy": "unique_crossing",
-      "name": "crossing_16011_16270"
-    },
-    "16122:11612": {
-      "strategy": "unique_crossing",
-      "name": "crossing_16122_11612"
-    },
-    "16122:11618": {
-      "strategy": "unique_crossing",
-      "name": "crossing_16122_11618"
     },
     "16165:16064": {
       "strategy": "unique_crossing",
@@ -3484,10 +3765,6 @@
     "27639:27638": {
       "strategy": "unique_crossing",
       "name": "crossing_27638_27639"
-    },
-    "28885:29773": {
-      "strategy": "unique_crossing",
-      "name": "crossing_28885_29773"
     },
     "30115:29861": {
       "strategy": "unique_crossing",
@@ -3777,6 +4054,45 @@
       {
         "do": "move",
         "cmd": "go gold tapestry"
+      }
+    ],
+    "7046:7091": [
+      {
+        "do": "repeat",
+        "until": "not:paths_are:out",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "search"
+          },
+          {
+            "do": "send",
+            "cmd": "turn bent spike"
+          },
+          {
+            "do": "sleep",
+            "seconds": 0.2
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:7091",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
       }
     ]
   }

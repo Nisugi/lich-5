@@ -281,6 +281,9 @@ module Lich
           convert_wayto_preserve_stance(body) ||
           convert_wayto_sit_branch(body) ||
           convert_wayto_escort(body) ||
+          convert_wayto_speak_language(body) ||
+          convert_wayto_walk_until_loot(body) ||
+          convert_wayto_random_wander_gated(body) ||
           convert_wayto_gated_moves(body) ||
           convert_move_then_send(body)
       end
@@ -346,6 +349,73 @@ module Lich
         Result.new('send_until_count',
                    [{ 'do' => 'repeat', 'times' => m[2].to_i,
                       'steps' => [{ 'do' => 'move', 'cmd' => cmd }] }])
+      end
+
+      # Guild doors that only answer Guildspeak: note the language you are
+      # speaking, switch, cross, switch back. The restore is skipped when you
+      # were already speaking Guildspeak, exactly as the proc does.
+      def convert_wayto_speak_language(body)
+        m = body.match(/\Afput\s+#{QUOTED};\s*
+                        language\s*=\s*\/You\ are\ currently\ speaking\ \(\.\*\?\)\\\.\/\.match\(get\)
+                        \.captures\.first\s+until\s+language;+\s*
+                        fput\(#{QUOTED}\)\s+unless\s+language\s*==\s*#{QUOTED};\s*
+                        fput\('unhide'\)\s+if\s+hidden\?\s+or\s+invisible\?;\s*
+                        move\s+#{QUOTED};\s*
+                        fput\('speak\ '\s*\+\s*language\.to_s\)\s+unless\s+language\s*==\s*#{QUOTED}\z/xm)
+        return nil unless m
+
+        # QUOTED carries two groups apiece: 1/2 ask, 3/4 switch command,
+        # 5/6 native language, 7/8 crossing command, 9/10 the same language.
+        native = m[5] || m[6]
+        Result.new('speak_language',
+                   [{ 'do' => 'await', 'cmd' => m[1] || m[2], 'timeout' => 5,
+                      'for' => 'You are currently speaking (.*?)\.',
+                      'bind' => { 'language' => 1 } },
+                    { 'do' => 'if', 'when' => "not:capture:language=#{native}",
+                      'then' => [{ 'do' => 'send', 'cmd' => m[3] || m[4] }] },
+                    # One unhide for either condition, as the proc's `or` does.
+                    { 'do' => 'if', 'when' => 'status:hidden',
+                      'then' => [{ 'do' => 'send', 'cmd' => 'unhide' }],
+                      'else' => [{ 'do' => 'if', 'when' => 'status:invisible',
+                                   'then' => [{ 'do' => 'send', 'cmd' => 'unhide' }] }] },
+                    { 'do' => 'move', 'cmd' => m[7] || m[8] },
+                    { 'do' => 'if', 'when' => "not:capture:language=#{native}",
+                      'then' => [{ 'do' => 'send', 'cmd' => 'speak {capture:language}' }] }])
+      end
+
+      # walk until checkloot.include?('path'); move 'go path'
+      # Wander the fixed maze until the exit object shows up in the room.
+      def convert_wayto_walk_until_loot(body)
+        m = body.match(/\Awalk\s+until\s+checkloot\.include\?\(#{QUOTED}\);\s*move\s+#{QUOTED}\z/)
+        return nil unless m
+
+        # loot_noun, not loot_match: checkloot compares nouns exactly, while
+        # loot_match is a regex over full names and would match wider.
+        Result.new('walk_until_loot',
+                   [{ 'do' => 'repeat', 'until' => "loot_noun:#{m[1] || m[2]}",
+                      'steps' => [{ 'do' => 'move_random' }] },
+                    { 'do' => 'move', 'cmd' => m[3] || m[4] }])
+      end
+
+      # move ['a','b'][rand(2)] while checkpaths == [...]; then gated moves.
+      # Wander between two exits while the room still shows the full set.
+      def convert_wayto_random_wander_gated(body)
+        clauses = split_top_level(body)
+        first = clauses.first.to_s
+        m = first.match(/\Amove\s+\[((?:\s*#{QUOTED}\s*,?)+)\]\[rand\(\d+\)\]\s+
+                         while\s+checkpaths\s*==\s*\[([^\]]*)\]\z/x)
+        return nil unless m
+
+        among = m[1].scan(QUOTED).map { |a, b| a || b }
+        paths = m[4].scan(QUOTED).map { |a, b| a || b }
+        return nil if among.empty? || paths.empty?
+
+        rest = convert_wayto_gated_moves(clauses[1..].join(';'))
+        return nil unless rest
+
+        Result.new('random_wander',
+                   [{ 'do' => 'repeat', 'until' => "not:paths_are:#{paths.join(',')}",
+                      'steps' => [{ 'do' => 'move_random', 'among' => among }] }] + rest.schema)
       end
 
       # Escort crossings: resolve the bounty/Society escortee once, then wait
@@ -447,8 +517,8 @@ module Lich
       MOVE_CLAUSE = /\Amove\s*\(?\s*#{QUOTED}\s*\)?
                      (?:\s+(while|if)\s+checkpaths\.include\?\(#{QUOTED}\))?\z/x
       def convert_wayto_gated_moves(body)
-        clauses = body.split(';').map(&:strip).reject(&:empty?)
-        return nil unless clauses.length.between?(2, 6)
+        clauses = split_top_level(body)
+        return nil unless clauses.length.between?(1, 6)
 
         steps = clauses.map do |clause|
           m = clause.match(MOVE_CLAUSE)

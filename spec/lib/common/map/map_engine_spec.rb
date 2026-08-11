@@ -195,6 +195,51 @@ RSpec.describe Lich::Common::MapEngine do
       expect(described_class.condition?('capture:missing')).to be(false)
     end
 
+    it 'branches on which alternative a bound line matched' do
+      described_class.captures['outcome'] = 'It appears to be locked.'
+      expect(described_class.condition?('capture_match:outcome=It appears to be locked')).to be(true)
+      expect(described_class.condition?('capture_match:outcome=You open')).to be(false)
+    end
+
+    it 'matches loot by exact noun, not by name regex' do
+      item = double('item', noun: 'path', name: 'a winding pathway')
+      # The engine resolves GameObj inside Lich::Common, so stub it there.
+      stub_const('Lich::Common::GameObj', double('GameObj', loot: [item]))
+      expect(described_class.condition?('loot_noun:path')).to be(true)
+      expect(described_class.condition?('loot_noun:pathway')).to be(false)
+    end
+
+    it 'derates the climbing bonus by encumbrance against a threshold' do
+      # (1 - encumbrance%) * to_bonus(climbing) >= N. Distinct from
+      # climb_vs_encumbrance, which compares raw ranks.
+      stub_const('Char', double('Char', percent_encumbrance: 50))
+      stub_const('Skills', double('Skills', climbing: 200, to_bonus: 100))
+      expect(described_class.requirement?('climb_bonus:50')).to be(true)  # 0.5 * 100
+      expect(described_class.requirement?('climb_bonus:60')).to be(false)
+      stub_const('Char', double('Char', percent_encumbrance: 80))
+      expect(described_class.requirement?('climb_bonus:50')).to be(false) # 0.2 * 100
+    end
+
+    it 'casts the first known spell from a preference list' do
+      known = double('known', known?: true, num: 1207)
+      unknown = double('unknown', known?: false, num: 407)
+      # Stub the lookup only, so Spell keeps behaving like the real class for
+      # everything else in this file.
+      spell_class = class_double('Spell').as_stubbed_const
+      allow(spell_class).to receive(:[]).with(407).and_return(unknown)
+      allow(spell_class).to receive(:[]).with(1207).and_return(known)
+      expect(described_class.send(:resolve_castable, [407, 1207])).to be(known)
+      # knowing none of them is a step failure, not a blind cast
+      expect(described_class.send(:resolve_castable, [407])).to be_nil
+    end
+
+    it 'validates cast spell lists' do
+      v = described_class::Validator
+      expect(v.errors_for_wayto([{ 'do' => 'cast', 'spell' => [407, 1207] }])).to be_empty
+      expect(v.errors_for_wayto([{ 'do' => 'cast', 'spell' => [] }]).join).to include('numeric spell')
+      expect(v.errors_for_wayto([{ 'do' => 'cast', 'spell' => ['407'] }]).join).to include('numeric spell')
+    end
+
     it 'reads room_loaded from the room description, not the room id' do
       # Fog spheres and teleports deliver an empty description while the game
       # is still placing you; the id may already have changed.

@@ -195,6 +195,12 @@ module Lich
           when 'climb_vs_encumbrance'
             # Skills.climbing >= max(encumbrance/1.25, MIN)
             Skills.climbing >= [XMLData.encumbrance_value / 1.25, arg.to_i].max
+          when 'climb_bonus'
+            # Climbing bonus derated by how loaded down you are, against a
+            # threshold: (1 - encumbrance%) * to_bonus(climbing) >= N. This is
+            # a different test from climb_vs_encumbrance, which compares raw
+            # ranks - keep both, the corpus uses each.
+            (1 - (Char.percent_encumbrance / 100.0)) * Skills.to_bonus(Skills.climbing) >= arg.to_f
           when 'global'
             name, expected = arg.to_s.split('=', 2)
             return false unless SETTABLE_GLOBALS.include?(name)
@@ -317,8 +323,7 @@ module Lich
           when 'echo'
             echo step['msg'].to_s
           when 'cast_buff'
-            spell = Spell[step['spell']]
-            spell.cast if spell && spell.known? && spell.affordable? && !spell.active?
+            run_cast_buff(step)
           when 'cross'
             run_cross_edge(step)
           when 'move_with_group'
@@ -402,14 +407,46 @@ module Lich
         # Cast a spell at an optional target, waiting for mana and retrying
         # through spell hindrance (the sanctum casting-loop idiom).
         def run_cast(step)
-          spell = Spell[step['spell']]
+          # spell may be a single number or a preference list: cast the first
+          # one this character actually knows (the "407, else 1207" idiom).
+          spell = resolve_castable(step['spell'])
           raise StepFailed, "cast: unknown spell #{step['spell'].inspect}" unless spell
+          # Retry on hindrance, plus any edge-specific failure text (gates that
+          # shrug off the spell and have to be hit again).
+          retry_on = step['retry_on'] ? compile_pattern(step['retry_on']) : nil
           MAX_LOOP_ITERATIONS.times do
             wait_until { spell.affordable? }
-            result = cast(step['spell'], step['target'])
-            return true unless result =~ /Spell Hindrance/
+            result = cast(spell.num, step['target'])
+            return true unless result =~ /Spell Hindrance/ || (retry_on && result =~ retry_on)
           end
           raise StepFailed, 'cast: spell hindrance persisted'
+        end
+
+        # Buff yourself before a crossing, skipping silently when the spell is
+        # unknown or already up. Society spells (sigil of resolve) cost stamina
+        # rather than mana, and the procs wait for it rather than give up;
+        # `unless` names buffs whose presence makes this one redundant.
+        def run_cast_buff(step)
+          spell = Spell[step['spell']]
+          return unless spell&.known? && !spell.active?
+          return if Array(step['unless']).any? { |name| Spell[name]&.active? }
+
+          if step['stamina']
+            deadline = Time.now + (step['timeout'] || 60).to_f
+            sleep 0.25 until stamina(spell.stamina_cost) || Time.now > deadline
+            return unless stamina(spell.stamina_cost)
+          elsif !spell.affordable?
+            return
+          end
+          spell.cast
+        end
+
+        # A spell number, or the first known spell from a preference list.
+        # Returns nil when the character knows none of them, which makes the
+        # step fail rather than blindly casting something unavailable.
+        def resolve_castable(spec)
+          return Spell[spec] unless spec.is_a?(Array)
+          spec.map { |num| Spell[num] }.compact.find(&:known?)
         end
 
         # Move through a random obvious path, honoring optional include /
@@ -640,11 +677,21 @@ module Lich
           when 'loot_match'
             re = compile_pattern(expand_tokens(arg))
             !re.nil? && GameObj.loot.any? { |obj| obj.name =~ re }
+          when 'loot_noun'
+            # checkloot's exact test: an item in the room has this noun. Not
+            # loot_match, which is a regex over full names and matches wider.
+            GameObj.loot.any? { |obj| obj.noun == expand_tokens(arg) }
           when 'capture'
             # capture:NAME (bound and non-empty) or capture:NAME=VALUE
             name, expected = arg.to_s.split('=', 2)
             value = captures[name]
             expected ? value.to_s == expected : !value.to_s.empty?
+          when 'capture_match'
+            # capture_match:NAME=PATTERN - branch on which alternative a bound
+            # line matched, which is what the procs do with their await result.
+            name, pattern = arg.to_s.split('=', 2)
+            re = compile_pattern(pattern)
+            !re.nil? && captures[name].to_s =~ re ? true : false
           when 'room_loaded'
             # The room description has arrived. Transit rooms (fog spheres,
             # teleports) deliver an empty description until the game finishes
@@ -840,12 +887,12 @@ module Lich
                         wait_castrt].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
                                month var var_raw society seeking_enabled has_item no_script spell_known level
-                               skill climb_vs_encumbrance global room_name location script_running subscription
+                               skill climb_vs_encumbrance climb_bonus global room_name location script_running subscription
                                edge drskill guild circle premium script_exists game dr_setting dr_spell_known
                                stamina].freeze
         FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match
-                             in_room platinum capture room_loaded].freeze
+                             in_room platinum capture capture_match room_loaded loot_noun].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function
@@ -946,7 +993,12 @@ module Lich
           when 'set'
             errors << 'set requires var' unless step['var'].is_a?(String)
           when 'cast_buff'
-            errors << 'cast_buff requires a numeric spell' unless step['spell'].is_a?(Integer)
+            unless step['spell'].is_a?(Integer) || step['spell'].is_a?(String)
+              errors << 'cast_buff requires a spell number or name'
+            end
+            if step['unless'] && !Array(step['unless']).all? { |n| n.is_a?(String) || n.is_a?(Integer) }
+              errors << 'cast_buff unless must be spell names or numbers'
+            end
           when 'cross'
             unless (step['room'].is_a?(Integer) || step['room'].to_s =~ /\A(?:u)?\d+\z/i) && step['dest']
               errors << 'cross requires room (id or uNNN) and dest'
@@ -976,7 +1028,10 @@ module Lich
               errors << "unknown condition kind #{kind.inspect}"
             end
           when 'cast'
-            errors << 'cast requires a numeric spell' unless step['spell'].is_a?(Integer)
+            spell = step['spell']
+            ok = spell.is_a?(Integer) ||
+                 (spell.is_a?(Array) && !spell.empty? && spell.all? { |n| n.is_a?(Integer) })
+            errors << 'cast requires a numeric spell or a list of them' unless ok
           when 'move_random'
             if step['among'] && !step['among'].is_a?(Array)
               errors << 'move_random among must be an array'

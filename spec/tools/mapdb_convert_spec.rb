@@ -343,6 +343,41 @@ RSpec.describe MapdbConverter do
                   'steps' => [{ 'do' => 'send', 'cmd' => 'climb root' }] }])
     end
 
+    it 'converts checkloot waits with loot_noun, not loot_match' do
+      # checkloot compares nouns exactly; loot_match is a regex over full
+      # names and would also match "pathway".
+      expect(schema_for("walk until checkloot.include?('path'); move 'go path'"))
+        .to eq([{ 'do' => 'repeat', 'until' => 'loot_noun:path',
+                  'steps' => [{ 'do' => 'move_random' }] },
+                { 'do' => 'move', 'cmd' => 'go path' }])
+    end
+
+    it 'converts random wander bounded by the full path set' do
+      body = "move ['northwest','southwest'][rand(2)] while checkpaths == [ 'ne', 'se', 'sw', 'nw' ]; " \
+             "move 'northwest' if checkpaths.include?('nw')"
+      expect(schema_for(body))
+        .to eq([{ 'do' => 'repeat', 'until' => 'not:paths_are:ne,se,sw,nw',
+                  'steps' => [{ 'do' => 'move_random', 'among' => %w[northwest southwest] }] },
+                { 'do' => 'if', 'when' => 'path:nw',
+                  'then' => [{ 'do' => 'move', 'cmd' => 'northwest' }] }])
+    end
+
+    it 'converts guildspeak doors, restoring the language it found' do
+      body = "fput 'speak'; language = /You are currently speaking (.*?)\\./.match(get).captures.first " \
+             "until language;; fput('speak wizard') unless language == 'Guildspeak'; " \
+             "fput('unhide') if hidden? or invisible?; move 'say ::door wizard'; " \
+             "fput('speak ' + language.to_s) unless language == 'Guildspeak'"
+      schema = schema_for(body)
+      expect(schema[0]).to include('do' => 'await', 'cmd' => 'speak', 'bind' => { 'language' => 1 })
+      expect(schema[1]).to eq({ 'do' => 'if', 'when' => 'not:capture:language=Guildspeak',
+                                'then' => [{ 'do' => 'send', 'cmd' => 'speak wizard' }] })
+      # one unhide covers both hidden and invisible, as the proc's `or` does
+      expect(schema[2]['then']).to eq([{ 'do' => 'send', 'cmd' => 'unhide' }])
+      expect(schema[2]['else'].first['when']).to eq('status:invisible')
+      expect(schema[3]).to eq({ 'do' => 'move', 'cmd' => 'say ::door wizard' })
+      expect(schema[4]['then']).to eq([{ 'do' => 'send', 'cmd' => 'speak {capture:language}' }])
+    end
+
     it 'converts escort staircases into alternating escort_wait and move' do
       wait = '50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc'
       body = 'if ((bounty? =~ /^You have made contact with the child/)||' \

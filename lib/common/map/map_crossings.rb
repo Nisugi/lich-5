@@ -70,14 +70,6 @@ module Lich
           unless (move 'go door'); push_result = dothistimeout 'push tine', 10, /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the|^You grasp the top tine and try to turn it, but it won't even budge.$/ until push_result =~ /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the (?:reflective glass stone aligned with the word 'Honor'|clear crystal stone aligned with the word 'Truth'|milky white stone aligned with the word 'Piety'|dull grey stone aligned with the word 'Humility'|flawless silver stone aligned with the word 'Faith'|veil iron stone aligned with the word 'Courage').$|^You grasp the top tine and try to turn it, but it won't even budge.$/; unless push_result.nil? or push_result == 'You grasp the top tine and try to turn it, but it won\'t even budge.'; unless mana < 100; castables = [ 110, 120, 140, 210, 216, 230, 420, 425, 430, 520, 540, 620, 625, 650, 1040, 1110, 1115, 1601, 1602, 1603, 1604, 1607, 1613, 1614, 1615 ].sort { |a,b| a.to_s[-2..-1] <=> b.to_s[-2..-1] }.reverse.collect { |n| Spell[n] }; castables.delete_if { |spell| spell.nil? or !spell.known? }; mana5spells = [105, 205, 305, 405, 505, 605, 705, 905, 1005, 1105, 1205, 1605].collect { |n| Spell[n] }; mana5spells.delete_if { |spell| spell.nil? or !spell.known? }; mana_needed = 100; while (mana_needed > 0) and ((Spell[515].active? and (spell = mana5spells.find { |s| s.known? })) or (spell = castables.find { |s| s.mana_cost <= mana_needed }) or (spell = castables.reverse.find { |s| s.mana_cost >= mana_needed })); loop { cast_result = spell.cast('crown'); break unless cast_result =~ /^\[Spell Hindrance for/ }; mana_needed -= spell.mana_cost; sleep 0.1; end; end; fput 'release' if Spell[515].active? and (checkprep != 'None'); fput 'touch crown'; fput 'say Aenatumgana'; sleep 0.5; end; move 'go door'; end
         end
 
-        define('crossing_3239_3264') do # 3239:3264 3264:3239
-          r = dothistimeout 'open rolaren gate', 10, /^You open|^That is already open|^It appears to be locked/; if r =~ /^You open|^That is already open/; move 'go rolaren gate'; elsif r =~ /^It appears to be locked/; spell = Spell['sigil of resolve']; bonus = spell.known? ? Society.rank/2 : 0; if ((1-(XMLData.encumbrance_value/100.0)) * Skills.to_bonus(Skills.climbing)) >= 50; if spell.known? && !spell.active? && !Spell['POPed muscles'].active?; echo 'Waiting for stamina do sigil of rsolve...' unless stamina(spell.stamina_cost); wait_until{stamina(spell.stamina_cost)}; spell.cast; end; move 'climb rolaren gate'; elsif Spell[704].known?; unless Spell[704].affordable?; echo 'waiting for mana...'; wait_until { Spell[704].affordable? }; end; Spell[704].cast('rolaren gate'); elsif (num = [ 407, 1207 ].find { |n| Spell[n].known? }); 1.times { unless Spell[num].affordable?; echo 'waiting for mana...'; wait_until { Spell[num].affordable? }; end; r = Spell[num].cast('rolaren gate', /^The gate vibrates slightly but nothing else happens|^A translucent force slams into the gate, but it remains unaffected/); redo if r =~ /^\[Spell Hindrance|^The gate vibrates slightly but nothing else happens|^A translucent force slams into the gate, but it remains unaffected/ }; move 'go rolaren gate'; else; echo "error: You can't get through the gate because you can't cast 704, 407, or 1207 and you suck at climbing and/or are too encumbered."; sleep 2; exit; end; else; $go2_restart = true; end
-        end
-
-        define('crossing_3495_18041') do # 3495:18041
-          fput 'speak'; language = /You are currently speaking (.*?)\./.match(get).captures.first until language;; fput('speak wizard') unless language == 'Guildspeak'; fput('unhide') if hidden? or invisible?; move 'say ::door wizard'; fput('speak ' + language.to_s) unless language == 'Guildspeak'
-        end
-
         define('crossing_3509_17805') do # 3509:17805
           status_tags; get_result = dothis 'get my lockpick', /You remove|detach .*?<a exist="(?:[0-9]+)".*?from.*?<a exist="(?:[0-9]+)"/; status_tags; lockpick, container = /You remove|detach .*?<a exist="([0-9]+)".*?from.*?<a exist="([0-9]+)"/.match(get_result).captures[0..1]; fput 'pick shed'; fput "_drag ##{lockpick} ##{container}"; fput 'open shed'; move 'go shed'
         end
@@ -451,26 +443,6 @@ module Lich
           $go2_restart = true;
         end
 
-        define('crossing_7046_3705') do # 7046:3705
-          loop { fput 'search'; fput 'turn bent spike'; sleep 0.2; break unless checkpaths == [ 'out' ] }; wait_while { standing? }; fput 'stand'; if Room.current == Room[7144]; move 'go door'; move 'go hole'; move 'go crack'; end; if Room.current == Room[7083]; move 'go space'; move 'east'; end; if Room.current == Room[7084]; move 'east'; move 'east'; move 'south'; move 'south'; move 'east'; move 'east'; end; if Room.current == Room[7099]; move 'south'; move 'west'; end; if Room.current == Room[7091]; move 'go door'; move 'go shaft'; move 'south'; move 'south'; end; if Room.current == Room[7047]; move 'southwest'; move 'southeast'; move 'southeast'; move 'northeast'; move 'northeast'; move 'climb rubble'; move 'go opening'; move 'north'; move 'out'; move 'south'; move 'south'; move 'south'; move 'east'; move 'north'; move 'north'; move 'north'; end
-        end
-
-        define('crossing_7046_7047') do # 7046:7047
-          loop { fput 'search'; fput 'turn bent spike'; sleep 0.2; break unless checkpaths == [ 'out' ] }; wait_while { standing? }; fput 'stand'; if Room.current == Room[7144]; move 'go door'; move 'go hole'; move 'go crack'; end; if Room.current == Room[7083]; move 'go space'; move 'east'; end; if Room.current == Room[7084]; move 'east'; move 'east'; move 'south'; move 'south'; move 'east'; move 'east'; end; if Room.current == Room[7099]; move 'south'; move 'west'; end; if Room.current == Room[7091]; move 'go door'; move 'go shaft'; move 'south'; move 'south'; end; if Room.current == Room[3705]; move 'south'; move 'south'; move 'west'; move 'north'; move 'north'; move 'north'; move 'go door'; move 'go tunnel'; move 'down'; move 'southwest'; move 'southwest'; move 'northwest'; move 'northwest'; move 'northeast'; end
-        end
-
-        define('crossing_7046_7083') do # 7046:7083
-          loop { fput 'search'; fput 'turn bent spike'; sleep 0.2; break unless checkpaths == [ 'out' ] }; wait_while { standing? }; fput 'stand'; if Room.current == Room[7047]; move 'southwest'; move 'southeast'; move 'southeast'; move 'northeast'; move 'northeast'; move 'climb rubble'; move 'go opening'; move 'out'; end; if Room.current == Room[3705]; move 'south'; move 'south'; move 'west'; move 'north'; move 'north'; move 'north'; end; if Room.current == Room[3687]; move 'north'; move 'northwest'; move 'south'; move 'south'; move 'south'; move 'climb ladder'; move 'go door'; move 'north'; move 'north'; move 'north'; move 'go space'; end; if Room.current == Room[7144]; move 'go door'; move 'go hole'; move 'go crack'; move 'west'; move 'go space'; end; if Room.current == Room[7099]; move 'north'; move 'west'; move 'west'; move 'west'; move 'west'; move 'west'; move 'go space'; end
-        end
-
-        define('crossing_7046_7099') do # 7046:7099
-          loop { fput 'search'; fput 'turn bent spike'; sleep 0.2; break unless checkpaths == [ 'out' ] }; wait_while { standing? }; fput 'stand'; if Room.current == Room[7047]; move 'southwest'; move 'southeast'; move 'southeast'; move 'northeast'; move 'northeast'; move 'climb rubble'; move 'go opening'; move 'out'; end; if Room.current == Room[3705]; move 'south'; move 'south'; move 'west'; move 'north'; move 'north'; move 'north'; end; if Room.current == Room[3687]; move 'north'; move 'northwest'; move 'south'; move 'south'; move 'south'; move 'climb ladder'; move 'go door'; move 'north'; move 'north'; move 'north'; move 'east'; end; if Room.current == Room[7144]; move 'go door'; move 'go hole'; move 'go crack'; end; if Room.current == Room[7083]; move 'go space'; move 'east'; end; if Room.current == Room[7084]; move 'east'; move 'east'; move 'east'; move 'east'; move 'south'; end
-        end
-
-        define('crossing_7046_7144') do # 7046:7144
-          loop { fput 'search'; fput 'turn bent spike'; sleep 0.2; break unless checkpaths == [ 'out' ] }; wait_while { standing? }; fput 'stand'; if Room.current == Room[7047]; move 'southwest'; move 'southeast'; move 'southeast'; move 'northeast'; move 'northeast'; move 'climb rubble'; move 'go opening'; move 'out'; end; if Room.current == Room[3705]; move 'south'; move 'south'; move 'west'; move 'north'; move 'north'; move 'north'; end; if Room.current == Room[3687]; move 'north'; move 'northwest'; move 'south'; move 'south'; move 'south'; move 'climb ladder'; move 'go door'; move 'north'; move 'north'; move 'north'; end; if Room.current == Room[7099]; move 'north'; move 'west'; move 'west'; move 'west'; move 'west'; move 'west'; move 'go space'; end; if Room.current == Room[7083]; move 'go space'; move 'go trapdoor'; move 'go door'; move 'east'; move 'east'; move 'go door'; move 'go crack'; move 'south'; move 'west'; end
-        end
-
         define('crossing_7324_4541') do # 7324:4541
           group_members = nil; clear.reverse.each { |line| if line =~ /^Obvious (paths|exits)/; break; elsif line =~ /^([A-Za-z ,]+) followed\.$/; group_members = $1.split(/, | and /); group_members.delete_if { |m| m =~ /^[Yy]our / }; group_members = nil if group_members.empty?; break; end }; fput 'yell jaron galarn'; sleep 1; result = nil; success = /Feeling around in the darkness, you stumble upon a low opening in the wall near the ground./; failures = /As you blindly search the area, you find something rooted to the ground|You feel around in the darkness as best you can, but find nothing./; matches = /Feeling around in the darkness, you stumble upon a low opening in the wall near the ground.|As you blindly search the area, you find something rooted to the ground|You feel around in the darkness as best you can, but find nothing./; until result =~ success; fput "stand" until standing?; result = dothistimeout "search", 5, matches; waitrt?; end; until checkpaths("south"); fput 'go opening'; sleep 0.2; end; fput 'stand' until standing?; if (group_members.to_a.length > 0); echo 'Waiting for your group... To ditch them, ;send go'; wait_until { (group_members.to_a - GameObj.pcs.to_a.delete_if { |pc| not pc.status.nil? }.collect { |pc| pc.name }).empty? or clear.find { |line| line == 'go' } }; end
         end
@@ -783,22 +755,6 @@ module Lich
           walk until GameObj.room_desc.find { |obj| obj.noun == 'ferns' }; move 'go ferns'
         end
 
-        define('crossing_16011_16256') do # 16011:16256
-          walk until checkloot.include?('path'); move 'go path'
-        end
-
-        define('crossing_16011_16270') do # 16011:16270
-          walk until checkloot.include?('trail'); move 'go trail'
-        end
-
-        define('crossing_16122_11612') do # 16122:11612
-          move ['northwest','southwest'][rand(2)] while checkpaths == [ 'ne', 'se', 'sw', 'nw' ]; move 'northwest' if checkpaths.include?('nw'); move 'west' if checkpaths.include?('w')
-        end
-
-        define('crossing_16122_11618') do # 16122:11618
-          move ['northwest','southwest'][rand(2)] while checkpaths == [ 'ne', 'se', 'sw', 'nw' ]; move 'east' if checkpaths.include?('e'); move 'southeast' if checkpaths.include?('se')
-        end
-
         define('crossing_16165_16064') do # 16165:16064
           result = String.new; until result =~ /The mirror won't turn any farther to the right/; fput 'turn mirror right'; result = matchwait("The mirror won't turn any farther to the right","You turn the oak-framed mirror slightly to the right"); end; until result =~ /from the base of the statue onto the center of the statue/; fput 'tilt mirror'; result = matchwait('from the base of the statue onto the center of the statue','You tilt the oak-framed mirror up until it flips around','You tilt the oak-framed mirror up slightly'); if result =~ /flips around/; fput 'turn mirror left'; result = matchwait("from the base of the statue onto the center of the statue","You turn the oak-framed mirror slightly to the left","The mirror won't turn any farther to the left");if result =~ /The mirror won't turn any farther to the left/; 4.times{fput 'turn mirror right'}; end; end; end; move 'go shadow'
         end
@@ -1098,10 +1054,6 @@ module Lich
 
         define('crossing_27638_27639') do # 27638:27639 27639:27638
           if UserVars.Peregrine; UserVars.Peregrine.each{|c| fput "#{c}" } end
-        end
-
-        define('crossing_28885_29773') do # 28885:29773
-          fput 'speak'; language = /You are currently speaking (.*?)\./.match(get).captures.first until language;; fput('speak wizard') unless language == 'Guildspeak'; fput('unhide') if hidden? or invisible?; move 'say ::portal wizard'; fput('speak ' + language.to_s) unless language == 'Guildspeak'
         end
 
         define('crossing_30115_29861') do # 30115:29861
