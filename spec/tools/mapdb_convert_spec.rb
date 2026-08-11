@@ -343,6 +343,63 @@ RSpec.describe MapdbConverter do
                   'steps' => [{ 'do' => 'send', 'cmd' => 'climb root' }] }])
     end
 
+    it 'converts path-gated move sequences' do
+      expect(schema_for("move 'northeast'; move 'east' while checkpaths.include?('e')"))
+        .to eq([{ 'do' => 'move', 'cmd' => 'northeast' },
+                { 'do' => 'repeat', 'until' => 'not:path:e',
+                  'steps' => [{ 'do' => 'move', 'cmd' => 'east' }] }])
+      expect(schema_for("move 'northwest' if checkpaths.include?('nw'); move 'west' if checkpaths.include?('w')"))
+        .to eq([{ 'do' => 'if', 'when' => 'path:nw', 'then' => [{ 'do' => 'move', 'cmd' => 'northwest' }] },
+                { 'do' => 'if', 'when' => 'path:w', 'then' => [{ 'do' => 'move', 'cmd' => 'west' }] }])
+    end
+
+    it 'refuses to emit a partial crossing when one clause is unexpressible' do
+      # Converting only the movement clauses would silently drop the guild
+      # check, so the whole body stays relocated rather than half-crossing.
+      expect(converter.convert_wayto(
+               "move 'north' if Society.status == 'Voln'; move 'west'"
+             )).to be_nil
+    end
+
+    it 'converts fog retries that clear their origin var and replan' do
+      body = 'result = nil;until result =~ /Obvious paths: northwest/;fput "stand" until standing?;' \
+             'result = dothistimeout "go fog", 5, /turned around|Obvious paths: northwest/;' \
+             'if result =~ /turned around/;sleep 0.5;waitrt?;end;end;' \
+             'UserVars.mapdb_redforest_location = nil; $go2_restart=true'
+      rooms = [{ 'id' => 24_675, 'wayto' => { '7892' => ";e #{body}" }, 'timeto' => {} }]
+      converter.convert_map!(rooms)
+      schema = rooms[0]['wayto']['7892']
+      expect(schema[0]['until']).to eq('paths_are:northwest')
+      # nil clears the var, matching the proc's `= nil` rather than writing "null"
+      expect(schema[1]).to eq({ 'do' => 'set', 'var' => 'redforest_location', 'value' => nil })
+      # the trailing restart still picks up the arrival guard
+      expect(schema[2]).to eq({ 'do' => 'if', 'when' => 'not:in_room:7892',
+                                'then' => [{ 'do' => 'replan' }] })
+    end
+
+    it 'converts fog-sphere transits into a room_loaded-bounded repeat' do
+      body = <<~'PROC'
+        fput 'go sphere'
+        loop do
+          result = dothistimeout('north', 2, /ethereal fog|torn to tiny pieces/)
+          break if result =~ /torn to tiny pieces/
+          break unless XMLData.room_description.empty?
+        end
+        sleep(1) while XMLData.room_description.empty?
+        fput 'stand' unless standing?
+      PROC
+      schema = schema_for(body)
+      expect(schema[0]).to eq({ 'do' => 'send', 'cmd' => 'go sphere' })
+      # Both of the proc's breaks mean "we have landed"; the bound says it once.
+      expect(schema[1]['do']).to eq('repeat')
+      expect(schema[1]['until']).to eq('room_loaded')
+      expect(schema[1]['steps'].first).to include('do' => 'await', 'cmd' => 'north',
+                                                  'on_timeout' => 'continue')
+      expect(schema[2]).to eq({ 'do' => 'wait_until', 'when' => 'room_loaded', 'timeout' => 30 })
+      expect(schema[3]).to eq({ 'do' => 'if', 'when' => 'not:status:standing',
+                                'then' => [{ 'do' => 'send', 'cmd' => 'stand' }] })
+    end
+
     it 'converts send-until-room into until_room, which compares mapdb ids' do
       expect(schema_for("fput 'swim downstream' until Room.current.id == 7602"))
         .to eq([{ 'do' => 'repeat', 'until_room' => 7602,

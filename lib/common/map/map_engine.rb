@@ -645,6 +645,11 @@ module Lich
             name, expected = arg.to_s.split('=', 2)
             value = captures[name]
             expected ? value.to_s == expected : !value.to_s.empty?
+          when 'room_loaded'
+            # The room description has arrived. Transit rooms (fog spheres,
+            # teleports) deliver an empty description until the game finishes
+            # placing you, so this is "we have landed somewhere real".
+            !XMLData.room_description.to_s.strip.empty?
           when 'in_room'
             at_room_ref?(arg)
           when 'platinum'
@@ -840,7 +845,7 @@ module Lich
                                stamina].freeze
         FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match
-                             in_room platinum capture].freeze
+                             in_room platinum capture room_loaded].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function

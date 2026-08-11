@@ -277,6 +277,8 @@ module Lich
           convert_posture_then_move(body) ||
           convert_send_until_room(body) ||
           convert_send_until_count(body) ||
+          convert_wayto_fog_transit(body) ||
+          convert_wayto_gated_moves(body) ||
           convert_move_then_send(body)
       end
 
@@ -341,6 +343,68 @@ module Lich
         Result.new('send_until_count',
                    [{ 'do' => 'repeat', 'times' => m[2].to_i,
                       'steps' => [{ 'do' => 'move', 'cmd' => cmd }] }])
+      end
+
+      # A sequence of moves, each optionally gated on an obvious path being
+      # present ("move east while there is still an east") - the corridor and
+      # ledge idiom. Any clause the vocabulary cannot express aborts the whole
+      # conversion, so a partial crossing is never emitted.
+      MOVE_CLAUSE = /\Amove\s*\(?\s*#{QUOTED}\s*\)?
+                     (?:\s+(while|if)\s+checkpaths\.include\?\(#{QUOTED}\))?\z/x
+      def convert_wayto_gated_moves(body)
+        clauses = body.split(';').map(&:strip).reject(&:empty?)
+        return nil unless clauses.length.between?(2, 6)
+
+        steps = clauses.map do |clause|
+          m = clause.match(MOVE_CLAUSE)
+          return nil unless m
+
+          cmd = m[1] || m[2]
+          dir = m[4] || m[5]
+          case m[3]
+          when 'while'
+            # Bounded: repeat only while that exit is still listed.
+            { 'do' => 'repeat', 'until' => "not:path:#{dir}",
+              'steps' => [{ 'do' => 'move', 'cmd' => cmd }] }
+          when 'if'
+            { 'do' => 'if', 'when' => "path:#{dir}",
+              'then' => [{ 'do' => 'move', 'cmd' => cmd }] }
+          else
+            { 'do' => 'move', 'cmd' => cmd }
+          end
+        end
+        # A bare move list is already the plain command_sequence case.
+        return nil if steps.none? { |s| s['do'] != 'move' }
+
+        Result.new('gated_moves', steps)
+      end
+
+      # Fog-sphere transits: enter, repeat a direction until the game finishes
+      # placing you (transit rooms report an empty description), then stand.
+      # The proc's two breaks - matched arrival text, or a loaded room - are
+      # both "we have landed", which repeat's until_ bound expresses directly.
+      def convert_wayto_fog_transit(body)
+        m = body.match(/\Afput\s+#{QUOTED}\s*
+                        loop\s+do\s*
+                        result\s*=\s*dothistimeout\(#{QUOTED},\s*(\d+),\s*\/(.+?)\/\)\s*
+                        break\s+if\s+result\s*=~\s*\/.+?\/\s*
+                        break\s+unless\s+XMLData\.room_description\.empty\?\s*
+                        end\s*
+                        sleep\(?[\d.]+\)?\s+while\s+XMLData\.room_description\.empty\?;?\s*
+                        (fput\s+#{QUOTED}\s+unless\s+standing\?;?)?\s*\z/xm)
+        return nil unless m
+
+        steps = [{ 'do' => 'send', 'cmd' => m[1] || m[2] },
+                 { 'do' => 'repeat', 'until' => 'room_loaded',
+                   'steps' => [{ 'do' => 'await', 'cmd' => m[3] || m[4],
+                                 'timeout' => m[5].to_i, 'for' => m[6],
+                                 'on_timeout' => 'continue' }] },
+                 { 'do' => 'wait_until', 'when' => 'room_loaded', 'timeout' => 30 }]
+        if m[7]
+          steps << { 'do' => 'if', 'when' => 'not:status:standing',
+                     'then' => [{ 'do' => 'send', 'cmd' => m[8] || m[9] }] }
+        end
+        Result.new('fog_transit', steps)
       end
 
       # move "knock wall"; fput "stand"  - a crossing with a trailing command.
@@ -736,7 +800,10 @@ module Lich
                         until\s+result\s*=~\s*\/Obvious\ paths:\ ([^\/]+)\/;\s*
                         fput\s+"stand"\s+until\s+standing\?;\s*
                         result\s*=\s*dothistimeout\s+"([^"]+)",\s*(\d+),\s*\/(.+?)\/;\s*
-                        (?:if\s+result\s*=~.*?end;)?\s*end;?\z/xm)
+                        (?:if\s+result\s*=~.*?end;)?\s*end;?
+                        # Exit variants: clear the origin var, ask go2 to replan, or both.
+                        (?:\s*UserVars\.mapdb_(\w+)\s*=\s*nil;?)?
+                        (?:\s*\$go2_restart\s*=\s*true;?)?\s*\z/xm)
         return nil unless m
 
         expected = m[3].strip
@@ -748,6 +815,10 @@ module Lich
                                { 'do' => 'await', 'cmd' => m[4], 'timeout' => m[5].to_i, 'for' => m[6] },
                                { 'do' => 'sleep', 'seconds' => 0.5 },
                                { 'do' => 'wait_rt' }] }
+        steps << { 'do' => 'set', 'var' => m[7], 'value' => nil } if m[7]
+        # The replan is only meaningful if we have not already arrived; an
+        # unconditional restart loops when the crossing succeeded.
+        steps << { 'do' => 'replan' } if body.include?('$go2_restart')
         Result.new('retry_until_paths', steps)
       end
 

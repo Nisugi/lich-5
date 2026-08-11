@@ -195,6 +195,15 @@ RSpec.describe Lich::Common::MapEngine do
       expect(described_class.condition?('capture:missing')).to be(false)
     end
 
+    it 'reads room_loaded from the room description, not the room id' do
+      # Fog spheres and teleports deliver an empty description while the game
+      # is still placing you; the id may already have changed.
+      stub_const('XMLData', double('XMLData', room_description: '   '))
+      expect(described_class.condition?('room_loaded')).to be(false)
+      stub_const('XMLData', double('XMLData', room_description: 'A misty clearing.'))
+      expect(described_class.condition?('room_loaded')).to be(true)
+    end
+
     it 'validates bind specs' do
       v = described_class::Validator
       good = [{ 'do' => 'await', 'cmd' => 'look', 'for' => '(\\w+)', 'bind' => { 'dir' => 1 } }]

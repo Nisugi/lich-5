@@ -66,39 +66,6 @@ module Lich
           query = "ivy-covered grey stone building with a sturdy cross-gabled roof";shop = GameObj.loot.find { |i| i.name.eql?(query) };shop or fail "could not locate: #{query}";fput "go ##{shop.id}"
         end
 
-        define('crossing_2636_2579') do # 2636:2579
-          fput 'go sphere'
-          loop do
-            result = dothistimeout('north', 2, /You are surrounded by an ethereal fog.|You feel every shred of yourself torn to tiny pieces and reformed...|You can do nothing... you can feel nothing... you are nothing.../)
-            break if result =~ /You feel every shred of yourself torn to tiny pieces and reformed...|You can do nothing... you can feel nothing... you are nothing.../
-            break unless XMLData.room_description.empty?
-          end
-          sleep(1) while XMLData.room_description.empty?
-          fput 'stand' unless standing?
-        end
-
-        define('crossing_2636_12093') do # 2636:12093
-          fput 'go sphere'
-          loop do
-            result = dothistimeout('east', 2, /You are surrounded by an ethereal fog.|You feel every shred of yourself torn to tiny pieces and reformed...|You can do nothing... you can feel nothing... you are nothing.../)
-            break if result =~ /You feel every shred of yourself torn to tiny pieces and reformed...|You can do nothing... you can feel nothing... you are nothing.../
-            break unless XMLData.room_description.empty?
-          end
-          sleep(1) while XMLData.room_description.empty?
-          fput 'stand' unless standing?
-        end
-
-        define('crossing_2636_12118') do # 2636:12118
-          fput 'go sphere'
-          loop do
-            result = dothistimeout('west', 2, /You are surrounded by an ethereal fog.|You feel every shred of yourself torn to tiny pieces and reformed...|You can do nothing... you can feel nothing... you are nothing.../)
-            break if result =~ /You feel every shred of yourself torn to tiny pieces and reformed...|You can do nothing... you can feel nothing... you are nothing.../
-            break unless XMLData.room_description.empty?
-          end
-          sleep(1) while XMLData.room_description.empty?
-          fput 'stand' unless standing?
-        end
-
         define('crossing_2677_2675') do # 2677:2675
           unless (move 'go door'); push_result = dothistimeout 'push tine', 10, /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the|^You grasp the top tine and try to turn it, but it won't even budge.$/ until push_result =~ /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the (?:reflective glass stone aligned with the word 'Honor'|clear crystal stone aligned with the word 'Truth'|milky white stone aligned with the word 'Piety'|dull grey stone aligned with the word 'Humility'|flawless silver stone aligned with the word 'Faith'|veil iron stone aligned with the word 'Courage').$|^You grasp the top tine and try to turn it, but it won't even budge.$/; unless push_result.nil? or push_result == 'You grasp the top tine and try to turn it, but it won\'t even budge.'; unless mana < 100; castables = [ 110, 120, 140, 210, 216, 230, 420, 425, 430, 520, 540, 620, 625, 650, 1040, 1110, 1115, 1601, 1602, 1603, 1604, 1607, 1613, 1614, 1615 ].sort { |a,b| a.to_s[-2..-1] <=> b.to_s[-2..-1] }.reverse.collect { |n| Spell[n] }; castables.delete_if { |spell| spell.nil? or !spell.known? }; mana5spells = [105, 205, 305, 405, 505, 605, 705, 905, 1005, 1105, 1205, 1605].collect { |n| Spell[n] }; mana5spells.delete_if { |spell| spell.nil? or !spell.known? }; mana_needed = 100; while (mana_needed > 0) and ((Spell[515].active? and (spell = mana5spells.find { |s| s.known? })) or (spell = castables.find { |s| s.mana_cost <= mana_needed }) or (spell = castables.reverse.find { |s| s.mana_cost >= mana_needed })); loop { cast_result = spell.cast('crown'); break unless cast_result =~ /^\[Spell Hindrance for/ }; mana_needed -= spell.mana_cost; sleep 0.1; end; end; fput 'release' if Spell[515].active? and (checkprep != 'None'); fput 'touch crown'; fput 'say Aenatumgana'; sleep 0.5; end; move 'go door'; end
         end
@@ -836,16 +803,8 @@ module Lich
           result = String.new; until result =~ /The mirror won't turn any farther to the right/; fput 'turn mirror right'; result = matchwait("The mirror won't turn any farther to the right","You turn the oak-framed mirror slightly to the right"); end; until result =~ /from the base of the statue onto the center of the statue/; fput 'tilt mirror'; result = matchwait('from the base of the statue onto the center of the statue','You tilt the oak-framed mirror up until it flips around','You tilt the oak-framed mirror up slightly'); if result =~ /flips around/; fput 'turn mirror left'; result = matchwait("from the base of the statue onto the center of the statue","You turn the oak-framed mirror slightly to the left","The mirror won't turn any farther to the left");if result =~ /The mirror won't turn any farther to the left/; 4.times{fput 'turn mirror right'}; end; end; end; move 'go shadow'
         end
 
-        define('crossing_16806_4160') do # 16806:4160
-          move 'northeast'; move 'east' while checkpaths.include?('e')
-        end
-
         define('crossing_16806_4162') do # 16806:4162
           move 'northwest'; unless checkpaths.include?('w'); move 'east'; move 'east'; end
-        end
-
-        define('crossing_16806_4164') do # 16806:4164
-          move 'northwest'; move 'west' while checkpaths.include?('w')
         end
 
         define('crossing_17493_3235') do # 17493:3235
@@ -1123,14 +1082,6 @@ module Lich
 
         define('crossing_24241_313') do # 24241:313
           (fput 'stand' until standing?;fput 'climb root') until Room.current.id != 24241;wait_until{Room.current.id == 313}
-        end
-
-        define('crossing_24675_7892') do # 24675:7892
-          result = nil;until result =~ /Obvious paths: northwest/;fput "stand" until standing?;result = dothistimeout "go fog", 5, /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!|Obvious paths: northwest/;if result =~ /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!/;sleep 0.5;waitrt?;end;end;UserVars.mapdb_redforest_location = nil; $go2_restart=true
-        end
-
-        define('crossing_24675_16744') do # 24675:16744
-          result = nil;until result =~ /Obvious paths: northeast, south/;fput "stand" until standing?;result = dothistimeout "go fog", 5, /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!|Obvious paths: northeast, south/;if result =~ /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!/;sleep 0.5;waitrt?;end;end;UserVars.mapdb_redforest_location = nil; $go2_restart=true
         end
 
         define('crossing_24730_24729') do # 24730:24729
