@@ -967,10 +967,6 @@ module Lich
           eyespy = Spell[707]; unless eyespy.affordable?; echo 'waiting for mana...'; wait_until { eyespy.affordable? }; end; eyespy.cast; for dir in [ 'out', 'south', 'door', 'northwest', 'northeast', 'west', 'water', 'grate', 'southeast', 'southeast', 'open', 'stair' ]; fput 'tell eye to go ' + dir; end; result = dothistimeout 'tell eye to read basalt', 10, /The (?:wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of basalt/; if rune = /The (wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of basalt/.match(result).captures.first; fput 'draw ' + rune + ' rune on basalt'; end; result = dothistimeout 'tell eye to read chalcedony', 10, /The (?:wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of chalcedony/; if rune = /The (wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of chalcedony/.match(result).captures.first; fput 'draw ' + rune + ' rune on chalcedony'; end; fput 'tell eye to return'
         end
 
-        define('crossing_18823_18822') do # 18823:18822
-          if checksitting;while Room.current.id == 18823;fput('row shore');waitrt?;end;else;move('climb shore');end;fill_hand;
-        end
-
         define('crossing_18893_13441') do # 18893:13441
           number = { '1' => 'first', '2' => 'second', '3' => 'third', '4' => 'fourth', '5' => 'fifth' }; result = dothistimeout 'look altar', 10, /^There is a strange grid on the altar.  Five rows are labeled with numbers and five columns are labeled with colors.  A red glow illuminates/; lever_hash = Hash.new; lever_hash['yellow'] = number[result.slice(/Yellow [0-9]/).slice(/[0-9]/)]; lever_hash['blue'] = number[result.slice(/Blue [0-9]/).slice(/[0-9]/)]; lever_hash['brown'] = number[result.slice(/Brown [0-9]/).slice(/[0-9]/)]; lever_hash['red'] = number[result.slice(/Red [0-9]/).slice(/[0-9]/)]; lever_hash['green'] = number[result.slice(/Green [0-9]/).slice(/[0-9]/)]; for lever,position in lever_hash; loop { result = dothistimeout 'pull ' + lever + ' lever', 3, /^You pull/; break if result =~ /#{position}/ }; end; move 'go step'; move 'go passage'; move 'go opening'
         end
@@ -1011,22 +1007,6 @@ module Lich
           waitrt?; fput 'search'; waitrt?; fput 'kneel' unless kneeling?; move 'go hole'; fput 'stand'; waitrt?
         end
 
-        define('crossing_22218_11612') do # 22218:11612
-          if ((bounty? =~ /^You have made contact with the child/)||(Society.task =~ /You have been tasked to find and rescue an official who was captured/)); mynpc = GameObj.npcs.find { |npc| npc.noun =~ /child|official/ }; else;  mynpc = nil; end;  50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southeast'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'northwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'northwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc;
-        end
-
-        define('crossing_22218_11617') do # 22218:11617
-          if ((bounty? =~ /^You have made contact with the child/)||(Society.task =~ /You have been tasked to find and rescue an official who was captured/)); mynpc = GameObj.npcs.find { |npc| npc.noun =~ /child|official/ }; else;  mynpc = nil; end;  50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southeast'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southeast'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'northwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'northwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc;
-        end
-
-        define('crossing_22218_11618') do # 22218:11618 22219:11653
-          if ((bounty? =~ /^You have made contact with the child/)||(Society.task =~ /You have been tasked to find and rescue an official who was captured/)); mynpc = GameObj.npcs.find { |npc| npc.noun =~ /child|official/ }; else;  mynpc = nil; end;  50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'northwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southeast'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc;
-        end
-
-        define('crossing_22219_11622') do # 22219:11622
-          if ((bounty? =~ /^You have made contact with the child/)||(Society.task =~ /You have been tasked to find and rescue an official who was captured/)); mynpc = GameObj.npcs.find { |npc| npc.noun =~ /child|official/ }; else;  mynpc = nil; end;  50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'northeast'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc; move 'southwest'; 50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc;
-        end
-
         define('crossing_22349_22444') do # 22349:22444
           put "search";while line=get;if line=~ /(dead rat|strand of silver hair|broken lockpick|tarnished coin)!$/;put "search";elsif line=~/brick-covered trapdoor!$/;put "go trapdoor";break;end;end
         end
@@ -1062,10 +1042,6 @@ module Lich
           	echo "You will have to do the puzzle on the table!"
           	exit
           end
-        end
-
-        define('crossing_23526_23525') do # 23526:23525
-          if checksitting;while Room.current.id == 23526;fput('row shore');waitrt?;end;else;move('climb shore');end;fill_hand;
         end
 
         define('crossing_23845_23926') do # 23845:23926
@@ -1112,16 +1088,8 @@ module Lich
           res = choice = nil;res = dothistimeout "inquire", 5, /(\d)\) Vornavis/;if res =~ /(\d)\) Vornavis/;choice = $1;end;dothistimeout "order #{choice}", 5, /The cost has already been covered/;put "order confirm";wait_until { XMLData.room_title =~ /Caravan, Wagon/ };sleep 1;wait_until{ XMLData.room_title !~ /Caravan, Wagon/ };if GameObj.npcs.any? { |npc| npc.name =~ /thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber/ };3.times do;_respond "<pushBold/>BANDITS!!! BANDITS!!! BANDITS!!!<popBold/>";end;exit;end;$go2_restart=true
         end
 
-        define('crossing_25172_25231') do # 25172:25231
-          save_stance = XMLData.stance_text;fput 'stance offensive' if save_stance != 'offensive';put 'climb latrine pit';move('climb latrine pit');fput "stance #{save_stance}" if save_stance != XMLData.stance_text;;$go2_restart = true;
-        end
-
         define('crossing_25183_25145') do # 25183:25145 25185:25145
           res = choice = nil;res = dothistimeout "inquire", 5, /(\d)\) the Sea of Fire/;if res =~ /(\d)\) the Sea of Fire/;choice = $1;end;dothistimeout "order #{choice}", 5, /You inquire with a caravan conductor about the price of a trip to the Sea of Fire\.  S?[Hh]e says, "That will be [,\d]+ silvers/;res = dothistimeout "order confirm", 5, /It doesn't look like you have enough silver to ride\.|We'll be taking that payment in silver, then\./;if res =~ /It doesn't look like you have enough silver to ride\./;5.times do;echo "Didn't have enough silver!";exit;end;end;wait_until { XMLData.room_title =~ /Caravan, Wagon/ };sleep 1;wait_until{ XMLData.room_title !~ /Caravan, Wagon/ };if GameObj.npcs.any? { |npc| npc.name =~ /thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber/ };3.times do;_respond "<pushBold/>BANDITS!!! BANDITS!!! BANDITS!!!<popBold/>";end;exit;end;$go2_restart=true
-        end
-
-        define('crossing_25231_25172') do # 25231:25172
-          save_stance = XMLData.stance_text;fput 'stance offensive' if save_stance != 'offensive';move('climb wide hole');fput "stance #{save_stance}" if save_stance != XMLData.stance_text;;$go2_restart = true;
         end
 
         define('crossing_26765_27623') do # 26765:27623

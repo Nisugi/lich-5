@@ -278,6 +278,9 @@ module Lich
           convert_send_until_room(body) ||
           convert_send_until_count(body) ||
           convert_wayto_fog_transit(body) ||
+          convert_wayto_preserve_stance(body) ||
+          convert_wayto_sit_branch(body) ||
+          convert_wayto_escort(body) ||
           convert_wayto_gated_moves(body) ||
           convert_move_then_send(body)
       end
@@ -343,6 +346,98 @@ module Lich
         Result.new('send_until_count',
                    [{ 'do' => 'repeat', 'times' => m[2].to_i,
                       'steps' => [{ 'do' => 'move', 'cmd' => cmd }] }])
+      end
+
+      # Escort crossings: resolve the bounty/Society escortee once, then wait
+      # for it to follow before and after each move. escort_wait encapsulates
+      # the whole idiom - the same task checks and the same 50 x 0.1s bound -
+      # so the body reduces to an alternating wait/move list.
+      ESCORT_PREAMBLE = /\Aif\s+\(\(bounty\?\s*=~.*?\)\|\|\(Society\.task\s*=~.*?\)\);\s*
+                         mynpc\s*=\s*GameObj\.npcs\.find.*?;\s*
+                         else;\s*mynpc\s*=\s*nil;\s*end;\s*/xm
+      ESCORT_WAIT = /\A50\.times\s*\{\s*break\s+if\s+GameObj\.npcs\.any\?.*?\s*sleep\s+0\.1\s*\}\s+if\s+mynpc\z/m
+
+      # Split on semicolons that separate statements, ignoring those nested in
+      # braces or brackets (the escort wait carries one inside its block).
+      def split_top_level(text)
+        parts = []
+        depth = 0
+        current = +''
+        text.each_char do |ch|
+          case ch
+          when '{', '[', '(' then depth += 1
+          when '}', ']', ')' then depth -= 1
+          end
+          if ch == ';' && depth <= 0
+            parts << current.strip
+            current = +''
+          else
+            current << ch
+          end
+        end
+        parts << current.strip
+        parts.reject(&:empty?)
+      end
+
+      def convert_wayto_escort(body)
+        return nil unless body =~ ESCORT_PREAMBLE
+
+        rest = body.sub(ESCORT_PREAMBLE, '')
+        steps = split_top_level(rest).map do |clause|
+          if clause =~ ESCORT_WAIT
+            { 'do' => 'escort_wait' }
+          elsif (m = clause.match(/\Amove\s+#{QUOTED}\z/))
+            { 'do' => 'move', 'cmd' => m[1] || m[2] }
+          end
+        end
+        return nil if steps.any?(&:nil?) || steps.none? { |s| s['do'] == 'move' }
+
+        Result.new('escort_moves', steps)
+      end
+
+      # Seated vs standing crossings: row out of the room if you are in a boat,
+      # otherwise climb. The row loop's "while still in room N" is simply
+      # "until the room changes", which also holds in unmapped rooms.
+      def convert_wayto_sit_branch(body)
+        m = body.match(/\Aif\s+checksitting;\s*
+                        while\s+Room\.current\.id\s*==\s*\d+;\s*
+                        fput\(?#{QUOTED}\)?;\s*waitrt\?;\s*end;\s*
+                        else;\s*move\(?#{QUOTED}\)?;\s*end;\s*
+                        (?:(fill_hands?);?)?\s*\z/xm)
+        return nil unless m
+
+        steps = [{ 'do' => 'if', 'when' => 'status:sitting',
+                   'then' => [{ 'do' => 'repeat', 'until_room_change' => true,
+                                'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] },
+                                            { 'do' => 'wait_rt' }] }],
+                   'else' => [{ 'do' => 'move', 'cmd' => m[3] || m[4] }] }]
+        # fill_hand and fill_hands are different steps; keep whichever it said.
+        steps << { 'do' => m[5] } if m[5]
+        Result.new('sit_branch', steps)
+      end
+
+      # Save the stance, force one for the crossing, restore it after: the
+      # climb idiom. preserve_stance already does exactly this, including the
+      # "only switch if it differs" guard on both ends.
+      def convert_wayto_preserve_stance(body)
+        m = body.match(/\Asave_stance\s*=\s*XMLData\.stance_text;\s*
+                        fput\s+#{QUOTED}\s+if\s+save_stance\s*!=\s*#{QUOTED};\s*
+                        (.*?);\s*
+                        fput\s+"stance\s\#\{save_stance\}"\s+if\s+save_stance\s*!=\s*XMLData\.stance_text;+\s*
+                        (\$go2_restart\s*=\s*true;?)?\s*\z/xm)
+        return nil unless m
+
+        wanted = m[3] || m[4]
+        # The forced stance must be the one the guard compares against, or the
+        # proc and preserve_stance would disagree about when to switch back.
+        return nil unless (m[1] || m[2]).to_s.downcase == "stance #{wanted.downcase}"
+
+        inner = convert_command_sequence(m[5])
+        return nil unless inner
+
+        steps = [{ 'do' => 'preserve_stance', 'stance' => wanted, 'steps' => inner }]
+        steps << { 'do' => 'replan' } if m[6]
+        Result.new('preserve_stance', steps)
       end
 
       # A sequence of moves, each optionally gated on an obvious path being

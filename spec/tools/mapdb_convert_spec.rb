@@ -343,6 +343,49 @@ RSpec.describe MapdbConverter do
                   'steps' => [{ 'do' => 'send', 'cmd' => 'climb root' }] }])
     end
 
+    it 'converts escort staircases into alternating escort_wait and move' do
+      wait = '50.times { break if GameObj.npcs.any? { |npc| npc.id == mynpc.id }; sleep 0.1 } if mynpc'
+      body = 'if ((bounty? =~ /^You have made contact with the child/)||' \
+             '(Society.task =~ /You have been tasked to find and rescue an official who was captured/)); ' \
+             'mynpc = GameObj.npcs.find { |npc| npc.noun =~ /child|official/ }; else;  mynpc = nil; end;  ' \
+             "#{wait}; move 'southwest'; #{wait};"
+      # The wait block carries a semicolon inside its braces - clause splitting
+      # has to respect nesting or the body fragments.
+      expect(schema_for(body))
+        .to eq([{ 'do' => 'escort_wait' },
+                { 'do' => 'move', 'cmd' => 'southwest' },
+                { 'do' => 'escort_wait' }])
+    end
+
+    it 'converts stance save/restore into preserve_stance' do
+      body = "save_stance = XMLData.stance_text;fput 'stance offensive' if save_stance != 'offensive';" \
+             "move('climb wide hole');fput \"stance \#{save_stance}\" if save_stance != XMLData.stance_text;"
+      expect(schema_for(body))
+        .to eq([{ 'do' => 'preserve_stance', 'stance' => 'offensive',
+                  'steps' => [{ 'do' => 'move', 'cmd' => 'climb wide hole' }] }])
+    end
+
+    it 'refuses stance bodies whose forced stance is not the one guarded on' do
+      # preserve_stance decides the restore from (saved != wanted); if the proc
+      # forced a different stance than it compared against, they disagree.
+      body = "save_stance = XMLData.stance_text;fput 'stance guarded' if save_stance != 'offensive';" \
+             "move('climb');fput \"stance \#{save_stance}\" if save_stance != XMLData.stance_text;"
+      expect(converter.convert_wayto(body)).to be_nil
+    end
+
+    it 'converts seated-vs-standing crossings' do
+      body = "if checksitting;while Room.current.id == 18823;fput('row shore');waitrt?;end;" \
+             "else;move('climb shore');end;fill_hand;"
+      expect(schema_for(body))
+        .to eq([{ 'do' => 'if', 'when' => 'status:sitting',
+                  'then' => [{ 'do' => 'repeat', 'until_room_change' => true,
+                               'steps' => [{ 'do' => 'send', 'cmd' => 'row shore' },
+                                           { 'do' => 'wait_rt' }] }],
+                  'else' => [{ 'do' => 'move', 'cmd' => 'climb shore' }] },
+                # fill_hand, not fill_hands - they are different steps
+                { 'do' => 'fill_hand' }])
+    end
+
     it 'converts path-gated move sequences' do
       expect(schema_for("move 'northeast'; move 'east' while checkpaths.include?('e')"))
         .to eq([{ 'do' => 'move', 'cmd' => 'northeast' },

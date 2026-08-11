@@ -3361,10 +3361,6 @@
       "strategy": "unique_crossing",
       "name": "crossing_18748_18747"
     },
-    "18823:18822": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18823_18822"
-    },
     "18893:13441": {
       "strategy": "unique_crossing",
       "name": "crossing_18893_13441"
@@ -3409,26 +3405,6 @@
       "strategy": "unique_crossing",
       "name": "crossing_21960_21961"
     },
-    "22218:11612": {
-      "strategy": "unique_crossing",
-      "name": "crossing_22218_11612"
-    },
-    "22218:11617": {
-      "strategy": "unique_crossing",
-      "name": "crossing_22218_11617"
-    },
-    "22218:11618": {
-      "strategy": "unique_crossing",
-      "name": "crossing_22218_11618"
-    },
-    "22219:11653": {
-      "strategy": "unique_crossing",
-      "name": "crossing_22218_11618"
-    },
-    "22219:11622": {
-      "strategy": "unique_crossing",
-      "name": "crossing_22219_11622"
-    },
     "22349:22444": {
       "strategy": "unique_crossing",
       "name": "crossing_22349_22444"
@@ -3444,10 +3420,6 @@
     "23338:23339": {
       "strategy": "unique_crossing",
       "name": "crossing_23338_23339"
-    },
-    "23526:23525": {
-      "strategy": "unique_crossing",
-      "name": "crossing_23526_23525"
     },
     "23845:23926": {
       "strategy": "unique_crossing",
@@ -3493,10 +3465,6 @@
       "strategy": "unique_crossing",
       "name": "crossing_25148_3904"
     },
-    "25172:25231": {
-      "strategy": "unique_crossing",
-      "name": "crossing_25172_25231"
-    },
     "25183:25145": {
       "strategy": "unique_crossing",
       "name": "crossing_25183_25145"
@@ -3504,10 +3472,6 @@
     "25185:25145": {
       "strategy": "unique_crossing",
       "name": "crossing_25183_25145"
-    },
-    "25231:25172": {
-      "strategy": "unique_crossing",
-      "name": "crossing_25231_25172"
     },
     "26765:27623": {
       "strategy": "unique_crossing",
