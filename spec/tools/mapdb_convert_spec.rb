@@ -343,6 +343,25 @@ RSpec.describe MapdbConverter do
                   'steps' => [{ 'do' => 'send', 'cmd' => 'climb root' }] }])
     end
 
+    it 'converts small waits and loops' do
+      expect(schema_for("move 'jump pit'; wait_while{checkstunned}"))
+        .to eq([{ 'do' => 'move', 'cmd' => 'jump pit' },
+                { 'do' => 'wait_until', 'when' => 'not:status:stunned', 'timeout' => 60 }])
+      expect(schema_for("2.times{fput 'ask sailor about boat';}"))
+        .to eq([{ 'do' => 'repeat', 'times' => 2,
+                  'steps' => [{ 'do' => 'send', 'cmd' => 'ask sailor about boat' }] }])
+      # room_desc is scenery; loot is what is lying on the ground.
+      expect(schema_for("walk until GameObj.room_desc.find { |obj| obj.noun == 'ferns' }; move 'go ferns'"))
+        .to eq([{ 'do' => 'repeat', 'until' => 'room_object:ferns',
+                  'steps' => [{ 'do' => 'move_random' }] },
+                { 'do' => 'move', 'cmd' => 'go ferns' }])
+    end
+
+    it 'refuses to set globals outside the engine whitelist' do
+      expect(converter.convert_wayto("$SILVERWOOD_TOWN=:zul;move 'go door'")).not_to be_nil
+      expect(converter.convert_wayto("$SOME_OTHER_GLOBAL=:x;move 'go door'")).to be_nil
+    end
+
     it 'converts door-response branches' do
       body = "fput 'open door';while line = get;" \
              "if ['You open a large stone door.', 'That is already open.'].include?(line);" \

@@ -281,6 +281,7 @@ module Lich
           convert_wayto_preserve_stance(body) ||
           convert_wayto_sit_branch(body) ||
           convert_wayto_escort(body) ||
+          convert_wayto_small_forms(body) ||
           convert_wayto_door_branch(body) ||
           convert_wayto_wait_until_gone(body) ||
           convert_wayto_send_then_repeat(body) ||
@@ -353,6 +354,91 @@ module Lich
         Result.new('send_until_count',
                    [{ 'do' => 'repeat', 'times' => m[2].to_i,
                       'steps' => [{ 'do' => 'move', 'cmd' => cmd }] }])
+      end
+
+      # Small waits and loops that appear once or twice each but share shapes.
+      def convert_wayto_small_forms(body)
+        convert_move_then_wait(body) ||
+          convert_repeat_send_times(body) ||
+          convert_wait_for_object(body) ||
+          convert_search_until_object(body) ||
+          convert_walk_until_object(body) ||
+          convert_set_global_move(body)
+      end
+
+      # move CMD, then wait for a condition to settle (stun to wear off, an
+      # exit to appear).
+      def convert_move_then_wait(body)
+        m = body.match(/\Amove\s+#{QUOTED};\s*
+                        (?:wait_while\s*\{\s*checkstunned\s*\}|
+                           wait_until\s*\{\s*checkpaths\.include\?\(#{QUOTED}\)\s*\})\z/xm)
+        return nil unless m
+
+        wait = if body.include?('checkstunned')
+                 { 'do' => 'wait_until', 'when' => 'not:status:stunned', 'timeout' => 60 }
+               else
+                 { 'do' => 'wait_until', 'when' => "path:#{m[3] || m[4]}", 'timeout' => 60 }
+               end
+        Result.new('move_then_wait', [{ 'do' => 'move', 'cmd' => m[1] || m[2] }, wait])
+      end
+
+      # N.times { fput 'CMD' } - repeat a command a fixed number of times.
+      def convert_repeat_send_times(body)
+        m = body.match(/\A(\d+)\.times\s*\{\s*fput\s+#{QUOTED};?\s*\}\z/)
+        return nil unless m
+
+        Result.new('repeat_send',
+                   [{ 'do' => 'repeat', 'times' => m[1].to_i,
+                      'steps' => [{ 'do' => 'send', 'cmd' => m[2] || m[3] }] }])
+      end
+
+      # wait_until an object appears in the room, then take it.
+      def convert_wait_for_object(body)
+        m = body.match(/\Await_until\s*\{\s*GameObj\.loot\.find\s*\{\s*\|\w+\|\s*
+                        \w+\.noun\s*==\s*#{QUOTED}\s*\}\s*\};\s*fput\s+#{QUOTED}\z/xm)
+        return nil unless m
+
+        Result.new('wait_for_object',
+                   [{ 'do' => 'wait_until', 'when' => "loot_noun:#{m[1] || m[2]}", 'timeout' => 300 },
+                    { 'do' => 'send', 'cmd' => m[3] || m[4] }])
+      end
+
+      # Search until something turns up, then go through it.
+      def convert_search_until_object(body)
+        m = body.match(/\Auntil\s+GameObj\.loot\.find\s*\{\s*\|\w+\|\s*\w+\.noun\s*==\s*#{QUOTED}\s*\};\s*
+                        fput\s+#{QUOTED};\s*waitrt\??;\s*end;\s*move\s+#{QUOTED};?\z/xm)
+        return nil unless m
+
+        Result.new('search_until_object',
+                   [{ 'do' => 'repeat', 'until' => "loot_noun:#{m[1] || m[2]}",
+                      'steps' => [{ 'do' => 'send', 'cmd' => m[3] || m[4] },
+                                  { 'do' => 'wait_rt' }] },
+                    { 'do' => 'move', 'cmd' => m[5] || m[6] }])
+      end
+
+      # Wander until a room-description object shows up, then take it.
+      def convert_walk_until_object(body)
+        m = body.match(/\Awalk\s+until\s+GameObj\.room_desc\.find\s*\{\s*\|\w+\|\s*
+                        \w+\.noun\s*==\s*#{QUOTED}\s*\};\s*move\s+#{QUOTED}\z/xm)
+        return nil unless m
+
+        Result.new('walk_until_object',
+                   [{ 'do' => 'repeat', 'until' => "room_object:#{m[1] || m[2]}",
+                      'steps' => [{ 'do' => 'move_random' }] },
+                    { 'do' => 'move', 'cmd' => m[3] || m[4] }])
+      end
+
+      # Set a whitelisted event global, then cross.
+      def convert_set_global_move(body)
+        m = body.match(/\A\$(\w+)\s*=\s*:?(\w+);\s*move\s+#{QUOTED}\z/)
+        return nil unless m
+        # The engine's global whitelist is closed; anything outside it stays
+        # relocated rather than converting to a step that cannot run.
+        return nil unless Lich::Common::MapEngine::SETTABLE_GLOBALS.include?(m[1])
+
+        Result.new('set_global_move',
+                   [{ 'do' => 'set_global', 'var' => m[1], 'value' => m[2] },
+                    { 'do' => 'move', 'cmd' => m[3] || m[4] }])
       end
 
       # Door-response branches: open the door, read the reply, and act on it -

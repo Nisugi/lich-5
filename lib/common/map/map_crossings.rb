@@ -387,20 +387,12 @@ module Lich
           }
         end
 
-        define('crossing_16011_11022') do # 16011:11022
-          walk until GameObj.room_desc.find { |obj| obj.noun == 'ferns' }; move 'go ferns'
-        end
-
         define('crossing_16165_16064') do # 16165:16064
           result = String.new; until result =~ /The mirror won't turn any farther to the right/; fput 'turn mirror right'; result = matchwait("The mirror won't turn any farther to the right","You turn the oak-framed mirror slightly to the right"); end; until result =~ /from the base of the statue onto the center of the statue/; fput 'tilt mirror'; result = matchwait('from the base of the statue onto the center of the statue','You tilt the oak-framed mirror up until it flips around','You tilt the oak-framed mirror up slightly'); if result =~ /flips around/; fput 'turn mirror left'; result = matchwait("from the base of the statue onto the center of the statue","You turn the oak-framed mirror slightly to the left","The mirror won't turn any farther to the left");if result =~ /The mirror won't turn any farther to the left/; 4.times{fput 'turn mirror right'}; end; end; end; move 'go shadow'
         end
 
         define('crossing_16806_4162') do # 16806:4162
           move 'northwest'; unless checkpaths.include?('w'); move 'east'; move 'east'; end
-        end
-
-        define('crossing_17493_3235') do # 17493:3235
-          move 'go arches'; wait_until { checkpaths.include?('e') }
         end
 
         define('crossing_18043_18052') do # 18043:18052 18052:18054 18054:18068
@@ -551,16 +543,8 @@ module Lich
           number = { '1' => 'first', '2' => 'second', '3' => 'third', '4' => 'fourth', '5' => 'fifth' }; result = dothistimeout 'look altar', 10, /^There is a strange grid on the altar.  Five rows are labeled with numbers and five columns are labeled with colors.  A red glow illuminates/; lever_hash = Hash.new; lever_hash['yellow'] = number[result.slice(/Yellow [0-9]/).slice(/[0-9]/)]; lever_hash['blue'] = number[result.slice(/Blue [0-9]/).slice(/[0-9]/)]; lever_hash['brown'] = number[result.slice(/Brown [0-9]/).slice(/[0-9]/)]; lever_hash['red'] = number[result.slice(/Red [0-9]/).slice(/[0-9]/)]; lever_hash['green'] = number[result.slice(/Green [0-9]/).slice(/[0-9]/)]; for lever,position in lever_hash; loop { result = dothistimeout 'pull ' + lever + ' lever', 3, /^You pull/; break if result =~ /#{position}/ }; end; move 'go step'; move 'go passage'; move 'go opening'
         end
 
-        define('crossing_19377_25691') do # 19377:25691
-          2.times{fput 'ask sailor about boat';}
-        end
-
         define('crossing_19543_1102') do # 19543:1102
           move 'southeast'; move 'northeast'; move checkpaths[rand(checkpaths.length)] while checkpaths.length > 2
-        end
-
-        define('crossing_19727_19990') do # 19727:19990
-          wait_until{GameObj.loot.find{|item| item.noun == "island"}};fput "go island"
         end
 
         define('crossing_19728_19992') do # 19728:19992
@@ -653,18 +637,6 @@ module Lich
 
         define('crossing_30850_30851') do # 30850:30851
           color_moves = {'blue' => 'n,sw,sw', 'black' => 'n,sw,sw,sw,s,se', 'red' => 'n,se,se', 'yellow' => 'n,se,se,se,s,sw'};GameObj.room_desc.find { |o| o.name =~ /(blue|black|yellow|red) barrier/ };color = $1;move_order = color_moves[color].split(',');move_order.each { |w| move(w) };move('go grotto');fput 'touch crystal';move('out');move_order.reverse.each { |w| move(reverse_direction(w)) };move('go barrier')
-        end
-
-        define('crossing_31286_31345') do # 31286:31345
-          until GameObj.loot.find {|o| o.noun=='gap'};fput 'search';waitrt?;end;move 'go gap';
-        end
-
-        define('crossing_32873_13532') do # 32873:13532
-          $SILVERWOOD_TOWN=:zul;move 'go door'
-        end
-
-        define('crossing_36416_36412') do # 36416:36412
-          move 'jump pit'; wait_while{checkstunned}
         end
 
         define('crossing_36419_36440') do # 36419:36440
