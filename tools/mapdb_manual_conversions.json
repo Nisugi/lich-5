@@ -3595,10 +3595,151 @@
       "strategy": "unique_crossing",
       "name": "crossing_11357_11358"
     },
-    "11753:11749": {
-      "strategy": "unique_crossing",
-      "name": "crossing_11753_11749"
-    },
+    "11753:11749": [
+      {
+        "do": "find_item",
+        "nouns": [
+          "scrip",
+          "scroll",
+          "document",
+          "parchment",
+          "paper",
+          "note"
+        ],
+        "verify": "look {item}",
+        "timeout": 3,
+        "matching": "reads, \".*{char}",
+        "settles": "^You see nothing unusual\\.|^It takes you a moment to focus|[0-9]+ silver"
+      },
+      {
+        "do": "if",
+        "when": "not:capture:item",
+        "then": [
+          {
+            "do": "travel_to",
+            "room": 5724
+          },
+          {
+            "do": "if",
+            "when": "status:hidden",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "unhide"
+              }
+            ]
+          },
+          {
+            "do": "await",
+            "cmd": "ask jyhm about ticket",
+            "timeout": 5,
+            "for": "^Jyhm whispers, \"Look -- I need ([0-9]+) coins for something like that\\.|^Jyhm quietly takes your money",
+            "on_timeout": "continue",
+            "bind": {
+              "cost": 1
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture:cost",
+            "then": [
+              {
+                "do": "travel_to",
+                "room": 5710
+              },
+              {
+                "do": "await",
+                "cmd": "withdraw {capture:cost} silvers",
+                "timeout": 5,
+                "for": "hands you [0-9]+ silvers|don't seem to have that much",
+                "on_timeout": "continue",
+                "bind": {
+                  "withdrew": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "not:capture_match:withdrew=hands you",
+                "then": [
+                  {
+                    "do": "echo",
+                    "msg": "You cannot afford a ticket to River's Rest."
+                  },
+                  {
+                    "do": "break"
+                  }
+                ]
+              },
+              {
+                "do": "travel_to",
+                "room": 5724
+              },
+              {
+                "do": "if",
+                "when": "status:hidden",
+                "then": [
+                  {
+                    "do": "send",
+                    "cmd": "unhide"
+                  }
+                ]
+              },
+              {
+                "do": "await",
+                "cmd": "ask jyhm about ticket",
+                "timeout": 5,
+                "for": "^Jyhm quietly takes your money",
+                "on_timeout": "continue"
+              }
+            ]
+          },
+          {
+            "do": "travel_to",
+            "room": 11753
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "status:hidden",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "unhide"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:loot_noun:gangplank",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "waiting for the cutter..."
+          },
+          {
+            "do": "await",
+            "timeout": 1800,
+            "on_timeout": "fail",
+            "for": "The crew swiftly extends a gangplank\\.|^You hear a voice on the cutter shouting, \"Are the passengers all aboard\\?\""
+          },
+          {
+            "do": "if",
+            "when": "status:hidden",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "unhide"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go gangplank"
+      }
+    ],
     "14060:20430": {
       "strategy": "unique_crossing",
       "name": "crossing_14060_20430"

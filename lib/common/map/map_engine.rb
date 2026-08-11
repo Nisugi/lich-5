@@ -26,6 +26,9 @@ module Lich
 
       DEFAULT_AWAIT_TIMEOUT = 10
       MAX_LOOP_ITERATIONS   = 50
+      # A crossing reached by travel_to cannot itself travel_to: bad data
+      # wastes one route rather than routing in circles.
+      MAX_TRAVEL_DEPTH      = 1
 
       # Legacy event globals a handful of edges write. Closed whitelist:
       # growing it is a reviewed Lich change, never a map-data change.
@@ -328,6 +331,10 @@ module Lich
             run_use_item(step)
           when 'borrow_item'
             run_borrow_item(step)
+          when 'find_item'
+            run_find_item(step)
+          when 'travel_to'
+            run_travel_to(step)
           when 'return_item'
             run_return_item(step)
           when 'cross'
@@ -437,6 +444,98 @@ module Lich
         # raw tag stream, so that work lives here in reviewed code rather than
         # in map data: the schema names the item and the verb, nothing else.
         # An item already in hand (or worn) is used in place and not put away.
+        # Route to another room mid-crossing, using go2's own pathfinding
+        # rather than a path baked into the map.
+        #
+        #   { "do": "travel_to", "room": 400 }
+        #
+        # Errand edges (fetch a ticket, visit a bank) walked hardcoded move
+        # lists that duplicated graph the router already had, and silently
+        # rotted when a room changed. This delegates instead.
+        #
+        # Guarded against re-entry: a crossing reached by travel_to cannot
+        # itself travel_to, so bad data wastes one route instead of looping
+        # forever (MAX_TRAVEL_DEPTH is 1 for that reason).
+        def run_travel_to(step)
+          room = resolve_room_ref(step['room'])
+          raise StepFailed, "travel_to: unknown room #{step['room'].inspect}" unless room
+          return if at_room_ref?(step['room'])
+
+          @travel_depth ||= 0
+          if @travel_depth >= MAX_TRAVEL_DEPTH
+            raise StepFailed, "travel_to: nested routing refused (room #{step['room']})"
+          end
+
+          @travel_depth += 1
+          begin
+            # This crossing is itself running under a go2, so count the ones
+            # already present and wait for our new one to drop back to that,
+            # rather than assuming any particular number.
+            before = Script.running.count { |s| s.name == 'go2' }
+            force_start_script('go2', [room.id.to_s])
+            # Wait for it to register before waiting for it to finish, or the
+            # finish check can fall through on the very first poll.
+            started = Time.now
+            sleep 0.1 until Script.running.count { |s| s.name == 'go2' } > before || Time.now - started > 5
+            wait_while { Script.running.count { |s| s.name == 'go2' } > before }
+            unless at_room_ref?(step['room'])
+              raise StepFailed, "travel_to: did not reach room #{room.id}"
+            end
+          ensure
+            @travel_depth -= 1
+          end
+        end
+
+        # Find an item you own that satisfies a check, and get it into hand.
+        # Some items are only distinguishable by looking at them - a boat
+        # ticket is yours if its text carries your name - so candidates are
+        # filtered by noun and then verified one at a time.
+        #
+        #   { "do": "find_item", "nouns": ["scrip", "scroll"],
+        #     "verify": "look #{item}", "matching": "reads, \".*{char}" }
+        #
+        # Binds {capture:item}. Not finding one leaves it unbound rather than
+        # failing, so an edge can offer a fallback.
+        def run_find_item(step)
+          nouns = Array(step['nouns']).map(&:to_s)
+          raise StepFailed, 'find_item requires nouns' if nouns.empty?
+
+          @captures ||= {}
+          @captures['item'] = nil
+          pattern = compile_pattern(expand_tokens(step['matching'].to_s))
+          raise StepFailed, 'find_item requires a matching pattern' unless pattern
+
+          hands = [GameObj.right_hand, GameObj.left_hand].compact.select { |o| o.id }
+          candidates = hands.select { |o| nouns.include?(o.noun) }
+          # Then anything already visible inside a container we can see into.
+          GameObj.inv.each do |container|
+            contents = container.contents
+            next if contents.nil? || contents.empty?
+            candidates.concat(contents.select { |o| nouns.include?(o.noun) })
+          end
+
+          found = candidates.find { |obj| verify_item(obj, step, pattern) }
+          return unless found
+
+          # Take it if it is not already in hand.
+          unless hands.any? { |o| o.id == found.id }
+            empty_hand if GameObj.right_hand.id && GameObj.left_hand.id
+            fput "get ##{found.id}"
+          end
+          @captures['item'] = "##{found.id}"
+        end
+
+        # `settles` names the lines that mean "answer received, but no" - a
+        # look that reveals nothing. Without them the wait burns its full
+        # timeout on every candidate that is not the one.
+        def verify_item(obj, step, pattern)
+          cmd = expand_tokens(step['verify'].to_s).gsub('{item}', "##{obj.id}")
+          settle = step['settles'] ? compile_pattern(step['settles']) : nil
+          wait_for = settle ? Regexp.union(pattern, settle) : pattern
+          result = dothistimeout(cmd, (step['timeout'] || 3).to_f, wait_for)
+          !result.nil? && result =~ pattern ? true : false
+        end
+
         # Get the item into hand and remember where it came from. Binds
         # {capture:item} and {capture:container} for the steps that follow, so
         # an edge can compose whatever it needs between borrow and return:
@@ -1016,7 +1115,7 @@ module Lich
         STEP_NAMES = %w[send move await wait_rt sleep wait_room_change if empty_hands fill_hands replan repeat
                         set echo cast_buff cross move_with_group try_move cast move_random empty_hand fill_hand
                         preserve_stance escort_wait break break_if_moved set_global run_script wait_until
-                        wait_castrt use_item borrow_item return_item].freeze
+                        wait_castrt use_item borrow_item return_item find_item travel_to].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
                                month var var_raw society seeking_enabled has_item no_script spell_known level
                                skill climb_vs_encumbrance climb_bonus global room_name location script_running subscription
@@ -1124,6 +1223,14 @@ module Lich
             errors.concat(Array(step['else']).flat_map { |s| errors_for_step(s) })
           when 'set'
             errors << 'set requires var' unless step['var'].is_a?(String)
+          when 'travel_to'
+            unless step['room'].is_a?(Integer) || step['room'].to_s =~ /\A(?:u)?\d+\z/i
+              errors << 'travel_to requires room (id or uNNN)'
+            end
+          when 'find_item'
+            errors << 'find_item requires nouns' unless step['nouns'].is_a?(Array) && !step['nouns'].empty?
+            errors << 'find_item requires verify' unless step['verify'].is_a?(String)
+            errors << 'find_item requires matching' unless step['matching'].is_a?(String)
           when 'use_item', 'borrow_item'
             errors << "#{name} requires item" unless step['item'].is_a?(String)
             errors << "#{name} verb must be a string" if step['verb'] && !step['verb'].is_a?(String)

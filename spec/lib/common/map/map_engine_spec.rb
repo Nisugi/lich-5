@@ -293,6 +293,77 @@ RSpec.describe Lich::Common::MapEngine do
       end
     end
 
+    describe 'travel_to' do
+      it 'refuses to nest, so bad data cannot loop forever' do
+        room = double('room', id: 400)
+        allow(described_class).to receive(:resolve_room_ref).and_return(room)
+        allow(described_class).to receive(:at_room_ref?).and_return(false)
+        described_class.instance_variable_set(:@travel_depth, described_class::MAX_TRAVEL_DEPTH)
+
+        expect(described_class).not_to receive(:force_start_script)
+        expect { described_class.send(:run_travel_to, { 'room' => 400 }) }
+          .to raise_error(described_class::StepFailed, /nested routing refused/)
+      ensure
+        described_class.instance_variable_set(:@travel_depth, 0)
+      end
+
+      it 'does nothing when already in the target room' do
+        allow(described_class).to receive(:resolve_room_ref).and_return(double('room', id: 400))
+        allow(described_class).to receive(:at_room_ref?).and_return(true)
+        expect(described_class).not_to receive(:force_start_script)
+        described_class.send(:run_travel_to, { 'room' => 400 })
+      end
+
+      it 'validates the room reference' do
+        v = described_class::Validator
+        expect(v.errors_for_wayto([{ 'do' => 'travel_to', 'room' => 400 }])).to be_empty
+        expect(v.errors_for_wayto([{ 'do' => 'travel_to', 'room' => 'u123' }])).to be_empty
+        expect(v.errors_for_wayto([{ 'do' => 'travel_to' }]).join).to include('requires room')
+      end
+    end
+
+    describe 'find_item' do
+      it 'verifies candidates and binds the one that matches' do
+        mine = double('mine', id: 111, noun: 'scrip')
+        theirs = double('theirs', id: 222, noun: 'scrip')
+        stub_const('Lich::Common::GameObj',
+                   double('GameObj',
+                          right_hand: double(id: nil, noun: nil),
+                          left_hand: double(id: nil, noun: nil),
+                          inv: [double('sack', contents: [theirs, mine])]))
+        allow(described_class).to receive(:fput)
+        allow(described_class).to receive(:empty_hand)
+        # Only the second look carries the character name.
+        allow(described_class).to receive(:dothistimeout)
+          .and_return('You see nothing unusual.', 'reads, "Nisugi')
+
+        described_class.send(:run_find_item,
+                             { 'nouns' => ['scrip'], 'verify' => 'look {item}',
+                               'matching' => 'reads, ".*Nisugi' })
+        expect(described_class.captures['item']).to eq('#111')
+      end
+
+      it 'leaves item unbound when nothing matches, so an edge can offer a fallback' do
+        stub_const('Lich::Common::GameObj',
+                   double('GameObj',
+                          right_hand: double(id: nil, noun: nil),
+                          left_hand: double(id: nil, noun: nil),
+                          inv: []))
+        described_class.send(:run_find_item,
+                             { 'nouns' => ['scrip'], 'verify' => 'look {item}',
+                               'matching' => 'reads, ".*Nisugi' })
+        expect(described_class.condition?('capture:item')).to be(false)
+      end
+
+      it 'validates its required params' do
+        v = described_class::Validator
+        good = { 'do' => 'find_item', 'nouns' => ['scrip'], 'verify' => 'look {item}',
+                 'matching' => 'x' }
+        expect(v.errors_for_wayto([good])).to be_empty
+        expect(v.errors_for_wayto([good.merge('nouns' => [])]).join).to include('requires nouns')
+      end
+    end
+
     it 'branches on which alternative a bound line matched' do
       described_class.captures['outcome'] = 'It appears to be locked.'
       expect(described_class.condition?('capture_match:outcome=It appears to be locked')).to be(true)
