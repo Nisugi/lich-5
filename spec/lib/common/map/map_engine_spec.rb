@@ -343,6 +343,37 @@ RSpec.describe Lich::Common::MapEngine do
         expect(described_class.captures['item']).to eq('#111')
       end
 
+      it 'opens containers it cannot see into, and closes the ones it opened' do
+        ticket = double('ticket', id: 333, noun: 'scrip')
+        # contents empty at first (so it must be opened), populated after.
+        sack = double('sack', id: 900)
+        # Empty until we look inside, then populated - as the game reports it.
+        looked = false
+        allow(sack).to receive(:contents) { looked ? [ticket] : nil }
+        stub_const('Lich::Common::GameObj',
+                   double('GameObj',
+                          right_hand: double(id: nil, noun: nil),
+                          left_hand: double(id: nil, noun: nil),
+                          inv: [sack]))
+        allow(described_class).to receive(:fput)
+        allow(described_class).to receive(:empty_hand)
+        allow(described_class).to receive(:dothistimeout) do |cmd, _t, _p|
+          case cmd
+          when /\Aopen / then 'You open the sack.'
+          when /\Alook in /
+            looked = true
+            'In the sack you see a scrip.'
+          else 'reads, "Nisugi'
+          end
+        end
+
+        expect(described_class).to receive(:fput).with('close #900')
+        described_class.send(:run_find_item,
+                             { 'nouns' => ['scrip'], 'verify' => 'look {item}',
+                               'matching' => 'reads, ".*Nisugi' })
+        expect(described_class.captures['item']).to eq('#333')
+      end
+
       it 'leaves item unbound when nothing matches, so an edge can offer a fallback' do
         stub_const('Lich::Common::GameObj',
                    double('GameObj',

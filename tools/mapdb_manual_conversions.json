@@ -3832,10 +3832,151 @@
       "strategy": "unique_crossing",
       "name": "crossing_18243_22550"
     },
-    "18677:11749": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18677_11749"
-    },
+    "18677:11749": [
+      {
+        "do": "find_item",
+        "nouns": [
+          "scrip",
+          "scroll",
+          "document",
+          "parchment",
+          "paper",
+          "note"
+        ],
+        "verify": "look {item}",
+        "timeout": 3,
+        "matching": "reads, \".*{char}",
+        "settles": "^You see nothing unusual\\.|^It takes you a moment to focus|[0-9]+ silver"
+      },
+      {
+        "do": "if",
+        "when": "not:capture:item",
+        "then": [
+          {
+            "do": "travel_to",
+            "room": 11748
+          },
+          {
+            "do": "if",
+            "when": "status:hidden",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "unhide"
+              }
+            ]
+          },
+          {
+            "do": "await",
+            "cmd": "ask percy about ticket",
+            "timeout": 5,
+            "for": "^Percy whispers, \"Look -- I need ([0-9]+) coins for something like that\\.|^Percy quietly takes your money",
+            "on_timeout": "continue",
+            "bind": {
+              "cost": 1
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture:cost",
+            "then": [
+              {
+                "do": "travel_to",
+                "room": 10911
+              },
+              {
+                "do": "await",
+                "cmd": "withdraw {capture:cost} silvers",
+                "timeout": 5,
+                "for": "hands you [0-9]+ silvers|don't seem to have that much",
+                "on_timeout": "continue",
+                "bind": {
+                  "withdrew": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "not:capture_match:withdrew=hands you",
+                "then": [
+                  {
+                    "do": "echo",
+                    "msg": "You cannot afford a ticket to Solhaven."
+                  },
+                  {
+                    "do": "break"
+                  }
+                ]
+              },
+              {
+                "do": "travel_to",
+                "room": 11748
+              },
+              {
+                "do": "if",
+                "when": "status:hidden",
+                "then": [
+                  {
+                    "do": "send",
+                    "cmd": "unhide"
+                  }
+                ]
+              },
+              {
+                "do": "await",
+                "cmd": "ask percy about ticket",
+                "timeout": 5,
+                "for": "^Percy quietly takes your money",
+                "on_timeout": "continue"
+              }
+            ]
+          },
+          {
+            "do": "travel_to",
+            "room": 18677
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "status:hidden",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "unhide"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:loot_noun:gangplank",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "waiting for the cutter..."
+          },
+          {
+            "do": "await",
+            "timeout": 1800,
+            "on_timeout": "fail",
+            "for": "^A small cutter glides up beneath the bridge\\.  The crew swiftly extends a gangplank\\.|^You hear a voice on the cutter shouting, \"Are the passengers all aboard\\?\""
+          },
+          {
+            "do": "if",
+            "when": "status:hidden",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "unhide"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go gangplank"
+      }
+    ],
     "18700:18250": {
       "strategy": "unique_crossing",
       "name": "crossing_18700_18250"

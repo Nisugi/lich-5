@@ -515,6 +515,9 @@ module Lich
           end
 
           found = candidates.find { |obj| verify_item(obj, step, pattern) }
+          # Nothing visible matched: containers we have not looked inside may
+          # still hold it. Open, check, and close the ones we opened.
+          found ||= search_closed_containers(nouns, step, pattern)
           return unless found
 
           # Take it if it is not already in hand.
@@ -523,6 +526,25 @@ module Lich
             fput "get ##{found.id}"
           end
           @captures['item'] = "##{found.id}"
+        end
+
+        # Look inside containers whose contents we cannot already see, leaving
+        # each as we found it: a container we opened gets closed again.
+        def search_closed_containers(nouns, step, pattern)
+          GameObj.inv.each do |container|
+            next unless container.contents.nil? || container.contents.empty?
+
+            opened = dothistimeout("open ##{container.id}", 3,
+                                   /^You open|^That is already open\.$/).to_s
+            # Opening does not necessarily repopulate contents; looking does.
+            dothistimeout("look in ##{container.id}", 3, /^In the|^There is nothing/)
+            found = Array(container.contents)
+                    .select { |o| nouns.include?(o.noun) }
+                    .find { |o| verify_item(o, step, pattern) }
+            fput "close ##{container.id}" if opened =~ /^You open/
+            return found if found
+          end
+          nil
         end
 
         # `settles` names the lines that mean "answer received, but no" - a
