@@ -281,6 +281,7 @@ module Lich
           convert_wayto_preserve_stance(body) ||
           convert_wayto_sit_branch(body) ||
           convert_wayto_escort(body) ||
+          convert_wayto_door_branch(body) ||
           convert_wayto_wait_until_gone(body) ||
           convert_wayto_send_then_repeat(body) ||
           convert_wayto_try_then_clear(body) ||
@@ -352,6 +353,70 @@ module Lich
         Result.new('send_until_count',
                    [{ 'do' => 'repeat', 'times' => m[2].to_i,
                       'steps' => [{ 'do' => 'move', 'cmd' => cmd }] }])
+      end
+
+      # Door-response branches: open the door, read the reply, and act on it -
+      # go through if it opened, deal with the lock if it did not. The proc
+      # shape is `fput 'open X'; while line = get; if <cases>; ...; break`.
+      def convert_wayto_door_branch(body)
+        m = body.match(/\Afput\s+#{QUOTED};\s*while\s+line\s*=\s*get;\s*(.+)\s*end;?\s*\z/m)
+        return nil unless m
+
+        branches = parse_line_branches(m[3])
+        return nil unless branches
+
+        steps = [{ 'do' => 'await', 'cmd' => m[1] || m[2], 'timeout' => 5,
+                   'on_timeout' => 'continue',
+                   'for' => branches.map { |b| b[:pattern] }.join('|'),
+                   'bind' => { 'reply' => 0 } }]
+        branches.each do |b|
+          steps << { 'do' => 'if', 'when' => "capture_match:reply=#{b[:pattern]}",
+                     'then' => b[:steps] }
+        end
+        Result.new('door_branch', steps)
+      end
+
+      # if/elsif chain over `line`, each arm ending in break. Returns nil for
+      # anything with an else, a nested condition, or a body we cannot express.
+      def parse_line_branches(text)
+        # Drop the if-chain's own terminator, then split on elsif. A bare else
+        # would need a "nothing matched" arm, which await cannot express.
+        inner = text.strip.sub(/\bend;?\s*\z/, '').strip
+        return nil if inner =~ /(?<!\w)else(?!if)\b/
+
+        arms = inner.split(/;\s*elsif\s+/).map(&:strip).reject(&:empty?)
+        return nil if arms.empty?
+
+        arms.map do |arm|
+          arm = arm.sub(/\Aif\s+/, '')
+          head = arm.match(/\A(.+?);\s*(.*)\z/m)
+          return nil unless head
+
+          pattern = branch_pattern(head[1].strip)
+          return nil unless pattern
+
+          steps = convert_command_sequence(head[2].sub(/\bbreak;?\s*\z/, ''))
+          return nil unless steps
+
+          { :pattern => pattern, :steps => steps }
+        end
+      end
+
+      # `line == 'X'`, `line =~ /X/`, or `['X','Y'].include?(line)`.
+      def branch_pattern(cond)
+        if (m = cond.match(/\Aline\s*==\s*#{QUOTED}\z/))
+          escape_literal(m[1] || m[2])
+        elsif (m = cond.match(%r{\Aline\s*=~\s*/(.+)/\z}))
+          m[1]
+        elsif (m = cond.match(/\A\[(.+)\]\.include\?\(line\)\z/))
+          m[1].scan(QUOTED).map { |a, b| escape_literal(a || b) }.join('|')
+        end
+      end
+
+      # Regexp.escape also escapes spaces, which is valid but makes the stored
+      # pattern hard to read; only the metacharacters need it here.
+      def escape_literal(text)
+        text.gsub(%r{[.*+?^$(){}\[\]|\\/]}) { |ch| "\\#{ch}" }
       end
 
       # Ride-out edges: something else moves you (a lift, a current), so just

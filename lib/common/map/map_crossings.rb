@@ -41,14 +41,6 @@ module Lich
           unless (move 'go door'); push_result = dothistimeout 'push tine', 10, /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the|^You grasp the top tine and try to turn it, but it won't even budge.$/ until push_result =~ /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the (?:reflective glass stone aligned with the word 'Honor'|clear crystal stone aligned with the word 'Truth'|milky white stone aligned with the word 'Piety'|dull grey stone aligned with the word 'Humility'|flawless silver stone aligned with the word 'Faith'|veil iron stone aligned with the word 'Courage').$|^You grasp the top tine and try to turn it, but it won't even budge.$/; unless push_result.nil? or push_result == 'You grasp the top tine and try to turn it, but it won\'t even budge.'; unless mana < 100; castables = [ 110, 120, 140, 210, 216, 230, 420, 425, 430, 520, 540, 620, 625, 650, 1040, 1110, 1115, 1601, 1602, 1603, 1604, 1607, 1613, 1614, 1615 ].sort { |a,b| a.to_s[-2..-1] <=> b.to_s[-2..-1] }.reverse.collect { |n| Spell[n] }; castables.delete_if { |spell| spell.nil? or !spell.known? }; mana5spells = [105, 205, 305, 405, 505, 605, 705, 905, 1005, 1105, 1205, 1605].collect { |n| Spell[n] }; mana5spells.delete_if { |spell| spell.nil? or !spell.known? }; mana_needed = 100; while (mana_needed > 0) and ((Spell[515].active? and (spell = mana5spells.find { |s| s.known? })) or (spell = castables.find { |s| s.mana_cost <= mana_needed }) or (spell = castables.reverse.find { |s| s.mana_cost >= mana_needed })); loop { cast_result = spell.cast('crown'); break unless cast_result =~ /^\[Spell Hindrance for/ }; mana_needed -= spell.mana_cost; sleep 0.1; end; end; fput 'release' if Spell[515].active? and (checkprep != 'None'); fput 'touch crown'; fput 'say Aenatumgana'; sleep 0.5; end; move 'go door'; end
         end
 
-        define('crossing_4140_4141') do # 4140:4141
-          spell_list = [407, 1604, 304, 1207];until dothistimeout('go gate', 5, /^The bronze gate appears to be closed\.$|^Obvious (?:paths|exits)\: northeast, northwest, up$/) =~ /^Obvious/;  if spell_num = spell_list.find { |num| Spell[num].known? };    spell = Spell[spell_num];    loop {;      unless spell.affordable?;        echo 'waiting for mana...';        wait_until { spell.affordable? };      end;      break unless spell.cast('gate') =~ /^\[Spell Hindrance/;    };  else;    empty_hands;    dothistimeout('push bronze gate', 16, /^(?:With a shocking lack of resistance, t|T)he (?:huge )?(?:bronze )?gate .* open|^The ancient hinges of the gate creak loudly as they give way|^Summoning the power .*? gate opens|the gate slowly opens wide enough to allow passage|The bronze gate pops open|^It's opened wide enough to slip through now\.  That thick chain won't let it open any farther\.$|just (came|went) through a massive bronze gate\.$/);    fill_hands;  end;end
-        end
-
-        define('crossing_4141_4140') do # 4141:4140
-          spell_list = [407, 1604, 304, 1207];until dothistimeout('go gate', 5, /^The bronze gate appears to be closed\.$|^Obvious (?:paths|exits)\: none$/) =~ /^Obvious/ ;  if spell_num = spell_list.find { |num| Spell[num].known? };    spell = Spell[spell_num];    loop {;      unless spell.affordable?;        echo 'waiting for mana...';        wait_until { spell.affordable? };      end;      break unless spell.cast('gate') =~ /^\[Spell Hindrance/;    };  elsif (Stats.prof == 'Warrior') and (Stats.level >= 15);    empty_hands;    fput 'batter gate';    sleep 0.5;    waitrt?;    fill_hands;  else;    empty_hands;    dothistimeout('push bronze gate', 16, /^(?:With a shocking lack of resistance, t|T)he (?:huge )?(?:bronze )?gate .* open|^The ancient hinges of the gate creak loudly as they give way|^Summoning the power .*? gate opens|the gate slowly opens wide enough to allow passage|The bronze gate pops open|^It's opened wide enough to slip through now\.  That thick chain won't let it open any farther\.$|just (came|went) through a massive bronze gate\.$/);    fill_hands;  end;end
-        end
-
         define('crossing_6135_6136') do # 6135:6136
           group_members = nil; clear.reverse.each { |line| if line =~ /^Obvious (paths|exits)/; break; elsif line =~ /^([A-Za-z ,]+) followed\.$/; group_members = $1.split(/, | and /); group_members.delete_if { |m| m =~ /^[Yy]our / }; group_members = nil if group_members.empty?; break; end }; result = nil; while !result; if celerity = Spell[506] and celerity.known? and celerity.affordable? and not celerity.active?; celerity.cast; end; fput 'search'; result = matchtimeout(1,/you discover a narrow crevice/); waitrt?; if !result then multimove 'n','s'; end; end; fput 'point crevice' if group_members; move 'go crevice'; if group_members; echo 'Waiting for your group... To ditch them, ;send go '; while (group_members.length > 0) and (line = get); if line =~ /^(You reach out and hold )?([A-z][a-z]+)('s hand| joins your group)\.$/; group_members.delete $2; elsif line == 'go'; break; end; end; end
         end
@@ -567,10 +559,6 @@ module Lich
           move 'southeast'; move 'northeast'; move checkpaths[rand(checkpaths.length)] while checkpaths.length > 2
         end
 
-        define('crossing_19657_20012') do # 19657:20012
-          fput 'open door';while line = get;if ['You open the nearly invisible stone door.', 'That is already open.'].include?(line);fput 'go door';break;elsif line == 'It appears to be locked.';empty_hands;fput 'get lockpick';fput 'pick door';fput 'stow lockpick';fill_hands;fput 'open door';fput 'go door';break;end;end
-        end
-
         define('crossing_19727_19990') do # 19727:19990
           wait_until{GameObj.loot.find{|item| item.noun == "island"}};fput "go island"
         end
@@ -581,10 +569,6 @@ module Lich
 
         define('crossing_19992_19728') do # 19992:19728
           fput 'open door';while line = get;if line == "It's locked, Blazyn!";empty_hand;fput 'turn lock';fput 'open door';fput 'go door';fill_hand;break;else;fput 'go door';break;end;end
-        end
-
-        define('crossing_20012_19657') do # 20012:19657
-          fput 'open door';while line = get;if ['You open a large stone door.', 'That is already open.'].include?(line);fput 'go door';break;elsif line == 'It appears to be locked.';empty_hand;fput 'turn lock';fput 'open door';fput 'go door';fill_hand;break;end;end;
         end
 
         define('crossing_21386_23157') do # 21386:23157

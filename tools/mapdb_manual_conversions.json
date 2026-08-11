@@ -3324,14 +3324,124 @@
         "cmd": "go shed"
       }
     ],
-    "4140:4141": {
-      "strategy": "unique_crossing",
-      "name": "crossing_4140_4141"
-    },
-    "4141:4140": {
-      "strategy": "unique_crossing",
-      "name": "crossing_4141_4140"
-    },
+    "4140:4141": [
+      {
+        "do": "repeat",
+        "times": 10,
+        "until": "paths_are:northeast, northwest, up",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "go gate",
+            "timeout": 5,
+            "on_timeout": "continue",
+            "for": "^The bronze gate appears to be closed\\.$|^Obvious (?:paths|exits): northeast, northwest, up$",
+            "bind": {
+              "gate": 0
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture_match:gate=Obvious",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "if",
+            "when": "spell_known:407,1604,304,1207",
+            "then": [
+              {
+                "do": "cast",
+                "spell": [
+                  407,
+                  1604,
+                  304,
+                  1207
+                ],
+                "target": "gate"
+              }
+            ],
+            "else": [
+              {
+                "do": "empty_hands"
+              },
+              {
+                "do": "await",
+                "cmd": "push bronze gate",
+                "timeout": 16,
+                "on_timeout": "continue",
+                "for": "^(?:With a shocking lack of resistance, t|T)he (?:huge )?(?:bronze )?gate .* open|^The ancient hinges of the gate creak loudly as they give way|^Summoning the power .*? gate opens|the gate slowly opens wide enough to allow passage|The bronze gate pops open|^It's opened wide enough to slip through now\\.  That thick chain won't let it open any farther\\.$|^just (?:came|went) through a massive bronze gate\\.$"
+              },
+              {
+                "do": "fill_hands"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "4141:4140": [
+      {
+        "do": "repeat",
+        "times": 10,
+        "until": "paths_are:none",
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "go gate",
+            "timeout": 5,
+            "on_timeout": "continue",
+            "for": "^The bronze gate appears to be closed\\.$|^Obvious (?:paths|exits): none$",
+            "bind": {
+              "gate": 0
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture_match:gate=Obvious",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "if",
+            "when": "spell_known:407,1604,304,1207",
+            "then": [
+              {
+                "do": "cast",
+                "spell": [
+                  407,
+                  1604,
+                  304,
+                  1207
+                ],
+                "target": "gate"
+              }
+            ],
+            "else": [
+              {
+                "do": "empty_hands"
+              },
+              {
+                "do": "await",
+                "cmd": "push bronze gate",
+                "timeout": 16,
+                "on_timeout": "continue",
+                "for": "^(?:With a shocking lack of resistance, t|T)he (?:huge )?(?:bronze )?gate .* open|^The ancient hinges of the gate creak loudly as they give way|^Summoning the power .*? gate opens|the gate slowly opens wide enough to allow passage|The bronze gate pops open|^It's opened wide enough to slip through now\\.  That thick chain won't let it open any farther\\.$|^just (?:came|went) through a massive bronze gate\\.$"
+              },
+              {
+                "do": "fill_hands"
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "6135:6136": {
       "strategy": "unique_crossing",
       "name": "crossing_6135_6136"

@@ -80,14 +80,14 @@ RSpec.describe Lich::Common::MapEngine::Strategies do
       # recognizers learn each idiom family. Assert both game sections loaded
       # and that a named block is callable.
       expect(described_class::REGISTRY).not_to be_empty
-      expect(described_class.known?('crossing_6274_11032')).to be(true)
+      expect(described_class.known?('crossing_339_24768')).to be(true)
       expect(described_class::REGISTRY.keys).to include(a_string_starting_with('crossing_dr_'))
-      expect(described_class::REGISTRY['crossing_6274_11032']).to be_a(Proc)
+      expect(described_class::REGISTRY['crossing_339_24768']).to be_a(Proc)
     end
 
     it 'validates unique_crossing strategy references' do
       validator = Lich::Common::MapEngine::Validator
-      expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing', 'name' => 'crossing_6274_11032' }))
+      expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing', 'name' => 'crossing_339_24768' }))
         .to be_empty
       expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing' }).join)
         .to include('missing required param')

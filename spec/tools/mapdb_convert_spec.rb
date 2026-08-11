@@ -343,6 +343,26 @@ RSpec.describe MapdbConverter do
                   'steps' => [{ 'do' => 'send', 'cmd' => 'climb root' }] }])
     end
 
+    it 'converts door-response branches' do
+      body = "fput 'open door';while line = get;" \
+             "if ['You open a large stone door.', 'That is already open.'].include?(line);" \
+             "fput 'go door';break;elsif line == 'It appears to be locked.';" \
+             "fput 'turn lock';fput 'go door';break;end;end"
+      schema = schema_for(body)
+      expect(schema[0]).to include('do' => 'await', 'cmd' => 'open door',
+                                   'bind' => { 'reply' => 0 })
+      expect(schema[1]['when']).to eq('capture_match:reply=You open a large stone door\.|That is already open\.')
+      expect(schema[1]['then']).to eq([{ 'do' => 'send', 'cmd' => 'go door' }])
+      expect(schema[2]['when']).to eq('capture_match:reply=It appears to be locked\.')
+    end
+
+    it 'refuses door branches with an else arm' do
+      # await matches a pattern; it cannot express "none of the above".
+      body = "fput 'open door';while line = get;if line == 'x';fput 'go door';break;" \
+             "else;fput 'go door';break;end;end"
+      expect(converter.convert_wayto(body)).to be_nil
+    end
+
     it 'converts try-then-clear blocked exits' do
       # Your own open locker blocks the way out; close it and go again.
       body = "room = Room.current.id; fput 'go opening'; " \
