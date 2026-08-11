@@ -120,7 +120,9 @@ section = section_begin + defs + section_end
 if File.exist?(crossings_path)
   content = File.read(crossings_path)
   if content.include?(section_begin)
-    content = content.sub(/#{Regexp.escape(section_begin)}.*?#{Regexp.escape(section_end)}/m, section)
+    # Block form: relocated proc bodies contain \1, \0, \\ and friends, which
+    # String#sub would read as backreferences in a string replacement.
+    content = content.sub(/#{Regexp.escape(section_begin)}.*?#{Regexp.escape(section_end)}/m) { section }
   else
     content = content.sub(footer) { section + footer }
   end

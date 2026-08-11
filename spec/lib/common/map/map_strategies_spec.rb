@@ -76,8 +76,13 @@ RSpec.describe Lich::Common::MapEngine::Strategies do
 
   describe Lich::Common::MapEngine::UniqueCrossings do
     it 'carries the relocated one-off crossings' do
-      expect(described_class::REGISTRY.size).to be >= 139
+      # Deliberately not a size floor: this registry is meant to shrink as
+      # recognizers learn each idiom family. Assert both game sections loaded
+      # and that a named block is callable.
+      expect(described_class::REGISTRY).not_to be_empty
       expect(described_class.known?('crossing_6274_11032')).to be(true)
+      expect(described_class::REGISTRY.keys).to include(a_string_starting_with('crossing_dr_'))
+      expect(described_class::REGISTRY['crossing_6274_11032']).to be_a(Proc)
     end
 
     it 'validates unique_crossing strategy references' do

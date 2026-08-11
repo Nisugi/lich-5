@@ -66,15 +66,6 @@ module Lich
           query = "ivy-covered grey stone building with a sturdy cross-gabled roof";shop = GameObj.loot.find { |i| i.name.eql?(query) };shop or fail "could not locate: #{query}";fput "go ##{shop.id}"
         end
 
-        define('crossing_1042_1041') do # 1042:1041
-          move 'climb boulder'
-          fput 'look trail'
-          dir = matchfindword "You peer into the mist and see that the trail heads off to the ?"
-          move 'down'
-          sleep 5 if running?('agoto')
-          move dir
-        end
-
         define('crossing_2636_2579') do # 2636:2579
           fput 'go sphere'
           loop do
@@ -108,98 +99,6 @@ module Lich
           fput 'stand' unless standing?
         end
 
-        define('crossing_2658_2647') do # 2658:2647
-          clear
-          put 'look'
-          loop {
-          line = get
-          if line =~ /a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall, a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall, a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall and a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall\./
-          if $3 == 'northern'
-          move 'climb steps'
-          elsif $6 == 'northern'
-          move 'climb second steps'
-          elsif $9 == 'northern'
-          move 'climb third steps'
-          elsif $12 == 'northern'
-          move 'climb fourth steps'
-          else
-          echo "error: unique_map_movements can't find the right steps"
-          exit
-          end
-          break
-          end
-          }
-        end
-
-        define('crossing_2658_2659') do # 2658:2659
-          clear
-          put 'look'
-          loop {
-          line = get
-          if line =~ /a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall, a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall, a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall and a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall\./
-          if $3 == 'eastern'
-          move 'climb steps'
-          elsif $6 == 'eastern'
-          move 'climb second steps'
-          elsif $9 == 'eastern'
-          move 'climb third steps'
-          elsif $12 == 'eastern'
-          move 'climb fourth steps'
-          else
-          echo "error: unique_map_movements can't find the right steps"
-          exit
-          end
-          break
-          end
-          }
-        end
-
-        define('crossing_2658_2660') do # 2658:2660
-          clear
-          put 'look'
-          loop {
-          line = get
-          if line =~ /a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall, a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall, a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall and a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall\./
-          if $3 == 'southern'
-          move 'climb steps'
-          elsif $6 == 'southern'
-          move 'climb second steps'
-          elsif $9 == 'southern'
-          move 'climb third steps'
-          elsif $12 == 'southern'
-          move 'climb fourth steps'
-          else
-          echo "error: unique_map_movements can't find the right steps"
-          exit
-          end
-          break
-          end
-          }
-        end
-
-        define('crossing_2658_2661') do # 2658:2661
-          clear
-          put 'look'
-          loop {
-          line = get
-          if line =~ /a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall, a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall, a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall and a flight of (ascending|descending) steps (curving along|leading straight through) the (northern|eastern|southern|western) wall\./
-          if $3 == 'western'
-          move 'climb steps'
-          elsif $6 == 'western'
-          move 'climb second steps'
-          elsif $9 == 'western'
-          move 'climb third steps'
-          elsif $12 == 'western'
-          move 'climb fourth steps'
-          else
-          echo "error: unique_map_movements.txt can't find the right steps"
-          exit
-          end
-          break
-          end
-          }
-        end
-
         define('crossing_2677_2675') do # 2677:2675
           unless (move 'go door'); push_result = dothistimeout 'push tine', 10, /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the|^You grasp the top tine and try to turn it, but it won't even budge.$/ until push_result =~ /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the (?:reflective glass stone aligned with the word 'Honor'|clear crystal stone aligned with the word 'Truth'|milky white stone aligned with the word 'Piety'|dull grey stone aligned with the word 'Humility'|flawless silver stone aligned with the word 'Faith'|veil iron stone aligned with the word 'Courage').$|^You grasp the top tine and try to turn it, but it won't even budge.$/; unless push_result.nil? or push_result == 'You grasp the top tine and try to turn it, but it won\'t even budge.'; unless mana < 100; castables = [ 110, 120, 140, 210, 216, 230, 420, 425, 430, 520, 540, 620, 625, 650, 1040, 1110, 1115, 1601, 1602, 1603, 1604, 1607, 1613, 1614, 1615 ].sort { |a,b| a.to_s[-2..-1] <=> b.to_s[-2..-1] }.reverse.collect { |n| Spell[n] }; castables.delete_if { |spell| spell.nil? or !spell.known? }; mana5spells = [105, 205, 305, 405, 505, 605, 705, 905, 1005, 1105, 1205, 1605].collect { |n| Spell[n] }; mana5spells.delete_if { |spell| spell.nil? or !spell.known? }; mana_needed = 100; while (mana_needed > 0) and ((Spell[515].active? and (spell = mana5spells.find { |s| s.known? })) or (spell = castables.find { |s| s.mana_cost <= mana_needed }) or (spell = castables.reverse.find { |s| s.mana_cost >= mana_needed })); loop { cast_result = spell.cast('crown'); break unless cast_result =~ /^\[Spell Hindrance for/ }; mana_needed -= spell.mana_cost; sleep 0.1; end; end; fput 'release' if Spell[515].active? and (checkprep != 'None'); fput 'touch crown'; fput 'say Aenatumgana'; sleep 0.5; end; move 'go door'; end
         end
@@ -222,10 +121,6 @@ module Lich
 
         define('crossing_4141_4140') do # 4141:4140
           spell_list = [407, 1604, 304, 1207];until dothistimeout('go gate', 5, /^The bronze gate appears to be closed\.$|^Obvious (?:paths|exits)\: none$/) =~ /^Obvious/ ;  if spell_num = spell_list.find { |num| Spell[num].known? };    spell = Spell[spell_num];    loop {;      unless spell.affordable?;        echo 'waiting for mana...';        wait_until { spell.affordable? };      end;      break unless spell.cast('gate') =~ /^\[Spell Hindrance/;    };  elsif (Stats.prof == 'Warrior') and (Stats.level >= 15);    empty_hands;    fput 'batter gate';    sleep 0.5;    waitrt?;    fill_hands;  else;    empty_hands;    dothistimeout('push bronze gate', 16, /^(?:With a shocking lack of resistance, t|T)he (?:huge )?(?:bronze )?gate .* open|^The ancient hinges of the gate creak loudly as they give way|^Summoning the power .*? gate opens|the gate slowly opens wide enough to allow passage|The bronze gate pops open|^It's opened wide enough to slip through now\.  That thick chain won't let it open any farther\.$|just (came|went) through a massive bronze gate\.$/);    fill_hands;  end;end
-        end
-
-        define('crossing_4344_7298') do # 4344:7298
-          group_members = nil; clear.reverse.each { |line| if line =~ /^Obvious (paths|exits)/; break; elsif line =~ /^([A-Za-z ,]+) followed\.$/; group_members = $1.split(/, | and /); group_members.delete_if { |m| m =~ /^[Yy]our / }; group_members = nil if group_members.empty?; break; end }; move 'say shadow bind my soul'; if (group_members.to_a.length > 0); echo 'Waiting for your group... To ditch them, ;send go'; wait_until { (group_members.to_a - checkpcs.to_a).empty? or clear.find { |line| line == 'go' } }; end
         end
 
         define('crossing_6135_6136') do # 6135:6136
@@ -609,10 +504,6 @@ module Lich
           loop { fput 'search'; fput 'turn bent spike'; sleep 0.2; break unless checkpaths == [ 'out' ] }; wait_while { standing? }; fput 'stand'; if Room.current == Room[7047]; move 'southwest'; move 'southeast'; move 'southeast'; move 'northeast'; move 'northeast'; move 'climb rubble'; move 'go opening'; move 'out'; end; if Room.current == Room[3705]; move 'south'; move 'south'; move 'west'; move 'north'; move 'north'; move 'north'; end; if Room.current == Room[3687]; move 'north'; move 'northwest'; move 'south'; move 'south'; move 'south'; move 'climb ladder'; move 'go door'; move 'north'; move 'north'; move 'north'; end; if Room.current == Room[7099]; move 'north'; move 'west'; move 'west'; move 'west'; move 'west'; move 'west'; move 'go space'; end; if Room.current == Room[7083]; move 'go space'; move 'go trapdoor'; move 'go door'; move 'east'; move 'east'; move 'go door'; move 'go crack'; move 'south'; move 'west'; end
         end
 
-        define('crossing_7318_7319') do # 7318:7319
-          group_members = nil; clear.reverse.each { |line| if line =~ /^Obvious (paths|exits)/; break; elsif line =~ /^([A-Za-z ,]+) followed\.$/; group_members = $1.split(/, | and /); group_members.delete_if { |m| m =~ /^[Yy]our / }; group_members = nil if group_members.empty?; break; end }; empty_hands; move 'climb opening'; waitrt?; fill_hands; if (group_members.to_a.length > 0); echo 'Waiting for your group... To ditch them, ;send go'; while (line = get) and (group_members.length > 0); if line =~ /(#{group_members.join('|')}) just arrived/; put 'hold ' + $1.to_s; elsif line =~ /^(You reach out and hold )?([A-z][a-z]+)('s hand| joins your group)\.$/; group_members.delete $2; elsif line == 'go'; break; end; end; end
-        end
-
         define('crossing_7324_4541') do # 7324:4541
           group_members = nil; clear.reverse.each { |line| if line =~ /^Obvious (paths|exits)/; break; elsif line =~ /^([A-Za-z ,]+) followed\.$/; group_members = $1.split(/, | and /); group_members.delete_if { |m| m =~ /^[Yy]our / }; group_members = nil if group_members.empty?; break; end }; fput 'yell jaron galarn'; sleep 1; result = nil; success = /Feeling around in the darkness, you stumble upon a low opening in the wall near the ground./; failures = /As you blindly search the area, you find something rooted to the ground|You feel around in the darkness as best you can, but find nothing./; matches = /Feeling around in the darkness, you stumble upon a low opening in the wall near the ground.|As you blindly search the area, you find something rooted to the ground|You feel around in the darkness as best you can, but find nothing./; until result =~ success; fput "stand" until standing?; result = dothistimeout "search", 5, matches; waitrt?; end; until checkpaths("south"); fput 'go opening'; sleep 0.2; end; fput 'stand' until standing?; if (group_members.to_a.length > 0); echo 'Waiting for your group... To ditch them, ;send go'; wait_until { (group_members.to_a - GameObj.pcs.to_a.delete_if { |pc| not pc.status.nil? }.collect { |pc| pc.name }).empty? or clear.find { |line| line == 'go' } }; end
         end
@@ -945,10 +836,6 @@ module Lich
           result = String.new; until result =~ /The mirror won't turn any farther to the right/; fput 'turn mirror right'; result = matchwait("The mirror won't turn any farther to the right","You turn the oak-framed mirror slightly to the right"); end; until result =~ /from the base of the statue onto the center of the statue/; fput 'tilt mirror'; result = matchwait('from the base of the statue onto the center of the statue','You tilt the oak-framed mirror up until it flips around','You tilt the oak-framed mirror up slightly'); if result =~ /flips around/; fput 'turn mirror left'; result = matchwait("from the base of the statue onto the center of the statue","You turn the oak-framed mirror slightly to the left","The mirror won't turn any farther to the left");if result =~ /The mirror won't turn any farther to the left/; 4.times{fput 'turn mirror right'}; end; end; end; move 'go shadow'
         end
 
-        define('crossing_16744_24675') do # 16744:24675
-          UserVars.mapdb_redforest_location = 'EN';result = nil;until result =~ /Obvious paths: northeast, southeast/;fput "stand" until standing?;result = dothistimeout "go fog", 5, /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!|Obvious paths: northeast, southeast/;if result =~ /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!/;sleep 0.5;waitrt?;end;end
-        end
-
         define('crossing_16806_4160') do # 16806:4160
           move 'northeast'; move 'east' while checkpaths.include?('e')
         end
@@ -1274,26 +1161,6 @@ module Lich
           result = nil;until result =~ /Obvious paths: northeast, south/;fput "stand" until standing?;result = dothistimeout "go fog", 5, /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!|Obvious paths: northeast, south/;if result =~ /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!/;sleep 0.5;waitrt?;end;end;UserVars.mapdb_redforest_location = nil; $go2_restart=true
         end
 
-        define('crossing_24695_24696') do # 24695:24696
-          result = nil;until result =~ /Obvious paths: northeast, south/;fput "stand" until standing?;result = dothistimeout "go fog", 5, /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!|Obvious paths: northeast, south/;if result =~ /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!/;sleep 0.5;waitrt?;end;end
-        end
-
-        define('crossing_24696_24695') do # 24696:24695
-          result = nil;until result =~ /Obvious paths: southwest, northwest/;fput "stand" until standing?;result = dothistimeout "go fog", 5, /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!|Obvious paths: southwest, northwest/;if result =~ /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!/;sleep 0.5;waitrt?;end;end
-        end
-
-        define('crossing_24715_24716') do # 24715:24716
-          result = nil;until result =~ /Obvious paths: northeast, southeast/;fput "stand" until standing?;result = dothistimeout "go fog", 5, /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!|Obvious paths: northeast, southeast/;if result =~ /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!/;sleep 0.5;waitrt?;end;end
-        end
-
-        define('crossing_24716_24715') do # 24716:24715
-          result = nil;until result =~ /Obvious paths: southwest/;fput "stand" until standing?;result = dothistimeout "go fog", 5, /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!|Obvious paths: southwest/;if result =~ /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!/;sleep 0.5;waitrt?;end;end
-        end
-
-        define('crossing_24729_24730') do # 24729:24730
-          result = nil;until result =~ /Obvious paths: east, southwest/;fput "stand" until standing?;result = dothistimeout "go fog", 5, /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!|Obvious paths: east, southwest/;if result =~ /You attempt to navigate your way through the fog, but get turned around and come right back out where you started!/;sleep 0.5;waitrt?;end;end
-        end
-
         define('crossing_24730_24729') do # 24730:24729
           while Room.current.id == 24730 do;fput "stand" until standing?;success = /^Rows upon rows of oak trees/;fail = /^You attempt to navigate/;result = dothistimeout "go fog", 5, Regexp.union(success, fail);if result =~ fail;sleep 0.5;waitrt?;end;end
         end
@@ -1338,10 +1205,6 @@ module Lich
           save_stance = XMLData.stance_text;fput 'stance offensive' if save_stance != 'offensive';move('climb wide hole');fput "stance #{save_stance}" if save_stance != XMLData.stance_text;;$go2_restart = true;
         end
 
-        define('crossing_25985_26834') do # 25985:26834
-          if GameObj.inv.find {|obj| obj.noun == "key"};fput "go beechwood door";else;empty_hand;multifput "get my #{UserVars.journeys_end} from my #{UserVars.keysack}","go beechwood door","put my key in my #{UserVars.keysack}";fill_hand;end
-        end
-
         define('crossing_26765_27623') do # 26765:27623
           fput 'search' until GameObj.loot.find{|x| x.name == 'craggy rough-hewn opening'}; fput 'go opening'
         end
@@ -1378,20 +1241,8 @@ module Lich
           until GameObj.loot.find {|o| o.noun=='gap'};fput 'search';waitrt?;end;move 'go gap';
         end
 
-        define('crossing_31427_31428') do # 31427:31428 31428:31427
-          if GameObj.inv.find {|obj| obj.noun =~ /^key(?:ring)?$/};fput "go pine door";else;empty_hand;multifput "get my key from my #{UserVars.key_sack}","go pine door","put my key in my #{UserVars.key_sack}";fill_hand;end
-        end
-
         define('crossing_32873_13532') do # 32873:13532
           $SILVERWOOD_TOWN=:zul;move 'go door'
-        end
-
-        define('crossing_33350_33351') do # 33350:33351
-          if GameObj.inv.find {|obj| obj.noun == "key"};fput "go brick-covered door";else;empty_hand;multifput "get my #{UserVars.safe_harbor} from my #{UserVars.keysack}","go brick-covered door","put my key in my #{UserVars.keysack}";fill_hand;end
-        end
-
-        define('crossing_33365_33366') do # 33365:33366
-          if GameObj.inv.find {|obj| obj.noun == "key"};fput "go entryway";else;empty_hand;multifput "get my #{UserVars.spindrift} from my #{UserVars.keysack}","go entryway","put my key in my #{UserVars.keysack}";fill_hand;end
         end
 
         define('crossing_34434_34435') do # 34434:34435 34435:34434
