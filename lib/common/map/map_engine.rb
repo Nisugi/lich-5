@@ -281,10 +281,18 @@ module Lich
           if raw.is_a?(Hash) && raw['strategy']
             Strategies.run(raw, dest)
           else
+            # A crossing may name reusable step lists once and reference them
+            # by name, so a body used several times is stored once:
+            #
+            #   { "define": { "leg": [ ...steps... ] },
+            #     "steps": [ { "do": "steps_ref", "name": "leg" }, ... ] }
+            @definitions = raw.is_a?(Hash) ? (raw['define'] || {}) : {}
             steps = raw.is_a?(Array) ? raw : Array(raw['steps'])
             steps.each { |step| run_step(step) }
             true
           end
+        ensure
+          @definitions = {}
         end
 
         def run_step(step)
@@ -324,6 +332,8 @@ module Lich
             run_repeat(step)
           when 'for_each'
             run_for_each(step)
+          when 'steps_ref'
+            run_steps_ref(step)
           when 'set'
             value = step['value'].is_a?(String) ? expand_tokens(step['value']) : step['value']
             value = value.to_i if step['value'] == '{map_id}'
@@ -839,6 +849,25 @@ module Lich
           way.respond_to?(:call) ? way.call : move(way)
         end
 
+        # Run a step list the crossing defined once under `define`. Guarded
+        # against recursion: a definition that references itself would loop.
+        MAX_REF_DEPTH = 4
+        def run_steps_ref(step)
+          name = step['name'].to_s
+          body = (@definitions || {})[name]
+          raise StepFailed, "steps_ref: no definition named #{name.inspect}" unless body
+
+          @ref_depth ||= 0
+          raise StepFailed, "steps_ref: #{name.inspect} nested too deeply" if @ref_depth >= MAX_REF_DEPTH
+
+          @ref_depth += 1
+          begin
+            Array(body).each { |s| run_step(s) }
+          ensure
+            @ref_depth -= 1
+          end
+        end
+
         # Run the same steps once per item, with the item bound for the body
         # to interpolate:
         #
@@ -1261,7 +1290,7 @@ module Lich
                         set echo cast_buff cross move_with_group try_move cast move_random empty_hand fill_hand
                         preserve_stance escort_wait break break_if_moved set_global run_script wait_until
                         wait_castrt use_item borrow_item return_item find_item travel_to
-                        search_rooms for_each].freeze
+                        search_rooms for_each steps_ref].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
                                month var var_raw society seeking_enabled has_item no_script spell_known level
                                skill climb_vs_encumbrance climb_bonus global room_name location script_running subscription
@@ -1315,7 +1344,37 @@ module Lich
           return [] if value.is_a?(Array) && value.empty?
           steps = value.is_a?(Array) ? value : Array(value.is_a?(Hash) ? value['steps'] : nil)
           return ['wayto schema entry must be a step list or strategy'] if steps.empty?
-          steps.flat_map { |step| errors_for_step(step) }
+
+          defs = value.is_a?(Hash) ? value['define'] : nil
+          errors = []
+          if defs
+            unless defs.is_a?(Hash)
+              return ['define must be an object of name => step list']
+            end
+            defs.each do |name, body|
+              errors << "define #{name.inspect} must be a step list" unless body.is_a?(Array)
+              errors.concat(Array(body).flat_map { |s| errors_for_step(s) })
+            end
+          end
+          errors.concat(steps.flat_map { |step| errors_for_step(step) })
+          # Every steps_ref has to name something that exists, or the crossing
+          # fails at run time on data that looked valid at build time.
+          known = (defs || {}).keys
+          each_step(steps + (defs || {}).values.flatten) do |s|
+            next unless s['do'] == 'steps_ref'
+            errors << "steps_ref #{s['name'].inspect} has no matching define" unless known.include?(s['name'])
+          end
+          errors
+        end
+
+        # Yield every step in a tree, including those nested in branches.
+        def each_step(steps, &blk)
+          Array(steps).each do |s|
+            next unless s.is_a?(Hash)
+            blk.call(s)
+            %w[steps then else fallback].each { |k| each_step(s[k], &blk) }
+            Array(s['branches']).each { |br| each_step(br.is_a?(Hash) ? br['steps'] : nil, &blk) }
+          end
         end
 
         def errors_for_step(step)
@@ -1428,6 +1487,8 @@ module Lich
               end
             end
             errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
+          when 'steps_ref'
+            errors << 'steps_ref requires name' unless step['name'].is_a?(String)
           when 'for_each'
             errors << 'for_each requires steps' if Array(step['steps']).empty?
             unless step['items'].is_a?(Array) && !step['items'].empty?

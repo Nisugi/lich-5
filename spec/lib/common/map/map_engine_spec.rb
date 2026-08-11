@@ -190,6 +190,39 @@ RSpec.describe Lich::Common::MapEngine do
       expect(described_class.captures['which']).to eq('second steps')
     end
 
+    describe 'steps_ref' do
+      it 'runs a body the crossing defined once' do
+        stub_const('XMLData', double('XMLData', room_id: 1, name: 'Tester'))
+        seen = []
+        allow(described_class).to receive(:run_step).and_call_original
+        allow(described_class).to receive(:fput) { |c| seen << c }
+        described_class.cross({ 'define' => { 'leg' => [{ 'do' => 'send', 'cmd' => 'go' }] },
+                                'steps'  => [{ 'do' => 'steps_ref', 'name' => 'leg' },
+                                             { 'do' => 'steps_ref', 'name' => 'leg' }] })
+        expect(seen).to eq(%w[go go])
+      end
+
+      it 'refuses a definition that recurses, rather than looping forever' do
+        stub_const('XMLData', double('XMLData', room_id: 1, name: 'Tester'))
+        raw = { 'define' => { 'loop' => [{ 'do' => 'steps_ref', 'name' => 'loop' }] },
+                'steps'  => [{ 'do' => 'steps_ref', 'name' => 'loop' }] }
+        expect { described_class.cross(raw) }
+          .to raise_error(described_class::StepFailed, /nested too deeply/)
+        # Crossing#call turns that into "not crossable" rather than an escape.
+        expect(described_class::Crossing.new(raw).call).to be(false)
+      end
+
+      it 'rejects a steps_ref with no matching define at build time' do
+        v = described_class::Validator
+        entry = { 'define' => { 'leg' => [{ 'do' => 'wait_rt' }] },
+                  'steps'  => [{ 'do' => 'steps_ref', 'name' => 'missing' }] }
+        expect(v.errors_for_wayto(entry).join).to include('no matching define')
+        good = { 'define' => { 'leg' => [{ 'do' => 'wait_rt' }] },
+                 'steps'  => [{ 'do' => 'steps_ref', 'name' => 'leg' }] }
+        expect(v.errors_for_wayto(good)).to be_empty
+      end
+    end
+
     describe 'for_each' do
       it 'binds each item in turn for the body to interpolate' do
         stub_const('XMLData', double('XMLData', room_id: 1, name: 'Tester'))
