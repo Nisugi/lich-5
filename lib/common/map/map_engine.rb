@@ -360,6 +360,10 @@ module Lich
             run_cross_edge(step)
           when 'move_with_group'
             run_move_with_group(step)
+          when 'note_group'
+            note_group
+          when 'group_wait'
+            run_group_wait(step)
           when 'cast'
             run_cast(step)
           when 'move_random'
@@ -411,8 +415,10 @@ module Lich
         # "X, Y and Z followed." line), make the move, then wait until every
         # follower has joined before continuing. Ported from the group-wait
         # proc family.
-        def run_move_with_group(step)
-          members = nil
+        # Note who followed you into this room, from the room's "X, Y and Z
+        # followed." line. Kept for group_wait to check against later.
+        def note_group
+          @group_members = nil
           clear.reverse.each do |line|
             case line
             when /^Obvious (?:paths|exits)/
@@ -420,19 +426,34 @@ module Lich
             when /^([A-Za-z ,]+) followed\.$/
               members = ::Regexp.last_match(1).split(/, | and /)
               members.delete_if { |m| m =~ /^[Yy]our / }
-              members = nil if members.empty?
+              @group_members = members.empty? ? nil : members
               break
             end
           end
-          move step['cmd']
-          if members
-            echo 'Waiting for your group...'
-            while members.length.positive?
-              if (get) =~ /^(?:You reach out and hold )?([A-Z][a-z]+)(?:'s hand| joins your group)\.$/
-                members.delete(::Regexp.last_match(1))
-              end
+          @group_members
+        end
+
+        # Block until everyone noted has caught up. Crossings that stun or
+        # scatter the party do this after the crossing rather than as part of
+        # it, which is why it is separable from move_with_group.
+        def run_group_wait(_step = nil)
+          members = @group_members
+          return if members.nil? || members.empty?
+
+          echo 'Waiting for your group...'
+          pending = members.dup
+          while pending.length.positive?
+            if (get) =~ /^(?:You reach out and hold )?([A-Z][a-z]+)(?:'s hand| joins your group)\.$/
+              pending.delete(::Regexp.last_match(1))
             end
           end
+        end
+
+        # The common case: note the group, cross, wait for them, in one step.
+        def run_move_with_group(step)
+          note_group
+          move step['cmd']
+          run_group_wait
           waitrt?
         end
 
@@ -1290,7 +1311,7 @@ module Lich
                         set echo cast_buff cross move_with_group try_move cast move_random empty_hand fill_hand
                         preserve_stance escort_wait break break_if_moved set_global run_script wait_until
                         wait_castrt use_item borrow_item return_item find_item travel_to
-                        search_rooms for_each steps_ref].freeze
+                        search_rooms for_each steps_ref note_group group_wait].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
                                month var var_raw society seeking_enabled has_item no_script spell_known level
                                skill climb_vs_encumbrance climb_bonus global room_name location script_running subscription

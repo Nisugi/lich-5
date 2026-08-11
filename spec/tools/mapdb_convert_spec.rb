@@ -373,6 +373,22 @@ RSpec.describe MapdbConverter do
       expect(schema[2]).to eq({ 'do' => 'move', 'cmd' => 'up' })
     end
 
+    it 'brackets a non-move crossing with note_group and group_wait' do
+      # A jump that stuns you scatters the party, so the wait happens after
+      # the crossing rather than as part of it - which move_with_group,
+      # bundling both, cannot express.
+      body = "group_members = nil; clear.reverse.each { |line| if line =~ /^Obvious (paths|exits)/; break; " \
+             "elsif line =~ /^([A-Za-z ,]+) followed\\.$/; group_members = $1.split(/, | and /); " \
+             "group_members.delete_if { |m| m =~ /^[Yy]our / }; group_members = nil if group_members.empty?; " \
+             "break; end }; fput 'stand' unless standing?; fput 'jump abyss'; wait_until { stunned? }; " \
+             "wait_while { stunned? }; fput 'stand'; if (group_members.to_a.length > 0); end"
+      schema = schema_for(body)
+      expect(schema.first).to eq({ 'do' => 'note_group' })
+      expect(schema.last).to eq({ 'do' => 'group_wait' })
+      expect(schema).to include({ 'do' => 'wait_until', 'when' => 'status:stunned', 'timeout' => 30 })
+      expect(schema).to include({ 'do' => 'wait_until', 'when' => 'not:status:stunned', 'timeout' => 300 })
+    end
+
     it 'converts scheduled rides with a bound that outlasts the ride' do
       body = 'sleep(0.2); _respond "#{monsterbold_start}Waiting for the cab.#{monsterbold_end} #{Time.now}"; ' \
              'waitfor "ledge comes into view"; move("out");'

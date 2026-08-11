@@ -252,6 +252,9 @@ module Lich
         if (r = convert_wayto_group(body))
           return r
         end
+        if (r = convert_wayto_group_bracketed(body))
+          return r
+        end
         if (r = convert_wayto_special(body))
           return r
         end
@@ -1611,6 +1614,24 @@ module Lich
         Result.new('group_move', steps)
       end
 
+      # The same group preamble, but the crossing between it and the wait is
+      # something other than a plain move - a jump that stuns you, a climb.
+      # note_group and group_wait bracket whatever it is.
+      def convert_wayto_group_bracketed(body)
+        return nil unless body =~ /\Agroup_members\s*=\s*nil;\s*clear\.reverse\.each/
+
+        rest = body.sub(GROUP_SCAN, '')
+        # Everything up to the group-wait tail is the crossing proper.
+        idx = rest.index(/if\s+\(?group_members/)
+        return nil unless idx
+
+        middle = convert_command_sequence(rest[0...idx].sub(/;\s*\z/, ''))
+        return nil unless middle
+
+        Result.new('group_bracketed',
+                   [{ 'do' => 'note_group' }] + middle + [{ 'do' => 'group_wait' }])
+      end
+
       # Conditional-wait, buff-cast, delegation, and posture families.
       def convert_wayto_conditionals(body)
         if (m = body.match(ICE_GATE))
@@ -1781,6 +1802,10 @@ module Lich
         /\Amove\s+#{QUOTED}\z/                                                                                                                                        => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
         /\Amove\(#{QUOTED}\)\z/                                                                                                                                       => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
         /\Awaitrt\?\z/                                                                                                                                                => ->(_) { { 'do' => 'wait_rt' } },
+        # Ride out a stun: wait for it to land, then wait for it to pass.
+        /\Await_until\s*\{\s*stunned\?\s*\}\z/                                                                                                                        => ->(_) { { 'do' => 'wait_until', 'when' => 'status:stunned', 'timeout' => 30 } },
+        /\Await_while\s*\{\s*stunned\?\s*\}\z/                                                                                                                        => ->(_) { { 'do' => 'wait_until', 'when' => 'not:status:stunned', 'timeout' => 300 } },
+        /\Await_while\s*\{\s*checkstunned\s*\}\z/                                                                                                                     => ->(_) { { 'do' => 'wait_until', 'when' => 'not:status:stunned', 'timeout' => 300 } },
         /\Asleep\s+(\d+(?:\.\d+)?)\z/                                                                                                                                 => ->(m) { { 'do' => 'sleep', 'seconds' => m[1].to_f } },
         /\Apause\s+(\d+(?:\.\d+)?)\z/                                                                                                                                 => ->(m) { { 'do' => 'sleep', 'seconds' => m[1].to_f } },
         /\Aempty_hands\z/                                                                                                                                             => ->(_) { { 'do' => 'empty_hands' } },
