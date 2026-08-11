@@ -373,6 +373,24 @@ RSpec.describe MapdbConverter do
       expect(schema[2]).to eq({ 'do' => 'move', 'cmd' => 'up' })
     end
 
+    it 'converts piloted rides, bounding every waitfor' do
+      body = "start_time = Time.now.to_i; fput 'lay'; " \
+             '_respond "#{monsterbold_start}Waiting for cue one.#{monsterbold_end}"; ' \
+             'waitfor "one on the left"; fput "lean left"; ' \
+             '_respond "#{monsterbold_start}Waiting to exit.#{monsterbold_end}"; ' \
+             'waitfor "Obvious paths: southwest"; ' \
+             '_respond "#{monsterbold_start}water tunnel time: #{Time.now.to_i - start_time} seconds.#{monsterbold_end}"; ' \
+             'fill_hands;'
+      schema = schema_for(body)
+      # waitfor has no timeout of its own; a missed cue must fail, not hang.
+      awaits = schema.select { |s| s['do'] == 'await' }
+      expect(awaits.length).to eq(2)
+      expect(awaits).to all(include('timeout' => 600, 'on_timeout' => 'fail'))
+      # the timing bookkeeping is diagnostic only and does not survive
+      expect(JSON.generate(schema)).not_to include('start_time')
+      expect(schema.last).to eq({ 'do' => 'fill_hands' })
+    end
+
     it 'brackets a non-move crossing with note_group and group_wait' do
       # A jump that stuns you scatters the party, so the wait happens after
       # the crossing rather than as part of it - which move_with_group,

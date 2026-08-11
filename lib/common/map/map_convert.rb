@@ -374,6 +374,7 @@ module Lich
           convert_repeat_until_left(body) ||
           convert_wait_for_line(body) ||
           convert_scheduled_ride(body) ||
+          convert_wayto_piloted_ride(body) ||
           convert_move_unless_path(body) ||
           convert_title_loop(body) ||
           convert_summon_disk(body) ||
@@ -502,6 +503,49 @@ module Lich
                    { 'do' => 'wait_room_change', 'timeout' => 1800 }
                  end
         Result.new('wait_for_line', steps)
+      end
+
+      # Piloted rides: a sequence of "announce what we are waiting for, wait
+      # for it, then steer" - the water tunnels, where each landmark cues the
+      # next lean. Every waitfor becomes a bounded await, since waitfor itself
+      # has no timeout and a missed cue would otherwise hang the crossing.
+      def convert_wayto_piloted_ride(body)
+        # Strip the timing bookkeeping, which is diagnostic only.
+        text = body.gsub(/start_time\s*=\s*Time\.now\.to_i;?\s*/, '')
+                   .gsub(/_respond\s+"[^"]*water tunnel time[^"]*";?\s*/, '')
+        return nil unless text.scan(/waitfor\s+#{QUOTED}/).length >= 2
+
+        steps = []
+        rest = text
+        until rest.strip.empty?
+          rest = rest.sub(/\A;\s*/, '')
+          if (m = rest.match(/\A_respond\s+"[^"]*?monsterbold_start\}(.+?)\#\{monsterbold_end[^"]*";\s*/m))
+            steps << { 'do' => 'echo', 'msg' => m[1].strip }
+            rest = rest[m[0].length..]
+          elsif (m = rest.match(/\Awaitfor\s+#{QUOTED};?\s*/m))
+            steps << { 'do' => 'await', 'timeout' => 600, 'on_timeout' => 'fail',
+                       'for' => escape_literal(m[1] || m[2]) }
+            rest = rest[m[0].length..]
+          elsif (m = rest.match(/\A(?:fput|put)\s+#{QUOTED};?\s*/m))
+            steps << { 'do' => 'send', 'cmd' => m[1] || m[2] }
+            rest = rest[m[0].length..]
+          elsif (m = rest.match(/\Arefill_hands\s*=\s*false;?\s*/m))
+            rest = rest[m[0].length..]
+          elsif (m = rest.match(/\A\(refill_hands\s*=\s*true;\s*empty_hands;\s*\)\s*if\s+
+                                  GameObj\.right_hand\.id\s+or\s+GameObj\.left_hand\.id;?\s*/xm))
+            # empty_hands is already a no-op with empty hands.
+            steps << { 'do' => 'empty_hands' }
+            rest = rest[m[0].length..]
+          elsif (m = rest.match(/\Afill_hands(?:\s+if\s+refill_hands)?;?\s*/m))
+            steps << { 'do' => 'fill_hands' }
+            rest = rest[m[0].length..]
+          else
+            return nil # something we do not model; leave the whole body alone
+          end
+        end
+        return nil if steps.none? { |s| s['do'] == 'await' }
+
+        Result.new('piloted_ride', steps)
       end
 
       # Scheduled rides: announce the wait, block until the arrival line, then
