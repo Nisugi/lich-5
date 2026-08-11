@@ -555,10 +555,6 @@ module Lich
           fput 'open door';while line = get;if line == "It's locked, Blazyn!";empty_hand;fput 'turn lock';fput 'open door';fput 'go door';fill_hand;break;else;fput 'go door';break;end;end
         end
 
-        define('crossing_21386_23157') do # 21386:23157
-          if celerity = Spell[506] and celerity.known? and celerity.affordable? and not celerity.active?; celerity.cast; end; fput 'search'; move 'go camouflaged opening'
-        end
-
         define('crossing_21960_21961') do # 21960:21961 21961:21960
           waitrt?; fput 'search'; waitrt?; fput 'kneel' unless kneeling?; move 'go hole'; fput 'stand'; waitrt?
         end
@@ -573,10 +569,6 @@ module Lich
 
         define('crossing_23282_23282') do # 23282:23282
           hot_rooms = [23282,23283,23284,23285,23286,23287,23288,23289,23290,23291,23292,23293,23294,23295,23296,23297,23298,23299,23300,23301,23302,23303,23329,23330,23331,23332,23333,23334]; cold_rooms = [23304,23305,23306,23307,23308,23309,23310,23311,23312,23313,23314,23315,23316,23317,23318,23319,23320,23321,23322,23323,23324,23325,23326,23327,23328]; $mapdb_confluence_wayto ||= Hash.new; $mapdb_confluence_wander ||= Array.new; loop { start_room = Room.current; break if start_room.id == $mapdb_confluence_target; if hot_rooms.include?(start_room.id); hot = true; elsif cold_rooms.include?(start_room.id); hot = false; else; $go2_restart = true; break; end; if GameObj.loot.any? { |o| o.name == 'point of elemental tranquility' }; if hot; $mapdb_confluence_hot_tranquility = start_room.id; else; $mapdb_confluence_cold_tranquility = start_room.id; end; elsif $mapdb_confluence_hot_tranquility == start_room.id; $mapdb_confluence_hot_tranquility = nil; elsif $mapdb_confluence_cold_tranquility == start_room.id; $mapdb_confluence_cold_tranquility = nil; end; if GameObj.loot.any? { |o| o.name == 'gaping bottomless pit' }; if hot; $mapdb_confluence_hot_pit = start_room.id; else; $mapdb_confluence_cold_pit = start_room.id; end; elsif $mapdb_confluence_hot_pit == start_room.id; $mapdb_confluence_hot_pit = nil; elsif $mapdb_confluence_cold_pit == start_room.id; $mapdb_confluence_cold_pit = nil; end; if $mapdb_confluence_wayto[start_room.id].nil?; wayto = Hash.new; XMLData.room_exits.each { |d| wayto[d] = nil }; redo if Room.current != start_room; $mapdb_confluence_wayto[start_room.id] = wayto; end; if ($mapdb_confluence_wayto[start_room.id].keys != XMLData.room_exits); redo if Room.current != start_room; $mapdb_confluence_wayto = Hash.new; redo; end; child = ((bounty? =~ /^You have made contact with the child/) ? GameObj.npcs.find { |npc| npc.noun == 'child' } : nil); dir_to = proc { |targets| dir = nil; tried = Array.new; 30.times { break if dir = $mapdb_confluence_wayto[start_room.id].keys.find { |d| targets.include?($mapdb_confluence_wayto[start_room.id][d]) }; targets.each { |i| tried.push(i) unless tried.include?(i) }; ot = targets; targets = $mapdb_confluence_wayto.keys.find_all { |k| $mapdb_confluence_wayto[k].values.any? { |i| ot.include?(i) } and not tried.include?(k) }; break if targets.empty? }; dir }; dir = nil; if $mapdb_confluence_target == 'tranquility'; if GameObj.loot.any? { |o| o.name == 'point of elemental tranquility' }; move 'go tranquility'; $go2_restart = true; break; end; if hot and $mapdb_confluence_hot_tranquility; dir = dir_to.call([$mapdb_confluence_hot_tranquility]); elsif not hot and $mapdb_confluence_cold_tranquility; dir = dir_to.call([$mapdb_confluence_cold_tranquility]); end; else; if hot and cold_rooms.include?($mapdb_confluence_target); if GameObj.loot.any? { |o| o.name == 'gaping bottomless pit' }; move 'go pit'; redo; end; dir = dir_to.call([$mapdb_confluence_hot_pit]) if $mapdb_confluence_hot_pit; elsif not hot and hot_rooms.include?($mapdb_confluence_target); if GameObj.loot.any? { |o| o.name == 'gaping bottomless pit' }; move 'go pit'; redo; end; dir = dir_to.call([$mapdb_confluence_cold_pit]) if $mapdb_confluence_cold_pit; else; dir = dir_to.call([$mapdb_confluence_target]); end; end; dir ||= dir_to.call([nil]); dir ||= $mapdb_confluence_wayto[start_room.id].keys.find { |d| not $mapdb_confluence_wander.include?($mapdb_confluence_wayto[start_room.id][d]) }; if dir.nil?; next_id = $mapdb_confluence_wander.find { |i| $mapdb_confluence_wayto[start_room.id].values.include?(i) }; dir = $mapdb_confluence_wayto[start_room.id].keys.find { |d| $mapdb_confluence_wayto[start_room.id][d] == next_id }; end; r = move(dir.dup); 50.times { break if GameObj.npcs.any? { |npc| npc.id == child.id }; sleep 0.1 } if child; if r == false; status_tags; result = dothistimeout 'look', 5, /<compass>/; status_tags; options = result.scan(/<dir value="(.*?)"/).flatten; move options[rand(options.length)]; else; end_room = Room.current; redo if end_room.id == start_room.id; $mapdb_confluence_wayto[start_room.id][dir] = end_room.id; $mapdb_confluence_wander.delete(end_room.id); $mapdb_confluence_wander.push(end_room.id); end }
-        end
-
-        define('crossing_23845_23926') do # 23845:23926
-          if celerity = Spell[506] and celerity.known? and celerity.affordable? and not celerity.active?; celerity.cast; end; fput 'search'; waitrt?; fput 'go wooden trapdoor'
         end
 
         define('crossing_24238_21557') do # 24238:21557
@@ -599,10 +591,6 @@ module Lich
           ['west','west','northwest'].each{|d| move(d)};fput 'rub blood';['southeast','east','east'].each{|d| move(d)};fput 'rub hatch';move('go hatch');
         end
 
-        define('crossing_24837_24967') do # 24837:24967
-          line = fput "search" until line =~ /You discover a shallow crevice while searching the area!/;move 'go crevice'
-        end
-
         define('crossing_24976_24979') do # 24976:24979
           fput 'lie tomb';dothistimeout 'sleep', 3, /^As you start to drift into unconsciousness/;wait_until{stunned?};echo '** Waiting for stunned status to end... **';wait_until{!stunned?};fput 'stand' until standing?
         end
@@ -615,10 +603,6 @@ module Lich
           res = choice = nil;res = dothistimeout "inquire", 5, /(\d)\) the Sea of Fire/;if res =~ /(\d)\) the Sea of Fire/;choice = $1;end;dothistimeout "order #{choice}", 5, /You inquire with a caravan conductor about the price of a trip to the Sea of Fire\.  S?[Hh]e says, "That will be [,\d]+ silvers/;res = dothistimeout "order confirm", 5, /It doesn't look like you have enough silver to ride\.|We'll be taking that payment in silver, then\./;if res =~ /It doesn't look like you have enough silver to ride\./;5.times do;echo "Didn't have enough silver!";exit;end;end;wait_until { XMLData.room_title =~ /Caravan, Wagon/ };sleep 1;wait_until{ XMLData.room_title !~ /Caravan, Wagon/ };if GameObj.npcs.any? { |npc| npc.name =~ /thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber/ };3.times do;_respond "<pushBold/>BANDITS!!! BANDITS!!! BANDITS!!!<popBold/>";end;exit;end;$go2_restart=true
         end
 
-        define('crossing_26765_27623') do # 26765:27623
-          fput 'search' until GameObj.loot.find{|x| x.name == 'craggy rough-hewn opening'}; fput 'go opening'
-        end
-
         define('crossing_27638_27639') do # 27638:27639 27639:27638
           if UserVars.Peregrine; UserVars.Peregrine.each{|c| fput "#{c}" } end
         end
@@ -627,24 +611,8 @@ module Lich
           while Room.current.id == 30115; fput 'south'; waitrt; end;
         end
 
-        define('crossing_30581_30582') do # 30581:30582 30582:30581
-          fput 'lie' until checkprone; result = dothistimeout 'search',3, /staircase/ until result;waitrt?;fput 'stand' until standing?;waitrt?;fput 'go staircase'
-        end
-
-        define('crossing_30582_30583') do # 30582:30583 30583:30581
-          fput 'lie' until checkprone; result = dothistimeout 'search',3, /curtain/ until result;waitrt?;fput 'stand' until standing?;waitrt?;fput 'go curtain'
-        end
-
         define('crossing_30850_30851') do # 30850:30851
           color_moves = {'blue' => 'n,sw,sw', 'black' => 'n,sw,sw,sw,s,se', 'red' => 'n,se,se', 'yellow' => 'n,se,se,se,s,sw'};GameObj.room_desc.find { |o| o.name =~ /(blue|black|yellow|red) barrier/ };color = $1;move_order = color_moves[color].split(',');move_order.each { |w| move(w) };move('go grotto');fput 'touch crystal';move('out');move_order.reverse.each { |w| move(reverse_direction(w)) };move('go barrier')
-        end
-
-        define('crossing_36419_36440') do # 36419:36440
-          if !GameObj.loot.any?{|i| i.name =~ /opening/};move('west');move('north');fput 'pull statue';fput 'turn statue';move('south');move('east');end;sleep 0.2 until GameObj.loot.any?{|i| i.name =~ /opening/};move('go opening')
-        end
-
-        define('crossing_36440_36419') do # 36440:36419
-          if !GameObj.loot.any?{|i| i.name =~ /opening/};fput 'pull lever';sleep 0.2 until GameObj.loot.any?{|i| i.name =~ /opening/};end;move('go opening')
         end
         # ===== END gs crossings =====
         # ===== BEGIN dr crossings (generated) =====

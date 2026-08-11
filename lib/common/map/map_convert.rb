@@ -313,7 +313,7 @@ module Lich
       # fput 'kneel' until kneeling?; move 'go opening'
       # Only postures the engine's status? actually answers; anything else
       # falls through to relocation rather than to an always-false condition.
-      POSTURES = %w[kneeling standing sitting hidden invisible].freeze
+      POSTURES = %w[kneeling standing sitting hidden invisible prone].freeze
       def convert_posture_then_move(body)
         m = body.match(/\Afput\s+#{QUOTED}\s+until\s+(\w+)\?;\s*move\s+#{QUOTED}\z/)
         return nil unless m && POSTURES.include?(m[3])
@@ -363,7 +363,106 @@ module Lich
           convert_wait_for_object(body) ||
           convert_search_until_object(body) ||
           convert_walk_until_object(body) ||
-          convert_set_global_move(body)
+          convert_set_global_move(body) ||
+          convert_search_until_name(body) ||
+          convert_celerity_then(body) ||
+          convert_lie_search_stand(body) ||
+          convert_reveal_then_move(body) ||
+          convert_send_until_text(body)
+      end
+
+      # fput 'search' until <object by name>; then take it.
+      def convert_search_until_name(body)
+        m = body.match(/\Afput\s+#{QUOTED}\s+until\s+GameObj\.loot\.find\s*\{\s*\|\w+\|\s*
+                        \w+\.name\s*(?:==|\.eql\?\()\s*#{QUOTED}\)?\s*\};\s*
+                        fput\s+#{QUOTED}\z/xm)
+        return nil unless m
+
+        Result.new('search_until_name',
+                   [{ 'do' => 'repeat', 'until' => "loot_match:#{Regexp.escape(m[3] || m[4])}",
+                      'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] },
+                                  { 'do' => 'wait_rt' }] },
+                    { 'do' => 'send', 'cmd' => m[5] || m[6] }])
+      end
+
+      # Buff with celerity if it is worth casting, then do the crossing.
+      def convert_celerity_then(body)
+        m = body.match(/\Aif\s+celerity\s*=\s*Spell\[(\d+)\]\s+and\s+celerity\.known\?\s+and\s+
+                        celerity\.affordable\?\s+and\s+not\s+celerity\.active\?;\s*
+                        celerity\.cast;\s*end;\s*(.+)\z/xm)
+        return nil unless m
+
+        rest = convert_command_sequence(m[2])
+        return nil unless rest
+
+        Result.new('buff_then_cross',
+                   [{ 'do' => 'cast_buff', 'spell' => m[1].to_i }] + rest)
+      end
+
+      # Lie down, search until something is revealed, stand, and go through it.
+      def convert_lie_search_stand(body)
+        m = body.match(/\Afput\s+#{QUOTED}\s+until\s+checkprone;\s*
+                        result\s*=\s*dothistimeout\s+#{QUOTED},\s*(\d+),\s*\/(.+?)\/\s+until\s+result;\s*
+                        waitrt\??;\s*fput\s+#{QUOTED}\s+until\s+standing\?;\s*waitrt\??;\s*
+                        fput\s+#{QUOTED}\z/xm)
+        return nil unless m
+
+        # QUOTED is two groups each: 1/2 lie, 3/4 search cmd, 5 timeout,
+        # 6 pattern, 7/8 stand, 9/10 crossing.
+        Result.new('lie_search_stand',
+                   [{ 'do' => 'repeat', 'until' => 'status:prone',
+                      'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] },
+                    { 'do' => 'repeat', 'times' => 20,
+                      'steps' => [{ 'do' => 'await', 'cmd' => m[3] || m[4],
+                                    'timeout' => m[5].to_i, 'for' => m[6],
+                                    'on_timeout' => 'continue',
+                                    'bind' => { 'found' => 0 } },
+                                  { 'do' => 'if', 'when' => 'capture:found',
+                                    'then' => [{ 'do' => 'break' }] }] },
+                    { 'do' => 'wait_rt' },
+                    { 'do' => 'repeat', 'until' => 'status:standing',
+                      'steps' => [{ 'do' => 'send', 'cmd' => m[7] || m[8] }] },
+                    { 'do' => 'wait_rt' },
+                    { 'do' => 'send', 'cmd' => m[9] || m[10] }])
+      end
+
+      # Reveal a hidden exit (pull a lever, push a stone) if it is not already
+      # showing, then take it.
+      def convert_reveal_then_move(body)
+        m = body.match(/\Aif\s*!GameObj\.loot\.any\?\s*\{\s*\|\w+\|\s*\w+\.name\s*=~\s*\/([^\/]+)\/\s*\};\s*
+                        (.+?);?\s*
+                        sleep\s+[\d.]+\s+until\s+GameObj\.loot\.any\?\s*\{\s*\|\w+\|\s*\w+\.name\s*=~\s*\/\1\/\s*\};?\s*
+                        end;?\s*move\(?#{QUOTED}\)?;?\z/xm)
+        m ||= body.match(/\Aif\s*!GameObj\.loot\.any\?\s*\{\s*\|\w+\|\s*\w+\.name\s*=~\s*\/([^\/]+)\/\s*\};\s*
+                          (.+?);\s*end;\s*
+                          sleep\s+[\d.]+\s+until\s+GameObj\.loot\.any\?\s*\{\s*\|\w+\|\s*\w+\.name\s*=~\s*\/\1\/\s*\};\s*
+                          move\(?#{QUOTED}\)?;?\z/xm)
+        return nil unless m
+
+        reveal = convert_command_sequence(m[2])
+        return nil unless reveal
+
+        Result.new('reveal_then_move',
+                   [{ 'do' => 'if', 'when' => "not:loot_match:#{m[1]}",
+                      'then' => reveal + [{ 'do' => 'wait_until', 'when' => "loot_match:#{m[1]}",
+                                            'timeout' => 60 }] },
+                    { 'do' => 'move', 'cmd' => m[3] || m[4] }])
+      end
+
+      # Repeat a command until a line of game text arrives.
+      def convert_send_until_text(body)
+        m = body.match(/\Aline\s*=\s*fput\s+#{QUOTED}\s+until\s+line\s*=~\s*\/(.+?)\/;\s*
+                        move\s+#{QUOTED}\z/xm)
+        return nil unless m
+
+        Result.new('send_until_text',
+                   [{ 'do' => 'repeat', 'times' => 50,
+                      'steps' => [{ 'do' => 'await', 'cmd' => m[1] || m[2], 'timeout' => 3,
+                                    'for' => m[3], 'on_timeout' => 'continue',
+                                    'bind' => { 'found' => 0 } },
+                                  { 'do' => 'if', 'when' => 'capture:found',
+                                    'then' => [{ 'do' => 'break' }] }] },
+                    { 'do' => 'move', 'cmd' => m[4] || m[5] }])
       end
 
       # move CMD, then wait for a condition to settle (stun to wear off, an

@@ -326,8 +326,11 @@ RSpec.describe MapdbConverter do
     end
 
     it 'leaves postures the engine cannot answer to relocation' do
-      # status? has no 'prone' - converting would emit an always-false gate.
-      expect(converter.convert_wayto("fput 'lie' until prone?; move 'go gap'")).to be_nil
+      # prone is answerable now (checkprone); a made-up one still is not, and
+      # converting it would emit an always-false gate.
+      expect(schema_for("fput 'lie' until prone?; move 'go gap'").first['until'])
+        .to eq('status:prone')
+      expect(converter.convert_wayto("fput 'crouch' until crouching?; move 'go gap'")).to be_nil
     end
 
     it 'keeps a leading roundtime wait rather than dropping it' do
@@ -355,6 +358,25 @@ RSpec.describe MapdbConverter do
         .to eq([{ 'do' => 'repeat', 'until' => 'room_object:ferns',
                   'steps' => [{ 'do' => 'move_random' }] },
                 { 'do' => 'move', 'cmd' => 'go ferns' }])
+    end
+
+    it 'converts buff-then-cross' do
+      body = 'if celerity = Spell[506] and celerity.known? and celerity.affordable? and ' \
+             "not celerity.active?; celerity.cast; end; fput 'search'; move 'go opening'"
+      expect(schema_for(body))
+        .to eq([{ 'do' => 'cast_buff', 'spell' => 506 },
+                { 'do' => 'send', 'cmd' => 'search' },
+                { 'do' => 'move', 'cmd' => 'go opening' }])
+    end
+
+    it 'converts reveal-then-move, waiting for the exit to appear' do
+      body = "if !GameObj.loot.any?{|i| i.name =~ /opening/};fput 'pull lever';" \
+             "sleep 0.2 until GameObj.loot.any?{|i| i.name =~ /opening/};end;move('go opening')"
+      schema = schema_for(body)
+      expect(schema[0]['when']).to eq('not:loot_match:opening')
+      expect(schema[0]['then'].first).to eq({ 'do' => 'send', 'cmd' => 'pull lever' })
+      expect(schema[0]['then'].last).to include('do' => 'wait_until', 'when' => 'loot_match:opening')
+      expect(schema[1]).to eq({ 'do' => 'move', 'cmd' => 'go opening' })
     end
 
     it 'refuses to set globals outside the engine whitelist' do

@@ -1054,6 +1054,7 @@ module Lich
           when 'sitting'   then defined?(sitting?) ? sitting? : false
           when 'kneeling'  then defined?(kneeling?) ? kneeling? : false
           when 'standing'  then defined?(standing?) ? standing? : false
+          when 'prone'     then defined?(checkprone) ? checkprone : false
           when 'stunned'   then defined?(stunned?) ? stunned? : false
           else false
           end
