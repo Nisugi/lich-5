@@ -364,6 +364,11 @@ module Lich
           convert_search_until_object(body) ||
           convert_walk_until_object(body) ||
           convert_set_global_move(body) ||
+          convert_repeat_until_left(body) ||
+          convert_wait_for_line(body) ||
+          convert_scheduled_ride(body) ||
+          convert_move_unless_path(body) ||
+          convert_title_loop(body) ||
           convert_summon_disk(body) ||
           convert_loot_branch(body) ||
           convert_move_list(body) ||
@@ -373,6 +378,95 @@ module Lich
           convert_lie_search_stand(body) ||
           convert_reveal_then_move(body) ||
           convert_send_until_text(body)
+      end
+
+      # Stand and try the crossing until you are out of this room. Some of
+      # these confirm arrival at a specific room afterwards.
+      def convert_repeat_until_left(body)
+        m = body.match(/\A\(fput\s+#{QUOTED}\s+until\s+standing\?;\s*fput\s+#{QUOTED}\)\s+
+                        until\s+Room\.current\.id\s*!=\s*\d+;\s*
+                        (?:wait_until\s*\{\s*Room\.current\.id\s*==\s*(\d+)\s*\};?)?\s*\z/xm)
+        return nil unless m
+
+        steps = [{ 'do' => 'repeat', 'until_room_change' => true,
+                   'steps' => [{ 'do' => 'repeat', 'until' => 'status:standing',
+                                 'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] },
+                               { 'do' => 'send', 'cmd' => m[3] || m[4] }] }]
+        if m[5]
+          steps << { 'do' => 'wait_until', 'when' => "in_room:#{m[5]}", 'timeout' => 300 }
+        end
+        Result.new('repeat_until_left', steps)
+      end
+
+      # Announce a long wait, then block until a line arrives or the room
+      # changes - currents, geysers, and the cable car.
+      def convert_wait_for_line(body)
+        m = body.match(/\A(.*?)(?:echo\s+#{QUOTED};\s*)?
+                        line\s*=\s*get\s+until\s+
+                        (?:line\s*=~\s*\/(.+?)\/|Room\.current\.id\s*!=\s*\d+)\s*;?\s*\z/xm)
+        return nil unless m
+
+        # Anything before the wait (board the raft, push off) has to convert
+        # too, or the crossing would wait without doing the thing first.
+        steps = m[1].to_s.strip.empty? ? [] : convert_command_sequence(m[1])
+        return nil unless steps
+
+        steps += [{ 'do' => 'echo', 'msg' => m[2] || m[3] }] if m[2] || m[3]
+        steps << if m[4]
+                   { 'do' => 'await', 'timeout' => 1800, 'for' => m[4], 'on_timeout' => 'fail' }
+                 else
+                   { 'do' => 'wait_room_change', 'timeout' => 1800 }
+                 end
+        Result.new('wait_for_line', steps)
+      end
+
+      # Scheduled rides: announce the wait, block until the arrival line, then
+      # step off. waitfor has no timeout of its own, so these get the long
+      # ride-out bound and fail rather than continue if it never comes.
+      def convert_scheduled_ride(body)
+        m = body.match(/\A(?:sleep\s*\(?[\d.]+\)?;\s*)?
+                        _respond\s+"[^"]*?monsterbold_start\}(.+?)\#\{monsterbold_end[^"]*";\s*
+                        waitfor\s+#{QUOTED};\s*
+                        move\(?#{QUOTED}\)?;?\s*\z/xm)
+        return nil unless m
+
+        Result.new('scheduled_ride',
+                   [{ 'do' => 'echo', 'msg' => m[1].strip },
+                    { 'do' => 'await', 'timeout' => 1800, 'on_timeout' => 'fail',
+                      'for' => escape_literal(m[2] || m[3]) },
+                    { 'do' => 'move', 'cmd' => m[4] || m[5] }])
+      end
+
+      # move CMD; unless <path present>; <fallback moves>; end
+      def convert_move_unless_path(body)
+        m = body.match(/\Amove\s+#{QUOTED};\s*unless\s+checkpaths\.include\?\(#{QUOTED}\);\s*
+                        (.+?);?\s*end;?\z/xm)
+        return nil unless m
+
+        alt = convert_command_sequence(m[5])
+        return nil unless alt
+
+        Result.new('move_unless_path',
+                   [{ 'do' => 'move', 'cmd' => m[1] || m[2] },
+                    { 'do' => 'if', 'when' => "not:path:#{m[3] || m[4]}", 'then' => alt }])
+      end
+
+      # Repeat while the room title still says we have not left.
+      def convert_title_loop(body)
+        m = body.match(/\Awhile\s+XMLData\.room_title\s*==\s*#{QUOTED};\s*
+                        (.+?);?\s*end;\s*(fill_hands?);?\s*\z/xm)
+        return nil unless m
+
+        inner = convert_command_sequence(m[3])
+        return nil unless inner
+
+        # The proc compares the whole title, brackets and all; anchor so the
+        # converted form is the same test rather than a substring match.
+        title = m[1] || m[2]
+        Result.new('title_loop',
+                   [{ 'do' => 'repeat', 'until' => "not:room_name:\\A#{Regexp.escape(title)}\\z",
+                      'steps' => inner },
+                    { 'do' => m[4] }])
       end
 
       # Wait briefly for your own disk to arrive, summoning one if it does not.

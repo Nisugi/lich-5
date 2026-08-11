@@ -372,6 +372,26 @@ RSpec.describe MapdbConverter do
       expect(schema[2]).to eq({ 'do' => 'move', 'cmd' => 'up' })
     end
 
+    it 'converts scheduled rides with a bound that outlasts the ride' do
+      body = 'sleep(0.2); _respond "#{monsterbold_start}Waiting for the cab.#{monsterbold_end} #{Time.now}"; ' \
+             'waitfor "ledge comes into view"; move("out");'
+      schema = schema_for(body)
+      expect(schema[0]).to eq({ 'do' => 'echo', 'msg' => 'Waiting for the cab.' })
+      # waitfor has no timeout of its own; the converted form must not give up
+      # early on a four-minute ride, and must fail rather than walk on blind.
+      expect(schema[1]).to include('timeout' => 1800, 'on_timeout' => 'fail')
+      expect(schema[2]).to eq({ 'do' => 'move', 'cmd' => 'out' })
+    end
+
+    it 'keeps the commands that precede a long wait' do
+      # Boarding the raft has to happen before waiting for the geyser.
+      body = "fput \"get pile\";fput \"push raft\";fput \"go raft\";" \
+             "echo \"Waiting for the geyser...\";line = get until Room.current.id != 24238"
+      schema = schema_for(body)
+      expect(schema.first).to eq({ 'do' => 'send', 'cmd' => 'get pile' })
+      expect(schema.last).to eq({ 'do' => 'wait_room_change', 'timeout' => 1800 })
+    end
+
     it 'converts fixed move lists' do
       body = "['west','west','northwest'].each{|d| move(d)};fput 'rub blood';move('go hatch');"
       expect(schema_for(body))
