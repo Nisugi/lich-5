@@ -4608,10 +4608,116 @@
         ]
       }
     ],
-    "15571:17721": {
-      "strategy": "unique_crossing",
-      "name": "crossing_15571_17721"
-    },
+    "15571:17721": [
+      {
+        "do": "repeat",
+        "times": 1,
+        "steps": [
+          {
+            "do": "if",
+            "when": "spells_known:505,914,912",
+            "then": [
+              {
+                "do": "repeat",
+                "times": 2,
+                "steps": [
+                  {
+                    "do": "move",
+                    "cmd": "north"
+                  }
+                ]
+              },
+              {
+                "do": "cast",
+                "spell": 505,
+                "target": "grey orb"
+              },
+              {
+                "do": "cast",
+                "spell": 914,
+                "target": "blue orb"
+              },
+              {
+                "do": "cast",
+                "spell": 912,
+                "target": "white orb"
+              },
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "if",
+            "when": "spells_known:908,519,906",
+            "then": [
+              {
+                "do": "repeat",
+                "times": 2,
+                "steps": [
+                  {
+                    "do": "move",
+                    "cmd": "west"
+                  }
+                ]
+              },
+              {
+                "do": "cast",
+                "spell": 908,
+                "target": "blue flame"
+              },
+              {
+                "do": "cast",
+                "spell": 519,
+                "target": "scarlet flame"
+              },
+              {
+                "do": "cast",
+                "spell": 906,
+                "target": "white flame"
+              },
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "if",
+            "when": "spells_known:520,510,909",
+            "then": [
+              {
+                "do": "repeat",
+                "times": 2,
+                "steps": [
+                  {
+                    "do": "move",
+                    "cmd": "south"
+                  }
+                ]
+              },
+              {
+                "do": "cast",
+                "spell": 520,
+                "target": "blue crystal"
+              },
+              {
+                "do": "cast",
+                "spell": 510,
+                "target": "black crystal"
+              },
+              {
+                "do": "cast",
+                "spell": 909,
+                "target": "violet crystal"
+              },
+              {
+                "do": "break"
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "15950:7989": {
       "strategy": "unique_crossing",
       "name": "crossing_15950_7989"
@@ -4936,10 +5042,809 @@
       "strategy": "unique_crossing",
       "name": "crossing_18748_18747"
     },
-    "18893:13441": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18893_13441"
-    },
+    "18893:13441": [
+      {
+        "do": "await",
+        "cmd": "look altar",
+        "timeout": 10,
+        "on_timeout": "fail",
+        "for": "There is a strange grid on the altar",
+        "bind_all": {
+          "yellow": "Yellow ([0-9])",
+          "blue": "Blue ([0-9])",
+          "brown": "Brown ([0-9])",
+          "red": "Red ([0-9])",
+          "green": "Green ([0-9])"
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:yellow=1",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull yellow lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=first",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:yellow=2",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull yellow lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=second",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:yellow=3",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull yellow lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=third",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:yellow=4",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull yellow lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=fourth",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:yellow=5",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull yellow lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=fifth",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:blue=1",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull blue lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=first",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:blue=2",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull blue lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=second",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:blue=3",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull blue lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=third",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:blue=4",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull blue lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=fourth",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:blue=5",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull blue lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=fifth",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:brown=1",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull brown lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=first",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:brown=2",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull brown lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=second",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:brown=3",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull brown lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=third",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:brown=4",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull brown lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=fourth",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:brown=5",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull brown lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=fifth",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:red=1",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull red lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=first",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:red=2",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull red lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=second",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:red=3",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull red lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=third",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:red=4",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull red lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=fourth",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:red=5",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull red lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=fifth",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:green=1",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull green lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=first",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:green=2",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull green lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=second",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:green=3",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull green lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=third",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:green=4",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull green lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=fourth",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "capture:green=5",
+        "then": [
+          {
+            "do": "repeat",
+            "times": 10,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "pull green lever",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "^You pull",
+                "bind": {
+                  "pulled": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:pulled=fifth",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go step"
+      },
+      {
+        "do": "move",
+        "cmd": "go passage"
+      },
+      {
+        "do": "move",
+        "cmd": "go opening"
+      }
+    ],
     "19377:25691": {
       "strategy": "unique_crossing",
       "name": "crossing_19377_25691"

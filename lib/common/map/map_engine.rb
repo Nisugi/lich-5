@@ -187,6 +187,11 @@ module Lich
             $go2_use_seeking ? true : false
           when 'spell_known'
             arg.to_s.split(',').any? { |num| Spell[num.strip.to_i]&.known? }
+          when 'spells_known'
+            # All of them, for gates that need a whole set rather than any one
+            # of several alternatives.
+            nums = arg.to_s.split(',').map { |n| n.strip.to_i }
+            !nums.empty? && nums.all? { |num| Spell[num]&.known? }
           when 'level'
             compare_number(defined?(Stats) ? Stats.level : XMLData.level, arg)
           when 'skill'
@@ -917,6 +922,7 @@ module Lich
         # interpolates as empty, which fails the command visibly rather than
         # sending a half-formed one silently.
         def bind_captures(step, hit, pattern)
+          bind_scan(step, hit)
           spec = step['bind']
           return unless spec.is_a?(Hash)
           @captures ||= {}
@@ -928,6 +934,24 @@ module Lich
               when String then md && md[group]
               when Hash then bind_ordinal(md, group)
               end
+          end
+        end
+
+        # Pull several independent values out of one response:
+        #
+        #   "bind_all": { "yellow": "Yellow ([0-9])", "blue": "Blue ([0-9])" }
+        #
+        # Each name gets its own pattern scanned against the whole matched
+        # text, so nothing is assumed about the order they appear in - the
+        # grid-reading idiom, where a proc slices each value out separately.
+        def bind_scan(step, hit)
+          spec = step['bind_all']
+          return unless spec.is_a?(Hash)
+          @captures ||= {}
+          spec.each do |name, source|
+            re = compile_pattern(source)
+            md = re && hit ? re.match(hit.to_s) : nil
+            @captures[name.to_s] = md && (md[1] || md[0])
           end
         end
 
@@ -1209,7 +1233,7 @@ module Lich
                                month var var_raw society seeking_enabled has_item no_script spell_known level
                                skill climb_vs_encumbrance climb_bonus global room_name location script_running subscription
                                edge drskill guild circle premium script_exists game dr_setting dr_spell_known
-                               stamina].freeze
+                               stamina spells_known].freeze
         FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match
                              in_room platinum capture capture_match room_loaded loot_noun
@@ -1297,6 +1321,15 @@ module Lich
                 end
               else
                 errors << 'bind must be an object of name => group'
+              end
+            end
+            if step.key?('bind_all')
+              if step['bind_all'].is_a?(Hash)
+                step['bind_all'].each_value do |source|
+                  errors << "bind_all target must be a pattern: #{source.inspect}" unless source.is_a?(String)
+                end
+              else
+                errors << 'bind_all must be an object of name => pattern'
               end
             end
           when 'sleep'

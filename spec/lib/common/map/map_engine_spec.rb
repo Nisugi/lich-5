@@ -190,6 +190,28 @@ RSpec.describe Lich::Common::MapEngine do
       expect(described_class.captures['which']).to eq('second steps')
     end
 
+    it 'binds several independent values from one response' do
+      # The altar grid arrives as a single line; each colour is sliced out
+      # separately, so nothing may depend on the order they appear in.
+      line = 'A red glow illuminates Green 4, Yellow 2 and Blue 5.'
+      described_class.send(:bind_scan,
+                           { 'bind_all' => { 'yellow' => 'Yellow ([0-9])',
+                                             'blue'   => 'Blue ([0-9])',
+                                             'green'  => 'Green ([0-9])' } },
+                           line)
+      expect(described_class.captures['yellow']).to eq('2')
+      expect(described_class.captures['blue']).to eq('5')
+      expect(described_class.captures['green']).to eq('4')
+    end
+
+    it 'validates bind_all patterns' do
+      v = described_class::Validator
+      good = { 'do' => 'await', 'for' => 'x', 'bind_all' => { 'a' => 'A ([0-9])' } }
+      expect(v.errors_for_wayto([good])).to be_empty
+      expect(v.errors_for_wayto([good.merge('bind_all' => { 'a' => 3 })]).join)
+        .to include('must be a pattern')
+    end
+
     it 'treats an unbound capture as empty and false' do
       expect(described_class.expand_tokens('move {capture:missing}')).to eq('move ')
       expect(described_class.condition?('capture:missing')).to be(false)

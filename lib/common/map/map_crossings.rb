@@ -317,50 +317,6 @@ module Lich
           	fput "go door"
         end
 
-        define('crossing_15571_17721') do # 15571:17721
-          
-          elements = {
-          	'air' => {	'grey orb' => 505,
-          			'blue orb' => 914,
-          			'white orb' => 912 },
-          	'fire' => {	'blue flame' => 908,
-          			'scarlet flame' => 519,
-          			'white flame' => 906 },
-          	'earth' => {	'blue crystal' => 520,
-          			'black crystal' => 510,
-          			'violet crystal' => 909 }
-          }
-          
-          direction = {
-          	'air' => 'north',
-          	'fire' => 'west',
-          	'earth' => 'south'
-          }
-          
-          result = nil
-          ['air','fire','earth'].each { |element|
-          	truth_table = elements[element].values.find_all { |spellnum| Spell[spellnum].known? }
-          	if truth_table.size == 3
-          		result = element
-          		break
-          	end
-          }
-          
-          if result.nil?
-          	echo 'You do not know enough spells to get into the workshop.'
-          	exit
-          end
-          
-          2.times{ move direction[result] }
-          elements[result].each{ |pillar, spellnum|
-          	if !Spell[spellnum].affordable?
-          		echo 'Waiting for mana'
-          		wait_until{ Spell[spellnum].affordable? }
-          	end
-          	Spell[spellnum].cast(pillar)
-          }
-        end
-
         define('crossing_16165_16064') do # 16165:16064
           result = String.new; until result =~ /The mirror won't turn any farther to the right/; fput 'turn mirror right'; result = matchwait("The mirror won't turn any farther to the right","You turn the oak-framed mirror slightly to the right"); end; until result =~ /from the base of the statue onto the center of the statue/; fput 'tilt mirror'; result = matchwait('from the base of the statue onto the center of the statue','You tilt the oak-framed mirror up until it flips around','You tilt the oak-framed mirror up slightly'); if result =~ /flips around/; fput 'turn mirror left'; result = matchwait("from the base of the statue onto the center of the statue","You turn the oak-framed mirror slightly to the left","The mirror won't turn any farther to the left");if result =~ /The mirror won't turn any farther to the left/; 4.times{fput 'turn mirror right'}; end; end; end; move 'go shadow'
         end
@@ -487,10 +443,6 @@ module Lich
 
         define('crossing_18748_18747') do # 18748:18747
           eyespy = Spell[707]; unless eyespy.affordable?; echo 'waiting for mana...'; wait_until { eyespy.affordable? }; end; eyespy.cast; for dir in [ 'out', 'south', 'door', 'northwest', 'northeast', 'west', 'water', 'grate', 'southeast', 'southeast', 'open', 'stair' ]; fput 'tell eye to go ' + dir; end; result = dothistimeout 'tell eye to read basalt', 10, /The (?:wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of basalt/; if rune = /The (wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of basalt/.match(result).captures.first; fput 'draw ' + rune + ' rune on basalt'; end; result = dothistimeout 'tell eye to read chalcedony', 10, /The (?:wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of chalcedony/; if rune = /The (wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of chalcedony/.match(result).captures.first; fput 'draw ' + rune + ' rune on chalcedony'; end; fput 'tell eye to return'
-        end
-
-        define('crossing_18893_13441') do # 18893:13441
-          number = { '1' => 'first', '2' => 'second', '3' => 'third', '4' => 'fourth', '5' => 'fifth' }; result = dothistimeout 'look altar', 10, /^There is a strange grid on the altar.  Five rows are labeled with numbers and five columns are labeled with colors.  A red glow illuminates/; lever_hash = Hash.new; lever_hash['yellow'] = number[result.slice(/Yellow [0-9]/).slice(/[0-9]/)]; lever_hash['blue'] = number[result.slice(/Blue [0-9]/).slice(/[0-9]/)]; lever_hash['brown'] = number[result.slice(/Brown [0-9]/).slice(/[0-9]/)]; lever_hash['red'] = number[result.slice(/Red [0-9]/).slice(/[0-9]/)]; lever_hash['green'] = number[result.slice(/Green [0-9]/).slice(/[0-9]/)]; for lever,position in lever_hash; loop { result = dothistimeout 'pull ' + lever + ' lever', 3, /^You pull/; break if result =~ /#{position}/ }; end; move 'go step'; move 'go passage'; move 'go opening'
         end
 
         define('crossing_19543_1102') do # 19543:1102
