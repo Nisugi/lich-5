@@ -322,6 +322,8 @@ module Lich
             $go2_restart = true
           when 'repeat'
             run_repeat(step)
+          when 'for_each'
+            run_for_each(step)
           when 'set'
             value = step['value'].is_a?(String) ? expand_tokens(step['value']) : step['value']
             value = value.to_i if step['value'] == '{map_id}'
@@ -837,6 +839,37 @@ module Lich
           way.respond_to?(:call) ? way.call : move(way)
         end
 
+        # Run the same steps once per item, with the item bound for the body
+        # to interpolate:
+        #
+        #   { "do": "for_each", "as": "dir", "items": ["w", "s", "arch"],
+        #     "steps": [ { "do": "send", "cmd": "tell familiar to go {capture:dir}" } ] }
+        #
+        # Without this, a proc's `list.each { |d| ... }` has to be unrolled at
+        # build time, which multiplies the body by the list length - 48KB for
+        # one edge in the case that prompted it.
+        def run_for_each(step)
+          items = Array(step['items'])
+          raise StepFailed, 'for_each requires items' if items.empty?
+          name = (step['as'] || 'item').to_s
+          @captures ||= {}
+          previous = @captures[name]
+          # Mark loop context so a `break` inside the body is legal, as in repeat.
+          (@loop_rooms ||= []).push(XMLData.room_id)
+          begin
+            # Bounded like every other loop, so bad data cannot run away.
+            items.first(MAX_LOOP_ITERATIONS).each do |item|
+              @captures[name] = item.to_s
+              Array(step['steps']).each { |s| run_step(s) }
+            end
+          rescue BreakLoop
+            nil
+          ensure
+            @loop_rooms.pop
+            @captures[name] = previous
+          end
+        end
+
         # Bounded loop: runs its steps up to `times` iterations (hard-capped),
         # stopping early when `until_room` is reached or, with
         # `until_room_change`, when the room differs from the one at loop
@@ -1228,7 +1261,7 @@ module Lich
                         set echo cast_buff cross move_with_group try_move cast move_random empty_hand fill_hand
                         preserve_stance escort_wait break break_if_moved set_global run_script wait_until
                         wait_castrt use_item borrow_item return_item find_item travel_to
-                        search_rooms].freeze
+                        search_rooms for_each].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
                                month var var_raw society seeking_enabled has_item no_script spell_known level
                                skill climb_vs_encumbrance climb_bonus global room_name location script_running subscription
@@ -1394,6 +1427,13 @@ module Lich
                 errors << "unknown condition kind #{kind.inspect}"
               end
             end
+            errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
+          when 'for_each'
+            errors << 'for_each requires steps' if Array(step['steps']).empty?
+            unless step['items'].is_a?(Array) && !step['items'].empty?
+              errors << 'for_each requires a non-empty items array'
+            end
+            errors << 'for_each as must be a string' if step['as'] && !step['as'].is_a?(String)
             errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
           when 'move_with_group'
             errors << 'move_with_group requires cmd' unless step['cmd'].is_a?(String)

@@ -3615,10 +3615,6 @@
         ]
       }
     ],
-    "6486:6487": {
-      "strategy": "unique_crossing",
-      "name": "crossing_6486_6487"
-    },
     "6897:6928": {
       "strategy": "unique_crossing",
       "name": "crossing_6897_6928"
@@ -6582,6 +6578,552 @@
         "then": [
           {
             "do": "replan"
+          }
+        ]
+      }
+    ],
+    "6486:6487": [
+      {
+        "do": "await",
+        "cmd": "go stone doors",
+        "timeout": 3,
+        "on_timeout": "continue",
+        "for": "^Obvious exits: west$|^You cannot",
+        "bind": {
+          "doors": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "not:capture_match:doors=^Obvious",
+        "then": [
+          {
+            "do": "if",
+            "when": "spell_known:920",
+            "then": [
+              {
+                "do": "cast_buff",
+                "spell": 920
+              },
+              {
+                "do": "await",
+                "cmd": "tell familiar to return",
+                "timeout": 15,
+                "on_timeout": "continue",
+                "for": "^You sense understanding from your .+"
+              },
+              {
+                "do": "await",
+                "cmd": "tell familiar to watch",
+                "timeout": 15,
+                "on_timeout": "continue",
+                "for": "^You sense understanding|is already watching",
+                "bind": {
+                  "watch": 0
+                }
+              },
+              {
+                "do": "repeat",
+                "times": 4,
+                "steps": [
+                  {
+                    "do": "for_each",
+                    "as": "dir",
+                    "items": [
+                      "doors",
+                      "w",
+                      "s",
+                      "arch",
+                      "ne",
+                      "e",
+                      "privy",
+                      "hole",
+                      "w"
+                    ],
+                    "steps": [
+                      {
+                        "do": "await",
+                        "cmd": "tell familiar to go {capture:dir}",
+                        "timeout": 15,
+                        "on_timeout": "continue",
+                        "bind": {
+                          "sense": 0
+                        },
+                        "for": "^You sense|just squeezed between the stone doors|^Obvious (?:exits|paths)"
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=^You sense confusion",
+                        "then": [
+                          {
+                            "do": "break"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the iron door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get iron ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the steel door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get steel ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the bronze door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get copper ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the copper door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get bronze ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "do": "for_each",
+                    "as": "dir",
+                    "items": [
+                      "w",
+                      "w",
+                      "sw"
+                    ],
+                    "steps": [
+                      {
+                        "do": "await",
+                        "cmd": "tell familiar to go {capture:dir}",
+                        "timeout": 15,
+                        "on_timeout": "continue",
+                        "bind": {
+                          "sense": 0
+                        },
+                        "for": "^You sense|just squeezed between the stone doors|^Obvious (?:exits|paths)"
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=^You sense confusion",
+                        "then": [
+                          {
+                            "do": "break"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the iron door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get iron ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the steel door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get steel ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the bronze door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get copper ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the copper door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get bronze ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "do": "for_each",
+                    "as": "dir",
+                    "items": [
+                      "iron door",
+                      "steel door",
+                      "bronze door",
+                      "copper door"
+                    ],
+                    "steps": [
+                      {
+                        "do": "await",
+                        "cmd": "tell familiar to go {capture:dir}",
+                        "timeout": 15,
+                        "on_timeout": "continue",
+                        "bind": {
+                          "sense": 0
+                        },
+                        "for": "^You sense|just squeezed between the stone doors|^Obvious (?:exits|paths)"
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=^You sense confusion",
+                        "then": [
+                          {
+                            "do": "break"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the iron door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get iron ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the steel door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get steel ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the bronze door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get copper ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the copper door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get bronze ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "do": "send",
+                    "cmd": "tell familiar to get rocks"
+                  },
+                  {
+                    "do": "for_each",
+                    "as": "dir",
+                    "items": [
+                      "copper door",
+                      "bronze door",
+                      "steel door",
+                      "iron door",
+                      "ne",
+                      "e",
+                      "e",
+                      "s",
+                      "e",
+                      "e",
+                      "se"
+                    ],
+                    "steps": [
+                      {
+                        "do": "await",
+                        "cmd": "tell familiar to go {capture:dir}",
+                        "timeout": 15,
+                        "on_timeout": "continue",
+                        "bind": {
+                          "sense": 0
+                        },
+                        "for": "^You sense|just squeezed between the stone doors|^Obvious (?:exits|paths)"
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=^You sense confusion",
+                        "then": [
+                          {
+                            "do": "break"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the iron door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get iron ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the steel door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get steel ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the bronze door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get copper ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      },
+                      {
+                        "do": "if",
+                        "when": "capture_match:sense=not able to enter the copper door",
+                        "then": [
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to get bronze ring",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^Your familiar reacts with mild confusion|^You sense"
+                          },
+                          {
+                            "do": "await",
+                            "cmd": "tell familiar to go {capture:dir}",
+                            "timeout": 15,
+                            "on_timeout": "continue",
+                            "for": "^You sense|^Obvious (?:exits|paths)"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "do": "send",
+                    "cmd": "tell familiar to drop basket"
+                  }
+                ]
+              },
+              {
+                "do": "if",
+                "when": "capture_match:watch=^You sense understanding",
+                "then": [
+                  {
+                    "do": "send",
+                    "cmd": "tell familiar to stop watching"
+                  }
+                ]
+              },
+              {
+                "do": "if",
+                "when": "var:hate_familiar",
+                "then": [
+                  {
+                    "do": "sleep",
+                    "seconds": 0.3
+                  },
+                  {
+                    "do": "send",
+                    "cmd": "tell familiar to return"
+                  },
+                  {
+                    "do": "send",
+                    "cmd": "tell familiar to stay"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "do": "move",
+            "cmd": "go doors"
           }
         ]
       }

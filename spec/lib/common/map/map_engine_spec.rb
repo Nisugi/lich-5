@@ -190,6 +190,37 @@ RSpec.describe Lich::Common::MapEngine do
       expect(described_class.captures['which']).to eq('second steps')
     end
 
+    describe 'for_each' do
+      it 'binds each item in turn for the body to interpolate' do
+        stub_const('XMLData', double('XMLData', room_id: 1, name: 'Tester'))
+        seen = []
+        allow(described_class).to receive(:run_step) do |s|
+          seen << described_class.expand_tokens(s['cmd'])
+        end
+        described_class.send(:run_for_each,
+                             { 'as' => 'dir', 'items' => %w[w s arch],
+                               'steps' => [{ 'do' => 'send', 'cmd' => 'go {capture:dir}' }] })
+        expect(seen).to eq(['go w', 'go s', 'go arch'])
+      end
+
+      it 'restores any previous binding of the same name' do
+        stub_const('XMLData', double('XMLData', room_id: 1))
+        described_class.captures['dir'] = 'original'
+        allow(described_class).to receive(:run_step)
+        described_class.send(:run_for_each,
+                             { 'as' => 'dir', 'items' => %w[w s], 'steps' => [{ 'do' => 'send' }] })
+        expect(described_class.captures['dir']).to eq('original')
+      end
+
+      it 'validates items and steps' do
+        v = described_class::Validator
+        good = { 'do' => 'for_each', 'items' => ['w'], 'steps' => [{ 'do' => 'wait_rt' }] }
+        expect(v.errors_for_wayto([good])).to be_empty
+        expect(v.errors_for_wayto([good.merge('items' => [])]).join).to include('non-empty items')
+        expect(v.errors_for_wayto([good.merge('steps' => [])]).join).to include('requires steps')
+      end
+    end
+
     it 'binds several independent values from one response' do
       # The altar grid arrives as a single line; each colour is sliced out
       # separately, so nothing may depend on the order they appear in.
