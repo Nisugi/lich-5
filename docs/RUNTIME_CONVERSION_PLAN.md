@@ -59,14 +59,22 @@ mapmap round-trip byte-identical.
 
 ## Phase 2 — Telemetry and operator tooling
 
-- `Map.conversion_report` — in-game mirror of MapConvert#report: stats by
-  idiom, refusal clusters with example edges. This is the field telemetry
-  that tells us when new mapper idioms appear on tillmen.
-- Refusals also logged to a file (one line per unique cluster) so users can
-  paste reports.
-- `Map.convert_string` / `Map.convert_edge` (already built) stay as the
-  authoring/debug tools; document that `convert_edge` now shows what the
-  runtime would do.
+Partly landed with Phase 1; what remains is marked TODO.
+
+- [x] `Map.conversion_report` — in-game mirror of MapConvert#report:
+  converted-body count plus refusal clusters with an example edge each.
+- [x] `Map.unconverted_edges` — the same data as structured hashes.
+- [ ] TODO: stats **by idiom** for converted edges. Today the report counts
+  bodies converted but does not say which recognizer matched, so there is
+  no way to see idiom drift on tillmen before it becomes a refusal.
+  Needs MapConvert::Result#idiom threaded through GuardedProc's cache.
+- [ ] TODO: log refusals to a file, one line per unique cluster, so a user
+  can paste a report without re-running anything. Decide the path
+  (Lich log dir) and whether it appends across sessions.
+- [ ] TODO: document that `Map.convert_edge` now shows what the runtime
+  would do, not a separate offline path (mapping guide + command help).
+- [ ] TODO (nice to have): a one-line summary at map load when anything
+  refused, so a user notices without running the report.
 
 ## Phase 3 — Validation gates (all must pass before PR)
 
