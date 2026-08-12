@@ -999,7 +999,8 @@ RSpec.describe Lich::Common::MapBase do
       settings.personal_map_targets = nil
 
       test_class.apply_wayto_overrides
-      expect(test_class.test_list[10].wayto['20']).to be_a(StringProc)
+      expect(test_class.test_list[10].wayto['20']).to respond_to(:_dump)
+      expect(test_class.test_list[10].wayto['20']._dump).to eq('move north')
     end
 
     it 'applies wayto overrides with numeric travel_time' do
@@ -1030,7 +1031,8 @@ RSpec.describe Lich::Common::MapBase do
       settings.personal_map_targets = nil
 
       test_class.apply_wayto_overrides
-      expect(test_class.test_list[10].timeto['20']).to be_a(StringProc)
+      expect(test_class.test_list[10].timeto['20']).to respond_to(:_dump)
+      expect(test_class.test_list[10].timeto['20']._dump).to eq('1 + 2')
     end
 
     it 'personal overrides take precedence over base overrides' do
@@ -1052,7 +1054,7 @@ RSpec.describe Lich::Common::MapBase do
 
       test_class.apply_wayto_overrides
       proc = test_class.test_list[10].wayto['20']
-      expect(proc).to be_a(StringProc)
+      expect(proc).to respond_to(:_dump)
     end
 
     it 'skips entries missing start_room' do

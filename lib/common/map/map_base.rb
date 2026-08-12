@@ -339,6 +339,10 @@ module Lich
           synchronize_load do
             return true if loaded?
 
+            # Conversions and refusals are memoized per loaded map, so a
+            # reload starts clean rather than reporting the old map's edges.
+            MapEngine::GuardedProc.reset! if defined?(MapEngine::GuardedProc)
+
             file_list = filename ? [filename] : json_map_files
             if file_list.empty?
               respond '--- Lich: error: no map database found'
@@ -374,16 +378,22 @@ module Lich
               room['timeto'] ||= {}
               room['tags'] ||= []
               room['uid'] ||= []
+              # A ';e ' edge is Ruby the mapdb carries as data. Wrapping it in
+              # a GuardedProc converts it to schema on first use and executes
+              # that instead of evaling; _dump still returns the source, so
+              # saving and mapmap round-trip byte-identically. Only map-loaded
+              # procs are wrapped - script-injected StringProcs (teleport.lic)
+              # are built elsewhere and keep their existing behavior.
               room['wayto'].keys.each do |k|
                 if room['wayto'][k].is_a?(String) && room['wayto'][k][0..2] == ';e '
-                  room['wayto'][k] = StringProc.new(room['wayto'][k][3..])
+                  room['wayto'][k] = MapEngine::GuardedProc.new(room['wayto'][k][3..], 'wayto', room['id'], k)
                 else
                   room['wayto'][k] = MapEngine.build_wayto(room['wayto'][k], k)
                 end
               end
               room['timeto'].keys.each do |k|
                 if room['timeto'][k].is_a?(String) && room['timeto'][k][0..2] == ';e '
-                  room['timeto'][k] = StringProc.new(room['timeto'][k][3..])
+                  room['timeto'][k] = MapEngine::GuardedProc.new(room['timeto'][k][3..], 'timeto', room['id'], k)
                 else
                   room['timeto'][k] = MapEngine.build_timeto(room['timeto'][k])
                 end
@@ -720,6 +730,32 @@ module Lich
             end
           end
           respond '--- Map.convert_edge: no StringProcs on that edge.' if out.empty? && defined?(respond)
+          out
+        end
+
+        # Map edges whose StringProc could not be converted to schema, and so
+        # are not routable this session. Empty is the expected state.
+        # @return [Array<Hash>] clusters, most-used idiom first
+        def unconverted_edges
+          return [] unless defined?(MapEngine::GuardedProc)
+          MapEngine::GuardedProc.refusal_clusters
+        end
+
+        # Human-readable version of the above, for pasting into a report:
+        #   ;e Map.conversion_report
+        # Conversion is lazy, so this reflects the edges actually used so far.
+        # @return [String]
+        def conversion_report
+          clusters = unconverted_edges
+          cached = defined?(MapEngine::GuardedProc) ? MapEngine::GuardedProc.cache.size : 0
+          out = +"--- MapEngine conversion: #{cached} proc bodies converted, " \
+                 "#{clusters.sum { |c| c[:count] }} edges refused\n"
+          clusters.each do |c|
+            room, dest = c[:example]
+            out << format("%6dx  %-6s (e.g. %s -> %s)  %s\n", c[:count], c[:field], room, dest, c[:cluster])
+          end
+          out << "--- every proc converted; nothing refused\n" if clusters.empty?
+          respond out if defined?(respond)
           out
         end
 

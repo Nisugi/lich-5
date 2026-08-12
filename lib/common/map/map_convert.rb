@@ -6,6 +6,7 @@
 # Map.convert_string / Map.convert_edge helpers - shipping it inside lich-5
 # keeps the recognizers in lockstep with the engine vocabulary they emit.
 
+require "json"
 require_relative "map_engine"
 
 module Lich
@@ -1991,6 +1992,26 @@ module Lich
       # validated exactly like recognizer output.
       def load_manual(path)
         @manual = JSON.parse(File.read(path))
+      end
+
+      # The overlay that ships with Lich, for the game currently being played.
+      # Runtime conversion needs the same hand-authored entries the offline
+      # converter uses, so they live beside the engine rather than in tools/.
+      # Loaded once per game and cached; a missing file is simply no overlay.
+      def self.shipped_manual(game)
+        @shipped_manual ||= {}
+        key = game.to_s.start_with?('DR') ? 'dr' : 'gs'
+        @shipped_manual[key] ||= begin
+          path = File.join(__dir__, "manual_conversions_#{key}.json")
+          File.exist?(path) ? JSON.parse(File.read(path)) : { 'wayto' => {}, 'timeto' => {} }
+        rescue JSON::ParserError => e
+          warn "MapConvert: could not read #{path}: #{e.message}"
+          { 'wayto' => {}, 'timeto' => {} }
+        end
+      end
+
+      def load_shipped_manual(game)
+        @manual = self.class.shipped_manual(game)
       end
 
       def manual_for(field, room_id, dest)

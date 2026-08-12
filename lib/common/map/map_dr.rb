@@ -3,6 +3,7 @@
 require_relative 'map_base'
 require_relative 'map_engine'
 require_relative 'map_strategies'
+require_relative 'guarded_proc'
 
 module Lich
   module Common
