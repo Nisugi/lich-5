@@ -778,6 +778,85 @@ module Lich
           end
         end
         register 'rogue_guild_door', RogueGuildDoor
+
+        # The Lornon crown: turn the tine until a stone aligns, then pour a
+        # fixed amount of mana into the crown and speak the word.
+        #
+        #   { "strategy" => "mana_crown", "amount" => 100, "target" => "crown",
+        #     "word" => "Aenatumgana", "castables" => [...], "cheap" => [...] }
+        #
+        # Which spells get cast depends on what this character knows and what
+        # they cost, so the selection is a search rather than a fixed list -
+        # that part is code; the candidate lists and the amount are data.
+        class ManaCrown
+          MAX_SPELLS = 50
+
+          def initialize(params)
+            @amount = (params['amount'] || 100).to_i
+            @target = params['target'] || 'crown'
+            @word = params['word']
+            @castables = Array(params['castables']).map(&:to_i)
+            @cheap = Array(params['cheap']).map(&:to_i)
+            @tine = params['tine']
+            @aligned = params['aligned']
+            @stuck = params['stuck']
+          end
+
+          def run
+            return true if move('go door')
+
+            align_tine if @tine
+            fill_crown if mana >= @amount
+            fput 'release' if Spell[515]&.active? && checkprep != 'None'
+            fput "touch #{@target}"
+            fput "say #{@word}" if @word
+            sleep 0.5
+            move 'go door'
+            true
+          end
+
+          private
+
+          # Turn the tine until a stone lines up, or until it will not budge.
+          def align_tine
+            pattern = ::Regexp.union(::Regexp.new(@aligned.to_s), ::Regexp.new(@stuck.to_s))
+            MAX_SPELLS.times do
+              result = dothistimeout("push #{@tine}", 10, pattern)
+              break if result.nil? || result =~ ::Regexp.new(@stuck.to_s)
+              break if result =~ ::Regexp.new(@aligned.to_s)
+            end
+          end
+
+          # Spend `amount` mana on the crown, preferring the cheapest spells
+          # while 515 is up (it makes every cast cost five) and otherwise
+          # taking whatever fits the remaining budget.
+          def fill_crown
+            known = ->(nums) { nums.map { |n| Spell[n] }.compact.select(&:known?) }
+            castables = known.call(@castables)
+                             .sort_by { |s| s.num.to_s[-2..].to_i }.reverse
+            cheap = known.call(@cheap)
+
+            remaining = @amount
+            MAX_SPELLS.times do
+              break if remaining <= 0
+
+              spell = if Spell[515]&.active?
+                        cheap.first
+                      else
+                        castables.find { |s| s.mana_cost <= remaining } ||
+                          castables.reverse.find { |s| s.mana_cost >= remaining }
+                      end
+              break unless spell
+
+              MAX_SPELLS.times do
+                break unless spell.cast(@target) =~ /^\[Spell Hindrance for/
+              end
+              remaining -= spell.mana_cost
+              sleep 0.1
+            end
+          end
+        end
+        register 'mana_crown', ManaCrown, %w[amount]
       end
     end
   end

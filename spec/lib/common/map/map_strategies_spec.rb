@@ -74,6 +74,27 @@ RSpec.describe Lich::Common::MapEngine::Strategies do
     end
   end
 
+  describe Lich::Common::MapEngine::Strategies::ManaCrown do
+    it 'spends the budget on spells this character actually knows' do
+      cheap = double('cheap', num: 105, known?: true, mana_cost: 5)
+      big   = double('big', num: 420, known?: true, mana_cost: 40)
+      unknown = double('unknown', num: 110, known?: false, mana_cost: 10)
+      spell515 = double('515', active?: false)
+      lookup = { 105 => cheap, 420 => big, 110 => unknown, 515 => spell515 }
+      spell_class = class_double('Spell').as_stubbed_const
+      allow(spell_class).to receive(:[]) { |n| lookup[n] }
+
+      crown = described_class.new('amount' => 80, 'target' => 'crown',
+                                  'castables' => [110, 420], 'cheap' => [105])
+      allow(crown).to receive(:mana).and_return(999)
+      allow(crown).to receive(:sleep)
+      # 420 costs 40 and fits twice; 110 is unknown and never chosen.
+      expect(big).to receive(:cast).with('crown').twice.and_return('You gesture.')
+      expect(unknown).not_to receive(:cast)
+      crown.send(:fill_crown)
+    end
+  end
+
   describe Lich::Common::MapEngine::UniqueCrossings do
     # Naming a specific crossing here pins a moving target: every block is a
     # candidate to become schema, and this spec has already had to be

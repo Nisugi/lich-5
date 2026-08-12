@@ -3154,8 +3154,54 @@
       "name": "crossing_339_24768"
     },
     "2677:2675": {
-      "strategy": "unique_crossing",
-      "name": "crossing_2677_2675"
+      "strategy": "mana_crown",
+      "amount": 100,
+      "target": "crown",
+      "word": "Aenatumgana",
+      "tine": "tine",
+      "aligned": "^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the",
+      "stuck": "^You grasp the top tine and try to turn it, but it won.t even budge.$",
+      "castables": [
+        110,
+        120,
+        140,
+        210,
+        216,
+        230,
+        420,
+        425,
+        430,
+        520,
+        540,
+        620,
+        625,
+        650,
+        1040,
+        1110,
+        1115,
+        1601,
+        1602,
+        1603,
+        1604,
+        1607,
+        1613,
+        1614,
+        1615
+      ],
+      "cheap": [
+        105,
+        205,
+        305,
+        405,
+        505,
+        605,
+        705,
+        905,
+        1005,
+        1105,
+        1205,
+        1605
+      ]
     },
     "3239:3264": [
       {
