@@ -6779,10 +6779,35 @@
         "cmd": "go opening"
       }
     ],
-    "19377:25691": {
-      "strategy": "unique_crossing",
-      "name": "crossing_19377_25691"
-    },
+    "19377:25691": [
+      {
+        "do": "send",
+        "cmd": "ask sailor about boat"
+      },
+      {
+        "do": "await",
+        "cmd": "ask sailor about boat",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "have enough for the fare",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver to rent a boat."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      }
+    ],
     "19543:1102": {
       "strategy": "unique_crossing",
       "name": "crossing_19543_1102"
@@ -10793,6 +10818,35 @@
         "for": "You\\ hastily\\ exit\\ the\\ cart",
         "timeout": 1800,
         "on_timeout": "fail"
+      }
+    ],
+    "17591:17645": [
+      {
+        "do": "send",
+        "cmd": "ask fisherman about boat"
+      },
+      {
+        "do": "await",
+        "cmd": "ask fisherman about boat",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "dun ha.e .nough fer tha. rate",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver to rent a boat."
+          },
+          {
+            "do": "break"
+          }
+        ]
       }
     ]
   }
