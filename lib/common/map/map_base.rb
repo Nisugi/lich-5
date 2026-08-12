@@ -701,27 +701,49 @@ module Lich
         end
 
         # Convert an existing StringProc edge in the loaded map to schema,
-        # in place, echoing the JSON to paste into a submission. The mapper
-        # flow: author the ;e proc locally as always, test it, then
+        # in place, echoing the JSON to paste into a submission.
+        #
+        # This is not a separate offline path: GuardedProc already converts
+        # every ;e edge on first use and runs the schema instead of evaling.
+        # convert_edge shows what that edge is *already* doing at runtime,
+        # eagerly and visibly, through the same recognizers and the same
+        # manual overlay. An edge that converts here is one Lich can route;
+        # one that refuses here is one it cannot.
+        #
+        # The mapper flow: author the ;e proc locally as always, test it,
         #   ;e Map.convert_edge(1230, '30523')
-        # and re-test the converted edge with Room[1230].wayto['30523'].call.
+        # then re-test with Room[1230].wayto['30523'].call and paste the
+        # echoed JSON into your submission.
         # @return [Hash] converted fields, e.g. { wayto: [...], timeto: {...} }
         def convert_edge(room_id, dest)
           require_relative 'map_convert' unless Lich::Common.const_defined?(:MapConvert)
           room = self[room_id]
           raise ArgumentError, "unknown room #{room_id.inspect}" unless room
           dest = dest.to_s
-          converter = MapConvert.new
+          # Share the runtime's converter so the overlay is loaded and this
+          # cannot disagree with what GuardedProc would do for the same edge.
+          converter = MapEngine::GuardedProc.converter
           out = {}
           { wayto: :convert_wayto, timeto: :convert_timeto }.each do |field, meth|
             value = room.send(field)[dest]
             next unless value.is_a?(StringProc)
-            result = converter.send(meth, value._dump)
+            # Overlay first, exactly as GuardedProc#resolve orders it: a
+            # hand-authored entry outranks whatever a recognizer would emit.
+            manual = converter.manual_for(field.to_s, room_id, dest)
+            result = manual ? MapConvert::Result.new('manual', manual) : converter.send(meth, value._dump)
             if result.nil? || result.schema.nil?
               respond "--- Map.convert_edge: #{field} proc not recognized; left unchanged." if defined?(respond)
               next
             end
             schema = result.schema
+            # Same post-processing the runtime applies, so the JSON echoed
+            # here is the JSON that would actually run.
+            schema = converter.guard_trailing_replan(schema, dest) if field == :wayto && !schema.is_a?(String)
+            errors = schema.is_a?(String) ? [] : validate_schema(field, schema)
+            unless errors.empty?
+              respond "--- Map.convert_edge: #{field} INVALID: #{errors.join('; ')}" if defined?(respond)
+              next
+            end
             room.send(field)[dest] =
               field == :wayto ? MapEngine.build_wayto(schema, dest) : MapEngine.build_timeto(schema)
             out[field] = schema
@@ -731,6 +753,14 @@ module Lich
           end
           respond '--- Map.convert_edge: no StringProcs on that edge.' if out.empty? && defined?(respond)
           out
+        end
+
+        def validate_schema(field, schema)
+          if field.to_sym == :timeto
+            MapEngine::Validator.errors_for_timeto(schema)
+          else
+            MapEngine::Validator.errors_for_wayto(schema)
+          end
         end
 
         # Map edges whose StringProc could not be converted to schema, and so
