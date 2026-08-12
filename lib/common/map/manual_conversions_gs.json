@@ -900,38 +900,6 @@
         "until_room_change": true
       }
     ],
-    "3091:31352": [
-      {
-        "do": "if",
-        "when": "has_item:key",
-        "then": [
-          {
-            "do": "send",
-            "cmd": "go snow cabin"
-          }
-        ],
-        "else": [
-          {
-            "do": "empty_hand"
-          },
-          {
-            "do": "send",
-            "cmd": "get my key from my {uservar:key_sack}"
-          },
-          {
-            "do": "send",
-            "cmd": "go snow cabin"
-          },
-          {
-            "do": "send",
-            "cmd": "put my key in my {uservar:key_sack}"
-          },
-          {
-            "do": "fill_hand"
-          }
-        ]
-      }
-    ],
     "3492:10329": [
       {
         "do": "if",
@@ -1865,66 +1833,6 @@
         "cmd": "go stair"
       }
     ],
-    "7458:7459": [
-      {
-        "do": "cast_buff",
-        "spell": 506
-      },
-      {
-        "do": "send",
-        "cmd": "search"
-      },
-      {
-        "do": "wait_rt"
-      },
-      {
-        "do": "move",
-        "cmd": "go crack"
-      },
-      {
-        "do": "wait_rt"
-      }
-    ],
-    "7477:7478": [
-      {
-        "do": "cast_buff",
-        "spell": 506
-      },
-      {
-        "do": "send",
-        "cmd": "search"
-      },
-      {
-        "do": "wait_rt"
-      },
-      {
-        "do": "move",
-        "cmd": "go crack"
-      },
-      {
-        "do": "wait_rt"
-      }
-    ],
-    "7478:7477": [
-      {
-        "do": "cast_buff",
-        "spell": 506
-      },
-      {
-        "do": "send",
-        "cmd": "search"
-      },
-      {
-        "do": "wait_rt"
-      },
-      {
-        "do": "move",
-        "cmd": "go crack"
-      },
-      {
-        "do": "wait_rt"
-      }
-    ],
     "7477:7476": [
       {
         "do": "if",
@@ -2158,39 +2066,6 @@
           }
         ],
         "until": "not:path:nw"
-      }
-    ],
-    "8695:13532": [
-      {
-        "do": "set_global",
-        "var": "SILVERWOOD_TOWN",
-        "value": "wl"
-      },
-      {
-        "do": "move",
-        "cmd": "go door"
-      }
-    ],
-    "8696:13532": [
-      {
-        "do": "set_global",
-        "var": "SILVERWOOD_TOWN",
-        "value": "imt"
-      },
-      {
-        "do": "move",
-        "cmd": "go door"
-      }
-    ],
-    "14659:13532": [
-      {
-        "do": "set_global",
-        "var": "SILVERWOOD_TOWN",
-        "value": "va"
-      },
-      {
-        "do": "move",
-        "cmd": "go door"
       }
     ],
     "9651:6135": [
@@ -2579,145 +2454,6 @@
         "cmd": "go river"
       }
     ],
-    "11630:11612": [
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "southwest"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "northwest"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "northwest"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "southwest"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "northwest"
-      },
-      {
-        "do": "escort_wait"
-      }
-    ],
-    "11630:11617": [
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "southeast"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "southwest"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "northwest"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "northwest"
-      },
-      {
-        "do": "escort_wait"
-      }
-    ],
-    "11630:11618": [
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "southeast"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "northwest"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "southeast"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "southwest"
-      },
-      {
-        "do": "escort_wait"
-      }
-    ],
-    "11653:11620": [
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "southeast"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "northwest"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "southeast"
-      },
-      {
-        "do": "escort_wait"
-      },
-      {
-        "do": "move",
-        "cmd": "southwest"
-      },
-      {
-        "do": "escort_wait"
-      }
-    ],
     "11667:11675": [
       {
         "do": "move",
@@ -3081,36 +2817,6 @@
       },
       {
         "do": "fill_hands"
-      }
-    ],
-    "13966:13923": [
-      {
-        "do": "if",
-        "when": "status:sitting",
-        "then": [
-          {
-            "do": "repeat",
-            "steps": [
-              {
-                "do": "send",
-                "cmd": "row southwest"
-              },
-              {
-                "do": "wait_rt"
-              }
-            ],
-            "until_room_change": true
-          }
-        ],
-        "else": [
-          {
-            "do": "move",
-            "cmd": "swim southwest"
-          }
-        ]
-      },
-      {
-        "do": "fill_hand"
       }
     ],
     "7:3668": [
@@ -7586,45 +7292,6 @@
       {
         "do": "move",
         "cmd": "go gold tapestry"
-      }
-    ],
-    "7046:7091": [
-      {
-        "do": "repeat",
-        "until": "not:paths_are:out",
-        "steps": [
-          {
-            "do": "send",
-            "cmd": "search"
-          },
-          {
-            "do": "send",
-            "cmd": "turn bent spike"
-          },
-          {
-            "do": "sleep",
-            "seconds": 0.2
-          }
-        ]
-      },
-      {
-        "do": "repeat",
-        "until": "status:standing",
-        "steps": [
-          {
-            "do": "send",
-            "cmd": "stand"
-          }
-        ]
-      },
-      {
-        "do": "if",
-        "when": "not:in_room:7091",
-        "then": [
-          {
-            "do": "replan"
-          }
-        ]
       }
     ],
     "6486:6487": {

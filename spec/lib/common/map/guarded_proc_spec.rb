@@ -15,6 +15,16 @@ RSpec.describe Lich::Common::MapEngine::GuardedProc do
   # A body every recognizer set handles: the portmaster setting gate.
   let(:gate) { 'UserVars.mapdb_use_portmasters == true ? 1200 : nil' }
 
+  # The newest proc-bearing map in the repo's data dir; MAPDB_FIXTURE
+  # overrides. A converted map has no procs and would pass vacuously, so
+  # maps without any are skipped rather than counted as a pass.
+  def stock_mapdb
+    return ENV['MAPDB_FIXTURE'] if ENV['MAPDB_FIXTURE']
+    Dir.glob(File.expand_path('../../../../data/GSIV/map-*.json', __dir__))
+       .sort_by { |f| -File.mtime(f).to_i }
+       .find { |f| File.read(f).include?('";e ') }
+  end
+
   describe 'proc fidelity' do
     it 'reports the original source from _dump, so maps round-trip unedited' do
       proc = described_class.new(gate, 'timeto', 250, '10838')
@@ -184,6 +194,51 @@ RSpec.describe Lich::Common::MapEngine::GuardedProc do
     end
   end
 
+  describe 'the manual overlay earns its place', :slow do
+    # Every overlay entry outranks the recognizers, so one that merely
+    # restates what a recognizer already emits is dead weight: it freezes
+    # that edge at today's schema and silently opts it out of any later
+    # recognizer improvement. This asserts none of those exist.
+    #
+    # An entry whose schema DIFFERS from the recognizer's is not redundant -
+    # it is a deliberate improvement (refusal detection on a priced edge,
+    # say) and must stay. Only byte-identical duplicates are the problem.
+    it 'has no entry a recognizer would reproduce exactly' do
+      path = stock_mapdb
+      skip 'no proc-bearing mapdb available (set MAPDB_FIXTURE)' unless path
+
+      described_class.reset!
+      described_class.use_game('GSIV')
+      converter = described_class.converter
+      overlay = JSON.parse(File.read('lib/common/map/manual_conversions_gs.json'))
+      edges = {}
+      JSON.parse(File.read(path)).each do |room|
+        %w[wayto timeto].each do |field|
+          (room[field] || {}).each { |dest, v| edges[[field, "#{room['id']}:#{dest}"]] = v }
+        end
+      end
+
+      redundant = []
+      orphaned = []
+      %w[wayto timeto].each do |field|
+        (overlay[field] || {}).each do |key, schema|
+          value = edges[[field, key]]
+          next orphaned << [field, key] if value.nil?
+          next unless value.is_a?(String) && value.start_with?(';e ')
+
+          result = field == 'wayto' ? converter.convert_wayto(value[3..]) : converter.convert_timeto(value[3..])
+          next if result.nil? || result.schema.nil?
+
+          built = result.schema
+          built = converter.guard_trailing_replan(built, key.split(':').last) if field == 'wayto' && !built.is_a?(String)
+          redundant << [field, key] if built == schema
+        end
+      end
+      expect(redundant).to be_empty
+      expect(orphaned).to be_empty
+    end
+  end
+
   describe 'coverage against real map data', :slow do
     # The gate that matters: a stock tillmen map must convert completely,
     # since a refusal is an edge the user can no longer travel.
@@ -200,18 +255,6 @@ RSpec.describe Lich::Common::MapEngine::GuardedProc do
         end
       end
       described_class.refusal_clusters
-    end
-
-    # The real gate: a stock tillmen mapdb must convert completely, since a
-    # refusal is an edge the user can no longer travel. Prefers the newest
-    # proc-bearing map in the repo's data dir; MAPDB_FIXTURE overrides.
-    # A converted map has no procs and would pass vacuously, so maps without
-    # any are skipped rather than counted as a pass.
-    def stock_mapdb
-      return ENV['MAPDB_FIXTURE'] if ENV['MAPDB_FIXTURE']
-      Dir.glob(File.expand_path('../../../../data/GSIV/map-*.json', __dir__))
-         .sort_by { |f| -File.mtime(f).to_i }
-         .find { |f| File.read(f).include?('";e ') }
     end
 
     it 'converts every proc in a stock GS mapdb' do
