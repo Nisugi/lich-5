@@ -72,13 +72,20 @@ Partly landed with Phase 1; what remains is marked TODO.
   `wayto:command_sequence` (393), with **31 singletons** — that tail is
   where tillmen drift shows up first, which is the point of the stat.
   A spec asserts every conversion is attributed, so nothing falls through.
-- [ ] TODO: log refusals to a file, one line per unique cluster, so a user
-  can paste a report without re-running anything. Decide the path
-  (Lich log dir) and whether it appends across sessions.
+- [x] Refusals logged to `LOG_DIR/mapengine-refusals.log`, one tab-separated
+  line per **new cluster** (timestamp, field, edge, validator errors,
+  masked body), appended across sessions so a user can hand the file over
+  without reproducing anything. Logging is best effort: an unwritable log
+  dir disables logging rather than breaking routing, since failing closed
+  on an edge must never become an exception on the travel path.
 - [ ] TODO: document that `Map.convert_edge` now shows what the runtime
   would do, not a separate offline path (mapping guide + command help).
-- [ ] TODO (nice to have): a one-line summary at map load when anything
-  refused, so a user notices without running the report.
+- [x] Notice when anything refuses — but **not at map load**, as originally
+  written: conversion is lazy, so at load time nothing has been converted
+  and no refusal is known yet. There is no later "everything is loaded"
+  moment either. The only point at which a refusal is known to be new is
+  its first sighting, so the echo happens there (once per cluster, not per
+  edge) and now names `;e Map.conversion_report` for the full list.
 
 ## Phase 3 — Validation gates (all must pass before PR)
 

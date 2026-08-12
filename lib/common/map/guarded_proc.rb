@@ -21,6 +21,8 @@
 # Every refusal is recorded so `Map.conversion_report` can show which
 # idioms need a recognizer.
 
+require 'fileutils'
+
 require_relative '../class_exts/stringproc'
 require_relative 'map_engine'
 require_relative 'map_convert'
@@ -63,6 +65,32 @@ module Lich
               { cluster: key, field: info[:field], count: info[:edges].length,
                 example: info[:edges].first, edges: info[:edges] }
             end.sort_by { |c| -c[:count] }
+          end
+
+          # Where new refusal clusters are appended. Nil disables logging,
+          # which is what specs want; LOG_DIR is only defined under a real
+          # Lich, so a bare require never tries to write anything.
+          def refusal_log_path
+            return @refusal_log_path if defined?(@refusal_log_path)
+            @refusal_log_path = defined?(LOG_DIR) ? File.join(LOG_DIR, 'mapengine-refusals.log') : nil
+          end
+
+          attr_writer :refusal_log_path
+
+          # One line per cluster, appended across sessions so a user can hand
+          # over the file without reproducing anything. Logging is best
+          # effort: a read-only or missing log dir must not break routing,
+          # which is the whole point of failing closed rather than raising.
+          def log_refusal(field, room_id, dest, cluster, errors)
+            path = refusal_log_path
+            return unless path
+
+            line = format("%s\t%s\t%s->%s\t%s\t%s\n", Time.now.strftime('%Y-%m-%d %H:%M:%S'),
+                          field, room_id, dest, errors ? errors.join('; ') : '-', cluster)
+            FileUtils.mkdir_p(File.dirname(path))
+            File.open(path, 'a') { |f| f.write(line) }
+          rescue StandardError
+            @refusal_log_path = nil # stop retrying a path that cannot be written
           end
 
           def note_refusal(field, body, room_id, dest)
@@ -162,11 +190,19 @@ module Lich
           @field == 'wayto' ? MapEngine.build_wayto(schema, @dest) : MapEngine.build_timeto(schema)
         end
 
+        # First sighting of a cluster is the only moment we know is new, and
+        # conversion is lazy, so there is no later "everything is loaded"
+        # point to summarize from. Report and log here, once per cluster.
         def record_refusal(errors = nil)
           entry = GuardedProc.note_refusal(@field, @string, @room_id, @dest)
-          if entry[:edges].length == 1 && defined?(respond)
-            respond "--- MapEngine: cannot convert #{@field} #{@room_id}->#{@dest}" \
-                    "#{errors ? " (#{errors.join('; ')})" : ''}; edge not routable."
+          if entry[:edges].length == 1
+            if defined?(respond)
+              respond "--- MapEngine: cannot convert #{@field} #{@room_id}->#{@dest}" \
+                      "#{errors ? " (#{errors.join('; ')})" : ''}; edge not routable." \
+                      ' Run ;e Map.conversion_report for the full list.'
+            end
+            GuardedProc.log_refusal(@field, @room_id, @dest,
+                                    GuardedProc.converter.cluster_key(@string), errors)
           end
           :refused
         end

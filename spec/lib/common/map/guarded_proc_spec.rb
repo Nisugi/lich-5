@@ -2,6 +2,8 @@
 
 require_relative '../../../spec_helper'
 require 'json'
+require 'tmpdir'
+require 'fileutils'
 require 'common/map/map_engine'
 require 'common/map/map_strategies'
 require 'common/map/guarded_proc'
@@ -102,6 +104,44 @@ RSpec.describe Lich::Common::MapEngine::GuardedProc do
       expect(clusters.length).to eq(1)
       expect(clusters.first[:count]).to eq(2)
       expect(clusters.first[:field]).to eq('wayto')
+    end
+  end
+
+  describe 'refusal logging' do
+    let(:log) { File.join(Dir.tmpdir, "mapengine-refusals-#{Process.pid}.log") }
+
+    before { described_class.refusal_log_path = log }
+    after  { FileUtils.rm_f(log) }
+
+    it 'appends one line per new cluster, not one per refused edge' do
+      described_class.new('mystery_call(1)', 'wayto', 1, '2').call
+      described_class.new('mystery_call(2)', 'wayto', 3, '4').call # same cluster
+      described_class.new('other_mystery(9)', 'timeto', 5, '6').call
+      lines = File.readlines(log)
+      expect(lines.length).to eq(2)
+      expect(lines[0]).to include("wayto\t1->2")
+      expect(lines[1]).to include("timeto\t5->6")
+    end
+
+    it 'creates the log directory if it does not exist yet' do
+      nested = File.join(Dir.tmpdir, "mapengine-#{Process.pid}", 'refusals.log')
+      described_class.refusal_log_path = nested
+      described_class.new('mystery_call(1)', 'wayto', 1, '2').call
+      expect(File).to exist(nested)
+      FileUtils.rm_rf(File.dirname(nested))
+    end
+
+    it 'keeps routing when the log cannot be written, rather than raising' do
+      allow(File).to receive(:open).and_raise(Errno::EACCES)
+      expect(described_class.new('mystery_call(1)', 'wayto', 1, '2').call).to be(false)
+      # And it stops retrying a path that has already failed.
+      expect(described_class.refusal_log_path).to be_nil
+    end
+
+    it 'writes nothing when no path is configured' do
+      described_class.refusal_log_path = nil
+      expect { described_class.new('mystery_call(1)', 'wayto', 1, '2').call }.not_to raise_error
+      expect(File).not_to exist(log)
     end
   end
 
