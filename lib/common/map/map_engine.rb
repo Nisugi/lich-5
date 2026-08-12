@@ -1081,6 +1081,10 @@ module Lich
             !re.nil? && defined?(Stats) && Stats.race.to_s =~ re ? true : false
           when 'path'
             checkpaths.include?(arg)
+          when 'paths_at_most'
+            # How many obvious exits remain: the wander-until-narrow idiom,
+            # where a maze funnels down to a couple of ways out.
+            checkpaths.length <= arg.to_i
           when 'paths_are'
             # Exact obvious-paths set, order-insensitive: paths_are:north,south
             checkpaths.sort == arg.to_s.split(',').map(&:strip).sort
@@ -1320,7 +1324,7 @@ module Lich
         FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match
                              in_room platinum capture capture_match room_loaded loot_noun
-                             npc_match room_object room_object_match].freeze
+                             npc_match room_object room_object_match paths_at_most].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function

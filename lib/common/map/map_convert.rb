@@ -287,6 +287,7 @@ module Lich
           convert_wayto_small_forms(body) ||
           convert_wayto_door_branch(body) ||
           convert_wayto_wait_until_gone(body) ||
+          convert_wayto_repeat_until_moved(body) ||
           convert_wayto_send_then_repeat(body) ||
           convert_wayto_try_then_clear(body) ||
           convert_wayto_speak_language(body) ||
@@ -939,6 +940,18 @@ module Lich
         steps = [{ 'do' => 'wait_room_change', 'timeout' => 300 }]
         steps << { 'do' => 'replan' } if m[1]
         Result.new('wait_until_gone', steps)
+      end
+
+      # Repeat a command until the room changes, with no preamble.
+      def convert_wayto_repeat_until_moved(body)
+        m = body.match(/\Awhile\s+Room\.current\.id\s*==\s*\d+;\s*
+                        fput\s+#{QUOTED};\s*waitrt\??;\s*end;?\s*\z/xm)
+        return nil unless m
+
+        Result.new('repeat_until_moved',
+                   [{ 'do' => 'repeat', 'until_room_change' => true,
+                      'steps' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] },
+                                  { 'do' => 'wait_rt' }] }])
       end
 
       # A first command, then repeat a second until the room changes.
@@ -1880,6 +1893,16 @@ module Lich
         /\Amove\s+#{QUOTED}\z/                                                                                                                                        => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
         /\Amove\(#{QUOTED}\)\z/                                                                                                                                       => ->(m) { { 'do' => 'move', 'cmd' => m[1] || m[2] } },
         /\Awaitrt\?\z/                                                                                                                                                => ->(_) { { 'do' => 'wait_rt' } },
+        # Posture guards: the step is a no-op when already in that posture.
+        /\Afput\s+#{QUOTED}\s+unless\s+(kneeling|standing|sitting)\?\z/                                                                                               => lambda { |m|
+          { 'do' => 'if', 'when' => "not:status:#{m[3]}",
+            'then' => [{ 'do' => 'send', 'cmd' => m[1] || m[2] }] }
+        },
+        # Wander whatever exits remain, while there are more than N of them.
+        %r{\Amove\s+checkpaths\[rand\(checkpaths\.length\)\]\s+while\s+checkpaths\.length\s*>\s*(\d+)\z}                                                              => lambda { |m|
+          { 'do' => 'repeat', 'times' => 20, 'until' => "paths_at_most:#{m[1]}",
+            'steps' => [{ 'do' => 'move_random' }] }
+        },
         # Ride out a stun: wait for it to land, then wait for it to pass.
         /\Await_until\s*\{\s*stunned\?\s*\}\z/                                                                                                                        => ->(_) { { 'do' => 'wait_until', 'when' => 'status:stunned', 'timeout' => 30 } },
         /\Await_while\s*\{\s*stunned\?\s*\}\z/                                                                                                                        => ->(_) { { 'do' => 'wait_until', 'when' => 'not:status:stunned', 'timeout' => 300 } },

@@ -373,6 +373,16 @@ RSpec.describe MapdbConverter do
       expect(schema[2]).to eq({ 'do' => 'move', 'cmd' => 'up' })
     end
 
+    it 'converts posture guards and exit-count wanders' do
+      expect(schema_for("fput 'kneel' unless kneeling?; move 'go hole'"))
+        .to eq([{ 'do' => 'if', 'when' => 'not:status:kneeling',
+                  'then' => [{ 'do' => 'send', 'cmd' => 'kneel' }] },
+                { 'do' => 'move', 'cmd' => 'go hole' }])
+      expect(schema_for("move 'southeast'; move checkpaths[rand(checkpaths.length)] while checkpaths.length > 2").last)
+        .to eq({ 'do' => 'repeat', 'times' => 20, 'until' => 'paths_at_most:2',
+                 'steps' => [{ 'do' => 'move_random' }] })
+    end
+
     it 'converts piloted rides, bounding every waitfor' do
       body = "start_time = Time.now.to_i; fput 'lay'; " \
              '_respond "#{monsterbold_start}Waiting for cue one.#{monsterbold_end}"; ' \

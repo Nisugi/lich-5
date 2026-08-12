@@ -5890,8 +5890,8 @@
       "name": "crossing_22666_24233"
     },
     "23282:23282": {
-      "strategy": "unique_crossing",
-      "name": "crossing_23282_23282"
+      "strategy": "confluence_explorer",
+      "target": "tranquility"
     },
     "23338:23339": [
       {
