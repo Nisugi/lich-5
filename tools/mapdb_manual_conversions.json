@@ -3442,10 +3442,60 @@
         ]
       }
     ],
-    "6135:6136": {
-      "strategy": "unique_crossing",
-      "name": "crossing_6135_6136"
-    },
+    "6135:6136": [
+      {
+        "do": "note_group"
+      },
+      {
+        "do": "repeat",
+        "times": 20,
+        "steps": [
+          {
+            "do": "cast_buff",
+            "spell": 506
+          },
+          {
+            "do": "await",
+            "cmd": "search",
+            "timeout": 1,
+            "on_timeout": "continue",
+            "for": "you discover a narrow crevice",
+            "bind": {
+              "found": 0
+            }
+          },
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "if",
+            "when": "capture:found",
+            "then": [
+              {
+                "do": "break"
+              }
+            ],
+            "else": [
+              {
+                "do": "move",
+                "cmd": "n"
+              },
+              {
+                "do": "move",
+                "cmd": "s"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "point crevice"
+      },
+      {
+        "do": "group_wait"
+      }
+    ],
     "6274:11032": [
       {
         "do": "if",
@@ -3818,10 +3868,85 @@
         ]
       }
     ],
-    "7324:4541": {
-      "strategy": "unique_crossing",
-      "name": "crossing_7324_4541"
-    },
+    "7324:4541": [
+      {
+        "do": "note_group"
+      },
+      {
+        "do": "send",
+        "cmd": "yell jaron galarn"
+      },
+      {
+        "do": "sleep",
+        "seconds": 1
+      },
+      {
+        "do": "repeat",
+        "times": 20,
+        "steps": [
+          {
+            "do": "repeat",
+            "until": "status:standing",
+            "steps": [
+              {
+                "do": "send",
+                "cmd": "stand"
+              }
+            ]
+          },
+          {
+            "do": "await",
+            "cmd": "search",
+            "timeout": 5,
+            "on_timeout": "continue",
+            "for": "Feeling around in the darkness, you stumble upon a low opening in the wall near the ground\\.|As you blindly search the area, you find something rooted to the ground|You feel around in the darkness as best you can, but find nothing\\.",
+            "bind": {
+              "result": 0
+            }
+          },
+          {
+            "do": "wait_rt"
+          },
+          {
+            "do": "if",
+            "when": "capture_match:result=Feeling around in the darkness, you stumble upon a low opening in the wall near the ground\\.",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "times": 20,
+        "until": "path:south",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "go opening"
+          },
+          {
+            "do": "sleep",
+            "seconds": 0.2
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      },
+      {
+        "do": "group_wait"
+      }
+    ],
     "7331:7315": {
       "strategy": "unique_crossing",
       "name": "crossing_7331_7315"
@@ -4321,10 +4446,45 @@
         ]
       }
     ],
-    "11355:11357": {
-      "strategy": "unique_crossing",
-      "name": "crossing_11355_11357"
-    },
+    "11355:11357": [
+      {
+        "do": "empty_hands"
+      },
+      {
+        "do": "preserve_stance",
+        "stance": "offensive",
+        "steps": [
+          {
+            "do": "repeat",
+            "times": 20,
+            "until": "paths_at_most:0",
+            "steps": [
+              {
+                "do": "if",
+                "when": "not:status:standing",
+                "then": [
+                  {
+                    "do": "send",
+                    "cmd": "stand"
+                  }
+                ]
+              },
+              {
+                "do": "send",
+                "cmd": "climb ledge"
+              },
+              {
+                "do": "sleep",
+                "seconds": 0.1
+              },
+              {
+                "do": "wait_rt"
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "11357:11358": {
       "strategy": "unique_crossing",
       "name": "crossing_11357_11358"
@@ -6024,10 +6184,48 @@
       "strategy": "unique_crossing",
       "name": "crossing_19728_19992"
     },
-    "19992:19728": {
-      "strategy": "unique_crossing",
-      "name": "crossing_19992_19728"
-    },
+    "19992:19728": [
+      {
+        "do": "await",
+        "cmd": "open door",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "It's locked, Blazyn!",
+        "bind": {
+          "reply": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:reply",
+        "then": [
+          {
+            "do": "empty_hand"
+          },
+          {
+            "do": "send",
+            "cmd": "turn lock"
+          },
+          {
+            "do": "send",
+            "cmd": "open door"
+          },
+          {
+            "do": "move",
+            "cmd": "go door"
+          },
+          {
+            "do": "fill_hand"
+          }
+        ],
+        "else": [
+          {
+            "do": "move",
+            "cmd": "go door"
+          }
+        ]
+      }
+    ],
     "20012:19657": {
       "strategy": "unique_crossing",
       "name": "crossing_20012_19657"
@@ -6048,10 +6246,59 @@
       "strategy": "unique_crossing",
       "name": "crossing_22349_22444"
     },
-    "22666:24233": {
-      "strategy": "unique_crossing",
-      "name": "crossing_22666_24233"
-    },
+    "22666:24233": [
+      {
+        "do": "repeat",
+        "times": 10,
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          },
+          {
+            "do": "wait_rt"
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "go ladder"
+      },
+      {
+        "do": "cast_buff",
+        "spell": 506
+      },
+      {
+        "do": "repeat",
+        "times": 10,
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "timeout": 3,
+            "on_timeout": "continue",
+            "for": "own leg|You take small comfort|find nothing|low opening",
+            "bind": {
+              "found": 0
+            }
+          },
+          {
+            "do": "if",
+            "when": "not:capture_match:found=low opening",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go opening"
+      }
+    ],
     "23282:23282": {
       "strategy": "confluence_explorer",
       "target": "tranquility"

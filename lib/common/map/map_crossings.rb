@@ -37,10 +37,6 @@ module Lich
           unless (move 'go door'); push_result = dothistimeout 'push tine', 10, /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the|^You grasp the top tine and try to turn it, but it won't even budge.$/ until push_result =~ /^Slowly, the stone ring surrounding the crown rotates, finally stopping with the tine set with the (?:reflective glass stone aligned with the word 'Honor'|clear crystal stone aligned with the word 'Truth'|milky white stone aligned with the word 'Piety'|dull grey stone aligned with the word 'Humility'|flawless silver stone aligned with the word 'Faith'|veil iron stone aligned with the word 'Courage').$|^You grasp the top tine and try to turn it, but it won't even budge.$/; unless push_result.nil? or push_result == 'You grasp the top tine and try to turn it, but it won\'t even budge.'; unless mana < 100; castables = [ 110, 120, 140, 210, 216, 230, 420, 425, 430, 520, 540, 620, 625, 650, 1040, 1110, 1115, 1601, 1602, 1603, 1604, 1607, 1613, 1614, 1615 ].sort { |a,b| a.to_s[-2..-1] <=> b.to_s[-2..-1] }.reverse.collect { |n| Spell[n] }; castables.delete_if { |spell| spell.nil? or !spell.known? }; mana5spells = [105, 205, 305, 405, 505, 605, 705, 905, 1005, 1105, 1205, 1605].collect { |n| Spell[n] }; mana5spells.delete_if { |spell| spell.nil? or !spell.known? }; mana_needed = 100; while (mana_needed > 0) and ((Spell[515].active? and (spell = mana5spells.find { |s| s.known? })) or (spell = castables.find { |s| s.mana_cost <= mana_needed }) or (spell = castables.reverse.find { |s| s.mana_cost >= mana_needed })); loop { cast_result = spell.cast('crown'); break unless cast_result =~ /^\[Spell Hindrance for/ }; mana_needed -= spell.mana_cost; sleep 0.1; end; end; fput 'release' if Spell[515].active? and (checkprep != 'None'); fput 'touch crown'; fput 'say Aenatumgana'; sleep 0.5; end; move 'go door'; end
         end
 
-        define('crossing_6135_6136') do # 6135:6136
-          group_members = nil; clear.reverse.each { |line| if line =~ /^Obvious (paths|exits)/; break; elsif line =~ /^([A-Za-z ,]+) followed\.$/; group_members = $1.split(/, | and /); group_members.delete_if { |m| m =~ /^[Yy]our / }; group_members = nil if group_members.empty?; break; end }; result = nil; while !result; if celerity = Spell[506] and celerity.known? and celerity.affordable? and not celerity.active?; celerity.cast; end; fput 'search'; result = matchtimeout(1,/you discover a narrow crevice/); waitrt?; if !result then multimove 'n','s'; end; end; fput 'point crevice' if group_members; move 'go crevice'; if group_members; echo 'Waiting for your group... To ditch them, ;send go '; while (group_members.length > 0) and (line = get); if line =~ /^(You reach out and hold )?([A-z][a-z]+)('s hand| joins your group)\.$/; group_members.delete $2; elsif line == 'go'; break; end; end; end
-        end
-
         define('crossing_6897_6928') do # 6897:6928
           
           result = Array.new
@@ -266,25 +262,8 @@ module Lich
           $go2_restart = true;
         end
 
-        define('crossing_7324_4541') do # 7324:4541
-          group_members = nil; clear.reverse.each { |line| if line =~ /^Obvious (paths|exits)/; break; elsif line =~ /^([A-Za-z ,]+) followed\.$/; group_members = $1.split(/, | and /); group_members.delete_if { |m| m =~ /^[Yy]our / }; group_members = nil if group_members.empty?; break; end }; fput 'yell jaron galarn'; sleep 1; result = nil; success = /Feeling around in the darkness, you stumble upon a low opening in the wall near the ground./; failures = /As you blindly search the area, you find something rooted to the ground|You feel around in the darkness as best you can, but find nothing./; matches = /Feeling around in the darkness, you stumble upon a low opening in the wall near the ground.|As you blindly search the area, you find something rooted to the ground|You feel around in the darkness as best you can, but find nothing./; until result =~ success; fput "stand" until standing?; result = dothistimeout "search", 5, matches; waitrt?; end; until checkpaths("south"); fput 'go opening'; sleep 0.2; end; fput 'stand' until standing?; if (group_members.to_a.length > 0); echo 'Waiting for your group... To ditch them, ;send go'; wait_until { (group_members.to_a - GameObj.pcs.to_a.delete_if { |pc| not pc.status.nil? }.collect { |pc| pc.name }).empty? or clear.find { |line| line == 'go' } }; end
-        end
-
         define('crossing_10781_18150') do # 10781:18150
           result = dothistimeout 'look deep pillar', 5, /dark cloud|dark eye|hazy black|slate grey|blood-drop|dark cloud|radiating circle|consist of/;if result =~ /dark eye/;	loop{;		wait_until{(XMLData.mana > (17 * 3))};		result = cast(717, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /hazy black/;	loop{;		wait_until{(XMLData.mana > (4 * 3))};		result = cast(704, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /slate grey/;	loop{;		wait_until{(XMLData.mana > (5 * 3))};		result = cast(705, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /blood-drop/;	loop{;		wait_until{(XMLData.mana > (1 * 3))};		result = cast(701, 'deep pillar');		if result =~ /Cast Roundtime/;			break		end;	};elsif result =~ /radiating circle/;	loop{;		wait_until{(XMLData.mana > (2 * 3))};		result = cast(702, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /dark cloud/;	loop{;		wait_until{(XMLData.mana > (3 * 3))};		result = cast(703, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};end;result = dothistimeout 'look black pillar', 5, /dark cloud|dark eye|hazy black|slate grey|blood-drop|dark cloud|radiating circle|consist of/;if result =~ /dark eye/;	loop{;		wait_until{(XMLData.mana > (17 * 3))};		result = cast(717, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /hazy black/;	loop{;		wait_until{(XMLData.mana > (4 * 3))};		result = cast(704, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /slate grey/;	loop{;		wait_until{(XMLData.mana > (5 * 3))};		result = cast(705, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /blood-drop/;	loop{;		wait_until{(XMLData.mana > (1 * 3))};		result = cast(701, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /radiating circle/;	loop{;		wait_until{(XMLData.mana > (2 * 3))};		result = cast(702, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /dark cloud/;	loop{;		wait_until{(XMLData.mana > (3 * 3))};		result = cast(703, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};end;result = dothistimeout 'look dark pillar', 5, /dark cloud|dark eye|hazy black|slate grey|blood-drop|dark cloud|radiating circle|consist of/;if result =~ /dark eye/;	loop{;		wait_until{(XMLData.mana > (17 * 3))};		result = cast(717, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /hazy black/;	loop{;		wait_until{(XMLData.mana > (4 * 3))};		result = cast(704, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /slate grey/;	loop{;		wait_until{(XMLData.mana > (5 * 3))};		result = cast(705, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /blood-drop/;	loop{;		wait_until{(XMLData.mana > (1 * 3))};		result = cast(701, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /radiating circle/;	loop{;		wait_until{(XMLData.mana > (2 * 3))};		result = cast(702, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /dark cloud/;	loop{;		wait_until{(XMLData.mana > (3 * 3))};		result = cast(703, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};end
-        end
-
-        define('crossing_11355_11357') do # 11355:11357
-          empty_hands
-          old_stance = XMLData.stance_text
-          fput 'stance offensive' unless old_stance == 'offensive'
-          until !checkpaths
-          fput 'stand' unless standing?
-          fput 'climb ledge'
-          sleep 0.1
-          waitrt?
-          end
-          fput 'stance ' + old_stance unless old_stance == 'offensive'
         end
 
         define('crossing_14060_20430') do # 14060:20430
@@ -368,14 +347,6 @@ module Lich
             move ('go door') if batter_result =~ /destroyed/;
             echo '  You need a different weapon to BATTER the DOOR' if batter_result =~ /ineffective|going to do much good/;
           end;
-        end
-
-        define('crossing_19992_19728') do # 19992:19728
-          fput 'open door';while line = get;if line == "It's locked, Blazyn!";empty_hand;fput 'turn lock';fput 'open door';fput 'go door';fill_hand;break;else;fput 'go door';break;end;end
-        end
-
-        define('crossing_22666_24233') do # 22666:24233
-          10.times { fput 'stand' unless standing?; waitrt? }; fput 'go ladder'; if celerity = Spell[506] and celerity.known? and celerity.affordable? and not celerity.active?; celerity.cast; end; 10.times { res = dothistimeout 'search', 3, /own leg|You take small comfort|find nothing|low opening/; break if res !~ /low opening/}; move 'go opening'
         end
 
         define('crossing_24980_24804') do # 24980:24804
