@@ -309,10 +309,6 @@ module Lich
           	fput "go door"
         end
 
-        define('crossing_16165_16064') do # 16165:16064
-          result = String.new; until result =~ /The mirror won't turn any farther to the right/; fput 'turn mirror right'; result = matchwait("The mirror won't turn any farther to the right","You turn the oak-framed mirror slightly to the right"); end; until result =~ /from the base of the statue onto the center of the statue/; fput 'tilt mirror'; result = matchwait('from the base of the statue onto the center of the statue','You tilt the oak-framed mirror up until it flips around','You tilt the oak-framed mirror up slightly'); if result =~ /flips around/; fput 'turn mirror left'; result = matchwait("from the base of the statue onto the center of the statue","You turn the oak-framed mirror slightly to the left","The mirror won't turn any farther to the left");if result =~ /The mirror won't turn any farther to the left/; 4.times{fput 'turn mirror right'}; end; end; end; move 'go shadow'
-        end
-
         define('crossing_18178_18179') do # 18178:18179
           refill_hands = false;
           done = false;
@@ -374,10 +370,6 @@ module Lich
           end;
         end
 
-        define('crossing_18748_18747') do # 18748:18747
-          eyespy = Spell[707]; unless eyespy.affordable?; echo 'waiting for mana...'; wait_until { eyespy.affordable? }; end; eyespy.cast; for dir in [ 'out', 'south', 'door', 'northwest', 'northeast', 'west', 'water', 'grate', 'southeast', 'southeast', 'open', 'stair' ]; fput 'tell eye to go ' + dir; end; result = dothistimeout 'tell eye to read basalt', 10, /The (?:wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of basalt/; if rune = /The (wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of basalt/.match(result).captures.first; fput 'draw ' + rune + ' rune on basalt'; end; result = dothistimeout 'tell eye to read chalcedony', 10, /The (?:wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of chalcedony/; if rune = /The (wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of chalcedony/.match(result).captures.first; fput 'draw ' + rune + ' rune on chalcedony'; end; fput 'tell eye to return'
-        end
-
         define('crossing_19992_19728') do # 19992:19728
           fput 'open door';while line = get;if line == "It's locked, Blazyn!";empty_hand;fput 'turn lock';fput 'open door';fput 'go door';fill_hand;break;else;fput 'go door';break;end;end
         end
@@ -388,10 +380,6 @@ module Lich
 
         define('crossing_24980_24804') do # 24980:24804
           echo '** Please wait.  Waiting for the stain to show up **';line=get until line =~ /dark stains/;fput "get stain";fput "lie" if standing?;line = fput "search" until line =~ /descending slope/;dothistimeout 'go slope', 3, /You gradually make your way down the descending slope/;line = fput "search" until line =~ /opening/;dothistimeout 'go opening', 3, /You duck down low and half-crawl into the opening/;fput "stand" until standing?
-        end
-
-        define('crossing_25183_25145') do # 25183:25145 25185:25145
-          res = choice = nil;res = dothistimeout "inquire", 5, /(\d)\) the Sea of Fire/;if res =~ /(\d)\) the Sea of Fire/;choice = $1;end;dothistimeout "order #{choice}", 5, /You inquire with a caravan conductor about the price of a trip to the Sea of Fire\.  S?[Hh]e says, "That will be [,\d]+ silvers/;res = dothistimeout "order confirm", 5, /It doesn't look like you have enough silver to ride\.|We'll be taking that payment in silver, then\./;if res =~ /It doesn't look like you have enough silver to ride\./;5.times do;echo "Didn't have enough silver!";exit;end;end;wait_until { XMLData.room_title =~ /Caravan, Wagon/ };sleep 1;wait_until{ XMLData.room_title !~ /Caravan, Wagon/ };if GameObj.npcs.any? { |npc| npc.name =~ /thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber/ };3.times do;_respond "<pushBold/>BANDITS!!! BANDITS!!! BANDITS!!!<popBold/>";end;exit;end;$go2_restart=true
         end
 
         define('crossing_27638_27639') do # 27638:27639 27639:27638
