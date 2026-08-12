@@ -45,6 +45,23 @@ RSpec.describe Lich::Common::MapEngine::GuardedProc do
       expect(described_class.cache.size).to eq(1)
     end
 
+    it 'records which recognizer matched, so idiom drift is visible' do
+      described_class.new(gate, 'timeto', 250, '10838').send(:resolve)
+      described_class.new("fput 'go arch'", 'wayto', 1, '2').send(:resolve)
+      expect(described_class.idioms['timeto:setting_gate']).to eq(1)
+      expect(described_class.idioms.values.sum).to eq(2)
+    end
+
+    it 'counts idioms per body, not per edge, matching what the cache holds' do
+      3.times { |i| described_class.new(gate, 'timeto', 250 + i, '10838').send(:resolve) }
+      expect(described_class.idioms['timeto:setting_gate']).to eq(1)
+    end
+
+    it 'does not count a refused body as an idiom' do
+      described_class.new('some_helper_no_recognizer_knows(42)', 'wayto', 1, '2').send(:resolve)
+      expect(described_class.idioms).to be_empty
+    end
+
     it 'prefers a hand-authored overlay entry, keyed per edge' do
       described_class.use_game('GSIV')
       overlay = described_class.converter
@@ -162,6 +179,12 @@ RSpec.describe Lich::Common::MapEngine::GuardedProc do
       skip 'no proc-bearing mapdb available (set MAPDB_FIXTURE)' unless path && File.exist?(path)
       skip "#{path} has no StringProcs" unless File.read(path).include?('";e ')
       expect(refusals_for(path, ENV.fetch('MAPDB_GAME', 'GSIV'))).to be_empty
+      # Every conversion is attributed to a recognizer with nothing falling
+      # through. Manual-overlay hits cache per edge rather than per body, so
+      # the profile spans both caches.
+      expect(described_class.idioms.values.sum)
+        .to eq(described_class.cache.size + described_class.edge_cache.size)
+      expect(described_class.idioms.keys).to all(match(%r{\A(wayto|timeto):\w+\z}))
     end
 
     it 'dumps every proc edge byte-identically, so saving a map is lossless' do

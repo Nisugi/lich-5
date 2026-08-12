@@ -64,10 +64,14 @@ Partly landed with Phase 1; what remains is marked TODO.
 - [x] `Map.conversion_report` — in-game mirror of MapConvert#report:
   converted-body count plus refusal clusters with an example edge each.
 - [x] `Map.unconverted_edges` — the same data as structured hashes.
-- [ ] TODO: stats **by idiom** for converted edges. Today the report counts
-  bodies converted but does not say which recognizer matched, so there is
-  no way to see idiom drift on tillmen before it becomes a refusal.
-  Needs MapConvert::Result#idiom threaded through GuardedProc's cache.
+- [x] Stats **by idiom** for converted edges — `Map.converted_idioms`, and
+  `Map.conversion_report(true)` for the printable breakdown. Recognizer
+  hits count distinct bodies (conversion is memoized per body); `manual`
+  counts edges, since that overlay is keyed per edge. A full GS map uses
+  **101 recognizers**, led by `wayto:table_join` (468) and
+  `wayto:command_sequence` (393), with **31 singletons** — that tail is
+  where tillmen drift shows up first, which is the point of the stat.
+  A spec asserts every conversion is attributed, so nothing falls through.
 - [ ] TODO: log refusals to a file, one line per unique cluster, so a user
   can paste a report without re-running anything. Decide the path
   (Lich log dir) and whether it appends across sessions.

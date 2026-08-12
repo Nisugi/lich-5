@@ -741,11 +741,23 @@ module Lich
           MapEngine::GuardedProc.refusal_clusters
         end
 
+        # Which recognizers this session's map is leaning on, as
+        # { "wayto:door_branch" => conversions }. Recognizer hits count
+        # distinct proc bodies, since conversion is memoized per body;
+        # "manual" counts edges, since the overlay is keyed per edge.
+        # @return [Hash{String => Integer}] most-used idiom first
+        def converted_idioms
+          return {} unless defined?(MapEngine::GuardedProc)
+          MapEngine::GuardedProc.idioms.sort_by { |name, n| [-n, name] }.to_h
+        end
+
         # Human-readable version of the above, for pasting into a report:
         #   ;e Map.conversion_report
         # Conversion is lazy, so this reflects the edges actually used so far.
+        # Pass true to include the per-idiom breakdown, which is long but is
+        # what shows idiom drift on tillmen before it turns into a refusal.
         # @return [String]
-        def conversion_report
+        def conversion_report(by_idiom = false)
           clusters = unconverted_edges
           cached = defined?(MapEngine::GuardedProc) ? MapEngine::GuardedProc.cache.size : 0
           out = +"--- MapEngine conversion: #{cached} proc bodies converted, " \
@@ -755,6 +767,11 @@ module Lich
             out << format("%6dx  %-6s (e.g. %s -> %s)  %s\n", c[:count], c[:field], room, dest, c[:cluster])
           end
           out << "--- every proc converted; nothing refused\n" if clusters.empty?
+          if by_idiom
+            idioms = converted_idioms
+            out << "\n--- by idiom (#{idioms.length} recognizers used)\n"
+            idioms.each { |name, n| out << format("%6d  %s\n", n, name) }
+          end
           respond out if defined?(respond)
           out
         end

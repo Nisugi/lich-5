@@ -34,15 +34,26 @@ module Lich
         # Manual-overlay hits are keyed by edge, not body, so they cache apart.
         @edge_cache = {}
         @refusals = {}
+        # "field:idiom" => conversions attributed to that recognizer. Answers
+        # "which recognizers is this map leaning on", so a drifting idiom on
+        # tillmen shows up as a shifting profile before it becomes a refusal.
+        # Recognizer hits count distinct bodies (conversion is memoized per
+        # body); "manual" counts edges, since that overlay is keyed per edge.
+        @idioms = Hash.new(0)
 
         class << self
-          attr_reader :cache, :edge_cache, :refusals
+          attr_reader :cache, :edge_cache, :refusals, :idioms
 
           def reset!
             @cache = {}
             @edge_cache = {}
             @refusals = {}
+            @idioms = Hash.new(0)
             @converter = nil
+          end
+
+          def note_idiom(field, idiom)
+            @idioms["#{field}:#{idiom}"] += 1
           end
 
           # Edges whose proc could not be converted, clustered by normalized
@@ -110,6 +121,7 @@ module Lich
 
           return edge_cache[edge_key] if edge_cache.key?(edge_key)
           if (manual = GuardedProc.converter.manual_for(@field, @room_id, @dest))
+            GuardedProc.note_idiom(@field, 'manual')
             return edge_cache[edge_key] = build(manual)
           end
           return cache[@string] if cache.key?(@string)
@@ -129,7 +141,10 @@ module Lich
           return record_refusal if result.nil? || result.schema.nil?
 
           schema = result.schema
-          return schema if schema.is_a?(String) # plain move, execute directly
+          if schema.is_a?(String) # plain move, execute directly
+            GuardedProc.note_idiom(@field, result.idiom)
+            return schema
+          end
 
           schema = GuardedProc.converter.guard_trailing_replan(schema, @dest) if @field == 'wayto'
           errors = if @field == 'wayto'
@@ -139,6 +154,7 @@ module Lich
                    end
           return record_refusal(errors) unless errors.empty?
 
+          GuardedProc.note_idiom(@field, result.idiom)
           build(schema)
         end
 
