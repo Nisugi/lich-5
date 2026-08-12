@@ -223,6 +223,204 @@ RSpec.describe Lich::Common::MapEngine do
       end
     end
 
+    describe 'scan_lines' do
+      # The mural idiom: a wall recites verses until it falls quiet, and each
+      # verse names a deity the puzzle wants touched back.
+      def scan_over(lines, step)
+        stub_const('XMLData', double('XMLData', room_id: 1, name: 'Tester'))
+        queue = lines.dup
+        allow(described_class).to receive(:put)
+        allow(described_class).to receive(:get?) { queue.shift }
+        allow(described_class).to receive(:sleep)
+        described_class.send(:run_scan_lines,
+                             { 'cmd' => 'touch mural', 'into' => 'deities',
+                               'until' => 'The face falls quiet' }.merge(step))
+        described_class.captures['deities']
+      end
+
+      let(:classify) { { 'classify' => { 'Koar' => 'golden crown', 'Ronan' => 'silver blade' } } }
+
+      it 'collects what each line names, in order, until the terminator' do
+        found = scan_over(['A golden crown shines bright', 'O silver blade, flash brightly',
+                           'A golden crown again', 'The face falls quiet.',
+                           'A golden crown after the end'], classify)
+        expect(found).to eq(%w[Koar Ronan Koar])
+      end
+
+      it 'ignores lines that match nothing' do
+        expect(scan_over(['Some unrelated verse', 'The face falls quiet.'], classify)).to eq([])
+      end
+
+      it 'stops at the deadline when the terminator never arrives' do
+        stub_const('XMLData', double('XMLData', room_id: 1, name: 'Tester'))
+        allow(described_class).to receive(:put)
+        allow(described_class).to receive(:get?).and_return(false) # empty buffer
+        allow(described_class).to receive(:sleep)
+        described_class.send(:run_scan_lines,
+                             { 'cmd' => 'touch mural', 'into' => 'deities', 'timeout' => 0,
+                               'until' => 'never', 'classify' => { 'X' => 'x' } })
+        expect(described_class.captures['deities']).to eq([])
+      end
+
+      it 'validates the classify table and until pattern' do
+        v = described_class::Validator
+        good = { 'do' => 'scan_lines', 'until' => 'quiet', 'classify' => { 'Koar' => 'crown' } }
+        expect(v.errors_for_wayto([good])).to be_empty
+        expect(v.errors_for_wayto([good.merge('classify' => {})]).join).to include('non-empty classify')
+        expect(v.errors_for_wayto([good.merge('until' => '(')]).join).to include('valid until')
+        expect(v.errors_for_wayto([good.merge('classify' => { 'K' => '(' })]).join)
+          .to include('must be a valid regex')
+      end
+    end
+
+    describe 'for_each items_from' do
+      it 'walks a list an earlier step collected' do
+        stub_const('XMLData', double('XMLData', room_id: 1, name: 'Tester'))
+        described_class.captures['deities'] = %w[Koar Ronan]
+        seen = []
+        allow(described_class).to receive(:run_step) do |s|
+          seen << described_class.expand_tokens(s['cmd'])
+        end
+        described_class.send(:run_for_each,
+                             { 'as' => 'deity', 'items_from' => 'deities',
+                               'steps' => [{ 'do' => 'send', 'cmd' => 'touch {capture:deity}' }] })
+        expect(seen).to eq(['touch Koar', 'touch Ronan'])
+      end
+
+      it 'treats an empty collected list as nothing to do, not an error' do
+        stub_const('XMLData', double('XMLData', room_id: 1))
+        described_class.captures['deities'] = []
+        expect { described_class.send(:run_for_each, { 'items_from' => 'deities', 'steps' => [] }) }
+          .not_to raise_error
+      end
+
+      it 'accepts items_from in place of items' do
+        v = described_class::Validator
+        step = { 'do' => 'for_each', 'items_from' => 'deities', 'steps' => [{ 'do' => 'wait_rt' }] }
+        expect(v.errors_for_wayto([step])).to be_empty
+      end
+    end
+
+    describe 'suspend_scripts' do
+      # Stub the two methods rather than the whole constant: replacing Script
+      # wholesale breaks the strategy registry, which uses it at load time.
+      it 'restarts only the scripts that were actually running' do
+        stub_const('XMLData', double('XMLData', room_id: 1))
+        allow(Script).to receive(:kill) { |name| name == 'disarm' }
+        started = []
+        allow(Script).to receive(:start) { |name| started << name }
+        allow(described_class).to receive(:run_step)
+        described_class.send(:run_suspend_scripts,
+                             { 'scripts' => %w[disarm notrunning],
+                               'steps'   => [{ 'do' => 'wait_rt' }] })
+        expect(started).to eq(['disarm'])
+      end
+
+      it 'restarts them even when the body fails' do
+        stub_const('XMLData', double('XMLData', room_id: 1))
+        allow(Script).to receive(:kill).and_return(true)
+        started = []
+        allow(Script).to receive(:start) { |name| started << name }
+        allow(described_class).to receive(:run_step).and_raise(described_class::StepFailed, 'boom')
+        expect do
+          described_class.send(:run_suspend_scripts,
+                               { 'scripts' => ['disarm'], 'steps' => [{ 'do' => 'wait_rt' }] })
+        end.to raise_error(described_class::StepFailed)
+        expect(started).to eq(['disarm'])
+      end
+
+      it 'validates scripts and steps' do
+        v = described_class::Validator
+        good = { 'do' => 'suspend_scripts', 'scripts' => ['disarm'], 'steps' => [{ 'do' => 'wait_rt' }] }
+        expect(v.errors_for_wayto([good])).to be_empty
+        expect(v.errors_for_wayto([good.merge('scripts' => [])]).join).to include('non-empty array')
+        expect(v.errors_for_wayto([good.merge('steps' => [])]).join).to include('requires steps')
+      end
+    end
+
+    describe 'cast with a run-time spell number' do
+      it 'casts the spell a capture names' do
+        described_class.captures['spell'] = '703'
+        spell = double('703', num: 703, affordable?: true)
+        lookup = class_double('Spell').as_stubbed_const
+        allow(lookup).to receive(:[]) { |n| n == 703 ? spell : nil }
+        expect(described_class.send(:resolve_castable, '{capture:spell}')).to be(spell)
+      end
+
+      it 'resolves to nothing when the capture is unbound, rather than casting blind' do
+        described_class.captures['spell'] = nil
+        expect(described_class.send(:resolve_castable, '{capture:spell}')).to be_nil
+      end
+
+      it 'accepts a capture token at build time' do
+        v = described_class::Validator
+        expect(v.errors_for_wayto([{ 'do' => 'cast', 'spell' => '{capture:spell}' }])).to be_empty
+        expect(v.errors_for_wayto([{ 'do' => 'cast', 'spell' => 'fireball' }]).join)
+          .to include('capture token')
+      end
+    end
+
+    describe 'map_capture' do
+      let(:runes) { { 'O' => 'R', 'R' => 'S', 'Z' => 'Z', 'S' => 'O', 'E' => 'E' } }
+
+      it 'translates a captured value through the table into another name' do
+        described_class.captures['under'] = 'O'
+        described_class.send(:run_map_capture,
+                             { 'from' => 'under', 'to' => 'press', 'table' => runes })
+        expect(described_class.captures['press']).to eq('R')
+        expect(described_class.captures['under']).to eq('O')
+      end
+
+      it 'looks up case-insensitively' do
+        # The staircase proc fell back to a lowercase "e" that its own
+        # table (keyed in upper case) could never match, so the press
+        # command went out with an empty rune. Folding the key fixes it.
+        described_class.captures['under'] = 'e'
+        described_class.send(:run_map_capture,
+                             { 'from' => 'under', 'to' => 'press', 'table' => runes })
+        expect(described_class.captures['press']).to eq('E')
+      end
+
+      it 'falls back to default for a value the table does not list' do
+        described_class.captures['under'] = 'Q'
+        described_class.send(:run_map_capture,
+                             { 'from' => 'under', 'to' => 'press',
+                               'table' => runes, 'default' => 'E' })
+        expect(described_class.captures['press']).to eq('E')
+      end
+
+      it 'binds nil with no default, so the command fails visibly' do
+        described_class.captures['under'] = 'Q'
+        described_class.send(:run_map_capture, { 'from' => 'under', 'table' => runes })
+        expect(described_class.captures['under']).to be_nil
+      end
+
+      it 'validates from and table' do
+        v = described_class::Validator
+        good = { 'do' => 'map_capture', 'from' => 'under', 'table' => runes }
+        expect(v.errors_for_wayto([good])).to be_empty
+        expect(v.errors_for_wayto([good.reject { |k, _| k == 'table' }]).join)
+          .to include('requires a table')
+        expect(v.errors_for_wayto([good.merge('table' => {})]).join).to include('must not be empty')
+        expect(v.errors_for_wayto([good.reject { |k, _| k == 'from' }]).join).to include('requires from')
+      end
+    end
+
+    describe 'set_capture' do
+      it 'binds a literal for later steps to interpolate' do
+        described_class.send(:run_set_capture, { 'name' => 'under', 'value' => 'E' })
+        expect(described_class.captures['under']).to eq('E')
+      end
+
+      it 'validates name and value' do
+        v = described_class::Validator
+        good = { 'do' => 'set_capture', 'name' => 'under', 'value' => 'E' }
+        expect(v.errors_for_wayto([good])).to be_empty
+        expect(v.errors_for_wayto([good.reject { |k, _| k == 'value' }]).join)
+          .to include('requires value')
+      end
+    end
+
     describe 'for_each' do
       it 'binds each item in turn for the body to interpolate' do
         stub_const('XMLData', double('XMLData', room_id: 1, name: 'Tester'))

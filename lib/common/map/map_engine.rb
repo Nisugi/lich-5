@@ -34,6 +34,11 @@ module Lich
       # growing it is a reviewed Lich change, never a map-data change.
       SETTABLE_GLOBALS = %w[SILVERWOOD_TOWN].freeze
 
+      # Globals an edge may read but must never write - go2's own user
+      # switches. Readable so an errand can ask "am I allowed to spend the
+      # user's silver?"; unwritable so map data cannot flip the answer.
+      READABLE_GLOBALS = (SETTABLE_GLOBALS + %w[go2_get_silvers]).freeze
+
       # Event cost tables, name -> callable returning the table (or nil while
       # the event script is not running). Registered here rather than read
       # directly so the schema never names a global variable.
@@ -211,9 +216,12 @@ module Lich
             (1 - (Char.percent_encumbrance / 100.0)) * Skills.to_bonus(Skills.climbing) >= arg.to_f
           when 'global'
             name, expected = arg.to_s.split('=', 2)
-            return false unless SETTABLE_GLOBALS.include?(name)
-            value = name == 'SILVERWOOD_TOWN' ? $SILVERWOOD_TOWN : nil
-            expected ? value.to_s == expected : !value.nil?
+            return false unless READABLE_GLOBALS.include?(name)
+            value = case name
+                    when 'SILVERWOOD_TOWN'  then $SILVERWOOD_TOWN
+                    when 'go2_get_silvers'  then $go2_get_silvers
+                    end
+            expected ? value.to_s == expected : !value.nil? && value != false
           when 'room_name'
             re = compile_pattern(arg)
             !re.nil? && checkroom.to_s =~ re ? true : false
@@ -374,6 +382,8 @@ module Lich
             fill_hand
           when 'preserve_stance'
             run_preserve_stance(step)
+          when 'suspend_scripts'
+            run_suspend_scripts(step)
           when 'escort_wait'
             run_escort_wait
           when 'break'
@@ -381,6 +391,12 @@ module Lich
             raise BreakLoop
           when 'break_if_moved'
             raise BreakLoop if @loop_rooms&.any? && XMLData.room_id != @loop_rooms.last
+          when 'map_capture'
+            run_map_capture(step)
+          when 'set_capture'
+            run_set_capture(step)
+          when 'scan_lines'
+            run_scan_lines(step)
           when 'set_global'
             run_set_global(step)
           when 'run_script'
@@ -779,6 +795,15 @@ module Lich
         # Returns nil when the character knows none of them, which makes the
         # step fail rather than blindly casting something unavailable.
         def resolve_castable(spec)
+          # A spell chosen at run time: the pillar idiom looks at a thing,
+          # maps what it sees to a spell number, then casts that. An unbound
+          # or non-numeric capture is "no spell", which the caller reports as
+          # an unroutable edge rather than casting something arbitrary.
+          if spec.is_a?(String) && spec.include?('{')
+            num = expand_tokens(spec)
+            return nil unless num =~ /\A\d+\z/
+            return Spell[num.to_i]
+          end
           return Spell[spec] unless spec.is_a?(Array)
           spec.map { |num| Spell[num] }.compact.find(&:known?)
         end
@@ -801,6 +826,25 @@ module Lich
         # Capture the current stance, run the nested steps, restore it after
         # (the stance save/restore crossing idiom). `stance` names the stance
         # to hold during the steps.
+        # Stop scripts that would fight the crossing, run the body, then start
+        # again whatever was actually running:
+        #
+        #   { "do": "suspend_scripts", "scripts": ["disarm"], "steps": [ ... ] }
+        #
+        # Only scripts that were running get restarted, so this never starts
+        # something the user had turned off. The ensure covers the body dying
+        # partway: a crossing that fails must not leave `disarm` stopped.
+        def run_suspend_scripts(step)
+          wanted = Array(step['scripts']).map(&:to_s)
+          raise StepFailed, 'suspend_scripts requires scripts' if wanted.empty?
+          killed = wanted.select { |name| Script.kill(name) }
+          begin
+            Array(step['steps']).each { |s| run_step(s) }
+          ensure
+            killed.each { |name| Script.start(name) }
+          end
+        end
+
         def run_preserve_stance(step)
           saved = XMLData.stance_text
           wanted = step['stance'] || 'defensive'
@@ -823,6 +867,33 @@ module Lich
             break if GameObj.npcs.any? { |n| n.id == npc.id }
             sleep 0.1
           end
+        end
+
+        # Translate a captured value through a fixed correspondence table:
+        #
+        #   { "do": "map_capture", "from": "under", "to": "press",
+        #     "table": { "O": "R", "R": "S", "Z": "Z", "S": "O", "E": "E" } }
+        #
+        # The rune-puzzle shape - a symbol read off the room selects, by a
+        # table the map states outright, the symbol to act on. Lookup is
+        # case-insensitive because the rooms that use this are inconsistent
+        # about it. An unlisted key binds `default` if given, otherwise nil,
+        # which interpolates empty and fails the command visibly.
+        def run_map_capture(step)
+          table = step['table']
+          raise StepFailed, 'map_capture requires a table' unless table.is_a?(Hash)
+          key = captures[step['from'].to_s].to_s
+          folded = table.each_with_object({}) { |(k, v), h| h[k.to_s.downcase] = v }
+          @captures ||= {}
+          @captures[(step['to'] || step['from']).to_s] =
+            folded.fetch(key.downcase) { step['default'] }
+        end
+
+        # Bind a capture to a literal, for the puzzle shape where a known
+        # reset value has to be forced after an unexpected response.
+        def run_set_capture(step)
+          @captures ||= {}
+          @captures[step['name'].to_s] = expand_tokens(step['value'].to_s)
         end
 
         def run_set_global(step)
@@ -901,6 +972,50 @@ module Lich
           end
         end
 
+        # Read the stream line by line until a terminator, classifying each
+        # line against a table and collecting what it names:
+        #
+        #   { "do": "scan_lines", "cmd": "touch mural", "into": "deities",
+        #     "until": "The face falls quiet",
+        #     "classify": { "Andelas": "A black cat crosses|The crimson claw",
+        #                   "Charl":   "No mercy lies in sea|One ship is saved" } }
+        #
+        # The mural idiom: a wall recites verses, each verse belongs to a
+        # deity, and the list of deities named is what the puzzle wants back.
+        # Result binds as a list for `for_each` to walk. Duplicates are kept -
+        # a verse recited twice is a deity named twice, which is what the
+        # original collected.
+        def run_scan_lines(step)
+          table = step['classify']
+          raise StepFailed, 'scan_lines requires a classify table' unless table.is_a?(Hash)
+          compiled = table.filter_map do |value, source|
+            re = compile_pattern(source)
+            re ? [value, re] : nil
+          end
+          stop = compile_pattern(step['until'])
+          raise StepFailed, "scan_lines: bad until #{step['until'].inspect}" unless stop
+          found = []
+          put expand_tokens(step['cmd']) if step['cmd']
+          deadline = Time.now + (step['timeout'] || 30).to_f
+          # Bounded twice over: a terminator that never arrives must not hang
+          # the router, and a stream that never stops must not grow forever.
+          # gets? is non-blocking and reports an empty buffer as false, so a
+          # silent stream costs a sleep rather than a wedged script.
+          (MAX_LOOP_ITERATIONS * 4).times do
+            break if Time.now > deadline
+            line = get?
+            unless line.is_a?(String)
+              sleep 0.05
+              next
+            end
+            break if line =~ stop
+            hit = compiled.find { |(_, re)| line =~ re }
+            found << hit.first if hit
+          end
+          @captures ||= {}
+          @captures[(step['into'] || 'found').to_s] = found
+        end
+
         # Run the same steps once per item, with the item bound for the body
         # to interpolate:
         #
@@ -911,7 +1026,16 @@ module Lich
         # build time, which multiplies the body by the list length - 48KB for
         # one edge in the case that prompted it.
         def run_for_each(step)
-          items = Array(step['items'])
+          # Items are either stated in the map or collected at run time by an
+          # earlier step (scan_lines), named here as "items_from".
+          items = if step['items_from']
+                    Array(captures[step['items_from'].to_s])
+                  else
+                    Array(step['items'])
+                  end
+          # A run-time list that came back empty is a legitimate "nothing to
+          # do", not bad data: the mural named no deities.
+          return if step['items_from'] && items.empty?
           raise StepFailed, 'for_each requires items' if items.empty?
           name = (step['as'] || 'item').to_s
           @captures ||= {}
@@ -1337,7 +1461,8 @@ module Lich
                         set echo cast_buff cross move_with_group try_move cast move_random empty_hand fill_hand
                         preserve_stance escort_wait break break_if_moved set_global run_script wait_until
                         wait_castrt use_item borrow_item return_item find_item travel_to
-                        search_rooms for_each steps_ref note_group group_wait].freeze
+                        search_rooms for_each steps_ref note_group group_wait map_capture
+                        set_capture scan_lines suspend_scripts].freeze
         REQUIREMENT_KINDS = %w[setting grant not is pass pass_buyable prof race gender citizenship spell climate
                                month var var_raw society seeking_enabled has_item no_script spell_known level
                                skill climb_vs_encumbrance climb_bonus global room_name location script_running subscription
@@ -1485,6 +1610,30 @@ module Lich
             errors.concat(Array(step['else']).flat_map { |s| errors_for_step(s) })
           when 'set'
             errors << 'set requires var' unless step['var'].is_a?(String)
+          when 'scan_lines'
+            if step['classify'].is_a?(Hash) && !step['classify'].empty?
+              step['classify'].each do |value, source|
+                unless source.is_a?(String) && compilable?(source)
+                  errors << "scan_lines pattern for #{value.inspect} must be a valid regex"
+                end
+              end
+            else
+              errors << 'scan_lines requires a non-empty classify table'
+            end
+            unless step['until'].is_a?(String) && compilable?(step['until'])
+              errors << 'scan_lines requires a valid until pattern'
+            end
+            errors << 'scan_lines into must be a string' if step['into'] && !step['into'].is_a?(String)
+          when 'set_capture'
+            errors << 'set_capture requires name' unless step['name'].is_a?(String)
+            errors << 'set_capture requires value' unless step['value'].is_a?(String)
+          when 'map_capture'
+            errors << 'map_capture requires from' unless step['from'].is_a?(String)
+            if step['table'].is_a?(Hash)
+              errors << 'map_capture table must not be empty' if step['table'].empty?
+            else
+              errors << 'map_capture requires a table of value => value'
+            end
           when 'travel_to'
             if step['tag']
               errors << 'travel_to tag must be a string' unless step['tag'].is_a?(String)
@@ -1538,8 +1687,10 @@ module Lich
             errors << 'steps_ref requires name' unless step['name'].is_a?(String)
           when 'for_each'
             errors << 'for_each requires steps' if Array(step['steps']).empty?
-            unless step['items'].is_a?(Array) && !step['items'].empty?
-              errors << 'for_each requires a non-empty items array'
+            if step['items_from']
+              errors << 'for_each items_from must be a string' unless step['items_from'].is_a?(String)
+            elsif !(step['items'].is_a?(Array) && !step['items'].empty?)
+              errors << 'for_each requires a non-empty items array or items_from'
             end
             errors << 'for_each as must be a string' if step['as'] && !step['as'].is_a?(String)
             errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
@@ -1558,12 +1709,21 @@ module Lich
           when 'cast'
             spell = step['spell']
             ok = spell.is_a?(Integer) ||
+                 # A {capture:...} token: the number is chosen at run time.
+                 (spell.is_a?(String) && spell =~ /\A\{capture:\w+\}\z/) ||
                  (spell.is_a?(Array) && !spell.empty? && spell.all? { |n| n.is_a?(Integer) })
-            errors << 'cast requires a numeric spell or a list of them' unless ok
+            errors << 'cast requires a numeric spell, a capture token, or a list of numbers' unless ok
           when 'move_random'
             if step['among'] && !step['among'].is_a?(Array)
               errors << 'move_random among must be an array'
             end
+          when 'suspend_scripts'
+            unless step['scripts'].is_a?(Array) && !step['scripts'].empty? &&
+                   step['scripts'].all? { |s| s.is_a?(String) }
+              errors << 'suspend_scripts requires a non-empty array of script names'
+            end
+            errors << 'suspend_scripts requires steps' if Array(step['steps']).empty?
+            errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
           when 'preserve_stance'
             errors << 'preserve_stance requires steps' if Array(step['steps']).empty?
             errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })
