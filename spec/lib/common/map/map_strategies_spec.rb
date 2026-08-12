@@ -96,32 +96,45 @@ RSpec.describe Lich::Common::MapEngine::Strategies do
   end
 
   describe Lich::Common::MapEngine::UniqueCrossings do
-    # Naming a specific crossing here pins a moving target: every block is a
-    # candidate to become schema. Take whatever is registered instead.
-    let(:a_crossing) { described_class::REGISTRY.keys.first }
-
-    it 'carries the relocated one-off crossings' do
-      # Deliberately not a size floor: this registry is meant to shrink as
-      # each idiom becomes schema. GS has reached zero - every GS edge is now
-      # data - so only assert that what IS registered is callable.
-      expect(described_class::REGISTRY).not_to be_empty
-      expect(described_class.known?(a_crossing)).to be(true)
-      expect(described_class::REGISTRY[a_crossing]).to be_a(Proc)
+    it 'is empty: every edge in both games is now schema' do
+      # The point of the registry was always to shrink to nothing. Both game
+      # sections of map_crossings.rb are empty, so this asserts the end state
+      # rather than a floor - a block reappearing means an edge regressed to
+      # relocated Ruby and should be converted instead.
+      expect(described_class::REGISTRY).to be_empty
     end
 
-    it 'has no GS crossings left: every GS edge is schema' do
-      gs = described_class::REGISTRY.keys.reject { |k| k.start_with?('crossing_dr_') }
-      expect(gs).to be_empty
-      # DR has not been through this pass yet.
-      expect(described_class::REGISTRY.keys).to include(a_string_starting_with('crossing_dr_'))
+    it 'still resolves a registered crossing, so the escape hatch works' do
+      # The mechanism has to keep working even with nothing in it: a mapper
+      # mid-conversion may relocate a block before writing its schema.
+      described_class.define('crossing_spec_probe') { :crossed }
+      begin
+        expect(described_class.known?('crossing_spec_probe')).to be(true)
+        expect(described_class::REGISTRY['crossing_spec_probe']).to be_a(Proc)
+        expect(Lich::Common::MapEngine::Validator.errors_for_wayto(
+                 { 'strategy' => 'unique_crossing', 'name' => 'crossing_spec_probe' }
+               )).to be_empty
+      ensure
+        described_class::REGISTRY.delete('crossing_spec_probe')
+      end
     end
 
-    it 'validates unique_crossing strategy references' do
+    it 'requires the name param at build time' do
       validator = Lich::Common::MapEngine::Validator
-      expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing', 'name' => a_crossing }))
-        .to be_empty
       expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing' }).join)
         .to include('missing required param')
+    end
+
+    it 'treats an unknown crossing as not crossable rather than an error' do
+      # Build-time validation deliberately does NOT check registry membership:
+      # the map is validated separately from Lich, so a name unknown to this
+      # build may exist in another. At run time the miss has to degrade to
+      # "edge not routable", never an escape that kills go2.
+      entry = { 'strategy' => 'unique_crossing', 'name' => 'crossing_not_here' }
+      expect(Lich::Common::MapEngine::Validator.errors_for_wayto(entry)).to be_empty
+      expect { described_class.run('crossing_not_here') }
+        .to raise_error(Lich::Common::MapEngine::StepFailed, /unknown crossing/)
+      expect(Lich::Common::MapEngine::Crossing.new(entry).call).to be(false)
     end
   end
 

@@ -129,6 +129,17 @@ if File.exist?(crossings_path)
 else
   content = header + "\n" + section + footer
 end
+
+# The blanket cop disable exists for the relocated bodies, which are
+# unformatted Ruby lifted verbatim. With every block converted to schema
+# the file is ordinary code again, and RuboCop flags the directive as
+# redundant - so carry it only while there is something to excuse.
+has_blocks = content.match?(/^\s*define\('crossing/)
+content = if has_blocks
+            content.include?('# rubocop:disable all') ? content : content.sub(/\A(# frozen_string_literal: true\n\n)/, "\\1# rubocop:disable all\n")
+          else
+            content.gsub(/^# rubocop:(?:disable|enable) all\n/, '')
+          end
 File.write(crossings_path, content)
 File.write(manual_path, JSON.pretty_generate(manual))
 puts "#{options[:game]}: #{bodies.size} crossings (#{bodies.values.sum { |i| i[:edges].size }} edges); section rewritten"
