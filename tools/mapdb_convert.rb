@@ -18,8 +18,6 @@ $LOAD_PATH.unshift(lib_dir) unless $LOAD_PATH.include?(lib_dir)
 module Lich; module Common; end; end
 require "common/map/map_engine"
 require "common/map/map_strategies"
-crossings = File.expand_path("../lib/common/map/map_crossings.rb", __dir__)
-require crossings if File.exist?(crossings)
 require "common/map/map_convert"
 
 MapdbConverter = Lich::Common::MapConvert
@@ -52,5 +50,16 @@ if $PROGRAM_NAME == __FILE__
     puts "wrote #{options[:report]}"
   else
     puts converter.report
+  end
+
+  # Fail closed. A proc no recognizer handles is a gap in the converter, and
+  # the fix belongs in the recognizers - not in a file of relocated Ruby that
+  # would tie the edge to Lich's release schedule. Exiting non-zero makes the
+  # submission pipeline stop and ask for a human.
+  leftovers = converter.unconverted
+  unless leftovers.empty?
+    warn "\n#{leftovers.length} edges could not be converted; see the residue clusters above."
+    warn 'Add a recognizer in lib/common/map/map_convert.rb or a manual conversion, then re-run.'
+    exit 1
   end
 end

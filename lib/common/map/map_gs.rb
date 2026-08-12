@@ -4,8 +4,6 @@ require_relative 'map_base'
 require_relative 'map_engine'
 require_relative 'map_strategies'
 
-require_relative 'map_crossings' if File.exist?(File.join(__dir__, 'map_crossings.rb'))
-
 module Lich
   module Common
     # GemStone-specific Map implementation

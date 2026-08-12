@@ -213,29 +213,6 @@ module Lich
         register 'uservar_sends', UservarSends, %w[var]
 
 
-        # One-off crossings relocated verbatim from mapdb StringProcs into
-        # lib/common/map/map_crossings.rb (generated, reviewed code).
-        #
-        # That file is required only when present, and with every edge now
-        # schema it may legitimately be absent from a build. A reference to a
-        # crossing then has to read as "edge not routable" like every other
-        # miss: without this guard the missing constant raises NameError,
-        # which Crossing#call does not catch and which would crash the route
-        # instead of skipping the edge.
-        class UniqueCrossing
-          def initialize(params)
-            @name = params['name']
-          end
-
-          def run
-            unless MapEngine.const_defined?(:UniqueCrossings)
-              raise StepFailed, "unknown crossing #{@name.inspect} (no relocated crossings loaded)"
-            end
-
-            UniqueCrossings.run(@name)
-          end
-        end
-        register 'unique_crossing', UniqueCrossing, %w[name]
 
         # ======================================================================
         # GemStone strategies

@@ -3,7 +3,6 @@
 require_relative '../../../spec_helper'
 require 'common/map/map_engine'
 require 'common/map/map_strategies'
-require 'common/map/map_crossings'
 
 RSpec.describe Lich::Common::MapEngine::Strategies do
   it 'registers the strategy set with required params' do
@@ -95,62 +94,18 @@ RSpec.describe Lich::Common::MapEngine::Strategies do
     end
   end
 
-  describe Lich::Common::MapEngine::UniqueCrossings do
-    it 'is empty: every edge in both games is now schema' do
-      # The point of the registry was always to shrink to nothing. Both game
-      # sections of map_crossings.rb are empty, so this asserts the end state
-      # rather than a floor - a block reappearing means an edge regressed to
-      # relocated Ruby and should be converted instead.
-      expect(described_class::REGISTRY).to be_empty
-    end
-
-    it 'still resolves a registered crossing, so the escape hatch works' do
-      # The mechanism has to keep working even with nothing in it: a mapper
-      # mid-conversion may relocate a block before writing its schema.
-      described_class.define('crossing_spec_probe') { :crossed }
-      begin
-        expect(described_class.known?('crossing_spec_probe')).to be(true)
-        expect(described_class::REGISTRY['crossing_spec_probe']).to be_a(Proc)
-        expect(Lich::Common::MapEngine::Validator.errors_for_wayto(
-                 { 'strategy' => 'unique_crossing', 'name' => 'crossing_spec_probe' }
-               )).to be_empty
-      ensure
-        described_class::REGISTRY.delete('crossing_spec_probe')
-      end
-    end
-
-    it 'requires the name param at build time' do
-      validator = Lich::Common::MapEngine::Validator
-      expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing' }).join)
-        .to include('missing required param')
-    end
-
-    it 'treats an unknown crossing as not crossable rather than an error' do
-      # Build-time validation deliberately does NOT check registry membership:
-      # the map is validated separately from Lich, so a name unknown to this
-      # build may exist in another. At run time the miss has to degrade to
-      # "edge not routable", never an escape that kills go2.
-      entry = { 'strategy' => 'unique_crossing', 'name' => 'crossing_not_here' }
-      expect(Lich::Common::MapEngine::Validator.errors_for_wayto(entry)).to be_empty
-      expect { described_class.run('crossing_not_here') }
-        .to raise_error(Lich::Common::MapEngine::StepFailed, /unknown crossing/)
-      expect(Lich::Common::MapEngine::Crossing.new(entry).call).to be(false)
-    end
-
-    it 'survives map_crossings.rb being absent entirely' do
-      # The file is required only if present, and with both games converted
-      # it defines nothing, so a build can ship without it. A stray
-      # unique_crossing reference must then read as "not routable" rather
-      # than a NameError, which would escape Crossing#call and crash a route.
-      engine = Lich::Common::MapEngine
-      hidden = engine.send(:remove_const, :UniqueCrossings)
-      begin
-        expect(engine.const_defined?(:UniqueCrossings)).to be(false)
-        entry = { 'strategy' => 'unique_crossing', 'name' => 'crossing_18178_18179' }
-        expect(engine::Crossing.new(entry).call).to be(false)
-      ensure
-        engine.const_set(:UniqueCrossings, hidden)
-      end
+  describe 'relocated StringProc crossings' do
+    it 'no longer exists: an unconvertible proc is a converter bug, not a hiding place' do
+      # map_crossings.rb and the unique_crossing strategy are gone. Relocating
+      # Ruby there made a map edge wait on Lich's release schedule to work,
+      # which is the same bottleneck this project set out to remove. The
+      # converter fails loudly on an idiom it cannot handle instead, so the
+      # fix lands in the recognizers where it belongs.
+      expect(Lich::Common::MapEngine.const_defined?(:UniqueCrossings)).to be(false)
+      expect(Lich::Common::MapEngine::Strategies.known?('unique_crossing')).to be(false)
+      expect(Lich::Common::MapEngine::Validator
+               .errors_for_wayto({ 'strategy' => 'unique_crossing', 'name' => 'x' }).join)
+        .to include('unknown strategy')
     end
   end
 

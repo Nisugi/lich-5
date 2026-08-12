@@ -3149,10 +3149,6 @@
         ]
       }
     ],
-    "339:24768": {
-      "strategy": "unique_crossing",
-      "name": "crossing_339_24768"
-    },
     "2677:2675": {
       "strategy": "mana_crown",
       "amount": 100,
@@ -4285,10 +4281,6 @@
         "do": "group_wait"
       }
     ],
-    "7331:7315": {
-      "strategy": "unique_crossing",
-      "name": "crossing_7331_7315"
-    },
     "8373:8374": [
       {
         "do": "repeat",
@@ -4876,10 +4868,6 @@
         ]
       }
     ],
-    "11357:11358": {
-      "strategy": "unique_crossing",
-      "name": "crossing_11357_11358"
-    },
     "11753:11749": [
       {
         "do": "find_item",
@@ -5302,18 +5290,6 @@
         ]
       }
     ],
-    "15950:7989": {
-      "strategy": "unique_crossing",
-      "name": "crossing_15950_7989"
-    },
-    "26919:24055": {
-      "strategy": "unique_crossing",
-      "name": "crossing_15950_7989"
-    },
-    "16011:11022": {
-      "strategy": "unique_crossing",
-      "name": "crossing_16011_11022"
-    },
     "16165:16064": [
       {
         "do": "repeat",
@@ -5411,42 +5387,6 @@
         "cmd": "go shadow"
       }
     ],
-    "16806:4162": {
-      "strategy": "unique_crossing",
-      "name": "crossing_16806_4162"
-    },
-    "17493:3235": {
-      "strategy": "unique_crossing",
-      "name": "crossing_17493_3235"
-    },
-    "17665:11433": {
-      "strategy": "unique_crossing",
-      "name": "crossing_17665_11433"
-    },
-    "18043:18052": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18043_18052"
-    },
-    "18052:18054": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18043_18052"
-    },
-    "18054:18068": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18043_18052"
-    },
-    "18052:18043": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18052_18043"
-    },
-    "18054:18052": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18052_18043"
-    },
-    "18068:18054": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18052_18043"
-    },
     "18178:18179": {
       "define": {
         "read_runes": [
@@ -5562,26 +5502,6 @@
           "cmd": "go staircase"
         }
       ]
-    },
-    "18180:18181": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18180_18181"
-    },
-    "18181:18182": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18181_18182"
-    },
-    "18186:451": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18186_451"
-    },
-    "18186:18187": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18186_18187"
-    },
-    "18187:451": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18187_451"
     },
     "18243:22550": [
       {
@@ -6808,22 +6728,6 @@
         ]
       }
     ],
-    "19543:1102": {
-      "strategy": "unique_crossing",
-      "name": "crossing_19543_1102"
-    },
-    "19657:20012": {
-      "strategy": "unique_crossing",
-      "name": "crossing_19657_20012"
-    },
-    "19727:19990": {
-      "strategy": "unique_crossing",
-      "name": "crossing_19727_19990"
-    },
-    "19728:19992": {
-      "strategy": "unique_crossing",
-      "name": "crossing_19728_19992"
-    },
     "19992:19728": [
       {
         "do": "await",
@@ -6866,26 +6770,6 @@
         ]
       }
     ],
-    "20012:19657": {
-      "strategy": "unique_crossing",
-      "name": "crossing_20012_19657"
-    },
-    "21386:23157": {
-      "strategy": "unique_crossing",
-      "name": "crossing_21386_23157"
-    },
-    "21960:21961": {
-      "strategy": "unique_crossing",
-      "name": "crossing_21960_21961"
-    },
-    "21961:21960": {
-      "strategy": "unique_crossing",
-      "name": "crossing_21960_21961"
-    },
-    "22349:22444": {
-      "strategy": "unique_crossing",
-      "name": "crossing_22349_22444"
-    },
     "22666:24233": [
       {
         "do": "repeat",
@@ -6960,38 +6844,6 @@
         "cmd": "go spiked gate"
       }
     ],
-    "23845:23926": {
-      "strategy": "unique_crossing",
-      "name": "crossing_23845_23926"
-    },
-    "24238:21557": {
-      "strategy": "unique_crossing",
-      "name": "crossing_24238_21557"
-    },
-    "24239:24240": {
-      "strategy": "unique_crossing",
-      "name": "crossing_24239_24240"
-    },
-    "24241:313": {
-      "strategy": "unique_crossing",
-      "name": "crossing_24241_313"
-    },
-    "24730:24729": {
-      "strategy": "unique_crossing",
-      "name": "crossing_24730_24729"
-    },
-    "24752:20423": {
-      "strategy": "unique_crossing",
-      "name": "crossing_24752_20423"
-    },
-    "24837:24967": {
-      "strategy": "unique_crossing",
-      "name": "crossing_24837_24967"
-    },
-    "24976:24979": {
-      "strategy": "unique_crossing",
-      "name": "crossing_24976_24979"
-    },
     "24980:24804": [
       {
         "do": "echo",
@@ -7295,10 +7147,6 @@
         "dest": "25145"
       }
     ],
-    "26765:27623": {
-      "strategy": "unique_crossing",
-      "name": "crossing_26765_27623"
-    },
     "27638:27639": [
       {
         "do": "for_each",
@@ -7325,30 +7173,6 @@
         ]
       }
     ],
-    "30115:29861": {
-      "strategy": "unique_crossing",
-      "name": "crossing_30115_29861"
-    },
-    "30115:29867": {
-      "strategy": "unique_crossing",
-      "name": "crossing_30115_29867"
-    },
-    "30581:30582": {
-      "strategy": "unique_crossing",
-      "name": "crossing_30581_30582"
-    },
-    "30582:30581": {
-      "strategy": "unique_crossing",
-      "name": "crossing_30581_30582"
-    },
-    "30582:30583": {
-      "strategy": "unique_crossing",
-      "name": "crossing_30582_30583"
-    },
-    "30583:30581": {
-      "strategy": "unique_crossing",
-      "name": "crossing_30582_30583"
-    },
     "30850:30851": [
       {
         "do": "if",
@@ -7427,14 +7251,6 @@
         "cmd": "go barrier"
       }
     ],
-    "31286:31345": {
-      "strategy": "unique_crossing",
-      "name": "crossing_31286_31345"
-    },
-    "32873:13532": {
-      "strategy": "unique_crossing",
-      "name": "crossing_32873_13532"
-    },
     "34434:34435": [
       {
         "do": "borrow_item",
@@ -7542,18 +7358,6 @@
         ]
       }
     ],
-    "36416:36412": {
-      "strategy": "unique_crossing",
-      "name": "crossing_36416_36412"
-    },
-    "36419:36440": {
-      "strategy": "unique_crossing",
-      "name": "crossing_36419_36440"
-    },
-    "36440:36419": {
-      "strategy": "unique_crossing",
-      "name": "crossing_36440_36419"
-    },
     "5203:24247": [
       {
         "do": "send",

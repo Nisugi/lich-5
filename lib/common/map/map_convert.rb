@@ -2088,6 +2088,17 @@ module Lich
         str.include?('.') ? str.to_f : str.to_i
       end
 
+      # Edges whose proc no recognizer or manual entry could handle, as
+      # [field, room_id, dest] triples. A submission that produces any of
+      # these is not convertible yet: the fix is a recognizer or a manual
+      # conversion, decided by a human during review. Callers gate on this
+      # rather than shipping a map with an eval'd string still in it.
+      def unconverted
+        %w[timeto wayto].flat_map do |field|
+          @residue[field].flat_map { |_, edges| edges.map { |room, dest| [field, room, dest] } }
+        end
+      end
+
       def report
         out = +"== Conversion stats ==\n"
         @stats.sort.each { |k, v| out << format("%8d  %s\n", v, k) }

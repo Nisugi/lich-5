@@ -23,8 +23,6 @@ $LOAD_PATH.unshift(lib_dir) unless $LOAD_PATH.include?(lib_dir)
 module Lich; module Common; end; end
 require 'common/map/map_engine'
 require 'common/map/map_strategies'
-crossings = File.expand_path('../lib/common/map/map_crossings.rb', __dir__)
-require crossings if File.exist?(crossings)
 
 options = { forbid_procs: false }
 OptionParser.new do |opts|
