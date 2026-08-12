@@ -8068,6 +8068,260 @@
           ]
         }
       ]
-    }
+    },
+    "23830:221": [
+      {
+        "do": "send",
+        "cmd": "inquire"
+      },
+      {
+        "do": "send",
+        "cmd": "order 1"
+      },
+      {
+        "do": "await",
+        "cmd": "order confirm",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "It doesn't look like you have enough silver to ride\\.|We'll be taking that payment in silver, then\\.",
+        "bind": {
+          "paid": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:paid=enough silver to ride",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for this caravan."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "The\\ wagon\\ comes\\ to\\ a\\ halt|The\\ wagon\\ draws\\ to\\ an\\ abrupt\\ halt|the\\ caravan\\ comes\\ to\\ a\\ stop",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "23830:2773": [
+      {
+        "do": "send",
+        "cmd": "inquire"
+      },
+      {
+        "do": "send",
+        "cmd": "order 2"
+      },
+      {
+        "do": "await",
+        "cmd": "order confirm",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "It doesn't look like you have enough silver to ride\\.|We'll be taking that payment in silver, then\\.",
+        "bind": {
+          "paid": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:paid=enough silver to ride",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for this caravan."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "The\\ wagon\\ comes\\ to\\ a\\ halt|The\\ wagon\\ draws\\ to\\ an\\ abrupt\\ halt|the\\ caravan\\ comes\\ to\\ a\\ stop",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "23830:29860": [
+      {
+        "do": "set",
+        "var": "hinterwilds_location",
+        "value": "IM"
+      },
+      {
+        "do": "send",
+        "cmd": "inquire"
+      },
+      {
+        "do": "send",
+        "cmd": "order 3"
+      },
+      {
+        "do": "await",
+        "cmd": "order confirm",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "It doesn't look like you have enough silver to ride\\.|We'll be taking that payment in silver, then\\.",
+        "bind": {
+          "paid": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:paid=enough silver to ride",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for this caravan."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "The\\ wagon\\ comes\\ to\\ a\\ halt|The\\ wagon\\ draws\\ to\\ an\\ abrupt\\ halt|the\\ caravan\\ comes\\ to\\ a\\ stop",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "29865:2487": [
+      {
+        "do": "send",
+        "cmd": "inquire"
+      },
+      {
+        "do": "send",
+        "cmd": "order 1"
+      },
+      {
+        "do": "await",
+        "cmd": "order confirm",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "It doesn't look like you have enough silver to ride\\.|We'll be taking that payment in silver, then\\.",
+        "bind": {
+          "paid": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:paid=enough silver to ride",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for this caravan."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "The\\ wagon\\ comes\\ to\\ a\\ halt|The\\ wagon\\ draws\\ to\\ an\\ abrupt\\ halt|the\\ caravan\\ comes\\ to\\ a\\ stop",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      },
+      {
+        "do": "set",
+        "var": "hinterwilds_location",
+        "value": null
+      }
+    ],
+    "29865:31069": [
+      {
+        "do": "send",
+        "cmd": "inquire"
+      },
+      {
+        "do": "send",
+        "cmd": "order 2"
+      },
+      {
+        "do": "await",
+        "cmd": "order confirm",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "It doesn't look like you have enough silver to ride\\.|We'll be taking that payment in silver, then\\.",
+        "bind": {
+          "paid": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:paid=enough silver to ride",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for this caravan."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "The\\ wagon\\ comes\\ to\\ a\\ halt|The\\ wagon\\ draws\\ to\\ an\\ abrupt\\ halt|the\\ caravan\\ comes\\ to\\ a\\ stop",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      },
+      {
+        "do": "set",
+        "var": "hinterwilds_location",
+        "value": null
+      }
+    ],
+    "31073:29860": [
+      {
+        "do": "set",
+        "var": "hinterwilds_location",
+        "value": "EN"
+      },
+      {
+        "do": "send",
+        "cmd": "inquire"
+      },
+      {
+        "do": "send",
+        "cmd": "order 1"
+      },
+      {
+        "do": "await",
+        "cmd": "order confirm",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "It doesn't look like you have enough silver to ride\\.|We'll be taking that payment in silver, then\\.",
+        "bind": {
+          "paid": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:paid=enough silver to ride",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for this caravan."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "With\\ a\\ groan\\ and\\ a\\ creak,\\ the\\ caravan\\ comes\\ to\\ a\\ stop\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ]
   }
 }
