@@ -136,6 +136,22 @@ RSpec.describe Lich::Common::MapEngine::Strategies do
         .to raise_error(Lich::Common::MapEngine::StepFailed, /unknown crossing/)
       expect(Lich::Common::MapEngine::Crossing.new(entry).call).to be(false)
     end
+
+    it 'survives map_crossings.rb being absent entirely' do
+      # The file is required only if present, and with both games converted
+      # it defines nothing, so a build can ship without it. A stray
+      # unique_crossing reference must then read as "not routable" rather
+      # than a NameError, which would escape Crossing#call and crash a route.
+      engine = Lich::Common::MapEngine
+      hidden = engine.send(:remove_const, :UniqueCrossings)
+      begin
+        expect(engine.const_defined?(:UniqueCrossings)).to be(false)
+        entry = { 'strategy' => 'unique_crossing', 'name' => 'crossing_18178_18179' }
+        expect(engine::Crossing.new(entry).call).to be(false)
+      ensure
+        engine.const_set(:UniqueCrossings, hidden)
+      end
+    end
   end
 
   describe Lich::Common::MapEngine::Strategies::GuidedRoute do
