@@ -4726,10 +4726,103 @@
       "strategy": "unique_crossing",
       "name": "crossing_16011_11022"
     },
-    "16165:16064": {
-      "strategy": "unique_crossing",
-      "name": "crossing_16165_16064"
-    },
+    "16165:16064": [
+      {
+        "do": "repeat",
+        "times": 20,
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "turn mirror right",
+            "timeout": 5,
+            "on_timeout": "continue",
+            "for": "The mirror won't turn any farther to the right|You turn the oak-framed mirror slightly to the right",
+            "bind": {
+              "turn": 0
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture_match:turn=The mirror won't turn any farther to the right",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "times": 20,
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "tilt mirror",
+            "timeout": 5,
+            "on_timeout": "continue",
+            "for": "from the base of the statue onto the center of the statue|You tilt the oak-framed mirror up until it flips around|You tilt the oak-framed mirror up slightly",
+            "bind": {
+              "tilt": 0
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture_match:tilt=from the base of the statue onto the center of the statue",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "if",
+            "when": "capture_match:tilt=flips around",
+            "then": [
+              {
+                "do": "await",
+                "cmd": "turn mirror left",
+                "timeout": 5,
+                "on_timeout": "continue",
+                "for": "from the base of the statue onto the center of the statue|You turn the oak-framed mirror slightly to the left|The mirror won't turn any farther to the left",
+                "bind": {
+                  "left": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:left=from the base of the statue onto the center of the statue",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              },
+              {
+                "do": "if",
+                "when": "capture_match:left=The mirror won't turn any farther to the left",
+                "then": [
+                  {
+                    "do": "repeat",
+                    "times": 4,
+                    "steps": [
+                      {
+                        "do": "send",
+                        "cmd": "turn mirror right"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go shadow"
+      }
+    ],
     "16806:4162": {
       "strategy": "unique_crossing",
       "name": "crossing_16806_4162"
@@ -5034,10 +5127,80 @@
       "strategy": "unique_crossing",
       "name": "crossing_18700_18250"
     },
-    "18748:18747": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18748_18747"
-    },
+    "18748:18747": [
+      {
+        "do": "cast",
+        "spell": 707
+      },
+      {
+        "do": "for_each",
+        "as": "dir",
+        "items": [
+          "out",
+          "south",
+          "door",
+          "northwest",
+          "northeast",
+          "west",
+          "water",
+          "grate",
+          "southeast",
+          "southeast",
+          "open",
+          "stair"
+        ],
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "tell eye to go {capture:dir}"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "cmd": "tell eye to read basalt",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "The (wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of basalt",
+        "bind": {
+          "rune": 1
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:rune",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "draw {capture:rune} rune on basalt"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "cmd": "tell eye to read chalcedony",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "The (wy'zio|ag'loenar|odeir'cos|beiron'fyn|ikar'fyn|quiss'fyn|erikar'fyn|lorae'tyr|shien'tyr|vakra|grk'tyr) rune glows with a pallid light on the surface of the panel of chalcedony",
+        "bind": {
+          "rune": 1
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:rune",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "draw {capture:rune} rune on chalcedony"
+          }
+        ]
+      },
+      {
+        "do": "send",
+        "cmd": "tell eye to return"
+      }
+    ],
     "18893:13441": [
       {
         "do": "await",
@@ -6064,14 +6227,162 @@
         ]
       }
     ],
-    "25183:25145": {
-      "strategy": "unique_crossing",
-      "name": "crossing_25183_25145"
-    },
-    "25185:25145": {
-      "strategy": "unique_crossing",
-      "name": "crossing_25183_25145"
-    },
+    "25183:25145": [
+      {
+        "do": "await",
+        "cmd": "inquire",
+        "timeout": 5,
+        "on_timeout": "fail",
+        "for": "(\\d)\\) the Sea of Fire",
+        "bind": {
+          "choice": 1
+        }
+      },
+      {
+        "do": "await",
+        "cmd": "order {capture:choice}",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "about the price of a trip to the Sea of Fire"
+      },
+      {
+        "do": "await",
+        "cmd": "order confirm",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "It doesn't look like you have enough silver to ride\\.|We'll be taking that payment in silver, then\\.",
+        "bind": {
+          "paid": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:paid=enough silver to ride",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for the Sea of Fire caravan."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "wait_until",
+        "when": "room_name:Caravan, Wagon",
+        "timeout": 120
+      },
+      {
+        "do": "sleep",
+        "seconds": 1
+      },
+      {
+        "do": "wait_until",
+        "when": "not:room_name:Caravan, Wagon",
+        "timeout": 1800
+      },
+      {
+        "do": "if",
+        "when": "npc_match:thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "BANDITS!!! BANDITS!!! BANDITS!!!"
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:25145",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
+    "25185:25145": [
+      {
+        "do": "await",
+        "cmd": "inquire",
+        "timeout": 5,
+        "on_timeout": "fail",
+        "for": "(\\d)\\) the Sea of Fire",
+        "bind": {
+          "choice": 1
+        }
+      },
+      {
+        "do": "await",
+        "cmd": "order {capture:choice}",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "about the price of a trip to the Sea of Fire"
+      },
+      {
+        "do": "await",
+        "cmd": "order confirm",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "It doesn't look like you have enough silver to ride\\.|We'll be taking that payment in silver, then\\.",
+        "bind": {
+          "paid": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:paid=enough silver to ride",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for the Sea of Fire caravan."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "wait_until",
+        "when": "room_name:Caravan, Wagon",
+        "timeout": 120
+      },
+      {
+        "do": "sleep",
+        "seconds": 1
+      },
+      {
+        "do": "wait_until",
+        "when": "not:room_name:Caravan, Wagon",
+        "timeout": 1800
+      },
+      {
+        "do": "if",
+        "when": "npc_match:thief|rogue|bandit|mugger|outlaw|highwayman|marauder|brigand|thug|robber",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "BANDITS!!! BANDITS!!! BANDITS!!!"
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "if",
+        "when": "not:in_room:25145",
+        "then": [
+          {
+            "do": "replan"
+          }
+        ]
+      }
+    ],
     "26765:27623": {
       "strategy": "unique_crossing",
       "name": "crossing_26765_27623"
