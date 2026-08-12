@@ -1026,16 +1026,20 @@ module Lich
         # build time, which multiplies the body by the list length - 48KB for
         # one edge in the case that prompted it.
         def run_for_each(step)
-          # Items are either stated in the map or collected at run time by an
-          # earlier step (scan_lines), named here as "items_from".
-          items = if step['items_from']
+          # Items come from the map ("items"), from a run-time collection by
+          # an earlier step ("items_from" - scan_lines), or from a list the
+          # user configured ("items_var" - a UserVar).
+          items = if step['items_var']
+                    uservar_list(step['items_var'].to_s)
+                  elsif step['items_from']
                     Array(captures[step['items_from'].to_s])
                   else
                     Array(step['items'])
                   end
           # A run-time list that came back empty is a legitimate "nothing to
-          # do", not bad data: the mural named no deities.
-          return if step['items_from'] && items.empty?
+          # do", not bad data: the mural named no deities, or the user has
+          # not configured this door.
+          return if (step['items_from'] || step['items_var']) && items.empty?
           raise StepFailed, 'for_each requires items' if items.empty?
           name = (step['as'] || 'item').to_s
           @captures ||= {}
@@ -1339,6 +1343,19 @@ module Lich
         def uservar(name)
           return nil unless defined?(UserVars)
           UserVars.respond_to?(name) ? UserVars.send(name) : nil
+        end
+
+        # A user variable read as a list. Vars are Marshal'd, so a var set
+        # from a script keeps its Array, while one set with `;vars set` is
+        # the comma-separated string that UserVars.add/change produce. Accept
+        # either, since the user has no reason to know which the map wanted.
+        def uservar_list(name)
+          value = uservar(name)
+          case value
+          when Array  then value.map { |v| v.to_s.strip }.reject(&:empty?)
+          when String then value.split(',').map(&:strip).reject(&:empty?)
+          else Array(value)
+          end
         end
 
         # Truthiness for user variables: nil/false and the strings a user
@@ -1687,10 +1704,12 @@ module Lich
             errors << 'steps_ref requires name' unless step['name'].is_a?(String)
           when 'for_each'
             errors << 'for_each requires steps' if Array(step['steps']).empty?
-            if step['items_from']
+            if step['items_var']
+              errors << 'for_each items_var must be a string' unless step['items_var'].is_a?(String)
+            elsif step['items_from']
               errors << 'for_each items_from must be a string' unless step['items_from'].is_a?(String)
             elsif !(step['items'].is_a?(Array) && !step['items'].empty?)
-              errors << 'for_each requires a non-empty items array or items_from'
+              errors << 'for_each requires a non-empty items array, items_from, or items_var'
             end
             errors << 'for_each as must be a string' if step['as'] && !step['as'].is_a?(String)
             errors.concat(Array(step['steps']).flat_map { |s| errors_for_step(s) })

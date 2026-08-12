@@ -301,6 +301,45 @@ RSpec.describe Lich::Common::MapEngine do
       end
     end
 
+    describe 'for_each items_var' do
+      # Private-property doors open for whatever sequence the owner gave the
+      # player, so the map cannot state it: the user configures a UserVar and
+      # the edge replays it.
+      def replay(value)
+        stub_const('XMLData', double('XMLData', room_id: 1, name: 'Tester'))
+        stub_const('UserVars', double('UserVars', :respond_to? => true, :Peregrine => value))
+        seen = []
+        allow(described_class).to receive(:run_step) do |s|
+          seen << described_class.expand_tokens(s['cmd'])
+        end
+        described_class.send(:run_for_each,
+                             { 'as' => 'cmd', 'items_var' => 'Peregrine',
+                               'steps' => [{ 'do' => 'send', 'cmd' => '{capture:cmd}' }] })
+        seen
+      end
+
+      it 'replays a list the user set from a script' do
+        expect(replay(['knock door', 'say friend'])).to eq(['knock door', 'say friend'])
+      end
+
+      it 'splits the comma-separated form that ;vars set produces' do
+        # UserVars.add/change store lists this way, so a user who configured
+        # the door by hand must not get one malformed command.
+        expect(replay('knock door, say friend')).to eq(['knock door', 'say friend'])
+      end
+
+      it 'does nothing when the user has not configured the door' do
+        expect(replay(nil)).to eq([])
+      end
+
+      it 'accepts items_var in place of items' do
+        v = described_class::Validator
+        step = { 'do' => 'for_each', 'items_var' => 'Peregrine',
+                 'steps' => [{ 'do' => 'wait_rt' }] }
+        expect(v.errors_for_wayto([step])).to be_empty
+      end
+    end
+
     describe 'suspend_scripts' do
       # Stub the two methods rather than the whole constant: replacing Script
       # wholesale breaks the strategy registry, which uses it at load time.

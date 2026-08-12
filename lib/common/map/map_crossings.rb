@@ -32,10 +32,6 @@ module Lich
         end
 
         # ===== BEGIN gs crossings (generated) =====
-
-        define('crossing_27638_27639') do # 27638:27639 27639:27638
-          if UserVars.Peregrine; UserVars.Peregrine.each{|c| fput "#{c}" } end
-        end
         # ===== END gs crossings =====
         # ===== BEGIN dr crossings (generated) =====
 

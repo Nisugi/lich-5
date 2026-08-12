@@ -7345,14 +7345,32 @@
       "strategy": "unique_crossing",
       "name": "crossing_26765_27623"
     },
-    "27638:27639": {
-      "strategy": "unique_crossing",
-      "name": "crossing_27638_27639"
-    },
-    "27639:27638": {
-      "strategy": "unique_crossing",
-      "name": "crossing_27638_27639"
-    },
+    "27638:27639": [
+      {
+        "do": "for_each",
+        "as": "cmd",
+        "items_var": "Peregrine",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "{capture:cmd}"
+          }
+        ]
+      }
+    ],
+    "27639:27638": [
+      {
+        "do": "for_each",
+        "as": "cmd",
+        "items_var": "Peregrine",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "{capture:cmd}"
+          }
+        ]
+      }
+    ],
     "30115:29861": {
       "strategy": "unique_crossing",
       "name": "crossing_30115_29861"

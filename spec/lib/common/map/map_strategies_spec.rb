@@ -97,26 +97,28 @@ RSpec.describe Lich::Common::MapEngine::Strategies do
 
   describe Lich::Common::MapEngine::UniqueCrossings do
     # Naming a specific crossing here pins a moving target: every block is a
-    # candidate to become schema, and this spec has already had to be
-    # repointed twice. Take whatever is registered instead.
-    let(:a_gs_crossing) do
-      described_class::REGISTRY.keys.find { |k| k.start_with?('crossing_') && !k.start_with?('crossing_dr_') }
-    end
+    # candidate to become schema. Take whatever is registered instead.
+    let(:a_crossing) { described_class::REGISTRY.keys.first }
 
     it 'carries the relocated one-off crossings' do
       # Deliberately not a size floor: this registry is meant to shrink as
-      # recognizers learn each idiom family. Assert both game sections loaded
-      # and that a named block is callable.
+      # each idiom becomes schema. GS has reached zero - every GS edge is now
+      # data - so only assert that what IS registered is callable.
       expect(described_class::REGISTRY).not_to be_empty
-      expect(a_gs_crossing).not_to be_nil
-      expect(described_class.known?(a_gs_crossing)).to be(true)
+      expect(described_class.known?(a_crossing)).to be(true)
+      expect(described_class::REGISTRY[a_crossing]).to be_a(Proc)
+    end
+
+    it 'has no GS crossings left: every GS edge is schema' do
+      gs = described_class::REGISTRY.keys.reject { |k| k.start_with?('crossing_dr_') }
+      expect(gs).to be_empty
+      # DR has not been through this pass yet.
       expect(described_class::REGISTRY.keys).to include(a_string_starting_with('crossing_dr_'))
-      expect(described_class::REGISTRY[a_gs_crossing]).to be_a(Proc)
     end
 
     it 'validates unique_crossing strategy references' do
       validator = Lich::Common::MapEngine::Validator
-      expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing', 'name' => a_gs_crossing }))
+      expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing', 'name' => a_crossing }))
         .to be_empty
       expect(validator.errors_for_wayto({ 'strategy' => 'unique_crossing' }).join)
         .to include('missing required param')
