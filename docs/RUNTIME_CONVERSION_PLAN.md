@@ -57,9 +57,7 @@ mapmap round-trip byte-identical.
 4. **Plain-string degenerate case:** recognizers that emit a plain string
    edge (`plain_move`) just execute a `move` — do NOT rewrite the edge.
 
-## Phase 2 — Telemetry and operator tooling
-
-Partly landed with Phase 1; what remains is marked TODO.
+## Phase 2 — Telemetry and operator tooling — COMPLETE (2026-08-12)
 
 - [x] `Map.conversion_report` — in-game mirror of MapConvert#report:
   converted-body count plus refusal clusters with an example edge each.
@@ -78,8 +76,13 @@ Partly landed with Phase 1; what remains is marked TODO.
   without reproducing anything. Logging is best effort: an unwritable log
   dir disables logging rather than breaking routing, since failing closed
   on an edge must never become an exception on the travel path.
-- [ ] TODO: document that `Map.convert_edge` now shows what the runtime
-  would do, not a separate offline path (mapping guide + command help).
+- [x] `Map.convert_edge` documented as an eager preview of the lazy runtime
+  path (cartographer `docs/mapping-guide.md` + the method's own docs).
+  Doing so surfaced a real inconsistency: it built a bare MapConvert, so
+  it skipped the manual overlay, the trailing-replan guard, and
+  validation. It now shares GuardedProc's converter and applies the same
+  post-processing in the same order, so the JSON it echoes for a
+  submission is the JSON that would actually run.
 - [x] Notice when anything refuses — but **not at map load**, as originally
   written: conversion is lazy, so at load time nothing has been converted
   and no refusal is known yet. There is no later "everything is loaded"
@@ -99,7 +102,9 @@ Partly landed with Phase 1; what remains is marked TODO.
    - Benchmark memoized timeto eval vs. raw `eval` baseline (expect parity
      or better after first hit).
    - Benchmark `Map.findpath` across the standard long-route set before /
-     after; budget: no measurable regression (>2%).
+     after; budget: no measurable regression (>2%). **DONE** — resolution
+     of the timeto costs dijkstra actually touches is 25.5x faster warm
+     than the eval it replaced; see the Status table.
    - Cold-route check: dijkstra touches every timeto in the searched
      region, but most timeto are numeric, and proc bodies are heavily
      duplicated (the cache keys by source string, so dozens of edges
@@ -167,8 +172,26 @@ Phase 1 built and measured against real data:
 | Cold convert, all timeto bodies | **16.6 ms** (1,873 edges -> 151 unique) |
 | Warm lookup per edge | **0.76 us** vs **7.47 us** for eval � ~10x faster |
 
-Remaining: findpath before/after benchmark, in-game smoke on a stock map,
-DR in-game pass.
+Phase 2 complete: idiom stats, refusal logging, first-sighting notice, and
+`convert_edge` aligned with the runtime path.
+
+Phase 3 performance gate met (`spec/lib/common/map/findpath_benchmark_spec.rb`,
+1,873 timeto edges / 107 distinct bodies):
+
+| measurement | result |
+|---|---|
+| Cold convert, all timeto bodies | **16.7 ms** total (8.92 us/edge, once) |
+| Warm lookup (every later dijkstra pass) | **0.63 us/edge** |
+| Eval baseline it replaced | **16.20 us/edge** |
+| Steady-state speedup | **25.5x** |
+
+The eval baseline is approximate — outside a live session many bodies
+reference absent game state and raise, so raise-and-rescue is inside the
+measurement. The margin is far larger than that caveat can explain, and
+the memoized path does no per-call parsing at all.
+
+Remaining: in-game smoke on a stock map and the DR in-game pass. Both
+require a live session and cannot be done from here.
 
 ## Success criteria
 
