@@ -1,0 +1,226 @@
+[
+  {
+    "body": "fput 'climb ramp'; waitfor 'Obvious paths:'",
+    "field": "wayto",
+    "room": 5608,
+    "dest": "5609",
+    "edges": 2
+  },
+  {
+    "body": "fput 'climb walk'; waitfor 'Obvious paths:'",
+    "field": "wayto",
+    "room": 5610,
+    "dest": "5611",
+    "edges": 2
+  },
+  {
+    "body": "fput('search'); waitrt?; move('go log')",
+    "field": "wayto",
+    "room": 52065,
+    "dest": "52066",
+    "edges": 2
+  },
+  {
+    "body": "move 'climb boulder'; waitrt?",
+    "field": "wayto",
+    "room": 52055,
+    "dest": "52058",
+    "edges": 1
+  },
+  {
+    "body": "move 'climb cliff gouge'; waitrt?",
+    "field": "wayto",
+    "room": 52061,
+    "dest": "52062",
+    "edges": 1
+  },
+  {
+    "body": "move 'climb col'; waitrt?",
+    "field": "wayto",
+    "room": 12481,
+    "dest": "12500",
+    "edges": 2
+  },
+  {
+    "body": "move 'climb crev'; waitrt?",
+    "field": "wayto",
+    "room": 12501,
+    "dest": "12502",
+    "edges": 2
+  },
+  {
+    "body": "move 'climb curt'; waitrt?",
+    "field": "wayto",
+    "room": 12481,
+    "dest": "12482",
+    "edges": 2
+  },
+  {
+    "body": "move 'climb heavy barricade'; waitrt?; fput('look')",
+    "field": "wayto",
+    "room": 1138,
+    "dest": "8945",
+    "edges": 2
+  },
+  {
+    "body": "move 'climb narrow opening'; waitrt?",
+    "field": "wayto",
+    "room": 52037,
+    "dest": "14607",
+    "edges": 1
+  },
+  {
+    "body": "move 'climb rock shelf'; waitrt?",
+    "field": "wayto",
+    "room": 52058,
+    "dest": "52059",
+    "edges": 1
+  },
+  {
+    "body": "move 'climb rough hole'; waitrt?",
+    "field": "wayto",
+    "room": 14607,
+    "dest": "52037",
+    "edges": 1
+  },
+  {
+    "body": "move 'climb rubble'; waitrt?",
+    "field": "wayto",
+    "room": 12478,
+    "dest": "12479",
+    "edges": 2
+  },
+  {
+    "body": "move 'climb slanting shelf'; waitrt?",
+    "field": "wayto",
+    "room": 52062,
+    "dest": "52061",
+    "edges": 1
+  },
+  {
+    "body": "move 'climb stalagmite'; waitrt?",
+    "field": "wayto",
+    "room": 52042,
+    "dest": "52046",
+    "edges": 2
+  },
+  {
+    "body": "move 'climb steep staircase'; waitrt?",
+    "field": "wayto",
+    "room": 12516,
+    "dest": "14608",
+    "edges": 2
+  },
+  {
+    "body": "move 'climb stone column'; waitrt?",
+    "field": "wayto",
+    "room": 13433,
+    "dest": "13434",
+    "edges": 2
+  },
+  {
+    "body": "move 'down'; waitrt?",
+    "field": "wayto",
+    "room": 12475,
+    "dest": "12476",
+    "edges": 13
+  },
+  {
+    "body": "move 'east'; waitrt?",
+    "field": "wayto",
+    "room": 12480,
+    "dest": "12481",
+    "edges": 27
+  },
+  {
+    "body": "move 'go open'; waitrt?",
+    "field": "wayto",
+    "room": 12502,
+    "dest": "12503",
+    "edges": 2
+  },
+  {
+    "body": "move 'go sea'; waitrt?",
+    "field": "wayto",
+    "room": 12485,
+    "dest": "12486",
+    "edges": 1
+  },
+  {
+    "body": "move 'go shore'; waitrt?",
+    "field": "wayto",
+    "room": 12486,
+    "dest": "12485",
+    "edges": 1
+  },
+  {
+    "body": "move 'go slit'; waitrt?",
+    "field": "wayto",
+    "room": 51201,
+    "dest": "51202",
+    "edges": 2
+  },
+  {
+    "body": "move 'go stone bridge'; waitrt?",
+    "field": "wayto",
+    "room": 12512,
+    "dest": "52033",
+    "edges": 2
+  },
+  {
+    "body": "move 'north'; waitrt?",
+    "field": "wayto",
+    "room": 12477,
+    "dest": "12476",
+    "edges": 29
+  },
+  {
+    "body": "move 'northeast'; waitrt?",
+    "field": "wayto",
+    "room": 12482,
+    "dest": "12493",
+    "edges": 19
+  },
+  {
+    "body": "move 'northwest'; waitrt?",
+    "field": "wayto",
+    "room": 12472,
+    "dest": "5642",
+    "edges": 28
+  },
+  {
+    "body": "move 'south'; waitrt?",
+    "field": "wayto",
+    "room": 12475,
+    "dest": "12507",
+    "edges": 29
+  },
+  {
+    "body": "move 'southeast'; waitrt?",
+    "field": "wayto",
+    "room": 5642,
+    "dest": "12472",
+    "edges": 26
+  },
+  {
+    "body": "move 'southwest'; waitrt?",
+    "field": "wayto",
+    "room": 12490,
+    "dest": "12488",
+    "edges": 20
+  },
+  {
+    "body": "move 'up'; waitrt?",
+    "field": "wayto",
+    "room": 12476,
+    "dest": "12475",
+    "edges": 11
+  },
+  {
+    "body": "move 'west'; waitrt?",
+    "field": "wayto",
+    "room": 12481,
+    "dest": "12480",
+    "edges": 28
+  }
+]

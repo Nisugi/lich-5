@@ -88,6 +88,45 @@ RSpec.describe Lich::Common::MapEngine::GuardedProc do
     end
   end
 
+  describe 'a real DR submission' do
+    # Every new StringProc from an actual DR mapper submission (the
+    # lich_repo_mirror dr_map report), 266 edges over 32 distinct bodies.
+    # It converted with no recognizer changes; this keeps it that way.
+    let(:fixture) do
+      path = File.expand_path('../../../fixtures/map/dr_submission_2026_08.json', __dir__)
+      JSON.parse(File.read(path))
+    end
+
+    it 'converts every submitted proc without a recognizer change' do
+      described_class.use_game('DR')
+      refused = fixture.reject do |entry|
+        described_class.new(entry['body'], entry['field'], entry['room'], entry['dest'])
+                       .send(:resolve) != :refused
+      end
+      expect(refused.map { |e| e['body'] }).to be_empty
+    end
+
+    it 'keeps move and fput distinct, since only move expects a room change' do
+      described_class.use_game('DR')
+      converter = described_class.converter
+      steps = converter.convert_wayto("move 'climb heavy barricade'; waitrt?; fput('look')").schema
+      expect(steps.map { |s| s['do'] }).to eq(%w[move wait_rt send])
+      steps = converter.convert_wayto("fput('search'); waitrt?; move('go log')").schema
+      expect(steps.map { |s| s['do'] }).to eq(%w[send wait_rt move])
+    end
+
+    it 'escapes a waitfor literal so punctuation is not read as a regex' do
+      described_class.use_game('DR')
+      steps = described_class.converter.convert_wayto("fput 'climb ramp'; waitfor 'Obvious paths:'").schema
+      pattern = Lich::Common::MapEngine.send(:compile_pattern, steps[0]['for'])
+      expect('Obvious paths: north, east').to match(pattern)
+      # waitfor has no timeout of its own, so converted awaits get the long
+      # ceiling and fail rather than falling through silently.
+      expect(steps[0]['timeout']).to eq(1800)
+      expect(steps[0]['on_timeout']).to eq('fail')
+    end
+  end
+
   describe 'coverage against real map data', :slow do
     # The gate that matters: a stock tillmen map must convert completely,
     # since a refusal is an edge the user can no longer travel.
