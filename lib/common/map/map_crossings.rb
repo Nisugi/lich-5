@@ -266,28 +266,6 @@ module Lich
           result = dothistimeout 'look deep pillar', 5, /dark cloud|dark eye|hazy black|slate grey|blood-drop|dark cloud|radiating circle|consist of/;if result =~ /dark eye/;	loop{;		wait_until{(XMLData.mana > (17 * 3))};		result = cast(717, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /hazy black/;	loop{;		wait_until{(XMLData.mana > (4 * 3))};		result = cast(704, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /slate grey/;	loop{;		wait_until{(XMLData.mana > (5 * 3))};		result = cast(705, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /blood-drop/;	loop{;		wait_until{(XMLData.mana > (1 * 3))};		result = cast(701, 'deep pillar');		if result =~ /Cast Roundtime/;			break		end;	};elsif result =~ /radiating circle/;	loop{;		wait_until{(XMLData.mana > (2 * 3))};		result = cast(702, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /dark cloud/;	loop{;		wait_until{(XMLData.mana > (3 * 3))};		result = cast(703, 'deep pillar');		if result =~ /Cast Roundtime/;			break;		end;	};end;result = dothistimeout 'look black pillar', 5, /dark cloud|dark eye|hazy black|slate grey|blood-drop|dark cloud|radiating circle|consist of/;if result =~ /dark eye/;	loop{;		wait_until{(XMLData.mana > (17 * 3))};		result = cast(717, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /hazy black/;	loop{;		wait_until{(XMLData.mana > (4 * 3))};		result = cast(704, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /slate grey/;	loop{;		wait_until{(XMLData.mana > (5 * 3))};		result = cast(705, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /blood-drop/;	loop{;		wait_until{(XMLData.mana > (1 * 3))};		result = cast(701, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /radiating circle/;	loop{;		wait_until{(XMLData.mana > (2 * 3))};		result = cast(702, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /dark cloud/;	loop{;		wait_until{(XMLData.mana > (3 * 3))};		result = cast(703, 'black pillar');		if result =~ /Cast Roundtime/;			break;		end;	};end;result = dothistimeout 'look dark pillar', 5, /dark cloud|dark eye|hazy black|slate grey|blood-drop|dark cloud|radiating circle|consist of/;if result =~ /dark eye/;	loop{;		wait_until{(XMLData.mana > (17 * 3))};		result = cast(717, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /hazy black/;	loop{;		wait_until{(XMLData.mana > (4 * 3))};		result = cast(704, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /slate grey/;	loop{;		wait_until{(XMLData.mana > (5 * 3))};		result = cast(705, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /blood-drop/;	loop{;		wait_until{(XMLData.mana > (1 * 3))};		result = cast(701, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /radiating circle/;	loop{;		wait_until{(XMLData.mana > (2 * 3))};		result = cast(702, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};elsif result =~ /dark cloud/;	loop{;		wait_until{(XMLData.mana > (3 * 3))};		result = cast(703, 'dark pillar');		if result =~ /Cast Roundtime/;			break;		end;	};end
         end
 
-        define('crossing_14060_20430') do # 14060:20430
-          
-          	fput "open door"
-          	while line = get
-          		if line =~ /That is already open\./
-          			break
-          		elsif line =~ /There doesn't seem to be any way to do that\./
-          			if GameObj.right_hand.type == "gem"
-          				fput "put ##{GameObj.right_hand.id} in vaalorn door"
-          				break
-          			else
-          				echo "In order to get past this door you must sacrifice a gem.\n Place a cheap gem in your right hand and unpause the script (;unpause) to continue."
-          				pause_script
-          				wait_until{GameObj.right_hand.name !~ /Empty/}
-          				fput "put ##{GameObj.right_hand.id} in vaalorn door"
-          				break
-          			end
-          		end
-          	end
-          	fput "go door"
-        end
-
         define('crossing_18178_18179') do # 18178:18179
           refill_hands = false;
           done = false;
@@ -330,27 +308,6 @@ module Lich
           end;
           fill_hands if refill_hands;
           move("go staircase");
-        end
-
-        define('crossing_18700_18250') do # 18700:18250
-          if !GameObj.loot.find{|o| o.name =~ /ruined cell door/}.nil?;
-            move ('go door');
-          elsif GameObj.right_hand.id.nil?;
-            echo 'You need a weapon to BATTER the DOOR';
-          else
-            echo 'BATTERing the DOOR with a valid weapon (even if not a warrior) until it is destroyed and becomes a ruined cell door';
-            batter_result = nil;
-            until batter_result =~ /ineffective|destroyed/;
-              batter_result = dothistimeout 'batter door', 3, /You bash at the|The cell door has already been destroyed.|Your .*? is ineffective against the door|going to do much good/;
-              break if batter_result =~ /ineffective/;
-            end;
-            move ('go door') if batter_result =~ /destroyed/;
-            echo '  You need a different weapon to BATTER the DOOR' if batter_result =~ /ineffective|going to do much good/;
-          end;
-        end
-
-        define('crossing_24980_24804') do # 24980:24804
-          echo '** Please wait.  Waiting for the stain to show up **';line=get until line =~ /dark stains/;fput "get stain";fput "lie" if standing?;line = fput "search" until line =~ /descending slope/;dothistimeout 'go slope', 3, /You gradually make your way down the descending slope/;line = fput "search" until line =~ /opening/;dothistimeout 'go opening', 3, /You duck down low and half-crawl into the opening/;fput "stand" until standing?
         end
 
         define('crossing_27638_27639') do # 27638:27639 27639:27638

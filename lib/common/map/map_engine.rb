@@ -850,6 +850,18 @@ module Lich
                   raise StepFailed, "item not in inventory: #{name}" unless item
                   "##{item.id}"
                 end
+                .gsub(/\{hand_id(?::(left|right))?\}/) do
+                  # Whatever is in hand, for edges that consume it - a gem fed
+                  # to a door, a weapon used on it.
+                  side = ::Regexp.last_match(1)
+                  obj = case side
+                        when 'left'  then GameObj.left_hand
+                        when 'right' then GameObj.right_hand
+                        else [GameObj.right_hand, GameObj.left_hand].compact.find { |o| o.id }
+                        end
+                  raise StepFailed, 'nothing in hand' unless obj&.id
+                  "##{obj.id}"
+                end
                 .gsub(/\{room_id:([^}]+)\}/) do
                   # Something in the room rather than something you own: shop
                   # fronts and other scenery you enter by id.
@@ -1097,6 +1109,16 @@ module Lich
             # checkloot's exact test: an item in the room has this noun. Not
             # loot_match, which is a regex over full names and matches wider.
             GameObj.loot.any? { |obj| obj.noun == expand_tokens(arg) }
+          when 'holding'
+            # Something is in a hand. Bare "holding" means either hand is
+            # occupied; "holding:gem" matches that item type, noun or name.
+            hands = [GameObj.right_hand, GameObj.left_hand].compact.select { |o| o.id }
+            if arg.to_s.empty?
+              hands.any?
+            else
+              want = expand_tokens(arg)
+              hands.any? { |o| o.type.to_s == want || o.noun == want || o.name == want }
+            end
           when 'room_object'
             # Scenery named in the room description, which is a different
             # registry from loot (things lying on the ground).
@@ -1324,7 +1346,7 @@ module Lich
         FORMULA_NAMES = %w[haste_scaled].freeze
         CONDITION_KINDS = %w[spell status setting race_match ice_caution path paths_are has_item loot_match
                              in_room platinum capture capture_match room_loaded loot_noun
-                             npc_match room_object room_object_match paths_at_most].freeze
+                             npc_match room_object room_object_match paths_at_most holding].freeze
         ON_TIMEOUT = %w[continue fail retry].freeze
 
         module_function

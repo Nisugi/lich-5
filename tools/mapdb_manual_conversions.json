@@ -4634,10 +4634,47 @@
         "cmd": "go gangplank"
       }
     ],
-    "14060:20430": {
-      "strategy": "unique_crossing",
-      "name": "crossing_14060_20430"
-    },
+    "14060:20430": [
+      {
+        "do": "await",
+        "cmd": "open door",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "That is already open\\.|There doesn't seem to be any way to do that\\.",
+        "bind": {
+          "reply": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture_match:reply=any way to do that",
+        "then": [
+          {
+            "do": "if",
+            "when": "holding:gem",
+            "then": [
+              {
+                "do": "send",
+                "cmd": "put {hand_id} in vaalorn door"
+              }
+            ],
+            "else": [
+              {
+                "do": "echo",
+                "msg": "This door needs a gem: put a cheap one in your hand and try again."
+              },
+              {
+                "do": "break"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go door"
+      }
+    ],
     "14726:18172": [
       {
         "do": "await",
@@ -5283,10 +5320,85 @@
         "cmd": "go gangplank"
       }
     ],
-    "18700:18250": {
-      "strategy": "unique_crossing",
-      "name": "crossing_18700_18250"
-    },
+    "18700:18250": [
+      {
+        "do": "if",
+        "when": "loot_match:ruined cell door",
+        "then": [
+          {
+            "do": "move",
+            "cmd": "go door"
+          }
+        ],
+        "else": [
+          {
+            "do": "if",
+            "when": "not:holding:",
+            "then": [
+              {
+                "do": "echo",
+                "msg": "You need a weapon in hand to batter the door."
+              },
+              {
+                "do": "break"
+              }
+            ]
+          },
+          {
+            "do": "echo",
+            "msg": "Battering the door until it is destroyed..."
+          },
+          {
+            "do": "repeat",
+            "times": 30,
+            "steps": [
+              {
+                "do": "await",
+                "cmd": "batter door",
+                "timeout": 3,
+                "on_timeout": "continue",
+                "for": "You bash at the|The cell door has already been destroyed\\.|Your .*? is ineffective against the door|going to do much good",
+                "bind": {
+                  "result": 0
+                }
+              },
+              {
+                "do": "if",
+                "when": "capture_match:result=ineffective|going to do much good",
+                "then": [
+                  {
+                    "do": "echo",
+                    "msg": "You need a different weapon to batter this door."
+                  },
+                  {
+                    "do": "break"
+                  }
+                ]
+              },
+              {
+                "do": "if",
+                "when": "capture_match:result=destroyed",
+                "then": [
+                  {
+                    "do": "break"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "do": "if",
+            "when": "loot_match:ruined cell door",
+            "then": [
+              {
+                "do": "move",
+                "cmd": "go door"
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "18748:18747": [
       {
         "do": "cast",
@@ -6352,10 +6464,106 @@
       "strategy": "unique_crossing",
       "name": "crossing_24976_24979"
     },
-    "24980:24804": {
-      "strategy": "unique_crossing",
-      "name": "crossing_24980_24804"
-    },
+    "24980:24804": [
+      {
+        "do": "echo",
+        "msg": "Waiting for the stain to show up..."
+      },
+      {
+        "do": "await",
+        "timeout": 600,
+        "on_timeout": "fail",
+        "for": "dark stains"
+      },
+      {
+        "do": "send",
+        "cmd": "get stain"
+      },
+      {
+        "do": "if",
+        "when": "status:standing",
+        "then": [
+          {
+            "do": "send",
+            "cmd": "lie"
+          }
+        ]
+      },
+      {
+        "do": "repeat",
+        "times": 30,
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "timeout": 3,
+            "on_timeout": "continue",
+            "for": "descending slope",
+            "bind": {
+              "slope": 0
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture:slope",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "cmd": "go slope",
+        "timeout": 3,
+        "on_timeout": "continue",
+        "for": "You gradually make your way down the descending slope"
+      },
+      {
+        "do": "repeat",
+        "times": 30,
+        "steps": [
+          {
+            "do": "await",
+            "cmd": "search",
+            "timeout": 3,
+            "on_timeout": "continue",
+            "for": "opening",
+            "bind": {
+              "opening": 0
+            }
+          },
+          {
+            "do": "if",
+            "when": "capture:opening",
+            "then": [
+              {
+                "do": "break"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "cmd": "go opening",
+        "timeout": 3,
+        "on_timeout": "continue",
+        "for": "You duck down low and half-crawl into the opening"
+      },
+      {
+        "do": "repeat",
+        "until": "status:standing",
+        "steps": [
+          {
+            "do": "send",
+            "cmd": "stand"
+          }
+        ]
+      }
+    ],
     "25148:221": [
       {
         "do": "await",

@@ -557,6 +557,25 @@ RSpec.describe Lich::Common::MapEngine do
       expect(described_class.condition?('room_object:barrier')).to be(true)
     end
 
+    it 'tests what is in hand, by type or by name' do
+      gem = double('gem', id: 77, type: 'gem', noun: 'diamond', name: 'a flawed diamond')
+      empty = double('empty', id: nil, type: nil, noun: nil, name: nil)
+      stub_const('Lich::Common::GameObj', double('GameObj', right_hand: gem, left_hand: empty))
+      expect(described_class.condition?('holding:')).to be(true)
+      expect(described_class.condition?('holding:gem')).to be(true)      # type
+      expect(described_class.condition?('holding:diamond')).to be(true)  # noun
+      expect(described_class.condition?('holding:sword')).to be(false)
+      expect(described_class.expand_tokens('put {hand_id} in door')).to eq('put #77 in door')
+    end
+
+    it 'reports empty hands rather than guessing an id' do
+      empty = double('empty', id: nil, type: nil, noun: nil, name: nil)
+      stub_const('Lich::Common::GameObj', double('GameObj', right_hand: empty, left_hand: empty))
+      expect(described_class.condition?('holding:')).to be(false)
+      expect { described_class.expand_tokens('put {hand_id} in door') }
+        .to raise_error(described_class::StepFailed, /nothing in hand/)
+    end
+
     it 'matches npcs separately from loot' do
       # GameObj.loot is items; a bandit is an npc and would never appear there.
       bandit = double('bandit', name: 'a burly bandit', noun: 'bandit')
