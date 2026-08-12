@@ -8322,6 +8322,2478 @@
         "timeout": 1800,
         "on_timeout": "fail"
       }
+    ],
+    "250:1870": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 4"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 4",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "250:10838": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 3"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 3",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "250:11756": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 2"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 2",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "250:29033": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 5"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 5",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "250:31493": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 6"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 6",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "250:32372": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 7"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 7",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "250:32928": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 8"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 8",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "250:35254": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 11"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 11",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1870:250": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 1"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 1",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1870:10838": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 3"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 3",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1870:11756": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 2"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 2",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1870:29033": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 5"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 5",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1870:31493": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 6"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 6",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1870:32372": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 7"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 7",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1870:32928": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 8"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 8",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "10838:250": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 1"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 1",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "10838:1870": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 4"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 4",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "10838:11756": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 2"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 2",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "10838:29033": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 5"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 5",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "10838:31493": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 6"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 6",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "10838:32372": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 7"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 7",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "10838:32928": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 8"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 8",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "11756:250": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 1"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 1",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "11756:1870": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 4"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 4",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "11756:10838": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 3"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 3",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "11756:29033": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 5"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 5",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "11756:31493": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 6"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 6",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "11756:32372": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 7"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 7",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "11756:32928": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 8"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 8",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "11756:35254": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 11"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 11",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "29033:250": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 1"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 1",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "29033:1870": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 4"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 4",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "29033:10838": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 3"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 3",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "29033:11756": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 2"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 2",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "29033:31493": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 6"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 6",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "29033:32372": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 7"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 7",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "29033:32928": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 8"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 8",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "31493:250": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 1"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 1",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "31493:1870": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 4"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 4",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "31493:10838": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 3"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 3",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "31493:11756": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 2"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 2",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "31493:29033": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 5"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 5",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "31493:32372": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 7"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 7",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "31493:32928": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 8"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 8",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32372:250": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 1"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 1",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32372:1870": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 4"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 4",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32372:10838": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 3"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 3",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32372:11756": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 2"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 2",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32372:29033": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 5"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 5",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32372:31493": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 6"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 6",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32372:32928": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 8"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 8",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32372:35254": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 11"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 11",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32928:250": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 1"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 1",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32928:1870": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 4"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 4",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32928:10838": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 3"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 3",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32928:11756": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 2"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 2",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32928:29033": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 5"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 5",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32928:31493": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 6"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 6",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "32928:32372": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 7"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 7",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "35254:250": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 1"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 1",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "35254:11756": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 2"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 2",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "35254:32372": [
+      {
+        "do": "send",
+        "cmd": "ask portmaster about travel 7"
+      },
+      {
+        "do": "await",
+        "cmd": "ask portmaster about travel 7",
+        "timeout": 10,
+        "on_timeout": "continue",
+        "for": "ain.t got the money",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for passage."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "A\\ crew\\ member\\ escorts\\ you\\ off\\ the\\ ship\\.",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "25859:25858": [
+      {
+        "do": "await",
+        "cmd": "give attendant 2000",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "don.t have that much silver",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for the attendant."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go archway"
+      }
+    ],
+    "25860:25975": [
+      {
+        "do": "await",
+        "cmd": "give attendant 2000",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "don.t have that much silver",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for the attendant."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go archway"
+      }
+    ],
+    "25861:25971": [
+      {
+        "do": "await",
+        "cmd": "give attendant 2000",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "don.t have that much silver",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for the attendant."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go archway"
+      }
+    ],
+    "31751:32075": [
+      {
+        "do": "await",
+        "cmd": "give attendant 2000",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "don.t have that much silver",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for the attendant."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "move",
+        "cmd": "go arch"
+      }
+    ],
+    "992:993": [
+      {
+        "do": "await",
+        "cmd": "buy ticket",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "don.t have enough silvers to purchase",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for a cart ticket."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "You\\ hastily\\ exit\\ the\\ cart",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "992:1013": [
+      {
+        "do": "await",
+        "cmd": "buy pass",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "don.t have enough silvers to purchase",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for a cart ticket."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "You\\ hastily\\ exit\\ the\\ cart",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1012:1013": [
+      {
+        "do": "await",
+        "cmd": "buy ticket",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "don.t have enough silvers to purchase",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for a cart ticket."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "You\\ hastily\\ exit\\ the\\ cart",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1260:1261": [
+      {
+        "do": "await",
+        "cmd": "buy ticket",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "don.t have enough silvers to purchase",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for a cart ticket."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "You\\ hastily\\ exit\\ the\\ cart",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1266:1261": [
+      {
+        "do": "await",
+        "cmd": "buy pass",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "don.t have enough silvers to purchase",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for a cart ticket."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "You\\ hastily\\ exit\\ the\\ cart",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
+    ],
+    "1266:1267": [
+      {
+        "do": "await",
+        "cmd": "buy ticket",
+        "timeout": 5,
+        "on_timeout": "continue",
+        "for": "don.t have enough silvers to purchase",
+        "bind": {
+          "refused": 0
+        }
+      },
+      {
+        "do": "if",
+        "when": "capture:refused",
+        "then": [
+          {
+            "do": "echo",
+            "msg": "Not enough silver for a cart ticket."
+          },
+          {
+            "do": "break"
+          }
+        ]
+      },
+      {
+        "do": "await",
+        "for": "You\\ hastily\\ exit\\ the\\ cart",
+        "timeout": 1800,
+        "on_timeout": "fail"
+      }
     ]
   }
 }
