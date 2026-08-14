@@ -43,6 +43,17 @@ module Lich
                             /(?<target>.+?) stands up\./
                           ].freeze),
 
+            StatusDef.new(:sitting,
+                          [/(?<target>.+?) is knocked into a sitting position!/].freeze,
+                          # standing back up clears sitting - same remove
+                          # messagings as prone
+                          [
+                            /(?<target>.+?) stands back up\./,
+                            /(?<target>.+?) gets back to .+? feet\./,
+                            /(?<target>.+?) rises to .+? feet\./,
+                            /(?<target>.+?) stands up\./
+                          ].freeze),
+
             StatusDef.new(:stunned,
                           [/The (?<target>.+?) is stunned!/].freeze,
                           [
