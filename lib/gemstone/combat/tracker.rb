@@ -60,6 +60,22 @@ module Lich
         class << self
           attr_reader :settings, :buffer
 
+          # Subscribe to parsed combat events (see Combat::Observers for
+          # event types, payloads, and the subscriber contract - callbacks
+          # may run on worker threads; never send game commands from one).
+          #
+          # @example
+          #   Combat::Tracker.on(:damage) { |type, data| queue << data }
+          # @return [Proc] handler; pass to {off} to unsubscribe
+          def on(*types, &block)
+            Observers.on(*types, &block)
+          end
+
+          # Unsubscribe a handler returned by {on}.
+          def off(handler)
+            Observers.off(handler)
+          end
+
           # Check if combat tracking is enabled
           #
           # Lazily initializes on first check if not already initialized.

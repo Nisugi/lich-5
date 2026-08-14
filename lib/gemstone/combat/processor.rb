@@ -7,6 +7,7 @@
 
 require_relative '../creature'
 require_relative '../critranks'
+require_relative 'observers'
 
 module Lich
   module Gemstone
@@ -190,6 +191,8 @@ module Lich
           event[:damages].each do |damage|
             creature.add_damage(damage)
             total_damage += damage
+            Observers.emit(:damage, id: creature.id, name: creature.name,
+                                    attack: event[:name], amount: damage)
             respond "  +#{damage} damage" if Tracker.debug?
           end
 
@@ -201,6 +204,9 @@ module Lich
                 body_part = map_critranks_to_body_part(crit[:location])
                 if body_part
                   creature.add_injury(body_part, crit[:wound_rank])
+                  Observers.emit(:wound, id: creature.id, name: creature.name,
+                                         attack: event[:name], location: crit[:location],
+                                         body_part: body_part, rank: crit[:wound_rank])
                   respond "  +wound: #{body_part} rank #{crit[:wound_rank]}" if Tracker.debug?
                 else
                   respond "  !unknown body part: #{crit[:location]}" if Tracker.debug?
@@ -210,6 +216,8 @@ module Lich
               # Check for fatal critical hit
               if crit[:fatal]
                 creature.mark_fatal_crit!
+                Observers.emit(:fatal_crit, id: creature.id, name: creature.name,
+                                            attack: event[:name], location: crit[:location])
                 respond "  +FATAL CRIT: #{crit[:location]} - creature died from crit, not HP loss" if Tracker.debug?
               end
             end
@@ -219,6 +227,8 @@ module Lich
           if Tracker.settings[:track_statuses]
             event[:statuses].each do |status|
               creature.add_status(status)
+              Observers.emit(:status, id: creature.id, name: creature.name,
+                                      status: status, action: :add)
               respond "  +status: #{status}" if Tracker.debug?
             end
           end
@@ -255,6 +265,8 @@ module Lich
             creature.clear_smote
             respond "[Combat] Cleared smite from #{creature.name} (#{creature.id})" if Tracker.debug?
           end
+          Observers.emit(:ucs, id: creature.id, name: creature.name,
+                               kind: ucs_result[:type], value: ucs_result[:value])
         rescue => e
           respond "[Combat] Error applying UCS: #{e.message}" if Tracker.debug?
         end
@@ -280,6 +292,8 @@ module Lich
               creature.add_status(status)
               respond "[Combat] Applied status #{status} to #{creature.name} (#{creature.id})" if Tracker.debug?
             end
+            Observers.emit(:status, id: creature.id, name: creature.name,
+                                    status: status, action: action == :remove ? :remove : :add)
           else
             respond "[Combat] Could not find creature for status: #{status} -> #{target_name_or_id}" if Tracker.debug?
           end
