@@ -54,6 +54,22 @@ RSpec.describe Lich::Gemstone::Combat::Parser do
       end
     end
 
+    it 'matches 302 Bane living-target messaging' do
+      line = "A sickly, violet haze encompasses #{bolded(452450877, 'mastodon', 'a heavily armored battle mastodon')}."
+      result = described_class.parse_attack(line)
+      expect(result).not_to be_nil
+      expect(result[:name]).to eq(:bane)
+      expect(result[:target][:id]).to eq(452450877)
+    end
+
+    it 'matches 335 Divine Wrath per-target materialize line' do
+      line = "A shadowy figure briefly materializes behind #{bolded(452450877, 'berserker', 'a tattooed gigas berserker')}, and a silent scream courses over a tattooed gigas berserker's visage."
+      result = described_class.parse_attack(line)
+      expect(result).not_to be_nil
+      expect(result[:name]).to eq(:divine_wrath)
+      expect(result[:target][:id]).to eq(452450877)
+    end
+
     it 'does not claim ambient spell messaging with no caster attribution' do
       # "Bloodstained light" fires identically for ANY caster's spell (seen
       # after both "Dicate gestures at..." and "You gesture at..." in logs),

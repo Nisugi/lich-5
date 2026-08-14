@@ -28,8 +28,15 @@ module Lich
           # Spell-based attacks
           SPELL_ATTACKS = [
             AttackDef.new(:balefire, [/You hurl a ball of greenish-black flame at (?<target>[^!]+)!/].freeze),
+            # 302 Bane, living-target version (the undead version has
+            # different messaging - not yet catalogued)
+            AttackDef.new(:bane, [/A sickly, violet haze encompasses (?<target>.+?)\./].freeze),
             AttackDef.new(:cold_snap, [/An airy mist rolls into the area, carrying a harsh chill with it./].freeze),
-            AttackDef.new(:divine_fury, [/A shadowy figure briefly materializes behind (?<target>[^,]+), and a silent scream courses over .+? visage./].freeze),
+            # 335 Divine Wrath: deity-specific cast flavor precedes; this
+            # materialize line repeats per target per round (up to 4 rounds,
+            # rounds 2+ have no cast messaging), so each line correctly
+            # initiates its own per-target event
+            AttackDef.new(:divine_wrath, [/A shadowy figure briefly materializes behind (?<target>[^,]+), and a silent scream courses over .+? visage./].freeze),
             AttackDef.new(:earthen_fury, [
               /Fiery debris explodes from the ground beneath (?<target>[^!]+)!/,
               /Craggy debris explodes from the ground beneath (?<target>[^!]+)!/,
