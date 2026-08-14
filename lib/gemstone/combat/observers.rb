@@ -42,21 +42,43 @@ module Lich
       module Observers
         @mutex = Mutex.new
         @subscribers = Hash.new { |h, k| h[k] = [] }
+        @named = {}
 
         class << self
           # Subscribe to one or more event types (or :any for everything).
           # Returns the block; keep it to unsubscribe via .off.
-          def on(*types, &block)
+          #
+          # With name:, registration is idempotent (DownstreamHook.add
+          # semantics): re-registering the same name replaces the previous
+          # handler instead of stacking - safe for script restarts and
+          # interactive ;e testing.
+          def on(*types, name: nil, &block)
             raise ArgumentError, 'block required' unless block
 
             types = [:any] if types.empty?
-            @mutex.synchronize { types.each { |t| @subscribers[t.to_sym] << block } }
+            @mutex.synchronize do
+              if name
+                old = @named.delete(name.to_s)
+                @subscribers.each_value { |list| list.delete(old) } if old
+                @named[name.to_s] = block
+              end
+              types.each { |t| @subscribers[t.to_sym] << block }
+            end
             block
           end
 
-          # Remove a previously registered handler from all types.
-          def off(handler)
-            @mutex.synchronize { @subscribers.each_value { |list| list.delete(handler) } }
+          # Remove a handler - pass the Proc returned by {on}, or the name
+          # it was registered under.
+          def off(handler_or_name)
+            @mutex.synchronize do
+              handler = if handler_or_name.is_a?(Proc)
+                          handler_or_name
+                        else
+                          @named.delete(handler_or_name.to_s)
+                        end
+              @named.delete_if { |_, h| h == handler }
+              @subscribers.each_value { |list| list.delete(handler) } if handler
+            end
             nil
           end
 
@@ -79,7 +101,10 @@ module Lich
           end
 
           def clear!
-            @mutex.synchronize { @subscribers.clear }
+            @mutex.synchronize do
+              @subscribers.clear
+              @named.clear
+            end
           end
         end
       end

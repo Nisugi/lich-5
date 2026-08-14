@@ -66,14 +66,15 @@ module Lich
           #
           # @example
           #   Combat::Tracker.on(:damage) { |type, data| queue << data }
+          #   Combat::Tracker.on(:damage, name: 'mybar') { ... } # idempotent
           # @return [Proc] handler; pass to {off} to unsubscribe
-          def on(*types, &block)
-            Observers.on(*types, &block)
+          def on(*types, name: nil, &block)
+            Observers.on(*types, name: name, &block)
           end
 
-          # Unsubscribe a handler returned by {on}.
-          def off(handler)
-            Observers.off(handler)
+          # Unsubscribe a handler returned by {on}, or by its name:.
+          def off(handler_or_name)
+            Observers.off(handler_or_name)
           end
 
           # Check if combat tracking is enabled

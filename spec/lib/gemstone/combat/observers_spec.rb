@@ -52,6 +52,22 @@ RSpec.describe Lich::Gemstone::Combat::Observers do
     expect(Lich.logged.last).to include('Combat::Observers subscriber (damage): boom')
   end
 
+  it 'named registration is idempotent - re-registering replaces' do
+    seen = []
+    described_class.on(:damage, name: 'bar') { seen << :first }
+    described_class.on(:damage, name: 'bar') { seen << :second }
+    described_class.emit(:damage, {})
+    expect(seen).to eq([:second])
+  end
+
+  it 'unsubscribes by name' do
+    seen = []
+    described_class.on(:damage, name: 'bar') { seen << 1 }
+    described_class.off('bar')
+    described_class.emit(:damage, {})
+    expect(seen).to be_empty
+  end
+
   it 'reports whether a type has subscribers' do
     expect(described_class.any_for?(:damage)).to be(false)
     described_class.on(:damage) { nil }
