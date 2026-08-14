@@ -22,13 +22,21 @@ module Lich
           @queue = Queue.new
           @processing = false
           @chunks_processed = 0
-          @worker = Thread.new { run_loop }
+          @spawn_mutex = Mutex.new
+          ensure_worker
         end
 
         # Enqueue a chunk; O(1), never blocks the game stream.
+        #
+        # Also revives the worker if it died: a worker spawned from a script
+        # context (enable! via autostart/;e) belongs to that script's thread
+        # group and is killed when the script exits. process_async runs on
+        # the downstream-hook (game) thread, so a worker respawned here
+        # survives script death.
         def process_async(chunk)
           return if chunk.empty?
           @queue.push(chunk)
+          ensure_worker
           nil
         end
 
@@ -50,11 +58,22 @@ module Lich
             active: @processing ? 1 : 0,
             queued: @queue.size,
             total: @chunks_processed,
-            worker_alive: @worker.alive?
+            worker_alive: !@worker.nil? && @worker.alive?
           }
         end
 
         private
+
+        def ensure_worker
+          return if @worker&.alive?
+
+          @spawn_mutex.synchronize do
+            next if @worker&.alive?
+
+            respond '[Combat] Worker thread dead - respawning' if @worker && Tracker.debug?
+            @worker = Thread.new { run_loop }
+          end
+        end
 
         def run_loop
           loop do
