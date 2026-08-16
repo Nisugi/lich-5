@@ -98,6 +98,44 @@ RSpec.describe Lich::Common::CreatureBase do
       expect(creature.has_status?('web')).to be false
     end
 
+    # The crit tables report position as "PRONE"/"KNEELING"/"SITTING";
+    # messaging and <crtrStatus> use lowercase. Membership is exact, so an
+    # uncanonicalized uppercase add could never be removed or matched.
+    it 'canonicalizes case at the boundary, whatever the producer sends' do
+      creature = SampleCreature.register('kobold', 1)
+
+      creature.add_status('PRONE')
+      expect(creature.has_status?('prone')).to be true
+      expect(creature.statuses).to include('prone')
+
+      creature.remove_status('prone')
+      expect(creature.has_status?('PRONE')).to be false
+    end
+
+    # A 3s roundtime followed by an overlapping 20s one kept the 3s expiry
+    # and reported the creature free ~19 seconds early.
+    it 'extends a timed status when re-added with a longer duration' do
+      creature = SampleCreature.register('kobold', 1)
+
+      creature.add_status('roundtime', 3)
+      creature.add_status('roundtime', 20)
+
+      later = Time.now + 10 # past the first expiry, inside the second
+      allow(Time).to receive(:now).and_return(later)
+      expect(creature.has_status?('roundtime')).to be true
+    end
+
+    it 'never shortens a timed status on re-add' do
+      creature = SampleCreature.register('kobold', 1)
+
+      creature.add_status('roundtime', 20)
+      creature.add_status('roundtime', 3)
+
+      later = Time.now + 10
+      allow(Time).to receive(:now).and_return(later)
+      expect(creature.has_status?('roundtime')).to be true
+    end
+
     it 'keeps a status with no configured duration until it is removed explicitly' do
       creature = SampleCreature.register('kobold', 1)
 

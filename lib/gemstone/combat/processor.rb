@@ -13,16 +13,56 @@ module Lich
   module Gemstone
     module Combat
       module Processor
+        # The floor positions are mutually exclusive: a creature is prone
+        # OR sitting OR kneeling (or none), never several at once, and the
+        # stand-up messagings are shared between them.
+        POSITION_STATUSES = %w[prone sitting kneeling].freeze
+
         module_function
 
         # Process a chunk of game lines for combat events
-        def process(chunk)
+        #
+        # @param chunk [Array<String>] game lines
+        # @param at [Time, nil] server time for this chunk (from the chunk's
+        #   <prompt time=>). Duration estimates are anchored to this rather
+        #   than to parse time, which the async worker can lag under load.
+        def process(chunk, at: nil)
           events = parse_events(chunk)
           return if events.empty?
 
-          events.each { |event| persist_event(event) }
+          at ||= prompt_time(chunk) || Time.now
+          events.each do |event|
+            event[:at] = at
+            persist_event(event)
+          end
 
           respond "[Combat] Processed #{events.size} events" if Tracker.debug?
+        end
+
+        PROMPT_TIME_PATTERN = /<prompt time="(\d+)"/.freeze
+
+        # Extracts the server timestamp from a chunk's <prompt> tag.
+        #
+        # Chunks are segmented on the prompt, so the last match is this
+        # chunk's own prompt.
+        #
+        # @return [Time, nil] the chunk's prompt time expressed on the LOCAL
+        #   clock, or nil when the chunk has no prompt.
+        #
+        # The prompt stamp is the game SERVER's epoch, but every duration
+        # estimate downstream (stun expiry, status timestamps) is compared
+        # against local Time.now. XMLData tracks the skew between the two
+        # clocks for exactly this reason - a raw Time.at(server_epoch) on a
+        # machine 40s ahead of the server produces stun estimates that are
+        # already expired the moment they land.
+        def prompt_time(chunk)
+          chunk.reverse_each do |line|
+            if (m = PROMPT_TIME_PATTERN.match(line))
+              offset = defined?(XMLData) ? XMLData.server_time_offset.to_f : 0.0
+              return Time.at(m[1].to_i + offset)
+            end
+          end
+          nil
         end
 
         # An event is worth persisting only if it has a target to apply data to
@@ -151,13 +191,13 @@ module Lich
 
                     # Look for crit on this line
                     if (c = CritRanks.parse(next_line.gsub(/<.+?>/, '')).values.first)
-                      current_event[:crits] << {
-                        type: c[:type],
-                        location: c[:location],
-                        rank: c[:rank],
-                        wound_rank: c[:wound_rank],
-                        fatal: c[:fatal]
-                      }
+                      # Keep the whole CritRanks hash rather than copying five
+                      # keys out of it: it is already allocated, and the rest
+                      # (stunned, roundtime, amputated, position, silenced,
+                      # slowed, dazed, secondary_wound, ...) is state we would
+                      # otherwise have to infer from messaging - or, for the
+                      # UCS-only fields, could not obtain at all.
+                      current_event[:crits] << c
                       respond "[Combat] Found critical hit: #{c[:location]} rank #{c[:wound_rank]}" if Tracker.debug?
                       break # Only take first crit found after this damage
                     end
@@ -213,6 +253,21 @@ module Lich
                 end
               end
 
+              # A crit can wound a second location (e.g. a strike that carries
+              # through); previously only the primary was registered.
+              if (secondary = crit[:secondary_wound])
+                apply_secondary_wound(creature, secondary, event)
+              end
+
+              # Amputation is a distinct terminal state, not accumulated rank.
+              if crit[:amputated] && (part = map_critranks_to_body_part(crit[:location]))
+                creature.amputate!(part)
+                Observers.emit(:amputation, id: creature.id, name: creature.name,
+                                            attack: event[:name], location: crit[:location],
+                                            body_part: part)
+                respond "  +AMPUTATED: #{part}" if Tracker.debug?
+              end
+
               # Check for fatal critical hit
               if crit[:fatal]
                 creature.mark_fatal_crit!
@@ -223,8 +278,10 @@ module Lich
             end
           end
 
-          # Apply status effects
+          # Status effects: crit-table-derived and message-derived, under
+          # one gate so they can never drift onto different flags.
           if Tracker.settings[:track_statuses]
+            apply_crit_statuses(creature, event)
             event[:statuses].each do |status|
               creature.add_status(status)
               Observers.emit(:status, id: creature.id, name: creature.name,
@@ -234,6 +291,103 @@ module Lich
           end
 
           respond "  Total damage applied: #{total_damage}" if total_damage > 0 && Tracker.debug?
+        end
+
+        # Registers a crit's secondary wound location, when it has one.
+        #
+        # CritRanks may report secondary_wound as a bare rank (same location)
+        # or as a {location:, rank:} pair; accept both.
+        def apply_secondary_wound(creature, secondary, event)
+          # bare (non-Hash) value with no location is ambiguous - skip
+          # rather than guess
+          return unless secondary.is_a?(Hash)
+
+          location = secondary[:location] || secondary['location']
+          # The tables key this :wound_rank ({ :location => "head",
+          # :wound_rank => 3 }); reading :rank made every secondary wound
+          # a silent no-op. :rank kept as a fallback for older data.
+          rank = (secondary[:wound_rank] || secondary['wound_rank'] ||
+                  secondary[:rank] || secondary['rank']).to_i
+          return unless rank > 0
+
+          # "both eyes" is a real table location with no single body part -
+          # it is two wounds, one per eye.
+          parts = if location.to_s.downcase.gsub(/[^a-z]/, '') == 'botheyes'
+                    %w[leftEye rightEye]
+                  else
+                    [map_critranks_to_body_part(location)].compact
+                  end
+          if parts.empty?
+            respond "  !unknown secondary wound location: #{location}" if Tracker.debug?
+            return
+          end
+
+          parts.each do |part|
+            creature.add_injury(part, rank)
+            Observers.emit(:wound, id: creature.id, name: creature.name,
+                                   attack: event[:name], location: location,
+                                   body_part: part, rank: rank, secondary: true)
+            respond "  +secondary wound: #{part} rank #{rank}" if Tracker.debug?
+          end
+        end
+
+        # Applies the status effects a critical hit carries.
+        #
+        # Deliberately not gated behind :track_ucs. The crit *tables* only
+        # populate roundtime/slowed/silenced/dazed for UCS attacks, but the
+        # underlying states are general - silence from Silence (210) or a
+        # silencing flare, slow from Slow (506), daze from various maneuvers.
+        # Gating the state on the UCS flag would mean a non-UCS character sees
+        # `silenced?` return false for a genuinely silenced creature, which is
+        # worse than having no answer at all.
+        #
+        # Units differ inside one CritRanks hash: `stunned` is in ROUNDS,
+        # `roundtime` is already in SECONDS.
+        def apply_crit_statuses(creature, event)
+          at = event[:at] || Time.now
+
+          event[:crits].each do |crit|
+            if crit[:stunned].to_i > 0
+              # The boolean stays owned by <crtrStatus>/messaging; this records
+              # the table-derived duration estimate beside it.
+              creature.add_status('stunned')
+              creature.add_stun_estimate(crit[:stunned], at: at)
+              Observers.emit(:stun, id: creature.id, name: creature.name,
+                                    attack: event[:name], rounds: crit[:stunned],
+                                    seconds: crit[:stunned].to_i * CreatureInstance::STUN_ROUND_SECONDS)
+            end
+
+            # roundtime is in seconds already - do not scale it.
+            if crit[:roundtime].to_i > 0
+              creature.add_status('roundtime', crit[:roundtime].to_i)
+              Observers.emit(:roundtime, id: creature.id, name: creature.name,
+                                         attack: event[:name], seconds: crit[:roundtime].to_i)
+            end
+
+            # Position changes carry better provenance than the messaging
+            # equivalents: /It is knocked to the ground!/ has no target
+            # capture, while this crit is already bound to a creature id.
+            if (pos = crit[:position])
+              # Tables report "PRONE"/"KNEELING"/"SITTING"; the status
+              # canon (messaging, <crtrStatus>, consumers) is lowercase.
+              # add_status canonicalizes too, but the observer payload
+              # must match what subscribers compare against.
+              status = pos.to_s.downcase
+              (POSITION_STATUSES - [status]).each { |s| creature.remove_status(s) }
+              creature.add_status(status)
+              Observers.emit(:status, id: creature.id, name: creature.name,
+                                      status: status, action: :add)
+            end
+
+            %i[silenced slowed dazed sleeping crippled limb_favored].each do |flag|
+              next unless crit[flag]
+
+              creature.add_status(flag.to_s)
+              Observers.emit(:status, id: creature.id, name: creature.name,
+                                      status: flag.to_s, action: :add)
+              respond "  +status: #{flag} (from crit)" if Tracker.debug?
+            end
+          end
         end
 
         # Apply UCS event to a creature
@@ -286,9 +440,25 @@ module Lich
 
           if creature
             if action == :remove
-              creature.remove_status(status)
+              # Position is one mutually-exclusive channel. The stand-up
+              # messagings are shared between prone and sitting, and parse
+              # returns the FIRST match (:prone, defined earlier) - so
+              # removing only the reported status left 'sitting' (and
+              # kneeling, which has no removal def at all) latched forever.
+              # A creature that stood up is in no floor position, whichever
+              # one the pattern happened to name.
+              if POSITION_STATUSES.include?(status.to_s)
+                POSITION_STATUSES.each { |s| creature.remove_status(s) }
+              else
+                creature.remove_status(status)
+              end
               respond "[Combat] Removed status #{status} from #{creature.name} (#{creature.id})" if Tracker.debug?
             else
+              # ...and adding one displaces the others: knocked prone while
+              # sitting is prone, not both.
+              if POSITION_STATUSES.include?(status.to_s)
+                (POSITION_STATUSES - [status.to_s]).each { |s| creature.remove_status(s) }
+              end
               creature.add_status(status)
               respond "[Combat] Applied status #{status} to #{creature.name} (#{creature.id})" if Tracker.debug?
             end
