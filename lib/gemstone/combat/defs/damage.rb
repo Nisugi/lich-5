@@ -12,7 +12,11 @@ module Lich
         module Damage
           # Core damage patterns - most common
           BASIC_DAMAGE = [
-            /\.\.\. and hit for (?<damage>\d+) points? of damage!/,
+            # "and hit for" is second person (your attacks); "and hits for"
+            # is third person (other players' casts and companions) - both
+            # are live, and missing the latter undercounted every group
+            # member's initial hit while still counting their followups.
+            /\.\.\. and hits? for (?<damage>\d+) points? of damage!/,
             /\.\.\. (?<damage>\d+) points? of damage!/,
             /\.\.\. hits for (?<damage>\d+) points? of damage!/
           ].freeze
