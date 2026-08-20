@@ -31,7 +31,14 @@ module Lich
             # 302 Bane, living-target version (the undead version has
             # different messaging - not yet catalogued)
             AttackDef.new(:bane, [/A sickly, violet haze encompasses (?<target>.+?)\./].freeze),
+            # 701 Blood Burst, per-hit line - the caster's gesture precedes it
+            # but this is the line that names the target (group members' casts
+            # produce it too, so their damage attributes correctly)
+            AttackDef.new(:blood_burst, [/Blood sprays from (?<target>.+?) neck in a crimson arc!/].freeze),
             AttackDef.new(:cold_snap, [/An airy mist rolls into the area, carrying a harsh chill with it./].freeze),
+            # 319 Ethereal Censer, per-target line (repeats per round like
+            # divine wrath; the censer manifestation messaging precedes)
+            AttackDef.new(:ethereal_censer, [/(?<target>.+?) becomes enveloped in the incense smoke!/].freeze),
             # 335 Divine Wrath: deity-specific cast flavor precedes; this
             # materialize line repeats per target per round (up to 4 rounds,
             # rounds 2+ have no cast messaging), so each line correctly
