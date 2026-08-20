@@ -49,6 +49,7 @@ module Lich
           track_wounds: true,
           track_statuses: true,
           track_ucs: true,          # Track UCS (position, tierup, smite)
+          emit_attacks: false,      # Emit whole parsed events (:attack blob) for recorder-class subscribers
           max_threads: 2,           # Keep threading for performance
           debug: false,
           buffer_size: 200,         # Increase for large combat chunks

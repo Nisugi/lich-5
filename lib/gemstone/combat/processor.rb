@@ -71,7 +71,28 @@ module Lich
         def event_worth_saving?(event)
           return false unless event && event[:target][:id]
 
-          !event[:damages].empty? || !event[:crits].empty? || !event[:statuses].empty?
+          !event[:damages].empty? || !event[:crits].empty? || !event[:statuses].empty? ||
+            event[:flares].any? { |f| !f[:damages].empty? || !f[:crits].empty? }
+        end
+
+        # Whether an event survives to persist_event. Registry-wise only
+        # events with data matter, but a recorder subscribed to :attack
+        # needs the empty ones too - a clean miss IS data (hit rates are
+        # impossible to compute from a feed that drops misses). Empty
+        # events pass through persist_event as no-ops apart from the emit.
+        def event_savable?(event)
+          return false unless event && event[:target][:id]
+
+          event_worth_saving?(event) || Tracker.settings[:emit_attacks]
+        end
+
+        # A flare's weapon (linked on its announce line) against a swing's
+        # weapon text: "slim short sword" is a substring of "kelyn-edged
+        # slim short sword". Flares without weapon info match any swing.
+        def flare_matches_weapon?(flare, weapon_text)
+          return true unless flare[:weapon] && weapon_text
+
+          weapon_text.include?(flare[:weapon][:name])
         end
 
         # State machine parser
@@ -81,8 +102,25 @@ module Lich
           parse_state = :seeking_attack
           current_target = nil
 
+          # Flare state (all chunk-local; see defs/flares.rb):
+          #   flare_ctx     - the flare whose damage/crit lines are arriving
+          #   pending_flares - flares seen before the swing they belong to
+          #                    (pre-flares); claimed by weapon on the next swing
+          #   spawn_pending / active_spawn - a spawn-class flare (Blink) casts
+          #                    an imbedded spell as a separate attack; its
+          #                    sequence brackets mark those events as children
+          flare_ctx = nil
+          pending_flares = []
+          spawn_pending = nil
+          active_spawn = nil
+          pending_resolution = nil
+
           lines.each_with_index do |line, index|
             next if line.strip.empty?
+            # Room-window components (objs/players) are full of bold creature
+            # links; feeding them to the target-switcher spawns phantom events
+            # for bystander creatures that were never attacked.
+            next if line.include?('<component id=')
 
             # Extract creature target once per line; reused by the status
             # handler and the target-switch logic below
@@ -115,24 +153,75 @@ module Lich
               end
             end
 
+            # Flare announce lines. A flare attaches to the current event when
+            # its weapon matches the swing's (post-flare); otherwise it is held
+            # for the next matching swing (pre-flare, e.g. dispel gloves that
+            # resolve before the attack). Position is ground truth for timing.
+            if (flare = Parser.parse_flare(line))
+              flare[:damages] = []
+              flare[:crits] = []
+              flare[:outcomes] = []
+              flare[:resolutions] = []
+              flare[:target_info] = line_target if line_target
+
+              if current_event && flare_matches_weapon?(flare, current_event[:weapon])
+                current_event[:flares] << flare
+              else
+                pending_flares << flare
+              end
+
+              # Only damaging flares own subsequent damage lines; a buff flare
+              # (breeze, tailwind) claiming the cursor would steal the parent
+              # swing's damage.
+              flare_ctx = flare[:damaging] ? flare : nil
+              spawn_pending = flare if flare[:spawns]
+              respond "[Combat] Found flare: #{flare[:name]}" if Tracker.debug?
+            end
+
+            # Spawn-class flares (Blink) fire an imbedded spell whose cast
+            # unfolds as a bracketed sequence. Events inside the bracket are
+            # children of the flare, not independent casts.
+            if spawn_pending && (seq = Parser.parse_sequence_start(line))
+              active_spawn = { flare: spawn_pending[:name], sequence: seq, weapon: spawn_pending[:weapon] }
+              spawn_pending = nil
+              respond "[Combat] Spawn sequence started: #{seq} from #{active_spawn[:flare]}" if Tracker.debug?
+            elsif active_spawn && Parser.parse_sequence_end(line) == active_spawn[:sequence]
+              respond "[Combat] Spawn sequence ended: #{active_spawn[:sequence]}" if Tracker.debug?
+              active_spawn = nil
+            end
+
             # Handle target switching (for multi-target attacks like volley)
             if line_target && parse_state != :seeking_attack
               # Check if this is a real target switch (different creature)
               if current_target && current_target[:id] != line_target[:id]
                 # Save previous event if it has data
-                if event_worth_saving?(current_event)
+                if event_savable?(current_event)
                   events << current_event
                   respond "[Combat] Saved event for #{current_event[:target][:name]}: #{current_event[:damages].size} damages, #{current_event[:crits].size} crits, #{current_event[:statuses].size} statuses" if Tracker.debug?
                 end
 
-                # Create new event for this target (inherit attack name from previous)
+                # Create new event for this target (inherit attack name and
+                # lineage from previous - a target switch mid-AoE stays inside
+                # the same spawned sequence)
                 current_event = {
                   name: current_event ? current_event[:name] : :unknown,
                   target: line_target,
+                  weapon: current_event && current_event[:weapon],
+                  parent: current_event && current_event[:parent],
                   damages: [],
                   crits: [],
-                  statuses: []
+                  statuses: [],
+                  flares: [],
+                  outcomes: [],
+                  resolutions: [],
+                  # A line can be BOTH a target switch and a new attack (an
+                  # AoE's per-target line). The switch fires first, creating
+                  # this inherited event; if the attack branch then replaces
+                  # it on the SAME line, it is an artifact, not a miss - mark
+                  # the birth line so the attack branch can tell.
+                  _line: index
                 }
+                flare_ctx = nil
                 current_target = line_target
                 respond "[Combat] Switched to target: #{line_target[:name]} (#{line_target[:id]})" if Tracker.debug?
 
@@ -145,6 +234,35 @@ module Lich
               # If current_target[:id] == line_target[:id], do nothing (same target)
             end
 
+            # Outcomes (why nothing landed) and resolutions (the roll lines)
+            # attach to whatever the cursor points at - an active flare owns
+            # its own SMR line, the swing owns its AS/DS line. Arrays because
+            # multi-strike attacks (flurry) roll several times per target.
+            # Runs AFTER target switching: an outcome line names its target
+            # ("the warg evades!"), so the switch must happen first or the
+            # outcome lands on the previous target's event.
+            # Only parsed when a recorder-class subscriber wants the blob.
+            if Tracker.settings[:emit_attacks]
+              if (resolution = Parser.parse_resolution(line))
+                # Most rolls FOLLOW their attack line (swing -> AS/DS), but
+                # volley's SMR PRECEDES each arrow line. A roll claims the
+                # current sink only while that sink is still virgin (no
+                # damage, no roll yet); otherwise it is held for the next
+                # attack event, which claims it on creation.
+                sink = flare_ctx
+                sink ||= current_event if current_event && current_event[:damages].empty? && current_event[:resolutions].empty?
+                if sink
+                  sink[:resolutions] << resolution
+                else
+                  pending_resolution = resolution
+                end
+                respond "[Combat] Found resolution: #{resolution[:type]} = #{resolution[:result]}" if Tracker.debug?
+              elsif (flare_ctx || current_event) && (outcome = Parser.parse_outcome(line))
+                (flare_ctx || current_event)[:outcomes] << outcome
+                respond "[Combat] Found outcome: #{outcome}" if Tracker.debug?
+              end
+            end
+
             # Attack check is needed in both states (a new attack while seeking
             # damage closes the previous event), so run it once per line. This
             # replaces the old `redo`, which re-ran the status/UCS handlers
@@ -152,8 +270,9 @@ module Lich
             attack = Parser.parse_attack(line)
 
             if attack
-              # Save previous event before starting a new one
-              if event_worth_saving?(current_event)
+              # Save previous event before starting a new one - unless the
+              # target-switcher created it on this very line (see _line)
+              if event_savable?(current_event) && current_event[:_line] != index
                 events << current_event
                 respond "[Combat] Completed event for #{current_event[:target][:name]}: #{current_event[:damages].size} damages, #{current_event[:crits].size} crits" if Tracker.debug?
               end
@@ -161,19 +280,40 @@ module Lich
               current_event = {
                 name: attack[:name],
                 target: attack[:target] || {},
+                weapon: Parser.parse_swing_weapon(line),
+                parent: active_spawn ? { flare: active_spawn[:flare], weapon: active_spawn[:weapon] } : nil,
                 damages: [],
                 crits: [],
-                statuses: []
+                statuses: [],
+                flares: [],
+                outcomes: [],
+                resolutions: []
               }
               current_target = current_event[:target][:id] ? current_event[:target] : nil
 
+              # A new swing claims any held pre-flares whose weapon matches it
+              # (they resolved before this swing but belong to it)
+              unless pending_flares.empty?
+                claimed, pending_flares = pending_flares.partition { |f| flare_matches_weapon?(f, current_event[:weapon]) }
+                current_event[:flares].concat(claimed)
+              end
+              if pending_resolution
+                current_event[:resolutions] << pending_resolution
+                pending_resolution = nil
+              end
+              flare_ctx = nil
+
               respond "[Combat] Found attack: #{attack[:name]}" if Tracker.debug?
               parse_state = :seeking_damage
-            elsif parse_state == :seeking_damage
-              # Accumulate all damage lines for the current attack
+            elsif flare_ctx || parse_state == :seeking_damage
+              # Accumulate damage lines. An active flare cursor owns them
+              # (its damage arrives after its announce line, before the next
+              # swing); otherwise they belong to the current attack. flare_ctx
+              # alone also routes pre-flare damage arriving before any swing.
               if (damage = Parser.parse_damage(line))
-                current_event[:damages] << damage
-                respond "[Combat] Found damage: #{damage}" if Tracker.debug?
+                sink = flare_ctx || current_event
+                sink[:damages] << damage
+                respond "[Combat] Found damage: #{damage}#{flare_ctx ? " (flare: #{flare_ctx[:name]})" : ''}" if Tracker.debug?
 
                 # When we find damage, look ahead 2-3 lines for related crit
                 if Tracker.settings[:track_wounds]
@@ -197,7 +337,7 @@ module Lich
                       # slowed, dazed, secondary_wound, ...) is state we would
                       # otherwise have to infer from messaging - or, for the
                       # UCS-only fields, could not obtain at all.
-                      current_event[:crits] << c
+                      sink[:crits] << c
                       respond "[Combat] Found critical hit: #{c[:location]} rank #{c[:wound_rank]}" if Tracker.debug?
                       break # Only take first crit found after this damage
                     end
@@ -208,7 +348,23 @@ module Lich
           end
 
           # Don't forget the last event
-          events << current_event if event_worth_saving?(current_event)
+          events << current_event if event_savable?(current_event)
+
+          # Pre-flares no swing claimed (e.g. the chunk ended first). Ones
+          # that resolved damage against a known target still count - wrap
+          # each as its own event so the damage is applied, not dropped.
+          pending_flares.each do |f|
+            next unless f[:target_info] && (!f[:damages].empty? || !f[:crits].empty?)
+
+            # Data stays on the flare (persist_event applies flare damage
+            # separately); duplicating it into the event arrays would
+            # double-apply it.
+            events << {
+              name: f[:name], target: f[:target_info], weapon: f[:weapon] && f[:weapon][:name],
+              parent: nil, damages: [], crits: [], statuses: [], flares: [f],
+              outcomes: [], resolutions: []
+            }
+          end
 
           events
         end
@@ -226,55 +382,54 @@ module Lich
 
           respond "[Combat] Applying to #{creature.name} (#{target[:id]})" if Tracker.debug?
 
+          # The whole parsed event as one emit: swing + flares + spawned-cast
+          # lineage, already correlated. Recorder-class subscribers get the
+          # ledger without reassembling per-fact emits. Emitted before the
+          # track_* gates strip anything, so the payload is complete
+          # regardless of settings - and therefore BEFORE the creature is
+          # mutated (an :attack subscriber reading Creature[id] sees
+          # pre-swing state; per-fact emits below see post).
+          Observers.emit(:attack, event) if Tracker.settings[:emit_attacks]
+
           # Apply direct damage
           total_damage = 0
-          event[:damages].each do |damage|
-            creature.add_damage(damage)
-            total_damage += damage
-            Observers.emit(:damage, id: creature.id, name: creature.name,
-                                    attack: event[:name], amount: damage)
-            respond "  +#{damage} damage" if Tracker.debug?
+          if Tracker.settings[:track_damage]
+            event[:damages].each do |damage|
+              creature.add_damage(damage)
+              total_damage += damage
+              Observers.emit(:damage, id: creature.id, name: creature.name,
+                                      attack: event[:name], amount: damage)
+              respond "  +#{damage} damage" if Tracker.debug?
+            end
           end
 
           # Apply critical wounds
           if Tracker.settings[:track_wounds]
-            event[:crits].each do |crit|
-              if crit[:wound_rank] && crit[:wound_rank] > 0
-                # Map CritRanks location to creature body part format
-                body_part = map_critranks_to_body_part(crit[:location])
-                if body_part
-                  creature.add_injury(body_part, crit[:wound_rank])
-                  Observers.emit(:wound, id: creature.id, name: creature.name,
-                                         attack: event[:name], location: crit[:location],
-                                         body_part: body_part, rank: crit[:wound_rank])
-                  respond "  +wound: #{body_part} rank #{crit[:wound_rank]}" if Tracker.debug?
-                else
-                  respond "  !unknown body part: #{crit[:location]}" if Tracker.debug?
-                end
-              end
+            event[:crits].each { |crit| apply_crit(creature, crit, event) }
+          end
 
-              # A crit can wound a second location (e.g. a strike that carries
-              # through); previously only the primary was registered.
-              if (secondary = crit[:secondary_wound])
-                apply_secondary_wound(creature, secondary, event)
-              end
+          # Flare damage/crits apply to the flare's own target when its
+          # announce line named one (AoE flares can hit a different creature
+          # than the swing), falling back to the swing's target.
+          (event[:flares] || []).each do |flare|
+            next if flare[:damages].empty? && flare[:crits].empty?
 
-              # Amputation is a distinct terminal state, not accumulated rank.
-              if crit[:amputated] && (part = map_critranks_to_body_part(crit[:location]))
-                creature.amputate!(part)
-                Observers.emit(:amputation, id: creature.id, name: creature.name,
-                                            attack: event[:name], location: crit[:location],
-                                            body_part: part)
-                respond "  +AMPUTATED: #{part}" if Tracker.debug?
-              end
+            f_target = flare[:target_info] || target
+            f_creature = f_target[:id] ? Creature[f_target[:id].to_i] : creature
+            next unless f_creature
 
-              # Check for fatal critical hit
-              if crit[:fatal]
-                creature.mark_fatal_crit!
-                Observers.emit(:fatal_crit, id: creature.id, name: creature.name,
-                                            attack: event[:name], location: crit[:location])
-                respond "  +FATAL CRIT: #{crit[:location]} - creature died from crit, not HP loss" if Tracker.debug?
+            if Tracker.settings[:track_damage]
+              flare[:damages].each do |damage|
+                f_creature.add_damage(damage)
+                total_damage += damage
+                Observers.emit(:damage, id: f_creature.id, name: f_creature.name,
+                                        attack: event[:name], flare: flare[:name], amount: damage)
+                respond "  +#{damage} damage (flare: #{flare[:name]})" if Tracker.debug?
               end
+            end
+
+            if Tracker.settings[:track_wounds]
+              flare[:crits].each { |crit| apply_crit(f_creature, crit, event, flare: flare[:name]) }
             end
           end
 
@@ -293,7 +448,49 @@ module Lich
           respond "  Total damage applied: #{total_damage}" if total_damage > 0 && Tracker.debug?
         end
 
-        # Registers a crit's secondary wound location, when it has one.
+        # Applies one parsed crit to a creature: primary wound, secondary
+        # wound, amputation, fatal. Shared by swing crits and flare crits
+        # (flares crit through the same tables their damage type uses).
+        def apply_crit(creature, crit, event, flare: nil)
+          if crit[:wound_rank] && crit[:wound_rank] > 0
+            # Map CritRanks location to creature body part format
+            body_part = map_critranks_to_body_part(crit[:location])
+            if body_part
+              creature.add_injury(body_part, crit[:wound_rank])
+              Observers.emit(:wound, id: creature.id, name: creature.name,
+                                     attack: event[:name], flare: flare, location: crit[:location],
+                                     body_part: body_part, rank: crit[:wound_rank])
+              respond "  +wound: #{body_part} rank #{crit[:wound_rank]}" if Tracker.debug?
+            else
+              respond "  !unknown body part: #{crit[:location]}" if Tracker.debug?
+            end
+          end
+
+          # A crit can wound a second location (e.g. a strike that carries
+          # through); previously only the primary was registered.
+          if (secondary = crit[:secondary_wound])
+            apply_secondary_wound(creature, secondary, event)
+          end
+
+          # Amputation is a distinct terminal state, not accumulated rank.
+          if crit[:amputated] && (part = map_critranks_to_body_part(crit[:location]))
+            creature.amputate!(part)
+            Observers.emit(:amputation, id: creature.id, name: creature.name,
+                                        attack: event[:name], flare: flare, location: crit[:location],
+                                        body_part: part)
+            respond "  +AMPUTATED: #{part}" if Tracker.debug?
+          end
+
+          # Check for fatal critical hit
+          if crit[:fatal]
+            creature.mark_fatal_crit!
+            Observers.emit(:fatal_crit, id: creature.id, name: creature.name,
+                                        attack: event[:name], flare: flare, location: crit[:location])
+            respond "  +FATAL CRIT: #{crit[:location]} - creature died from crit, not HP loss" if Tracker.debug?
+          end
+        end
+
+        # Registers a crit's secondary wound, when it has one.
         #
         # CritRanks may report secondary_wound as a bare rank (same location)
         # or as a {location:, rank:} pair; accept both.
