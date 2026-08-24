@@ -8,8 +8,8 @@
   family: "Ogre",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 250,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "large",
   areas: [
     {
       name: "Neartofar Forest",
-      rooms: []
+      uids: [14015201..14015212]
     },
     {
-      name: "Wehntoph",
-      rooms: []
+      name: "Northern Slopes of Wehntoph",
+      uids: [4302020..4302035]
     }
-  ],
-  spawns: [
-    { zone: 4302, count: 1, uid_ranges: [[4302020, 4302035]] },
-    { zone: 14015, count: 2, uid_ranges: [[14015201, 14015212]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +61,10 @@
     udf: 232,
     bar_td: 60,
     cle_td: 60,
-    emp_td: nil,
+    emp_td: (45..49),
     pal_td: 60,
     ran_td: 60,
-    sor_td: 60,
+    sor_td: (57..66),
     wiz_td: nil,
     mje_td: (60..66),
     mne_td: 60,

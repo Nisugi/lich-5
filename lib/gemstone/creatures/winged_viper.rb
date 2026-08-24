@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Avian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,12 @@
   max_hp: 260,
   speed: nil,
   height: nil,
-  size: "",
+  size: "small",
   areas: [
     {
       name: "Red Forest",
-      rooms: []
+      uids: [480201..480215, 17006201..17006215]
     }
-  ],
-  spawns: [
-    { zone: 480, count: 1, uid_ranges: [[480201, 480215]] },
-    { zone: 17006, count: 1, uid_ranges: [[17006201, 17006215]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -87,10 +83,10 @@
     udf: nil,
     bar_td: nil,
     cle_td: 225,
-    emp_td: nil,
+    emp_td: (225..234),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 236,
+    sor_td: (231..241),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 247,

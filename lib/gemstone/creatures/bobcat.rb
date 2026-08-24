@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 60,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "small",
   areas: [
     {
       name: "The Toadwort",
-      rooms: []
+      uids: [14007024..14007041]
     }
-  ],
-  spawns: [
-    { zone: 14007, count: 1, uid_ranges: [[14007024, 14007041]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +57,7 @@
     udf: 93,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -15,
     pal_td: nil,
     ran_td: nil,
     sor_td: 15,

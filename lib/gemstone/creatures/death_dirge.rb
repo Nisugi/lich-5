@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,27 +18,25 @@
   bcs: true,
   max_hp: 95,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Plains of Bone",
-      rooms: []
+      uids: [14011001..14011022]
     },
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4202141..4202156]
     },
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18042..18044, 18048..18052, 2162001..2162015]
+    },
+    {
+      name: "unmapped",
+      uids: [18045..18047]
     }
-  ],
-  spawns: [
-    { zone: 18, count: 1, uid_ranges: [[18042, 18052]] },
-    { zone: 2162, count: 2, uid_ranges: [[2162001, 2162015]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202141, 4202156]] },
-    { zone: 14011, count: 1, uid_ranges: [[14011001, 14011022]] }
   ],
   attack_attributes: {
     physical_attacks: [

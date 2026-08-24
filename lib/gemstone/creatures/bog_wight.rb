@@ -8,8 +8,8 @@
   family: "Wight",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 308,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "Fethayl Bog",
-      rooms: []
+      uids: [13038001..13038031]
     }
-  ],
-  spawns: [
-    { zone: 13038, count: 1, uid_ranges: [[13038001, 13038031]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,10 +54,10 @@
     udf: nil,
     bar_td: (126..132),
     cle_td: 145,
-    emp_td: nil,
+    emp_td: (141..144),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 153,
+    sor_td: (153..162),
     wiz_td: nil,
     mje_td: 163,
     mne_td: 153,

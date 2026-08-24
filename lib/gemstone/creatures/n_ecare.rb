@@ -8,8 +8,8 @@
   family: "N'ecare",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -17,19 +17,15 @@
     "Extraplanar"
   ],
   bcs: true,
-  max_hp: 300,
+  max_hp: 349,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "The Rift",
-      rooms: []
+      uids: [4568001..4568055, 4570001..4570014]
     }
-  ],
-  spawns: [
-    { zone: 4568, count: 2, uid_ranges: [[4568001, 4568055]] },
-    { zone: 4570, count: 1, uid_ranges: [[4570001, 4570014]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -59,18 +55,18 @@
   defense_attributes: {
     asg: "(see other info)",
     immunities: [],
-    melee: (230..330),
+    melee: (236..412),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 613,
     bar_td: 308,
     cle_td: 326,
-    emp_td: 320,
+    emp_td: (320..332),
     pal_td: 277,
     ran_td: nil,
     sor_td: 342,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: (362..371),
     mne_td: nil,
     mjs_td: 320,
     mns_td: (320..359),

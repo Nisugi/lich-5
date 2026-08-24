@@ -8,8 +8,8 @@
   family: "Vvrael",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,17 +20,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "The Rift",
-      rooms: []
+      uids: [4567001..4567055, 4568001..4568055]
     }
-  ],
-  spawns: [
-    { zone: 4567, count: 3, uid_ranges: [[4567001, 4567055]] },
-    { zone: 4568, count: 3, uid_ranges: [[4568001, 4568055]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -89,10 +85,10 @@
   defense_attributes: {
     asg: "2",
     immunities: [],
-    melee: (380..420),
+    melee: (388..657),
     ranged: (312..328),
     bolt: nil,
-    udf: nil,
+    udf: 682,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,

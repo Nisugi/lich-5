@@ -8,8 +8,8 @@
   family: "Krolvin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,31 +19,21 @@
   bcs: true,
   max_hp: 280,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Abandoned Mine",
-      rooms: []
-    },
-    {
-      name: "Krolvin Ship",
-      rooms: []
-    },
-    {
-      name: "Old Mine Road",
-      rooms: []
-    },
-    {
       name: "Sea Caves",
-      rooms: []
+      uids: [26001..26036, 26101..26120]
+    },
+    {
+      name: "Lysierian Hills",
+      uids: [93071..93079, 485001..485011]
+    },
+    {
+      name: "Luinne Bheinn",
+      uids: [4251017..4251056]
     }
-  ],
-  spawns: [
-    { zone: 26, count: 5, uid_ranges: [[26001, 26036], [26101, 26120]] },
-    { zone: 93, count: 2, uid_ranges: [[93071, 93079]] },
-    { zone: 485, count: 4, uid_ranges: [[485001, 485011]] },
-    { zone: 4251, count: 1, uid_ranges: [[4251017, 4251056]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -98,10 +88,10 @@
     udf: nil,
     bar_td: (63..89),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (70..78),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (84..94),
     wiz_td: nil,
     mje_td: 101,
     mne_td: 85,

@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,24 +18,13 @@
   bcs: true,
   max_hp: 211,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Glatoph",
-      rooms: []
-    },
-    {
-      name: "Icemule Environs",
-      rooms: []
-    },
-    {
-      name: "Olbin Pass",
-      rooms: []
+      name: "Icemule Trail",
+      uids: [4044002..4044019]
     }
-  ],
-  spawns: [
-    { zone: 4044, count: 1, uid_ranges: [[4044002, 4044019]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +54,10 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 65,
     pal_td: 72,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 79,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

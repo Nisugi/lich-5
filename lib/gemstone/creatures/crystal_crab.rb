@@ -8,8 +8,8 @@
   family: "Crab",
   type: "Crustacean",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 94,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
-      name: "Thurfel's Keep",
-      rooms: []
+      name: "Thurfel's Island",
+      uids: [7530006..7530029]
     }
-  ],
-  spawns: [
-    { zone: 7530, count: 1, uid_ranges: [[7530006, 7530029]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: 99,
     bar_td: 24,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 24,
     pal_td: nil,
     ran_td: nil,
     sor_td: 24,

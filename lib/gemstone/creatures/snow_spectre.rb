@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: nil,
   max_hp: 91,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
-      name: "Snow Fort",
-      rooms: []
+      name: "High Plains",
+      uids: [4129100..4129110]
     }
-  ],
-  spawns: [
-    { zone: 4129, count: 1, uid_ranges: [[4129100, 4129110]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -58,7 +55,7 @@
     udf: 24,
     bar_td: 27,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 1,
     pal_td: nil,
     ran_td: nil,
     sor_td: 27,

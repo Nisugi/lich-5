@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Elemental",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: nil,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
       name: "Ruined Temple",
-      rooms: []
+      uids: [3031025..3031035, 3031045..3031055]
     }
-  ],
-  spawns: [
-    { zone: 3031, count: 1, uid_ranges: [[3031025, 3031035], [3031045, 3031055]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -51,13 +48,13 @@
   defense_attributes: {
     asg: "10",
     immunities: [],
-    melee: 367,
+    melee: (289..589),
     ranged: nil,
     bolt: nil,
     udf: nil,
     bar_td: 409,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 407,
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,

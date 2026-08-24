@@ -8,8 +8,8 @@
   family: "Bat",
   type: "Avian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,15 +19,12 @@
   max_hp: 248,
   speed: nil,
   height: nil,
-  size: "",
+  size: "small",
   areas: [
     {
       name: "Troll Burial Grounds",
-      rooms: []
+      uids: [13011009..13011035]
     }
-  ],
-  spawns: [
-    { zone: 13011, count: 1, uid_ranges: [[13011009, 13011035]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,10 +53,10 @@
     udf: nil,
     bar_td: (113..122),
     cle_td: 120,
-    emp_td: nil,
+    emp_td: (126..135),
     pal_td: 108,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (132..138),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 147,

@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,17 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Temple Wyneb",
-      rooms: []
+      uids: [13300001..13300076, 13300080..13300080]
+    },
+    {
+      name: "unmapped",
+      uids: [13300077..13300079]
     }
-  ],
-  spawns: [
-    { zone: 13300, count: 3, uid_ranges: [[13300001, 13300080]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -54,15 +55,15 @@
     melee: 246,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 489,
     bar_td: 238,
     cle_td: 259,
-    emp_td: 259,
+    emp_td: (244..259),
     pal_td: nil,
     ran_td: nil,
     sor_td: 269,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 285,
     mne_td: 283,
     mjs_td: 259,
     mns_td: 259,

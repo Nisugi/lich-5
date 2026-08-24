@@ -8,8 +8,8 @@
   family: "Bear",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 210,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
       name: "Grasslands",
-      rooms: []
+      uids: [14012050..14012070]
     }
-  ],
-  spawns: [
-    { zone: 14012, count: 1, uid_ranges: [[14012050, 14012070]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 164,
     bar_td: 48,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (29..37),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 53,
+    sor_td: (42..53),
     wiz_td: nil,
     mje_td: 48,
     mne_td: 48,

@@ -7,19 +7,22 @@
   family: "golem",
   type: "biped",
   undead: false,
+  blood: nil,
+  bones: nil,
+  muggable: nil,
   boss: false,
   otherclass: [],
   areas: [
-    { name: "Hinterwilds", rooms: [] }
+    {
+      name: "Hinterwilds",
+      uids: [7503101..7503146]
+    }
   ],
   bcs: true,
   max_hp: 1000,
   speed: nil,
   height: 40,
   size: "huge",
-  spawns: [
-    { zone: 7503, count: 2, uid_ranges: [[7503101, 7503146]] }
-  ],
   attack_attributes: {
     physical_attacks: [
       {

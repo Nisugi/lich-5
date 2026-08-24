@@ -8,8 +8,8 @@
   family: "Giant",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,26 +19,21 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 12,
+  size: "huge",
   areas: [
     {
-      name: "Frozen Battlefield",
-      rooms: []
-    },
-    {
-      name: "Sentoph",
-      rooms: []
-    },
-    {
       name: "Stormpeak",
-      rooms: []
+      uids: [13150201..13150220]
+    },
+    {
+      name: "Upper Trollfang",
+      uids: [16065..16071]
+    },
+    {
+      name: "Ice Plains",
+      uids: [4127035..4127045]
     }
-  ],
-  spawns: [
-    { zone: 16, count: 2, uid_ranges: [[16065, 16071]] },
-    { zone: 4127, count: 1, uid_ranges: [[4127035, 4127045]] },
-    { zone: 13150, count: 1, uid_ranges: [[13150201, 13150220]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -90,10 +85,10 @@
     udf: 194,
     bar_td: nil,
     cle_td: nil,
-    emp_td: 145,
+    emp_td: (145..155),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 163,
+    sor_td: (155..163),
     wiz_td: nil,
     mje_td: 167,
     mne_td: 166,

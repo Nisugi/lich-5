@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: nil,
   max_hp: 51,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Coastal Cliffs",
-      rooms: []
+      uids: [67043..67053]
     }
-  ],
-  spawns: [
-    { zone: 67, count: 1, uid_ranges: [[67043, 67053]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -46,13 +43,13 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (-3..-2),
+    melee: -2,
     ranged: nil,
     bolt: "-13",
     udf: 48,
     bar_td: 6,
     cle_td: 6,
-    emp_td: nil,
+    emp_td: 6,
     pal_td: nil,
     ran_td: nil,
     sor_td: 6,

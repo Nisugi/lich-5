@@ -8,8 +8,8 @@
   family: "Arachnid",
   type: "Arachnid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,17 @@
   bcs: true,
   max_hp: 229,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
       name: "Mraent Caverns",
-      rooms: []
+      uids: [13008001..13008040]
+    },
+    {
+      name: "unmapped",
+      uids: [13008041..13008041]
     }
-  ],
-  spawns: [
-    { zone: 13008, count: 2, uid_ranges: [[13008001, 13008041]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,10 +58,10 @@
     udf: 207,
     bar_td: 72,
     cle_td: 74,
-    emp_td: nil,
+    emp_td: (73..76),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (79..85),
     wiz_td: nil,
     mje_td: 81,
     mne_td: 82,

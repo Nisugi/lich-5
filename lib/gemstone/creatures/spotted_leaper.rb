@@ -8,8 +8,8 @@
   family: "Leaper",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 51,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Rambling Meadows",
-      rooms: []
+      uids: [14006021..14006040]
     },
     {
-      name: "Shores of Lough Ne'Halin",
-      rooms: []
+      name: "Noralgar Forest",
+      uids: [4286004..4286012]
     }
-  ],
-  spawns: [
-    { zone: 4286, count: 1, uid_ranges: [[4286004, 4286012]] },
-    { zone: 14006, count: 1, uid_ranges: [[14006021, 14006040]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,7 +61,7 @@
     udf: 74,
     bar_td: 12,
     cle_td: nil,
-    emp_td: 12,
+    emp_td: (-19..12),
     pal_td: nil,
     ran_td: 12,
     sor_td: 12,

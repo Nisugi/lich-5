@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Ophidian",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,21 @@
   bcs: true,
   max_hp: 290,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
       name: "Marsh Keep",
-      rooms: []
+      uids: [376001..376001, 376003..376010, 376015..376018, 376020..376034, 376040..376044]
     },
     {
       name: "Fethayl Bog",
-      rooms: []
+      uids: [13038001..13038031]
+    },
+    {
+      name: "unmapped",
+      uids: [376002..376002, 376019..376019, 376035..376039]
     }
-  ],
-  spawns: [
-    { zone: 376, count: 2, uid_ranges: [[376001, 376010], [376015, 376044]] },
-    { zone: 13038, count: 1, uid_ranges: [[13038001, 13038031]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,7 +64,7 @@
     udf: 475,
     bar_td: 161,
     cle_td: 176,
-    emp_td: 182,
+    emp_td: (175..184),
     pal_td: nil,
     ran_td: 119,
     sor_td: (176..194),

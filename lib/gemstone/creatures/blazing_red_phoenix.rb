@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Avian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -20,15 +20,12 @@
   max_hp: 320,
   speed: nil,
   height: nil,
-  size: "",
+  size: "large",
   areas: [
     {
-      name: "The F'Eyrie",
-      rooms: []
+      name: "Volcanic Flats",
+      uids: [3023107..3023123]
     }
-  ],
-  spawns: [
-    { zone: 3023, count: 1, uid_ranges: [[3023107, 3023123]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -74,7 +71,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: 375,
-    emp_td: nil,
+    emp_td: (371..380),
     pal_td: nil,
     ran_td: nil,
     sor_td: 391,

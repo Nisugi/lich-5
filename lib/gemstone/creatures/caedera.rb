@@ -8,8 +8,8 @@
   family: "Worm",
   type: "Worm",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 600,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "large",
   areas: [
     {
       name: "The Rift",
-      rooms: []
+      uids: [4567001..4567055]
     }
-  ],
-  spawns: [
-    { zone: 4567, count: 3, uid_ranges: [[4567001, 4567055]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -59,13 +56,13 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: nil,
+    melee: (369..414),
     ranged: "+321",
     bolt: nil,
-    udf: nil,
+    udf: 450,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (305..311),
     pal_td: nil,
     ran_td: nil,
     sor_td: (326..338),

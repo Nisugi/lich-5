@@ -8,8 +8,8 @@
   family: "Worm",
   type: "Worm",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 28,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "tiny",
   areas: [
     {
       name: "Wehntoph",
-      rooms: []
+      uids: [484001..484013]
     }
-  ],
-  spawns: [
-    { zone: 484, count: 1, uid_ranges: [[484001, 484013]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,7 +49,7 @@
     udf: 93,
     bar_td: 3,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 3,
     pal_td: nil,
     ran_td: nil,
     sor_td: 3,

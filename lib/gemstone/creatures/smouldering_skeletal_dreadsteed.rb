@@ -8,8 +8,8 @@
   family: "Equine",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -23,11 +23,8 @@
   areas: [
     {
       name: "Moonsedge",
-      rooms: []
+      uids: [4577001..4577028, 4577051..4577058, 4577106..4577123, 4577201..4577214]
     }
-  ],
-  spawns: [
-    { zone: 4577, count: 2, uid_ranges: [[4577001, 4577028], [4577051, 4577058], [4577106, 4577123], [4577201, 4577214]] }
   ],
   attack_attributes: {
     physical_attacks: [

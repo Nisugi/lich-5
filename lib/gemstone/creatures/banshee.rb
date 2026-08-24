@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,17 @@
   bcs: nil,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Darkstone Castle",
-      rooms: []
+      uids: [42001..42016, 44001..44006, 44033..44036, 44046..44051]
     },
     {
       name: "Fhorian Village",
-      rooms: []
-    },
-    {
-      name: "The Broken Lands",
-      rooms: []
+      uids: [3030256..3030268]
     }
-  ],
-  spawns: [
-    { zone: 42, count: 1, uid_ranges: [[42001, 42016]] },
-    { zone: 44, count: 2, uid_ranges: [[44001, 44006], [44033, 44036], [44046, 44051]] },
-    { zone: 3030, count: 1, uid_ranges: [[3030256, 3030268]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,15 +55,15 @@
     melee: (206..415),
     ranged: "221 to 278",
     bolt: 271,
-    udf: nil,
+    udf: 417,
     bar_td: 179,
     cle_td: 195,
-    emp_td: nil,
+    emp_td: (193..202),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 204,
+    sor_td: (204..213),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 215,
     mne_td: 214,
     mjs_td: nil,
     mns_td: 193,

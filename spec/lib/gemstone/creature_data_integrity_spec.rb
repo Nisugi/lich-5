@@ -21,8 +21,8 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
   def known_top_level_keys
     %i[
       schema_version name noun url picture level family type undead
-      has_blood has_bones muggable boss otherclass bcs max_hp speed height
-      size areas spawns attack_attributes defense_attributes special_other
+      blood bones muggable boss otherclass bcs max_hp speed height
+      size areas attack_attributes defense_attributes special_other
       abilities alchemy abilities_misc treasure messaging
     ]
   end
@@ -71,26 +71,25 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
     expect(offenders).to be_empty
   end
 
-  it 'spawns blocks are well-formed: Integer zone/count, uid_ranges of ordered [lo, hi] pairs' do
+  it 'areas entries are well-formed: String name, uids an Array of ascending Integer Ranges' do
     offenders = []
     creature_files.each do |path|
       data = load_data(path)
       next unless data.is_a?(Hash)
 
-      spawns = data[:spawns]
-      next if spawns.nil?
+      areas = data[:areas]
+      next if areas.nil?
 
-      unless spawns.is_a?(Array)
-        offenders << "#{File.basename(path)}: spawns is #{spawns.class}"
+      unless areas.is_a?(Array)
+        offenders << "#{File.basename(path)}: areas is #{areas.class}"
         next
       end
-      spawns.each do |s|
-        ok = s.is_a?(Hash) &&
-             s[:zone].is_a?(Integer) &&
-             s[:count].is_a?(Integer) && s[:count].positive? &&
-             s[:uid_ranges].is_a?(Array) &&
-             s[:uid_ranges].all? { |r| r.is_a?(Array) && r.size == 2 && r.all?(Integer) && r[0] <= r[1] }
-        offenders << "#{File.basename(path)}: #{s.inspect[0, 80]}" unless ok
+      areas.each do |a|
+        ok = a.is_a?(Hash) &&
+             a[:name].is_a?(String) && !a[:name].strip.empty? &&
+             a[:uids].is_a?(Array) &&
+             a[:uids].all? { |r| r.is_a?(Range) && r.first.is_a?(Integer) && r.last.is_a?(Integer) && r.first <= r.last }
+        offenders << "#{File.basename(path)}: #{a.inspect[0, 80]}" unless ok
       end
     end
 
@@ -145,13 +144,13 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
     expect(offenders).to be_empty
   end
 
-  it 'has_blood/has_bones/muggable are only true, false, or nil - never coerced or stringly-typed' do
+  it 'blood/bones/muggable are only true, false, or nil - never coerced or stringly-typed' do
     offenders = []
     creature_files.each do |path|
       data = load_data(path)
       next unless data.is_a?(Hash)
 
-      %i[has_blood has_bones muggable].each do |field|
+      %i[blood bones muggable].each do |field|
         value = data[field]
         offenders << "#{File.basename(path)} #{field}=#{value.inspect}" unless value.nil? || value == true || value == false
       end

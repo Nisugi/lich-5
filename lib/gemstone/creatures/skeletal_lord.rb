@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Castle Varunar",
-      rooms: []
+      uids: [4750031..4750056, 4750058..4750069]
     }
-  ],
-  spawns: [
-    { zone: 4750, count: 2, uid_ranges: [[4750031, 4750056], [4750058, 4750069]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -59,10 +56,10 @@
     udf: 347,
     bar_td: 123,
     cle_td: 123,
-    emp_td: nil,
+    emp_td: (123..132),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 130,
+    sor_td: (130..136),
     wiz_td: nil,
     mje_td: 138,
     mne_td: 138,

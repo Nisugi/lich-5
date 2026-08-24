@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -20,16 +20,13 @@
   bcs: true,
   max_hp: 174,
   speed: "10 sec",
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
-      name: "Smokey Caverns",
-      rooms: []
+      name: "Lysierian Hills",
+      uids: [92032..92041, 92120..92129]
     }
-  ],
-  spawns: [
-    { zone: 92, count: 2, uid_ranges: [[92032, 92041], [92120, 92129]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,10 +61,10 @@
     udf: 175,
     bar_td: 54,
     cle_td: 54,
-    emp_td: 54,
+    emp_td: (37..54),
     pal_td: 54,
     ran_td: 54,
-    sor_td: (48..54),
+    sor_td: (48..60),
     wiz_td: 54,
     mje_td: 54,
     mne_td: 54,

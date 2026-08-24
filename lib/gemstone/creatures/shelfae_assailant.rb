@@ -8,24 +8,21 @@
   family: "Shelfae",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
   max_hp: 135,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "medium",
   areas: [
     {
       name: "Cliffwalk",
-      rooms: []
+      uids: [7129001..7129017]
     }
-  ],
-  spawns: [
-    { zone: 7129, count: 1, uid_ranges: [[7129001, 7129017]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -45,10 +42,10 @@
     udf: 73,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 9,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 33,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

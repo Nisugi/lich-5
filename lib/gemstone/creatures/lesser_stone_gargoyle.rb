@@ -8,8 +8,8 @@
   family: "Gargoyle",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 318,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 13,
+  size: "huge",
   areas: [
     {
       name: "Darkstone Castle",
-      rooms: []
+      uids: [45107..45118]
     }
-  ],
-  spawns: [
-    { zone: 45, count: 1, uid_ranges: [[45107, 45118]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,10 +53,10 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 88,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 92,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

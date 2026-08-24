@@ -8,8 +8,8 @@
   family: "Bovine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 70,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
       name: "Yander's Farm",
-      rooms: []
+      uids: [14005002..14005019]
     }
-  ],
-  spawns: [
-    { zone: 14005, count: 1, uid_ranges: [[14005002, 14005019]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,7 +49,7 @@
     udf: 63,
     bar_td: 6,
     cle_td: 6,
-    emp_td: 6,
+    emp_td: (-27..6),
     pal_td: 6,
     ran_td: 6,
     sor_td: 6,

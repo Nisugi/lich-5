@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Ophidian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,22 +18,21 @@
   bcs: true,
   max_hp: 51,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18048..18051, 18053..18054, 2156001..2156015]
     },
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4202101..4202111]
+    },
+    {
+      name: "unmapped",
+      uids: [18045..18047]
     }
-  ],
-  spawns: [
-    { zone: 18, count: 1, uid_ranges: [[18045, 18051], [18053, 18054]] },
-    { zone: 2156, count: 1, uid_ranges: [[2156001, 2156015]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202101, 4202111]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -58,10 +57,10 @@
     udf: 21,
     bar_td: 12,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -19,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 12,
     wiz_td: nil,
     mje_td: 12,
     mne_td: 12,

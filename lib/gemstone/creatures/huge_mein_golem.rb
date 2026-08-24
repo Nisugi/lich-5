@@ -8,27 +8,23 @@
   family: "Golem",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
     "Magical"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 326,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "huge",
   areas: [
     {
       name: "Darkstone Castle",
-      rooms: []
+      uids: [44015..44018, 44020..44023, 45121..45127]
     }
-  ],
-  spawns: [
-    { zone: 44, count: 1, uid_ranges: [[44015, 44018], [44020, 44023]] },
-    { zone: 45, count: 1, uid_ranges: [[45121, 45127]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -42,18 +38,18 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: 267,
+    melee: (133..151),
     ranged: nil,
     bolt: (85..125),
-    udf: nil,
+    udf: 352,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (133..142),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 143,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,

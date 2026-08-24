@@ -8,8 +8,8 @@
   family: "Triton",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -24,11 +24,8 @@
   areas: [
     {
       name: "Atoll",
-      rooms: []
+      uids: [7138201..7138218]
     }
-  ],
-  spawns: [
-    { zone: 7138, count: 1, uid_ranges: [[7138201, 7138218]] }
   ],
   attack_attributes: {
     physical_attacks: [

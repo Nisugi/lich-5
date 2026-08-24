@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "medium",
   areas: [
     {
       name: "Fhorian Village",
-      rooms: []
+      uids: [3030201..3030210]
     }
-  ],
-  spawns: [
-    { zone: 3030, count: 1, uid_ranges: [[3030201, 3030210]] }
   ],
   attack_attributes: {
     physical_attacks: [

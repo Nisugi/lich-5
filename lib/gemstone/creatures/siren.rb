@@ -8,8 +8,8 @@
   family: "Fey",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -17,18 +17,15 @@
     "Boss"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 205,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Ruined Temple",
-      rooms: []
+      uids: [3031025..3031042, 3031045..3031080]
     }
-  ],
-  spawns: [
-    { zone: 3031, count: 2, uid_ranges: [[3031025, 3031042], [3031045, 3031080]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -68,18 +65,18 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: 429,
+    melee: (413..577),
     ranged: nil,
     bolt: (336..453),
-    udf: nil,
+    udf: 613,
     bar_td: 363,
     cle_td: 389,
-    emp_td: nil,
+    emp_td: (417..424),
     pal_td: 329,
     ran_td: nil,
     sor_td: 406,
     wiz_td: nil,
-    mje_td: (425..435),
+    mje_td: (403..435),
     mne_td: (411..423),
     mjs_td: nil,
     mns_td: nil,

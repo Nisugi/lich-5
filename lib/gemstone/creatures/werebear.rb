@@ -8,8 +8,8 @@
   family: "Bear",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: nil,
   max_hp: 150,
   speed: "10",
-  height: nil,
-  size: "",
+  height: 3,
+  size: "large",
   areas: [
     {
-      name: "Cairnfang Forest",
-      rooms: []
+      name: "Upper Trollfang",
+      uids: [16036..16041]
     },
     {
-      name: "Sentoph",
-      rooms: []
+      name: "Cairnfang",
+      uids: [630015..630029]
     }
-  ],
-  spawns: [
-    { zone: 16, count: 1, uid_ranges: [[16036, 16041]] },
-    { zone: 630, count: 1, uid_ranges: [[630015, 630029]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,7 +61,7 @@
     udf: 85,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 5,
     pal_td: nil,
     ran_td: nil,
     sor_td: 30,

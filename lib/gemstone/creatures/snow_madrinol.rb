@@ -8,8 +8,8 @@
   family: "Madrinol",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "medium",
   areas: [
     {
       name: "Gossamer Valley",
-      rooms: []
+      uids: [13023013..13023054, 13023076..13023076]
+    },
+    {
+      name: "unmapped",
+      uids: [13023055..13023075]
     }
-  ],
-  spawns: [
-    { zone: 13023, count: 2, uid_ranges: [[13023013, 13023076]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -54,7 +55,7 @@
   defense_attributes: {
     asg: "15N",
     immunities: [],
-    melee: (469..472),
+    melee: (229..472),
     ranged: 247,
     bolt: 260,
     udf: 337,
@@ -65,7 +66,7 @@
     ran_td: nil,
     sor_td: (203..212),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 224,
     mne_td: 222,
     mjs_td: (188..197),
     mns_td: 200,

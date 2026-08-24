@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: nil,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Plains of Bone",
-      rooms: []
+      uids: [14011042..14011054]
     },
     {
-      name: "Sentoph",
-      rooms: []
+      name: "Temple of Love",
+      uids: [2155002..2155011]
     }
-  ],
-  spawns: [
-    { zone: 2155, count: 1, uid_ranges: [[2155002, 2155011]] },
-    { zone: 14011, count: 1, uid_ranges: [[14011042, 14011054]] }
   ],
   attack_attributes: {
     physical_attacks: [

@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 312,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Bonespear Tower",
-      rooms: []
+      uids: [319001..319015, 319117..319139]
     }
-  ],
-  spawns: [
-    { zone: 319, count: 2, uid_ranges: [[319001, 319015], [319117, 319139]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,7 +54,7 @@
     udf: 365,
     bar_td: 165,
     cle_td: 180,
-    emp_td: nil,
+    emp_td: (170..179),
     pal_td: nil,
     ran_td: nil,
     sor_td: (190..199),

@@ -8,8 +8,8 @@
   family: "Witch",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,16 +20,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
-      name: "Greymist Wood",
-      rooms: []
+      name: "Volcanic Flats",
+      uids: [3023001..3023028]
     }
-  ],
-  spawns: [
-    { zone: 3023, count: 2, uid_ranges: [[3023001, 3023028]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -75,10 +72,10 @@
     udf: 280,
     bar_td: 110,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (105..114),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 127,
+    sor_td: (119..128),
     wiz_td: nil,
     mje_td: 135,
     mne_td: 141,

@@ -8,8 +8,8 @@
   family: "Merrow",
   type: "",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -21,11 +21,8 @@
   areas: [
     {
       name: "Sailor's Grief",
-      rooms: []
+      uids: [7150501..7150535, 7150701..7150733]
     }
-  ],
-  spawns: [
-    { zone: 7150, count: 2, uid_ranges: [[7150501, 7150535], [7150701, 7150733]] }
   ],
   attack_attributes: {
     physical_attacks: [],

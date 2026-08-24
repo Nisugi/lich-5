@@ -8,8 +8,8 @@
   family: "Urchin",
   type: "Globoid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,20 +19,13 @@
   bcs: true,
   max_hp: 160,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "tiny",
   areas: [
     {
-      name: "Thurfel's Keep",
-      rooms: []
-    },
-    {
-      name: "Hornwort Cavern",
-      rooms: []
+      name: "Thurfel's Island",
+      uids: [7532001..7532033]
     }
-  ],
-  spawns: [
-    { zone: 7532, count: 2, uid_ranges: [[7532001, 7532033]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,10 +54,10 @@
     udf: 125,
     bar_td: 51,
     cle_td: 51,
-    emp_td: nil,
+    emp_td: (33..41),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 54,
+    sor_td: (48..57),
     wiz_td: nil,
     mje_td: 54,
     mne_td: 51,

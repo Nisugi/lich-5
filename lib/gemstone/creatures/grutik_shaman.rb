@@ -8,8 +8,8 @@
   family: "Grutik",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 229,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Zaerthu Tunnels",
-      rooms: []
+      uids: [13009001..13009039]
     }
-  ],
-  spawns: [
-    { zone: 13009, count: 2, uid_ranges: [[13009001, 13009039]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -75,10 +72,10 @@
     udf: 339,
     bar_td: 95,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (101..109),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (111..117),
     wiz_td: 115,
     mje_td: 115,
     mne_td: 115,

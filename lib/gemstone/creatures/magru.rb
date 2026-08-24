@@ -8,24 +8,21 @@
   family: "Globoid",
   type: "Globoid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
   max_hp: nil,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "The Broken Lands",
-      rooms: []
+      uids: [94002..94019]
     }
-  ],
-  spawns: [
-    { zone: 94, count: 1, uid_ranges: [[94002, 94019]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 130,
     pal_td: nil,
     ran_td: nil,
     sor_td: 136,

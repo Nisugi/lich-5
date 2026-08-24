@@ -8,8 +8,8 @@
   family: "Bear",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
       name: "Gyldemar Forest",
-      rooms: []
+      uids: [13031001..13031010, 13031025..13031043, 13031071..13031080]
     }
-  ],
-  spawns: [
-    { zone: 13031, count: 3, uid_ranges: [[13031001, 13031010], [13031025, 13031043], [13031071, 13031080]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -67,10 +64,10 @@
     udf: 283,
     bar_td: 111,
     cle_td: 120,
-    emp_td: nil,
+    emp_td: (120..126),
     pal_td: nil,
     ran_td: 111,
-    sor_td: 135,
+    sor_td: (126..135),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 142,

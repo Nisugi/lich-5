@@ -8,8 +8,8 @@
   family: "Wight",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,13 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18029..18035, 2162107..2162122]
     }
-  ],
-  spawns: [
-    { zone: 18, count: 2, uid_ranges: [[18029, 18035]] },
-    { zone: 2162, count: 1, uid_ranges: [[2162107, 2162122]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +52,7 @@
     udf: 165,
     bar_td: 45,
     cle_td: 45,
-    emp_td: 45,
+    emp_td: (25..45),
     pal_td: 45,
     ran_td: 45,
     sor_td: 45,

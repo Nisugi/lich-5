@@ -8,8 +8,8 @@
   family: "Krolvin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Krolvin Carrack",
-      rooms: []
+      name: "Shattered Moors",
+      uids: [420501..420542]
     }
-  ],
-  spawns: [
-    { zone: 420, count: 2, uid_ranges: [[420501, 420542]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -52,7 +49,7 @@
     udf: 311,
     bar_td: (108..114),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (114..123),
     pal_td: nil,
     ran_td: nil,
     sor_td: (105..123),

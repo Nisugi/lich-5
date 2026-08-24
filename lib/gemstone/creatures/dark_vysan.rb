@@ -8,8 +8,8 @@
   family: "Vysan",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,22 +18,17 @@
   bcs: true,
   max_hp: 60,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "small",
   areas: [
     {
       name: "Coastal Cliffs",
-      rooms: []
+      uids: [68006..68008, 68030..68032, 4381001..4381021]
     },
     {
       name: "Glaise Cnoc Cemetery",
-      rooms: []
+      uids: [14008025..14008051]
     }
-  ],
-  spawns: [
-    { zone: 68, count: 1, uid_ranges: [[68006, 68008], [68030, 68032]] },
-    { zone: 4381, count: 1, uid_ranges: [[4381001, 4381021]] },
-    { zone: 14008, count: 2, uid_ranges: [[14008025, 14008051]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -66,7 +61,7 @@
     udf: 50,
     bar_td: 9,
     cle_td: 9,
-    emp_td: 9,
+    emp_td: (-23..9),
     pal_td: 9,
     ran_td: 9,
     sor_td: 9,

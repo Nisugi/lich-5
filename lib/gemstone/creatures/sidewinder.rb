@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Ophidian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -22,12 +22,13 @@
   size: "",
   areas: [
     {
-      name: "Sanctum",
-      rooms: []
+      name: "Shadow of the Sanctum",
+      uids: [4216141..4216141, 4216148..4216148]
+    },
+    {
+      name: "unmapped",
+      uids: [4216142..4216147]
     }
-  ],
-  spawns: [
-    { zone: 4216, count: 1, uid_ranges: [[4216141, 4216148]] }
   ],
   attack_attributes: {
     physical_attacks: [

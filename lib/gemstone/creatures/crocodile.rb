@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,25 @@
   bcs: true,
   max_hp: 129,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
-      name: "Marshtown",
-      rooms: []
-    },
-    {
       name: "The Citadel",
-      rooms: []
+      uids: [377051..377066, 377077..377081, 377083..377084]
     },
     {
-      name: "Thurfel's Keep",
-      rooms: []
+      name: "unmapped",
+      uids: [377067..377076, 377082..377082]
+    },
+    {
+      name: "Plains of Vornavis",
+      uids: [4212301..4212324]
+    },
+    {
+      name: "Thurfel's Island",
+      uids: [7530006..7530029]
     }
-  ],
-  spawns: [
-    { zone: 377, count: 1, uid_ranges: [[377051, 377084]] },
-    { zone: 4212, count: 1, uid_ranges: [[4212301, 4212324]] },
-    { zone: 7530, count: 4, uid_ranges: [[7530006, 7530029]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -73,7 +72,7 @@
     emp_td: "-11-27",
     pal_td: nil,
     ran_td: nil,
-    sor_td: 27,
+    sor_td: (18..27),
     wiz_td: nil,
     mje_td: (18..27),
     mne_td: 27,

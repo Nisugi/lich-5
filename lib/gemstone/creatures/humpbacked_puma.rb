@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Liath Bheinn and Aillidh Brae",
+      uids: [4250062..4250067]
     }
-  ],
-  spawns: [
-    { zone: 4250, count: 1, uid_ranges: [[4250062, 4250067]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -54,13 +51,13 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (153..181),
+    melee: (153..166),
     ranged: 119,
     bolt: 119,
     udf: 197,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (25..33),
     pal_td: nil,
     ran_td: nil,
     sor_td: 45,

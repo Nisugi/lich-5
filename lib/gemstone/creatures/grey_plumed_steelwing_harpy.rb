@@ -8,8 +8,8 @@
   family: "Harpy",
   type: "",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -21,11 +21,12 @@
   areas: [
     {
       name: "Sailor's Grief",
-      rooms: []
+      uids: [7150301..7150325, 7150328..7150329]
+    },
+    {
+      name: "unmapped",
+      uids: [7150326..7150327]
     }
-  ],
-  spawns: [
-    { zone: 7150, count: 1, uid_ranges: [[7150301, 7150329]] }
   ],
   attack_attributes: {
     physical_attacks: [],

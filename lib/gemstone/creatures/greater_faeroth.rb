@@ -8,8 +8,8 @@
   family: "Faeroth",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "large",
   areas: [
     {
       name: "Gyldemar Forest",
-      rooms: []
+      uids: [13030041..13030076]
     }
-  ],
-  spawns: [
-    { zone: 13030, count: 2, uid_ranges: [[13030041, 13030076]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -55,18 +52,18 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (195..208),
-    ranged: nil,
-    bolt: nil,
+    melee: (436..472),
+    ranged: 269,
+    bolt: 269,
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (173..182),
     pal_td: nil,
     ran_td: nil,
     sor_td: (175..193),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 195,
     mne_td: 194,
     mjs_td: nil,
     mns_td: (164..184),

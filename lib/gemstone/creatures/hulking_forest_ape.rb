@@ -8,8 +8,8 @@
   family: "Primate",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -21,11 +21,8 @@
   areas: [
     {
       name: "Cloud Forest",
-      rooms: []
+      uids: [3219001..3219038]
     }
-  ],
-  spawns: [
-    { zone: 3219, count: 1, uid_ranges: [[3219001, 3219038]] }
   ],
   attack_attributes: {
     physical_attacks: [

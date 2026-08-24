@@ -8,30 +8,25 @@
   family: "Elemental",
   type: "Elemental",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Frozen Battlefield",
-      rooms: []
+      name: "Icemule Trail",
+      uids: [4044131..4044134, 4044136..4044139]
     },
     {
-      name: "Glatoph",
-      rooms: []
+      name: "Ice Plains",
+      uids: [4127035..4127045, 7502001..7502015]
     }
-  ],
-  spawns: [
-    { zone: 4044, count: 1, uid_ranges: [[4044131, 4044134], [4044136, 4044139]] },
-    { zone: 4127, count: 1, uid_ranges: [[4127035, 4127045]] },
-    { zone: 7502, count: 1, uid_ranges: [[7502001, 7502015]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,7 +60,7 @@
     udf: 205,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 117,
     pal_td: nil,
     ran_td: nil,
     sor_td: 123,

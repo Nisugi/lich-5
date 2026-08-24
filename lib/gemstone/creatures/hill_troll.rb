@@ -8,8 +8,8 @@
   family: "troll",
   type: "biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,28 +19,25 @@
   bcs: true,
   max_hp: 210,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
-      name: "Wehnimer's Environs",
-      rooms: []
-    },
-    {
       name: "Hidden Vale",
-      rooms: []
+      uids: [36006..36010]
     },
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Upper Trollfang",
+      uids: [17001..17010, 374001..374012]
+    },
+    {
+      name: "unmapped",
+      uids: [21001..21006]
+    },
+    {
+      name: "Slope",
+      uids: [395017..395051]
     }
-  ],
-  spawns: [
-    { zone: 17, count: 2, uid_ranges: [[17001, 17010]] },
-    { zone: 21, count: 2, uid_ranges: [[21001, 21006]] },
-    { zone: 36, count: 1, uid_ranges: [[36006, 36010]] },
-    { zone: 374, count: 4, uid_ranges: [[374001, 374012]] },
-    { zone: 395, count: 1, uid_ranges: [[395017, 395051]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -78,13 +75,13 @@
   defense_attributes: {
     asg: "various",
     immunities: [],
-    melee: (111..234),
-    ranged: (133..189),
-    bolt: (133..189),
+    melee: 114,
+    ranged: 133,
+    bolt: 133,
     udf: 130,
     bar_td: 55,
     cle_td: 63,
-    emp_td: 63,
+    emp_td: (44..63),
     pal_td: nil,
     ran_td: nil,
     sor_td: 59,

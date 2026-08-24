@@ -8,8 +8,8 @@
   family: "Bird",
   type: "Avian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,19 +19,12 @@
   max_hp: 390,
   speed: nil,
   height: nil,
-  size: "",
+  size: "large",
   areas: [
     {
-      name: "Black Moor",
-      rooms: []
-    },
-    {
       name: "Yegharren Plains",
-      rooms: []
+      uids: [13036111..13036118, 13036201..13036217]
     }
-  ],
-  spawns: [
-    { zone: 13036, count: 2, uid_ranges: [[13036111, 13036118], [13036201, 13036217]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -68,10 +61,10 @@
     udf: 200,
     bar_td: (93..102),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (106..113),
     pal_td: nil,
     ran_td: 102,
-    sor_td: 113,
+    sor_td: (113..122),
     wiz_td: nil,
     mje_td: 119,
     mne_td: 119,

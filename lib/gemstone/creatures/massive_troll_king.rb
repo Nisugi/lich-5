@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: false,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 11,
+  size: "huge",
   areas: [
     {
       name: "Darkstone Castle",
-      rooms: []
+      uids: [388002..388011]
     }
-  ],
-  spawns: [
-    { zone: 388, count: 1, uid_ranges: [[388002, 388011]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -62,7 +59,7 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 262,
+    melee: (247..249),
     ranged: 249,
     bolt: 237,
     udf: nil,
@@ -73,7 +70,7 @@
     ran_td: nil,
     sor_td: 262,
     wiz_td: nil,
-    mje_td: 276,
+    mje_td: (207..276),
     mne_td: 275,
     mjs_td: nil,
     mns_td: 247,

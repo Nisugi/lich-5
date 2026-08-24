@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 44,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
-      name: "Wehnimer's Landing",
-      rooms: []
+      name: "Catacombs",
+      uids: [490002..490004, 490010..490011, 490018..490018]
+    },
+    {
+      name: "unmapped",
+      uids: [490017..490017]
     }
-  ],
-  spawns: [
-    { zone: 490, count: 1, uid_ranges: [[490002, 490004], [490010, 490011], [490017, 490018]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -54,13 +55,13 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (37..61),
-    ranged: (37..57),
-    bolt: (37..57),
+    melee: (39..61),
+    ranged: (54..57),
+    bolt: (54..57),
     udf: 46,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -23,
     pal_td: nil,
     ran_td: nil,
     sor_td: 9,

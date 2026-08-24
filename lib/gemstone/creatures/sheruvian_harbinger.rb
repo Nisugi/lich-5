@@ -8,29 +8,29 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Darkstone Castle",
-      rooms: []
+      uids: [388012..388019, 388030..388035]
     },
     {
       name: "The Broken Lands",
-      rooms: []
+      uids: [487019..487041, 487043..487052, 487054..487054, 487056..487075]
+    },
+    {
+      name: "unmapped",
+      uids: [487042..487042, 487053..487053, 487055..487055]
     }
-  ],
-  spawns: [
-    { zone: 388, count: 1, uid_ranges: [[388012, 388019], [388030, 388035]] },
-    { zone: 487, count: 1, uid_ranges: [[487019, 487075]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -73,18 +73,18 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (216..231),
+    melee: (217..276),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 439,
     bar_td: 210,
     cle_td: nil,
-    emp_td: 219,
+    emp_td: (219..229),
     pal_td: 196,
     ran_td: nil,
     sor_td: 244,
     wiz_td: nil,
-    mje_td: 248,
+    mje_td: (248..254),
     mne_td: nil,
     mjs_td: nil,
     mns_td: 229,

@@ -8,8 +8,8 @@
   family: "Yeti",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 12,
+  size: "huge",
   areas: [
     {
       name: "Griffin's Keen",
-      rooms: []
+      uids: [13302101..13302169]
     }
-  ],
-  spawns: [
-    { zone: 13302, count: 3, uid_ranges: [[13302101, 13302169]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,18 +58,18 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 223,
+    melee: (357..465),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 588,
     bar_td: (226..247),
     cle_td: nil,
-    emp_td: 253,
+    emp_td: (253..265),
     pal_td: nil,
     ran_td: nil,
     sor_td: 269,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 285,
     mne_td: 283,
     mjs_td: nil,
     mns_td: 253,

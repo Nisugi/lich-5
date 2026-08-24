@@ -8,8 +8,8 @@
   family: "Arachnid",
   type: "Arachnid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 44,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "small",
   areas: [
     {
-      name: "Snowflake Vale",
-      rooms: []
+      name: "Southern Snowfields",
+      uids: [4128045..4128055]
     }
-  ],
-  spawns: [
-    { zone: 4128, count: 1, uid_ranges: [[4128045, 4128055]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +57,7 @@
     udf: 121,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 9,
     pal_td: nil,
     ran_td: nil,
     sor_td: 9,

@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: nil,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "medium",
   areas: [
     {
       name: "The Broken Lands",
-      rooms: []
+      uids: [94020..94026]
     }
-  ],
-  spawns: [
-    { zone: 94, count: 1, uid_ranges: [[94020, 94026]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +57,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: (145..169),
+    emp_td: (145..172),
     pal_td: nil,
     ran_td: nil,
     sor_td: (132..237),

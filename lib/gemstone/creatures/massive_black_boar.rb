@@ -8,8 +8,8 @@
   family: "Suine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,22 +18,17 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
       name: "Blighted Forest",
-      rooms: []
+      uids: [13020001..13020051]
     },
     {
       name: "Red Forest",
-      rooms: []
+      uids: [480201..480215, 17006201..17006215]
     }
-  ],
-  spawns: [
-    { zone: 480, count: 1, uid_ranges: [[480201, 480215]] },
-    { zone: 13020, count: 2, uid_ranges: [[13020001, 13020051]] },
-    { zone: 17006, count: 1, uid_ranges: [[17006201, 17006215]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,7 +64,7 @@
     emp_td: (208..229),
     pal_td: nil,
     ran_td: (190..202),
-    sor_td: 234,
+    sor_td: (234..246),
     wiz_td: nil,
     mje_td: (253..256),
     mne_td: 246,

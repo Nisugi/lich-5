@@ -8,8 +8,8 @@
   family: "Cerebralite",
   type: "Globoid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -17,19 +17,15 @@
     "Living"
   ],
   bcs: true,
-  max_hp: 400,
+  max_hp: 509,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "small",
   areas: [
     {
       name: "The Rift",
-      rooms: []
+      uids: [4569001..4569023, 4571001..4571030]
     }
-  ],
-  spawns: [
-    { zone: 4569, count: 1, uid_ranges: [[4569001, 4569023]] },
-    { zone: 4571, count: 2, uid_ranges: [[4571001, 4571030]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -75,13 +71,13 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: nil,
+    melee: (339..473),
     ranged: nil,
     bolt: 338,
-    udf: nil,
+    udf: 514,
     bar_td: (381..398),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (434..439),
     pal_td: nil,
     ran_td: nil,
     sor_td: 446,

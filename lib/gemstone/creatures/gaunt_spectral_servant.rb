@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Marsh Keep",
-      rooms: []
+      uids: [376001..376001, 376003..376010, 376015..376018, 376020..376034, 376040..376044, 376051..376054, 376057..376062, 376084..376088]
+    },
+    {
+      name: "unmapped",
+      uids: [376002..376002, 376019..376019, 376035..376039, 376055..376056]
     }
-  ],
-  spawns: [
-    { zone: 376, count: 3, uid_ranges: [[376001, 376010], [376015, 376044], [376051, 376062], [376084, 376088]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -47,10 +48,10 @@
     udf: 301,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (211..217),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 222,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

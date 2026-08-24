@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Abandoned Farm",
+      uids: [4124114..4124124]
     }
-  ],
-  spawns: [
-    { zone: 4124, count: 2, uid_ranges: [[4124114, 4124124]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 246,
     bar_td: 105,
     cle_td: 103,
-    emp_td: nil,
+    emp_td: (105..113),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 109,
+    sor_td: (109..112),
     wiz_td: nil,
     mje_td: 115,
     mne_td: 114,

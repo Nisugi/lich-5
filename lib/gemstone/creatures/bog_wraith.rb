@@ -8,8 +8,8 @@
   family: "Wraith",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Miasmal Forest",
-      rooms: []
+      uids: [5003021..5003027, 5003030..5003030, 5003032..5003032, 5003036..5003050]
+    },
+    {
+      name: "unmapped",
+      uids: [5003028..5003029, 5003031..5003031, 5003033..5003035]
     }
-  ],
-  spawns: [
-    { zone: 5003, count: 1, uid_ranges: [[5003021, 5003050]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -47,10 +48,10 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (166..176),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (173..183),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

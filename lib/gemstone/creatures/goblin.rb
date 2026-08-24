@@ -8,8 +8,8 @@
   family: "Goblin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,31 +18,25 @@
   bcs: true,
   max_hp: 49,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "small",
   areas: [
     {
       name: "Old Mine Road",
-      rooms: []
+      uids: [20001..20035]
     },
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18003..18011]
     },
     {
       name: "Upper Trollfang",
-      rooms: []
+      uids: [16001..16020]
     },
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Sea Caverns",
+      uids: [391001..391022]
     }
-  ],
-  spawns: [
-    { zone: 16, count: 1, uid_ranges: [[16001, 16020]] },
-    { zone: 18, count: 1, uid_ranges: [[18003, 18011]] },
-    { zone: 20, count: 1, uid_ranges: [[20001, 20035]] },
-    { zone: 391, count: 3, uid_ranges: [[391001, 391022]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,13 +55,13 @@
   defense_attributes: {
     asg: "5",
     immunities: [],
-    melee: (44..68),
+    melee: (54..68),
     ranged: -10,
     bolt: 6,
     udf: 102,
     bar_td: 6,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -27,
     pal_td: nil,
     ran_td: nil,
     sor_td: 6,

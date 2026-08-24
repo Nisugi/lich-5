@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,25 +20,17 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
-      name: "Frozen Battlefield",
-      rooms: []
-    },
-    {
       name: "Glatoph",
-      rooms: []
+      uids: [35005..35009, 35026..35040, 35068..35072]
     },
     {
-      name: "Olbin Pass",
-      rooms: []
+      name: "Ice Plains",
+      uids: [7502001..7502010, 7502016..7502021]
     }
-  ],
-  spawns: [
-    { zone: 35, count: 5, uid_ranges: [[35005, 35009], [35026, 35040], [35068, 35072]] },
-    { zone: 7502, count: 2, uid_ranges: [[7502001, 7502010], [7502016, 7502021]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -72,7 +64,7 @@
     udf: 191,
     bar_td: (86..91),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (88..98),
     pal_td: nil,
     ran_td: nil,
     sor_td: (101..112),

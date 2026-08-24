@@ -8,8 +8,8 @@
   family: "Fey",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 230,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "tiny",
   areas: [
     {
       name: "Sorcerer's Isle",
-      rooms: []
+      uids: [14202001..14202023]
     }
-  ],
-  spawns: [
-    { zone: 14202, count: 2, uid_ranges: [[14202001, 14202023]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -63,10 +60,10 @@
     udf: 316,
     bar_td: 55,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (135..145),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 82,
+    sor_td: (74..82),
     wiz_td: nil,
     mje_td: 49,
     mne_td: 109,

@@ -8,24 +8,21 @@
   family: "Golem",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
   max_hp: 190,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
       name: "Glatoph",
-      rooms: []
+      uids: [35041..35067]
     }
-  ],
-  spawns: [
-    { zone: 35, count: 2, uid_ranges: [[35041, 35067]] }
   ],
   attack_attributes: {
     physical_attacks: [

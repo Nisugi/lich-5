@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,21 @@
   bcs: true,
   max_hp: 200,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Karazja Jungle",
-      rooms: []
+      uids: [5006004..5006009, 5006040..5006040]
     },
     {
       name: "Vipershroud",
-      rooms: []
+      uids: [2190001..2190025, 2190027..2190034]
+    },
+    {
+      name: "unmapped",
+      uids: [5006010..5006039]
     }
-  ],
-  spawns: [
-    { zone: 2190, count: 2, uid_ranges: [[2190001, 2190025], [2190027, 2190034]] },
-    { zone: 5006, count: 2, uid_ranges: [[5006004, 5006040]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,10 +61,10 @@
     udf: 187,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (55..63),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 70,
+    sor_td: (70..76),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 72,

@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,25 @@
   bcs: true,
   max_hp: 68,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "small",
   areas: [
     {
-      name: "Cairnfang Forest",
-      rooms: []
-    },
-    {
-      name: "Wehnimer's Environs",
-      rooms: []
-    },
-    {
       name: "Yander's Farm",
-      rooms: []
+      uids: [14005023..14005025, 14005027..14005036]
+    },
+    {
+      name: "Ocoma Vale",
+      uids: [4300001..4300025]
+    },
+    {
+      name: "Central Caravansary",
+      uids: [4748310..4748312, 4748321..4748321]
+    },
+    {
+      name: "unmapped",
+      uids: [4748313..4748320]
     }
-  ],
-  spawns: [
-    { zone: 4300, count: 1, uid_ranges: [[4300001, 4300025]] },
-    { zone: 4748, count: 1, uid_ranges: [[4748310, 4748321]] },
-    { zone: 14005, count: 1, uid_ranges: [[14005023, 14005025], [14005027, 14005036]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -74,7 +73,7 @@
     udf: 98,
     bar_td: 18,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -11,
     pal_td: nil,
     ran_td: 18,
     sor_td: 18,

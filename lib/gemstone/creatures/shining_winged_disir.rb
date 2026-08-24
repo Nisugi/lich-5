@@ -7,19 +7,22 @@
   family: "",
   type: "",
   undead: false,
+  blood: nil,
+  bones: nil,
+  muggable: nil,
   boss: false,
   otherclass: [],
   areas: [
-    { name: "Hinterwilds", rooms: [] }
+    {
+      name: "Hinterwilds",
+      uids: [7503422..7503466]
+    }
   ],
   bcs: true,
   max_hp: nil,
   speed: nil,
   height: 9,
   size: "medium",
-  spawns: [
-    { zone: 7503, count: 2, uid_ranges: [[7503422, 7503466]] }
-  ],
   attack_attributes: {
     physical_attacks: [
       {

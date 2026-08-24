@@ -8,8 +8,8 @@
   family: "Bear",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
-      name: "Northern Mountains",
-      rooms: []
+      name: "Pinefar Forests",
+      uids: [4563014..4563026]
     }
-  ],
-  spawns: [
-    { zone: 4563, count: 1, uid_ranges: [[4563014, 4563026]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,10 +53,10 @@
     udf: 267,
     bar_td: 114,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (124..133),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 130,
+    sor_td: (130..137),
     wiz_td: nil,
     mje_td: 138,
     mne_td: 138,

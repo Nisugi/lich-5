@@ -8,8 +8,8 @@
   family: "Vysan",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 50,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "small",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Southern Snowfields",
+      uids: [4128058..4128070]
     }
-  ],
-  spawns: [
-    { zone: 4128, count: 1, uid_ranges: [[4128058, 4128070]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: 51,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -23,
     pal_td: nil,
     ran_td: nil,
     sor_td: 9,

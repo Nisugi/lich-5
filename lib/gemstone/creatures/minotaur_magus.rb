@@ -8,26 +8,23 @@
   family: "Minotaur",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 250,
+  max_hp: 253,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 8,
+  size: "medium",
   areas: [
     {
-      name: "Wehntoph",
-      rooms: []
+      name: "The Hidden Plateau",
+      uids: [2167070..2167108]
     }
-  ],
-  spawns: [
-    { zone: 2167, count: 2, uid_ranges: [[2167070, 2167108]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -63,18 +60,18 @@
   defense_attributes: {
     asg: "11",
     immunities: [],
-    melee: nil,
+    melee: (349..421),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 482,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 289,
     pal_td: 259,
     ran_td: nil,
     sor_td: (268..317),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 335,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,

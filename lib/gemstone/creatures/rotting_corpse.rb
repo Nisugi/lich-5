@@ -8,8 +8,8 @@
   family: "Zombie",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Castle Varunar",
-      rooms: []
+      uids: [4750006..4750029]
     }
-  ],
-  spawns: [
-    { zone: 4750, count: 1, uid_ranges: [[4750006, 4750029]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: 256,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (106..110),
     pal_td: nil,
     ran_td: nil,
     sor_td: (105..123),

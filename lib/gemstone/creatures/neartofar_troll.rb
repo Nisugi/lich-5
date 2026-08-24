@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 200,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
       name: "Neartofar Forest",
-      rooms: []
+      uids: [14015001..14015020]
     }
-  ],
-  spawns: [
-    { zone: 14015, count: 1, uid_ranges: [[14015001, 14015020]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,7 +49,7 @@
     udf: 112,
     bar_td: 52,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 40,
     pal_td: nil,
     ran_td: nil,
     sor_td: 56,

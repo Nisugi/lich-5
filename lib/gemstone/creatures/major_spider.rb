@@ -8,8 +8,8 @@
   family: "Arachnid",
   type: "Arachnid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 250,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "large",
   areas: [
     {
-      name: "Spider Temple",
-      rooms: []
+      name: "Lower Trollfang",
+      uids: [12001..12051]
     }
-  ],
-  spawns: [
-    { zone: 12, count: 2, uid_ranges: [[12001, 12051]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,10 +53,10 @@
     udf: 225,
     bar_td: nil,
     cle_td: nil,
-    emp_td: 61,
+    emp_td: (57..66),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 61,
+    sor_td: (55..61),
     wiz_td: nil,
     mje_td: 62,
     mne_td: 63,

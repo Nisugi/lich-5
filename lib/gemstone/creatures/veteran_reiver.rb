@@ -8,8 +8,8 @@
   family: "Reiver",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 270,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Luinne Bheinn",
+      uids: [4251011..4251039]
     }
-  ],
-  spawns: [
-    { zone: 4251, count: 1, uid_ranges: [[4251011, 4251039]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -47,10 +44,10 @@
     udf: 137,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 61,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 72,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

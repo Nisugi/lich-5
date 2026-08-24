@@ -8,8 +8,8 @@
   family: "Vruul",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "The Broken Lands",
-      rooms: []
+      uids: [94028..94053]
     }
-  ],
-  spawns: [
-    { zone: 94, count: 2, uid_ranges: [[94028, 94053]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -75,16 +72,16 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: nil,
+    melee: 430,
     ranged: nil,
     bolt: nil,
     udf: nil,
     bar_td: nil,
     cle_td: 190,
-    emp_td: 190,
+    emp_td: (180..190),
     pal_td: nil,
     ran_td: nil,
-    sor_td: (191..198),
+    sor_td: (190..198),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

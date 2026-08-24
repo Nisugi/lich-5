@@ -8,8 +8,8 @@
   family: "Caprine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 28,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Yander's Farm",
-      rooms: []
+      uids: [14005002..14005019]
     }
-  ],
-  spawns: [
-    { zone: 14005, count: 1, uid_ranges: [[14005002, 14005019]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -46,7 +43,7 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (5..28),
+    melee: 28,
     ranged: "+5",
     bolt: "+5",
     udf: 58,

@@ -8,8 +8,8 @@
   family: "Veaba",
   type: "Crustacean",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 160,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
       name: "Czeroth Caverns",
-      rooms: []
+      uids: [13007001..13007043]
     }
-  ],
-  spawns: [
-    { zone: 13007, count: 2, uid_ranges: [[13007001, 13007043]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: 318,
     bar_td: 51,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 75,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (45..51),
     wiz_td: nil,
     mje_td: (75..78),
     mne_td: 51,

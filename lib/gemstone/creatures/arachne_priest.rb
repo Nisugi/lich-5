@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: nil,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Spider Temple",
-      rooms: []
+      uids: [13001..13036]
     }
-  ],
-  spawns: [
-    { zone: 13, count: 2, uid_ranges: [[13001, 13036]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -75,10 +72,10 @@
     udf: nil,
     bar_td: 92,
     cle_td: 102,
-    emp_td: 95,
+    emp_td: (87..95),
     pal_td: nil,
     ran_td: nil,
-    sor_td: (108..115),
+    sor_td: (106..115),
     wiz_td: 107,
     mje_td: 107,
     mne_td: 107,

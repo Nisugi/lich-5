@@ -8,8 +8,8 @@
   family: "Orc",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,20 +18,13 @@
   bcs: true,
   max_hp: 150,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "medium",
   areas: [
     {
-      name: "Orcswold",
-      rooms: []
-    },
-    {
       name: "Yegharren Plains",
-      rooms: []
+      uids: [13034101..13034119, 13034201..13034221, 13034301..13034338, 13034401..13034416]
     }
-  ],
-  spawns: [
-    { zone: 13034, count: 4, uid_ranges: [[13034101, 13034119], [13034201, 13034221], [13034301, 13034338], [13034401, 13034416]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,10 +57,10 @@
     udf: 219,
     bar_td: (51..57),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (33..41),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (45..54),
     wiz_td: 57,
     mje_td: 51,
     mne_td: (51..57),

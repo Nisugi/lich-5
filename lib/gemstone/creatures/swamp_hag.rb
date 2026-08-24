@@ -8,8 +8,8 @@
   family: "Witch",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,17 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "Miasmal Forest",
-      rooms: []
+      uids: [5004035..5004044, 5004049..5004053]
+    },
+    {
+      name: "unmapped",
+      uids: [5004045..5004048, 5004054..5004054]
     }
-  ],
-  spawns: [
-    { zone: 5004, count: 1, uid_ranges: [[5004035, 5004054]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -76,10 +77,10 @@
     udf: 309,
     bar_td: nil,
     cle_td: 159,
-    emp_td: nil,
+    emp_td: (148..154),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 161,
+    sor_td: (155..161),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

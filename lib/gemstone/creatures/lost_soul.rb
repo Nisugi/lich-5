@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -17,18 +17,15 @@
     "Extraplanar"
   ],
   bcs: true,
-  max_hp: 240,
+  max_hp: 247,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "The Rift",
-      rooms: []
+      uids: [4570001..4570014]
     }
-  ],
-  spawns: [
-    { zone: 4570, count: 2, uid_ranges: [[4570001, 4570014]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -50,13 +47,13 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (296..420),
+    melee: (270..520),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 630,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (419..428),
     pal_td: 324,
     ran_td: nil,
     sor_td: (379..417),

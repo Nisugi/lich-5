@@ -8,8 +8,8 @@
   family: "Goblin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,36 +18,37 @@
   bcs: true,
   max_hp: 60,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Cairnfang Forest",
-      rooms: []
-    },
-    {
-      name: "Snowflake Vale",
-      rooms: []
-    },
-    {
       name: "The Graveyard",
-      rooms: []
+      uids: [18018..18028, 18037..18040, 18042..18044, 18048..18052, 2162001..2162015]
     },
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Upper Dragonsclaw",
+      uids: [8001..8009, 2121001..2121013, 4121001..4121020]
+    },
+    {
+      name: "unmapped",
+      uids: [18041..18041, 18045..18047, 7128016..7128025]
+    },
+    {
+      name: "Southern Snowfields",
+      uids: [4128018..4128024]
+    },
+    {
+      name: "Ocoma Vale",
+      uids: [4300001..4300025]
+    },
+    {
+      name: "Cairnfang",
+      uids: [4745040..4745050]
+    },
+    {
+      name: "Muddy Village",
+      uids: [7128001..7128015, 7128026..7128030]
     }
-  ],
-  spawns: [
-    { zone: 8, count: 3, uid_ranges: [[8001, 8009]] },
-    { zone: 18, count: 3, uid_ranges: [[18018, 18028], [18037, 18052]] },
-    { zone: 2121, count: 2, uid_ranges: [[2121001, 2121013]] },
-    { zone: 2162, count: 1, uid_ranges: [[2162001, 2162015]] },
-    { zone: 4121, count: 3, uid_ranges: [[4121001, 4121020]] },
-    { zone: 4128, count: 1, uid_ranges: [[4128018, 4128024]] },
-    { zone: 4300, count: 2, uid_ranges: [[4300001, 4300025]] },
-    { zone: 4745, count: 1, uid_ranges: [[4745040, 4745050]] },
-    { zone: 7128, count: 1, uid_ranges: [[7128001, 7128030]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -75,8 +76,8 @@
     asg: nil,
     immunities: [],
     melee: (4..93),
-    ranged: (-10..-9),
-    bolt: (-10..-9),
+    ranged: (-17..11),
+    bolt: (-17..11),
     udf: 111,
     bar_td: nil,
     cle_td: nil,

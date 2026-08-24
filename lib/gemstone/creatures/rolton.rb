@@ -8,8 +8,8 @@
   family: "Caprine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,27 +18,25 @@
   bcs: true,
   max_hp: 28,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Lower Dragonsclaw",
+      uids: [9008..9032]
     },
     {
-      name: "River's Rest Environs",
-      rooms: []
+      name: "South River Road",
+      uids: [2104011..2104017]
     },
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Southern Snowfields",
+      uids: [4128001..4128008]
+    },
+    {
+      name: "Graendlor Pasture",
+      uids: [4301001..4301025]
     }
-  ],
-  spawns: [
-    { zone: 9, count: 1, uid_ranges: [[9008, 9032]] },
-    { zone: 2104, count: 1, uid_ranges: [[2104011, 2104017]] },
-    { zone: 4128, count: 1, uid_ranges: [[4128001, 4128008]] },
-    { zone: 4301, count: 1, uid_ranges: [[4301001, 4301025]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,7 +55,7 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (16..78),
+    melee: (28..78),
     ranged: "+5",
     bolt: "+5",
     udf: nil,

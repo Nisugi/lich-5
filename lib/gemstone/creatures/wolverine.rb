@@ -8,8 +8,8 @@
   family: "Mustelid",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 210,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "small",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4214303..4214323]
     },
     {
-      name: "Northern Mountains",
-      rooms: []
+      name: "Pinefar Forests",
+      uids: [4563004..4563021]
     }
-  ],
-  spawns: [
-    { zone: 4214, count: 1, uid_ranges: [[4214303, 4214323]] },
-    { zone: 4563, count: 1, uid_ranges: [[4563004, 4563021]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +56,7 @@
     udf: 225,
     bar_td: 72,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 65,
     pal_td: 72,
     ran_td: nil,
     sor_td: 79,

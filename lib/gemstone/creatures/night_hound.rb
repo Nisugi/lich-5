@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 210,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [2150002..2150007, 2150010..2150014]
     }
-  ],
-  spawns: [
-    { zone: 2150, count: 2, uid_ranges: [[2150002, 2150007], [2150010, 2150014]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +57,7 @@
     udf: 141,
     bar_td: 97,
     cle_td: 99,
-    emp_td: nil,
+    emp_td: 90,
     pal_td: nil,
     ran_td: nil,
     sor_td: 104,

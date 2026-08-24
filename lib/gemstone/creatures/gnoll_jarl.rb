@@ -8,8 +8,8 @@
   family: "Gnoll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -22,12 +22,9 @@
   size: "",
   areas: [
     {
-      name: "Zeltoph",
-      rooms: []
+      name: "Foothills of Zeltoph",
+      uids: [11020..11030]
     }
-  ],
-  spawns: [
-    { zone: 11, count: 1, uid_ranges: [[11020, 11030]] }
   ],
   attack_attributes: {
     physical_attacks: [],

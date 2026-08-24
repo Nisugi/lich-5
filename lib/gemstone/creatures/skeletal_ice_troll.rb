@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 360,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 8,
+  size: "large",
   areas: [
     {
-      name: "Frozen Battlefield",
-      rooms: []
+      name: "Ice Plains",
+      uids: [7502011..7502015]
     }
-  ],
-  spawns: [
-    { zone: 7502, count: 1, uid_ranges: [[7502011, 7502015]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -58,7 +55,7 @@
     udf: 183,
     bar_td: nil,
     cle_td: 93,
-    emp_td: nil,
+    emp_td: 89,
     pal_td: nil,
     ran_td: nil,
     sor_td: 93,

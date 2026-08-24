@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,17 +19,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "Shadow Valley",
-      rooms: []
+      uids: [389050..389057, 2158001..2158038]
     }
-  ],
-  spawns: [
-    { zone: 389, count: 1, uid_ranges: [[389050, 389057]] },
-    { zone: 2158, count: 2, uid_ranges: [[2158001, 2158038]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -49,7 +45,7 @@
     udf: 271,
     bar_td: 158,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (142..151),
     pal_td: nil,
     ran_td: nil,
     sor_td: (143..166),

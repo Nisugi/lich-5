@@ -8,8 +8,8 @@
   family: "Plant",
   type: "Plantlife",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,16 +20,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "large",
   areas: [
     {
-      name: "Blighted Forest",
-      rooms: []
+      name: "Maaghara Tower",
+      uids: [13022026..13022060]
     }
-  ],
-  spawns: [
-    { zone: 13022, count: 2, uid_ranges: [[13022026, 13022060]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,18 +61,18 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: 211,
-    udf: nil,
+    melee: 221,
+    ranged: (200..221),
+    bolt: (200..221),
+    udf: 395,
     bar_td: (264..270),
     cle_td: (282..291),
-    emp_td: (283..292),
+    emp_td: (276..292),
     pal_td: nil,
     ran_td: nil,
     sor_td: (299..317),
     wiz_td: nil,
-    mje_td: 316,
+    mje_td: (316..322),
     mne_td: 332,
     mjs_td: nil,
     mns_td: (277..286),

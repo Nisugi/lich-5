@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Old Ta'Faendryl",
-      rooms: []
+      uids: [17003011..17003038, 17003101..17003150, 17003201..17003217]
+    },
+    {
+      name: "unmapped",
+      uids: [17003001..17003010]
     }
-  ],
-  spawns: [
-    { zone: 17003, count: 4, uid_ranges: [[17003001, 17003038], [17003101, 17003150], [17003201, 17003217]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -87,18 +88,18 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: 403,
+    melee: (382..472),
     ranged: 291,
     bolt: nil,
-    udf: nil,
+    udf: 549,
     bar_td: 327,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (339..349),
     pal_td: 296,
     ran_td: nil,
     sor_td: (340..380),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 384,
     mne_td: 378,
     mjs_td: nil,
     mns_td: 339,

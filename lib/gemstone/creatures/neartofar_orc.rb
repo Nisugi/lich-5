@@ -8,8 +8,8 @@
   family: "Orc",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Neartofar Forest",
-      rooms: []
+      uids: [14015001..14015020]
     }
-  ],
-  spawns: [
-    { zone: 14015, count: 1, uid_ranges: [[14015001, 14015020]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 165,
     bar_td: (30..33),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (9..17),
     pal_td: nil,
     ran_td: 33,
-    sor_td: 33,
+    sor_td: (33..39),
     wiz_td: nil,
     mje_td: (33..36),
     mne_td: (30..33),

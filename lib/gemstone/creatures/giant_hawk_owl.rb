@@ -8,8 +8,8 @@
   family: "Bird",
   type: "Avian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,20 +19,16 @@
   max_hp: 240,
   speed: nil,
   height: nil,
-  size: "",
+  size: "large",
   areas: [
     {
       name: "Sorcerer's Isle",
-      rooms: []
+      uids: [14202001..14202023]
     },
     {
       name: "Teorainn Dale",
-      rooms: []
+      uids: [13024035..13024064]
     }
-  ],
-  spawns: [
-    { zone: 13024, count: 1, uid_ranges: [[13024035, 13024064]] },
-    { zone: 14202, count: 1, uid_ranges: [[14202001, 14202023]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,7 +61,7 @@
     udf: nil,
     bar_td: (84..87),
     cle_td: (78..90),
-    emp_td: 84,
+    emp_td: (73..84),
     pal_td: (84..87),
     ran_td: (81..90),
     sor_td: (84..87),

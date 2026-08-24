@@ -8,8 +8,8 @@
   family: "troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
       name: "Teorainn Dale",
-      rooms: []
+      uids: [13024010..13024027, 13024030..13024079]
     }
-  ],
-  spawns: [
-    { zone: 13024, count: 3, uid_ranges: [[13024010, 13024027], [13024030, 13024079]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: 190,
     bar_td: 90,
     cle_td: 90,
-    emp_td: 90,
+    emp_td: (85..90),
     pal_td: 90,
     ran_td: 90,
     sor_td: 90,

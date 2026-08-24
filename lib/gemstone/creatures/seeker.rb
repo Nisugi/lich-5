@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Mount Aenatumgana",
-      rooms: []
+      name: "Great Mountain Aenatumgana",
+      uids: [4561101..4561141]
     }
-  ],
-  spawns: [
-    { zone: 4561, count: 1, uid_ranges: [[4561101, 4561141]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -54,16 +51,16 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: 342,
+    melee: (342..388),
     ranged: nil,
     bolt: (273..337),
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: 216,
+    emp_td: (216..228),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (224..233),
     wiz_td: nil,
     mje_td: 246,
     mne_td: nil,

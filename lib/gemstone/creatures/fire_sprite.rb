@@ -8,8 +8,8 @@
   family: "Fey",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -20,16 +20,12 @@
   max_hp: 240,
   speed: nil,
   height: nil,
-  size: "",
+  size: "tiny",
   areas: [
     {
-      name: "Glaes Caverns",
-      rooms: []
+      name: "Eye of V'Tull",
+      uids: [3051003..3051030, 3061025..3061035]
     }
-  ],
-  spawns: [
-    { zone: 3051, count: 1, uid_ranges: [[3051003, 3051030]] },
-    { zone: 3061, count: 1, uid_ranges: [[3061025, 3061035]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,7 +57,7 @@
     udf: 414,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 268,
     pal_td: nil,
     ran_td: nil,
     sor_td: 270,

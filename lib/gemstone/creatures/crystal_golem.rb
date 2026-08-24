@@ -8,8 +8,8 @@
   family: "Golem",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Crystal Caves",
+      uids: [24058..24064]
     }
-  ],
-  spawns: [
-    { zone: 24, count: 1, uid_ranges: [[24058, 24064]] }
   ],
   attack_attributes: {
     physical_attacks: [

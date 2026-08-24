@@ -8,8 +8,8 @@
   family: "Equine",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,18 +18,13 @@
   bcs: nil,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "large",
   areas: [
     {
       name: "Shadow Valley",
-      rooms: []
+      uids: [389030..389035, 2160001..2160035, 2161001..2161022]
     }
-  ],
-  spawns: [
-    { zone: 389, count: 2, uid_ranges: [[389030, 389035]] },
-    { zone: 2160, count: 1, uid_ranges: [[2160001, 2160035]] },
-    { zone: 2161, count: 1, uid_ranges: [[2161001, 2161022]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -49,10 +44,10 @@
     udf: 290,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (131..141),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (144..151),
     wiz_td: nil,
     mje_td: (154..157),
     mne_td: nil,

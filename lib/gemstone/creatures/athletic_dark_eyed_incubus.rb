@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Den of Rot",
-      rooms: []
+      name: "Abbey",
+      uids: [4132201..4132240, 4132243..4132248]
+    },
+    {
+      name: "unmapped",
+      uids: [4132241..4132242]
     }
-  ],
-  spawns: [
-    { zone: 4132, count: 2, uid_ranges: [[4132201, 4132248]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -58,10 +59,10 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: "275 (in offensive)",
-    ranged: nil,
-    bolt: "275 (in offensive)",
-    udf: 473,
+    melee: (275..504),
+    ranged: (306..311),
+    bolt: (306..311),
+    udf: 666,
     bar_td: (243..249),
     cle_td: 277,
     emp_td: (270..289),
@@ -69,7 +70,7 @@
     ran_td: nil,
     sor_td: nil,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 303,
     mne_td: nil,
     mjs_td: 273,
     mns_td: 248,

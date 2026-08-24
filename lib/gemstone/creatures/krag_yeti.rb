@@ -8,8 +8,8 @@
   family: "Yeti",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,17 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "large",
   areas: [
     {
-      name: "Wehntoph",
-      rooms: []
+      name: "Krag Slopes",
+      uids: [495101..495116]
+    },
+    {
+      name: "The Hidden Plateau",
+      uids: [2167001..2167022]
     }
-  ],
-  spawns: [
-    { zone: 495, count: 1, uid_ranges: [[495101, 495116]] },
-    { zone: 2167, count: 1, uid_ranges: [[2167001, 2167022]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -62,13 +62,13 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 287,
+    melee: (317..526),
     ranged: 288,
     bolt: (283..308),
     udf: nil,
     bar_td: (210..262),
     cle_td: (198..219),
-    emp_td: (260..266),
+    emp_td: (260..278),
     pal_td: (235..242),
     ran_td: 230,
     sor_td: 283,

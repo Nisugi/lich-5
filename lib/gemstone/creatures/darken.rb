@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -23,11 +23,8 @@
   areas: [
     {
       name: "Wraithenmist",
-      rooms: []
+      uids: [13027003..13027083]
     }
-  ],
-  spawns: [
-    { zone: 13027, count: 4, uid_ranges: [[13027003, 13027083]] }
   ],
   attack_attributes: {
     physical_attacks: [],

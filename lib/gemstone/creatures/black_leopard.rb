@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Grasslands",
-      rooms: []
+      uids: [14012050..14012070, 14012150..14012165]
     }
-  ],
-  spawns: [
-    { zone: 14012, count: 2, uid_ranges: [[14012050, 14012070], [14012150, 14012165]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: 146,
     bar_td: 45,
     cle_td: (42..51),
-    emp_td: nil,
+    emp_td: (25..33),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 45,
+    sor_td: (42..51),
     wiz_td: nil,
     mje_td: (39..45),
     mne_td: 45,

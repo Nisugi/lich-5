@@ -8,8 +8,8 @@
   family: "Centaur",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -23,11 +23,8 @@
   areas: [
     {
       name: "Rambling Meadows",
-      rooms: []
+      uids: [14006041..14006046, 14006048..14006060]
     }
-  ],
-  spawns: [
-    { zone: 14006, count: 1, uid_ranges: [[14006041, 14006046], [14006048, 14006060]] }
   ],
   attack_attributes: {
     physical_attacks: [

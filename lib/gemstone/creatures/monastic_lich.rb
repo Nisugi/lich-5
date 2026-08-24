@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 220,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "The Monastery",
-      rooms: []
+      name: "Lysierian Hills",
+      uids: [95156..95168, 95180..95185]
     }
-  ],
-  spawns: [
-    { zone: 95, count: 2, uid_ranges: [[95156, 95168], [95180, 95185]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -92,7 +89,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: (89..117),
-    emp_td: nil,
+    emp_td: 115,
     pal_td: nil,
     ran_td: nil,
     sor_td: (106..126),

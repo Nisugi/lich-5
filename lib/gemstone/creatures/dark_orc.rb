@@ -8,8 +8,8 @@
   family: "Orc",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,27 +18,25 @@
   bcs: true,
   max_hp: 150,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "medium",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
-    },
-    {
-      name: "Wehnimer's Environs",
-      rooms: []
-    },
-    {
       name: "Yander's Farm",
-      rooms: []
+      uids: [14005054..14005066]
+    },
+    {
+      name: "unmapped",
+      uids: [21025..21028]
+    },
+    {
+      name: "Smuggling Tunnels",
+      uids: [37002..37021]
+    },
+    {
+      name: "Vornavian Coast",
+      uids: [4202401..4202416]
     }
-  ],
-  spawns: [
-    { zone: 21, count: 1, uid_ranges: [[21025, 21028]] },
-    { zone: 37, count: 2, uid_ranges: [[37002, 37021]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202401, 4202416]] },
-    { zone: 14005, count: 1, uid_ranges: [[14005054, 14005066]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -71,10 +69,10 @@
     udf: 192,
     bar_td: 36,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (9..13),
     pal_td: nil,
     ran_td: 36,
-    sor_td: 36,
+    sor_td: (33..42),
     wiz_td: nil,
     mje_td: 33,
     mne_td: 36,

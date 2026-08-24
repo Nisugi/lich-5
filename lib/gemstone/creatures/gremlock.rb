@@ -8,8 +8,8 @@
   family: "Gremlin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,17 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Old Ta'Faendryl",
-      rooms: []
+      uids: [17002201..17002247, 17002301..17002325, 17003011..17003038, 17003101..17003150, 17003201..17003217]
+    },
+    {
+      name: "unmapped",
+      uids: [17003001..17003010]
     }
-  ],
-  spawns: [
-    { zone: 17002, count: 3, uid_ranges: [[17002201, 17002247], [17002301, 17002325]] },
-    { zone: 17003, count: 4, uid_ranges: [[17003001, 17003038], [17003101, 17003150], [17003201, 17003217]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -51,18 +51,18 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: 431,
+    melee: (381..614),
     ranged: nil,
     bolt: 302,
-    udf: nil,
+    udf: 727,
     bar_td: (297..306),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (326..335),
     pal_td: 282,
     ran_td: nil,
     sor_td: (338..348),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 364,
     mne_td: 361,
     mjs_td: nil,
     mns_td: nil,

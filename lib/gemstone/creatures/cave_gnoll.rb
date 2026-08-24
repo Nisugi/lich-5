@@ -8,8 +8,8 @@
   family: "Gnoll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 60,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Upper Dragonsclaw",
+      uids: [2121015..2121024]
     }
-  ],
-  spawns: [
-    { zone: 2121, count: 1, uid_ranges: [[2121015, 2121024]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -46,13 +43,13 @@
   defense_attributes: {
     asg: "7",
     immunities: [],
-    melee: (21..28),
+    melee: (21..26),
     ranged: 9,
     bolt: 9,
     udf: 44,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -23,
     pal_td: nil,
     ran_td: nil,
     sor_td: 9,

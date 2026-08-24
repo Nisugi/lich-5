@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Ophidian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 28,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
       name: "Rambling Meadows",
-      rooms: []
+      uids: [14006001..14006020]
     }
-  ],
-  spawns: [
-    { zone: 14006, count: 1, uid_ranges: [[14006001, 14006020]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,7 +49,7 @@
     udf: 41,
     bar_td: 3,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -31,
     pal_td: nil,
     ran_td: 3,
     sor_td: 3,

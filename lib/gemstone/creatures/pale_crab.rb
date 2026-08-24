@@ -8,8 +8,8 @@
   family: "Crab",
   type: "Crustacean",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,21 @@
   bcs: true,
   max_hp: 36,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
       name: "Coastal Cliffs",
-      rooms: []
-    },
-    {
-      name: "River Tunnels",
-      rooms: []
+      uids: [2163601..2163628]
     },
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4202401..4202416]
+    },
+    {
+      name: "The Citadel",
+      uids: [2103018..2103034]
     }
-  ],
-  spawns: [
-    { zone: 2103, count: 1, uid_ranges: [[2103018, 2103034]] },
-    { zone: 2163, count: 1, uid_ranges: [[2163601, 2163628]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202401, 4202416]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,7 +64,7 @@
     emp_td: 6,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 6,
     wiz_td: nil,
     mje_td: 6,
     mne_td: 6,

@@ -8,8 +8,8 @@
   family: "Eidolon",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: nil,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
       name: "Bonespear Tower",
-      rooms: []
+      uids: [319117..319140]
     }
-  ],
-  spawns: [
-    { zone: 319, count: 1, uid_ranges: [[319117, 319140]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,7 +66,7 @@
     udf: 452,
     bar_td: "179 to 209",
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (213..222),
     pal_td: nil,
     ran_td: 204,
     sor_td: "245 to 254",

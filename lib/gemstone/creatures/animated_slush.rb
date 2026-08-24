@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Elemental",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Gossamer Valley",
-      rooms: []
+      uids: [13023013..13023054, 13023076..13023076]
+    },
+    {
+      name: "unmapped",
+      uids: [13023055..13023075]
     }
-  ],
-  spawns: [
-    { zone: 13023, count: 3, uid_ranges: [[13023013, 13023076]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -66,16 +67,16 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: nil,
+    melee: (241..298),
     ranged: (225..262),
     bolt: (225..262),
     udf: nil,
     bar_td: (185..197),
     cle_td: 202,
-    emp_td: 192,
+    emp_td: (192..208),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 212,
+    sor_td: (206..212),
     wiz_td: nil,
     mje_td: (215..224),
     mne_td: 223,

@@ -8,8 +8,8 @@
   family: "Ghoul",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,32 +18,25 @@
   bcs: true,
   max_hp: 60,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Glaise Cnoc Cemetery",
-      rooms: []
+      uids: [14008025..14008051]
     },
     {
       name: "The Citadel",
-      rooms: []
+      uids: [2102008..2102020]
     },
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18048..18058, 18060..18061, 18065..18068, 2162001..2162015]
     },
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4202141..4202156]
     }
-  ],
-  spawns: [
-    { zone: 18, count: 3, uid_ranges: [[18048, 18058], [18060, 18061], [18065, 18068]] },
-    { zone: 2102, count: 1, uid_ranges: [[2102008, 2102020]] },
-    { zone: 2162, count: 2, uid_ranges: [[2162001, 2162015]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202141, 4202156]] },
-    { zone: 14008, count: 2, uid_ranges: [[14008025, 14008051]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -68,7 +61,7 @@
     udf: 51,
     bar_td: 9,
     cle_td: 9,
-    emp_td: 9,
+    emp_td: (-23..9),
     pal_td: 9,
     ran_td: 9,
     sor_td: 9,

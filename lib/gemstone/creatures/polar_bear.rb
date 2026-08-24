@@ -8,8 +8,8 @@
   family: "Bear",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,17 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "huge",
   areas: [
     {
-      name: "Arctic Tundra",
-      rooms: []
+      name: "Great Mountain Aenatumgana",
+      uids: [4561001..4561020, 4561201..4561208]
+    },
+    {
+      name: "Pinefar Forests",
+      uids: [4563043..4563055]
     }
-  ],
-  spawns: [
-    { zone: 4561, count: 2, uid_ranges: [[4561001, 4561020], [4561201, 4561208]] },
-    { zone: 4563, count: 1, uid_ranges: [[4563043, 4563055]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,10 +61,10 @@
     udf: 315,
     bar_td: 135,
     cle_td: nil,
-    emp_td: 154,
+    emp_td: (148..157),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (157..166),
     wiz_td: nil,
     mje_td: 167,
     mne_td: 166,

@@ -8,8 +8,8 @@
   family: "Ghoul",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,22 +18,17 @@
   bcs: true,
   max_hp: 145,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "large",
   areas: [
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18029..18035, 18070..18070, 2162101..2162122]
     },
     {
       name: "Plains of Bone",
-      rooms: []
+      uids: [14011023..14011035]
     }
-  ],
-  spawns: [
-    { zone: 18, count: 2, uid_ranges: [[18029, 18035], [18070, 18070]] },
-    { zone: 2162, count: 2, uid_ranges: [[2162101, 2162122]] },
-    { zone: 14011, count: 1, uid_ranges: [[14011023, 14011035]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -66,7 +61,7 @@
     udf: 211,
     bar_td: 48,
     cle_td: 48,
-    emp_td: nil,
+    emp_td: 29,
     pal_td: 48,
     ran_td: 48,
     sor_td: 48,

@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,20 +19,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
-      name: "Arctic Tundra",
-      rooms: []
-    },
-    {
-      name: "Mount Aenatumgana",
-      rooms: []
+      name: "Great Mountain Aenatumgana",
+      uids: [4561010..4561020, 4561102..4561140, 4561201..4561208]
     }
-  ],
-  spawns: [
-    { zone: 4561, count: 3, uid_ranges: [[4561010, 4561020], [4561102, 4561140], [4561201, 4561208]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,10 +54,10 @@
     udf: 374,
     bar_td: nil,
     cle_td: nil,
-    emp_td: 186,
+    emp_td: (186..195),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (197..206),
     wiz_td: nil,
     mje_td: (209..218),
     mne_td: nil,

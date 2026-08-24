@@ -8,8 +8,8 @@
   family: "ogre",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,21 +19,17 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "large",
   areas: [
     {
       name: "Blighted Forest",
-      rooms: []
+      uids: [13020001..13020051, 13020100..13020114]
     },
     {
       name: "Aradhul Road",
-      rooms: []
+      uids: [17005003..17005006, 17005015..17005023, 17005027..17005035]
     }
-  ],
-  spawns: [
-    { zone: 13020, count: 6, uid_ranges: [[13020001, 13020051], [13020100, 13020114]] },
-    { zone: 17005, count: 1, uid_ranges: [[17005003, 17005006], [17005015, 17005023], [17005027, 17005035]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -111,7 +107,7 @@
     udf: 322,
     bar_td: 205,
     cle_td: 219,
-    emp_td: (217..219),
+    emp_td: (217..231),
     pal_td: nil,
     ran_td: (179..193),
     sor_td: "231 to 234",

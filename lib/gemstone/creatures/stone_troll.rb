@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 11,
+  size: "large",
   areas: [
     {
-      name: "Thanatoph",
-      rooms: []
+      name: "Stone Valley",
+      uids: [4291027..4291043, 4291046..4291050, 4291053..4291058]
     }
-  ],
-  spawns: [
-    { zone: 4291, count: 3, uid_ranges: [[4291027, 4291043], [4291046, 4291050], [4291053, 4291058]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -72,10 +69,10 @@
     udf: nil,
     bar_td: (183..195),
     cle_td: 206,
-    emp_td: nil,
+    emp_td: (198..207),
     pal_td: 165,
     ran_td: nil,
-    sor_td: 228,
+    sor_td: (216..228),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

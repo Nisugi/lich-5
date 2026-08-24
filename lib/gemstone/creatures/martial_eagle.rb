@@ -8,8 +8,8 @@
   family: "Bird",
   type: "Avian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,15 +19,12 @@
   max_hp: 330,
   speed: nil,
   height: nil,
-  size: "",
+  size: "large",
   areas: [
     {
       name: "Sorcerer's Isle",
-      rooms: []
+      uids: [14202001..14202023]
     }
-  ],
-  spawns: [
-    { zone: 14202, count: 1, uid_ranges: [[14202001, 14202023]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (86..94),
     pal_td: nil,
     ran_td: nil,
     sor_td: 97,

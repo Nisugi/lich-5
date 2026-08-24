@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Hybrid",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "large",
   areas: [
     {
       name: "The Rift",
-      rooms: []
+      uids: [4566001..4566055]
     }
-  ],
-  spawns: [
-    { zone: 4566, count: 2, uid_ranges: [[4566001, 4566055]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,18 +54,18 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 397,
+    melee: (264..550),
     ranged: nil,
     bolt: 330,
-    udf: nil,
+    udf: 693,
     bar_td: "274 to 280",
     cle_td: 301,
-    emp_td: nil,
+    emp_td: (293..296),
     pal_td: nil,
     ran_td: nil,
     sor_td: 315,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 332,
     mne_td: 330,
     mjs_td: nil,
     mns_td: nil,

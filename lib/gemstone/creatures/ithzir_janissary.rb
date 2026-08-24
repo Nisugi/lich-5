@@ -8,8 +8,8 @@
   family: "Ithzir",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Old Ta'Faendryl",
-      rooms: []
+      uids: [17004001..17004028, 17004031..17004079, 17004160..17004168, 17004180..17004187, 17004190..17004195]
     }
-  ],
-  spawns: [
-    { zone: 17004, count: 6, uid_ranges: [[17004001, 17004028], [17004031, 17004079], [17004160, 17004168], [17004180, 17004187], [17004190, 17004195]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,18 +61,18 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: nil,
+    melee: (240..490),
     ranged: 289,
     bolt: 249,
-    udf: nil,
+    udf: 485,
     bar_td: 299,
     cle_td: (323..337),
-    emp_td: 329,
+    emp_td: (329..344),
     pal_td: nil,
     ran_td: nil,
     sor_td: 353,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 377,
     mne_td: 376,
     mjs_td: nil,
     mns_td: (317..332),

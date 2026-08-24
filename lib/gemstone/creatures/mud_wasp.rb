@@ -8,8 +8,8 @@
   family: "Wasp",
   type: "Insect",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
       name: "Fhorian Village",
-      rooms: []
+      uids: [3030011..3030023, 3030225..3030234, 3030250..3030255]
     }
-  ],
-  spawns: [
-    { zone: 3030, count: 3, uid_ranges: [[3030011, 3030023], [3030225, 3030234], [3030250, 3030255]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 238,
     bar_td: 174,
     cle_td: 123,
-    emp_td: nil,
+    emp_td: (180..184),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 131,
+    sor_td: (131..191),
     wiz_td: nil,
     mje_td: 198,
     mne_td: 138,

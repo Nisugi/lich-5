@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: nil,
   max_hp: 44,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Wehnimer's Landing",
-      rooms: []
+      name: "Coastal Cliffs",
+      uids: [2163601..2163628]
     },
     {
-      name: "Coastal Cliffs",
-      rooms: []
+      name: "Catacombs",
+      uids: [46007..46010, 46017..46018]
     }
-  ],
-  spawns: [
-    { zone: 46, count: 1, uid_ranges: [[46007, 46010], [46017, 46018]] },
-    { zone: 2163, count: 1, uid_ranges: [[2163601, 2163628]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -70,7 +66,7 @@
     udf: 17,
     bar_td: 6,
     cle_td: 6,
-    emp_td: nil,
+    emp_td: 6,
     pal_td: nil,
     ran_td: nil,
     sor_td: 6,

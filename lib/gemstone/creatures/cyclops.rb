@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 350,
   speed: "10",
-  height: nil,
-  size: "",
+  height: 15,
+  size: "huge",
   areas: [
     {
-      name: "Marshtown",
-      rooms: []
+      name: "Noman's Land",
+      uids: [4600010..4600020]
     }
-  ],
-  spawns: [
-    { zone: 4600, count: 1, uid_ranges: [[4600010, 4600020]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,10 +58,10 @@
     udf: (190..290),
     bar_td: 84,
     cle_td: 84,
-    emp_td: 84,
+    emp_td: (73..84),
     pal_td: 84,
     ran_td: 84,
-    sor_td: 84,
+    sor_td: (75..84),
     wiz_td: 84,
     mje_td: 81,
     mne_td: 84,

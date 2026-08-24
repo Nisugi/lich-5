@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,26 +19,21 @@
   bcs: true,
   max_hp: 160,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
-    },
-    {
-      name: "Wehntoph",
-      rooms: []
-    },
-    {
       name: "Stormpeak",
-      rooms: []
+      uids: [13150001..13150016]
+    },
+    {
+      name: "Vornavian Coast",
+      uids: [4214201..4214218]
+    },
+    {
+      name: "Northern Slopes of Wehntoph",
+      uids: [4302001..4302025]
     }
-  ],
-  spawns: [
-    { zone: 4214, count: 1, uid_ranges: [[4214201, 4214218]] },
-    { zone: 4302, count: 1, uid_ranges: [[4302001, 4302025]] },
-    { zone: 13150, count: 1, uid_ranges: [[13150001, 13150016]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -75,16 +70,16 @@
   defense_attributes: {
     asg: "10N",
     immunities: [],
-    melee: (74..132),
+    melee: (74..122),
     ranged: nil,
     bolt: (91..116),
-    udf: 120,
+    udf: 95,
     bar_td: (41..68),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (32..42),
     pal_td: 49,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (57..64),
     wiz_td: nil,
     mje_td: 53,
     mne_td: 53,

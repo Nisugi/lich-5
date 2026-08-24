@@ -8,8 +8,8 @@
   family: "Giant",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 380,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 12,
+  size: "large",
   areas: [
     {
-      name: "Sentoph",
-      rooms: []
+      name: "Upper Trollfang",
+      uids: [16065..16071]
     }
-  ],
-  spawns: [
-    { zone: 16, count: 1, uid_ranges: [[16065, 16071]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -55,7 +52,7 @@
     emp_td: 104,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 112,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

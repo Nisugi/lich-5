@@ -8,8 +8,8 @@
   family: "Tree",
   type: "Plantlife",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: nil,
   max_hp: 350,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 12,
+  size: "huge",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Abandoned Farm",
+      uids: [4124101..4124112, 4124114..4124124]
     }
-  ],
-  spawns: [
-    { zone: 4124, count: 2, uid_ranges: [[4124101, 4124112], [4124114, 4124124]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,10 +66,10 @@
     udf: nil,
     bar_td: 99,
     cle_td: 109,
-    emp_td: nil,
+    emp_td: (108..117),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 115,
+    sor_td: (109..115),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 120,

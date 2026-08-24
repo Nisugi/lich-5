@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,22 +18,21 @@
   bcs: true,
   max_hp: 350,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "large",
   areas: [
     {
-      name: "Greymist Wood",
-      rooms: []
+      name: "Karazja Jungle",
+      uids: [5006001..5006009, 5006040..5006040]
     },
     {
-      name: "Karazja Jungle",
-      rooms: []
+      name: "Greymist Woods",
+      uids: [3021001..3021016, 3022001..3022034]
+    },
+    {
+      name: "unmapped",
+      uids: [5006010..5006039]
     }
-  ],
-  spawns: [
-    { zone: 3021, count: 1, uid_ranges: [[3021001, 3021016]] },
-    { zone: 3022, count: 2, uid_ranges: [[3022001, 3022034]] },
-    { zone: 5006, count: 2, uid_ranges: [[5006001, 5006040]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,10 +68,10 @@
     udf: 236,
     bar_td: 89,
     cle_td: nil,
-    emp_td: 108,
+    emp_td: (93..108),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (105..112),
     wiz_td: nil,
     mje_td: (109..114),
     mne_td: 98,

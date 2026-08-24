@@ -8,8 +8,8 @@
   family: "Golem",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,21 @@
   bcs: true,
   max_hp: 90,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Danjirland",
-      rooms: []
-    },
-    {
       name: "Plains of Bone",
-      rooms: []
+      uids: [14011001..14011022]
     },
     {
       name: "The Citadel",
-      rooms: []
+      uids: [2102001..2102006, 2102059..2102069]
+    },
+    {
+      name: "Upper Trollfang",
+      uids: [14070..14079]
     }
-  ],
-  spawns: [
-    { zone: 14, count: 1, uid_ranges: [[14070, 14079]] },
-    { zone: 2102, count: 1, uid_ranges: [[2102001, 2102006], [2102059, 2102069]] },
-    { zone: 14011, count: 1, uid_ranges: [[14011001, 14011022]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -70,7 +65,7 @@
     udf: 146,
     bar_td: (24..27),
     cle_td: 24,
-    emp_td: 24,
+    emp_td: (-3..24),
     pal_td: 24,
     ran_td: 24,
     sor_td: 24,

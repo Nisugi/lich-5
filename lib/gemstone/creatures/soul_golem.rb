@@ -8,8 +8,8 @@
   family: "Golem",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -22,12 +22,9 @@
   size: "",
   areas: [
     {
-      name: "Temple of Luukos",
-      rooms: []
+      name: "Dark Palisade",
+      uids: [3041016..3041025]
     }
-  ],
-  spawns: [
-    { zone: 3041, count: 1, uid_ranges: [[3041016, 3041025]] }
   ],
   attack_attributes: {
     physical_attacks: [

@@ -8,8 +8,8 @@
   family: "Grahnk",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 321,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
-      name: "Thurfel's Keep",
-      rooms: []
+      name: "Thurfel's Island",
+      uids: [7532001..7532033]
     }
-  ],
-  spawns: [
-    { zone: 7532, count: 2, uid_ranges: [[7532001, 7532033]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,10 +54,10 @@
     udf: 168,
     bar_td: (54..60),
     cle_td: 60,
-    emp_td: nil,
+    emp_td: (45..53),
     pal_td: 60,
     ran_td: nil,
-    sor_td: 60,
+    sor_td: (54..63),
     wiz_td: nil,
     mje_td: 60,
     mne_td: 60,

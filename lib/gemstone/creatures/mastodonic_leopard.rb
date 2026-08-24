@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "large",
   areas: [
     {
-      name: "Gyldemar Green",
-      rooms: []
+      name: "Gyldemar Forest",
+      uids: [13028001..13028037, 13028084..13028091]
     }
-  ],
-  spawns: [
-    { zone: 13028, count: 3, uid_ranges: [[13028001, 13028037], [13028084, 13028091]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +62,10 @@
     udf: 296,
     bar_td: 135,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (148..157),
     pal_td: nil,
     ran_td: 132,
-    sor_td: 157,
+    sor_td: (157..163),
     wiz_td: nil,
     mje_td: 158,
     mne_td: 166,

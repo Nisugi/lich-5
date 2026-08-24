@@ -8,26 +8,23 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 300,
+  max_hp: 335,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Sanctum",
-      rooms: []
+      name: "Shadow of the Sanctum",
+      uids: [4216001..4216049]
     }
-  ],
-  spawns: [
-    { zone: 4216, count: 2, uid_ranges: [[4216001, 4216049]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -74,18 +71,18 @@
     immunities: [
       "Stun"
     ],
-    melee: 338,
+    melee: (294..539),
     ranged: (320..364),
     bolt: 331,
-    udf: nil,
+    udf: 741,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 450,
     pal_td: 403,
     ran_td: 331,
     sor_td: nil,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 502,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,

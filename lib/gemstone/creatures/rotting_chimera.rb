@@ -8,8 +8,8 @@
   family: "Chimeric",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
       name: "Marsh Keep",
-      rooms: []
+      uids: [376001..376001, 376003..376010, 376015..376018, 376020..376034, 376040..376044]
+    },
+    {
+      name: "unmapped",
+      uids: [376002..376002, 376019..376019, 376035..376039]
     }
-  ],
-  spawns: [
-    { zone: 376, count: 2, uid_ranges: [[376001, 376010], [376015, 376044]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -67,7 +68,7 @@
     udf: 398,
     bar_td: nil,
     cle_td: nil,
-    emp_td: 161,
+    emp_td: (161..170),
     pal_td: nil,
     ran_td: 112,
     sor_td: (167..185),

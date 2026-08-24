@@ -8,8 +8,8 @@
   family: "Zombie",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,21 +19,17 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Danjirland",
-      rooms: []
+      name: "Upper Trollfang",
+      uids: [2122001..2122016]
     },
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Abandoned Farm",
+      uids: [4124015..4124022, 4124024..4124026]
     }
-  ],
-  spawns: [
-    { zone: 2122, count: 1, uid_ranges: [[2122001, 2122016]] },
-    { zone: 4124, count: 2, uid_ranges: [[4124015, 4124022], [4124024, 4124026]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -62,7 +58,7 @@
     udf: 169,
     bar_td: (63..69),
     cle_td: (67..76),
-    emp_td: 72,
+    emp_td: (52..72),
     pal_td: nil,
     ran_td: nil,
     sor_td: (68..80),

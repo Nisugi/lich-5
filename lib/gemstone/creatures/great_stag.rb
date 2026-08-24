@@ -8,8 +8,8 @@
   family: "Deer",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 121,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Yander's Farm",
-      rooms: []
+      uids: [14005067..14005080]
     },
     {
       name: "Yegharren Plains",
-      rooms: []
+      uids: [13034101..13034118, 13034201..13034221]
     }
-  ],
-  spawns: [
-    { zone: 13034, count: 2, uid_ranges: [[13034101, 13034118], [13034201, 13034221]] },
-    { zone: 14005, count: 1, uid_ranges: [[14005067, 14005080]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,10 +57,10 @@
     udf: 141,
     bar_td: 39,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (17..25),
     pal_td: nil,
     ran_td: 39,
-    sor_td: nil,
+    sor_td: (36..45),
     wiz_td: nil,
     mje_td: 39,
     mne_td: (33..39),

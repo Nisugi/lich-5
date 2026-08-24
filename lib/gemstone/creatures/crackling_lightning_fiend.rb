@@ -8,24 +8,21 @@
   family: "Elemental",
   type: "Elemental",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
-  max_hp: 260,
+  max_hp: 265,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Stormpeak",
-      rooms: []
+      uids: [13150401..13150425]
     }
-  ],
-  spawns: [
-    { zone: 13150, count: 1, uid_ranges: [[13150401, 13150425]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -48,18 +45,18 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: nil,
+    melee: (276..521),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 573,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (316..324),
     pal_td: nil,
     ran_td: nil,
     sor_td: "330 to 360",
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 379,
     mne_td: "352 to 382",
     mjs_td: nil,
     mns_td: "306 to 336",

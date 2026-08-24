@@ -8,8 +8,8 @@
   family: "Krolvin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,21 @@
   bcs: true,
   max_hp: 200,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Abandoned Mine",
-      rooms: []
-    },
-    {
-      name: "Old Mine Road",
-      rooms: []
-    },
-    {
       name: "Sea Caves",
-      rooms: []
+      uids: [26103..26120]
+    },
+    {
+      name: "Lysierian Hills",
+      uids: [93050..93070]
+    },
+    {
+      name: "Liath Bheinn and Aillidh Brae",
+      uids: [4250050..4250068]
     }
-  ],
-  spawns: [
-    { zone: 26, count: 1, uid_ranges: [[26103, 26120]] },
-    { zone: 93, count: 1, uid_ranges: [[93050, 93070]] },
-    { zone: 4250, count: 1, uid_ranges: [[4250050, 4250068]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -66,10 +61,10 @@
     udf: 127,
     bar_td: 51,
     cle_td: nil,
-    emp_td: 51,
+    emp_td: (33..51),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 51,
+    sor_td: (51..57),
     wiz_td: nil,
     mje_td: 51,
     mne_td: 51,

@@ -8,8 +8,8 @@
   family: "Worm",
   type: "Worm",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 222,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "medium",
   areas: [
     {
       name: "Zaerthu Tunnels",
-      rooms: []
+      uids: [13009001..13009040]
     }
-  ],
-  spawns: [
-    { zone: 13009, count: 1, uid_ranges: [[13009001, 13009040]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,10 +53,10 @@
     udf: 267,
     bar_td: 78,
     cle_td: 74,
-    emp_td: nil,
+    emp_td: (73..82),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (76..82),
     wiz_td: nil,
     mje_td: 81,
     mne_td: 82,

@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 316,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Black Moor",
-      rooms: []
+      name: "Yegharren Plains",
+      uids: [13036201..13036217, 13036301..13036310, 13036401..13036414]
     }
-  ],
-  spawns: [
-    { zone: 13036, count: 3, uid_ranges: [[13036201, 13036217], [13036301, 13036310], [13036401, 13036414]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,10 +53,10 @@
     udf: 272,
     bar_td: 109,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (121..130),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 128,
+    sor_td: (122..128),
     wiz_td: nil,
     mje_td: (125..134),
     mne_td: 134,

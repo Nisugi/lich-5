@@ -8,8 +8,8 @@
   family: "Orc",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,35 +18,25 @@
   bcs: true,
   max_hp: 89,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
-    },
-    {
       name: "Melgorehn's Valley",
-      rooms: []
+      uids: [2148002..2148024]
     },
     {
       name: "Old Mine Road",
-      rooms: []
+      uids: [20001..20018]
     },
     {
       name: "Upper Trollfang",
-      rooms: []
+      uids: [15001..15034]
     },
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Southern Snowfields",
+      uids: [4128031..4128042]
     }
-  ],
-  spawns: [
-    { zone: 15, count: 2, uid_ranges: [[15001, 15034]] },
-    { zone: 20, count: 1, uid_ranges: [[20001, 20018]] },
-    { zone: 2148, count: 1, uid_ranges: [[2148002, 2148024]] },
-    { zone: 4128, count: 1, uid_ranges: [[4128031, 4128042]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -70,15 +60,15 @@
     asg: nil,
     immunities: [],
     melee: (37..114),
-    ranged: (29..37),
-    bolt: (29..37),
+    ranged: (32..37),
+    bolt: (32..37),
     udf: 127,
     bar_td: 18,
     cle_td: nil,
-    emp_td: 18,
+    emp_td: (-11..18),
     pal_td: 18,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 18,
     wiz_td: nil,
     mje_td: 18,
     mne_td: nil,

@@ -8,8 +8,8 @@
   family: "Wight",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 170,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Marshtown",
-      rooms: []
+      name: "Plains of Vornavis",
+      uids: [4212201..4212222]
     }
-  ],
-  spawns: [
-    { zone: 4212, count: 1, uid_ranges: [[4212201, 4212222]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -73,10 +70,10 @@
     udf: 180,
     bar_td: 66,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (37..45),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 61,
+    sor_td: (61..67),
     wiz_td: nil,
     mje_td: 62,
     mne_td: 63,

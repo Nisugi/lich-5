@@ -8,26 +8,23 @@
   family: "Triton",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 231,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Ruined Temple",
-      rooms: []
+      uids: [3031025..3031035, 3031045..3031055]
     }
-  ],
-  spawns: [
-    { zone: 3031, count: 1, uid_ranges: [[3031025, 3031035], [3031045, 3031055]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -65,7 +62,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 380,
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,

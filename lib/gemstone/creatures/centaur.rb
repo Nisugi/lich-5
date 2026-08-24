@@ -8,8 +8,8 @@
   family: "Centaur",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,30 +19,21 @@
   bcs: true,
   max_hp: 265,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "large",
   areas: [
     {
-      name: "Darkstone Castle",
-      rooms: []
-    },
-    {
-      name: "Foggy Valley",
-      rooms: []
-    },
-    {
-      name: "Glo'antern Moor",
-      rooms: []
-    },
-    {
       name: "Rambling Meadows",
-      rooms: []
+      uids: [14006041..14006046, 14006048..14006060]
+    },
+    {
+      name: "Vornavian Coast",
+      uids: [4218101..4218121]
+    },
+    {
+      name: "Locksmehr Trail",
+      uids: [13001043..13001079]
     }
-  ],
-  spawns: [
-    { zone: 4218, count: 1, uid_ranges: [[4218101, 4218121]] },
-    { zone: 13001, count: 2, uid_ranges: [[13001043, 13001079]] },
-    { zone: 14006, count: 1, uid_ranges: [[14006041, 14006046], [14006048, 14006060]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -74,12 +65,12 @@
     udf: 246,
     bar_td: (69..75),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (57..65),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 69,
+    sor_td: (66..75),
     wiz_td: nil,
-    mje_td: (63..69),
+    mje_td: (63..72),
     mne_td: 69,
     mjs_td: nil,
     mns_td: 69,

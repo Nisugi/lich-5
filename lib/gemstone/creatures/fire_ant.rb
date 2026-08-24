@@ -8,8 +8,8 @@
   family: "Ant",
   type: "Insect",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 28,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
-      name: "Ant Hill",
-      rooms: []
+      name: "unmapped",
+      uids: [14010001..14010032]
+    },
+    {
+      name: "Barefoot Hill",
+      uids: [14010101..14010118]
     }
-  ],
-  spawns: [
-    { zone: 14010, count: 3, uid_ranges: [[14010001, 14010032], [14010101, 14010118]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -50,7 +51,7 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (25..35),
+    melee: (25..27),
     ranged: 25,
     bolt: 25,
     udf: 33,

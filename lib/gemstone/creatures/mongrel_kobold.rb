@@ -8,8 +8,8 @@
   family: "Kobold",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,27 +18,21 @@
   bcs: true,
   max_hp: 80,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "small",
   areas: [
     {
-      name: "Marshtown",
-      rooms: []
-    },
-    {
       name: "The Citadel",
-      rooms: []
+      uids: [377101..377128]
     },
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4202401..4202416]
+    },
+    {
+      name: "Plains of Vornavis",
+      uids: [4212101..4212130, 4213101..4213130]
     }
-  ],
-  spawns: [
-    { zone: 377, count: 1, uid_ranges: [[377101, 377128]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202401, 4202416]] },
-    { zone: 4212, count: 1, uid_ranges: [[4212101, 4212130]] },
-    { zone: 4213, count: 1, uid_ranges: [[4213101, 4213130]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -63,10 +57,10 @@
     udf: 126,
     bar_td: 12,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -19,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 12,
     wiz_td: nil,
     mje_td: 12,
     mne_td: 12,

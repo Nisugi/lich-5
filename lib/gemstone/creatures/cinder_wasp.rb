@@ -8,8 +8,8 @@
   family: "Wasp",
   type: "Insect",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
-      name: "Lava Flows",
-      rooms: []
+      name: "Volcano",
+      uids: [3052001..3052025]
     }
-  ],
-  spawns: [
-    { zone: 3052, count: 1, uid_ranges: [[3052001, 3052025]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,7 +49,7 @@
     udf: 273,
     bar_td: 203,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 217,
     pal_td: nil,
     ran_td: nil,
     sor_td: 226,

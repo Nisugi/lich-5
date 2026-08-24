@@ -8,8 +8,8 @@
   family: "Wraith",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -17,18 +17,15 @@
     "Boss"
   ],
   bcs: true,
-  max_hp: 300,
+  max_hp: 323,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Temple of Luukos",
-      rooms: []
+      name: "Dark Palisade",
+      uids: [3040004..3040015]
     }
-  ],
-  spawns: [
-    { zone: 3040, count: 1, uid_ranges: [[3040004, 3040015]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -47,18 +44,18 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: "216 to 271",
+    melee: (231..450),
     ranged: nil,
     bolt: 275,
-    udf: nil,
+    udf: 534,
     bar_td: nil,
     cle_td: 250,
-    emp_td: 247,
+    emp_td: (247..259),
     pal_td: nil,
     ran_td: nil,
     sor_td: 262,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 276,
     mne_td: 284,
     mjs_td: nil,
     mns_td: 256,

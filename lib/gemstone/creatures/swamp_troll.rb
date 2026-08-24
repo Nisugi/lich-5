@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 170,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
-      name: "Cairnfang Forest",
-      rooms: []
+      name: "Central Caravansary",
+      uids: [4748201..4748215]
     }
-  ],
-  spawns: [
-    { zone: 4748, count: 1, uid_ranges: [[4748201, 4748215]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,7 +49,7 @@
     udf: 104,
     bar_td: 49,
     cle_td: 57,
-    emp_td: 57,
+    emp_td: (36..57),
     pal_td: nil,
     ran_td: nil,
     sor_td: 53,

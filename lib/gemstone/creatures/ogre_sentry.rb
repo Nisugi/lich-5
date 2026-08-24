@@ -8,8 +8,8 @@
   family: "Ogre",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 254,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "large",
   areas: [
     {
       name: "Hornwort Cavern",
-      rooms: []
+      uids: [7131001..7131018]
     }
-  ],
-  spawns: [
-    { zone: 7131, count: 1, uid_ranges: [[7131001, 7131018]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -51,10 +48,10 @@
     udf: 231,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (45..53),
     pal_td: 63,
     ran_td: nil,
-    sor_td: 59,
+    sor_td: (59..66),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

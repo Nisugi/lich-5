@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 150,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Orcswold",
-      rooms: []
+      name: "Yegharren Plains",
+      uids: [13034301..13034309, 13034314..13034337]
     }
-  ],
-  spawns: [
-    { zone: 13034, count: 2, uid_ranges: [[13034301, 13034309], [13034314, 13034337]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: nil,
     bar_td: (42..48),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 29,
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,

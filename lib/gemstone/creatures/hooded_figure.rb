@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,17 @@
   bcs: true,
   max_hp: 236,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "The Broken Lands",
-      rooms: []
+      uids: [306016..306048, 487002..487007, 487010..487014, 487016..487016, 487018..487018, 487044..487048]
+    },
+    {
+      name: "unmapped",
+      uids: [487015..487015, 487017..487017]
     }
-  ],
-  spawns: [
-    { zone: 306, count: 2, uid_ranges: [[306016, 306048]] },
-    { zone: 487, count: 6, uid_ranges: [[487002, 487007], [487010, 487018], [487044, 487048]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -128,7 +128,7 @@
     udf: 279,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (131..141),
     pal_td: nil,
     ran_td: nil,
     sor_td: (118..160),

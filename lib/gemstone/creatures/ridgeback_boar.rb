@@ -8,8 +8,8 @@
   family: "Suine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,20 +18,13 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Orcswold",
-      rooms: []
-    },
-    {
       name: "Yegharren Plains",
-      rooms: []
+      uids: [13034203..13034214, 13034324..13034336, 13034401..13034416]
     }
-  ],
-  spawns: [
-    { zone: 13034, count: 3, uid_ranges: [[13034203, 13034214], [13034324, 13034336], [13034401, 13034416]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -68,10 +61,10 @@
     udf: 97,
     bar_td: 45,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (25..33),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (42..51),
     wiz_td: nil,
     mje_td: (42..45),
     mne_td: 45,

@@ -8,8 +8,8 @@
   family: "Suine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,32 +18,29 @@
   bcs: true,
   max_hp: 100,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Dead Plateau",
-      rooms: []
-    },
-    {
-      name: "Old Mine Road",
-      rooms: []
-    },
-    {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4202182..4202199]
     },
     {
       name: "Yander's Farm",
-      rooms: []
+      uids: [14005054..14005066]
+    },
+    {
+      name: "Lysierian Hills",
+      uids: [92002..92018]
+    },
+    {
+      name: "Slope",
+      uids: [395002..395015]
+    },
+    {
+      name: "Locksmehr Trail",
+      uids: [13000002..13000047]
     }
-  ],
-  spawns: [
-    { zone: 92, count: 1, uid_ranges: [[92002, 92018]] },
-    { zone: 395, count: 1, uid_ranges: [[395002, 395015]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202182, 4202199]] },
-    { zone: 13000, count: 2, uid_ranges: [[13000002, 13000047]] },
-    { zone: 14005, count: 1, uid_ranges: [[14005054, 14005066]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -76,7 +73,7 @@
     udf: 113,
     bar_td: 30,
     cle_td: nil,
-    emp_td: 30,
+    emp_td: (5..30),
     pal_td: nil,
     ran_td: 30,
     sor_td: 30,

@@ -8,8 +8,8 @@
   family: "Shan",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4218301..4218325]
     }
-  ],
-  spawns: [
-    { zone: 4218, count: 3, uid_ranges: [[4218301, 4218325]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,10 +61,10 @@
     udf: 407,
     bar_td: (117..150),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (123..132),
     pal_td: 126,
     ran_td: nil,
-    sor_td: (117..132),
+    sor_td: (117..135),
     wiz_td: nil,
     mje_td: 132,
     mne_td: (129..132),

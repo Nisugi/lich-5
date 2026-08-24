@@ -8,8 +8,8 @@
   family: "Wasp",
   type: "Insect",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 170,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
       name: "Castle Anwyn",
-      rooms: []
+      uids: [4285036..4285040, 4285043..4285047, 4285051..4285057]
     }
-  ],
-  spawns: [
-    { zone: 4285, count: 1, uid_ranges: [[4285036, 4285040], [4285043, 4285047], [4285051, 4285057]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -53,13 +50,13 @@
     melee: (132..142),
     ranged: nil,
     bolt: 120,
-    udf: nil,
+    udf: 140,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 54,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 54,
     wiz_td: nil,
     mje_td: 54,
     mne_td: 54,

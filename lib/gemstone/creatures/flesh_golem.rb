@@ -8,8 +8,8 @@
   family: "golem",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,16 +20,17 @@
   bcs: true,
   max_hp: 448,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
       name: "Marsh Keep",
-      rooms: []
+      uids: [376051..376054, 376057..376088]
+    },
+    {
+      name: "unmapped",
+      uids: [376055..376056]
     }
-  ],
-  spawns: [
-    { zone: 376, count: 2, uid_ranges: [[376051, 376088]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +66,10 @@
     udf: 398,
     bar_td: 169,
     cle_td: 185,
-    emp_td: 183,
+    emp_td: (183..213),
     pal_td: 160,
     ran_td: nil,
-    sor_td: 194,
+    sor_td: (194..203),
     wiz_td: nil,
     mje_td: 211,
     mne_td: 183,

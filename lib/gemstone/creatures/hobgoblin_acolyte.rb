@@ -8,8 +8,8 @@
   family: "Goblin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 104,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Muddy Village",
-      rooms: []
+      uids: [7128001..7128015, 7128026..7128030]
+    },
+    {
+      name: "unmapped",
+      uids: [7128016..7128025]
     }
-  ],
-  spawns: [
-    { zone: 7128, count: 1, uid_ranges: [[7128001, 7128030]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +61,7 @@
     udf: 100,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 8,
     pal_td: nil,
     ran_td: nil,
     sor_td: "32 to 39",

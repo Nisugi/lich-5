@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 170,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 8,
+  size: "large",
   areas: [
     {
       name: "Grasslands",
-      rooms: []
+      uids: [14012030..14012042]
     }
-  ],
-  spawns: [
-    { zone: 14012, count: 1, uid_ranges: [[14012030, 14012042]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,7 +61,7 @@
     udf: 128,
     bar_td: 49,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 36,
     pal_td: nil,
     ran_td: nil,
     sor_td: 53,

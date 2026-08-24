@@ -8,26 +8,27 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 296,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Crawling Shore",
-      rooms: []
+      uids: [4576101..4576126, 4576151..4576160]
+    },
+    {
+      name: "unmapped",
+      uids: [4576127..4576150]
     }
-  ],
-  spawns: [
-    { zone: 4576, count: 1, uid_ranges: [[4576101, 4576160]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,13 +53,13 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: nil,
+    melee: (348..353),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 508,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 225,
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,

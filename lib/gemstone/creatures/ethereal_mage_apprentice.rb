@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "The Citadel",
-      rooms: []
+      uids: [377002..377008, 377013..377015, 377020..377030, 377320..377328]
     }
-  ],
-  spawns: [
-    { zone: 377, count: 2, uid_ranges: [[377002, 377008], [377013, 377015], [377020, 377030], [377320, 377328]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -47,10 +44,10 @@
     udf: 416,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (224..234),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (243..252),
     wiz_td: nil,
     mje_td: 278,
     mne_td: nil,

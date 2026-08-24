@@ -8,8 +8,8 @@
   family: "Fey",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,17 +19,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "small",
   areas: [
     {
       name: "Red Forest",
-      rooms: []
+      uids: [480231..480245, 17006231..17006245]
     }
-  ],
-  spawns: [
-    { zone: 480, count: 1, uid_ranges: [[480231, 480245]] },
-    { zone: 17006, count: 1, uid_ranges: [[17006231, 17006245]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -63,13 +59,13 @@
   defense_attributes: {
     asg: "5N",
     immunities: [],
-    melee: nil,
+    melee: (401..440),
     ranged: 360,
     bolt: 340,
-    udf: nil,
+    udf: 462,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (294..303),
     pal_td: nil,
     ran_td: nil,
     sor_td: (300..315),

@@ -8,8 +8,8 @@
   family: "Kiramon",
   type: "Insect",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -21,11 +21,8 @@
   areas: [
     {
       name: "The Hive",
-      rooms: []
+      uids: [13041101..13041132, 13041201..13041230]
     }
-  ],
-  spawns: [
-    { zone: 13041, count: 2, uid_ranges: [[13041101, 13041132], [13041201, 13041230]] }
   ],
   attack_attributes: {
     physical_attacks: [],

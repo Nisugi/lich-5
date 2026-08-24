@@ -8,8 +8,8 @@
   family: "Pyrothag",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -20,17 +20,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "large",
   areas: [
     {
-      name: "Lava Flows",
-      rooms: []
+      name: "Volcano",
+      uids: [3050017..3050036, 3052001..3052025]
     }
-  ],
-  spawns: [
-    { zone: 3050, count: 1, uid_ranges: [[3050017, 3050036]] },
-    { zone: 3052, count: 1, uid_ranges: [[3052001, 3052025]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -63,7 +59,7 @@
     udf: 423,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (213..219),
     pal_td: nil,
     ran_td: nil,
     sor_td: "229; 238",

@@ -8,8 +8,8 @@
   family: "Golem",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,17 +19,13 @@
   bcs: true,
   max_hp: 527,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 13,
+  size: "huge",
   areas: [
     {
       name: "Eye of V'Tull",
-      rooms: []
+      uids: [3060002..3060018, 3061001..3061028]
     }
-  ],
-  spawns: [
-    { zone: 3060, count: 1, uid_ranges: [[3060002, 3060018]] },
-    { zone: 3061, count: 1, uid_ranges: [[3061001, 3061028]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,16 +48,16 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (273..470),
+    melee: (205..470),
     ranged: nil,
     bolt: nil,
     udf: 276,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 248,
     pal_td: nil,
     ran_td: nil,
-    sor_td: 221,
+    sor_td: (221..233),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,32 +18,25 @@
   bcs: true,
   max_hp: 150,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "medium",
   areas: [
     {
-      name: "Danjirland",
-      rooms: []
-    },
-    {
       name: "Hidden Vale",
-      rooms: []
-    },
-    {
-      name: "Old Mine Road",
-      rooms: []
+      uids: [36001..36005]
     },
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4202161..4202180]
+    },
+    {
+      name: "Upper Trollfang",
+      uids: [14032..14043, 14052..14060, 17020..17028, 17101..17115]
+    },
+    {
+      name: "Crystal Caves",
+      uids: [24019..24057]
     }
-  ],
-  spawns: [
-    { zone: 14, count: 2, uid_ranges: [[14032, 14043], [14052, 14060]] },
-    { zone: 17, count: 1, uid_ranges: [[17020, 17028], [17101, 17115]] },
-    { zone: 24, count: 1, uid_ranges: [[24019, 24057]] },
-    { zone: 36, count: 1, uid_ranges: [[36001, 36005]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202161, 4202180]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -66,16 +59,16 @@
   defense_attributes: {
     asg: "11N",
     immunities: [],
-    melee: (84..105),
-    ranged: (93..121),
-    bolt: (93..121),
+    melee: (104..105),
+    ranged: (97..100),
+    bolt: (97..100),
     udf: nil,
     bar_td: nil,
     cle_td: 63,
-    emp_td: nil,
+    emp_td: 44,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 59,
     wiz_td: nil,
     mje_td: 55,
     mne_td: 63,

@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,20 +18,17 @@
   bcs: true,
   max_hp: nil,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 8,
+  size: "large",
   areas: [
     {
       name: "Hidden Vale",
-      rooms: []
+      uids: [40001..40013, 40020..40020]
     },
     {
-      name: "Troll Lair",
-      rooms: []
+      name: "unmapped",
+      uids: [40014..40019]
     }
-  ],
-  spawns: [
-    { zone: 40, count: 1, uid_ranges: [[40001, 40020]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: 96,
-    emp_td: nil,
+    emp_td: 88,
     pal_td: nil,
     ran_td: nil,
     sor_td: 92,

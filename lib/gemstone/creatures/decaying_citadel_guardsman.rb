@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "The Citadel",
-      rooms: []
+      uids: [377002..377008, 377013..377015, 377020..377030, 377301..377314, 377320..377344]
     }
-  ],
-  spawns: [
-    { zone: 377, count: 3, uid_ranges: [[377002, 377008], [377013, 377015], [377020, 377030], [377301, 377314], [377320, 377344]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,13 +53,13 @@
     melee: (205..436),
     ranged: 216,
     bolt: 259,
-    udf: 441,
+    udf: 469,
     bar_td: 168,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (184..193),
     pal_td: 197,
     ran_td: nil,
-    sor_td: 194,
+    sor_td: (188..197),
     wiz_td: nil,
     mje_td: 218,
     mne_td: nil,

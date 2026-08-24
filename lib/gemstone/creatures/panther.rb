@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Marshtown",
-      rooms: []
+      name: "Plains of Vornavis",
+      uids: [4212301..4212324]
     }
-  ],
-  spawns: [
-    { zone: 4212, count: 1, uid_ranges: [[4212301, 4212324]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,10 +53,10 @@
     udf: 146,
     bar_td: (33..51),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (25..33),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (42..51),
     wiz_td: nil,
     mje_td: (39..48),
     mne_td: (39..45),

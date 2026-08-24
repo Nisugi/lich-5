@@ -8,8 +8,8 @@
   family: "Urchin",
   type: "Globoid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 154,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "tiny",
   areas: [
     {
-      name: "Kraken's Fall",
-      rooms: []
+      name: "Hornwort Cavern",
+      uids: [7131001..7131018]
     }
-  ],
-  spawns: [
-    { zone: 7131, count: 1, uid_ranges: [[7131001, 7131018]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 152,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (33..41),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (45..54),
     wiz_td: nil,
     mje_td: 57,
     mne_td: nil,

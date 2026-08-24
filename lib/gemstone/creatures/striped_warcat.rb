@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 180,
   speed: "~8 sec",
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Smokey Caverns",
-      rooms: []
+      name: "Lysierian Hills",
+      uids: [92120..92129]
     },
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Dubh Brugh",
+      uids: [4003010..4003025]
     }
-  ],
-  spawns: [
-    { zone: 92, count: 1, uid_ranges: [[92120, 92129]] },
-    { zone: 4003, count: 2, uid_ranges: [[4003010, 4003025]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +61,10 @@
     udf: 166,
     bar_td: 60,
     cle_td: 60,
-    emp_td: 60,
+    emp_td: (45..60),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 61,
+    sor_td: (58..61),
     wiz_td: 63,
     mje_td: 63,
     mne_td: 63,

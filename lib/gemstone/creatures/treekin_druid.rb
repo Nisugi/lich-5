@@ -8,8 +8,8 @@
   family: "Tree",
   type: "Plantlife",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,17 +19,17 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 8,
+  size: "large",
   areas: [
     {
       name: "Red Forest",
-      rooms: []
+      uids: [480246..480248, 480250..480260, 17006246..17006248, 17006250..17006260]
+    },
+    {
+      name: "unmapped",
+      uids: [480249..480249, 17006249..17006249]
     }
-  ],
-  spawns: [
-    { zone: 480, count: 1, uid_ranges: [[480246, 480260]] },
-    { zone: 17006, count: 1, uid_ranges: [[17006246, 17006260]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -83,18 +83,18 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: nil,
+    melee: (361..434),
     ranged: nil,
     bolt: 217,
-    udf: nil,
+    udf: 390,
     bar_td: 329,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 361,
     pal_td: nil,
     ran_td: nil,
     sor_td: (365..379),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 389,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,

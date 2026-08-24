@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Hybrid",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -17,18 +17,15 @@
     "Magical"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 245,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "Old Ta'Faendryl",
-      rooms: []
+      uids: [17002201..17002247, 17002301..17002325]
     }
-  ],
-  spawns: [
-    { zone: 17002, count: 3, uid_ranges: [[17002201, 17002247], [17002301, 17002325]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +62,10 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: nil,
+    melee: (312..447),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 564,
     bar_td: (333..336),
     cle_td: nil,
     emp_td: nil,

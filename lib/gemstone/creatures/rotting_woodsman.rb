@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Marshtown",
-      rooms: []
+      name: "Plains of Vornavis",
+      uids: [4212201..4212222]
     }
-  ],
-  spawns: [
-    { zone: 4212, count: 1, uid_ranges: [[4212201, 4212222]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -53,10 +50,10 @@
     udf: 265,
     bar_td: 69,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (56..64),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 74,
+    sor_td: (74..80),
     wiz_td: nil,
     mje_td: 79,
     mne_td: 77,

@@ -8,8 +8,8 @@
   family: "Bear",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,17 @@
   bcs: true,
   max_hp: 190,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
-      name: "Danjirland",
-      rooms: []
+      name: "Upper Trollfang",
+      uids: [14001..14023, 17020..17025, 17101..17118, 17127..17127]
+    },
+    {
+      name: "unmapped",
+      uids: [17119..17126]
     }
-  ],
-  spawns: [
-    { zone: 14, count: 1, uid_ranges: [[14001, 14023]] },
-    { zone: 17, count: 1, uid_ranges: [[17020, 17025], [17101, 17127]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,10 +61,10 @@
     udf: 155,
     bar_td: nil,
     cle_td: nil,
-    emp_td: 42,
+    emp_td: (21..42),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (39..48),
     wiz_td: nil,
     mje_td: 42,
     mne_td: 42,

@@ -8,8 +8,8 @@
   family: "Worm",
   type: "Worm",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -25,11 +25,8 @@
   areas: [
     {
       name: "The Rift",
-      rooms: []
+      uids: [4569001..4569023]
     }
-  ],
-  spawns: [
-    { zone: 4569, count: 1, uid_ranges: [[4569001, 4569023]] }
   ],
   attack_attributes: {
     physical_attacks: [

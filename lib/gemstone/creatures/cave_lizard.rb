@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,20 +18,13 @@
   bcs: true,
   max_hp: 167,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
       name: "Czeroth Caverns",
-      rooms: []
-    },
-    {
-      name: "Hornwort Cavern",
-      rooms: []
+      uids: [13007001..13007043]
     }
-  ],
-  spawns: [
-    { zone: 13007, count: 2, uid_ranges: [[13007001, 13007043]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,10 +57,10 @@
     udf: 167,
     bar_td: 54,
     cle_td: nil,
-    emp_td: 54,
+    emp_td: (37..54),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (48..57),
     wiz_td: nil,
     mje_td: (51..54),
     mne_td: 54,

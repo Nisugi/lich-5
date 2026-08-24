@@ -8,8 +8,8 @@
   family: "Goblin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 80,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Ocoma Vale",
+      uids: [4300012..4300025]
     }
-  ],
-  spawns: [
-    { zone: 4300, count: 2, uid_ranges: [[4300012, 4300025]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,7 +62,7 @@
     udf: 86,
     bar_td: 24,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -10,
     pal_td: nil,
     ran_td: nil,
     sor_td: 20,

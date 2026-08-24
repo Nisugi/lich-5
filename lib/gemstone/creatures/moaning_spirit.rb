@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: nil,
   max_hp: 225,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Castle Anwyn",
-      rooms: []
+      uids: [4285004..4285008, 4285013..4285013, 4285024..4285025]
     },
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [2150002..2150007]
     }
-  ],
-  spawns: [
-    { zone: 2150, count: 1, uid_ranges: [[2150002, 2150007]] },
-    { zone: 4285, count: 1, uid_ranges: [[4285004, 4285008], [4285013, 4285013], [4285024, 4285025]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -52,10 +48,10 @@
     udf: 165,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 93,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 97,
     wiz_td: nil,
     mje_td: 100,
     mne_td: nil,

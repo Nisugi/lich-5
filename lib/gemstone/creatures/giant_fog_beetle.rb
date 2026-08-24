@@ -8,8 +8,8 @@
   family: "Beetle",
   type: "Insect",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,22 +19,17 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "large",
   areas: [
     {
-      name: "Greymist Wood",
-      rooms: []
+      name: "The Broken Lands",
+      uids: [306016..306048]
     },
     {
-      name: "The Broken Lands",
-      rooms: []
+      name: "Greymist Woods",
+      uids: [3021001..3021016, 3022001..3022017]
     }
-  ],
-  spawns: [
-    { zone: 306, count: 1, uid_ranges: [[306016, 306048]] },
-    { zone: 3021, count: 1, uid_ranges: [[3021001, 3021016]] },
-    { zone: 3022, count: 1, uid_ranges: [[3022001, 3022017]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -63,7 +58,7 @@
     udf: 288,
     bar_td: 97,
     cle_td: nil,
-    emp_td: (112..118),
+    emp_td: (109..118),
     pal_td: nil,
     ran_td: nil,
     sor_td: 114,

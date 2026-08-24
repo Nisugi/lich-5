@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 220,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Lunule Weald",
-      rooms: []
+      uids: [14016039..14016057, 14016059..14016082]
     }
-  ],
-  spawns: [
-    { zone: 14016, count: 2, uid_ranges: [[14016039, 14016057], [14016059, 14016082]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -62,10 +59,10 @@
     udf: nil,
     bar_td: (96..107),
     cle_td: 114,
-    emp_td: nil,
+    emp_td: (97..105),
     pal_td: nil,
     ran_td: 105,
-    sor_td: 120,
+    sor_td: (112..120),
     wiz_td: nil,
     mje_td: nil,
     mne_td: (115..126),

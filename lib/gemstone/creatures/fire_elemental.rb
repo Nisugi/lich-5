@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Elemental",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,17 +19,13 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Eye of V'Tull",
-      rooms: []
+      uids: [3060002..3060018, 3061001..3061028]
     }
-  ],
-  spawns: [
-    { zone: 3060, count: 1, uid_ranges: [[3060002, 3060018]] },
-    { zone: 3061, count: 1, uid_ranges: [[3061001, 3061028]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,13 +48,13 @@
   defense_attributes: {
     asg: "10N",
     immunities: [],
-    melee: "290, up to 462",
+    melee: (391..412),
     ranged: nil,
     bolt: 282,
-    udf: 463,
+    udf: 346,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 234,
     pal_td: nil,
     ran_td: nil,
     sor_td: 248,

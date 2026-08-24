@@ -8,24 +8,21 @@
   family: "Crab",
   type: "Crustacean",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
   max_hp: 32,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
       name: "Rocky Shoals",
-      rooms: []
+      uids: [7127001..7127019]
     }
-  ],
-  spawns: [
-    { zone: 7127, count: 1, uid_ranges: [[7127001, 7127019]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -45,10 +42,10 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 6,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 6,
     wiz_td: nil,
     mje_td: 6,
     mne_td: 6,

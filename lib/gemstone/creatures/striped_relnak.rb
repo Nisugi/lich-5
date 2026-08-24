@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 42,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
       name: "Rambling Meadows",
-      rooms: []
+      uids: [14006021..14006040]
     }
-  ],
-  spawns: [
-    { zone: 14006, count: 1, uid_ranges: [[14006021, 14006040]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +57,7 @@
     udf: 51,
     bar_td: 9,
     cle_td: nil,
-    emp_td: 9,
+    emp_td: (-23..9),
     pal_td: nil,
     ran_td: 9,
     sor_td: 9,

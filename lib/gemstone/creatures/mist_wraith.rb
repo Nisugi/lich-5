@@ -8,8 +8,8 @@
   family: "Wraith",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,21 @@
   bcs: nil,
   max_hp: 80,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Glaise Cnoc Cemetery",
-      rooms: []
-    },
-    {
-      name: "Cairnfang Forest",
-      rooms: []
+      uids: [14008051..14008070]
     },
     {
       name: "The Citadel",
-      rooms: []
+      uids: [2102022..2102039]
+    },
+    {
+      name: "Cairnfang",
+      uids: [630001..630014]
     }
-  ],
-  spawns: [
-    { zone: 630, count: 1, uid_ranges: [[630001, 630014]] },
-    { zone: 2102, count: 1, uid_ranges: [[2102022, 2102039]] },
-    { zone: 14008, count: 2, uid_ranges: [[14008051, 14008070]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -70,7 +65,7 @@
     udf: 77,
     bar_td: 15,
     cle_td: 15,
-    emp_td: nil,
+    emp_td: 15,
     pal_td: 15,
     ran_td: 15,
     sor_td: 15,

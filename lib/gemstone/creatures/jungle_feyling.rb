@@ -8,8 +8,8 @@
   family: "Fey",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -21,11 +21,8 @@
   areas: [
     {
       name: "Monsoon Jungle",
-      rooms: []
+      uids: [3218001..3218055, 3218062..3218063]
     }
-  ],
-  spawns: [
-    { zone: 3218, count: 3, uid_ranges: [[3218001, 3218055], [3218062, 3218063]] }
   ],
   attack_attributes: {
     physical_attacks: [

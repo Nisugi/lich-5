@@ -8,8 +8,8 @@
   family: "Goleras",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,16 +20,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "small",
   areas: [
     {
-      name: "Blighted Forest",
-      rooms: []
+      name: "Maaghara Tower",
+      uids: [13022004..13022055]
     }
-  ],
-  spawns: [
-    { zone: 13022, count: 2, uid_ranges: [[13022004, 13022055]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -96,15 +93,15 @@
     melee: nil,
     ranged: nil,
     bolt: 292,
-    udf: nil,
+    udf: 433,
     bar_td: (302..314),
     cle_td: (312..336),
-    emp_td: nil,
+    emp_td: (325..331),
     pal_td: 276,
     ran_td: nil,
     sor_td: (329..350),
     wiz_td: 365,
-    mje_td: (356..365),
+    mje_td: (353..365),
     mne_td: 363,
     mjs_td: nil,
     mns_td: (307..331),

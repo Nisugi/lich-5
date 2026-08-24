@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,31 +18,17 @@
   bcs: true,
   max_hp: 190,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
-      name: "Danjirland",
-      rooms: []
-    },
-    {
-      name: "Foggy Valley",
-      rooms: []
-    },
-    {
       name: "Upper Trollfang",
-      rooms: []
+      uids: [14001..14023, 15001..15030, 16005..16035]
     },
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4214101..4214115]
     }
-  ],
-  spawns: [
-    { zone: 14, count: 1, uid_ranges: [[14001, 14023]] },
-    { zone: 15, count: 1, uid_ranges: [[15001, 15030]] },
-    { zone: 16, count: 2, uid_ranges: [[16005, 16035]] },
-    { zone: 4214, count: 1, uid_ranges: [[4214101, 4214115]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -72,13 +58,13 @@
   defense_attributes: {
     asg: "various",
     immunities: [],
-    melee: (45..151),
-    ranged: (58..88),
-    bolt: (58..88),
+    melee: (55..151),
+    ranged: (65..88),
+    bolt: (65..88),
     udf: 117,
     bar_td: 49,
     cle_td: nil,
-    emp_td: 57,
+    emp_td: (36..57),
     pal_td: nil,
     ran_td: nil,
     sor_td: 53,

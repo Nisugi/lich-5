@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 190,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Castle Anwyn",
-      rooms: []
+      uids: [4285010..4285022, 4285030..4285050]
     }
-  ],
-  spawns: [
-    { zone: 4285, count: 2, uid_ranges: [[4285010, 4285022], [4285030, 4285050]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,10 +58,10 @@
     udf: 244,
     bar_td: 74,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (72..82),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (88..95),
     wiz_td: nil,
     mje_td: (85..98),
     mne_td: (85..98),

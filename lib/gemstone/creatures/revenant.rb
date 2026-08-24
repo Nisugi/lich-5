@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,25 @@
   bcs: nil,
   max_hp: 57,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Glaise Cnoc Cemetery",
-      rooms: []
-    },
-    {
-      name: "Cairnfang Forest",
-      rooms: []
+      uids: [14008040..14008070]
     },
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18036..18040, 18042..18044]
+    },
+    {
+      name: "unmapped",
+      uids: [18041..18041, 18045..18046]
+    },
+    {
+      name: "Cairnfang",
+      uids: [630001..630014]
     }
-  ],
-  spawns: [
-    { zone: 18, count: 1, uid_ranges: [[18036, 18046]] },
-    { zone: 630, count: 1, uid_ranges: [[630001, 630014]] },
-    { zone: 14008, count: 3, uid_ranges: [[14008040, 14008070]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -71,7 +70,7 @@
     udf: 35,
     bar_td: 12,
     cle_td: 12,
-    emp_td: nil,
+    emp_td: 12,
     pal_td: nil,
     ran_td: 12,
     sor_td: 12,

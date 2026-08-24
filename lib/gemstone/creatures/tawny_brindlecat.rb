@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 144,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Yegharren Plains",
-      rooms: []
+      uids: [13034101..13034118, 13034201..13034221, 13034301..13034309]
     }
-  ],
-  spawns: [
-    { zone: 13034, count: 3, uid_ranges: [[13034101, 13034118], [13034201, 13034221], [13034301, 13034309]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: 166,
     bar_td: 39,
     cle_td: 39,
-    emp_td: 39,
+    emp_td: (13..39),
     pal_td: 39,
     ran_td: 39,
-    sor_td: 39,
+    sor_td: (39..45),
     wiz_td: 39,
     mje_td: (39..45),
     mne_td: 39,

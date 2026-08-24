@@ -8,30 +8,33 @@
   family: "Dweller",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
-  max_hp: 400,
+  max_hp: 403,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
-      name: "Wehntoph",
-      rooms: []
+      name: "Stormpeak",
+      uids: [13150301..13150322]
     },
     {
-      name: "Stormpeak",
-      rooms: []
+      name: "Krag Slopes",
+      uids: [495101..495116]
+    },
+    {
+      name: "The Hidden Plateau",
+      uids: [2167001..2167022]
+    },
+    {
+      name: "unmapped",
+      uids: [13150323..13150324]
     }
-  ],
-  spawns: [
-    { zone: 495, count: 1, uid_ranges: [[495101, 495116]] },
-    { zone: 2167, count: 1, uid_ranges: [[2167001, 2167022]] },
-    { zone: 13150, count: 1, uid_ranges: [[13150301, 13150324]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -59,10 +62,10 @@
       "Fire",
       "Web (118)"
     ],
-    melee: nil,
+    melee: (188..445),
     ranged: nil,
     bolt: (204..229),
-    udf: nil,
+    udf: 561,
     bar_td: (246..264),
     cle_td: (278..281),
     emp_td: (274..286),
@@ -70,7 +73,7 @@
     ran_td: 230,
     sor_td: (280..301),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 317,
     mne_td: nil,
     mjs_td: (274..277),
     mns_td: (274..277),

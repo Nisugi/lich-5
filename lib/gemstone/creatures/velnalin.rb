@@ -8,8 +8,8 @@
   family: "Deer",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 44,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Lower Dragonsclaw",
+      uids: [9028..9041, 9065..9068, 9070..9071]
     }
-  ],
-  spawns: [
-    { zone: 9, count: 1, uid_ranges: [[9028, 9041], [9065, 9068], [9070, 9071]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +57,7 @@
     udf: 66,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -23,
     pal_td: nil,
     ran_td: nil,
     sor_td: 9,

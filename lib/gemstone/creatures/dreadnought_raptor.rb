@@ -8,8 +8,8 @@
   family: "Bird",
   type: "Avian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,15 +20,12 @@
   max_hp: 260,
   speed: nil,
   height: nil,
-  size: "",
+  size: "large",
   areas: [
     {
-      name: "Gyldemar Green",
-      rooms: []
+      name: "Gyldemar Forest",
+      uids: [13028001..13028034]
     }
-  ],
-  spawns: [
-    { zone: 13028, count: 2, uid_ranges: [[13028001, 13028034]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +62,10 @@
     udf: 240,
     bar_td: (122..131),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (138..147),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 153,
+    sor_td: (144..153),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

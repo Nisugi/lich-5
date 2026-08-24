@@ -8,8 +8,8 @@
   family: "Giant",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 480,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 15,
+  size: "huge",
   areas: [
     {
-      name: "Frozen Battlefield",
-      rooms: []
+      name: "Ice Plains",
+      uids: [4127021..4127034]
     }
-  ],
-  spawns: [
-    { zone: 4127, count: 1, uid_ranges: [[4127021, 4127034]] }
   ],
   attack_attributes: {
     physical_attacks: [

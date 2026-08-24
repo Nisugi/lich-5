@@ -7,19 +7,22 @@
   family: "humanoid",
   type: "biped",
   undead: false,
+  blood: nil,
+  bones: nil,
+  muggable: nil,
   boss: false,
   otherclass: [],
   areas: [
-    { name: "Hinterwilds", rooms: [] }
+    {
+      name: "Hinterwilds",
+      uids: [7503101..7503146]
+    }
   ],
   bcs: true,
   max_hp: 367,
   speed: nil,
   height: 3,
   size: "small",
-  spawns: [
-    { zone: 7503, count: 2, uid_ranges: [[7503101, 7503146]] }
-  ],
   attack_attributes: {
     physical_attacks: [
       {

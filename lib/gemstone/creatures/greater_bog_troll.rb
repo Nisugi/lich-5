@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,17 +19,17 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 11,
+  size: "large",
   areas: [
     {
       name: "Miasmal Forest",
-      rooms: []
+      uids: [5003039..5003050, 5004035..5004044, 5004049..5004053]
+    },
+    {
+      name: "unmapped",
+      uids: [5004045..5004048, 5004054..5004054]
     }
-  ],
-  spawns: [
-    { zone: 5003, count: 1, uid_ranges: [[5003039, 5003050]] },
-    { zone: 5004, count: 1, uid_ranges: [[5004035, 5004054]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,7 +64,7 @@
     udf: 269,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 121,
     pal_td: nil,
     ran_td: 102,
     sor_td: 130,

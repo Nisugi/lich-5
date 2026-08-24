@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Ophidian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 50,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
       name: "The Toadwort",
-      rooms: []
+      uids: [14007012..14007041]
     }
-  ],
-  spawns: [
-    { zone: 14007, count: 2, uid_ranges: [[14007012, 14007041]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 51,
     bar_td: 12,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -19,
     pal_td: nil,
     ran_td: 12,
-    sor_td: nil,
+    sor_td: 12,
     wiz_td: nil,
     mje_td: 12,
     mne_td: 12,

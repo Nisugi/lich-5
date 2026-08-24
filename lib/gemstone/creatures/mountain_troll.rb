@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,21 @@
   bcs: true,
   max_hp: 200,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "large",
   areas: [
     {
       name: "Hidden Vale",
-      rooms: []
+      uids: [36006..36010, 40001..40013, 40020..40020]
     },
     {
-      name: "Shores of Lough Ne'Halin",
-      rooms: []
+      name: "unmapped",
+      uids: [40014..40019]
     },
     {
-      name: "Troll Lair",
-      rooms: []
+      name: "Noralgar Forest",
+      uids: [4286002..4286013, 4286046..4286067]
     }
-  ],
-  spawns: [
-    { zone: 36, count: 1, uid_ranges: [[36006, 36010]] },
-    { zone: 40, count: 1, uid_ranges: [[40001, 40020]] },
-    { zone: 4286, count: 1, uid_ranges: [[4286002, 4286013], [4286046, 4286067]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -73,10 +68,10 @@
     udf: 113,
     bar_td: 58,
     cle_td: 66,
-    emp_td: nil,
+    emp_td: 48,
     pal_td: nil,
     ran_td: 36,
-    sor_td: nil,
+    sor_td: 62,
     wiz_td: nil,
     mje_td: 58,
     mne_td: 58,

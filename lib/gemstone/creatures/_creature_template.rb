@@ -10,8 +10,8 @@
   family: "",                   # e.g., "canine", "gigas"
   type: "",                     # e.g., "biped", "quadruped", "avian", "ooze"
   undead: "",                   # boolean
-  has_blood: nil,               # true/false/nil if unknown - corporeal, flesh & blood
-  has_bones: nil,               # true/false/nil if unknown - has a skeletal structure
+  blood: nil,               # true/false/nil if unknown - corporeal, flesh & blood
+  bones: nil,               # true/false/nil if unknown - has a skeletal structure
   muggable: nil,                # true/false/nil if unknown - typically humanoid + carries coin
   boss: false,                  # special encounter flag (optional)
   otherclass: [],               # any extra tags you keep (optional)
@@ -24,9 +24,12 @@
   size: "",                     # "small" | "medium" | "large" | "huge" | ...
 
   # ---------- Habitat / Locations ----------
-  # Multiple areas, each with its own room list
+  # Multiple areas, each with the game room UIDs the creature is found
+  # in, as ascending Integer Ranges. UIDs are the game's stable
+  # identifiers, never Lich mapdb ids (Map.ids_from_uid converts at time
+  # of use). Empty uids = wiki presence info without measured room data.
   areas: [
-    # { name: "Hinterwilds", rooms: [/* room ids */] }
+    # { name: "Hinterwilds", uids: [7503301..7503312] }
   ],
 
   # ---------- Offense / Capabilities ----------

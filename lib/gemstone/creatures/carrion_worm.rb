@@ -8,8 +8,8 @@
   family: "Worm",
   type: "Worm",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 28,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
       name: "Coastal Cliffs",
-      rooms: []
+      uids: [67001..67020]
     },
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Subterranean Tunnels",
+      uids: [4045211..4045230]
     }
-  ],
-  spawns: [
-    { zone: 67, count: 1, uid_ranges: [[67001, 67020]] },
-    { zone: 4045, count: 1, uid_ranges: [[4045211, 4045230]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -55,13 +51,13 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (15..71),
+    melee: (24..71),
     ranged: nil,
     bolt: 25,
     udf: "40 varies",
     bar_td: 3,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 3,
     pal_td: nil,
     ran_td: nil,
     sor_td: 3,

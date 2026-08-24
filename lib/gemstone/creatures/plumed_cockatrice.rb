@@ -8,8 +8,8 @@
   family: "Basilisk",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 123,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Neartofar Forest",
-      rooms: []
+      uids: [14015001..14015020]
     }
-  ],
-  spawns: [
-    { zone: 14015, count: 1, uid_ranges: [[14015001, 14015020]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: 212,
     bar_td: nil,
     cle_td: 39,
-    emp_td: 39,
+    emp_td: (9..39),
     pal_td: nil,
     ran_td: 9,
-    sor_td: 39,
+    sor_td: (39..45),
     wiz_td: nil,
     mje_td: (39..42),
     mne_td: 39,

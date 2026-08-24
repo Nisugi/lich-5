@@ -8,8 +8,8 @@
   family: "Mustelid",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 130,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "medium",
   areas: [
     {
-      name: "Masked Hills",
-      rooms: []
+      name: "Yegharren Plains",
+      uids: [13034401..13034416]
     },
     {
-      name: "Yegharren Plains",
-      rooms: []
+      name: "Emerald Forest",
+      uids: [13301201..13301232, 13301301..13301335]
     }
-  ],
-  spawns: [
-    { zone: 13034, count: 1, uid_ranges: [[13034401, 13034416]] },
-    { zone: 13301, count: 2, uid_ranges: [[13301201, 13301232], [13301301, 13301335]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,10 +57,10 @@
     udf: nil,
     bar_td: (42..48),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (21..29),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 42,
+    sor_td: (36..45),
     wiz_td: nil,
     mje_td: nil,
     mne_td: (42..48),

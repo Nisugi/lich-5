@@ -8,8 +8,8 @@
   family: "Vortece",
   type: "Globoid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "The Broken Lands",
-      rooms: []
+      uids: [94026..94040]
     }
-  ],
-  spawns: [
-    { zone: 94, count: 1, uid_ranges: [[94026, 94040]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -47,7 +44,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: 28,
+    melee: (25..136),
     ranged: nil,
     bolt: nil,
     udf: nil,
@@ -58,7 +55,7 @@
     ran_td: nil,
     sor_td: 159,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 158,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,

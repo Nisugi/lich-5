@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,45 +18,29 @@
   bcs: true,
   max_hp: 60,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
-    },
-    {
-      name: "Marshtown",
-      rooms: []
-    },
-    {
-      name: "North Beach",
-      rooms: []
-    },
-    {
-      name: "Old Mine Road",
-      rooms: []
-    },
-    {
       name: "Upper Trollfang",
-      rooms: []
+      uids: [16001..16005, 16011..16013]
     },
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4214101..4214115]
     },
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Lower Dragonsclaw",
+      uids: [9042..9047, 9058..9058]
+    },
+    {
+      name: "Plains of Vornavis",
+      uids: [4212101..4212130, 4213101..4213130]
+    },
+    {
+      name: "Liath Bheinn and Aillidh Brae",
+      uids: [4250022..4250026]
     }
-  ],
-  spawns: [
-    { zone: 9, count: 1, uid_ranges: [[9042, 9047], [9058, 9058]] },
-    { zone: 16, count: 1, uid_ranges: [[16001, 16005], [16011, 16013]] },
-    { zone: 4212, count: 1, uid_ranges: [[4212101, 4212130]] },
-    { zone: 4213, count: 1, uid_ranges: [[4213101, 4213130]] },
-    { zone: 4214, count: 1, uid_ranges: [[4214101, 4214115]] },
-    { zone: 4250, count: 1, uid_ranges: [[4250022, 4250026]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -85,7 +69,7 @@
     udf: 83,
     bar_td: 15,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -15,
     pal_td: nil,
     ran_td: nil,
     sor_td: 15,

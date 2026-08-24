@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,21 +20,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
       name: "Eye of V'Tull",
-      rooms: []
-    },
-    {
-      name: "Glaes Caverns",
-      rooms: []
+      uids: [3051003..3051030, 3061001..3061038]
     }
-  ],
-  spawns: [
-    { zone: 3051, count: 1, uid_ranges: [[3051003, 3051030]] },
-    { zone: 3061, count: 1, uid_ranges: [[3061001, 3061038]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -53,17 +45,17 @@
     asg: "12N",
     immunities: [],
     melee: 328,
-    ranged: nil,
-    bolt: 223,
-    udf: nil,
+    ranged: (166..211),
+    bolt: (166..211),
+    udf: 443,
     bar_td: 254,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (272..281),
     pal_td: nil,
     ran_td: nil,
     sor_td: 285,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 309,
     mne_td: 298,
     mjs_td: nil,
     mns_td: 269,

@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,16 +20,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 11,
+  size: "huge",
   areas: [
     {
-      name: "Greymist Wood",
-      rooms: []
+      name: "Volcanic Flats",
+      uids: [3023001..3023017]
     }
-  ],
-  spawns: [
-    { zone: 3023, count: 1, uid_ranges: [[3023001, 3023017]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -62,10 +59,10 @@
     udf: 260,
     bar_td: (105..111),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (111..120),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 123,
+    sor_td: (123..132),
     wiz_td: nil,
     mje_td: 129,
     mne_td: 129,

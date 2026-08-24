@@ -8,8 +8,8 @@
   family: "Griffin",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,15 +19,12 @@
   max_hp: 400,
   speed: nil,
   height: nil,
-  size: "",
+  size: "large",
   areas: [
     {
       name: "Old Ta'Faendryl",
-      rooms: []
+      uids: [17004001..17004028, 17004030..17004120, 17004160..17004168, 17004180..17004187, 17004190..17004195]
     }
-  ],
-  spawns: [
-    { zone: 17004, count: 8, uid_ranges: [[17004001, 17004028], [17004030, 17004120], [17004160, 17004168], [17004180, 17004187], [17004190, 17004195]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -73,12 +70,12 @@
     udf: nil,
     bar_td: 390,
     cle_td: (409..418),
-    emp_td: (409..415),
+    emp_td: (409..421),
     pal_td: 360,
     ran_td: nil,
     sor_td: 439,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: (457..463),
     mne_td: nil,
     mjs_td: nil,
     mns_td: (400..409),

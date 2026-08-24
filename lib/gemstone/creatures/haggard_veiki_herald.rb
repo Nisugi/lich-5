@@ -8,8 +8,8 @@
   family: "Giant",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 13,
+  size: "huge",
   areas: [
     {
       name: "Stormpeak",
-      rooms: []
+      uids: [13150401..13150425]
     }
-  ],
-  spawns: [
-    { zone: 13150, count: 1, uid_ranges: [[13150401, 13150425]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -46,18 +43,18 @@
   defense_attributes: {
     asg: "8",
     immunities: [],
-    melee: nil,
+    melee: (372..507),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 485,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (368..376),
     pal_td: nil,
     ran_td: nil,
     sor_td: "366 to 396",
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 400,
     mne_td: "385 to 415",
     mjs_td: nil,
     mns_td: "364 to 374",

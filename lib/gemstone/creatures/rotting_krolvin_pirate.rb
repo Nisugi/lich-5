@@ -8,8 +8,8 @@
   family: "Krolvin",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 210,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "The Citadel",
-      rooms: []
+      uids: [377201..377232]
     }
-  ],
-  spawns: [
-    { zone: 377, count: 2, uid_ranges: [[377201, 377232]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +57,7 @@
     udf: 122,
     bar_td: 54,
     cle_td: 54,
-    emp_td: 56,
+    emp_td: (37..56),
     pal_td: nil,
     ran_td: nil,
     sor_td: 54,

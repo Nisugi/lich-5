@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,22 +18,21 @@
   bcs: nil,
   max_hp: 127,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4202161..4202180]
     },
     {
-      name: "Vornavian Coast",
-      rooms: []
+      name: "Wolves' Den",
+      uids: [390002..390022, 390025..390048]
+    },
+    {
+      name: "Plains of Bone",
+      uids: [14011042..14011054]
     }
-  ],
-  spawns: [
-    { zone: 390, count: 2, uid_ranges: [[390002, 390022], [390025, 390048]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202161, 4202180]] },
-    { zone: 14011, count: 1, uid_ranges: [[14011042, 14011054]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -79,7 +78,7 @@
     udf: 167,
     bar_td: nil,
     cle_td: 42,
-    emp_td: nil,
+    emp_td: 42,
     pal_td: nil,
     ran_td: 42,
     sor_td: 42,

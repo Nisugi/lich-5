@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,17 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Shattered Moors",
-      rooms: []
+      uids: [420001..420037, 420040..420046]
+    },
+    {
+      name: "unmapped",
+      uids: [420038..420039]
     }
-  ],
-  spawns: [
-    { zone: 420, count: 2, uid_ranges: [[420001, 420046]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,7 +62,7 @@
     udf: 238,
     bar_td: 101,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (111..119),
     pal_td: nil,
     ran_td: nil,
     sor_td: 119,

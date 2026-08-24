@@ -8,8 +8,8 @@
   family: "Bovine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 80,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Graendlor Pasture",
+      uids: [4301001..4301025]
     }
-  ],
-  spawns: [
-    { zone: 4301, count: 1, uid_ranges: [[4301001, 4301025]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -46,13 +43,13 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (11..40),
+    melee: (20..40),
     ranged: (11..14),
     bolt: (11..14),
     udf: 73,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -23,
     pal_td: nil,
     ran_td: nil,
     sor_td: 9,

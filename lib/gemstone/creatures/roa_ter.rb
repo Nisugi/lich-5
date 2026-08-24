@@ -8,8 +8,8 @@
   family: "Worm",
   type: "Worm",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,28 +18,29 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "huge",
   areas: [
     {
       name: "Castle Varunar",
-      rooms: []
+      uids: [4750006..4750029]
     },
     {
       name: "Darkstone Castle",
-      rooms: []
+      uids: [42500..42521]
     },
     {
-      name: "Czeroth Labyrinth",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4218101..4218121]
+    },
+    {
+      name: "Czeroth Caverns",
+      uids: [13007201..13007228]
+    },
+    {
+      name: "The Hive",
+      uids: [13041001..13041026]
     }
-  ],
-  spawns: [
-    { zone: 42, count: 1, uid_ranges: [[42500, 42521]] },
-    { zone: 4218, count: 1, uid_ranges: [[4218101, 4218121]] },
-    { zone: 4750, count: 2, uid_ranges: [[4750006, 4750029]] },
-    { zone: 13007, count: 1, uid_ranges: [[13007201, 13007228]] },
-    { zone: 13041, count: 1, uid_ranges: [[13041001, 13041026]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -71,10 +72,10 @@
     udf: 323,
     bar_td: nil,
     cle_td: 142,
-    emp_td: nil,
+    emp_td: (146..149),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 154,
+    sor_td: (151..154),
     wiz_td: nil,
     mje_td: 165,
     mne_td: nil,

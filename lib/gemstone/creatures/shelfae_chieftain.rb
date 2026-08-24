@@ -8,8 +8,8 @@
   family: "Shelfae",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "medium",
   areas: [
     {
       name: "Coastal Cliffs",
-      rooms: []
+      uids: [84408..84413, 84416..84419]
     },
     {
-      name: "Marshtown",
-      rooms: []
+      name: "Plains of Vornavis",
+      uids: [4212301..4212324]
     }
-  ],
-  spawns: [
-    { zone: 84, count: 1, uid_ranges: [[84408, 84413], [84416, 84419]] },
-    { zone: 4212, count: 1, uid_ranges: [[4212301, 4212324]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,7 +61,7 @@
     udf: nil,
     bar_td: 33,
     cle_td: nil,
-    emp_td: 33,
+    emp_td: (9..33),
     pal_td: nil,
     ran_td: nil,
     sor_td: 33,

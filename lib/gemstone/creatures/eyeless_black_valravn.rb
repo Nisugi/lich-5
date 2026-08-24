@@ -7,21 +7,24 @@
   family: "Bird",
   type: "Avian",
   undead: true,
+  blood: nil,
+  bones: nil,
+  muggable: nil,
   boss: false,
   otherclass: [
     "Corporeal undead"
   ],
   areas: [
-    { name: "Hinterwilds", rooms: [] }
+    {
+      name: "Hinterwilds",
+      uids: [7503321..7503332, 7503371..7503374, 7503422..7503466]
+    }
   ],
   bcs: true,
   max_hp: nil,
   speed: nil,
   height: 5,
   size: "medium",
-  spawns: [
-    { zone: 7503, count: 3, uid_ranges: [[7503321, 7503332], [7503371, 7503374], [7503422, 7503466]] }
-  ],
   attack_attributes: {
     physical_attacks: [
       {

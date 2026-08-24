@@ -8,24 +8,21 @@
   family: "Bear",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
   max_hp: 209,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "large",
   areas: [
     {
       name: "Black Weald",
-      rooms: []
+      uids: [7130001..7130018]
     }
-  ],
-  spawns: [
-    { zone: 7130, count: 1, uid_ranges: [[7130001, 7130018]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -45,10 +42,10 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (29..37),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (48..54),
     wiz_td: nil,
     mje_td: 48,
     mne_td: nil,

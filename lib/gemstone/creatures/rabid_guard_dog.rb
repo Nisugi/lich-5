@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 100,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Thurfel's Keep",
-      rooms: []
+      name: "Thurfel's Island",
+      uids: [7531001..7531010]
     }
-  ],
-  spawns: [
-    { zone: 7531, count: 1, uid_ranges: [[7531001, 7531010]] }
   ],
   attack_attributes: {
     physical_attacks: [

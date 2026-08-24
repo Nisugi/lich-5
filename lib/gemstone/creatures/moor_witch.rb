@@ -8,8 +8,8 @@
   family: "Witch",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,17 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Shattered Moors",
-      rooms: []
+      uids: [420001..420037, 420040..420046]
+    },
+    {
+      name: "unmapped",
+      uids: [420038..420039]
     }
-  ],
-  spawns: [
-    { zone: 420, count: 2, uid_ranges: [[420001, 420046]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -53,10 +54,10 @@
     udf: 320,
     bar_td: 135,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (124..134),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 134,
+    sor_td: (134..147),
     wiz_td: nil,
     mje_td: 135,
     mne_td: nil,

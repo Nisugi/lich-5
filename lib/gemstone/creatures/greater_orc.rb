@@ -8,8 +8,8 @@
   family: "Orc",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,40 +18,29 @@
   bcs: true,
   max_hp: 112,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "medium",
   areas: [
     {
-      name: "Cairnfang Forest",
-      rooms: []
-    },
-    {
-      name: "Foggy Valley",
-      rooms: []
-    },
-    {
-      name: "Marshtown",
-      rooms: []
-    },
-    {
       name: "The Citadel",
-      rooms: []
+      uids: [2100102..2100120]
     },
     {
       name: "Upper Trollfang",
-      rooms: []
+      uids: [16001..16044]
     },
     {
-      name: "Zeltoph",
-      rooms: []
+      name: "Foothills of Zeltoph",
+      uids: [2131001..2131010, 2131040..2131045]
+    },
+    {
+      name: "Vornavian Coast",
+      uids: [4214101..4214115]
+    },
+    {
+      name: "Cairnfang",
+      uids: [4745001..4745019, 4745021..4745032, 4745035..4745039]
     }
-  ],
-  spawns: [
-    { zone: 16, count: 4, uid_ranges: [[16001, 16044]] },
-    { zone: 2100, count: 1, uid_ranges: [[2100102, 2100120]] },
-    { zone: 2131, count: 2, uid_ranges: [[2131001, 2131010], [2131040, 2131045]] },
-    { zone: 4214, count: 1, uid_ranges: [[4214101, 4214115]] },
-    { zone: 4745, count: 3, uid_ranges: [[4745001, 4745019], [4745021, 4745032], [4745035, 4745039]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -75,12 +64,12 @@
     asg: "varies",
     immunities: [],
     melee: (55..177),
-    ranged: (56..83),
-    bolt: (56..83),
+    ranged: (80..83),
+    bolt: (80..83),
     udf: 155,
     bar_td: 24,
     cle_td: 24,
-    emp_td: 24,
+    emp_td: (-3..24),
     pal_td: nil,
     ran_td: nil,
     sor_td: 24,

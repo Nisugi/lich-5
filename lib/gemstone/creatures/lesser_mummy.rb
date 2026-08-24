@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,13 @@
   bcs: true,
   max_hp: 91,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18013..18021, 2138001..2138018]
     }
-  ],
-  spawns: [
-    { zone: 18, count: 1, uid_ranges: [[18013, 18021]] },
-    { zone: 2138, count: 1, uid_ranges: [[2138001, 2138018]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,7 +53,7 @@
     udf: 60,
     bar_td: 18,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -11,
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,

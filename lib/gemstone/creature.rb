@@ -12,7 +12,7 @@ module Lich
       @@loaded = false
 
       attr_reader :name, :url, :picture, :level, :family, :type,
-                  :undead, :otherclass, :areas, :spawns, :bcs, :max_hp,
+                  :undead, :otherclass, :areas, :bcs, :max_hp,
                   :speed, :height, :size, :attack_attributes,
                   :defense_attributes, :treasure, :messaging,
                   :special_other, :abilities, :alchemy
@@ -35,16 +35,11 @@ module Lich
         @type = data[:type]
         @undead = data[:undead]
         # Tri-state (true/false/nil) - nil means uncatalogued/unknown, not false.
-        @has_blood = data[:has_blood]
-        @has_bones = data[:has_bones]
+        @blood = data[:blood]
+        @bones = data[:bones]
         @muggable = data[:muggable]
         @otherclass = data[:otherclass] || []
         @areas = data[:areas] || []
-        # Saga mongen data: [{zone:, count:, uid_ranges: [[lo, hi], ...]},
-        # ...] - count is the number of spawn generators feeding the zone.
-        # Room numbers are GAME UIDs - the stable identifiers - never Lich
-        # mapdb ids; convert with Map.ids_from_uid at the moment of use.
-        @spawns = data[:spawns] || []
         @bcs = data[:bcs]
         @max_hp = data[:max_hp]&.to_i || data[:hitpoints]&.to_i
         @speed = data[:speed]
@@ -161,39 +156,82 @@ module Lich
         @@templates.values.uniq
       end
 
-      # All game uids this creature spawns at, expanded from the stored
+      # All game uids the creature is found at, expanded from the stored
       # ranges (memoized - ranges stay compact on disk).
-      def spawn_uids
-        @spawn_uids ||= @spawns.flat_map do |s|
-          (s[:uid_ranges] || []).flat_map { |lo, hi| (lo..hi).to_a }
-        end.uniq.sort
+      def uids
+        @uids ||= @areas.flat_map { |a| Array(a[:uids]).flat_map(&:to_a) }.uniq.sort
       end
 
-      # Whether the creature spawns at the given game room uid. Checks the
-      # ranges directly, so no expansion cost.
-      def spawns_at_uid?(uid)
-        @spawns.any? do |s|
-          (s[:uid_ranges] || []).any? { |lo, hi| uid >= lo && uid <= hi }
+      # Whether the creature is found at the given game room uid. Checks
+      # the ranges directly, so no expansion cost.
+      def found_at_uid?(uid)
+        @areas.any? { |a| Array(a[:uids]).any? { |r| r.cover?(uid) } }
+      end
+
+      # Templates for the creatures found at the given game room uid.
+      def self.at_uid(uid)
+        all.select { |t| t.found_at_uid?(uid) }
+      end
+
+      # ---- consumer views (need the Lich mapdb loaded) ----------------
+      # Everything below converts uid -> Lich room id at call time via
+      # Map.ids_from_uid, so stored data survives mapdb renumbering. Gaps
+      # in the game's uid numbering never matter here: each uid converts
+      # individually, and uids the mapdb doesn't know yet simply drop out
+      # until someone maps those rooms.
+
+      # Every Lich room id the creature is found in, across all areas -
+      # ranges combined, deduped, sorted.
+      def rooms
+        @rooms ||= uids.flat_map { |u| Lich::Common::Map.ids_from_uid(u) }.uniq.sort
+      end
+
+      # {area name => [Lich room ids]} - the per-area display view
+      # (eBestiary and friends).
+      def rooms_by_area
+        @rooms_by_area ||= @areas.to_h do |a|
+          ids = Array(a[:uids]).flat_map { |r| r.flat_map { |u| Lich::Common::Map.ids_from_uid(u) } }
+          [a[:name], ids.uniq.sort]
         end
       end
 
-      # Templates that spawn at the given game room uid.
-      def self.at_uid(uid)
-        all.select { |t| t.spawns_at_uid?(uid) }
+      # Rooms bordering the creature's rooms: connected by an edge - in
+      # either direction - to a room the creature is found in, without
+      # being one themselves (bigshot's perimeter list). The reverse-edge
+      # pass scans the map once; the result is memoized.
+      def boundary_rooms
+        @boundary_rooms ||= begin
+          inside = {}
+          rooms.each { |id| inside[id] = true }
+          border = {}
+          inside.each_key do |id|
+            room = Lich::Common::Map[id] or next
+            (room.wayto || {}).each_key do |dest|
+              d = dest.to_i
+              border[d] = true unless inside[d]
+            end
+          end
+          Lich::Common::Map.list.compact.each do |room|
+            next if inside[room.id] || border[room.id]
+
+            border[room.id] = true if (room.wayto || {}).keys.any? { |dest| inside[dest.to_i] }
+          end
+          border.keys.sort
+        end
       end
 
       # Returns whether the bestiary template says the creature has blood.
       #
       # @return [Boolean, nil] true or false when catalogued; nil when unknown.
       def has_blood?
-        @has_blood
+        @blood
       end
 
       # Returns whether the bestiary template says the creature has bones.
       #
       # @return [Boolean, nil] true or false when catalogued; nil when unknown.
       def has_bones?
-        @has_bones
+        @bones
       end
 
       # Returns whether the bestiary template says the creature can be mugged.

@@ -8,8 +8,8 @@
   family: "Wraith",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,21 +19,17 @@
   bcs: nil,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Nightmare Gorge",
-      rooms: []
+      name: "Great Mountain Aenatumgana",
+      uids: [4561001..4561010]
     },
     {
-      name: "Arctic Tundra",
-      rooms: []
+      name: "Pinefar Forests",
+      uids: [4563039..4563060]
     }
-  ],
-  spawns: [
-    { zone: 4561, count: 1, uid_ranges: [[4561001, 4561010]] },
-    { zone: 4563, count: 1, uid_ranges: [[4563039, 4563060]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -53,10 +49,10 @@
     udf: 270,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (178..187),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (184..193),
     wiz_td: nil,
     mje_td: (197..207),
     mne_td: nil,

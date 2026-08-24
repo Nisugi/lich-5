@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 159,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "small",
   areas: [
     {
-      name: "Thurfel's Keep",
-      rooms: []
+      name: "Thurfel's Island",
+      uids: [7531001..7531042]
     }
-  ],
-  spawns: [
-    { zone: 7531, count: 2, uid_ranges: [[7531001, 7531042]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 171,
     bar_td: 27,
     cle_td: 33,
-    emp_td: 13,
+    emp_td: (9..17),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 27,
+    sor_td: (27..33),
     wiz_td: nil,
     mje_td: 33,
     mne_td: 33,

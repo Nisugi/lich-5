@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 44,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "small",
   areas: [
     {
-      name: "Snowflake Vale",
-      rooms: []
+      name: "Upper Dragonsclaw",
+      uids: [2121006..2121013]
     },
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Southern Snowfields",
+      uids: [4128024..4128030]
     }
-  ],
-  spawns: [
-    { zone: 2121, count: 1, uid_ranges: [[2121006, 2121013]] },
-    { zone: 4128, count: 1, uid_ranges: [[4128024, 4128030]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,7 +57,7 @@
     udf: 67,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -23,
     pal_td: nil,
     ran_td: nil,
     sor_td: 9,

@@ -8,8 +8,8 @@
   family: "Arachnid",
   type: "Arachnid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,27 +18,25 @@
   bcs: true,
   max_hp: 350,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "large",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
-    },
-    {
       name: "Sorcerer's Isle",
-      rooms: []
+      uids: [14202001..14202023]
     },
     {
       name: "Spider Temple",
-      rooms: []
+      uids: [13020..13036]
+    },
+    {
+      name: "unmapped",
+      uids: [4217102..4217132]
+    },
+    {
+      name: "Vornavian Coast",
+      uids: [4218301..4218325]
     }
-  ],
-  spawns: [
-    { zone: 13, count: 1, uid_ranges: [[13020, 13036]] },
-    { zone: 4217, count: 1, uid_ranges: [[4217102, 4217132]] },
-    { zone: 4218, count: 1, uid_ranges: [[4218301, 4218325]] },
-    { zone: 14202, count: 1, uid_ranges: [[14202001, 14202023]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -71,10 +69,10 @@
     udf: 317,
     bar_td: (90..96),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (88..97),
     pal_td: nil,
     ran_td: nil,
-    sor_td: (89..95),
+    sor_td: (89..101),
     wiz_td: nil,
     mje_td: 100,
     mne_td: 100,

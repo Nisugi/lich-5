@@ -8,8 +8,8 @@
   family: "Giant",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,28 +19,25 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 15,
+  size: "huge",
   areas: [
     {
-      name: "Frozen Battlefield",
-      rooms: []
-    },
-    {
       name: "Glatoph",
-      rooms: []
+      uids: [35026..35030, 35068..35072, 2153002..2153031]
     },
     {
-      name: "Olbin Pass",
-      rooms: []
+      name: "Icemule Trail",
+      uids: [4044001..4044019, 4044121..4044130]
+    },
+    {
+      name: "Sleeping Lady Mountains",
+      uids: [4560001..4560019]
+    },
+    {
+      name: "Ice Plains",
+      uids: [7502011..7502021]
     }
-  ],
-  spawns: [
-    { zone: 35, count: 2, uid_ranges: [[35026, 35030], [35068, 35072]] },
-    { zone: 2153, count: 1, uid_ranges: [[2153002, 2153031]] },
-    { zone: 4044, count: 2, uid_ranges: [[4044001, 4044019], [4044121, 4044130]] },
-    { zone: 4560, count: 1, uid_ranges: [[4560001, 4560019]] },
-    { zone: 7502, count: 1, uid_ranges: [[7502011, 7502021]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -82,12 +79,12 @@
     udf: 329,
     bar_td: 109,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (135..138),
     pal_td: nil,
     ran_td: nil,
     sor_td: (134..151),
     wiz_td: nil,
-    mje_td: 151,
+    mje_td: (145..151),
     mne_td: 145,
     mjs_td: nil,
     mns_td: 135,

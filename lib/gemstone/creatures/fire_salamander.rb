@@ -8,8 +8,8 @@
   family: "Amphibian",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,21 +19,17 @@
   bcs: true,
   max_hp: 44,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
-      name: "Wehnimer's Landing",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4202301..4202320]
     },
     {
-      name: "Vornavian Coast",
-      rooms: []
+      name: "Catacombs",
+      uids: [46019..46025, 46028..46032]
     }
-  ],
-  spawns: [
-    { zone: 46, count: 1, uid_ranges: [[46019, 46025], [46028, 46032]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202301, 4202320]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -66,7 +62,7 @@
     udf: 49,
     bar_td: nil,
     cle_td: 9,
-    emp_td: 9,
+    emp_td: (-23..9),
     pal_td: nil,
     ran_td: nil,
     sor_td: 9,

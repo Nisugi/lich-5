@@ -8,8 +8,8 @@
   family: "Suine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 270,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Masked Hills",
-      rooms: []
+      name: "Emerald Forest",
+      uids: [13301201..13301232, 13301301..13301335]
     }
-  ],
-  spawns: [
-    { zone: 13301, count: 2, uid_ranges: [[13301201, 13301232], [13301301, 13301335]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +57,7 @@
     udf: 196,
     bar_td: 63,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (53..61),
     pal_td: nil,
     ran_td: nil,
     sor_td: 66,

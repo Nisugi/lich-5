@@ -8,8 +8,8 @@
   family: "Chimeric",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 340,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "large",
   areas: [
     {
-      name: "Frozen Battlefield",
-      rooms: []
+      name: "Ice Plains",
+      uids: [4127005..4127045]
     }
-  ],
-  spawns: [
-    { zone: 4127, count: 3, uid_ranges: [[4127005, 4127045]] }
   ],
   attack_attributes: {
     physical_attacks: [

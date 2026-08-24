@@ -8,24 +8,21 @@
   family: "Golem",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
   max_hp: 65,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "The Citadel",
-      rooms: []
+      uids: [2102022..2102039]
     }
-  ],
-  spawns: [
-    { zone: 2102, count: 1, uid_ranges: [[2102022, 2102039]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,7 +54,7 @@
     emp_td: nil,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 15,
     wiz_td: nil,
     mje_td: 15,
     mne_td: 15,

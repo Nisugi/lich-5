@@ -8,8 +8,8 @@
   family: "Giant",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 20,
+  size: "huge",
   areas: [
     {
-      name: "Olbin Pass",
-      rooms: []
+      name: "Sleeping Lady Mountains",
+      uids: [4560030..4560053]
     }
-  ],
-  spawns: [
-    { zone: 4560, count: 1, uid_ranges: [[4560030, 4560053]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -62,10 +59,10 @@
     udf: 289,
     bar_td: (151..156),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (164..173),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 183,
+    sor_td: (175..184),
     wiz_td: nil,
     mje_td: (184..189),
     mne_td: (180..183),

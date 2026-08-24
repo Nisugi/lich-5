@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,20 +18,13 @@
   bcs: nil,
   max_hp: 44,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "Glaise Cnoc Cemetery",
-      rooms: []
-    },
-    {
-      name: "The Graveyard",
-      rooms: []
+      uids: [14008011..14008025]
     }
-  ],
-  spawns: [
-    { zone: 14008, count: 1, uid_ranges: [[14008011, 14008025]] }
   ],
   attack_attributes: {
     physical_attacks: [

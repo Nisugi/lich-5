@@ -8,8 +8,8 @@
   family: "Krynch",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,17 @@
   bcs: true,
   max_hp: 236,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Mraent Caverns",
-      rooms: []
+      uids: [13008001..13008040]
+    },
+    {
+      name: "unmapped",
+      uids: [13008041..13008041]
     }
-  ],
-  spawns: [
-    { zone: 13008, count: 2, uid_ranges: [[13008001, 13008041]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,10 +58,10 @@
     udf: 273,
     bar_td: (87..102),
     cle_td: 98,
-    emp_td: nil,
+    emp_td: (97..101),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (104..113),
     wiz_td: nil,
     mje_td: 115,
     mne_td: "106 124",

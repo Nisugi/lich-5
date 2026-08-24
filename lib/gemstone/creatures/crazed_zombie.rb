@@ -8,8 +8,8 @@
   family: "Zombie",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Lunule Weald",
-      rooms: []
+      uids: [14016001..14016038]
     }
-  ],
-  spawns: [
-    { zone: 14016, count: 2, uid_ranges: [[14016001, 14016038]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,10 +54,10 @@
     udf: 169,
     bar_td: 69,
     cle_td: 70,
-    emp_td: nil,
+    emp_td: (60..68),
     pal_td: 69,
     ran_td: nil,
-    sor_td: 74,
+    sor_td: (68..74),
     wiz_td: nil,
     mje_td: nil,
     mne_td: "77 = 83",

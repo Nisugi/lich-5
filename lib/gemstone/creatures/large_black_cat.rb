@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -21,7 +21,7 @@
   areas: [
     {
       name: "The Broken Lands",
-      rooms: []
+      uids: []
     }
   ],
   attack_attributes: {

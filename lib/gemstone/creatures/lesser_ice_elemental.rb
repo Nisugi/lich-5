@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Elemental",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "large",
   areas: [
     {
-      name: "Mount Aenatumgana",
-      rooms: []
+      name: "Great Mountain Aenatumgana",
+      uids: [4561102..4561141]
     }
-  ],
-  spawns: [
-    { zone: 4561, count: 1, uid_ranges: [[4561102, 4561141]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -62,16 +59,16 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (335..386),
+    melee: (297..386),
     ranged: nil,
     bolt: (256..302),
     udf: 416,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (203..204),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (216..223),
     wiz_td: nil,
     mje_td: (216..240),
     mne_td: nil,

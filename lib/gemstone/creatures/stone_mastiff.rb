@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
-      name: "Thanatoph",
-      rooms: []
+      name: "Stone Valley",
+      uids: [4292001..4292060]
     }
-  ],
-  spawns: [
-    { zone: 4292, count: 3, uid_ranges: [[4292001, 4292060]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -55,18 +52,18 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: (147..279),
+    melee: (232..294),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 456,
     bar_td: (206..227),
     cle_td: 236,
-    emp_td: nil,
+    emp_td: (236..245),
     pal_td: 201,
     ran_td: nil,
-    sor_td: 247,
+    sor_td: (247..259),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 265,
     mne_td: 260,
     mjs_td: nil,
     mns_td: 233,

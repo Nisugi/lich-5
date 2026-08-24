@@ -7,19 +7,22 @@
   family: "Worm",
   type: "Worm",
   undead: false,
+  blood: nil,
+  bones: nil,
+  muggable: nil,
   boss: false,
   otherclass: [],
   areas: [
-    { name: "Hinterwilds", rooms: [] }
+    {
+      name: "Hinterwilds",
+      uids: [7503401..7503421, 7503479..7503498]
+    }
   ],
   bcs: true,
   max_hp: nil,
   speed: nil,
   height: nil,
   size: nil,
-  spawns: [
-    { zone: 7503, count: 2, uid_ranges: [[7503401, 7503421], [7503479, 7503498]] }
-  ],
   attack_attributes: {
     physical_attacks: [
       {

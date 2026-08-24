@@ -8,8 +8,8 @@
   family: "Rodent",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 28,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
-      name: "Catacombs (Ta'Vaalor)|Catacombs",
-      rooms: []
+      name: "Catacombs",
+      uids: [14009001..14009040]
     }
-  ],
-  spawns: [
-    { zone: 14009, count: 2, uid_ranges: [[14009001, 14009040]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -46,13 +43,13 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (22..34),
+    melee: (32..34),
     ranged: nil,
     bolt: 22,
     udf: 14,
     bar_td: 3,
     cle_td: 3,
-    emp_td: 3,
+    emp_td: (-31..3),
     pal_td: 3,
     ran_td: 3,
     sor_td: 3,

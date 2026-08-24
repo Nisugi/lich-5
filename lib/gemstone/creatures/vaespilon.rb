@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "The Rift",
-      rooms: []
+      uids: [4570001..4570014]
     }
-  ],
-  spawns: [
-    { zone: 4570, count: 2, uid_ranges: [[4570001, 4570014]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -52,18 +49,18 @@
   defense_attributes: {
     asg: "2",
     immunities: [],
-    melee: (255..400),
+    melee: (374..377),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 617,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (385..391),
     pal_td: 334,
     ran_td: nil,
     sor_td: 421,
     wiz_td: nil,
-    mje_td: 434,
+    mje_td: (434..439),
     mne_td: 436,
     mjs_td: nil,
     mns_td: nil,

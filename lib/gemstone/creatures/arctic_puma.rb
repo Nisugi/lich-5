@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "small",
   areas: [
     {
-      name: "Temple of Hope",
-      rooms: []
+      name: "Abbey",
+      uids: [4132001..4132010]
     }
-  ],
-  spawns: [
-    { zone: 4132, count: 1, uid_ranges: [[4132001, 4132010]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: 168,
     bar_td: (39..51),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (17..25),
     pal_td: nil,
     ran_td: nil,
     sor_td: (39..51),

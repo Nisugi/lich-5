@@ -7,19 +7,22 @@
   family: "suine",
   type: "quadruped",
   undead: false,
+  blood: nil,
+  bones: nil,
+  muggable: nil,
   boss: false,
   otherclass: [],
   areas: [
-    { name: "Hinterwilds", rooms: [] }
+    {
+      name: "Hinterwilds",
+      uids: [7503101..7503122, 7503126..7503146]
+    }
   ],
   bcs: true,
   max_hp: 600,
   speed: nil,
   height: 25,
   size: "huge",
-  spawns: [
-    { zone: 7503, count: 2, uid_ranges: [[7503101, 7503122], [7503126, 7503146]] }
-  ],
   attack_attributes: {
     physical_attacks: [
       {

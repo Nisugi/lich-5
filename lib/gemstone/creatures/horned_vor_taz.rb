@@ -8,8 +8,8 @@
   family: "Vor'taz",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "large",
   areas: [
     {
       name: "Gyldemar Forest",
-      rooms: []
+      uids: [13030001..13030040]
     }
-  ],
-  spawns: [
-    { zone: 13030, count: 2, uid_ranges: [[13030001, 13030040]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,18 +62,18 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: nil,
-    ranged: 165,
-    bolt: 202,
-    udf: nil,
+    melee: (607..634),
+    ranged: (233..247),
+    bolt: (233..247),
+    udf: 428,
     bar_td: (160..183),
     cle_td: (174..193),
     emp_td: (182..195),
     pal_td: nil,
     ran_td: 166,
-    sor_td: 202,
+    sor_td: (194..202),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 204,
     mne_td: 208,
     mjs_td: nil,
     mns_td: 192,

@@ -8,8 +8,8 @@
   family: "Chimeric",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 550,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 15,
+  size: "huge",
   areas: [
     {
-      name: "Sanctum",
-      rooms: []
+      name: "Shadow of the Sanctum",
+      uids: [4216001..4216049]
     }
-  ],
-  spawns: [
-    { zone: 4216, count: 2, uid_ranges: [[4216001, 4216049]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,13 +58,13 @@
   defense_attributes: {
     asg: "5",
     immunities: [],
-    melee: 263,
+    melee: (215..562),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 646,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (401..407),
     pal_td: 343,
     ran_td: nil,
     sor_td: nil,

@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 205,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Lunule Weald",
-      rooms: []
+      uids: [14016001..14016038]
     }
-  ],
-  spawns: [
-    { zone: 14016, count: 2, uid_ranges: [[14016001, 14016038]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -73,10 +70,10 @@
     udf: 243,
     bar_td: (81..92),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (90..100),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 96,
+    sor_td: (96..103),
     wiz_td: nil,
     mje_td: 98,
     mne_td: 103,

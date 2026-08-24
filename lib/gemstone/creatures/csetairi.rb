@@ -8,8 +8,8 @@
   family: "Csetairi",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "large",
   areas: [
     {
       name: "The Rift",
-      rooms: []
+      uids: [4567001..4567055]
     }
-  ],
-  spawns: [
-    { zone: 4567, count: 2, uid_ranges: [[4567001, 4567055]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -79,18 +76,18 @@
   defense_attributes: {
     asg: "5N",
     immunities: [],
-    melee: nil,
+    melee: (366..545),
     ranged: (272..334),
     bolt: nil,
-    udf: nil,
+    udf: 486,
     bar_td: (292..300),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (322..332),
     pal_td: nil,
     ran_td: nil,
     sor_td: 349,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 365,
     mne_td: 362,
     mjs_td: nil,
     mns_td: nil,

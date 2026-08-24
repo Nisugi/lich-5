@@ -8,8 +8,8 @@
   family: "Rodent",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 150,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Yander's Farm",
+      uids: [14005038..14005053]
     },
     {
-      name: "Yander's Farm",
-      rooms: []
+      name: "Smuggling Tunnels",
+      uids: [37002..37041]
     }
-  ],
-  spawns: [
-    { zone: 37, count: 1, uid_ranges: [[37002, 37041]] },
-    { zone: 14005, count: 1, uid_ranges: [[14005038, 14005053]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,7 +57,7 @@
     udf: 102,
     bar_td: 30,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 5,
     pal_td: nil,
     ran_td: 30,
     sor_td: 30,

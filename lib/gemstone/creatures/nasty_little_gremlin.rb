@@ -8,8 +8,8 @@
   family: "Gremlin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 80,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "small",
   areas: [
     {
       name: "Wehntoph",
-      rooms: []
+      uids: [484001..484013]
     }
-  ],
-  spawns: [
-    { zone: 484, count: 1, uid_ranges: [[484001, 484013]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -55,7 +52,7 @@
     emp_td: nil,
     pal_td: nil,
     ran_td: nil,
-    sor_td: 11,
+    sor_td: (10..11),
     wiz_td: nil,
     mje_td: 10,
     mne_td: 10,

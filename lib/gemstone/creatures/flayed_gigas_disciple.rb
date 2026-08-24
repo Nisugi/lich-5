@@ -8,8 +8,8 @@
   family: "Gigas",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -21,11 +21,8 @@
   areas: [
     {
       name: "Hinterwilds",
-      rooms: []
+      uids: [7503401..7503421, 7503467..7503478, 7503490..7503498]
     }
-  ],
-  spawns: [
-    { zone: 7503, count: 2, uid_ranges: [[7503401, 7503421], [7503467, 7503478], [7503490, 7503498]] }
   ],
   attack_attributes: {
     physical_attacks: [],

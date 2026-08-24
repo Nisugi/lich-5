@@ -8,8 +8,8 @@
   family: "Ogre",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,21 @@
   bcs: true,
   max_hp: 210,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 8,
+  size: "large",
   areas: [
     {
-      name: "Danjirland",
-      rooms: []
+      name: "Upper Trollfang",
+      uids: [17101..17118]
     },
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Abbey",
+      uids: [4132001..4132010]
     },
     {
-      name: "Temple of Hope",
-      rooms: []
+      name: "Liath Bheinn and Aillidh Brae",
+      uids: [4250050..4250060]
     }
-  ],
-  spawns: [
-    { zone: 17, count: 1, uid_ranges: [[17101, 17118]] },
-    { zone: 4132, count: 1, uid_ranges: [[4132001, 4132010]] },
-    { zone: 4250, count: 1, uid_ranges: [[4250050, 4250060]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -70,10 +65,10 @@
     udf: 228,
     bar_td: 48,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (29..37),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 48,
+    sor_td: (45..54),
     wiz_td: nil,
     mje_td: 48,
     mne_td: 48,

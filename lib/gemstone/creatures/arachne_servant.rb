@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Spider Temple",
-      rooms: []
+      name: "Lower Trollfang",
+      uids: [12016..12045]
     }
-  ],
-  spawns: [
-    { zone: 12, count: 1, uid_ranges: [[12016, 12045]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 263,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (59..67),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 63,
+    sor_td: (63..76),
     wiz_td: nil,
     mje_td: (60..68),
     mne_td: (60..68),

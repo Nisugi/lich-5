@@ -8,8 +8,8 @@
   family: "Goblin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 50,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "small",
   areas: [
     {
       name: "The Toadwort",
-      rooms: []
+      uids: [14007001..14007022]
     }
-  ],
-  spawns: [
-    { zone: 14007, count: 2, uid_ranges: [[14007001, 14007022]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -50,13 +47,13 @@
   defense_attributes: {
     asg: "7",
     immunities: [],
-    melee: (-10..68),
+    melee: (5..68),
     ranged: -17,
     bolt: 0,
     udf: 116,
     bar_td: 6,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -27,
     pal_td: nil,
     ran_td: 6,
     sor_td: 6,

@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -23,11 +23,8 @@
   areas: [
     {
       name: "Sailor's Grief",
-      rooms: []
+      uids: [7150501..7150535]
     }
-  ],
-  spawns: [
-    { zone: 7150, count: 1, uid_ranges: [[7150501, 7150535]] }
   ],
   attack_attributes: {
     physical_attacks: [],

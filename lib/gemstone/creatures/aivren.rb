@@ -8,8 +8,8 @@
   family: "Aivren",
   type: "Avian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,15 +20,12 @@
   max_hp: 300,
   speed: nil,
   height: nil,
-  size: "",
+  size: "medium",
   areas: [
     {
       name: "The Rift",
-      rooms: []
+      uids: [4568028..4568055]
     }
-  ],
-  spawns: [
-    { zone: 4568, count: 1, uid_ranges: [[4568028, 4568055]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,12 +54,12 @@
     udf: nil,
     bar_td: 320,
     cle_td: 338,
-    emp_td: 332,
+    emp_td: (332..341),
     pal_td: 289,
     ran_td: nil,
     sor_td: 354,
     wiz_td: nil,
-    mje_td: 373,
+    mje_td: (367..373),
     mne_td: nil,
     mjs_td: 332,
     mns_td: 332,

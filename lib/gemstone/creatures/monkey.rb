@@ -8,8 +8,8 @@
   family: "Primate",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,25 @@
   bcs: true,
   max_hp: 86,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "small",
   areas: [
     {
       name: "The Citadel",
-      rooms: []
-    },
-    {
-      name: "Thurfel's Keep",
-      rooms: []
+      uids: [377051..377066, 377077..377081, 377083..377084]
     },
     {
       name: "Muddy Village",
-      rooms: []
+      uids: [7128001..7128015, 7128026..7128030]
+    },
+    {
+      name: "unmapped",
+      uids: [377067..377076, 377082..377082, 7128016..7128025]
+    },
+    {
+      name: "Thurfel's Island",
+      uids: [7530006..7530029]
     }
-  ],
-  spawns: [
-    { zone: 377, count: 1, uid_ranges: [[377051, 377084]] },
-    { zone: 7128, count: 1, uid_ranges: [[7128001, 7128030]] },
-    { zone: 7530, count: 4, uid_ranges: [[7530006, 7530029]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -78,7 +77,7 @@
     udf: 144,
     bar_td: 18,
     cle_td: nil,
-    emp_td: 18,
+    emp_td: (-11..18),
     pal_td: nil,
     ran_td: nil,
     sor_td: 18,

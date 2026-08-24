@@ -8,8 +8,8 @@
   family: "Vesperti",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Deep Woods",
+      uids: [4007001..4007038]
     }
-  ],
-  spawns: [
-    { zone: 4007, count: 3, uid_ranges: [[4007001, 4007038]] }
   ],
   attack_attributes: {
     physical_attacks: [

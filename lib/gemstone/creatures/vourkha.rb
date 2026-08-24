@@ -8,8 +8,8 @@
   family: "Wraith",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Black Moor",
-      rooms: []
+      name: "Yegharren Plains",
+      uids: [13036106..13036120, 13036201..13036217, 13036301..13036310]
     }
-  ],
-  spawns: [
-    { zone: 13036, count: 3, uid_ranges: [[13036106, 13036120], [13036201, 13036217], [13036301, 13036310]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +62,10 @@
     udf: 195,
     bar_td: 135,
     cle_td: nil,
-    emp_td: 148,
+    emp_td: (148..154),
     pal_td: nil,
     ran_td: 126,
-    sor_td: 149,
+    sor_td: (149..164),
     wiz_td: nil,
     mje_td: 163,
     mne_td: 162,

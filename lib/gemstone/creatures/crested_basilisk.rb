@@ -8,8 +8,8 @@
   family: "Basilisk",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,26 +19,21 @@
   bcs: true,
   max_hp: 200,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Outlands",
-      rooms: []
+      uids: [2152013..2152030]
     },
     {
       name: "Rambling Meadows",
-      rooms: []
+      uids: [14006041..14006046, 14006048..14006060]
     },
     {
       name: "Yegharren Plains",
-      rooms: []
+      uids: [13034401..13034416]
     }
-  ],
-  spawns: [
-    { zone: 2152, count: 1, uid_ranges: [[2152013, 2152030]] },
-    { zone: 13034, count: 1, uid_ranges: [[13034401, 13034416]] },
-    { zone: 14006, count: 1, uid_ranges: [[14006041, 14006046], [14006048, 14006060]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -71,10 +66,10 @@
     udf: 193,
     bar_td: (66..72),
     cle_td: nil,
-    emp_td: 68,
+    emp_td: (55..68),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 70,
+    sor_td: (64..73),
     wiz_td: 72,
     mje_td: (72..78),
     mne_td: (72..78),

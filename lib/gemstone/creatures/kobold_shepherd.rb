@@ -8,8 +8,8 @@
   family: "Kobold",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 51,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "small",
   areas: [
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Graendlor Pasture",
+      uids: [4301001..4301019]
     }
-  ],
-  spawns: [
-    { zone: 4301, count: 1, uid_ranges: [[4301001, 4301019]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -66,10 +63,10 @@
     udf: 76,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (-28..-18),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (5..12),
     wiz_td: nil,
     mje_td: 8,
     mne_td: 3,

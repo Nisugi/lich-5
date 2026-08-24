@@ -8,8 +8,8 @@
   family: "Arachnid",
   type: "Arachnid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 350,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "large",
   areas: [
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [2162113..2162122]
     }
-  ],
-  spawns: [
-    { zone: 2162, count: 1, uid_ranges: [[2162113, 2162122]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 101,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 102,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

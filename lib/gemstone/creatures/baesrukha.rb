@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Black Moor",
-      rooms: []
+      name: "Yegharren Plains",
+      uids: [13036401..13036414, 13036501..13036514]
     }
-  ],
-  spawns: [
-    { zone: 13036, count: 2, uid_ranges: [[13036401, 13036414], [13036501, 13036514]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,10 +66,10 @@
     udf: 330,
     bar_td: "140 to 153",
     cle_td: nil,
-    emp_td: 169,
+    emp_td: (164..169),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 179,
+    sor_td: (162..179),
     wiz_td: nil,
     mje_td: 173,
     mne_td: 188,

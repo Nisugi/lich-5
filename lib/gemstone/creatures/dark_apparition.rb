@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: nil,
   max_hp: 65,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Glaise Cnoc Cemetery",
+      uids: [14008073..14008081]
     },
     {
-      name: "Glaise Cnoc Cemetery",
-      rooms: []
+      name: "Southern Snowfields",
+      uids: [4128058..4128070]
     }
-  ],
-  spawns: [
-    { zone: 4128, count: 1, uid_ranges: [[4128058, 4128070]] },
-    { zone: 14008, count: 1, uid_ranges: [[14008073, 14008081]] }
   ],
   attack_attributes: {
     physical_attacks: [

@@ -8,8 +8,8 @@
   family: "Tumbleweed",
   type: "Plantlife",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 392,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Frozen Bramble",
-      rooms: []
+      name: "Abandoned Farm",
+      uids: [4124050..4124062]
     }
-  ],
-  spawns: [
-    { zone: 4124, count: 1, uid_ranges: [[4124050, 4124062]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: 349,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (138..147),
     pal_td: nil,
     ran_td: nil,
     sor_td: "130 to 160",

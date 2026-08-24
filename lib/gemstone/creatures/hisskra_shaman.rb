@@ -8,8 +8,8 @@
   family: "Hisskra",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "The Ruined Tower",
-      rooms: []
+      uids: [305001..305022, 305050..305056]
     }
-  ],
-  spawns: [
-    { zone: 305, count: 2, uid_ranges: [[305001, 305022], [305050, 305056]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,10 +66,10 @@
     udf: 225,
     bar_td: 112,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (126..129),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 128,
+    sor_td: (128..144),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 135,

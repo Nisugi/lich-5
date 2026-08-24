@@ -8,8 +8,8 @@
   family: "Trali",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 268,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Gyldemar Green",
-      rooms: []
+      name: "Gyldemar Forest",
+      uids: [13028038..13028080]
     }
-  ],
-  spawns: [
-    { zone: 13028, count: 2, uid_ranges: [[13028038, 13028080]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -76,10 +73,10 @@
     udf: 330,
     bar_td: (149..172),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (167..170),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 193,
+    sor_td: (171..193),
     wiz_td: nil,
     mje_td: 200,
     mne_td: 198,

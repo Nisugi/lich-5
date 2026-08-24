@@ -8,8 +8,8 @@
   family: "elemental",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 8,
+  size: "medium",
   areas: [
     {
-      name: "The F'Eyrie",
-      rooms: []
+      name: "Volcanic Flats",
+      uids: [3023107..3023123]
     }
-  ],
-  spawns: [
-    { zone: 3023, count: 1, uid_ranges: [[3023107, 3023123]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,18 +54,18 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: nil,
+    melee: (241..494),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 616,
     bar_td: nil,
     cle_td: 342,
-    emp_td: nil,
+    emp_td: (336..342),
     pal_td: nil,
     ran_td: nil,
     sor_td: 397,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 390,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,

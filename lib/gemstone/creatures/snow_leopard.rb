@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Masked Hills",
-      rooms: []
+      name: "Sleeping Lady Mountains",
+      uids: [4565009..4565014]
     },
     {
-      name: "Quiet Forest",
-      rooms: []
+      name: "Emerald Forest",
+      uids: [13301170..13301191, 13301201..13301232]
     }
-  ],
-  spawns: [
-    { zone: 4565, count: 1, uid_ranges: [[4565009, 4565014]] },
-    { zone: 13301, count: 2, uid_ranges: [[13301170, 13301191], [13301201, 13301232]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,10 +65,10 @@
     udf: 236,
     bar_td: 81,
     cle_td: 84,
-    emp_td: (73..77),
+    emp_td: (73..81),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 76,
+    sor_td: (76..88),
     wiz_td: nil,
     mje_td: 86,
     mne_td: 86,

@@ -8,8 +8,8 @@
   family: "Caprine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 172,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Masked Hills",
-      rooms: []
+      name: "Emerald Forest",
+      uids: [13301170..13301191, 13301201..13301232]
     }
-  ],
-  spawns: [
-    { zone: 13301, count: 2, uid_ranges: [[13301170, 13301191], [13301201, 13301232]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,7 +49,7 @@
     udf: nil,
     bar_td: 54,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (37..45),
     pal_td: nil,
     ran_td: nil,
     sor_td: 54,

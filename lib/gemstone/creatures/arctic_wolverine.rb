@@ -8,8 +8,8 @@
   family: "Mustelid",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,25 +18,17 @@
   bcs: true,
   max_hp: 210,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "small",
   areas: [
     {
-      name: "Dark Caves",
-      rooms: []
+      name: "Pinefar Forests",
+      uids: [4563008..4563020]
     },
     {
-      name: "Northern Mountains",
-      rooms: []
-    },
-    {
-      name: "Quiet Forest",
-      rooms: []
+      name: "Sleeping Lady Mountains",
+      uids: [4565016..4565037]
     }
-  ],
-  spawns: [
-    { zone: 4563, count: 1, uid_ranges: [[4563008, 4563020]] },
-    { zone: 4565, count: 3, uid_ranges: [[4565016, 4565037]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +57,10 @@
     udf: 194,
     bar_td: 72,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (61..69),
     pal_td: 75,
     ran_td: nil,
-    sor_td: 72,
+    sor_td: (66..75),
     wiz_td: nil,
     mje_td: 72,
     mne_td: nil,

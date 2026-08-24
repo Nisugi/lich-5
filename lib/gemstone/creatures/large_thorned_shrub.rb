@@ -8,8 +8,8 @@
   family: "Shrub",
   type: "Plantlife",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 409,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Frozen Bramble",
-      rooms: []
+      name: "Abandoned Farm",
+      uids: [4124050..4124062]
     }
-  ],
-  spawns: [
-    { zone: 4124, count: 1, uid_ranges: [[4124050, 4124062]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -46,16 +43,16 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (149..384),
+    melee: (149..604),
     ranged: nil,
     bolt: nil,
     udf: 404,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (175..184),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (182..189),
     wiz_td: nil,
     mje_td: (196..202),
     mne_td: nil,

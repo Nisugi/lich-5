@@ -8,8 +8,8 @@
   family: "Ogre",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 220,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4218201..4218221]
     }
-  ],
-  spawns: [
-    { zone: 4218, count: 1, uid_ranges: [[4218201, 4218221]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -68,10 +65,10 @@
     udf: 192,
     bar_td: (45..51),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (41..51),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 51,
     wiz_td: nil,
     mje_td: 51,
     mne_td: 51,

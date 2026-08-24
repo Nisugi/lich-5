@@ -8,8 +8,8 @@
   family: "Bear",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,22 +18,21 @@
   bcs: true,
   max_hp: 210,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "large",
   areas: [
     {
       name: "Neartofar Forest",
-      rooms: []
+      uids: [14015101..14015118]
     },
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Lysierian Hills",
+      uids: [92002..92018]
+    },
+    {
+      name: "Slope",
+      uids: [395002..395015]
     }
-  ],
-  spawns: [
-    { zone: 92, count: 1, uid_ranges: [[92002, 92018]] },
-    { zone: 395, count: 1, uid_ranges: [[395002, 395015]] },
-    { zone: 14015, count: 1, uid_ranges: [[14015101, 14015118]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -70,10 +69,10 @@
     udf: 160,
     bar_td: (48..54),
     cle_td: (45..48),
-    emp_td: 48,
+    emp_td: (29..48),
     pal_td: nil,
     ran_td: 48,
-    sor_td: 48,
+    sor_td: (45..54),
     wiz_td: nil,
     mje_td: 42,
     mne_td: nil,

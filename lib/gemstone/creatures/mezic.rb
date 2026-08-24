@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "small",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4214303..4214323]
     }
-  ],
-  spawns: [
-    { zone: 4214, count: 1, uid_ranges: [[4214303, 4214323]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -74,10 +71,10 @@
     udf: nil,
     bar_td: 110,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (109..115),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 113,
+    sor_td: (113..132),
     wiz_td: nil,
     mje_td: 124,
     mne_td: 130,

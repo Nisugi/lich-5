@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,32 +18,25 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Abandoned Mine",
-      rooms: []
-    },
-    {
-      name: "Shores of Lough Ne'Halin",
-      rooms: []
-    },
-    {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4202182..4202199]
     },
     {
-      name: "Wehntoph",
-      rooms: []
+      name: "Lysierian Hills",
+      uids: [92079..92081, 92095..92099, 93045..93056]
+    },
+    {
+      name: "Noralgar Forest",
+      uids: [4286004..4286014, 4286019..4286023, 4286046..4286067]
+    },
+    {
+      name: "Northern Slopes of Wehntoph",
+      uids: [4302013..4302035]
     }
-  ],
-  spawns: [
-    { zone: 92, count: 1, uid_ranges: [[92079, 92081], [92095, 92099]] },
-    { zone: 93, count: 1, uid_ranges: [[93045, 93056]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202182, 4202199]] },
-    { zone: 4286, count: 1, uid_ranges: [[4286004, 4286014], [4286019, 4286023], [4286046, 4286067]] },
-    { zone: 4302, count: 1, uid_ranges: [[4302013, 4302035]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -76,7 +69,7 @@
     udf: 146,
     bar_td: 51,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (25..33),
     pal_td: 48,
     ran_td: nil,
     sor_td: (39..51),

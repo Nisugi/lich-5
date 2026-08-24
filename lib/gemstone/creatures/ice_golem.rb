@@ -8,8 +8,8 @@
   family: "Golem",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 500,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 21,
+  size: "huge",
   areas: [
     {
-      name: "Mount Aenatumgana",
-      rooms: []
+      name: "Great Mountain Aenatumgana",
+      uids: [4561102..4561141]
     }
-  ],
-  spawns: [
-    { zone: 4561, count: 1, uid_ranges: [[4561102, 4561141]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -58,7 +55,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (220..233),
+    melee: (203..233),
     ranged: nil,
     bolt: (196..225),
     udf: nil,
@@ -67,9 +64,9 @@
     emp_td: nil,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 207,
     wiz_td: nil,
-    mje_td: (213..219),
+    mje_td: (210..219),
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,

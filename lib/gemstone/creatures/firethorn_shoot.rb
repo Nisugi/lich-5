@@ -8,24 +8,21 @@
   family: "Plant",
   type: "Plantlife",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [],
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "Fhorian Village",
-      rooms: []
+      uids: [3030001..3030010, 3030035..3030043, 3030250..3030254]
     }
-  ],
-  spawns: [
-    { zone: 3030, count: 3, uid_ranges: [[3030001, 3030010], [3030035, 3030043], [3030250, 3030254]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -58,7 +55,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 158,
     pal_td: nil,
     ran_td: nil,
     sor_td: 167,

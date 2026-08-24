@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: nil,
   max_hp: 246,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Wolves' Den",
+      uids: [390002..390022, 390025..390048]
     }
-  ],
-  spawns: [
-    { zone: 390, count: 6, uid_ranges: [[390002, 390022], [390025, 390048]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: 170,
     bar_td: nil,
     cle_td: (48..60),
-    emp_td: nil,
+    emp_td: 54,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (51..54),
     wiz_td: nil,
     mje_td: (48..60),
     mne_td: (48..60),

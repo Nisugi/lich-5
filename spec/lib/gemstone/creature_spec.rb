@@ -111,6 +111,49 @@ RSpec.describe Lich::Gemstone::CreatureTemplate do
 end
 
 RSpec.describe Lich::Gemstone::CreatureTemplate do
+  describe 'rooms / rooms_by_area / boundary_rooms' do
+    # A five-room map: the creature is found in 1 <-> 2 <-> 3 (uids
+    # 101..103), room 4 borders room 3 bidirectionally, room 5 has only a
+    # one-way edge INTO room 1. Room ids are uid - 100.
+    let(:fake_map) do
+      rooms = {
+        1 => double('room', id: 1, wayto: { '2' => 'e' }),
+        2 => double('room', id: 2, wayto: { '1' => 'w', '3' => 'e' }),
+        3 => double('room', id: 3, wayto: { '2' => 'w', '4' => 'out' }),
+        4 => double('room', id: 4, wayto: { '3' => 'in' }),
+        5 => double('room', id: 5, wayto: { '1' => 'go gate' })
+      }
+      # plain double: lib/common/map isn't loaded in the spec env, and the
+      # accessors resolve the constant lazily at call time anyway
+      map = double('Map')
+      allow(map).to receive(:ids_from_uid) { |u| rooms.key?(u - 100) ? [u - 100] : [] }
+      allow(map).to receive(:[]) { |id| rooms[id] }
+      allow(map).to receive(:list).and_return(rooms.values)
+      map
+    end
+
+    let(:template) do
+      described_class.new(name: 'gap wolf',
+                          areas: [{ name: 'Strip', uids: [101..101, 103..103] },
+                                  { name: 'Middle', uids: [102..102] },
+                                  { name: 'Unmapped', uids: [900..900] }])
+    end
+
+    before { stub_const('Lich::Common::Map', fake_map) }
+
+    it 'combines all ranges into one sorted room list, dropping uids the mapdb does not know' do
+      expect(template.rooms).to eq([1, 2, 3])
+    end
+
+    it 'keys converted room ids by area name' do
+      expect(template.rooms_by_area).to eq('Strip' => [1, 3], 'Middle' => [2], 'Unmapped' => [])
+    end
+
+    it "returns bordering rooms from edges in either direction, excluding the creature's own rooms" do
+      expect(template.boundary_rooms).to eq([4, 5])
+    end
+  end
+
   describe 'has_blood? / has_bones? / muggable?' do
     it 'default to nil (unknown) rather than false when uncatalogued' do
       template = described_class.new(name: 'unknown creature')
@@ -121,7 +164,7 @@ RSpec.describe Lich::Gemstone::CreatureTemplate do
     end
 
     it 'return the catalogued true/false value without coercion' do
-      template = described_class.new(name: 'skeleton', has_blood: false, has_bones: true, muggable: false)
+      template = described_class.new(name: 'skeleton', blood: false, bones: true, muggable: false)
 
       expect(template.has_blood?).to eq(false)
       expect(template.has_bones?).to eq(true)

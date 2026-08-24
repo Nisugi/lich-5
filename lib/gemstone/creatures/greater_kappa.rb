@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 100,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "Coastal Cliffs",
-      rooms: []
+      uids: [85001..85009]
     }
-  ],
-  spawns: [
-    { zone: 85, count: 1, uid_ranges: [[85001, 85009]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,7 +49,7 @@
     udf: 140,
     bar_td: 21,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -7,
     pal_td: 21,
     ran_td: nil,
     sor_td: 21,

@@ -8,8 +8,8 @@
   family: "",
   type: "",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -18,9 +18,11 @@
   speed: nil,
   height: nil,
   size: "",
-  areas: [],
-  spawns: [
-    { zone: 7150, count: 1, uid_ranges: [[7150501, 7150535]] }
+  areas: [
+    {
+      name: "Sailor's Grief",
+      uids: [7150501..7150535]
+    }
   ],
   attack_attributes: {
     physical_attacks: [],

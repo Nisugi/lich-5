@@ -8,8 +8,8 @@
   family: "Worm",
   type: "Worm",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,20 +18,13 @@
   bcs: true,
   max_hp: 150,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
-      name: "Thurfel's Keep",
-      rooms: []
-    },
-    {
-      name: "Hornwort Cavern",
-      rooms: []
+      name: "Thurfel's Island",
+      uids: [7532001..7532033]
     }
-  ],
-  spawns: [
-    { zone: 7532, count: 2, uid_ranges: [[7532001, 7532033]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +49,7 @@
     udf: 122,
     bar_td: (45..51),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (45..54),
     pal_td: 42,
     ran_td: nil,
     sor_td: (42..54),

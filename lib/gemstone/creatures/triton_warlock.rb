@@ -8,8 +8,8 @@
   family: "Triton",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Atoll",
-      rooms: []
+      uids: [7138001..7138015]
     }
-  ],
-  spawns: [
-    { zone: 7138, count: 1, uid_ranges: [[7138001, 7138015]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,18 +66,18 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: 530,
+    melee: (334..496),
     ranged: nil,
     bolt: nil,
-    udf: "500 to 615",
+    udf: 590,
     bar_td: 400,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 409,
     pal_td: nil,
     ran_td: nil,
     sor_td: "410 to 440",
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 436,
     mne_td: 446,
     mjs_td: nil,
     mns_td: 391,

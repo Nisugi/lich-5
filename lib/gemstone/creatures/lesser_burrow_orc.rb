@@ -8,8 +8,8 @@
   family: "Orc",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 100,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Melgorehn's Valley",
-      rooms: []
+      uids: [2148002..2148024]
     }
-  ],
-  spawns: [
-    { zone: 2148, count: 1, uid_ranges: [[2148002, 2148024]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 126,
     bar_td: nil,
     cle_td: nil,
-    emp_td: 21,
+    emp_td: (-7..21),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 21,
     wiz_td: nil,
     mje_td: 21,
     mne_td: 21,

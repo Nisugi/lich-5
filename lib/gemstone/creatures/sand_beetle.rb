@@ -8,8 +8,8 @@
   family: "Beetle",
   type: "Insect",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 360,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "large",
   areas: [
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4217201..4217216]
     }
-  ],
-  spawns: [
-    { zone: 4217, count: 1, uid_ranges: [[4217201, 4217216]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,7 +53,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 103,
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,

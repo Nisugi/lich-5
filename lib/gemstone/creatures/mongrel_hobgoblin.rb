@@ -8,8 +8,8 @@
   family: "Goblin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,21 @@
   bcs: true,
   max_hp: 80,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Ocoma Vale",
+      uids: [4300004..4300025]
+    },
+    {
+      name: "Muddy Village",
+      uids: [7128001..7128015, 7128026..7128030]
+    },
+    {
+      name: "unmapped",
+      uids: [7128016..7128025]
     }
-  ],
-  spawns: [
-    { zone: 4300, count: 1, uid_ranges: [[4300004, 4300025]] },
-    { zone: 7128, count: 1, uid_ranges: [[7128001, 7128030]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -47,13 +51,13 @@
   defense_attributes: {
     asg: "8",
     immunities: [],
-    melee: (11..72),
-    ranged: 1,
-    bolt: 1,
+    melee: (13..72),
+    ranged: 0,
+    bolt: 0,
     udf: 113,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -15,
     pal_td: nil,
     ran_td: nil,
     sor_td: 15,

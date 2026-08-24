@@ -8,8 +8,8 @@
   family: "Worm",
   type: "Worm",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 120,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "large",
   areas: [
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Crystal Caves",
+      uids: [24001..24017, 24019..24057]
     },
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Sea Caverns",
+      uids: [392001..392008]
     }
-  ],
-  spawns: [
-    { zone: 24, count: 1, uid_ranges: [[24001, 24017], [24019, 24057]] },
-    { zone: 392, count: 1, uid_ranges: [[392001, 392008]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,7 +61,7 @@
     udf: 137,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 30,
     pal_td: nil,
     ran_td: nil,
     sor_td: 30,

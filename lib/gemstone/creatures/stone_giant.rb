@@ -8,8 +8,8 @@
   family: "Giant",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,13 @@
   bcs: true,
   max_hp: 611,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 22,
+  size: "huge",
   areas: [
     {
-      name: "Thanatoph",
-      rooms: []
+      name: "Stone Valley",
+      uids: [4291027..4291043, 4291046..4291050, 4291053..4291058, 4292001..4292060]
     }
-  ],
-  spawns: [
-    { zone: 4291, count: 3, uid_ranges: [[4291027, 4291043], [4291046, 4291050], [4291053, 4291058]] },
-    { zone: 4292, count: 3, uid_ranges: [[4292001, 4292060]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,18 +65,18 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: (502..573),
+    melee: (227..573),
     ranged: (149..222),
     bolt: (149..222),
     udf: 474,
     bar_td: 202,
     cle_td: 219,
-    emp_td: nil,
+    emp_td: 228,
     pal_td: 192,
     ran_td: nil,
-    sor_td: 241,
+    sor_td: (235..241),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: (240..243),
     mne_td: nil,
     mjs_td: nil,
     mns_td: 216,

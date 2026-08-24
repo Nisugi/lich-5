@@ -8,8 +8,8 @@
   family: "Griffin",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -20,20 +20,20 @@
   max_hp: 400,
   speed: nil,
   height: nil,
-  size: "",
+  size: "large",
   areas: [
     {
       name: "Griffin's Keen",
-      rooms: []
+      uids: [13302101..13302142]
     },
     {
       name: "Stormpeak",
-      rooms: []
+      uids: [13150301..13150322]
+    },
+    {
+      name: "unmapped",
+      uids: [13150323..13150324]
     }
-  ],
-  spawns: [
-    { zone: 13150, count: 1, uid_ranges: [[13150301, 13150324]] },
-    { zone: 13302, count: 2, uid_ranges: [[13302101, 13302142]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -81,12 +81,12 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 288,
     pal_td: nil,
     ran_td: nil,
     sor_td: 306,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 314,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,

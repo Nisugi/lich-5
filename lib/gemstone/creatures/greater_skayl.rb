@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Globoid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
-      name: "Eye of V'Tull",
-      rooms: []
+      name: "McKyren's End",
+      uids: [3063001..3063013]
     }
-  ],
-  spawns: [
-    { zone: 3063, count: 1, uid_ranges: [[3063001, 3063013]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,13 +57,13 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: nil,
+    melee: (275..411),
     ranged: nil,
     bolt: nil,
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 321,
     pal_td: nil,
     ran_td: nil,
     sor_td: 346,

@@ -8,8 +8,8 @@
   family: "Tegursh",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 368,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "large",
   areas: [
     {
       name: "Sorcerer's Isle",
-      rooms: []
+      uids: [14202001..14202023]
     }
-  ],
-  spawns: [
-    { zone: 14202, count: 2, uid_ranges: [[14202001, 14202023]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,10 +61,10 @@
     udf: 336,
     bar_td: 96,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (106..114),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 115,
+    sor_td: (109..118),
     wiz_td: nil,
     mje_td: 123,
     mne_td: 120,

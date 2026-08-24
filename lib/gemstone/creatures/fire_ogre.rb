@@ -8,8 +8,8 @@
   family: "Ogre",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 225,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "huge",
   areas: [
     {
-      name: "Greymist Wood",
-      rooms: []
+      name: "Volcanic Flats",
+      uids: [3023001..3023028]
     }
-  ],
-  spawns: [
-    { zone: 3023, count: 2, uid_ranges: [[3023001, 3023028]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -58,10 +55,10 @@
     udf: 281,
     bar_td: (101..115),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (94..102),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 104,
+    sor_td: (104..111),
     wiz_td: nil,
     mje_td: 113,
     mne_td: nil,

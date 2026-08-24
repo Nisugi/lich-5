@@ -8,8 +8,8 @@
   family: "Zombie",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,21 +19,17 @@
   bcs: true,
   max_hp: 299,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Arctic Tundra",
-      rooms: []
+      name: "Sleeping Lady Mountains",
+      uids: [4560030..4560053]
     },
     {
-      name: "Nightmare Gorge",
-      rooms: []
+      name: "Pinefar Forests",
+      uids: [4563030..4563051]
     }
-  ],
-  spawns: [
-    { zone: 4560, count: 1, uid_ranges: [[4560030, 4560053]] },
-    { zone: 4563, count: 1, uid_ranges: [[4563030, 4563051]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -58,10 +54,10 @@
     udf: 272,
     bar_td: 123,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (142..145),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 151,
+    sor_td: (148..151),
     wiz_td: nil,
     mje_td: (162..168),
     mne_td: 153,

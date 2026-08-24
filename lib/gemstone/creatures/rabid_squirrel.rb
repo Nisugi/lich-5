@@ -8,8 +8,8 @@
   family: "Rodent",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,22 +18,17 @@
   bcs: true,
   max_hp: 36,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Lower Dragonsclaw",
+      uids: [372030..372039, 373017..373019, 373022..373024]
     },
     {
-      name: "Kobold Village",
-      rooms: []
+      name: "Southern Snowfields",
+      uids: [4128007..4128011]
     }
-  ],
-  spawns: [
-    { zone: 372, count: 1, uid_ranges: [[372030, 372039]] },
-    { zone: 373, count: 1, uid_ranges: [[373017, 373019], [373022, 373024]] },
-    { zone: 4128, count: 1, uid_ranges: [[4128007, 4128011]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -51,13 +46,13 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (23..29),
+    melee: 29,
     ranged: nil,
     bolt: 27,
     udf: 48,
     bar_td: nil,
     cle_td: 6,
-    emp_td: 6,
+    emp_td: (-27..6),
     pal_td: 6,
     ran_td: 6,
     sor_td: 6,

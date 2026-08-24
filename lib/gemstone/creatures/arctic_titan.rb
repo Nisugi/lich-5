@@ -8,8 +8,8 @@
   family: "Giant",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,17 +19,17 @@
   bcs: true,
   max_hp: 397,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 18,
+  size: "huge",
   areas: [
     {
       name: "Glatoph",
-      rooms: []
+      uids: [2153002..2153031]
+    },
+    {
+      name: "Icemule Trail",
+      uids: [4044134..4044139]
     }
-  ],
-  spawns: [
-    { zone: 2153, count: 1, uid_ranges: [[2153002, 2153031]] },
-    { zone: 4044, count: 1, uid_ranges: [[4044134, 4044139]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -79,7 +79,7 @@
     emp_td: 111,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 117,
     wiz_td: nil,
     mje_td: 124,
     mne_td: nil,

@@ -8,8 +8,8 @@
   family: "Leaper",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 88,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Coastal Cliffs",
-      rooms: []
+      uids: [67023..67033]
     },
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Southern Snowfields",
+      uids: [4128031..4128040]
     }
-  ],
-  spawns: [
-    { zone: 67, count: 1, uid_ranges: [[67023, 67033]] },
-    { zone: 4128, count: 1, uid_ranges: [[4128031, 4128040]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +61,10 @@
     udf: 80,
     bar_td: 18,
     cle_td: nil,
-    emp_td: 16,
+    emp_td: (-11..16),
     pal_td: nil,
     ran_td: 18,
-    sor_td: nil,
+    sor_td: 18,
     wiz_td: nil,
     mje_td: 18,
     mne_td: 18,

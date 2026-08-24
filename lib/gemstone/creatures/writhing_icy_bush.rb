@@ -8,8 +8,8 @@
   family: "Bush",
   type: "Plantlife",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 371,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Frozen Bramble",
-      rooms: []
+      name: "Abandoned Farm",
+      uids: [4124037..4124049]
     }
-  ],
-  spawns: [
-    { zone: 4124, count: 1, uid_ranges: [[4124037, 4124049]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,7 +57,7 @@
     udf: 215,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (117..126),
     pal_td: nil,
     ran_td: nil,
     sor_td: "117 to 147",

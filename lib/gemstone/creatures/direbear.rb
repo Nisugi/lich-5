@@ -8,8 +8,8 @@
   family: "Bear",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
       name: "Red Forest",
-      rooms: []
+      uids: [480216..480230, 17006216..17006230]
     }
-  ],
-  spawns: [
-    { zone: 480, count: 1, uid_ranges: [[480216, 480230]] },
-    { zone: 17006, count: 1, uid_ranges: [[17006216, 17006230]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -68,13 +64,13 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: 244,
-    ranged: nil,
-    bolt: 184,
-    udf: 318,
+    melee: (272..347),
+    ranged: (217..283),
+    bolt: (217..283),
+    udf: 417,
     bar_td: (234..240),
     cle_td: 259,
-    emp_td: (243..258),
+    emp_td: (243..305),
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,

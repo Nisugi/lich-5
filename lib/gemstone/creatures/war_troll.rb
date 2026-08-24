@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,22 +18,17 @@
   bcs: true,
   max_hp: 230,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "large",
   areas: [
     {
-      name: "Danjirland",
-      rooms: []
+      name: "Upper Trollfang",
+      uids: [14001..14005, 14010..14020, 17102..17118]
     },
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Slope",
+      uids: [395017..395051]
     }
-  ],
-  spawns: [
-    { zone: 14, count: 1, uid_ranges: [[14001, 14005], [14010, 14020]] },
-    { zone: 17, count: 1, uid_ranges: [[17102, 17118]] },
-    { zone: 395, count: 1, uid_ranges: [[395017, 395051]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,16 +55,16 @@
   defense_attributes: {
     asg: "various",
     immunities: [],
-    melee: (47..108),
-    ranged: (35..76),
-    bolt: (35..76),
-    udf: 202,
+    melee: (61..66),
+    ranged: (61..76),
+    bolt: (61..76),
+    udf: 118,
     bar_td: nil,
     cle_td: nil,
-    emp_td: 69,
+    emp_td: (52..69),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 65,
     wiz_td: nil,
     mje_td: (61..69),
     mne_td: (61..69),

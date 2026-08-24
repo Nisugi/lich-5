@@ -8,8 +8,8 @@
   family: "Tree",
   type: "Plantlife",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,21 @@
   bcs: true,
   max_hp: 120,
   speed: "5",
-  height: nil,
-  size: "",
+  height: 8,
+  size: "large",
   areas: [
     {
       name: "The Toadwort",
-      rooms: []
+      uids: [14007024..14007031]
     },
     {
-      name: "Sentoph",
-      rooms: []
+      name: "Upper Trollfang",
+      uids: [16036..16044]
     },
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4218201..4218221]
     }
-  ],
-  spawns: [
-    { zone: 16, count: 1, uid_ranges: [[16036, 16044]] },
-    { zone: 4218, count: 1, uid_ranges: [[4218201, 4218221]] },
-    { zone: 14007, count: 1, uid_ranges: [[14007024, 14007031]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -82,7 +77,7 @@
     udf: 175,
     bar_td: 39,
     cle_td: 39,
-    emp_td: nil,
+    emp_td: 39,
     pal_td: nil,
     ran_td: nil,
     sor_td: 39,

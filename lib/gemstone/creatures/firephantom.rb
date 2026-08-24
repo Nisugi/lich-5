@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,26 +19,21 @@
   bcs: nil,
   max_hp: 70,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Glatoph",
-      rooms: []
+      uids: [35010..35024]
     },
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4202301..4202320]
     },
     {
       name: "The Citadel",
-      rooms: []
+      uids: [2102001..2102006, 2102059..2102069]
     }
-  ],
-  spawns: [
-    { zone: 35, count: 1, uid_ranges: [[35010, 35024]] },
-    { zone: 2102, count: 1, uid_ranges: [[2102001, 2102006], [2102059, 2102069]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202301, 4202320]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -75,7 +70,7 @@
     emp_td: 18,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 18,
     wiz_td: nil,
     mje_td: 18,
     mne_td: 18,

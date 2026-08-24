@@ -8,8 +8,8 @@
   family: "Equine",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 407,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "large",
   areas: [
     {
       name: "Castle Varunar",
-      rooms: []
+      uids: [4750034..4750039, 4750071..4750076]
     }
-  ],
-  spawns: [
-    { zone: 4750, count: 2, uid_ranges: [[4750034, 4750039], [4750071, 4750076]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: 220,
     bar_td: nil,
     cle_td: 111,
-    emp_td: nil,
+    emp_td: (111..120),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 114,
+    sor_td: (102..114),
     wiz_td: nil,
     mje_td: 111,
     mne_td: 111,

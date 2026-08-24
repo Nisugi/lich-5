@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: nil,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Castle Varunar",
-      rooms: []
+      uids: [4750053..4750069]
     }
-  ],
-  spawns: [
-    { zone: 4750, count: 2, uid_ranges: [[4750053, 4750069]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -73,7 +70,7 @@
     udf: 391,
     bar_td: "130 to 135",
     cle_td: 161,
-    emp_td: nil,
+    emp_td: (153..163),
     pal_td: nil,
     ran_td: nil,
     sor_td: "160 to 185",

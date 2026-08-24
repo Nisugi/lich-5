@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: nil,
   max_hp: 259,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4214303..4214323]
     }
-  ],
-  spawns: [
-    { zone: 4214, count: 1, uid_ranges: [[4214303, 4214323]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -47,10 +44,10 @@
     udf: 324,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (136..145),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (145..151),
     wiz_td: nil,
     mje_td: 155,
     mne_td: nil,

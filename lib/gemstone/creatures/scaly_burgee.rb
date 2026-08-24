@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 340,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "large",
   areas: [
     {
-      name: "Greymist Wood",
-      rooms: []
+      name: "Teorainn Dale",
+      uids: [13024030..13024047, 13024051..13024064]
     },
     {
-      name: "Teorainn Dale",
-      rooms: []
+      name: "Greymist Woods",
+      uids: [3022018..3022034]
     }
-  ],
-  spawns: [
-    { zone: 3022, count: 1, uid_ranges: [[3022018, 3022034]] },
-    { zone: 13024, count: 2, uid_ranges: [[13024030, 13024047], [13024051, 13024064]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -65,10 +61,10 @@
     udf: 289,
     bar_td: 87,
     cle_td: nil,
-    emp_td: 93,
+    emp_td: (81..93),
     pal_td: nil,
     ran_td: 87,
-    sor_td: 91,
+    sor_td: (88..97),
     wiz_td: nil,
     mje_td: (95..98),
     mne_td: 95,

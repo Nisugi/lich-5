@@ -8,8 +8,8 @@
   family: "Chimeric",
   type: "Hybrid",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Blighted Forest",
-      rooms: []
+      name: "Maaghara Tower",
+      uids: [13022008..13022049]
     }
-  ],
-  spawns: [
-    { zone: 13022, count: 2, uid_ranges: [[13022008, 13022049]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,13 +58,13 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: nil,
-    ranged: nil,
+    melee: (327..450),
+    ranged: 265,
     bolt: 285,
-    udf: nil,
+    udf: 648,
     bar_td: (281..285),
     cle_td: (295..320),
-    emp_td: nil,
+    emp_td: (296..303),
     pal_td: 260,
     ran_td: nil,
     sor_td: (306..338),

@@ -8,8 +8,8 @@
   family: "Wight",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,22 +18,21 @@
   bcs: true,
   max_hp: 284,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Black Moor",
-      rooms: []
+      name: "Miasmal Forest",
+      uids: [5003039..5003050, 5004035..5004044, 5004049..5004053]
     },
     {
-      name: "Miasmal Forest",
-      rooms: []
+      name: "unmapped",
+      uids: [5004045..5004048, 5004054..5004054]
+    },
+    {
+      name: "Yegharren Plains",
+      uids: [13036201..13036217, 13036401..13036414, 13036501..13036514]
     }
-  ],
-  spawns: [
-    { zone: 5003, count: 1, uid_ranges: [[5003039, 5003050]] },
-    { zone: 5004, count: 1, uid_ranges: [[5004035, 5004054]] },
-    { zone: 13036, count: 3, uid_ranges: [[13036201, 13036217], [13036401, 13036414], [13036501, 13036514]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -71,10 +70,10 @@
     udf: 372,
     bar_td: 133,
     cle_td: (152..155),
-    emp_td: 146,
+    emp_td: (146..164),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (162..171),
     wiz_td: nil,
     mje_td: (158..167),
     mne_td: 160,

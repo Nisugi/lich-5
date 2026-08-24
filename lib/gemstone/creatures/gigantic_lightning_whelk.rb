@@ -8,8 +8,8 @@
   family: "Whelk",
   type: "",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -21,11 +21,12 @@
   areas: [
     {
       name: "Sailor's Grief",
-      rooms: []
+      uids: [7150101..7150105, 7150115..7150116, 7150201..7150229, 7150301..7150325, 7150328..7150329]
+    },
+    {
+      name: "unmapped",
+      uids: [7150117..7150117, 7150326..7150327]
     }
-  ],
-  spawns: [
-    { zone: 7150, count: 3, uid_ranges: [[7150101, 7150105], [7150115, 7150117], [7150201, 7150229], [7150301, 7150329]] }
   ],
   attack_attributes: {
     physical_attacks: [],

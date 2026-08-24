@@ -8,8 +8,8 @@
   family: "Wight",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,32 +18,25 @@
   bcs: true,
   max_hp: 170,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "Castle Anwyn",
-      rooms: []
+      uids: [4285023..4285023, 4285030..4285030, 4285051..4285057, 4285100..4285103]
     },
     {
       name: "Plains of Bone",
-      rooms: []
-    },
-    {
-      name: "Temple of Hope",
-      rooms: []
+      uids: [14011023..14011041]
     },
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18101..18110, 18200..18209, 2162113..2162122]
+    },
+    {
+      name: "Abbey",
+      uids: [4132101..4132118]
     }
-  ],
-  spawns: [
-    { zone: 18, count: 2, uid_ranges: [[18101, 18110], [18200, 18209]] },
-    { zone: 2162, count: 1, uid_ranges: [[2162113, 2162122]] },
-    { zone: 4132, count: 1, uid_ranges: [[4132101, 4132118]] },
-    { zone: 4285, count: 2, uid_ranges: [[4285023, 4285023], [4285030, 4285030], [4285051, 4285057], [4285100, 4285103]] },
-    { zone: 14011, count: 1, uid_ranges: [[14011023, 14011041]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -87,7 +80,7 @@
     udf: 152,
     bar_td: 66,
     cle_td: 60,
-    emp_td: 60,
+    emp_td: (45..60),
     pal_td: 60,
     ran_td: 60,
     sor_td: 60,

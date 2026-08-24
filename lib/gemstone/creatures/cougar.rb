@@ -8,8 +8,8 @@
   family: "Feline",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -17,18 +17,15 @@
     "Boss"
   ],
   bcs: true,
-  max_hp: 194,
+  max_hp: 195,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4218101..4218121]
     }
-  ],
-  spawns: [
-    { zone: 4218, count: 1, uid_ranges: [[4218101, 4218121]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -53,10 +50,10 @@
     udf: 190,
     bar_td: 66,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (53..63),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 66,
+    sor_td: (63..72),
     wiz_td: nil,
     mje_td: (60..66),
     mne_td: 66,

@@ -8,8 +8,8 @@
   family: "Witch",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,26 +19,21 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
-    },
-    {
-      name: "Wehntoph",
-      rooms: []
-    },
-    {
       name: "Stormpeak",
-      rooms: []
+      uids: [13150001..13150016, 13150101..13150120]
+    },
+    {
+      name: "Vornavian Coast",
+      uids: [4214201..4214218]
+    },
+    {
+      name: "Northern Slopes of Wehntoph",
+      uids: [4302001..4302035]
     }
-  ],
-  spawns: [
-    { zone: 4214, count: 1, uid_ranges: [[4214201, 4214218]] },
-    { zone: 4302, count: 1, uid_ranges: [[4302001, 4302035]] },
-    { zone: 13150, count: 2, uid_ranges: [[13150001, 13150016], [13150101, 13150120]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -84,10 +79,10 @@
     udf: 134,
     bar_td: (54..59),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (27..34),
     pal_td: 53,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (45..55),
     wiz_td: nil,
     mje_td: (44..59),
     mne_td: (44..59),

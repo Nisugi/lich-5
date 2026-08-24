@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: nil,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Abandoned Farm",
+      uids: [4124106..4124112, 4124114..4124115, 4124125..4124128]
     }
-  ],
-  spawns: [
-    { zone: 4124, count: 1, uid_ranges: [[4124106, 4124112], [4124114, 4124115], [4124125, 4124128]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -82,7 +79,7 @@
     udf: 327,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (124..134),
     pal_td: nil,
     ran_td: nil,
     sor_td: "125 to146",

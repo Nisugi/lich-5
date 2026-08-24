@@ -8,8 +8,8 @@
   family: "Giant",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 503,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 21,
+  size: "huge",
   areas: [
     {
-      name: "Greymist Wood",
-      rooms: []
+      name: "Volcanic Flats",
+      uids: [3023001..3023017]
     }
-  ],
-  spawns: [
-    { zone: 3023, count: 1, uid_ranges: [[3023001, 3023017]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -62,10 +59,10 @@
     udf: 342,
     bar_td: 116,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (124..133),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 142,
+    sor_td: (125..142),
     wiz_td: nil,
     mje_td: 145,
     mne_td: nil,

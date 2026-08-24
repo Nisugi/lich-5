@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,21 @@
   bcs: nil,
   max_hp: 150,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
-    },
-    {
       name: "Plains of Bone",
-      rooms: []
+      uids: [14011023..14011041]
     },
     {
-      name: "Danjirland",
-      rooms: []
+      name: "Upper Trollfang",
+      uids: [14070..14079]
+    },
+    {
+      name: "Icemule Trail",
+      uids: [4044200..4044218]
     }
-  ],
-  spawns: [
-    { zone: 14, count: 1, uid_ranges: [[14070, 14079]] },
-    { zone: 4044, count: 1, uid_ranges: [[4044200, 4044218]] },
-    { zone: 14011, count: 1, uid_ranges: [[14011023, 14011041]] }
   ],
   attack_attributes: {
     physical_attacks: [

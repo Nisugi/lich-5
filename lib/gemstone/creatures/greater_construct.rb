@@ -8,8 +8,8 @@
   family: "Golem",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 500,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 18,
+  size: "huge",
   areas: [
     {
       name: "Old Ta'Faendryl",
-      rooms: []
+      uids: [17004001..17004028, 17004030..17004120]
     }
-  ],
-  spawns: [
-    { zone: 17004, count: 4, uid_ranges: [[17004001, 17004028], [17004030, 17004120]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,10 +58,10 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: nil,
+    melee: (260..499),
     ranged: (299..344),
     bolt: nil,
-    udf: nil,
+    udf: 487,
     bar_td: nil,
     cle_td: (366..387),
     emp_td: (358..379),

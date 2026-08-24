@@ -8,8 +8,8 @@
   family: "Arachnid",
   type: "Arachnid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 140,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "medium",
   areas: [
     {
-      name: "Thurfel's Keep",
-      rooms: []
+      name: "Thurfel's Island",
+      uids: [7532001..7532033]
     }
-  ],
-  spawns: [
-    { zone: 7532, count: 2, uid_ranges: [[7532001, 7532033]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: 221,
     bar_td: 45,
     cle_td: 45,
-    emp_td: 45,
+    emp_td: (42..51),
     pal_td: 45,
     ran_td: nil,
-    sor_td: 45,
+    sor_td: (42..51),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 45,

@@ -8,8 +8,8 @@
   family: "Suine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,32 +18,25 @@
   bcs: true,
   max_hp: 51,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Cairnfang Forest",
-      rooms: []
+      name: "Foothills of Zeltoph",
+      uids: [2131013..2131024]
     },
     {
-      name: "Dead Plateau",
-      rooms: []
+      name: "Plains of Vornavis",
+      uids: [4212101..4212130, 4213101..4213130]
     },
     {
-      name: "Marshtown",
-      rooms: []
+      name: "Noman's Land",
+      uids: [4600001..4600009]
     },
     {
-      name: "Vornavian Coast",
-      rooms: []
+      name: "Locksmehr Trail",
+      uids: [13001001..13001038]
     }
-  ],
-  spawns: [
-    { zone: 2131, count: 1, uid_ranges: [[2131013, 2131024]] },
-    { zone: 4212, count: 1, uid_ranges: [[4212101, 4212130]] },
-    { zone: 4213, count: 1, uid_ranges: [[4213101, 4213130]] },
-    { zone: 4600, count: 1, uid_ranges: [[4600001, 4600009]] },
-    { zone: 13001, count: 2, uid_ranges: [[13001001, 13001038]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -68,7 +61,7 @@
     udf: 72,
     bar_td: 12,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -19,
     pal_td: nil,
     ran_td: nil,
     sor_td: 12,

@@ -8,8 +8,8 @@
   family: "Bird",
   type: "Avian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "large",
   areas: [
     {
       name: "Shattered Moors",
-      rooms: []
+      uids: [420001..420025]
     }
-  ],
-  spawns: [
-    { zone: 420, count: 1, uid_ranges: [[420001, 420025]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,10 +53,10 @@
     udf: nil,
     bar_td: 109,
     cle_td: nil,
-    emp_td: 121,
+    emp_td: (117..127),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 128,
+    sor_td: (125..134),
     wiz_td: nil,
     mje_td: 134,
     mne_td: 134,

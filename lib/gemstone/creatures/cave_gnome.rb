@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,30 +18,21 @@
   bcs: true,
   max_hp: 51,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "small",
   areas: [
     {
-      name: "Wehnimer's Landing",
-      rooms: []
+      name: "Catacombs",
+      uids: [46029..46033, 46035..46037]
     },
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Upper Dragonsclaw",
+      uids: [2121015..2121024]
     },
     {
-      name: "Old Mine Road",
-      rooms: []
-    },
-    {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Subterranean Tunnels",
+      uids: [4045120..4045141]
     }
-  ],
-  spawns: [
-    { zone: 46, count: 1, uid_ranges: [[46029, 46033], [46035, 46037]] },
-    { zone: 2121, count: 1, uid_ranges: [[2121015, 2121024]] },
-    { zone: 4045, count: 1, uid_ranges: [[4045120, 4045141]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -68,16 +59,16 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (0..94),
+    melee: (7..94),
     ranged: 10,
     bolt: 10,
-    udf: 61,
+    udf: 57,
     bar_td: nil,
     cle_td: 6,
-    emp_td: nil,
+    emp_td: -27,
     pal_td: nil,
     ran_td: 6,
-    sor_td: nil,
+    sor_td: 6,
     wiz_td: nil,
     mje_td: 6,
     mne_td: 6,

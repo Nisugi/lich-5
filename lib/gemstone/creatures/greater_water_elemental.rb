@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Elemental",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -23,11 +23,8 @@
   areas: [
     {
       name: "Ruined Temple",
-      rooms: []
+      uids: [3031081..3031106]
     }
-  ],
-  spawns: [
-    { zone: 3031, count: 1, uid_ranges: [[3031081, 3031106]] }
   ],
   attack_attributes: {
     physical_attacks: [

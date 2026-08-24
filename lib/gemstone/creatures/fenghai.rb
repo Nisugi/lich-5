@@ -8,8 +8,8 @@
   family: "Fey",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,17 +20,13 @@
   bcs: true,
   max_hp: 190,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "medium",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4006001..4006031, 4218101..4218121]
     }
-  ],
-  spawns: [
-    { zone: 4006, count: 1, uid_ranges: [[4006001, 4006031]] },
-    { zone: 4218, count: 1, uid_ranges: [[4218101, 4218121]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -69,15 +65,15 @@
     melee: (165..333),
     ranged: nil,
     bolt: nil,
-    udf: 247,
+    udf: 285,
     bar_td: 76,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (149..159),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 94,
+    sor_td: (94..165),
     wiz_td: nil,
-    mje_td: (89..92),
+    mje_td: (89..97),
     mne_td: 83,
     mjs_td: nil,
     mns_td: 80,

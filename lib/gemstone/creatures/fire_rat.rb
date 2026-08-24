@@ -8,8 +8,8 @@
   family: "Rodent",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 148,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "small",
   areas: [
     {
-      name: "Smokey Caverns",
-      rooms: []
+      name: "Lysierian Hills",
+      uids: [92032..92041]
     }
-  ],
-  spawns: [
-    { zone: 92, count: 1, uid_ranges: [[92032, 92041]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -59,7 +56,7 @@
     udf: 121,
     bar_td: 42,
     cle_td: 48,
-    emp_td: nil,
+    emp_td: (21..29),
     pal_td: nil,
     ran_td: nil,
     sor_td: (42..54),

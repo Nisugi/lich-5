@@ -8,8 +8,8 @@
   family: "Wraith",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,26 +18,21 @@
   bcs: nil,
   max_hp: 133,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "large",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
-    },
-    {
-      name: "Wehnimer's Environs",
-      rooms: []
-    },
-    {
       name: "The Graveyard",
-      rooms: []
+      uids: [2138123..2138142]
+    },
+    {
+      name: "Smuggling Tunnels",
+      uids: [37022..37041]
+    },
+    {
+      name: "Abandoned Farm",
+      uids: [4124007..4124013, 4124027..4124036]
     }
-  ],
-  spawns: [
-    { zone: 37, count: 2, uid_ranges: [[37022, 37041]] },
-    { zone: 2138, count: 1, uid_ranges: [[2138123, 2138142]] },
-    { zone: 4124, count: 2, uid_ranges: [[4124007, 4124013], [4124027, 4124036]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -57,10 +52,10 @@
     udf: 166,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 45,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 45,
     wiz_td: nil,
     mje_td: 45,
     mne_td: nil,

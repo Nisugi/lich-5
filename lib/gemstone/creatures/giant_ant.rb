@@ -8,8 +8,8 @@
   family: "Ant",
   type: "Insect",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 29,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
-      name: "Wehnimer's Landing",
-      rooms: []
+      name: "Dark Caverns",
+      uids: [47001..47024, 47026..47033]
     }
-  ],
-  spawns: [
-    { zone: 47, count: 2, uid_ranges: [[47001, 47024], [47026, 47033]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -51,15 +48,15 @@
     asg: "5N",
     immunities: [],
     melee: (25..47),
-    ranged: (23..33),
-    bolt: (23..33),
-    udf: 42,
+    ranged: (25..33),
+    bolt: (25..33),
+    udf: 33,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (3..6),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 3,
+    sor_td: (3..6),
     wiz_td: nil,
     mje_td: 3,
     mne_td: 3,

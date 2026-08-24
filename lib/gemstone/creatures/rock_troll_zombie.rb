@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: nil,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 11,
+  size: "huge",
   areas: [
     {
       name: "Troll Burial Grounds",
-      rooms: []
+      uids: [13011001..13011035]
     }
-  ],
-  spawns: [
-    { zone: 13011, count: 2, uid_ranges: [[13011001, 13011035]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: 373,
     bar_td: nil,
     cle_td: 119,
-    emp_td: nil,
+    emp_td: (116..126),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (123..132),
     wiz_td: nil,
     mje_td: 129,
     mne_td: (123..138),

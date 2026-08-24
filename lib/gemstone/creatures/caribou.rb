@@ -8,8 +8,8 @@
   family: "Deer",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 370,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "large",
   areas: [
     {
-      name: "Dark Caves",
-      rooms: []
+      name: "Pinefar Forests",
+      uids: [4563001..4563021]
     },
     {
-      name: "Northern Mountains",
-      rooms: []
+      name: "Sleeping Lady Mountains",
+      uids: [4565004..4565014]
     }
-  ],
-  spawns: [
-    { zone: 4563, count: 1, uid_ranges: [[4563001, 4563021]] },
-    { zone: 4565, count: 1, uid_ranges: [[4565004, 4565014]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,7 +60,7 @@
     emp_td: (88..96),
     pal_td: nil,
     ran_td: nil,
-    sor_td: (95..104),
+    sor_td: (95..113),
     wiz_td: nil,
     mje_td: 110,
     mne_td: 100,

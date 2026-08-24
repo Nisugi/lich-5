@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "Stormpeak",
-      rooms: []
+      uids: [13150201..13150220]
     }
-  ],
-  spawns: [
-    { zone: 13150, count: 1, uid_ranges: [[13150201, 13150220]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -74,10 +71,10 @@
     udf: 244,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (134..136),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 141,
+    sor_td: (139..145),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 147,

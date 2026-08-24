@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
       name: "Marsh Keep",
-      rooms: []
+      uids: [376063..376083]
     }
-  ],
-  spawns: [
-    { zone: 376, count: 1, uid_ranges: [[376063, 376083]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -73,10 +70,10 @@
     udf: 371,
     bar_td: (212..242),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (257..267),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 285,
     wiz_td: nil,
     mje_td: 276,
     mne_td: nil,

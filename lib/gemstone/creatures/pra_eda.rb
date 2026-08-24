@@ -8,27 +8,23 @@
   family: "Canine",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 340,
+  max_hp: 341,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "large",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4214303..4214323, 4218101..4218121]
     }
-  ],
-  spawns: [
-    { zone: 4214, count: 1, uid_ranges: [[4214303, 4214323]] },
-    { zone: 4218, count: 1, uid_ranges: [[4218101, 4218121]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -54,15 +50,15 @@
     melee: (151..241),
     ranged: 132,
     bolt: nil,
-    udf: nil,
+    udf: 206,
     bar_td: 89,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (109..119),
     pal_td: nil,
     ran_td: nil,
     sor_td: (103..128),
     wiz_td: nil,
-    mje_td: (113..114),
+    mje_td: (113..130),
     mne_td: 109,
     mjs_td: nil,
     mns_td: nil,

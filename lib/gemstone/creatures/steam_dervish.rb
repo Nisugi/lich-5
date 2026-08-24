@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -20,16 +20,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Eye of V'Tull",
-      rooms: []
+      name: "McKyren's End",
+      uids: [3063001..3063013]
     }
-  ],
-  spawns: [
-    { zone: 3063, count: 1, uid_ranges: [[3063001, 3063013]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -56,18 +53,18 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: 324,
+    melee: (308..487),
     ranged: nil,
     bolt: 290,
-    udf: nil,
+    udf: 561,
     bar_td: "325 to 349",
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (318..321),
     pal_td: nil,
     ran_td: nil,
     sor_td: 343,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 367,
     mne_td: 370,
     mjs_td: nil,
     mns_td: 322,

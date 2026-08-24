@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Ophidian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
       name: "Blighted Forest",
-      rooms: []
+      uids: [13020001..13020051, 13020100..13020114]
     }
-  ],
-  spawns: [
-    { zone: 13020, count: 3, uid_ranges: [[13020001, 13020051], [13020100, 13020114]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -59,7 +56,7 @@
     emp_td: (211..229),
     pal_td: nil,
     ran_td: "181 to 196",
-    sor_td: 234,
+    sor_td: (234..246),
     wiz_td: 246,
     mje_td: 246,
     mne_td: 246,

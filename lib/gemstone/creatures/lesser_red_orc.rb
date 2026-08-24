@@ -8,8 +8,8 @@
   family: "Orc",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 100,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Coastal Cliffs",
-      rooms: []
+      uids: [68001..68004, 68010..68016]
     },
     {
       name: "Yander's Farm",
-      rooms: []
+      uids: [14005023..14005025, 14005027..14005036]
     }
-  ],
-  spawns: [
-    { zone: 68, count: 1, uid_ranges: [[68001, 68004], [68010, 68016]] },
-    { zone: 14005, count: 1, uid_ranges: [[14005023, 14005025], [14005027, 14005036]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,7 +53,7 @@
     udf: 114,
     bar_td: 21,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -7,
     pal_td: nil,
     ran_td: 21,
     sor_td: 21,

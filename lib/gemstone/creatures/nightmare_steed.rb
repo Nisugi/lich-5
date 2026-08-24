@@ -8,8 +8,8 @@
   family: "Equine",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -23,11 +23,11 @@
   areas: [
     {
       name: "Darkstone Castle",
-      rooms: []
+      uids: []
     },
     {
       name: "The Broken Lands",
-      rooms: []
+      uids: []
     }
   ],
   attack_attributes: {

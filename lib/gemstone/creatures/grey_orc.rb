@@ -8,8 +8,8 @@
   family: "Orc",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,31 +18,25 @@
   bcs: false,
   max_hp: 130,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
-      name: "Danjirland",
-      rooms: []
-    },
-    {
-      name: "Old Mine Road",
-      rooms: []
-    },
-    {
-      name: "Sentoph",
-      rooms: []
-    },
-    {
       name: "Yander's Farm",
-      rooms: []
+      uids: [14005067..14005080]
+    },
+    {
+      name: "Upper Trollfang",
+      uids: [14015..14023, 14025..14025, 16051..16057]
+    },
+    {
+      name: "unmapped",
+      uids: [14024..14024]
+    },
+    {
+      name: "Liath Bheinn and Aillidh Brae",
+      uids: [4250005..4250021]
     }
-  ],
-  spawns: [
-    { zone: 14, count: 1, uid_ranges: [[14015, 14025]] },
-    { zone: 16, count: 2, uid_ranges: [[16051, 16057]] },
-    { zone: 4250, count: 1, uid_ranges: [[4250005, 4250021]] },
-    { zone: 14005, count: 1, uid_ranges: [[14005067, 14005080]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -70,16 +64,16 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (103..133),
+    melee: (106..123),
     ranged: (67..105),
     bolt: (67..105),
-    udf: 185,
+    udf: 118,
     bar_td: 42,
     cle_td: nil,
-    emp_td: 42,
+    emp_td: (21..42),
     pal_td: nil,
     ran_td: 39,
-    sor_td: nil,
+    sor_td: (42..45),
     wiz_td: 42,
     mje_td: 45,
     mne_td: 42,

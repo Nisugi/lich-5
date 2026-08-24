@@ -8,8 +8,8 @@
   family: "Worm",
   type: "Worm",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 179,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
-      name: "Kraken's Fall",
-      rooms: []
+      name: "Hornwort Cavern",
+      uids: [7131001..7131018]
     }
-  ],
-  spawns: [
-    { zone: 7131, count: 1, uid_ranges: [[7131001, 7131018]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 106,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (42..48),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (48..51),
     wiz_td: nil,
     mje_td: 51,
     mne_td: nil,

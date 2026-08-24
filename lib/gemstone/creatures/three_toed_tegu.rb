@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 380,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "large",
   areas: [
     {
       name: "Teorainn Dale",
-      rooms: []
+      uids: [13024010..13024027]
     }
-  ],
-  spawns: [
-    { zone: 13024, count: 1, uid_ranges: [[13024010, 13024027]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -64,7 +61,7 @@
     udf: 250,
     bar_td: (96..99),
     cle_td: (96..102),
-    emp_td: (103..106),
+    emp_td: (97..106),
     pal_td: 99,
     ran_td: (99..105),
     sor_td: (103..120),

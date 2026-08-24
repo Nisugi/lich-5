@@ -8,8 +8,8 @@
   family: "Arachnid",
   type: "Arachnid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 90,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "medium",
   areas: [
     {
       name: "The Citadel",
-      rooms: []
+      uids: [2102022..2102049]
     }
-  ],
-  spawns: [
-    { zone: 2102, count: 1, uid_ranges: [[2102022, 2102049]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: 160,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 27,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 27,
     wiz_td: nil,
     mje_td: 27,
     mne_td: 27,

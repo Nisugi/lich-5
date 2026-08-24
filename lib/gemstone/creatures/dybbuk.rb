@@ -8,8 +8,8 @@
   family: "Chimeric",
   type: "Hybrid",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 8,
+  size: "large",
   areas: [
     {
       name: "Bonespear Tower",
-      rooms: []
+      uids: [319100..319112, 319117..319133]
     }
-  ],
-  spawns: [
-    { zone: 319, count: 2, uid_ranges: [[319100, 319112], [319117, 319133]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -53,7 +50,7 @@
     udf: 266,
     bar_td: (155..161),
     cle_td: 176,
-    emp_td: nil,
+    emp_td: (169..175),
     pal_td: nil,
     ran_td: 134,
     sor_td: (179..194),

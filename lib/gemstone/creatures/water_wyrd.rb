@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,17 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "The Ruined Tower",
-      rooms: []
+      uids: [305023..305030, 305032..305038]
+    },
+    {
+      name: "unmapped",
+      uids: [305031..305031]
     }
-  ],
-  spawns: [
-    { zone: 305, count: 1, uid_ranges: [[305023, 305038]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -74,7 +75,7 @@
     udf: 244,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 129,
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,

@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Globoid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -20,17 +20,17 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Lava Flows",
-      rooms: []
+      name: "Volcano",
+      uids: [3050023..3050036]
+    },
+    {
+      name: "Eye of V'Tull",
+      uids: [3060002..3060018]
     }
-  ],
-  spawns: [
-    { zone: 3050, count: 1, uid_ranges: [[3050023, 3050036]] },
-    { zone: 3060, count: 1, uid_ranges: [[3060002, 3060018]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -63,10 +63,10 @@
     udf: nil,
     bar_td: 197,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 191,
     pal_td: nil,
     ran_td: nil,
-    sor_td: 216,
+    sor_td: (212..221),
     wiz_td: nil,
     mje_td: 224,
     mne_td: 235,

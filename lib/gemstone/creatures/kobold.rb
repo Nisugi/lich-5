@@ -8,8 +8,8 @@
   family: "Kobold",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,48 +18,33 @@
   bcs: true,
   max_hp: 40,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "small",
   areas: [
     {
       name: "Briar Thicket",
-      rooms: []
+      uids: [14013001..14013018]
     },
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Lower Dragonsclaw",
+      uids: [9028..9041, 372005..372014, 372020..372026, 373005..373016, 373020..373021]
     },
     {
-      name: "Kobold Village",
-      rooms: []
+      name: "Old Mine Road",
+      uids: [20002..20018, 401002..401009, 401011..401015, 401101..401102, 401201..401207, 401209..401209]
     },
     {
-      name: "Marshtown",
-      rooms: []
+      name: "unmapped",
+      uids: [401010..401010, 401208..401208]
     },
     {
-      name: "North Beach",
-      rooms: []
+      name: "Southern Snowfields",
+      uids: [4128005..4128008, 4128012..4128016]
     },
     {
-      name: "Solhaven Environs",
-      rooms: []
-    },
-    {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Plains of Vornavis",
+      uids: [4212101..4212130, 4213101..4213130]
     }
-  ],
-  spawns: [
-    { zone: 9, count: 1, uid_ranges: [[9028, 9041]] },
-    { zone: 20, count: 1, uid_ranges: [[20002, 20018]] },
-    { zone: 372, count: 4, uid_ranges: [[372005, 372014], [372020, 372026]] },
-    { zone: 373, count: 3, uid_ranges: [[373005, 373016], [373020, 373021]] },
-    { zone: 401, count: 1, uid_ranges: [[401002, 401015], [401101, 401102], [401201, 401209]] },
-    { zone: 4128, count: 1, uid_ranges: [[4128005, 4128008], [4128012, 4128016]] },
-    { zone: 4212, count: 1, uid_ranges: [[4212101, 4212130]] },
-    { zone: 4213, count: 1, uid_ranges: [[4213101, 4213130]] },
-    { zone: 14013, count: 2, uid_ranges: [[14013001, 14013018]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -78,13 +63,13 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (28..78),
+    melee: (37..78),
     ranged: nil,
     bolt: nil,
     udf: 77,
     bar_td: 3,
     cle_td: nil,
-    emp_td: 3,
+    emp_td: (-31..3),
     pal_td: 3,
     ran_td: 3,
     sor_td: 3,

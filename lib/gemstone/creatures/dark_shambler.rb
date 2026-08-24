@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,31 +18,25 @@
   bcs: true,
   max_hp: 218,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Plains of Bone",
-      rooms: []
-    },
-    {
-      name: "Sentoph",
-      rooms: []
-    },
-    {
-      name: "Temple of Hope",
-      rooms: []
+      uids: [14011023..14011035]
     },
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4217201..4217216]
+    },
+    {
+      name: "Upper Trollfang",
+      uids: [16058..16064]
+    },
+    {
+      name: "Abbey",
+      uids: [4132101..4132118]
     }
-  ],
-  spawns: [
-    { zone: 16, count: 1, uid_ranges: [[16058, 16064]] },
-    { zone: 4132, count: 1, uid_ranges: [[4132101, 4132118]] },
-    { zone: 4217, count: 2, uid_ranges: [[4217201, 4217216]] },
-    { zone: 14011, count: 1, uid_ranges: [[14011023, 14011035]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -67,7 +61,7 @@
     udf: 235,
     bar_td: 51,
     cle_td: 51,
-    emp_td: 51,
+    emp_td: (33..51),
     pal_td: 51,
     ran_td: 51,
     sor_td: 51,

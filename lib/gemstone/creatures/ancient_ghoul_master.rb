@@ -8,8 +8,8 @@
   family: "Ghoul",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 180,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18029..18035, 18070..18070]
     }
-  ],
-  spawns: [
-    { zone: 18, count: 1, uid_ranges: [[18029, 18035], [18070, 18070]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,7 +58,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 49,
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,

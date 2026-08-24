@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,27 +18,21 @@
   bcs: true,
   max_hp: 40,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Glaise Cnoc Cemetery",
-      rooms: []
-    },
-    {
-      name: "Icemule Environs",
-      rooms: []
+      uids: [14008001..14008033, 14008060..14008070]
     },
     {
       name: "The Graveyard",
-      rooms: []
+      uids: [18003..18009, 2162201..2162211]
+    },
+    {
+      name: "Southern Snowfields",
+      uids: [4128063..4128067]
     }
-  ],
-  spawns: [
-    { zone: 18, count: 1, uid_ranges: [[18003, 18009]] },
-    { zone: 2162, count: 1, uid_ranges: [[2162201, 2162211]] },
-    { zone: 4128, count: 1, uid_ranges: [[4128063, 4128067]] },
-    { zone: 14008, count: 3, uid_ranges: [[14008001, 14008033], [14008060, 14008070]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -67,7 +61,7 @@
     udf: 34,
     bar_td: 3,
     cle_td: 3,
-    emp_td: 3,
+    emp_td: (-31..3),
     pal_td: 3,
     ran_td: 3,
     sor_td: 3,

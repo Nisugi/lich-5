@@ -8,8 +8,8 @@
   family: "Kiramon",
   type: "Insect",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: false,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,32 +19,33 @@
   bcs: true,
   max_hp: 300,
   speed: "6",
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Darkstone Castle",
-      rooms: []
+      uids: [41019..41025, 41027..41029, 41034..41050]
     },
     {
-      name: "Kharam Dzu",
-      rooms: []
+      name: "unmapped",
+      uids: [41026..41026]
     },
     {
-      name: "Seethe Naedal",
-      rooms: []
+      name: "Abandoned Mine",
+      uids: [3005003..3005012, 3005014..3005022]
     },
     {
-      name: "Czeroth Labyrinth",
-      rooms: []
+      name: "Czeroth Caverns",
+      uids: [13007201..13007228]
+    },
+    {
+      name: "Maernstrike Caverns",
+      uids: [13037001..13037020]
+    },
+    {
+      name: "The Hive",
+      uids: [13041001..13041026]
     }
-  ],
-  spawns: [
-    { zone: 41, count: 2, uid_ranges: [[41019, 41029], [41034, 41050]] },
-    { zone: 3005, count: 2, uid_ranges: [[3005003, 3005012], [3005014, 3005022]] },
-    { zone: 13007, count: 2, uid_ranges: [[13007201, 13007228]] },
-    { zone: 13037, count: 1, uid_ranges: [[13037001, 13037020]] },
-    { zone: 13041, count: 1, uid_ranges: [[13041001, 13041026]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -90,7 +91,7 @@
     udf: 431,
     bar_td: (160..163),
     cle_td: 178,
-    emp_td: nil,
+    emp_td: (168..177),
     pal_td: nil,
     ran_td: nil,
     sor_td: (177..195),

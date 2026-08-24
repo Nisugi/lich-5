@@ -8,8 +8,8 @@
   family: "Reptilian",
   type: "Ophidian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,21 @@
   bcs: true,
   max_hp: 230,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "medium",
   areas: [
     {
       name: "Karazja Jungle",
-      rooms: []
+      uids: [5006004..5006009, 5006040..5006040]
     },
     {
       name: "Vipershroud",
-      rooms: []
+      uids: [2190001..2190035]
+    },
+    {
+      name: "unmapped",
+      uids: [5006010..5006039]
     }
-  ],
-  spawns: [
-    { zone: 2190, count: 2, uid_ranges: [[2190001, 2190035]] },
-    { zone: 5006, count: 2, uid_ranges: [[5006004, 5006040]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,7 +61,7 @@
     udf: 196,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (57..61),
     pal_td: nil,
     ran_td: nil,
     sor_td: 72,

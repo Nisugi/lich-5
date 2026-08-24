@@ -8,8 +8,8 @@
   family: "Orc",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 170,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "High Plains",
-      rooms: []
+      uids: [4129002..4129021]
     }
-  ],
-  spawns: [
-    { zone: 4129, count: 2, uid_ranges: [[4129002, 4129021]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,7 +49,7 @@
     udf: 189,
     bar_td: 48,
     cle_td: nil,
-    emp_td: 21,
+    emp_td: (13..21),
     pal_td: nil,
     ran_td: nil,
     sor_td: 42,

@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Den of Rot",
-      rooms: []
+      name: "Abbey",
+      uids: [4132201..4132240, 4132243..4132248]
+    },
+    {
+      name: "unmapped",
+      uids: [4132241..4132242]
     }
-  ],
-  spawns: [
-    { zone: 4132, count: 2, uid_ranges: [[4132201, 4132248]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -45,18 +46,18 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: "320 (in offensive)",
+    melee: (387..549),
     ranged: nil,
     bolt: "319 (in offensive)",
-    udf: nil,
+    udf: 567,
     bar_td: 290,
     cle_td: (290..301),
-    emp_td: nil,
+    emp_td: (297..306),
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 328,
     mne_td: nil,
     mjs_td: 254,
     mns_td: 269,

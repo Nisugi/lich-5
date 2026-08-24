@@ -8,8 +8,8 @@
   family: "Troll",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 190,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 9,
+  size: "large",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
+      name: "Vornavian Coast",
+      uids: [4214101..4214115]
     }
-  ],
-  spawns: [
-    { zone: 4214, count: 1, uid_ranges: [[4214101, 4214115]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -52,10 +49,10 @@
     udf: 133,
     bar_td: 55,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 44,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 59,
     wiz_td: nil,
     mje_td: 55,
     mne_td: 55,

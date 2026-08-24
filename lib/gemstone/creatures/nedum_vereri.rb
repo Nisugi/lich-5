@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 160,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Temple of Hope",
-      rooms: []
+      name: "Temple of Love",
+      uids: [2155012..2155044, 2155046..2155048]
     },
     {
-      name: "Sentoph",
-      rooms: []
+      name: "Abbey",
+      uids: [4132101..4132118]
     }
-  ],
-  spawns: [
-    { zone: 2155, count: 2, uid_ranges: [[2155012, 2155044], [2155046, 2155048]] },
-    { zone: 4132, count: 1, uid_ranges: [[4132101, 4132118]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -66,7 +62,7 @@
     udf: 168,
     bar_td: nil,
     cle_td: 54,
-    emp_td: 54,
+    emp_td: (37..54),
     pal_td: nil,
     ran_td: 87,
     sor_td: 54,

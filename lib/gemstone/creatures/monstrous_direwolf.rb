@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,17 +18,13 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "large",
   areas: [
     {
       name: "Red Forest",
-      rooms: []
+      uids: [480216..480230, 17006216..17006230]
     }
-  ],
-  spawns: [
-    { zone: 480, count: 1, uid_ranges: [[480216, 480230]] },
-    { zone: 17006, count: 1, uid_ranges: [[17006216, 17006230]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -58,18 +54,18 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: (281..305),
-    ranged: nil,
-    bolt: 243,
-    udf: nil,
+    melee: (290..305),
+    ranged: (215..291),
+    bolt: (215..291),
+    udf: 463,
     bar_td: 240,
     cle_td: 271,
-    emp_td: 261,
+    emp_td: (261..329),
     pal_td: nil,
     ran_td: nil,
     sor_td: (272..284),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 303,
     mne_td: 298,
     mjs_td: nil,
     mns_td: 267,

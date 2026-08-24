@@ -8,8 +8,8 @@
   family: "Caprine",
   type: "Quadruped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,27 +18,21 @@
   bcs: true,
   max_hp: 28,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Cairnfang Forest",
-      rooms: []
-    },
-    {
-      name: "Icemule Environs",
-      rooms: []
-    },
-    {
       name: "The Citadel",
-      rooms: []
+      uids: [2102008..2102020, 2103001..2103007]
+    },
+    {
+      name: "Cairnfang",
+      uids: [630100..630105]
+    },
+    {
+      name: "Southern Snowfields",
+      uids: [4128056..4128059]
     }
-  ],
-  spawns: [
-    { zone: 630, count: 1, uid_ranges: [[630100, 630105]] },
-    { zone: 2102, count: 1, uid_ranges: [[2102008, 2102020]] },
-    { zone: 2103, count: 1, uid_ranges: [[2103001, 2103007]] },
-    { zone: 4128, count: 1, uid_ranges: [[4128056, 4128059]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,7 +55,7 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (5..7),
+    melee: 7,
     ranged: 5,
     bolt: 5,
     udf: 42,

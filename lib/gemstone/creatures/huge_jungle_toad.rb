@@ -8,8 +8,8 @@
   family: "Amphibian",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -21,11 +21,8 @@
   areas: [
     {
       name: "Monsoon Jungle",
-      rooms: []
+      uids: [3218017..3218023, 3218045..3218048]
     }
-  ],
-  spawns: [
-    { zone: 3218, count: 1, uid_ranges: [[3218017, 3218023], [3218045, 3218048]] }
   ],
   attack_attributes: {
     physical_attacks: [

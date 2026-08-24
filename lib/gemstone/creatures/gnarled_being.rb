@@ -8,8 +8,8 @@
   family: "Chimeric",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,17 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "large",
   areas: [
     {
       name: "Old Ta'Faendryl",
-      rooms: []
+      uids: [17003011..17003038, 17003101..17003150, 17003201..17003217]
+    },
+    {
+      name: "unmapped",
+      uids: [17003001..17003010]
     }
-  ],
-  spawns: [
-    { zone: 17003, count: 4, uid_ranges: [[17003001, 17003038], [17003101, 17003150], [17003201, 17003217]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -50,13 +51,13 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 594,
+    melee: 509,
     ranged: nil,
     bolt: nil,
     udf: nil,
     bar_td: (315..335),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (335..341),
     pal_td: 294,
     ran_td: nil,
     sor_td: (354..390),

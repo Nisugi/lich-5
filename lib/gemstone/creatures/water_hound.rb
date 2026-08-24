@@ -8,8 +8,8 @@
   family: "Canine",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 210,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Stormpeak",
-      rooms: []
+      uids: [13150101..13150120]
     }
-  ],
-  spawns: [
-    { zone: 13150, count: 1, uid_ranges: [[13150101, 13150120]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -61,7 +58,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: 74,
-    emp_td: nil,
+    emp_td: 65,
     pal_td: nil,
     ran_td: nil,
     sor_td: 79,

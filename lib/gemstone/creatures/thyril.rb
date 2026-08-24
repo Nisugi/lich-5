@@ -8,8 +8,8 @@
   family: "Thyril",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,27 +18,21 @@
   bcs: true,
   max_hp: 51,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "small",
   areas: [
     {
-      name: "Wehnimer's Landing",
-      rooms: []
-    },
-    {
-      name: "Icemule Environs",
-      rooms: []
-    },
-    {
       name: "Rambling Meadows",
-      rooms: []
+      uids: [14006001..14006020]
+    },
+    {
+      name: "Catacombs",
+      uids: [490003..490005, 490008..490009, 490014..490015, 4126004..4126023]
+    },
+    {
+      name: "Frozen Garden",
+      uids: [4160002..4160020]
     }
-  ],
-  spawns: [
-    { zone: 490, count: 1, uid_ranges: [[490003, 490005], [490008, 490009], [490014, 490015]] },
-    { zone: 4126, count: 2, uid_ranges: [[4126004, 4126023]] },
-    { zone: 4160, count: 1, uid_ranges: [[4160002, 4160020]] },
-    { zone: 14006, count: 1, uid_ranges: [[14006001, 14006020]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -67,7 +61,7 @@
     udf: 44,
     bar_td: 6,
     cle_td: nil,
-    emp_td: 6,
+    emp_td: (-27..6),
     pal_td: 6,
     ran_td: 6,
     sor_td: 6,

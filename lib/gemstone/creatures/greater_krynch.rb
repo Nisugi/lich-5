@@ -8,8 +8,8 @@
   family: "Krynch",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "medium",
   areas: [
     {
-      name: "Thanatoph",
-      rooms: []
+      name: "Bowels of Thanatoph",
+      uids: [4293001..4293052]
     }
-  ],
-  spawns: [
-    { zone: 4293, count: 3, uid_ranges: [[4293001, 4293052]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -50,18 +47,18 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: nil,
+    melee: (222..438),
     ranged: nil,
     bolt: 224,
-    udf: nil,
+    udf: 653,
     bar_td: (306..315),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (323..332),
     pal_td: nil,
     ran_td: nil,
     sor_td: 345,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 364,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,

@@ -8,8 +8,8 @@
   family: "Basilisk",
   type: "Hybrid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 69,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
       name: "Upper Trollfang",
-      rooms: []
+      uids: [15009..15015]
     }
-  ],
-  spawns: [
-    { zone: 15, count: 1, uid_ranges: [[15009, 15015]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -54,16 +51,16 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (51..114),
+    melee: (53..114),
     ranged: nil,
     bolt: nil,
     udf: 138,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -11,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 18,
     wiz_td: nil,
     mje_td: 18,
     mne_td: nil,

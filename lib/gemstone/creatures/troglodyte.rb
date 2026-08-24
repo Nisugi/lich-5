@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 60,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Old Mine Road",
-      rooms: []
+      name: "Upper Dragonsclaw",
+      uids: [2121015..2121024]
     },
     {
-      name: "Wehnimer's Environs",
-      rooms: []
+      name: "Rocky Shoals",
+      uids: [7127020..7127030]
     }
-  ],
-  spawns: [
-    { zone: 2121, count: 1, uid_ranges: [[2121015, 2121024]] },
-    { zone: 7127, count: 1, uid_ranges: [[7127020, 7127030]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -57,7 +53,7 @@
     udf: 44,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: -23,
     pal_td: nil,
     ran_td: nil,
     sor_td: 9,

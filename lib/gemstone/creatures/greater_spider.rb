@@ -8,8 +8,8 @@
   family: "Arachnid",
   type: "Arachnid",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,32 +18,25 @@
   bcs: true,
   max_hp: 90,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "medium",
   areas: [
     {
-      name: "Foggy Valley",
-      rooms: []
-    },
-    {
-      name: "Old Mine Road",
-      rooms: []
-    },
-    {
       name: "The Graveyard",
-      rooms: []
+      uids: [2162001..2162015]
     },
     {
       name: "Vornavian Coast",
-      rooms: []
+      uids: [4202161..4202180, 4218201..4218221]
+    },
+    {
+      name: "Crystal Caves",
+      uids: [24001..24017]
+    },
+    {
+      name: "Sea Caverns",
+      uids: [392001..392008]
     }
-  ],
-  spawns: [
-    { zone: 24, count: 1, uid_ranges: [[24001, 24017]] },
-    { zone: 392, count: 1, uid_ranges: [[392001, 392008]] },
-    { zone: 2162, count: 1, uid_ranges: [[2162001, 2162015]] },
-    { zone: 4202, count: 1, uid_ranges: [[4202161, 4202180]] },
-    { zone: 4218, count: 1, uid_ranges: [[4218201, 4218221]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -76,7 +69,7 @@
     udf: 145,
     bar_td: 24,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 24,
     pal_td: nil,
     ran_td: 24,
     sor_td: 24,

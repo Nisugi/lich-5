@@ -8,8 +8,8 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "Fethayl Bog",
-      rooms: []
+      uids: [13038001..13038031]
     }
-  ],
-  spawns: [
-    { zone: 13038, count: 1, uid_ranges: [[13038001, 13038031]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -71,10 +68,10 @@
     udf: 319,
     bar_td: 182,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (181..190),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 201,
+    sor_td: (195..205),
     wiz_td: nil,
     mje_td: 195,
     mne_td: (186..204),

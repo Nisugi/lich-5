@@ -8,8 +8,8 @@
   family: "Witch",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,25 +19,17 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Glatoph",
-      rooms: []
+      uids: [35028..35038, 35068..35072]
     },
     {
-      name: "Northern Mountains",
-      rooms: []
-    },
-    {
-      name: "Olbin Pass",
-      rooms: []
+      name: "Sleeping Lady Mountains",
+      uids: [4560001..4560053]
     }
-  ],
-  spawns: [
-    { zone: 35, count: 2, uid_ranges: [[35028, 35038], [35068, 35072]] },
-    { zone: 4560, count: 2, uid_ranges: [[4560001, 4560053]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -71,10 +63,10 @@
     udf: 299,
     bar_td: (113..118),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (129..138),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 142,
+    sor_td: (136..146),
     wiz_td: nil,
     mje_td: 125,
     mne_td: 143,

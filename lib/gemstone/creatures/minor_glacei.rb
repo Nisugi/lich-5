@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Elemental",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: false,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,20 +18,13 @@
   bcs: true,
   max_hp: nil,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Arctic Tundra",
-      rooms: []
-    },
-    {
-      name: "Nightmare Gorge",
-      rooms: []
+      name: "Pinefar Forests",
+      uids: [4563030..4563043]
     }
-  ],
-  spawns: [
-    { zone: 4563, count: 1, uid_ranges: [[4563030, 4563043]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +53,10 @@
     udf: nil,
     bar_td: 158,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 160,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (168..177),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 158,

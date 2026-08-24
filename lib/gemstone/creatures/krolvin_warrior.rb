@@ -8,8 +8,8 @@
   family: "Krolvin",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -19,25 +19,17 @@
   bcs: true,
   max_hp: 220,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
-      name: "Abandoned Mine",
-      rooms: []
-    },
-    {
-      name: "Krolvin Ship",
-      rooms: []
-    },
-    {
       name: "Sea Caves",
-      rooms: []
+      uids: [26002..26036, 26103..26120]
+    },
+    {
+      name: "Lysierian Hills",
+      uids: [93057..93079]
     }
-  ],
-  spawns: [
-    { zone: 26, count: 3, uid_ranges: [[26002, 26036], [26103, 26120]] },
-    { zone: 93, count: 2, uid_ranges: [[93057, 93079]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -66,10 +58,10 @@
     udf: 201,
     bar_td: 57,
     cle_td: (54..57),
-    emp_td: nil,
+    emp_td: (41..49),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 57,
+    sor_td: (57..63),
     wiz_td: nil,
     mje_td: 63,
     mne_td: 57,

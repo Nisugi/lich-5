@@ -8,8 +8,8 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -22,12 +22,9 @@
   size: "",
   areas: [
     {
-      name: "Sanctum",
-      rooms: []
+      name: "Shadow of the Sanctum",
+      uids: [4216001..4216049]
     }
-  ],
-  spawns: [
-    { zone: 4216, count: 2, uid_ranges: [[4216001, 4216049]] }
   ],
   attack_attributes: {
     physical_attacks: [],

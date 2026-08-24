@@ -8,8 +8,8 @@
   family: "Fungus",
   type: "Plantlife",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [],
@@ -21,11 +21,8 @@
   areas: [
     {
       name: "Wraithenmist",
-      rooms: []
+      uids: [13027003..13027035, 13027056..13027083]
     }
-  ],
-  spawns: [
-    { zone: 13027, count: 3, uid_ranges: [[13027003, 13027035], [13027056, 13027083]] }
   ],
   attack_attributes: {
     physical_attacks: [],

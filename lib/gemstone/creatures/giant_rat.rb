@@ -8,8 +8,8 @@
   family: "Rodent",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,36 +18,25 @@
   bcs: true,
   max_hp: 28,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 1,
+  size: "small",
   areas: [
     {
-      name: "Icemule Environs",
-      rooms: []
+      name: "Catacombs",
+      uids: [46001..46003, 46007..46007, 46039..46041, 46052..46058, 2133100..2133109, 2133200..2133206, 2134100..2134108, 2134200..2134207, 2135100..2135107, 2135200..2135209, 2136100..2136108, 2136200..2136208, 4126004..4126023]
     },
     {
-      name: "Kobold Village",
-      rooms: []
+      name: "Lower Dragonsclaw",
+      uids: [372005..372014, 372020..372026, 372030..372039]
     },
     {
-      name: "River Tunnels",
-      rooms: []
+      name: "The Citadel",
+      uids: [2103007..2103013, 2103015..2103023]
     },
     {
-      name: "Wehnimer's Landing",
-      rooms: []
+      name: "Subterranean Tunnels",
+      uids: [4045150..4045158, 4045160..4045168, 4045200..4045210]
     }
-  ],
-  spawns: [
-    { zone: 46, count: 2, uid_ranges: [[46001, 46003], [46007, 46007], [46039, 46041], [46052, 46058]] },
-    { zone: 372, count: 2, uid_ranges: [[372005, 372014], [372020, 372026], [372030, 372039]] },
-    { zone: 2103, count: 1, uid_ranges: [[2103007, 2103013], [2103015, 2103023]] },
-    { zone: 2133, count: 2, uid_ranges: [[2133100, 2133109], [2133200, 2133206]] },
-    { zone: 2134, count: 2, uid_ranges: [[2134100, 2134108], [2134200, 2134207]] },
-    { zone: 2135, count: 2, uid_ranges: [[2135100, 2135107], [2135200, 2135209]] },
-    { zone: 2136, count: 2, uid_ranges: [[2136100, 2136108], [2136200, 2136208]] },
-    { zone: 4045, count: 3, uid_ranges: [[4045150, 4045158], [4045160, 4045168], [4045200, 4045210]] },
-    { zone: 4126, count: 1, uid_ranges: [[4126004, 4126023]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -66,13 +55,13 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (12..34),
+    melee: (24..34),
     ranged: 2,
     bolt: 2,
     udf: 32,
     bar_td: 3,
     cle_td: 3,
-    emp_td: nil,
+    emp_td: -31,
     pal_td: 3,
     ran_td: nil,
     sor_td: 3,

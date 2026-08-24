@@ -8,8 +8,8 @@
   family: "Bear",
   type: "Quadruped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,20 +18,17 @@
   bcs: true,
   max_hp: 260,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "large",
   areas: [
     {
       name: "Hidden Vale",
-      rooms: []
+      uids: [40001..40013, 40020..40020]
     },
     {
-      name: "Troll Lair",
-      rooms: []
+      name: "unmapped",
+      uids: [40014..40019]
     }
-  ],
-  spawns: [
-    { zone: 40, count: 1, uid_ranges: [[40001, 40020]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -60,10 +57,10 @@
     udf: 174,
     bar_td: nil,
     cle_td: 69,
-    emp_td: nil,
+    emp_td: (41..49),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 63,
+    sor_td: (63..69),
     wiz_td: nil,
     mje_td: 63,
     mne_td: 63,

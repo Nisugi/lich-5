@@ -8,8 +8,8 @@
   family: "Shan",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: nil,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Forgotten Vineyard",
-      rooms: []
+      uids: [4225003..4225016]
     }
-  ],
-  spawns: [
-    { zone: 4225, count: 1, uid_ranges: [[4225003, 4225016]] }
   ],
   attack_attributes: {
     physical_attacks: [],
@@ -47,7 +44,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (286..293),
     pal_td: nil,
     ran_td: nil,
     sor_td: nil,

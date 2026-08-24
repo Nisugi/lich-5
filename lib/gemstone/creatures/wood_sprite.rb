@@ -8,8 +8,8 @@
   family: "Fey",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -19,16 +19,13 @@
   bcs: true,
   max_hp: 240,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 3,
+  size: "tiny",
   areas: [
     {
       name: "Gyldemar Forest",
-      rooms: []
+      uids: [13031001..13031012, 13031025..13031043, 13031055..13031081]
     }
-  ],
-  spawns: [
-    { zone: 13031, count: 3, uid_ranges: [[13031001, 13031012], [13031025, 13031043], [13031055, 13031081]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -74,10 +71,10 @@
     udf: 358,
     bar_td: (119..124),
     cle_td: nil,
-    emp_td: nil,
+    emp_td: (140..150),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 148,
+    sor_td: (140..149),
     wiz_td: nil,
     mje_td: 146,
     mne_td: 157,

@@ -8,8 +8,8 @@
   family: "Bird",
   type: "Avian",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,21 +18,17 @@
   bcs: true,
   max_hp: 120,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 2,
+  size: "large",
   areas: [
     {
-      name: "River's Rest Environs",
-      rooms: []
+      name: "The Citadel",
+      uids: [2102022..2102049]
     },
     {
-      name: "The Citadel",
-      rooms: []
+      name: "South River Road",
+      uids: [2104010..2104016]
     }
-  ],
-  spawns: [
-    { zone: 2102, count: 1, uid_ranges: [[2102022, 2102049]] },
-    { zone: 2104, count: 1, uid_ranges: [[2104010, 2104016]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -67,7 +63,7 @@
     udf: nil,
     bar_td: nil,
     cle_td: 21,
-    emp_td: 21,
+    emp_td: (-7..21),
     pal_td: nil,
     ran_td: nil,
     sor_td: 21,

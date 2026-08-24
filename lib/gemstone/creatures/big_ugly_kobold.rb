@@ -8,8 +8,8 @@
   family: "Kobold",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: nil,
+  bones: true,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -18,16 +18,13 @@
   bcs: true,
   max_hp: 50,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
-      name: "Kobold Village",
-      rooms: []
+      name: "Lower Dragonsclaw",
+      uids: [373005..373016]
     }
-  ],
-  spawns: [
-    { zone: 373, count: 1, uid_ranges: [[373005, 373016]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -46,16 +43,16 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (22..109),
+    melee: (34..66),
     ranged: nil,
     bolt: 23,
     udf: 96,
     bar_td: nil,
     cle_td: nil,
-    emp_td: 6,
+    emp_td: (-27..6),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 6,
     wiz_td: nil,
     mje_td: 6,
     mne_td: 6,

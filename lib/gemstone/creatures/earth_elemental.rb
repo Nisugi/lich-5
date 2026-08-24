@@ -8,8 +8,8 @@
   family: "Elemental",
   type: "Elemental",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: false,
+  bones: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -17,18 +17,15 @@
     "Magical"
   ],
   bcs: true,
-  max_hp: 400,
+  max_hp: 443,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 10,
+  size: "huge",
   areas: [
     {
-      name: "Thanatoph",
-      rooms: []
+      name: "Bowels of Thanatoph",
+      uids: [4293001..4293032, 4293051..4293057]
     }
-  ],
-  spawns: [
-    { zone: 4293, count: 3, uid_ranges: [[4293001, 4293032], [4293051, 4293057]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -47,18 +44,18 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: nil,
+    melee: (160..293),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 662,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 315,
     pal_td: nil,
     ran_td: nil,
     sor_td: (366..375),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 369,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,

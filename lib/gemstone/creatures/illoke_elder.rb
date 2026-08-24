@@ -8,8 +8,8 @@
   family: "Giant",
   type: "Biped",
   undead: false,
-  has_blood: nil,
-  has_bones: nil,
+  blood: true,
+  bones: true,
   muggable: nil,
   boss: true,
   otherclass: [
@@ -17,18 +17,15 @@
     "Boss"
   ],
   bcs: true,
-  max_hp: 600,
+  max_hp: 610,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 21,
+  size: "huge",
   areas: [
     {
-      name: "Thanatoph",
-      rooms: []
+      name: "Bowels of Thanatoph",
+      uids: [4293015..4293057]
     }
-  ],
-  spawns: [
-    { zone: 4293, count: 3, uid_ranges: [[4293015, 4293057]] }
   ],
   attack_attributes: {
     physical_attacks: [
@@ -73,18 +70,18 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: "+305",
+    melee: (259..504),
     ranged: "+285-309",
     bolt: "+202",
-    udf: nil,
+    udf: 759,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 360,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 393,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 425,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,
