@@ -83,7 +83,7 @@
     udf: 144,
     bar_td: 18,
     cle_td: nil,
-    emp_td: (-11..18),
+    emp_td: 18,
     pal_td: nil,
     ran_td: nil,
     sor_td: 18,
@@ -134,7 +134,8 @@
       "A stout bright orange monkey scampers {direction}.",
       "A bright green monkey scampers {direction}.",
       "A stout bright orange monkey scampers {direction} of sight!",
-      "A monkey scampers {direction} of sight!"
+      "A monkey scampers {direction} of sight!",
+      "A bright green monkey scampers {direction} of sight!"
     ],
     death: [
       "The monkey screeches one last time and dies.",

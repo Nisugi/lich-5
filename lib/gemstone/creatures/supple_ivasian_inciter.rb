@@ -79,7 +79,7 @@
     emp_td: (254..264),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 284,
+    sor_td: (271..284),
     wiz_td: nil,
     mje_td: (273..276),
     mne_td: nil,

@@ -121,7 +121,7 @@
     udf: 322,
     bar_td: 205,
     cle_td: 219,
-    emp_td: (217..231),
+    emp_td: 231,
     pal_td: nil,
     ran_td: (179..193),
     sor_td: "231 to 234",

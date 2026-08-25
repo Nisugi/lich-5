@@ -65,7 +65,7 @@
     udf: 50,
     bar_td: 9,
     cle_td: 9,
-    emp_td: (-23..9),
+    emp_td: 9,
     pal_td: 9,
     ran_td: 9,
     sor_td: 9,

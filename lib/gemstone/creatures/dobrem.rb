@@ -59,7 +59,7 @@
     udf: 172,
     bar_td: "+84 TD",
     cle_td: "+84 TD",
-    emp_td: "+84 TD",
+    emp_td: (76..84),
     pal_td: "+84 TD",
     ran_td: "+84 TD",
     sor_td: "+84 TD",

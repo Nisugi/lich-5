@@ -79,7 +79,7 @@
     udf: 398,
     bar_td: 169,
     cle_td: 185,
-    emp_td: (183..213),
+    emp_td: 213,
     pal_td: 160,
     ran_td: nil,
     sor_td: (194..203),

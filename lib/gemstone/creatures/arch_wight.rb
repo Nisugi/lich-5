@@ -96,7 +96,7 @@
     udf: 152,
     bar_td: 66,
     cle_td: 60,
-    emp_td: (45..68),
+    emp_td: (60..68),
     pal_td: 60,
     ran_td: 60,
     sor_td: 60,

@@ -75,7 +75,7 @@
     emp_td: (257..267),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 285,
+    sor_td: (252..285),
     wiz_td: nil,
     mje_td: 276,
     mne_td: nil,

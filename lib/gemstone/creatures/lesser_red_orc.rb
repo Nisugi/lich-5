@@ -53,7 +53,7 @@
     udf: 114,
     bar_td: 21,
     cle_td: nil,
-    emp_td: -7,
+    emp_td: 21,
     pal_td: nil,
     ran_td: 21,
     sor_td: 21,

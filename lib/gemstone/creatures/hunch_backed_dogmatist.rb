@@ -83,7 +83,7 @@
     udf: 424,
     bar_td: "268 to 277",
     cle_td: "281 to 397",
-    emp_td: "277 to 293",
+    emp_td: (283..293),
     pal_td: 247,
     ran_td: nil,
     sor_td: "315 to 322",
