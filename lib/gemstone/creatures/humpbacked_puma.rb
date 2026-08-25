@@ -69,7 +69,7 @@
     udf: 197,
     bar_td: nil,
     cle_td: nil,
-    emp_td: (25..33),
+    emp_td: (25..53),
     pal_td: nil,
     ran_td: nil,
     sor_td: 45,

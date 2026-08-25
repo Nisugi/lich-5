@@ -62,7 +62,7 @@
     udf: 165,
     bar_td: 45,
     cle_td: 45,
-    emp_td: (25..45),
+    emp_td: (25..53),
     pal_td: 45,
     ran_td: 45,
     sor_td: 45,

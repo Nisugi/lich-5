@@ -68,7 +68,7 @@
     udf: 232,
     bar_td: 60,
     cle_td: 60,
-    emp_td: (45..49),
+    emp_td: (45..64),
     pal_td: 60,
     ran_td: 60,
     sor_td: (57..66),

@@ -65,7 +65,7 @@
     udf: 196,
     bar_td: 63,
     cle_td: nil,
-    emp_td: (53..61),
+    emp_td: (53..74),
     pal_td: nil,
     ran_td: nil,
     sor_td: 66,
@@ -103,7 +103,8 @@
       "The warthog lets out a final agonized snuffle and dies."
     ],
     decay: [
-      "A warthog decays into a pile of fur and bone."
+      "A warthog decays into a pile of fur and bone.",
+      "The warthog's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

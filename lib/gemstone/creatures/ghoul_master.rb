@@ -74,7 +74,7 @@
     udf: 211,
     bar_td: 48,
     cle_td: 48,
-    emp_td: 29,
+    emp_td: (29..48),
     pal_td: 48,
     ran_td: 48,
     sor_td: 48,

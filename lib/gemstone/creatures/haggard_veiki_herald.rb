@@ -59,7 +59,7 @@
     udf: 485,
     bar_td: nil,
     cle_td: nil,
-    emp_td: (368..376),
+    emp_td: (359..376),
     pal_td: nil,
     ran_td: nil,
     sor_td: "366 to 396",

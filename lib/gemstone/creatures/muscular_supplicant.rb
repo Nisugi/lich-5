@@ -90,7 +90,8 @@
       "Standing somewhere near average height for a human, the muscular supplicant is a lean frame of wiry muscle covered by scarred and dry skin. A great mop of greasy hair covers her eyes, twisted up in long braids. Intricate tattoos cover the exposed flesh, drawing unrecognizable patterns."
     ],
     arrival: [
-      "A muscular supplicant just arrived."
+      "A muscular supplicant just arrived.",
+      "A muscular supplicant strides into the area!"
     ],
     flee: [],
     death: [
@@ -98,7 +99,8 @@
       "A muscular supplicant thrashes violently and then dies.",
       "A muscular supplicant goes limp as he is rendered unconscious!",
       "A muscular supplicant dies and collapses to the floor.",
-      "A muscular supplicant staggers, then falls to the floor and dies."
+      "A muscular supplicant staggers, then falls to the floor and dies.",
+      "With an ear-piercing cry of agony, the muscular supplicant dies."
     ],
     decay: [
       "A muscular supplicant crumbles to dust and blows away on the wind.",

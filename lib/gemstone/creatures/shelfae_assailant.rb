@@ -51,7 +51,7 @@
     udf: 73,
     bar_td: nil,
     cle_td: nil,
-    emp_td: 9,
+    emp_td: (9..37),
     pal_td: nil,
     ran_td: nil,
     sor_td: 33,
