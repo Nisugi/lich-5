@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Short sword",
-        as: 128
+        as: (118..128)
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,10 +82,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A greater burrow orc growls one last time and dies.",
+      "A greater burrow orc growls silently one last time and dies.",
+      "A greater burrow orc goes limp as he is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater burrow orc swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

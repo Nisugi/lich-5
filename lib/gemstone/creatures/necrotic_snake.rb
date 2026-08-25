@@ -38,7 +38,7 @@
     physical_attacks: [
       {
         name: "Strike",
-        as: (277..291)
+        as: 288
       }
     ],
     bolt_spells: [],
@@ -50,6 +50,12 @@
       },
       {
         name: "Poison Spit"
+      },
+      {
+        name: "Spit"
+      },
+      {
+        name: "Strike"
       }
     ],
     special_abilities: [],
@@ -82,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -94,12 +101,26 @@
     description: [
       "The fearsome product of magical experimentation, the necrotic snake is larger than most men. Rotting scales cover the length of the undead reptile in a diamond pattern formed of various hues of brown, gold, and black. Large gashes in the snake's side reveal thin rib bones and the carcasses of previous meals, while leaking rancid fumes into the surrounding air."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A necrotic snake slithers in.",
+      "A necrotic snake arrives, slithering awkwardly in obvious pain."
+    ],
+    flee: [
+      "A necrotic snake slithers {direction}, leaving a trail of rotting scales."
+    ],
+    death: [
+      "A necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp."
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the necrotic snake's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A necrotic snake hisses and strikes at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

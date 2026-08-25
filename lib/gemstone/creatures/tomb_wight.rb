@@ -29,10 +29,15 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Broadsword"
+        name: "Broadsword",
+        as: 131
       },
       {
         name: "Two-handed sword",
+        as: 157
+      },
+      {
+        name: "Twohanded sword",
         as: 157
       }
     ],
@@ -70,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -82,12 +88,26 @@
     description: [
       "A tomb wight is a mass of blackened muscle in humanoid form. Striding boldly upright and with a determined gaze, a tomb wight marches through the world of the dead, seeking the bodies of the recently deceased. Though, in fact, dead itself, its putrid breath reveals its consumption of a steady diet of decayed flesh. If none can be found, a tomb wight is more than happy to cause the living to become the recently deceased."
     ],
-    arrival: [],
+    arrival: [
+      "A tomb wight just arrived.",
+      "A tomb wight just arrived, limping.",
+      "A tomb wight just arrived, limping badly."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The tomb wight falls to the ground motionless.",
+      "The tomb wight screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A tomb wight crumbles to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A tomb wight swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

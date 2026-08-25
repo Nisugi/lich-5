@@ -35,7 +35,11 @@
       },
       {
         name: "Ensnare",
-        as: 402
+        as: 424
+      },
+      {
+        name: "Fist",
+        as: 410
       }
     ],
     bolt_spells: [
@@ -66,7 +70,7 @@
     emp_td: 321,
     pal_td: nil,
     ran_td: nil,
-    sor_td: 346,
+    sor_td: (346..358),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 379,
@@ -88,6 +92,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -102,10 +107,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The greater skayl goes limp and it falls over as the fire slowly fades from its eyes."
+    ],
+    decay: [
+      "Bright orange lava oozes out of the greater skayl before it crumbles into a lifeless pile of glaes."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater skayl pounds at you with {pronoun} fist!",
+      "A greater skayl releases a wave of fiery red energy at you!",
+      "A greater skayl tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

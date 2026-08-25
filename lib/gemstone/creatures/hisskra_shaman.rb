@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Trident",
-        as: 222
+        as: (208..222)
       }
     ],
     bolt_spells: [],
@@ -90,6 +90,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -104,10 +105,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The hisskra shaman rolls over on his back and dies."
+    ],
+    decay: [
+      "A hisskra shaman decays into a pile of scales and bone.",
+      "A hisskra shaman collapses into a putrid lump of scaly flesh.",
+      "A hisskra shaman withers away, leaving nothing but a few scales that blow away on a gentle breeze.",
+      "A hisskra shaman's scales wither as he decays into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An hisskra shaman swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

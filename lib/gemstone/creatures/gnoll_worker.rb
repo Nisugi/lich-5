@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Hatchet",
-        as: 125
+        as: (112..125)
       }
     ],
     bolt_spells: [],
@@ -69,6 +69,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,12 +82,24 @@
     description: [
       "The gnoll worker is about three feet tall and vaguely man-like. Gnolls in general have a dwarven or gnomish appearance, but are markedly different in a way that can't quite be pin-pointed. This particular gnoll is part of the working class with well-muscled arms and callused hands. There is little doubt that the gnoll would be a formidable opponent if the need should arise, or if backed into a corner."
     ],
-    arrival: [],
+    arrival: [
+      "A gnoll ranger wanders in, alertly surveying its surroundings.",
+      "A gnoll worker strides in solemnly."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The gnoll worker falls to the ground and dies.",
+      "The gnoll worker rolls over and dies.",
+      "A gnoll worker goes limp as she is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A gnoll worker swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

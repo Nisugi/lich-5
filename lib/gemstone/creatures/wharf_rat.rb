@@ -60,6 +60,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -72,12 +73,28 @@
     description: [
       ""
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A choking fetid odor heralds the arrival of a wharf rat!",
+      "A wharf rat scampers in!"
+    ],
+    flee: [
+      "A wharf rat scampers {direction}."
+    ],
+    death: [
+      "The wharf rat collapses to the ground, emits a final squeal, and dies.",
+      "The wharf rat twitches and dies.",
+      "The wharf rat collapses to the ground, emits a final silent squeal, and dies."
+    ],
+    decay: [
+      "A wharf rat decays into a pile of mangy hair and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A wharf rat tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

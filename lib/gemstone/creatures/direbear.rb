@@ -88,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -100,12 +101,32 @@
     description: [
       "The direbear is a huge powerful beast with baleful red eyes that seem to bore through to the very soul. Impressively large bone deposits protrude across the breadth of the beast's back and neck. Large teeth that seem too big even for the massive maw can easily be seen even when the powerful jaws are closed. Mist, or perhaps tendrils of smoke, occasionally drift up from the flaring nostrils. Sharp eyes, a sense of smell to match, and a cunning said to rival demons make a direbear something to be avoid."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A direbear lumbers in, balefully surveying the area with bloodshot red eyes!",
+      "A direbear lumbers in!",
+      "A direbear shudders and lumbers in, snarling in agony!",
+      "A direbear slowly lumbers in, growling in pain!"
+    ],
+    flee: [
+      "A direbear lumbers {direction}.",
+      "A direbear slowly lumbers {direction}, growling in pain.",
+      "A direbear shudders and lumbers {direction}, snarling in agony.",
+      "A direbear crawls {direction}."
+    ],
+    death: [
+      "The direbear collapses heavily into a heap on the ground and dies.",
+      "The direbear lets out a blood-curdling roar and dies."
+    ],
+    decay: [
+      "A direbear decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A monstrous direwolf focuses direbear glare on you and looses an eerie, bone-chilling howl!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

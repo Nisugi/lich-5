@@ -41,6 +41,14 @@
       {
         name: "Battle-axe",
         as: 205
+      },
+      {
+        name: "Enruned ice-covered battle axe",
+        as: 200
+      },
+      {
+        name: "Freezing ball of pure cold",
+        as: 185
       }
     ],
     bolt_spells: [
@@ -82,6 +90,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -96,10 +105,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The ice troll cries out in cold agony one last time and dies.",
+      "An ice troll goes limp as she is rendered unconscious!",
+      "The ice troll falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An ice troll hurls {weapon} at you!",
+      "An ice troll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -74,7 +74,7 @@
     emp_td: (249..268),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 277,
+    sor_td: (274..280),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 288,
@@ -97,6 +97,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -109,12 +110,28 @@
     description: [
       "The emaciated hierophant stands short for a human, and might pass for one except for the storm grey eyes that swirl with unearthly energy. Long robes that appear to float in the air gap to reveal an ornate tunic and breeches with polished green leather boots to the knee. A long golden chain hangs about his neck, a small glowing red crystal suspended as a pendant there. Intricate tattoos cover his flesh, drawing ornate and unrecognizable patterns that glow a dull red and seem to pulse along as if it were blood."
     ],
-    arrival: [],
+    arrival: [
+      "An emaciated hierophant just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "An emaciated hierophant dies and collapses to the floor.",
+      "With an ear-piercing cry of agony, the emaciated hierophant dies.",
+      "An emaciated hierophant goes limp as she is rendered unconscious!",
+      "An emaciated hierophant thrashes violently and then dies.",
+      "An emaciated hierophant dies, falling down like a rag doll.",
+      "An emaciated hierophant staggers, then falls to the floor and dies."
+    ],
+    decay: [
+      "An emaciated hierophant crumbles to dust and blows away on the wind.",
+      "An emaciated hierophant suddenly dissolves into a puddle of viscous ooze.",
+      "The emaciated hierophant's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

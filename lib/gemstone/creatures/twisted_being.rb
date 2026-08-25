@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 396
+        as: (356..396)
       },
       {
         name: "Claw",
@@ -82,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -100,6 +101,13 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A twisted being tries to bite you!"
+    ],
+    claw: [
+      "A twisted being claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -47,11 +47,15 @@
       },
       {
         name: "Falchion",
-        as: 200
+        as: (162..200)
       },
       {
         name: "Morning star",
         as: 196
+      },
+      {
+        name: "Broadsword",
+        as: 204
       }
     ],
     bolt_spells: [
@@ -113,6 +117,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -127,10 +132,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A krolvin warfarer goes limp as he is rendered unconscious!",
+      "The krolvin warfarer twitches violently, then dies."
+    ],
+    decay: [
+      "The krolvin warfarer's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A krolvin warfarer gestures at you!",
+      "A krolvin warfarer swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

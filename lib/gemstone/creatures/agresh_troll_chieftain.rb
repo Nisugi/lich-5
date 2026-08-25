@@ -30,16 +30,22 @@
     physical_attacks: [
       {
         name: "Flail",
-        as: (207..247)
+        as: 247
+      },
+      {
+        name: "Military pick",
+        as: 227
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "+40 AS boost"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_notes: []
@@ -73,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -85,12 +92,24 @@
     description: [
       "The troll chieftain splatters its surroundings with flecks of spittle as it lifts its head and snarls. Crudely drawn symbols painted with ash on its face do little to improve its gruesome visage as it scrunches its face into an expression of rage. Tufts of golden hair on its otherwise barren body make it look that much more ugly."
     ],
-    arrival: [],
+    arrival: [
+      "An Agresh troll chieftain just arrived!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The troll chieftain bellows in rage one last time and dies.",
+      "An Agresh troll chieftain goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "An Agresh troll chieftain decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Agresh troll chieftain swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

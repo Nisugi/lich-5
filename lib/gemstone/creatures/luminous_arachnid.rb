@@ -34,7 +34,7 @@
       },
       {
         name: "Ensnare",
-        as: 152
+        as: (148..152)
       }
     ],
     bolt_spells: [],
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,12 +88,26 @@
     description: [
       "Dotting the pale-skinned arachnid are numerous tiny luminescent diamond-shaped markings. The markings glow with a bluish-green tint."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A carrion worm crawls in, leaving a trail of slime in its wake."
+    ],
+    flee: [
+      "A luminous arachnid crawls {direction}."
+    ],
+    death: [
+      "The luminous arachnid collapses to the ground and dies.",
+      "The luminous arachnid's body jerks one last time and dies."
+    ],
+    decay: [
+      "A luminous arachnid's legs shrivel up beneath it as it decays into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A arachnid tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

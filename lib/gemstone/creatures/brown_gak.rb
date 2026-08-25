@@ -31,6 +31,10 @@
       {
         name: "Impale",
         as: 48
+      },
+      {
+        name: "Tusk",
+        as: 43
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -81,10 +86,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The brown gak collapses to the ground, emits a final bellow, and dies.",
+      "The brown gak lets out a final agonized bellow and dies.",
+      "The brown gak collapses to the ground, emits a final silent bellow, and dies.",
+      "A brown gak goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A brown gak decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A brown gak charges at you with {pronoun} tusk!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -62,6 +62,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -74,12 +75,26 @@
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A shan shaman wanders in chanting an orison!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The shan shaman yips in pain as she falls to the ground motionless.",
+      "The shan shaman howls out one last time and dies.",
+      "The shan shaman shudders and falls to the ground motionless.",
+      "The shan shaman yips in pain as he falls to the ground motionless.",
+      "A shan shaman's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
+      "A shan shaman's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
+    ],
+    decay: [
+      "The shan shaman's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

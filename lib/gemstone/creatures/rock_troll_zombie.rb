@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 245
+        as: (227..245)
       }
     ],
     bolt_spells: [],
@@ -43,6 +43,12 @@
       },
       {
         name: "Disarm Weapon"
+      },
+      {
+        name: "Disarm"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -75,6 +81,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,12 +94,23 @@
     description: [
       "A rock troll zombie is a towering sight to behold. Standing well over the height of two giantkin combined, the troll zombie is clad in rock armor, composed entirely of granite. Golden embers burn with a hatred of life out from under the zombie's massive granite helm."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A rock troll zombie lumbers in!",
+      "A rock troll zombie lumbers in, limping slightly!"
+    ],
+    flee: [
+      "A rock troll zombie lumbers {direction}.",
+      "A rock troll zombie lumbers {direction} with a slight limp."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A rock troll zombie claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

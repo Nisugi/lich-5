@@ -72,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -84,12 +85,24 @@
     description: [
       "Barely still connected to the living plane, the moaning phantom flickers in and out as it confronts those that would intrude upon its rest. The outlines of its shape are barely apparent, but what is visible suggests a once-humanoid appearance, caught in a continuous scream of anguish. The phantom must move and strike quickly, as it is only able to glimpse the figures of the targets around it when it is in its most visible state."
     ],
-    arrival: [],
+    arrival: [
+      "A darkness flows out of the ground and materializes into a moaning phantom!",
+      "A moaning phantom just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The moaning phantom slowly settles to the ground and begins to dissipate."
+    ],
+    decay: [
+      "A moaning phantom vanishes into thin air, leaving no trace behind."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A moaning phantom swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -33,12 +33,11 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Two-handed sword",
-        as: (175..211)
+        name: "Two-handed sword"
       },
       {
         name: "War hammer",
-        as: (175..211)
+        as: 175
       }
     ],
     bolt_spells: [],
@@ -81,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,10 +95,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The war troll falls to the ground and dies.",
+      "The war troll screams one last time and dies."
+    ],
+    decay: [
+      "A war troll decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A war troll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

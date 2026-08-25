@@ -73,6 +73,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -85,12 +86,23 @@
     description: [
       "Light fingered and agile, the gnoll thief is easily at home in both the dark stone corridors of his lair and anywhere that loot may be gained. Wiry and lithe, with pale skin and large, colorless eyes, the thief stands around three feet tall as it regards you uneasily."
     ],
-    arrival: [],
+    arrival: [
+      "A gnoll ranger wanders in, alertly surveying its surroundings."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The gnoll thief rolls over and dies.",
+      "The gnoll thief falls to the ground and dies.",
+      "A gnoll thief goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The gnoll thief's tibia passes her femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -8,7 +8,7 @@
   family: "Griffin",
   type: "Hybrid",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: true,
@@ -35,11 +35,19 @@
       },
       {
         name: "Bite",
-        as: 341
+        as: (338..341)
       },
       {
         name: "Claw",
-        as: 348
+        as: (348..351)
+      },
+      {
+        name: "Beak",
+        as: 329
+      },
+      {
+        name: "Swoop",
+        as: 320
       }
     ],
     bolt_spells: [],
@@ -51,6 +59,9 @@
       },
       {
         name: "Wing Swat"
+      },
+      {
+        name: "Dive"
       }
     ],
     special_abilities: [
@@ -78,7 +89,7 @@
     emp_td: (267..273),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 278,
+    sor_td: (278..290),
     wiz_td: nil,
     mje_td: 285,
     mne_td: (292..304),
@@ -93,6 +104,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -105,12 +117,28 @@
     description: [
       "The lesser griffin is a magnificent beast, as if designed by the gods to embody fierce and graceful predation. Its front legs, forebody, wings, and head are those of a great eagle, complete with large white feathers and aquiline beak. The rear half of the creature's body is that of a powerful lion, with short tawny fur and a long feline tail. Emphasized by its size, which is larger than a warhorse, the griffin's renowned majestic presence and great bravery have earned the creature a place on many nobles' coats-of-arms."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A grifflet surveys the area intently as it flies into sight!"
+    ],
+    flee: [
+      "A lesser griffin flies {direction}."
+    ],
+    death: [
+      "The lesser griffin writhes in agony, its wings flapping fruitlessly as it dies."
+    ],
+    decay: [
+      "The lesser griffin decays into a pile of feathers and fur."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser griffin rakes at you with a razor-sharp claw!",
+      "A lesser griffin tries to spear you with lesser griffin beak!"
+    ],
+    bite: [
+      "A lesser griffin tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

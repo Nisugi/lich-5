@@ -60,6 +60,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -72,12 +73,27 @@
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A shelfae guard just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The shelfae guard falls to the ground and dies.",
+      "A shelfae guard goes limp as it is rendered unconscious!",
+      "The shelfae guard screams one last time and dies."
+    ],
+    decay: [
+      "A guard crumbles into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A shelfae guard tries to bite you!"
+    ],
+    claw: [
+      "A shelfae guard claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

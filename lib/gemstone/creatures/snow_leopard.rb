@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 203
+        as: (182..203)
       },
       {
         name: "Charge",
@@ -42,7 +42,7 @@
       },
       {
         name: "Claw",
-        as: 213
+        as: (187..213)
       }
     ],
     bolt_spells: [],
@@ -83,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -95,12 +96,29 @@
     description: [
       "With her distinctive markings, the reclusive snow leopard is endowed with an almost uncanny ability to blend into the rocky vastness she inhabits. Adapted to living in the rugged mountains, she has large forepaws, short forelimbs, well-developed chest muscles and a long, elegant tail. The leopard's fur is a beautiful combination of dark spots set against a field of tan that fades from a dorsal stripe to luminous white on the leopard's belly. Small ears crown the animal's head."
     ],
-    arrival: [],
+    arrival: [
+      "A snow leopard just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The snow leopard lets out a final caterwaul and dies.",
+      "The snow leopard crumples to the ground and dies.",
+      "A snow leopard goes limp as he is rendered unconscious!",
+      "A snow leopard goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A snow leopard decays into a compost of fangs, fur and claws.",
+      "Acid dissolves connecting cartilage, freeing the snow leopard's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A snow leopard tries to bite you!"
+    ],
+    claw: [
+      "A snow leopard claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

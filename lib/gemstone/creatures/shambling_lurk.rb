@@ -33,8 +33,12 @@
         as: 450
       },
       {
-        name: "Bite",
-        as: "(Enraged) 530"
+        name: "Bloated arms",
+        as: 470
+      },
+      {
+        name: "Strike",
+        as: 459
       }
     ],
     bolt_spells: [
@@ -49,13 +53,18 @@
         name: "Elemental Wave"
       }
     ],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Vomit"
       },
       {
         name: "Bite"
+      },
+      {
+        name: "Gesture"
+      },
+      {
+        name: "Strike"
       }
     ],
     special_notes: []
@@ -87,6 +96,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -99,12 +109,26 @@
     description: [
       "Not dead so long that its body has begun to lose the unwinnable war against decay, a shambling lurk is firmly in the grip of rigor mortis. Its face is paralyzed in a slack-jawed smile that reveals broken teeth and a dry and swollen tongue. From the viridian firelight dancing in its eyes, it is clear that it is beyond the services of a cleric, except perhaps to grant the blessing of a swift release."
     ],
-    arrival: [],
+    arrival: [
+      "A shambling lurk just arrived.",
+      "Vital fluids seeping from its orifices, a shambling lurk shambles in with a piteous moan."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A patchwork flesh monstrosity tries to ensnare you with shambling lurk bloated arms!",
+      "A shambling lurk manages a fumbling gesture toward you!",
+      "A sheen of venom glistening from shambling lurk needle-sharp fangs, a white sidewinder strikes at you!",
+      "Desperate in shambling lurk hunger for flesh, a shambling lurk throws itself at you!",
+      "Gnawing blindly with shattered teeth, a shambling lurk tries to bite into you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

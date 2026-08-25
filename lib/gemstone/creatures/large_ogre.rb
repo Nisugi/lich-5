@@ -46,7 +46,7 @@
       },
       {
         name: "Closed fist",
-        as: 155
+        as: (130..155)
       },
       {
         name: "Flail",
@@ -54,6 +54,14 @@
       },
       {
         name: "Two-handed sword",
+        as: 165
+      },
+      {
+        name: "Mace",
+        as: 155
+      },
+      {
+        name: "Spear",
         as: 165
       }
     ],
@@ -63,6 +71,9 @@
     maneuvers: [
       {
         name: "Tackle"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -95,6 +106,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -107,12 +119,28 @@
     description: [
       "Even while slightly hunched over, the large ogre is taller than any giantman. Heavily muscled, his long arms hang nearly to the ground, ending in massive hands that easily crush anything unlucky enough to be in their grasp. The large ogre squints, as if barely able to see through his long, matted hair or extremely puzzled by the world around him. When standing downwind of this creature, it is evident that a bath is long overdue."
     ],
-    arrival: [],
+    arrival: [
+      "A large ogre just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The large ogre screams one last time and dies.",
+      "The large ogre falls to the ground and dies.",
+      "The large ogre screams silently one last time and dies.",
+      "A large ogre goes limp as he is rendered unconscious!",
+      "A large ogre goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A large ogre decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A large ogre swings {weapon} at you!",
+      "A large ogre thrusts with a spear at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

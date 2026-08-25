@@ -29,12 +29,14 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Claw",
-        as: (107..119)
+        name: "Claw"
       },
       {
-        name: "Pincer (attack)",
-        as: (95..107)
+        name: "Pincer (attack)"
+      },
+      {
+        name: "Pincer",
+        as: 107
       }
     ],
     bolt_spells: [],
@@ -75,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: false,
@@ -89,10 +92,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The brown spinner's body jerks one last time and dies.",
+      "The brown spinner collapses to the ground and dies.",
+      "A brown spinner goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A brown spinner's legs shrivel up beneath it as it decays into dust.",
+      "The brown spinner's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A brown spinner snaps at you with {pronoun} pincer!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

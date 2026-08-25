@@ -36,6 +36,22 @@
       {
         name: "Claw (attack)",
         as: 378
+      },
+      {
+        name: "Bite",
+        as: 403
+      },
+      {
+        name: "Massive beak",
+        as: 358
+      },
+      {
+        name: "Razor-sharp claw",
+        as: 410
+      },
+      {
+        name: "Swoop",
+        as: 410
       }
     ],
     bolt_spells: [],
@@ -72,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -90,6 +107,14 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An aivren rakes at you with a razor-sharp claw!",
+      "An aivren tries to spear you with {pronoun} massive beak!"
+    ],
+    bite: [
+      "An aivren tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

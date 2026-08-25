@@ -30,14 +30,26 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Scythe"
+        name: "Scythe",
+        as: 418
+      },
+      {
+        name: "Scorched black ball and chain",
+        as: 501
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [
+    warding_spells: [
       {
         name: "Elemental Dispel (417)"
+      },
+      {
+        name: "Gleaming silvery scythe",
+        cs: 383
+      },
+      {
+        name: "Scorched black ball and chain",
+        cs: 380
       }
     ],
     maneuvers: [],
@@ -76,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -94,6 +107,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lost soul points both spectral hands at you!",
+      "A lost soul swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -35,6 +35,10 @@
       {
         name: "Claw (attack)",
         as: 275
+      },
+      {
+        name: "Claw",
+        as: 267
       }
     ],
     bolt_spells: [],
@@ -76,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,9 +96,16 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A banshee dissolves away."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A banshee claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

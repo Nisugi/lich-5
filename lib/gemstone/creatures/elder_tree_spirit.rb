@@ -29,20 +29,23 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Ensnare (attack)",
-        as: "202 to 212"
+        name: "Ensnare (attack)"
+      },
+      {
+        name: "Ensnare",
+        as: 182
       }
     ],
     bolt_spells: [
       {
         name: "Major Shock (910)",
-        as: "208 to 220"
+        as: (208..220)
       }
     ],
     warding_spells: [
       {
         name: "Unbalance (110)",
-        cs: "157 to 169"
+        cs: (157..169)
       }
     ],
     offensive_spells: [
@@ -84,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -96,12 +100,22 @@
     description: [
       "The undead tree spirit resides among its living brethren, barely distinguishable from them until it is awakened from its slumber. It resembles many different types of towering trees, for a tree spirit is able to take on the shape and appearance of the forest around it. Being spirit, though, it is not quite solid, not quite sharply defined, and its appearance shifts slightly as it moves. Many are fooled by a tree spirit's soft, soothing whispering, only to realize with horror that it is the preparation of a lethal spell."
     ],
-    arrival: [],
+    arrival: [
+      "An elder tree spirit just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The tree spirit slowly settles to the ground and begins to dissipate."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An elder tree spirit gestures at you!",
+      "An elder tree spirit tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

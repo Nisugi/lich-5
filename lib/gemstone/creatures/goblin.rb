@@ -43,6 +43,10 @@
       {
         name: "Flail",
         as: 46
+      },
+      {
+        name: "Scimitar",
+        as: 36
       }
     ],
     bolt_spells: [],
@@ -81,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -95,10 +100,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The goblin falls to the ground, kicks several times and dies.",
+      "The goblin screams, shudders one last time and dies."
+    ],
+    decay: [
+      "A goblin's carcass collapses into a gooey mess."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A goblin swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

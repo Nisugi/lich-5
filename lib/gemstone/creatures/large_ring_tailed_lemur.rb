@@ -33,6 +33,18 @@
       {
         name: "Closed fist",
         as: 118
+      },
+      {
+        name: "Bite",
+        as: 111
+      },
+      {
+        name: "Charge",
+        as: 208
+      },
+      {
+        name: "Sharp claws",
+        as: 117
       }
     ],
     bolt_spells: [],
@@ -69,6 +81,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,6 +100,14 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "Launching large ring-tailed lemur into the air, the jungle toad charges at you with {pronoun} enormous, flat head!",
+      "Lunging forward, a large ring-tailed lemur swings {weapon} at you and attempts to slash you with {pronoun} sharp claws!"
+    ],
+    bite: [
+      "A large ring-tailed lemur attempts to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

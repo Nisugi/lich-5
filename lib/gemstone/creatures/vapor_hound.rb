@@ -77,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -91,10 +92,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The vapor hound lets out one last whimpering sigh of chartreuse vapors and dies."
+    ],
+    decay: [
+      "A vapor hound decays into a compost of fur and fangs."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A vapor hound tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -97,6 +97,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -109,12 +110,23 @@
     description: [
       "Standing nearly six feet tall, the man-like trali shaman watches adventurers' every move with piercing grey eyes. A short matted, reddish grey mane covers his head and his skin has a greenish grey hue. There is little doubt that the stealthy trali shaman can be a formidable opponent when need arises, or when he is hard pressed."
     ],
-    arrival: [],
+    arrival: [
+      "A forest trali shaman arrives, sniffing the air for prey!",
+      "A forest trali shaman stalks in."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A forest trali shaman's body crumbles into dust and is scattered by a stiff breeze.",
+      "Acid dissolves connecting cartilage, freeing the trali shaman's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A forest trali shaman swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

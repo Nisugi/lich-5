@@ -34,7 +34,7 @@
       },
       {
         name: "Bite",
-        as: 237
+        as: (227..237)
       },
       {
         name: "Claw",
@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -91,12 +92,27 @@
     description: [
       "Despite its lumbering appearance, this heavily plated creature can show surprising bursts of speed. Each of the three toes on the tegu's forelegs are incredibly sharp, capable of slicing through the toughest hide. The armored tail of this male tegu is tipped with pointy spikes."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A three-toed tegu slithers in."
+    ],
+    flee: [
+      "A three-toed tegu slithers {direction}."
+    ],
+    death: [
+      "The three-toed tegu arches its back in a tortured spasm and dies.",
+      "The three-toed tegu stumbles and falls to the ground, twitches and dies.",
+      "A three-toed tegu goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A three-toed tegu's leathered hide and scaly armor collapses into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A three-toed tegu tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

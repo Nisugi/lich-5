@@ -8,7 +8,7 @@
   family: "Ithzir",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -32,6 +32,10 @@
       {
         name: "Quarterstaff",
         as: 398
+      },
+      {
+        name: "Twisted crystal-tipped staff",
+        as: 411
       }
     ],
     bolt_spells: [
@@ -72,6 +76,10 @@
       {
         name: "Web",
         cs: 431
+      },
+      {
+        name: "Twisted crystal-tipped staff",
+        cs: 431
       }
     ],
     offensive_spells: [
@@ -108,7 +116,7 @@
     emp_td: (378..423),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 431,
+    sor_td: (431..445),
     wiz_td: nil,
     mje_td: (450..459),
     mne_td: nil,
@@ -134,6 +142,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -146,12 +155,25 @@
     description: [
       "The Ithzir seer carries an authoritative bearing, her arresting, pupil-less green eyes taking in her surroundings with both confidence and cunning. Even when battle rages around her, each movement of the seer seems eerily effortless and calm. The Ithzir seer is slightly taller than a human, and while her humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The seer wears a crisply-cut, silvery-blue tunic with high shoulders and a deep vee-neck. Emblazoned on the right breast of the tunic is a twelve-pointed golden star."
     ],
-    arrival: [],
+    arrival: [
+      "A faint rippling in the air heralds the arrival of an Ithzir seer!"
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves the knee ligaments.  The Ithzir seer's tibia passes his femur in a very unpleasant manner!",
+      "Acid dissolves connecting cartilage, freeing the Ithzir seer's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Ithzir seer suddenly opens ithzir seer eyes and stares directly at you!",
+      "An Ithzir seer swings {weapon} at you!",
+      "An Ithzir seer throws {weapon} at you!",
+      "The Ithzir seer points at you."
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

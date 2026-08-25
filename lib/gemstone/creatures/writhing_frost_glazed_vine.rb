@@ -27,13 +27,13 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [],
-    maneuvers: [
+    physical_attacks: [
       {
         name: "Vine fling"
+      },
+      {
+        name: "Stinger",
+        as: 217
       }
     ],
     special_abilities: [],
@@ -66,6 +66,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -78,12 +79,19 @@
     description: [
       "This \"little\" vine seems to be a bit on the feeling poorly side but if it catches you, likely you'll feel pretty bad too."
     ],
-    arrival: [],
+    arrival: [
+      "A writhing frost-glazed vine slithers in grasping and twisting as it arrives."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A writhing frost-glazed vine stabs at you with {pronoun} stinger!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

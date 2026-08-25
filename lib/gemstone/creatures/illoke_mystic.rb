@@ -69,6 +69,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -83,10 +84,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "An Illoke mystic goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "An Illoke mystic crumbles into a mound of sand that quickly blows away."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Illoke mystic swings {weapon} at you!",
+      "An Illoke mystic throws {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

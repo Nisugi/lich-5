@@ -62,6 +62,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -74,12 +75,21 @@
     description: [
       "Twisted and warped in the service of the Council of Twelve, the apprentice floats several inches over the floor, hunched over, gazing at his surroundings with abnormally large yellow-hued eyes framed by translucent, rotting and pestilent skin. Draped over his broken form are the remnants of a once simple, but finely crafted robe. Cinching the robe at the waist is a thick black belt, adorned with numerous leather pouches once used to hold the supplies desired by his arcane master."
     ],
-    arrival: [],
+    arrival: [
+      "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the room, his crossbow cradled in the crook of an arm."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An mage apprentice hurls {weapon} at you!",
+      "An mage apprentice swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

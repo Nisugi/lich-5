@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 174
+        as: (160..174)
       },
       {
         name: "Bite",
-        as: 164
+        as: 174
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -83,12 +84,30 @@
     description: [
       "The red bear weighs around 600 pounds and is about seven feet long. This bear is a dark reddish-brown color and has a characteristic muscle hump over the shoulders, and has long vicious looking claws on his front paws.K"
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A red bear lumbers in!",
+      "A red bear slowly lumbers in, growling in pain!"
+    ],
+    flee: [
+      "A red bear lumbers {direction}.",
+      "A red bear slowly lumbers {direction}, growling in pain."
+    ],
+    death: [
+      "The red bear collapses heavily into a heap on the ground and dies.",
+      "The red bear lets out a blood-curdling roar and dies."
+    ],
+    decay: [
+      "A red bear decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A red bear tries to bite you!"
+    ],
+    claw: [
+      "A red bear claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

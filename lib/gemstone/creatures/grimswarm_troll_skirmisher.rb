@@ -61,6 +61,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -79,6 +80,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Grimswarm troll skirmisher fires {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [
         "Observed with heavy crossbow (AS 474, n=6), camp level unknown."

@@ -41,10 +41,12 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Gas cloud"
+      },
+      {
+        name: "Gesture"
       }
     ],
     special_notes: []
@@ -76,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -88,12 +91,24 @@
     description: [
       "The ancient ghoul master is a mass of blackened muscle in humanoid form. Striding boldly upright and with a determined gaze, the ancient ghoul master marches through the world of the dead, seeking the bodies of the recently deceased. Though, in fact, dead itself, its putrid breath reveals its consumption of a steady diet of decayed flesh. If none can be found, the ancient ghoul master is more than happy to cause the living to become the recently deceased."
     ],
-    arrival: [],
+    arrival: [
+      "An ancient ghoul master just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The ancient ghoul master falls to the ground motionless.",
+      "The ancient ghoul master screams evilly one last time and goes still."
+    ],
+    decay: [
+      "An ancient ghoul master turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An ancient ghoul master swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

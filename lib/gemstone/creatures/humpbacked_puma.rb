@@ -35,6 +35,14 @@
       {
         name: "Claw (attack)",
         as: 168
+      },
+      {
+        name: "Bite",
+        as: 148
+      },
+      {
+        name: "Claw",
+        as: 142
       }
     ],
     bolt_spells: [],
@@ -75,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -87,12 +96,29 @@
     description: [
       "The humpbacked puma is a muscular and athletic animal. Covered with a uniform coat of greyish-brown fur, his long, lithe body is equipped with powerful legs, displaying a proportionately greater difference in the length of the forelegs compared to the extenuated hind legs. The feline's head is topped with rounded ears, and a very long, balancing tail completes the puma's physique."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A humpbacked puma scampers in!"
+    ],
+    flee: [
+      "A humpbacked puma scampers {direction}."
+    ],
+    death: [
+      "The humpbacked puma lets out a final caterwaul and dies.",
+      "The humpbacked puma crumples to the ground and dies.",
+      "A humpbacked puma goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A humpbacked puma decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A humpbacked puma tries to bite you!"
+    ],
+    claw: [
+      "A humpbacked puma claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -42,11 +42,15 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 116
+        as: (104..116)
       },
       {
         name: "Pincer (attack)",
         as: 116
+      },
+      {
+        name: "Pincer",
+        as: 104
       }
     ],
     bolt_spells: [],
@@ -87,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -101,10 +106,23 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The greater spider collapses to the ground and dies.",
+      "The greater spider's body jerks one last time and dies.",
+      "A greater spider goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A greater spider's legs shrivel up beneath it as it decays into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater spider snaps at you with {pronoun} pincer!"
+    ],
+    bite: [],
+    claw: [
+      "A greater spider claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

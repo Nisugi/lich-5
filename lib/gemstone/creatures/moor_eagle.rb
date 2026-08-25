@@ -30,11 +30,15 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 259
+        as: (233..259)
       },
       {
         name: "Impale",
-        as: 239
+        as: 249
+      },
+      {
+        name: "Swoop",
+        as: 267
       }
     ],
     bolt_spells: [],
@@ -71,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -84,11 +89,24 @@
       "Wide, snow white wings spread ten feet across as the moor eagle soars in flight. Pale yellow feet extend below the bird's light grey, feathered body, the feet displaying razor-sharp talons that look long and strong enough to powerfully grasp most anything the eagle might encounter. A large, hooked beak protrudes from the moor eagle's head. In contrast to the muted colors on the rest of the moor eagle, the eagle's eyes are a striking sky blue."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A moor eagle flies {direction}."
+    ],
+    death: [
+      "A moor eagle goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "The moor eagle decays into a pile of feathers.",
+      "Acid dissolves connecting cartilage, freeing the moor eagle's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A moor eagle rakes at you with a razor-sharp claw!",
+      "A moor eagle tries to impale you on {pronoun} beak!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

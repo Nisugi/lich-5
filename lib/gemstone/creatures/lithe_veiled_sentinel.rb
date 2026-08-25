@@ -30,7 +30,23 @@
     physical_attacks: [
       {
         name: "Kick",
-        as: 458
+        as: 484
+      },
+      {
+        name: "Bloated arms",
+        as: 450
+      },
+      {
+        name: "Bronze cutlass",
+        as: 553
+      },
+      {
+        name: "Heel of her hand",
+        as: 438
+      },
+      {
+        name: "Heel of his hand",
+        as: 483
       }
     ],
     bolt_spells: [],
@@ -38,6 +54,10 @@
       {
         name: "Thought Lash",
         cs: (438..447)
+      },
+      {
+        name: "Lash",
+        cs: 462
       }
     ],
     offensive_spells: [
@@ -57,6 +77,12 @@
       },
       {
         name: "Bull Rush"
+      },
+      {
+        name: "Disarm"
+      },
+      {
+        name: "Martial Strike"
       }
     ],
     special_abilities: [
@@ -104,6 +130,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -116,12 +143,32 @@
     description: [
       "Blessed with an improbably lithe physique and muscles like corded iron, a lithe veiled sentinel is a short female with a face deeply darkened and lined by the sun's ungentle kiss. Her eyes are constantly, warily moving, and with every darting motion, they flash with a sharp-edged lambency like the glint of moonlight off of a shard of blue-green glass. The woman wears her shirt open to the waist, but is swathed in a shroud of green silk that flows in a rippling current on the air behind her. She is deadly grace embodied."
     ],
-    arrival: [],
+    arrival: [
+      "A lithe veiled sentinel strides in, eyes surveying the surroundings warily.",
+      "A lithe veiled sentinel just arrived.",
+      "Vital fluids seeping from its orifices, a shambling lurk shambles in with a piteous moan."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  She dies with a knowing smile on her face.",
+      "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  He dies with a knowing smile on his face."
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The veiled sentinel's tibia passes his femur in a very unpleasant manner!",
+      "Acid dissolves connecting cartilage, freeing the veiled sentinel's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lithe veiled sentinel delivers a vicious kick at you!",
+      "A lithe veiled sentinel throws lithe veiled sentinel arms outward for balance and leaps into the air, executing a series of kicks at you!",
+      "A patchwork flesh monstrosity tries to ensnare you with lithe veiled sentinel bloated arms!",
+      "Moving with preternatural speed, a lithe veiled sentinel strikes at you with the heel of lithe veiled sentinel hand!",
+      "Snarling, a lithe veiled sentinel charges toward you, fists flying with deadly precision!",
+      "With an eerie, boneless fluidity, a lithe veiled sentinel slashes at you with lithe veiled sentinel bronze cutlass!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

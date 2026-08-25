@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Halberd",
-        as: 325
+        as: (300..325)
       }
     ],
     bolt_spells: [],
@@ -72,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -84,12 +85,19 @@
     description: [
       "But a shadow of its former self, the warrior shade's form is hardly discernable as it flickers in and out of view. At times strange ripples of ethereal light roll across its spectral image, highlighting every horrible scar and festering wound on the shade's translucent body. Its gaunt face stares out from under a ghostly helm, though nothing but deep, hollow pits for eyes can be seen, soulless and unforgiving in their regard."
     ],
-    arrival: [],
+    arrival: [
+      "A warrior shade just arrived."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A warrior shade swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

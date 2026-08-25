@@ -8,7 +8,7 @@
   family: "Triton",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -34,6 +34,10 @@
       },
       {
         name: "Trident",
+        as: (424..444)
+      },
+      {
+        name: "Seaweed-wound rusted steel hatchet",
         as: 424
       }
     ],
@@ -58,6 +62,9 @@
       },
       {
         name: "Drowning Pool"
+      },
+      {
+        name: "Disarm"
       }
     ],
     special_abilities: [],
@@ -75,7 +82,7 @@
     emp_td: (349..358),
     pal_td: (283..295),
     ran_td: nil,
-    sor_td: 369,
+    sor_td: (369..384),
     wiz_td: nil,
     mje_td: (375..390),
     mne_td: 386,
@@ -90,6 +97,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -102,12 +110,21 @@
     description: [
       "The triton combatant stands hunched, her head thrust forward, and neck enveloped by heavy, muscled shoulders. Tiny alien eyes stare from a prominently bony brow, regarding the world with stubborn truculence. A mottled brown ridge rises from the amphibian's forehead and sweeps up and back, hugging her skull. This heavy protuberance, covered with damp, leathery skin, provides her with formidable head and neck protection."
     ],
-    arrival: [],
+    arrival: [
+      "A triton combatant strides in, a wary look on his face."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A triton combatant swings {weapon} at you!",
+      "A triton combatant throws {weapon} at you!",
+      "A triton combatant thrusts with an oak-shafted silvery blue trident at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

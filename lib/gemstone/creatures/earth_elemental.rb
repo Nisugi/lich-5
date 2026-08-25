@@ -32,6 +32,14 @@
       {
         name: "Pound (attack)",
         as: 401
+      },
+      {
+        name: "Foot",
+        as: 422
+      },
+      {
+        name: "Heavy earthen fists",
+        as: 421
       }
     ],
     bolt_spells: [],
@@ -70,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -85,9 +94,17 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An earth elemental pounds at you with earth elemental heavy earthen fists!",
+      "An earth elemental stomps at you with {pronoun} foot!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

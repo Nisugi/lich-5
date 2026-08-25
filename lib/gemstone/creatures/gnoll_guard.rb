@@ -64,6 +64,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -78,10 +79,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The gnoll guard rolls over and dies.",
+      "The gnoll guard falls to the ground and dies.",
+      "A gnoll guard goes limp as she is rendered unconscious!",
+      "A gnoll guard goes limp as he is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

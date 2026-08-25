@@ -47,6 +47,10 @@
       {
         name: "Bite",
         as: 127
+      },
+      {
+        name: "Charge",
+        as: 137
       }
     ],
     bolt_spells: [],
@@ -87,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -99,12 +104,33 @@
     description: [
       "A large scaled lizard, with a wide gaping mouth full of sharp teeth, it has short powerful legs barely long enough to lift the beast off the ground. The crocodile also has a long powerful tail that looks rather dangerous."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A florid mauve crocodile slithers in.",
+      "A striped blue crocodile slithers in.",
+      "A brilliant red crocodile slithers in.",
+      "A speckled tangerine crocodile slithers in.",
+      "A crocodile slithers in."
+    ],
+    flee: [
+      "The crocodile slithers {direction}."
+    ],
+    death: [
+      "The crocodile falls back into a heap and dies.",
+      "The crocodile hisses one last time and dies.",
+      "A crocodile goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A crocodile decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A crocodile charges at you!"
+    ],
+    bite: [
+      "A crocodile tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

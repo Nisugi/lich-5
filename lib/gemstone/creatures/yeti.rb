@@ -8,7 +8,7 @@
   family: "Yeti",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: true,
@@ -35,7 +35,7 @@
       },
       {
         name: "Stomp",
-        as: 347
+        as: (312..347)
       }
     ],
     bolt_spells: [],
@@ -82,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -94,12 +95,28 @@
     description: [
       "Standing almost twelve feet tall, the yeti is a large humanoid creature covered in long, stringy black and red hair. His domed pate is matted with twigs and dirt, and his heavy brow forms a shelf over his tiny black eyes. With arms nearly long enough to brush the ground, the yeti has a ferociously strong grip and excellent leverage for the tossing of heavy objects. Broad, flat feet provide stability and traction in the icy, mountainous environments that are his normal habitat."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A giant shadow towers over the area as a yeti stomps in!",
+      "A yeti stomps in!",
+      "A yeti moans as it stomps in!",
+      "A grifflet surveys the area intently as it flies into sight!"
+    ],
+    flee: [
+      "A yeti spins around and retreats as far as it can."
+    ],
+    death: [
+      "A yeti goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "The yeti collapses into a pile of hair and bones and goes still."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A yeti raises yeti hairy foot and attempts to stomp you into the ground!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

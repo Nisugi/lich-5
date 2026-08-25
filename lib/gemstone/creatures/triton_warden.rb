@@ -30,8 +30,15 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Longbow",
-        as: "411 to 446"
+        name: "Longbow"
+      },
+      {
+        name: "Pale driftwood arrow",
+        as: 456
+      },
+      {
+        name: "Sapphire-tipped arrow",
+        as: 456
       }
     ],
     bolt_spells: [],
@@ -96,6 +103,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -108,12 +116,19 @@
     description: [
       "A faded coat of sun-bleached oilskin graces the muscular shoulders of a triton warden, the rusted ornamentations covered in grey-cast barnacles and dried kelp. His trident-branded knuckles are exposed through his desiccated leather gloves, the shreds of hide clinging tightly to his green-tinged forearms. The warden growls softly through his clenched teeth, the sharp protrusions biting down on a broken driftwood pipe."
     ],
-    arrival: [],
+    arrival: [
+      "A triton warden just arrived."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A triton warden fires {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

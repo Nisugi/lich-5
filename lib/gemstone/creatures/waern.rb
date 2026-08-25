@@ -31,7 +31,11 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: (276..290)
+        as: 295
+      },
+      {
+        name: "Charge",
+        as: 294
       }
     ],
     bolt_spells: [],
@@ -40,6 +44,9 @@
     maneuvers: [
       {
         name: "Grapple"
+      },
+      {
+        name: "Lunge"
       }
     ],
     special_abilities: [],
@@ -72,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -86,10 +94,24 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The waern rolls over and dies.",
+      "The waern falls to the ground and dies."
+    ],
+    decay: [
+      "A waern decays into a compost of fangs and fur.",
+      "A muculent waern decays into a compost of fangs and fur.",
+      "A slimy waern decays into a compost of fangs and fur."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A waern charges at you!"
+    ],
+    bite: [],
+    claw: [
+      "A waern claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -97,6 +97,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -109,12 +110,26 @@
     description: [
       "This misshapen humanoid has large luminous eyes from many years of living underground. It's dressed in scraps of mismatched cloth in an apparent attempt to make a crude patchwork robe. While not overly muscled, its eyes shine with a crude intelligence."
     ],
-    arrival: [],
+    arrival: [
+      "A Grutik shaman shambles in."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A Grutik shaman goes limp as she is rendered unconscious!",
+      "The Grutik shaman twitches violently, then dies."
+    ],
+    decay: [
+      "A Grutik shaman collapses into a lifeless heap upon the ground.",
+      "A Grutik shaman's body turns to dust.",
+      "The Grutik shaman's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Grutik shaman finishes the chant and gestures at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 260
+        as: (200..260)
       },
       {
         name: "Charge (attack)",
@@ -44,13 +44,15 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Charge"
       },
       {
         name: "Squeal"
+      },
+      {
+        name: "Lash"
       }
     ],
     special_notes: []
@@ -82,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -94,12 +97,26 @@
     description: [
       "Standing nearly nine feet in height, the tusked ursian appears to be an unnatural union between a boar and a bear. Her yellow-tusked maw is lined with jagged fangs and beady eyes peer over a moist snout. Powerful limbs ending in black-nailed claws attest to the ferocity of this beast."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A tusked ursian lumbers in!"
+    ],
+    flee: [
+      "A tusked ursian slowly lumbers {direction}, growling in pain.",
+      "A tusked ursian lumbers {direction}."
+    ],
+    death: [
+      "The tusked ursian collapses heavily into a heap on the ground and dies.",
+      "The tusked ursian lets out a blood-curdling roar and dies.",
+      "A tusked ursian goes limp as she is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A tusked ursian claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

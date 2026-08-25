@@ -28,7 +28,7 @@
     physical_attacks: [
       {
         name: "Fist-scythe",
-        as: 195
+        as: 198
       }
     ],
     bolt_spells: [],
@@ -37,6 +37,9 @@
     maneuvers: [
       {
         name: "Hamstring"
+      },
+      {
+        name: "Fist-scythe"
       }
     ],
     special_abilities: [],
@@ -69,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,6 +91,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A jungle feyling suddenly jabs at you with a fist-scythe."
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

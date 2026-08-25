@@ -83,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,12 +96,25 @@
     description: [
       "This very short creature resembles, if anything, a misshapen dwarf. Whereas dwarves carry themselves upright, the cave gnome scampers about in a hunched over fashion, peering malignantly up at intruders through bulging purple eyes set on a head seemingly a few sizes too big for the associated body. Do not mistake their size as a limitation, though. The cave gnome regularly bounces high enough in combat to strike giantmen square in the head."
     ],
-    arrival: [],
+    arrival: [
+      "A cave gnome just arrived.",
+      "A cave gnome just arrived, limping."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The cave gnome falls to the ground and dies.",
+      "The cave gnome screams one last time and dies."
+    ],
+    decay: [
+      "A cave gnome decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A cave gnome swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

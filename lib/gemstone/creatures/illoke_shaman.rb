@@ -29,8 +29,19 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "War mattock",
-        as: (357..378)
+        name: "War mattock"
+      },
+      {
+        name: "Fist",
+        as: 337
+      },
+      {
+        name: "Foot",
+        as: 303
+      },
+      {
+        name: "Huge stone maul",
+        as: 316
       }
     ],
     bolt_spells: [],
@@ -42,6 +53,10 @@
       {
         name: "Interference (212)",
         cs: 282
+      },
+      {
+        name: "Huge stone maul",
+        cs: 291
       }
     ],
     offensive_spells: [
@@ -87,6 +102,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -101,10 +117,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "An Illoke shaman goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "An Illoke shaman crumbles into a mass of shiny rocks, leaving nothing behind."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Illoke shaman pounds at you with {pronoun} fist!",
+      "An Illoke shaman stomps at you with {pronoun} foot!",
+      "An Illoke shaman swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

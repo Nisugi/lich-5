@@ -51,6 +51,14 @@
       {
         name: "Short sword",
         as: 36
+      },
+      {
+        name: "(quarantine-recovered)",
+        as: 16
+      },
+      {
+        name: "Javelin",
+        as: 36
       }
     ],
     bolt_spells: [],
@@ -87,6 +95,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -99,12 +108,27 @@
     description: [
       "Smaller than a dwarf and even many halflings, she has ruddy skin and a hairless pate topped with small horns. Long-limbed for her size, the kobold eschews any display of brute strength and relies on what agility she pretends to have. The kobold stares back at you with beady little black eyes, sizing you up as a foe.\n\nAppraisal:\nThe kobold is small in size, about three feet high in his current state, appears to be of weak constitution, is in a forward stance, and is in relatively good shape."
     ],
-    arrival: [],
+    arrival: [
+      "A kobold just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The kobold crumples to a heap on the ground and dies.",
+      "The kobold cries out in pain one last time and dies.",
+      "The kobold crumples to a heap on the floor and dies."
+    ],
+    decay: [
+      "A small, green cloud of smelly gas rises from the body of a kobold as she decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a kobold as he decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A kobold swings {weapon} at you!",
+      "A kobold thrusts with a javelin at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

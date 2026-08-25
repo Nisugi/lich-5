@@ -31,11 +31,15 @@
     physical_attacks: [
       {
         name: "Falchion",
-        as: 386
+        as: (386..503)
       },
       {
         name: "Mace",
-        as: 386
+        as: (386..396)
+      },
+      {
+        name: "Long blackened jeddart-axe",
+        as: 520
       }
     ],
     bolt_spells: [],
@@ -47,6 +51,12 @@
       },
       {
         name: "Trip"
+      },
+      {
+        name: "Polearm Plant"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -79,6 +89,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -93,10 +104,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The n'ecare falls to the ground motionless."
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the n'ecare's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A n'ecare swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

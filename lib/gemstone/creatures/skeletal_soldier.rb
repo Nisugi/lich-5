@@ -31,13 +31,13 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [],
-    maneuvers: [
+    physical_attacks: [
       {
         name: "Disarm Weapon"
+      },
+      {
+        name: "Crude black iron morning star",
+        as: 224
       }
     ],
     special_abilities: [],
@@ -70,6 +70,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -82,12 +83,22 @@
     description: [
       "Clad in broken chain armor, the soldier's pale white bones are exposed in certain points in which the armor has completely rusted away. Dark leather gloves cover its bony hands. A very small glimmer of life can be seen in the depths of the soldier's eye sockets."
     ],
-    arrival: [],
+    arrival: [
+      "A bog troll lumbers in, his face set in an angry scowl!"
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A skeletal soldier crumbles to a fine white powder.",
+      "Acid dissolves connecting cartilage, freeing the skeletal soldier's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A skeletal soldier swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

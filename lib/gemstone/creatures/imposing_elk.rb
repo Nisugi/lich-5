@@ -60,6 +60,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -74,10 +75,25 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The imposing elk collapses to the ground, emits a final sigh, and dies.",
+      "An imposing elk goes limp as she is rendered unconscious!",
+      "The imposing elk silently lets out a final agonized sigh and dies.",
+      "The imposing elk lets out a final agonized sigh and dies.",
+      "The imposing elk collapses to the ground, emits a final silent sigh, and dies.",
+      "An imposing elk goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "An imposing elk decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An imposing elk charges at you!",
+      "An imposing elk tries to impale you with {pronoun} antlers!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

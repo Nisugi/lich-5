@@ -31,6 +31,10 @@
       {
         name: "Charge (attack)",
         as: 154
+      },
+      {
+        name: "Charge",
+        as: 154
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -79,12 +84,21 @@
     description: [
       "The beast before you bears similarities to an earthworm, except it is considerably larger. The beast has a gaping maw filled with tiny sharp teeth. The phosphorescent slime coating the worm serves to both protect the beast and perhaps distract its foes."
     ],
-    arrival: [],
+    arrival: [
+      "A phosphorescent worm slithers into view, its glow illuminating the area."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "A phosphorescent worm goes limp as it is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A phosphorescent worm charges at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

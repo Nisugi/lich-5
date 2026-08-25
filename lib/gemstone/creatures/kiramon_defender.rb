@@ -59,7 +59,11 @@
       },
       {
         name: "Claw",
-        as: 256
+        as: (230..256)
+      },
+      {
+        name: "Charge",
+        as: 236
       }
     ],
     bolt_spells: [],
@@ -109,6 +113,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -121,12 +126,27 @@
     description: [
       "The kiramon defender has a mobile head with huge, bulging, eyes that sparkle in a faceted clustering around a lidless perimeter. Protruding from his massive head is a vicious-looking snout with insectile mandibles, while the back of his cranium is a distended, two-lobed case. Remarkably powerful rear legs jut backward from an extremely hard, resilient exoskeleton that seems to be in constant motion. Though his middle legs have evolved away long ago, his front legs end in strong opposing claws and knobby-jointed fingers. Stunted wings flap uselessly from his long cylindrical body."
     ],
-    arrival: [],
+    arrival: [
+      "You hear a strange clicking that makes your hair stand on end as a kiramon defender arrives."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The kiramon defender falls back into a heap and dies.",
+      "The kiramon defender clicks one last time and dies.",
+      "A kiramon defender goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A kiramon defender crumbles away into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A kiramon defender charges at you!"
+    ],
+    bite: [],
+    claw: [
+      "A kiramon defender claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

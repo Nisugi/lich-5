@@ -60,6 +60,14 @@
       {
         name: "Mana Burst (1414)",
         cs: 457
+      },
+      {
+        name: "Jab",
+        cs: 448
+      },
+      {
+        name: "Lash",
+        cs: 448
       }
     ],
     offensive_spells: [],
@@ -103,6 +111,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -115,12 +124,19 @@
     description: [
       "An ethereal triton psionicist scowls about the area, her unsubstantial bluish skin rippling like waves across the ocean. Her tongue flickers out, pierced by a tiny atoll crab, and barnacles encircle each muscular arm. Sigil-carved shell rings adorn each finger, and a broken ivory trident dangles from an intangible coral belt."
     ],
-    arrival: [],
+    arrival: [
+      "An ethereal triton psionicist just arrived."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An triton psionicist points a clawed finger toward you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

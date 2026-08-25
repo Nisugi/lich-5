@@ -60,6 +60,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -72,12 +73,27 @@
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A shelfae assailant just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The shelfae assailant falls to the ground and dies.",
+      "The shelfae assailant screams one last time and dies.",
+      "A shelfae assailant goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A assailant crumbles into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A shelfae assailant tries to bite you!"
+    ],
+    claw: [
+      "A shelfae assailant claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

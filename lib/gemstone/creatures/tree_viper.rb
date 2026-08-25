@@ -38,16 +38,18 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 218
+        as: (195..218)
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Poisonous spit"
+      },
+      {
+        name: "Spit"
       }
     ],
     special_notes: []
@@ -79,6 +81,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -91,12 +94,25 @@
     description: [
       "The tree viper is a striking, brilliant green, complemented by its pale yellow underbelly that is usually only seen when the viper drapes over a tree branch. Much larger than a typical snake, the viper is nearly ten feet long, and it is quite capable of slaying foes as large as a human. The snake's lazy movement belies its ability to strike rapidly when threatened."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A tree viper slithers in, hissing in warning!",
+      "A tree viper slithers in."
+    ],
+    flee: [
+      "A tree viper slithers {direction}.",
+      "A tree viper drops from overhead and slithers {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "A tree viper decays into a pile of scales and flesh."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A tree viper fangs glisten as it tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

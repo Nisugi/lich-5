@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 269
+        as: (242..269)
       },
       {
         name: "Ensnare",
-        as: 275
+        as: (250..275)
       }
     ],
     bolt_spells: [],
@@ -92,6 +92,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -106,10 +107,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A bog spectre tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [
+      "A bog spectre claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

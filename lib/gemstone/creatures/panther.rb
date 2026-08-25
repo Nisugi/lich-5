@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 174
+        as: (150..174)
       },
       {
         name: "Claw",
-        as: 174
+        as: (134..174)
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -83,12 +84,31 @@
     description: [
       "The panther is a large, black cat with a slender body and long tail. Often approaching and striking silently, he affords his prey little warning. Powerful jaws bite and sharp claws rend as the panther attempts to secure enough food for another day. Even when satiated, though, the panther enjoys killing just for the pleasure of it."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A panther scampers in!",
+      "A panther scampers in, mewling in pain!"
+    ],
+    flee: [
+      "A panther scampers {direction}.",
+      "A panther scampers {direction}, mewling in pain."
+    ],
+    death: [
+      "The panther lets out a final caterwaul and dies.",
+      "The panther crumples to the ground and dies.",
+      "A panther goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A panther decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A panther tries to bite you!"
+    ],
+    claw: [
+      "A panther claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -34,7 +34,7 @@
       },
       {
         name: "Morning star",
-        as: 250
+        as: (222..250)
       }
     ],
     bolt_spells: [],
@@ -43,6 +43,9 @@
     maneuvers: [
       {
         name: "Disarm Weapon"
+      },
+      {
+        name: "Disarm"
       }
     ],
     special_abilities: [],
@@ -75,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -93,6 +97,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spectral lord swings a black steel ball &amp; chain at you!",
+      "A spectral lord swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

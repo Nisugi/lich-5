@@ -28,7 +28,7 @@
     physical_attacks: [
       {
         name: "Ensnare",
-        as: 178
+        as: (168..178)
       },
       {
         name: "Pound",
@@ -37,6 +37,10 @@
       {
         name: "Stomp",
         as: 198
+      },
+      {
+        name: "Metallic hand",
+        as: 169
       }
     ],
     bolt_spells: [],
@@ -45,6 +49,9 @@
     maneuvers: [
       {
         name: "Twin Hammerfists"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_abilities: [
@@ -81,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -93,12 +101,24 @@
     description: [
       "The squeal of rusty gears and the shriek of cracked pipes expelling steam is nearly deafening, but the sharp sound of a steel golem's claws rhythmically sharpening themselves against each other still grate distinctly throughout the area. Thick plates of armor cover the golem, but nothing could hide the mass of mechanized motion underneath. In a horrifying mimicry of life, a lining of sharp steel teeth are embedded within its large jaw, just underneath eye sockets that slowly expel a stream of black smoke."
     ],
-    arrival: [],
+    arrival: [
+      "A steel golem arrives, emitting a horrible screeching noise.",
+      "A steel golem strides in, head swiveling and gears twirling rapidly."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "A steel golem freezes completely before falling to the floor in pieces."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A steel golem pounds at you with steel golem metallic hand!",
+      "A steel golem pounds at you with {pronoun} metallic hand!",
+      "The gears of a steel golem spin viciously as it tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

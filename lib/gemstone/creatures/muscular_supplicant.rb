@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: true,
@@ -35,7 +35,7 @@
     physical_attacks: [
       {
         name: "Flamberge",
-        as: 342
+        as: (273..342)
       }
     ],
     bolt_spells: [],
@@ -61,7 +61,7 @@
     emp_td: (244..259),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 269,
+    sor_td: (269..272),
     wiz_td: nil,
     mje_td: 285,
     mne_td: 283,
@@ -76,6 +76,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -88,12 +89,28 @@
     description: [
       "Standing somewhere near average height for a human, the muscular supplicant is a lean frame of wiry muscle covered by scarred and dry skin. A great mop of greasy hair covers her eyes, twisted up in long braids. Intricate tattoos cover the exposed flesh, drawing unrecognizable patterns."
     ],
-    arrival: [],
+    arrival: [
+      "A muscular supplicant just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A muscular supplicant spasms one last time and then dies.",
+      "A muscular supplicant thrashes violently and then dies.",
+      "A muscular supplicant goes limp as he is rendered unconscious!",
+      "A muscular supplicant dies and collapses to the floor.",
+      "A muscular supplicant staggers, then falls to the floor and dies."
+    ],
+    decay: [
+      "A muscular supplicant crumbles to dust and blows away on the wind.",
+      "A muscular supplicant suddenly dissolves into a puddle of viscous ooze."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A muscular supplicant swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

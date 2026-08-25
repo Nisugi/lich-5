@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Longsword",
-        as: "(blackened) 238"
+        as: 208
       },
       {
         name: "Falchion",
-        as: "(dull) 238"
+        as: 208
       }
     ],
     bolt_spells: [],
@@ -77,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,6 +96,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mara swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

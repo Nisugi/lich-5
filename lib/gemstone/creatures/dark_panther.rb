@@ -38,7 +38,7 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 198
+        as: (178..198)
       },
       {
         name: "Bite",
@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -91,12 +92,28 @@
     description: [
       "The dark panther is a large, black cat with a slender body and long tail. The dark panther often approaches and strikes silently, affording her prey little warning. Powerful jaws bite and sharp claws rend as the dark panther attempts to secure enough food for another day. Even when satiated, though, the dark panther enjoys killing just for the pleasure of it."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A dark panther scampers in!",
+      "A dark panther scampers in, mewling in pain!"
+    ],
+    flee: [
+      "A dark panther scampers {direction}.",
+      "A dark panther scampers {direction}, mewling in pain."
+    ],
+    death: [
+      "The dark panther lets out a final caterwaul and dies.",
+      "The dark panther crumples to the ground and dies."
+    ],
+    decay: [
+      "A dark panther decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A dark panther claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

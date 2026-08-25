@@ -15,7 +15,7 @@ module Lich
                   :undead, :otherclass, :areas, :bcs, :max_hp,
                   :speed, :height, :size, :attack_attributes,
                   :defense_attributes, :treasure, :messaging,
-                  :special_other, :abilities, :alchemy
+                  :special_other, :abilities, :alchemy, :equipment
 
       BOON_ADJECTIVES = %w[
         adroit afflicted apt barbed belligerent blurry canny combative dazzling deft diseased drab
@@ -62,6 +62,8 @@ module Lich
         @special_other = data[:special_other]
         @abilities = data[:abilities] || []
         @alchemy = data[:alchemy] || []
+        # Items seen on the creature via LOOK, as plain strings.
+        @equipment = data[:equipment] || []
       end
 
       # Load all templates from files
@@ -661,10 +663,14 @@ module Lich
                     :spell_prep, :frenzy, :sympathy, :bite,
                     :claw, :attack, :enrage, :mstrike
 
+      # Every form a placeholder can take in a real game line. The lists
+      # are alternatives in the generated regex, so a form that is missing
+      # here makes an otherwise-correct message unmatchable - "its" and
+      # "their" (possessives) and "out" (a flee direction) were absent.
       PLACEHOLDER_MAP = {
-        Pronoun: %w[He Her His It She],
-        pronoun: %w[he her his it she],
-        direction: %w[north south east west up down northeast northwest southeast southwest],
+        Pronoun: %w[He She It His Her Its Their Him Them],
+        pronoun: %w[he she it his her its their him them],
+        direction: %w[north south east west up down out northeast northwest southeast southwest],
         weapon: %w[RAW:.+?]
       }
 
@@ -697,13 +703,16 @@ module Lich
         end
       end
 
+      # Returns the placeholder captures ({} for a literal hit) when +str+
+      # is one of the field's messages, else nil. Arrays are the common
+      # case - most creatures have several variants of a message - so a
+      # match against any variant counts.
       def match(field, str)
-        msg = send(field)
-        if msg.is_a?(PlaceholderTemplate)
-          msg.match(str)
-        else
-          msg == str ? {} : nil
+        Array(send(field)).each do |msg|
+          hit = msg.is_a?(PlaceholderTemplate) ? msg.match(str) : (msg == str ? {} : nil)
+          return hit if hit
         end
+        nil
       end
     end
 
@@ -786,6 +795,18 @@ module Lich
         @regex_cache[cache_key] = regex
       end
 
+      # Public: Messaging#match calls this on the template it holds. It
+      # sat below the `private` keyword, so every templated message
+      # raised NoMethodError on match - the placeholder machinery could
+      # render a line but never recognize one.
+      def match(str, literals = {})
+        regex = to_regex(literals)
+        m = regex.match(str)
+        return nil unless m
+
+        m.names.any? ? m.named_captures.transform_keys(&:to_sym) : m.captures
+      end
+
       private
 
       def build_regex(literals)
@@ -800,13 +821,6 @@ module Lich
           end
         end
         Regexp.new("#{pattern}")
-      end
-
-      def match(str, literals = {})
-        regex = to_regex(literals)
-        m = regex.match(str)
-        return nil unless m
-        m.names.any? ? m.named_captures.transform_keys(&:to_sym) : m.captures
       end
     end
   end

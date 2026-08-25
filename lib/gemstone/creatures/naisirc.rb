@@ -35,6 +35,14 @@
       {
         name: "Ensnare (attack)",
         as: 396
+      },
+      {
+        name: "Charge",
+        as: 374
+      },
+      {
+        name: "Ensnare",
+        as: 366
       }
     ],
     bolt_spells: [],
@@ -82,6 +90,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -100,6 +109,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A naisirc charges at you!",
+      "A naisirc tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

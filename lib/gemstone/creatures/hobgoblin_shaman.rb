@@ -85,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -99,10 +100,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The hobgoblin shaman screams up at the heavens, then collapses and dies."
+    ],
+    decay: [
+      "A hobgoblin shaman decays into a pile of compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A hobgoblin shaman finishes chanting and thrusts {weapon} towards you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

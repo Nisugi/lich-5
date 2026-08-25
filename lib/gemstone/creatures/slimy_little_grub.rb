@@ -31,6 +31,10 @@
       {
         name: "Stinger (attack)",
         as: 47
+      },
+      {
+        name: "Stinger",
+        as: 37
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -79,12 +84,25 @@
     description: [
       "The little grub is a small yellowish white creature little more than six inches long. It is covered in a sickly green slime that leaves a trail behind it."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A slimy little grub crawls in, leaving a trail of slime in its wake."
+    ],
+    flee: [
+      "A slimy little grub slithers {direction}."
+    ],
+    death: [
+      "The grub rolls over and dies."
+    ],
+    decay: [
+      "A slimy little grub decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A little grub stabs at you with {pronoun} stinger!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "War mattock",
-        as: 262
+        as: (209..262)
       }
     ],
     bolt_spells: [
@@ -82,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -94,12 +95,25 @@
     description: [
       "Towering high above you, the fire giant stands taller than four of the tallest giantman. Plumes of steam pour from her smoldering black skin and her flaming hair burns bright red. Eyes ablaze with fiery red hatred under its heavy brow, she looks at you as a human may look at an gnat."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A fire giant lumbers in, engulfed in a fiery blaze!"
+    ],
+    flee: [
+      "A fire giant lumbers {direction}, engulfed in a fiery blaze.",
+      "A fire giant crawls {direction}."
+    ],
+    death: [
+      "A fire giant goes limp as he is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A fire giant points a flaming hand at you!",
+      "A fire giant swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

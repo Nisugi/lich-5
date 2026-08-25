@@ -69,6 +69,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,12 +82,26 @@
     description: [
       "The mongrel troll is a repulsive combination of troll and some other lesser creature, if there could be a creature considered lower on the scale of life than a troll. Loathesome and hideous, the mongrel troll would tower above you if its bent, crooked spine didn't force it to hunch over. Mottled grey and brown skin so lumpy and loose, that it doesn't so much cover the troll, but sags loosely over from the troll's frame. Tufts of thick black hair sprout over the skin like a series of ill placed shrubs. A hideously toothy grin spreads across the troll's face displaying misshapen fangs crusted with dried blood. No spark of intellect fires in its narrow piggish eyes."
     ],
-    arrival: [],
+    arrival: [
+      "A mongrel troll just arrived!",
+      "A mongrel troll shambles in!",
+      "A mongrel troll just arrived, limping in!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The mongrel troll twitches violently, then dies.",
+      "The mongrel troll whimpers pitifully one last time and dies."
+    ],
+    decay: [
+      "A mongrel troll decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mongrel troll thrusts with a spear at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

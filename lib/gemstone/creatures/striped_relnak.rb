@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 61
+        as: (31..61)
       },
       {
         name: "Charge (attack)",
@@ -38,6 +38,10 @@
       },
       {
         name: "Stomp",
+        as: 61
+      },
+      {
+        name: "Foot",
         as: 61
       }
     ],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -87,12 +92,28 @@
     description: [
       "The striped relnak is a low-slung, wide-bodied reptile of the chameleon family. Only a few feet long, it is deceptively fast despite its girth. Its skin is scaly and rough with alternating strips of red and charcoal grey, except for the flaring, spiny sail that stands erect on its back which is solid grey. Extending from its thick neck to nearly the tip of its flicking tail, the sail's charcoal grey is punctuated by evenly spaced iridescent blue spines which glow brightly when the relnak is agitated."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A striped relnak scampers in."
+    ],
+    flee: [
+      "The relnak scampers {direction}."
+    ],
+    death: [
+      "The striped relnak hisses one last time and dies.",
+      "The striped relnak falls back into a heap and dies."
+    ],
+    decay: [
+      "A striped relnak decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A striped relnak stomps at you with {pronoun} foot!"
+    ],
+    bite: [
+      "A striped relnak tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

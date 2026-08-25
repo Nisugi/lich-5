@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +92,19 @@
     description: [
       "As tall as the average human, the mercenary has the characteristic long-fingered hands and sturdy musculature that denote most of the krolvin race. The mercenary also sports the trademark grey-blue skin and thick, coarse, white hair covers his head and spreads across his shoulders and down his back."
     ],
-    arrival: [],
+    arrival: [
+      "A krolvin mercenary just arrived."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A krolvin mercenary collapses into a pile of dirty rags."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

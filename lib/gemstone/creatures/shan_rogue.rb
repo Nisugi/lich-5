@@ -62,6 +62,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -76,10 +77,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The shan rogue yips in pain as he falls to the ground motionless.",
+      "The shan rogue howls out one last time and dies.",
+      "A shan rogue's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
+      "A shan rogue's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -31,6 +31,10 @@
       {
         name: "Jeddart-axe",
         as: 232
+      },
+      {
+        name: "Bite",
+        as: 222
       }
     ],
     bolt_spells: [],
@@ -74,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -86,12 +91,25 @@
     description: [
       "Though lankier than most of its brethren, the hunter troll still towers over the tallest of giantmen. Its skin is slightly paler than most trolls, but the intelligence which smolders in its dark eyes forces you to dismiss any thought of this being a weak or inferior breed."
     ],
-    arrival: [],
+    arrival: [
+      "A hunter troll just arrived!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A hunter troll goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A hunter troll decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A hunter troll swings {weapon} at you!"
+    ],
+    bite: [
+      "A hunter troll tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

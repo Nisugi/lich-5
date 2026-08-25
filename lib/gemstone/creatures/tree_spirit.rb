@@ -94,6 +94,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -106,12 +107,21 @@
     description: [
       "The undead tree spirit resides among its living brethren, barely distinguishable from them until it is awakened from its slumber. It resembles many different types of towering trees, for a tree spirit is able to take on the shape and appearance of the forest around it. Being spirit, though, it is not quite solid, not quite sharply defined, and its appearance shifts slightly as it moves. Many are fooled by a tree spirit's soft, soothing whispering, only to realize with horror that it is the preparation of a lethal spell."
     ],
-    arrival: [],
+    arrival: [
+      "A tree spirit just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The tree spirit slowly settles to the ground and begins to dissipate."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A tree spirit gestures at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

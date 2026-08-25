@@ -38,7 +38,11 @@
       },
       {
         name: "Claw",
-        as: 247
+        as: (225..247)
+      },
+      {
+        name: "Charge",
+        as: 221
       }
     ],
     bolt_spells: [],
@@ -79,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -93,10 +98,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A scaly burgee goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The scaly burgee's tibia passes its femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A scaly burgee charges at you!"
+    ],
+    bite: [],
+    claw: [
+      "A scaly burgee claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

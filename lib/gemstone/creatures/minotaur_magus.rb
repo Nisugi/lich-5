@@ -8,7 +8,7 @@
   family: "Minotaur",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -69,7 +69,7 @@
     emp_td: 289,
     pal_td: 259,
     ran_td: nil,
-    sor_td: (268..317),
+    sor_td: (268..327),
     wiz_td: nil,
     mje_td: 335,
     mne_td: nil,
@@ -90,6 +90,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -108,6 +109,9 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

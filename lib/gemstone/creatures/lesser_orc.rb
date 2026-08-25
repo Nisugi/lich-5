@@ -46,7 +46,7 @@
       },
       {
         name: "Short sword",
-        as: 108
+        as: (88..108)
       }
     ],
     bolt_spells: [],
@@ -83,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,12 +96,23 @@
     description: [
       "The lesser orc stands almost man high but is much thicker so that it appears stunted for its height. Heavy brow ridges and a sloping forehead give the beast a brutish appearance not aided by its rank breath and foul odor. It glares blankly around ignoring anything that it can't eat or pillage."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser orc wanders in looking a bit unsteady on her feet.",
+      "A lesser orc wanders in looking a bit unsteady on his feet."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "A lesser orc screams one last time and dies.",
+      "A lesser orc screams silently one last time and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser orc swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

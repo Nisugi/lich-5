@@ -27,14 +27,14 @@
     physical_attacks: [
       {
         name: "Cudgel",
-        as: "598"
+        as: 598
       }
     ],
     bolt_spells: [],
     warding_spells: [
       {
         name: "Bind",
-        cs: "475"
+        cs: 475
       }
     ],
     offensive_spells: [],
@@ -68,6 +68,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -78,6 +79,9 @@
     blunt_required: false
   },
   messaging: {
+    attack: [],
+    bite: [],
+    claw: [],
     general_advice: "* As primarily casting creatures, mutants are fairly vulnerable to SMR-based spells and attacks like Condemn (309), Earthen Fury (917), Hamstring, Spike Thorn (616), Twin Hammerfists, and so on. This is offset somewhat by their high level, though.\n* Mutants have exceptionally high CS--over 520--that leaves their Thought Lash (1210), Bind (214), and Vertigo (1219) spells nearly guaranteed to hit against every profession and leave characters stunned or disabled. Keep them from casting by any means including Sweep, Feint, Corrupt Essence (703), Moonbeam (611), Condemn, Earthen Fury, or other options that keep them stalled out, unable to cast, or repeatedly stunned.\n* Mutants have Brace (1214), which can disarm against many forms of physical attacks. However, many combat maneuvers and SMR-based weapon techniques bypass this, as do ranged attacks and unarmed combat. Brace can also be removed via dispelling magic such as Spirit Dispel (119), Spiritual Abolition (230), Elemental Dispel (417), Mental Dispel (1218), and Song of Unravelling (1013) or other similar effects like Spell Cleave.",
     voln: "* Symbol of Transcendence can sometimes salvage a bad situation, either preemptively or used with its emergency cooldown. High CS aside, mutants are still mostly casting disablers or attacking with one of the weaker weapon bases, the cudgel, so it's possible to survive even ten rounds of stun with enough luck.\n* Symbol of Restoration can be used while Immobilized by Bind.",
     bards: "* Vibration Chant (1002) can destroy their weapons and has at least a chance to kill outright.\n* Be ready to shout Troubadour's Rally (1040) at a moment's notice to get away safely after being hit by any of a mutant's dangerous spells.",

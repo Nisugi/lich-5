@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Battle axe",
-        as: 216
+        as: 270
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +84,24 @@
     description: [
       "Similar to most trolls, the grey muscular body of the troll chieftain displays immense strength from head to toe. It is different from its lesser-ranked brethren in two respects, however. First, there is a glimmer of intelligence in its small, close-set, pink eyes. Second, two long, inflamed scars run from its chest, down its forearms, to end at its elbows. These signify the testing the troll shamans have put the troll chieftain through to ensure it is qualified for its rank. It is rumored that no one ever again sees those that do not qualify."
     ],
-    arrival: [],
+    arrival: [
+      "A troll chieftain just arrived!",
+      "A troll chieftain just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The troll chieftain bellows in rage one last time and dies."
+    ],
+    decay: [
+      "A troll chieftain decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A troll chieftain swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

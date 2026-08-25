@@ -35,6 +35,22 @@
       {
         name: "Pound (attack)",
         as: 303
+      },
+      {
+        name: "Claw",
+        as: 293
+      },
+      {
+        name: "Fist",
+        as: 303
+      },
+      {
+        name: "Small surge of electricity",
+        as: 283
+      },
+      {
+        name: "Stream of water",
+        as: 283
       }
     ],
     bolt_spells: [
@@ -111,6 +127,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -125,10 +142,26 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The sand devil screams one last time and dies.",
+      "The sand devil falls to the ground and dies.",
+      "A sand devil goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the sand devil's ribs to move independently.",
+      "Acid dissolves the knee ligaments.  The sand devil's tibia passes its femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A sand devil hurls {weapon} at you!",
+      "A sand devil pounds at you with {pronoun} fist!",
+      "A sand devil shoots strands of webbing at you!"
+    ],
+    bite: [],
+    claw: [
+      "A sand devil claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

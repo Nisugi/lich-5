@@ -83,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,12 +96,28 @@
     description: [
       "The smaller cousin to the normal lifeleeching wraith, the mist wraith is the spirit of a soldier vanquished in a great battle. The spirits trap the mist of the local area and use it to give them a semi-physical form with which to exact vengeance. This results in their powerful claws and arms with which to rip the living apart."
     ],
-    arrival: [],
+    arrival: [
+      "A mist wraith just arrived!",
+      "A mist wraith just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The mist wraith falls to the ground motionless.",
+      "The mist wraith screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A mist wraith turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mist wraith swings {weapon} at you!",
+      "A mist wraith tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [
+      "A mist wraith claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -88,6 +88,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -109,13 +110,19 @@
       "A savage fork-tongued wendigo gets down on all fours and sprints {direction} at unnatural speed.",
       "A savage fork-tongued wendigo's luminous eyes flare with unnatural light as it turns and stalks {direction}."
     ],
-    death: "Rage flickers in the wendigo's eyes as it collapses, bloody maw still working hungrily until the last hint of life goes out of its form.",
-    decay: "Rot sets into a savage fork-tongued wendigo's body with unnatural speed, skin sloughing away to reveal greying muscle and rampant suppuration.  In moments, all that remain are yellowing bones and stinking effluvia.",
+    death: [
+      "Rage flickers in the wendigo's eyes as it collapses, bloody maw still working hungrily until the last hint of life goes out of its form."
+    ],
+    decay: [
+      "Rot sets into a savage fork-tongued wendigo's body with unnatural speed, skin sloughing away to reveal greying muscle and rampant suppuration.  In moments, all that remain are yellowing bones and stinking effluvia."
+    ],
     search: [
       "A savage fork-tongued wendigo tilts its head, eyeing the shadows with a hideous smile upon its face.",
       "a savage fork-tongued wendigo's eyes dart around, suspicion warring with hunger in its beady eyes."
     ],
-    spell_prep: "A savage fork-tongued wendigo rasps out a dissonant, sing-song phrase.",
+    spell_prep: [
+      "A savage fork-tongued wendigo rasps out a dissonant, sing-song phrase."
+    ],
 
     frenzy: "A savage fork-tongued wendigo crooks an oddly elongated finger at you!",
     sympathy: "A savage fork-tongued wendigo points skyward with a single gristly talon!",

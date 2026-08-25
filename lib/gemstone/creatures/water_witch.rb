@@ -32,6 +32,10 @@
       {
         name: "Spear",
         as: 94
+      },
+      {
+        name: "Gold-edged steel jeddart-axe",
+        as: 66
       }
     ],
     bolt_spells: [],
@@ -68,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -82,10 +87,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The water witch falls to the ground motionless.",
+      "The water witch screams evilly one last time and goes still.",
+      "A water witch goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A water witch turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A water witch swings {weapon} at you!",
+      "A water witch thrusts with a spear at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

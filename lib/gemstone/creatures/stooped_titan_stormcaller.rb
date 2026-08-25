@@ -27,13 +27,13 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [],
-    maneuvers: [
+    physical_attacks: [
       {
         name: "Leering Lightning(?)"
+      },
+      {
+        name: "Glowing hand",
+        as: 205
       }
     ],
     special_abilities: [],
@@ -71,6 +71,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [
+    "a burnt modwir staff inlaid with jagged brass lightning bolts",
+    "a cream-colored homespun robe stitched with tiny disks of crude brass"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +87,26 @@
     description: [
       "The power of the storm cannot be contained in the titan stormcaller's body. Jagged bolts of electricity arc up from under her skin and crackle down her limbs, seemingly causing her no pain during their passage. Despite her towering height, the stormcaller's stooped shoulders and spindly limbs make her look less imposing. Her features are plain and unlovely.\n\n;Assess\nThe titan stormcaller is huge in size and about twelve feet high in his current state."
     ],
-    arrival: [],
+    arrival: [
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
+      "A stooped titan stormcaller strides in, each step like a peal of thunder.",
+      "A stooped titan stormcaller stiffly strides in, each step like a peal of thunder."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "A stooped titan stormcaller goes limp as she is rendered unconscious!",
+      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as she dies.",
+      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as he dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A stooped titan stormcaller gestures with a glowing hand at you!",
+      "A stooped titan stormcaller twirls stooped titan stormcaller modwir staff theatrically before lashing out at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

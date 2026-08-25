@@ -39,6 +39,10 @@
       {
         name: "Scimitar",
         as: 229
+      },
+      {
+        name: "Blackened cutlass",
+        as: 202
       }
     ],
     bolt_spells: [],
@@ -95,6 +99,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -107,12 +112,30 @@
     description: [
       "The vesperti stands roughly six feet tall, with coarse black fur covering his willowy frame. A veined membrane of skin extends from his ankle up to his wrists, edges scalloped like those of a bat's wings. Capping off the wings are taloned hands and feet, the long, tapered digits bearing glossy black claws. Intense eyes stare out from beneath a mane of tousled hair, looking far too sentient for any measure of comfort."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "With a flurry of his wings, a vesperti flies in!",
+      "With a flurry of her wings, a vesperti flies in!"
+    ],
+    flee: [
+      "With a flurry of her wings, a lustrous vesperti flies {direction}.",
+      "With a flurry of his wings, a vesperti flies {direction}.",
+      "With a flurry of her wings, a vesperti flies {direction}."
+    ],
+    death: [
+      "A vesperti goes limp as he is rendered unconscious!",
+      "A vesperti goes limp as she is rendered unconscious!",
+      "The vesperti twitches violently, then dies."
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the vesperti's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A vesperti swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

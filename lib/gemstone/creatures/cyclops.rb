@@ -40,6 +40,10 @@
       {
         name: "Stomp (attack)",
         as: 238
+      },
+      {
+        name: "Splintered tree trunk",
+        as: 187
       }
     ],
     bolt_spells: [],
@@ -76,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -88,12 +93,26 @@
     description: [
       "Towering twice the height of the tallest giantman, the cyclops myopically observes the surrounding terrain through its solitary eye. Aside from these features, the cyclops would appear as any other giantman and is often found wearing animal hides. Blessed with gargantuan strength, the cyclops can wield a 100 pound tree trunk with the same effort that an adventurer wields a dagger. The cyclops, however, is cursed with poor depth perception, limiting the effect of its attack. It is not a good practice to tease the cyclops by calling it 'One Eye.'"
     ],
-    arrival: [],
+    arrival: [
+      "A cyclops just arrived!",
+      "A cyclops just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The cyclops rolls over and dies.",
+      "The cyclops falls to the ground and dies.",
+      "A cyclops goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A cyclops decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A cyclops swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

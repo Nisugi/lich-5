@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Twohanded sword",
-        as: 132
+        as: (122..132)
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -79,12 +80,28 @@
     description: [
       "A glimmer of intelligence actually resides behind the crimson eyes of the raider orc, unusual for a member of the orc species. He shares the same bony cranium and noxious odor of his brethren, but he strides much more upright, and his sharp teeth are only revealed when necessary for rending something. Interestingly, the raider orc's clawed fingers show webbing in between, indicating that this orc may be as much at home on bodies of water as he is on land."
     ],
-    arrival: [],
+    arrival: [
+      "A raider orc saunters in looking for something to pillage."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A raider orc screams his defiance skyward one last time and dies.",
+      "A raider orc screams her defiance skyward one last time and dies.",
+      "A raider orc screams his defiance silently skyward one last time and dies.",
+      "A raider orc screams her defiance silently skyward one last time and dies."
+    ],
+    decay: [
+      "A raider orc withers away until he is no more.",
+      "A raider orc withers away until she is no more.",
+      "The raider orc's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A raider orc swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

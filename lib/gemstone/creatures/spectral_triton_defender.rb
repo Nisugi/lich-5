@@ -8,7 +8,7 @@
   family: "Triton",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: false,
@@ -47,7 +47,7 @@
     emp_td: 368,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (376..385),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
@@ -62,6 +62,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -74,12 +75,23 @@
     description: [
       "The triton defender forges ahead on powerful legs, as if unaware of their lack of substance, while thick and ropey muscles bunch powerfully along her oddly translucent arms. The skin covering her squat ethereal frame is the color of bleached, dirty leather and seems to retain the clammy wetness of living amphibians. Sweeping behind her muscled limbs, a long tail floats after the creature like a recently abandoned child."
     ],
-    arrival: [],
+    arrival: [
+      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
+      "A triton combatant strides in, a wary look on her face.",
+      "A triton radical strides in, a wary look on her face.",
+      "A triton dissembler strides in, a wary look on his face."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spectral triton defender swings {weapon} at you!",
+      "A spectral triton defender thrusts with a lackluster blue steel harpoon at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

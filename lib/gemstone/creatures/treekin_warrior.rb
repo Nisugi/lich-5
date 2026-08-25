@@ -44,6 +44,10 @@
       {
         name: "Root slam",
         as: 390
+      },
+      {
+        name: "Leafy fist",
+        as: 355
       }
     ],
     bolt_spells: [],
@@ -55,6 +59,12 @@
       },
       {
         name: "Caber toss"
+      },
+      {
+        name: "Grab"
+      },
+      {
+        name: "Sap Spit"
       }
     ],
     special_abilities: [],
@@ -74,7 +84,7 @@
     emp_td: (317..326),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 337,
+    sor_td: (337..343),
     wiz_td: nil,
     mje_td: 349,
     mne_td: nil,
@@ -89,6 +99,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -101,12 +112,32 @@
     description: [
       "Standing approximately twelve feet tall, the treekin warrior towers menacingly before you. Lambent yellow eyes and thick leg-shaped roots make it clear that this is no ordinary tree. Leaves cover the warrior from head to trunk, with two arm-shaped branches protruding from the canopy. Numerous gashes and chips indicate that this particular specimen has seen much combat in the past."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "With a rustle of leaves, a treekin warrior lumbers in!",
+      "A treekin warrior lumbers in!",
+      "A treekin warrior shudders as it lumbers in, leaving a path of sap and leaves behind it!",
+      "A treekin warrior lumbers in, leaving a path of leaves behind it!"
+    ],
+    flee: [
+      "A treekin warrior shudders and lumbers {direction}, leaving a trail of sap and leaves of behind it.",
+      "A treekin warrior lumbers {direction}.",
+      "A treekin warrior lumbers {direction}, leaving a trail of leaves of behind it."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "A treekin warrior decays into compost.",
+      "The layer of bark on a treekin warrior hardens and absorbs the attack!  The bark crackles as it crumbles to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A treekin warrior lashes {weapon} at you!",
+      "A treekin warrior pounds at you with a leafy fist!",
+      "A treekin warrior raises a large root and slams it down at you!",
+      "A treekin warrior strikes out at you with all of treekin warrior might!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

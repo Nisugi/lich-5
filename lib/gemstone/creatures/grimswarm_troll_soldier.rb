@@ -61,6 +61,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -79,6 +80,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Grimswarm troll soldier swings {weapon} at you!",
+      "Tightening grimswarm troll soldier grip on grimswarm troll soldier twohanded sword, a Grimswarm troll soldier strikes out at you with all of grimswarm troll soldier might!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [
         "Observed with two-handed sword (AS 456, n=6), camp level unknown."

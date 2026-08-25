@@ -38,7 +38,7 @@
       },
       {
         name: "Claw",
-        as: 131
+        as: (121..131)
       }
     ],
     bolt_spells: [],
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -89,10 +90,25 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The giant marmot collapses to the ground, emits a final squeal, and dies.",
+      "The giant marmot collapses to the ground, emits a final silent squeal, and dies.",
+      "The giant marmot twitches and dies.",
+      "The giant marmot twitches violently, then dies.",
+      "A giant marmot goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A giant marmot decays into a pile of hair and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A giant marmot tries to bite you!"
+    ],
+    claw: [
+      "A giant marmot claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

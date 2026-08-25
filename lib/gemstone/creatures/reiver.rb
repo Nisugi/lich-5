@@ -47,6 +47,10 @@
       {
         name: "Two-handed sword",
         as: 222
+      },
+      {
+        name: "Fist",
+        as: 202
       }
     ],
     bolt_spells: [],
@@ -83,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,12 +100,27 @@
     description: [
       "The reiver stands tall and proud. Moss-green eyes dominate the strong face and tousled, dark hair crowns the head. The reiver is well-muscled and toned, with calloused hands used to the wielding of weapons. Forged by a hard history and a harsh climate, the reiver is a tough fighter with a sense of honor and duty. Normally calm and amiable, the reiver's visage is thunderous when kith and kin are threatened or there are krolvins lurking."
     ],
-    arrival: [],
+    arrival: [
+      "A reiver just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The reiver takes one last breath, then dies.",
+      "A reiver goes limp as it is rendered unconscious!",
+      "The reiver falls to the ground motionless."
+    ],
+    decay: [
+      "A reiver turns to dust.",
+      "Acid dissolves connecting cartilage, freeing the reiver's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A reiver pounds at you with {pronoun} fist!",
+      "A reiver swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

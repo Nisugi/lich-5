@@ -8,7 +8,7 @@
   family: "Reptilian",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: true,
@@ -29,14 +29,21 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    physical_attacks: [
       {
         name: "Leap"
+      },
+      {
+        name: "Bite",
+        as: 293
+      },
+      {
+        name: "Claw",
+        as: 347
+      },
+      {
+        name: "Roaring ball of fire",
+        as: 294
       }
     ],
     special_notes: []
@@ -53,7 +60,7 @@
     emp_td: (272..281),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 285,
+    sor_td: (285..294),
     wiz_td: nil,
     mje_td: 309,
     mne_td: 298,
@@ -68,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -82,10 +90,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The red tsark goes limp and she falls over as the fire slowly fades from her eyes.",
+      "The red tsark goes limp and he falls over as the fire slowly fades from his eyes."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A red tsark hurls {weapon} at you!"
+    ],
+    bite: [
+      "A red tsark tries to bite you!"
+    ],
+    claw: [
+      "A red tsark claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

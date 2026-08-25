@@ -36,7 +36,7 @@
     physical_attacks: [
       {
         name: "Broadsword",
-        as: (324..414)
+        as: 404
       }
     ],
     bolt_spells: [],
@@ -55,6 +55,10 @@
       },
       {
         name: "Silence (210)",
+        cs: 284
+      },
+      {
+        name: "Black steel broadsword",
         cs: 284
       }
     ],
@@ -102,6 +106,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -114,12 +119,20 @@
     description: [
       "The Sheruvian harbinger is a handsome woman with hypnotic eyes and fair skin. Her demeanor appears emotionless, but you can see some sort of evil fire burning within those dark pupils. A sleek, black breastplate covers most of her torso, and you can see it is made of fine quality. The mere look of the harbinger reminds most people of the tales of the Harbinger of Chaos, spawned forth to do great evil."
     ],
-    arrival: [],
+    arrival: [
+      "A Sheruvian harbinger just arrived, limping badly.",
+      "A Sheruvian harbinger just arrived."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Sheruvian harbinger swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

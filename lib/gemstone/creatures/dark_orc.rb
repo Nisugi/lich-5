@@ -42,7 +42,7 @@
     physical_attacks: [
       {
         name: "Halberd",
-        as: 157
+        as: (147..157)
       },
       {
         name: "Scimitar",
@@ -50,6 +50,10 @@
       },
       {
         name: "Morning star",
+        as: 157
+      },
+      {
+        name: "Falchion",
         as: 157
       }
     ],
@@ -87,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -101,10 +106,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A dark orc gives a last shudder and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A dark orc swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

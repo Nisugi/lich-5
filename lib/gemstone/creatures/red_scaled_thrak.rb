@@ -36,6 +36,14 @@
       {
         name: "Claw (attack)",
         as: 278
+      },
+      {
+        name: "Bite",
+        as: 278
+      },
+      {
+        name: "Claw",
+        as: 278
       }
     ],
     bolt_spells: [],
@@ -72,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -86,10 +95,24 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The red-scaled thrak falls back into a heap and dies.",
+      "The red-scaled thrak hisses one last time and dies.",
+      "The red-scaled thrak twitches violently, then dies.",
+      "A red-scaled thrak goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A red-scaled thrak decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A red-scaled thrak tries to bite you!"
+    ],
+    claw: [
+      "A red-scaled thrak claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

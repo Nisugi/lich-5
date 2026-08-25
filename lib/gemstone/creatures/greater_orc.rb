@@ -51,6 +51,18 @@
       {
         name: "War mattock",
         as: 113
+      },
+      {
+        name: "Mace",
+        as: 113
+      },
+      {
+        name: "Scimitar",
+        as: 113
+      },
+      {
+        name: "Short sword",
+        as: 113
       }
     ],
     bolt_spells: [],
@@ -87,6 +99,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -99,12 +112,27 @@
     description: [
       "Taller than a human and of substantially heavier build, the greater orc is a solid mass of bone and gristle. Red-rimmed eyes glare angrily out from under a thick bony forehead. Irregular clumps of rank hair cover its body and head. Its arms resemble thick and twisted tree trunks, ending in ragged claws crusted with dried gore."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A greater orc stalks in!"
+    ],
+    flee: [
+      "A greater orc stalks {direction}."
+    ],
+    death: [
+      "A greater orc breathes his last gasp and dies.",
+      "A greater orc breathes her last gasp and dies.",
+      "A greater orc goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A greater orc collapses into a pile of dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater orc swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

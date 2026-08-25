@@ -30,15 +30,15 @@
     physical_attacks: [
       {
         name: "Broadsword",
-        as: (162..191)
+        as: 173
       },
       {
         name: "Morning star",
-        as: (162..191)
+        as: 168
       },
       {
         name: "Flail",
-        as: (162..191)
+        as: 153
       }
     ],
     bolt_spells: [],
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -93,6 +94,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A warrior swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

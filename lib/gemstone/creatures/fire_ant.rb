@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -87,12 +88,24 @@
     description: [
       "The fire ant looks like a giant armored version of a common ordinary ant except for the faint wisps of smoke floating off its feelers. Its faceted eyes stare back at you with apparent disinterest."
     ],
-    arrival: [],
+    arrival: [
+      "A fire ant just arrived.",
+      "A fire ant crawls in, feelers twitching."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The fire ant falls to the ground and dies, its feelers twitching."
+    ],
+    decay: [
+      "A fire ant decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A fire ant tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -43,6 +43,10 @@
       {
         name: "Pound (attack)",
         as: 137
+      },
+      {
+        name: "Fist",
+        as: 137
       }
     ],
     bolt_spells: [],
@@ -79,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +96,29 @@
     description: [
       "Broader and taller then the more common ghouls, this one stands with some cold bearing of command and power. Tattered rags of velvet and silk still drape the corrupt form and a keen light of evil will and force dominates the ruined face now rotting and festered. The aura of its power tingles along your nerves and brings a cold sweat to your brow as you gaze into eyes, now vacant, which seem to stare back at you with cruel disdain.\n\nThe ghoul master is large in size and about seven feet high in its current state."
     ],
-    arrival: [],
+    arrival: [
+      "A ghoul master just arrived.",
+      "A ghoul master just arrived, limping."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The ghoul master falls to the ground motionless.",
+      "The ghoul master screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A ghoul master turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A ghoul master pounds at you with {pronoun} fist!"
+    ],
+    bite: [
+      "A ghoul master tries to bite you!"
+    ],
+    claw: [
+      "A ghoul master claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

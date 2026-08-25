@@ -29,8 +29,19 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Battle axe",
-        as: "194 to 219"
+        name: "Battle axe"
+      },
+      {
+        name: "Hissing stream of acid",
+        as: 192
+      },
+      {
+        name: "Powerful lightning bolt",
+        as: 172
+      },
+      {
+        name: "Roaring ball of fire",
+        as: 176
       }
     ],
     bolt_spells: [
@@ -103,6 +114,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -121,6 +133,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spectral woodsman nods at you!",
+      "A spectral woodsman swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

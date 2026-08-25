@@ -78,6 +78,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -93,13 +94,22 @@
       "Heavy hoofbeats herald the arrival of an immense gold-bristled hinterboar.",
       "An immense gold-bristled hinterboar trots in with its tusks lifted skyward.  Its great hooves shake the ground with every step."
     ],
-    flee: "An immense gold-bristled hinterboar charges {direction}, shaking the ground with each hoofbeat.",
-    death: "With a final discordant squeal, an immense gold-bristled hinterboar's great head sinks to the ground as its form goes still.",
-    decay: "An immense gold-bristled hinterboar's form succumbs to decay, collapsing into ruined meat and patchy bristles.",
+    flee: [
+      "An immense gold-bristled hinterboar charges {direction}, shaking the ground with each hoofbeat."
+    ],
+    death: [
+      "With a final discordant squeal, an immense gold-bristled hinterboar's great head sinks to the ground as its form goes still."
+    ],
+    decay: [
+      "An immense gold-bristled hinterboar's form succumbs to decay, collapsing into ruined meat and patchy bristles."
+    ],
     search: [
       "An immense gold-bristled hinterboar puts its snout to the ground and snuffles for unseen prey.",
       "An immense gold-bristled hinterboar snuffles at the ground, trying to ferret out hidden threats."
     ],
+    attack: [],
+    bite: [],
+    claw: [],
     charge: "Lowering its head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
     boarrush: "An immense gold-bristled hinterboar scrapes the ground with one forehoof before lowering its huge head.  It barrels into a mighty charge, hooves pounding across the ground as it races toward you.",
     impale: "Murder in its eyes, an immense gold-bristled hinterboar tries to gore you with its tusks!",

@@ -37,12 +37,11 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Broadsword",
-        as: (21..31)
+        name: "Broadsword"
       },
       {
         name: "Dagger",
-        as: (21..31)
+        as: 31
       }
     ],
     bolt_spells: [],
@@ -79,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +91,25 @@
     description: [
       "The skeleton clatters noisily about as if lost in the world of the living. Bleached bones, barely connected by stiff, crystallized tendons, tell a story of flesh long rotted away. Cockroaches, maggots and other insect types, perhaps still feeding on the rotting remains of the brain of the skeleton, scuttle and slither liberally in and out of the cranial sockets."
     ],
-    arrival: [],
+    arrival: [
+      "A skeleton just arrived!",
+      "A skeleton just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The skeleton falls to the ground motionless.",
+      "The skeleton screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A skeleton turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A skeleton swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

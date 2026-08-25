@@ -33,13 +33,22 @@
       {
         name: "Charge (attack)",
         as: 232
+      },
+      {
+        name: "Bite",
+        as: 230
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
     maneuvers: [
-      { name: "poisonous glob of phlegm" }
+      {
+        name: "poisonous glob of phlegm"
+      },
+      {
+        name: "Glob"
+      }
     ],
     special_abilities: [
       {
@@ -75,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -93,6 +103,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A huge jungle toad attempts to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

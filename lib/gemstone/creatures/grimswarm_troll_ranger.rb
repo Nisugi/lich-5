@@ -61,6 +61,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -72,13 +73,20 @@
   messaging: {
     description: [],
     arrival: [
-      "A Grimswarm troll ranger just arrived."
+      "A Grimswarm troll ranger just arrived.",
+      "A Grimswarm troll ranger strides in, glowering upon the scene."
     ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Grimswarm troll ranger fires {weapon} at you!",
+      "A Grimswarm troll ranger swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [
         "Observed with crossbow and dagger, and casting spiritual-circle spells (CS 234), camp level unknown."

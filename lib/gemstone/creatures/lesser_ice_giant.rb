@@ -31,16 +31,18 @@
     physical_attacks: [
       {
         name: "Massive Icicle",
-        as: (302..309)
+        as: 299
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "AS Booster"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_notes: []
@@ -72,6 +74,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -84,12 +87,24 @@
     description: [
       "Standing twice as tall as the tallest giantman, the ice giant trails frost and snow in her wake. Seemingly carved from living ice and snow, icy blue eyes set beneath a heavily furrowed brow and a tangled mop of icy blue hair provide a splash of color against the ice giant's dull white frost-covered skin."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A lesser ice giant lumbers in, followed by a hailing icestorm!"
+    ],
+    flee: [
+      "A lesser ice giant lumbers {direction}, followed by a hailing icestorm."
+    ],
+    death: [
+      "The ice giant cries out in cold agony one last time and dies.",
+      "The ice giant falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser ice giant swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

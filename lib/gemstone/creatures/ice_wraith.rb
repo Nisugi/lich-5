@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -85,6 +86,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An ice wraith points a ghostly finger at you!",
+      "An ice wraith swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

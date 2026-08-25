@@ -101,6 +101,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -113,12 +114,23 @@
     description: [
       "A grey-splotched pink, the glistening cerebralite is a fleshy mass that somewhat resembles a humanoid brain, though it is oversized and grossly proportioned. Eye-stalks sprout from either hemisphere, supporting a pair of lidless eyes with iridescent irises and ebony pupils. Thick veins span the wrinkled surface of the creature's body, pulsing rhythmically with a writhing mass of barbed tentacles sprouting from its underside. A viscous fluid coats the cerebralite's surface, the substance phlegm-like in consistency."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A glistening cerebralite just arrived, looking terrified!"
+    ],
+    flee: [
+      "A glistening cerebralite bolts {direction}!"
+    ],
+    death: [
+      "An intangible ripple of pure energy courses through the air as the cerebralite's pupils widen a final time, its eyes clouding over as it dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A glistening cerebralite focuses glistening cerebralite eye-stalks on you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

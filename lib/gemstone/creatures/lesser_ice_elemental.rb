@@ -30,8 +30,11 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Ensnare",
-        as: (301..335)
+        name: "Ensnare"
+      },
+      {
+        name: "Lash",
+        as: 301
       }
     ],
     bolt_spells: [
@@ -88,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -106,6 +110,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser ice elemental lashes out at you!",
+      "A lesser ice elemental releases a wave of cold blue energy at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -8,7 +8,7 @@
   family: "Ithzir",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -39,6 +39,22 @@
       {
         name: "Mace",
         as: 421
+      },
+      {
+        name: "Smash",
+        as: 453
+      },
+      {
+        name: "Spiral-hafted crystal-edged handaxe",
+        as: 423
+      },
+      {
+        name: "Spiral-hafted handaxe",
+        as: 421
+      },
+      {
+        name: "Twisted crystal-tipped staff",
+        as: 431
       }
     ],
     bolt_spells: [],
@@ -53,6 +69,9 @@
       },
       {
         name: "Warcries"
+      },
+      {
+        name: "Disarm"
       }
     ],
     special_abilities: [],
@@ -70,7 +89,7 @@
     emp_td: (329..344),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 353,
+    sor_td: (353..368),
     wiz_td: nil,
     mje_td: 377,
     mne_td: 376,
@@ -85,6 +104,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -97,12 +117,22 @@
     description: [
       "The Ithzir janissary's movements are both aggressive and graceful, his muscular, lithe form the envy of any acrobat or student of the martial arts. Wide, upward-slanted, green eyes take in his surroundings with an easy confidence, as if the fate of any opponent is not a matter of chance, only of time. The Ithzir janissary is a head taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The janissary wears a crisply-cut silvery blue tunic emblazoned with a feline silhouette on the right breast."
     ],
-    arrival: [],
+    arrival: [
+      "An Ithzir janissary strides in, surveying the surroundings alertly."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater construct raises ithzir janissary massive foot and attempts to smash you!",
+      "An Ithzir janissary swings {weapon} at you!",
+      "The Ithzir janissary points at you for emphasis.",
+      "The Ithzir janissary points at you."
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -34,15 +34,17 @@
       },
       {
         name: "Claw",
-        as: 339
+        as: 522
       },
       {
-        name: "Bite (enraged)",
-        as: (493..527)
+        name: "Bite (enraged)"
       },
       {
-        name: "Claw (enraged)",
-        as: (493..513)
+        name: "Claw (enraged)"
+      },
+      {
+        name: "Fist",
+        as: 502
       }
     ],
     bolt_spells: [],
@@ -83,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,12 +98,26 @@
     description: [
       "Massive troll kings are the largest, ugliest, dumbest, and most powerful creatures in the troll family.\n\nThis fierce monster is roughly humanoid, standing nearly 9 feet tall, with long arms ending in razor-sharp claws. Dark green and covered with ugly warts, this hideous being appears unintelligent yet incredibly strong."
     ],
-    arrival: [],
+    arrival: [
+      "A massive troll king arrives, flexing its massive claws."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A massive troll king goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A massive troll king decays away into compost.",
+      "Acid dissolves connecting cartilage, freeing the troll king's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A massive troll king pounds at you with {pronoun} fist!"
+    ],
+    bite: [],
+    claw: [
+      "A massive troll king claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

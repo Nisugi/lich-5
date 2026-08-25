@@ -42,7 +42,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: "+36"
+        as: 32
       }
     ],
     bolt_spells: [],
@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -93,10 +94,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The rolton collapses to the ground, emits a final bleat, and dies.",
+      "The rolton collapses to the ground, emits a final silent bleat, and dies.",
+      "The rolton lets out a final agonized bleat and dies."
+    ],
+    decay: [
+      "A rolton decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A rolton tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

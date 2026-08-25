@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -80,9 +81,17 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Spines litter the ground as the cavern urchin crumbles into a pile of splinters and skin.",
+      "A barbed cavern urchin simply withers away, bits of grayish dust scattered about in its wake."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A cavern urchin thrusts {pronoun} barbed spines at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [
         "Sibling of the spiked cavern urchin (also level 17, different zone)."

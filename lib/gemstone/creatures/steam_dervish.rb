@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -32,7 +32,7 @@
     physical_attacks: [
       {
         name: "Longsword",
-        as: 402
+        as: (402..452)
       }
     ],
     bolt_spells: [],
@@ -41,6 +41,9 @@
     maneuvers: [
       {
         name: "Hamstring"
+      },
+      {
+        name: "Steam Blast"
       }
     ],
     special_abilities: [
@@ -62,7 +65,7 @@
     emp_td: (318..321),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 343,
+    sor_td: (329..343),
     wiz_td: nil,
     mje_td: 367,
     mne_td: 370,
@@ -77,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,6 +99,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A steam dervish swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

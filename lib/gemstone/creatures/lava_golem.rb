@@ -36,6 +36,14 @@
       {
         name: "Stomp (attack)",
         as: 320
+      },
+      {
+        name: "Fist",
+        as: 331
+      },
+      {
+        name: "Foot",
+        as: 321
       }
     ],
     bolt_spells: [],
@@ -74,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -86,12 +95,26 @@
     description: [
       "The lava golem is a mammoth construct of molten red hot rock and white hot eyes. Towering over twelve feet in height, it surely weighs several tons."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A lava golem lumbers in, trailed by black wisps of smoke!",
+      "A lava golem slowly lumbers in, trailed by black wisps of smoke!"
+    ],
+    flee: [
+      "A lava golem slowly lumbers {direction}, trailed by black wisps of smoke.",
+      "A lava golem lumbers {direction}, trailed by black wisps of smoke."
+    ],
+    death: [
+      "The lava golem writhes in fiery agony and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lava golem pounds at you with {pronoun} fist!",
+      "A lava golem stomps at you with {pronoun} foot!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

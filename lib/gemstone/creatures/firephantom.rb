@@ -85,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -97,12 +98,21 @@
     description: [
       "A billowing pillar of searing fire, the firephantom darts about quickly to set aflame any that would stand in its way. Although it has a vaguely humanoid appearance, its form is entirely composed of fire, with the legs a dark red. The darker red slowly gives way to blazing red in the torso and bright yellow in the cranial area. Where the eyes and mouth should be only empty holes exist, floating eerily in the head of this mobile conflagration."
     ],
-    arrival: [],
+    arrival: [
+      "A firephantom just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The firephantom slowly settles to the ground and begins to dissipate."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A firephantom swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

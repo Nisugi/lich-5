@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -91,12 +92,24 @@
     description: [
       "Larger than a domestic cat, the giant rat stands over a foot high. Dark brown in color, shading off to white on the belly, with naked pink ears and narrow glinting eyes, the rat glares with unrestrained bloodlust. Known to exist in great packs, the rat has brought more than one over-eager adventurer to an early grave."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A giant rat scampers in!"
+    ],
+    flee: [
+      "A giant rat scampers {direction}."
+    ],
+    death: [
+      "The giant rat collapses to the ground, emits a final squeal, and dies.",
+      "The giant rat twitches and dies."
+    ],
+    decay: [
+      "A giant rat decays into a pile of mangy hair and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

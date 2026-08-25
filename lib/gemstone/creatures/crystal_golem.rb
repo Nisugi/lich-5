@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Ensnare",
-        as: 134
+        as: 140
       },
       {
         name: "Pound",
@@ -39,15 +39,21 @@
       {
         name: "Stomp",
         as: 144
+      },
+      {
+        name: "Crystalline fist",
+        as: 117
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Foot stomp"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_notes: []
@@ -79,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +98,21 @@
     description: [
       "Towering about three yards tall, a crystal golem's form is nothing short of massive. Deeply set fires glimmer coldly from its eye sockets, throwing a myriad of colors throughout the large crystal spikes jutting sharply away from its thick crystalline skin. As it moves, the rainbow color flickers through the facets of its body in a dizzying array of color."
     ],
-    arrival: [],
+    arrival: [
+      "A gnoll ranger wanders in, alertly surveying its surroundings.",
+      "A crystal golem stomps in, fiery eyes the only clue to its deadly intent."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A crystal golem pounds at you with {pronoun} crystalline fist!",
+      "A crystal golem tries to ensnare you in {pronoun} thick arms!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

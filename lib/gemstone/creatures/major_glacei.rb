@@ -34,7 +34,11 @@
     physical_attacks: [
       {
         name: "Lash",
-        as: 250
+        as: 259
+      },
+      {
+        name: "Strike",
+        as: 281
       }
     ],
     bolt_spells: [
@@ -76,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -94,6 +99,13 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A major glacei focuses a wave of cold energy at you!",
+      "A major glacei lashes out at you!",
+      "A major glacei strikes at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

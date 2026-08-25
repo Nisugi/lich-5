@@ -85,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -99,10 +100,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The shan wizard twitches violently, then dies.",
+      "The shan wizard yips in pain as he falls to the ground motionless.",
+      "The shan wizard yips in pain as she falls to the ground motionless.",
+      "The shan wizard howls out one last time and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shan wizard points both hands at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

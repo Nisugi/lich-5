@@ -30,17 +30,22 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Bite",
-        as: "+220 to +250"
+        name: "Bite"
+      },
+      {
+        name: "Claw",
+        as: 198
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Canine lunge"
+      },
+      {
+        name: "Lunge"
       }
     ],
     special_notes: []
@@ -51,7 +56,7 @@
     melee: "+140 to +160 DS",
     ranged: nil,
     bolt: "+154 DS",
-    udf: "+172",
+    udf: 172,
     bar_td: "+84 TD",
     cle_td: "+84 TD",
     emp_td: "+84 TD",
@@ -72,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -86,10 +92,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The dobrem falls to the ground and dies.",
+      "The dobrem rolls over and dies."
+    ],
+    decay: [
+      "A dobrem decays into a compost of fangs and fur."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A dobrem claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

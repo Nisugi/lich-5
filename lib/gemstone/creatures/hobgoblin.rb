@@ -63,6 +63,14 @@
       {
         name: "Rapier",
         as: 68
+      },
+      {
+        name: "Iron battle axe",
+        as: 58
+      },
+      {
+        name: "Morning star",
+        as: 54
       }
     ],
     bolt_spells: [],
@@ -99,6 +107,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -112,11 +121,25 @@
       "This is a large humanoid creature, similar to its smaller cousin the goblin. It has a snub nose and wide mouth with large and very sharp teeth and a greenish-yellow, leathery skin. Reputed to be uncommonly fond of collecting treasure, these are among the most hunted beings known to exist. But many are the whitening skulls that adorn the crude dwellings of the hobgoblin, for treasure is not all they collect."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A hobgoblin snarls as she retreats!",
+      "A hobgoblin flees {direction}."
+    ],
+    death: [
+      "The hobgoblin crumples to the ground and dies.",
+      "A hobgoblin goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A hobgoblin decays into a pile of compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A hobgoblin swings {weapon} at you!",
+      "A hobgoblin thrusts with a rapier at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

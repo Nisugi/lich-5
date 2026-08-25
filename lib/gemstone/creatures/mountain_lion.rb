@@ -30,20 +30,22 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 165
+        as: (159..165)
       },
       {
         name: "Bite",
-        as: 165
+        as: 168
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Pounce"
+      },
+      {
+        name: "Leap"
       }
     ],
     special_notes: []
@@ -75,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -87,12 +90,30 @@
     description: [
       "The mountain lion is a muscular and athletic animal. Covered with a uniform coat of reddish-brown fur, her long, lithe body is equipped with powerful legs, displaying a proportionately greater difference in the length of the forelegs compared to the extenuated hind limbs. The feline's head is topped with rounded ears, and a very long, balancing tail completes the lion's physique."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A mountain lion scampers in!",
+      "A mountain lion scampers in, mewling in pain!"
+    ],
+    flee: [
+      "A mountain lion scampers {direction}.",
+      "A mountain lion scampers {direction}, mewling in pain."
+    ],
+    death: [
+      "The mountain lion crumples to the ground and dies.",
+      "The mountain lion lets out a final caterwaul and dies."
+    ],
+    decay: [
+      "A mountain lion decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A mountain lion tries to bite you!"
+    ],
+    claw: [
+      "A mountain lion claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

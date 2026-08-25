@@ -84,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -96,12 +97,26 @@
     description: [
       "It is difficult to focus on the shape of the dark apparition. It wavers and shifts as an image seen through dark waters yet each shape it assumes has some aspect of horror and bloody death. One form is that of a corpse mutilated beyond words with arms hacked to stumps yet tipped with shining claws. Another is that of a waif horribly burned and scarred so that her features run like melted wax. Yet another is something apparently torn apart by huge razors...flesh hanging in sheets that blow in some ill-spawned breeze like leaves of sea-grass in the current. The sight would make any normal person turn and gag, being unable to bear any more."
     ],
-    arrival: [],
+    arrival: [
+      "Out of thin air, a shadowy figure takes shape before your eyes and materializes into a dark apparition!",
+      "A dark apparition just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The dark apparition slowly settles to the ground and begins to dissipate."
+    ],
+    decay: [
+      "A dark apparition vanishes into thin air, leaving no trace behind."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A dark apparition tries to bite you!"
+    ],
+    claw: [
+      "A dark apparition claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

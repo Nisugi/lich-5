@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 202
+        as: (181..202)
       },
       {
         name: "Claw",
@@ -72,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -84,12 +85,24 @@
     description: [
       "Pity the poor crazed zombie, an animated corpse abandoned long ago by her creator. The skin of the crazed zombie has turned a sickly grey, her clothing hangs in tattered ribbons, and she barely keeps control over her death-stiffened muscles. Her mouth, once sewn shut to hold the salt necessary in the animation process, has broken open again, salt dribbling from the parched, thread-covered lips. The crazed zombie verbally threatens and attacks anyone she believes may interfere with her quest to return to the grave."
     ],
-    arrival: [],
+    arrival: [
+      "A crazed zombie shambles in!",
+      "A lustrous crazed zombie shambles in!",
+      "A glittering crazed zombie shambles in!",
+      "A luminous crazed zombie shambles in!"
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A crazed zombie tries to bite you!"
+    ],
+    claw: [
+      "A crazed zombie claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

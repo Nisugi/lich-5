@@ -62,6 +62,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -74,12 +75,26 @@
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A shan sorceress saunters in growling phrases of magic!",
+      "A shan sorcerer saunters in growling phrases of magic!",
+      "A shan sorceress just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The shan sorcerer yips in pain as he falls to the ground motionless.",
+      "The shan sorceress yips in pain as she falls to the ground motionless.",
+      "The shan sorcerer howls out one last time and dies.",
+      "A shan sorcerer's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shan sorceress hurls {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

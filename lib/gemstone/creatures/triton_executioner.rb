@@ -8,7 +8,7 @@
   family: "Triton",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -30,15 +30,18 @@
     physical_attacks: [
       {
         name: "Handaxe",
-        as: 433
+        as: (433..445)
       },
       {
-        name: "Heavy crossbow",
-        as: (433..448)
+        name: "Heavy crossbow"
       },
       {
         name: "longsword",
-        as: 433
+        as: (433..439)
+      },
+      {
+        name: "Streaked pale driftwood bolt",
+        as: 453
       }
     ],
     bolt_spells: [],
@@ -73,7 +76,7 @@
     emp_td: (359..368),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 381,
+    sor_td: (381..396),
     wiz_td: nil,
     mje_td: (393..408),
     mne_td: nil,
@@ -88,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -100,12 +104,26 @@
     description: [
       "The triton executioner scans his surroundings with merciless eyes as if seeking his next client. Heavy, leathery lips are pulled into a perpetually disgusted sneer, pinching the creature's nostrils into narrow slits. Animal muscles, powerfully knotted beneath his moist blue-green skin, seem ready to spring in any direction. The executioner wears a dark blue tabard emblazoned with a silver wave upon the chest."
     ],
-    arrival: [],
+    arrival: [
+      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
+      "A triton executioner strides in, a wary look on her face.",
+      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
+      "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
+      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton dissembler arrives, striding forth with her robes trailing behind her.",
+      "A triton executioner strides in, a wary look on his face."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A triton executioner fires {weapon} at you!",
+      "A triton executioner swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

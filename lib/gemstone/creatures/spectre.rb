@@ -43,6 +43,10 @@
       {
         name: "Battle axe",
         as: 102
+      },
+      {
+        name: "Fist",
+        as: 102
       }
     ],
     bolt_spells: [
@@ -61,10 +65,12 @@
         name: "Call Wind (912)"
       }
     ],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Gas cloud"
+      },
+      {
+        name: "Mystic Gesture"
       }
     ],
     special_notes: []
@@ -96,6 +102,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -108,12 +115,30 @@
     description: [
       "You have never seen anything quite like a spectre, so you are not really sure what to make of it or how dangerous it might be."
     ],
-    arrival: [],
+    arrival: [
+      "A gnoll ranger wanders in, alertly surveying its surroundings.",
+      "A spectre just arrived.",
+      "A shadowy spectre just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The spectre falls to the ground motionless.",
+      "The shadowy spectre falls to the ground motionless."
+    ],
+    decay: [
+      "A spectre turns to dust.",
+      "A shadowy spectre turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spectre gestures at you!",
+      "A spectre nods at you!",
+      "A spectre pounds at you with {pronoun} fist!",
+      "A spectre swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [
         "Also encountered as an unarmed (\"monk\") variant at Plains of Bone, using natural attacks instead of weapons."

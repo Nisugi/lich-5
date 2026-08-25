@@ -53,10 +53,12 @@
         name: "Earthen Fury (917)"
       }
     ],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Gas cloud"
+      },
+      {
+        name: "Gesture"
       }
     ],
     special_notes: []
@@ -88,6 +90,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -100,12 +103,22 @@
     description: [
       "The wood wight stalks the forest, searching for decaying and not-so-decaying flesh. Perhaps once a powerful human ranger, the wood wight is still powerful, but its tattered clothing is covered with mold, fungus and moss. The wood wight shambles about, mercilessly attacking anything living. Its cold, grey eyes and clammy fingers wield magic and weaponry with equal skill."
     ],
-    arrival: [],
+    arrival: [
+      "A wood wight just arrived.",
+      "A wood wight just arrived, limping badly."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The wood wight screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A wood wight crumbles to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -28,7 +28,7 @@
     physical_attacks: [
       {
         name: "Mace",
-        as: "185 to 235"
+        as: (185..235)
       }
     ],
     bolt_spells: [],
@@ -43,6 +43,9 @@
       },
       {
         name: "Footstomp"
+      },
+      {
+        name: "Kick"
       }
     ],
     special_abilities: [],
@@ -75,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,12 +91,18 @@
     description: [
       "Long, muscular legs support the small body of the bully. Her skin is nut brown and she has mustard yellow hair that falls to the small of her back in tangled, unwashed locks. She has big almond-shaped eyes that are oddly wide-set and a pointed nose that looks like a thorn sticking out of her round, plump face."
     ],
-    arrival: [],
+    arrival: [
+      "Smacking one fist into his opposite hand in a menacing manner, a cloud sprite bully wanders in.",
+      "Smacking one fist into her opposite hand in a menacing manner, a cloud sprite bully wanders in."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

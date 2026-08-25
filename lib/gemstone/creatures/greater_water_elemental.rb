@@ -31,6 +31,10 @@
       {
         name: "Pound",
         as: 441
+      },
+      {
+        name: "Fist",
+        as: 425
       }
     ],
     bolt_spells: [
@@ -96,6 +100,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -114,6 +119,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater water elemental pounds at you with {pronoun} fist!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

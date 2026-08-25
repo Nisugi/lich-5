@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Dagger",
-        as: 95
+        as: 100
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -79,12 +80,33 @@
     description: [
       "The little gremlin is a small furless creature with beady little eyes and sharp teeth that have been filed into triangular fangs. It has long, metal capped, nails protruding several inches from the tip of each finger. Though humanoid in form, it has a natural facial expression that is as wicked as any other known to nature."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A slimy little grub crawls in, leaving a trail of slime in its wake."
+    ],
+    flee: [
+      "A nasty little blue gremlin scampers {direction}."
+    ],
+    death: [
+      "The green gremlin falls to the ground and dies with a gentle sigh.",
+      "The red gremlin falls to the ground and dies with a gentle sigh.",
+      "The red gremlin sighs one last time and dies.",
+      "The yellow gremlin falls to the ground and dies with a gentle sigh.",
+      "The green gremlin sighs one last time and dies.",
+      "The blue gremlin falls to the ground and dies with a gentle sigh."
+    ],
+    decay: [
+      "A nasty little green gremlin decays into compost.",
+      "A nasty little red gremlin decays into compost.",
+      "A nasty little yellow gremlin decays into compost.",
+      "A nasty little blue gremlin decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A nasty little gremlin swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

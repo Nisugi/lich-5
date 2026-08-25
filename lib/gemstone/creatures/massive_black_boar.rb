@@ -43,6 +43,18 @@
       {
         name: "Bite (attack)",
         as: 312
+      },
+      {
+        name: "Bite",
+        as: 325
+      },
+      {
+        name: "Charge",
+        as: 335
+      },
+      {
+        name: "Tusk",
+        as: 325
       }
     ],
     bolt_spells: [],
@@ -79,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -92,11 +105,26 @@
       "The black boar snorts loudly and scrapes at the ground, peering around with his close-set, bloodshot eyes in hopes of finding something he can gore into a bloody pulp or pound into the earth. His body is covered with coarse, black hair, and dull grey tusks protrude from each side of his gaping mouth. A good ten feet long from dripping snout to curly tail and weighing more than a ton, the black boar moves with surprising speed and dexterity as he bears down, squealing furiously, on his intended prey. The murderous glint in the boar's eyes betrays an intelligence much greater than his mundane kin."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A massive black boar crawls {direction}."
+    ],
+    death: [
+      "The black boar lets out a final agonized squeal and dies.",
+      "The black boar collapses to the ground, emits a final squeal, and dies."
+    ],
+    decay: [
+      "A massive black boar decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A massive black boar charges at you with {pronoun} tusk!",
+      "A massive black boar charges at you!"
+    ],
+    bite: [
+      "A massive black boar tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

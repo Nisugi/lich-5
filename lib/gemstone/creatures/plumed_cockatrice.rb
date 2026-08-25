@@ -39,6 +39,10 @@
       {
         name: "Pincer (attack)",
         as: 157
+      },
+      {
+        name: "Strike",
+        as: 143
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,12 +92,24 @@
     description: [
       "A smaller relative of the basilisk, the plumed cockatrice has a snake-like body, plumes of feathers spearing up from its head, dapple grey wings, and short, stout legs. Its cold, penetrating gaze is not nearly as deadly as that of its larger cousin but the plumed cockatrice should not be treated lightly. Its vicious use of its sharp beak and raking claws make it a fierce opponent even in the best of situations."
     ],
-    arrival: [],
+    arrival: [
+      "A plumed cockatrice just arrived!",
+      "A Neartofar orc stalks in purposefully, his nose raised as he sniffs at the air."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The plumed cockatrice rolls over on its back, emits a final screech and dies."
+    ],
+    decay: [
+      "A plumed cockatrice decays into a useless pile of scales and feathers."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A plumed cockatrice screeches and strikes at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

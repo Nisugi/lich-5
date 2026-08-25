@@ -8,7 +8,7 @@
   family: "Gremlin",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: (406..422)
+        as: 427
       }
     ],
     bolt_spells: [],
@@ -60,7 +60,7 @@
     emp_td: (326..335),
     pal_td: 282,
     ran_td: nil,
-    sor_td: (338..348),
+    sor_td: (338..357),
     wiz_td: nil,
     mje_td: 364,
     mne_td: 361,
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,12 +88,35 @@
     description: [
       "The gremlock is larger than her relative, the gremlin, stretching five to six feet in height. The back hunched over from her time spent in the shadows stalking her prey, her actual height cannot be determined accurately. Tufts of dirty fur form a straggly mane around the savage looking face. Her long bulky arms tipped with massive claws only add to the deformity of the gremlock with her razor-sharp maw and potentially fatal, hungry glare."
     ],
-    arrival: [],
+    arrival: [
+      "A stick flies in and skips along the floor drawing your attention.  As you return to your original focus, you see a gremlock!",
+      "A pebble flies in and skips along the floor drawing your attention.  As you return to your original focus, you see a gremlock!",
+      "A rock flies in and skips along the floor drawing your attention.  As you return to your original focus, you see a gremlock!",
+      "A pebble flies in and skips along the ground drawing your attention.  As you return to your original focus, you see a gremlock!",
+      "A rock flies in and skips along the ground drawing your attention.  As you return to your original focus, you see a gremlock!",
+      "A stick flies in and skips along the ground drawing your attention.  As you return to your original focus, you see a gremlock!",
+      "A gremlock stomps in angrily!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A gremlock's eyes roll up as she dies.",
+      "A gremlock collapses and his eyes roll up as he dies.",
+      "A gremlock's eyes roll up as he dies.",
+      "A gremlock collapses and her eyes roll up as she dies.",
+      "A gremlock goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The gremlock's tibia passes his femur in a very unpleasant manner!",
+      "Acid dissolves connecting cartilage, freeing the gremlock's ribs to move independently.",
+      "Acid dissolves the knee ligaments.  The gremlock's tibia passes her femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A gremlock claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

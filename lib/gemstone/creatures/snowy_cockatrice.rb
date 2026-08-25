@@ -39,15 +39,21 @@
       {
         name: "Pincer (attack)",
         as: 99
+      },
+      {
+        name: "Strike",
+        as: 99
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Stare"
+      },
+      {
+        name: "Dust Kick"
       }
     ],
     special_notes: []
@@ -79,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +98,23 @@
     description: [
       "A smaller relative of the basilisk, the cockatrice has a serpentine body, with feathered head, wings, and legs. Having the cold, freezing gaze of its larger cousin, the cockatrice should not be treated lightly. A sharp beak and raking claws complete this small but deadly package of evil."
     ],
-    arrival: [],
+    arrival: [
+      "A snowy cockatrice just arrived!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The snowy cockatrice rolls over on its back, emits a final screech and dies."
+    ],
+    decay: [
+      "A snowy cockatrice decays into a useless pile of scales and feathers."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A snowy cockatrice screeches and strikes at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

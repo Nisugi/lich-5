@@ -83,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,12 +96,30 @@
     description: [
       "This odd creature looks unnatural, as though some wizard had been meddling with its shape. It looks like a large, 4-foot-long lizard, with an uncomfortably large variety of teeth in its long snout."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A thrak scampers in."
+    ],
+    flee: [
+      "The thrak scampers {direction}."
+    ],
+    death: [
+      "The thrak falls back into a heap and dies.",
+      "The thrak hisses one last time and dies."
+    ],
+    decay: [
+      "A thrak decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A thrak charges at you!"
+    ],
+    bite: [
+      "A thrak tries to bite you!"
+    ],
+    claw: [
+      "A thrak claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

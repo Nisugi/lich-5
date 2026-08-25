@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -79,12 +80,26 @@
     description: [
       "With scruffy brown fur and dark black naked ears, the fanged rodent stands nearly two feet in height. An elongated snout with violently twitching whiskers gives this ferocious beast its keen sense of smell and the ability to detect even the most stealthy of adventurers. Its beady eyes glare back with unrestrained hatred as drool dribbles down from its vicious maw and clings to the neck of its dirty pelt. Routinely seen in great packs, the rodent has brought more than one over-eager adventurer to an early grave."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A choking fetid odor heralds the arrival of a fanged rodent!",
+      "A fanged rodent scampers in!"
+    ],
+    flee: [
+      "A fanged rodent scampers {direction}."
+    ],
+    death: [
+      "The fanged rodent collapses to the ground, emits a final squeal, and dies.",
+      "The fanged rodent twitches and dies.",
+      "The fanged rodent collapses to the ground, emits a final silent squeal, and dies."
+    ],
+    decay: [
+      "A fanged rodent decays into a pile of hair and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

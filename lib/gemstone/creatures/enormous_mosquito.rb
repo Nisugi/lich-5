@@ -29,15 +29,21 @@
       {
         name: "Dive",
         as: 216
+      },
+      {
+        name: "(quarantine-recovered)",
+        as: 216
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Blood drain"
+      },
+      {
+        name: "Dive"
       }
     ],
     special_notes: []
@@ -69,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -83,10 +90,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "An enormous mosquito goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "Growing brittle, the enormous mosquito's body suddenly caves in and turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An enormous mosquito suddenly dives at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

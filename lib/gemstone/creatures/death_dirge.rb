@@ -43,6 +43,10 @@
       {
         name: "Closed fist",
         as: 98
+      },
+      {
+        name: "Black scimitar",
+        as: 98
       }
     ],
     bolt_spells: [],
@@ -50,6 +54,10 @@
       {
         name: "Calm (201)",
         cs: 53
+      },
+      {
+        name: "Closed fist",
+        cs: 49
       }
     ],
     offensive_spells: [],
@@ -84,6 +92,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -96,12 +105,25 @@
     description: [
       "Defender of a battleground long lost in the terrain, the death dirge still maintains its post relentlessly, battling all that would attempt to invade its position. All that seems to remain in its consciousness are the orders to repel all who enter, a task it executes with single-minded fury."
     ],
-    arrival: [],
+    arrival: [
+      "A sorrowful tune is carried on the breeze.  The wailing grows louder, reaching an excruciating pitch as a death dirge arrives!",
+      "A death dirge just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The death dirge falls to the ground motionless.",
+      "The death dirge screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A death dirge turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A death dirge swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

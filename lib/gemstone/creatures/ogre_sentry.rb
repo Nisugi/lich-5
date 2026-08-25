@@ -27,13 +27,13 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [],
-    maneuvers: [
+    physical_attacks: [
       {
         name: "Sunder Shield"
+      },
+      {
+        name: "Thin-bladed steel handaxe",
+        as: 193
       }
     ],
     special_abilities: [],
@@ -66,6 +66,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -78,12 +79,28 @@
     description: [
       "You are not quite sure what to make of the ogre sentry, as you have never seen anything that looks quite like it. Stopping a moment, you try to commit this creature to memory so that you can tell tales of it to your fellow adventurers back in the safety of the local tavern."
     ],
-    arrival: [],
+    arrival: [
+      "An ogre sentry just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The ogre sentry screams one last time and dies.",
+      "The ogre sentry falls to the floor and dies.",
+      "The ogre sentry falls to the ground and dies.",
+      "The ogre sentry screams silently one last time and dies.",
+      "An ogre sentry goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "An ogre sentry decays into compost.",
+      "Acid dissolves the knee ligaments.  The ogre sentry's tibia passes his femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An ogre sentry swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

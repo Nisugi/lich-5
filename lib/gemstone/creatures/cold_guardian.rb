@@ -78,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -92,10 +93,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The cold guardian screams evilly one last time and goes still.",
+      "The cold guardian falls to the ground motionless."
+    ],
+    decay: [
+      "A cold guardian turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A cold guardian gestures at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

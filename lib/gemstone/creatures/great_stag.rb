@@ -39,6 +39,14 @@
       {
         name: "Impale (attack)",
         as: 165
+      },
+      {
+        name: "Antlers",
+        as: 148
+      },
+      {
+        name: "Charge",
+        as: 148
       }
     ],
     bolt_spells: [],
@@ -77,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -91,10 +100,23 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The great stag collapses to the ground, emits a final sigh, and dies.",
+      "The great stag lets out a final agonized sigh and dies.",
+      "The great stag collapses to the ground, emits a final silent sigh, and dies.",
+      "The great stag silently lets out a final agonized sigh and dies."
+    ],
+    decay: [
+      "A great stag decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A great stag charges at you!",
+      "A great stag tries to impale you with {pronoun} antlers!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

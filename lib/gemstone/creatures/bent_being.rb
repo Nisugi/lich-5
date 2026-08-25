@@ -31,6 +31,10 @@
       {
         name: "Stomp",
         as: 386
+      },
+      {
+        name: "Claw",
+        as: 356
       }
     ],
     bolt_spells: [
@@ -79,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -97,6 +102,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A bent being claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

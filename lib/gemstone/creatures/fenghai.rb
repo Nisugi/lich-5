@@ -33,6 +33,34 @@
       {
         name: "kris",
         as: 173
+      },
+      {
+        name: "Freezing ball of pure cold",
+        as: 200
+      },
+      {
+        name: "Hissing stream of acid",
+        as: 206
+      },
+      {
+        name: "Large boulder",
+        as: 123
+      },
+      {
+        name: "Powerful lightning bolt",
+        as: 208
+      },
+      {
+        name: "Scimitar",
+        as: 209
+      },
+      {
+        name: "Small surge of electricity",
+        as: 202
+      },
+      {
+        name: "Stream of fire",
+        as: 167
       }
     ],
     bolt_spells: [
@@ -93,6 +121,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -107,10 +136,25 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The fenghai falls to the ground motionless.",
+      "A fenghai goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the fenghai's ribs to move independently.",
+      "The fenghai's left leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves the knee ligaments.  The fenghai's tibia passes its femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A fenghai hurls {weapon} at you!",
+      "A fenghai points a furry finger at you!",
+      "A fenghai spins {pronoun} head in your direction and spews a massive stream of spittle and blood at you!  With a quick duck of your head, you step out of {pronoun} path.",
+      "A fenghai swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

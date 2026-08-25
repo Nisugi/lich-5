@@ -39,6 +39,14 @@
       {
         name: "Kick",
         as: 232
+      },
+      {
+        name: "(quarantine-recovered)",
+        as: 238
+      },
+      {
+        name: "Antlers",
+        as: 238
       }
     ],
     bolt_spells: [],
@@ -75,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -89,10 +98,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A caribou goes limp as he is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A caribou charges you with {pronoun} antlers!",
+      "A caribou rears back and kicks {pronoun} front hooves at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

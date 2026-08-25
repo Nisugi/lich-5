@@ -33,6 +33,10 @@
       {
         name: "Stinger (attack)",
         as: 254
+      },
+      {
+        name: "Stinger",
+        as: 254
       }
     ],
     bolt_spells: [],
@@ -73,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -85,12 +90,26 @@
     description: [
       "The firethorn shoot is comprised of a light brown, round, bamboo-like stalk rising off flexible roots. Near the top, several leafy green fronds, laden with thorns, curl away from the main stalk. A mobile, half-intelligent plant, the firethorn shoot ambles about looking for carriers in which to implant its thorny seeds in the hope that they will be taken far from the original plant to grown a new firethorn shoot. Unfortunately, the implantation process often kills the carrier."
     ],
-    arrival: [],
+    arrival: [
+      "A firethorn shoot shambles in.",
+      "A firethorn shoot just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The firethorn shoot falls to the ground and dies.",
+      "A firethorn shoot goes limp as it is rendered unconscious!",
+      "The firethorn shoot twitches one last time and dies."
+    ],
+    decay: [
+      "A firethorn shoot decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A firethorn shoot stabs at you with {pronoun} stinger!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

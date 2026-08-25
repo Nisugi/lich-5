@@ -35,7 +35,11 @@
     physical_attacks: [
       {
         name: "Trident",
-        as: (215..229)
+        as: 197
+      },
+      {
+        name: "Stream of water",
+        as: 227
       }
     ],
     bolt_spells: [
@@ -61,6 +65,9 @@
     maneuvers: [
       {
         name: "Water blast"
+      },
+      {
+        name: "Repel"
       }
     ],
     special_abilities: [],
@@ -96,6 +103,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -111,9 +119,67 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a Solhaven Bay scallop shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a turquoise stone catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a lump of grey ambergris catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a light pink morganite stone catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a large grey pearl catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a dovesnail shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of some blue lapis lazuli catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a split-back pink conch shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a yellow zircon catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of an angulate wentletrap shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a black helmet shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a star sapphire catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a white gryphon's wing shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a leopard cowrie shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a black tourmaline catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor.",
+      "The glimmer of a pink rhodochrosite stone catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a purple-cap cowrie shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a ruby-lined nassa shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a white opal catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a snow cowrie shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a crown-of-Charl shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a tiger cowrie shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a green tourmaline catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a black opal catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a selanthan bloodjewel catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The water wyrd gurgles and collapses into the large puddle on the floor.",
+      "The water wyrd gurgles and collapses into the small puddle on the floor.",
+      "The glimmer of a polished green abalone shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a smoky topaz catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a white opal catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor.",
+      "The glimmer of an uncut ruby catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor.",
+      "The glimmer of a red helmet shell catches your eye as the water wyrd gurgles and collapses into the small pool on the floor.",
+      "The glimmer of an amethyst clam shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a blue spinel catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a crown conch shell catches your eye as the water wyrd gurgles and collapses into the small pool on the floor.",
+      "The water wyrd gurgles and collapses into the small pool on the floor.",
+      "The glimmer of a Solhaven Bay scallop shell catches your eye as the water wyrd gurgles and collapses into the small pool on the floor.",
+      "The glimmer of a selanthan bloodjewel catches your eye as the water wyrd gurgles and collapses into the large pool on the floor.",
+      "The glimmer of a tiger cowrie shell catches your eye as the water wyrd gurgles and collapses into the large pool on the floor.",
+      "The glimmer of a violet sapphire catches your eye as the water wyrd gurgles and collapses into the large pool on the floor.",
+      "The glimmer of a pink sapphire catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor.",
+      "The glimmer of a black-spined conch shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The water wyrd gurgles and collapses into the large pool on the floor.",
+      "The glimmer of a leopard cowrie shell catches your eye as the water wyrd gurgles and collapses into the large pool on the floor.",
+      "The glimmer of an iridescent tempest shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of some polished pink coral catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a pink rhodochrosite stone catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor.",
+      "The glimmer of a spiny siren's-comb shell catches your eye as the water wyrd gurgles and collapses into the small pool on the floor.",
+      "The glimmer of a selanthan bloodjewel catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor.",
+      "The glimmer of a pearl nautilus shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A water wyrd raises {pronoun} hands, palms outward toward you!",
+      "A water wyrd swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

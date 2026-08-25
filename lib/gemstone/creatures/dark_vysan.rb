@@ -43,6 +43,10 @@
       {
         name: "Charge (attack)",
         as: 54
+      },
+      {
+        name: "Fist",
+        as: 44
       }
     ],
     bolt_spells: [],
@@ -79,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: false,
@@ -93,10 +98,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The dark vysan falls to the ground motionless.",
+      "The dark vysan screams evilly one last time and goes still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A dark vysan pounds at you with {pronoun} fist!",
+      "A dark vysan tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

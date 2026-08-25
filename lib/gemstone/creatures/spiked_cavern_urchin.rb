@@ -37,10 +37,12 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Barbed spines"
+      },
+      {
+        name: "Spine Barrage"
       }
     ],
     special_notes: []
@@ -72,6 +74,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -86,10 +89,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A spiked cavern urchin goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "Spines litter the ground as the cavern urchin crumbles into a pile of splinters and skin.",
+      "A spiked cavern urchin simply withers away, bits of grayish dust scattered about in its wake."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -87,6 +87,15 @@
     # }
   ],
 
+  # ---------- Equipment ----------
+  # Items the creature is seen with, from the LOOK gear line ("It has a
+  # wooden shield, a broadsword and some reinforced leather."). Flat
+  # list; the game's own "(worn)" marker is not kept here (re-derivable
+  # from session logs if it is ever wanted).
+  equipment: [
+    # "a crude zorchar khopesh"
+  ],
+
   # ---------- Crafting / Misc ----------
   alchemy: [],
   abilities_misc: [], # keep if you want to separate non-combat traits
@@ -114,6 +123,9 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
 
     # Optional informational block for human tips (NOT triggers)
     info: {

@@ -43,15 +43,21 @@
       {
         name: "Pound",
         as: 107
+      },
+      {
+        name: "Skeletal fist",
+        as: 97
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Tail sweep"
+      },
+      {
+        name: "Tail Swipe"
       }
     ],
     special_notes: []
@@ -83,6 +89,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -101,6 +108,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A bone golem pounds at you with bone golem skeletal fist!",
+      "A bone golem pounds at you with {pronoun} skeletal fist!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

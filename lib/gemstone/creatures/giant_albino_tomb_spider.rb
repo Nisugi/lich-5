@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -89,10 +90,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The albino tomb spider collapses to the ground and dies.",
+      "The albino tomb spider's body jerks one last time and dies."
+    ],
+    decay: [
+      "A giant albino tomb spider's legs shrivel up beneath it as it decays into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

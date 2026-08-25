@@ -29,6 +29,10 @@
       {
         name: "Pound",
         as: 210
+      },
+      {
+        name: "Fist",
+        as: 260
       }
     ],
     bolt_spells: [],
@@ -71,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -83,12 +88,21 @@
     description: [
       "The magru appears to be a huge, gelatinous red lump that pulses, swelling and shrinking slightly with a hypnotic rhythm. Its skin glistens with a dark, disgusting ooze."
     ],
-    arrival: [],
+    arrival: [
+      "A magru just arrived."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The magru collapses into a heap of quivering jelly."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A magru pounds at you with {pronoun} fist!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

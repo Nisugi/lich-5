@@ -29,12 +29,11 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Falchion",
-        as: (215..225)
+        name: "Falchion"
       },
       {
         name: "Jeddart-axe",
-        as: 225
+        as: (176..225)
       }
     ],
     bolt_spells: [],
@@ -43,6 +42,9 @@
     maneuvers: [
       {
         name: "Shield Charge"
+      },
+      {
+        name: "Tail Swipe"
       }
     ],
     special_abilities: [
@@ -79,6 +81,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -93,10 +96,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A tegursh sentry rasps a final scream and dies.",
+      "A tegursh sentry silently rasps a final scream and dies."
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the tegursh sentry's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A tegursh sentry swings {weapon} at you!",
+      "A tegursh sentry throws {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -73,6 +73,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -85,12 +86,22 @@
     description: [
       "Dressed in a cassock and veil, the Arachne servant looks thin and malnourished. Staring from behind the veil are a pair of eyes that reflect both terror and determination. Bound to the service of Arachne, the Arachne servants are totally dedicated to their master, performing whatever duty is required."
     ],
-    arrival: [],
+    arrival: [
+      "An Arachne servant just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The Arachne servant exhales a final curse and dies.",
+      "The Arachne servant slumps to the ground and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Arachne servant swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

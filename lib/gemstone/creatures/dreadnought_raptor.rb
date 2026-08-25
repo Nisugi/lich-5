@@ -31,15 +31,18 @@
     physical_attacks: [
       {
         name: "Impale",
-        as: "(spear) 275"
+        as: 274
       },
       {
-        name: "Bite",
-        as: "(impale) 275"
+        name: "Bite"
       },
       {
         name: "Claw",
         as: 275
+      },
+      {
+        name: "Swoop",
+        as: 281
       }
     ],
     bolt_spells: [],
@@ -80,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -93,11 +97,23 @@
       "The dreadnought raptor is a large, distinctly marked bird, with a wingspan twice the height of a giantman. Glossy black feathers and white markings on its broad wings and rounded tail give the raptor an ominous appearance, and feathers cover its legs to its feet. A dark ruff borders the dreadnought raptor's bald red head and neck. Its hooked bill and powerful talons are well suited for hunting."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A dreadnought raptor flies {direction}."
+    ],
+    death: [
+      "The dreadnought raptor writhes in agony, its wings flapping fruitlessly as it dies.",
+      "A dreadnought raptor goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "The dreadnought raptor decays into a pile of feathers."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A dazzling dreadnought raptor tries to impale you on dreadnought raptor beak!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

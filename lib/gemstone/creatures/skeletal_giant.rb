@@ -31,6 +31,10 @@
       {
         name: "Pound",
         as: 227
+      },
+      {
+        name: "Fist",
+        as: 227
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -82,9 +87,16 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A skeletal giant turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A skeletal giant pounds at you with {pronoun} fist!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

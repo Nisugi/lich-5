@@ -32,11 +32,11 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 164
+        as: (135..164)
       },
       {
         name: "Bite",
-        as: 170
+        as: (157..170)
       }
     ],
     bolt_spells: [],
@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -91,12 +92,30 @@
     description: [
       "The fire cat is a sleek cat, a real beauty to behold. It is fairly large, standing roughly head-high to a halfling. Its fur ranges from red to orange in color and it has long claws that have a metallic glint."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A fire cat scampers in!"
+    ],
+    flee: [
+      "A fire cat scampers {direction}.",
+      "A fire cat scampers {direction}, mewling in pain."
+    ],
+    death: [
+      "The fire cat lets out a final caterwaul and dies.",
+      "The fire cat crumples to the ground and dies.",
+      "A fire cat goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A fire cat decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A fire cat tries to bite you!"
+    ],
+    claw: [
+      "A fire cat claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

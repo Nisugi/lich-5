@@ -39,6 +39,10 @@
       {
         name: "Charge (attack)",
         as: 90
+      },
+      {
+        name: "Bite",
+        as: 72
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -87,12 +92,27 @@
     description: [
       "Twice the size of a domestic cat, the bobcat is covered in dense, thick fur varying from soft greys to light reddish brown. The fur along the middle back is darker, while her underparts are snowy white. Deep brown spots mark the bobcat's pelt but a predominent white spot on the back of her dark triangular ears make her easily recognizable when gathered with other wild cats. Whisking back and forth with her short banded tail, the bobcat seems anxious to pounce on her next prey."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A bobcat scampers in!"
+    ],
+    flee: [
+      "A bobcat scampers {direction}.",
+      "A bobcat scampers {direction}, mewling in pain."
+    ],
+    death: [
+      "The bobcat crumples to the ground and dies.",
+      "The bobcat lets out a final caterwaul and dies."
+    ],
+    decay: [
+      "A bobcat decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A bobcat tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

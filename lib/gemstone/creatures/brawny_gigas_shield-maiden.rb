@@ -98,6 +98,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -120,9 +121,18 @@
       "A brawny gigas shield-maiden just went into a thatched timber smithy.", # need to deal with portals
       "A brawny gigas shield-maiden rides a heavily armored battle mastodon {direction}, the mastodon limping with every great step."
     ],
-    spell_prep: "A brawny gigas shield-maiden raises a fist to the heavens as {pronoun} eyes begin to glow like molten gold.",
-    death: "A plaintive look passes across a brawny gigas shield-maiden's eyes like a fleeting shadow as {pronoun} goes still in death.",
-    decay: "Rot consumes a brawny gigas shield-maiden's body, leaving little behind.",
+    spell_prep: [
+      "A brawny gigas shield-maiden raises a fist to the heavens as {pronoun} eyes begin to glow like molten gold."
+    ],
+    attack: [],
+    bite: [],
+    claw: [],
+    death: [
+      "A plaintive look passes across a brawny gigas shield-maiden's eyes like a fleeting shadow as {pronoun} goes still in death."
+    ],
+    decay: [
+      "Rot consumes a brawny gigas shield-maiden's body, leaving little behind."
+    ],
     damage_resistance: "In response to the vibrations, a brawny gigas shield-maiden's skin seems to discolor and harden, lending the shield-maiden unnatural durability!",
     shield_bash: "A brawny gigas shield-maiden lunges forward at you with {pronoun} golden targe and attempts a shield bash!",
     shield_push: "A brawny gigas shield-maiden raises {pronoun} golden targe and attempts to push you away!",

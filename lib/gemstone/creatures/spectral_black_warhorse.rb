@@ -22,12 +22,15 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Charge (attack)",
-        as: "265 = 330"
+        name: "Charge (attack)"
       },
       {
         name: "Stomp",
         as: 250
+      },
+      {
+        name: "Charge",
+        as: 190
       }
     ],
     bolt_spells: [],
@@ -68,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -86,6 +90,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spectral black warhorse charges at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

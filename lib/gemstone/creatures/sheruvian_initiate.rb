@@ -35,6 +35,10 @@
       {
         name: "Jeddart-axe",
         as: 230
+      },
+      {
+        name: "Lunge",
+        as: 220
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -89,10 +94,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A Sheruvian initiate goes limp as it is rendered unconscious!",
+      "A Sheruvian initiate lunges at you, exclaiming, \"I've seen children put up a better fight than this fool!  Now he dies!\""
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The Sheruvian initiate's tibia passes its femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Sheruvian initiate lunges at you, exclaiming, \"I've seen children put up a better fight than this fool!  Now he dies!\"",
+      "A Sheruvian initiate swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

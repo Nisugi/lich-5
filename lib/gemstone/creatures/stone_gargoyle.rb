@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 242
+        as: (134..242)
       },
       {
         name: "Claw",
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -85,10 +86,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A stone gargoyle goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A stone gargoyle crumbles to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A stone gargoyle tries to bite you!"
+    ],
+    claw: [
+      "A stone gargoyle claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

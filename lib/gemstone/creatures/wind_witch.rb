@@ -62,10 +62,12 @@
         name: "Call Wind (912)"
       }
     ],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Gas cloud"
+      },
+      {
+        name: "Point"
       }
     ],
     special_notes: []
@@ -103,6 +105,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -117,10 +120,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The wind witch howls in agony one last time and dies.",
+      "A wind witch goes limp as it is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A wind witch points {pronoun} outstretched hands at you!",
+      "A wind witch swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -39,6 +39,14 @@
       {
         name: "Impale",
         as: 396
+      },
+      {
+        name: "Smash",
+        as: 412
+      },
+      {
+        name: "Tusk",
+        as: 356
       }
     ],
     bolt_spells: [],
@@ -77,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -89,12 +98,26 @@
     description: [
       "The gnarled being is a twisted amalgamation of flesh and other, less mentionable things. Tusks and horns grow from its head in an impressive array of weaponry. The tough, pale yellow skin of the being looks burnt and scorched in places, but this doesn't seem to bother it. The gnarled being's twisted hands and feet end with wicked, razor-sharp claws that refuse to shine in the light."
     ],
-    arrival: [],
+    arrival: [
+      "A gnarled being strides in with a snort of derision.",
+      "A twisted being stalks in, its tail swishing back and forth menacingly."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A gnarled being coughs up some blood and dies.",
+      "A bent being curses through its teeth as it dies."
+    ],
+    decay: [
+      "A gnarled being crumbles away into nothing."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A gnarled being charges at you with {pronoun} tusk!",
+      "A lesser construct raises gnarled being massive foot and attempts to smash you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

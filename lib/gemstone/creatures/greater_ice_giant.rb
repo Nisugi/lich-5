@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Battle-axe",
-        as: 306
+        as: (236..306)
       }
     ],
     bolt_spells: [
@@ -77,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -89,12 +90,23 @@
     description: [
       "Standing nearly three times as tall as a giantman, the ice giant trails frost and snow in his wake. Seemingly carved from living ice and snow, icy blue eyes set beneath a heavily furrowed brow and a tangled mop of icy blue hair provide a splash of color against the ice giant's dull white frost-covered skin."
     ],
-    arrival: [],
+    arrival: [
+      "A greater ice giant lumbers in, followed by a hailing icestorm!"
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The ice giant cries out in cold agony one last time and dies.",
+      "The ice giant falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater ice giant points an icy finger at you!",
+      "A greater ice giant swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

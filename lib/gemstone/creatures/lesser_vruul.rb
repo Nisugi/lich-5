@@ -62,6 +62,10 @@
       {
         name: "Unbalance (110)",
         cs: 205
+      },
+      {
+        name: "Battle axe",
+        cs: 205
       }
     ],
     offensive_spells: [],
@@ -104,6 +108,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -116,12 +121,21 @@
     description: [
       "The lesser vruul has tough, leathery hide, as black as midnight. Bat-like wings sprout from its back, but they do not look large or strong enough to support its weight in flight. The vruul's claws are long, sharp and appear to be stained with the blood of many victims. Its eyes are eerie, solid green orbs that seem to glow with an inner power."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser vruul just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The lesser vruul twitches violently, then dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser vruul swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

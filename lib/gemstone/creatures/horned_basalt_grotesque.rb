@@ -28,7 +28,7 @@
     physical_attacks: [
       {
         name: "Closed fist",
-        as: "525 to 565"
+        as: (525..565)
       },
       {
         name: "Stomp",
@@ -103,6 +103,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -121,6 +122,9 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

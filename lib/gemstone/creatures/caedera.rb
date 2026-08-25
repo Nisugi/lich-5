@@ -31,24 +31,32 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: (420..440)
+        as: 411
       },
       {
-        name: "Charge (attack)",
-        as: (420..440)
+        name: "Charge (attack)"
       },
       {
-        name: "Ensnare (attack)",
-        as: (420..440)
+        name: "Ensnare (attack)"
+      },
+      {
+        name: "Charge",
+        as: 421
+      },
+      {
+        name: "Ensnare",
+        as: 421
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Burrow"
+      },
+      {
+        name: "Burrow Ambush"
       }
     ],
     special_notes: []
@@ -80,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -94,10 +103,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A caedera goes limp as it is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A caedera charges at you!",
+      "A caedera tries to ensnare you!"
+    ],
+    bite: [
+      "A caedera tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

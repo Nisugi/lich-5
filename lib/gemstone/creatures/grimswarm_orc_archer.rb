@@ -61,6 +61,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -79,6 +80,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Grimswarm orc archer fires {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [
         "Ranged attacker (bow). Observed arrow AS 267 at an unknown camp level."

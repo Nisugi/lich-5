@@ -35,6 +35,14 @@
       {
         name: "Impale (attack)",
         as: 216
+      },
+      {
+        name: "Charge",
+        as: 206
+      },
+      {
+        name: "Tusk",
+        as: 208
       }
     ],
     bolt_spells: [],
@@ -75,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -89,10 +98,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The warthog collapses to the ground, emits a final snuffle, and dies.",
+      "The warthog lets out a final agonized snuffle and dies."
+    ],
+    decay: [
+      "A warthog decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A warthog charges at you with {pronoun} tusk!",
+      "A warthog charges at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

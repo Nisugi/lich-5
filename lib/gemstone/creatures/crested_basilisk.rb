@@ -39,11 +39,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 220
+        as: (206..220)
       },
       {
         name: "Claw",
-        as: (208..216)
+        as: 221
       }
     ],
     bolt_spells: [],
@@ -84,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -96,12 +97,29 @@
     description: [
       "The crested basilisk is the size of a large dog, but its vicious-looking talons and sharp, hooked beak are fearsome weapons indeed. Looking like a cross between a huge fighting rooster and a serpentine lizard, the crested basilisk gazes around with its hypnotic, paralyzing eyes as its scaled reptilian tail whips back and forth. A bright red crest, more reminiscent of a lizard than of a chicken, adorns its feathered head and neck."
     ],
-    arrival: [],
+    arrival: [
+      "A crested basilisk stomps in and glares about.",
+      "A combative crested basilisk stomps in and glares about.",
+      "A belligerent crested basilisk stomps in and glares about."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The crested basilisk rolls over on its back, emits a final hiss and dies.",
+      "The crested basilisk emits a final hiss and dies.",
+      "The crested basilisk emits a final silent hiss and dies.",
+      "A crested basilisk goes limp as it is rendered unconscious!",
+      "The crested basilisk rolls over on its back, emits a final silent hiss and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A crested basilisk tries to bite you!"
+    ],
+    claw: [
+      "A crested basilisk claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

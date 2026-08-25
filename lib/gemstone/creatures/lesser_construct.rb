@@ -8,7 +8,7 @@
   family: "Golem",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: false,
@@ -33,21 +33,30 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Flail",
-        as: "(massive arm)419"
+        name: "Flail"
       },
       {
         name: "Stomp",
         as: 404
+      },
+      {
+        name: "Massive arm",
+        as: 412
+      },
+      {
+        name: "Smash",
+        as: 416
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Foot Stomp"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_notes: []
@@ -79,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +101,22 @@
     description: [
       "The white granite-like features of the lesser construct hold no hints of the giant creature's intentions or motivations. Its alabaster skin made more of the hardest rock than any living tissue makes the construct a formidable opponent for any who dare to trifle with it. Massing more than ten giantmen, it is a a mountain of rock when in motion and very little, man or animal can oppose its desired path of travel once it is in motion."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A lesser construct lumbers in!"
+    ],
+    flee: [
+      "A lesser construct crawls {direction}."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser construct raises lesser construct massive foot and attempts to smash you!",
+      "A lesser construct swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

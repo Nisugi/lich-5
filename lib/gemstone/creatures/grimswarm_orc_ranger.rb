@@ -61,6 +61,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -79,6 +80,14 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Grimswarm orc ranger fires {weapon} at you!",
+      "A Grimswarm orc ranger gestures at you!",
+      "A Grimswarm orc ranger swings {weapon} at you!",
+      "A Grimswarm orc ranger thrusts with a trident at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [
         "Observed with trident (AS 269-350) and casting spiritual-circle spells (CS 213), camp level unknown."

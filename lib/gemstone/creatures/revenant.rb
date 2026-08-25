@@ -88,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -100,12 +101,24 @@
     description: [
       "The revenant howls in pain, excruciatingly remembering its grisly demise. It presents a ghostly visage of skin shredded by the torturer's whip to display exposed muscles, shriveled organs, and protruding bones. This gaunt creature strikes quickly in its attempt to eradicate all that is living, thereby making sure its enemies die as well.\n\nLook:\nYou see a fairly typical revenant. It appears to be undead.\nIt appears to be in good shape.\nIt has a wooden shield, a broadsword and some reinforced leather (worn).\n\nAssess:\nThe revenant is medium in size and about five feet high in its current state."
     ],
-    arrival: [],
+    arrival: [
+      "Out of thin air, a shadowy figure takes shape before your eyes and materializes into a revenant!",
+      "A revenant just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The revenant slowly settles to the ground and begins to dissipate."
+    ],
+    decay: [
+      "A revenant vanishes into thin air, leaving no trace behind."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A revenant swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

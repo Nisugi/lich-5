@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 133
+        as: (103..133)
       },
       {
         name: "Claw",
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -87,12 +88,28 @@
     description: [
       "The wolfshade is the animated spirit of a powerful northern grey wolf, one of the larger members of the wolf species. Even in death, the wolfshade still possesses the instincts and abilities of its living form, including keen hearing, smell, sight, and extremely quick reflexes. Dark grey with bloodshot eyes, the wolfshade is driven onward by a hunger for living flesh that it can never hope to satisfy."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A wolfshade scampers in."
+    ],
+    flee: [
+      "The wolfshade scampers {direction}."
+    ],
+    death: [
+      "The wolfshade falls back into a heap and dies.",
+      "The wolfshade hisses one last time and dies."
+    ],
+    decay: [
+      "A wolfshade decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A wolfshade tries to bite you!"
+    ],
+    claw: [
+      "A wolfshade claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

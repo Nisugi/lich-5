@@ -29,8 +29,19 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Hammer of Kai",
-        as: "+348"
+        name: "Hammer of Kai"
+      },
+      {
+        name: "Black steel claidhmore",
+        as: 272
+      },
+      {
+        name: "Black steel twohanded sword",
+        as: 342
+      },
+      {
+        name: "Rhimar trident",
+        as: 345
       }
     ],
     bolt_spells: [],
@@ -74,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -86,12 +98,25 @@
     description: [
       "Muscular and lean, a phantasmal bestial swordsman stands shorter than most giantmen, dressed only in the ragged remains of leather pants. His skin is the color of a starless night and is wrapped tightly around brawny arms and legs. Long, pointed ears extend from the sides of his bald head with large, pitch black eyes set closely together over two large slits in place of a proper nose. Long yellow canines stick up from behind the lower lip of the swordsman."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A phantasmal bestial swordsman stalks in."
+    ],
+    flee: [
+      "A phantasmal bestial swordsman stalks {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "Thin blue lines of magical energy crackle over the body of a phantasmal bestial swordsman before he dissolves, leaving a puddle of liquid and the smell of ozone in the air.",
+      "Thin blue lines of magical energy crackle over the body of a phantasmal bestial swordsman before she dissolves, leaving a puddle of liquid and the smell of ozone in the air."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A phantasmal bestial swordsman swings {weapon} at you!",
+      "A phantasmal bestial swordsman thrusts with a rhimar trident at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

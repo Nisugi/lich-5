@@ -87,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -101,10 +102,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The kobold shepherd howls in agony one last time and dies."
+    ],
+    decay: [
+      "With one last twitch, the kobold shepherd decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A kobold shepherd claps {pronoun} hands together in front of you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

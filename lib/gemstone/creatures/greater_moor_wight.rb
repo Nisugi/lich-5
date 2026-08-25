@@ -37,12 +37,19 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Broadsword",
-        as: (252..267)
+        name: "Broadsword"
       },
       {
         name: "Handaxe",
-        as: 252
+        as: (226..252)
+      },
+      {
+        name: "Rusty steel flyssa",
+        as: 246
+      },
+      {
+        name: "Wickedly curved scimitar",
+        as: 226
       }
     ],
     bolt_spells: [],
@@ -94,6 +101,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -112,6 +120,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater moor wight swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

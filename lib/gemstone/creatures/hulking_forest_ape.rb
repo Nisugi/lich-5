@@ -28,15 +28,15 @@
     physical_attacks: [
       {
         name: "Pound (attack)",
-        as: "200 to 278"
+        as: (200..278)
       },
       {
         name: "Bite (attack)",
-        as: "200 to 278"
+        as: (200..278)
       },
       {
         name: "Charge (attack)",
-        as: "200 to 278"
+        as: (200..278)
       }
     ],
     bolt_spells: [],
@@ -77,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -95,6 +96,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A hulking forest ape lunges forward at you on {pronoun} powerful limbs!",
+      "A hulking forest ape snaps at you with sharp teeth and strong jaws!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

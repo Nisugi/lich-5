@@ -8,7 +8,7 @@
   family: "Ithzir",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -32,6 +32,14 @@
       {
         name: "Broadsword",
         as: (414..424)
+      },
+      {
+        name: "Closed fist",
+        as: 402
+      },
+      {
+        name: "Smash",
+        as: 443
       }
     ],
     bolt_spells: [],
@@ -60,7 +68,7 @@
     emp_td: (325..334),
     pal_td: nil,
     ran_td: nil,
-    sor_td: (339..354),
+    sor_td: (339..363),
     wiz_td: nil,
     mje_td: 380,
     mne_td: 368,
@@ -75,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,12 +96,27 @@
     description: [
       "Wide, pupil-less green eyes peer about, quickly assessing both threats and terrain. The Ithzir scout stalks in a fluid, half-crouch that is as graceful as it is lightning fast, his whole demeanor underscoring his menace and obvious intelligence. The Ithzir scout is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The scout wears a charcoal grey tunic with no apparent identifiers of his station."
     ],
-    arrival: [],
+    arrival: [
+      "An Ithzir initiate strides in, his hands clasped before him.",
+      "An Ithzir initiate strides in, her hands clasped before her."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The Ithzir scout twitches violently, then dies."
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The Ithzir scout's tibia passes her femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater construct raises ithzir scout massive foot and attempts to smash you!",
+      "An Ithzir scout swings {weapon} at you!",
+      "An Ithzir scout throws {weapon} at you!",
+      "The Ithzir scout points at you for emphasis."
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

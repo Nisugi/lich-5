@@ -8,7 +8,7 @@
   family: "elemental",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: false,
@@ -32,6 +32,18 @@
       {
         name: "Falchion",
         as: 402
+      },
+      {
+        name: "Ensnare",
+        as: 346
+      },
+      {
+        name: "Jagged shard of obsidian",
+        as: 406
+      },
+      {
+        name: "Sharp beak",
+        as: 295
       }
     ],
     bolt_spells: [],
@@ -46,6 +58,9 @@
       },
       {
         name: "Shield Bash"
+      },
+      {
+        name: "Dust Kick"
       }
     ],
     special_abilities: [],
@@ -63,7 +78,7 @@
     emp_td: (336..342),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 397,
+    sor_td: (370..397),
     wiz_td: nil,
     mje_td: 390,
     mne_td: nil,
@@ -78,6 +93,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -90,12 +106,24 @@
     description: [
       "Distinct features are difficult to determine as clouds of ash obscure the form of the ash guardian. What is visible is a towering humanoid shadow that drifts through the ash clouds."
     ],
-    arrival: [],
+    arrival: [
+      "A firebird flies in, a trail of flame behind it."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The form of an ash guardian dissolves into the surroundings."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A firebird cranes ash guardian neck, snapping at you with ash guardian sharp beak!",
+      "An ash guardian swings {weapon} at you!",
+      "An ash guardian tries to ensnare you!",
+      "In a trail of flames, a firebird extends ash guardian fearsome talons as it dives at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

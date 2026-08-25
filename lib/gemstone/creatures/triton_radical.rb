@@ -8,7 +8,7 @@
   family: "Triton",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -30,10 +30,11 @@
     physical_attacks: [
       {
         name: "Scaling fork",
-        as: 430
+        as: (430..505)
       },
       {
-        name: "Trident"
+        name: "Trident",
+        as: 430
       }
     ],
     bolt_spells: [],
@@ -57,6 +58,10 @@
       {
         name: "Judgment (1630)",
         cs: 409
+      },
+      {
+        name: "Point",
+        cs: 421
       }
     ],
     offensive_spells: [
@@ -93,7 +98,7 @@
     emp_td: (369..372),
     pal_td: 345,
     ran_td: nil,
-    sor_td: 420,
+    sor_td: (416..420),
     wiz_td: nil,
     mje_td: (428..453),
     mne_td: (414..438),
@@ -114,6 +119,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -126,12 +132,24 @@
     description: [
       "Glaring angrily and gnashing his sharp yellowed teeth, the triton radical stalks along muttering to himself as if involved in angry debate with a phantasmal antagonist. Pale, red-rimmed eyes sit deep in a heavy-boned skull, which perches upon a long, slender neck. The radical's body pitches forward alarmingly, so only the weight of his tail prevents a return to a four-legged posture. Upon his tapered brow is set a golden crown bearing a large, wave-etched crystal drop."
     ],
-    arrival: [],
+    arrival: [
+      "A triton radical strides in, a wary look on her face.",
+      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton radical strides in, a wary look on his face.",
+      "A triton executioner strides in, a wary look on her face.",
+      "A triton executioner stalks in silently, her cold eyes gleaming with hatred."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A triton radical thrusts with a corroded bronze scaling fork at you!",
+      "A triton radical thrusts with a wide silvery green trident at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

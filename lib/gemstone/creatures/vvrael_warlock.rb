@@ -32,7 +32,15 @@
     physical_attacks: [
       {
         name: "Whip",
-        as: (396..407)
+        as: 356
+      },
+      {
+        name: "Ball of greenish-black flame",
+        as: 466
+      },
+      {
+        name: "Midnight black longsword",
+        as: 470
       }
     ],
     bolt_spells: [
@@ -64,6 +72,14 @@
       },
       {
         name: "Torment (718)",
+        cs: 360
+      },
+      {
+        name: "Midnight black longsword",
+        cs: 364
+      },
+      {
+        name: "Midnight black spiked whip",
         cs: 360
       }
     ],
@@ -117,6 +133,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -129,12 +146,25 @@
     description: [
       "The Vvrael warlock's figure is tall and thin, with stark proportions that call to mind sharp, unforgiving angles. His features are stoic, however the eyes held in that pale, rigidly handsome face are full of fury and malignant intent. The creature seems to move in slow motion, each gesture full of drama and elegance. But the appearance of languid grace is insubstantial. Experience soon dispells this illusion and reveals the true nature of this enemy, whose movements are both lightning quick and deadly."
     ],
-    arrival: [],
+    arrival: [
+      "The air becomes deathly cold as a Vvrael warlock strides into view!",
+      "A Vvrael warlock strides in!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The Vvrael warlock writhes in black agony and dies."
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the Vvrael warlock's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Vvrael warlock hurls {weapon} at you!",
+      "A Vvrael warlock swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

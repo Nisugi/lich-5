@@ -28,10 +28,7 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [
+    physical_attacks: [
       {
         name: "Implosion (720)"
       },
@@ -40,6 +37,10 @@
       },
       {
         name: "Bravery (211)"
+      },
+      {
+        name: "Blackened wooden staff",
+        as: 495
       }
     ],
     maneuvers: [],
@@ -83,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -97,10 +99,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The vaespilon falls to the ground motionless."
+    ],
+    decay: [
+      "All the malice and magic that once held the vaespilon together dissipates, leaving nothing but a husk which crumbles to dust.",
+      "Acid dissolves connecting cartilage, freeing the vaespilon's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A vaespilon swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

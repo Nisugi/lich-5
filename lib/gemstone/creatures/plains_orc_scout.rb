@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Longsword",
-        as: 175
+        as: (157..175)
       }
     ],
     bolt_spells: [],
@@ -40,10 +40,12 @@
         name: "Tangleweed (610)"
       }
     ],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Throw"
+      },
+      {
+        name: "Lash"
       }
     ],
     special_notes: []
@@ -78,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -90,12 +93,22 @@
     description: [
       "As tall as a giantman and twice as muscular as most, the plains orc scout is taller and more agile than her more primitive orcish brothers, and judging by the cleverness in her beady yellow eyes, probably quite a bit more intelligent as well. Leathery brown skin covers her bulging limbs, the same color as the crude armor that protects her massive torso, and a scraggly red beard frames her heavy jowls."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A plains orc scout wanders in!",
+      "A plains orc scout wanders in looking a bit unsteady on his feet."
+    ],
+    flee: [
+      "A plains orc scout wanders {direction}."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A plains orc scout swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

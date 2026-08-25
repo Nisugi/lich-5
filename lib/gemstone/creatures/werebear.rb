@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +92,23 @@
     description: [
       "Smaller than a normal bear, the werebear still presents a menacing aspect. Eyes that glitter with a shred of their former humanity glare out at the world with undisguised rage and hate. Thick dark fur combined with a tough hide gives the beast a solid defense, and huge paws tipped with razor sharp claws give pause to even the well-armed adventurer."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A werebear lumbers in, uttering a weird half-human cry!"
+    ],
+    flee: [
+      "A werebear lumbers {direction} of the underbrush, uttering a weird, half-human cry!"
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "A werebear turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A werebear tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -93,6 +93,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -112,12 +113,18 @@
       "Licking {pronoun} lips ravenously, a bloody halfling cannibal creeps {direction}.",
       "You hear soft footfalls."
     ],
-    death: "A monstrous, too-wide smile spreads across the cannibal's face as {pronoun} collapses to the ground, dead.",
-    decay: "A bloody halfling cannibal's body rots away, leaving only a small stain on the ground.",
+    death: [
+      "A monstrous, too-wide smile spreads across the cannibal's face as {pronoun} collapses to the ground, dead."
+    ],
+    decay: [
+      "A bloody halfling cannibal's body rots away, leaving only a small stain on the ground."
+    ],
     search: [
       "A bloody halfling cannibal sniffs at the air, {pronoun} eyes glinting as {pronoun} searches the shadows.",
       "a bloody halfling cannibal's eyes dart around, suspicion warring with hunger in {pronoun} beady eyes."
     ],
+    attack: [],
+    claw: [],
     hide: "A bloody halfling cannibal darts into the shadows.",
     vanish: "As you move to attack a bloody halfling cannibal, the cannibal shrinks away from you, baring sharpened teeth as {pronoun} darts into the shadows!",
     hunger: "A bloody halfling cannibal's eyes grow bloodshot with ravening hunger!",

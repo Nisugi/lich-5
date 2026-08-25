@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -103,6 +103,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -117,10 +118,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A hunch-backed dogmatist goes limp as he is rendered unconscious!",
+      "A hunch-backed dogmatist goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A hunch-backed dogmatist crumbles in upon herself, her skin flaking away as if it only served as an outer shell.",
+      "A hunch-backed dogmatist crumbles in upon himself, his skin flaking away as if it only served as an outer shell."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

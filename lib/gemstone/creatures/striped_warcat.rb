@@ -34,20 +34,22 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 195
+        as: (185..195)
       },
       {
         name: "Bite",
-        as: 193
+        as: (185..193)
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Leap (knock down)"
+      },
+      {
+        name: "Leap"
       }
     ],
     special_notes: []
@@ -79,6 +81,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -91,12 +94,28 @@
     description: [
       "The striped warcat is a large ornery cat. It is fairly large, standing roughly a head over a halfling. Wide, tapering grey stripes run down the side of its black fur. Its amber eyes gleam hypnotically as it stares back in your direction."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A striped warcat stalks in!"
+    ],
+    flee: [
+      "A striped warcat stalks {direction}."
+    ],
+    death: [
+      "The striped warcat lets out a final caterwaul and dies.",
+      "The striped warcat crumples to the ground and dies."
+    ],
+    decay: [
+      "A striped warcat decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A striped warcat tries to bite you!"
+    ],
+    claw: [
+      "A striped warcat claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

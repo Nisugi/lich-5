@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 150
+        as: (132..150)
       },
       {
         name: "Charge",
-        as: 150
+        as: 161
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -85,10 +86,26 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The mongrel wolfhound falls to the ground and dies.",
+      "The mangy wild hound rolls over and dies.",
+      "The mongrel wild dog rolls over and dies.",
+      "The black mongrel wolfhound falls to the ground and dies.",
+      "The black mongrel wolfhound rolls over and dies.",
+      "The mongrel wild dog falls to the ground and dies."
+    ],
+    decay: [
+      "A mongrel wolfhound decays into a pile of matted fur."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mongrel wolfhound charges at you!"
+    ],
+    bite: [
+      "A mongrel wolfhound tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

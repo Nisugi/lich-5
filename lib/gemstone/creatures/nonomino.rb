@@ -34,7 +34,7 @@
       },
       {
         name: "Dagger",
-        as: 160
+        as: (147..160)
       }
     ],
     bolt_spells: [],
@@ -80,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -92,12 +93,21 @@
     description: [
       "A creature of sublime beauty, the nonomino floats just above the ground in a pulsing sphere of unearthly light. As you watch, he abruptly turns his head to stare, as cracks distend across his visage and the glorious mantle peels away to reveal disease and decay. The incarnation constantly molts his epidermis, regenerating it moments later in a hideous parody of the struggle between life and death. Frozen by the hypnotic horror of his appearance, you almost fail to notice the nonomino's fluid movement, and the adept dance of his hands as he summons his theurgical arsenal."
     ],
-    arrival: [],
+    arrival: [
+      "A nonomino shambles in!"
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The nonomino falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A nonomino swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

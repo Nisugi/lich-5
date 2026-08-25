@@ -32,7 +32,7 @@
     physical_attacks: [
       {
         name: "Dagger",
-        as: 379
+        as: (379..387)
       }
     ],
     bolt_spells: [
@@ -114,6 +114,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -126,12 +127,30 @@
     description: [
       "Dull, mottled, grey skin covers the dhu goleras's stubby, wrinkled torso. The arms appear twice as long as they should be, ending in long, twig-like fingers. The legs are the opposite. Short and misshapen, they have three knees each, giving the dhu goleras a peculiar, hobbling gait, yet with incredible quickness. Huge, lidless, moon-shaped eyes with white irises bulge from a bony cranium atop a long, thin, rubbery neck. Green ichor drips from around the eyes, running down the sunken cheeks. The dhu goleras extends his long white tongue and licks off what ichor he can reach, consuming it with relish."
     ],
-    arrival: [],
+    arrival: [
+      "A dhu goleras arrives with a loping, uneven gait, his body rocking side-to-side and his head and arms flopping wildly."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The dhu goleras opens her mouth wide and lets out a choked, shrill scream and her eyes cloud over to a solid milky white as she collapses and dies.",
+      "The dhu goleras opens her mouth wide and lets out a choked, shrill scream and her eyes cloud over to a solid milky white as she dies.",
+      "The dhu goleras opens her mouth wide and lets out a choked, silent scream and her eyes cloud over to a solid milky white as she collapses and dies.",
+      "A dhu goleras goes limp as he is rendered unconscious!",
+      "The dhu goleras opens his mouth wide and lets out a choked, shrill scream and his eyes cloud over to a solid milky white as he dies.",
+      "The dhu goleras opens his mouth wide and lets out a choked, silent scream and his eyes cloud over to a solid milky white as he collapses and dies.",
+      "The dhu goleras opens her mouth wide and lets out a choked, silent scream and her eyes cloud over to a solid milky white as she dies.",
+      "The dhu goleras opens his mouth wide and lets out a choked, shrill scream and his eyes cloud over to a solid milky white as he collapses and dies."
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The dhu goleras's tibia passes her femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A dhu goleras swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

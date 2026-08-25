@@ -61,6 +61,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -79,6 +80,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Grimswarm troll scourge swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [
         "Observed with dagger (AS 228), camp level unknown."

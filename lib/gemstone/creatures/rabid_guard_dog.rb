@@ -30,11 +30,14 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: (118..128)
+        as: 106
       },
       {
-        name: "Charge (attack)",
-        as: (106..128)
+        name: "Charge (attack)"
+      },
+      {
+        name: "Charge",
+        as: 106
       }
     ],
     bolt_spells: [],
@@ -71,6 +74,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -85,10 +89,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The guard dog falls to the ground and dies.",
+      "The guard dog rolls over and dies."
+    ],
+    decay: [
+      "A rabid guard dog decays into a compost of fangs and fur."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A rabid guard dog charges at you!"
+    ],
+    bite: [
+      "A rabid guard dog tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

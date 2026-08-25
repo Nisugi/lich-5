@@ -25,12 +25,13 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [
+    physical_attacks: [
       {
-        name: "Lightning Torrent(?)",
-        cs: 325
+        name: "Lightning Torrent(?)"
+      },
+      {
+        name: "Crackling blue and golden spark",
+        as: 317
       }
     ],
     offensive_spells: [],
@@ -74,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -86,12 +88,24 @@
     description: [
       ";Description\nFlashes of brilliant azure flicker and fade within the lightning fiend's mesmerizing shape, an amorphous form woven from threads of wildly dancing electricity. At times, the elemental takes the shape of a vaguely humanoid figure, its translucent helm graced by two wildly twisting horns. Arcing arteries of lightning leap from the heart of the fiend to shimmer up nearby surfaces.\n\n;Assess\n\nThe lightning fiend is medium in size and about six feet high in its current state."
     ],
-    arrival: [],
+    arrival: [
+      "A jolting charge in the air heralds the arrival of a crackling lightning fiend!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A crackling lightning fiend goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "With a white-hot corruscation of sparks, a crackling lightning fiend collapses into a buzzing tangle of glowing filaments."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A crackling lightning fiend launches a crackling blue and golden spark at you!",
+      "A crackling lightning fiend raises a luminous hand and sends a bolt of blue and golden lightning streaking toward you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

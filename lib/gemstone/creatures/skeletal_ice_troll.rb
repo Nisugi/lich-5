@@ -73,6 +73,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -85,12 +86,23 @@
     description: [
       "Huge, massive and dangerous, the Troll towers above even a tall Giantman. Grey skin so thick that it serves quite well as armor covers most of the monster with here and there tufts of thick hair sprouting like weeds between cracked paving stones. A hideous grin splits its face displaying for you fangs crusted with dried blood and less guessable matter. No light of intellect glows in its piggish, narrow eyes. Lust of slaughter and a thirst for blood and mortal flesh are all that animate this hulkish beast."
     ],
-    arrival: [],
+    arrival: [
+      "A skeletal ice troll just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The ice troll falls to the ground motionless.",
+      "The ice troll screams evilly one last time and goes still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A skeletal ice troll gestures at you!",
+      "A skeletal ice troll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

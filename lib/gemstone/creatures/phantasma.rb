@@ -31,6 +31,14 @@
       {
         name: "Leather whip",
         as: 217
+      },
+      {
+        name: "Barbed whip",
+        as: 237
+      },
+      {
+        name: "Splintered lance",
+        as: 227
       }
     ],
     bolt_spells: [],
@@ -53,10 +61,12 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Moan"
+      },
+      {
+        name: "Point"
       }
     ],
     special_notes: []
@@ -95,6 +105,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -113,6 +124,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A phantasma swings {weapon} at you!",
+      "A phantasma thrusts with a splintered lance at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

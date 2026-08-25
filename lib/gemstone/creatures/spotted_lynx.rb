@@ -46,11 +46,11 @@
       },
       {
         name: "Charge",
-        as: 102
+        as: (92..102)
       },
       {
         name: "Claw",
-        as: 102
+        as: (91..102)
       }
     ],
     bolt_spells: [],
@@ -91,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -105,10 +106,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The spotted lynx crumples to the ground and dies.",
+      "The spotted lynx lets out a final caterwaul and dies."
+    ],
+    decay: [
+      "A spotted lynx decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spotted lynx charges at you!"
+    ],
+    bite: [],
+    claw: [
+      "A spotted lynx claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

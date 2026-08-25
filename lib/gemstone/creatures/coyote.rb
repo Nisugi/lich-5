@@ -46,11 +46,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 95
+        as: (76..95)
       },
       {
         name: "Charge",
-        as: 95
+        as: (85..95)
       }
     ],
     bolt_spells: [],
@@ -87,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -101,10 +102,24 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The coyote falls to the ground and dies.",
+      "The coyote rolls over and dies.",
+      "A greater orc breathes his last gasp and dies.",
+      "A greater orc breathes her last gasp and dies."
+    ],
+    decay: [
+      "A coyote decays into a compost of fangs and fur."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A coyote charges at you!"
+    ],
+    bite: [
+      "A coyote tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

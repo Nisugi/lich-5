@@ -73,6 +73,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -85,12 +86,24 @@
     description: [
       "The snow spectre floats easily over the ground, seeming to move through solid obstacles with little effort. Its appearance alternates between a flickering, semi-transparent apparition and a near-blinding, white, icy solidity. Its face is permanently twisted into a tortured, leering grin and its eyes stare far ahead, as if transfixed on something horrible in the distance."
     ],
-    arrival: [],
+    arrival: [
+      "A snow spectre just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The snow spectre falls to the ground motionless.",
+      "The snow spectre screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A snow spectre turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A snow spectre swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

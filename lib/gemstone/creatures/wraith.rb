@@ -70,6 +70,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -82,12 +83,25 @@
     description: [
       "A creature of darkness, the wraith shies away from the light, preferring to ambush and rend its prey in the safety of the deep shadows. Its crimson eyes glare hatefully at the world around it, while its tortured grimace displays sharp, gleaming fangs. Proficient with weaponry, a disarmed wraith is still a formidable foe, as its long, sharp talons indicate."
     ],
-    arrival: [],
+    arrival: [
+      "A wraith just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The wraith falls to the ground motionless.",
+      "The wraith screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A wraith turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A wraith gestures at you!",
+      "A wraith swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

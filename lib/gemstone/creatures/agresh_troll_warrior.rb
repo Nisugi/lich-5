@@ -30,7 +30,11 @@
     physical_attacks: [
       {
         name: "War hammer",
-        as: "155 to 197"
+        as: 165
+      },
+      {
+        name: "Fist",
+        as: 115
       }
     ],
     bolt_spells: [],
@@ -69,6 +73,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,12 +86,24 @@
     description: [
       "The troll warrior stands silenty still. Disdain touches its face as it awaits any who would challenge its bulking muscles. Stripes of ash run down its cheeks in illegible runes as bits of its straggly hair blow in front of it. The eyes that stare out from under its low brow are those of a natural born killer awaiting its next victim."
     ],
-    arrival: [],
+    arrival: [
+      "An Agresh troll warrior just arrived!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "An Agresh troll warrior goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "An Agresh troll warrior decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Agresh troll warrior pounds at you with {pronoun} fist!",
+      "An Agresh troll warrior swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -32,19 +32,19 @@
     warding_spells: [
       {
         name: "Dark Catalyst (719)",
-        cs: "+451 to +457"
+        cs: (451..457)
       },
       {
         name: "Mana Disruption (702)",
-        cs: "+451 to +457"
+        cs: (451..457)
       },
       {
         name: "Disintegrate (705)",
-        cs: "+451 to +457"
+        cs: (451..457)
       },
       {
         name: "Mind Jolt (706)",
-        cs: "+451 to +457"
+        cs: (451..457)
       }
     ],
     offensive_spells: [
@@ -86,6 +86,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -104,6 +105,9 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

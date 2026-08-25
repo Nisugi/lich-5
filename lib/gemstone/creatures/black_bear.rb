@@ -47,6 +47,14 @@
       {
         name: "Charge (attack)",
         as: 190
+      },
+      {
+        name: "Bite",
+        as: 150
+      },
+      {
+        name: "Claw",
+        as: 171
       }
     ],
     bolt_spells: [],
@@ -87,6 +95,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -99,12 +108,31 @@
     description: [
       "The black bear is a medium sized bear with a body about six feet long and appears to weigh around 440 pounds. Mostly blackish in color, asone would expect from a black bear, its muzzle is somewhat lighter and a distinct V-shaped patch of cream colored fur can be found on the chest. Also of note are the ears which appear much larger than those of other bears."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A black bear lumbers in!"
+    ],
+    flee: [
+      "A black bear lumbers {direction}.",
+      "A black bear slowly lumbers {direction}, growling in pain."
+    ],
+    death: [
+      "The black bear lets out a blood-curdling roar and dies.",
+      "The black bear collapses heavily into a heap on the ground and dies.",
+      "A black bear goes limp as she is rendered unconscious!",
+      "A black bear goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A black bear decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A black bear tries to bite you!"
+    ],
+    claw: [
+      "A black bear claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

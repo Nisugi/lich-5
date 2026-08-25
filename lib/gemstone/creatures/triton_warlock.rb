@@ -32,30 +32,38 @@
       {
         name: "Runestaff",
         as: 427
+      },
+      {
+        name: "Claw",
+        as: 417
       }
     ],
     bolt_spells: [
       {
         name: "Balefire (713)",
-        as: "404 to 429"
+        as: (404..429)
       }
     ],
     warding_spells: [
       {
         name: "Disintegrate (705)",
-        cs: "402 to 438"
+        cs: (402..438)
       },
       {
         name: "Mind Jolt (706)",
-        cs: "402 to 438"
+        cs: (402..438)
       },
       {
         name: "Torment (718)",
-        cs: "402 to 438"
+        cs: (402..438)
       },
       {
         name: "Dark Catalyst (719)",
-        cs: "402 to 438"
+        cs: (402..438)
+      },
+      {
+        name: "Claw",
+        cs: 449
       }
     ],
     offensive_spells: [],
@@ -98,6 +106,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -110,12 +119,29 @@
     description: [
       "The amphibian visage of a triton warlock gazes out beneath a frayed dark blue robe, her sun-cracked lips curled back into a sneer as she observes the area with slitted, sickly yellow eyes. Her emaciated form leans backwards, leaving her sinewy arms exposed to the elements as they grip tightly to her staff, her green-fleshed knuckles branded in rough runes. Her head rotates at the most minute of changes, nostrils flaring as she murmurs indecipherable incantations to herself in preparation of the unknown."
     ],
-    arrival: [],
+    arrival: [
+      "A triton warlock arrives, striding forth with her robes trailing behind her.",
+      "A triton assassin stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton assassin stalks in silently, her cold eyes gleaming with hatred.",
+      "A glowing triton warlock just arrived.",
+      "A triton warlock just arrived.",
+      "An unyielding triton warlock just arrived.",
+      "A triton warlock just arrived, limping badly."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves the knee ligaments.  The triton warlock's tibia passes her femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A triton warlock points a single golden nail toward you!"
+    ],
+    bite: [],
+    claw: [
+      "A triton warlock claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

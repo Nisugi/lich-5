@@ -30,10 +30,14 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 118
+        as: (94..118)
       },
       {
         name: "Charge (attack)",
+        as: 128
+      },
+      {
+        name: "Charge",
         as: 128
       }
     ],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -89,10 +94,23 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The crazed canine falls to the ground and dies.",
+      "The crazed canine rolls over and dies.",
+      "A crazed canine goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A crazed canine decays into a compost of fangs and fur."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A crazed canine charges at you!"
+    ],
+    bite: [
+      "A crazed canine tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

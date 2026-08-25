@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Broadsword",
-        as: 274
+        as: (244..274)
       },
       {
         name: "Dart",
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +84,26 @@
     description: [
       "Standing nearly six feet tall, the man-like forest trali watches adventurers' every move with piercing grey eyes. A short matted, reddish grey mane covers her head and her skin has a greenish grey hue. There is little doubt that the stealthy forest trali can be a formidable opponent when need arises, or when she is hard pressed."
     ],
-    arrival: [],
+    arrival: [
+      "A forest trali arrives, sniffing the air for prey!",
+      "A forest trali stalks in."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The forest trali twitches violently, then dies.",
+      "A forest trali goes limp as she is rendered unconscious!",
+      "A forest trali goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The forest trali's tibia passes his femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A forest trali swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

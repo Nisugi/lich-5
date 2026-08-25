@@ -33,8 +33,15 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Pound",
-        as: "(icy appendage) 288 - 298"
+        name: "Pound"
+      },
+      {
+        name: "Icy appendage",
+        as: 263
+      },
+      {
+        name: "Stream of water",
+        as: 243
       }
     ],
     bolt_spells: [
@@ -59,6 +66,9 @@
       },
       {
         name: "Slush wall"
+      },
+      {
+        name: "Tail Swipe"
       }
     ],
     special_abilities: [],
@@ -91,6 +101,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -103,12 +114,20 @@
     description: [
       "An animated slush could easily be mistaken for a huge pile of snow that has partially melted then refrozen. It presents a squat, icy white cone ten feet wide at the base but only rising five feet high. The edges are slightly transparent and tinged a light blue, while the interior is dark, with portions seeming more solid than others. Rippling over the terrain, its exact motion indiscernible, the animated slush unerringly finds its prey, yet it displays no sensory glands of any type."
     ],
-    arrival: [],
+    arrival: [
+      "An animated slush ripples in, its mass wobbling slightly as it arrives."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An animated slush flings an icy appendage at you!",
+      "An animated slush hurls {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

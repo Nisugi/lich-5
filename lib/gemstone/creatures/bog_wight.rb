@@ -31,11 +31,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 274
+        as: (270..274)
       },
       {
         name: "Claw",
-        as: 284
+        as: (264..284)
       }
     ],
     bolt_spells: [],
@@ -72,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -84,12 +85,23 @@
     description: [
       "Cloaked in a thick shroud of mist that perpetually follows it, the bog wight moves with a quick grace. Two burning red orbs stare out from its gaunt, emaciated face, devoid of any compassion or mercy. A fanged, lipless mouth accompanies its haunting eyes, the maggot-white skin of its face pulled so taught over its skull that it gives the impression of a bestial grin. Wisps of the miasma that enshrouds its nearly skeletal form whipback and forth as it glides about, writhing against its tattered robes."
     ],
-    arrival: [],
+    arrival: [
+      "A bog wight just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The bog wight falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A bog wight tries to bite you!"
+    ],
+    claw: [
+      "A bog wight claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

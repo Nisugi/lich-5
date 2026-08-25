@@ -31,11 +31,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 305
+        as: 313
       },
       {
         name: "Charge",
-        as: 315
+        as: (297..315)
       }
     ],
     bolt_spells: [],
@@ -72,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -84,12 +85,29 @@
     description: [
       "The huge sabre-tooth tiger is obviously a formidable predator, measuring more than 15 feet from the nose to the tip of her tail. Flexing massive shoulders above powerful forelegs, the tiger growls and snarls, exposing the elongated canines that give her her name. The tiger's magnificent striped pelt gradates from a soft tan undertone along the spine to a powder white on belly and legs."
     ],
-    arrival: [],
+    arrival: [
+      "A sabre-tooth tiger prowls in!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The sabre-tooth tiger crumples to the ground and dies.",
+      "The sabre-tooth tiger lets out a final caterwaul and dies.",
+      "A sabre-tooth tiger goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A sabre-tooth tiger decays into a compost of fangs, fur and claws.",
+      "A dazzling sabre-tooth tiger decays into a compost of fangs, fur and claws.",
+      "A steadfast sabre-tooth tiger decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A sabre-tooth tiger charges at you!"
+    ],
+    bite: [
+      "A sabre-tooth tiger tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

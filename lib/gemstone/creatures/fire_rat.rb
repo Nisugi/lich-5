@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 169
+        as: (139..169)
       },
       {
         name: "Claw",
@@ -74,6 +74,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -86,12 +87,29 @@
     description: [
       "The fire rat is a large animal, roughly the size of a small dog. Its fur is shaggy, and rusty red in color. It has a long hairless tail, and glinting red eyes. Most dangerous are its claws which spark flame when attacking its prey."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A fire rat scampers in!"
+    ],
+    flee: [
+      "A fire rat scampers {direction}.",
+      "A fire rat crawls {direction}."
+    ],
+    death: [
+      "The fire rat collapses to the ground, emits a final squeal, and dies.",
+      "The fire rat twitches and dies.",
+      "The fire rat collapses to the ground, emits a final silent squeal, and dies."
+    ],
+    decay: [
+      "A fire rat crumbles into a pile of ash.",
+      "Acid dissolves the knee ligaments.  The fire rat's tibia passes its femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A fire rat tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

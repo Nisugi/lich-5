@@ -27,12 +27,13 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [
+    physical_attacks: [
       {
         name: "Spirit Strike"
+      },
+      {
+        name: "Modwir-hafted mace",
+        as: 378
       }
     ],
     maneuvers: [],
@@ -68,6 +69,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -82,10 +84,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The shan empath howls out one last time and dies.",
+      "The shan empath yips in pain as he falls to the ground motionless.",
+      "The shan empath yips in pain as she falls to the ground motionless.",
+      "A shan empath's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
+      "A shan empath's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shan empath snarls and gestures sharply at you!",
+      "A shan empath swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

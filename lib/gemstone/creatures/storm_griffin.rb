@@ -8,7 +8,7 @@
   family: "Griffin",
   type: "Hybrid",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -39,7 +39,7 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 368
+        as: (338..368)
       },
       {
         name: "Impale",
@@ -47,7 +47,11 @@
       },
       {
         name: "Bite",
-        as: 358
+        as: (327..358)
+      },
+      {
+        name: "Swoop",
+        as: 368
       }
     ],
     bolt_spells: [
@@ -84,7 +88,7 @@
     emp_td: 288,
     pal_td: nil,
     ran_td: nil,
-    sor_td: 306,
+    sor_td: (297..306),
     wiz_td: nil,
     mje_td: 314,
     mne_td: nil,
@@ -99,6 +103,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: nil,
@@ -111,12 +116,26 @@
     description: [
       "The storm griffin is a magnificent beast, as if designed by the gods to embody fierce and graceful predation. Its front legs, forebody, wings, and head are those of a great eagle, complete with large powder-blue feathers and aquiline beak. The rear half of the creature's body is that of a powerful lion, with short, sandy blonde fur and a long feline tail. A tendril of electricity snakes across one outstreched claw as the storm griffin glares about with its piercing blue eyes."
     ],
-    arrival: [],
+    arrival: [
+      "A grifflet surveys the area intently as it flies into sight!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A storm griffin goes limp as it is rendered unconscious!",
+      "The storm griffin writhes in agony, its wings flapping fruitlessly as it dies."
+    ],
+    decay: [
+      "The storm griffin decays into a pile of feathers and fur."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A storm griffin rakes at you with a razor-sharp claw!"
+    ],
+    bite: [
+      "A storm griffin tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

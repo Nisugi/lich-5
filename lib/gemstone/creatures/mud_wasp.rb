@@ -31,6 +31,10 @@
       {
         name: "Stinger (attack)",
         as: 254
+      },
+      {
+        name: "Stinger",
+        as: 254
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -79,12 +84,27 @@
     description: [
       "With a body about the size of a human hand, and a wingspan approaching a foot, the mud wasp is a rather intimidating sight. It is a superb example of camouflage, with a brown body covered in splatters of mud, and eyes the color of muddy water. The wings are the only exception to the brown color scheme, being transparent with a faint touch of blue."
     ],
-    arrival: [],
+    arrival: [
+      "A mud wasp just arrived.",
+      "A mud wasp wobbles as it flies in.",
+      "A mud wasp weaves slowly as it flies in."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The mud wasp flutters its wings one last time and dies.",
+      "The mud wasp twitches violently, then dies.",
+      "A mud wasp goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A mud wasp decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mud wasp stabs at you with {pronoun} stinger!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

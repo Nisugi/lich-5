@@ -35,6 +35,10 @@
       {
         name: "Stinger (attack)",
         as: 220
+      },
+      {
+        name: "Thorn",
+        as: 230
       }
     ],
     bolt_spells: [],
@@ -43,6 +47,9 @@
     maneuvers: [
       {
         name: "thorn fling"
+      },
+      {
+        name: "Lash"
       }
     ],
     special_abilities: [],
@@ -75,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -87,12 +95,21 @@
     description: [
       ";Description\nWhen planting a garden or a yard, often one will plant these to prevent unwanted guests and prying eyes. If that was the case for these, they apparently have taken their job a bit too seriously.\n\n;Assess\nThe icy bush is medium in size and about three feet high in its current state."
     ],
-    arrival: [],
+    arrival: [
+      "A writhing icy bush just arrived!"
+    ],
     flee: [],
-    death: [],
+    death: [
+      "A writhing icy bush collapses to the ground, shakes one last time and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A writhing icy bush spits a thorn towards you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

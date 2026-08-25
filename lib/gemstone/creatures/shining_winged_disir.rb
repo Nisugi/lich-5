@@ -68,6 +68,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -78,6 +79,9 @@
     blunt_required: false
   },
   messaging: {
+    attack: [],
+    bite: [],
+    claw: [],
     description: "Clad from head to toe in armor of shining gold, the disir takes the form of a powerfully built woman with ageless features and eyes like pools of sunlit sky.  On her head, nestled atop curls of shimmering hair, is a winged helm whose visor dips low over her face, lending a grim cast to her features.  The disir's skin is faintly luminous, with hints of rainbowed color pulsing beneath it.",
 
     bards: "* Vibration Chant (1002) can eliminate their \"spears\" (which hit like lances). Disirs then switch to a magical, non-physical shield which can't be blown up, but many will find that preferable to letting them swing lances with 650 AS.",

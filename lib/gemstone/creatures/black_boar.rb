@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 171
+        as: (153..171)
       },
       {
         name: "Charge (attack)",
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -89,10 +90,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The black boar lets out a final agonized squeal and dies.",
+      "The black boar collapses to the ground, emits a final squeal, and dies.",
+      "A black boar goes limp as he is rendered unconscious!",
+      "The black boar silently lets out a final agonized squeal and dies."
+    ],
+    decay: [
+      "A black boar decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A black boar tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

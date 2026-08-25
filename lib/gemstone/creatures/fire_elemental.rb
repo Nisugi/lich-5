@@ -8,7 +8,7 @@
   family: "Elemental",
   type: "Elemental",
   undead: false,
-  blood: nil,
+  blood: false,
   bones: nil,
   muggable: nil,
   boss: false,
@@ -57,7 +57,7 @@
     emp_td: 234,
     pal_td: nil,
     ran_td: nil,
-    sor_td: 248,
+    sor_td: (248..260),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
@@ -72,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -86,10 +87,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The fire elemental sputters violently, cascading flames all around as it collapses in a final fiery display."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A fire elemental flares brighter, an extension reaching towards you!",
+      "A fire elemental flares brightly, extending a fiery tendril towards you!",
+      "A fire elemental focuses {pronoun} energies at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -68,6 +68,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -80,12 +81,24 @@
     description: [
       "This somewhat orc-like looking humanoid creature is surrounded with an eerie white glow and appears to be transparent. An abundance of excessively wrinkled skin and long bushy grey eyebrows serve to make spectral miner appear ancient."
     ],
-    arrival: [],
+    arrival: [
+      "A spectral miner just arrived.",
+      "A ready spectral miner just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The spectral miner falls to the ground motionless."
+    ],
+    decay: [
+      "A spectral miner quickly crumbles into the ground in front of your eyes."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spectral miner swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

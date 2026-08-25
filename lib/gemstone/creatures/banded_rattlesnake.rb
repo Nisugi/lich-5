@@ -31,6 +31,10 @@
       {
         name: "Bite",
         as: 182
+      },
+      {
+        name: "(quarantine-recovered)",
+        as: 163
       }
     ],
     bolt_spells: [],
@@ -71,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -83,12 +88,24 @@
     description: [
       "The banded rattlesnake is recognizable by the wide black and red bands that encircle its tubular-shaped body. The beaded, reptilian eyes constantly stare about in an unflickering gaze as it searches for intruders. Very territorial, this snake provides warning to potential aggressors that they have intruded on its domain by sending the rattles on its tail into flickering motion, emitting a constant rattling hum. When coiled in preparation to attack, the rattlesnake's tongue darts in and out of its mouth to assist in gauging its attack. As the tongue flicks in and out, the rattlesnake's main weapon can be seen, the venom-filled fangs that are its bringers of death."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A banded rattlesnake slithers in, its tongue darting out to taste the air around it.",
+      "A banded rattlesnake slithers in.",
+      "A banded rattlesnake slowly slithers in."
+    ],
+    flee: [
+      "A banded rattlesnake slithers {direction}.",
+      "A banded rattlesnake slowly slithers {direction}."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A banded rattlesnake uncoils suddenly and tries to sink {pronoun} fangs into you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

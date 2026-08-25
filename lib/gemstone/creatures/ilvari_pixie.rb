@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Giant bee stinger",
-        as: (356..378)
+        as: 348
       }
     ],
     bolt_spells: [
@@ -91,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -106,9 +107,20 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The layer of bark on an Ilvari pixie hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
+      "Acid dissolves connecting cartilage, freeing the Ilvari pixie's ribs to move independently.",
+      "The layer of bark on an Ilvari pixie hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust.",
+      "The Ilvari pixie's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Ilvari pixie points precisely at you!",
+      "An Ilvari pixie thrusts with a giant bee stinger at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

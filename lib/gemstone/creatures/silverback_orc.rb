@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Falchion",
-        as: 163
+        as: (158..163)
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,10 +82,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A silverback orc curls up in the snow and dies.",
+      "A silverback orc goes limp as he is rendered unconscious!",
+      "A silverback orc curls up and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A silverback orc swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

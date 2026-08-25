@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +84,24 @@
     description: [
       "The shelfae soldier is the vanguard of the shelfae reptilian forces. Bipedal, it stands approximately five feet tall with orange-tinged scales and clawed hands and feet. The shelfae soldier does not range very far from its commanding officer, and usually can be found guarding strategic points in the defensive system. It views the world through cold reptilian eyes and shows little mercy when confronting an enemy to its lands."
     ],
-    arrival: [],
+    arrival: [
+      "A shelfae soldier just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The shelfae soldier falls to the ground and dies.",
+      "The shelfae soldier screams one last time and dies."
+    ],
+    decay: [
+      "A soldier crumbles into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shelfae soldier thrusts with a trident at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

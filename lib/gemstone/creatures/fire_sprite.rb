@@ -8,7 +8,7 @@
   family: "Fey",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: false,
   bones: true,
   muggable: nil,
   boss: false,
@@ -30,7 +30,8 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Closed fist"
+        name: "Closed fist",
+        as: 327
       }
     ],
     bolt_spells: [
@@ -60,7 +61,7 @@
     emp_td: 268,
     pal_td: nil,
     ran_td: nil,
-    sor_td: 270,
+    sor_td: (268..275),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 290,
@@ -82,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -96,10 +98,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The fire sprite goes limp and she falls over as the fire slowly fades from her eyes."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A fire sprite swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

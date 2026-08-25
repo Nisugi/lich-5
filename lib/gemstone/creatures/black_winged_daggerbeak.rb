@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -80,11 +81,22 @@
       "With its naked head resembling that of a vulture and a wingspan of almost three feet, the black-winged daggerbeak gets its name from its wickedly pointed beak and the way it uses it. Created by a mean-spirited enchanter for the bedevilment of some peasants who had offended him, the daggerbeak survives by stabbing domesticated herd animals with its beak and drinking their blood."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "The daggerbeak flies {direction}."
+    ],
+    death: [
+      "The black-winged daggerbeak hisses one last time and dies."
+    ],
+    decay: [
+      "A black-winged daggerbeak decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A black-winged daggerbeak tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

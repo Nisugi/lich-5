@@ -42,11 +42,15 @@
     physical_attacks: [
       {
         name: "Scimitar",
-        as: 156
+        as: (144..156)
       },
       {
         name: "Claw",
         as: 136
+      },
+      {
+        name: "Twohanded sword",
+        as: 150
       }
     ],
     bolt_spells: [],
@@ -57,6 +61,14 @@
       },
       {
         name: "Empathy (1108)"
+      },
+      {
+        name: "Scimitar",
+        cs: 129
+      },
+      {
+        name: "Twohanded sword",
+        cs: 117
       }
     ],
     offensive_spells: [
@@ -101,6 +113,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -113,12 +126,24 @@
     description: [
       "The arch wight moves along ponderously, its gaunt humanoid frame often bent nearly double as it walks through the corridors of the deceased. Massive upper arms contrast with a thin torso and narrow hips. Its liquid golden eyes seem to be filled with tiny red sparks, and the lack of flesh on its face causes the arch wight to sport a horrific toothy grin. Very proficient in the ways of magic, the arch wight feasts upon the flesh of the deceased, but often cooks the living to death before indulging in its grisly meal."
     ],
-    arrival: [],
+    arrival: [
+      "An arch wight just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The arch wight falls to the ground motionless.",
+      "The arch wight screams evilly one last time and goes still."
+    ],
+    decay: [
+      "An arch wight crumbles to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An arch wight swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

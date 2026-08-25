@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -79,12 +80,26 @@
     description: [
       "The greater kappa moves slowly on land, its bulk more suited to shallow bays and underwater cities. It stands on short, fleshy legs and observes the world through lidless, bulbous eyes. Totally black from head to webbed foot, the greater kappa easily blends in with the dark sands of its hunting area and is nearly impossible to see once underwater. The flesh of the greater kappa is very oily and, though a good source of lamp fuel, is not good to eat."
     ],
-    arrival: [],
+    arrival: [
+      "A greater kappa just arrived!",
+      "A greater kappa just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The greater kappa twitches violently, then dies.",
+      "The greater kappa falls to the ground motionless.",
+      "The greater kappa screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A greater kappa turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater kappa swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

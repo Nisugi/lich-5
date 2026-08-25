@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +84,28 @@
     description: [
       "The first thing that will strike you about the manticore is its noxious smell. Looking much like a snow-white lion, if such a thing could naturally exist, it appears somewhat like an unkempt lion, but after you wipe away the tears brought to your eyes by its vile stench, you will see that its head is more like that of a man, and it has a long segmented tail like that of a scorpion."
     ],
-    arrival: [],
+    arrival: [
+      "An arctic manticore just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The arctic manticore falls to the ground and dies.",
+      "The arctic manticore screams one last time and dies.",
+      "The arctic manticore twitches violently, then dies.",
+      "An arctic manticore goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "An arctic manticore decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "An arctic manticore tries to bite you!"
+    ],
+    claw: [
+      "An arctic manticore claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

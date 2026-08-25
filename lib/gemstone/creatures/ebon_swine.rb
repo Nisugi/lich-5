@@ -60,6 +60,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -74,10 +75,24 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The ebon swine lets out a final agonized squeal and dies.",
+      "The ebon swine collapses to the ground, emits a final squeal, and dies.",
+      "The ebon swine twitches violently, then dies.",
+      "The ebon swine silently lets out a final agonized squeal and dies."
+    ],
+    decay: [
+      "An ebon swine decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An ebon swine charges at you!"
+    ],
+    bite: [
+      "An ebon swine tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

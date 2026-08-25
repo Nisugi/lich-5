@@ -29,8 +29,11 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Stinger (attack)",
-        as: "201 252"
+        name: "Stinger (attack)"
+      },
+      {
+        name: "Stinger",
+        as: 252
       }
     ],
     bolt_spells: [],
@@ -71,6 +74,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -83,12 +87,19 @@
     description: [
       ";Description\nNot exactly the best representative of its Species, let alone its Genus, none-the-less, the inclusion of this particular tumbleweed would make a fine addition to anyone's tumbleweed collection. Just for its uniqueness if nothing else. Of course unlike most tumbleweed, this one might object to being collected, VIGOUROUSLY.\n\n;Assess\nThe decaying tumbleweed is medium in size and about three feet high in its current state."
     ],
-    arrival: [],
+    arrival: [
+      "A blackened decaying tumbleweed spins in kicking up snow as it arrives!"
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A blackened decaying tumbleweed stabs at you with {pronoun} stinger!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

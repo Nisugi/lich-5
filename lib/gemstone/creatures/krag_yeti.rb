@@ -34,27 +34,29 @@
     physical_attacks: [
       {
         name: "Hairy hand",
-        as: 364
+        as: (328..364)
       },
       {
         name: "Ensnare",
-        as: (383..386)
+        as: 335
       },
       {
         name: "Closed fist",
-        as: 388
+        as: (346..388)
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Arm Entrapment/Bear Hug"
       },
       {
         name: "Ground slap"
+      },
+      {
+        name: "Hairy hand"
       }
     ],
     special_notes: []
@@ -71,7 +73,7 @@
     emp_td: (260..278),
     pal_td: (235..242),
     ran_td: 230,
-    sor_td: 283,
+    sor_td: (280..289),
     wiz_td: nil,
     mje_td: (293..302),
     mne_td: 297,
@@ -86,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -98,12 +101,20 @@
     description: [
       "A towering mound of fur that belies her swift blinding speed, the krag yeti is at home either in the sub-zero wasteland or on rocky mountain tops. The krag yeti's white fur allows an almost perfect blend with the natural surroundings, enabling the creature to move with uncommon stealth. Legendary strength and fury make her a formidable opponent for any who would cross her."
     ],
-    arrival: [],
+    arrival: [
+      "A krag yeti stomps in, a fetid odor wafting before it."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A krag yeti swings {weapon} at you!",
+      "A krag yeti tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

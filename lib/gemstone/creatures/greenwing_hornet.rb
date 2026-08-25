@@ -31,6 +31,10 @@
       {
         name: "Stinger (attack)",
         as: 172
+      },
+      {
+        name: "Stinger",
+        as: 172
       }
     ],
     bolt_spells: [],
@@ -71,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -85,10 +90,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The greenwing hornet falls back into a heap and dies.",
+      "The greenwing hornet flutters its wings one last time and dies.",
+      "A greenwing hornet goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A greenwing hornet decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greenwing hornet stabs at you with {pronoun} stinger!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

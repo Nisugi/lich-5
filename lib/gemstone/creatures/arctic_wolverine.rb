@@ -34,11 +34,15 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 194
+        as: (178..194)
       },
       {
         name: "Claw",
-        as: 204
+        as: (184..204)
+      },
+      {
+        name: "(quarantine-recovered)",
+        as: 238
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -87,12 +92,28 @@
     description: [
       "Similar to his cousin of the more temperate climates, the arctic wolverine is possessed with a ferocious nature far out of proportion to his size, making him an extremely vicious opponent. Swift and agile, with claws and teeth backed by muscles like coiled springs, the arctic wolverine will take on and defeat foes three times his size. His shaggy hide is a mixture of light brown and icy white, affording him good cover in the frosty fields, and his toes are webbed, providing a snowshoe effect for increased agility in the snow."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "An arctic wolverine scampers in!",
+      "An arctic wolverine scampers in, growling in pain!"
+    ],
+    flee: [
+      "An arctic wolverine scampers {direction}, growling in pain.",
+      "An arctic wolverine scampers {direction}."
+    ],
+    death: [
+      "An arctic wolverine goes limp as he is rendered unconscious!",
+      "An arctic wolverine goes limp as she is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "An arctic wolverine tries to bite you!"
+    ],
+    claw: [
+      "An arctic wolverine claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

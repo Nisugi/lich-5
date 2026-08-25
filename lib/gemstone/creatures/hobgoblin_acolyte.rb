@@ -84,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -97,11 +98,23 @@
       ""
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A hobgoblin acolyte snarls as he retreats!"
+    ],
+    death: [
+      "The hobgoblin acolyte screams up at the heavens, then collapses and dies.",
+      "The hobgoblin acolyte crumples to the ground and dies."
+    ],
+    decay: [
+      "A hobgoblin acolyte decays into a pile of compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A hobgoblin acolyte finishes chanting and thrusts {weapon} towards you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

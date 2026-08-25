@@ -88,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -100,12 +101,27 @@
     description: [
       "Never found far from the life-giving sea, the sea nymph slips onto dry land to waylay unwary adventurers. Depending mostly on her seductive song, she charms her prey into submission, then strikes quickly and deeply with her dagger. From a distance she is often mistaken for a slim sylvan lady. The flowing robe she wears conceals the webbed appendages that give her speed in the ocean."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A sea nymph just arrived."
+    ],
+    flee: [
+      "A sea nymph draped in seaweed and a wet, clinging robe slithers {direction} {direction} of a crevice."
+    ],
+    death: [
+      "The sea nymph falls to the ground and dies.",
+      "The sea nymph screams one last time and dies."
+    ],
+    decay: [
+      "A sea nymph decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A sea nymph swings {weapon} at you!",
+      "A sea nymph thrusts with a blue-tasseled white steel spear at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

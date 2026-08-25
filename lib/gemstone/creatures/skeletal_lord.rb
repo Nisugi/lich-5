@@ -42,6 +42,12 @@
       },
       {
         name: "Trip"
+      },
+      {
+        name: "Disarm"
+      },
+      {
+        name: "Polearm Plant"
       }
     ],
     special_abilities: [],
@@ -74,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -86,12 +93,23 @@
     description: [
       "The skeletal lord still stands proudly erect. Skilled in the art of battle, it takes its time, carefully measuring each powerful attack to strike at the enemy's most exposed point. Its body reduced to shreds of flesh, eye sockets now empty, the skeletal lord still attacks with amazing accuracy."
     ],
-    arrival: [],
+    arrival: [
+      "A skeletal lord shambles in!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The skeletal lord falls to the ground motionless."
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the skeletal lord's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A skeletal lord thrusts with a splintered lance at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

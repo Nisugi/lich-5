@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +92,27 @@
     description: [
       "Larger and meaner then its lesser brethren, the greater ghoul shambles along with filth-encrusted claws and ragged bits of decaying flesh hanging from sharp fangs in its decaying jaws. A few filthy bits of rotting cloth still cling to its diseased and festering body as it wanders dimly in search of more flesh."
     ],
-    arrival: [],
+    arrival: [
+      "A greater ghoul just arrived!",
+      "A greater ghoul just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The greater ghoul falls to the ground motionless.",
+      "The greater ghoul screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A greater ghoul turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater ghoul swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [
+      "A greater ghoul claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

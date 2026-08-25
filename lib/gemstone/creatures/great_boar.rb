@@ -46,11 +46,11 @@
     physical_attacks: [
       {
         name: "Charge",
-        as: 148
+        as: (138..148)
       },
       {
         name: "Bite",
-        as: 138
+        as: (128..138)
       }
     ],
     bolt_spells: [],
@@ -93,6 +93,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -107,10 +108,24 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The great boar collapses to the ground, emits a final squeal, and dies.",
+      "The great boar lets out a final agonized squeal and dies.",
+      "The great boar collapses to the ground, emits a final silent squeal, and dies.",
+      "The great boar silently lets out a final agonized squeal and dies."
+    ],
+    decay: [
+      "A great boar decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A great boar charges at you!"
+    ],
+    bite: [
+      "A great boar tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

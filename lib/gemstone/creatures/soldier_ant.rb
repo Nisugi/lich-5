@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -83,12 +84,22 @@
     description: [
       "The soldier ant looks like a giant armored version of a common ordinary ant. Its faceted eyes stare back at you with apparent disinterest."
     ],
-    arrival: [],
+    arrival: [
+      "A soldier ant just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The soldier ant feebly twitches a feeler one last time and dies.",
+      "The soldier ant falls to the ground and dies, its feelers twitching."
+    ],
+    decay: [
+      "A soldier ant decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [
         "Not in the Bestiary. Uncommon; shares the Wehnimer's Landing ant nest with giant ants (mongen profile 1194, rooms u47001-u47033).",

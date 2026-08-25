@@ -8,7 +8,7 @@
   family: "Ithzir",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
   muggable: nil,
   boss: false,
@@ -32,6 +32,10 @@
       {
         name: "Quarterstaff",
         as: 433
+      },
+      {
+        name: "Twisted crystal-tipped staff",
+        as: 503
       }
     ],
     bolt_spells: [
@@ -68,6 +72,10 @@
       {
         name: "Web (118)",
         cs: 398
+      },
+      {
+        name: "Twisted crystal-tipped staff",
+        cs: 383
       }
     ],
     offensive_spells: [
@@ -98,7 +106,7 @@
     emp_td: (366..385),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 395,
+    sor_td: (394..403),
     wiz_td: nil,
     mje_td: 408,
     mne_td: nil,
@@ -122,6 +130,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -134,12 +143,23 @@
     description: [
       "The Ithzir initiate carries herself with a humble bearing, her arresting, pupil-less green eyes taking in her surroundings with confidence and surety. Even when battle rages around her, each movement of the initiate seems eerily effortless and calm. The Ithzir initiate is slightly taller than a human, and while her humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The initiate wears a crisply-cut, blue tunic with a green palm-print emblazoned on the right breast."
     ],
-    arrival: [],
+    arrival: [
+      "An Ithzir initiate strides in, his hands clasped before him.",
+      "An Ithzir initiate strides in, her hands clasped before her."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the Ithzir initiate's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Ithzir initiate places one palm on ithzir initiate chest, and raises the other toward you!",
+      "An Ithzir initiate swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

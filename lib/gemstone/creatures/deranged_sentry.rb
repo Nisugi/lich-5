@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Halberd",
-        as: (114..160)
+        as: 167
       }
     ],
     bolt_spells: [],
@@ -45,6 +45,9 @@
       },
       {
         name: "Trip"
+      },
+      {
+        name: "Halberd Sweep"
       }
     ],
     special_abilities: [],
@@ -77,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -89,12 +93,23 @@
     description: [
       "Garbed in bright crimson armor, the deranged sentry appears alert and ready for battle. The sentry is haphazardly dressed with unlaced boots, leathers and a helm that looks to be about three sizes to big."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A deranged sentry lumbers in."
+    ],
+    flee: [
+      "A deranged sentry lumbers {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "The deranged sentry decays into a grisly pile of armor, blood, and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A deranged sentry swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

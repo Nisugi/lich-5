@@ -80,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -92,12 +93,25 @@
     description: [
       "The fire salamander is pale white, with bright red eyes, sharp claws, feathery gill slits and a flickering tongue."
     ],
-    arrival: [],
+    arrival: [
+      "A fire salamander slithers in!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The fire salamander hisses one last time and dies."
+    ],
+    decay: [
+      "A fire salamander decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A fire salamander charges at you!"
+    ],
+    bite: [
+      "A fire salamander tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

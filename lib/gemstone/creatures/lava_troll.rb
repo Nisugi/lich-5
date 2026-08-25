@@ -37,6 +37,10 @@
       {
         name: "Warsword",
         as: 215
+      },
+      {
+        name: "Leather-wound ruddy steel sledgehammer",
+        as: 215
       }
     ],
     bolt_spells: [],
@@ -45,6 +49,9 @@
     maneuvers: [
       {
         name: "Tackle"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -77,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -90,11 +98,22 @@
       "Easily twice as large as the largest giantman, this brutish creature glares with coal black eyes. The lava troll has reddened, blistered skin and soot-black hair. Steam pours from her ears when she bares her blackened fangs."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A lava troll crawls {direction}."
+    ],
+    death: [
+      "A lava troll goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A lava troll burns down to a husk, that crumbles to ash."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lava troll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

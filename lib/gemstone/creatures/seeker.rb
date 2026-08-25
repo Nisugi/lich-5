@@ -27,10 +27,7 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [
+    physical_attacks: [
       {
         name: "Earthen Fury (917)"
       },
@@ -42,6 +39,10 @@
       },
       {
         name: "Elemental Dispel"
+      },
+      {
+        name: "Ancient walking stick",
+        as: 271
       }
     ],
     maneuvers: [],
@@ -81,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -93,12 +95,21 @@
     description: [
       "Approaching from afar, the seeker looks for all the world like a hunched over traveller, barely getting by with the aid of her walking stick, shuffling along and muttering to herself. Upon close examination, though, the seeker projects a grisly visage of skeletal madness. Some strange magic has caused her eyelids to grow completely over her eyes, rendering her blind, yet the rest of her face is totally fleshless. Grinning fiendishly, the seeker unerringly pursues her goal - the Eye of the Drake and the path through to the Rift."
     ],
-    arrival: [],
+    arrival: [
+      "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A seeker points a skeletal finger at you!",
+      "A seeker swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

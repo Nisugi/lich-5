@@ -30,16 +30,18 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 334
+        as: 340
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Venomous spit"
+      },
+      {
+        name: "Spit"
       }
     ],
     special_notes: []
@@ -71,6 +73,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -83,12 +86,26 @@
     description: [
       "The black forest viper is a shadowy charcoal grey, complemented by its paler grey underbelly. Small horned protrusions rise above each of the viper's eyes, giving the creature a devilish appearance. Much larger than a typical snake, the viper is nearly ten feet long, and it is quite capable of slaying foes as large as a human. The snake's lazy movement belies its ability to strike rapidly when threatened."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A black forest viper slithers in with a sibilant warning!",
+      "A black forest viper slithers in.",
+      "A black forest viper slowly slithers in."
+    ],
+    flee: [
+      "A black forest viper slithers {direction}.",
+      "A black forest viper slowly slithers {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "A black forest viper decays into a pile of scales and flesh."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A black forest viper fangs glisten as it tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

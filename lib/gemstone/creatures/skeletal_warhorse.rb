@@ -30,11 +30,15 @@
     physical_attacks: [
       {
         name: "Charge",
-        as: 250
+        as: 262
       },
       {
         name: "Stomp",
         as: 240
+      },
+      {
+        name: "Foot",
+        as: 235
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -87,12 +92,22 @@
     description: [
       "A bulky skeleton belies the skeletal warhorse's speed and quick reflexes. Even encased in heavy steel barding and lacking its muscular body, the warhorse charges, stomps and bites with the same ferocity it displayed in life. Now, long decomposed, its hide has turned to a moldy gray and the once-proud mane hangs in tattered strands."
     ],
-    arrival: [],
+    arrival: [
+      "A skeletal warhorse just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The skeletal warhorse falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A skeletal warhorse charges at you!",
+      "A skeletal warhorse stomps at you with {pronoun} foot!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

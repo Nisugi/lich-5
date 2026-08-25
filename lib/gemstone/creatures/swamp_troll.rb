@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Cudgel",
-        as: 173
+        as: (155..173)
       }
     ],
     bolt_spells: [],
@@ -69,6 +69,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,12 +82,24 @@
     description: [
       "Huge and dangerous, the swamp troll towers above even a tall giantman. Grey skin so thick that it serves quite well as armor covers most of the troll, with tufts of thick hair sprouting here and there like weeds between cracked stones. A hideous grin splits its face displaying fangs crusted with dried blood and less guessable matter. No light of intellect glows in its narrow piggish eyes. The lust for slaughter and thirst for blood are what drive this hulkish beast's existence.\n\nThe swamp troll is large in size and about nine feet high in its current state."
     ],
-    arrival: [],
+    arrival: [
+      "A swamp troll just arrived!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The swamp troll falls to the ground and dies.",
+      "The swamp troll screams one last time and dies."
+    ],
+    decay: [
+      "A swamp troll decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A swamp troll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

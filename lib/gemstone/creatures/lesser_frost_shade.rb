@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Handaxe",
-        as: 43
+        as: (33..43)
       }
     ],
     bolt_spells: [],
@@ -77,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,10 +92,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The frost shade falls to the ground motionless.",
+      "The frost shade screams evilly one last time and goes still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser frost shade swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

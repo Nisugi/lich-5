@@ -24,12 +24,7 @@
   height: 13,
   size: "large",
   attack_attributes: {
-    physical_attacks: [
-      {
-        name: "",
-        as: ""
-      }
-    ],
+    physical_attacks: [],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
@@ -63,6 +58,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -73,6 +69,9 @@
     blunt_required: false
   },
   messaging: {
+    attack: [],
+    bite: [],
+    claw: [],
     description: "Swirling ectoplasm, crimson and black and lit from within by crackles of sickly yellow energy, takes on a rough humanoid shape, but the angargeist is clearly nothing alive.  Where a face ought to be is a molten ruin, lopsided eyes of unholy flame sparking in its ill-made sockets.  Immaterial and dripping essence, the arms and legs are uneven, both ending in straining talons.  The angargeist's form bubbles and simmers in places like fury lent form.",
     fade: "Angargeist fade similar to Banshee and reappear randomly.",
     vortex_smr: "The shadows bubble and seethe as a roiling crimson angargeist rematerializes, swirling together into a vortex of vile energies!\nCrackling torrents of spectral energy erupt from the angargeist as it reforms, warping the air as they ripple outward!",

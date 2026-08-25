@@ -30,20 +30,22 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 168
+        as: (134..168)
       },
       {
         name: "Bite",
-        as: 168
+        as: (128..168)
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Pounce"
+      },
+      {
+        name: "Leap"
       }
     ],
     special_notes: []
@@ -75,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -87,12 +90,31 @@
     description: [
       "At first glance, the black leopard has pure black fur but upon the shifting of light, faint auburn rosette patterns fade in and out of sight against the sleek darkness. The only visible part of the leopard when she's stealthily hidden in the wilds is her deeply-toned amber eyes, which are always gazing warily at her surroundings. With the ability to retract her claws into her large padded paws, the black leopard is able to conceal her movement and stalk silently behind her prey with great success."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A black leopard scampers in!",
+      "A black leopard scampers in, mewling in pain!",
+      "An Agresh bear lumbers in, flecks of drool flinging with each of its strides."
+    ],
+    flee: [
+      "A black leopard scampers {direction}.",
+      "A black leopard scampers {direction}, mewling in pain."
+    ],
+    death: [
+      "The black leopard lets out a final caterwaul and dies.",
+      "The black leopard crumples to the ground and dies."
+    ],
+    decay: [
+      "A black leopard decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A black leopard tries to bite you!"
+    ],
+    claw: [
+      "A black leopard claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

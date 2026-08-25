@@ -31,6 +31,10 @@
       {
         name: "melee: stab",
         as: 285
+      },
+      {
+        name: "Stinger",
+        as: 289
       }
     ],
     bolt_spells: [],
@@ -42,6 +46,12 @@
       },
       {
         name: "leafy appendages"
+      },
+      {
+        name: "Vine Fling"
+      },
+      {
+        name: "Whip"
       }
     ],
     special_abilities: [],
@@ -74,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -88,10 +99,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A shriveled icy creeper collapses to the ground, twitches one last time and dies.",
+      "A shriveled icy creeper twitches one last time and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shriveled icy creeper stabs at you with {pronoun} stinger!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

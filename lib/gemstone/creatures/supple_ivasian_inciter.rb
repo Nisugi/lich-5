@@ -32,11 +32,15 @@
     physical_attacks: [
       {
         name: "Kick",
-        as: 329
+        as: 414
       },
       {
         name: "Whip",
         as: 329
+      },
+      {
+        name: "Quick jab",
+        as: 323
       }
     ],
     bolt_spells: [],
@@ -82,6 +86,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -94,12 +99,29 @@
     description: [
       "A supple Ivasian inciter is a surpassingly attractive figure clad in a loose silken shirt of shimmering green cloth of a vivid bile green hue and a darker loincloth. More than just a hint of zealotry glimmers in her kohl-rimmed eyes. She wears a glinting steel symbol, painted red and bordered in a wreath of tentacles, that depicts a stylized wisp of green smoke."
     ],
-    arrival: [],
+    arrival: [
+      "A supple Ivasian inciter arrives in a sleek swirl of robes, his tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
+      "A supple Ivasian inciter strides in with a smooth, rolling gait.",
+      "A supple Ivasian inciter arrives in a sleek swirl of robes, her tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
+      "A supple Ivasian inciter strides in with a stiff but rolling gait, his face tight with pain.",
+      "A supple Ivasian inciter just arrived from some lichen-clad dark wooden docks."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The Ivasian inciter twitches violently, then dies.",
+      "A supple Ivasian inciter goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "The Ivasian inciter's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A supple Ivasian inciter leaps forward and aims a series of lightning-swift kicks at you!",
+      "Lean muscles knitting with intensity, a supple Ivasian inciter throws {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

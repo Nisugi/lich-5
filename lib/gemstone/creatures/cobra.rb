@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -87,12 +88,23 @@
     description: [
       "The long, thin, varicolored cobra slithers quickly through the landscape, searching for small prey upon which to feed. It is a docile snake until disturbed, at which time it raises its head high off the ground and expands the loose skin around its neck, forming an intimidating dark hood. An angered cobra is not to be trifled with, as its fangs contain a potent poison known to cause death in many instances."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A cobra slithers in!"
+    ],
+    flee: [
+      "A cobra slithers {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "A cobra decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A cobra tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

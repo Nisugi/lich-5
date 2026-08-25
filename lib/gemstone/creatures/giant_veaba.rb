@@ -30,20 +30,22 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 166
+        as: 178
       },
       {
         name: "Claw",
-        as: 176
+        as: 189
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Charge"
+      },
+      {
+        name: "Rear"
       }
     ],
     special_notes: []
@@ -75,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -87,12 +90,28 @@
     description: [
       "The flattened body of the giant veaba is divided into a head and trunk comprised of several segments. Pairs of legs, too numerous to count, flank each segment of the body. Just below a gaping maw, two appendages of the first segment have large claws that are equipped with poison glands. Long antennae extend from the eyeless head."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A giant veaba crawls in, its antennae waving with curiousity.",
+      "A giant veaba crawls in, low on the ground."
+    ],
+    flee: [
+      "A giant veaba crawls {direction} in pain."
+    ],
+    death: [
+      "A giant veaba shudders violently as it dies.",
+      "A giant veaba dies in a squirming, quivering heap.",
+      "A giant veaba dies; vitreous fluids escape its body."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A giant veaba tries to bite you!"
+    ],
+    claw: [
+      "A giant veaba claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

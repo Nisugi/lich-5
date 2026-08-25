@@ -61,6 +61,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -79,6 +80,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Grimswarm orc hunter swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [
         "Observed with ball and chain (AS 256, n=8) and casting (CS 198), camp level unknown."

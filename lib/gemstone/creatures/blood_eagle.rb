@@ -41,6 +41,10 @@
       },
       {
         name: "Pound"
+      },
+      {
+        name: "Ensnare",
+        as: 96
       }
     ],
     bolt_spells: [],
@@ -81,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -95,10 +100,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The blood eagle squawks as it falls back into a heap and dies.",
+      "The blood eagle flutters its wings one last time and dies."
+    ],
+    decay: [
+      "A blood eagle decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A night golem tries to ensnare you in blood eagle black arms!"
+    ],
+    bite: [],
+    claw: [
+      "A blood eagle claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

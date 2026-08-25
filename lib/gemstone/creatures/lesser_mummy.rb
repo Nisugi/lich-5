@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +84,27 @@
     description: [
       "The lesser mummy scrapes slowly across the floor, dragging its form tirelessly in an attempt to find final rest. Its decayed flesh is barely contained in the remnants of its embalming strips, torn and unwrapping in its wake. Once a member of a proud and wealthy family, it has left its sarcophagus to discover someone who can help it and to kill all those who cannot."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser mummy just arrived!",
+      "A lesser mummy just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The lesser mummy falls to the ground motionless.",
+      "The lesser mummy screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A lesser mummy turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser mummy tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [
+      "A lesser mummy claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Lash",
-        as: 246
+        as: (217..246)
       },
       {
         name: "Strike",
-        as: 250
+        as: (247..250)
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -89,6 +90,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A minor glacei lashes out at you!",
+      "A minor glacei strikes at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

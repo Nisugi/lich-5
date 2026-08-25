@@ -42,11 +42,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 212
+        as: 215
       },
       {
         name: "Ensnare",
-        as: 222
+        as: 226
       }
     ],
     bolt_spells: [],
@@ -87,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -100,11 +101,25 @@
       "The mammoth arachnid towers over its prey, fangs dripping poison mixed with fresh blood from its last kill shortly ago. Its entire body is draped with long, coal black hair, with the exception of a small patch on the very rear tip of its bulbous abdomen. This contains the spinnerets it uses to effectively web its prey before injecting the victim with a caustic poison, resulting in slow disintegration from the inside. The arachnid's eight crimson eyes dart about, making certain no prey, no matter how small, escapes."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A mammoth arachnid crawls {direction}."
+    ],
+    death: [
+      "The mammoth arachnid collapses to the ground and dies.",
+      "The mammoth arachnid's body jerks one last time and dies."
+    ],
+    decay: [
+      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mammoth arachnid tries to ensnare you!"
+    ],
+    bite: [
+      "A mammoth arachnid tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Short sword",
-        as: 127
+        as: (107..127)
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,10 +82,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A lesser burrow orc goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A lesser burrow orc's body crumbles into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser burrow orc swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

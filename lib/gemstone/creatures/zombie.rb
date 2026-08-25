@@ -35,11 +35,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: (200..208)
+        as: 206
       },
       {
         name: "Claw",
-        as: (198..210)
+        as: 202
       }
     ],
     bolt_spells: [],
@@ -76,6 +76,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -88,12 +89,25 @@
     description: [
       "Pity the poor zombie, an animated corpse abandoned long ago by her creator. The skin of the zombie has turned a sickly grey, her clothing hangs in tattered ribbons, and she barely keeps control over her death-stiffened muscles. Her mouth, once sewn shut to hold the salt necessary in the animation process, has broken open again, salt dribbling from the parched, thread-covered lips. The zombie verbally threatens and attacks anyone she believes may interfere with her quest to return to the grave."
     ],
-    arrival: [],
+    arrival: [
+      "A zombie shambles in!"
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the zombie's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A zombie waves {pronoun} arms around flinging bits of flesh towards you."
+    ],
+    bite: [
+      "A zombie tries to bite you!"
+    ],
+    claw: [
+      "A zombie claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -78,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -90,12 +91,26 @@
     description: [
       "This gnoll is dressed for the out-of-doors. His rough clothing that blends into the landscape marks him as a ranger. Used to the ways of weapons and hunting, the gnoll's small stature should not be cause to regard him lightly."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A gnoll ranger stalks in.",
+      "A gnoll ranger wanders in, alertly surveying its surroundings."
+    ],
+    flee: [
+      "A gnoll ranger stalks {direction}."
+    ],
+    death: [
+      "The gnoll ranger falls to the ground and dies.",
+      "The gnoll ranger rolls over and dies.",
+      "A gnoll ranger goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the gnoll ranger's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

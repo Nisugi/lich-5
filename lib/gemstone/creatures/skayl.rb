@@ -36,7 +36,7 @@
     physical_attacks: [
       {
         name: "Closed fist",
-        as: 328
+        as: (257..328)
       },
       {
         name: "Ensnare (attack)",
@@ -44,10 +44,13 @@
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [
+    warding_spells: [
       {
         name: "Earthen Fury (917)"
+      },
+      {
+        name: "Burrow Ambush",
+        cs: 265
       }
     ],
     maneuvers: [],
@@ -85,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -99,10 +103,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The skayl goes limp and it falls over as the fire slowly fades from its eyes."
+    ],
+    decay: [
+      "Bright orange lava oozes out of the skayl before it crumbles into a lifeless pile of glaes."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A skayl swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -31,16 +31,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [
+    physical_attacks: [
       {
-        name: "Disintegrate (705)",
-        cs: 317
+        name: "Disintegrate (705)"
       },
       {
-        name: "Corrupt Essence (703)",
-        cs: 317
+        name: "Corrupt Essence (703)"
+      },
+      {
+        name: "Claw",
+        as: 330
       }
     ],
     offensive_spells: [
@@ -82,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -94,12 +95,23 @@
     description: [
       "Writhing green smoke comprises the form of a seething pestilent vision. It has only the suggestion of a humanoid form, and a buzzing like that of countless swarming flies fills the air around it. Where eyes ought to be, it has only a pair of luminous orbs that pulse between phosphorescent white and toxic green."
     ],
-    arrival: [],
+    arrival: [
+      "A seething pestilent vision just arrived from some lichen-clad dark wooden docks.",
+      "A supple Ivasian inciter arrives in a sleek swirl of robes, his tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
+      "A supple Ivasian inciter arrives in a sleek swirl of robes, her tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A seething pestilent vision directs the flow of {pronoun} vile energies toward you!"
+    ],
+    bite: [],
+    claw: [
+      "A seething pestilent vision claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

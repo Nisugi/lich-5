@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Jeddart-axe",
-        as: (236..321)
+        as: 214
       },
       {
         name: "Spear",
@@ -98,6 +98,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -110,12 +111,28 @@
     description: [
       "Appearing more like an animated stick figure than a fleshy humanoid, the slender brown form of the wood sprite stands just under three feet. Her eyes, two sparkling almond-shapes in her wood-like visage, belie a fervent sort of insanity as a frantic, incomprehensible whispering issues from her small mouth."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "Seemingly from nowhere, a wood sprite wanders in!"
+    ],
+    flee: [
+      "A wood sprite glances around and then wanders {direction}!"
+    ],
+    death: [
+      "A wood sprite goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A wood sprite crumbles into a pile of dry splinters.",
+      "Acid dissolves connecting cartilage, freeing the wood sprite's ribs to move independently.",
+      "Acid dissolves the knee ligaments.  The wood sprite's tibia passes her femur in a very unpleasant manner!",
+      "The wood sprite's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A wood sprite swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

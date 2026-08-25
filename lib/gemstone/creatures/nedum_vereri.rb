@@ -35,6 +35,10 @@
       {
         name: "Morning star",
         as: 161
+      },
+      {
+        name: "Gilt-thorned steel spikestar",
+        as: 120
       }
     ],
     bolt_spells: [],
@@ -80,6 +84,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [
+    "a gilt-thorned steel spikestar",
+    "an age-blanched raw silk shift patterned with faded red roses"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -92,12 +100,21 @@
     description: [
       "Once a priestess, this woman's service to her deity has ended tragically with her binding to life after death. Tattered robes hang from her form, and although she is lovely in spite of her glowing eyes, you cannot look upon her for long without feeling that you might run from her in fear."
     ],
-    arrival: [],
+    arrival: [
+      "A nedum vereri just arrived."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the nedum vereri's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A nedum vereri swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

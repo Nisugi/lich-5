@@ -47,6 +47,18 @@
       {
         name: "Tail (attack)",
         as: 255
+      },
+      {
+        name: "Claw",
+        as: 267
+      },
+      {
+        name: "Ensnare",
+        as: 277
+      },
+      {
+        name: "Fist",
+        as: 267
       }
     ],
     bolt_spells: [],
@@ -92,6 +104,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -104,12 +117,30 @@
     description: [
       "The siren lizard has multicolored pastel skin which appears to be rather scaly, a long, blunt snout, sharp teeth, and a swiftly moving tail."
     ],
-    arrival: [],
+    arrival: [
+      "A siren lizard just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The siren lizard falls to the ground and dies.",
+      "The siren lizard hisses one last time and dies.",
+      "A siren lizard goes limp as it is rendered unconscious!",
+      "The siren lizard twitches violently, then dies."
+    ],
+    decay: [
+      "A siren lizard decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A siren lizard pounds at you with {pronoun} fist!",
+      "A siren lizard swings {pronoun} swift tail at you!",
+      "A siren lizard tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [
+      "A siren lizard claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

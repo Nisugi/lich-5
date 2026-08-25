@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Scimitar",
-        as: 111
+        as: (99..111)
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -85,10 +86,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A lesser red orc collapses in a red mess and dies."
+    ],
+    decay: [
+      "A lesser red orc collapses into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser red orc swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 319
+        as: (278..319)
       },
       {
         name: "Charge",
@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -93,10 +94,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The polar bear collapses heavily into a heap on the ground and dies.",
+      "The polar bear lets out a blood-curdling roar and dies."
+    ],
+    decay: [
+      "A polar bear decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A polar bear tries to bite you!"
+    ],
+    claw: [
+      "A polar bear claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

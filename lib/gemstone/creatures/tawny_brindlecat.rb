@@ -30,20 +30,22 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 150
+        as: (147..150)
       },
       {
         name: "Claw",
-        as: 162
+        as: (136..162)
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Pounce"
+      },
+      {
+        name: "Leap"
       }
     ],
     special_notes: []
@@ -75,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -87,12 +90,27 @@
     description: [
       "The tawny brindlecat is a large, tawny brown animal of the cat family with a slender body and long tail. Larger than her cougar and puma cousins, her sleek build disguises her power. Both claws and jaws are to be feared, as the tawny brindlecat strikes quickly with each. Prized for her soft pelt, this feline is a proud and fierce hunter of the great eastern plains."
     ],
-    arrival: [],
+    arrival: [
+      "A tawny brindlecat stalks in!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The tawny brindlecat's tail twitches feebly as she dies.",
+      "The tawny brindlecat's tail twitches feebly as he dies."
+    ],
+    decay: [
+      "A tawny brindlecat decays into a compost of fangs, fur and claws.",
+      "Acid dissolves the knee ligaments.  The tawny brindlecat's tibia passes his femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A tawny brindlecat tries to bite you!"
+    ],
+    claw: [
+      "A tawny brindlecat claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

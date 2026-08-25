@@ -33,6 +33,22 @@
       {
         name: "Short sword",
         as: 371
+      },
+      {
+        name: "Bite",
+        as: 367
+      },
+      {
+        name: "Claw",
+        as: 398
+      },
+      {
+        name: "Midnight black spiked whip",
+        as: 415
+      },
+      {
+        name: "Twisted kris",
+        as: 401
       }
     ],
     bolt_spells: [],
@@ -69,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,10 +100,28 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A raving lunatic goes limp as he is rendered unconscious!",
+      "The raving lunatic twitches violently, then dies."
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the raving lunatic's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A raving lunatic swings {weapon} at you!",
+      "An raving lunatic swings {weapon} at you!",
+      "An raving lunatic throws {weapon} at you!"
+    ],
+    bite: [
+      "A raving lunatic tries to bite you!",
+      "An raving lunatic tries to bite you!"
+    ],
+    claw: [
+      "A raving lunatic claws at you!",
+      "An raving lunatic claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

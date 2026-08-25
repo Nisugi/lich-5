@@ -8,7 +8,7 @@
   family: "Dweller",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: false,
   bones: true,
   muggable: nil,
   boss: false,
@@ -41,6 +41,10 @@
       {
         name: "Pound",
         as: 400
+      },
+      {
+        name: "Fist",
+        as: 383
       }
     ],
     bolt_spells: [],
@@ -86,6 +90,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -98,12 +103,26 @@
     description: [
       "The krag dweller appears to be a cross between a troll and elemental rock. It towers over 8 feet tall with massive limbs. Jet black hairs grow between the plates of its brown scaly hide while long razor sharp fangs and claws provide the krag dweller with all the weapons it will ever need. Even darker than the blackest night, its eyes reveal the smouldering malice within."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "The boulder comes to a sudden stop and rises into the form of a krag dweller!",
+      "A krag dweller lumbers in, causing the ground to tremble with each passing step!"
+    ],
+    flee: [
+      "A krag dweller lumbers {direction}, causing the ground to tremble with each passing step!"
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "The krag dweller crumbles into a pile of rubble.",
+      "The krag dweller crumbles away into dust.",
+      "The krag dweller collapses into a pile of rubble."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A krag dweller pounds at you with {pronoun} fist!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

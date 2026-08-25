@@ -8,7 +8,7 @@
   family: "Golem",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: true,
@@ -30,12 +30,15 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Stomp",
-        as: (435..443)
+        name: "Stomp"
       },
       {
         name: "Arm",
-        as: 449
+        as: (449..460)
+      },
+      {
+        name: "Smash",
+        as: 468
       }
     ],
     bolt_spells: [],
@@ -50,6 +53,12 @@
       },
       {
         name: "Team Swat"
+      },
+      {
+        name: "Ground Slam"
+      },
+      {
+        name: "Slam"
       }
     ],
     special_abilities: [],
@@ -84,6 +93,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -96,12 +106,28 @@
     description: [
       "The white granite-like features of the greater construct hold no hints of the giant creature's intentions or motivations. Its alabaster skin made more of the hardest rock than any living tissue makes the construct a formidable opponent for any who dare to trifle with it. Massing more than ten giantmen, it is a mountain of rock when in motion and very little, man or animal can oppose its desired path of travel once it is in motion."
     ],
-    arrival: [],
+    arrival: [
+      "A greater construct stomps in.",
+      "A glorious greater construct stomps in.",
+      "A hoarse rumbling heralds the arrival of a greater construct!",
+      "A deep humming sound comes from a greater construct as it lumbers in.",
+      "An Ithzir initiate strides in, her hands clasped before her."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A greater construct's body crumbles until only a pile of rubble marks its remains."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A glorious greater construct raises greater construct massive foot and attempts to smash you!",
+      "A greater construct raises greater construct massive foot and attempts to smash you!",
+      "A greater construct swings {weapon} at you!",
+      "An Ithzir initiate places one palm on greater construct chest, and raises the other toward you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

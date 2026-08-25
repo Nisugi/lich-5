@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Runestaff",
-        as: 302
+        as: (277..302)
       }
     ],
     bolt_spells: [
@@ -115,6 +115,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -127,12 +128,27 @@
     description: [
       "Maggots crawl and writhe in the eye sockets of a putrefied Citadel herald. Replete in immaculate costume, the herald stands stiffly with an expression of disdain on her withered face of grey putrified skin. A large signet ring graces one of her two large wrinkled hands patiently folded one over the other. A polished, leather scroll case hangs at the herald's side, embossed with a large letter \"E.\""
     ],
-    arrival: [],
+    arrival: [
+      "A putrefied Citadel herald strides in confidently.",
+      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the room, his crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the area, her crossbow cradled in the crook of an arm."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the Citadel herald's ribs to move independently.",
+      "The Citadel herald's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A putrefied Citadel herald decisively points at you!",
+      "A putrefied Citadel herald swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

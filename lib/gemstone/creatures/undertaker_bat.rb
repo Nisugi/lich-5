@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 242
+        as: (217..242)
       },
       {
         name: "Claw",
-        as: 182
+        as: (182..226)
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -85,10 +86,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The undertaker bat twitches violently, then dies.",
+      "An undertaker bat goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "The undertaker bat decays into a tuft of matted hair and leathery wings."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An undertaker bat rakes at you with a bony claw!"
+    ],
+    bite: [
+      "An undertaker bat tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

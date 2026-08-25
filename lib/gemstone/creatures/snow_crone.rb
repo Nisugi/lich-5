@@ -84,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -98,10 +99,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The snow crone cries out in cold agony one last time and dies.",
+      "A snow crone goes limp as she is rendered unconscious!",
+      "The snow crone falls to the ground motionless."
+    ],
+    decay: [
+      "The snow crone's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A snow crone points a crooked icy finger at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

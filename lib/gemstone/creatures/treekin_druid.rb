@@ -44,6 +44,10 @@
       {
         name: "Root slam",
         as: 400
+      },
+      {
+        name: "Large boulder",
+        as: 265
       }
     ],
     bolt_spells: [
@@ -75,6 +79,12 @@
     maneuvers: [
       {
         name: "Whirlwind of leaves (or pollen)"
+      },
+      {
+        name: "Grab"
+      },
+      {
+        name: "Leaf Whirlwind"
       }
     ],
     special_abilities: [],
@@ -111,6 +121,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -123,12 +134,31 @@
     description: [
       "Standing approximately eight feet tall, the treekin druid glares at you with malevolent intent. Lambent yellow eyes and thick leg-shaped roots make it clear that this is no ordinary tree. Leaves cover the druid from head to trunk, with two arm-shaped branches protruding from the canopy. A long mossy beard dangles below a crooked knothole under the eyes, giving gnarled look to an already imposing foe."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "With a rustle of leaves, a treekin druid lumbers in!",
+      "A treekin druid lumbers in!",
+      "A treekin druid lumbers in, leaving a path of leaves behind it!"
+    ],
+    flee: [
+      "A treekin druid lumbers {direction}.",
+      "A treekin druid lumbers {direction}, leaving a trail of leaves of behind it.",
+      "A treekin druid shudders and lumbers {direction}, leaving a trail of sap and leaves of behind it."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "The layer of bark on a treekin druid hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
+      "The layer of bark on a treekin druid hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust.",
+      "A treekin druid decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A treekin druid hurls {weapon} at you!",
+      "A treekin druid lashes {weapon} at you!",
+      "A treekin druid raises a large root and slams it down at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

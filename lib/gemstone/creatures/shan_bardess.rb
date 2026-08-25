@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Lance",
-        as: 337
+        as: (320..337)
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -79,12 +80,25 @@
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A shan bardess arrives barking a rhythmic verse!",
+      "A shan bard just arrived.",
+      "A shan bard arrives barking a rhythmic verse!"
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The shan bard yips in pain as he falls to the ground motionless.",
+      "A shan bard's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
+      "The shan bard howls out one last time and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shan bardess thrusts with a sonic lance at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

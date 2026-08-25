@@ -8,7 +8,7 @@
   family: "Minotaur",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -34,7 +34,11 @@
       },
       {
         name: "Moon axe",
-        as: 368
+        as: (368..384)
+      },
+      {
+        name: "Lustrous steel battle axe",
+        as: 348
       }
     ],
     bolt_spells: [],
@@ -46,6 +50,12 @@
       },
       {
         name: "Disarm"
+      },
+      {
+        name: "Charge"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_abilities: [],
@@ -78,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -93,9 +104,18 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust.",
+      "Acid dissolves connecting cartilage, freeing the minotaur warrior's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A minotaur warrior swings {weapon} at you!",
+      "Tightening minotaur warrior grip on minotaur warrior steel battle axe, a minotaur warrior strikes out at you with all of minotaur warrior might!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

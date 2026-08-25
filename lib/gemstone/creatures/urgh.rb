@@ -43,6 +43,10 @@
       {
         name: "Impale",
         as: 84
+      },
+      {
+        name: "Tusk",
+        as: 74
       }
     ],
     bolt_spells: [],
@@ -79,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -93,10 +98,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The urgh collapses to the ground, emits a final squeal, and dies.",
+      "The urgh lets out a final agonized squeal and dies."
+    ],
+    decay: [
+      "An urgh decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An urgh charges at you with {pronoun} tusk!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

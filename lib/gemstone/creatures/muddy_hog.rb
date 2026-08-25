@@ -60,6 +60,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -74,10 +75,24 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The muddy hog collapses to the ground, emits a final squeal, and dies.",
+      "The muddy hog lets out a final agonized squeal and dies.",
+      "The muddy hog collapses to the ground, emits a final silent squeal, and dies.",
+      "A muddy hog goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A muddy hog decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A muddy hog charges at you!"
+    ],
+    bite: [
+      "A muddy hog tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

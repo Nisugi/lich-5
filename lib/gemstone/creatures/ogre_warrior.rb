@@ -34,11 +34,15 @@
     physical_attacks: [
       {
         name: "Mace",
-        as: 201
+        as: (173..201)
       },
       {
         name: "Military pick",
-        as: 193
+        as: (177..193)
+      },
+      {
+        name: "Broad-bladed steel hatchet",
+        as: 169
       }
     ],
     bolt_spells: [],
@@ -47,6 +51,9 @@
     maneuvers: [
       {
         name: "Sunder Shield"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -79,6 +86,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +99,28 @@
     description: [
       "The ogre warrior's bulging muscles and long arms give it an advantage in any encounter it might have. The heavy, rock hard skin serves equally well as armor or to just keep itself dry from the elements. Dark, smoking eyes glare out as it challenges any to oppose it."
     ],
-    arrival: [],
+    arrival: [
+      "An ogre warrior just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The ogre warrior falls to the ground and dies.",
+      "The ogre warrior screams one last time and dies.",
+      "The ogre warrior falls to the floor and dies.",
+      "The ogre warrior screams silently one last time and dies.",
+      "An ogre warrior goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "An ogre warrior decays into compost.",
+      "Acid dissolves the knee ligaments.  The ogre warrior's tibia passes his femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An ogre warrior swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

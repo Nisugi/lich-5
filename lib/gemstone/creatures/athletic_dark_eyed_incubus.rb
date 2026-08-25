@@ -83,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -95,12 +96,26 @@
     description: [
       "Almost lewdly handsome, an athletic dark-eyed incubus moves with the grace of a fencer and has the body of a wrestler. He is bare to the waist and clad only in form-fitting trousers of supple, dark leather. The incubus's eyes are inky black pools that lend an otherworldly quality to his intensely masculine beauty."
     ],
-    arrival: [],
+    arrival: [
+      "An athletic dark-eyed incubus just arrived from some lichen-clad dark wooden docks.",
+      "An athletic dark-eyed incubus just arrived from a torchlit overgrown grotto.",
+      "A supple Ivasian inciter arrives in a sleek swirl of robes, his tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
+      "A supple Ivasian inciter arrives in a sleek swirl of robes, her tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Shadows crawl toward the form of an athletic dark-eyed incubus, engulfing it in a stygian tide.  The darkness dissolves into the ground with a faint sound of rushing liquid.",
+      "The dark-eyed incubus's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An athletic dark-eyed incubus directs athletic dark-eyed incubus otherworldly spellsong at you!",
+      "An athletic dark-eyed incubus tries to wrap you in athletic dark-eyed incubus well-muscled arms!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

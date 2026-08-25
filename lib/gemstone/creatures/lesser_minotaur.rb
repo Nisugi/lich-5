@@ -8,7 +8,7 @@
   family: "Minotaur",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Greataxe",
-        as: (381..405)
+        as: 338
       },
       {
         name: "Waraxe",
-        as: 376
+        as: (341..376)
       }
     ],
     bolt_spells: [],
@@ -43,6 +43,9 @@
     maneuvers: [
       {
         name: "Bull Rush"
+      },
+      {
+        name: "Feint"
       }
     ],
     special_abilities: [],
@@ -60,7 +63,7 @@
     emp_td: (239..264),
     pal_td: (210..234),
     ran_td: nil,
-    sor_td: (261..282),
+    sor_td: (261..285),
     wiz_td: nil,
     mje_td: (290..299),
     mne_td: (288..297),
@@ -75,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,12 +91,21 @@
     description: [
       "The lesser minotaur is an ugly, brutish looking beast. Taller than most average men, the minotaur has a bull-like appearance while his muscular body is humanoid with thick arms and broad shoulders. The lesser minotaur feet end in hooves that rattle the ground with every step. Despite his barbaric features, a great intelligence is reflected in the depths of his eyes and mannerisms."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser minotaur stomps in!",
+      "A lesser minotaur stomps in, squinting warily.",
+      "A krag yeti stomps in, a fetid odor wafting before it."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser minotaur swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

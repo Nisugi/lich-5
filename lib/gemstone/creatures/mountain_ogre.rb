@@ -43,6 +43,14 @@
       {
         name: "Broadsword",
         as: 173
+      },
+      {
+        name: "Crude pine mattock",
+        as: 177
+      },
+      {
+        name: "Cudgel",
+        as: 177
       }
     ],
     bolt_spells: [],
@@ -51,6 +59,9 @@
     maneuvers: [
       {
         name: "Tackle"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -83,6 +94,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,12 +107,28 @@
     description: [
       "Nearly as big as a large boulder and as thick as the rock in one, the mountain ogre spends the majority of its time pounding around, killing, eating and sleeping, not necessarily in order of importance. Its skin is a blotchy mix of light brown and slate grey, much of which is hidden by its long, matted dirt-brown hair. A huge, protruding lower lip hides the pointed rending teeth of the mountain ogre, and its claws are kept nicely sharpened by constant dragging over the hard rock surfaces."
     ],
-    arrival: [],
+    arrival: [
+      "A mountain ogre just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The mountain ogre falls to the ground and dies.",
+      "The mountain ogre screams one last time and dies.",
+      "The mountain ogre screams silently one last time and dies.",
+      "A mountain ogre goes limp as she is rendered unconscious!",
+      "A mountain ogre goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A mountain ogre decays into compost.",
+      "Acid dissolves connecting cartilage, freeing the mountain ogre's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mountain ogre swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "War hammer",
-        as: (200..275)
+        as: 161
       }
     ],
     bolt_spells: [],
@@ -55,6 +55,9 @@
       },
       {
         name: "Tackle"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -92,6 +95,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -104,12 +108,27 @@
     description: [
       "The Arachne acolyte's head is clean shaven and bald. Where hair once grew, ornate tattoos of deep red hue decorate every visible bare body part. The Arachne acolytes are muscular but lean. Long years of study and training has produced fanatical allegiance to Arachne. Any semblance of humanity has long since been exorcised through torture and meditation. Only the zealous duty of Arachne now compels their existence."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "An Arachne acolyte just arrived."
+    ],
+    flee: [
+      "An Arachne acolyte winces and anxiously retreats!"
+    ],
+    death: [
+      "The Arachne acolyte slumps to the ground and dies.",
+      "The Arachne acolyte exhales a final curse and dies.",
+      "An Arachne acolyte goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "The Arachne acolyte's body dissolves into a puff of lingering red smoke."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Arachne acolyte swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -34,11 +34,11 @@
       },
       {
         name: "Scimitar",
-        as: 219
+        as: 294
       },
       {
         name: "Short sword",
-        as: 219
+        as: 266
       }
     ],
     bolt_spells: [],
@@ -96,6 +96,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -108,12 +109,24 @@
     description: [
       "The Arachne priest's lithe body is covered by heavy silk robes that also cowl most of the facial features. A single visible image of a black spider over a crimson background is clearly emblazoned upon the backside. Draped in their macabre attire, the Arachne priest goes about its zealous duties in worship of Arachne. Upon close inspection, one can make out partial shapes of sigils formed by welts and mutilations on the hands and face."
     ],
-    arrival: [],
+    arrival: [
+      "An Arachne priest just arrived.",
+      "An Arachne priestess just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The Arachne priest exhales a final curse and dies.",
+      "The Arachne priest slumps to the ground and dies.",
+      "The Arachne priestess exhales a final curse and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Arachne priest swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

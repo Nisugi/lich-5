@@ -27,16 +27,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [
+    physical_attacks: [
       {
-        name: "Fear",
-        cs: 307
+        name: "Fear"
       },
       {
-        name: "Pain (711)",
-        cs: 313
+        name: "Pain (711)"
+      },
+      {
+        name: "Ensnare",
+        as: 301
       }
     ],
     offensive_spells: [
@@ -50,6 +50,9 @@
     maneuvers: [
       {
         name: "Vine fling"
+      },
+      {
+        name: "Gesture"
       }
     ],
     special_abilities: [],
@@ -82,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -94,12 +98,21 @@
     description: [
       "The undead tree spirit resides among its living brethren, barely distinguishable from them until it is awakened from its slumber. Once awakened, terrible gashes and scars appear across its trunk, many of which would have been entirely fatal in life. Its outline is not quite defined and its appearance shifts noticeably as it moves. The occasional flicker reveals a horrifically malformed visage, before fading back to its normal tree-like state."
     ],
-    arrival: [],
+    arrival: [
+      "A warped tree spirit just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The tree spirit slowly settles to the ground and begins to dissipate."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A warped tree spirit tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

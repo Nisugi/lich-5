@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Scimitar",
-        as: 256
+        as: (230..256)
       },
       {
         name: "Morning star",
-        as: 256
+        as: (235..256)
       }
     ],
     bolt_spells: [],
@@ -77,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -91,10 +92,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A forest bendith goes limp as she is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A forest bendith swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

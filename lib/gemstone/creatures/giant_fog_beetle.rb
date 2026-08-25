@@ -36,6 +36,10 @@
       {
         name: "Pincer (attack)",
         as: 228
+      },
+      {
+        name: "Pincer",
+        as: 208
       }
     ],
     bolt_spells: [],
@@ -76,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -90,10 +95,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A giant fog beetle goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A giant fog beetle's legs shrivel up beneath it as it decays into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A giant fog beetle snaps at you with {pronoun} pincer!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -32,7 +32,7 @@
     physical_attacks: [
       {
         name: "Crackling Sparks",
-        as: "+476"
+        as: 476
       }
     ],
     bolt_spells: [
@@ -103,6 +103,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -121,6 +122,9 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

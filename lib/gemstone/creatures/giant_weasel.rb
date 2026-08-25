@@ -38,7 +38,7 @@
       },
       {
         name: "Claw",
-        as: 166
+        as: (144..166)
       }
     ],
     bolt_spells: [],
@@ -77,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -89,12 +90,28 @@
     description: [
       "Darting with amazing speed, the giant weasel often pounces upon its prey before the startled victim can react. Nearly six feet from the tip of its wiggling nose to the end of its furred tail, its short legs propel it rapidly, albeit with an amusingly wavy motion. The body is covered with long, chocolate brown fur, darker on top than underneath. Yellow eyes peer out from its head, glancing about the area with a devious intelligence as the giant weasel sniffs the air, searching for its next meal."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A giant weasel just arrived.",
+      "A giant weasel scampers in, chittering to announce its arrival!",
+      "A giant weasel scampers in!"
+    ],
+    flee: [
+      "A giant weasel scampers {direction}."
+    ],
+    death: [
+      "The giant weasel collapses to the ground, emits a final cry, and dies.",
+      "The giant weasel lets out a final agonized cry and dies."
+    ],
+    decay: [
+      "A giant weasel decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A giant weasel claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

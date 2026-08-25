@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Short sword",
-        as: 43
+        as: (33..43)
       },
       {
         name: "Falchion",
@@ -84,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -96,12 +97,21 @@
     description: [
       "The lesser shade bears the outline of a man and looks solid, but you can see faint images of the background through it."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser shade just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The lesser shade falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser shade swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

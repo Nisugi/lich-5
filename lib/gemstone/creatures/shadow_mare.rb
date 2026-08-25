@@ -62,6 +62,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -76,10 +77,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The shadow mare falls to the ground motionless."
+    ],
+    decay: [
+      "A shadow mare's eyes go dim as she dissolves into the shadows."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shadow mare stomps at you with {pronoun} foot!"
+    ],
+    bite: [
+      "A shadow mare tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

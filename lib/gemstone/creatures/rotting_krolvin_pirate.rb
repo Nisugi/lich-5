@@ -35,6 +35,14 @@
       {
         name: "Trident",
         as: 173
+      },
+      {
+        name: "Corroded long-handled gaff",
+        as: 155
+      },
+      {
+        name: "Weathered boarding axe",
+        as: 153
       }
     ],
     bolt_spells: [],
@@ -75,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -90,9 +99,17 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The krolvin pirate decays into a pile of compost, releasing a stench of rotting seaweed."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A rotting krolvin pirate swings {weapon} at you!",
+      "A rotting krolvin pirate thrusts with a corroded long-handled gaff at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

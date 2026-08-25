@@ -35,6 +35,10 @@
       {
         name: "Stinger (attack)",
         as: 71
+      },
+      {
+        name: "Pincer",
+        as: 54
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -89,10 +94,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The greater ice spider collapses to the ground and dies.",
+      "The greater ice spider's body jerks one last time and dies."
+    ],
+    decay: [
+      "A greater ice spider's legs shrivel up beneath it as it decays into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater ice spider snaps at you with {pronoun} pincer!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

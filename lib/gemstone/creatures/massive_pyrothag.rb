@@ -41,6 +41,10 @@
       {
         name: "Pound (attack)",
         as: 283
+      },
+      {
+        name: "Massive glaes club",
+        as: 302
       }
     ],
     bolt_spells: [],
@@ -77,6 +81,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -89,12 +94,25 @@
     description: [
       "The pyrothag is a huge creature, towering over the tallest of giantmen. Scorched black by the heat of its environment, its thick skin protects it from blows and the hostile lava flows. The most striking thing aside from its size, is the lack of facial features. A smooth face matching its smooth black skin leaves one wondering how such a thing could have evolved."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A massive pyrothag lumbers in!",
+      "A sickly green massive pyrothag lumbers in!",
+      "A massive pyrothag lumbers in, grumbling to itself!"
+    ],
+    flee: [
+      "A massive pyrothag lumbers {direction}.",
+      "A massive pyrothag rumbles loudly as it lumbers {direction}.",
+      "A massive pyrothag crawls {direction}."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A massive pyrothag swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

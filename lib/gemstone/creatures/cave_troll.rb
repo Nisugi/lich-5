@@ -47,6 +47,10 @@
       {
         name: "Spear",
         as: 191
+      },
+      {
+        name: "Pitted battle axe",
+        as: 191
       }
     ],
     bolt_spells: [],
@@ -85,6 +89,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -98,11 +103,24 @@
       "Huge and dangerous, the cave troll towers above even a tall giantman. Grey skin so thick that it serves quite well as armor covers most of the troll, with tufts of thick hair sprouting here and there like weeds between cracked stones. A hideous grin splits its face displaying fangs crusted with dried blood and less guessable matter. No light of intellect glows in its narrow piggish eyes. The lust for slaughter and thirst for blood are what drive this hulkish beast's existence."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A cave troll lumbers {direction}."
+    ],
+    death: [
+      "The cave troll falls to the ground and dies.",
+      "The cave troll screams one last time and dies."
+    ],
+    decay: [
+      "A cave troll decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A cave troll swings {weapon} at you!",
+      "A cave troll thrusts with a spear at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

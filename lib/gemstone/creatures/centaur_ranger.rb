@@ -31,6 +31,10 @@
       {
         name: "Long bow",
         as: 208
+      },
+      {
+        name: "Plain wooden arrow",
+        as: 209
       }
     ],
     bolt_spells: [],
@@ -87,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -101,10 +106,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The tan centaur ranger screams one last time and dies.",
+      "The black centaur ranger screams one last time and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A centaur ranger fires {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

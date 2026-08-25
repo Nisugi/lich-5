@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Morning star",
-        as: 180
+        as: (176..180)
       },
       {
         name: "Handaxe",
-        as: 180
+        as: (140..180)
       }
     ],
     bolt_spells: [],
@@ -43,6 +43,9 @@
     maneuvers: [
       {
         name: "Tackle"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -75,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -90,9 +94,16 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The plains orc warrior's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A plains orc warrior swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

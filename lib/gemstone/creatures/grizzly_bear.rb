@@ -30,10 +30,14 @@
     physical_attacks: [
       {
         name: "Charge",
-        as: 269
+        as: 286
       },
       {
         name: "Claw",
+        as: 285
+      },
+      {
+        name: "Bite",
         as: 269
       }
     ],
@@ -71,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -83,12 +88,32 @@
     description: [
       "One of the largest of the bears, the grizzly bear weighs around 860 pounds and has about ten feet of total body length. This bear is dark brown in color. The tips of her guard hairs are white, giving the bear a grizzled appearance. The grizzly bear has a characteristic muscle hump over the shoulders, and longer claws on her front paws than on her rear paws."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A grizzly bear lumbers in!"
+    ],
+    flee: [
+      "A grizzly bear lumbers {direction}."
+    ],
+    death: [
+      "The grizzly bear lets out a blood-curdling roar and dies.",
+      "The grizzly bear collapses heavily into a heap on the ground and dies.",
+      "A grizzly bear goes limp as he is rendered unconscious!",
+      "A grizzly bear goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A grizzly bear decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A grizzly bear charges at you!"
+    ],
+    bite: [
+      "A grizzly bear tries to bite you!"
+    ],
+    claw: [
+      "A grizzly bear claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

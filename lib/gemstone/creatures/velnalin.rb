@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 61
+        as: (48..61)
       },
       {
         name: "Charge",
-        as: 71
+        as: (61..71)
       },
       {
         name: "Stomp",
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -89,10 +90,23 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The velnalin collapses to the ground, emits a final sigh, and dies.",
+      "The velnalin lets out a final agonized sigh and dies.",
+      "The velnalin collapses to the ground, emits a final silent sigh, and dies."
+    ],
+    decay: [
+      "A velnalin decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A velnalin charges at you!"
+    ],
+    bite: [
+      "A velnalin tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

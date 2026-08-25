@@ -59,10 +59,12 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Stomp"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_notes: []
@@ -94,6 +96,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -106,12 +109,26 @@
     description: [
       "Commanding the elements of cold and ice, the arctic titan pounds through the snowy countryside, looking to destroy those that would invade its domain. The arctic titan stands tall amidst the howling winds and pounding sleet, its muscular torso and thick legs carrying it effortlessly through the elements to unleash savage attacks against its enemies. Its deep blue skin coloration is not a result of exposure to the icy wind but rather from the blue lichen that supplements its diet of meat."
     ],
-    arrival: [],
+    arrival: [
+      "An arctic titan lumbers into view."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "An arctic titan goes limp as it is rendered unconscious!",
+      "The arctic titan screams evilly one last time and goes still.",
+      "The arctic titan falls to the ground motionless."
+    ],
+    decay: [
+      "An arctic titan turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An arctic titan gestures at you!",
+      "An arctic titan swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

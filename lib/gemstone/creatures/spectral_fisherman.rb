@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Trident",
-        as: "+94"
+        as: 94
       },
       {
         name: "Bite"
@@ -77,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -89,12 +90,24 @@
     description: [
       "Excruciating pain reflected in his tired eyes and weathered face, the spectral fisherman still guards his now-destroyed fishing grounds, held by his love of the sea and the curse that binds his soul to the shore. Human in appearance, the spectral fisherman wields his weapon capably in defense of what he considers to be his, by right, by ancestry, and earned long ago by his own hand."
     ],
-    arrival: [],
+    arrival: [
+      "A spectral fisherman just arrived!",
+      "A spectral fisherman just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The spectral fisherman falls to the ground motionless."
+    ],
+    decay: [
+      "A spectral fisherman turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spectral fisherman thrusts with a trident at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

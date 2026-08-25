@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Closed fist",
-        as: 236
+        as: 281
       }
     ],
     bolt_spells: [],
@@ -76,6 +76,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -90,10 +91,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The pra'eda falls to the ground motionless.",
+      "A pra'eda goes limp as it is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A pra'eda swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

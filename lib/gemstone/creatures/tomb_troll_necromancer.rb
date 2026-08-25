@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Runestaff",
-        as: 283
+        as: (133..283)
       }
     ],
     bolt_spells: [],
@@ -53,10 +53,12 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Animate Dead (730)"
+      },
+      {
+        name: "Point"
       }
     ],
     special_notes: []
@@ -92,6 +94,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -106,10 +109,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A tomb troll necromancer goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A tomb troll necromancer decays into a pile of skin and bones."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A tomb troll necromancer swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

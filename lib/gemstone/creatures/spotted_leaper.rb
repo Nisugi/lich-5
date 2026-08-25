@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 76
+        as: (68..76)
       },
       {
         name: "Claw",
@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -93,10 +94,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The spotted leaper collapses to the ground, emits a final snarl, and dies.",
+      "The spotted leaper twitches and dies.",
+      "The spotted leaper collapses to the ground, emits a final silent snarl, and dies."
+    ],
+    decay: [
+      "A spotted leaper decays into a pile of hair and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A spotted leaper tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

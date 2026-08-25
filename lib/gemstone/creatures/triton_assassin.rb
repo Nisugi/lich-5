@@ -30,12 +30,14 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Longsword",
-        as: "428 to 453"
+        name: "Longsword"
       },
       {
-        name: "Main gauche",
-        as: "428 to 453"
+        name: "Main gauche"
+      },
+      {
+        name: "Claw",
+        as: 443
       }
     ],
     bolt_spells: [],
@@ -47,6 +49,9 @@
       },
       {
         name: "Cutthroat"
+      },
+      {
+        name: "Kick"
       }
     ],
     special_abilities: [
@@ -92,6 +97,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -104,12 +110,23 @@
     description: [
       "Dressed in grey-on-black, a triton assassin watches the area intently. The assassin bares her sharply serrated teeth, and her thick tail twitches silently with each breath. Inked upon one muscular forearm is a broken ivory trident overlaying a series of spiky runes."
     ],
-    arrival: [],
+    arrival: [
+      "A triton assassin stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton assassin stalks in silently, her cold eyes gleaming with hatred.",
+      "A triton warlock arrives, striding forth with her robes trailing behind her."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves the knee ligaments.  The triton assassin's tibia passes her femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A triton assassin claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

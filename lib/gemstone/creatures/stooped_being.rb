@@ -34,7 +34,7 @@
       },
       {
         name: "Bite",
-        as: 396
+        as: (356..396)
       }
     ],
     bolt_spells: [],
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -93,6 +94,13 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A stooped being tries to bite you!"
+    ],
+    claw: [
+      "A stooped being claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

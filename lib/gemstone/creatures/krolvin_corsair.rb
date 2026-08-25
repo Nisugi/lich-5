@@ -28,13 +28,13 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [],
-    offensive_spells: [],
-    maneuvers: [
+    physical_attacks: [
       {
         name: "Tackle"
+      },
+      {
+        name: "Plain steel cutlass",
+        as: 228
       }
     ],
     special_abilities: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,10 +82,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A krolvin corsair goes limp as he is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A krolvin corsair swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

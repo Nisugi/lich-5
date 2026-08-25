@@ -154,6 +154,41 @@ RSpec.describe Lich::Gemstone::CreatureTemplate do
     end
   end
 
+  describe 'messaging attack lines' do
+    let(:messaging) do
+      Lich::Gemstone::Messaging.new(
+        bite: 'A wolf tries to bite you!',
+        claw: ['A wolf claws at you!', 'A wolf rakes {pronoun} claws at you!'],
+        attack: 'A shan ranger swings {weapon} at you!'
+      )
+    end
+
+    it 'matches a literal message' do
+      expect(messaging.match(:bite, 'A wolf tries to bite you!')).to eq({})
+    end
+
+    it 'matches any variant when the field holds several' do
+      expect(messaging.match(:claw, 'A wolf claws at you!')).to eq({})
+    end
+
+    it 'captures a placeholder from a templated variant' do
+      expect(messaging.match(:claw, 'A wolf rakes its claws at you!')).to eq(pronoun: 'its')
+    end
+
+    it 'matches a {weapon} placeholder against any weapon name' do
+      expect(messaging.match(:attack, 'A shan ranger swings a diamond-hilted longsword at you!'))
+        .not_to be_nil
+    end
+
+    it 'returns nil when nothing matches' do
+      expect(messaging.match(:bite, 'A wolf yawns.')).to be_nil
+    end
+
+    it 'renders every variant through display' do
+      expect(messaging.display(:claw)).to include('A wolf claws at you!')
+    end
+  end
+
   describe 'has_blood? / has_bones? / muggable?' do
     it 'default to nil (unknown) rather than false when uncatalogued' do
       template = described_class.new(name: 'unknown creature')

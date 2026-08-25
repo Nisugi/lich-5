@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Morning star",
-        as: 159
+        as: (149..159)
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -79,12 +80,30 @@
     description: [
       "Taller than a common human and of a substantially heavier build, the Neartofar orc has a build of solid bone and gristle. Piercing, yellow eyes glare angrily out from under a thick ridge of bone on his forehead. Irregular clumps of rank hair litter his oddly striking brown and green hued-body from head to toe. His arms resemble thick and twisted tree trunks, ending in ragged claws crusted with dried gore."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A Neartofar orc stalks in purposefully, her nose raised as she sniffs at the air.",
+      "A Neartofar orc stalks in purposefully, his nose raised as he sniffs at the air.",
+      "A Neartofar orc stalks in!"
+    ],
+    flee: [
+      "A Neartofar orc stalks {direction}."
+    ],
+    death: [
+      "A Neartofar orc breathes her last gasp and dies.",
+      "A Neartofar orc breathes his last gasp and dies.",
+      "A Neartofar orc goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A Neartofar orc collapses into a pile of dust.",
+      "Acid dissolves the knee ligaments.  The Neartofar orc's tibia passes her femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Neartofar orc swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

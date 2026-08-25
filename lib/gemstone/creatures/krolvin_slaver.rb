@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Scimitar",
-        as: 230
+        as: (212..230)
       }
     ],
     bolt_spells: [],
@@ -81,6 +81,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,10 +96,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The krolvin slaver's body goes stiff and cold as he dies.",
+      "A krolvin slaver goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A krolvin slaver collapses into a pile of dirty rags."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A krolvin slaver swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

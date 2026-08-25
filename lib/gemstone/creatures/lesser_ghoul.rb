@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +84,25 @@
     description: [
       "Resembling a decaying corpse more than anything else, the lesser ghoul is hunched over so that its long arms trail along the ground. Sharp claw-like nails tip both hands and feet and the stench of corruption wafts thickly from the sodden rags of clothing that cling to its leprous body. Strings of gnawed flesh drop from the creature's loose-lipped mouth as it continues to chew on something better left unknown."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser ghoul just arrived!",
+      "A lesser ghoul just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The lesser ghoul falls to the ground motionless.",
+      "The lesser ghoul screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A lesser ghoul turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A lesser ghoul claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

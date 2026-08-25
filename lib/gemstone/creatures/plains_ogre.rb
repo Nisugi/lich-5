@@ -34,7 +34,11 @@
       },
       {
         name: "Mace",
-        as: 175
+        as: (157..175)
+      },
+      {
+        name: "Claw",
+        as: 155
       }
     ],
     bolt_spells: [],
@@ -43,6 +47,9 @@
     maneuvers: [
       {
         name: "Tackle"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -75,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -89,10 +97,24 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The plains ogre screams one last time and dies.",
+      "The plains ogre falls to the ground and dies.",
+      "The plains ogre screams silently one last time and dies.",
+      "A plains ogre goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A plains ogre decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A plains ogre swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [
+      "A plains ogre claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

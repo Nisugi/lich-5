@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Closed fist",
-        as: "248 to 307"
+        as: (248..307)
       }
     ],
     bolt_spells: [],
@@ -91,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -109,6 +110,9 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

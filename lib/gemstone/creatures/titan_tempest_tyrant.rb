@@ -34,6 +34,12 @@
     maneuvers: [
       {
         name: "Tempest Strike(?)"
+      },
+      {
+        name: "Feint"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_abilities: [],
@@ -74,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -92,6 +99,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A titan tempest tyrant's feras morning star crackles with corruscating lightning as titan tempest tyrant swings it at you!",
+      "Tightening titan tempest tyrant grip on titan tempest tyrant feras morning star, a titan tempest tyrant strikes out at you with all of titan tempest tyrant might!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

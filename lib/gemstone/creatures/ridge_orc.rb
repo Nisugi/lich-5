@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Handaxe",
-        as: 84
+        as: (74..84)
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -80,11 +81,22 @@
       "Massive and sullen looking, the ridge orc glares and grimaces at all who dare to approach. Unknown power resides in this horrific-appearing monster."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A ridge orc flees {direction}."
+    ],
+    death: [
+      "A ridge orc gives a last gasp and dies."
+    ],
+    decay: [
+      "A ridge orc decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A ridge orc swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

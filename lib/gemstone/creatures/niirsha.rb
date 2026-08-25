@@ -76,6 +76,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -88,12 +89,19 @@
     description: [
       "The niirsha floats just above the ground, his appearance that of glorious beauty. However, as one approaches the niirsha, his majestic visage begins to crack and peel away to reveal the horrible face of an undead monster. Continually shedding and regenerating his flesh, the niirsha seems locked in a never-ending battle to recapture his former beauty. The niirsha violently preys upon all passers-by, hoping to replace his own cursed flesh with that of the living."
     ],
-    arrival: [],
+    arrival: [
+      "A niirsha shambles in!"
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The niirsha falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -76,6 +76,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -91,9 +92,14 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A greater faeroth decays into a pile of foul-smelling compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

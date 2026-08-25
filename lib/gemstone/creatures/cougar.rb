@@ -31,7 +31,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 203
+        as: (196..203)
+      },
+      {
+        name: "Claw",
+        as: 208
       }
     ],
     bolt_spells: [],
@@ -68,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -80,12 +85,51 @@
     description: [
       "The cougar is a large, tawny brown animal of the cat family with a slender body and long tail. Her sleek build disguises her power. Both claws and jaws are to be feared, as the cougar strikes quickly with each. Prized for her soft pelt, this cat's hunting grounds have been severely diminished in recent years due to overhunting, though many of her breed can still be found in more remote areas and backwaters."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A cougar scampers in, mewling in pain!",
+      "A cougar scampers in!",
+      "A deft cougar scampers in!",
+      "An adroit cougar scampers in!",
+      "A canny cougar scampers in!",
+      "A keen cougar scampers in!"
+    ],
+    flee: [
+      "A cougar scampers {direction}.",
+      "A cougar scampers {direction}, mewling in pain.",
+      "A barbed cougar scampers {direction}.",
+      "A deft cougar scampers {direction}.",
+      "A robust cougar scampers {direction}.",
+      "A keen cougar scampers {direction}."
+    ],
+    death: [
+      "The cougar lets out a final caterwaul and dies.",
+      "The cougar crumples to the ground and dies.",
+      "A cougar goes limp as she is rendered unconscious!",
+      "A cougar goes limp as he is rendered unconscious!",
+      "The cougar twitches violently, then dies."
+    ],
+    decay: [
+      "A cougar decays into a compost of fangs, fur and claws.",
+      "A barbed cougar decays into a compost of fangs, fur and claws.",
+      "A spiny cougar decays into a compost of fangs, fur and claws.",
+      "An adroit cougar decays into a compost of fangs, fur and claws.",
+      "A deft cougar decays into a compost of fangs, fur and claws.",
+      "A stalwart cougar decays into a compost of fangs, fur and claws.",
+      "A robust cougar decays into a compost of fangs, fur and claws.",
+      "A shimmering cougar decays into a compost of fangs, fur and claws.",
+      "A gleaming cougar decays into a compost of fangs, fur and claws.",
+      "A keen cougar decays into a compost of fangs, fur and claws.",
+      "A canny cougar decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A cougar tries to bite you!"
+    ],
+    claw: [
+      "A cougar claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

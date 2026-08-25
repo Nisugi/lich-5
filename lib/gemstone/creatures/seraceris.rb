@@ -31,6 +31,10 @@
       {
         name: "Claw (attack)",
         as: 291
+      },
+      {
+        name: "Claw",
+        as: 384
       }
     ],
     bolt_spells: [],
@@ -53,6 +57,10 @@
       {
         name: "Disintegrate (705)",
         cs: 341
+      },
+      {
+        name: "Point",
+        cs: 346
       }
     ],
     offensive_spells: [],
@@ -94,6 +102,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -112,6 +121,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A seraceris claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

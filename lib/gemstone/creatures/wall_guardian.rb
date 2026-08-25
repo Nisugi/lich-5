@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Military pick",
-        as: (100..153)
+        as: 153
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -82,9 +83,16 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The wall guardian decays into a grisly pile of armor, blood, and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A wall guardian swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

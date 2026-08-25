@@ -31,6 +31,10 @@
     physical_attacks: [
       {
         name: "Ball and chain"
+      },
+      {
+        name: "Stream of water",
+        as: 198
       }
     ],
     bolt_spells: [
@@ -96,6 +100,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -110,10 +115,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A mezic goes limp as he is rendered unconscious!",
+      "The mezic twitches violently, then dies.",
+      "The mezic falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mezic hurls {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

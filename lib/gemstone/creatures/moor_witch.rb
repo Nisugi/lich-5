@@ -35,7 +35,7 @@
     physical_attacks: [
       {
         name: "Dagger",
-        as: 252
+        as: (211..252)
       }
     ],
     bolt_spells: [],
@@ -80,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -94,10 +95,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A moor witch goes limp as she is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A moor witch swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

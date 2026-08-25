@@ -27,8 +27,7 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [
+    physical_attacks: [
       {
         name: "Major Cold (907)",
         as: 160
@@ -40,6 +39,14 @@
       {
         name: "Major Shock (910)",
         as: 160
+      },
+      {
+        name: "Bite",
+        as: 189
+      },
+      {
+        name: "Claw",
+        as: 139
       }
     ],
     warding_spells: [],
@@ -87,6 +94,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -99,12 +107,25 @@
     description: [
       "The carceris makes a peculiar rustling sound as she moves, reminiscent of dried up parchment. The carceris's ragged robes lift and swirl about her like animated tendrils, and bare bones protrude from similar tatters of skin hanging from her hands and hollow cheeks. The specter bares yellowed teeth, the roots discolored a deep brown where they are anchored in the visible jawbones. As she circles, constantly whispering a litany of magic, gooey pools of darkness which were once the horror's eyes weep rivulets of stain down the remnants of her face."
     ],
-    arrival: [],
+    arrival: [
+      "A carceris shambles in!"
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The carceris falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A carceris gestures at you!"
+    ],
+    bite: [
+      "A carceris tries to bite you!"
+    ],
+    claw: [
+      "A carceris claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -76,6 +76,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -88,12 +89,23 @@
     description: [
       "Easily three times as large as the largest giantman, this brutish creature glares about with fire red eyes. The fire ogre has black, soot-covered skin and fiery orange hair. Steam pours from her nose as she flexes her massive claws."
     ],
-    arrival: [],
+    arrival: [
+      "A fire ogre stomps in, covered in black soot!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A fire ogre goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A fire ogre burns down to a husk, that crumbles to ash."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A fire ogre blows fire ogre fiery breath at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

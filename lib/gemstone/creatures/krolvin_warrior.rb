@@ -35,11 +35,15 @@
     physical_attacks: [
       {
         name: "War mattock",
-        as: 195
+        as: (156..195)
       },
       {
         name: "Morning star",
-        as: 195
+        as: (166..195)
+      },
+      {
+        name: "Jeddart-axe",
+        as: 185
       }
     ],
     bolt_spells: [],
@@ -76,6 +80,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -90,10 +95,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A krolvin warrior goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A krolvin warrior's body decays into a pile of compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A krolvin warrior swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

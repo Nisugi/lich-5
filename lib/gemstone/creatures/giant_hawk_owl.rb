@@ -42,7 +42,11 @@
       },
       {
         name: "Claw",
-        as: 247
+        as: (203..247)
+      },
+      {
+        name: "Swoop",
+        as: 194
       }
     ],
     bolt_spells: [],
@@ -79,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -92,11 +97,23 @@
       "This large, stocky owl seems designed for predation. Its sharp talons are only partially concealed by its feathered legs, and the hawk-owl's beak is comparatively small, but razor sharp. Coal black eyes are set deep in the great bird's mottled facial disks."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A giant hawk-owl flies {direction}."
+    ],
+    death: [
+      "The giant hawk-owl writhes in agony, its wings flapping fruitlessly as it dies.",
+      "A giant hawk-owl goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "The giant hawk-owl decays into a pile of feathers."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A giant hawk-owl rakes at you with a razor-sharp claw!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

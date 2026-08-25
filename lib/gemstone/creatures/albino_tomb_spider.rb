@@ -30,10 +30,14 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 116
+        as: (106..116)
       },
       {
         name: "Pincer (attack)",
+        as: 116
+      },
+      {
+        name: "Pincer",
         as: 116
       }
     ],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -89,10 +94,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The tomb spider's body jerks one last time and dies.",
+      "The tomb spider collapses to the ground and dies."
+    ],
+    decay: [
+      "An albino tomb spider's legs shrivel up beneath it as it decays into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An albino tomb spider snaps at you with {pronoun} pincer!"
+    ],
+    bite: [],
+    claw: [
+      "An albino tomb spider claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

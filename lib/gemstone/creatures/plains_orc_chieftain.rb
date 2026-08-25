@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Machete",
-        as: 195
+        as: (171..195)
       },
       {
         name: "Morning star",
-        as: 195
+        as: (191..195)
       }
     ],
     bolt_spells: [],
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -89,10 +90,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A plains orc chieftain's chest heaves one last time then she dies.",
+      "A plains orc chieftain's chest heaves one last time then he dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A plains orc chieftain swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

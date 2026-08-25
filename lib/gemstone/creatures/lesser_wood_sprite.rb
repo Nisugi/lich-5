@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Estoc",
-        as: 222
+        as: (190..222)
       },
       {
         name: "Composite bow"
@@ -87,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -99,12 +100,27 @@
     description: [
       "Appearing more like an animated stick figure than a fleshy humanoid, the slight brown form of the lesser wood sprite stands just over two feet. Her eyes, two sparkling almond-shapes in her wood-like visage, belie a fervent sort of insanity as a frantic, incomprehensible whispering issues from her small mouth."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "Seemingly from nowhere, a lesser wood sprite wanders in!"
+    ],
+    flee: [
+      "A lesser wood sprite glances around and then wanders {direction}!"
+    ],
+    death: [
+      "The lesser wood sprite twitches violently, then dies.",
+      "A lesser wood sprite goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A lesser wood sprite crumbles into a pile of dry splinters.",
+      "The lesser wood sprite's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser wood sprite thrusts with a wood-gripped estoc at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

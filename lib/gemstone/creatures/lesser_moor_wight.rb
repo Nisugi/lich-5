@@ -40,6 +40,14 @@
       {
         name: "Broadsword",
         as: 250
+      },
+      {
+        name: "Blackened twisted steel longsword",
+        as: 250
+      },
+      {
+        name: "Slender enruned steel longsword",
+        as: 250
       }
     ],
     bolt_spells: [],
@@ -85,6 +93,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -97,12 +106,20 @@
     description: [
       "Once beautiful beyond comprehension, the moor wight before you is now as disgusting as it was once charming. The wight has a slender, decaying body hidden by tattered and fading robes. Plainly written across the moor wight's face is an expression of eternal anguish and pain, silently speaking of the horrofic events which unfolded during its life to bring it to this sad state."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser moor wight arrives on a cold wind.",
+      "A bog troll lumbers in, his face set in an angry scowl!"
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lesser moor wight swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

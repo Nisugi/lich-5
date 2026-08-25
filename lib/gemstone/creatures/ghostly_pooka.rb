@@ -63,6 +63,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -77,10 +78,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The ghostly pooka falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A ghostly pooka tries to bite you!",
+      "A pooka tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

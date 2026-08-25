@@ -31,11 +31,17 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [],
-    warding_spells: [
+    physical_attacks: [
       {
         name: "Repel (Fear)"
+      },
+      {
+        name: "Decaying fists",
+        as: 354
+      },
+      {
+        name: "Leather whip",
+        as: 363
       }
     ],
     offensive_spells: [],
@@ -70,6 +76,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -82,12 +89,21 @@
     description: [
       "A horrific magna vereri is the animated corpse of a woman, twisted into a perverse parody of beauty. Glowing white eyes glare out of a face whose cheeks are rouged with streaks of blood, and the lips are bloated and red around needle-like teeth. The obscene curvature of her body is at odds with her skeletal limbs, which are little more than bones clad in pale blue-grey corpseflesh. The vereri's movements are jerky and uneven as she totters around, driven by feral rage."
     ],
-    arrival: [],
+    arrival: [
+      "A supple Ivasian inciter arrives in a sleek swirl of robes, his tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
+      "A supple Ivasian inciter arrives in a sleek swirl of robes, her tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "Screaming out an insensate series of curses, a horrific magna vereri pounds at you with magna vereri decaying fists!",
+      "With a vicious flick of magna vereri wrist, a supple Ivasian inciter lashes at you with magna vereri leather whip!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

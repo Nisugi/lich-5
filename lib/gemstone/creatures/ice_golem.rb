@@ -30,12 +30,23 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Pound",
-        as: (315..335)
+        name: "Pound"
       },
       {
         name: "Stomp",
         as: 319
+      },
+      {
+        name: "Ensnare",
+        as: 333
+      },
+      {
+        name: "Fist",
+        as: 327
+      },
+      {
+        name: "Foot",
+        as: 333
       }
     ],
     bolt_spells: [],
@@ -79,6 +90,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -91,12 +103,26 @@
     description: [
       "The ice golem is a mammoth construct of freezing cold ice and snow. Towering over twenty feet in height, this ice golem surely weighs several tons. The ice golem's rime-covered face displays its sharp, angular features, over which whisps from its frosty brow droop."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "An ice golem lumbers in, followed by a hailing icestorm!",
+      "An ice golem slowly lumbers in, followed by a hailing icestorm!"
+    ],
+    flee: [
+      "An ice golem lumbers {direction}, followed by a hailing icestorm."
+    ],
+    death: [
+      "The ice golem writhes in cold agony and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An ice golem pounds at you with {pronoun} fist!",
+      "An ice golem stomps at you with {pronoun} foot!",
+      "An ice golem tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

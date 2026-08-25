@@ -62,6 +62,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -80,6 +81,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shadow steed charges at you!",
+      "A shadow steed stomps at you with {pronoun} foot!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

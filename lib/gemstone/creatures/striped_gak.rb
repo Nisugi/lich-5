@@ -31,6 +31,10 @@
       {
         name: "Impale",
         as: 61
+      },
+      {
+        name: "Tusk",
+        as: 54
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -81,10 +86,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The striped gak collapses to the ground, emits a final bellow, and dies.",
+      "The striped gak lets out a final agonized bellow and dies.",
+      "The striped gak collapses to the ground, emits a final silent bellow, and dies."
+    ],
+    decay: [
+      "A striped gak decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A striped gak charges at you with {pronoun} tusk!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

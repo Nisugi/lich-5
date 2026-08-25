@@ -30,11 +30,15 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 171
+        as: (121..171)
       },
       {
         name: "Charge (attack)",
         as: 187
+      },
+      {
+        name: "Charge",
+        as: 151
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -89,10 +94,25 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The brown boar collapses to the ground, emits a final squeal, and dies.",
+      "The brown boar lets out a final agonized squeal and dies.",
+      "The brown boar silently lets out a final agonized squeal and dies.",
+      "A brown boar goes limp as he is rendered unconscious!",
+      "The brown boar collapses to the ground, emits a final silent squeal, and dies."
+    ],
+    decay: [
+      "A brown boar decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A brown boar charges at you!"
+    ],
+    bite: [
+      "A brown boar tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

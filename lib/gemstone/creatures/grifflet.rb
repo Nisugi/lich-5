@@ -39,6 +39,10 @@
       {
         name: "Claw",
         as: 352
+      },
+      {
+        name: "Swoop",
+        as: 342
       }
     ],
     bolt_spells: [],
@@ -82,6 +86,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -94,12 +99,23 @@
     description: [
       "The grifflet is a young, yet magnificent beast. Mottled brown feathers marked with light splotches cover the grifflet's front legs, forebody, and wings, while the creature's eagle-like head is almost completely grey. The rear half of the grifflet's body is that of a young lion, with short, pale yellow fur and a long feline tail. Even at this immature stage of life, the horse-sized grifflet is a deadly foe."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A grifflet surveys the area intently as it flies into sight!"
+    ],
+    flee: [
+      "A grifflet flies {direction}."
+    ],
+    death: [
+      "The grifflet writhes in agony, its wings flapping fruitlessly as it dies."
+    ],
+    decay: [
+      "The grifflet decays into a pile of soft down and fur."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

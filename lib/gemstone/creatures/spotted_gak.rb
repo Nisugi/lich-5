@@ -31,6 +31,10 @@
       {
         name: "Impale",
         as: 48
+      },
+      {
+        name: "Tusk",
+        as: 48
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -81,10 +86,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The spotted gak collapses to the ground, emits a final bellow, and dies.",
+      "The spotted gak lets out a final agonized bellow and dies."
+    ],
+    decay: [
+      "A spotted gak decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spotted gak charges at you with {pronoun} tusk!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

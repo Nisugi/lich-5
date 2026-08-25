@@ -30,20 +30,22 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 193
+        as: (183..193)
       },
       {
         name: "Bite",
-        as: 183
+        as: 189
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Tail Sweep"
+      },
+      {
+        name: "Tail Swipe"
       }
     ],
     special_notes: []
@@ -75,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -87,12 +90,22 @@
     description: [
       "When safe in the confines of its underground home, the cave lizard is easily mistaken for just another rock on the floor, albeit a rather long, thick rock. Its low-slung body and stubby legs allow it to squeeze through cracks that would defy attempts by the smaller humanoid races. A mottled, scaly hide of charcoal grey intermixed with deep crimson helps it hide in low light conditions. Bright light reveals not only the more scintillating aspects of its crimson coloration but rows of razor-sharp teeth set in a protruding snout. One should not fixate on the snout, though, lest the powerful tail of the cave lizard land a devastating blow."
     ],
-    arrival: [],
+    arrival: [
+      "A dance of dust and gravel heralds the arrival of a speckled cave lizard!",
+      "A dance of dust and gravel heralds the arrival of a cave lizard!"
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A cave lizard tries to bite you!"
+    ],
+    claw: [
+      "A cave lizard claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

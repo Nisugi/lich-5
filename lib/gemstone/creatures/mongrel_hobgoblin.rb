@@ -39,6 +39,10 @@
       {
         name: "Morning star",
         as: 99
+      },
+      {
+        name: "Spiked club",
+        as: 79
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -88,11 +93,22 @@
       "The mongrel hobgoblin is a horribly misshapen beast, with a hideously deformed face. The large, knotted muscles on her arms betray the creature's strength, which is capable of rending a man's limbs right out of their sockets. Mottled skin with a greenish-yellow hue is splotched with randomly scattered patches of reddish-brown fur. The dark beady eyes of the hobgoblin glare menacingly, as if crushing the life from someone would somehow make her life more bearable."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A mongrel hobgoblin snarls as she retreats!"
+    ],
+    death: [
+      "The mongrel hobgoblin crumples to the ground and dies."
+    ],
+    decay: [
+      "A mongrel hobgoblin decays into a pile of compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mongrel hobgoblin swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

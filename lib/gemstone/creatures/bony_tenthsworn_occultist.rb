@@ -76,6 +76,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [
+    "a crooked bloodwood runestaff carved with sinuous lines",
+    "some dark mauve robes threaded with blood red sigils"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -88,12 +92,36 @@
     description: [
       "Robed and hooded, the Tenthsworn occultist has fervent eyes the color of dried blood and the sort of pallor earned from days spent out of the sun. His dark robes are stitched with serpentine patterns in crimson, a theme repeated in the symbol at his throat, which takes the form of a pair of intertwined asps. The occultist's face is hollow and he looks as if he has not eaten in some time, though perhaps the zeal within him has burned all spare flesh away. \n\nAppraisal:\nThe Tenthsworn occultist is small in size, about four feet high in his current state."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon her face.",
+      "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon his face.",
+      "A desiccated half-krolvin strigoi crawls in, his featureless black eyes gleaming predatorily in the ambient light.  He bares his yellowed fangs, insatiable hunger twisting his face.",
+      "A desiccated half-krolvin strigoi crawls in, her body low to the ground.",
+      "A desiccated half-krolvin strigoi crawls in, his body low to the ground.",
+      "A desiccated half-krolvin strigoi crawls in, her featureless black eyes gleaming predatorily in the ambient light.  She bares her yellowed fangs, insatiable hunger twisting her face."
+    ],
+    flee: [
+      "Zeal written upon his face, a bony Tenthsworn occultist stalks {direction}.",
+      "Zeal written upon her face, a bony Tenthsworn occultist stalks {direction}.",
+      "Biting her lip in pain, a bony Tenthsworn occultist stalks {direction}.",
+      "A desiccated half-krolvin strigoi crawls {direction}, her body low to the ground.",
+      "A desiccated half-krolvin strigoi crawls {direction}, his body low to the ground.",
+      "Biting his lip in pain, a bony Tenthsworn occultist stalks {direction}."
+    ],
+    death: [
+      "The Tenthsworn occultist twitches violently, then dies.",
+      "A bony Tenthsworn occultist goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the Tenthsworn occultist's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A desiccated half-krolvin strigoi flings bony tenthsworn occultist arms wide and throws himself at you, trying to trap you in a deadly embrace!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

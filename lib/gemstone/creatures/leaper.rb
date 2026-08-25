@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 94
+        as: (84..94)
       },
       {
         name: "Claw",
@@ -43,6 +43,10 @@
       {
         name: "Stomp",
         as: 94
+      },
+      {
+        name: "Foot",
+        as: 84
       }
     ],
     bolt_spells: [],
@@ -79,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -93,10 +98,24 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The leaper collapses to the ground, emits a final snarl, and dies.",
+      "The leaper twitches and dies.",
+      "The leaper collapses to the ground, emits a final silent snarl, and dies.",
+      "A leaper goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A leaper decays into a pile of hair and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A leaper stomps at you with {pronoun} foot!"
+    ],
+    bite: [
+      "A leaper tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

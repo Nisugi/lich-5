@@ -40,6 +40,14 @@
       {
         name: "Closed fistClosed fist (Wizards)",
         as: 294
+      },
+      {
+        name: "Closed fist",
+        as: 273
+      },
+      {
+        name: "Rust-covered dhara",
+        as: 336
       }
     ],
     bolt_spells: [
@@ -86,6 +94,9 @@
     maneuvers: [
       {
         name: "Cheapshots"
+      },
+      {
+        name: "Swiftkick"
       }
     ],
     special_abilities: [
@@ -134,6 +145,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -146,12 +158,35 @@
     description: [
       "A black forest ogre plods through the countryside, her immense arm and leg muscles rippling with each wide step. An oversized, slavering lower jaw and two long, pointed, lower teeth give the ogre a constant toothy sneer. The thick bones of her protruding forehead shade beady black eyes, and if there is any intelligence in those eyes, it is completely obscured by the black forest ogre's vicious malevolence. Short, coal black hair covers the creature's body and appendages, though in many places the hair is broken by long, deep scars."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A rippling in the shadows heralds the arrival of a black forest ogre!",
+      "A black forest ogre lumbers in, growling.",
+      "A black forest ogre lumbers in, muttering to herself."
+    ],
+    flee: [
+      "A black forest ogre lumbers {direction}, growling.",
+      "A black forest ogre lumbers {direction}, a grimace on her face.",
+      "A black forest ogre lumbers {direction}, a grimace on his face.",
+      "A black forest ogre lumbers {direction}, muttering to himself.",
+      "A ghastly black forest ogre lumbers {direction}, muttering to himself."
+    ],
+    death: [
+      "A black forest ogre twitches one last time and dies.",
+      "A black forest ogre falls prone to the ground, twitches one last time and dies.",
+      "The light in a black forest ogre's eyes goes out as she collapses and finally dies.",
+      "The light in a black forest ogre's eyes goes out and she finally dies.",
+      "The light in a black forest ogre's eyes goes out as he collapses and finally dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A black forest ogre swings {weapon} at you!",
+      "A black forest ogre throws {weapon} at you!",
+      "A black forest ogre waves {pronoun} elongated, clawed hands at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

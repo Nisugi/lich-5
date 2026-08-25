@@ -8,7 +8,7 @@
   family: "Wraith",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: true,
@@ -32,6 +32,10 @@
       {
         name: "Claw (attack)",
         as: 294
+      },
+      {
+        name: "Claw",
+        as: 300
       }
     ],
     bolt_spells: [],
@@ -53,7 +57,7 @@
     emp_td: (247..259),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 262,
+    sor_td: (256..265),
     wiz_td: nil,
     mje_td: 276,
     mne_td: 284,
@@ -68,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -82,10 +87,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A wind wraith releases a groan of mingled ecstasy and relief as it fades away.",
+      "A flexile wind wraith releases a groan of mingled ecstasy and relief as it fades away.",
+      "A sinuous wind wraith releases a groan of mingled ecstasy and relief as it fades away."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A wind wraith claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

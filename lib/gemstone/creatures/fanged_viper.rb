@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -80,11 +81,20 @@
       "The fanged viper slithers quickly through the landscape, searching for small prey upon which to feed. Its massive venomous fangs hidden by small flaps of skin, this docile snake until disturbed, appears non-threatening. Once it is disturbed and its ire is aroused, the small flaps pull back revealing the true monster it is. Death rapidly awaits any who doubt its abilities."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A fanged viper slithers {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "A fanged viper decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A fanged viper tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

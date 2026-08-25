@@ -30,11 +30,23 @@
     physical_attacks: [
       {
         name: "Spear",
-        as: 230
+        as: (206..230)
       },
       {
         name: "Dart",
         as: 249
+      },
+      {
+        name: "Closed fist",
+        as: 200
+      },
+      {
+        name: "Crude stone axe",
+        as: 206
+      },
+      {
+        name: "Crude wooden club",
+        as: 215
       }
     ],
     bolt_spells: [],
@@ -71,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +96,26 @@
     description: [
       "This misshapen humanoid has large luminous eyes from many years of living underground. It's dressed in scraps of leather armor and odd bits of mismatched clothing, apparently scavenged from various sources. The flesh you can see underneath is mostly grey though well muscled."
     ],
-    arrival: [],
+    arrival: [
+      "A Grutik savage shambles in."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A Grutik savage goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A Grutik savage collapses into a lifeless heap upon the ground.",
+      "A Grutik savage's body turns to dust.",
+      "Acid dissolves connecting cartilage, freeing the Grutik savage's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Grutik savage swings {weapon} at you!",
+      "A Grutik savage thrusts with a crude wooden spear at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -33,12 +33,14 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Broadsword",
-        as: (189..231)
+        name: "Broadsword"
       },
       {
-        name: "Morning star",
-        as: (189..231)
+        name: "Morning star"
+      },
+      {
+        name: "Falchion",
+        as: 186
       }
     ],
     bolt_spells: [
@@ -161,6 +163,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -173,12 +176,24 @@
     description: [
       "It is hard to see much of the hooded figure because of the voluminous hooded cloak. However, the figure does appear to be that of a young human, or humanoid, male. His skin is very pale, almost an opalescent white in color and his eyes are an ominous dull grey. You can see a few locks of curly black hair streaked with stark white tufts concealed by the hood of his cloak. When he glances in your direction, you can feel his gaze almost as a physical blow. He holds himself erect, a tall and imposing figure giving evidence of great pride."
     ],
-    arrival: [],
+    arrival: [
+      "A hooded figure just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A hooded figure goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the hooded figure's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A hooded figure gestures at you!",
+      "A hooded figure swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

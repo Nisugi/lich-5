@@ -62,6 +62,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -80,6 +81,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spectral shade nods at you!",
+      "A spectral shade swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

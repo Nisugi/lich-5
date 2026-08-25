@@ -33,12 +33,16 @@
         as: 260
       },
       {
-        name: "ranged: frost-covered crystalline flower",
-        as: 260
+        name: "Frost-covered crystalline flower",
+        as: (138..260)
       },
       {
         name: "melee: stab",
         as: 260
+      },
+      {
+        name: "Stinger",
+        as: 242
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -87,12 +92,26 @@
     description: [
       "Though this plant with its droopy leafs and sickly flowers is a bit on the far gone side, it might still benefit from being re-potted. Preferably six feet under!"
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A dark frosty plant stalks in and plants its roots."
+    ],
+    flee: [
+      "A dark frosty plant stalks {direction}."
+    ],
+    death: [
+      "A dark frosty plant collapses to the ground, twitches one last time and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A dark frosty plant flings a frost-covered crystalline flower towards you!",
+      "A dark frosty plant rotates until it points a large flower at you!",
+      "A dark frosty plant stabs at you with {pronoun} stinger!",
+      "A dark frosty plant turns one of {pronoun} massive flowers towards you and spits a seed in your direction!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

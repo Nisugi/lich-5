@@ -63,6 +63,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: nil,
@@ -82,11 +83,16 @@
       "A heavily armored battle mastodon just went through a rune-carved white granite arch.",
       "A heavily armored battle mastodon stomps {direction}, trunk swinging between its huge forelegs."
     ],
-    death: "As a heavily armored battle mastodon collapses, it lets out a shrill trumpet of despair.  Its trunk flails futilely before slamming to the ground, still.",
+    death: [
+      "As a heavily armored battle mastodon collapses, it lets out a shrill trumpet of despair.  Its trunk flails futilely before slamming to the ground, still."
+    ],
     search: [
       "A heavily armored battle mastodon quests about with its trunk, eyes narrowing.",
       "A heavily armored battle mastodon looks about in alarm as its trunk tests the air."
     ],
+    attack: [],
+    bite: [],
+    claw: [],
 
     combat_messaging: "A heavily armored battle mastodon raises its trunk and rears back onto its immense hind legs, blaring out a note of sheer fury!\n[SSR result: 34 (Open d100: 8)]\nYou keep your wits amidst the mastodon's angry trumpeting!\n[SSR result: 138 (Open d100: 87)]\nThe mastodon's angry trumpeting startles XXX!\nA heavily armored battle mastodon slams a gigantic foot down, sending tremors rippling outward from the point of impact!"
   }

@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 175
+        as: (161..175)
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -81,10 +82,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The mountain goat collapses to the ground, emits a final bray, and dies.",
+      "The mountain goat lets out a final agonized bray and dies."
+    ],
+    decay: [
+      "A mountain goat decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A mountain goat tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

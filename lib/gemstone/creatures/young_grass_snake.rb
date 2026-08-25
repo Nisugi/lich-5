@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -80,11 +81,20 @@
       "Pale green and about a foot long, the grass snake relies on camouflage to avoid predators long enough to survive until adulthood. Though young, this creature is more deadly than its darker-in-color adult kin as it has yet to control its venom glands. Many an overconfident adventurer has died from the noxious poisons the grass snake is capable of delivering."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A young grass snake slithers {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "A young grass snake decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A young grass snake tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -77,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -89,12 +90,24 @@
     description: [
       "Standing twice as tall as as the tallest giantman, the ice giant trails frost and snow in its wake. Seemingly carved from living ice and snow, icy blue eyes set beneath a heavily furrowed brow and a tangled mop of icy blue hair provide a splash of color against the ice giant's dull white frost-covered skin."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A tundra giant lumbers in, followed by a swirling snowstorm!"
+    ],
+    flee: [
+      "A tundra giant lumbers {direction}, followed by a swirling snowstorm."
+    ],
+    death: [
+      "The tundra giant cries out in cold agony one last time and dies.",
+      "A tundra giant goes limp as he is rendered unconscious!",
+      "A tundra giant goes limp as she is rendered unconscious!",
+      "The tundra giant falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Longsword",
-        as: 294
+        as: (276..294)
       }
     ],
     bolt_spells: [
@@ -107,6 +107,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -121,10 +122,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The shan ranger howls out one last time and dies.",
+      "The shan ranger yips in pain as he falls to the ground motionless.",
+      "The shan ranger yips in pain as she falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shan ranger swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

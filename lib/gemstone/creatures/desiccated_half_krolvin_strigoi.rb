@@ -77,6 +77,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [
+    "some tattered hide clothing adorned with bone buttons"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -89,12 +92,30 @@
     description: [
       "The corpse-like face of the half-krolvin strigoi bears little resemblance to a living half-krolvin save in its heavy brow and dense brows. Eyes like pits of shadow stare out from the sunken hollows of the strigoi's altered visage, hungry and hateful. The strigoi has yellowed fangs that distend her lips in an ugly fashion. Her motions are distinctly unnatural, fluid in a way that a living being's are not. \n\nAppraisal:\nThe half-krolvin strigoi is medium in size, about six feet high in her current state."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A desiccated half-krolvin strigoi crawls in, her body low to the ground.",
+      "A desiccated half-krolvin strigoi crawls in, his featureless black eyes gleaming predatorily in the ambient light.  He bares his yellowed fangs, insatiable hunger twisting his face.",
+      "A desiccated half-krolvin strigoi crawls in, his body low to the ground.",
+      "A desiccated half-krolvin strigoi crawls in, her featureless black eyes gleaming predatorily in the ambient light.  She bares her yellowed fangs, insatiable hunger twisting her face.",
+      "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon her face."
+    ],
+    flee: [
+      "A desiccated half-krolvin strigoi crawls {direction}, his body low to the ground.",
+      "A desiccated half-krolvin strigoi crawls {direction}, her body low to the ground.",
+      "Zeal written upon his face, a bony Tenthsworn occultist stalks {direction}.",
+      "Zeal written upon her face, a bony Tenthsworn occultist stalks {direction}."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A bony Tenthsworn occultist hesitantly swings desiccated half-krolvin strigoi bloodwood runestaff at you!",
+      "A desiccated half-krolvin strigoi flings desiccated half-krolvin strigoi arms wide and throws himself at you, trying to trap you in a deadly embrace!",
+      "A desiccated half-krolvin strigoi raises a clawed hand overhead and slashes viciously at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

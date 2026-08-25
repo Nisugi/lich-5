@@ -31,6 +31,10 @@
       {
         name: "Pound",
         as: 380
+      },
+      {
+        name: "Fist",
+        as: 350
       }
     ],
     bolt_spells: [
@@ -94,6 +98,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -106,12 +111,21 @@
     description: [
       "Comprised of solid blocks of granite, the immense stone sentinel stands and moves very stiffly. Each portion of its anatomy is chiseled in rectangular pieces with sharp right angles. It is not apparent how this animated construct moves, or how it even stays together, but somehow it does both effectively. The attacks of a stone sentinel carry the weight of tons of rock behind them. Being in the path of one is not an experience to be recommended."
     ],
-    arrival: [],
+    arrival: [
+      "A stone sentinel just arrived."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A stone sentinel crumbles to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A stone sentinel pounds at you with {pronoun} fist!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

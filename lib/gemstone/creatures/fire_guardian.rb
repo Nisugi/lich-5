@@ -88,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -102,10 +103,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The fire guardian falls to the ground motionless.",
+      "The fire guardian screams evilly one last time and goes still."
+    ],
+    decay: [
+      "A fire guardian turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A fire guardian gestures at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

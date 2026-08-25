@@ -31,6 +31,10 @@
       {
         name: "Impale",
         as: 32
+      },
+      {
+        name: "Tusk",
+        as: 23
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -81,10 +86,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The spotted gnarp collapses to the ground, emits a final cry, and dies.",
+      "The spotted gnarp lets out a final agonized cry and dies.",
+      "The spotted gnarp collapses to the ground, emits a final silent cry, and dies."
+    ],
+    decay: [
+      "A spotted gnarp decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spotted gnarp charges at you with {pronoun} tusk!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -31,6 +31,10 @@
       {
         name: "Charge (attack)",
         as: 197
+      },
+      {
+        name: "Charge",
+        as: 191
       }
     ],
     bolt_spells: [],
@@ -71,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -84,11 +89,23 @@
       "The roa'ter wormling is large worm that seems not quite fully grown, and yet it is still a massive creature around fifteen feet long. Though young, it possesses great strength and moves quickly about. Light red in color, it seems to have no eyes, but its keen tremor sense quickly finds targets."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A roa'ter wormling slithers {direction}."
+    ],
+    death: [
+      "The wormling rolls over and dies.",
+      "A roa'ter wormling goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A roa'ter wormling decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A roa'ter wormling charges at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

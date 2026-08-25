@@ -64,6 +64,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -77,11 +78,20 @@
       "Smooth black basalt forms a squat cone, taller than many giantmen. The rock looks almost to have been molded or poured into shape, lacking any sign of having been worked. The top is apparently open, allowing the wasps access to the interior. A deep hum radiates from the nest, implying a feverish level of activity inside."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A mud wasp crawls {direction} of the wasp nest!",
+      "A cinder wasp crawls {direction} of the wasp nest!"
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "The wasp nest collapses into a pile of rubble.",
+      "A wasp nest decays into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

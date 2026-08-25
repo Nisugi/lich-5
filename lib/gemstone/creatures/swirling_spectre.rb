@@ -34,7 +34,7 @@
       },
       {
         name: "Ensnare",
-        as: 154
+        as: 222
       }
     ],
     bolt_spells: [
@@ -97,6 +97,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -109,12 +110,19 @@
     description: [
       "Note: Creature description did not display"
     ],
-    arrival: [],
+    arrival: [
+      "The wind manifests into a swirling spectre!"
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A swirling spectre tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

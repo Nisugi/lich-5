@@ -63,6 +63,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -78,12 +79,19 @@
       "A tattooed gigas berserker barrels in, bellowing a mad battlecry that shakes the ground with its intensity!",
       "A tattooed gigas berserker charges in, madness twisting his features.",
     ],
-    death: "A tattooed gigas berserker's fists tense with impotent rage as she surrenders to death.",
-    decay: "Creeping decay races across a tattooed gigas berserker's prone form, swiftly consuming the body despite its colossal size.",
+    death: [
+      "A tattooed gigas berserker's fists tense with impotent rage as she surrenders to death."
+    ],
+    decay: [
+      "Creeping decay races across a tattooed gigas berserker's prone form, swiftly consuming the body despite its colossal size."
+    ],
     search: [
       "A tattooed gigas berserker raises his great head, bulging eyes searching the shadows.",
       "A tattooed gigas berserker's brow knits sneers as his eyes fruitlessly search the shadows."
     ],
+    attack: [],
+    bite: [],
+    claw: [],
 
     general_advice: "* Berserkers are square creatures in fairly light armor, so players of semis and pures can take advantage of low TD and CvA by casting CS-based offensive spells.",
     bards: "* By destroying berserkers' weapons, Vibration Chant (1002) stops many of the most threatening things they can do and sometimes kills them outright.",

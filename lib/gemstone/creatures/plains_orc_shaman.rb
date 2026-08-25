@@ -91,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -105,10 +106,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A plains orc shaman mutters belaboring his fate and then dies.",
+      "A plains orc shaman mutters belaboring her fate and then dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A plains orc shaman closes {pronoun} eyes and gestures at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

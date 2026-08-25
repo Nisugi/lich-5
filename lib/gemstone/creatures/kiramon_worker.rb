@@ -56,6 +56,10 @@
       {
         name: "Charge (attack)",
         as: 246
+      },
+      {
+        name: "Charge",
+        as: 196
       }
     ],
     bolt_spells: [],
@@ -100,6 +104,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -112,12 +117,27 @@
     description: [
       "The kiramon worker has a mobile head with huge, bulging, eyes that sparkle in a faceted clustering around a lidless perimeter. Protruding from its massive head is a vicious-looking snout with insectile mandibles, while the back of the cranium is a distended, two-lobed case. Remarkably powerful rear legs jut backward from an extremely hard, resilient exoskeleton that seems to be in constant motion. Though its middle legs have evolved away long ago, the front legs end in strong opposing claws and knobby-jointed fingers. Stunted wings flap uselessly from its long cylindrical body."
     ],
-    arrival: [],
+    arrival: [
+      "You hear a strange clicking that makes your hair stand on end as a kiramon worker arrives."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The kiramon worker falls back into a heap and dies.",
+      "The kiramon worker clicks one last time and dies.",
+      "A kiramon worker goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A kiramon worker crumbles away into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A kiramon worker charges at you!"
+    ],
+    bite: [],
+    claw: [
+      "A kiramon worker claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

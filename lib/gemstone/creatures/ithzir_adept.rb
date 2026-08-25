@@ -8,7 +8,7 @@
   family: "Ithzir",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -32,6 +32,10 @@
       {
         name: "Quarterstaff",
         as: 408
+      },
+      {
+        name: "Twisted crystal-tipped staff",
+        as: 428
       }
     ],
     bolt_spells: [
@@ -68,6 +72,10 @@
       {
         name: "Weapon Fire (915)",
         cs: 402
+      },
+      {
+        name: "Twisted crystal-tipped staff",
+        cs: 402
       }
     ],
     offensive_spells: [
@@ -94,7 +102,7 @@
     emp_td: (383..405),
     pal_td: nil,
     ran_td: nil,
-    sor_td: (411..425),
+    sor_td: (411..436),
     wiz_td: nil,
     mje_td: 440,
     mne_td: nil,
@@ -119,6 +127,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -131,12 +140,27 @@
     description: [
       "The Ithzir adept carries a bearing of absolute confidence, his piercing, pupil-less green eyes shrewdly taking in his surroundings. The Ithzir adept is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The adept wears a crisply-cut, silvery-blue tunic with high shoulders and a deep vee-neck. Emblazoned on the right breast of the tunic is a single green eye."
     ],
-    arrival: [],
+    arrival: [
+      "An Ithzir initiate strides in, her hands clasped before her.",
+      "An Ithzir initiate strides in, his hands clasped before him."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "An Ithzir adept goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "The crystal crumbles into a fine blue powder that sifts through the adept's fingers."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Ithzir adept swings {weapon} at you!",
+      "An Ithzir adept thrusts both palms toward you!",
+      "An Ithzir initiate places one palm on ithzir adept chest, and raises the other toward you!",
+      "An Ithzir seer suddenly opens ithzir adept eyes and stares directly at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

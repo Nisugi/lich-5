@@ -38,7 +38,11 @@
     physical_attacks: [
       {
         name: "Handaxe",
-        as: 73
+        as: (65..73)
+      },
+      {
+        name: "Short sword",
+        as: 65
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,12 +92,25 @@
     description: [
       "This mongrel kobold mostly resembles her kobold brethren. Smaller than a dwarf and even many halflings, she has splotchy skin and a fairly hairy head topped with small horns. Long-limbed for her size, the mongrel kobold eschews any display of brute strength and relies on what agility she pretends to have. The mongrel kobold stares back at you with beady little black eyes, sizing you up as a foe."
     ],
-    arrival: [],
+    arrival: [
+      "A mongrel kobold just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The mongrel kobold screams one last time and dies.",
+      "The mongrel kobold falls to the ground and dies."
+    ],
+    decay: [
+      "A small, green cloud of smelly gas rises from the body of a mongrel kobold as she decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a mongrel kobold as he decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mongrel kobold swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

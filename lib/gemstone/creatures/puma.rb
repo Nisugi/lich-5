@@ -42,11 +42,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 171
+        as: (156..171)
       },
       {
         name: "Claw",
-        as: 163
+        as: (160..163)
       }
     ],
     bolt_spells: [],
@@ -87,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -99,12 +100,30 @@
     description: [
       "The puma is a muscular and athletic animal. Covered with a uniform coat of greyish-brown fur, her long, lithe body is equipped with powerful legs, displaying a proportionately greater difference in the length of the forelegs compared to the extenuated hind limbs. The feline's head is topped with rounded ears, and a very long, balancing tail completes the puma's physique."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A puma scampers in!"
+    ],
+    flee: [
+      "A puma scampers {direction}.",
+      "A puma scampers {direction}, mewling in pain."
+    ],
+    death: [
+      "The puma lets out a final caterwaul and dies.",
+      "The puma crumples to the ground and dies."
+    ],
+    decay: [
+      "A puma decays into a compost of fangs, fur and claws.",
+      "The puma's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A puma tries to bite you!"
+    ],
+    claw: [
+      "A puma claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

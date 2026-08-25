@@ -60,6 +60,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -72,12 +73,27 @@
     description: [
       "The muscular brindlecat is a large, tawny brown animal of the cat family with a slender body and long tail. Larger than her cougar and puma cousins, her sleek build disguises her power. Both claws and jaws are to be feared, as the muscular brindlecat strikes quickly with each. Prized for her soft pelt, this feline is a proud and fierce hunter of the great eastern plains."
     ],
-    arrival: [],
+    arrival: [
+      "A muscular brindlecat stalks in!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The muscular brindlecat's tail twitches feebly as she dies.",
+      "The muscular brindlecat's tail twitches feebly as he dies.",
+      "A muscular brindlecat goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A muscular brindlecat decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A muscular brindlecat tries to bite you!"
+    ],
+    claw: [
+      "A muscular brindlecat claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

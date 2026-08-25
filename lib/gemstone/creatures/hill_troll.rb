@@ -42,20 +42,24 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Two-handed sword",
-        as: (182..214)
+        name: "Two-handed sword"
       },
       {
-        name: "War mattock",
-        as: (182..214)
+        name: "War mattock"
       },
       {
-        name: "War hammer",
-        as: (182..214)
+        name: "War hammer"
       },
       {
-        name: "Spear",
-        as: (182..214)
+        name: "Spear"
+      },
+      {
+        name: "Cudgel",
+        as: 207
+      },
+      {
+        name: "Military pick",
+        as: 194
       }
     ],
     bolt_spells: [],
@@ -101,6 +105,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -113,12 +118,26 @@
     description: [
       "Huge and dangerous, the hill troll towers above even a tall giantman. Grey skin so thick that it serves quite well as armor covers most of the troll, with tufts of thick hair sprouting here and there like weeds between cracked stones. A hideous grin splits its face displaying fangs crusted with dried blood and less guessable matter. No light of intellect glows in its narrow piggish eyes. The lust for slaughter and thirst for blood are what drive this hulkish beast's existence.\n\nAppraisal:\nThe hill troll is large in size, about nine feet high in her current state, appears to be of hardy constitution, is in an offensive stance, and is in relatively good shape."
     ],
-    arrival: [],
+    arrival: [
+      "A hill troll just arrived!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The hill troll screams one last time and dies.",
+      "The hill troll falls to the ground and dies.",
+      "A hill troll goes limp as she is rendered unconscious!",
+      "A hill troll goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A hill troll decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A hill troll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

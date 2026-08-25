@@ -69,6 +69,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,12 +82,26 @@
     description: [
       "Huge and dangerous, the Neartofar troll towers above even a tall giantman. Brown and green pigmented skin so thick that it serves quite well as armor covers most of the troll, with tufts of thick hair sprouting here and there like weeds between cracked stones. A hideous grin splits face displaying fangs crusted with dried blood and less guessable matter. No light of intellect glows in narrow piggish eyes. The lust for slaughter and thirst for blood are what drive this hulkish beast's existence."
     ],
-    arrival: [],
+    arrival: [
+      "A Neartofar troll just arrived!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The Neartofar troll falls to the ground and dies.",
+      "The Neartofar troll screams one last time and dies.",
+      "A Neartofar troll goes limp as he is rendered unconscious!",
+      "A Neartofar troll goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A Neartofar troll decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Neartofar troll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

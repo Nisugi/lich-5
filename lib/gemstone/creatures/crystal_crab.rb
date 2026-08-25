@@ -34,7 +34,7 @@
       },
       {
         name: "Claw",
-        as: 112
+        as: (100..112)
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -84,11 +85,25 @@
       "The multi-faceted shell of this oversized crab resembles a massive oval gem. Underneath the protective covering are its formidable claws and pincers, the front pair easily the largest. The creature's eyestalks peer about nervously at even the slightest sound."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A glittering crystal crab retreats back into its shell."
+    ],
+    death: [
+      "The crystal crab collapses to the ground, clacks its pincers and dies.",
+      "The crystal crab clacks its pincers a final agonizing time and dies."
+    ],
+    decay: [
+      "A glittering crystal crab decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A crystal crab tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [
+      "A crystal crab claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Short sword",
-        as: (36..62)
+        as: 55
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -82,9 +83,17 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A big ugly kobold swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

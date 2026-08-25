@@ -8,7 +8,7 @@
   family: "Bird",
   type: "Avian",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -41,6 +41,22 @@
       {
         name: "Impale (attack)",
         as: 380
+      },
+      {
+        name: "Beak",
+        as: 375
+      },
+      {
+        name: "Roaring ball of fire",
+        as: 302
+      },
+      {
+        name: "Sharp beak",
+        as: 381
+      },
+      {
+        name: "Stream of fire",
+        as: 322
       }
     ],
     bolt_spells: [
@@ -51,8 +67,7 @@
     ],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Wing Buffet"
       },
@@ -67,6 +82,9 @@
       },
       {
         name: "Fire flares"
+      },
+      {
+        name: "Dive"
       }
     ],
     special_notes: []
@@ -83,7 +101,7 @@
     emp_td: (328..337),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 359,
+    sor_td: (359..368),
     wiz_td: nil,
     mje_td: 378,
     mne_td: nil,
@@ -98,6 +116,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -110,12 +129,27 @@
     description: [
       "Smoldering black eyes and a sharp golden beak display the fury of the firebird. A golden crest of feathers adorn the head of this large but nimble avian that continues down its long craning neck, transitioning to orange around its sleek body, then deep red along its narrow legs that end in wickedly sharp black talons. Flames dance from the firebird's wide arcing wings that leave a trail with its long tail feathers in its wake."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A firebird flies in, a trail of flame behind it.",
+      "A firebird flies in, struggling to flap its flaming wings."
+    ],
+    flee: [
+      "A firebird struggles to flap its flaming wings as it flies {direction}.",
+      "A firebird leaves a trail of flame as it flies {direction}.",
+      "The firebird flaps its great flaming wings as it retreats upwards into the air."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A firebird cranes firebird neck, snapping at you with firebird sharp beak!",
+      "A firebird hurls {weapon} at you!",
+      "A firebird tries to spear you with firebird beak!",
+      "In a trail of flames, a firebird extends firebird fearsome talons as it dives at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

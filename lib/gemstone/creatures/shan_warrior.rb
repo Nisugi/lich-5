@@ -30,15 +30,19 @@
     physical_attacks: [
       {
         name: "Flamberge",
-        as: 259
+        as: (259..271)
       },
       {
         name: "Longsword",
-        as: 259
+        as: (231..259)
       },
       {
         name: "Jeddart-axe",
-        as: 259
+        as: (237..259)
+      },
+      {
+        name: "Sharply-honed vultite handaxe",
+        as: 375
       }
     ],
     bolt_spells: [],
@@ -47,6 +51,9 @@
     maneuvers: [
       {
         name: "Disarm Weapon"
+      },
+      {
+        name: "Disarm"
       }
     ],
     special_abilities: [],
@@ -79,6 +86,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -93,10 +101,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The shan warrior howls out one last time and dies.",
+      "The shan warrior yips in pain as she falls to the ground motionless.",
+      "The shan warrior yips in pain as he falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shan warrior swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

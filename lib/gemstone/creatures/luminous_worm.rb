@@ -31,6 +31,10 @@
       {
         name: "Charge (attack)",
         as: 156
+      },
+      {
+        name: "Charge",
+        as: 156
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -81,10 +86,17 @@
       "A luminous worm slithers into view, its glow illuminating the area."
     ],
     flee: [],
-    death: [],
+    death: [
+      "A luminous worm goes limp as it is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A worm charges at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

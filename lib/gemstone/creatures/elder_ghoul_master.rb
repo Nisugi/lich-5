@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,10 +82,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The elder ghoul master falls to the ground motionless.",
+      "The elder ghoul master screams evilly one last time and goes still."
+    ],
+    decay: [
+      "An elder ghoul master turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An elder ghoul master swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -31,6 +31,14 @@
       {
         name: "Heavy crossbow",
         as: 312
+      },
+      {
+        name: "Wooden burning bolt",
+        as: 312
+      },
+      {
+        name: "Wooden heavy crossbow bolt",
+        as: 318
       }
     ],
     bolt_spells: [],
@@ -71,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +92,23 @@
     description: [
       "A rusted conical helmet, wrapped in a band of buff and blue, sits above the empty eye sockets of a skull draped in the rotting remains of a rotting Citadel arbalester's face. Residual juices drip from the head of the arbalester and down a ragged surcoat of buff and blue cinched with a tattered leather belt buckled with a rusted shield stamped with a large letter \"E.\" A quiver hangs from the belt, flush with feathered bolts and within easy reach of the arbalester's gloved hands."
     ],
-    arrival: [],
+    arrival: [
+      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the room, his crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides in.",
+      "A rotting Citadel arbalester strides into the area, her crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A rotting Citadel arbalester fires {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

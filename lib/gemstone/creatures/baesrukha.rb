@@ -30,11 +30,15 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 273
+        as: (247..273)
       },
       {
         name: "Bite",
-        as: 262
+        as: (187..262)
+      },
+      {
+        name: "Roaring ball of fire",
+        as: 220
       }
     ],
     bolt_spells: [
@@ -90,6 +94,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -105,9 +110,20 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The baesrukha's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A baesrukha hurls {weapon} at you!"
+    ],
+    bite: [
+      "A baesrukha tries to bite you!"
+    ],
+    claw: [
+      "A baesrukha claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

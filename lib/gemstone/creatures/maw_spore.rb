@@ -24,6 +24,10 @@
       {
         name: "Stinger (attack)",
         as: 227
+      },
+      {
+        name: "Stinger",
+        as: 227
       }
     ],
     bolt_spells: [],
@@ -60,6 +64,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -72,12 +77,19 @@
     description: [
       "A maw spore is a spore of the Elanthian variety."
     ],
-    arrival: [],
+    arrival: [
+      "A maw spore arrives, bobbing haphazardly on a current of air."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A maw spore stabs at you with {pronoun} stinger!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

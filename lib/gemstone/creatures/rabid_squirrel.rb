@@ -34,6 +34,10 @@
     physical_attacks: [
       {
         name: "Nip (attack)"
+      },
+      {
+        name: "Nip",
+        as: 36
       }
     ],
     bolt_spells: [],
@@ -70,6 +74,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -82,12 +87,26 @@
     description: [
       "A rabid squirrel is twice the size of your average squirrel. Its beady little eyes are blood-shot and watery and its mangy coat is a lusterless grey. The evil little creature slavers constantly and moves with terrifying speed."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A rabid squirrel scampers in, foam dripping from its mouth!",
+      "A rabid squirrel scampers in!"
+    ],
+    flee: [
+      "A rabid squirrel scampers {direction}."
+    ],
+    death: [
+      "The rabid squirrel twitches its tail one last time and dies."
+    ],
+    decay: [
+      "A rabid squirrel decays into a pile of hair and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A rabid squirrel nips at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

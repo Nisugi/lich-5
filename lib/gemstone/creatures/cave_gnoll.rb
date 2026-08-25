@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Scimitar",
-        as: 68
+        as: (58..68)
       }
     ],
     bolt_spells: [],
@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -79,12 +80,25 @@
     description: [
       "Standing only three feet tall, the man-like gnoll watches your every move with piercing grey eyes. It mutters something in an oddly resonant voice that sounds like the ring of hammer on stone. There is little doubt that the stealthy gnoll can be a formidable opponent when need arises, or when it is hard pressed. A faint odor of fermented mushroom wine wafts from its drab and slightly musty clothing."
     ],
-    arrival: [],
+    arrival: [
+      "A cave gnoll just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The cave gnoll falls to the ground and dies.",
+      "The cave gnoll screams one last time and dies."
+    ],
+    decay: [
+      "A cave gnoll decays into compost.",
+      "The cave gnoll's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A cave gnoll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

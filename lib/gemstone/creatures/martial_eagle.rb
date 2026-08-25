@@ -35,6 +35,10 @@
       {
         name: "Claw",
         as: 230
+      },
+      {
+        name: "Swoop",
+        as: 220
       }
     ],
     bolt_spells: [],
@@ -71,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -84,11 +89,23 @@
       "Larger than a typical halfling, this powerfully built raptor has glossy brown feathers over its wings, which extend for at least four feet to either side of its stocky body. Its head and upper chest are the same dark brown, making its golden eyes all the more dramatic. Its underparts are pale, streaked with black, matching its flight feathers. The majestic bird's powerful talons are well equipped to trap and maul prey."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A martial eagle flies {direction}."
+    ],
+    death: [
+      "The martial eagle writhes in agony, its wings flapping fruitlessly as it dies.",
+      "A martial eagle goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "The martial eagle decays into a pile of feathers."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A martial eagle strikes out at you with all of {pronoun} might!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

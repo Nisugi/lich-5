@@ -35,6 +35,14 @@
       {
         name: "Charge (attack)",
         as: 70
+      },
+      {
+        name: "Bite",
+        as: 50
+      },
+      {
+        name: "Charge",
+        as: 63
       }
     ],
     bolt_spells: [],
@@ -71,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -85,10 +94,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The Bresnahanini rolton collapses to the ground, emits a final bleat, and dies.",
+      "The Bresnahanini rolton lets out a final agonized bleat and dies."
+    ],
+    decay: [
+      "A Bresnahanini rolton decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Bresnahanini rolton charges at you!"
+    ],
+    bite: [
+      "A Bresnahanini rolton tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

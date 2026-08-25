@@ -43,6 +43,10 @@
       {
         name: "Charge (attack)",
         as: 139
+      },
+      {
+        name: "Charge",
+        as: 119
       }
     ],
     bolt_spells: [],
@@ -79,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -91,12 +96,28 @@
     description: [
       "The cave worm is a colorless and legless serpentine creature. Its bizarre head is encircled with six three-foot horns, which cut through obstacles as it moves through subterranean caverns. Over 20 feet in length, it feeds on both rock and flesh, and caustic acid oozes from its body and its 10-foot prehensile tongue. Six-inch fangs allow it to casually tear through any armor, and its pungent acid dissolves what it cannot consume."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A cave worm crawls in, leaving a trail of slime in its wake."
+    ],
+    flee: [
+      "A cave worm slithers {direction}."
+    ],
+    death: [
+      "The worm rolls over and dies."
+    ],
+    decay: [
+      "A cave worm decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A cave worm charges at you!",
+      "A cave worm tries to ensnare you!"
+    ],
+    bite: [
+      "A cave worm tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

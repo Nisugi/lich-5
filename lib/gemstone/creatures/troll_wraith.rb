@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 215
+        as: (214..215)
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -89,6 +90,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A troll wraith claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

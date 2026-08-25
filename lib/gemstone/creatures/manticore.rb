@@ -83,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,12 +96,26 @@
     description: [
       "The first thing that strikes you about the manticore is its noxious smell. At first it appears somewhat like an unkempt lion, but after you wipe away the tears brought to your eyes by its vile stench, you see that its head is more like that of a man, and it has a long segmented tail like that of a scorpion.\n\nThe manticore is large in size and about three feet high."
     ],
-    arrival: [],
+    arrival: [
+      "A manticore just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The manticore falls to the ground and dies.",
+      "The manticore screams one last time and dies."
+    ],
+    decay: [
+      "A manticore decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A manticore swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [
+      "A manticore claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -31,11 +31,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: (335..345)
+        as: 268
       },
       {
         name: "Claw",
-        as: 332
+        as: 337
       }
     ],
     bolt_spells: [],
@@ -44,6 +44,9 @@
     maneuvers: [
       {
         name: "Charge"
+      },
+      {
+        name: "Leap"
       }
     ],
     special_abilities: [],
@@ -76,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -90,10 +94,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The stone mastiff falls to the ground and dies.",
+      "The stone mastiff rolls over and dies."
+    ],
+    decay: [
+      "A stone mastiff crumbles into a pile of rubble."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A stone mastiff tries to bite you!"
+    ],
+    claw: [
+      "A stone mastiff claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

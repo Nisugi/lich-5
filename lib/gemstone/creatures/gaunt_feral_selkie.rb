@@ -29,13 +29,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [
+    physical_attacks: [
       {
         name: "Hand of Tonis (505)"
       },
       {
         name: "Major Cold (907)"
+      },
+      {
+        name: "Charge",
+        as: 298
       }
     ],
     warding_spells: [],
@@ -92,6 +95,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [
+    "a woven twine necklace adorned with yellowed shark teeth"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -104,12 +110,39 @@
     description: [
       "Clad in sealskin and sailcloth, the feral selkie is a half-krolvin in his middle years. Her hair is unkempt and her eyes are wild and unfocused. Rattling bones, dried iceblossoms, and bits of kelp adorn her ritualistic attire, held in place by bits of fraying twine. Unwashed and obviously addled, the selkie looks as if she has one foot firmly in a world that you cannot see.\nOr:\nThe selkie's large, dark eyes hold more than a glimmer of unnatural intellect. His fur is soft and sleek over an agile musculature more suited to the water than dry land. The selkie's sharp teeth are yellowed and an overwhelming odor of fish guts rises from his mouth in a noxious cloud. \n\nAppraisal:\nThe feral selkie is medium in size, about six feet high in his current state."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A gaunt feral selkie wanders in, lost in a pall of befuddlement.",
+      "A gaunt feral selkie wanders in, befuddled and seemingly unaware of her injuries.",
+      "A desiccated half-krolvin strigoi crawls in, her body low to the ground.",
+      "A desiccated half-krolvin strigoi crawls in, his body low to the ground."
+    ],
+    flee: [
+      "Lost in a pall of befuddlement, a gaunt feral selkie wanders {direction}.",
+      "Seemingly unaware of his injuries, a gaunt feral selkie wanders {direction}.",
+      "A desiccated half-krolvin strigoi crawls {direction}, her body low to the ground.",
+      "Zeal written upon his face, a bony Tenthsworn occultist stalks {direction}.",
+      "Zeal written upon her face, a bony Tenthsworn occultist stalks {direction}.",
+      "Seemingly unaware of her injuries, a gaunt feral selkie wanders {direction}.",
+      "A desiccated half-krolvin strigoi crawls {direction}, his body low to the ground."
+    ],
+    death: [
+      "An instant of clarity dawns in a gaunt feral selkie's eyes as he succumbs to his injuries.  Peace blossoms on his face as he dies.",
+      "An instant of clarity dawns in a gaunt feral selkie's eyes as she succumbs to her injuries.  Peace blossoms on her face as she dies.",
+      "A gaunt feral selkie goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The feral selkie's tibia passes his femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A desiccated half-krolvin strigoi flings gaunt feral selkie arms wide and throws himself at you, trying to trap you in a deadly embrace!",
+      "A gaunt feral selkie balls up a grimy hand and takes a swing at you!",
+      "Leading with gaunt feral selkie shoulder, a gaunt feral selkie barrels into a charge at you!",
+      "Propelling gaunt feral selkie forward with {pronoun} flippers, a gaunt feral selkie charges at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

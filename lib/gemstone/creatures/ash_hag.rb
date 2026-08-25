@@ -94,6 +94,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -106,12 +107,23 @@
     description: [
       "You are not quite sure what to make of the ash hag, as you have never seen anything that looks quite like it. Stopping a moment, you try to commit this creature to memory so that you can tell tales of it to your fellow adventurers back in the safety of the local tavern."
     ],
-    arrival: [],
+    arrival: [
+      "An ash hag just arrived, shrieking in pain!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The ash hag twitches violently, then dies.",
+      "An ash hag goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "An ash hag crumbles into a pile of ash.",
+      "Acid dissolves connecting cartilage, freeing the ash hag's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

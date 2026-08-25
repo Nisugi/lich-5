@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Handaxe",
-        as: 46
+        as: (36..46)
       },
       {
         name: "Spear",
-        as: 46
+        as: (36..46)
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -85,10 +86,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The fanged goblin falls to the ground, kicks several times and dies.",
+      "The fanged goblin screams silently, shudders one last time and dies.",
+      "The fanged goblin screams, shudders one last time and dies."
+    ],
+    decay: [
+      "A fanged goblin's carcass collapses into a gooey mess."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A fanged goblin swings {weapon} at you!",
+      "A fanged goblin thrusts with a spear at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

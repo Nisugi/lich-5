@@ -115,6 +115,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -130,9 +131,16 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A monastic lich dissolves into a foul-smelling miasma."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A monastic lich points at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

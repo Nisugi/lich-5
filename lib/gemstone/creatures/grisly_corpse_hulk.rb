@@ -87,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -99,12 +100,32 @@
     description: [
       "A grisly corpse hulk is a collection of corpse parts roughly arranged into a humanoid form within a handspan of a giant's height. Milky pinkish fluid drips from the uneven stitches that hold its body together. Its eyes are tiny and appear piggish in such an oversized head. They hold only a rudimentary spark of intellect. \n\nAppraisal:\nThe corpse hulk is large in size, about eight feet high in its current state."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A desiccated half-krolvin strigoi crawls in, her featureless black eyes gleaming predatorily in the ambient light.  She bares her yellowed fangs, insatiable hunger twisting her face.",
+      "A desiccated half-krolvin strigoi crawls in, her body low to the ground.",
+      "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon his face.",
+      "A desiccated half-krolvin strigoi crawls in, his featureless black eyes gleaming predatorily in the ambient light.  He bares his yellowed fangs, insatiable hunger twisting his face.",
+      "A desiccated half-krolvin strigoi crawls in, his body low to the ground.",
+      "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon her face."
+    ],
+    flee: [
+      "A desiccated half-krolvin strigoi crawls {direction}, her body low to the ground.",
+      "Zeal written upon his face, a bony Tenthsworn occultist stalks {direction}.",
+      "A desiccated half-krolvin strigoi crawls {direction}, his body low to the ground.",
+      "Zeal written upon her face, a bony Tenthsworn occultist stalks {direction}."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A desiccated half-krolvin strigoi flings grisly corpse hulk arms wide and throws herself at you, trying to trap you in a deadly embrace!",
+      "A desiccated half-krolvin strigoi flings grisly corpse hulk arms wide and throws himself at you, trying to trap you in a deadly embrace!",
+      "A grisly corpse hulk spreads grisly corpse hulk sloughing arms and tries to lock you in a bearhug!",
+      "A grisly corpse hulk tries to stomp on you with one massive, rotting foot!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

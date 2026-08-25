@@ -29,6 +29,10 @@
       {
         name: "Short bow",
         as: 216
+      },
+      {
+        name: "Wooden mace",
+        as: 209
       }
     ],
     bolt_spells: [],
@@ -88,6 +92,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -106,6 +111,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "Giggling madly, a cloud sprite bully lunges forward and attacks you with cloud sprite meddler wooden mace!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

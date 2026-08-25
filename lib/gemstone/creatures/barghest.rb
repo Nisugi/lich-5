@@ -34,7 +34,11 @@
       },
       {
         name: "Bite",
-        as: 234
+        as: (206..234)
+      },
+      {
+        name: "Charge",
+        as: 214
       }
     ],
     bolt_spells: [],
@@ -71,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -85,10 +90,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The barghest falls to the ground and dies.",
+      "The barghest rolls over and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A barghest charges at you!"
+    ],
+    bite: [
+      "A barghest tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

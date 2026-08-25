@@ -30,11 +30,23 @@
     physical_attacks: [
       {
         name: "Fist",
-        as: 371
+        as: 392
       },
       {
         name: "Hammer",
-        as: 422
+        as: (422..435)
+      },
+      {
+        name: "Foot",
+        as: 405
+      },
+      {
+        name: "Heavy earthen fists",
+        as: 419
+      },
+      {
+        name: "Huge rock",
+        as: 434
       }
     ],
     bolt_spells: [],
@@ -42,6 +54,14 @@
       {
         name: "Divine Strike (1615)",
         cs: (363..375)
+      },
+      {
+        name: "Heavy black stone hammer",
+        cs: 366
+      },
+      {
+        name: "Slate grey stone hammer",
+        cs: 338
       }
     ],
     offensive_spells: [
@@ -52,6 +72,15 @@
     maneuvers: [
       {
         name: "Mstrike"
+      },
+      {
+        name: "Divine Wrath"
+      },
+      {
+        name: "Feint"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_abilities: [],
@@ -89,6 +118,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -103,10 +133,25 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "An Illoke jarl's form goes limp as he falls unconscious."
+    ],
+    decay: [
+      "An Illoke jarl cracks and collapses into a pile of craggy dark rock that rapidly disappears without a trace.",
+      "The Illoke jarl's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater earth elemental pounds at you with illoke jarl heavy earthen fists!",
+      "An Illoke jarl pounds at you with {pronoun} fist!",
+      "An Illoke jarl stomps at you with {pronoun} foot!",
+      "An Illoke jarl swings {weapon} at you!",
+      "An Illoke jarl throws {weapon} at you!",
+      "An earth elemental pounds at you with illoke jarl heavy earthen fists!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

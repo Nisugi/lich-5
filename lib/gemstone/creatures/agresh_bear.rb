@@ -30,7 +30,11 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 179
+        as: (144..179)
+      },
+      {
+        name: "Bite",
+        as: 174
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -79,12 +84,32 @@
     description: [
       "The Agresh bear is all muscle and bone and presents a formidable appearance when standing on his hindlegs. He is a tawny gold in color allowing him to blend more easily into his surroundings or at least as much as a 600 pound bear can. The deadly claws that tip each front paw completes the total package of death known as the Agresh bear."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "An Agresh bear lumbers in, flecks of drool flinging with each of its strides.",
+      "An Agresh bear lumbers in!"
+    ],
+    flee: [
+      "An Agresh bear lumbers {direction}.",
+      "An Agresh bear slowly lumbers {direction}, growling in pain."
+    ],
+    death: [
+      "The Agresh bear collapses heavily into a heap on the ground and dies.",
+      "The Agresh bear lets out a blood-curdling roar and dies.",
+      "An Agresh bear goes limp as he is rendered unconscious!",
+      "An Agresh bear goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "An Agresh bear decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "An Agresh bear tries to bite you!"
+    ],
+    claw: [
+      "An Agresh bear claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -91,12 +92,26 @@
     description: [
       "An undead version of the domesticated breed, these were one of the earlier attempts by the Council of Twelve to create undead. They litter the countryside, viciously attacking any living thing they see."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A zombie rolton scampers in."
+    ],
+    flee: [
+      "The rolton scampers {direction}."
+    ],
+    death: [
+      "The zombie rolton falls back into a heap and dies.",
+      "The zombie rolton hisses one last time and dies."
+    ],
+    decay: [
+      "A zombie rolton decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A zombie rolton claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

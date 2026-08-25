@@ -35,6 +35,14 @@
       {
         name: "Pincer (attack)",
         as: 65
+      },
+      {
+        name: "Pincer",
+        as: 65
+      },
+      {
+        name: "Tusk",
+        as: 45
       }
     ],
     bolt_spells: [],
@@ -75,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -89,10 +98,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The whiptail falls back and dies.",
+      "The whiptail hisses one last time and dies."
+    ],
+    decay: [
+      "A whiptail decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A whiptail charges at you with {pronoun} tusk!",
+      "A whiptail snaps at you with {pronoun} pincer!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -34,15 +34,19 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 191
+        as: (189..191)
       },
       {
         name: "Bite",
-        as: 184
+        as: (182..184)
       },
       {
         name: "Charge (attack)",
         as: 194
+      },
+      {
+        name: "Charge",
+        as: 179
       }
     ],
     bolt_spells: [],
@@ -81,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -93,12 +98,34 @@
     description: [
       "The great brown bear weighs around 500 pounds and is about eight feet long. This bear is dark brown in color and has a characteristic muscle hump over the shoulders and longer claws on her front paws than on her rear paws."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A great brown bear lumbers in!"
+    ],
+    flee: [
+      "A great brown bear slowly lumbers {direction}, growling in pain.",
+      "A great brown bear lumbers {direction}."
+    ],
+    death: [
+      "The great brown bear collapses heavily into a heap on the ground and dies.",
+      "The great brown bear lets out a blood-curdling roar and dies.",
+      "A great brown bear goes limp as she is rendered unconscious!",
+      "A great brown bear goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A great brown bear decays into a compost of fangs, fur and claws.",
+      "Acid dissolves the knee ligaments.  The great brown bear's tibia passes his femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A great brown bear charges at you!"
+    ],
+    bite: [
+      "A great brown bear tries to bite you!"
+    ],
+    claw: [
+      "A great brown bear claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

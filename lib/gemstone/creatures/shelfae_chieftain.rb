@@ -79,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +92,25 @@
     description: [
       "Similar to the shelfae soldier but taller by nearly two feet, the shelfae chieftain guides the legions of shelfae in combat. Its taller stature, significantly brighter orange coloration, and protruding crest mark it as an officer. Although formidably armed, the shelfae chieftain prefers to bring its opponents down first by sweeping its tail to produce a quake effect."
     ],
-    arrival: [],
+    arrival: [
+      "A shelfae chieftain just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The shelfae chieftain falls to the ground and dies.",
+      "The shelfae chieftain screams one last time and dies.",
+      "The shelfae chieftain twitches violently, then dies."
+    ],
+    decay: [
+      "A chieftain crumbles into dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shelfae chieftain swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

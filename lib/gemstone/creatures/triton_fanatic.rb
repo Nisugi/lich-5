@@ -31,18 +31,22 @@
     physical_attacks: [
       {
         name: "Hammer of Kai",
-        as: "423 to 464"
+        as: (423..539)
       }
     ],
     bolt_spells: [],
     warding_spells: [
       {
         name: "Pious Trial (1602)",
-        cs: "430 to 442"
+        cs: (430..442)
       },
       {
         name: "Repentance (1615)",
-        cs: "430 to 442"
+        cs: (430..442)
+      },
+      {
+        name: "Point",
+        cs: 454
       }
     ],
     offensive_spells: [
@@ -62,6 +66,9 @@
     maneuvers: [
       {
         name: "Feint"
+      },
+      {
+        name: "Lash"
       }
     ],
     special_abilities: [
@@ -106,6 +113,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -118,12 +126,22 @@
     description: [
       "A triton fanatic visibly twitches as he clutches a contorted driftwood fetish within his sigil-gouged fingers, his crazed bloodshot eyes darting to and fro beneath a shredded miter of dark oilskin. The last vestiges of a hair-sewn tunic barely cling to his emaciated form, stained in rust-colored splotches from collar to knee, and lashed together with knots of thick sinew. Branded across his forehead is the image of a broken trident, the forks splayed between his brows."
     ],
-    arrival: [],
+    arrival: [
+      "A triton assassin stalks in silently, her cold eyes gleaming with hatred.",
+      "A triton fanatic just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "A triton fanatic goes limp as she is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A triton fanatic swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

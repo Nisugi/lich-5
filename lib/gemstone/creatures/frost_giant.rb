@@ -42,12 +42,23 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "War hammer",
-        as: (234..259)
+        name: "War hammer"
       },
       {
         name: "Battle axe",
         as: 251
+      },
+      {
+        name: "Freezing ball of pure cold",
+        as: 204
+      },
+      {
+        name: "Frost-covered battle-axe",
+        as: 244
+      },
+      {
+        name: "Morning star",
+        as: 216
       }
     ],
     bolt_spells: [
@@ -101,6 +112,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -113,12 +125,28 @@
     description: [
       "Standing more than twice as tall as the tallest giantman, the frost giant trails frost and snow in his wake. Seemingly carved from living ice and snow, icy blue eyes set beneath a heavily furrowed brow and a tangled mop of icy blue hair provide a splash of color against the frost giant's dull white frost-covered skin."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A frost giant lumbers in, followed by a swirling snowstorm!"
+    ],
+    flee: [
+      "A frost giant lumbers {direction}, followed by a swirling snowstorm."
+    ],
+    death: [
+      "The frost giant cries out in cold agony one last time and dies.",
+      "A frost giant goes limp as he is rendered unconscious!",
+      "The frost giant falls to the ground motionless.",
+      "A frost giant goes limp as she is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A frost giant hurls {weapon} at you!",
+      "A frost giant points an icy finger at you!",
+      "A frost giant swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

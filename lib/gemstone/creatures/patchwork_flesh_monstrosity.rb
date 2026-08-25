@@ -33,8 +33,23 @@
         as: 450
       },
       {
-        name: "Stomp (attack)Stomp",
-        as: (430..448)
+        name: "Stomp (attack)Stomp"
+      },
+      {
+        name: "Bloated arms",
+        as: 480
+      },
+      {
+        name: "Bronze cutlass",
+        as: 543
+      },
+      {
+        name: "Heel of his hand",
+        as: 418
+      },
+      {
+        name: "Kick",
+        as: 390
       }
     ],
     bolt_spells: [],
@@ -82,6 +97,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -94,12 +110,24 @@
     description: [
       "A patchwork flesh monstrosity is near as tall as a giant and twice as broad, a lumbering monstrosity cobbled together from spare parts in tactless parody of a human form. Red-tinged serum leaks constantly from the straining stitches that maintain the monster's integrity. Only the barest glimmer of intelligence lurks in the monstrosity's eyes, and that, perhaps, is a blessing: anything with even half of a brain would be horrified to be such an abominable figure. From the looks of it, the monstrosity's has barely a quarter of one."
     ],
-    arrival: [],
+    arrival: [
+      "Vital fluids seeping from its orifices, a shambling lurk shambles in with a piteous moan."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A lithe veiled sentinel throws patchwork flesh monstrosity arms outward for balance and leaps into the air, executing a series of kicks at you!",
+      "A patchwork flesh monstrosity raises a hamhock-sized fist overhead and brings it swiftly down at you!",
+      "A patchwork flesh monstrosity tries to ensnare you with patchwork flesh monstrosity bloated arms!",
+      "Moving with preternatural speed, a lithe veiled sentinel strikes at you with the heel of patchwork flesh monstrosity hand!",
+      "Raising one immense foot, a patchwork flesh monstrosity tries to stomp on you!",
+      "With an eerie, boneless fluidity, a lithe veiled sentinel slashes at you with patchwork flesh monstrosity bronze cutlass!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

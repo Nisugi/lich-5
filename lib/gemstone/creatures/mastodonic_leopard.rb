@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 269
+        as: (242..269)
       },
       {
         name: "Claw",
@@ -44,6 +44,9 @@
     maneuvers: [
       {
         name: "Caterwaul"
+      },
+      {
+        name: "Leap"
       }
     ],
     special_abilities: [
@@ -80,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -92,12 +96,30 @@
     description: [
       "The mastodonic leopard has a long, narrow body, relatively short muscular legs and large broad paws. His large, broad tail is used for balancing himself in the trees. Two alert yellow eyes gaze over his broad snout, capped on the leopard's narrow head by his tufted ears. Most striking are his markings: six large, narrow, brown blotches, edged in black, with pale areas separating the blotches on his sides. Along his back, the leopard has a series of large open-centered spots, and his underside is solidly pale. The mastodonic leopard's square jaw and extra long canine teeth, characteristic of the northern sabre-toothed tiger, are ideal for shredding meat."
     ],
-    arrival: [],
+    arrival: [
+      "A mastodonic leopard prowls in!",
+      "A mastodonic leopard crouches as she stalks into view!",
+      "A mastodonic leopard crouches as he stalks into view!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The mastodonic leopard lets out a final caterwaul and dies.",
+      "The mastodonic leopard crumples to the ground and dies.",
+      "A mastodonic leopard goes limp as he is rendered unconscious!",
+      "A mastodonic leopard goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A mastodonic leopard decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A mastodonic leopard tries to bite you!"
+    ],
+    claw: [
+      "A mastodonic leopard claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

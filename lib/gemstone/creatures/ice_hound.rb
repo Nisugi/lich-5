@@ -31,6 +31,10 @@
       {
         name: "Bite",
         as: 192
+      },
+      {
+        name: "Freezing ball of pure cold",
+        as: 171
       }
     ],
     bolt_spells: [
@@ -72,6 +76,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -84,12 +89,26 @@
     description: [
       "The ice hound, protected by a long fur coat, is at home in the most frozen areas of the lands. One of the largest breeds of dog, its blue and silver fur blends well with the frozen lakes and rivers. A nasty bite and frosty breath make this canine a very formidable foe. A strange feature of this hound is that its eyes are completely white, giving its gaze a vacant, unfocused look."
     ],
-    arrival: [],
+    arrival: [
+      "An ice hound arrives leaving puffs of ice crystal clouds in its wake."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The ice hound lets out one last whimpering sigh of frosty mist and dies.",
+      "An ice hound goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "An ice hound decays into a compost of fur and fangs."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An ice hound hurls {weapon} at you!"
+    ],
+    bite: [
+      "An ice hound tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -34,7 +34,7 @@
       },
       {
         name: "Flail",
-        as: 250
+        as: (230..250)
       },
       {
         name: "Broadsword",
@@ -42,7 +42,7 @@
       },
       {
         name: "Halberd",
-        as: 250
+        as: (250..288)
       }
     ],
     bolt_spells: [],
@@ -51,6 +51,9 @@
     maneuvers: [
       {
         name: "Disarm"
+      },
+      {
+        name: "Halberd Sweep"
       }
     ],
     special_abilities: [
@@ -89,6 +92,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -101,12 +105,19 @@
     description: [
       "The spectral warrior shimmers for an instant, seemingly half real and half phantom, his semi-ethereal armor faintly gleaming as it moves. A gaunt face stares out from beneath the ghostly helm, his eyes swirling pits of blackness that seek out living foes, hatefully wishing to resign others to his own horrible fate."
     ],
-    arrival: [],
+    arrival: [
+      "A spectral warrior strides in!"
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spectral warrior swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Length of Rusted Chain",
-        as: 291
+        as: 298
       }
     ],
     bolt_spells: [],
@@ -68,6 +68,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -80,12 +81,23 @@
     description: [
       "The dybbuk is a piecemeal composition of horror, its mismatched sections of body coalesced into a whole that would frighten a banshee. The thing lumbers, managing to look clumsy and menacing at the same time. The skin is pallid and stretched, and in places, gaping wounds reveal worse atrophy than that evident on the abomination's exterior. Huge hands grope before the dybbuk's trunk, sweeping around it in flailing arcs and leaving no doubt that close proximity to the creature spells dire results."
     ],
-    arrival: [],
+    arrival: [
+      "A dybbuk shambles in!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The dybbuk falls to the ground motionless."
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The dybbuk's tibia passes its femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A dybbuk swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

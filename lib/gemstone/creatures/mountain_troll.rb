@@ -88,6 +88,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -100,12 +101,26 @@
     description: [
       "Huge and dangerous, the mountain troll towers above even a tall giantman. Grey skin so thick that it serves quite well as armor covers most of the troll, with tufts of thick hair sprouting here and there like weeds between cracked stones. A hideous grin splits its face displaying fangs crusted with dried blood and less guessable matter. No light of intellect glows in its narrow piggish eyes. The lust for slaughter and thirst for blood are what drive this hulkish beast's existence."
     ],
-    arrival: [],
+    arrival: [
+      "A mountain troll just arrived!",
+      "A mountain troll just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The mountain troll screams one last time and dies.",
+      "The mountain troll falls to the ground and dies.",
+      "The mountain troll twitches violently, then dies."
+    ],
+    decay: [
+      "A mountain troll decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A mountain troll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

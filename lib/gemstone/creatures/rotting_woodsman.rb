@@ -32,6 +32,10 @@
       {
         name: "Battle axe",
         as: 202
+      },
+      {
+        name: "Huge logging axe",
+        as: 207
       }
     ],
     bolt_spells: [],
@@ -68,6 +72,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -80,12 +85,23 @@
     description: [
       "The rotting woodsman staggers about through the forests she once knew in life, now unable to obtain rest. Putrid flesh drips from her exposed bones, and only ragged patches of hair remain on her thick skull. Despite the lack of solid muscle, the rotting woodsman swings her axe with enormous power, felling the living as she once felled the immense trees of the forest."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A robust rotting woodsman shambles in!",
+      "A rotting woodsman shambles in!"
+    ],
+    flee: [
+      "A rotting woodsman crawls {direction}."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A rotting woodsman swings {weapon} at you!",
+      "A rotting woodsman waves {pronoun} arms around flinging bits of flesh towards you."
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Scimitar",
-        as: 417
+        as: (369..417)
       }
     ],
     bolt_spells: [
@@ -62,13 +62,15 @@
         name: "Heroism (215)"
       }
     ],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Multi-strike"
       },
       {
         name: "Dispel"
+      },
+      {
+        name: "Point"
       }
     ],
     special_notes: []
@@ -107,6 +109,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -119,12 +122,21 @@
     description: [
       "__noTOC__\nThe csetairi has several humanoid features, appearing as a shapely woman with long, silky, black hair. However, the differences are readily apparent. Instead of legs, she has a long, thick, coiled tail, and her locomotion is definitely snakelike. Four arms sprout from her chest, and long, pointed fangs extend down below her upper lip. Her slitted, olive green eyes scan the area rapidly, looking for potential victims."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A csetairi slithers in!"
+    ],
+    flee: [
+      "A csetairi slithers {direction}."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A csetairi swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

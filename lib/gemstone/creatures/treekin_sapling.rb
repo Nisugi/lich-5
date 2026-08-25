@@ -68,6 +68,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -80,12 +81,21 @@
     description: [
       "Standing approximately five feet tall, this relatively mature sapling sways menacingly before you. Lambent yellow eyes and thick leg-shaped roots make it clear that this is no ordinary tree. Leaves cover the sapling from head to trunk, with two arm-shaped branches protruding from the canopy."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A treekin sapling lumbers in!"
+    ],
+    flee: [
+      "A treekin sapling lumbers {direction}."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A treekin sapling rakes a branch at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

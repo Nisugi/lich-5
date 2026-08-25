@@ -66,6 +66,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -84,6 +85,14 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A nightmare steed charges at you!",
+      "A nightmare steed stomps at you with {pronoun} foot!"
+    ],
+    bite: [
+      "A nightmare steed tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

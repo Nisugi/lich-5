@@ -31,6 +31,10 @@
       {
         name: "small glistening thorn",
         as: 299
+      },
+      {
+        name: "Twig",
+        as: 279
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -81,10 +86,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A large thorned shrub collapses to the ground, shakes one last time and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A large thorned shrub snaps a twig towards you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

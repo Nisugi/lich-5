@@ -42,19 +42,25 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 78
+        as: 88
       },
       {
-        name: "Mace",
-        as: "(wooden cane) 70"
+        name: "Mace"
       },
       {
         name: "Closed fist",
         as: 88
       },
       {
-        name: "Leather whip",
-        as: "(red vine) 70"
+        name: "Leather whip"
+      },
+      {
+        name: "Length of coiled red vine",
+        as: 70
+      },
+      {
+        name: "Thin oaken cudgel",
+        as: 63
       }
     ],
     bolt_spells: [],
@@ -95,6 +101,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -107,12 +114,45 @@
     description: [
       ""
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A monkey scampers in!",
+      "A monkey scampers in at a reckless tear!",
+      "A deep pink monkey scampers in at a reckless tear!",
+      "A deep pink monkey scampers in!",
+      "A brilliant violet monkey scampers in!",
+      "A brilliant violet monkey scampers in at a reckless tear!",
+      "A stout bright orange monkey scampers in at a reckless tear!",
+      "A bright green monkey scampers in at a reckless tear!",
+      "A bright green monkey scampers in!",
+      "A stout bright orange monkey scampers in!"
+    ],
+    flee: [
+      "A monkey scampers {direction}.",
+      "A deep pink monkey scampers {direction}.",
+      "A brilliant violet monkey scampers {direction}.",
+      "A deep pink monkey scampers {direction} of sight!",
+      "A stout bright orange monkey scampers {direction}.",
+      "A bright green monkey scampers {direction}.",
+      "A stout bright orange monkey scampers {direction} of sight!",
+      "A monkey scampers {direction} of sight!"
+    ],
+    death: [
+      "The monkey screeches one last time and dies.",
+      "The monkey falls back into a heap and dies.",
+      "A bright green monkey goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A monkey decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A monkey swings {weapon} at you!"
+    ],
+    bite: [
+      "A monkey tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

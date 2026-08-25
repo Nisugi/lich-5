@@ -30,11 +30,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: (151..201)
+        as: 180
       },
       {
         name: "Claw",
-        as: (151..201)
+        as: 201
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -85,10 +86,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A lesser stone gargoyle goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A lesser stone gargoyle crumbles to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A lesser stone gargoyle tries to bite you!"
+    ],
+    claw: [
+      "A lesser stone gargoyle claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

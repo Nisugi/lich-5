@@ -29,16 +29,18 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Pound",
-        as: (324..346)
+        name: "Pound"
       },
       {
-        name: "Stomp",
-        as: (324..346)
+        name: "Stomp"
       },
       {
         name: "War mattock",
-        as: (324..346)
+        as: 324
+      },
+      {
+        name: "Large rock",
+        as: 267
       }
     ],
     bolt_spells: [
@@ -93,6 +95,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -105,12 +108,27 @@
     description: [
       "Looming high above you, taller than three of the tallest giantmen, this stone giant dominates the surrounding area. The stone giant's skin is a smooth dull grey with mottled brown splotches and its eyes, concealed under a heavy brow, gleam black with hatred."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A stone giant just arrived.",
+      "The ground shakes as an enraged stone giant stomps in!"
+    ],
+    flee: [
+      "A stone giant crawls {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "The stone giant's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A stone giant swings {weapon} at you!",
+      "A stone giant throws {weapon} at you!",
+      "The stone giant rumbles in agony as he teeters for a moment, then falls directly at you!",
+      "The stone giant rumbles in agony as she teeters for a moment, then falls directly at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

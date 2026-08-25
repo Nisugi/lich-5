@@ -23,7 +23,7 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
       schema_version name noun url picture level family type undead
       blood bones muggable boss otherclass bcs max_hp speed height
       size areas attack_attributes defense_attributes special_other
-      abilities alchemy abilities_misc treasure messaging
+      abilities alchemy abilities_misc equipment treasure messaging
     ]
   end
 

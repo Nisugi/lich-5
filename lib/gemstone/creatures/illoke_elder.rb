@@ -30,20 +30,44 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Stomp (attack)",
-        as: "+339"
+        name: "Stomp (attack)"
       },
       {
-        name: "Sledgehammer",
-        as: "+408"
+        name: "Sledgehammer"
       },
       {
-        name: "Stalagmite",
-        as: "+425"
+        name: "Stalagmite"
       },
       {
-        name: "Rock (hurled)",
-        as: "+423"
+        name: "Rock (hurled)"
+      },
+      {
+        name: "Enormous stalagmite",
+        as: 419
+      },
+      {
+        name: "Fist",
+        as: 389
+      },
+      {
+        name: "Foot",
+        as: 292
+      },
+      {
+        name: "Giant granite sledgehammer",
+        as: 417
+      },
+      {
+        name: "Heavy earthen fists",
+        as: 431
+      },
+      {
+        name: "Heavy stone hammer",
+        as: 409
+      },
+      {
+        name: "Large rock",
+        as: 429
       }
     ],
     bolt_spells: [],
@@ -94,6 +118,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -109,9 +134,21 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "An Illoke elder's body shudders and crumbles into itself in a mass of rough grey stone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater earth elemental pounds at you with illoke elder heavy earthen fists!",
+      "An Illoke elder pounds at you with {pronoun} fist!",
+      "An Illoke elder stomps at you with {pronoun} foot!",
+      "An Illoke elder swings {weapon} at you!",
+      "An Illoke elder throws {weapon} at you!",
+      "An earth elemental pounds at you with illoke elder heavy earthen fists!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

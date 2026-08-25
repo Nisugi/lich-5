@@ -52,6 +52,24 @@
       },
       {
         name: "Twin Hammerfists"
+      },
+      {
+        name: "Charge"
+      },
+      {
+        name: "Fist"
+      },
+      {
+        name: "Grapple"
+      },
+      {
+        name: "Jab"
+      },
+      {
+        name: "Kick"
+      },
+      {
+        name: "Punch"
       }
     ],
     special_abilities: [],
@@ -91,6 +109,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -103,12 +122,21 @@
     description: [
       "Wearing only a linen and leather pteruges, a triton brawler is covered in roughly inked black tattoos, a cavalcade of runes, sigils, and symbols twining about one another and obscuring his grey-blue flesh. Across his amphibian-like head is a tattoo of a powerful tentacle crushing a trident in its suckered grip. The brawler's eyes dart warily this way and that, and his tongue flicks in and out with deceptive laziness."
     ],
-    arrival: [],
+    arrival: [
+      "A triton brawler just arrived.",
+      "A triton brawler just arrived, limping badly.",
+      "A tough triton brawler just arrived, limping badly."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the triton brawler's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

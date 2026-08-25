@@ -37,7 +37,8 @@
         as: 234
       },
       {
-        name: "Claw"
+        name: "Claw",
+        as: 234
       }
     ],
     bolt_spells: [],
@@ -74,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -86,12 +88,31 @@
     description: [
       "Possessed with a ferocious nature far out of proportion to its size, this wolverine appears to be an extremely vicious opponent. Swift and agile, with claws and teeth backed by muscles like coiled springs, the wolverine will take on and defeat foes three times its size. Even stout boiled leather is oft times no match for its powerful claws and ferocious bite. There is commonly a touch of foam about its mouth, which may indicate some type of virulent disease."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A wolverine scampers in."
+    ],
+    flee: [
+      "The wolverine scampers {direction}."
+    ],
+    death: [
+      "The wolverine falls back into a heap and dies.",
+      "The wolverine hisses one last time and dies.",
+      "A wolverine goes limp as it is rendered unconscious!",
+      "The wolverine twitches violently, then dies."
+    ],
+    decay: [
+      "A wolverine decays into compost.",
+      "Acid dissolves the knee ligaments.  The wolverine's tibia passes its femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A wolverine tries to bite you!"
+    ],
+    claw: [
+      "A wolverine claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

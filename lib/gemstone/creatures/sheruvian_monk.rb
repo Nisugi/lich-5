@@ -34,7 +34,11 @@
     physical_attacks: [
       {
         name: "Jeddart-axe",
-        as: (239..269)
+        as: 314
+      },
+      {
+        name: "Lunge",
+        as: 269
       }
     ],
     bolt_spells: [],
@@ -75,6 +79,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -87,12 +92,23 @@
     description: [
       "It is hard to tell if the Sheruvian monk is human, or some foul spawn of inhuman parents. The head of the warrior-monk has been shaved smooth and is covered in dark, mystic runes tattooed on its scalp. A heavy brow hangs low over its cold, calculating eyes."
     ],
-    arrival: [],
+    arrival: [
+      "A Sheruvian monk just arrived."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "A Sheruvian monk goes limp as it is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Sheruvian monk lunges at you!  As you shift to block the blow, the monk reverses {pronoun} swing, coming in low to your left side!",
+      "A Sheruvian monk snarls as it launches itself at you!",
+      "A Sheruvian monk swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

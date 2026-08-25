@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +84,24 @@
     description: [
       "Short and massively squat, the troglodyte resembles a clay figure of a human left in the hot sun until it settled into an untidy lump, misshapen and unlovely. Dressed in the crudest of untanned hides, the creature glares out at you with brutish cunning and hate from narrow eyes set deep beneath a heavily boned forehead. Massive arms and ragged claws caked with dirt twitch reflexively, ready to dig in the earth or to tear the throat out of anything it can catch and eat."
     ],
-    arrival: [],
+    arrival: [
+      "A troglodyte just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The troglodyte falls to the ground and dies.",
+      "The troglodyte screams one last time and dies."
+    ],
+    decay: [
+      "A troglodyte decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A troglodyte swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

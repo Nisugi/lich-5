@@ -31,6 +31,10 @@
       {
         name: "Stinger (attack)",
         as: 276
+      },
+      {
+        name: "Stinger",
+        as: 276
       }
     ],
     bolt_spells: [],
@@ -67,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -79,12 +84,27 @@
     description: [
       "With a body length of nearly 1 foot, and a wingspan of 18 inches, a cinder wasp is without a doubt, the biggest wasp to be seen. The body is black with irridescent blue highlights. The wings are like soap bubbles, clear with rainbows of color shimmering across them. Large redly glowing compound eyes and a stinger large enough to make a nasty stiletto give this creature a distinctly threatening appearance."
     ],
-    arrival: [],
+    arrival: [
+      "A cinder wasp just arrived.",
+      "A cinder wasp weaves slowly as it flies in.",
+      "A cinder wasp wobbles as it flies in."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The cinder wasp flutters its wings one last time and dies.",
+      "The cinder wasp twitches violently, then dies."
+    ],
+    decay: [
+      "A cinder wasp decays into compost.",
+      "Acid dissolves the knee ligaments.  The cinder wasp's tibia passes its femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A cinder wasp stabs at you with {pronoun} stinger!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

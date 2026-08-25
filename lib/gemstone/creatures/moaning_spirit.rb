@@ -66,6 +66,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -78,12 +79,26 @@
     description: [
       "Intense hatred for those living drives the moaning spirit to traverse the bounds of space to attack its enemies. Crying out in constant pain, it marshals magic, claw and fist against its foes, destroying relentlessly to sate the desires of the forces that bind it, then returning whence it came to await the intrusion of another living creature. Its semi-transparent countenance is passably humanoid, save for the eagle-like claws replacing what would normally be the human's feet."
     ],
-    arrival: [],
+    arrival: [
+      "A moaning spirit just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The moaning spirit falls to the ground motionless."
+    ],
+    decay: [
+      "A moaning spirit collapses into a puddle of jelly, falling silent at last."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A moaning spirit gestures at you!",
+      "A moaning spirit swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [
+      "A moaning spirit claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

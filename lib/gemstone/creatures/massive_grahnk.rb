@@ -30,8 +30,15 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Cudgel",
-        as: "(stone club) 169 199"
+        name: "Cudgel"
+      },
+      {
+        name: "Foot",
+        as: 151
+      },
+      {
+        name: "Heavy stone club",
+        as: 192
       }
     ],
     bolt_spells: [],
@@ -40,6 +47,9 @@
     maneuvers: [
       {
         name: "Tackle"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -72,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -84,12 +95,24 @@
     description: [
       "Taller than a giant, the massive grahnk bears similarities to both a troll and an ogre. The beast has rippling muscles easily capable of tearing an arm or leg from its socket."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A massive grahnk lumbers in, malice in her eyes!"
+    ],
+    flee: [
+      "A massive grahnk lumbers {direction}, malice in her eyes."
+    ],
+    death: [
+      "A massive grahnk goes limp as she is rendered unconscious!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A massive grahnk stomps at you with {pronoun} foot!",
+      "A massive grahnk swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

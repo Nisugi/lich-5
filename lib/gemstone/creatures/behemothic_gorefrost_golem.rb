@@ -103,6 +103,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -122,9 +123,18 @@
       "A behemothic gorefrost golem stomps {direction}, shedding bits of broken ice and detritus.",
       "The ground shudders as a behemothic gorefrost golem stomps {direction}.",
     ],
-    spell_prep: "A behemothic gorefrost golem glows with shimmering incarnadine light that suffuses its monstrous form with power.",
-    death: "A rush of silent thunder explodes outward from the golem as the power animating it disperses.",
-    decay: "Cracks spread over the surface of a behemothic gorefrost golem.  With a ringing sound like struck crystal, the golem shatters into shards of inert ice.",
+    spell_prep: [
+      "A behemothic gorefrost golem glows with shimmering incarnadine light that suffuses its monstrous form with power."
+    ],
+    attack: [],
+    bite: [],
+    claw: [],
+    death: [
+      "A rush of silent thunder explodes outward from the golem as the power animating it disperses."
+    ],
+    decay: [
+      "Cracks spread over the surface of a behemothic gorefrost golem.  With a ringing sound like struck crystal, the golem shatters into shards of inert ice."
+    ],
     search: [
       "A behemothic gorefrost golem hesitates for a moment, as if uncertain.",
       "Corruscating light flares where a behemothic gorefrost golem's eyes ought to be as it searches the shadows."

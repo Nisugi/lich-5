@@ -67,6 +67,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -79,12 +80,24 @@
     description: [
       "Found near graveyards and other resting places of the dead, the ghost presents itself as a pale reflection of what it once was, a living, breathing person. Eyes long rotted away, appendages barely discernable, it knows not why it fights, but attacks the living at every occasion. The ghost fights relentlessly, knowing no fear, until victorious or utterly destroyed. Its agonized, horrific moans often chill those who face it."
     ],
-    arrival: [],
+    arrival: [
+      "Out of thin air, a shadowy figure takes shape before your eyes and materializes into a ghost!",
+      "A ghost just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The ghost slowly settles to the ground and begins to dissipate."
+    ],
+    decay: [
+      "A ghost vanishes into thin air, leaving no trace behind."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A ghost swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

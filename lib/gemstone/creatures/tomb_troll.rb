@@ -31,7 +31,11 @@
     physical_attacks: [
       {
         name: "Morning star",
-        as: (292..296)
+        as: 273
+      },
+      {
+        name: "Huge swollen right fist",
+        as: 235
       }
     ],
     bolt_spells: [],
@@ -72,6 +76,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -86,10 +91,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A tomb troll goes limp as he is rendered unconscious!",
+      "A tomb troll goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "The tomb troll's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A flesh golem pounds at you with tomb troll huge swollen right fist!",
+      "A tomb troll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

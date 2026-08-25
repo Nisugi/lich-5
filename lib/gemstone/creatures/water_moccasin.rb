@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -83,12 +84,23 @@
     description: [
       "The water moccasin appears to be at least three feet long, with dark olive-colored skin. You also note a faint diamond pattern travelling down from head to tail. When the mouth opens you can see a sickly white lining within."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A water moccasin slithers in!"
+    ],
+    flee: [
+      "A water moccasin slithers {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "A water moccasin decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A water moccasin tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

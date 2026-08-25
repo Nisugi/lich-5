@@ -43,6 +43,10 @@
       {
         name: "Claw (attack)",
         as: 227
+      },
+      {
+        name: "Vine-wrapped rusting bastard sword",
+        as: 272
       }
     ],
     bolt_spells: [],
@@ -91,6 +95,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -103,12 +108,24 @@
     description: [
       "A thin, tall creature, the troll chieftain scampers over the terrain in quick bursts. The a jungle troll chieftain's dark green, mottled skin displays an oily sheen, and hair is nowhere to be found on its body. An elongated face, perhaps two feet from the end of the exaggerated chin to the tips of the pointed ears, sits atop a thin, rubbery neck. Deep orange, slitted pupils nest horizontally in the steel grey eyes, and clusters of sharp orange horns poke up from the troll chieftain's head to surround the extended ears."
     ],
-    arrival: [],
+    arrival: [
+      "A jungle troll chieftain just arrived!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A jungle troll chieftain goes limp as he is rendered unconscious!",
+      "A jungle troll chieftain goes limp as she is rendered unconscious!"
+    ],
+    decay: [
+      "A jungle troll chieftain decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A jungle troll chieftain swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -29,19 +29,41 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [
+    physical_attacks: [
       {
         name: "Minor Acid (904)"
+      },
+      {
+        name: "Chunk of ice",
+        as: 349
+      },
+      {
+        name: "Large boulder",
+        as: 349
+      },
+      {
+        name: "Midnight black morning star",
+        as: 323
+      },
+      {
+        name: "Powerful lightning bolt",
+        as: 360
+      },
+      {
+        name: "Stream of fire",
+        as: 349
       }
     ],
-    warding_spells: [],
-    offensive_spells: [
+    warding_spells: [
       {
         name: "Earthen Fury (917)"
       },
       {
         name: "Elemental Dispel (417)"
+      },
+      {
+        name: "Midnight black morning star",
+        cs: 352
       }
     ],
     maneuvers: [],
@@ -84,6 +106,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -98,10 +121,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The Vvrael witch writhes in black agony and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A Vvrael witch gestures gracefully, hurling ebon motes of anti-mana at you!",
+      "A Vvrael witch hurls {weapon} at you!",
+      "A Vvrael witch swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

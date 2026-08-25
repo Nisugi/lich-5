@@ -43,6 +43,14 @@
       {
         name: "Two-handed sword",
         as: 175
+      },
+      {
+        name: "Immense dark steel bidenhander",
+        as: 165
+      },
+      {
+        name: "Twohanded sword",
+        as: 175
       }
     ],
     bolt_spells: [],
@@ -79,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -91,12 +100,27 @@
     description: [
       "Very little of the dark shambler is not thickly muscled. This squat humanoid lumbers through the countryside, surveying the world through glistening black eyes. Were it not for the eyes, the dark shambler could almost be taken for a shadow from a distance, for its skin is also entirely black. The eyes glisten eerily, though, while the rest of the dark shambler is a flat shade of charcoal that appears to absorb the light more than reflect it."
     ],
-    arrival: [],
+    arrival: [
+      "A dark shambler just arrived!",
+      "A dark shambler just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A dark shambler goes limp as it is rendered unconscious!",
+      "The dark shambler falls to the ground motionless.",
+      "The dark shambler screams evilly one last time and goes still.",
+      "The dark shambler twitches violently, then dies."
+    ],
+    decay: [
+      "A dark shambler turns to dust."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A dark shambler swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

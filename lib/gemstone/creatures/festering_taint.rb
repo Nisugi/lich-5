@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: (408..420)
+        as: 370
       }
     ],
     bolt_spells: [
@@ -67,6 +67,10 @@
       {
         name: "Unbalance (110)",
         cs: 366
+      },
+      {
+        name: "Claw",
+        cs: 367
       }
     ],
     offensive_spells: [
@@ -77,10 +81,12 @@
         name: "Grasp of the Grave (709)"
       }
     ],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Putrid Air"
+      },
+      {
+        name: "Point"
       }
     ],
     special_notes: []
@@ -118,6 +124,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -130,12 +137,34 @@
     description: [
       "The festering taint is a putrescent collection of rotting flesh and disease. The gender of the taint is impossible to make out due to the scabs and boils which cover its skin, oozing out disgustingly. Black and yellow rotting teeth are displayed in a mouth that is unnaturally wide underneath two black eyes that stare out with a frightening spark of intelligence. No nose or ears are visible on the festering taint, but it has a mop of greasy, filthy black hair that sprouts from the top of its head."
     ],
-    arrival: [],
+    arrival: [
+      "A festering taint arrives, bringing in a rancid odor.",
+      "A festering taint arrives with a disgusting stench.",
+      "A festering taint arrives with a grin that displays blackened and rotting teeth."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The festering taint sinks to its knees as it chokes on its own blood and dies.",
+      "The festering taint crumples to the ground, spits out a curse, and dies.",
+      "The festering taint falls to the ground, cursing, and dies.",
+      "The festering taint spasms uncontrollably as it goes into shock and dies.",
+      "The festering taint lets out a final curse as it dies.",
+      "The festering taint screams with rage as it falls to the ground and dies.",
+      "The festering taint curses the day it was created and dies."
+    ],
+    decay: [
+      "A festering taint's corpse falls apart and dissolves with a sudden hiss.",
+      "A festering taint's body dissolves, bubbling and fizzing until nothing is left."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A festering taint points a putrid hand at you!"
+    ],
+    bite: [],
+    claw: [
+      "A festering taint claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

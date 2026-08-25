@@ -34,7 +34,7 @@
       },
       {
         name: "Claw",
-        as: 202
+        as: (182..202)
       }
     ],
     bolt_spells: [],
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -89,10 +90,21 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The night hound lets out one last whimpering sigh of dark and shadowy whirlwinds and dies."
+    ],
+    decay: [
+      "A night hound decays into a compost of fur and fangs."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A night hound tries to bite you!"
+    ],
+    claw: [
+      "A night hound claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

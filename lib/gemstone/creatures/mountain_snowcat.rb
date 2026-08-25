@@ -38,7 +38,7 @@
       },
       {
         name: "Claw",
-        as: 59
+        as: (49..59)
       }
     ],
     bolt_spells: [],
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -87,12 +88,26 @@
     description: [
       "With its distinctive markings, the reclusive mountain snowcat is endowed with an almost uncanny ability to blend into the rocky vastness she inhabits. Adapted to living in the rugged mountains, she has large forepaws, short forelimbs, well-developed chest muscles and a long, elegant tail. Smaller than her cousin the snow leopard, the snowcat's fur shows many of the same beautiful combinations of dark spots that mark the snow leopards. Small ears crown the snowcat's head."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A mountain snowcat scampers in!"
+    ],
+    flee: [
+      "A mountain snowcat scampers {direction}."
+    ],
+    death: [
+      "The mountain snowcat crumples to the ground and dies.",
+      "The mountain snowcat lets out a final caterwaul and dies."
+    ],
+    decay: [
+      "A mountain snowcat decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [
+      "A mountain snowcat claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

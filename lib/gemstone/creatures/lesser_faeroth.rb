@@ -76,6 +76,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -88,12 +89,27 @@
     description: [
       "The lesser faeroth looks as though she is a near relative to a monkey. Standing on powerful forelimbs, her body is lifted entirely off the ground. Two atrophied legs with filthy claws dangle loosely below the body and look to be double-jointed. A spark of malevolent intelligence burns in her eyes."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser faeroth strides in.",
+      "A lesser faeroth just arrived!",
+      "A stalwart lesser faeroth strides in.",
+      "A robust lesser faeroth strides in."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A lesser faeroth goes limp as she is rendered unconscious!",
+      "A lesser faeroth goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A lesser faeroth decays into a pile of foul-smelling compost.",
+      "A robust lesser faeroth decays into a pile of foul-smelling compost.",
+      "A stalwart lesser faeroth decays into a pile of foul-smelling compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

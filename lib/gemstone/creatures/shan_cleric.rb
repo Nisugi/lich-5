@@ -31,6 +31,10 @@
       {
         name: "Morning star",
         as: 212
+      },
+      {
+        name: "Spiked holy-water sprinkler",
+        as: 307
       }
     ],
     bolt_spells: [],
@@ -82,6 +86,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -96,10 +101,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The shan cleric howls out one last time and dies.",
+      "The shan cleric yips in pain as she falls to the ground motionless.",
+      "The shan cleric yips in pain as he falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A shan cleric swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

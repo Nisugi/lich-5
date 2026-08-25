@@ -27,11 +27,26 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [
+    physical_attacks: [
       {
         name: "Major Fire",
         as: 462
+      },
+      {
+        name: "Bronze cutlass",
+        as: 549
+      },
+      {
+        name: "Ensnare",
+        as: 413
+      },
+      {
+        name: "Heel of his hand",
+        as: 420
+      },
+      {
+        name: "Strike",
+        as: 459
       }
     ],
     warding_spells: [
@@ -44,6 +59,10 @@
       },
       {
         name: "Dark Catalyst (719)"
+      },
+      {
+        name: "Ensnare",
+        cs: 443
       }
     ],
     offensive_spells: [],
@@ -88,6 +107,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -100,12 +120,29 @@
     description: [
       "Clad in emerald robes of lush velvet that are stitched with tiny scales of clacking bronze, the fanatic is nearly fleshless, his reserves of fat and muscle burned away by a long war with madness. He has, judging from the stink of body odor and filth about him, not washed in weeks, and his gaze is as inconstant as the quickfire succession of random emotions that play across his tanned face."
     ],
-    arrival: [],
+    arrival: [
+      "A deathsworn fanatic just arrived.",
+      "Vital fluids seeping from its orifices, a shambling lurk shambles in with a piteous moan."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the deathsworn fanatic's ribs to move independently.",
+      "Acid dissolves the knee ligaments.  The deathsworn fanatic's tibia passes his femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A deathsworn fanatic jabs a trembling finger at you!",
+      "A deathsworn fanatic tries to ensnare you!",
+      "A sheen of venom glistening from deathsworn fanatic needle-sharp fangs, a white sidewinder strikes at you!",
+      "Deathsworn fanatic face twisting with mad rage, a deathsworn fanatic swings at you!",
+      "Desperate in deathsworn fanatic hunger for flesh, a shambling lurk throws itself at you!",
+      "Moving with preternatural speed, a lithe veiled sentinel strikes at you with the heel of deathsworn fanatic hand!",
+      "With an eerie, boneless fluidity, a lithe veiled sentinel slashes at you with deathsworn fanatic bronze cutlass!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

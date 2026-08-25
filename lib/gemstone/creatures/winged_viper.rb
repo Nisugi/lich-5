@@ -31,6 +31,10 @@
       {
         name: "Bite",
         as: 294
+      },
+      {
+        name: "Swoop",
+        as: 298
       }
     ],
     bolt_spells: [
@@ -47,6 +51,10 @@
     warding_spells: [
       {
         name: "Elemental Strike (415)"
+      },
+      {
+        name: "Bite",
+        cs: 274
       }
     ],
     offensive_spells: [
@@ -69,6 +77,9 @@
     maneuvers: [
       {
         name: "Spit"
+      },
+      {
+        name: "Tongue Flick"
       }
     ],
     special_abilities: [],
@@ -104,6 +115,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -117,11 +129,18 @@
       "The viper has a sinuous scaley body of purest white, feathered from snout to tail. Two majestic wings arch from its body roughly one-third of the way down its length. The viper's mouth is filled with long, needle sharp fangs, and its forked tongue flickers constantly to taste the air hungrily."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A winged viper flies {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "The winged viper dissolves as the acidic poison consumes it from within."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

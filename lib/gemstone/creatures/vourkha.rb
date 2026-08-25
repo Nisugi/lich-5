@@ -30,11 +30,15 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 252
+        as: (226..252)
       },
       {
         name: "Claw",
         as: 262
+      },
+      {
+        name: "Swoop",
+        as: 235
       }
     ],
     bolt_spells: [
@@ -83,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,12 +100,28 @@
     description: [
       "Empty black soulless eyes gaze from the gaunt, grey form of the wraithlike vourkha. His thin-lipped mouth gaped in a silent howl, he grasps at the fetid air with gnarled, clawed hands as he glides just above the ground, trailing tendrils of thick white ectoplasm that seem to seep from his shredded clothing. The creature seems to fade in and out of corporeal existence as if he walked in an eternal patch of shadow."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "An evil hiss fills the air as a vourkha stalks in!"
+    ],
+    flee: [
+      "An evil hiss fills the air as a vourkha stalks {direction}."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the vourkha's ribs to move independently.",
+      "The vourkha's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A vourkha tosses {pronoun} head back and points towards you!"
+    ],
+    bite: [
+      "A vourkha tries to bite you!"
+    ],
+    claw: [
+      "A vourkha claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

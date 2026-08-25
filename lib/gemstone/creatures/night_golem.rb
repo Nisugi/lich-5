@@ -33,6 +33,10 @@
       {
         name: "Pound",
         as: 86
+      },
+      {
+        name: "Black fists",
+        as: 77
       }
     ],
     bolt_spells: [],
@@ -69,6 +73,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -81,12 +86,19 @@
     description: [
       "Formed by the alchemists of the Citadel in their service to the Council of Twelve, these 4' tall golems appear to be made of coalesced night sky. Looking closely, you can see stars twinkling within their short, massive bodies."
     ],
-    arrival: [],
+    arrival: [
+      "A slimy little grub crawls in, leaving a trail of slime in its wake."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A night golem pounds at you with {pronoun} black fists!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

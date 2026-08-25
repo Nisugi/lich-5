@@ -66,6 +66,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -78,12 +79,22 @@
     description: [
       "A haze of cloaked blackness and violet vapors, the bog wraith floats in the air just above the ground. Its violet eyes illuminate between a soft glow and an angry blazoned appearance. A pair of clawed hands extend from the middle of its being, abnormally tiny in comparison to the rest of its body."
     ],
-    arrival: [],
+    arrival: [
+      "A bog troll lumbers in, her face set in an angry scowl!",
+      "A bog troll lumbers in, his face set in an angry scowl!"
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A bog wraith tries to ensnare you!"
+    ],
+    bite: [],
+    claw: [
+      "A bog wraith claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

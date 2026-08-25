@@ -34,8 +34,11 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Pound",
-        as: (240..262)
+        name: "Pound"
+      },
+      {
+        name: "Fist",
+        as: 250
       }
     ],
     bolt_spells: [],
@@ -78,6 +81,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -90,12 +94,21 @@
     description: [
       "Flecked with bits of mica and quartz crystal, the krynch shimmers in even the dimmest light. Moving with a fluid grace that belies the granite composition of its body, the creature has a barrel chest and thick, powerful limbs. The krynch has no visible ears or nose on its perfectly spherical head. Its mouth is fixed in a perpetual scowl and its glossy black eyes glare at you with malevolent intensity."
     ],
-    arrival: [],
+    arrival: [
+      "A large boulder comes barrelling into view, abruptly rolls to a stop, and rises into the form of a krynch!"
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Tiny fissures quickly spread over a dead krynch, and it crumbles into rubble."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A krynch pounds at you with {pronoun} fist!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

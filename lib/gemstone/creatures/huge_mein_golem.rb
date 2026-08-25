@@ -62,6 +62,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -74,12 +75,21 @@
     description: [
       "A towering, animated, glass-like creature, the huge mein golem is comprised entirely of mein. Taller than a giantman by half again and nearly as wide as tall, the mein golem displays a barrel chest, massive legs and arms, and a flattened, cylindrical head with almost no neck apparent. Animated by someone with a unique sense of humor, the huge mein golem contains many surprises for the unwary adventurer."
     ],
-    arrival: [],
+    arrival: [
+      "A huge mein golem arrives, methodically striding forward.",
+      "A huge mein golem strides in, a terrible creaking sound coming from cracks in its glass body."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A huge mein golem pounds at you with huge mein golem heavy mein right fist!",
+      "A huge mein golem tries to ensnare you in huge mein golem solid mein arms!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -27,21 +27,27 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [
+    physical_attacks: [
       {
-        name: "Major Fire",
-        as: "+454"
+        name: "Major Fire"
+      },
+      {
+        name: "Long acacia runestaff",
+        as: 517
       }
     ],
     warding_spells: [
       {
         name: "Disintegrate",
-        cs: "+353"
+        cs: 353
       },
       {
         name: "Cloak of Shadows",
-        cs: "+431"
+        cs: 431
+      },
+      {
+        name: "Long acacia runestaff",
+        cs: 445
       }
     ],
     offensive_spells: [
@@ -97,6 +103,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -109,12 +116,20 @@
     description: [
       "A pale scaled shaper is far taller than a woman ought to be, with a stretched appearance like that of a doll tugged by battling children. That is, if she is even female: the pale robes that she wears, with their faint appliqued patterns of winking copper scales, betray only the most suggestive promise of a feminine form beneath. There is something upsettingly inhuman about the shaper's face, which has the shape and proportions of a human's, but eyes that glow like green embers and a dusting of ridged scales on its cheeks and brow."
     ],
-    arrival: [],
+    arrival: [
+      "A pale scaled shaper just arrived."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A pale scaled shaper smirks, flicking a skeletal finger toward you!",
+      "With serpentine speed, a pale scaled shaper swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

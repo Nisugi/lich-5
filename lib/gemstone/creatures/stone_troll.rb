@@ -36,6 +36,14 @@
       {
         name: "War hammer",
         as: 321
+      },
+      {
+        name: "Foot",
+        as: 296
+      },
+      {
+        name: "Giant stone hammer",
+        as: 298
       }
     ],
     bolt_spells: [],
@@ -46,8 +54,7 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Ground slap"
       },
@@ -56,6 +63,9 @@
       },
       {
         name: "Stone spit"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_notes: []
@@ -87,6 +97,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -99,12 +110,24 @@
     description: [
       "Towering above you, the stone troll is an ugly, brutish looking creature. Its marbled grey skin is covered with pocks and divots. This lumpy grotesque troll grins maniacally at you, sending cracks and fissures across its face."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "The ground shakes as an enraged stone troll stomps in!"
+    ],
+    flee: [
+      "There is a loud rumbling as a stone troll crawls {direction} of the ground!"
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A stone troll stomps at you with {pronoun} foot!",
+      "A stone troll swings {weapon} at you!",
+      "The stone giant rumbles in agony as he teeters for a moment, then falls directly at you!",
+      "The stone giant rumbles in agony as she teeters for a moment, then falls directly at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

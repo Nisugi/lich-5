@@ -26,12 +26,7 @@
   height: 5,
   size: "medium",
   attack_attributes: {
-    physical_attacks: [
-      {
-        name: "",
-        as: ""
-      }
-    ],
+    physical_attacks: [],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
@@ -65,6 +60,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -75,6 +71,9 @@
     blunt_required: false
   },
   messaging: {
+    attack: [],
+    bite: [],
+    claw: [],
     description: "Wings of stygian darkness enshroud the huge black bird.  When not in motion, there is an ominous and unnatural stillness to the valravn that marks it as otherworldly.  Where eyes should be, there are strange hollows that occasionally flicker with scintillating golden light.",
     general_advice: "* Broadly speaking, valravns are a \"glass cannon\" type of creature. Their \"glass\" is durable in the sense of high DS and TD, but when attacks get past those thresholds--or attacks that bypass them, like SMR-based attacks or unarmed combat--they're likely to hit these unarmored creatures hard and they have a fairly small amount of health.\n* Valravns are primarily magical creatures and are fairly vulnerable to maneuver-based spells and attacks like Earthen Fury (917), Hamstring, Spike Thorn (616), Twin Hammerfists, and more. This is offset somewhat by their high level, however.",
     voln: "* Symbol of Diminishment can make valravns far more manageable. However, their high level imposes a penalty against the standard success resolution system that Voln symbols use, so it might take multiple tries. High Influence can counteract level disadvantage somewhat.",

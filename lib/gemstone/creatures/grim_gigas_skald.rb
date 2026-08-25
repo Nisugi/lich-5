@@ -24,12 +24,7 @@
   height: 28,
   size: "huge",
   attack_attributes: {
-    physical_attacks: [
-      {
-        name: "",
-        as: ""
-      }
-    ],
+    physical_attacks: [],
     bolt_spells: [],
     warding_spells: [
       {
@@ -78,6 +73,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -93,8 +89,15 @@
       "Preceded by a mournful dirge, a grim gigas skald stalks in, his song accompanied by the clacking of the crude jeweled beads adorning the ceremonial garb that he wears.",
       "A grim gigas skald meanders in, dourly taking in the surroundings."
     ],
-    death: "A grim gigas skald raises a hand as if to grasp for support as she collapses, life going out of her form.",
-    decay: "A grim gigas skald's corpse succumbs to rot, collapsing in upon itself until naught but dust remains.",
+    death: [
+      "A grim gigas skald raises a hand as if to grasp for support as she collapses, life going out of her form."
+    ],
+    decay: [
+      "A grim gigas skald's corpse succumbs to rot, collapsing in upon itself until naught but dust remains."
+    ],
+    attack: [],
+    bite: [],
+    claw: [],
 
     general_advice: "* Options like Hamstring or unarmed combat essentially get around DS, which is useful since skalds have pretty high DS even when forced into offensive stance and their unconventional lyre weapon can't be removed by typical tactics like Disarm Weapon or Vibration Chant (1002).\n* SMR-based offense like Condemn (309), Earthen Fury (917), and Spike Thorn (616) works well against skalds.",
     clerics: "* Since the strength of each damaging round of Condemn is based only on the initial roll, it can often be worthwhile to cast Condemn again before the first cast has finished if that first cast had a low enough endroll. This is especially true if the first cast isn't doing enough damage to keep them stunned, which is crucial since skalds' SMR attack can be lethal and their TD is sufficiently high that Soul Ward (319) isn't always reliable defense.",

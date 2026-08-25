@@ -39,6 +39,30 @@
       {
         name: "Scimitar",
         as: 173
+      },
+      {
+        name: "Bite",
+        as: 153
+      },
+      {
+        name: "Claw",
+        as: 153
+      },
+      {
+        name: "Dagger",
+        as: 173
+      },
+      {
+        name: "Flail",
+        as: 173
+      },
+      {
+        name: "Mace",
+        as: 173
+      },
+      {
+        name: "War mattock",
+        as: 173
       }
     ],
     bolt_spells: [],
@@ -84,6 +108,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -96,12 +121,29 @@
     description: [
       "Huge and dangerous, the forest troll towers above even a tall giantman. Grey skin so thick that it serves quite well as armor covers most of the troll, with tufts of thick hair sprouting here and there like weeds between cracked stones. A hideous grin splits its face displaying fangs crusted with dried blood and less guessable matter. No light of intellect glows in its narrow piggish eyes. The lust for slaughter and thirst for blood are what drive this hulkish beast's existence."
     ],
-    arrival: [],
+    arrival: [
+      "A forest troll just arrived!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The forest troll screams one last time and dies.",
+      "The forest troll falls to the ground and dies.",
+      "A forest troll goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A forest troll decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A forest troll swings {weapon} at you!"
+    ],
+    bite: [
+      "A forest troll tries to bite you!"
+    ],
+    claw: [
+      "A forest troll claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

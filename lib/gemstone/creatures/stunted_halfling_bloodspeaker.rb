@@ -103,6 +103,7 @@
   special_other: "",
   abilities: [],
   alchemy: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -114,11 +115,21 @@
   },
   messaging: {
     description: "Small even for a halfling, the bloodspeaker is twisted of limb and stunted of form.  Bulging eyes the color of dried blood peer out from a face like molten wax.  The ritualistic burn scars marring {pronoun} flesh look painful beyond the most grotesque of imaginings.  The bloodspeaker wears heavy robes of red velvet that do little to conceal the broken-puppet jangle of {pronoun} misshapen body beneath them.  {pronoun} tongue is bisected and lolls forth from a mouth that looks like a wet gash in {pronoun} obscene face.",
-    arrival: "A stunted halfling bloodspeaker hurries in, ebon eyes darting about in paranoia.",
-    flee: "Ebon eyes darting about in paranoia, a stunted halfling bloodspeaker hurries {direction}.",
-    spell_prep: "A stunted halfling bloodspeaker utters a garbled, sibilant phrase as globules of crimson light spin around {pronoun} gnarled hands.",
-    death: "A stunted halfling bloodspeaker's eyes bulge as {pronoun} stares toward the heavens, mouthing a gurgling prayer as {pronoun} succumbs to death.",
-    decay: "A stunted halfling bloodspeaker's body collapses in upon itself as if everything solid within has turned to liquid, the sanguine remains oozing out of the remaining folds of skin.",
+    arrival: [
+      "A stunted halfling bloodspeaker hurries in, ebon eyes darting about in paranoia."
+    ],
+    flee: [
+      "Ebon eyes darting about in paranoia, a stunted halfling bloodspeaker hurries {direction}."
+    ],
+    spell_prep: [
+      "A stunted halfling bloodspeaker utters a garbled, sibilant phrase as globules of crimson light spin around {pronoun} gnarled hands."
+    ],
+    death: [
+      "A stunted halfling bloodspeaker's eyes bulge as {pronoun} stares toward the heavens, mouthing a gurgling prayer as {pronoun} succumbs to death."
+    ],
+    decay: [
+      "A stunted halfling bloodspeaker's body collapses in upon itself as if everything solid within has turned to liquid, the sanguine remains oozing out of the remaining folds of skin."
+    ],
     search: [
       "A stunted halfling bloodspeaker licks her lips as she looks around, as if certain that she has missed something.",
       "a stunted halfling bloodspeaker's sniffs the air, bulging eyes darting about wildly"

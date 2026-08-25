@@ -34,7 +34,7 @@
       },
       {
         name: "Ensnare",
-        as: 168
+        as: 178
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -84,11 +85,27 @@
       "Large enough to encompass a horse in her grasp, the major spider needs no web to feed from though she uses her sticky traps well when it suits her. Agile and aggressive, this demon among spiders crouches before you, her unwinking eyes showing no emotion as she waits to attack or defend. The palps around her mouth work continuously and a thin line of digestive slime drools down her mandibles."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A major spider crawls {direction}."
+    ],
+    death: [
+      "The major spider collapses to the ground and dies.",
+      "The major spider's body jerks one last time and dies.",
+      "A major spider goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A major spider's legs shrivel up beneath it as it decays into dust.",
+      "Acid dissolves the knee ligaments.  The major spider's tibia passes its femur in a very unpleasant manner!"
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A major spider tries to ensnare you!"
+    ],
+    bite: [
+      "A major spider tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

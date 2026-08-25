@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Thick Wooden Knurl",
-        as: 314
+        as: (244..314)
       }
     ],
     bolt_spells: [],
@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -83,12 +84,27 @@
     description: [
       "Hunched over and bow-legged, the bog troll bears many resemblances to the frogs that inhabit the bogs along with it. Its skin is a dark yellow mottled with patches of brownish green. Its mouth, wide and thick-lipped, displays rows of misaligned, jagged teeth, and the troll keeps a constant grin, as if its teeth are too large for it to completely close its mouth. Bulbous green eyes sit nearly atop its flat cranium, and sharp claws extend from its oversized, webbed hands and feet."
     ],
-    arrival: [],
+    arrival: [
+      "A bog troll lumbers in, his face set in an angry scowl!",
+      "A bog troll lumbers in, her face set in an angry scowl!",
+      "A bog troll just arrived!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A bog troll goes limp as she is rendered unconscious!",
+      "A bog troll goes limp as he is rendered unconscious!",
+      "The bog troll twitches violently, then dies."
+    ],
+    decay: [
+      "A bog troll decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A bog troll swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

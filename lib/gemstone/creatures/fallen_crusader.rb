@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -83,12 +84,24 @@
     description: [
       "Roiling wisps of ethereal green mist fill in the form of a muscled warrior. Fleshy tones, segments of armor, and humanoid features flicker across her visage, as if the mist was remembering bits and pieces of the paladin's former body, if for only moments at a time. Unable to hold corporeal form, the only meaningful remnants of the crusader's prior existence are her stark conviction, held now in eyes which are no more than swirling grey voids, and her martial prowess."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A darkly inked fetish master arrives, the skulls on its belt clacking with a hollow resonance.",
+      "A fallen crusader just arrived, looking terrified!"
+    ],
+    flee: [
+      "A fallen crusader bolts {direction}!"
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A fallen crusader swings {weapon} at you!",
+      "A glistening cerebralite focuses fallen crusader eye-stalks on you!",
+      "A glistening cerebralite lashes at you with fallen crusader barbed tentacle!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

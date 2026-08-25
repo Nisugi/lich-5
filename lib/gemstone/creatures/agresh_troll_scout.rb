@@ -30,19 +30,16 @@
     physical_attacks: [
       {
         name: "War hammer",
-        as: "+171"
+        as: 171
       },
       {
-        name: "Ensnare",
-        as: "disarmed 161"
+        name: "Ensnare"
       },
       {
-        name: "Pound",
-        as: "disarmed 161"
+        name: "Pound"
       },
       {
-        name: "Stomp",
-        as: "disarmed 161"
+        name: "Stomp"
       }
     ],
     bolt_spells: [],
@@ -81,6 +78,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -93,12 +91,25 @@
     description: [
       "The troll scout grimaces as it surveys its surroundings with suspicion. Crudely drawn runic symbols painted with ash cover its face. Tufts of straggly, yellow hair are spread over its otherwise barren body giving it a vaguely lionish appearance. Only occasionally can sparks of true intelligence be seen in its otherwise dull eyes."
     ],
-    arrival: [],
+    arrival: [
+      "An Agresh troll scout just arrived!",
+      "An Agresh troll scout stalks in, glancing warily side to each side!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "An Agresh troll scout goes limp as he is rendered unconscious!",
+      "Intestines rupture from intense heat; an Agresh troll scout dies a slow, painful death."
+    ],
+    decay: [
+      "An Agresh troll scout decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "An Agresh troll scout swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

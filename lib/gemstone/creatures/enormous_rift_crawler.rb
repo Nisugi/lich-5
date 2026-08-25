@@ -32,23 +32,29 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 449
+        as: 461
       },
       {
         name: "Charge (attack)",
         as: 447
+      },
+      {
+        name: "Charge",
+        as: 475
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Burrow"
       },
       {
         name: "Tail slam"
+      },
+      {
+        name: "Tail Swipe"
       }
     ],
     special_notes: []
@@ -80,6 +86,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -98,6 +105,13 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "An enormous rift crawler charges at you!"
+    ],
+    bite: [
+      "An enormous rift crawler tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

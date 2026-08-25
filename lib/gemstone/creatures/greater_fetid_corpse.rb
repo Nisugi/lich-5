@@ -62,6 +62,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -80,6 +81,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A greater fetid corpse tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [
         "Observed wandering in level 41-42 hunting areas; spawn zone not yet confirmed (not in Saga mongen data)."

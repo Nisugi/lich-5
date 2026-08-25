@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: true,
@@ -31,7 +31,12 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Closed fist"
+        name: "Closed fist",
+        as: 115
+      },
+      {
+        name: "Gnarled black staff",
+        as: 274
       }
     ],
     bolt_spells: [
@@ -40,8 +45,7 @@
         as: 311
       }
     ],
-    warding_spells: [],
-    offensive_spells: [
+    warding_spells: [
       {
         name: "Earthen Fury"
       },
@@ -56,6 +60,10 @@
       },
       {
         name: "Weapon Fire"
+      },
+      {
+        name: "Feras mattock",
+        cs: 324
       }
     ],
     maneuvers: [],
@@ -74,7 +82,7 @@
     emp_td: (294..302),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 316,
+    sor_td: (316..328),
     wiz_td: nil,
     mje_td: 345,
     mne_td: 333,
@@ -99,6 +107,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -111,12 +120,32 @@
     description: [
       "The fire mage isn't tall, standing no more than five feet, but her harrowing image is more than intimidating. Blackened skin of her face is framed with a wild mane of silvery hair, which lifts in the smoke and flames rising from the mage's robes like writhing serpents. Twin pits of fire glare out of the apparition's eye sockets, constantly sweeping her surroundings with maleficent intent."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "Violent flames begin to whip and spit about the area as a fire mage strides into view!",
+      "A fire mage strides in!",
+      "An apt fire mage strides in!"
+    ],
+    flee: [
+      "A fire mage crawls {direction}."
+    ],
+    death: [
+      "The fire mage goes limp and she falls over as the fire slowly fades from her eyes.",
+      "The fire mage goes limp and he falls over as the fire slowly fades from his eyes.",
+      "The fire mage twitches violently, then dies."
+    ],
+    decay: [
+      "A fire mage decays into a fine grey ash that quickly blows away.",
+      "Acid dissolves connecting cartilage, freeing the fire mage's ribs to move independently.",
+      "An apt fire mage decays into a fine grey ash that quickly blows away."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A fire mage leaves a trail of fire in the air while gesturing at you!",
+      "A fire mage swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

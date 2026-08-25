@@ -71,6 +71,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -83,12 +84,24 @@
     description: [
       "The giant ant looks like a giant armored version of a common ordinary ant. Its faceted eyes stare out into air with constant disinterest."
     ],
-    arrival: [],
+    arrival: [
+      "A giant ant just arrived."
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The giant ant falls to the ground and dies, its feelers twitching.",
+      "The giant ant feebly twitches a feeler one last time and dies."
+    ],
+    decay: [
+      "A giant ant decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [
+      "A giant ant tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

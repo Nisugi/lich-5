@@ -35,6 +35,10 @@
       {
         name: "Pound",
         as: 44
+      },
+      {
+        name: "Fist",
+        as: 34
       }
     ],
     bolt_spells: [],
@@ -71,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -85,10 +90,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The white vysan falls to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A white vysan pounds at you with {pronoun} fist!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

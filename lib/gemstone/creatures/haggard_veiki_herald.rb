@@ -72,6 +72,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [
+    "a crude zorchar khopesh",
+    "a round metal aegis emblazoned with a jagged lightning bolt",
+    "some hardened hide armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -90,6 +95,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "Hoisting haggard veiki herald zorchar khopesh high, a haggard Veiki herald strikes brutally at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

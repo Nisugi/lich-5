@@ -38,7 +38,7 @@
       },
       {
         name: "Trident",
-        as: 222
+        as: (222..227)
       }
     ],
     bolt_spells: [],
@@ -75,6 +75,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -89,10 +90,25 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The hisskra warrior rolls over on his back and dies.",
+      "A hisskra warrior goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A hisskra warrior collapses into a putrid lump of scaly flesh.",
+      "A hisskra warrior decays into a pile of scales and bone.",
+      "A hisskra warrior's scales wither as he decays into dust.",
+      "A hisskra warrior withers away, leaving nothing but a few scales that blow away on a gentle breeze.",
+      "Acid dissolves connecting cartilage, freeing the hisskra warrior's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A hisskra warrior slings a long, hollow reed from over {pronoun} shoulder and raises one end to {pronoun} lips.  {Pronoun} points the other end toward you and exhales sharply!",
+      "A hisskra warrior swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

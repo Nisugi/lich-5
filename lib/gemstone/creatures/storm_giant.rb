@@ -43,7 +43,11 @@
       },
       {
         name: "Spear",
-        as: 247
+        as: (197..247)
+      },
+      {
+        name: "Weathered huge zorchar maul",
+        as: 252
       }
     ],
     bolt_spells: [
@@ -65,13 +69,21 @@
         name: "Gas cloud"
       }
     ],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Ground stomp"
       },
       {
         name: "Wind blast"
+      },
+      {
+        name: "Ground Slam"
+      },
+      {
+        name: "Thunderclap"
+      },
+      {
+        name: "Wind Rush"
       }
     ],
     special_notes: []
@@ -106,6 +118,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -118,12 +131,28 @@
     description: [
       "The storm giant's regal bearing and calm demeanor stand in sharp contrast to the raging tempest surrounding it. Standing taller than the tallest giantman, the storm giant stares at others with dull grey eyes that refuse to reflect the sparks of electricity that crackle out from them."
     ],
-    arrival: [],
+    arrival: [
+      "A storm giant lumbers in, surrounded by a raging storm!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The storm giant howls in agony one last time and dies.",
+      "The storm giant twitches violently, then dies.",
+      "A storm giant goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "Acid dissolves the knee ligaments.  The storm giant's tibia passes its femur in a very unpleasant manner!",
+      "The storm giant's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A storm giant claps {pronoun} hands together in front of you!",
+      "A storm giant swings {weapon} at you!",
+      "A storm giant thrusts with a spear at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

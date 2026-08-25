@@ -40,6 +40,14 @@
       {
         name: "Stinger (attack)",
         as: 207
+      },
+      {
+        name: "Pincer",
+        as: 177
+      },
+      {
+        name: "Stinger",
+        as: 207
       }
     ],
     bolt_spells: [],
@@ -76,6 +84,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -90,10 +99,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A giant albino scorpion goes limp as it is rendered unconscious!",
+      "The albino scorpion twitches violently, then dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    attack: [
+      "A giant albino scorpion snaps at you with {pronoun} pincer!",
+      "A giant albino scorpion stabs at you with {pronoun} stinger!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

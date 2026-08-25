@@ -39,6 +39,10 @@
       {
         name: "Impale",
         as: 235
+      },
+      {
+        name: "Swoop",
+        as: 245
       }
     ],
     bolt_spells: [],
@@ -79,6 +83,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -92,11 +97,21 @@
       "The colossus vulture is a large, distinctly marked bird, with a wingspan twice the height of a giantman. Glossy black feathers and white markings on its broad wings and rounded tail give the vulture an ominous appearance, and feathers cover its legs to its feet. A dark ruff borders the colossus vulture's bald red head and neck. Its hooked bill and powerful talons are well suited for hunting."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A colossus vulture flies {direction}."
+    ],
+    death: [
+      "The colossus vulture writhes in agony, its wings flapping fruitlessly as it dies.",
+      "A colossus vulture goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "The colossus vulture decays into a pile of feathers."
+    ],
     search: [],
     spell_prep: [],
+    attack: [],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

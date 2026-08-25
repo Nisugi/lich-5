@@ -42,6 +42,9 @@
       },
       {
         name: "Trip"
+      },
+      {
+        name: "Polearm Plant"
       }
     ],
     special_abilities: [],
@@ -74,6 +77,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -86,12 +90,24 @@
     description: [
       "Blazing white balefire fills the eye sockets of the Citadel guardsman, who is dressed in the deteriorating remains of a once resplendent uniform of buff and blue. The taut, sinewy flesh stretched over the guardsman's exposed face and hands is riddled with gaping holes that reveal the desiccated remains of muscle and cartilage. Gripped firmly in hands of exposed bone and flesh is an immaculate Hammer of Kai, which is aflame in a radiant white fire that burns along its blade."
     ],
-    arrival: [],
+    arrival: [
+      "A decaying Citadel guardsman strides in.",
+      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant draft.",
+      "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant breeze.",
+      "Acid dissolves connecting cartilage, freeing the Citadel guardsman's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A decaying Citadel guardsman swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

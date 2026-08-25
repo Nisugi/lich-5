@@ -33,6 +33,10 @@
       {
         name: "Attack",
         as: 380
+      },
+      {
+        name: "Powerful lightning bolt",
+        as: 277
       }
     ],
     bolt_spells: [
@@ -90,6 +94,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -102,12 +107,28 @@
     description: [
       "Waving its myriad of oddly flexible, root-like appendages, the moulis scuttles about its home area. It is not known what the moulis searches for, as observations have usually yielded a quick death for the observer, yet it is known that the moulis is an intelligent, lethal foe capable of commanding the forces of magic as well as a powerful physical attack. It appears to be nothing more than a writhing mass of tubers, roots and thin hair strands in various shades of brown--until a vicious attack springs from the center of the creature."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A dhu goleras arrives with a loping, uneven gait, his body rocking side-to-side and his head and arms flopping wildly.",
+      "A dhu goleras arrives with a loping, uneven gait, her body rocking side-to-side and her head and arms flopping wildly."
+    ],
+    flee: [
+      "A moulis suddenly bolts upright, balancing itself on several wooden appendages."
+    ],
+    death: [
+      "The moulis twitches violently, then dies."
+    ],
+    decay: [
+      "A moulis crumbles into a putrid compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A moulis extrudes a flattened fiber and swings it at you!",
+      "A moulis hurls {weapon} at you!",
+      "A moulis scraping rolls into a ball and flings moulis at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

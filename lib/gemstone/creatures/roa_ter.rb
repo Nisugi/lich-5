@@ -52,13 +52,15 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Burrow"
       },
       {
         name: "Tail Slam"
+      },
+      {
+        name: "Tail Swipe"
       }
     ],
     special_notes: []
@@ -90,6 +92,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -103,11 +106,22 @@
       "This massive worm is probably over twenty to thirty feet long, making it an easy target to hit, but having incomparable force and strength. Dark red in color, it seems to have no eyes, but its keen sense of smell quickly finds targets."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A roa'ter slithers {direction}."
+    ],
+    death: [
+      "The roa'ter rolls over and dies."
+    ],
+    decay: [
+      "A roa'ter decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A roa'ter charges at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

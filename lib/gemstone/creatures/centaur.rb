@@ -40,6 +40,14 @@
       {
         name: "Longsword",
         as: 208
+      },
+      {
+        name: "Greatsword",
+        as: 208
+      },
+      {
+        name: "Scimitar",
+        as: 166
       }
     ],
     bolt_spells: [],
@@ -83,6 +91,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: true,
     magic_items: true,
@@ -97,10 +106,44 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The white centaur falls to the ground and dies.",
+      "The white centaur screams one last time and dies.",
+      "The bay centaur falls to the ground and dies.",
+      "The tan centaur screams one last time and dies.",
+      "The roan centaur falls to the ground and dies.",
+      "The bay centaur screams one last time and dies.",
+      "The black centaur falls to the ground and dies.",
+      "The tan centaur falls to the ground and dies.",
+      "The roan centaur screams one last time and dies.",
+      "The black centaur screams one last time and dies.",
+      "A roan centaur goes limp as he is rendered unconscious!",
+      "A black centaur goes limp as he is rendered unconscious!",
+      "A tan centaur goes limp as she is rendered unconscious!",
+      "A roan centaur goes limp as she is rendered unconscious!",
+      "A white centaur goes limp as she is rendered unconscious!",
+      "A white centaur goes limp as he is rendered unconscious!",
+      "A bay centaur goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A white centaur dissolves into a puff of red smoke.",
+      "A bay centaur dissolves into a puff of red smoke.",
+      "A tan centaur dissolves into a puff of red smoke.",
+      "A roan centaur dissolves into a puff of red smoke.",
+      "A black centaur dissolves into a puff of red smoke.",
+      "Acid dissolves connecting cartilage, freeing the bay centaur's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A centaur swings {weapon} at you!",
+      "A centaur throws {weapon} at you!",
+      "Tightening centaur grip on centaur greatsword, a black centaur strikes out at you with all of centaur might!",
+      "Tightening centaur grip on centaur polished longsword, a tan centaur strikes out at you with all of centaur might!",
+      "Tightening centaur grip on centaur polished longsword, a white centaur strikes out at you with all of centaur might!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

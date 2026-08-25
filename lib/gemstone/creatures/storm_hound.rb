@@ -35,6 +35,10 @@
       {
         name: "Claw",
         as: 202
+      },
+      {
+        name: "Powerful lightning bolt",
+        as: 202
       }
     ],
     bolt_spells: [
@@ -78,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -92,10 +97,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The storm hound lets out one last whimpering sigh of sparks and blue mist and dies.",
+      "A storm hound goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A storm hound decays into a compost of fur and fangs."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A storm hound hurls {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

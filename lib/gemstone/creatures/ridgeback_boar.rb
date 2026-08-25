@@ -30,24 +30,30 @@
     physical_attacks: [
       {
         name: "Charge",
-        as: 170
+        as: (140..170)
       },
       {
         name: "Bite",
-        as: 170
+        as: (160..170)
       },
       {
         name: "Impale",
         as: 170
+      },
+      {
+        name: "Tusk",
+        as: 150
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Charge maneuver"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_notes: []
@@ -79,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -92,11 +99,28 @@
       "The ridgeback boar snorts loudly and scrapes at the ground, peering around with his close-set, bloodshot eyes in hopes of finding something he can gore into a bloody pulp or pound into the earth. His body is covered with coarse, reddish-brown hair, and gleaming tusks protrude from each side of his gaping mouth. A good eight feet long from dripping snout to curly tail and weighing nearly a half ton, the ridgeback boar moves with surprising speed and dexterity as he bears down, squealing furiously, on his intended prey. The boar's bony backbone lends the beast his name, as it juts up through his bristly hair."
     ],
     arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    flee: [
+      "A ridgeback boar crawls {direction}."
+    ],
+    death: [
+      "The ridgeback boar collapses to the ground, emits a final squeal, and dies.",
+      "The ridgeback boar lets out a final agonized squeal and dies.",
+      "The ridgeback boar silently lets out a final agonized squeal and dies.",
+      "The ridgeback boar collapses to the ground, emits a final silent squeal, and dies."
+    ],
+    decay: [
+      "A ridgeback boar decays into a pile of fur and bone."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A ridgeback boar charges at you with {pronoun} tusk!",
+      "A ridgeback boar charges at you!"
+    ],
+    bite: [
+      "A ridgeback boar tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

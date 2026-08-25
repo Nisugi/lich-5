@@ -30,10 +30,14 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 192
+        as: (182..192)
       },
       {
         name: "Claw",
+        as: 202
+      },
+      {
+        name: "Stream of water",
         as: 202
       }
     ],
@@ -78,6 +82,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -90,12 +95,26 @@
     description: [
       "You have never seen anything quite like a water hound, so you are not really sure what to make of it or how dangerous it might be.\n\n;Assess\nThe water hound is medium in size and about three feet high in its current state."
     ],
-    arrival: [],
+    arrival: [
+      "A water hound arrives, shaking droplets of water from its slick, blue fur ruff!"
+    ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The water hound lets out one last whimpering sigh of water droplets and dies.",
+      "A water hound goes limp as it is rendered unconscious!"
+    ],
+    decay: [
+      "A water hound decays into a compost of fur and fangs."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A water hound hurls {weapon} at you!"
+    ],
+    bite: [
+      "A water hound tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

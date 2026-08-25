@@ -8,7 +8,7 @@
   family: "Triton",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -27,11 +27,14 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
-    bolt_spells: [
+    physical_attacks: [
       {
         name: "Empathic Assault (1110)",
         as: 404
+      },
+      {
+        name: "Fine-grained deep cerulean runestaff",
+        as: 391
       }
     ],
     warding_spells: [
@@ -45,10 +48,12 @@
         name: "Implosion (720)"
       }
     ],
-    maneuvers: [],
-    special_abilities: [
+    maneuvers: [
       {
         name: "Fear Gaze"
+      },
+      {
+        name: "Golden Nail"
       }
     ],
     special_notes: []
@@ -65,7 +70,7 @@
     emp_td: 380,
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (378..385),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
@@ -85,6 +90,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -97,12 +103,22 @@
     description: [
       "Weight carefully balanced upon her massive tail, the triton dissembler walks rigidly upright, moving with self-absorbed elegance. Luminous dark blue eyes are set deeply in the sockets of her fine-boned head where delicate, fleshy lips curve into an unpleasant smile. The dissembler's long, translucently webbed hands bear curved claws, carefully filed to tapered points and painted with gold lacquer. This pretense to arrogant refinement belies the feverishly clammy sweat covering the creature's slick, sea green hide."
     ],
-    arrival: [],
+    arrival: [
+      "A triton dissembler arrives, striding forth with her robes trailing behind her."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The triton dissembler's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A triton dissembler points a single golden nail toward you!",
+      "A triton dissembler swings {weapon} at you!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -30,12 +30,23 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Pound (attack)",
-        as: (419..422)
+        name: "Pound (attack)"
       },
       {
         name: "Thrown Rock",
         as: 419
+      },
+      {
+        name: "Fist",
+        as: 397
+      },
+      {
+        name: "Heavy earthen fists",
+        as: 439
+      },
+      {
+        name: "Large rock",
+        as: 423
       }
     ],
     bolt_spells: [],
@@ -74,6 +85,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -86,12 +98,27 @@
     description: [
       "Massive and thick, with broad shoulders but no apparent head, the earth elemental appears to be a composite of the earth itself. A large, craggy maw in the middle of the elemental's chest appears to be the creature's mouth, and the earth elemental's huge feet and giant-sized fists look like they would pulverize flesh without much effort at all.\n\nGreater earth elementals have DFRedux which will reduce the damage factors of weapons, including bolt spells, by 30% for AS-based attacks. This is in addition to their natural full plate equivalent armor."
     ],
-    arrival: [],
+    arrival: [
+      "A greater earth elemental lumbers in slowly."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Tiny fissures quickly spread over the entire form of a greater earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
+      "Acid dissolves the knee ligaments.  The earth elemental's tibia passes its femur in a very unpleasant manner!",
+      "Acid dissolves connecting cartilage, freeing the earth elemental's ribs to move independently.",
+      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A greater earth elemental pounds at you with greater earth elemental heavy earthen fists!",
+      "A greater earth elemental pounds at you with {pronoun} fist!",
+      "A greater earth elemental throws {weapon} at you!",
+      "An earth elemental pounds at you with greater earth elemental heavy earthen fists!"
+    ],
+    bite: [],
+    claw: [],
     info: {
       general: [],
       class_tips: {

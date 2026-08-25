@@ -43,6 +43,14 @@
       {
         name: "Stomp",
         as: 61
+      },
+      {
+        name: "Charge",
+        as: 71
+      },
+      {
+        name: "Foot",
+        as: 61
       }
     ],
     bolt_spells: [],
@@ -79,6 +87,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: false,
     magic_items: false,
@@ -91,12 +100,29 @@
     description: [
       "The relnak is a low-slung, wide-bodied reptile of the chameleon family. Only a few feet long, it is deceptively fast despite its girth. Its skin is scaly, rough, and a uniform charcoal grey, except for the flaring, spiny sail that stands erect on its back. Extending from its thick neck to nearly the tip of its flicking tail, the sail's charcoal grey is punctuated by evenly spaced iridescent blue spines which glow brightly when the relnak is agitated."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A relnak scampers in."
+    ],
+    flee: [
+      "The relnak scampers {direction}."
+    ],
+    death: [
+      "The relnak falls back into a heap and dies.",
+      "The relnak hisses one last time and dies."
+    ],
+    decay: [
+      "A relnak decays into compost."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A relnak charges at you!",
+      "A relnak stomps at you with {pronoun} foot!"
+    ],
+    bite: [
+      "A relnak tries to bite you!"
+    ],
+    claw: [],
     info: {
       general: [],
       class_tips: {

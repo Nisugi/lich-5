@@ -60,6 +60,7 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
+  equipment: [],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -72,12 +73,32 @@
     description: [
       ""
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [],
+    arrival: [
+      "A spectacled bear lumbers in!"
+    ],
+    flee: [
+      "A spectacled bear lumbers {direction}."
+    ],
+    death: [
+      "The spectacled bear collapses heavily into a heap on the ground and dies.",
+      "The spectacled bear lets out a blood-curdling roar and dies.",
+      "A spectacled bear goes limp as she is rendered unconscious!",
+      "A spectacled bear goes limp as he is rendered unconscious!"
+    ],
+    decay: [
+      "A spectacled bear decays into a compost of fangs, fur and claws."
+    ],
     search: [],
     spell_prep: [],
+    attack: [
+      "A spectacled bear charges at you!"
+    ],
+    bite: [
+      "A spectacled bear tries to bite you!"
+    ],
+    claw: [
+      "A spectacled bear claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {
