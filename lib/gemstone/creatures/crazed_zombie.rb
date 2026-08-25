@@ -10,6 +10,8 @@
   undead: true,
   blood: nil,
   bones: true,
+  witherable: nil,
+  sympathy: nil,
   muggable: nil,
   boss: true,
   otherclass: [

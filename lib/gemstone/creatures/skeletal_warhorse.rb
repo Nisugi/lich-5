@@ -10,6 +10,8 @@
   undead: true,
   blood: nil,
   bones: true,
+  witherable: nil,
+  sympathy: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -97,7 +99,8 @@
     ],
     flee: [],
     death: [
-      "The skeletal warhorse falls to the ground motionless."
+      "The skeletal warhorse falls to the ground motionless.",
+      "The skeletal warhorse wails in terrifying pain one last time and lies still."
     ],
     decay: [],
     search: [],

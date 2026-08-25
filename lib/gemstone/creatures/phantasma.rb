@@ -10,6 +10,8 @@
   undead: true,
   blood: nil,
   bones: false,
+  witherable: true,
+  sympathy: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -58,6 +60,10 @@
       {
         name: "Curse (715)",
         cs: 201
+      },
+      {
+        name: "Point",
+        cs: 210
       }
     ],
     offensive_spells: [],
@@ -120,7 +126,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A phantasma fades into oblivion."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

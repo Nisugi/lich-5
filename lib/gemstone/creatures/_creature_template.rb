@@ -12,6 +12,8 @@
   undead: "",                   # boolean
   blood: nil,               # true/false/nil if unknown - corporeal, flesh & blood
   bones: nil,               # true/false/nil if unknown - has a skeletal structure
+  witherable: nil,           # true/false/nil - has a body Wither (1115) can attack
+  sympathy: nil,             # true/false/nil - can be affected by Sympathy (1120)
   muggable: nil,                # true/false/nil if unknown - typically humanoid + carries coin
   boss: false,                  # special encounter flag (optional)
   otherclass: [],               # any extra tags you keep (optional)

@@ -10,6 +10,8 @@
   undead: true,
   blood: nil,
   bones: true,
+  witherable: nil,
+  sympathy: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -49,6 +51,10 @@
       },
       {
         name: "Repel (Fear)",
+        cs: 95
+      },
+      {
+        name: "Gilt-thorned steel spikestar",
         cs: 95
       }
     ],

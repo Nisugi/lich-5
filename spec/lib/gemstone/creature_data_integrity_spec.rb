@@ -21,7 +21,7 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
   def known_top_level_keys
     %i[
       schema_version name noun url picture level family type undead
-      blood bones muggable boss otherclass bcs max_hp speed height
+      blood bones witherable sympathy muggable boss otherclass bcs max_hp speed height
       size areas attack_attributes defense_attributes special_other
       abilities alchemy abilities_misc equipment treasure messaging
     ]
@@ -144,13 +144,13 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
     expect(offenders).to be_empty
   end
 
-  it 'blood/bones/muggable are only true, false, or nil - never coerced or stringly-typed' do
+  it 'probe facts and muggable are only true, false, or nil - never coerced or stringly-typed' do
     offenders = []
     creature_files.each do |path|
       data = load_data(path)
       next unless data.is_a?(Hash)
 
-      %i[blood bones muggable].each do |field|
+      %i[blood bones witherable sympathy muggable].each do |field|
         value = data[field]
         offenders << "#{File.basename(path)} #{field}=#{value.inspect}" unless value.nil? || value == true || value == false
       end

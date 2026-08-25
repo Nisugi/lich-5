@@ -9,6 +9,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  witherable: nil,
   muggable: nil,
   boss: false,
   otherclass: ["Non Corporeal undead"],

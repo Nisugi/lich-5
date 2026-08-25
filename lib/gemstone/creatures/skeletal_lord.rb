@@ -10,6 +10,8 @@
   undead: true,
   blood: false,
   bones: true,
+  witherable: nil,
+  sympathy: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -98,7 +100,8 @@
     ],
     flee: [],
     death: [
-      "The skeletal lord falls to the ground motionless."
+      "The skeletal lord falls to the ground motionless.",
+      "The skeletal lord wails in terrifying pain one last time and lies still."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the skeletal lord's ribs to move independently."

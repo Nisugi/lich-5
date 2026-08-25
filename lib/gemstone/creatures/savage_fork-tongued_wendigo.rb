@@ -9,6 +9,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  witherable: nil,
   muggable: nil,
   boss: false,
   otherclass: [],

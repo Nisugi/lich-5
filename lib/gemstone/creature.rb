@@ -37,6 +37,8 @@ module Lich
         # Tri-state (true/false/nil) - nil means uncatalogued/unknown, not false.
         @blood = data[:blood]
         @bones = data[:bones]
+        @witherable = data[:witherable]
+        @sympathy = data[:sympathy]
         @muggable = data[:muggable]
         @otherclass = data[:otherclass] || []
         @areas = data[:areas] || []
@@ -234,6 +236,25 @@ module Lich
       # @return [Boolean, nil] true or false when catalogued; nil when unknown.
       def has_bones?
         @bones
+      end
+
+      # Returns whether Wither (1115) has a body to attack on this
+      # creature. Not about limbs - the spell strikes all thirteen
+      # locations, chest and abdomen most often - and not about
+      # corporeality either: it works on non-corporeal undead (wraiths,
+      # spectres, lost souls) and fails on the golem and elemental
+      # families.
+      #
+      # @return [Boolean, nil] true or false when catalogued; nil when unknown.
+      def witherable?
+        @witherable
+      end
+
+      # Returns whether Sympathy (1120) can affect this creature.
+      #
+      # @return [Boolean, nil] true or false when catalogued; nil when unknown.
+      def sympathy?
+        @sympathy
       end
 
       # Returns whether the bestiary template says the creature can be mugged.

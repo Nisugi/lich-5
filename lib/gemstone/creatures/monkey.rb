@@ -10,6 +10,8 @@
   undead: false,
   blood: true,
   bones: true,
+  witherable: nil,
+  sympathy: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -135,7 +137,8 @@
       "A bright green monkey scampers {direction}.",
       "A stout bright orange monkey scampers {direction} of sight!",
       "A monkey scampers {direction} of sight!",
-      "A bright green monkey scampers {direction} of sight!"
+      "A bright green monkey scampers {direction} of sight!",
+      "A brilliant violet monkey scampers {direction} of sight!"
     ],
     death: [
       "The monkey screeches one last time and dies.",

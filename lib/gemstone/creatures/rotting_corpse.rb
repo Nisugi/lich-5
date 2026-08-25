@@ -10,6 +10,8 @@
   undead: true,
   blood: false,
   bones: true,
+  witherable: nil,
+  sympathy: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -86,7 +88,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The rotting corpse wails in terrifying pain one last time and lies still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

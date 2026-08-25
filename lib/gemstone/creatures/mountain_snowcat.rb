@@ -10,6 +10,8 @@
   undead: false,
   blood: true,
   bones: true,
+  witherable: nil,
+  sympathy: nil,
   muggable: nil,
   boss: false,
   otherclass: [
@@ -99,7 +101,8 @@
       "The mountain snowcat lets out a final caterwaul and dies."
     ],
     decay: [
-      "A mountain snowcat decays into a compost of fangs, fur and claws."
+      "A mountain snowcat decays into a compost of fangs, fur and claws.",
+      "The mountain snowcat's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],
