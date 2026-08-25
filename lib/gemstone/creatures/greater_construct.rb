@@ -66,7 +66,7 @@
   },
   defense_attributes: {
     asg: "20N",
-    immunities: [],
+    immunities: ["magic"],
     melee: (260..499),
     ranged: (299..344),
     bolt: nil,
