@@ -27,7 +27,12 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Old claidhmore",
+        as: 207
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

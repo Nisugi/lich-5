@@ -34,7 +34,7 @@
       },
       {
         name: "Charge",
-        as: 156
+        as: (156..162)
       }
     ],
     bolt_spells: [],

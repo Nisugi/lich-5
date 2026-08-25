@@ -45,7 +45,11 @@
         as: 271
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Skeletal Finger"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -95,10 +99,7 @@
     description: [
       "Approaching from afar, the seeker looks for all the world like a hunched over traveller, barely getting by with the aid of her walking stick, shuffling along and muttering to herself. Upon close examination, though, the seeker projects a grisly visage of skeletal madness. Some strange magic has caused her eyelids to grow completely over her eyes, rendering her blind, yet the rest of her face is totally fleshless. Grinning fiendishly, the seeker unerringly pursues her goal - the Eye of the Drake and the path through to the Rift."
     ],
-    arrival: [
-      "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm.",
-      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm."
-    ],
+    arrival: [],
     flee: [],
     death: [],
     decay: [],

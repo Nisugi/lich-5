@@ -67,7 +67,7 @@
     emp_td: (253..265),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 269,
+    sor_td: (266..275),
     wiz_td: nil,
     mje_td: 285,
     mne_td: 283,
@@ -98,8 +98,7 @@
     arrival: [
       "A giant shadow towers over the area as a yeti stomps in!",
       "A yeti stomps in!",
-      "A yeti moans as it stomps in!",
-      "A grifflet surveys the area intently as it flies into sight!"
+      "A yeti moans as it stomps in!"
     ],
     flee: [
       "A yeti spins around and retreats as far as it can."

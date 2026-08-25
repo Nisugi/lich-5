@@ -45,7 +45,11 @@
         name: "Grasp of the Grave (709)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Crimson Smoke"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -61,7 +65,7 @@
     emp_td: (244..259),
     pal_td: nil,
     ran_td: nil,
-    sor_td: (264..274),
+    sor_td: (264..277),
     wiz_td: nil,
     mje_td: (273..279),
     mne_td: nil,
@@ -94,18 +98,12 @@
     ],
     arrival: [
       "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon her face.",
-      "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon his face.",
-      "A desiccated half-krolvin strigoi crawls in, his featureless black eyes gleaming predatorily in the ambient light.  He bares his yellowed fangs, insatiable hunger twisting his face.",
-      "A desiccated half-krolvin strigoi crawls in, her body low to the ground.",
-      "A desiccated half-krolvin strigoi crawls in, his body low to the ground.",
-      "A desiccated half-krolvin strigoi crawls in, her featureless black eyes gleaming predatorily in the ambient light.  She bares her yellowed fangs, insatiable hunger twisting her face."
+      "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon his face."
     ],
     flee: [
       "Zeal written upon his face, a bony Tenthsworn occultist stalks {direction}.",
       "Zeal written upon her face, a bony Tenthsworn occultist stalks {direction}.",
       "Biting her lip in pain, a bony Tenthsworn occultist stalks {direction}.",
-      "A desiccated half-krolvin strigoi crawls {direction}, her body low to the ground.",
-      "A desiccated half-krolvin strigoi crawls {direction}, his body low to the ground.",
       "Biting his lip in pain, a bony Tenthsworn occultist stalks {direction}."
     ],
     death: [

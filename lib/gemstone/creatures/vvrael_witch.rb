@@ -8,7 +8,7 @@
   family: "Vvrael",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: true,
@@ -66,7 +66,14 @@
         cs: 352
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Anti-mana Wave"
+      },
+      {
+        name: "Lash"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

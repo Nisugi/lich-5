@@ -8,7 +8,7 @@
   family: "Chimeric",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: true,
   muggable: nil,
   boss: false,
@@ -61,6 +61,15 @@
       },
       {
         name: "Twin Hammerfists"
+      },
+      {
+        name: "Charge"
+      },
+      {
+        name: "Disarm"
+      },
+      {
+        name: "Stomp"
       }
     ],
     special_abilities: [
@@ -82,7 +91,7 @@
     emp_td: (401..407),
     pal_td: 343,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (421..430),
     wiz_td: nil,
     mje_td: 448,
     mne_td: 444,
@@ -110,9 +119,7 @@
     description: [
       "A patchwork flesh monstrosity is near as tall as a giant and twice as broad, a lumbering monstrosity cobbled together from spare parts in tactless parody of a human form. Red-tinged serum leaks constantly from the straining stitches that maintain the monster's integrity. Only the barest glimmer of intelligence lurks in the monstrosity's eyes, and that, perhaps, is a blessing: anything with even half of a brain would be horrified to be such an abominable figure. From the looks of it, the monstrosity's has barely a quarter of one."
     ],
-    arrival: [
-      "Vital fluids seeping from its orifices, a shambling lurk shambles in with a piteous moan."
-    ],
+    arrival: [],
     flee: [],
     death: [],
     decay: [],

@@ -79,7 +79,11 @@
         name: "Gas cloud"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

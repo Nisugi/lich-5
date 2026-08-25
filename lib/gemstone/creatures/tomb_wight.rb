@@ -42,7 +42,12 @@
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Twohanded sword",
+        cs: 90
+      }
+    ],
     offensive_spells: [],
     maneuvers: [],
     special_abilities: [],

@@ -40,7 +40,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

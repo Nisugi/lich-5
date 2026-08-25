@@ -35,7 +35,20 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Broadsword",
+        as: 147
+      },
+      {
+        name: "Handaxe",
+        as: 147
+      },
+      {
+        name: "Short sword",
+        as: 147
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

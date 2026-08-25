@@ -8,7 +8,7 @@
   family: "Aivren",
   type: "Avian",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: true,
@@ -57,7 +57,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Wing Buffet"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

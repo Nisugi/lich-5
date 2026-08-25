@@ -31,7 +31,20 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Bite",
+        as: 327
+      },
+      {
+        name: "Charge",
+        as: 337
+      },
+      {
+        name: "Foot",
+        as: 327
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
@@ -81,7 +94,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The nightmare steed screams one last time and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

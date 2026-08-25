@@ -30,7 +30,7 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: (183..193)
+        as: (183..203)
       },
       {
         name: "Bite",
@@ -95,7 +95,9 @@
       "A dance of dust and gravel heralds the arrival of a cave lizard!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "The cave lizard shudders a final time and goes still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

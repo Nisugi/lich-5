@@ -32,11 +32,20 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Kaskara",
+        as: 238
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -82,7 +91,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "An ice wraith fades into oblivion."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

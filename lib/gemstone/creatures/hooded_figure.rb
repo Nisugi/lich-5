@@ -117,7 +117,11 @@
         name: "Weapon Deflection (412)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

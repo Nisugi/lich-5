@@ -140,7 +140,9 @@
       "A triton executioner stalks in silently, her cold eyes gleaming with hatred."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The siren gives a plaintive wail before she slumps to her side and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

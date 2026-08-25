@@ -8,7 +8,7 @@
   family: "Chimeric",
   type: "Hybrid",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: true,
   muggable: nil,
   boss: false,
@@ -55,7 +55,11 @@
         name: "Major Elemental Wave (435)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -103,11 +107,7 @@
     description: [
       "Seemingly cobbled together from leftover bodily parts, no two shrickhen are alike. One may have the lower body of a troll supporting the torso of a fire salamander from which a dark orc's arm extends on one side and a gremlin's arm extends on the other, all topped by a timberwolf's head. A second may have a mezic's leg, a coyote's leg, a pyrothag's arm, and a shan warrior's arm, each connected in almost the right place to the torso of a krolvin warfarer, with the entire grouping utilizing the one-eyed head of a cyclops for navigation. These hideous conglomerations definitely have two things in common: a total lack of fear and an insatiable need to consume flesh."
     ],
-    arrival: [
-      "A dhu goleras arrives with a loping, uneven gait, her body rocking side-to-side and her head and arms flopping wildly.",
-      "A resolute dhu goleras arrives with a loping, uneven gait, her body rocking side-to-side and her head and arms flopping wildly.",
-      "A dhu goleras arrives with a loping, uneven gait, his body rocking side-to-side and his head and arms flopping wildly."
-    ],
+    arrival: [],
     flee: [],
     death: [],
     decay: [

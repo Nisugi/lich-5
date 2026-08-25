@@ -27,7 +27,28 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Hissing stream of acid",
+        as: 293
+      },
+      {
+        name: "Large boulder",
+        as: 261
+      },
+      {
+        name: "Polished black oak runestaff",
+        as: 288
+      },
+      {
+        name: "Roaring ball of fire",
+        as: 265
+      },
+      {
+        name: "Stream of fire",
+        as: 288
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
@@ -75,10 +96,7 @@
     description: [
       "Twisted and warped in the service of the Council of Twelve, the apprentice floats several inches over the floor, hunched over, gazing at his surroundings with abnormally large yellow-hued eyes framed by translucent, rotting and pestilent skin. Draped over his broken form are the remnants of a once simple, but finely crafted robe. Cinching the robe at the waist is a thick black belt, adorned with numerous leather pouches once used to hold the supplies desired by his arcane master."
     ],
-    arrival: [
-      "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm.",
-      "A rotting Citadel arbalester strides into the room, his crossbow cradled in the crook of an arm."
-    ],
+    arrival: [],
     flee: [],
     death: [],
     decay: [],

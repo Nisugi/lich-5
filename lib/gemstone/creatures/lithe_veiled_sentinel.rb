@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -58,6 +58,10 @@
       {
         name: "Lash",
         cs: 462
+      },
+      {
+        name: "Charge",
+        cs: 462
       }
     ],
     offensive_spells: [
@@ -83,6 +87,9 @@
       },
       {
         name: "Martial Strike"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_abilities: [
@@ -106,7 +113,7 @@
     emp_td: 450,
     pal_td: 403,
     ran_td: 331,
-    sor_td: nil,
+    sor_td: 473,
     wiz_td: nil,
     mje_td: 502,
     mne_td: nil,
@@ -145,13 +152,13 @@
     ],
     arrival: [
       "A lithe veiled sentinel strides in, eyes surveying the surroundings warily.",
-      "A lithe veiled sentinel just arrived.",
-      "Vital fluids seeping from its orifices, a shambling lurk shambles in with a piteous moan."
+      "A lithe veiled sentinel just arrived."
     ],
     flee: [],
     death: [
       "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  She dies with a knowing smile on her face.",
-      "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  He dies with a knowing smile on his face."
+      "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  He dies with a knowing smile on his face.",
+      "Intestines rupture from intense heat; a lithe veiled sentinel dies a slow, painful death."
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The veiled sentinel's tibia passes his femur in a very unpleasant manner!",

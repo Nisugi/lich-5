@@ -91,11 +91,14 @@
     description: [
       "Massive and thick, with broad shoulders but no apparent head, the earth elemental appears to be a composite of the earth itself. A large, craggy maw in the middle of the elemental's chest appears to be the creature's mouth, and the earth elemental's huge feet and giant-sized fists look like they would pulverize flesh without much effort at all."
     ],
-    arrival: [],
+    arrival: [
+      "The boulder comes to a sudden stop and rises into the form of a greater krynch!"
+    ],
     flee: [],
     death: [],
     decay: [
-      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble."
+      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
+      "The earth elemental's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

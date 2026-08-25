@@ -69,7 +69,17 @@
         name: "Call Swarm (615)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Disarm"
+      },
+      {
+        name: "Lash"
+      },
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

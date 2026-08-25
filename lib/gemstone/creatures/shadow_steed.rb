@@ -27,7 +27,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Charge",
+        as: 254
+      },
+      {
+        name: "Foot",
+        as: 228
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

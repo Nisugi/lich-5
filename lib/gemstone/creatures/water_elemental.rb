@@ -51,6 +51,9 @@
       },
       {
         name: "Repel"
+      },
+      {
+        name: "Ethereal Wave"
       }
     ],
     special_abilities: [],
@@ -101,14 +104,12 @@
       "The water elemental's upper body is that of a humanoid, while its lower body forms a turbulent, watery vortex. The facial features of the elemental creature are vague and shifting, rippling with every contortion of its face. Sloshing and splashing noises accompany each movement of the water elemental, along with an odd gurgling."
     ],
     arrival: [
-      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
-      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton executioner strides in, gliding swiftly through the water with a wary look on his face.",
-      "A triton dissembler arrives, striding forth with her robes trailing behind her."
+      "A triton executioner strides in, gliding swiftly through the water with a wary look on his face."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The siren gives a plaintive wail before she slumps to her side and dies."
+    ],
     decay: [
       "The glimmer of a white dreamstone catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
       "The glimmer of a red spinel catches your eye as the water elemental gurgles eerily and collapses into the water.",

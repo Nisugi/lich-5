@@ -122,10 +122,6 @@
     ],
     arrival: [
       "A siren arrives, warbling softly.",
-      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
-      "A triton dissembler arrives, striding forth with her robes trailing behind her.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
       "A siren just arrived."
     ],
     flee: [],

@@ -86,7 +86,11 @@
         name: "Lightning mote"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Palm Thrust"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

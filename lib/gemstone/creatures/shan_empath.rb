@@ -36,7 +36,11 @@
         as: 378
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -52,7 +56,7 @@
     emp_td: (271..280),
     pal_td: nil,
     ran_td: nil,
-    sor_td: (254..264),
+    sor_td: (254..276),
     wiz_td: nil,
     mje_td: (270..279),
     mne_td: nil,

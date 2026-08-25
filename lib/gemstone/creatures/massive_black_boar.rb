@@ -60,7 +60,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Charge"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

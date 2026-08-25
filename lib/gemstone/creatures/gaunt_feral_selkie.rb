@@ -59,6 +59,9 @@
       },
       {
         name: "Sweep"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_abilities: [],
@@ -112,18 +115,12 @@
     ],
     arrival: [
       "A gaunt feral selkie wanders in, lost in a pall of befuddlement.",
-      "A gaunt feral selkie wanders in, befuddled and seemingly unaware of her injuries.",
-      "A desiccated half-krolvin strigoi crawls in, her body low to the ground.",
-      "A desiccated half-krolvin strigoi crawls in, his body low to the ground."
+      "A gaunt feral selkie wanders in, befuddled and seemingly unaware of her injuries."
     ],
     flee: [
       "Lost in a pall of befuddlement, a gaunt feral selkie wanders {direction}.",
       "Seemingly unaware of his injuries, a gaunt feral selkie wanders {direction}.",
-      "A desiccated half-krolvin strigoi crawls {direction}, her body low to the ground.",
-      "Zeal written upon his face, a bony Tenthsworn occultist stalks {direction}.",
-      "Zeal written upon her face, a bony Tenthsworn occultist stalks {direction}.",
-      "Seemingly unaware of her injuries, a gaunt feral selkie wanders {direction}.",
-      "A desiccated half-krolvin strigoi crawls {direction}, his body low to the ground."
+      "Seemingly unaware of her injuries, a gaunt feral selkie wanders {direction}."
     ],
     death: [
       "An instant of clarity dawns in a gaunt feral selkie's eyes as he succumbs to his injuries.  Peace blossoms on his face as he dies.",

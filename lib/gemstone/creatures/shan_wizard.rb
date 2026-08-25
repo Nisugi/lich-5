@@ -51,7 +51,11 @@
         name: "Elemental Targeting (425)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

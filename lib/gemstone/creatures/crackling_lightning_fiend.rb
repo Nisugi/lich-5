@@ -38,6 +38,15 @@
     maneuvers: [
       {
         name: "Jagged Jolt(?)"
+      },
+      {
+        name: "Charge"
+      },
+      {
+        name: "Ethereal Wave"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_abilities: [],
@@ -89,7 +98,9 @@
       ";Description\nFlashes of brilliant azure flicker and fade within the lightning fiend's mesmerizing shape, an amorphous form woven from threads of wildly dancing electricity. At times, the elemental takes the shape of a vaguely humanoid figure, its translucent helm graced by two wildly twisting horns. Arcing arteries of lightning leap from the heart of the fiend to shimmer up nearby surfaces.\n\n;Assess\n\nThe lightning fiend is medium in size and about six feet high in its current state."
     ],
     arrival: [
-      "A jolting charge in the air heralds the arrival of a crackling lightning fiend!"
+      "A jolting charge in the air heralds the arrival of a crackling lightning fiend!",
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
     ],
     flee: [],
     death: [
@@ -102,7 +113,9 @@
     spell_prep: [],
     attack: [
       "A crackling lightning fiend launches a crackling blue and golden spark at you!",
-      "A crackling lightning fiend raises a luminous hand and sends a bolt of blue and golden lightning streaking toward you!"
+      "A crackling lightning fiend raises a luminous hand and sends a bolt of blue and golden lightning streaking toward you!",
+      "A titan tempest tyrant's feras morning star crackles with corruscating lightning as crackling lightning fiend swings it at you!",
+      "Hoisting crackling lightning fiend zorchar khopesh high, a haggard Veiki herald strikes brutally at you!"
     ],
     bite: [],
     claw: [],

@@ -84,7 +84,8 @@
       "A slimy little grub crawls in, leaving a trail of slime in its wake."
     ],
     flee: [
-      "A nasty little blue gremlin scampers {direction}."
+      "A nasty little blue gremlin scampers {direction}.",
+      "A nasty little red gremlin scampers {direction}."
     ],
     death: [
       "The green gremlin falls to the ground and dies with a gentle sigh.",
@@ -92,13 +93,20 @@
       "The red gremlin sighs one last time and dies.",
       "The yellow gremlin falls to the ground and dies with a gentle sigh.",
       "The green gremlin sighs one last time and dies.",
-      "The blue gremlin falls to the ground and dies with a gentle sigh."
+      "The blue gremlin falls to the ground and dies with a gentle sigh.",
+      "The black gremlin falls to the ground and dies with a gentle sigh.",
+      "The orange gremlin falls to the ground and dies with a gentle sigh.",
+      "The black gremlin sighs one last time and dies.",
+      "The yellow gremlin sighs one last time and dies.",
+      "The orange gremlin sighs one last time and dies."
     ],
     decay: [
       "A nasty little green gremlin decays into compost.",
       "A nasty little red gremlin decays into compost.",
       "A nasty little yellow gremlin decays into compost.",
-      "A nasty little blue gremlin decays into compost."
+      "A nasty little blue gremlin decays into compost.",
+      "A nasty little black gremlin decays into compost.",
+      "A nasty little orange gremlin decays into compost."
     ],
     search: [],
     spell_prep: [],

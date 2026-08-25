@@ -8,7 +8,7 @@
   family: "Ghost",
   type: "Hybrid",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: false,
@@ -55,7 +55,11 @@
         name: "Tangleweed (610)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Lash"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -71,7 +75,7 @@
     emp_td: (293..296),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 315,
+    sor_td: (315..327),
     wiz_td: nil,
     mje_td: 332,
     mne_td: 330,

@@ -8,7 +8,7 @@
   family: "Goleras",
   type: "Hybrid",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: true,

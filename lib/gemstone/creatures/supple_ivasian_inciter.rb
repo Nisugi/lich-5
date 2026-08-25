@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -36,11 +36,11 @@
       },
       {
         name: "Whip",
-        as: 329
+        as: (294..329)
       },
       {
         name: "Quick jab",
-        as: 323
+        as: (323..363)
       }
     ],
     bolt_spells: [],
@@ -53,7 +53,17 @@
         name: "Spike Thorn"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      },
+      {
+        name: "Kick"
+      },
+      {
+        name: "Swiftkick"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -69,7 +79,7 @@
     emp_td: (254..264),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 284,
     wiz_td: nil,
     mje_td: (273..276),
     mne_td: nil,
@@ -104,7 +114,8 @@
       "A supple Ivasian inciter strides in with a smooth, rolling gait.",
       "A supple Ivasian inciter arrives in a sleek swirl of robes, her tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
       "A supple Ivasian inciter strides in with a stiff but rolling gait, his face tight with pain.",
-      "A supple Ivasian inciter just arrived from some lichen-clad dark wooden docks."
+      "A supple Ivasian inciter just arrived from some lichen-clad dark wooden docks.",
+      "A supple Ivasian inciter just arrived."
     ],
     flee: [],
     death: [
@@ -112,13 +123,15 @@
       "A supple Ivasian inciter goes limp as he is rendered unconscious!"
     ],
     decay: [
-      "The Ivasian inciter's right leg crumbles briefly and explodes in a shower of gore."
+      "The Ivasian inciter's right leg crumbles briefly and explodes in a shower of gore.",
+      "The Ivasian inciter's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],
     attack: [
       "A supple Ivasian inciter leaps forward and aims a series of lightning-swift kicks at you!",
-      "Lean muscles knitting with intensity, a supple Ivasian inciter throws {weapon} at you!"
+      "Lean muscles knitting with intensity, a supple Ivasian inciter throws {weapon} at you!",
+      "With a vicious flick of supple ivasian inciter wrist, a supple Ivasian inciter lashes at you with supple ivasian inciter leather whip!"
     ],
     bite: [],
     claw: [],

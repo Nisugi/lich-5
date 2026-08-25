@@ -46,7 +46,11 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Stomp"
+      }
+    ],
     special_abilities: [
       {
         name: "Gas Cloud"

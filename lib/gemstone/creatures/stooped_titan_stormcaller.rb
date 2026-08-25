@@ -8,7 +8,7 @@
   family: "Giant",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -98,7 +98,9 @@
       "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as she dies.",
       "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as he dies."
     ],
-    decay: [],
+    decay: [
+      "The titan stormcaller's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

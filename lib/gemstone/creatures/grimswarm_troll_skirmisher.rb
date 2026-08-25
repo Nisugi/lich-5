@@ -23,11 +23,20 @@
   size: "",
   areas: [],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Wooden heavy crossbow bolt",
+        as: 474
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Sand Kick"
+      }
+    ],
     special_abilities: [],
     special_notes: [
       "Grimswarm spawn in warcamps; level, AS/DS and TDs scale with the camp, so fixed values are not recorded.",

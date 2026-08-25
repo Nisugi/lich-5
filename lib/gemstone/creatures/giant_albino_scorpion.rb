@@ -97,7 +97,9 @@
     description: [
       "The scorpion is like any other scorpion in general body structure. This particular variety, however, is about seven feet in length, with potent venom brewing in its cauda. The huge insectoid creature is entirely white, except for its pincers and stinger, which are a light pink. The eyes of the albino scorpion are crimson -- not to mention entirely blind."
     ],
-    arrival: [],
+    arrival: [
+      "The boulder comes to a sudden stop and rises into the form of a krynch!"
+    ],
     flee: [],
     death: [
       "A giant albino scorpion goes limp as it is rendered unconscious!",

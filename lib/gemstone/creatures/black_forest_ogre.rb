@@ -97,6 +97,9 @@
       },
       {
         name: "Swiftkick"
+      },
+      {
+        name: "Stomp"
       }
     ],
     special_abilities: [
@@ -161,7 +164,8 @@
     arrival: [
       "A rippling in the shadows heralds the arrival of a black forest ogre!",
       "A black forest ogre lumbers in, growling.",
-      "A black forest ogre lumbers in, muttering to herself."
+      "A black forest ogre lumbers in, muttering to herself.",
+      "A ghastly black forest ogre lumbers in, growling."
     ],
     flee: [
       "A black forest ogre lumbers {direction}, growling.",
@@ -175,7 +179,9 @@
       "A black forest ogre falls prone to the ground, twitches one last time and dies.",
       "The light in a black forest ogre's eyes goes out as she collapses and finally dies.",
       "The light in a black forest ogre's eyes goes out and she finally dies.",
-      "The light in a black forest ogre's eyes goes out as he collapses and finally dies."
+      "The light in a black forest ogre's eyes goes out as he collapses and finally dies.",
+      "The light in a black forest ogre's eyes goes out and he finally dies.",
+      "A ghastly black forest ogre twitches one last time and dies."
     ],
     decay: [],
     search: [],

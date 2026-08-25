@@ -25,7 +25,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Antlers",
+        as: 139
+      },
+      {
+        name: "Charge",
+        as: 148
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

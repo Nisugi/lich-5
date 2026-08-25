@@ -99,7 +99,8 @@
     arrival: [
       "A mastodonic leopard prowls in!",
       "A mastodonic leopard crouches as she stalks into view!",
-      "A mastodonic leopard crouches as he stalks into view!"
+      "A mastodonic leopard crouches as he stalks into view!",
+      "A stalwart mastodonic leopard prowls in!"
     ],
     flee: [],
     death: [
@@ -109,7 +110,9 @@
       "A mastodonic leopard goes limp as she is rendered unconscious!"
     ],
     decay: [
-      "A mastodonic leopard decays into a compost of fangs, fur and claws."
+      "A mastodonic leopard decays into a compost of fangs, fur and claws.",
+      "A robust mastodonic leopard decays into a compost of fangs, fur and claws.",
+      "A stalwart mastodonic leopard decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],

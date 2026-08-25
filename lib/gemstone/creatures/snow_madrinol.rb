@@ -97,7 +97,6 @@
     ],
     arrival: [
       "A snow madrinol lumbers in pushing a fetid unwashed odor before it!",
-      "An animated slush ripples in, its mass wobbling slightly as it arrives.",
       "A snow madrinol lumbers in, grumbling in pain."
     ],
     flee: [

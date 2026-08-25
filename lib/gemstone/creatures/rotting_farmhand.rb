@@ -85,7 +85,8 @@
     ],
     flee: [],
     death: [
-      "The rotting farmhand twitches violently, then dies."
+      "The rotting farmhand twitches violently, then dies.",
+      "The rotting farmhand wails in terrifying pain one last time and lies still."
     ],
     decay: [],
     search: [],

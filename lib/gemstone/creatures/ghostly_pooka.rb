@@ -28,7 +28,12 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Bite",
+        as: (189..217)
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

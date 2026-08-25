@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Cudgel",
-        as: 173
+        as: (173..201)
       },
       {
         name: "Scimitar",

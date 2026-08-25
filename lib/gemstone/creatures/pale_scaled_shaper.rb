@@ -64,7 +64,11 @@
         name: "Condemn"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Skeletal Finger"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

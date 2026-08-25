@@ -95,7 +95,9 @@
       "The pra'eda falls to the ground motionless.",
       "A pra'eda goes limp as it is rendered unconscious!"
     ],
-    decay: [],
+    decay: [
+      "The pra'eda's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

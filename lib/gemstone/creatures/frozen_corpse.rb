@@ -89,7 +89,9 @@
       "A frozen corpse shambles in!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "The frozen corpse wails in terrifying pain one last time and lies still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

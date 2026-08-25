@@ -27,7 +27,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Dust Kick"
+      }
+    ],
     special_abilities: [],
     special_notes: [
       "Grimswarm spawn in warcamps; level, AS/DS and TDs scale with the camp, so fixed values are not recorded.",

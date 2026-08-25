@@ -23,7 +23,12 @@
   size: "",
   areas: [],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Dagger",
+        as: 228
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

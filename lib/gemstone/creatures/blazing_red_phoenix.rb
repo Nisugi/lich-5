@@ -86,7 +86,14 @@
         name: "Major Elemental Wave (435)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Ethereal Wave"
+      },
+      {
+        name: "Shield Bash"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -132,7 +139,6 @@
     ],
     arrival: [
       "A blazing red phoenix flies in, surrounded in raging flames.",
-      "A firebird flies in, a trail of flame behind it.",
       "A blazing red phoenix flies in on wobbly wings."
     ],
     flee: [],

@@ -93,8 +93,7 @@
     ],
     arrival: [
       "A lesser minotaur stomps in!",
-      "A lesser minotaur stomps in, squinting warily.",
-      "A krag yeti stomps in, a fetid odor wafting before it."
+      "A lesser minotaur stomps in, squinting warily."
     ],
     flee: [],
     death: [],

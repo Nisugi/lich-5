@@ -8,7 +8,7 @@
   family: "Zombie",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: true,
   muggable: nil,
   boss: false,
@@ -39,6 +39,10 @@
       {
         name: "Strike",
         as: 459
+      },
+      {
+        name: "Bronze cutlass",
+        as: 452
       }
     ],
     bolt_spells: [
@@ -65,6 +69,9 @@
       },
       {
         name: "Strike"
+      },
+      {
+        name: "Disarm"
       }
     ],
     special_notes: []
@@ -81,7 +88,7 @@
     emp_td: 416,
     pal_td: 342,
     ran_td: 352,
-    sor_td: nil,
+    sor_td: 443,
     wiz_td: nil,
     mje_td: 465,
     mne_td: 461,
@@ -125,7 +132,8 @@
       "A shambling lurk manages a fumbling gesture toward you!",
       "A sheen of venom glistening from shambling lurk needle-sharp fangs, a white sidewinder strikes at you!",
       "Desperate in shambling lurk hunger for flesh, a shambling lurk throws itself at you!",
-      "Gnawing blindly with shattered teeth, a shambling lurk tries to bite into you!"
+      "Gnawing blindly with shattered teeth, a shambling lurk tries to bite into you!",
+      "With an eerie, boneless fluidity, a lithe veiled sentinel slashes at you with shambling lurk bronze cutlass!"
     ],
     bite: [],
     claw: [],

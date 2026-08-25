@@ -95,7 +95,8 @@
     ],
     arrival: [
       "A plains orc scout wanders in!",
-      "A plains orc scout wanders in looking a bit unsteady on his feet."
+      "A plains orc scout wanders in looking a bit unsteady on his feet.",
+      "A plains orc scout just arrived!"
     ],
     flee: [
       "A plains orc scout wanders {direction}."

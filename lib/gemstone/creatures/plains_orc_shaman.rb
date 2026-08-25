@@ -53,7 +53,11 @@
     ],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Pounce"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

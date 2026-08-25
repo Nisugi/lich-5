@@ -170,7 +170,10 @@
       "The glimmer of a pink rhodochrosite stone catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor.",
       "The glimmer of a spiny siren's-comb shell catches your eye as the water wyrd gurgles and collapses into the small pool on the floor.",
       "The glimmer of a selanthan bloodjewel catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor.",
-      "The glimmer of a pearl nautilus shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water."
+      "The glimmer of a pearl nautilus shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a queen helmet shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a large black pearl catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a scintillating fishscale catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor."
     ],
     search: [],
     spell_prep: [],

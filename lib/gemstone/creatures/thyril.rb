@@ -93,7 +93,6 @@
       "This soldier of the small mammal legions resembles an overgrown mole, except that it stands upright. Intelligence is apparent in its bulbous, yellow eyes, and its clawed feet give it exceptional agility in moist areas. The skin of the thyril is a muddy, mottled mass of light brown and dark brown hair, allowing it to blend in well with the decayed vegetation and soil in underground lairs and other dank locales."
     ],
     arrival: [
-      "A carrion worm crawls in, leaving a trail of slime in its wake.",
       "A thyril just arrived."
     ],
     flee: [],

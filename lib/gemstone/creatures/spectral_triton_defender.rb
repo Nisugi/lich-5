@@ -27,11 +27,30 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Lackluster blue steel harpoon",
+        as: 444
+      },
+      {
+        name: "Seaweed-wound rusted steel hatchet",
+        as: 424
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Charge"
+      },
+      {
+        name: "Disarm"
+      },
+      {
+        name: "Feint"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -82,7 +101,9 @@
       "A triton dissembler strides in, a wary look on his face."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The siren gives a plaintive wail before she slumps to her side and dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

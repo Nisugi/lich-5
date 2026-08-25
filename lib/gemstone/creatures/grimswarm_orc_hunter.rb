@@ -23,7 +23,12 @@
   size: "",
   areas: [],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Ball and chain",
+        as: 256
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

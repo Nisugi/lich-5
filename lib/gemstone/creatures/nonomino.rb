@@ -98,7 +98,8 @@
     ],
     flee: [],
     death: [
-      "The nonomino falls to the ground motionless."
+      "The nonomino falls to the ground motionless.",
+      "The nonomino wails in terrifying pain one last time and lies still."
     ],
     decay: [],
     search: [],

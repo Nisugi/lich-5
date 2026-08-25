@@ -59,7 +59,11 @@
         name: "Benediction (307)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

@@ -27,7 +27,12 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Ball of greenish-black flame",
+        as: 326
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

@@ -87,7 +87,14 @@
         name: "Sandstorm (914)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Divine Wrath"
+      },
+      {
+        name: "Ethereal Wave"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -131,11 +138,17 @@
     description: [
       "The enormous form of the Illoke elder occupies a large section of the area, over twenty feet at his full height. He carries himself with an air of confident superiority, casting a hate-filled gaze around him. Thick and rough grey skin covers him from head to toe, providing protection against all but the strongest of blows. A deep crimson symbol of Illoke is chiseled into his forehead, bathing his face in a lurid illumination."
     ],
-    arrival: [],
+    arrival: [
+      "The boulder comes to a sudden stop and rises into the form of a greater krynch!"
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The Illoke elder grumbles in pain one last time before lying still."
+    ],
     decay: [
-      "An Illoke elder's body shudders and crumbles into itself in a mass of rough grey stone."
+      "An Illoke elder's body shudders and crumbles into itself in a mass of rough grey stone.",
+      "The Illoke elder's right leg crumbles briefly and explodes in a shower of gore.",
+      "A dazzling Illoke elder's body shudders and crumbles into itself in a mass of rough grey stone."
     ],
     search: [],
     spell_prep: [],

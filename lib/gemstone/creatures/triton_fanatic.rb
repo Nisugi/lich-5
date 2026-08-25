@@ -69,6 +69,9 @@
       },
       {
         name: "Lash"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_abilities: [

@@ -62,6 +62,9 @@
       },
       {
         name: "Miasma"
+      },
+      {
+        name: "Shield Bash"
       }
     ],
     special_abilities: [],

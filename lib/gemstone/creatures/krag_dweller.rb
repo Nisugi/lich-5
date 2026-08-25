@@ -105,7 +105,8 @@
     ],
     arrival: [
       "The boulder comes to a sudden stop and rises into the form of a krag dweller!",
-      "A krag dweller lumbers in, causing the ground to tremble with each passing step!"
+      "A krag dweller lumbers in, causing the ground to tremble with each passing step!",
+      "A krag yeti stomps in, a fetid odor wafting before it."
     ],
     flee: [
       "A krag dweller lumbers {direction}, causing the ground to tremble with each passing step!"

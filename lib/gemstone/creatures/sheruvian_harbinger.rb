@@ -70,7 +70,11 @@
         name: "Spirit Strike (117)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Pale Arm"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -86,7 +90,7 @@
     emp_td: (219..229),
     pal_td: 196,
     ran_td: nil,
-    sor_td: 244,
+    sor_td: (236..244),
     wiz_td: nil,
     mje_td: (248..254),
     mne_td: nil,
@@ -125,7 +129,9 @@
     ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The Sheruvian harbinger's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

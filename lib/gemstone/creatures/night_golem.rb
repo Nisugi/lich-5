@@ -86,9 +86,7 @@
     description: [
       "Formed by the alchemists of the Citadel in their service to the Council of Twelve, these 4' tall golems appear to be made of coalesced night sky. Looking closely, you can see stars twinkling within their short, massive bodies."
     ],
-    arrival: [
-      "A slimy little grub crawls in, leaving a trail of slime in its wake."
-    ],
+    arrival: [],
     flee: [],
     death: [],
     decay: [],

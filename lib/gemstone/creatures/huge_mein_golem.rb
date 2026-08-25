@@ -27,11 +27,24 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Ensnare",
+        as: 250
+      },
+      {
+        name: "Heavy mein right fist",
+        as: 234
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Ground Slam"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

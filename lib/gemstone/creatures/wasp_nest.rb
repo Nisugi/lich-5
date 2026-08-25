@@ -29,7 +29,12 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Dreadful droning of their wings",
+        as: 367
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

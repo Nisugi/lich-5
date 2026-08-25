@@ -49,7 +49,14 @@
         name: "Spirit Strike (117)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Disarm"
+      },
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

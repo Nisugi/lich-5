@@ -66,7 +66,11 @@
         cs: 324
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Fire Bolt"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

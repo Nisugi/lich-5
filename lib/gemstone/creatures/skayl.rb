@@ -53,7 +53,11 @@
         cs: 265
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Fire Wave"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

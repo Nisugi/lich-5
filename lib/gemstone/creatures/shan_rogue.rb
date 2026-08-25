@@ -8,7 +8,7 @@
   family: "Shan",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -47,7 +47,7 @@
     emp_td: (232..235),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: (254..260),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
@@ -81,7 +81,8 @@
       "The shan rogue yips in pain as he falls to the ground motionless.",
       "The shan rogue howls out one last time and dies.",
       "A shan rogue's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
-      "A shan rogue's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette."
+      "A shan rogue's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
+      "The shan rogue yips in pain as she falls to the ground motionless."
     ],
     decay: [],
     search: [],

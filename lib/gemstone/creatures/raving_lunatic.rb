@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: true,
@@ -70,7 +70,7 @@
     emp_td: (294..300),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 315,
+    sor_td: (315..326),
     wiz_td: 330,
     mje_td: (330..331),
     mne_td: 330,
@@ -105,14 +105,16 @@
       "The raving lunatic twitches violently, then dies."
     ],
     decay: [
-      "Acid dissolves connecting cartilage, freeing the raving lunatic's ribs to move independently."
+      "Acid dissolves connecting cartilage, freeing the raving lunatic's ribs to move independently.",
+      "The raving lunatic's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],
     attack: [
       "A raving lunatic swings {weapon} at you!",
       "An raving lunatic swings {weapon} at you!",
-      "An raving lunatic throws {weapon} at you!"
+      "An raving lunatic throws {weapon} at you!",
+      "A raving lunatic throws {weapon} at you!"
     ],
     bite: [
       "A raving lunatic tries to bite you!",

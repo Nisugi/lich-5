@@ -64,7 +64,14 @@
         name: "Major Elemental Wave (435)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Evil Eye"
+      },
+      {
+        name: "Lash"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

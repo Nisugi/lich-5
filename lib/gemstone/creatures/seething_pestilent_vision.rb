@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: false,
@@ -51,7 +51,14 @@
         name: "Spirit Dispel (119)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      },
+      {
+        name: "Vile Energy"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -97,8 +104,7 @@
     ],
     arrival: [
       "A seething pestilent vision just arrived from some lichen-clad dark wooden docks.",
-      "A supple Ivasian inciter arrives in a sleek swirl of robes, his tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
-      "A supple Ivasian inciter arrives in a sleek swirl of robes, her tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat."
+      "A seething pestilent vision just arrived from a torchlit overgrown grotto."
     ],
     flee: [],
     death: [],

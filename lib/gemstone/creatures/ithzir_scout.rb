@@ -51,6 +51,9 @@
       },
       {
         name: "Sweep"
+      },
+      {
+        name: "Stomp"
       }
     ],
     special_abilities: [],

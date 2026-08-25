@@ -8,7 +8,7 @@
   family: "Csetairi",
   type: "Hybrid",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
   muggable: nil,
   boss: false,
@@ -71,6 +71,9 @@
       },
       {
         name: "Point"
+      },
+      {
+        name: "Air Blast"
       }
     ],
     special_notes: []
@@ -87,7 +90,7 @@
     emp_td: (322..332),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 349,
+    sor_td: (341..349),
     wiz_td: nil,
     mje_td: 365,
     mne_td: 362,
@@ -128,7 +131,9 @@
     flee: [
       "A csetairi slithers {direction}."
     ],
-    death: [],
+    death: [
+      "Intestines rupture from intense heat; a csetairi dies a slow, painful death."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

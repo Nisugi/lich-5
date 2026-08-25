@@ -41,7 +41,17 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Charge"
+      },
+      {
+        name: "Kick"
+      },
+      {
+        name: "Leap"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -91,7 +101,9 @@
       "A deft cougar scampers in!",
       "An adroit cougar scampers in!",
       "A canny cougar scampers in!",
-      "A keen cougar scampers in!"
+      "A keen cougar scampers in!",
+      "A belligerent cougar scampers in!",
+      "A luminous cougar scampers in!"
     ],
     flee: [
       "A cougar scampers {direction}.",
@@ -99,7 +111,8 @@
       "A barbed cougar scampers {direction}.",
       "A deft cougar scampers {direction}.",
       "A robust cougar scampers {direction}.",
-      "A keen cougar scampers {direction}."
+      "A keen cougar scampers {direction}.",
+      "A combative cougar scampers {direction}."
     ],
     death: [
       "The cougar lets out a final caterwaul and dies.",
@@ -119,7 +132,11 @@
       "A shimmering cougar decays into a compost of fangs, fur and claws.",
       "A gleaming cougar decays into a compost of fangs, fur and claws.",
       "A keen cougar decays into a compost of fangs, fur and claws.",
-      "A canny cougar decays into a compost of fangs, fur and claws."
+      "A canny cougar decays into a compost of fangs, fur and claws.",
+      "A belligerent cougar decays into a compost of fangs, fur and claws.",
+      "A combative cougar decays into a compost of fangs, fur and claws.",
+      "A lustrous cougar decays into a compost of fangs, fur and claws.",
+      "A luminous cougar decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],

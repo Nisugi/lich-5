@@ -79,7 +79,11 @@
         name: "Web (118)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

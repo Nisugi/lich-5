@@ -42,13 +42,17 @@
       },
       {
         name: "Tusk",
-        as: 45
+        as: (45..65)
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [
       {
         name: "Web"
@@ -103,7 +107,8 @@
       "The whiptail hisses one last time and dies."
     ],
     decay: [
-      "A whiptail decays into compost."
+      "A whiptail decays into compost.",
+      "The whiptail's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

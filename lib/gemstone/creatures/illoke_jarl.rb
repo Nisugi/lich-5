@@ -62,6 +62,10 @@
       {
         name: "Slate grey stone hammer",
         cs: 338
+      },
+      {
+        name: "Charge",
+        cs: 363
       }
     ],
     offensive_spells: [
@@ -81,6 +85,15 @@
       },
       {
         name: "Ground Slam"
+      },
+      {
+        name: "Charge"
+      },
+      {
+        name: "Ethereal Wave"
+      },
+      {
+        name: "Shield Charge"
       }
     ],
     special_abilities: [],
@@ -134,7 +147,8 @@
     arrival: [],
     flee: [],
     death: [
-      "An Illoke jarl's form goes limp as he falls unconscious."
+      "An Illoke jarl's form goes limp as he falls unconscious.",
+      "The Illoke jarl grumbles in pain one last time before lying still."
     ],
     decay: [
       "An Illoke jarl cracks and collapses into a pile of craggy dark rock that rapidly disappears without a trace.",

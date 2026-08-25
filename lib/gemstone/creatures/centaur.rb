@@ -59,6 +59,12 @@
       },
       {
         name: "Bull Rush"
+      },
+      {
+        name: "Charge"
+      },
+      {
+        name: "Tail Swipe"
       }
     ],
     special_abilities: [],

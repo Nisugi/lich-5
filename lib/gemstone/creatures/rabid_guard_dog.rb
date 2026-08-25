@@ -43,7 +43,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Leap"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

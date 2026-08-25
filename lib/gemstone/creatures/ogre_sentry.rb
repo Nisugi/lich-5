@@ -33,7 +33,7 @@
       },
       {
         name: "Thin-bladed steel handaxe",
-        as: 193
+        as: (193..199)
       }
     ],
     special_abilities: [],

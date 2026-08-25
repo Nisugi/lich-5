@@ -8,7 +8,7 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: false,
@@ -53,6 +53,9 @@
       },
       {
         name: "Sunder Shield"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_abilities: [],
@@ -104,7 +107,9 @@
     flee: [
       "A phantasmal bestial swordsman stalks {direction}."
     ],
-    death: [],
+    death: [
+      "Growling lowly, the bestial swordsman falls to one knee, then collapses to the floor."
+    ],
     decay: [
       "Thin blue lines of magical energy crackle over the body of a phantasmal bestial swordsman before he dissolves, leaving a puddle of liquid and the smell of ozone in the air.",
       "Thin blue lines of magical energy crackle over the body of a phantasmal bestial swordsman before she dissolves, leaving a puddle of liquid and the smell of ozone in the air."

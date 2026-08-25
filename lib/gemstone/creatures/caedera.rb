@@ -8,7 +8,7 @@
   family: "Worm",
   type: "Worm",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: false,
   muggable: nil,
   boss: false,

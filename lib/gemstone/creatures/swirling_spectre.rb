@@ -58,7 +58,11 @@
         name: "Call Wind (912)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Claw"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

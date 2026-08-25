@@ -45,6 +45,10 @@
       {
         name: "Ensnare",
         as: 96
+      },
+      {
+        name: "Black fists",
+        as: 86
       }
     ],
     bolt_spells: [],
@@ -110,7 +114,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A night golem tries to ensnare you in blood eagle black arms!"
+      "A night golem tries to ensnare you in blood eagle black arms!",
+      "A night golem pounds at you with blood eagle black fists!"
     ],
     bite: [],
     claw: [

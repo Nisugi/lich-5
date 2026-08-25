@@ -96,7 +96,8 @@
     arrival: [],
     flee: [],
     death: [
-      "A giant fog beetle goes limp as it is rendered unconscious!"
+      "A giant fog beetle goes limp as it is rendered unconscious!",
+      "The giant fog beetle kicks a leg one last time and lies still."
     ],
     decay: [
       "A giant fog beetle's legs shrivel up beneath it as it decays into dust."

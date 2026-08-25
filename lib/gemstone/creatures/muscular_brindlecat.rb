@@ -25,11 +25,24 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Bite",
+        as: 142
+      },
+      {
+        name: "Claw",
+        as: 119
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Leap"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

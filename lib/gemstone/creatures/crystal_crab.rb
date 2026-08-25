@@ -93,7 +93,8 @@
       "The crystal crab clacks its pincers a final agonizing time and dies."
     ],
     decay: [
-      "A glittering crystal crab decays into compost."
+      "A glittering crystal crab decays into compost.",
+      "The crystal crab's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

@@ -8,7 +8,7 @@
   family: "Yeti",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -102,7 +102,8 @@
       "A towering mound of fur that belies her swift blinding speed, the krag yeti is at home either in the sub-zero wasteland or on rocky mountain tops. The krag yeti's white fur allows an almost perfect blend with the natural surroundings, enabling the creature to move with uncommon stealth. Legendary strength and fury make her a formidable opponent for any who would cross her."
     ],
     arrival: [
-      "A krag yeti stomps in, a fetid odor wafting before it."
+      "A krag yeti stomps in, a fetid odor wafting before it.",
+      "The boulder comes to a sudden stop and rises into the form of a krag dweller!"
     ],
     flee: [],
     death: [],

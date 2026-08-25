@@ -31,11 +31,24 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Claw",
+        as: 216
+      },
+      {
+        name: "Ensnare",
+        as: 239
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Lash"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

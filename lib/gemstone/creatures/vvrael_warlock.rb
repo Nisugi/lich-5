@@ -8,7 +8,7 @@
   family: "Vvrael",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: true,
@@ -94,7 +94,17 @@
         name: "Elemental Dispel (417)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      },
+      {
+        name: "Pounce"
+      },
+      {
+        name: "Wing Buffet"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

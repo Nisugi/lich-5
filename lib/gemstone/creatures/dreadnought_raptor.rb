@@ -48,7 +48,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Wing Buffet"
+      }
+    ],
     special_abilities: [
       {
         name: "Buffet"

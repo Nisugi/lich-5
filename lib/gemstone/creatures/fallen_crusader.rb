@@ -28,11 +28,46 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Barbed tentacle",
+        as: 428
+      },
+      {
+        name: "Gilt-edged steel talon sword",
+        as: 515
+      },
+      {
+        name: "Gold-spiked black morning star",
+        as: 451
+      }
+    ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Gilt-edged steel talon sword",
+        cs: 411
+      },
+      {
+        name: "Gold-spiked black morning star",
+        cs: 408
+      }
+    ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Charge"
+      },
+      {
+        name: "Feint"
+      },
+      {
+        name: "Shield Charge"
+      },
+      {
+        name: "Tail Swipe"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -85,7 +120,6 @@
       "Roiling wisps of ethereal green mist fill in the form of a muscled warrior. Fleshy tones, segments of armor, and humanoid features flicker across her visage, as if the mist was remembering bits and pieces of the paladin's former body, if for only moments at a time. Unable to hold corporeal form, the only meaningful remnants of the crusader's prior existence are her stark conviction, held now in eyes which are no more than swirling grey voids, and her martial prowess."
     ],
     arrival: [
-      "A darkly inked fetish master arrives, the skulls on its belt clacking with a hollow resonance.",
       "A fallen crusader just arrived, looking terrified!"
     ],
     flee: [

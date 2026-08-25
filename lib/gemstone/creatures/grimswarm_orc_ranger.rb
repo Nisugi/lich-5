@@ -23,7 +23,20 @@
   size: "",
   areas: [],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Mace",
+        as: 231
+      },
+      {
+        name: "Plain wooden arrow",
+        as: 465
+      },
+      {
+        name: "Trident",
+        as: 269
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

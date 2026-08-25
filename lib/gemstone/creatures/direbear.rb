@@ -35,6 +35,10 @@
       {
         name: "Claw (attack)",
         as: (340..355)
+      },
+      {
+        name: "Bite",
+        as: 270
       }
     ],
     bolt_spells: [],
@@ -125,7 +129,9 @@
     attack: [
       "A monstrous direwolf focuses direbear glare on you and looses an eerie, bone-chilling howl!"
     ],
-    bite: [],
+    bite: [
+      "A direbear tries to bite you!"
+    ],
     claw: [],
     info: {
       general: [],

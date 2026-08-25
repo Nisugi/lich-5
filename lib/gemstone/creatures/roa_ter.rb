@@ -61,6 +61,9 @@
       },
       {
         name: "Tail Swipe"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_notes: []

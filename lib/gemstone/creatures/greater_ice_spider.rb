@@ -48,7 +48,11 @@
         name: "Webbed"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

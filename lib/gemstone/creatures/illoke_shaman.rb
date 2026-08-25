@@ -42,6 +42,10 @@
       {
         name: "Huge stone maul",
         as: 316
+      },
+      {
+        name: "Massive granite hammer",
+        as: 325
       }
     ],
     bolt_spells: [],
@@ -64,7 +68,11 @@
         name: "Earthen Fury"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Divine Wrath"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -118,10 +126,12 @@
     arrival: [],
     flee: [],
     death: [
-      "An Illoke shaman goes limp as he is rendered unconscious!"
+      "An Illoke shaman goes limp as he is rendered unconscious!",
+      "The Illoke shaman grumbles in pain one last time before lying still."
     ],
     decay: [
-      "An Illoke shaman crumbles into a mass of shiny rocks, leaving nothing behind."
+      "An Illoke shaman crumbles into a mass of shiny rocks, leaving nothing behind.",
+      "The Illoke shaman's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

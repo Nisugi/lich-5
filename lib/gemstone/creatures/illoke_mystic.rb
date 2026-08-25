@@ -27,11 +27,28 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Giant stone hammer",
+        as: 341
+      },
+      {
+        name: "Heavy stone hammer",
+        as: 255
+      },
+      {
+        name: "Large rock",
+        as: 356
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Divine Wrath"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -85,10 +102,12 @@
     arrival: [],
     flee: [],
     death: [
-      "An Illoke mystic goes limp as he is rendered unconscious!"
+      "An Illoke mystic goes limp as he is rendered unconscious!",
+      "The Illoke mystic grumbles in pain one last time before lying still."
     ],
     decay: [
-      "An Illoke mystic crumbles into a mound of sand that quickly blows away."
+      "An Illoke mystic crumbles into a mound of sand that quickly blows away.",
+      "The Illoke mystic's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 268
+        as: (229..268)
       },
       {
         name: "Claw",

@@ -31,7 +31,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Foot",
+        as: 302
+      },
+      {
+        name: "Impale",
+        as: 336
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

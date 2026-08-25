@@ -27,11 +27,24 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Bite",
+        as: 188
+      },
+      {
+        name: "Foot",
+        as: 211
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Ethereal Wave"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

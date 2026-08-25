@@ -63,7 +63,11 @@
         name: "Earthen Fury (917)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

@@ -25,7 +25,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Bite",
+        as: 82
+      },
+      {
+        name: "Claw",
+        as: 82
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

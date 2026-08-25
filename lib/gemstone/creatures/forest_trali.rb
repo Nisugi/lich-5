@@ -95,7 +95,8 @@
       "A forest trali goes limp as he is rendered unconscious!"
     ],
     decay: [
-      "Acid dissolves the knee ligaments.  The forest trali's tibia passes his femur in a very unpleasant manner!"
+      "Acid dissolves the knee ligaments.  The forest trali's tibia passes his femur in a very unpleasant manner!",
+      "The forest trali's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

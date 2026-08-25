@@ -91,7 +91,8 @@
     arrival: [],
     flee: [],
     death: [
-      "The white vysan falls to the ground motionless."
+      "The white vysan falls to the ground motionless.",
+      "The white vysan screams evilly one last time and goes still."
     ],
     decay: [],
     search: [],

@@ -40,7 +40,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Pounce"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -92,10 +96,12 @@
       "The mongrel wild dog rolls over and dies.",
       "The black mongrel wolfhound falls to the ground and dies.",
       "The black mongrel wolfhound rolls over and dies.",
-      "The mongrel wild dog falls to the ground and dies."
+      "The mongrel wild dog falls to the ground and dies.",
+      "The mongrel wolfhound rolls over and dies."
     ],
     decay: [
-      "A mongrel wolfhound decays into a pile of matted fur."
+      "A mongrel wolfhound decays into a pile of matted fur.",
+      "A black mongrel wolfhound decays into a pile of matted fur."
     ],
     search: [],
     spell_prep: [],

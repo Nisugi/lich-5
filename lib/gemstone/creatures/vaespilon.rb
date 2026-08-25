@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: true,
   muggable: nil,
   boss: false,
@@ -43,7 +43,11 @@
         as: 495
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Skeletal Finger"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -59,7 +63,7 @@
     emp_td: (385..391),
     pal_td: 334,
     ran_td: nil,
-    sor_td: 421,
+    sor_td: (416..425),
     wiz_td: nil,
     mje_td: (434..439),
     mne_td: 436,
@@ -97,7 +101,9 @@
     description: [
       "The vaespilon's features are so terribly deformed by death's ravages, her expression is one of almost comical surprise, until her smile widens into a grin that is a study in terror. The skin covering the walking corpse is mottled and stretched unevenly over the bones, and the surface ripples and bulges as if putrescence is bubbling underneath. The vaespilon hisses in glee as she moves, a wave of stench preceding her like an invisible assailant."
     ],
-    arrival: [],
+    arrival: [
+      "A vaespilon crawls in, wailing in pain!"
+    ],
     flee: [],
     death: [
       "The vaespilon falls to the ground motionless."

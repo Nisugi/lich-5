@@ -92,9 +92,7 @@
     description: [
       "The giant pale crab is about a foot across and has large pincers at the end of each of its two arms. Its multiple legs make a skittering noise as it walks. The pale color seems to be the result of living in dark, wet caves for its entire life."
     ],
-    arrival: [
-      "A slimy little grub crawls in, leaving a trail of slime in its wake."
-    ],
+    arrival: [],
     flee: [],
     death: [
       "The pale crab falls back into a heap and dies.",

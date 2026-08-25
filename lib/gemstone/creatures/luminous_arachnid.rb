@@ -40,7 +40,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [
       {
         name: "Web"
@@ -88,9 +92,7 @@
     description: [
       "Dotting the pale-skinned arachnid are numerous tiny luminescent diamond-shaped markings. The markings glow with a bluish-green tint."
     ],
-    arrival: [
-      "A carrion worm crawls in, leaving a trail of slime in its wake."
-    ],
+    arrival: [],
     flee: [
       "A luminous arachnid crawls {direction}."
     ],

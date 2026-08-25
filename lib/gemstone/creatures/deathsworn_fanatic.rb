@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -66,7 +66,14 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Disarm"
+      },
+      {
+        name: "Strike"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -82,7 +89,7 @@
     emp_td: 440,
     pal_td: nil,
     ran_td: 377,
-    sor_td: nil,
+    sor_td: (452..455),
     wiz_td: nil,
     mje_td: 427,
     mne_td: nil,
@@ -121,8 +128,7 @@
       "Clad in emerald robes of lush velvet that are stitched with tiny scales of clacking bronze, the fanatic is nearly fleshless, his reserves of fat and muscle burned away by a long war with madness. He has, judging from the stink of body odor and filth about him, not washed in weeks, and his gaze is as inconstant as the quickfire succession of random emotions that play across his tanned face."
     ],
     arrival: [
-      "A deathsworn fanatic just arrived.",
-      "Vital fluids seeping from its orifices, a shambling lurk shambles in with a piteous moan."
+      "A deathsworn fanatic just arrived."
     ],
     flee: [],
     death: [],

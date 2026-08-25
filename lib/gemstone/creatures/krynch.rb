@@ -8,7 +8,7 @@
   family: "Krynch",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -95,7 +95,8 @@
       "Flecked with bits of mica and quartz crystal, the krynch shimmers in even the dimmest light. Moving with a fluid grace that belies the granite composition of its body, the creature has a barrel chest and thick, powerful limbs. The krynch has no visible ears or nose on its perfectly spherical head. Its mouth is fixed in a perpetual scowl and its glossy black eyes glare at you with malevolent intensity."
     ],
     arrival: [
-      "A large boulder comes barrelling into view, abruptly rolls to a stop, and rises into the form of a krynch!"
+      "A large boulder comes barrelling into view, abruptly rolls to a stop, and rises into the form of a krynch!",
+      "The boulder comes to a sudden stop and rises into the form of a krynch!"
     ],
     flee: [],
     death: [],

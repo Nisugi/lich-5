@@ -85,6 +85,12 @@
       },
       {
         name: "Dive"
+      },
+      {
+        name: "Ethereal Wave"
+      },
+      {
+        name: "Shield Bash"
       }
     ],
     special_notes: []

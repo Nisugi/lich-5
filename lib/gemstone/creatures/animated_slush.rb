@@ -69,6 +69,9 @@
       },
       {
         name: "Tail Swipe"
+      },
+      {
+        name: "Ethereal Wave"
       }
     ],
     special_abilities: [],

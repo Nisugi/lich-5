@@ -64,7 +64,11 @@
         name: "Tremors (909)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Mystic Gesture"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

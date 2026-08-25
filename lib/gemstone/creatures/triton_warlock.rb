@@ -8,7 +8,7 @@
   family: "Triton",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: true,

@@ -106,9 +106,7 @@
     description: [
       "Distinct features are difficult to determine as clouds of ash obscure the form of the ash guardian. What is visible is a towering humanoid shadow that drifts through the ash clouds."
     ],
-    arrival: [
-      "A firebird flies in, a trail of flame behind it."
-    ],
+    arrival: [],
     flee: [],
     death: [],
     decay: [

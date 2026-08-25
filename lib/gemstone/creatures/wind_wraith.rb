@@ -39,7 +39,12 @@
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Claw",
+        cs: 291
+      }
+    ],
     offensive_spells: [],
     maneuvers: [],
     special_abilities: [],

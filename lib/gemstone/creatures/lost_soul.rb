@@ -8,7 +8,7 @@
   family: "Ghost",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: false,
@@ -31,7 +31,7 @@
     physical_attacks: [
       {
         name: "Scythe",
-        as: 418
+        as: (418..493)
       },
       {
         name: "Scorched black ball and chain",
@@ -52,7 +52,11 @@
         cs: 380
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -68,7 +72,7 @@
     emp_td: (419..428),
     pal_td: 324,
     ran_td: nil,
-    sor_td: (379..417),
+    sor_td: (379..442),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,

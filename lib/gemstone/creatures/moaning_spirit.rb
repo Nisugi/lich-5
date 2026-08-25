@@ -31,11 +31,24 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Claw",
+        as: 235
+      },
+      {
+        name: "Closed fist",
+        as: 245
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Mystic Gesture"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

@@ -27,7 +27,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Blackened scythe",
+        as: 239
+      },
+      {
+        name: "Powerful lightning bolt",
+        as: 162
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

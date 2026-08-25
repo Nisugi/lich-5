@@ -90,7 +90,8 @@
       "A lesser stone gargoyle goes limp as it is rendered unconscious!"
     ],
     decay: [
-      "A lesser stone gargoyle crumbles to dust."
+      "A lesser stone gargoyle crumbles to dust.",
+      "The stone gargoyle's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

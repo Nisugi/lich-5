@@ -8,7 +8,7 @@
   family: "Triton",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: false,
   muggable: nil,
   boss: true,
@@ -41,7 +41,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Shield Charge"
+      }
+    ],
     special_abilities: [
       {
         name: "Dizzying Swing"
@@ -67,7 +71,7 @@
     emp_td: (404..406),
     pal_td: nil,
     ran_td: nil,
-    sor_td: 419,
+    sor_td: (419..426),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 437,

@@ -58,7 +58,11 @@
         name: "Earthen Fury (917)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -112,7 +116,8 @@
     ],
     flee: [],
     death: [
-      "The carceris falls to the ground motionless."
+      "The carceris falls to the ground motionless.",
+      "The carceris wails in terrifying pain one last time and lies still."
     ],
     decay: [],
     search: [],

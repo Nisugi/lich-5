@@ -55,7 +55,14 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      },
+      {
+        name: "Ground Slam"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

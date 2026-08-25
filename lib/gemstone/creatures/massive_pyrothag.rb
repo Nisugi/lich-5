@@ -50,7 +50,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Massive glaes club"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

@@ -87,7 +87,11 @@
         name: "Tangleweed (610)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Lash"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

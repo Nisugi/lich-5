@@ -42,7 +42,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Ethereal Wave"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -88,9 +92,7 @@
     description: [
       "Chunks of ice appear to be held together by strands of organic material to form the rough outline of a bipedal creature. The chunks have no specific shape, and some are larger than others without direct relation to placement on glacial morph. Often the glacial morph draws in on itself, the chunks rearranging and reattaching to form a considerably different shape, and it seems to be able to change color at will to match its surroundings. The glacial morph peers out from two malevolent eyes set deeply in a 'head' of ice. Strangely, the head does not always appear to be on top of the torso."
     ],
-    arrival: [
-      "An animated slush ripples in, its mass wobbling slightly as it arrives."
-    ],
+    arrival: [],
     flee: [],
     death: [],
     decay: [],

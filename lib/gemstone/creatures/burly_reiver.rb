@@ -27,7 +27,12 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Steel dirk",
+        as: 232
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

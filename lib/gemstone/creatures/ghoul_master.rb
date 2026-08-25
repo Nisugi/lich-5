@@ -50,7 +50,16 @@
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Bite",
+        cs: 88
+      },
+      {
+        name: "Claw",
+        cs: 88
+      }
+    ],
     offensive_spells: [],
     maneuvers: [],
     special_abilities: [],

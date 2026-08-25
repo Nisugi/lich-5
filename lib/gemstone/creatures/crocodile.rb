@@ -117,10 +117,23 @@
     death: [
       "The crocodile falls back into a heap and dies.",
       "The crocodile hisses one last time and dies.",
-      "A crocodile goes limp as it is rendered unconscious!"
+      "A crocodile goes limp as it is rendered unconscious!",
+      "The blue crocodile falls back into a heap and dies.",
+      "The mauve crocodile falls back into a heap and dies.",
+      "The blue crocodile hisses one last time and dies.",
+      "The mauve crocodile hisses one last time and dies.",
+      "The red crocodile falls back into a heap and dies.",
+      "The tangerine crocodile hisses one last time and dies.",
+      "The red crocodile hisses one last time and dies.",
+      "The tangerine crocodile falls back into a heap and dies."
     ],
     decay: [
-      "A crocodile decays into compost."
+      "A crocodile decays into compost.",
+      "A striped blue crocodile decays into compost.",
+      "A florid mauve crocodile decays into compost.",
+      "A brilliant red crocodile decays into compost.",
+      "A speckled tangerine crocodile decays into compost.",
+      "The tangerine crocodile's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

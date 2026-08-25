@@ -8,7 +8,7 @@
   family: "Humanoid",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
   muggable: nil,
   boss: false,
@@ -52,7 +52,11 @@
         name: "Earthen Fury (917)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Spellsong"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -68,7 +72,7 @@
     emp_td: (270..289),
     pal_td: nil,
     ran_td: nil,
-    sor_td: nil,
+    sor_td: 310,
     wiz_td: nil,
     mje_td: 303,
     mne_td: nil,
@@ -98,15 +102,18 @@
     ],
     arrival: [
       "An athletic dark-eyed incubus just arrived from some lichen-clad dark wooden docks.",
-      "An athletic dark-eyed incubus just arrived from a torchlit overgrown grotto.",
-      "A supple Ivasian inciter arrives in a sleek swirl of robes, his tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
-      "A supple Ivasian inciter arrives in a sleek swirl of robes, her tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat."
+      "An athletic dark-eyed incubus just arrived from a torchlit overgrown grotto."
     ],
-    flee: [],
-    death: [],
+    flee: [
+      "An athletic dark-eyed incubus crawls {direction}."
+    ],
+    death: [
+      "Intestines rupture from intense heat; an athletic dark-eyed incubus dies a slow, painful death."
+    ],
     decay: [
       "Shadows crawl toward the form of an athletic dark-eyed incubus, engulfing it in a stygian tide.  The darkness dissolves into the ground with a faint sound of rushing liquid.",
-      "The dark-eyed incubus's left leg crumbles briefly and explodes in a shower of gore."
+      "The dark-eyed incubus's left leg crumbles briefly and explodes in a shower of gore.",
+      "The dark-eyed incubus's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

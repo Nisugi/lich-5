@@ -107,9 +107,7 @@
     ],
     arrival: [],
     flee: [],
-    death: [
-      "A necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp."
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],

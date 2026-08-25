@@ -90,7 +90,8 @@
     ],
     flee: [],
     death: [
-      "The bog wight falls to the ground motionless."
+      "The bog wight falls to the ground motionless.",
+      "The bog wight wails in terrifying pain one last time and lies still."
     ],
     decay: [],
     search: [],

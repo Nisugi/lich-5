@@ -69,7 +69,11 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

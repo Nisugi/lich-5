@@ -54,7 +54,11 @@
         name: "Earthen Fury (917)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Fire Wave"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

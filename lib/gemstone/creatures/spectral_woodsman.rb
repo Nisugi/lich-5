@@ -129,7 +129,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A spectral woodsman fades into oblivion."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

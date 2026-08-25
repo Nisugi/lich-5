@@ -55,7 +55,11 @@
         name: "Major Elemental Wave (435)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Ground Slam"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

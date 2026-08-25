@@ -35,12 +35,20 @@
       {
         name: "Bite",
         as: 459
+      },
+      {
+        name: "Strike",
+        as: 469
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Strike"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -84,13 +92,20 @@
     description: [
       "The swiftly writhing coils and flared, triangular head tells one all they need to know about the sidewinder: it is fast, and it is deadly. Scales as white as ivory flakes proceed in a sinuous pattern down the sidewinder's back, the muscles beneath undulating from side to side to propel it forward."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A white sidewinder slithers in, silent as a pale shadow."
+    ],
+    flee: [
+      "A white sidewinder cuts a winding path across the floor as it slithers {direction}."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A sheen of venom glistening from sidewinder needle-sharp fangs, a white sidewinder strikes at you!",
+      "A sidewinder darts in for a quick strike at you!"
+    ],
     bite: [],
     claw: [],
     info: {

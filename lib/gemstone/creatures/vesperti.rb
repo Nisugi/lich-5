@@ -64,7 +64,11 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Charge"
+      }
+    ],
     special_abilities: [
       {
         name: "Dodge"

@@ -44,7 +44,14 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Lash"
+      },
+      {
+        name: "Tail Swipe"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -99,7 +106,8 @@
       "A hisskra warrior decays into a pile of scales and bone.",
       "A hisskra warrior's scales wither as he decays into dust.",
       "A hisskra warrior withers away, leaving nothing but a few scales that blow away on a gentle breeze.",
-      "Acid dissolves connecting cartilage, freeing the hisskra warrior's ribs to move independently."
+      "Acid dissolves connecting cartilage, freeing the hisskra warrior's ribs to move independently.",
+      "The hisskra warrior's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

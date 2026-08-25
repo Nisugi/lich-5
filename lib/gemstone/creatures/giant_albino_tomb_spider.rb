@@ -40,7 +40,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [
       {
         name: "Web"
@@ -60,7 +64,7 @@
     emp_td: 101,
     pal_td: nil,
     ran_td: nil,
-    sor_td: 102,
+    sor_td: (102..105),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
@@ -95,7 +99,8 @@
       "The albino tomb spider's body jerks one last time and dies."
     ],
     decay: [
-      "A giant albino tomb spider's legs shrivel up beneath it as it decays into dust."
+      "A giant albino tomb spider's legs shrivel up beneath it as it decays into dust.",
+      "An albino tomb spider's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],

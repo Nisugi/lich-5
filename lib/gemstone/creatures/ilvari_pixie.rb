@@ -54,7 +54,11 @@
         name: "Major Elemental Wave (435)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

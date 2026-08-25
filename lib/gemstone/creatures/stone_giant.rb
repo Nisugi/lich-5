@@ -115,7 +115,9 @@
     flee: [
       "A stone giant crawls {direction}."
     ],
-    death: [],
+    death: [
+      "The stone giant rumbles in agony and goes still."
+    ],
     decay: [
       "The stone giant's right leg crumbles briefly and explodes in a shower of gore."
     ],
