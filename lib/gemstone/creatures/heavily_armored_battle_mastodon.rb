@@ -45,7 +45,7 @@
     melee: (425..746),
     ranged: (447..509),
     bolt: nil,
-    udf: nil,
+    udf: 600,
     bar_td: (408..415),
     cle_td: nil,
     emp_td: 427,
@@ -92,7 +92,9 @@
       "A heavily armored battle mastodon quests about with its trunk, eyes narrowing.",
       "A heavily armored battle mastodon looks about in alarm as its trunk tests the air."
     ],
-    attack: [],
+    attack: [
+      "A heavily armored battle mastodon raises heavily armored battle mastodon trunk and slams it down toward you!"
+    ],
     bite: [],
     claw: [],
 

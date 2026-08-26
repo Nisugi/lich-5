@@ -37,6 +37,10 @@
       },
       {
         name: "Stinger (attack)"
+      },
+      {
+        name: "Bite",
+        as: 565
       }
     ],
     bolt_spells: [],
@@ -75,7 +79,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 782,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -111,12 +115,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A sleek black kiramon stalker grabs you by the head and twists violently.  You hear a loud *CRACK* as your neck bones snap and your body goes limp!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
     attack: [],
-    bite: [],
+    bite: [
+      "A sleek black kiramon stalker aims a preternaturally swift bite at you!",
+      "Without warning, a sleek black kiramon stalker glides from the shadows and aims a preternaturally swift bite at you!"
+    ],
     claw: [],
     info: {
       general: [],

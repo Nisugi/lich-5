@@ -37,6 +37,10 @@
       {
         name: "claw (attack)",
         as: (515..615)
+      },
+      {
+        name: "Elongated talon",
+        as: 481
       }
     ],
     bolt_spells: [],

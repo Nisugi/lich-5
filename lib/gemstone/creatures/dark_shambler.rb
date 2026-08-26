@@ -66,9 +66,9 @@
     asg: "10",
     immunities: [],
     melee: (118..238),
-    ranged: (97..114),
-    bolt: 94,
-    udf: 235,
+    ranged: 110,
+    bolt: 110,
+    udf: (145..235),
     bar_td: 51,
     cle_td: 51,
     emp_td: 51,
@@ -127,7 +127,8 @@
       "The dark shambler falls to the ground motionless.",
       "The dark shambler screams evilly one last time and goes still.",
       "The dark shambler twitches violently, then dies.",
-      "The dark shambler slumps to the ground."
+      "The dark shambler slumps to the ground.",
+      "Beautiful shot pierces both lungs, the dark shambler makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A dark shambler turns to dust.",

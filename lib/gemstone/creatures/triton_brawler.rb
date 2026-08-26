@@ -83,9 +83,9 @@
     melee: (321..413),
     ranged: nil,
     bolt: nil,
-    udf: 759,
+    udf: (457..759),
     bar_td: 385,
-    cle_td: nil,
+    cle_td: (403..410),
     emp_td: (412..422),
     pal_td: nil,
     ran_td: nil,
@@ -134,7 +134,8 @@
       "A triton brawler heads {direction}."
     ],
     death: [
-      "The triton brawler gurgles once and goes still, a wrathful look on her face."
+      "The triton brawler gurgles once and goes still, a wrathful look on her face.",
+      "The triton brawler gurgles once and goes still, a wrathful look on his face."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the triton brawler's ribs to move independently."

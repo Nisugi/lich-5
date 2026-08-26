@@ -28,7 +28,12 @@
   height: 5,
   size: "medium",
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Talons",
+        as: 600
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
@@ -42,7 +47,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 960,
     bar_td: nil,
     cle_td: nil,
     emp_td: "493",
@@ -73,7 +78,9 @@
     blunt_required: false
   },
   messaging: {
-    attack: [],
+    attack: [
+      "Soaring by on inky wings, an eyeless black valravn rakes at you with eyeless black valravn talons!"
+    ],
     bite: [],
     claw: [],
     description: "Wings of stygian darkness enshroud the huge black bird.  When not in motion, there is an ominous and unnatural stillness to the valravn that marks it as otherworldly.  Where eyes should be, there are strange hollows that occasionally flicker with scintillating golden light.",

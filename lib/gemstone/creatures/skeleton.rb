@@ -104,7 +104,8 @@
     flee: [],
     death: [
       "The skeleton falls to the ground motionless.",
-      "The skeleton screams evilly one last time and goes still."
+      "The skeleton screams evilly one last time and goes still.",
+      "Beautiful shot pierces both lungs, the skeleton makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A skeleton turns to dust."

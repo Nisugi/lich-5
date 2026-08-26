@@ -56,7 +56,7 @@
     melee: 140,
     ranged: nil,
     bolt: nil,
-    udf: 280,
+    udf: (280..300),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,

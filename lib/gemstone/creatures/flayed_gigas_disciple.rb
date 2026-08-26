@@ -42,6 +42,10 @@
       {
         name: "719",
         cs: 535
+      },
+      {
+        name: "Point",
+        cs: 517
       }
     ],
     offensive_spells: [],
@@ -55,7 +59,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 680,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,

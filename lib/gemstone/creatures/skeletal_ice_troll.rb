@@ -52,14 +52,14 @@
     asg: "16",
     immunities: [],
     melee: (64..96),
-    ranged: (64..87),
-    bolt: (64..87),
+    ranged: (74..77),
+    bolt: (74..77),
     udf: 183,
     bar_td: nil,
     cle_td: 93,
     emp_td: 93,
     pal_td: (90..93),
-    ran_td: nil,
+    ran_td: 93,
     sor_td: 93,
     wiz_td: nil,
     mje_td: 93,
@@ -98,7 +98,9 @@
       "The ice troll falls to the ground motionless.",
       "The ice troll screams evilly one last time and goes still."
     ],
-    decay: [],
+    decay: [
+      "The ice troll's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

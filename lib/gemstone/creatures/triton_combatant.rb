@@ -78,7 +78,7 @@
     melee: (269..375),
     ranged: nil,
     bolt: nil,
-    udf: 526,
+    udf: (526..539),
     bar_td: 324,
     cle_td: (351..360),
     emp_td: (349..358),
@@ -119,7 +119,8 @@
     arrival: [
       "A triton combatant strides in, a wary look on his face.",
       "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton combatant strides in, a wary look on her face."
+      "A triton combatant strides in, a wary look on her face.",
+      "A triton executioner stalks in silently, her cold eyes gleaming with hatred."
     ],
     flee: [],
     death: [

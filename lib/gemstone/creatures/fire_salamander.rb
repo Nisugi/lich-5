@@ -60,7 +60,7 @@
     immunities: [],
     melee: (38..59),
     ranged: 55,
-    bolt: 35,
+    bolt: 55,
     udf: 49,
     bar_td: nil,
     cle_td: 9,

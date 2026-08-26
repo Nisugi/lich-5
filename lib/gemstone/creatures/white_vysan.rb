@@ -61,7 +61,7 @@
     cle_td: 9,
     emp_td: 9,
     pal_td: (6..9),
-    ran_td: nil,
+    ran_td: 9,
     sor_td: 9,
     wiz_td: nil,
     mje_td: 9,

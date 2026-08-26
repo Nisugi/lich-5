@@ -50,7 +50,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 1001,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -81,7 +81,9 @@
     blunt_required: false
   },
   messaging: {
-    attack: [],
+    attack: [
+      "Gilded brilliance twinkles along the edges of a shining winged disir's metallic spear as winged disir swings it at you!"
+    ],
     bite: [],
     claw: [],
     description: "Clad from head to toe in armor of shining gold, the disir takes the form of a powerfully built woman with ageless features and eyes like pools of sunlit sky.  On her head, nestled atop curls of shimmering hair, is a winged helm whose visor dips low over her face, lending a grim cast to her features.  The disir's skin is faintly luminous, with hints of rainbowed color pulsing beneath it.",

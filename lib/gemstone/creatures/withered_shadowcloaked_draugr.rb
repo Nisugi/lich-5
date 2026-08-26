@@ -47,7 +47,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 813,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -78,7 +78,9 @@
     blunt_required: false
   },
   messaging: {
-    attack: [],
+    attack: [
+      "Wisps of shadow follow the arc of a withered shadow-cloaked draugr's arm as withered shadow-cloaked draugr swings {weapon} at you!"
+    ],
     bite: [],
     claw: [],
     description: "Utterly immense, the draugr's humanoid shape is comprised wholly of inky shadows that drip and pool at its intangible feet.  Cruel eyes of frigid light glare from a face of sharp lines and malevolent angles.  The shade's arms are lightless and devoid of all but the most rudimentary features, but are massively thick and traced with intricate lines of blazing blue radiance.",

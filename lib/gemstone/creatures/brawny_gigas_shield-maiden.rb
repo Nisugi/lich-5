@@ -68,7 +68,7 @@
     melee: (463..695),
     ranged: (383..548),
     bolt: nil,
-    udf: nil,
+    udf: 621,
     bar_td: (377..380),
     cle_td: nil,
     emp_td: 411,
@@ -126,7 +126,9 @@
     spell_prep: [
       "A brawny gigas shield-maiden raises a fist to the heavens as {pronoun} eyes begin to glow like molten gold."
     ],
-    attack: [],
+    attack: [
+      "In a display of martial precision, a brawny gigas shield-maiden thrusts with a gold-tipped heavy spear at you!"
+    ],
     bite: [],
     claw: [],
     death: [

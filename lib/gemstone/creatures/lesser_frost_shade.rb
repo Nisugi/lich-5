@@ -63,7 +63,7 @@
     cle_td: 6,
     emp_td: 6,
     pal_td: (3..6),
-    ran_td: nil,
+    ran_td: 6,
     sor_td: 6,
     wiz_td: nil,
     mje_td: 6,
@@ -98,7 +98,8 @@
     flee: [],
     death: [
       "The frost shade falls to the ground motionless.",
-      "The frost shade screams evilly one last time and goes still."
+      "The frost shade screams evilly one last time and goes still.",
+      "The frost shade goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

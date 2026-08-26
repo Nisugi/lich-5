@@ -35,7 +35,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Pounce"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -44,7 +48,7 @@
     melee: (432..701),
     ranged: (389..491),
     bolt: nil,
-    udf: nil,
+    udf: 615,
     bar_td: 410,
     cle_td: nil,
     emp_td: nil,
@@ -80,7 +84,8 @@
     arrival: [
       "With a plaintive howl, a niveous giant warg bounds in, hackles raised and sickle-sized fangs bared.",
       "A niveous giant warg pads in, deadly quiet despite its great size.",
-      "A niveous giant warg just came through a rune-carved white granite arch."
+      "A niveous giant warg just came through a rune-carved white granite arch.",
+      "A niveous giant warg just arrived."
     ],
     flee: [
       "A niveous giant warg lopes {direction}, muscle bunching under its fur."

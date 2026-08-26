@@ -58,7 +58,7 @@
     melee: 103,
     ranged: 127,
     bolt: 106,
-    udf: 342,
+    udf: (319..327),
     bar_td: 116,
     cle_td: nil,
     emp_td: (124..133),
