@@ -86,7 +86,8 @@
     flee: [],
     death: [
       "The black rolton collapses to the ground, emits a final bleat, and dies.",
-      "The black rolton lets out a final agonized bleat and dies."
+      "The black rolton lets out a final agonized bleat and dies.",
+      "The black rolton bleats loudly as he slumps to the ground and cradles his wounded left foreleg."
     ],
     decay: [
       "A black rolton decays into a pile of fur and bone."

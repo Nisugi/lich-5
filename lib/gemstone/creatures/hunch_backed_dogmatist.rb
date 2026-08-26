@@ -86,7 +86,7 @@
     bar_td: "268 to 277",
     cle_td: "281 to 397",
     emp_td: (283..293),
-    pal_td: 247,
+    pal_td: (247..257),
     ran_td: nil,
     sor_td: "315 to 322",
     wiz_td: "315 to 322",
@@ -94,7 +94,7 @@
     mne_td: "315 to 322",
     mjs_td: "277 to 293",
     mns_td: "277 to 293",
-    mnm_td: nil,
+    mnm_td: (271..280),
     defensive_spells: [
       "Wall of Force (140)"
     ],

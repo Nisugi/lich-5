@@ -109,7 +109,8 @@
     ],
     flee: [],
     death: [
-      "The revenant slowly settles to the ground and begins to dissipate."
+      "The revenant slowly settles to the ground and begins to dissipate.",
+      "The revenant goes still for a moment while its head reshapes."
     ],
     decay: [
       "A revenant vanishes into thin air, leaving no trace behind."

@@ -60,15 +60,15 @@
     bar_td: 111,
     cle_td: (113..122),
     emp_td: (114..123),
-    pal_td: 96,
+    pal_td: (95..105),
     ran_td: nil,
     sor_td: (121..127),
     wiz_td: 125,
     mje_td: 131,
     mne_td: 127,
     mjs_td: nil,
-    mns_td: 117,
-    mnm_td: nil,
+    mns_td: (104..117),
+    mnm_td: (99..109),
     defensive_spells: [
       "Elemental Defense III"
     ],
@@ -94,7 +94,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A haunting melody fills the air and fades as a ghostly mara dissipates into nothing."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

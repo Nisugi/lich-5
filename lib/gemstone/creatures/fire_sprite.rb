@@ -68,8 +68,8 @@
     mje_td: nil,
     mne_td: 290,
     mjs_td: nil,
-    mns_td: 256,
-    mnm_td: nil,
+    mns_td: (256..287),
+    mnm_td: (214..215),
     defensive_spells: [
       "Elemental Defense I",
       "Elemental Defense II",

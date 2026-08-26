@@ -58,17 +58,17 @@
     bolt: nil,
     udf: nil,
     bar_td: (42..48),
-    cle_td: nil,
+    cle_td: (36..45),
     emp_td: (42..50),
-    pal_td: nil,
+    pal_td: (36..45),
     ran_td: nil,
     sor_td: (36..45),
     wiz_td: nil,
     mje_td: nil,
     mne_td: (42..48),
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (39..48),
+    mnm_td: (39..48),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: [
@@ -102,7 +102,9 @@
     ],
     death: [
       "The giant weasel collapses to the ground, emits a final cry, and dies.",
-      "The giant weasel lets out a final agonized cry and dies."
+      "The giant weasel lets out a final agonized cry and dies.",
+      "The giant weasel cries loudly as it slumps to the ground and cradles its wounded left foreleg.",
+      "The giant weasel cries loudly as it slumps to the ground and cradles its wounded right foreleg."
     ],
     decay: [
       "A giant weasel decays into a pile of fur and bone."

@@ -93,7 +93,10 @@
     arrival: [],
     flee: [],
     death: [
-      "The night hound lets out one last whimpering sigh of dark and shadowy whirlwinds and dies."
+      "The night hound lets out one last whimpering sigh of dark and shadowy whirlwinds and dies.",
+      "The night hound yelps loudly as it slumps to the ground and licks its wounded left foreleg.",
+      "The night hound yelps loudly as it slumps to the ground and licks its wounded right paw.",
+      "The night hound yelps loudly as it slumps to the ground and licks its wounded right foreleg."
     ],
     decay: [
       "A night hound decays into a compost of fur and fangs."

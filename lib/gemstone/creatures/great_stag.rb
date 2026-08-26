@@ -66,17 +66,17 @@
     bolt: 84,
     udf: 141,
     bar_td: 39,
-    cle_td: nil,
+    cle_td: (33..42),
     emp_td: (39..47),
-    pal_td: nil,
+    pal_td: (36..45),
     ran_td: 39,
     sor_td: (36..45),
     wiz_td: nil,
     mje_td: 39,
     mne_td: (33..39),
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (36..39),
+    mnm_td: (39..45),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: [
@@ -106,7 +106,10 @@
       "The great stag collapses to the ground, emits a final sigh, and dies.",
       "The great stag lets out a final agonized sigh and dies.",
       "The great stag collapses to the ground, emits a final silent sigh, and dies.",
-      "The great stag silently lets out a final agonized sigh and dies."
+      "The great stag silently lets out a final agonized sigh and dies.",
+      "The great stag groans loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The great stag groans loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The great stag groans loudly as he slumps to the ground and cradles his wounded right hoof."
     ],
     decay: [
       "A great stag decays into a pile of fur and bone."
@@ -115,7 +118,8 @@
     spell_prep: [],
     attack: [
       "A great stag charges at you!",
-      "A great stag tries to impale you with {pronoun} antlers!"
+      "A great stag tries to impale you with {pronoun} antlers!",
+      "A great stag tries to impale you with great stag antlers!"
     ],
     bite: [],
     claw: [],

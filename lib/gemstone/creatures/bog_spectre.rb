@@ -69,7 +69,7 @@
     bolt: 228,
     udf: 319,
     bar_td: 182,
-    cle_td: nil,
+    cle_td: 185,
     emp_td: (181..190),
     pal_td: nil,
     ran_td: nil,
@@ -78,8 +78,8 @@
     mje_td: 195,
     mne_td: (186..204),
     mjs_td: nil,
-    mns_td: 186,
-    mnm_td: nil,
+    mns_td: (184..194),
+    mnm_td: (157..167),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -109,7 +109,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A heavy mist pours from the bog spectre as he slumps to the ground.",
+      "A heavy mist pours from the bog spectre as she slumps to the ground."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

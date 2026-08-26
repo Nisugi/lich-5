@@ -40,7 +40,7 @@
       },
       {
         name: "Bite",
-        as: 270
+        as: (270..280)
       }
     ],
     bolt_spells: [],
@@ -75,9 +75,9 @@
     bolt: (217..283),
     udf: 417,
     bar_td: (234..240),
-    cle_td: 259,
+    cle_td: 306,
     emp_td: 305,
-    pal_td: nil,
+    pal_td: (281..284),
     ran_td: nil,
     sor_td: nil,
     wiz_td: nil,
@@ -85,7 +85,7 @@
     mne_td: nil,
     mjs_td: nil,
     mns_td: 255,
-    mnm_td: nil,
+    mnm_td: 245,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

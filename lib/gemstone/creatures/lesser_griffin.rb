@@ -21,7 +21,7 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
+  height: 5,
   size: "large",
   areas: [
     {
@@ -90,9 +90,9 @@
     bolt: 244,
     udf: nil,
     bar_td: 246,
-    cle_td: nil,
+    cle_td: (269..278),
     emp_td: (267..273),
-    pal_td: nil,
+    pal_td: (226..235),
     ran_td: nil,
     sor_td: (278..290),
     wiz_td: nil,
@@ -100,7 +100,7 @@
     mne_td: (292..304),
     mjs_td: nil,
     mns_td: nil,
-    mnm_td: nil,
+    mnm_td: (213..222),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -127,7 +127,8 @@
       "A lesser griffin flies {direction}."
     ],
     death: [
-      "The lesser griffin writhes in agony, its wings flapping fruitlessly as it dies."
+      "The lesser griffin writhes in agony, its wings flapping fruitlessly as it dies.",
+      "The lesser griffin crashes to the ground, motionless."
     ],
     decay: [
       "The lesser griffin decays into a pile of feathers and fur."

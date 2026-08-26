@@ -144,8 +144,8 @@
     mje_td: 136,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (131..134),
+    mnm_td: (122..129),
     defensive_spells: [
       "Elemental Bias (508)",
       "Elemental Defense I (401)",
@@ -187,7 +187,9 @@
     ],
     flee: [],
     death: [
-      "A hooded figure goes limp as it is rendered unconscious!"
+      "A hooded figure goes limp as it is rendered unconscious!",
+      "The hooded figure screams one last time and lies still.",
+      "The hooded figure falls to the ground and lies still."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the hooded figure's ribs to move independently."

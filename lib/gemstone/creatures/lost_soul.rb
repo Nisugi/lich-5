@@ -79,8 +79,8 @@
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: 376,
-    mnm_td: nil,
+    mns_td: 430,
+    mnm_td: (321..327),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -109,7 +109,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A lost soul fades into oblivion."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

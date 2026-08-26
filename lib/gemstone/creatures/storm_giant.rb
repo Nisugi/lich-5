@@ -98,17 +98,17 @@
     bolt: 161,
     udf: 194,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (145..155),
     emp_td: (145..155),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (123..133),
+    ran_td: (123..133),
     sor_td: (155..163),
     wiz_td: nil,
     mje_td: 167,
     mne_td: 166,
     mjs_td: nil,
-    mns_td: 155,
-    mnm_td: nil,
+    mns_td: (145..155),
+    mnm_td: (117..122),
     defensive_spells: [
       "Spirit Defense (103)",
       "Spirit Warding I (101)"
@@ -140,7 +140,9 @@
     death: [
       "The storm giant howls in agony one last time and dies.",
       "The storm giant twitches violently, then dies.",
-      "A storm giant goes limp as it is rendered unconscious!"
+      "A storm giant goes limp as it is rendered unconscious!",
+      "The storm giant crumples to the ground motionless.",
+      "Beautiful shot pierces both lungs, the storm giant makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The storm giant's tibia passes its femur in a very unpleasant manner!",

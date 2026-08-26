@@ -75,7 +75,7 @@
     bar_td: (281..285),
     cle_td: (295..320),
     emp_td: (296..303),
-    pal_td: 260,
+    pal_td: (268..277),
     ran_td: nil,
     sor_td: (306..338),
     wiz_td: nil,
@@ -83,7 +83,7 @@
     mne_td: nil,
     mjs_td: nil,
     mns_td: (290..315),
-    mnm_td: nil,
+    mnm_td: (245..253),
     defensive_spells: [
       "Elemental Defense II",
       "Elemental Defense III",

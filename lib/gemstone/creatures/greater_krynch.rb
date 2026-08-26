@@ -46,7 +46,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Ethereal Wave"
+      }
+    ],
     special_abilities: [
       {
         name: "Krynch boulder"
@@ -62,17 +66,17 @@
     bolt: 224,
     udf: 653,
     bar_td: (306..315),
-    cle_td: nil,
+    cle_td: 341,
     emp_td: (323..332),
-    pal_td: nil,
+    pal_td: (279..282),
     ran_td: nil,
     sor_td: 345,
     wiz_td: nil,
     mje_td: 364,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 354,
+    mnm_td: (258..264),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

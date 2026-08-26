@@ -64,17 +64,17 @@
     bolt: (30..46),
     udf: 76,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (14..16),
     emp_td: (4..14),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (4..14),
+    ran_td: 4,
     sor_td: (5..12),
     wiz_td: nil,
     mje_td: 8,
     mne_td: 3,
     mjs_td: 14,
-    mns_td: 14,
-    mnm_td: nil,
+    mns_td: (4..14),
+    mnm_td: 16,
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -107,7 +107,8 @@
     ],
     flee: [],
     death: [
-      "The kobold shepherd howls in agony one last time and dies."
+      "The kobold shepherd howls in agony one last time and dies.",
+      "The kobold shepherd crumples to the ground motionless."
     ],
     decay: [
       "With one last twitch, the kobold shepherd decays into compost."

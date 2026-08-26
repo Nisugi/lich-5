@@ -90,8 +90,8 @@
     mje_td: 411,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (423..425),
+    mnm_td: (296..305),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Defense (103)",
@@ -127,7 +127,9 @@
     flee: [
       "A fallen crusader bolts {direction}!"
     ],
-    death: [],
+    death: [
+      "The fallen crusader goes still for a moment while its head reshapes."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

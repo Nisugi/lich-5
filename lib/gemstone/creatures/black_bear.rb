@@ -78,9 +78,9 @@
     bolt: (92..104),
     udf: 160,
     bar_td: (48..54),
-    cle_td: (45..48),
+    cle_td: (45..54),
     emp_td: (48..56),
-    pal_td: nil,
+    pal_td: (42..48),
     ran_td: 48,
     sor_td: (45..54),
     wiz_td: nil,
@@ -88,7 +88,7 @@
     mne_td: nil,
     mjs_td: 48,
     mns_td: (45..48),
-    mnm_td: nil,
+    mnm_td: (45..54),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -121,7 +121,11 @@
       "The black bear lets out a blood-curdling roar and dies.",
       "The black bear collapses heavily into a heap on the ground and dies.",
       "A black bear goes limp as she is rendered unconscious!",
-      "A black bear goes limp as he is rendered unconscious!"
+      "A black bear goes limp as he is rendered unconscious!",
+      "The black bear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The black bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The black bear roars loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The black bear roars loudly as she slumps to the ground and licks her wounded left paw."
     ],
     decay: [
       "A black bear decays into a compost of fangs, fur and claws."

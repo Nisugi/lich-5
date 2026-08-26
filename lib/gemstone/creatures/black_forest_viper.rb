@@ -56,17 +56,17 @@
     bolt: 292,
     udf: nil,
     bar_td: "200 to 206",
-    cle_td: 220,
+    cle_td: (229..235),
     emp_td: (220..229),
-    pal_td: nil,
+    pal_td: (199..202),
     ran_td: "181 to 196",
     sor_td: (234..246),
     wiz_td: 246,
     mje_td: 246,
     mne_td: 246,
     mjs_td: 220,
-    mns_td: 220,
-    mnm_td: nil,
+    mns_td: (223..232),
+    mnm_td: (171..177),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -97,7 +97,9 @@
       "A black forest viper slithers {direction}.",
       "A black forest viper slowly slithers {direction}."
     ],
-    death: [],
+    death: [
+      "The black forest viper twists and coils violently in its death throes, finally going still."
+    ],
     decay: [
       "A black forest viper decays into a pile of scales and flesh."
     ],

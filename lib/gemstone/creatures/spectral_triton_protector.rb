@@ -21,8 +21,8 @@
   bcs: true,
   max_hp: 381,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Atoll",
@@ -78,8 +78,8 @@
     mje_td: nil,
     mne_td: 437,
     mjs_td: nil,
-    mns_td: 393,
-    mnm_td: nil,
+    mns_td: (385..388),
+    mnm_td: (391..399),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -102,10 +102,14 @@
       "Coral-spiked pauldrons are draped across a spectral triton protector's shoulders, the leather straps taut across her bare chest, the hide cutting into her tattooed blue-green flesh. Thick rings of ivory encircle her forearms and calves, etched in crude runes caked with blackish mud. Uneven streaks of pigment decorate her sunken cheekbones, the remnants splattered across her trident-inked collarbones."
     ],
     arrival: [
-      "A spectral triton protector just arrived."
+      "A spectral triton protector just arrived.",
+      "A triton warlock arrives, striding forth with her robes trailing behind her."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The triton protector fades into transparency, his remnants rapidly dissolving into the air.",
+      "The triton protector fades into transparency, her remnants rapidly dissolving into the air."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

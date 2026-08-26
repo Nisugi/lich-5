@@ -58,7 +58,7 @@
     bolt: (112..119),
     udf: 167,
     bar_td: (54..60),
-    cle_td: nil,
+    cle_td: (54..60),
     emp_td: (46..54),
     pal_td: nil,
     ran_td: nil,
@@ -67,8 +67,8 @@
     mje_td: 54,
     mne_td: 54,
     mjs_td: 48,
-    mns_td: 54,
-    mnm_td: nil,
+    mns_td: (51..57),
+    mnm_td: (54..60),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -100,7 +100,9 @@
     ],
     death: [
       "The plains lion crumples to the ground and dies.",
-      "The plains lion lets out a final caterwaul and dies."
+      "The plains lion lets out a final caterwaul and dies.",
+      "The plains lion mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The plains lion mewls in pain as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [
       "A plains lion decays into a compost of fangs, fur and claws."

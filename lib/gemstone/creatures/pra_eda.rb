@@ -54,7 +54,7 @@
     bolt: nil,
     udf: 206,
     bar_td: 89,
-    cle_td: nil,
+    cle_td: (105..115),
     emp_td: (115..125),
     pal_td: nil,
     ran_td: nil,
@@ -63,8 +63,8 @@
     mje_td: (113..130),
     mne_td: 109,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (114..123),
+    mnm_td: (107..117),
     defensive_spells: [
       "Elemental Defense III (414)",
       "Spirit Defense (103)",
@@ -95,10 +95,12 @@
     flee: [],
     death: [
       "The pra'eda falls to the ground motionless.",
-      "A pra'eda goes limp as it is rendered unconscious!"
+      "A pra'eda goes limp as it is rendered unconscious!",
+      "The pra'eda cries out one last time and lies still."
     ],
     decay: [
-      "The pra'eda's left leg crumbles briefly and explodes in a shower of gore."
+      "The pra'eda's left leg crumbles briefly and explodes in a shower of gore.",
+      "The pra'eda's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

@@ -50,6 +50,10 @@
       {
         name: "Large boulder",
         as: 265
+      },
+      {
+        name: "Leafy fist",
+        as: 370
       }
     ],
     bolt_spells: [
@@ -100,17 +104,17 @@
     bolt: 217,
     udf: 390,
     bar_td: 329,
-    cle_td: nil,
+    cle_td: (355..361),
     emp_td: 361,
-    pal_td: nil,
+    pal_td: (305..311),
     ran_td: nil,
     sor_td: (365..379),
     wiz_td: nil,
     mje_td: 389,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (346..355),
+    mnm_td: 261,
     defensive_spells: [
       "Barkskin",
       "Natural Colors (601)",
@@ -157,7 +161,8 @@
     attack: [
       "A treekin druid hurls {weapon} at you!",
       "A treekin druid lashes {weapon} at you!",
-      "A treekin druid raises a large root and slams it down at you!"
+      "A treekin druid raises a large root and slams it down at you!",
+      "A treekin druid pounds at you with a leafy fist!"
     ],
     bite: [],
     claw: [],

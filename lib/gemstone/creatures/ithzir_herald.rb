@@ -98,7 +98,7 @@
     mne_td: nil,
     mjs_td: nil,
     mns_td: (349..369),
-    mnm_td: nil,
+    mnm_td: (322..330),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -130,7 +130,10 @@
       "An Ithzir initiate strides in, her hands clasped before her."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The Ithzir herald vainly struggles to rise, then goes still.",
+      "An Ithzir herald's body shimmers slightly, then fades from view like a dissipating phantom."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

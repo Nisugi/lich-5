@@ -66,17 +66,17 @@
     bolt: 150,
     udf: 200,
     bar_td: (93..102),
-    cle_td: nil,
+    cle_td: (100..106),
     emp_td: (107..114),
-    pal_td: nil,
+    pal_td: (102..111),
     ran_td: 102,
     sor_td: (113..122),
     wiz_td: nil,
     mje_td: 119,
     mne_td: 119,
     mjs_td: nil,
-    mns_td: 107,
-    mnm_td: nil,
+    mns_td: (146..155),
+    mnm_td: (93..102),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -104,7 +104,8 @@
     ],
     death: [
       "The colossus vulture writhes in agony, its wings flapping fruitlessly as it dies.",
-      "A colossus vulture goes limp as it is rendered unconscious!"
+      "A colossus vulture goes limp as it is rendered unconscious!",
+      "The colossus vulture crashes to the ground, motionless."
     ],
     decay: [
       "The colossus vulture decays into a pile of feathers."

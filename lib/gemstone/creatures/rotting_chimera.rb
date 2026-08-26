@@ -80,17 +80,17 @@
     bolt: 188,
     udf: 398,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (168..177),
     emp_td: (167..170),
-    pal_td: nil,
+    pal_td: (142..151),
     ran_td: 112,
     sor_td: (167..185),
     wiz_td: nil,
     mje_td: 186,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: 138,
+    mns_td: (161..170),
+    mnm_td: (135..138),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -119,7 +119,9 @@
     flee: [
       "A rotting chimera crawls {direction}."
     ],
-    death: [],
+    death: [
+      "A rotting chimera releases a loud, weary sigh and slumps to the ground."
+    ],
     decay: [
       "A rotting chimera collapses into a pile of skin and bones."
     ],

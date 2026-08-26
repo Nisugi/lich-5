@@ -36,7 +36,7 @@
       },
       {
         name: "Tusk",
-        as: 23
+        as: (23..36)
       }
     ],
     bolt_spells: [],
@@ -64,7 +64,7 @@
     mne_td: 3,
     mjs_td: 3,
     mns_td: 3,
-    mnm_td: nil,
+    mnm_td: 3,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -91,7 +91,9 @@
     death: [
       "The spotted gnarp collapses to the ground, emits a final cry, and dies.",
       "The spotted gnarp lets out a final agonized cry and dies.",
-      "The spotted gnarp collapses to the ground, emits a final silent cry, and dies."
+      "The spotted gnarp collapses to the ground, emits a final silent cry, and dies.",
+      "The spotted gnarp shrieks loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The spotted gnarp shrieks loudly as he slumps to the ground and cradles his wounded right foreleg."
     ],
     decay: [
       "A spotted gnarp decays into a pile of fur and bone."

@@ -114,8 +114,8 @@
     mje_td: (203..206),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: 202,
-    mnm_td: nil,
+    mns_td: (183..185),
+    mnm_td: 172,
     defensive_spells: [
       "Spirit Warding II (107)",
       "Lesser Shroud (120)",

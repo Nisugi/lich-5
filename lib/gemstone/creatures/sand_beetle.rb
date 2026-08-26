@@ -67,8 +67,8 @@
     mje_td: 114,
     mne_td: 114,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 103,
+    mnm_td: (96..99),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -92,7 +92,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The sand beetle falls to the ground and lies twitching for a moment before going still.",
+      "The sand beetle kicks a leg one last time and lies still."
+    ],
     decay: [
       "A sand beetle's legs shrivel up beneath it as it decays into dust."
     ],

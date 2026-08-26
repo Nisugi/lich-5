@@ -46,7 +46,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Dive"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -58,17 +62,17 @@
     bolt: nil,
     udf: nil,
     bar_td: 109,
-    cle_td: nil,
+    cle_td: (118..127),
     emp_td: (117..127),
-    pal_td: nil,
+    pal_td: (105..114),
     ran_td: nil,
     sor_td: (125..134),
     wiz_td: nil,
     mje_td: 134,
     mne_td: 134,
     mjs_td: nil,
-    mns_td: 121,
-    mnm_td: nil,
+    mns_td: (113..121),
+    mnm_td: (105..111),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

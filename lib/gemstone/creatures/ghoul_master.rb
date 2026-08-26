@@ -77,14 +77,14 @@
     bar_td: 48,
     cle_td: 48,
     emp_td: 48,
-    pal_td: 48,
+    pal_td: (45..48),
     ran_td: 48,
     sor_td: 48,
     wiz_td: nil,
     mje_td: 48,
     mne_td: 48,
     mjs_td: nil,
-    mns_td: 48,
+    mns_td: (48..60),
     mnm_td: 48,
     defensive_spells: [],
     defensive_abilities: [],
@@ -117,7 +117,8 @@
       "The ghoul master screams evilly one last time and goes still."
     ],
     decay: [
-      "A ghoul master turns to dust."
+      "A ghoul master turns to dust.",
+      "The ghoul master's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

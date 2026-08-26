@@ -63,17 +63,17 @@
     bolt: (81..91),
     udf: 224,
     bar_td: (39..42),
-    cle_td: nil,
+    cle_td: (33..39),
     emp_td: (39..47),
-    pal_td: nil,
+    pal_td: (30..39),
     ran_td: nil,
     sor_td: (33..45),
     wiz_td: nil,
     mje_td: 45,
     mne_td: 39,
     mjs_td: nil,
-    mns_td: 39,
-    mnm_td: (33..39),
+    mns_td: (36..45),
+    mnm_td: (33..45),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -101,7 +101,9 @@
     flee: [
       "A deranged sentry lumbers {direction}."
     ],
-    death: [],
+    death: [
+      "The deranged sentry vainly tries to shout a warning, then goes still."
+    ],
     decay: [
       "The deranged sentry decays into a grisly pile of armor, blood, and bone."
     ],

@@ -55,7 +55,7 @@
     bolt: (166..173),
     udf: 222,
     bar_td: 90,
-    cle_td: 81,
+    cle_td: (80..90),
     emp_td: (79..89),
     pal_td: nil,
     ran_td: nil,
@@ -64,8 +64,8 @@
     mje_td: (87..95),
     mne_td: (83..86),
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (89..92),
+    mnm_td: (78..87),
     defensive_spells: [
       "Prayer of Protection",
       "Spirit Warding I",
@@ -96,7 +96,8 @@
     ],
     flee: [],
     death: [
-      "The niirsha falls to the ground motionless."
+      "The niirsha falls to the ground motionless.",
+      "The niirsha wails in terrifying pain one last time and lies still."
     ],
     decay: [],
     search: [],

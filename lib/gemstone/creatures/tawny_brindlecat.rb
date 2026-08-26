@@ -60,17 +60,17 @@
     bolt: 97,
     udf: 166,
     bar_td: 39,
-    cle_td: 39,
+    cle_td: (39..45),
     emp_td: (35..43),
-    pal_td: 39,
+    pal_td: (30..39),
     ran_td: 39,
     sor_td: (39..45),
     wiz_td: 39,
     mje_td: (39..45),
     mne_td: 39,
     mjs_td: 39,
-    mns_td: 39,
-    mnm_td: 39,
+    mns_td: 66,
+    mnm_td: (39..45),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -98,7 +98,10 @@
     flee: [],
     death: [
       "The tawny brindlecat's tail twitches feebly as she dies.",
-      "The tawny brindlecat's tail twitches feebly as he dies."
+      "The tawny brindlecat's tail twitches feebly as he dies.",
+      "The tawny brindlecat mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The tawny brindlecat mewls in pain as she slumps to the ground and licks her wounded right paw.",
+      "The tawny brindlecat mewls in pain as he slumps to the ground and licks his wounded left foreleg."
     ],
     decay: [
       "A tawny brindlecat decays into a compost of fangs, fur and claws.",

@@ -48,7 +48,7 @@
       },
       {
         name: "Ensnare",
-        as: 71
+        as: (71..81)
       }
     ],
     bolt_spells: [],
@@ -68,7 +68,7 @@
     bar_td: 15,
     cle_td: 15,
     emp_td: 15,
-    pal_td: 15,
+    pal_td: (12..15),
     ran_td: 15,
     sor_td: 15,
     wiz_td: 15,

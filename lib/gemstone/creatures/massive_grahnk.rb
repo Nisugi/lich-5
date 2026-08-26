@@ -67,15 +67,15 @@
     bar_td: (54..60),
     cle_td: 60,
     emp_td: (60..68),
-    pal_td: 60,
+    pal_td: (54..63),
     ran_td: nil,
     sor_td: (54..63),
     wiz_td: nil,
     mje_td: 60,
     mne_td: 60,
     mjs_td: nil,
-    mns_td: 60,
-    mnm_td: nil,
+    mns_td: (60..66),
+    mnm_td: (54..60),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -98,13 +98,16 @@
       "Taller than a giant, the massive grahnk bears similarities to both a troll and an ogre. The beast has rippling muscles easily capable of tearing an arm or leg from its socket."
     ],
     arrival: [
-      "A massive grahnk lumbers in, malice in her eyes!"
+      "A massive grahnk lumbers in, malice in her eyes!",
+      "A massive grahnk lumbers in, malice in his eyes!"
     ],
     flee: [
       "A massive grahnk lumbers {direction}, malice in her eyes."
     ],
     death: [
-      "A massive grahnk goes limp as she is rendered unconscious!"
+      "A massive grahnk goes limp as she is rendered unconscious!",
+      "The massive grahnk growls one last time in defiance, then slumps to the ground.",
+      "The massive grahnk growls one last time in defiance, then goes still."
     ],
     decay: [],
     search: [],

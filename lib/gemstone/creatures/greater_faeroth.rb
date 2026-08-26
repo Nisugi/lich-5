@@ -69,7 +69,7 @@
     mne_td: 194,
     mjs_td: nil,
     mns_td: (164..184),
-    mnm_td: nil,
+    mnm_td: (147..150),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -93,7 +93,12 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A greater faeroth emits a roar as he goes still.",
+      "A greater faeroth emits a roar as she goes still.",
+      "A greater faeroth releases a roar as she falls to the ground and goes still.",
+      "A greater faeroth releases a roar as he falls to the ground and goes still."
+    ],
     decay: [
       "A greater faeroth decays into a pile of foul-smelling compost."
     ],

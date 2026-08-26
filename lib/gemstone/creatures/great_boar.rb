@@ -78,9 +78,9 @@
     bolt: (17..29),
     udf: 113,
     bar_td: 30,
-    cle_td: nil,
+    cle_td: 30,
     emp_td: 30,
-    pal_td: nil,
+    pal_td: (27..30),
     ran_td: 30,
     sor_td: 30,
     wiz_td: nil,
@@ -88,7 +88,7 @@
     mne_td: 30,
     mjs_td: nil,
     mns_td: 30,
-    mnm_td: nil,
+    mnm_td: 30,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: [
@@ -118,7 +118,9 @@
       "The great boar collapses to the ground, emits a final squeal, and dies.",
       "The great boar lets out a final agonized squeal and dies.",
       "The great boar collapses to the ground, emits a final silent squeal, and dies.",
-      "The great boar silently lets out a final agonized squeal and dies."
+      "The great boar silently lets out a final agonized squeal and dies.",
+      "The great boar squeals loudly as he slumps to the ground and cradles his wounded left hoof.",
+      "The great boar squeals loudly as he slumps to the ground and cradles his wounded left foreleg."
     ],
     decay: [
       "A great boar decays into a pile of fur and bone."

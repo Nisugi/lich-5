@@ -67,7 +67,7 @@
     bolt: 129,
     udf: 193,
     bar_td: (66..72),
-    cle_td: nil,
+    cle_td: (72..78),
     emp_td: (68..76),
     pal_td: nil,
     ran_td: nil,
@@ -76,8 +76,8 @@
     mje_td: (72..78),
     mne_td: (72..78),
     mjs_td: 68,
-    mns_td: 68,
-    mnm_td: nil,
+    mns_td: (65..74),
+    mnm_td: (66..72),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -102,7 +102,8 @@
     arrival: [
       "A crested basilisk stomps in and glares about.",
       "A combative crested basilisk stomps in and glares about.",
-      "A belligerent crested basilisk stomps in and glares about."
+      "A belligerent crested basilisk stomps in and glares about.",
+      "A canny crested basilisk stomps in and glares about."
     ],
     flee: [],
     death: [

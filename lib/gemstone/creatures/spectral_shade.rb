@@ -54,7 +54,7 @@
     bolt: nil,
     udf: 324,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 123,
     emp_td: (136..145),
     pal_td: nil,
     ran_td: nil,
@@ -63,8 +63,8 @@
     mje_td: 155,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (129..136),
+    mnm_td: (104..113),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -88,7 +88,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A spectral shade fades into oblivion."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

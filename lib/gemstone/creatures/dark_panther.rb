@@ -62,17 +62,17 @@
     bolt: 123,
     udf: 187,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (63..72),
     emp_td: (68..76),
-    pal_td: nil,
+    pal_td: (60..66),
     ran_td: nil,
     sor_td: (70..76),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 72,
     mjs_td: nil,
-    mns_td: 68,
-    mnm_td: nil,
+    mns_td: (65..74),
+    mnm_td: 66,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -104,7 +104,9 @@
     ],
     death: [
       "The dark panther lets out a final caterwaul and dies.",
-      "The dark panther crumples to the ground and dies."
+      "The dark panther crumples to the ground and dies.",
+      "The dark panther mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The dark panther mewls in pain as she slumps to the ground and licks her wounded right foreleg."
     ],
     decay: [
       "A dark panther decays into a compost of fangs, fur and claws."

@@ -96,8 +96,8 @@
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: 190,
-    mnm_td: nil,
+    mns_td: (180..190),
+    mnm_td: (170..175),
     defensive_spells: [
       "Bravery (211)",
       "Heroism (215)",
@@ -132,7 +132,8 @@
     ],
     flee: [],
     death: [
-      "The lesser vruul twitches violently, then dies."
+      "The lesser vruul twitches violently, then dies.",
+      "The lesser vruul screams one last time and lies still."
     ],
     decay: [],
     search: [],

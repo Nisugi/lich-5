@@ -70,17 +70,17 @@
     bolt: 85,
     udf: 146,
     bar_td: 51,
-    cle_td: nil,
+    cle_td: (42..51),
     emp_td: (45..53),
-    pal_td: 48,
-    ran_td: nil,
+    pal_td: (39..48),
+    ran_td: (45..51),
     sor_td: (39..51),
     wiz_td: nil,
     mje_td: 45,
     mne_td: 45,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (39..48),
+    mnm_td: (42..51),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -111,7 +111,10 @@
     ],
     death: [
       "The puma lets out a final caterwaul and dies.",
-      "The puma crumples to the ground and dies."
+      "The puma crumples to the ground and dies.",
+      "The puma mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The puma mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The puma mewls in pain as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [
       "A puma decays into a compost of fangs, fur and claws.",

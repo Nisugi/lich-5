@@ -85,8 +85,8 @@
     mje_td: nil,
     mne_td: 391,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (353..359),
+    mnm_td: (305..311),
     defensive_spells: [
       "Lesser Shroud",
       "Spirit Shield",
@@ -116,7 +116,9 @@
       "A lich qyn'arj arrives on powerful strokes of its rotting wings."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The lich qyn'arj spasms violently and suddenly goes still, its body turning to stone."
+    ],
     decay: [
       "The stone form of a lich qyn'arj crumbles away to dust.",
       "Acid dissolves connecting cartilage, freeing the lich qyn'arj's ribs to move independently."

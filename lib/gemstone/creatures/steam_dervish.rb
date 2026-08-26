@@ -72,8 +72,8 @@
     mje_td: 367,
     mne_td: 370,
     mjs_td: nil,
-    mns_td: 322,
-    mnm_td: nil,
+    mns_td: (321..328),
+    mnm_td: 252,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -97,7 +97,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The steam dervish falls to the ground, leaking steam profusely."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

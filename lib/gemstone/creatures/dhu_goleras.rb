@@ -99,7 +99,7 @@
     bar_td: (302..314),
     cle_td: (312..336),
     emp_td: (325..331),
-    pal_td: 276,
+    pal_td: (276..288),
     ran_td: nil,
     sor_td: (329..350),
     wiz_td: 365,
@@ -107,7 +107,7 @@
     mne_td: 363,
     mjs_td: nil,
     mns_td: (307..331),
-    mnm_td: nil,
+    mnm_td: (262..271),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

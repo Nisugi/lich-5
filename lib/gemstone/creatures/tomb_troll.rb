@@ -33,7 +33,7 @@
     physical_attacks: [
       {
         name: "Morning star",
-        as: 273
+        as: (248..273)
       },
       {
         name: "Huge swollen right fist",
@@ -59,17 +59,17 @@
     bolt: 196,
     udf: 453,
     bar_td: 177,
-    cle_td: nil,
+    cle_td: 214,
     emp_td: (191..197),
-    pal_td: nil,
+    pal_td: (164..173),
     ran_td: nil,
     sor_td: (194..214),
     wiz_td: nil,
     mje_td: 215,
     mne_td: 213,
     mjs_td: nil,
-    mns_td: 188,
-    mnm_td: nil,
+    mns_td: (182..191),
+    mnm_td: (159..168),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -95,7 +95,9 @@
     flee: [],
     death: [
       "A tomb troll goes limp as he is rendered unconscious!",
-      "A tomb troll goes limp as she is rendered unconscious!"
+      "A tomb troll goes limp as she is rendered unconscious!",
+      "A low sigh fills the air and the tomb troll fades to nothing.",
+      "A tomb troll blinks in astonishment, then collapses in a motionless heap."
     ],
     decay: [
       "The tomb troll's left leg crumbles briefly and explodes in a shower of gore."

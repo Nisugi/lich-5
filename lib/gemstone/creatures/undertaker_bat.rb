@@ -54,7 +54,7 @@
     bolt: 166,
     udf: nil,
     bar_td: (113..122),
-    cle_td: 120,
+    cle_td: (120..134),
     emp_td: (126..135),
     pal_td: 108,
     ran_td: nil,
@@ -63,8 +63,8 @@
     mje_td: nil,
     mne_td: 147,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 126,
+    mnm_td: (108..114),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -90,7 +90,9 @@
     flee: [],
     death: [
       "The undertaker bat twitches violently, then dies.",
-      "An undertaker bat goes limp as it is rendered unconscious!"
+      "An undertaker bat goes limp as it is rendered unconscious!",
+      "The undertaker bat flaps its wings in a last ditch effort to ascend from the ground, but fails and finally lies still.",
+      "As the strength drains out of the undertaker bat's wings, it falls to the ground in a motionless heap."
     ],
     decay: [
       "The undertaker bat decays into a tuft of matted hair and leathery wings."

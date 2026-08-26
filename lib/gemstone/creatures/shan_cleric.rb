@@ -70,7 +70,7 @@
     bolt: nil,
     udf: nil,
     bar_td: (116..157),
-    cle_td: nil,
+    cle_td: (160..170),
     emp_td: (159..169),
     pal_td: nil,
     ran_td: nil,
@@ -79,8 +79,8 @@
     mje_td: 177,
     mne_td: 182,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (159..169),
+    mnm_td: 172,
     defensive_spells: [
       "Lesser Shroud (120)",
       "Prayer (313)",
@@ -113,7 +113,9 @@
     death: [
       "The shan cleric howls out one last time and dies.",
       "The shan cleric yips in pain as she falls to the ground motionless.",
-      "The shan cleric yips in pain as he falls to the ground motionless."
+      "The shan cleric yips in pain as he falls to the ground motionless.",
+      "A shan cleric's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
+      "A shan cleric's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette."
     ],
     decay: [],
     search: [],

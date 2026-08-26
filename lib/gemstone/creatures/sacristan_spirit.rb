@@ -71,7 +71,7 @@
     bolt: (103..113),
     udf: 243,
     bar_td: (81..92),
-    cle_td: nil,
+    cle_td: (88..98),
     emp_td: (90..100),
     pal_td: nil,
     ran_td: nil,
@@ -80,8 +80,8 @@
     mje_td: 98,
     mne_td: 103,
     mjs_td: nil,
-    mns_td: 92,
-    mnm_td: nil,
+    mns_td: (90..100),
+    mnm_td: (75..80),
     defensive_spells: [
       "Prayer of Protection",
       "Prismatic Guard",
@@ -111,7 +111,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A sacristan spirit fades into oblivion.",
+      "The sacristan spirit goes still for a moment while its head reshapes."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

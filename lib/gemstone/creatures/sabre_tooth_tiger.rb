@@ -68,8 +68,8 @@
     mje_td: (209..218),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: 186,
-    mnm_td: (150..159),
+    mns_td: (186..195),
+    mnm_td: (150..165),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -92,18 +92,27 @@
       "The huge sabre-tooth tiger is obviously a formidable predator, measuring more than 15 feet from the nose to the tip of her tail. Flexing massive shoulders above powerful forelegs, the tiger growls and snarls, exposing the elongated canines that give her her name. The tiger's magnificent striped pelt gradates from a soft tan undertone along the spine to a powder white on belly and legs."
     ],
     arrival: [
-      "A sabre-tooth tiger prowls in!"
+      "A sabre-tooth tiger prowls in!",
+      "A shining sabre-tooth tiger prowls in!",
+      "A sparkling sabre-tooth tiger prowls in!",
+      "A shadowy sabre-tooth tiger prowls in!"
     ],
     flee: [],
     death: [
       "The sabre-tooth tiger crumples to the ground and dies.",
       "The sabre-tooth tiger lets out a final caterwaul and dies.",
-      "A sabre-tooth tiger goes limp as she is rendered unconscious!"
+      "A sabre-tooth tiger goes limp as she is rendered unconscious!",
+      "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded left foreleg."
     ],
     decay: [
       "A sabre-tooth tiger decays into a compost of fangs, fur and claws.",
       "A dazzling sabre-tooth tiger decays into a compost of fangs, fur and claws.",
-      "A steadfast sabre-tooth tiger decays into a compost of fangs, fur and claws."
+      "A steadfast sabre-tooth tiger decays into a compost of fangs, fur and claws.",
+      "A shining sabre-tooth tiger decays into a compost of fangs, fur and claws.",
+      "A sparkling sabre-tooth tiger decays into a compost of fangs, fur and claws.",
+      "A tenebrous sabre-tooth tiger decays into a compost of fangs, fur and claws.",
+      "A shadowy sabre-tooth tiger decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],

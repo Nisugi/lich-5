@@ -78,7 +78,7 @@
     bolt: nil,
     udf: 77,
     bar_td: 3,
-    cle_td: nil,
+    cle_td: 3,
     emp_td: 3,
     pal_td: 3,
     ran_td: 3,
@@ -87,7 +87,7 @@
     mje_td: 3,
     mne_td: 3,
     mjs_td: 3,
-    mns_td: nil,
+    mns_td: 3,
     mnm_td: nil,
     defensive_spells: [],
     defensive_abilities: [],
@@ -117,7 +117,8 @@
     death: [
       "The kobold crumples to a heap on the ground and dies.",
       "The kobold cries out in pain one last time and dies.",
-      "The kobold crumples to a heap on the floor and dies."
+      "The kobold crumples to a heap on the floor and dies.",
+      "Beautiful shot pierces both lungs, the kobold makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A small, green cloud of smelly gas rises from the body of a kobold as she decays into compost.",

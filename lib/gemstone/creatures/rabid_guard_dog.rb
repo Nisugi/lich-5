@@ -63,7 +63,7 @@
     bar_td: 30,
     cle_td: 30,
     emp_td: 30,
-    pal_td: nil,
+    pal_td: (27..30),
     ran_td: nil,
     sor_td: 30,
     wiz_td: nil,

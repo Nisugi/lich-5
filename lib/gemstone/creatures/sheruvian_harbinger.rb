@@ -97,8 +97,8 @@
     mje_td: (248..254),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: 229,
-    mnm_td: nil,
+    mns_td: 214,
+    mnm_td: 206,
     defensive_spells: [
       "Lesser Shroud (120)",
       "Spirit Shield (202)",
@@ -130,7 +130,10 @@
       "A Sheruvian harbinger just arrived."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The Sheruvian harbinger collapses on the ground and lies still.",
+      "The Sheruvian harbinger releases a horrible wail then lies still."
+    ],
     decay: [
       "The Sheruvian harbinger's left leg crumbles briefly and explodes in a shower of gore."
     ],

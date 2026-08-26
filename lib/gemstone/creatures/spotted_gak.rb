@@ -54,17 +54,17 @@
     bolt: 18,
     udf: 60,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 6,
     emp_td: 6,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (3..6),
+    ran_td: 6,
     sor_td: 6,
     wiz_td: nil,
     mje_td: 6,
     mne_td: 6,
     mjs_td: nil,
     mns_td: 6,
-    mnm_td: nil,
+    mnm_td: 6,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -90,7 +90,10 @@
     flee: [],
     death: [
       "The spotted gak collapses to the ground, emits a final bellow, and dies.",
-      "The spotted gak lets out a final agonized bellow and dies."
+      "The spotted gak lets out a final agonized bellow and dies.",
+      "The spotted gak brays loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The spotted gak brays loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "The spotted gak brays loudly as he slumps to the ground and cradles his wounded left foreleg."
     ],
     decay: [
       "A spotted gak decays into a pile of fur and bone."

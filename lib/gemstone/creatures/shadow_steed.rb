@@ -63,8 +63,8 @@
     mje_td: (154..157),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (132..140),
+    mnm_td: (115..125),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -88,7 +88,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The shadow steed goes still for a moment while its head reshapes.",
+      "A shadow steed fades into oblivion."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

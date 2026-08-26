@@ -65,7 +65,7 @@
     bar_td: 6,
     cle_td: 6,
     emp_td: 6,
-    pal_td: 6,
+    pal_td: (3..6),
     ran_td: 6,
     sor_td: 6,
     wiz_td: 6,

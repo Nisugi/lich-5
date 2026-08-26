@@ -83,7 +83,7 @@
     bolt: (120..173),
     udf: 244,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (139..142),
     emp_td: 129,
     pal_td: nil,
     ran_td: nil,
@@ -92,8 +92,8 @@
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (163..172),
+    mnm_td: (122..132),
     defensive_spells: [
       "Elemental Defense I",
       "Elemental Defense II"
@@ -175,7 +175,12 @@
       "The glimmer of a pearl nautilus shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
       "The glimmer of a queen helmet shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
       "The glimmer of a large black pearl catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
-      "The glimmer of a scintillating fishscale catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor."
+      "The glimmer of a scintillating fishscale catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor.",
+      "The glimmer of a translucent golden spiral shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "A water wyrd decays into compost.",
+      "The glimmer of a brilliant fire pearl catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a giant paper nautilus shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a piece of iridescent mother-of-pearl catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water."
     ],
     search: [],
     spell_prep: [],

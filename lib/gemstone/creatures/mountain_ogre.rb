@@ -77,17 +77,17 @@
     bolt: 136,
     udf: 228,
     bar_td: 48,
-    cle_td: nil,
+    cle_td: (42..51),
     emp_td: (48..56),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (45..48),
+    ran_td: (45..48),
     sor_td: (45..54),
     wiz_td: nil,
     mje_td: 48,
     mne_td: 48,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (45..54),
+    mnm_td: (48..54),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -122,7 +122,8 @@
     ],
     decay: [
       "A mountain ogre decays into compost.",
-      "Acid dissolves connecting cartilage, freeing the mountain ogre's ribs to move independently."
+      "Acid dissolves connecting cartilage, freeing the mountain ogre's ribs to move independently.",
+      "The mountain ogre's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

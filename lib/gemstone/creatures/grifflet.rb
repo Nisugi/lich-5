@@ -69,17 +69,17 @@
     bolt: 263,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 244,
     emp_td: 241,
-    pal_td: nil,
+    pal_td: (196..199),
     ran_td: nil,
     sor_td: 256,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 241,
+    mnm_td: (192..195),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -108,7 +108,8 @@
       "A grifflet flies {direction}."
     ],
     death: [
-      "The grifflet writhes in agony, its wings flapping fruitlessly as it dies."
+      "The grifflet writhes in agony, its wings flapping fruitlessly as it dies.",
+      "The grifflet crashes to the ground, motionless."
     ],
     decay: [
       "The grifflet decays into a pile of soft down and fur."

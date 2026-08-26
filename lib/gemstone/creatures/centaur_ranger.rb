@@ -20,8 +20,8 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "large",
   areas: [
     {
       name: "Rambling Meadows",
@@ -68,7 +68,7 @@
     bolt: nil,
     udf: nil,
     bar_td: (66..75),
-    cle_td: nil,
+    cle_td: (70..79),
     emp_td: nil,
     pal_td: nil,
     ran_td: nil,
@@ -78,7 +78,7 @@
     mne_td: 82,
     mjs_td: nil,
     mns_td: 72,
-    mnm_td: nil,
+    mnm_td: (80..86),
     defensive_spells: [
       "Natural Colors (601)",
       "Resist Elements (602)",
@@ -110,9 +110,22 @@
     flee: [],
     death: [
       "The tan centaur ranger screams one last time and dies.",
-      "The black centaur ranger screams one last time and dies."
+      "The black centaur ranger screams one last time and dies.",
+      "The roan centaur ranger screams one last time and dies.",
+      "The bay centaur ranger screams one last time and dies.",
+      "The white centaur ranger screams one last time and dies.",
+      "The black centaur ranger falls to the ground and dies.",
+      "The tan centaur ranger falls to the ground and dies.",
+      "The bay centaur ranger falls to the ground and dies.",
+      "The white centaur ranger falls to the ground and dies."
     ],
-    decay: [],
+    decay: [
+      "A roan centaur ranger dissolves into a puff of red smoke.",
+      "A bay centaur ranger dissolves into a puff of red smoke.",
+      "A white centaur ranger dissolves into a puff of red smoke.",
+      "A tan centaur ranger dissolves into a puff of red smoke.",
+      "A black centaur ranger dissolves into a puff of red smoke."
+    ],
     search: [],
     spell_prep: [],
     attack: [

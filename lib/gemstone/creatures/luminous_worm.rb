@@ -54,17 +54,17 @@
     bolt: (62..73),
     udf: 106,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (45..54),
     emp_td: (42..48),
-    pal_td: nil,
+    pal_td: (45..54),
     ran_td: nil,
     sor_td: (48..51),
     wiz_td: nil,
     mje_td: 51,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (48..54),
+    mnm_td: (42..51),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -89,7 +89,8 @@
     ],
     flee: [],
     death: [
-      "A luminous worm goes limp as it is rendered unconscious!"
+      "A luminous worm goes limp as it is rendered unconscious!",
+      "A luminous worm slumps to the ground, its glowing form now motionless and dull."
     ],
     decay: [],
     search: [],

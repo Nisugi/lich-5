@@ -97,7 +97,7 @@
     bolt: nil,
     udf: 285,
     bar_td: 76,
-    cle_td: nil,
+    cle_td: (78..83),
     emp_td: (161..171),
     pal_td: nil,
     ran_td: nil,
@@ -106,8 +106,8 @@
     mje_td: (89..97),
     mne_td: 83,
     mjs_td: nil,
-    mns_td: 80,
-    mnm_td: nil,
+    mns_td: (151..160),
+    mnm_td: (155..165),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -140,12 +140,14 @@
     flee: [],
     death: [
       "The fenghai falls to the ground motionless.",
-      "A fenghai goes limp as it is rendered unconscious!"
+      "A fenghai goes limp as it is rendered unconscious!",
+      "The fenghai cries out one last time and lies still."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the fenghai's ribs to move independently.",
       "The fenghai's left leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves the knee ligaments.  The fenghai's tibia passes its femur in a very unpleasant manner!"
+      "Acid dissolves the knee ligaments.  The fenghai's tibia passes its femur in a very unpleasant manner!",
+      "The fenghai's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

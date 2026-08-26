@@ -50,9 +50,9 @@
     bolt: 211,
     udf: 311,
     bar_td: (108..114),
-    cle_td: nil,
+    cle_td: (108..111),
     emp_td: (114..123),
-    pal_td: nil,
+    pal_td: (111..120),
     ran_td: nil,
     sor_td: (105..123),
     wiz_td: nil,
@@ -60,7 +60,7 @@
     mne_td: (112..130),
     mjs_td: nil,
     mns_td: (105..123),
-    mnm_td: nil,
+    mnm_td: (114..117),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -85,7 +85,8 @@
     arrival: [],
     flee: [],
     death: [
-      "A krolvin corsair goes limp as he is rendered unconscious!"
+      "A krolvin corsair goes limp as he is rendered unconscious!",
+      "The krolvin corsair tries to crawl away on the deck but collapses and goes still."
     ],
     decay: [],
     search: [],

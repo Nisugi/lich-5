@@ -54,17 +54,17 @@
     bolt: 172,
     udf: 214,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 120,
     emp_td: 120,
-    pal_td: nil,
+    pal_td: (117..120),
     ran_td: nil,
     sor_td: (122..130),
     wiz_td: nil,
     mje_td: 124,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 120,
+    mnm_td: (105..112),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -95,7 +95,8 @@
     death: [
       "A bog troll goes limp as she is rendered unconscious!",
       "A bog troll goes limp as he is rendered unconscious!",
-      "The bog troll twitches violently, then dies."
+      "The bog troll twitches violently, then dies.",
+      "The bog troll tries to get back up but finally collapses and goes still."
     ],
     decay: [
       "A bog troll decays into compost."

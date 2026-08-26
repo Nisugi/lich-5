@@ -58,17 +58,17 @@
     bolt: 131,
     udf: 168,
     bar_td: (39..51),
-    cle_td: nil,
+    cle_td: (42..45),
     emp_td: (37..45),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (39..45),
+    ran_td: 39,
     sor_td: (39..51),
     wiz_td: nil,
     mje_td: (39..51),
     mne_td: (39..51),
     mjs_td: nil,
     mns_td: (39..51),
-    mnm_td: nil,
+    mnm_td: (45..51),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -99,7 +99,9 @@
     death: [
       "The arctic puma crumples to the ground and dies.",
       "The arctic puma lets out a final caterwaul and dies.",
-      "An arctic puma goes limp as he is rendered unconscious!"
+      "An arctic puma goes limp as he is rendered unconscious!",
+      "The arctic puma mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The arctic puma mewls in pain as he slumps to the ground and licks his wounded left foreleg."
     ],
     decay: [
       "An arctic puma decays into a compost of fangs, fur and claws."

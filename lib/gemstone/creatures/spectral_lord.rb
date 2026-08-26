@@ -61,7 +61,7 @@
     bolt: nil,
     udf: 255,
     bar_td: 108,
-    cle_td: nil,
+    cle_td: (108..114),
     emp_td: (108..117),
     pal_td: 108,
     ran_td: nil,
@@ -70,8 +70,8 @@
     mje_td: nil,
     mne_td: (113..119),
     mjs_td: nil,
-    mns_td: 110,
-    mnm_td: nil,
+    mns_td: (110..120),
+    mnm_td: (102..108),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -95,7 +95,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A spectral lord dissipates into ethereal wisps."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

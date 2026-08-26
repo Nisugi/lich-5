@@ -54,17 +54,17 @@
     bolt: (11..14),
     udf: 73,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 9,
     emp_td: 9,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (6..9),
+    ran_td: 9,
     sor_td: 9,
     wiz_td: nil,
     mje_td: 9,
     mne_td: 9,
     mjs_td: nil,
     mns_td: 9,
-    mnm_td: nil,
+    mnm_td: 9,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -91,7 +91,8 @@
     death: [
       "The striped gak collapses to the ground, emits a final bellow, and dies.",
       "The striped gak lets out a final agonized bellow and dies.",
-      "The striped gak collapses to the ground, emits a final silent bellow, and dies."
+      "The striped gak collapses to the ground, emits a final silent bellow, and dies.",
+      "The striped gak brays loudly as she slumps to the ground and cradles her wounded left foreleg."
     ],
     decay: [
       "A striped gak decays into a pile of fur and bone."

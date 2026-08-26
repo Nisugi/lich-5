@@ -70,8 +70,8 @@
     mje_td: (434..439),
     mne_td: 436,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (389..397),
+    mnm_td: (365..369),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Defense (103)",
@@ -108,7 +108,8 @@
     ],
     flee: [],
     death: [
-      "The vaespilon falls to the ground motionless."
+      "The vaespilon falls to the ground motionless.",
+      "The vaespilon wails in terrifying pain one last time and lies still."
     ],
     decay: [
       "All the malice and magic that once held the vaespilon together dissipates, leaving nothing but a husk which crumbles to dust.",

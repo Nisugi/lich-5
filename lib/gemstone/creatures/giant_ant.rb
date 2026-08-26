@@ -32,7 +32,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 36
+        as: (36..41)
       },
       {
         name: "Charge (attack)",
@@ -54,17 +54,17 @@
     bolt: (25..33),
     udf: 33,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (3..6),
     emp_td: (3..6),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (3..6),
+    ran_td: 3,
     sor_td: (3..6),
     wiz_td: nil,
     mje_td: 3,
     mne_td: 3,
     mjs_td: 3,
-    mns_td: 3,
-    mnm_td: nil,
+    mns_td: (3..6),
+    mnm_td: 3,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -92,7 +92,8 @@
     flee: [],
     death: [
       "The giant ant falls to the ground and dies, its feelers twitching.",
-      "The giant ant feebly twitches a feeler one last time and dies."
+      "The giant ant feebly twitches a feeler one last time and dies.",
+      "Beautiful shot pierces both lungs, the giant ant makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A giant ant decays into compost."

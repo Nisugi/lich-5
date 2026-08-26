@@ -66,17 +66,17 @@
     bolt: nil,
     udf: 196,
     bar_td: 63,
-    cle_td: nil,
+    cle_td: (63..72),
     emp_td: (66..74),
-    pal_td: nil,
+    pal_td: (60..69),
     ran_td: nil,
     sor_td: 66,
     wiz_td: nil,
     mje_td: 69,
     mne_td: 66,
     mjs_td: nil,
-    mns_td: 66,
-    mnm_td: nil,
+    mns_td: (60..66),
+    mnm_td: (60..69),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -98,11 +98,15 @@
     description: [
       "The warthog stands level-backed on short, thick legs. His large, angular head is balanced on each side by curved tusks. Used for goring or gashing his enemies, the tusks provide the warthog's primary means of defense. The warthog's bright, attentive eyes are set back and up on his head. Around the edges of the eyes are rows of warts that give this creature his name. Mainly found living in woods or underground burrows, the warthog prefers dark and damp areas to hide in and to provide him concealment until he rushes out after his prey."
     ],
-    arrival: [],
+    arrival: [
+      "A warthog just arrived."
+    ],
     flee: [],
     death: [
       "The warthog collapses to the ground, emits a final snuffle, and dies.",
-      "The warthog lets out a final agonized snuffle and dies."
+      "The warthog lets out a final agonized snuffle and dies.",
+      "The warthog snuffles loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The warthog snuffles loudly as he slumps to the ground and cradles his wounded left hoof."
     ],
     decay: [
       "A warthog decays into a pile of fur and bone.",

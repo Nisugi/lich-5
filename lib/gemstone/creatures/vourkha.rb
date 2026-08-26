@@ -67,17 +67,17 @@
     bolt: (145..170),
     udf: 195,
     bar_td: 135,
-    cle_td: nil,
+    cle_td: (148..157),
     emp_td: (148..154),
-    pal_td: nil,
+    pal_td: (126..135),
     ran_td: 126,
     sor_td: (149..164),
     wiz_td: nil,
     mje_td: 163,
     mne_td: 162,
     mjs_td: nil,
-    mns_td: 148,
-    mnm_td: nil,
+    mns_td: (148..157),
+    mnm_td: (127..136),
     defensive_spells: [
       "Elemental Bias (508)",
       "Thurfel's Ward (503)"
@@ -108,7 +108,10 @@
     flee: [
       "An evil hiss fills the air as a vourkha stalks {direction}."
     ],
-    death: [],
+    death: [
+      "The vourkha slumps to the ground as the light departs his eyes.",
+      "The vourkha slumps to the ground as the light departs her eyes."
+    ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the vourkha's ribs to move independently.",
       "The vourkha's right leg crumbles briefly and explodes in a shower of gore."

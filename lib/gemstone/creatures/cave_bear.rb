@@ -58,7 +58,7 @@
     bolt: 96,
     udf: 174,
     bar_td: nil,
-    cle_td: 69,
+    cle_td: (60..69),
     emp_td: (55..63),
     pal_td: nil,
     ran_td: nil,
@@ -67,8 +67,8 @@
     mje_td: 63,
     mne_td: 63,
     mjs_td: nil,
-    mns_td: 63,
-    mnm_td: nil,
+    mns_td: (57..63),
+    mnm_td: 63,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -101,7 +101,8 @@
     ],
     death: [
       "The cave bear collapses heavily into a heap on the ground and dies.",
-      "The cave bear lets out a blood-curdling roar and dies."
+      "The cave bear lets out a blood-curdling roar and dies.",
+      "The cave bear roars loudly as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [
       "A cave bear decays into a compost of fangs, fur and claws."

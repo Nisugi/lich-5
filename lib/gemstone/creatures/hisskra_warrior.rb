@@ -65,17 +65,17 @@
     bolt: nil,
     udf: 337,
     bar_td: (87..90),
-    cle_td: nil,
+    cle_td: (93..99),
     emp_td: (97..105),
-    pal_td: nil,
+    pal_td: (87..96),
     ran_td: nil,
     sor_td: (102..111),
     wiz_td: nil,
     mje_td: (104..110),
     mne_td: 110,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (98..107),
+    mnm_td: (84..93),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -101,7 +101,9 @@
     flee: [],
     death: [
       "The hisskra warrior rolls over on his back and dies.",
-      "A hisskra warrior goes limp as he is rendered unconscious!"
+      "A hisskra warrior goes limp as he is rendered unconscious!",
+      "The hisskra warrior collapses in a motionless heap.",
+      "The hisskra warrior contorts in a tortured spasm, then goes still."
     ],
     decay: [
       "A hisskra warrior collapses into a putrid lump of scaly flesh.",

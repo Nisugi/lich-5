@@ -65,15 +65,15 @@
     bar_td: 57,
     cle_td: (54..57),
     emp_td: (57..65),
-    pal_td: nil,
+    pal_td: (54..63),
     ran_td: nil,
     sor_td: (57..63),
     wiz_td: nil,
     mje_td: 63,
     mne_td: 57,
     mjs_td: nil,
-    mns_td: (54..57),
-    mnm_td: nil,
+    mns_td: (54..63),
+    mnm_td: (57..63),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -98,7 +98,8 @@
     arrival: [],
     flee: [],
     death: [
-      "A krolvin warrior goes limp as he is rendered unconscious!"
+      "A krolvin warrior goes limp as he is rendered unconscious!",
+      "The krolvin warrior rolls over on the floor and goes still."
     ],
     decay: [
       "A krolvin warrior's body decays into a pile of compost."

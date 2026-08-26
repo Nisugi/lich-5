@@ -21,7 +21,7 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
+  height: 5,
   size: "large",
   areas: [
     {
@@ -90,17 +90,17 @@
     bolt: 263,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (287..293),
     emp_td: 288,
-    pal_td: nil,
+    pal_td: (242..251),
     ran_td: nil,
     sor_td: (297..315),
     wiz_td: nil,
     mje_td: 314,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 279,
+    mnm_td: (234..243),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -122,11 +122,14 @@
     description: [
       "The storm griffin is a magnificent beast, as if designed by the gods to embody fierce and graceful predation. Its front legs, forebody, wings, and head are those of a great eagle, complete with large powder-blue feathers and aquiline beak. The rear half of the creature's body is that of a powerful lion, with short, sandy blonde fur and a long feline tail. A tendril of electricity snakes across one outstreched claw as the storm griffin glares about with its piercing blue eyes."
     ],
-    arrival: [],
+    arrival: [
+      "A storm griffin just arrived."
+    ],
     flee: [],
     death: [
       "A storm griffin goes limp as it is rendered unconscious!",
-      "The storm griffin writhes in agony, its wings flapping fruitlessly as it dies."
+      "The storm griffin writhes in agony, its wings flapping fruitlessly as it dies.",
+      "The storm griffin crashes to the ground, motionless."
     ],
     decay: [
       "The storm griffin decays into a pile of feathers and fur."

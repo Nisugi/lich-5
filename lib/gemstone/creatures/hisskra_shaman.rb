@@ -67,17 +67,17 @@
     bolt: nil,
     udf: 225,
     bar_td: 112,
-    cle_td: nil,
+    cle_td: 119,
     emp_td: (128..131),
-    pal_td: nil,
+    pal_td: (101..110),
     ran_td: nil,
     sor_td: (128..144),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 135,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (129..139),
+    mnm_td: (106..115),
     defensive_spells: [
       "Natural Colors",
       "Resist Elements",
@@ -108,7 +108,10 @@
     arrival: [],
     flee: [],
     death: [
-      "The hisskra shaman rolls over on his back and dies."
+      "The hisskra shaman rolls over on his back and dies.",
+      "The hisskra shaman collapses in a motionless heap.",
+      "The hisskra shaman contorts in a tortured spasm, then goes still.",
+      "The hisskra shaman twitches violently in his death throes before finally going still."
     ],
     decay: [
       "A hisskra shaman decays into a pile of scales and bone.",
@@ -119,7 +122,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "An hisskra shaman swings {weapon} at you!"
+      "An hisskra shaman swings {weapon} at you!",
+      "A hisskra shaman swings {weapon} at you!"
     ],
     bite: [],
     claw: [],

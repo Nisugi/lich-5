@@ -60,8 +60,8 @@
     mje_td: 164,
     mne_td: 163,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (142..152),
+    mnm_td: (125..135),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Warding II (107)",
@@ -94,7 +94,8 @@
     ],
     flee: [],
     death: [
-      "The spectral miner falls to the ground motionless."
+      "The spectral miner falls to the ground motionless.",
+      "The spectral miner goes still for a moment while its head reshapes."
     ],
     decay: [
       "A spectral miner quickly crumbles into the ground in front of your eyes."

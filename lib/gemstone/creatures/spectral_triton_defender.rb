@@ -73,8 +73,8 @@
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (365..368),
+    mnm_td: (294..300),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -100,11 +100,16 @@
       "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
       "A triton combatant strides in, a wary look on her face.",
       "A triton radical strides in, a wary look on her face.",
-      "A triton dissembler strides in, a wary look on his face."
+      "A triton dissembler strides in, a wary look on his face.",
+      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton dissembler arrives, striding forth with his robes trailing behind him."
     ],
     flee: [],
     death: [
-      "The siren gives a plaintive wail before she slumps to her side and dies."
+      "The siren gives a plaintive wail before she slumps to her side and dies.",
+      "The triton defender fades into transparency, her remnants rapidly dissolving into the air.",
+      "The triton defender fades into transparency, his remnants rapidly dissolving into the air.",
+      "The triton defender goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

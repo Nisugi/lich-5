@@ -84,8 +84,8 @@
     mje_td: (367..373),
     mne_td: nil,
     mjs_td: 332,
-    mns_td: 332,
-    mnm_td: nil,
+    mns_td: 320,
+    mnm_td: 319,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -115,10 +115,12 @@
     spell_prep: [],
     attack: [
       "An aivren rakes at you with a razor-sharp claw!",
-      "An aivren tries to spear you with {pronoun} massive beak!"
+      "An aivren tries to spear you with {pronoun} massive beak!",
+      "A aivren rakes at you with a razor-sharp claw!"
     ],
     bite: [
-      "An aivren tries to bite you!"
+      "An aivren tries to bite you!",
+      "A aivren tries to bite you!"
     ],
     claw: [],
     info: {

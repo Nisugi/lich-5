@@ -42,7 +42,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Pounce"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -54,17 +58,17 @@
     bolt: (56..73),
     udf: 122,
     bar_td: (45..51),
-    cle_td: nil,
+    cle_td: (45..54),
     emp_td: (45..54),
-    pal_td: 42,
+    pal_td: (45..54),
     ran_td: nil,
     sor_td: (42..54),
     wiz_td: nil,
     mje_td: 48,
     mne_td: 48,
     mjs_td: nil,
-    mns_td: 48,
-    mnm_td: nil,
+    mns_td: (48..54),
+    mnm_td: (42..48),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -91,7 +95,8 @@
     ],
     flee: [],
     death: [
-      "A phosphorescent worm goes limp as it is rendered unconscious!"
+      "A phosphorescent worm goes limp as it is rendered unconscious!",
+      "A phosphorescent worm slumps to the ground, its glowing form now motionless and dull."
     ],
     decay: [],
     search: [],

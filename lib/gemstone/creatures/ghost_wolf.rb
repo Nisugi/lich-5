@@ -64,7 +64,7 @@
     bar_td: 48,
     cle_td: 48,
     emp_td: 48,
-    pal_td: 48,
+    pal_td: (45..48),
     ran_td: 48,
     sor_td: 48,
     wiz_td: 48,

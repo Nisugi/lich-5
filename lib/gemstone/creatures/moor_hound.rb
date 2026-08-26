@@ -67,9 +67,9 @@
     bolt: nil,
     udf: 238,
     bar_td: 101,
-    cle_td: nil,
+    cle_td: (109..115),
     emp_td: (113..121),
-    pal_td: nil,
+    pal_td: (96..99),
     ran_td: nil,
     sor_td: 119,
     wiz_td: nil,
@@ -77,7 +77,7 @@
     mne_td: 124,
     mjs_td: nil,
     mns_td: 113,
-    mnm_td: nil,
+    mnm_td: (99..108),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -110,7 +110,9 @@
       "The moor hound falls to the ground and dies.",
       "The moor hound rolls over and dies.",
       "A moor hound goes limp as she is rendered unconscious!",
-      "A moor hound goes limp as he is rendered unconscious!"
+      "A moor hound goes limp as he is rendered unconscious!",
+      "The moor hound yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The moor hound yelps loudly as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [],
     search: [],

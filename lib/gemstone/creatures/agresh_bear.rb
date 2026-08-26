@@ -54,7 +54,7 @@
     bolt: (96..105),
     udf: 164,
     bar_td: 48,
-    cle_td: nil,
+    cle_td: (48..54),
     emp_td: (48..56),
     pal_td: nil,
     ran_td: nil,
@@ -63,8 +63,8 @@
     mje_td: 48,
     mne_td: 48,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (48..51),
+    mnm_td: (48..54),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -98,7 +98,8 @@
       "The Agresh bear collapses heavily into a heap on the ground and dies.",
       "The Agresh bear lets out a blood-curdling roar and dies.",
       "An Agresh bear goes limp as he is rendered unconscious!",
-      "An Agresh bear goes limp as she is rendered unconscious!"
+      "An Agresh bear goes limp as she is rendered unconscious!",
+      "The Agresh bear roars loudly as she slumps to the ground and licks her wounded left foreleg."
     ],
     decay: [
       "An Agresh bear decays into a compost of fangs, fur and claws."

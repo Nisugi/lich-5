@@ -95,9 +95,9 @@
     bolt: 206,
     udf: nil,
     bar_td: nil,
-    cle_td: 225,
+    cle_td: (221..225),
     emp_td: (225..234),
-    pal_td: nil,
+    pal_td: (188..191),
     ran_td: nil,
     sor_td: (231..241),
     wiz_td: nil,
@@ -105,7 +105,7 @@
     mne_td: 247,
     mjs_td: nil,
     mns_td: 222,
-    mnm_td: nil,
+    mnm_td: (192..201),
     defensive_spells: [
       "Elemental Barrier (430)",
       "Elemental Defense III (414)"

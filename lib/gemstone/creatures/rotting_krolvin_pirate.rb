@@ -68,7 +68,7 @@
     bar_td: 54,
     cle_td: 54,
     emp_td: 54,
-    pal_td: nil,
+    pal_td: (51..54),
     ran_td: nil,
     sor_td: 54,
     wiz_td: nil,
@@ -76,7 +76,7 @@
     mne_td: (51..60),
     mjs_td: (51..60),
     mns_td: (51..60),
-    mnm_td: nil,
+    mnm_td: 54,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -100,7 +100,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The krolvin pirate spits out one last curse and lies still.",
+      "The krolvin pirate vainly struggles to rise, then goes still."
+    ],
     decay: [
       "The krolvin pirate decays into a pile of compost, releasing a stench of rotting seaweed."
     ],

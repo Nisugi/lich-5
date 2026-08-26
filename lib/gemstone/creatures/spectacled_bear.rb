@@ -56,17 +56,17 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (48..54),
     emp_td: (29..59),
-    pal_td: nil,
+    pal_td: (45..54),
     ran_td: nil,
     sor_td: (48..54),
     wiz_td: nil,
     mje_td: 48,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (48..54),
+    mnm_td: (45..54),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -98,7 +98,9 @@
       "The spectacled bear collapses heavily into a heap on the ground and dies.",
       "The spectacled bear lets out a blood-curdling roar and dies.",
       "A spectacled bear goes limp as she is rendered unconscious!",
-      "A spectacled bear goes limp as he is rendered unconscious!"
+      "A spectacled bear goes limp as he is rendered unconscious!",
+      "The spectacled bear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The spectacled bear roars loudly as he slumps to the ground and licks his wounded left foreleg."
     ],
     decay: [
       "A spectacled bear decays into a compost of fangs, fur and claws."

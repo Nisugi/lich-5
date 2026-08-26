@@ -70,9 +70,9 @@
     bolt: nil,
     udf: 83,
     bar_td: 15,
-    cle_td: nil,
+    cle_td: 15,
     emp_td: 15,
-    pal_td: nil,
+    pal_td: (12..15),
     ran_td: nil,
     sor_td: 15,
     wiz_td: nil,
@@ -80,7 +80,7 @@
     mne_td: 15,
     mjs_td: nil,
     mns_td: 15,
-    mnm_td: nil,
+    mnm_td: 15,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -108,7 +108,8 @@
       "The coyote falls to the ground and dies.",
       "The coyote rolls over and dies.",
       "A greater orc breathes his last gasp and dies.",
-      "A greater orc breathes her last gasp and dies."
+      "A greater orc breathes her last gasp and dies.",
+      "The coyote yelps loudly as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [
       "A coyote decays into a compost of fangs and fur."

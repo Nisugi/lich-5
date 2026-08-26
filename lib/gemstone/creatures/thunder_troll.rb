@@ -87,17 +87,17 @@
     bolt: (91..116),
     udf: 95,
     bar_td: (41..68),
-    cle_td: nil,
+    cle_td: (49..59),
     emp_td: (49..59),
-    pal_td: 49,
+    pal_td: (49..59),
     ran_td: nil,
     sor_td: (57..64),
     wiz_td: nil,
     mje_td: 53,
     mne_td: 53,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (59..66),
+    mnm_td: (61..66),
     defensive_spells: [
       "Elemental Defense I",
       "Elemental Defense II",
@@ -135,7 +135,9 @@
     flee: [],
     death: [
       "The thunder troll howls in agony one last time and dies.",
-      "A thunder troll goes limp as it is rendered unconscious!"
+      "A thunder troll goes limp as it is rendered unconscious!",
+      "A thunder troll dissipates into the air, leaving nothing behind.",
+      "The thunder troll crumples to the ground motionless."
     ],
     decay: [],
     search: [],

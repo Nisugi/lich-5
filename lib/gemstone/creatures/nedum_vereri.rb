@@ -73,8 +73,8 @@
     bar_td: nil,
     cle_td: 54,
     emp_td: 54,
-    pal_td: nil,
-    ran_td: 87,
+    pal_td: (51..54),
+    ran_td: 54,
     sor_td: 54,
     wiz_td: nil,
     mje_td: 54,
@@ -110,7 +110,10 @@
       "A nedum vereri just arrived."
     ],
     flee: [],
-    death: [],
+    death: [
+      "A nedum vereri exhales a sigh of relief and slumps to the ground motionless.",
+      "A nedum vereri exhales a sigh of relief and goes still."
+    ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the nedum vereri's ribs to move independently."
     ],

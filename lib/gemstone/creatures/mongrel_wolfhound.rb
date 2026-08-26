@@ -58,7 +58,7 @@
     bolt: nil,
     udf: nil,
     bar_td: (42..48),
-    cle_td: nil,
+    cle_td: 42,
     emp_td: (29..48),
     pal_td: nil,
     ran_td: nil,
@@ -68,7 +68,7 @@
     mne_td: 51,
     mjs_td: nil,
     mns_td: nil,
-    mnm_td: nil,
+    mnm_td: (47..54),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

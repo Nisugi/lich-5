@@ -78,7 +78,7 @@
     mne_td: 275,
     mjs_td: nil,
     mns_td: 247,
-    mnm_td: nil,
+    mnm_td: 199,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -105,7 +105,8 @@
     ],
     flee: [],
     death: [
-      "A massive troll king goes limp as it is rendered unconscious!"
+      "A massive troll king goes limp as it is rendered unconscious!",
+      "The troll king lies still."
     ],
     decay: [
       "A massive troll king decays away into compost.",

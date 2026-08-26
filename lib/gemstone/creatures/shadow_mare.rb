@@ -32,7 +32,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 188
+        as: (188..211)
       },
       {
         name: "Foot",
@@ -67,8 +67,8 @@
     mje_td: (137..143),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (130..139),
+    mnm_td: (123..132),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -93,7 +93,8 @@
     arrival: [],
     flee: [],
     death: [
-      "The shadow mare falls to the ground motionless."
+      "The shadow mare falls to the ground motionless.",
+      "The shadow mare goes still for a moment while its head reshapes."
     ],
     decay: [
       "A shadow mare's eyes go dim as she dissolves into the shadows."

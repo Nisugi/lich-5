@@ -52,6 +52,12 @@
       },
       {
         name: "Spit"
+      },
+      {
+        name: "Glob"
+      },
+      {
+        name: "Lash"
       }
     ],
     special_notes: []
@@ -64,17 +70,17 @@
     bolt: 208,
     udf: 196,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 72,
     emp_td: (68..72),
-    pal_td: nil,
+    pal_td: (66..72),
     ran_td: nil,
     sor_td: 72,
     wiz_td: nil,
     mje_td: 75,
     mne_td: 72,
     mjs_td: nil,
-    mns_td: 72,
-    mnm_td: nil,
+    mns_td: (72..78),
+    mnm_td: 75,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -104,7 +110,9 @@
       "A tree viper slithers {direction}.",
       "A tree viper drops from overhead and slithers {direction}."
     ],
-    death: [],
+    death: [
+      "The tree viper twists and coils violently in its death throes, finally going still."
+    ],
     decay: [
       "A tree viper decays into a pile of scales and flesh."
     ],

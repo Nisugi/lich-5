@@ -59,7 +59,7 @@
     mne_td: "351 to 381",
     mjs_td: nil,
     mns_td: "319 to 349",
-    mnm_td: nil,
+    mnm_td: (273..276),
     defensive_spells: [
       "Elemental Defense III (414)",
       "Elemental Barrier (430)",

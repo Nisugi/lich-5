@@ -72,17 +72,17 @@
     bolt: nil,
     udf: 358,
     bar_td: (119..124),
-    cle_td: nil,
+    cle_td: (130..140),
     emp_td: (140..150),
-    pal_td: nil,
+    pal_td: (111..120),
     ran_td: nil,
     sor_td: (140..149),
     wiz_td: nil,
     mje_td: 146,
     mne_td: 157,
     mjs_td: nil,
-    mns_td: 141,
-    mnm_td: nil,
+    mns_td: (131..141),
+    mnm_td: (122..127),
     defensive_spells: [
       "Natural Colors (601)",
       "Phoen's Strength (606)",
@@ -120,7 +120,9 @@
       "A wood sprite glances around and then wanders {direction}!"
     ],
     death: [
-      "A wood sprite goes limp as he is rendered unconscious!"
+      "A wood sprite goes limp as he is rendered unconscious!",
+      "The wood sprite's eyes grow dim as his lifeforce fades away.",
+      "The wood sprite's eyes grow dim as her lifeforce fades away."
     ],
     decay: [
       "A wood sprite crumbles into a pile of dry splinters.",

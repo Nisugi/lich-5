@@ -93,7 +93,7 @@
     bolt: nil,
     udf: 373,
     bar_td: 135,
-    cle_td: nil,
+    cle_td: (143..147),
     emp_td: (142..152),
     pal_td: nil,
     ran_td: (135..138),
@@ -102,8 +102,8 @@
     mje_td: 159,
     mne_td: 165,
     mjs_td: nil,
-    mns_td: 146,
-    mnm_td: nil,
+    mns_td: (142..152),
+    mnm_td: (148..157),
     defensive_spells: [
       "Mobility (618)",
       "Natural Colors (601)",
@@ -137,7 +137,9 @@
     death: [
       "The shan ranger howls out one last time and dies.",
       "The shan ranger yips in pain as he falls to the ground motionless.",
-      "The shan ranger yips in pain as she falls to the ground motionless."
+      "The shan ranger yips in pain as she falls to the ground motionless.",
+      "A shan ranger's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
+      "A shan ranger's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette."
     ],
     decay: [],
     search: [],

@@ -69,7 +69,7 @@
     mne_td: 175,
     mjs_td: (157..166),
     mns_td: (157..166),
-    mnm_td: nil,
+    mnm_td: (129..138),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -100,7 +100,9 @@
     flee: [],
     death: [
       "A lesser faeroth goes limp as she is rendered unconscious!",
-      "A lesser faeroth goes limp as he is rendered unconscious!"
+      "A lesser faeroth goes limp as he is rendered unconscious!",
+      "A lesser faeroth emits a shriek as he goes still.",
+      "A lesser faeroth emits a shriek as she goes still."
     ],
     decay: [
       "A lesser faeroth decays into a pile of foul-smelling compost.",

@@ -97,17 +97,17 @@
     bolt: nil,
     udf: nil,
     bar_td: (63..89),
-    cle_td: nil,
+    cle_td: (81..89),
     emp_td: (80..88),
-    pal_td: nil,
+    pal_td: (67..76),
     ran_td: nil,
     sor_td: (84..94),
     wiz_td: nil,
     mje_td: 101,
     mne_td: 85,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: 87,
+    mns_td: (77..86),
+    mnm_td: (82..91),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -140,10 +140,12 @@
     flee: [],
     death: [
       "A krolvin warfarer goes limp as he is rendered unconscious!",
-      "The krolvin warfarer twitches violently, then dies."
+      "The krolvin warfarer twitches violently, then dies.",
+      "The krolvin warfarer rolls over on the floor and goes still."
     ],
     decay: [
-      "The krolvin warfarer's right leg crumbles briefly and explodes in a shower of gore."
+      "The krolvin warfarer's right leg crumbles briefly and explodes in a shower of gore.",
+      "The krolvin warfarer's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

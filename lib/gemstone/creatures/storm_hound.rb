@@ -73,7 +73,7 @@
     mne_td: 82,
     mjs_td: 76,
     mns_td: 76,
-    mnm_td: nil,
+    mnm_td: 72,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: [
@@ -101,7 +101,8 @@
     flee: [],
     death: [
       "The storm hound lets out one last whimpering sigh of sparks and blue mist and dies.",
-      "A storm hound goes limp as it is rendered unconscious!"
+      "A storm hound goes limp as it is rendered unconscious!",
+      "The storm hound yelps loudly as it slumps to the ground and licks its wounded right foreleg."
     ],
     decay: [
       "A storm hound decays into a compost of fur and fangs."

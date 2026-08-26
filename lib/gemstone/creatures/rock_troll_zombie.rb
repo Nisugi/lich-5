@@ -64,7 +64,7 @@
     bolt: 140,
     udf: 373,
     bar_td: nil,
-    cle_td: 119,
+    cle_td: (116..119),
     emp_td: (117..127),
     pal_td: nil,
     ran_td: nil,
@@ -73,8 +73,8 @@
     mje_td: 129,
     mne_td: (123..138),
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (117..126),
+    mnm_td: (96..105),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -104,7 +104,11 @@
       "A rock troll zombie lumbers {direction}.",
       "A rock troll zombie lumbers {direction} with a slight limp."
     ],
-    death: [],
+    death: [
+      "The troll zombie tears off a piece of her flesh, gnawing upon the decayed meat in a vain attempt to nourish her continued tormented existence.  With the attempt failing, the troll zombie slumps to the ground motionless.",
+      "The troll zombie tears off a piece of his flesh, gnawing upon the decayed meat in a vain attempt to nourish his continued tormented existence.  With the attempt failing, the troll zombie slumps to the ground motionless.",
+      "The troll zombie tears off a piece of his flesh, gnawing upon the decayed meat in a vain attempt to nourish his continued tormented existence.  With the attempt failing, the troll zombie topples to the ground motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

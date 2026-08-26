@@ -69,7 +69,7 @@
     bolt: nil,
     udf: 407,
     bar_td: (117..150),
-    cle_td: nil,
+    cle_td: 126,
     emp_td: (123..132),
     pal_td: 126,
     ran_td: nil,
@@ -78,8 +78,8 @@
     mje_td: 132,
     mne_td: (129..132),
     mjs_td: nil,
-    mns_td: 150,
-    mnm_td: nil,
+    mns_td: (150..152),
+    mnm_td: (123..132),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -106,7 +106,9 @@
     death: [
       "The shan warrior howls out one last time and dies.",
       "The shan warrior yips in pain as she falls to the ground motionless.",
-      "The shan warrior yips in pain as he falls to the ground motionless."
+      "The shan warrior yips in pain as he falls to the ground motionless.",
+      "A shan warrior's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
+      "A shan warrior's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
     ],
     decay: [],
     search: [],

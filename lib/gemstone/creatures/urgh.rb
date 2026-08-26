@@ -66,9 +66,9 @@
     bolt: 19,
     udf: 72,
     bar_td: 12,
-    cle_td: nil,
+    cle_td: 12,
     emp_td: 12,
-    pal_td: nil,
+    pal_td: (9..12),
     ran_td: nil,
     sor_td: 12,
     wiz_td: nil,
@@ -76,7 +76,7 @@
     mne_td: 12,
     mjs_td: nil,
     mns_td: 12,
-    mnm_td: nil,
+    mnm_td: 12,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -102,7 +102,8 @@
     flee: [],
     death: [
       "The urgh collapses to the ground, emits a final squeal, and dies.",
-      "The urgh lets out a final agonized squeal and dies."
+      "The urgh lets out a final agonized squeal and dies.",
+      "The urgh squeals loudly as she slumps to the ground and cradles her wounded left foreleg."
     ],
     decay: [
       "An urgh decays into a pile of fur and bone."

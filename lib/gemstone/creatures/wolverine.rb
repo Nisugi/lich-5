@@ -58,9 +58,9 @@
     bolt: 205,
     udf: 225,
     bar_td: 72,
-    cle_td: nil,
+    cle_td: 74,
     emp_td: 76,
-    pal_td: 72,
+    pal_td: (69..72),
     ran_td: nil,
     sor_td: 79,
     wiz_td: nil,
@@ -68,7 +68,7 @@
     mne_td: 82,
     mjs_td: nil,
     mns_td: 76,
-    mnm_td: nil,
+    mnm_td: 72,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -100,7 +100,8 @@
       "The wolverine falls back into a heap and dies.",
       "The wolverine hisses one last time and dies.",
       "A wolverine goes limp as it is rendered unconscious!",
-      "The wolverine twitches violently, then dies."
+      "The wolverine twitches violently, then dies.",
+      "A wolverine screeches loudly and slumps to the ground while frantically licking its wounded right foreleg."
     ],
     decay: [
       "A wolverine decays into compost.",

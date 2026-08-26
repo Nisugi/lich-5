@@ -60,8 +60,8 @@
     mje_td: 196,
     mne_td: 195,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (175..184),
+    mnm_td: (144..147),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -88,7 +88,8 @@
     ],
     flee: [],
     death: [
-      "The dybbuk falls to the ground motionless."
+      "The dybbuk falls to the ground motionless.",
+      "The dybbuk wails in terrifying pain one last time and lies still."
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The dybbuk's tibia passes its femur in a very unpleasant manner!"

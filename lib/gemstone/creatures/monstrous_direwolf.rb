@@ -71,9 +71,9 @@
     bolt: (215..291),
     udf: 463,
     bar_td: 240,
-    cle_td: 271,
+    cle_td: (312..321),
     emp_td: 329,
-    pal_td: nil,
+    pal_td: (280..283),
     ran_td: nil,
     sor_td: (272..284),
     wiz_td: nil,
@@ -81,7 +81,7 @@
     mne_td: 298,
     mjs_td: nil,
     mns_td: 267,
-    mnm_td: nil,
+    mnm_td: 266,
     defensive_spells: [
       "TD boost"
     ],
@@ -107,7 +107,8 @@
     ],
     arrival: [
       "A monstrous direwolf lumbers in with a vicious snarl!",
-      "A monstrous direwolf stalks in!"
+      "A monstrous direwolf stalks in!",
+      "A monstrous direwolf stalks in, growling in pain!"
     ],
     flee: [
       "A monstrous direwolf stalks {direction}.",

@@ -62,7 +62,7 @@
     bolt: nil,
     udf: 127,
     bar_td: 51,
-    cle_td: nil,
+    cle_td: (45..51),
     emp_td: (51..59),
     pal_td: nil,
     ran_td: nil,
@@ -71,8 +71,8 @@
     mje_td: 51,
     mne_td: 51,
     mjs_td: nil,
-    mns_td: 51,
-    mnm_td: nil,
+    mns_td: (51..57),
+    mnm_td: (51..57),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -98,7 +98,10 @@
       "A krolvin mercenary just arrived."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The krolvin mercenary rolls over on the ground and goes still.",
+      "The krolvin mercenary rolls over on the floor and goes still."
+    ],
     decay: [
       "A krolvin mercenary collapses into a pile of dirty rags."
     ],

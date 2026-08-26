@@ -68,15 +68,15 @@
     bar_td: 24,
     cle_td: 24,
     emp_td: 24,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: 24,
+    ran_td: 24,
     sor_td: 24,
     wiz_td: 24,
     mje_td: 24,
     mne_td: 24,
     mjs_td: 24,
     mns_td: 24,
-    mnm_td: nil,
+    mnm_td: 24,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -106,7 +106,8 @@
     ],
     death: [
       "The thrak falls back into a heap and dies.",
-      "The thrak hisses one last time and dies."
+      "The thrak hisses one last time and dies.",
+      "A thrak screeches loudly and slumps to the ground while frantically licking its wounded right foreleg."
     ],
     decay: [
       "A thrak decays into compost."

@@ -93,8 +93,8 @@
     mje_td: 345,
     mne_td: 333,
     mjs_td: nil,
-    mns_td: 294,
-    mnm_td: nil,
+    mns_td: (302..311),
+    mnm_td: (233..243),
     defensive_spells: [
       "Elemental Barrier",
       "Elemental Defense I",
@@ -137,7 +137,8 @@
     death: [
       "The fire mage goes limp and she falls over as the fire slowly fades from her eyes.",
       "The fire mage goes limp and he falls over as the fire slowly fades from his eyes.",
-      "The fire mage twitches violently, then dies."
+      "The fire mage twitches violently, then dies.",
+      "The fire in the fire mage's eyes slowly fades away."
     ],
     decay: [
       "A fire mage decays into a fine grey ash that quickly blows away.",

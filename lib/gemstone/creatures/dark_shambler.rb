@@ -72,7 +72,7 @@
     bar_td: 51,
     cle_td: 51,
     emp_td: 51,
-    pal_td: 51,
+    pal_td: (48..51),
     ran_td: 51,
     sor_td: 51,
     wiz_td: 51,
@@ -80,7 +80,7 @@
     mne_td: 51,
     mjs_td: 51,
     mns_td: 51,
-    mnm_td: 51,
+    mnm_td: (49..51),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -114,7 +114,8 @@
       "The dark shambler twitches violently, then dies."
     ],
     decay: [
-      "A dark shambler turns to dust."
+      "A dark shambler turns to dust.",
+      "The dark shambler's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

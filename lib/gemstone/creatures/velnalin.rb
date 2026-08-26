@@ -58,10 +58,10 @@
     bolt: 13,
     udf: 66,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 9,
     emp_td: 9,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (6..9),
+    ran_td: 9,
     sor_td: 9,
     wiz_td: nil,
     mje_td: 9,
@@ -95,7 +95,11 @@
     death: [
       "The velnalin collapses to the ground, emits a final sigh, and dies.",
       "The velnalin lets out a final agonized sigh and dies.",
-      "The velnalin collapses to the ground, emits a final silent sigh, and dies."
+      "The velnalin collapses to the ground, emits a final silent sigh, and dies.",
+      "The velnalin groans loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The velnalin groans loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The velnalin groans loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "The velnalin groans loudly as he slumps to the ground and cradles his wounded right foreleg."
     ],
     decay: [
       "A velnalin decays into a pile of fur and bone."

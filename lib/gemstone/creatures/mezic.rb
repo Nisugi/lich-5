@@ -85,8 +85,8 @@
     mje_td: 124,
     mne_td: 130,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (103..111),
+    mnm_td: (105..113),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -120,7 +120,8 @@
     death: [
       "A mezic goes limp as he is rendered unconscious!",
       "The mezic twitches violently, then dies.",
-      "The mezic falls to the ground motionless."
+      "The mezic falls to the ground motionless.",
+      "The mezic cries out one last time and lies still."
     ],
     decay: [],
     search: [],

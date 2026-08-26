@@ -72,17 +72,17 @@
     bolt: nil,
     udf: 484,
     bar_td: "234 to 244",
-    cle_td: 268,
+    cle_td: 276,
     emp_td: (249..259),
-    pal_td: nil,
+    pal_td: (225..234),
     ran_td: nil,
     sor_td: (274..280),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 288,
     mjs_td: 268,
-    mns_td: 268,
-    mnm_td: nil,
+    mns_td: (262..272),
+    mnm_td: 250,
     defensive_spells: [
       "Spirit Defense",
       "Spirit Warding II",
@@ -124,7 +124,10 @@
       "An emaciated hierophant thrashes violently and then dies.",
       "An emaciated hierophant dies, falling down like a rag doll.",
       "An emaciated hierophant staggers, then falls to the floor and dies.",
-      "An emaciated hierophant spasms one last time and then dies."
+      "An emaciated hierophant spasms one last time and then dies.",
+      "An emaciated hierophant thrashes one last time and goes still.",
+      "An emaciated hierophant moans in agony and then goes still.",
+      "An emaciated hierophant spasms in death and then goes still."
     ],
     decay: [
       "An emaciated hierophant crumbles to dust and blows away on the wind.",

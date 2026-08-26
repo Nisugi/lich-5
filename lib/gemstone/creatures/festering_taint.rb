@@ -110,8 +110,8 @@
     mje_td: 384,
     mne_td: 378,
     mjs_td: nil,
-    mns_td: 339,
-    mnm_td: nil,
+    mns_td: (339..349),
+    mnm_td: (303..310),
     defensive_spells: [
       "Lesser Shroud (120)",
       "Spirit Defense (103)",

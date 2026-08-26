@@ -73,9 +73,9 @@
     bolt: 169,
     udf: 191,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (96..102),
     emp_td: (102..105),
-    pal_td: nil,
+    pal_td: (99..102),
     ran_td: nil,
     sor_td: (93..102),
     wiz_td: nil,
@@ -83,7 +83,7 @@
     mne_td: (94..109),
     mjs_td: nil,
     mns_td: 102,
-    mnm_td: nil,
+    mnm_td: 102,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: [
@@ -111,7 +111,9 @@
       "A spectral warrior strides in!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "A spectral warrior dissipates into ethereal wisps."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

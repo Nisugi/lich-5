@@ -53,17 +53,17 @@
     bolt: nil,
     udf: 303,
     bar_td: (102..111),
-    cle_td: 108,
+    cle_td: (108..114),
     emp_td: (109..116),
-    pal_td: nil,
+    pal_td: (102..111),
     ran_td: nil,
     sor_td: (115..124),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 121,
     mjs_td: nil,
-    mns_td: 109,
-    mnm_td: nil,
+    mns_td: (109..118),
+    mnm_td: (102..105),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -89,7 +89,9 @@
       "A bog troll lumbers in, his face set in an angry scowl!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "The skeletal soldier struggles to rise to its feet, but soon lies still."
+    ],
     decay: [
       "A skeletal soldier crumbles to a fine white powder.",
       "Acid dissolves connecting cartilage, freeing the skeletal soldier's ribs to move independently."

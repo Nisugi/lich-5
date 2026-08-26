@@ -52,15 +52,15 @@
     bar_td: 27,
     cle_td: 33,
     emp_td: (33..41),
-    pal_td: nil,
+    pal_td: (30..39),
     ran_td: nil,
     sor_td: (27..33),
     wiz_td: nil,
     mje_td: 33,
     mne_td: 33,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: 33,
+    mns_td: (27..33),
+    mnm_td: (33..39),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -84,7 +84,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The wall guardian vainly tries to shout a warning, then goes still."
+    ],
     decay: [
       "The wall guardian decays into a grisly pile of armor, blood, and bone."
     ],

@@ -68,7 +68,7 @@
     mne_td: 107,
     mjs_td: 101,
     mns_td: 101,
-    mnm_td: nil,
+    mnm_td: 97,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: [
@@ -95,7 +95,9 @@
     arrival: [],
     flee: [],
     death: [
-      "The vapor hound lets out one last whimpering sigh of chartreuse vapors and dies."
+      "The vapor hound lets out one last whimpering sigh of chartreuse vapors and dies.",
+      "The vapor hound yelps loudly as it slumps to the ground and licks its wounded right foreleg.",
+      "The vapor hound yelps loudly as it slumps to the ground and licks its wounded left foreleg."
     ],
     decay: [
       "A vapor hound decays into a compost of fur and fangs."

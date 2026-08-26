@@ -52,17 +52,17 @@
     bolt: (90..93),
     udf: 141,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (39..45),
     emp_td: (17..47),
-    pal_td: nil,
+    pal_td: (36..39),
     ran_td: nil,
     sor_td: (36..45),
     wiz_td: nil,
     mje_td: (33..39),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (39..45),
+    mnm_td: (39..45),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -92,7 +92,9 @@
       "The imposing elk silently lets out a final agonized sigh and dies.",
       "The imposing elk lets out a final agonized sigh and dies.",
       "The imposing elk collapses to the ground, emits a final silent sigh, and dies.",
-      "An imposing elk goes limp as he is rendered unconscious!"
+      "An imposing elk goes limp as he is rendered unconscious!",
+      "The imposing elk groans loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The imposing elk groans loudly as he slumps to the ground and cradles his wounded right hoof."
     ],
     decay: [
       "An imposing elk decays into a pile of fur and bone."

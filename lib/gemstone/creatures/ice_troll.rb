@@ -50,7 +50,7 @@
       },
       {
         name: "Freezing ball of pure cold",
-        as: 185
+        as: (179..185)
       }
     ],
     bolt_spells: [
@@ -76,14 +76,14 @@
     cle_td: nil,
     emp_td: (94..104),
     pal_td: nil,
-    ran_td: nil,
+    ran_td: (81..84),
     sor_td: (101..112),
     wiz_td: nil,
     mje_td: 109,
     mne_td: 104,
     mjs_td: nil,
-    mns_td: 94,
-    mnm_td: nil,
+    mns_td: (94..97),
+    mnm_td: (87..90),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

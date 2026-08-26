@@ -63,8 +63,8 @@
     mje_td: (270..279),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 274,
+    mnm_td: (206..215),
     defensive_spells: [
       "Troll's Blood"
     ],
@@ -97,7 +97,9 @@
       "A shan empath's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
       "A shan empath's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
     ],
-    decay: [],
+    decay: [
+      "The shan empath's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

@@ -69,8 +69,8 @@
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (213..216),
+    mnm_td: (177..183),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

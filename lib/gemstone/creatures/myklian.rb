@@ -71,8 +71,8 @@
     mje_td: 188,
     mne_td: 176,
     mjs_td: 202,
-    mns_td: (159..161),
-    mnm_td: nil,
+    mns_td: (153..158),
+    mnm_td: (122..131),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -111,7 +111,9 @@
       "The red myklian hisses one last time and dies.",
       "The young myklian falls back into a heap and dies.",
       "The yellow myklian falls back into a heap and dies.",
-      "The orange myklian falls back into a heap and dies."
+      "The orange myklian falls back into a heap and dies.",
+      "A red myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled left foreleg.",
+      "The orange myklian hisses one last time and dies."
     ],
     decay: [
       "A blue myklian crumbles away into dust.",

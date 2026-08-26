@@ -72,8 +72,8 @@
     mje_td: 215,
     mne_td: 214,
     mjs_td: nil,
-    mns_td: 193,
-    mnm_td: 150,
+    mns_td: (193..202),
+    mnm_td: (228..234),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -97,7 +97,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The banshee goes still for a moment while its head reshapes."
+    ],
     decay: [
       "A banshee dissolves away."
     ],

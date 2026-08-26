@@ -72,17 +72,17 @@
     bolt: (200..221),
     udf: 395,
     bar_td: (264..270),
-    cle_td: (282..291),
+    cle_td: (282..297),
     emp_td: (276..286),
-    pal_td: nil,
+    pal_td: (238..248),
     ran_td: nil,
     sor_td: (299..317),
     wiz_td: nil,
     mje_td: (316..322),
     mne_td: 332,
     mjs_td: nil,
-    mns_td: (277..286),
-    mnm_td: nil,
+    mns_td: (306..311),
+    mnm_td: (235..245),
     defensive_spells: [
       "Elemental Bias (508)",
       "Elemental Deflection (507)",
@@ -115,12 +115,15 @@
       "A nebulous moulis suddenly bolts upright, balancing itself on several wooden appendages."
     ],
     death: [
-      "The moulis twitches violently, then dies."
+      "The moulis twitches violently, then dies.",
+      "The moulis flails wildly for a moment before going still, its appendages dropping lifelessly to the ground."
     ],
     decay: [
       "A moulis crumbles into a putrid compost.",
       "A nebulous moulis crumbles into a putrid compost.",
-      "An indistinct moulis crumbles into a putrid compost."
+      "An indistinct moulis crumbles into a putrid compost.",
+      "A drab moulis crumbles into a putrid compost.",
+      "A dreary moulis crumbles into a putrid compost."
     ],
     search: [],
     spell_prep: [],

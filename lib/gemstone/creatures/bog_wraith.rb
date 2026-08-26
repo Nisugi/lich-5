@@ -62,17 +62,17 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (160..170),
     emp_td: (166..176),
-    pal_td: nil,
+    pal_td: (140..150),
     ran_td: nil,
     sor_td: (173..183),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (166..176),
+    mnm_td: (176..185),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -99,7 +99,9 @@
       "A bog troll lumbers in, his face set in an angry scowl!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "A bog wraith's form dissipates into a purple haze."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

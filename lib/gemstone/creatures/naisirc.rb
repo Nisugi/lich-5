@@ -82,8 +82,8 @@
     mje_td: 332,
     mne_td: 330,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (296..302),
+    mnm_td: (249..258),
     defensive_spells: [
       "Elemental Targeting (425)",
       "Natural Colors (601)",
@@ -111,7 +111,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A naisirc fades into oblivion."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

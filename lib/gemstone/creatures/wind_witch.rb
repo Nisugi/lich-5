@@ -82,17 +82,17 @@
     bolt: (106..116),
     udf: 134,
     bar_td: (54..59),
-    cle_td: nil,
+    cle_td: (46..53),
     emp_td: (46..53),
-    pal_td: 53,
+    pal_td: (43..53),
     ran_td: nil,
     sor_td: (45..55),
     wiz_td: nil,
     mje_td: (44..59),
     mne_td: (44..59),
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (46..53),
+    mnm_td: (48..55),
     defensive_spells: [
       "Elemental Defense I",
       "Elemental Defense II",
@@ -124,7 +124,9 @@
     flee: [],
     death: [
       "The wind witch howls in agony one last time and dies.",
-      "A wind witch goes limp as it is rendered unconscious!"
+      "A wind witch goes limp as it is rendered unconscious!",
+      "A wind witch dissipates into the air, leaving nothing behind.",
+      "The wind witch crumples to the ground motionless."
     ],
     decay: [],
     search: [],

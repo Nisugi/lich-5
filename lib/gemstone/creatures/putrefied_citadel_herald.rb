@@ -97,17 +97,17 @@
     bolt: 239,
     udf: 486,
     bar_td: 232,
-    cle_td: nil,
+    cle_td: (279..288),
     emp_td: (268..276),
-    pal_td: 242,
+    pal_td: (231..236),
     ran_td: nil,
     sor_td: (268..280),
     wiz_td: nil,
     mje_td: 296,
     mne_td: 283,
     mjs_td: nil,
-    mns_td: 276,
-    mnm_td: nil,
+    mns_td: (267..276),
+    mnm_td: 212,
     defensive_spells: [
       "Fasthr's Reward (115)",
       "Lesser Shroud (120)",
@@ -142,7 +142,10 @@
       "A rotting Citadel arbalester strides into the area, her crossbow cradled in the crook of an arm."
     ],
     flee: [],
-    death: [],
+    death: [
+      "A putrefied Citadel herald collapses in upon herself, leaving behind a pile of dust.",
+      "A putrefied Citadel herald collapses in upon himself, leaving behind a pile of dust."
+    ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the Citadel herald's ribs to move independently.",
       "The Citadel herald's right leg crumbles briefly and explodes in a shower of gore."

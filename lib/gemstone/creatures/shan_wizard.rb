@@ -56,6 +56,9 @@
     maneuvers: [
       {
         name: "Web"
+      },
+      {
+        name: "Point"
       }
     ],
     special_abilities: [],
@@ -69,7 +72,7 @@
     bolt: nil,
     udf: 323,
     bar_td: (138..157),
-    cle_td: nil,
+    cle_td: (162..165),
     emp_td: (161..170),
     pal_td: nil,
     ran_td: nil,
@@ -78,8 +81,8 @@
     mje_td: 168,
     mne_td: 168,
     mjs_td: nil,
-    mns_td: 167,
-    mnm_td: nil,
+    mns_td: (164..173),
+    mnm_td: (128..134),
     defensive_spells: [
       "Elemental Defense II",
       "Elemental Defense III"
@@ -110,7 +113,9 @@
       "The shan wizard twitches violently, then dies.",
       "The shan wizard yips in pain as he falls to the ground motionless.",
       "The shan wizard yips in pain as she falls to the ground motionless.",
-      "The shan wizard howls out one last time and dies."
+      "The shan wizard howls out one last time and dies.",
+      "A shan wizard's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
+      "A shan wizard's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
     ],
     decay: [],
     search: [],

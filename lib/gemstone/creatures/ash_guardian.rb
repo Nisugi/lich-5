@@ -85,8 +85,8 @@
     mje_td: 390,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (327..336),
+    mnm_td: (261..264),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -110,7 +110,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "Ash explodes in all directions as an ash guardian succumbs to its final blow."
+    ],
     decay: [
       "The form of an ash guardian dissolves into the surroundings."
     ],

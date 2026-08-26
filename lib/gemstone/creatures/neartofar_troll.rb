@@ -50,7 +50,7 @@
     bolt: (57..92),
     udf: 112,
     bar_td: 52,
-    cle_td: nil,
+    cle_td: 60,
     emp_td: 60,
     pal_td: nil,
     ran_td: nil,
@@ -59,8 +59,8 @@
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 60,
+    mnm_td: (45..52),
     defensive_spells: [
       "Spirit Warding II (107)"
     ],
@@ -85,7 +85,9 @@
       "Huge and dangerous, the Neartofar troll towers above even a tall giantman. Brown and green pigmented skin so thick that it serves quite well as armor covers most of the troll, with tufts of thick hair sprouting here and there like weeds between cracked stones. A hideous grin splits face displaying fangs crusted with dried blood and less guessable matter. No light of intellect glows in narrow piggish eyes. The lust for slaughter and thirst for blood are what drive this hulkish beast's existence."
     ],
     arrival: [
-      "A Neartofar troll just arrived!"
+      "A Neartofar troll just arrived!",
+      "A Neartofar orc stalks in purposefully, his nose raised as he sniffs at the air.",
+      "A Neartofar orc stalks in purposefully, her nose raised as she sniffs at the air."
     ],
     flee: [],
     death: [

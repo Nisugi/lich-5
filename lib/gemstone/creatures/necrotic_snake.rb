@@ -71,17 +71,17 @@
     bolt: nil,
     udf: 475,
     bar_td: 161,
-    cle_td: 176,
+    cle_td: (182..185),
     emp_td: (175..184),
-    pal_td: nil,
+    pal_td: (146..155),
     ran_td: 119,
     sor_td: (176..194),
     wiz_td: nil,
     mje_td: (196..202),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (175..184),
+    mnm_td: (144..153),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -111,7 +111,9 @@
       "A necrotic snake slithers {direction}, leaving a trail of rotting scales."
     ],
     death: [
-      "A necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp."
+      "A necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp.",
+      "A sinuous necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp.",
+      "A flexile necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the necrotic snake's ribs to move independently."

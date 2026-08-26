@@ -60,7 +60,7 @@
     bolt: 259,
     udf: 469,
     bar_td: 168,
-    cle_td: nil,
+    cle_td: 171,
     emp_td: (184..193),
     pal_td: 197,
     ran_td: nil,
@@ -69,8 +69,8 @@
     mje_td: 218,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 181,
+    mnm_td: (168..177),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -97,7 +97,10 @@
       "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm."
     ],
     flee: [],
-    death: [],
+    death: [
+      "A decaying Citadel guardsman collapses sobbing silently before lying motionless on the floor.",
+      "A decaying Citadel guardsman collapses sobbing silently before lying motionless on the ground."
+    ],
     decay: [
       "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant draft.",
       "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant breeze.",

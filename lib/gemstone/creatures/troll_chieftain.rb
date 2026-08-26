@@ -56,7 +56,7 @@
     bar_td: nil,
     cle_td: 96,
     emp_td: 96,
-    pal_td: nil,
+    pal_td: (78..81),
     ran_td: nil,
     sor_td: 92,
     wiz_td: nil,
@@ -64,7 +64,7 @@
     mne_td: 88,
     mjs_td: nil,
     mns_td: 96,
-    mnm_td: nil,
+    mnm_td: (81..88),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

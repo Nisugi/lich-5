@@ -113,8 +113,8 @@
     mje_td: 440,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: (376..392),
-    mnm_td: nil,
+    mns_td: (376..398),
+    mnm_td: (355..357),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -152,7 +152,9 @@
     ],
     flee: [],
     death: [
-      "An Ithzir adept goes limp as she is rendered unconscious!"
+      "An Ithzir adept goes limp as she is rendered unconscious!",
+      "The Ithzir adept vainly struggles to rise, then goes still.",
+      "An Ithzir adept's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
     decay: [
       "The crystal crumbles into a fine blue powder that sifts through the adept's fingers."

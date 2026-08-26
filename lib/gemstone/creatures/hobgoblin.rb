@@ -90,9 +90,9 @@
     bolt: (-17..11),
     udf: 111,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 9,
     emp_td: 9,
-    pal_td: nil,
+    pal_td: (6..9),
     ran_td: nil,
     sor_td: 9,
     wiz_td: nil,
@@ -100,7 +100,7 @@
     mne_td: 9,
     mjs_td: nil,
     mns_td: 9,
-    mnm_td: nil,
+    mnm_td: 9,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -125,11 +125,13 @@
     arrival: [],
     flee: [
       "A hobgoblin snarls as she retreats!",
-      "A hobgoblin flees {direction}."
+      "A hobgoblin flees {direction}.",
+      "A hobgoblin snarls as he retreats!"
     ],
     death: [
       "The hobgoblin crumples to the ground and dies.",
-      "A hobgoblin goes limp as she is rendered unconscious!"
+      "A hobgoblin goes limp as she is rendered unconscious!",
+      "The hobgoblin lets out a final scream and goes still."
     ],
     decay: [
       "A hobgoblin decays into a pile of compost."

@@ -40,6 +40,10 @@
       {
         name: "Claw",
         as: 443
+      },
+      {
+        name: "Coral-hilted heavy ball and chain",
+        as: 433
       }
     ],
     bolt_spells: [],
@@ -90,7 +94,7 @@
     mne_td: "413 to 441",
     mjs_td: nil,
     mns_td: "364 to 381",
-    mnm_td: nil,
+    mnm_td: (379..381),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -118,13 +122,18 @@
       "A triton warlock arrives, striding forth with her robes trailing behind her."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The triton assassin gurgles once and goes still, a wrathful look on her face.",
+      "The triton assassin gurgles once and goes still, a wrathful look on his face."
+    ],
     decay: [
       "Acid dissolves the knee ligaments.  The triton assassin's tibia passes her femur in a very unpleasant manner!"
     ],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A triton assassin swings {weapon} at you!"
+    ],
     bite: [],
     claw: [
       "A triton assassin claws at you!"

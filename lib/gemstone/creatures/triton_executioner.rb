@@ -39,7 +39,7 @@
       },
       {
         name: "longsword",
-        as: (433..439)
+        as: (433..441)
       },
       {
         name: "Streaked pale driftwood bolt",
@@ -83,8 +83,8 @@
     mje_td: (393..408),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 371,
+    mnm_td: (294..303),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -116,7 +116,10 @@
       "A triton executioner strides in, a wary look on his face."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The triton executioner gurgles once and goes still, a wrathful look on his face.",
+      "The triton executioner gurgles once and goes still, a wrathful look on her face."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

@@ -63,17 +63,17 @@
     bolt: (90..141),
     udf: 288,
     bar_td: 97,
-    cle_td: nil,
+    cle_td: (108..111),
     emp_td: (109..118),
-    pal_td: nil,
+    pal_td: (93..96),
     ran_td: nil,
     sor_td: 114,
     wiz_td: nil,
     mje_td: 114,
     mne_td: 119,
     mjs_td: 109,
-    mns_td: 109,
-    mnm_td: nil,
+    mns_td: (109..115),
+    mnm_td: (93..96),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -96,10 +96,13 @@
       "The giant fog beetle appears to be some sort of giant insect. It looks a little like some misshapen scorpion, but the tail on it is not as long as a scorpion's would be, and it flares like the tail of a lobster rather than ending in a poison sting. The segmented body is wide, supported by six short multi-jointed legs. A dull red chitinous shell covers most of its body, and a broad carapace protects its head. Two massive claws provide the creature with formidable weapons."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A giant fog beetle crawls {direction}."
+    ],
     death: [
       "A giant fog beetle goes limp as it is rendered unconscious!",
-      "The giant fog beetle kicks a leg one last time and lies still."
+      "The giant fog beetle kicks a leg one last time and lies still.",
+      "The giant fog beetle falls to the ground and lies twitching for a moment before going still."
     ],
     decay: [
       "A giant fog beetle's legs shrivel up beneath it as it decays into dust."

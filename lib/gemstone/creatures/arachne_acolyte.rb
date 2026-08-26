@@ -75,14 +75,14 @@
     bar_td: 67,
     cle_td: 66,
     emp_td: (70..80),
-    pal_td: nil,
+    pal_td: (63..73),
     ran_td: nil,
     sor_td: 57,
     wiz_td: (67..72),
     mje_td: (67..72),
     mne_td: 73,
     mjs_td: 76,
-    mns_td: 66,
+    mns_td: (66..104),
     mnm_td: nil,
     defensive_spells: [
       "Spirit Warding I (101)",
@@ -122,7 +122,8 @@
       "An Arachne acolyte goes limp as he is rendered unconscious!"
     ],
     decay: [
-      "The Arachne acolyte's body dissolves into a puff of lingering red smoke."
+      "The Arachne acolyte's body dissolves into a puff of lingering red smoke.",
+      "The Arachne acolyte's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

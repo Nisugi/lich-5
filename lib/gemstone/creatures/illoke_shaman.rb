@@ -73,6 +73,9 @@
     maneuvers: [
       {
         name: "Divine Wrath"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_abilities: [],
@@ -86,17 +89,17 @@
     bolt: nil,
     udf: 462,
     bar_td: (244..259),
-    cle_td: 265,
+    cle_td: (263..272),
     emp_td: (266..274),
-    pal_td: nil,
+    pal_td: (231..240),
     ran_td: nil,
     sor_td: (285..291),
     wiz_td: nil,
     mje_td: 301,
     mne_td: nil,
     mjs_td: 268,
-    mns_td: 261,
-    mnm_td: nil,
+    mns_td: (261..271),
+    mnm_td: (218..227),
     defensive_spells: [
       "Benediction (307)",
       "Elemental Defense I (401)",

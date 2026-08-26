@@ -76,15 +76,15 @@
     bar_td: (110..115),
     cle_td: (100..119),
     emp_td: (110..120),
-    pal_td: nil,
+    pal_td: (108..118),
     ran_td: nil,
     sor_td: (119..128),
     wiz_td: nil,
     mje_td: (119..134),
     mne_td: 130,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 129,
+    mnm_td: (108..116),
     defensive_spells: [
       "Thurfel's Ward (503)"
     ],

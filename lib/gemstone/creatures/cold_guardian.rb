@@ -61,17 +61,17 @@
     bolt: 163,
     udf: 205,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 116,
     emp_td: 117,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (99..102),
+    ran_td: 102,
     sor_td: 123,
     wiz_td: nil,
     mje_td: 129,
     mne_td: 129,
     mjs_td: nil,
     mns_td: 117,
-    mnm_td: nil,
+    mnm_td: 102,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -105,7 +105,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A cold guardian gestures at you!"
+      "A cold guardian gestures at you!",
+      "A cold guardian swings {weapon} at you!"
     ],
     bite: [],
     claw: [],

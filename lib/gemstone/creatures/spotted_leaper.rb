@@ -62,7 +62,7 @@
     bolt: 15,
     udf: 74,
     bar_td: 12,
-    cle_td: nil,
+    cle_td: 12,
     emp_td: 12,
     pal_td: nil,
     ran_td: 12,
@@ -72,7 +72,7 @@
     mne_td: 12,
     mjs_td: 12,
     mns_td: 12,
-    mnm_td: nil,
+    mnm_td: 12,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -99,7 +99,8 @@
     death: [
       "The spotted leaper collapses to the ground, emits a final snarl, and dies.",
       "The spotted leaper twitches and dies.",
-      "The spotted leaper collapses to the ground, emits a final silent snarl, and dies."
+      "The spotted leaper collapses to the ground, emits a final silent snarl, and dies.",
+      "The spotted leaper growls as it slumps to the ground and licks at its wounded right claw."
     ],
     decay: [
       "A spotted leaper decays into a pile of hair and bone."

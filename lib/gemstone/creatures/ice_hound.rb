@@ -59,17 +59,17 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 74,
     emp_td: 76,
-    pal_td: 72,
+    pal_td: (69..72),
     ran_td: nil,
     sor_td: 79,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 76,
+    mnm_td: 72,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -97,7 +97,9 @@
     flee: [],
     death: [
       "The ice hound lets out one last whimpering sigh of frosty mist and dies.",
-      "An ice hound goes limp as it is rendered unconscious!"
+      "An ice hound goes limp as it is rendered unconscious!",
+      "The ice hound yelps loudly as it slumps to the ground and licks its wounded right foreleg.",
+      "The ice hound yelps loudly as it slumps to the ground and licks its wounded left paw."
     ],
     decay: [
       "An ice hound decays into a compost of fur and fangs."

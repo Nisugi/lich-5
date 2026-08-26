@@ -58,17 +58,17 @@
     bolt: nil,
     udf: 330,
     bar_td: (136..148),
-    cle_td: nil,
+    cle_td: (149..152),
     emp_td: (152..161),
-    pal_td: nil,
+    pal_td: (127..136),
     ran_td: 130,
     sor_td: (160..166),
     wiz_td: nil,
     mje_td: (168..171),
     mne_td: 167,
     mjs_td: nil,
-    mns_td: 152,
-    mnm_td: nil,
+    mns_td: (152..161),
+    mnm_td: (120..129),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: [
@@ -95,7 +95,9 @@
     arrival: [],
     flee: [],
     death: [
-      "A forest bendith goes limp as she is rendered unconscious!"
+      "A forest bendith goes limp as she is rendered unconscious!",
+      "The forest bendith's eyes grow dim as her lifeforce fades away.",
+      "Just as you move to cast, the forest bendith grins slightly, and then fades into the thick undergrowth to avoid your spell."
     ],
     decay: [],
     search: [],

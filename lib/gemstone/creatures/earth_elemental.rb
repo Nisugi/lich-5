@@ -59,9 +59,9 @@
     bolt: nil,
     udf: 662,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 333,
     emp_td: 315,
-    pal_td: nil,
+    pal_td: (277..286),
     ran_td: nil,
     sor_td: (366..375),
     wiz_td: nil,
@@ -69,7 +69,7 @@
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,
-    mnm_td: nil,
+    mnm_td: (246..252),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: [
@@ -94,7 +94,8 @@
       "Massive and thick, with broad shoulders but no apparent head, the earth elemental appears to be a composite of the earth itself. A large, craggy maw in the middle of the elemental's chest appears to be the creature's mouth, and the earth elemental's huge feet and giant-sized fists look like they would pulverize flesh without much effort at all."
     ],
     arrival: [
-      "The boulder comes to a sudden stop and rises into the form of a greater krynch!"
+      "The boulder comes to a sudden stop and rises into the form of a greater krynch!",
+      "An earth elemental lumbers in slowly."
     ],
     flee: [],
     death: [],

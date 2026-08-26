@@ -84,9 +84,9 @@
     bolt: (32..36),
     udf: 144,
     bar_td: 18,
-    cle_td: nil,
+    cle_td: 18,
     emp_td: 18,
-    pal_td: nil,
+    pal_td: (15..18),
     ran_td: nil,
     sor_td: 18,
     wiz_td: nil,
@@ -152,7 +152,8 @@
       "The green monkey falls back into a heap and dies.",
       "The orange monkey falls back into a heap and dies.",
       "The green monkey screeches one last time and dies.",
-      "The orange monkey screeches one last time and dies."
+      "The orange monkey screeches one last time and dies.",
+      "The pink monkey screeches loudly as he slumps to the ground and cradles his wounded right forearm."
     ],
     decay: [
       "A monkey decays into compost.",

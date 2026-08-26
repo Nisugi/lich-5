@@ -51,7 +51,11 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -63,17 +67,17 @@
     bolt: nil,
     udf: 165,
     bar_td: 45,
-    cle_td: 45,
+    cle_td: (39..45),
     emp_td: (45..53),
-    pal_td: 45,
+    pal_td: (42..51),
     ran_td: 45,
     sor_td: 45,
     wiz_td: 45,
     mje_td: 45,
     mne_td: 45,
     mjs_td: 45,
-    mns_td: 45,
-    mnm_td: 45,
+    mns_td: (45..60),
+    mnm_td: (42..51),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

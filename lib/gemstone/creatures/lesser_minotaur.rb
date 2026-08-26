@@ -70,8 +70,8 @@
     mje_td: (290..299),
     mne_td: (288..297),
     mjs_td: (249..264),
-    mns_td: (249..264),
-    mnm_td: nil,
+    mns_td: (249..267),
+    mnm_td: (225..234),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -98,7 +98,10 @@
       "A lesser minotaur stomps in, squinting warily."
     ],
     flee: [],
-    death: [],
+    death: [
+      "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the ground.",
+      "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the floor."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

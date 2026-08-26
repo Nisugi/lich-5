@@ -33,6 +33,10 @@
       {
         name: "Plain wooden bolt",
         as: 124
+      },
+      {
+        name: "Plain wooden arrow",
+        as: 408
       }
     ],
     bolt_spells: [],

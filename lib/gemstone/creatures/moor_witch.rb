@@ -55,17 +55,17 @@
     bolt: nil,
     udf: 320,
     bar_td: 135,
-    cle_td: nil,
+    cle_td: (121..130),
     emp_td: (125..135),
-    pal_td: nil,
+    pal_td: (106..115),
     ran_td: nil,
     sor_td: (134..147),
     wiz_td: nil,
     mje_td: 135,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (116..125),
+    mnm_td: (129..139),
     defensive_spells: [
       "Elemental Defense I",
       "Elemental Defense II",
@@ -98,7 +98,8 @@
     arrival: [],
     flee: [],
     death: [
-      "A moor witch goes limp as she is rendered unconscious!"
+      "A moor witch goes limp as she is rendered unconscious!",
+      "The moor witch's face takes on a surprised expression and she collapses, motionless."
     ],
     decay: [],
     search: [],

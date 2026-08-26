@@ -58,7 +58,7 @@
     bolt: (140..179),
     udf: 267,
     bar_td: 78,
-    cle_td: 74,
+    cle_td: (68..77),
     emp_td: (73..82),
     pal_td: nil,
     ran_td: nil,
@@ -67,8 +67,8 @@
     mje_td: 81,
     mne_td: 82,
     mjs_td: 73,
-    mns_td: 82,
-    mnm_td: nil,
+    mns_td: (73..76),
+    mnm_td: (72..78),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -99,7 +99,9 @@
       "A roa'ter wormling goes limp as it is rendered unconscious!"
     ],
     decay: [
-      "A roa'ter wormling decays into compost."
+      "A roa'ter wormling decays into compost.",
+      "A combative roa'ter wormling decays into compost.",
+      "A belligerent roa'ter wormling decays into compost."
     ],
     search: [],
     spell_prep: [],

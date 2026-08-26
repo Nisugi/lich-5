@@ -63,17 +63,17 @@
     bolt: 19,
     udf: 86,
     bar_td: 24,
-    cle_td: nil,
+    cle_td: 18,
     emp_td: 18,
-    pal_td: nil,
+    pal_td: (15..18),
     ran_td: nil,
     sor_td: 20,
     wiz_td: nil,
     mje_td: 19,
     mne_td: 20,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 18,
+    mnm_td: 28,
     defensive_spells: [
       "Spirit Defense (103)",
       "Spirit Shield (202)",
@@ -103,7 +103,8 @@
     arrival: [],
     flee: [],
     death: [
-      "The hobgoblin shaman screams up at the heavens, then collapses and dies."
+      "The hobgoblin shaman screams up at the heavens, then collapses and dies.",
+      "The hobgoblin shaman struggles to utter a final prayer, then goes still."
     ],
     decay: [
       "A hobgoblin shaman decays into a pile of compost."

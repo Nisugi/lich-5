@@ -89,8 +89,8 @@
     mje_td: (375..390),
     mne_td: 386,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (349..355),
+    mnm_td: (294..303),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -113,10 +113,15 @@
       "The triton combatant stands hunched, her head thrust forward, and neck enveloped by heavy, muscled shoulders. Tiny alien eyes stare from a prominently bony brow, regarding the world with stubborn truculence. A mottled brown ridge rises from the amphibian's forehead and sweeps up and back, hugging her skull. This heavy protuberance, covered with damp, leathery skin, provides her with formidable head and neck protection."
     ],
     arrival: [
-      "A triton combatant strides in, a wary look on his face."
+      "A triton combatant strides in, a wary look on his face.",
+      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton combatant strides in, a wary look on her face."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The triton combatant gurgles once and goes still, a wrathful look on her face.",
+      "The triton combatant gurgles once and goes still, a wrathful look on his face."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

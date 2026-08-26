@@ -68,17 +68,17 @@
     bolt: nil,
     udf: 97,
     bar_td: 45,
-    cle_td: nil,
+    cle_td: 45,
     emp_td: (45..53),
-    pal_td: nil,
+    pal_td: (39..48),
     ran_td: nil,
     sor_td: (42..51),
     wiz_td: nil,
     mje_td: (42..45),
     mne_td: 45,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (45..51),
+    mnm_td: (45..51),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -108,7 +108,8 @@
       "The ridgeback boar collapses to the ground, emits a final squeal, and dies.",
       "The ridgeback boar lets out a final agonized squeal and dies.",
       "The ridgeback boar silently lets out a final agonized squeal and dies.",
-      "The ridgeback boar collapses to the ground, emits a final silent squeal, and dies."
+      "The ridgeback boar collapses to the ground, emits a final silent squeal, and dies.",
+      "The ridgeback boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg."
     ],
     decay: [
       "A ridgeback boar decays into a pile of fur and bone."

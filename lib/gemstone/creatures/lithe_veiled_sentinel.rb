@@ -120,8 +120,8 @@
     mje_td: (443..502),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 450,
+    mnm_td: (333..340),
     defensive_spells: [
       "Iron Skin",
       "Spirit Warding I",

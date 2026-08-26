@@ -89,17 +89,17 @@
     bolt: (65..88),
     udf: 117,
     bar_td: 49,
-    cle_td: nil,
+    cle_td: 57,
     emp_td: 57,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (54..57),
+    ran_td: 57,
     sor_td: 53,
     wiz_td: nil,
     mje_td: (42..49),
     mne_td: (42..49),
     mjs_td: (42..57),
     mns_td: (42..57),
-    mnm_td: nil,
+    mnm_td: (42..49),
     defensive_spells: [
       "Spirit Warding II (107)"
     ],
@@ -130,7 +130,8 @@
     death: [
       "The forest troll screams one last time and dies.",
       "The forest troll falls to the ground and dies.",
-      "A forest troll goes limp as he is rendered unconscious!"
+      "A forest troll goes limp as he is rendered unconscious!",
+      "Beautiful shot pierces both lungs, the forest troll makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A forest troll decays into compost."

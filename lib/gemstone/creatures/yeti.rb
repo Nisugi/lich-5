@@ -52,6 +52,9 @@
       },
       {
         name: "Stomp"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_abilities: [],
@@ -65,17 +68,17 @@
     bolt: nil,
     udf: 588,
     bar_td: (226..247),
-    cle_td: nil,
+    cle_td: (251..257),
     emp_td: (256..265),
-    pal_td: nil,
+    pal_td: (216..222),
     ran_td: nil,
     sor_td: (266..275),
     wiz_td: nil,
     mje_td: 285,
     mne_td: 283,
     mjs_td: nil,
-    mns_td: 253,
-    mnm_td: nil,
+    mns_td: (247..256),
+    mnm_td: (200..209),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -100,13 +103,16 @@
     arrival: [
       "A giant shadow towers over the area as a yeti stomps in!",
       "A yeti stomps in!",
-      "A yeti moans as it stomps in!"
+      "A yeti moans as it stomps in!",
+      "A yeti roars in pain as it stomps in!"
     ],
     flee: [
       "A yeti spins around and retreats as far as it can."
     ],
     death: [
-      "A yeti goes limp as it is rendered unconscious!"
+      "A yeti goes limp as it is rendered unconscious!",
+      "The mass of hair and bone that was the yeti finally goes still.",
+      "The yeti collapses into a pile of hair and bones and goes still."
     ],
     decay: [
       "The yeti collapses into a pile of hair and bones and goes still."

@@ -50,17 +50,17 @@
     bolt: nil,
     udf: 154,
     bar_td: 51,
-    cle_td: nil,
+    cle_td: (45..51),
     emp_td: (51..59),
-    pal_td: nil,
+    pal_td: (48..57),
     ran_td: nil,
     sor_td: (48..57),
     wiz_td: nil,
     mje_td: 51,
     mne_td: 51,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (51..57),
+    mnm_td: (45..54),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -82,11 +82,14 @@
     description: [
       "The mountain goat is a blunt squarish-looking animal with a rather short body and humped shoulders. The narrow head has a black muzzle, sharp pointed ears and a double beard of long hair on her chin and throat. The white coat has a soft, woolly, three to four inches thick undercoat. Long coarse guard hairs, up to seven inches long, form heavy mats over the shoulders and hips giving a humped appearance. The coat grows to within eight inches of each hoof, where it abruptly stops giving the appearance of the goat wearing pants. As the days become longer and the weather warmer, she begins to shed her heavy winter coat and replaces it with a short summer coat that is yellowish in color. Black hooves accent her normal white coat and are equipped with cushioned skid-proof pads for grip and traction on steep rocky surfaces. Atop her head, slender, black shiny horns rise in a smooth backward curve to a length of ten to twelve inches. Rings can be seen around each horn indicative of the number of winters she has survived."
     ],
-    arrival: [],
+    arrival: [
+      "A mountain goat just arrived."
+    ],
     flee: [],
     death: [
       "The mountain goat collapses to the ground, emits a final bray, and dies.",
-      "The mountain goat lets out a final agonized bray and dies."
+      "The mountain goat lets out a final agonized bray and dies.",
+      "The mountain goat brays loudly as she slumps to the ground and cradles her wounded right foreleg."
     ],
     decay: [
       "A mountain goat decays into a pile of fur and bone."

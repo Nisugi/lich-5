@@ -72,8 +72,8 @@
     mje_td: 246,
     mne_td: nil,
     mjs_td: 201,
-    mns_td: 201,
-    mnm_td: nil,
+    mns_td: (196..201),
+    mnm_td: (178..187),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -103,7 +103,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The seeker mutters, \"...the Eye, the Eye...\" and lies still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

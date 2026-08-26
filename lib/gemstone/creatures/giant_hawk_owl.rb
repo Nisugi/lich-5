@@ -72,7 +72,7 @@
     bar_td: (84..87),
     cle_td: (78..90),
     emp_td: (80..88),
-    pal_td: (84..87),
+    pal_td: (78..87),
     ran_td: (81..90),
     sor_td: (84..87),
     wiz_td: nil,
@@ -80,7 +80,7 @@
     mne_td: (88..97),
     mjs_td: (78..90),
     mns_td: (78..90),
-    mnm_td: nil,
+    mnm_td: (78..87),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -108,7 +108,8 @@
     ],
     death: [
       "The giant hawk-owl writhes in agony, its wings flapping fruitlessly as it dies.",
-      "A giant hawk-owl goes limp as it is rendered unconscious!"
+      "A giant hawk-owl goes limp as it is rendered unconscious!",
+      "The giant hawk-owl crashes to the ground, motionless."
     ],
     decay: [
       "The giant hawk-owl decays into a pile of feathers."

@@ -62,7 +62,7 @@
     bolt: 34,
     udf: 51,
     bar_td: 9,
-    cle_td: nil,
+    cle_td: 9,
     emp_td: 9,
     pal_td: nil,
     ran_td: 9,
@@ -72,7 +72,7 @@
     mne_td: 9,
     mjs_td: 9,
     mns_td: 9,
-    mnm_td: nil,
+    mnm_td: 9,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -102,7 +102,8 @@
     ],
     death: [
       "The striped relnak hisses one last time and dies.",
-      "The striped relnak falls back into a heap and dies."
+      "The striped relnak falls back into a heap and dies.",
+      "A striped relnak screeches loudly and slumps to the ground while frantically licking its wounded right foreleg."
     ],
     decay: [
       "A striped relnak decays into compost."

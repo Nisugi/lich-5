@@ -60,7 +60,7 @@
     bar_td: 90,
     cle_td: 90,
     emp_td: 90,
-    pal_td: 90,
+    pal_td: (87..90),
     ran_td: 90,
     sor_td: 90,
     wiz_td: 90,
@@ -68,7 +68,7 @@
     mne_td: 90,
     mjs_td: 90,
     mns_td: 90,
-    mnm_td: 90,
+    mnm_td: (90..100),
     defensive_spells: [
       "Natural Colors",
       "Self Control"
@@ -98,7 +98,8 @@
     ],
     flee: [],
     death: [
-      "A hunter troll goes limp as he is rendered unconscious!"
+      "A hunter troll goes limp as he is rendered unconscious!",
+      "The hunter troll slumps to the ground with a final snarl."
     ],
     decay: [
       "A hunter troll decays into compost."

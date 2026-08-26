@@ -21,8 +21,8 @@
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Atoll",
@@ -103,8 +103,8 @@
     mje_td: 451,
     mne_td: "433 to 468",
     mjs_td: nil,
-    mns_td: 415,
-    mnm_td: nil,
+    mns_td: (423..433),
+    mnm_td: (408..417),
     defensive_spells: [
       "Mantle of Faith (1601)",
       "Higher Vision (1610)",
@@ -137,9 +137,13 @@
     ],
     flee: [],
     death: [
-      "A triton fanatic goes limp as she is rendered unconscious!"
+      "A triton fanatic goes limp as she is rendered unconscious!",
+      "The triton fanatic gurgles once and goes still, a wrathful look on her face.",
+      "The triton fanatic gurgles once and goes still, a wrathful look on his face."
     ],
-    decay: [],
+    decay: [
+      "The triton fanatic's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

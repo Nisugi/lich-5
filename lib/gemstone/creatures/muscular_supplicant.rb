@@ -59,17 +59,17 @@
     bolt: nil,
     udf: 489,
     bar_td: 238,
-    cle_td: 259,
+    cle_td: (260..269),
     emp_td: (244..253),
-    pal_td: nil,
+    pal_td: (222..231),
     ran_td: nil,
     sor_td: (269..272),
     wiz_td: nil,
     mje_td: 285,
     mne_td: 283,
     mjs_td: 259,
-    mns_td: 259,
-    mnm_td: nil,
+    mns_td: (259..265),
+    mnm_td: (197..206),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -102,7 +102,10 @@
       "A muscular supplicant goes limp as he is rendered unconscious!",
       "A muscular supplicant dies and collapses to the floor.",
       "A muscular supplicant staggers, then falls to the floor and dies.",
-      "With an ear-piercing cry of agony, the muscular supplicant dies."
+      "With an ear-piercing cry of agony, the muscular supplicant dies.",
+      "A muscular supplicant spasms in death and then goes still.",
+      "A muscular supplicant moans in agony and then goes still.",
+      "A muscular supplicant thrashes one last time and goes still."
     ],
     decay: [
       "A muscular supplicant crumbles to dust and blows away on the wind.",

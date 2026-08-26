@@ -86,8 +86,8 @@
     mje_td: (281..282),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (251..261),
+    mnm_td: (210..215),
     defensive_spells: [
       "Iron Skin (1202)",
       "Foresight (1204)",

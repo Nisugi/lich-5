@@ -70,8 +70,8 @@
     mje_td: 49,
     mne_td: 109,
     mjs_td: nil,
-    mns_td: 98,
-    mnm_td: nil,
+    mns_td: (85..94),
+    mnm_td: (117..125),
     defensive_spells: [
       "Lesser Shroud (120)",
       "Natural Colors (601)",

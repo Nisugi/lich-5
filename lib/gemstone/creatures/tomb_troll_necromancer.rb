@@ -73,17 +73,17 @@
     bolt: 203,
     udf: 371,
     bar_td: (212..242),
-    cle_td: nil,
+    cle_td: (259..269),
     emp_td: (257..267),
-    pal_td: nil,
+    pal_td: (238..247),
     ran_td: nil,
     sor_td: (252..285),
     wiz_td: nil,
     mje_td: 276,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (230..237),
+    mnm_td: (198..208),
     defensive_spells: [
       "Elemental Defense II (406)",
       "Fasthr's Reward (115)",
@@ -112,7 +112,8 @@
     arrival: [],
     flee: [],
     death: [
-      "A tomb troll necromancer goes limp as she is rendered unconscious!"
+      "A tomb troll necromancer goes limp as she is rendered unconscious!",
+      "A tomb troll necromancer glares forward, then collapses in a motionless heap."
     ],
     decay: [
       "A tomb troll necromancer decays into a pile of skin and bones."

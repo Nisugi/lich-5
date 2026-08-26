@@ -69,8 +69,8 @@
     mje_td: nil,
     mne_td: (115..126),
     mjs_td: nil,
-    mns_td: 115,
-    mnm_td: nil,
+    mns_td: (105..115),
+    mnm_td: (75..84),
     defensive_spells: [
       "Prayer of Protection (303)",
       "Prismatic Guard (905)",
@@ -102,7 +102,8 @@
     flee: [],
     death: [],
     decay: [
-      "A frenzied monk dissolves into a foul-smelling miasma."
+      "A frenzied monk dissolves into a foul-smelling miasma.",
+      "A nebulous frenzied monk dissolves into a foul-smelling miasma."
     ],
     search: [],
     spell_prep: [],

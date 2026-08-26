@@ -62,7 +62,7 @@
     bolt: (56..73),
     udf: 128,
     bar_td: 42,
-    cle_td: nil,
+    cle_td: 42,
     emp_td: (38..46),
     pal_td: nil,
     ran_td: 48,
@@ -72,7 +72,7 @@
     mne_td: (36..42),
     mjs_td: nil,
     mns_td: 42,
-    mnm_td: nil,
+    mnm_td: (39..48),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -100,7 +100,8 @@
       "The black boar lets out a final agonized squeal and dies.",
       "The black boar collapses to the ground, emits a final squeal, and dies.",
       "A black boar goes limp as he is rendered unconscious!",
-      "The black boar silently lets out a final agonized squeal and dies."
+      "The black boar silently lets out a final agonized squeal and dies.",
+      "The black boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg."
     ],
     decay: [
       "A black boar decays into a pile of fur and bone."

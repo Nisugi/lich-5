@@ -78,17 +78,17 @@
     bolt: (195..250),
     udf: 372,
     bar_td: 133,
-    cle_td: (152..155),
+    cle_td: (152..164),
     emp_td: (155..164),
-    pal_td: nil,
+    pal_td: (133..142),
     ran_td: nil,
     sor_td: (162..171),
     wiz_td: nil,
     mje_td: (158..167),
     mne_td: 160,
     mjs_td: nil,
-    mns_td: 145,
-    mnm_td: nil,
+    mns_td: (145..155),
+    mnm_td: (119..128),
     defensive_spells: [
       "Haste (506)",
       "Mass Blur (911)",
@@ -119,7 +119,9 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The moor wight's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

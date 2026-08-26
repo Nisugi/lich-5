@@ -71,17 +71,17 @@
     bolt: (283..308),
     udf: nil,
     bar_td: (210..262),
-    cle_td: (198..219),
+    cle_td: 270,
     emp_td: (272..278),
-    pal_td: (235..242),
+    pal_td: (227..230),
     ran_td: 230,
     sor_td: (280..289),
     wiz_td: nil,
     mje_td: (293..302),
     mne_td: 297,
     mjs_td: nil,
-    mns_td: 266,
-    mnm_td: nil,
+    mns_td: (266..272),
+    mnm_td: (204..213),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -108,7 +108,9 @@
       "The boulder comes to a sudden stop and rises into the form of a krag dweller!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "The krag yeti shudders once before it finally goes still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

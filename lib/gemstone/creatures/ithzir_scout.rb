@@ -78,8 +78,8 @@
     mje_td: 380,
     mne_td: 368,
     mjs_td: nil,
-    mns_td: 328,
-    mnm_td: nil,
+    mns_td: (328..334),
+    mnm_td: (273..279),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -107,7 +107,9 @@
     ],
     flee: [],
     death: [
-      "The Ithzir scout twitches violently, then dies."
+      "The Ithzir scout twitches violently, then dies.",
+      "The Ithzir scout vainly struggles to rise, then goes still.",
+      "An Ithzir scout's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The Ithzir scout's tibia passes her femur in a very unpleasant manner!"

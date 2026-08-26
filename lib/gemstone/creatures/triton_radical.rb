@@ -105,8 +105,8 @@
     mje_td: (428..453),
     mne_td: (414..438),
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 392,
+    mnm_td: (317..327),
     defensive_spells: [
       "Divine Shield",
       "Fasthr's Reward",
@@ -143,7 +143,9 @@
     ],
     flee: [],
     death: [
-      "The siren gives a plaintive wail before she slumps to her side and dies."
+      "The siren gives a plaintive wail before she slumps to her side and dies.",
+      "The triton radical gurgles once and goes still, a wrathful look on her face.",
+      "The triton radical gurgles once and goes still, a wrathful look on his face."
     ],
     decay: [],
     search: [],

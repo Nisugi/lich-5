@@ -79,8 +79,8 @@
     mje_td: 197,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (176..186),
+    mnm_td: 168,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -104,7 +104,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "Torn and strained stitches pop all over a grisly corpse hulk's body as it surrenders to death, allowing necrotic organs and ichor to spill free."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

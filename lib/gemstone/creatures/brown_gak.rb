@@ -64,7 +64,7 @@
     mne_td: 6,
     mjs_td: 6,
     mns_td: 6,
-    mnm_td: nil,
+    mnm_td: 6,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -92,7 +92,10 @@
       "The brown gak collapses to the ground, emits a final bellow, and dies.",
       "The brown gak lets out a final agonized bellow and dies.",
       "The brown gak collapses to the ground, emits a final silent bellow, and dies.",
-      "A brown gak goes limp as she is rendered unconscious!"
+      "A brown gak goes limp as she is rendered unconscious!",
+      "The brown gak brays loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The brown gak brays loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The brown gak brays loudly as he slumps to the ground and cradles his wounded right hoof."
     ],
     decay: [
       "A brown gak decays into a pile of fur and bone."

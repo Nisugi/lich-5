@@ -90,8 +90,8 @@
     mje_td: 436,
     mne_td: 446,
     mjs_td: nil,
-    mns_td: 391,
-    mnm_td: nil,
+    mns_td: (392..399),
+    mnm_td: (393..403),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Defense (103)",
@@ -131,7 +131,9 @@
       "A triton warlock just arrived, limping badly."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The triton warlock gurgles once and goes still, a wrathful look on her face."
+    ],
     decay: [
       "Acid dissolves the knee ligaments.  The triton warlock's tibia passes her femur in a very unpleasant manner!"
     ],

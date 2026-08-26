@@ -41,7 +41,12 @@
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Point",
+        cs: 227
+      }
+    ],
     offensive_spells: [],
     maneuvers: [
       {
@@ -59,17 +64,17 @@
     bolt: (124..158),
     udf: 270,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 176,
     emp_td: (178..187),
-    pal_td: nil,
+    pal_td: (140..143),
     ran_td: nil,
     sor_td: (184..193),
     wiz_td: nil,
     mje_td: (197..207),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (168..178),
+    mnm_td: (150..157),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

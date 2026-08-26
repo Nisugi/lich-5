@@ -78,7 +78,7 @@
     mne_td: "241; 244",
     mjs_td: nil,
     mns_td: "191; 219",
-    mnm_td: nil,
+    mnm_td: (174..180),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -110,7 +110,9 @@
       "A massive pyrothag rumbles loudly as it lumbers {direction}.",
       "A massive pyrothag crawls {direction}."
     ],
-    death: [],
+    death: [
+      "The massive pyrothag vibrates violently one final time and then lies still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

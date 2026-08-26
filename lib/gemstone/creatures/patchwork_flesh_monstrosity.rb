@@ -98,8 +98,8 @@
     mje_td: 448,
     mne_td: 444,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (401..411),
+    mnm_td: (300..309),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

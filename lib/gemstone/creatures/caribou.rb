@@ -66,17 +66,17 @@
     bolt: nil,
     udf: nil,
     bar_td: 96,
-    cle_td: nil,
+    cle_td: (89..98),
     emp_td: (91..99),
-    pal_td: nil,
+    pal_td: (96..105),
     ran_td: nil,
     sor_td: (95..113),
     wiz_td: nil,
     mje_td: 110,
     mne_td: 100,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (99..108),
+    mnm_td: (96..99),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -101,7 +101,9 @@
     arrival: [],
     flee: [],
     death: [
-      "A caribou goes limp as he is rendered unconscious!"
+      "A caribou goes limp as he is rendered unconscious!",
+      "The caribou bellows loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The caribou bellows loudly as she slumps to the ground and licks her wounded right foreleg."
     ],
     decay: [],
     search: [],

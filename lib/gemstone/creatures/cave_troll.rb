@@ -72,7 +72,7 @@
     bar_td: nil,
     cle_td: 63,
     emp_td: 63,
-    pal_td: nil,
+    pal_td: (60..63),
     ran_td: nil,
     sor_td: 59,
     wiz_td: nil,
@@ -80,7 +80,7 @@
     mne_td: 63,
     mjs_td: 63,
     mns_td: 63,
-    mnm_td: nil,
+    mnm_td: (48..55),
     defensive_spells: [
       "Spirit Warding II (107)"
     ],

@@ -73,17 +73,17 @@
     bolt: 102,
     udf: 236,
     bar_td: 89,
-    cle_td: nil,
+    cle_td: (96..106),
     emp_td: (98..108),
-    pal_td: nil,
+    pal_td: (84..87),
     ran_td: nil,
     sor_td: (105..112),
     wiz_td: nil,
     mje_td: (109..114),
     mne_td: 98,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 98,
+    mnm_td: (100..105),
     defensive_spells: [
       "Natural Colors (601)",
       "Self Control (613)",
@@ -116,7 +116,11 @@
     flee: [],
     death: [
       "A jungle troll chieftain goes limp as he is rendered unconscious!",
-      "A jungle troll chieftain goes limp as she is rendered unconscious!"
+      "A jungle troll chieftain goes limp as she is rendered unconscious!",
+      "The troll chieftain snarls his defiance before collapsing and going still.",
+      "The troll chieftain snarls her defiance one last time before going still.",
+      "The troll chieftain snarls her defiance before collapsing and going still.",
+      "The troll chieftain snarls his defiance one last time before going still."
     ],
     decay: [
       "A jungle troll chieftain decays into compost."

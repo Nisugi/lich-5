@@ -87,8 +87,8 @@
     mje_td: 364,
     mne_td: 365,
     mjs_td: 336,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (317..324),
+    mnm_td: (289..297),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -119,7 +119,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A seraceris fades into oblivion."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

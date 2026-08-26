@@ -124,7 +124,7 @@
     mne_td: nil,
     mjs_td: nil,
     mns_td: (363..423),
-    mnm_td: nil,
+    mnm_td: (380..386),
     defensive_spells: [
       "Minor Sanctuary (213)",
       "Self Control (613)",
@@ -161,7 +161,10 @@
       "A faint rippling in the air heralds the arrival of an Ithzir seer!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "The Ithzir seer vainly struggles to rise, then goes still.",
+      "An Ithzir seer's body shimmers slightly, then fades from view like a dissipating phantom."
+    ],
     decay: [
       "Acid dissolves the knee ligaments.  The Ithzir seer's tibia passes his femur in a very unpleasant manner!",
       "Acid dissolves connecting cartilage, freeing the Ithzir seer's ribs to move independently."

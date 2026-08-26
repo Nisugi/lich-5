@@ -85,8 +85,8 @@
     mje_td: nil,
     mne_td: 147,
     mjs_td: nil,
-    mns_td: 130,
-    mnm_td: nil,
+    mns_td: (125..131),
+    mnm_td: (118..127),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Barrier (102)",
@@ -120,7 +120,9 @@
       "The wind manifests into a swirling spectre!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "The swirling spectre goes still for a moment while its head reshapes."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

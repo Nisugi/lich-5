@@ -22,7 +22,7 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
+  height: 6,
   size: "large",
   areas: [
     {
@@ -115,7 +115,7 @@
     mne_td: nil,
     mjs_td: nil,
     mns_td: 333,
-    mnm_td: nil,
+    mnm_td: (255..258),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

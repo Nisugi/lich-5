@@ -58,9 +58,9 @@
     bolt: 83,
     udf: 102,
     bar_td: 30,
-    cle_td: nil,
+    cle_td: 30,
     emp_td: 30,
-    pal_td: nil,
+    pal_td: 30,
     ran_td: 30,
     sor_td: 30,
     wiz_td: nil,
@@ -68,7 +68,7 @@
     mne_td: 30,
     mjs_td: nil,
     mns_td: 30,
-    mnm_td: nil,
+    mnm_td: 30,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -97,7 +97,9 @@
       "The giant marmot collapses to the ground, emits a final silent squeal, and dies.",
       "The giant marmot twitches and dies.",
       "The giant marmot twitches violently, then dies.",
-      "A giant marmot goes limp as it is rendered unconscious!"
+      "A giant marmot goes limp as it is rendered unconscious!",
+      "The giant marmot shrieks as it slumps to the ground and licks at its wounded left foreleg.",
+      "The giant marmot shrieks as it slumps to the ground and licks at its wounded right claw."
     ],
     decay: [
       "A giant marmot decays into a pile of hair and bone."

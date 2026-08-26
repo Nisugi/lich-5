@@ -50,17 +50,17 @@
     bolt: nil,
     udf: nil,
     bar_td: 54,
-    cle_td: nil,
+    cle_td: (51..54),
     emp_td: (54..62),
-    pal_td: nil,
+    pal_td: (48..57),
     ran_td: nil,
     sor_td: 54,
     wiz_td: nil,
     mje_td: 54,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (51..54),
+    mnm_td: (51..60),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -86,7 +86,10 @@
       "A bighorn sheep just arrived."
     ],
     flee: [],
-    death: [],
+    death: [
+      "A bighorn sheep collapses, his head dropping heavily to the ground as he goes still.",
+      "A bighorn sheep collapses, her head dropping heavily to the ground as she goes still."
+    ],
     decay: [
       "A bighorn sheep decays into a pile of fur and bone."
     ],

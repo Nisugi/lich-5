@@ -96,7 +96,7 @@
     bolt: 195,
     udf: 431,
     bar_td: (160..163),
-    cle_td: 178,
+    cle_td: (178..187),
     emp_td: (168..177),
     pal_td: nil,
     ran_td: nil,
@@ -106,7 +106,7 @@
     mne_td: (198..201),
     mjs_td: 177,
     mns_td: (168..183),
-    mnm_td: 177,
+    mnm_td: (138..147),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

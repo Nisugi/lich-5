@@ -62,17 +62,17 @@
     bolt: 172,
     udf: 267,
     bar_td: 114,
-    cle_td: nil,
+    cle_td: (123..132),
     emp_td: (124..133),
-    pal_td: nil,
+    pal_td: (111..120),
     ran_td: nil,
     sor_td: (130..137),
     wiz_td: nil,
     mje_td: 138,
     mne_td: 138,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (124..130),
+    mnm_td: (111..120),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -95,7 +95,8 @@
       "One of the largest of the bears, the grizzly bear weighs around 860 pounds and has about ten feet of total body length. This bear is dark brown in color. The tips of her guard hairs are white, giving the bear a grizzled appearance. The grizzly bear has a characteristic muscle hump over the shoulders, and longer claws on her front paws than on her rear paws."
     ],
     arrival: [
-      "A grizzly bear lumbers in!"
+      "A grizzly bear lumbers in!",
+      "A grizzly bear shudders and lumbers in, snarling in agony!"
     ],
     flee: [
       "A grizzly bear lumbers {direction}."

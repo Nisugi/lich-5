@@ -20,7 +20,7 @@
   bcs: true,
   max_hp: 400,
   speed: nil,
-  height: nil,
+  height: 6,
   size: "large",
   areas: [
     {
@@ -44,7 +44,7 @@
       },
       {
         name: "Beak",
-        as: 444
+        as: (444..451)
       },
       {
         name: "Smash",
@@ -95,8 +95,8 @@
     mje_td: (457..463),
     mne_td: nil,
     mjs_td: nil,
-    mns_td: (400..409),
-    mnm_td: nil,
+    mns_td: (381..388),
+    mnm_td: (351..360),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -125,7 +125,8 @@
       "A war griffin flies {direction}."
     ],
     death: [
-      "The war griffin writhes in agony, its wings flapping fruitlessly as it dies."
+      "The war griffin writhes in agony, its wings flapping fruitlessly as it dies.",
+      "The war griffin crashes to the ground, motionless."
     ],
     decay: [
       "The war griffin decays into a pile of feathers and fur."

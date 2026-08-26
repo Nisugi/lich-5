@@ -93,11 +93,11 @@
     ran_td: nil,
     sor_td: 159,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: (265..275),
     mne_td: 167,
     mjs_td: nil,
     mns_td: 150,
-    mnm_td: nil,
+    mnm_td: 126,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

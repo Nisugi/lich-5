@@ -72,7 +72,7 @@
     mne_td: "352 to 382",
     mjs_td: nil,
     mns_td: "306 to 336",
-    mnm_td: nil,
+    mnm_td: 276,
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -106,7 +106,8 @@
     ],
     flee: [],
     death: [
-      "A crackling lightning fiend goes limp as it is rendered unconscious!"
+      "A crackling lightning fiend goes limp as it is rendered unconscious!",
+      "With a last crackle and a burst of ozone, a crackling lightning fiend dissipates into nothingness."
     ],
     decay: [
       "With a white-hot corruscation of sparks, a crackling lightning fiend collapses into a buzzing tangle of glowing filaments."

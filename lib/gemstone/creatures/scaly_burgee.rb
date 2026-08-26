@@ -66,17 +66,17 @@
     bolt: 151,
     udf: 289,
     bar_td: 87,
-    cle_td: nil,
+    cle_td: (84..93),
     emp_td: (87..95),
-    pal_td: nil,
+    pal_td: (84..93),
     ran_td: 87,
     sor_td: (88..97),
     wiz_td: nil,
     mje_td: (95..98),
     mne_td: 95,
     mjs_td: nil,
-    mns_td: 87,
-    mnm_td: nil,
+    mns_td: (87..98),
+    mnm_td: (81..90),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -101,10 +101,15 @@
     arrival: [],
     flee: [],
     death: [
-      "A scaly burgee goes limp as it is rendered unconscious!"
+      "A scaly burgee goes limp as it is rendered unconscious!",
+      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled left claw.",
+      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled left foreleg.",
+      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled right foreleg.",
+      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled right claw."
     ],
     decay: [
-      "Acid dissolves the knee ligaments.  The scaly burgee's tibia passes its femur in a very unpleasant manner!"
+      "Acid dissolves the knee ligaments.  The scaly burgee's tibia passes its femur in a very unpleasant manner!",
+      "The scaly burgee's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

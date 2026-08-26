@@ -52,17 +52,17 @@
     bolt: (65..67),
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (42..48),
     emp_td: (21..51),
-    pal_td: nil,
+    pal_td: (36..42),
     ran_td: nil,
     sor_td: (39..48),
     wiz_td: nil,
     mje_td: 42,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (36..45),
+    mnm_td: (42..48),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -90,7 +90,9 @@
       "The muddy hog collapses to the ground, emits a final squeal, and dies.",
       "The muddy hog lets out a final agonized squeal and dies.",
       "The muddy hog collapses to the ground, emits a final silent squeal, and dies.",
-      "A muddy hog goes limp as she is rendered unconscious!"
+      "A muddy hog goes limp as she is rendered unconscious!",
+      "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded left hoof."
     ],
     decay: [
       "A muddy hog decays into a pile of fur and bone."

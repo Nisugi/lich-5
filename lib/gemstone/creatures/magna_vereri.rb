@@ -47,7 +47,7 @@
       },
       {
         name: "Mouth full of rotting teeth",
-        as: 338
+        as: (338..364)
       },
       {
         name: "Slash",
@@ -71,17 +71,17 @@
     bolt: "319 (in offensive)",
     udf: 567,
     bar_td: 290,
-    cle_td: (290..301),
+    cle_td: (301..310),
     emp_td: (297..306),
-    pal_td: nil,
+    pal_td: (263..269),
     ran_td: nil,
     sor_td: nil,
     wiz_td: nil,
     mje_td: 328,
     mne_td: nil,
     mjs_td: 254,
-    mns_td: 269,
-    mnm_td: nil,
+    mns_td: 306,
+    mnm_td: (213..222),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

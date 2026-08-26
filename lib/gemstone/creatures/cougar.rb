@@ -65,7 +65,7 @@
     bolt: nil,
     udf: 190,
     bar_td: 66,
-    cle_td: nil,
+    cle_td: (60..69),
     emp_td: (66..76),
     pal_td: nil,
     ran_td: nil,
@@ -74,8 +74,8 @@
     mje_td: (60..66),
     mne_td: 66,
     mjs_td: nil,
-    mns_td: 66,
-    mnm_td: nil,
+    mns_td: (63..72),
+    mnm_td: (63..72),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -105,7 +105,8 @@
       "A canny cougar scampers in!",
       "A keen cougar scampers in!",
       "A belligerent cougar scampers in!",
-      "A luminous cougar scampers in!"
+      "A luminous cougar scampers in!",
+      "A dreary cougar scampers in!"
     ],
     flee: [
       "A cougar scampers {direction}.",
@@ -114,14 +115,20 @@
       "A deft cougar scampers {direction}.",
       "A robust cougar scampers {direction}.",
       "A keen cougar scampers {direction}.",
-      "A combative cougar scampers {direction}."
+      "A combative cougar scampers {direction}.",
+      "A stalwart cougar scampers {direction}."
     ],
     death: [
       "The cougar lets out a final caterwaul and dies.",
       "The cougar crumples to the ground and dies.",
       "A cougar goes limp as she is rendered unconscious!",
       "A cougar goes limp as he is rendered unconscious!",
-      "The cougar twitches violently, then dies."
+      "The cougar twitches violently, then dies.",
+      "The cougar mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The cougar mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The cougar mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The cougar mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The cougar mewls in pain as he slumps to the ground and licks his wounded right paw."
     ],
     decay: [
       "A cougar decays into a compost of fangs, fur and claws.",
@@ -138,7 +145,9 @@
       "A belligerent cougar decays into a compost of fangs, fur and claws.",
       "A combative cougar decays into a compost of fangs, fur and claws.",
       "A lustrous cougar decays into a compost of fangs, fur and claws.",
-      "A luminous cougar decays into a compost of fangs, fur and claws."
+      "A luminous cougar decays into a compost of fangs, fur and claws.",
+      "A dreary cougar decays into a compost of fangs, fur and claws.",
+      "A drab cougar decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],

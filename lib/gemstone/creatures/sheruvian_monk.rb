@@ -71,7 +71,7 @@
     mje_td: 172,
     mne_td: 172,
     mjs_td: nil,
-    mns_td: 156,
+    mns_td: 231,
     mnm_td: 123,
     defensive_spells: [],
     defensive_abilities: [],
@@ -99,7 +99,9 @@
     ],
     flee: [],
     death: [
-      "A Sheruvian monk goes limp as it is rendered unconscious!"
+      "A Sheruvian monk goes limp as it is rendered unconscious!",
+      "The Sheruvian monk screams emotionlessly one last time and lies still.",
+      "The Sheruvian monk falls to the ground and lies still."
     ],
     decay: [],
     search: [],

@@ -54,7 +54,7 @@
     bolt: (52..100),
     udf: 114,
     bar_td: 55,
-    cle_td: nil,
+    cle_td: 63,
     emp_td: 63,
     pal_td: nil,
     ran_td: nil,
@@ -63,8 +63,8 @@
     mje_td: 55,
     mne_td: (55..59),
     mjs_td: 63,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 63,
+    mnm_td: 48,
     defensive_spells: [
       "Spirit Warding II (107)"
     ],

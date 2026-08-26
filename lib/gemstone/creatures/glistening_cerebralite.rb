@@ -66,7 +66,11 @@
         name: "Spiritual Abolition (230)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Tail Swipe"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -84,11 +88,11 @@
     ran_td: nil,
     sor_td: (442..446),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 449,
     mne_td: 455,
     mjs_td: nil,
-    mns_td: 425,
-    mnm_td: nil,
+    mns_td: (423..425),
+    mnm_td: (320..327),
     defensive_spells: [
       "Cloak of Shadows (712)",
       "Elemental Defense I (401)",

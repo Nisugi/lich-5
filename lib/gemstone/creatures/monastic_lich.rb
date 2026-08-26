@@ -99,8 +99,8 @@
     mje_td: 120,
     mne_td: 120,
     mjs_td: nil,
-    mns_td: 115,
-    mnm_td: nil,
+    mns_td: (115..121),
+    mnm_td: (81..87),
     defensive_spells: [
       "Prayer of Protection (303)",
       "Prismatic Guard (905)",

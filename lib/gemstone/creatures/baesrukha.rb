@@ -71,17 +71,17 @@
     bolt: (187..195),
     udf: 330,
     bar_td: "140 to 153",
-    cle_td: nil,
+    cle_td: (158..165),
     emp_td: (164..167),
-    pal_td: nil,
+    pal_td: (135..144),
     ran_td: nil,
     sor_td: (162..179),
     wiz_td: nil,
     mje_td: 173,
     mne_td: 188,
     mjs_td: nil,
-    mns_td: 165,
-    mnm_td: nil,
+    mns_td: (161..168),
+    mnm_td: (143..152),
     defensive_spells: [
       "Elemental Defense I",
       "Elemental Defense II",
@@ -111,7 +111,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from his unwashed body.",
+      "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from her unwashed body."
+    ],
     decay: [
       "The baesrukha's right leg crumbles briefly and explodes in a shower of gore."
     ],

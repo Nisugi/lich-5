@@ -62,7 +62,7 @@
     bar_td: nil,
     cle_td: 6,
     emp_td: 6,
-    pal_td: nil,
+    pal_td: (3..6),
     ran_td: nil,
     sor_td: 6,
     wiz_td: nil,
@@ -70,7 +70,7 @@
     mne_td: 6,
     mjs_td: nil,
     mns_td: 6,
-    mnm_td: nil,
+    mnm_td: 6,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -92,7 +92,9 @@
     description: [
       "The frost shade bears the outline of a man and looks solid, but you can see faint images of the background through it."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser frost shade just arrived."
+    ],
     flee: [],
     death: [
       "The frost shade falls to the ground motionless.",

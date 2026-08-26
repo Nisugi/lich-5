@@ -109,17 +109,17 @@
     bolt: nil,
     udf: 699,
     bar_td: 336,
-    cle_td: nil,
+    cle_td: (364..373),
     emp_td: (354..363),
-    pal_td: nil,
+    pal_td: (310..319),
     ran_td: nil,
     sor_td: (373..382),
     wiz_td: nil,
     mje_td: 397,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (351..360),
+    mnm_td: (280..289),
     defensive_spells: [
       "Divine Shield",
       "Fasthr's Reward",
@@ -150,7 +150,8 @@
     flee: [],
     death: [
       "An Illoke jarl's form goes limp as he falls unconscious.",
-      "The Illoke jarl grumbles in pain one last time before lying still."
+      "The Illoke jarl grumbles in pain one last time before lying still.",
+      "The Illoke jarl shudders one last time before lying still."
     ],
     decay: [
       "An Illoke jarl cracks and collapses into a pile of craggy dark rock that rapidly disappears without a trace.",

@@ -65,17 +65,17 @@
     bolt: (150..163),
     udf: 269,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 121,
     emp_td: 121,
-    pal_td: nil,
+    pal_td: (114..117),
     ran_td: 102,
     sor_td: 130,
     wiz_td: nil,
     mje_td: 136,
     mne_td: 135,
     mjs_td: 121,
-    mns_td: 121,
-    mnm_td: nil,
+    mns_td: 158,
+    mnm_td: (127..134),
     defensive_spells: [
       "Mobility (618)",
       "Natural Colors (601)",
@@ -115,10 +115,12 @@
       "The greater bog troll's body goes rigid and her eyes roll back into her head as she dies.",
       "The greater bog troll's body goes rigid and his eyes roll back into his head as he dies.",
       "A greater bog troll goes limp as he is rendered unconscious!",
-      "A greater bog troll goes limp as she is rendered unconscious!"
+      "A greater bog troll goes limp as she is rendered unconscious!",
+      "The greater bog troll's body goes rigid and collapses to the ground, dead."
     ],
     decay: [
-      "A greater bog troll decays into compost."
+      "A greater bog troll decays into compost.",
+      "The greater bog troll's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

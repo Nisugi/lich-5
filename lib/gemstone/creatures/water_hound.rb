@@ -73,7 +73,7 @@
     mne_td: 82,
     mjs_td: 76,
     mns_td: 76,
-    mnm_td: nil,
+    mnm_td: 72,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: [

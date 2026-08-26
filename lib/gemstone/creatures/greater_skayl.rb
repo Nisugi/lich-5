@@ -81,8 +81,8 @@
     mje_td: nil,
     mne_td: 379,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (321..327),
+    mnm_td: (263..266),
     defensive_spells: [
       "Thurfel's Ward (503)",
       "Elemental Bias (508)",

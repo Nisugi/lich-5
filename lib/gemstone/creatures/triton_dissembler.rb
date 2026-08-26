@@ -74,11 +74,11 @@
     ran_td: nil,
     sor_td: (378..385),
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 502,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (364..374),
+    mnm_td: (316..323),
     defensive_spells: [
       "Cloak of Shadows (712)",
       "Fasthr's Reward (115)",
@@ -106,10 +106,15 @@
       "Weight carefully balanced upon her massive tail, the triton dissembler walks rigidly upright, moving with self-absorbed elegance. Luminous dark blue eyes are set deeply in the sockets of her fine-boned head where delicate, fleshy lips curve into an unpleasant smile. The dissembler's long, translucently webbed hands bear curved claws, carefully filed to tapered points and painted with gold lacquer. This pretense to arrogant refinement belies the feverishly clammy sweat covering the creature's slick, sea green hide."
     ],
     arrival: [
-      "A triton dissembler arrives, striding forth with her robes trailing behind her."
+      "A triton dissembler arrives, striding forth with her robes trailing behind her.",
+      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton dissembler arrives, striding forth with his robes trailing behind him."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The triton dissembler gurgles once and goes still, a wrathful look on her face.",
+      "The triton dissembler gurgles once and goes still, a wrathful look on his face."
+    ],
     decay: [
       "The triton dissembler's left leg crumbles briefly and explodes in a shower of gore."
     ],

@@ -36,7 +36,7 @@
       },
       {
         name: "Ensnare",
-        as: 178
+        as: (178..186)
       }
     ],
     bolt_spells: [],
@@ -58,17 +58,17 @@
     bolt: (60..146),
     udf: 225,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (57..66),
     emp_td: (57..66),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (54..63),
+    ran_td: (60..66),
     sor_td: (55..61),
     wiz_td: nil,
     mje_td: 62,
     mne_td: 63,
     mjs_td: nil,
-    mns_td: 60,
-    mnm_td: nil,
+    mns_td: (60..66),
+    mnm_td: (54..60),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []

@@ -78,8 +78,8 @@
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (436..438),
+    mnm_td: (331..341),
     defensive_spells: [
       "Elemental Barrier (430)",
       "Elemental Defense II (406)",
@@ -134,7 +134,12 @@
       "The glimmer of a red starstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
       "The glimmer of a grey moonstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
       "The glimmer of a dragonsbreath sapphire catches your eye as the water elemental gurgles eerily and collapses into the water.",
-      "The glimmer of a large grey pearl catches your eye as the water elemental gurgles eerily and collapses into a puddle of water."
+      "The glimmer of a large grey pearl catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a blue moonstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of an uncut ruby catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a blue starstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of some asterfire quartz catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a black moonstone catches your eye as the water elemental gurgles eerily and collapses into the water."
     ],
     search: [],
     spell_prep: [],

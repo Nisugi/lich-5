@@ -82,7 +82,7 @@
     mne_td: nil,
     mjs_td: 320,
     mns_td: (320..359),
-    mnm_td: nil,
+    mnm_td: (252..261),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -107,7 +107,8 @@
     arrival: [],
     flee: [],
     death: [
-      "The n'ecare falls to the ground motionless."
+      "The n'ecare falls to the ground motionless.",
+      "The n'ecare wails in terrifying pain one last time and lies still."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the n'ecare's ribs to move independently."

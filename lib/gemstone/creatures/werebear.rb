@@ -62,16 +62,16 @@
     bolt: 75,
     udf: 85,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 30,
     emp_td: 30,
-    pal_td: nil,
+    pal_td: (27..30),
     ran_td: nil,
     sor_td: 30,
     wiz_td: nil,
     mje_td: nil,
     mne_td: 30,
     mjs_td: nil,
-    mns_td: 30,
+    mns_td: (30..39),
     mnm_td: 30,
     defensive_spells: [],
     defensive_abilities: [],
@@ -100,7 +100,9 @@
     flee: [
       "A werebear lumbers {direction} of the underbrush, uttering a weird, half-human cry!"
     ],
-    death: [],
+    death: [
+      "A werebear growls one last time, and crumples to the ground in a heap."
+    ],
     decay: [
       "A werebear turns to dust."
     ],

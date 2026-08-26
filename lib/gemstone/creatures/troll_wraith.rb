@@ -51,7 +51,7 @@
     bolt: 105,
     udf: 342,
     bar_td: (118..123),
-    cle_td: 130,
+    cle_td: (129..139),
     emp_td: (130..136),
     pal_td: nil,
     ran_td: nil,
@@ -60,8 +60,8 @@
     mje_td: 148,
     mne_td: (143..148),
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (132..141),
+    mnm_td: (119..128),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense III (414)"
@@ -88,7 +88,11 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The troll wraith goes still for a moment while its head reshapes.",
+      "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to her side.",
+      "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to his side."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

@@ -78,8 +78,8 @@
     mje_td: 204,
     mne_td: 208,
     mjs_td: nil,
-    mns_td: 192,
-    mnm_td: nil,
+    mns_td: (182..192),
+    mnm_td: (153..162),
     defensive_spells: [
       "Natural Colors (601)",
       "Phoen's Strength (606)",
@@ -110,7 +110,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The horned vor'taz's horn dims as his lifeforce fades away."
+    ],
     decay: [
       "A horned vor'taz crumbles away to nothing."
     ],

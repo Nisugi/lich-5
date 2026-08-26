@@ -96,8 +96,8 @@
     mje_td: 377,
     mne_td: 376,
     mjs_td: nil,
-    mns_td: (317..332),
-    mnm_td: nil,
+    mns_td: 408,
+    mnm_td: 291,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -123,7 +123,10 @@
       "An Ithzir janissary strides in, surveying the surroundings alertly."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The Ithzir janissary vainly struggles to rise, then goes still.",
+      "An Ithzir janissary's body shimmers slightly, then fades from view like a dissipating phantom."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

@@ -59,17 +59,17 @@
     bolt: nil,
     udf: 196,
     bar_td: 105,
-    cle_td: nil,
+    cle_td: (116..125),
     emp_td: (117..124),
-    pal_td: nil,
+    pal_td: (99..102),
     ran_td: nil,
     sor_td: (123..132),
     wiz_td: nil,
     mje_td: 129,
     mne_td: 129,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (117..126),
+    mnm_td: (102..108),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -98,7 +98,10 @@
     death: [
       "The hisskra chieftain rolls over on his back and dies.",
       "The hisskra chieftain twitches violently, then dies.",
-      "A hisskra chieftain goes limp as he is rendered unconscious!"
+      "A hisskra chieftain goes limp as he is rendered unconscious!",
+      "The hisskra chieftain collapses in a motionless heap.",
+      "The hisskra chieftain contorts in a tortured spasm, then goes still.",
+      "The hisskra chieftain twitches violently in his death throes before finally going still."
     ],
     decay: [
       "A hisskra chieftain decays into a pile of scales and bone.",

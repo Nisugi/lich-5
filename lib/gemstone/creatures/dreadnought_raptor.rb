@@ -70,9 +70,9 @@
     bolt: nil,
     udf: 240,
     bar_td: (122..131),
-    cle_td: nil,
+    cle_td: (142..151),
     emp_td: (138..147),
-    pal_td: nil,
+    pal_td: (129..138),
     ran_td: nil,
     sor_td: (144..153),
     wiz_td: nil,
@@ -80,7 +80,7 @@
     mne_td: nil,
     mjs_td: 144,
     mns_td: nil,
-    mnm_td: nil,
+    mnm_td: (126..132),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -108,7 +108,8 @@
     ],
     death: [
       "The dreadnought raptor writhes in agony, its wings flapping fruitlessly as it dies.",
-      "A dreadnought raptor goes limp as it is rendered unconscious!"
+      "A dreadnought raptor goes limp as it is rendered unconscious!",
+      "The dreadnought raptor crashes to the ground, motionless."
     ],
     decay: [
       "The dreadnought raptor decays into a pile of feathers."

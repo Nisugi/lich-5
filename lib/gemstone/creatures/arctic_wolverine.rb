@@ -62,17 +62,17 @@
     bolt: (121..145),
     udf: 194,
     bar_td: 72,
-    cle_td: nil,
+    cle_td: (69..78),
     emp_td: (72..80),
-    pal_td: 75,
+    pal_td: (69..78),
     ran_td: nil,
     sor_td: (66..75),
     wiz_td: nil,
     mje_td: 72,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (72..78),
+    mnm_td: 72,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -104,7 +104,8 @@
     ],
     death: [
       "An arctic wolverine goes limp as he is rendered unconscious!",
-      "An arctic wolverine goes limp as she is rendered unconscious!"
+      "An arctic wolverine goes limp as she is rendered unconscious!",
+      "The arctic wolverine snarls loudly as he slumps to the ground and licks his wounded left foreleg."
     ],
     decay: [],
     search: [],

@@ -70,7 +70,7 @@
     mne_td: "385 to 415",
     mjs_td: nil,
     mns_td: "364 to 374",
-    mnm_td: nil,
+    mnm_td: 313,
     defensive_spells: [
       "Mantle of Faith (1601)",
       "Divine Shield (1609)",

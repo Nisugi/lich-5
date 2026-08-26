@@ -60,7 +60,7 @@
     bolt: 85,
     udf: 146,
     bar_td: 45,
-    cle_td: (42..51),
+    cle_td: (39..51),
     emp_td: (45..53),
     pal_td: nil,
     ran_td: nil,
@@ -69,8 +69,8 @@
     mje_td: (39..45),
     mne_td: 45,
     mjs_td: 45,
-    mns_td: 45,
-    mnm_td: nil,
+    mns_td: (42..51),
+    mnm_td: (42..51),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -103,7 +103,9 @@
     ],
     death: [
       "The black leopard lets out a final caterwaul and dies.",
-      "The black leopard crumples to the ground and dies."
+      "The black leopard crumples to the ground and dies.",
+      "The black leopard mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The black leopard mewls in pain as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [
       "A black leopard decays into a compost of fangs, fur and claws."

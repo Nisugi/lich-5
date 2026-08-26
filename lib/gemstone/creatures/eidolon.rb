@@ -76,8 +76,8 @@
     mje_td: 244,
     mne_td: "217 to 252",
     mjs_td: nil,
-    mns_td: 231,
-    mnm_td: nil,
+    mns_td: 248,
+    mnm_td: (211..218),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Defense (103)",
@@ -108,7 +108,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "An eidolon fades into oblivion."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

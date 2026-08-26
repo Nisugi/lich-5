@@ -52,17 +52,17 @@
     bolt: 67,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (39..42),
     emp_td: (21..51),
-    pal_td: nil,
+    pal_td: (39..42),
     ran_td: nil,
     sor_td: (36..45),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (36..42),
+    mnm_td: 42,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -90,7 +90,9 @@
       "The ebon swine lets out a final agonized squeal and dies.",
       "The ebon swine collapses to the ground, emits a final squeal, and dies.",
       "The ebon swine twitches violently, then dies.",
-      "The ebon swine silently lets out a final agonized squeal and dies."
+      "The ebon swine silently lets out a final agonized squeal and dies.",
+      "The ebon swine squeals loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The ebon swine squeals loudly as he slumps to the ground and cradles his wounded left foreleg."
     ],
     decay: [
       "An ebon swine decays into a pile of fur and bone."

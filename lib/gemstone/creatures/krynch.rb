@@ -62,7 +62,7 @@
     bolt: (71..98),
     udf: 273,
     bar_td: (87..102),
-    cle_td: 98,
+    cle_td: (104..113),
     emp_td: (101..105),
     pal_td: nil,
     ran_td: nil,
@@ -71,8 +71,8 @@
     mje_td: 115,
     mne_td: "106 124",
     mjs_td: 99,
-    mns_td: 99,
-    mnm_td: 93,
+    mns_td: (99..108),
+    mnm_td: (93..99),
     defensive_spells: [
       "Natural Colors (601)"
     ],
@@ -101,7 +101,10 @@
       "The boulder comes to a sudden stop and rises into the form of a krynch!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "The krynch shudders, then topples to the ground.",
+      "The krynch shudders violently for a moment, then goes still."
+    ],
     decay: [
       "Tiny fissures quickly spread over a dead krynch, and it crumbles into rubble."
     ],

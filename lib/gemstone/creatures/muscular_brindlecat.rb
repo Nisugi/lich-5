@@ -56,17 +56,17 @@
     bolt: nil,
     udf: 143,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (39..42),
     emp_td: (17..47),
-    pal_td: nil,
+    pal_td: (36..39),
     ran_td: nil,
     sor_td: (36..45),
     wiz_td: nil,
     mje_td: 45,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (39..45),
+    mnm_td: (36..39),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -95,7 +95,9 @@
     death: [
       "The muscular brindlecat's tail twitches feebly as she dies.",
       "The muscular brindlecat's tail twitches feebly as he dies.",
-      "A muscular brindlecat goes limp as he is rendered unconscious!"
+      "A muscular brindlecat goes limp as he is rendered unconscious!",
+      "The muscular brindlecat mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The muscular brindlecat mewls in pain as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [
       "A muscular brindlecat decays into a compost of fangs, fur and claws."

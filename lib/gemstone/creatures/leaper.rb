@@ -66,17 +66,17 @@
     bolt: 9,
     udf: 80,
     bar_td: 18,
-    cle_td: nil,
+    cle_td: 18,
     emp_td: 18,
-    pal_td: nil,
+    pal_td: (15..18),
     ran_td: 18,
     sor_td: 18,
     wiz_td: nil,
     mje_td: 18,
     mne_td: 18,
     mjs_td: 18,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 18,
+    mnm_td: 18,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -104,7 +104,8 @@
       "The leaper collapses to the ground, emits a final snarl, and dies.",
       "The leaper twitches and dies.",
       "The leaper collapses to the ground, emits a final silent snarl, and dies.",
-      "A leaper goes limp as it is rendered unconscious!"
+      "A leaper goes limp as it is rendered unconscious!",
+      "The leaper growls as it slumps to the ground and licks at its wounded left foreleg."
     ],
     decay: [
       "A leaper decays into a pile of hair and bone."

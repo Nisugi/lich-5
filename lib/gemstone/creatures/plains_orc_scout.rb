@@ -60,17 +60,17 @@
     bolt: nil,
     udf: 219,
     bar_td: (51..57),
-    cle_td: nil,
+    cle_td: (48..57),
     emp_td: (51..59),
-    pal_td: nil,
+    pal_td: (48..57),
     ran_td: nil,
     sor_td: (45..54),
     wiz_td: 57,
     mje_td: 51,
     mne_td: (51..57),
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (48..57),
+    mnm_td: (57..67),
     defensive_spells: [
       "Natural Colors (601)",
       "Self Control (613)"
@@ -103,7 +103,9 @@
     flee: [
       "A plains orc scout wanders {direction}."
     ],
-    death: [],
+    death: [
+      "A plains orc scout collapses until all that is left is a few scraps of hide."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

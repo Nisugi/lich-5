@@ -56,15 +56,15 @@
     bar_td: nil,
     cle_td: 105,
     emp_td: 106,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (96..99),
+    ran_td: 99,
     sor_td: 112,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: 106,
+    mnm_td: 99,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -88,7 +88,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A skeletal giant falls to the ground in a clattering, motionless heap.",
+      "Beautiful shot pierces both lungs, the skeletal giant makes a wheezing noise, and drops dead!"
+    ],
     decay: [
       "A skeletal giant turns to dust."
     ],

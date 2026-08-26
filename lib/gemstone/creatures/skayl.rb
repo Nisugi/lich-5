@@ -80,8 +80,8 @@
     mje_td: 224,
     mne_td: 235,
     mjs_td: nil,
-    mns_td: 202,
-    mnm_td: nil,
+    mns_td: (194..202),
+    mnm_td: (172..175),
     defensive_spells: [
       "Elemental Bias (508)",
       "Strength (509)",

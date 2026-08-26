@@ -84,8 +84,8 @@
     mje_td: 103,
     mne_td: 98,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (96..106),
+    mnm_td: (75..80),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Shield (202)",
@@ -114,7 +114,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A spectral monk fades into oblivion.",
+      "The spectral monk goes still for a moment while its head reshapes."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

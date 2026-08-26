@@ -99,7 +99,10 @@
     death: [
       "The rolton collapses to the ground, emits a final bleat, and dies.",
       "The rolton collapses to the ground, emits a final silent bleat, and dies.",
-      "The rolton lets out a final agonized bleat and dies."
+      "The rolton lets out a final agonized bleat and dies.",
+      "The rolton bleats loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The rolton bleats loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The rolton bleats loudly as he slumps to the ground and cradles his wounded left foreleg."
     ],
     decay: [
       "A rolton decays into a pile of fur and bone."

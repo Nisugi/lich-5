@@ -84,15 +84,15 @@
     bar_td: 39,
     cle_td: 39,
     emp_td: 39,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (36..39),
+    ran_td: 39,
     sor_td: 39,
     wiz_td: nil,
     mje_td: 39,
     mne_td: 39,
     mjs_td: 39,
     mns_td: 39,
-    mnm_td: nil,
+    mnm_td: 39,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -122,7 +122,8 @@
       "The darkwoode slowly settles to the ground and begins to dissipate."
     ],
     decay: [
-      "Acid dissolves connecting cartilage, freeing the darkwoode's ribs to move independently."
+      "Acid dissolves connecting cartilage, freeing the darkwoode's ribs to move independently.",
+      "The darkwoode's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

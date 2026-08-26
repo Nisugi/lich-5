@@ -91,6 +91,9 @@
     maneuvers: [
       {
         name: "Mind Stun"
+      },
+      {
+        name: "Ground Slam"
       }
     ],
     special_abilities: [],
@@ -113,8 +116,8 @@
     mje_td: 408,
     mne_td: nil,
     mjs_td: nil,
-    mns_td: (357..373),
-    mnm_td: nil,
+    mns_td: 388,
+    mnm_td: (355..364),
     defensive_spells: [
       "Lesser Shroud (120)",
       "Minor Sanctuary (213)",
@@ -147,10 +150,14 @@
     ],
     arrival: [
       "An Ithzir initiate strides in, his hands clasped before him.",
-      "An Ithzir initiate strides in, her hands clasped before her."
+      "An Ithzir initiate strides in, her hands clasped before her.",
+      "An Ithzir initiate strides in."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The Ithzir initiate vainly struggles to rise, then goes still.",
+      "An Ithzir initiate's body shimmers slightly, then fades from view like a dissipating phantom."
+    ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the Ithzir initiate's ribs to move independently."
     ],

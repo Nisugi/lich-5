@@ -66,7 +66,7 @@
     bolt: 27,
     udf: 93,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 15,
     emp_td: 15,
     pal_td: nil,
     ran_td: nil,
@@ -76,7 +76,7 @@
     mne_td: 15,
     mjs_td: nil,
     mns_td: 15,
-    mnm_td: nil,
+    mnm_td: 15,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -107,7 +107,9 @@
     ],
     death: [
       "The bobcat crumples to the ground and dies.",
-      "The bobcat lets out a final caterwaul and dies."
+      "The bobcat lets out a final caterwaul and dies.",
+      "The bobcat mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The bobcat mewls in pain as he slumps to the ground and licks his wounded left foreleg."
     ],
     decay: [
       "A bobcat decays into a compost of fangs, fur and claws."

@@ -97,8 +97,8 @@
     mje_td: 365,
     mne_td: 362,
     mjs_td: nil,
-    mns_td: nil,
-    mnm_td: nil,
+    mns_td: (322..332),
+    mnm_td: (310..319),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Defense (103)",
