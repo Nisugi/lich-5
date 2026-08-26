@@ -33,7 +33,7 @@
     physical_attacks: [
       {
         name: "Broadsword",
-        as: (414..424)
+        as: (414..429)
       },
       {
         name: "Closed fist",
@@ -71,7 +71,7 @@
     bar_td: nil,
     cle_td: (335..344),
     emp_td: (325..334),
-    pal_td: nil,
+    pal_td: (284..293),
     ran_td: nil,
     sor_td: (339..363),
     wiz_td: nil,

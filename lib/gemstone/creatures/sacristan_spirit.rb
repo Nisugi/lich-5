@@ -33,6 +33,10 @@
       {
         name: "a twisted black steel half moon",
         as: 211
+      },
+      {
+        name: "Twisted black steel half moon",
+        as: 172
       }
     ],
     bolt_spells: [],
@@ -73,7 +77,7 @@
     bar_td: (81..92),
     cle_td: (88..98),
     emp_td: (90..100),
-    pal_td: nil,
+    pal_td: (81..87),
     ran_td: nil,
     sor_td: (96..103),
     wiz_td: nil,
@@ -121,7 +125,9 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A sacristan spirit swings {weapon} at you!"
+    ],
     bite: [],
     claw: [],
     info: {

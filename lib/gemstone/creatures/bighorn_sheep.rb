@@ -93,7 +93,8 @@
       "A bighorn sheep rolls over, his head dropping heavily to the ground as he goes still.",
       "The bighorn sheep snorts loudly as she slumps to the ground and cradles her wounded left foreleg.",
       "A bighorn sheep rolls over, her head dropping heavily to the ground as she goes still.",
-      "The bighorn sheep snorts loudly as she slumps to the ground and cradles her wounded right foreleg."
+      "The bighorn sheep snorts loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The bighorn sheep snorts loudly as he slumps to the ground and cradles his wounded left foreleg."
     ],
     decay: [
       "A bighorn sheep decays into a pile of fur and bone."

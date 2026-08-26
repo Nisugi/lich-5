@@ -74,7 +74,7 @@
     bar_td: (24..27),
     cle_td: 24,
     emp_td: 24,
-    pal_td: 24,
+    pal_td: (21..24),
     ran_td: 24,
     sor_td: 24,
     wiz_td: 24,

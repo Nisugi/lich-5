@@ -110,7 +110,9 @@
       "A jungle troll lumbers in at a run!",
       "A jungle troll just arrived!"
     ],
-    flee: [],
+    flee: [
+      "A jungle troll runs {direction}."
+    ],
     death: [
       "A jungle troll goes limp as she is rendered unconscious!"
     ],

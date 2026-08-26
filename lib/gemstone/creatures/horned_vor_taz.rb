@@ -71,7 +71,7 @@
     bar_td: (160..183),
     cle_td: (174..199),
     emp_td: (182..192),
-    pal_td: nil,
+    pal_td: (156..166),
     ran_td: 166,
     sor_td: (194..202),
     wiz_td: nil,

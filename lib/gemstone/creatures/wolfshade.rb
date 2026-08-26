@@ -60,7 +60,7 @@
     bar_td: 45,
     cle_td: 45,
     emp_td: 45,
-    pal_td: 45,
+    pal_td: (42..45),
     ran_td: 45,
     sor_td: 45,
     wiz_td: 45,

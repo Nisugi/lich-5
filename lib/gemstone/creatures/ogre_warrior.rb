@@ -72,7 +72,7 @@
     cle_td: (60..66),
     emp_td: (60..64),
     pal_td: (54..60),
-    ran_td: 60,
+    ran_td: (57..63),
     sor_td: (57..66),
     wiz_td: nil,
     mje_td: (60..66),

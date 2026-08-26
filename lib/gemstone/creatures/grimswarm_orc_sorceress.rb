@@ -81,7 +81,9 @@
     arrival: [
       "A Grimswarm orc sorceress just arrived."
     ],
-    flee: [],
+    flee: [
+      "A Grimswarm orc sorceress heads {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

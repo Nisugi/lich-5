@@ -51,7 +51,7 @@
     bolt: (152..187),
     udf: 271,
     bar_td: 158,
-    cle_td: nil,
+    cle_td: (142..152),
     emp_td: (142..151),
     pal_td: nil,
     ran_td: nil,

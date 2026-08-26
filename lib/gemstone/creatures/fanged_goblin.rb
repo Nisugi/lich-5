@@ -56,7 +56,7 @@
     bar_td: 6,
     cle_td: 6,
     emp_td: 6,
-    pal_td: nil,
+    pal_td: (3..6),
     ran_td: 6,
     sor_td: 6,
     wiz_td: nil,
@@ -92,7 +92,9 @@
     description: [
       "Round-headed with a squat nose and a wide mouth, her features occasionally interrupted by warts, the fanged goblin has a dark cast green skin with a sickly yellow tinge to it. Long, sharp fangs poke out of her puffed lips forcing her face into a perpetual sneer. Standing as tall as a dwarf or halfling, the fanged goblin moves with a nervous energy but rarely looks directly at anyone. A yeasty smell as of molding bread or of something left to rot in a dark damp place completes the goblin's aura of repulsiveness."
     ],
-    arrival: [],
+    arrival: [
+      "A fanged goblin just arrived!"
+    ],
     flee: [
       "A fanged goblin tramps {direction}."
     ],

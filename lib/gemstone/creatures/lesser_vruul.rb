@@ -87,7 +87,7 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: 190,
+    cle_td: (180..190),
     emp_td: (180..190),
     pal_td: nil,
     ran_td: nil,
@@ -141,7 +141,9 @@
       "The lesser vruul falls to the ground and lies still.",
       "The lesser vruul slumps to the ground."
     ],
-    decay: [],
+    decay: [
+      "The lesser vruul's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

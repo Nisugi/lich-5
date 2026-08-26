@@ -126,7 +126,8 @@
       "A glorious greater construct raises greater construct massive foot and attempts to smash you!",
       "A greater construct raises greater construct massive foot and attempts to smash you!",
       "A greater construct swings {weapon} at you!",
-      "An Ithzir initiate places one palm on greater construct chest, and raises the other toward you!"
+      "An Ithzir initiate places one palm on greater construct chest, and raises the other toward you!",
+      "An Ithzir seer suddenly opens greater construct eyes and stares directly at you!"
     ],
     bite: [],
     claw: [],

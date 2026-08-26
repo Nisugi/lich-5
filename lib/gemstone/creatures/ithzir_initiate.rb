@@ -109,7 +109,7 @@
     bar_td: (351..363),
     cle_td: (370..385),
     emp_td: (375..385),
-    pal_td: nil,
+    pal_td: (328..337),
     ran_td: nil,
     sor_td: (394..403),
     wiz_td: nil,
@@ -156,7 +156,9 @@
       "An Ithzir initiate strides in, her hands clasped before her.",
       "An Ithzir initiate strides in."
     ],
-    flee: [],
+    flee: [
+      "An Ithzir initiate strides {direction}."
+    ],
     death: [
       "The Ithzir initiate vainly struggles to rise, then goes still.",
       "An Ithzir initiate's body shimmers slightly, then fades from view like a dissipating phantom.",

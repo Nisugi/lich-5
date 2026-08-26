@@ -34,6 +34,10 @@
       {
         name: "Bite",
         as: 382
+      },
+      {
+        name: "Smash",
+        as: 363
       }
     ],
     bolt_spells: [
@@ -126,7 +130,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A lich qyn'arj gestures with rotting mottled wings at you!"
+      "A lich qyn'arj gestures with rotting mottled wings at you!",
+      "A lesser construct raises lich qyn'arj massive foot and attempts to smash you!"
     ],
     bite: [
       "A lich qyn'arj tries to bite you!"

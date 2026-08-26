@@ -81,7 +81,7 @@
     bolt: nil,
     udf: 716,
     bar_td: "+338 to +360",
-    cle_td: nil,
+    cle_td: (361..367),
     emp_td: (373..383),
     pal_td: nil,
     ran_td: nil,

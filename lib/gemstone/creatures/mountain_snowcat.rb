@@ -99,7 +99,9 @@
     death: [
       "The mountain snowcat crumples to the ground and dies.",
       "The mountain snowcat lets out a final caterwaul and dies.",
-      "The mountain snowcat mewls in pain as he slumps to the ground and licks his wounded left paw."
+      "The mountain snowcat mewls in pain as he slumps to the ground and licks his wounded left paw.",
+      "The mountain snowcat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The mountain snowcat mewls in pain as she slumps to the ground and licks her wounded left foreleg."
     ],
     decay: [
       "A mountain snowcat decays into a compost of fangs, fur and claws.",

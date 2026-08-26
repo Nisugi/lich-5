@@ -105,7 +105,8 @@
       "The crazed canine yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
       "The crazed canine yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
       "The crazed canine yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
-      "The crazed canine yelps loudly as she slumps to the ground and licks her wounded left paw."
+      "The crazed canine yelps loudly as she slumps to the ground and licks her wounded left paw.",
+      "The crazed canine yelps loudly as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [
       "A crazed canine decays into a compost of fangs and fur."

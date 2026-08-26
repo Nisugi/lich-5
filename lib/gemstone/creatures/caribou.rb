@@ -109,7 +109,8 @@
       "The caribou slumps to the ground.",
       "The caribou bellows loudly as he slumps to the ground and licks his wounded right foreleg.",
       "The caribou bellows loudly as he slumps to the ground and licks his wounded left foreleg.",
-      "The caribou bellows loudly as he slumps to the ground and licks his wounded left hoof."
+      "The caribou bellows loudly as he slumps to the ground and licks his wounded left hoof.",
+      "The caribou bellows loudly as he slumps to the ground and licks his wounded right hoof."
     ],
     decay: [],
     search: [],

@@ -103,7 +103,7 @@
     bar_td: 327,
     cle_td: (345..354),
     emp_td: (339..349),
-    pal_td: 296,
+    pal_td: (306..315),
     ran_td: nil,
     sor_td: (340..380),
     wiz_td: nil,

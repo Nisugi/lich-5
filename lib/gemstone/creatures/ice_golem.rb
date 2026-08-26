@@ -73,7 +73,7 @@
     bolt: (196..225),
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (203..209),
     emp_td: nil,
     pal_td: nil,
     ran_td: nil,
@@ -116,7 +116,9 @@
       "The ice golem writhes in cold agony and dies.",
       "The ice golem slumps to the ground."
     ],
-    decay: [],
+    decay: [
+      "The ice golem's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

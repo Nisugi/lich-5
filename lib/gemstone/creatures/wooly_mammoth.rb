@@ -58,7 +58,7 @@
     bolt: 257,
     udf: nil,
     bar_td: 167,
-    cle_td: nil,
+    cle_td: (183..192),
     emp_td: (178..184),
     pal_td: nil,
     ran_td: nil,
@@ -106,7 +106,8 @@
       "The wooly mammoth slumps to the ground and licks his wounded left foreleg.",
       "The wooly mammoth slumps to the ground and licks her wounded right foreleg.",
       "The wooly mammoth slumps to the ground and licks her wounded left foreleg.",
-      "The wooly mammoth slumps to the ground and licks his wounded right foot."
+      "The wooly mammoth slumps to the ground and licks his wounded right foot.",
+      "The wooly mammoth slumps to the ground and licks his wounded left foot."
     ],
     decay: [],
     search: [],

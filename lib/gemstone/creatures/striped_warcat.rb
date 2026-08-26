@@ -108,7 +108,8 @@
       "The striped warcat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
       "The striped warcat mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
       "The striped warcat mewls in pain as he slumps to the ground and licks his wounded left paw.",
-      "Beautiful shot pierces both lungs, the striped warcat makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the striped warcat makes a wheezing noise, and drops dead!",
+      "The striped warcat mewls in pain as she slumps to the ground and licks her wounded right paw."
     ],
     decay: [
       "A striped warcat decays into a compost of fangs, fur and claws."

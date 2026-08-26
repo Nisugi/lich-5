@@ -70,7 +70,7 @@
     bolt: nil,
     udf: 630,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 407,
     emp_td: (419..428),
     pal_td: 324,
     ran_td: nil,

@@ -116,7 +116,7 @@
     bar_td: (373..385),
     cle_td: (371..431),
     emp_td: (414..423),
-    pal_td: nil,
+    pal_td: (357..360),
     ran_td: nil,
     sor_td: (431..445),
     wiz_td: nil,
@@ -164,12 +164,14 @@
       "A faint rippling in the air heralds the arrival of an Ithzir seer!"
     ],
     flee: [
-      "An Ithzir seer walks {direction}."
+      "An Ithzir seer walks {direction}.",
+      "An Ithzir seer limps {direction}."
     ],
     death: [
       "The Ithzir seer vainly struggles to rise, then goes still.",
       "An Ithzir seer's body shimmers slightly, then fades from view like a dissipating phantom.",
-      "Just as you incant, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!"
+      "Just as you incant, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!",
+      "Just as you cast, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!"
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The Ithzir seer's tibia passes his femur in a very unpleasant manner!",

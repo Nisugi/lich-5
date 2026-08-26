@@ -132,7 +132,8 @@
       "The black bear roars loudly as she slumps to the ground and licks her wounded right paw."
     ],
     decay: [
-      "A black bear decays into a compost of fangs, fur and claws."
+      "A black bear decays into a compost of fangs, fur and claws.",
+      "The black bear's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

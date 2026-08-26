@@ -65,7 +65,7 @@
     cle_td: 6,
     emp_td: 6,
     pal_td: (3..6),
-    ran_td: nil,
+    ran_td: 6,
     sor_td: 6,
     wiz_td: nil,
     mje_td: 6,
@@ -100,7 +100,8 @@
     ],
     death: [
       "The pale crab falls back into a heap and dies.",
-      "The pale crab hisses one last time and dies."
+      "The pale crab hisses one last time and dies.",
+      "Beautiful shot pierces both lungs, the pale crab makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A pale crab decays into compost."

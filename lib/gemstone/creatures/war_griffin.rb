@@ -52,7 +52,7 @@
       },
       {
         name: "Swoop",
-        as: 457
+        as: (457..460)
       }
     ],
     bolt_spells: [],
@@ -88,7 +88,7 @@
     bar_td: 390,
     cle_td: (424..430),
     emp_td: (415..421),
-    pal_td: 360,
+    pal_td: (366..375),
     ran_td: nil,
     sor_td: (439..448),
     wiz_td: nil,

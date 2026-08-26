@@ -90,7 +90,9 @@
       "Stumbling, staggering, cartwheeling wildly, the rotting corpse moves like a large marionette controlled by a drunken hand. Bits of flesh, sinew and disintegrating rags hang from its bony humanoid skeleton. The corpse hunts the living relentlessly, driven by an envy of the living world apparent in her hate-filled eyes."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A rotting corpse shambles {direction}."
+    ],
     death: [
       "The rotting corpse wails in terrifying pain one last time and lies still."
     ],

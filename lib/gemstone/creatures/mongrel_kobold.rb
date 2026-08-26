@@ -44,7 +44,7 @@
       },
       {
         name: "Short sword",
-        as: 65
+        as: (65..73)
       }
     ],
     bolt_spells: [],

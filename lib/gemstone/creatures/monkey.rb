@@ -192,7 +192,10 @@
       "The orange monkey screeches loudly as he slumps to the ground and cradles his wounded left forearm.",
       "The orange monkey screeches loudly as she slumps to the ground and cradles her wounded right paw.",
       "The monkey screeches loudly as he slumps to the ground and cradles his wounded right forearm.",
-      "The monkey screeches loudly as she slumps to the ground and cradles her wounded right paw."
+      "The monkey screeches loudly as she slumps to the ground and cradles her wounded right paw.",
+      "The monkey screeches loudly as he slumps to the ground and cradles his wounded left forearm.",
+      "The violet monkey screeches loudly as she slumps to the ground and cradles her wounded left forearm.",
+      "The orange monkey screeches loudly as he slumps to the ground and cradles his wounded right forearm."
     ],
     decay: [
       "A monkey decays into compost.",

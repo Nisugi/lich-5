@@ -83,7 +83,7 @@
     bar_td: 78,
     cle_td: (76..82),
     emp_td: (81..90),
-    pal_td: nil,
+    pal_td: (75..84),
     ran_td: nil,
     sor_td: (88..91),
     wiz_td: nil,

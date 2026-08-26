@@ -20,7 +20,7 @@
   bcs: true,
   max_hp: 330,
   speed: nil,
-  height: nil,
+  height: 2,
   size: "large",
   areas: [
     {
@@ -60,7 +60,7 @@
     bar_td: nil,
     cle_td: nil,
     emp_td: (93..101),
-    pal_td: nil,
+    pal_td: (81..90),
     ran_td: nil,
     sor_td: 97,
     wiz_td: nil,

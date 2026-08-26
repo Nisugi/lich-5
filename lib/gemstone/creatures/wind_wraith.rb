@@ -95,7 +95,9 @@
     arrival: [],
     flee: [
       "A wind wraith drifts {direction}.",
-      "A flexile wind wraith drifts {direction}."
+      "A flexile wind wraith drifts {direction}.",
+      "A dazzling wind wraith drifts {direction}.",
+      "A flashy wind wraith drifts {direction}."
     ],
     death: [
       "A wind wraith releases a groan of mingled ecstasy and relief as it fades away.",

@@ -116,7 +116,8 @@
       "The moor hound yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
       "The moor hound yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
       "The moor hound yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
-      "The moor hound yelps loudly as he slumps to the ground and licks his wounded right paw."
+      "The moor hound yelps loudly as he slumps to the ground and licks his wounded right paw.",
+      "The moor hound yelps loudly as he slumps to the ground and licks his wounded left foreleg."
     ],
     decay: [],
     search: [],

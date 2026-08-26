@@ -62,7 +62,7 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 181,
     emp_td: 172,
     pal_td: nil,
     ran_td: nil,
@@ -122,7 +122,9 @@
       "The orange myklian hisses one last time and dies.",
       "A yellow myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled left claw.",
       "A young myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled right foreleg.",
-      "A red myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled right foreleg."
+      "A red myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled right foreleg.",
+      "A yellow myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled right foreleg.",
+      "A red myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled right claw."
     ],
     decay: [
       "A blue myklian crumbles away into dust.",

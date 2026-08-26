@@ -125,7 +125,8 @@
       "Seemingly from nowhere, a wood sprite wanders in!"
     ],
     flee: [
-      "A wood sprite glances around and then wanders {direction}!"
+      "A wood sprite glances around and then wanders {direction}!",
+      "A wood sprite screams loudly as he stands {direction}!"
     ],
     death: [
       "A wood sprite goes limp as he is rendered unconscious!",

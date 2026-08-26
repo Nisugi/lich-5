@@ -105,7 +105,8 @@
       "The guard dog yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
       "The guard dog yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
       "The guard dog yelps loudly as she slumps to the ground and licks her wounded left paw.",
-      "The guard dog yelps loudly as he slumps to the ground and licks his wounded left paw."
+      "The guard dog yelps loudly as he slumps to the ground and licks his wounded left paw.",
+      "The guard dog yelps loudly as she slumps to the ground and licks her wounded right foreleg."
     ],
     decay: [
       "A rabid guard dog decays into a compost of fangs and fur."
