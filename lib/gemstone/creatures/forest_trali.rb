@@ -73,7 +73,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a battered breastplate",
+    "a battered shield",
+    "a stain-darkened broadsword"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -105,7 +105,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a silver-edged black silk sack",
+    "a tarnished invar kaskara"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

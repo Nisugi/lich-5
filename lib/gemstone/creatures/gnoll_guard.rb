@@ -66,7 +66,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a broadsword",
+    "a wooden shield",
+    "some full leather"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

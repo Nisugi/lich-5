@@ -84,7 +84,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a coral shield",
+    "a heavy stone club",
+    "a squid-crested breastplate"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

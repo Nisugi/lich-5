@@ -94,7 +94,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a battered wooden shield",
+    "a metal aventail",
+    "a wooden shield",
+    "some black double chain",
+    "some double chain"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

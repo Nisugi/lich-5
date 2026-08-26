@@ -150,7 +150,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a rust-covered dhara",
+    "a rust-covered kite shield",
+    "some dusty leather armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

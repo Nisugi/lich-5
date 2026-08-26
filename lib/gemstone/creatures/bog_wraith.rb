@@ -81,7 +81,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

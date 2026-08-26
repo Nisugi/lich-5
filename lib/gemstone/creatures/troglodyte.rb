@@ -73,7 +73,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a cudgel",
+    "a wooden shield",
+    "some light leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

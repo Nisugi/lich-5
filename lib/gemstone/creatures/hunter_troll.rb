@@ -80,7 +80,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a chain hauberk",
+    "a jeddart-axe"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

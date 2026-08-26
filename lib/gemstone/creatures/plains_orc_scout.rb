@@ -82,7 +82,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bone-hilted iron longsword",
+    "a crude feather talisman",
+    "some rough iron-scaled leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

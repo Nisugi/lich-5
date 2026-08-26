@@ -107,7 +107,15 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a cudgel",
+    "a reinforced shield",
+    "a war hammer",
+    "some arm greaves",
+    "some full leather",
+    "some leather boots",
+    "some studded leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

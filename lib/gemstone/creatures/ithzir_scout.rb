@@ -88,7 +88,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a charcoal grey shield",
+    "a curved crystal-edged blade",
+    "a gleaming crystal-edged broadsword",
+    "a gleaming steel broadsword",
+    "some sleek grey brigandine"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

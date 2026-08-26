@@ -85,7 +85,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a crude stone axe",
+    "a crude wooden club",
+    "a crude wooden shield",
+    "a crude wooden spear",
+    "some crude leather armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

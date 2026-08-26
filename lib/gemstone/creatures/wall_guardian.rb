@@ -69,7 +69,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a coral-shafted military pick",
+    "a salt-stained chain hauberk"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

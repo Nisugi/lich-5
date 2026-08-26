@@ -78,7 +78,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a deep black spiked flail",
+    "a scorched black oak-hafted flail"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

@@ -83,7 +83,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a length of spiked chain",
+    "a plain steel scimitar",
+    "some double chain armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

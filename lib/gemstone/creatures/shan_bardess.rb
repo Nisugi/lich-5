@@ -69,7 +69,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a set of blue-edged jazerant",
+    "a sonic lance"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

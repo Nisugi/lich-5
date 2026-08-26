@@ -94,7 +94,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some rotting black leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

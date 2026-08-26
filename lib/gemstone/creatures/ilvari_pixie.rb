@@ -97,7 +97,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a giant bee stinger",
+    "a leafy green tunic"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,

@@ -80,7 +80,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a battered",
+    "a black steel ball & chain",
+    "a modwir hafted morning star",
+    "a reinforced shield",
+    "a rotting leather breastplate",
+    "some rusted double chain"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

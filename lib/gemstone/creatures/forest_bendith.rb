@@ -79,7 +79,15 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a braided vine necklace",
+    "a morning star",
+    "a rusted metal helm",
+    "a scimitar",
+    "a small cracked wooden shield",
+    "a stained leather helm",
+    "a warped wooden shield"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,

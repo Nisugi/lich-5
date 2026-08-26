@@ -83,7 +83,16 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a belt pack",
+    "a bruised left eye",
+    "a bruised right eye",
+    "a completely severed left arm",
+    "a pitted iron falchion",
+    "a pitted iron jeddart-axe",
+    "a spiraled ram's horn",
+    "a wood buckler"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

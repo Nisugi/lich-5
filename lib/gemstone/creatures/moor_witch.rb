@@ -82,7 +82,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a diaphanous robe",
+    "a twisted dagger"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

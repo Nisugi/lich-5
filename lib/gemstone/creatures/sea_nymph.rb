@@ -90,7 +90,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blue-tasseled white steel spear",
+    "a dagger",
+    "a flowing white robe",
+    "a quartz-hilted sea blue steel knife",
+    "some flowing robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

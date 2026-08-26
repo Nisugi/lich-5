@@ -112,7 +112,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a black metal breastplate",
+    "a black steel broadsword",
+    "a reinforced shield",
+    "a wooden shield"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

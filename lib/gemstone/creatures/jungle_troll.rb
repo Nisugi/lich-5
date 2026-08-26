@@ -91,7 +91,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bamboo-hilted machete"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

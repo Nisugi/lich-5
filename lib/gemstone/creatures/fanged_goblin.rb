@@ -73,7 +73,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a handaxe",
+    "a leather breastplate",
+    "a spear",
+    "a wooden shield",
+    "some reinforced leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

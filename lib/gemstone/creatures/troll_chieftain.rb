@@ -73,7 +73,17 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a battle axe",
+    "a flail",
+    "a leather helm",
+    "a military pick",
+    "a vine-wrapped rusting bastard sword",
+    "a visored helm",
+    "an augmented breastplate",
+    "some brigandine armor",
+    "some chain mail"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

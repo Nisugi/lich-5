@@ -90,7 +90,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blackened steel moon axe",
+    "a deep blue heater shield",
+    "a lustrous steel battle axe",
+    "some banded grey brigandine armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

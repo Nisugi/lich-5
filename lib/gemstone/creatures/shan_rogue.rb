@@ -64,7 +64,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bronze-edged targe",
+    "a bruised left eye",
+    "a bruised right eye",
+    "a slender kris",
+    "some faded brigandine armor"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

@@ -95,7 +95,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a jagged shard of obsidian",
+    "a smoldering slab of glaes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

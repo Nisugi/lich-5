@@ -80,7 +80,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a massive iron-banded greatshield"
+  ],
   treasure: {
     coins: false,
     magic_items: false,

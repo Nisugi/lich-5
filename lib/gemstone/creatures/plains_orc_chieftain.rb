@@ -77,7 +77,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bone-hilted iron machete",
+    "a crude hound's tooth talisman",
+    "a crude iron morning star",
+    "some rough iron half plate"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

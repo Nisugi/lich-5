@@ -82,7 +82,15 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a chain hauberk",
+    "a cracked leather belt",
+    "a jeddart-axe",
+    "a morning star",
+    "a reinforced shield",
+    "a war mattock",
+    "some brigandine armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

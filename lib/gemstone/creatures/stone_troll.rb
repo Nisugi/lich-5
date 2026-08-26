@@ -99,7 +99,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a flail",
+    "a reinforced shield",
+    "a war hammer"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

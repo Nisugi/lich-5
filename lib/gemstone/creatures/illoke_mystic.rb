@@ -88,7 +88,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a giant stone hammer",
+    "a grey stone crescent symbol",
+    "a heavy stone hammer",
+    "a massive iron shield"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,

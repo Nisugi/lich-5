@@ -80,7 +80,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a crude iron morning star",
+    "a crude leather helm",
+    "a heavy iron handaxe",
+    "some heavy iron chainmail"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

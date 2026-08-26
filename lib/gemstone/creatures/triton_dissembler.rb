@@ -92,7 +92,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a fine-grained deep cerulean runestaff"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

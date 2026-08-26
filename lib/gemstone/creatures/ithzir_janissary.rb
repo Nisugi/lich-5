@@ -106,7 +106,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blued steel hauberk",
+    "a polished steel shield",
+    "a spiral-hafted crystal-edged handaxe",
+    "a spiral-hafted handaxe"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

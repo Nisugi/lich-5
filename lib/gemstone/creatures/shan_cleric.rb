@@ -95,7 +95,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a small silver roundshield",
+    "a spiked holy-water sprinkler",
+    "some dark braided leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,

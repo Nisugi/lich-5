@@ -112,7 +112,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a curved crystal-edged blade",
+    "a curved silvery blade",
+    "a gleaming crystal-edged broadsword",
+    "a polished steel shield",
+    "some sleek studded leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

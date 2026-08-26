@@ -103,7 +103,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a crude roa'ter-toothed necklace",
+    "a dirty tattered robe",
+    "a gnarled wooden staff"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

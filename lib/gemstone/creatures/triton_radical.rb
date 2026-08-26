@@ -121,7 +121,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a corroded bronze scaling fork"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

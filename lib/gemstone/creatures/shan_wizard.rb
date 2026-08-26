@@ -94,7 +94,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a flowing grey robe",
+    "a long dagger",
+    "a spiked tower shield"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

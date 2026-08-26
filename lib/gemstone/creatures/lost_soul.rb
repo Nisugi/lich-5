@@ -94,7 +94,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a gleaming silvery scythe",
+    "a scorched black ball",
+    "a shimmering black shield"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

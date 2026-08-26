@@ -64,7 +64,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "an enruned parma",
+    "an ivory-hilted khopesh",
+    "some bone-adorned leathers"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

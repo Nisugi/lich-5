@@ -96,7 +96,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "an onyx-inset carved wooden runestaff",
+    "some ebon-hued studded leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

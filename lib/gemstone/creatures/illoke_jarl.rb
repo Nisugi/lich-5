@@ -133,7 +133,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a grey stone crescent symbol",
+    "a heavy black stone hammer",
+    "a massive iron-banded greatshield",
+    "a massive pitted iron pavis",
+    "a slate grey stone hammer"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

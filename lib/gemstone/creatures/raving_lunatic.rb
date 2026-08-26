@@ -87,7 +87,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a twisted kris",
+    "some tattered rags"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

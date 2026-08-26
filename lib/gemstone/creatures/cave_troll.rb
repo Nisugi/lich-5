@@ -91,7 +91,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a short sword",
+    "a spear",
+    "a war hammer",
+    "a wooden shield",
+    "some double leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

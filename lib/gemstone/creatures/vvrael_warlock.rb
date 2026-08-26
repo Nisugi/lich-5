@@ -145,7 +145,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a midnight black longsword",
+    "a midnight black ora choker",
+    "a midnight black spiked whip",
+    "a midnight black tower shield",
+    "some flowing midnight-black robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

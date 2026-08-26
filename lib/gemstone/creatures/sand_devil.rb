@@ -133,7 +133,16 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a crystal wand",
+    "a giant clamshell shield",
+    "a metal wand",
+    "a slender blue wand",
+    "some dirty turquoise robes",
+    "some dusty green robes",
+    "some ripped blue robes",
+    "some tattered ochre robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

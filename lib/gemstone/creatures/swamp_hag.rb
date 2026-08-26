@@ -113,7 +113,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some torn"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

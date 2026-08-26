@@ -88,7 +88,18 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a dented chain hauberk",
+    "a gleaming silver flamberge",
+    "a gleaming silver longsword",
+    "a plumed helm",
+    "a spiked tower shield",
+    "a visored helm",
+    "a winged helm",
+    "an over-sized jeddart-axe",
+    "some nicked double chainmail",
+    "some polished full platemail"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -93,7 +93,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a wooden long bow",
+    "some chain mail"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

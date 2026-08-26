@@ -99,7 +99,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a dented iron pavis",
+    "a scorched rune-etched espadon"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

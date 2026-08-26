@@ -114,7 +114,16 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a frost-covered battle axe",
+    "a frost-covered battle-axe",
+    "a fur-lined horned helm",
+    "a horned helm",
+    "a massive ice club",
+    "a morning star",
+    "an ice spear",
+    "some brigandine armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -119,7 +119,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blackened scimitar",
+    "a corroded steel scimitar",
+    "a scimitar",
+    "a war hammer",
+    "some cuirbouilli leather",
+    "some tattered gilt-edged silk robes"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

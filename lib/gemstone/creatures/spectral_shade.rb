@@ -73,7 +73,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blackened scythe",
+    "a bruised left eye",
+    "some tattered rags"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

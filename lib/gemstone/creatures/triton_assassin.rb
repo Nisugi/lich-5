@@ -103,7 +103,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a twisted soot black runestaff capped with a gold-caged crystal drop of water"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

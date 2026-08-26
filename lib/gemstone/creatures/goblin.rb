@@ -87,7 +87,21 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a flail",
+    "a handaxe",
+    "a leather breastplate",
+    "a leather helm",
+    "a morning star",
+    "a scimitar",
+    "a spear",
+    "a wooden shield",
+    "some cuirbouilli leather",
+    "some leather boots",
+    "some light leather",
+    "some reinforced leather",
+    "some studded leather"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,

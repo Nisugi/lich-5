@@ -90,7 +90,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a clinging raw silk shift"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

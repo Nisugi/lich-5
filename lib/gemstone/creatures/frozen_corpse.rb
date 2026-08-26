@@ -74,7 +74,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a large ice pick",
+    "a mountaineer's pack",
+    "some rotted leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

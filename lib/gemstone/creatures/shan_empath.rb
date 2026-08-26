@@ -75,7 +75,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a modwir-hafted mace",
+    "an engraved parma",
+    "some torn leathers"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

@@ -74,7 +74,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a ragged blackened breastplate"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

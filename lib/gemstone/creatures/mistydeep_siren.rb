@@ -78,7 +78,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a curved bracelet dagger",
+    "a pale water silk drape",
+    "a wavy silvered dirk",
+    "some soft gossamer robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

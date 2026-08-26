@@ -69,7 +69,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a plain steel cutlass",
+    "a salt-encrusted knapsack",
+    "a suit of chain hauberk"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

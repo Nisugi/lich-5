@@ -83,7 +83,15 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a kaskara",
+    "a rusting horned helm",
+    "a splintered shield",
+    "a steel-tipped whip",
+    "a tattered robe",
+    "some decaying leathers"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

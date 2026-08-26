@@ -100,7 +100,15 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a battered helm",
+    "a frayed leather helm",
+    "a jeddart-axe",
+    "a quarter staff",
+    "a spear",
+    "a torn leather bracers",
+    "some tattered bracers"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,

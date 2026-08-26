@@ -116,7 +116,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a rusty woodsman's axe",
+    "a tattered plaid flannel shirt",
+    "a weathered plaid flannel cap",
+    "some heavy leather boots",
+    "some torn woodsman's leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

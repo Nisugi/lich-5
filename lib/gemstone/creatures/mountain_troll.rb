@@ -90,7 +90,15 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye",
+    "a completely severed left arm",
+    "a flail",
+    "a leather helm",
+    "a sigil-etched glaes flail",
+    "some brigandine armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

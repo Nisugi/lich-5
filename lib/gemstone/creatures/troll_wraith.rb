@@ -73,7 +73,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some blackened steel gauntlets"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

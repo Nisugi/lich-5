@@ -105,7 +105,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a barbed whip",
+    "a blackened cutlass",
+    "a spiked flail",
+    "a spiked shield"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

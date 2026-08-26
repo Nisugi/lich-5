@@ -105,7 +105,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a case of sporadic convulsions",
+    "some rotting sun-bleached garb"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

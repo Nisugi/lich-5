@@ -99,7 +99,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a reinforced canvas bandolier",
+    "an elliptical brine-stained parma",
+    "an oak-shafted silvery blue trident"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

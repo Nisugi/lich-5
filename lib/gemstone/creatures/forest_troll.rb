@@ -110,7 +110,21 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye",
+    "a cudgel",
+    "a dagger",
+    "a flail",
+    "a leather breastplate",
+    "a mace",
+    "a scimitar",
+    "a war hammer",
+    "a war mattock",
+    "a wooden shield",
+    "some full leather",
+    "some light leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

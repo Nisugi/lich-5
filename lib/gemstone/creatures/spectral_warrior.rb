@@ -94,7 +94,15 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a battered steel shield",
+    "a rusted broadsword",
+    "a tarnished flail",
+    "an old pitted halberd",
+    "some dented augmented chain",
+    "some rotting brigandine armor",
+    "some rusted steel half plate"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

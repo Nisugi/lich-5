@@ -70,7 +70,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some heavy chains",
+    "some torn"
+  ],
   treasure: {
     coins: false,
     magic_items: false,

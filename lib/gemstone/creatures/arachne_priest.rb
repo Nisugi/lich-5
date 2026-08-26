@@ -102,7 +102,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a reinforced shield",
+    "a scimitar",
+    "a short sword"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

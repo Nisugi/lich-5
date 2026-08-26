@@ -78,7 +78,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some tattered rags"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

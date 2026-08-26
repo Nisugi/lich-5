@@ -82,7 +82,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a chain hauberk",
+    "a leather helm",
+    "a twohanded sword",
+    "a war hammer",
+    "a wooden shield",
+    "some studded leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -82,7 +82,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a pair of unlaced boots",
+    "a pearlescent abalone-hafted halberd",
+    "some garish shell-studded leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

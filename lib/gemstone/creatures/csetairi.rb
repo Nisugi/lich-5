@@ -114,7 +114,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a green-black spiked collar",
+    "a green-black spiked helm",
+    "a razor-sharp green-black scimitar"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

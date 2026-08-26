@@ -89,7 +89,20 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a broadsword",
+    "a falchion",
+    "a gleaming chain hauberk",
+    "a handaxe",
+    "a reinforced shield",
+    "a threadbare green tartan cloak",
+    "a threadbare tartan cloak",
+    "a wooden shield",
+    "some augmented chain",
+    "some double chain",
+    "some half plate",
+    "some steel leg greaves"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

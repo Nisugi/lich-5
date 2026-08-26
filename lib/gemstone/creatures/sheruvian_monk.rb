@@ -81,7 +81,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a black steel jeddart-axe",
+    "some black velvet robes"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

@@ -108,7 +108,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a gilt-edged steel talon sword",
+    "a gold-spiked black morning star",
+    "a pitted golden chain hauberk",
+    "a reinforced dark steel kite shield"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,

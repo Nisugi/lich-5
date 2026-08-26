@@ -69,7 +69,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blackened claidhmore",
+    "some blackened brigandine"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

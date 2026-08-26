@@ -69,7 +69,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "an oak runestaff",
+    "some dark grey robes"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

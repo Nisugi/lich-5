@@ -113,7 +113,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a gnarled black staff",
+    "some sooty black robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

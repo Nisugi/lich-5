@@ -90,7 +90,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blackened wooden staff",
+    "a scorched black pendant",
+    "a twisted black ring",
+    "some decaying black robes",
+    "some rotting black robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

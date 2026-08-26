@@ -118,7 +118,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a corroded bronze Hammer of Kai"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

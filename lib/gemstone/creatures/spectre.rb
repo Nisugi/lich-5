@@ -104,7 +104,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a pitted battle axe",
+    "a rusty metal breastplate"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -79,7 +79,17 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a banded steel shield",
+    "a blackened longsword",
+    "a dulled falchion",
+    "a ragged great kilt",
+    "a reinforced shield",
+    "a rotting targe",
+    "a serrated falchion",
+    "some rotting leather hunts",
+    "some tattered leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

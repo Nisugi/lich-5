@@ -82,7 +82,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a fetid urgh hide",
+    "a splintered tree trunk"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

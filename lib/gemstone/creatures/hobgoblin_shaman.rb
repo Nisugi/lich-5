@@ -87,7 +87,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bone vest",
+    "a leather whip",
+    "a lynx skull",
+    "a twisted modwir short-staff"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

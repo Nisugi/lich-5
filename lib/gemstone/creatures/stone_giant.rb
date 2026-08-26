@@ -97,7 +97,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a war mattock"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -82,7 +82,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a dripping glaes chain hauberk",
+    "a steaming glaes longsword",
+    "a warped glaes buckler"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

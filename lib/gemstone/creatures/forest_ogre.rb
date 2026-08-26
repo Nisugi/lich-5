@@ -88,7 +88,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a falchion",
+    "a metal breastplate",
+    "a wooden shield"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

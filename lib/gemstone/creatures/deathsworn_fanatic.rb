@@ -116,7 +116,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a copper serpent necklace",
+    "some stained emerald robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

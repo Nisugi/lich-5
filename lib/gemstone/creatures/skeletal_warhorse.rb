@@ -81,7 +81,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a rusted steel chanfron",
+    "some rotting studded leather barding",
+    "some rusted steel barding"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

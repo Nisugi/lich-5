@@ -88,7 +88,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a rotting tattered robe",
+    "an ancient walking stick"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

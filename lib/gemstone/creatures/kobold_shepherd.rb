@@ -89,7 +89,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a shepherd's crook",
+    "some dirty brown robes",
+    "some leather sandals"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

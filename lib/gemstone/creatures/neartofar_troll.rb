@@ -71,7 +71,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a longsword",
+    "some weathered cuirbouilli leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

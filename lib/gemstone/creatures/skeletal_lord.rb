@@ -82,7 +82,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a splintered lance",
+    "a tarnished visored helm",
+    "a tattered flowing cloak",
+    "some rusting chain mail",
+    "some tattered riding boots"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,

@@ -85,7 +85,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some moss-covered leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

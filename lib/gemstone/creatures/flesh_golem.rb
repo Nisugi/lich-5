@@ -99,7 +99,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a pitted wooden shield covered in rusty black iron spikes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -89,7 +89,20 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blackened twohanded sword",
+    "a broadsword",
+    "a bruised left eye",
+    "a bruised right eye",
+    "a completely severed right arm",
+    "a crude dark visored helm",
+    "a suit of form-fitting night black brigandine",
+    "a twohanded sword",
+    "a visored helm",
+    "a wooden shield",
+    "an immense dark steel bidenhander",
+    "some brigandine armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

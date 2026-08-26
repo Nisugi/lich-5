@@ -123,7 +123,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye",
+    "a greatsword",
+    "a scimitar"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

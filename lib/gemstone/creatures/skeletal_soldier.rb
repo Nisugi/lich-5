@@ -72,7 +72,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a crude black iron morning star",
+    "some decaying grey-hued leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

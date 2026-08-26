@@ -90,7 +90,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blackened composite bow",
+    "a deerskin quiver",
+    "a mace",
+    "a metal aventail",
+    "some double leather",
+    "some studded urgh-hide leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

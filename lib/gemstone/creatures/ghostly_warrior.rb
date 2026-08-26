@@ -77,7 +77,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a broadsword",
+    "a flail",
+    "a morning star",
+    "a reinforced shield",
+    "some chain mail",
+    "some cuirbouilli leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

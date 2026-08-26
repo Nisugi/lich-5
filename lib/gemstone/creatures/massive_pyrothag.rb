@@ -87,7 +87,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a massive glaes club"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

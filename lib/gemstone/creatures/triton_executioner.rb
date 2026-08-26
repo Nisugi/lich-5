@@ -93,7 +93,16 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a coral-hilted sharply tapered longsword",
+    "a crested thick leather harness",
+    "a navy-banded slate grey targe",
+    "a rough ashen heavy crossbow",
+    "a sharply curved black handaxe",
+    "a short-prodded heavy arbalest",
+    "a silver-rimmed black steel buckler",
+    "a teardrop-clasped dark leather harness"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

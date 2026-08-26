@@ -86,7 +86,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a short sword",
+    "an augmented breastplate"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

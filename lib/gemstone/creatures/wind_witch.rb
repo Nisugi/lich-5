@@ -107,7 +107,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bolt-etched bone knife",
+    "a long knife",
+    "a razor-sharp wavy dagger",
+    "some flowing robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

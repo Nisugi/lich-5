@@ -120,7 +120,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a morning star",
+    "a reinforced shield",
+    "a spear",
+    "a weathered huge zorchar maul"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

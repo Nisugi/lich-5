@@ -69,7 +69,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a ragged straw hat",
+    "a rusted pitchfork",
+    "a torn plaid shirt",
+    "some threadbare coveralls"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

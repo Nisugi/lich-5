@@ -96,7 +96,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a crude pine mattock",
+    "a cudgel",
+    "some full leather",
+    "some unevenly stitched pale leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

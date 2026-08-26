@@ -80,7 +80,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blackened battle axe",
+    "some blackened platemail"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

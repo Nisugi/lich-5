@@ -90,7 +90,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a flowing white robe",
+    "an ice-white palache",
+    "an icy dagger",
+    "some tattered white robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

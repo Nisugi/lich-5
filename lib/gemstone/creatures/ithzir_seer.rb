@@ -144,7 +144,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a suit of trimmed leather",
+    "a twisted crystal-tipped staff"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

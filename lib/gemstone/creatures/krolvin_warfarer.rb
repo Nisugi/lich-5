@@ -123,7 +123,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a falchion",
+    "a reinforced shield",
+    "some full leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

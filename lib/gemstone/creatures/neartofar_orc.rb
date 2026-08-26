@@ -69,7 +69,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a cracked leather helm",
+    "a reinforced shield",
+    "a rusted morning star",
+    "some dirt-caked dark iron armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

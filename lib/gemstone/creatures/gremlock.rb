@@ -77,7 +77,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a dusty knapsack",
+    "a filthy knapsack",
+    "a ragged knapsack",
+    "a rusted wire garrote",
+    "a stained knapsack",
+    "a tattered knapsack"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

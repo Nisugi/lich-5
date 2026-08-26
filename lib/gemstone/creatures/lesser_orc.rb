@@ -85,7 +85,17 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a cudgel",
+    "a flail",
+    "a leather breastplate",
+    "a leather helm",
+    "a metal aventail",
+    "a reinforced shield",
+    "a short sword",
+    "a wooden shield",
+    "some full leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

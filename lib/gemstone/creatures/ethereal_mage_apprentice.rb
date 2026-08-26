@@ -85,7 +85,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a polished black oak runestaff",
+    "a polished red steel Hammer of Kai",
+    "some simple buff tattered leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

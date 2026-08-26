@@ -89,7 +89,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a pitted iron falchion",
+    "a pitted iron jeddart-axe",
+    "a wood buckler",
+    "a wood composite bow",
+    "a wood-gripped estoc"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

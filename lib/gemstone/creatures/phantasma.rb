@@ -111,7 +111,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a barbed whip",
+    "a wickedly curved scimitar",
+    "some rotted leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

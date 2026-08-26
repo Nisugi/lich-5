@@ -101,7 +101,17 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a chain hauberk",
+    "a mace",
+    "a scimitar",
+    "a short sword",
+    "a war mattock",
+    "a wooden shield",
+    "some cuirbouilli leather",
+    "some double chain",
+    "some double leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

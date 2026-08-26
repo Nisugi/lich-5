@@ -109,7 +109,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a pearlescent oyster shell shield",
+    "a sienna-banded scallop shell shield",
+    "an oak-shafted silvery blue trident"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

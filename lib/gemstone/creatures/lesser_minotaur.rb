@@ -80,7 +80,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a broad leather-wrapped waraxe",
+    "a bruised left eye",
+    "a bruised right eye",
+    "a curved silvery white greataxe",
+    "a reinforced slatted wooden shield",
+    "some rough dark grey brigandine armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

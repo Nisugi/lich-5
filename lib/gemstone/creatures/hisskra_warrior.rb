@@ -84,7 +84,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a slimy trident"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

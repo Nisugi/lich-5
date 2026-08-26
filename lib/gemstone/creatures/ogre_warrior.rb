@@ -88,7 +88,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a broad-bladed steel hatchet",
+    "a slatted reinforced wooden shield"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

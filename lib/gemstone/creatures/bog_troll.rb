@@ -73,7 +73,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a thick wooden knurl",
+    "some weed-covered brigandine"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

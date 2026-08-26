@@ -69,7 +69,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a steel dirk",
+    "a steel rimmed shield",
+    "some full plate"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

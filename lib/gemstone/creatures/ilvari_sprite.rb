@@ -90,7 +90,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a leafy green tunic"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

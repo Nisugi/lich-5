@@ -116,7 +116,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bone-handled dagger"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -81,7 +81,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a spiked club",
+    "some lynx hide armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

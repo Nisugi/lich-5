@@ -73,7 +73,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a rusted wheat scythe",
+    "some tattered rags"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,

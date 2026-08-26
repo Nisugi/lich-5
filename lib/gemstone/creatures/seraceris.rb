@@ -104,7 +104,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some tattered flowing robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

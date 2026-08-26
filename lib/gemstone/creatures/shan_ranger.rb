@@ -119,7 +119,15 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a diamond-hilted longsword",
+    "a leather skullcap",
+    "a silvery longsword",
+    "a small steel buckler",
+    "a square lantern shield",
+    "some forest green leathers",
+    "some studded green leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

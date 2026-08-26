@@ -127,7 +127,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a giant granite sledgehammer",
+    "a gleaming ora aegis",
+    "a grey stone crescent symbol",
+    "a heavy stone hammer",
+    "a rusted dark iron aegis",
+    "an enormous stalagmite"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

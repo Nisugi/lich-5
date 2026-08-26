@@ -97,7 +97,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bone-hafted spiked mace",
+    "a bone-handled kris",
+    "a string of carved bone beads",
+    "a tattered leather tunic"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,

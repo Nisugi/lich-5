@@ -78,7 +78,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bone-hafted black iron morning star",
+    "a pitted wooden shield covered in rusty black iron spikes",
+    "a small glaes morning star"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

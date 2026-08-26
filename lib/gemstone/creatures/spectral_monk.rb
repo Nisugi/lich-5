@@ -99,7 +99,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a black skull-cap",
+    "a long blackened scythe",
+    "a rusty claidhmore",
+    "some black coiled prayer beads",
+    "some burnished black leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

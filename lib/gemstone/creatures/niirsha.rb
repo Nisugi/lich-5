@@ -78,7 +78,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a corroded iron goupillon"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

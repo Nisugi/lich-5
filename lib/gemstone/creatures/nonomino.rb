@@ -82,7 +82,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a corroded steel dagger",
+    "a rotting wooden shield",
+    "a wickedly spiked ball & chain",
+    "some tattered leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

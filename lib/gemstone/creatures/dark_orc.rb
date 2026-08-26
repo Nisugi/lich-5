@@ -93,7 +93,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a crudely forged iron halberd",
+    "a dented iron helm",
+    "a falchion",
+    "a wooden shield",
+    "some augmented chain",
+    "some wide-ring double chain"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

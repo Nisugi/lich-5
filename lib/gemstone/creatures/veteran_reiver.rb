@@ -69,7 +69,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a threadbare dun tartan cloak",
+    "an old claidhmore",
+    "some full plate"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

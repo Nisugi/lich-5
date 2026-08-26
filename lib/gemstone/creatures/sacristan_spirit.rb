@@ -96,7 +96,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a twisted black steel half moon",
+    "some tanned dark grey leathers"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

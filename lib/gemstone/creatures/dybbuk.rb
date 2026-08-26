@@ -70,7 +70,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a length of rusted chain"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,

@@ -97,7 +97,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a javelin",
+    "a ratty sack",
+    "a short sword",
+    "a wooden shield",
+    "some light leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -92,7 +92,15 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a badly torn rusted chain hauberk",
+    "a massive icicle",
+    "an enruned ice-covered battle axe",
+    "an ice club",
+    "an ice spear",
+    "an ice-covered two-handed sword",
+    "an ice-crusted steel chain hauberk"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

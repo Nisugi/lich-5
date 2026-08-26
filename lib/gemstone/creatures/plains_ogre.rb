@@ -84,7 +84,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a mace",
+    "some full leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

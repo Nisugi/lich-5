@@ -117,7 +117,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blackened shield",
+    "a blackened visor",
+    "a ceremonial kris",
+    "a wickedly barbed leather whip",
+    "some black ora bracers",
+    "some tattered flowing black robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

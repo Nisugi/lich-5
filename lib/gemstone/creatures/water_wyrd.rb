@@ -105,7 +105,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a translucent green trident"
+  ],
   treasure: {
     coins: false,
     magic_items: false,

@@ -91,7 +91,20 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a dark steel shield",
+    "a heavy flanged mace",
+    "a long blackened jeddart-axe",
+    "a spiked leather collar",
+    "a splintered wooden buckler",
+    "a studded leather scabbard",
+    "a tattered black cloak",
+    "a wickedly curved falchion",
+    "some deep black reinforced leather",
+    "some knee-high black boots",
+    "some rotting black leather gloves",
+    "some rusted chain mail"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -79,7 +79,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a leather fisherman's apron",
+    "a trident"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

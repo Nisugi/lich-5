@@ -86,7 +86,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a broadsword",
+    "a metal breastplate",
+    "a twohanded sword",
+    "a wooden shield",
+    "an augmented breastplate"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

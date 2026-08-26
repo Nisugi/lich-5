@@ -103,7 +103,20 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bright gold-buttoned coat",
+    "a jaunty yellow bowtie",
+    "a length of coiled red vine",
+    "a long flowing red evening gown",
+    "a strand of faux pearls",
+    "a striped silver-clasped coat",
+    "a tall dark felt hat",
+    "a thin oaken cudgel",
+    "a vibrant yellow jacket",
+    "a wide-brimmed yellow hat",
+    "an iron-tipped wooden cane",
+    "some sensible red boots"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
