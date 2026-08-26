@@ -60,7 +60,7 @@
   defense_attributes: {
     asg: "17",
     immunities: [],
-    melee: (64..124),
+    melee: (38..124),
     ranged: (38..69),
     bolt: (38..69),
     udf: 168,
@@ -68,7 +68,7 @@
     cle_td: 60,
     emp_td: (60..68),
     pal_td: (54..63),
-    ran_td: nil,
+    ran_td: (60..66),
     sor_td: (54..63),
     wiz_td: nil,
     mje_td: 60,
@@ -106,7 +106,8 @@
       "A massive grahnk lumbers in, malice in his eyes!"
     ],
     flee: [
-      "A massive grahnk lumbers {direction}, malice in her eyes."
+      "A massive grahnk lumbers {direction}, malice in her eyes.",
+      "A massive grahnk roars with pain and staggers {direction}."
     ],
     death: [
       "A massive grahnk goes limp as she is rendered unconscious!",

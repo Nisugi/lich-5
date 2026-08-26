@@ -89,7 +89,7 @@
     bar_td: "123 to 135",
     cle_td: (142..148),
     emp_td: (142..151),
-    pal_td: nil,
+    pal_td: (117..126),
     ran_td: nil,
     sor_td: "141 to 150",
     wiz_td: nil,
@@ -122,7 +122,10 @@
     arrival: [
       "You hear a strange clicking that makes your hair stand on end as a kiramon worker arrives."
     ],
-    flee: [],
+    flee: [
+      "A kiramon worker heads {direction}.",
+      "A kiramon worker limps {direction}."
+    ],
     death: [
       "The kiramon worker falls back into a heap and dies.",
       "The kiramon worker clicks one last time and dies.",

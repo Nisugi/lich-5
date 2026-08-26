@@ -63,7 +63,7 @@
     cle_td: (54..60),
     emp_td: (54..62),
     pal_td: (51..60),
-    ran_td: nil,
+    ran_td: (54..60),
     sor_td: (48..57),
     wiz_td: nil,
     mje_td: (51..54),
@@ -96,7 +96,10 @@
       "A dance of dust and gravel heralds the arrival of a speckled cave lizard!",
       "A dance of dust and gravel heralds the arrival of a cave lizard!"
     ],
-    flee: [],
+    flee: [
+      "A speckled cave lizard plods {direction}.",
+      "A cave lizard plods {direction}."
+    ],
     death: [
       "The cave lizard shudders a final time and goes still."
     ],

@@ -97,7 +97,14 @@
     death: [
       "The panther lets out a final caterwaul and dies.",
       "The panther crumples to the ground and dies.",
-      "A panther goes limp as she is rendered unconscious!"
+      "A panther goes limp as she is rendered unconscious!",
+      "The panther mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The panther mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The panther mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The panther mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The panther mewls in pain as she slumps to the ground and licks her wounded right paw.",
+      "The panther mewls in pain as he slumps to the ground and licks his wounded right paw.",
+      "The panther mewls in pain as he slumps to the ground and licks his wounded left paw."
     ],
     decay: [
       "A panther decays into a compost of fangs, fur and claws."

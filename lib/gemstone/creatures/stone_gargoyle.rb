@@ -49,7 +49,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (116..193),
+    melee: (30..131),
     ranged: (30..131),
     bolt: (30..131),
     udf: 228,
@@ -87,9 +87,13 @@
       "The stone gargoyle, an animated being, was once a huge, grey, granite carving that overlooked the castle walls. Standing over fifteen feet tall on its powerful hind legs, the stone gargoyle was sculpted with a body similar to a lion's and a head that is a grotesque union between a human and a bat. Long horns protrude from the forehead and needle-like fangs extend menacingly below the upper lip. Swirling, yellow-green eyes, the only non-rock portion of the beast's anatomy, coldly examine the surrounding area."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A stone gargoyle heads {direction}.",
+      "A stone gargoyle limps {direction}."
+    ],
     death: [
-      "A stone gargoyle goes limp as it is rendered unconscious!"
+      "A stone gargoyle goes limp as it is rendered unconscious!",
+      "The stone gargoyle slumps to the ground."
     ],
     decay: [
       "A stone gargoyle crumbles to dust."

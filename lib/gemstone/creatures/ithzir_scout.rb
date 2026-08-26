@@ -69,7 +69,7 @@
     bolt: (346..392),
     udf: 434,
     bar_td: nil,
-    cle_td: (335..339),
+    cle_td: (335..344),
     emp_td: (325..334),
     pal_td: nil,
     ran_td: nil,
@@ -115,7 +115,8 @@
     death: [
       "The Ithzir scout twitches violently, then dies.",
       "The Ithzir scout vainly struggles to rise, then goes still.",
-      "An Ithzir scout's body shimmers slightly, then fades from view like a dissipating phantom."
+      "An Ithzir scout's body shimmers slightly, then fades from view like a dissipating phantom.",
+      "Just as you incant, the Ithzir scout shimmers and fades away, leaving you gesturing at nothingness!"
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The Ithzir scout's tibia passes her femur in a very unpleasant manner!"

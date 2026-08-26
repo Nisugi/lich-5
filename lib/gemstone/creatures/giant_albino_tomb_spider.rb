@@ -95,7 +95,9 @@
       "Glowing an eerie, pale white, the albino tomb spider clambers through underground tunnels, grottos and caves in search of anything alive it can trap and consume. Its long, thin forelegs reach out to grasp and drag potential food back to the glistening fangs, while its shorter, muscular back legs propel it forward with surprising speed. Totally hairless, the albino tomb spider gazes around through the only bodily part that has any color--its oversized crimson eyes."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A giant albino tomb spider scurries {direction}."
+    ],
     death: [
       "The albino tomb spider collapses to the ground and dies.",
       "The albino tomb spider's body jerks one last time and dies."

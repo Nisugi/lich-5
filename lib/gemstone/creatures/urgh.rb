@@ -69,7 +69,7 @@
     cle_td: 12,
     emp_td: 12,
     pal_td: (9..12),
-    ran_td: nil,
+    ran_td: 12,
     sor_td: 12,
     wiz_td: nil,
     mje_td: 12,
@@ -99,11 +99,16 @@
       "The herbivorous urgh resembles, if anything, an overgrown, hairy pig. He stands on four feet and has a dark brown coat and curled, hairless tail. Instead of the usual upper and lower jaw in the front of his head, though, the urgh has an extremely long upper lip, which he can extend a good two feet to drag vegetation back into his mouth. Under the mouth reside two long, sharp tusks, used for digging up peat and other grasses upon which the urgh feeds, and for defense."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "An urgh trots {direction}."
+    ],
     death: [
       "The urgh collapses to the ground, emits a final squeal, and dies.",
       "The urgh lets out a final agonized squeal and dies.",
-      "The urgh squeals loudly as she slumps to the ground and cradles her wounded left foreleg."
+      "The urgh squeals loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "The urgh squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The urgh squeals loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The urgh squeals loudly as he slumps to the ground and cradles his wounded right foreleg."
     ],
     decay: [
       "An urgh decays into a pile of fur and bone."

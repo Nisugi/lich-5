@@ -105,7 +105,8 @@
     ],
     flee: [],
     death: [
-      "The dark apparition slowly settles to the ground and begins to dissipate."
+      "The dark apparition slowly settles to the ground and begins to dissipate.",
+      "The dark apparition goes still for a moment while its head reshapes."
     ],
     decay: [
       "A dark apparition vanishes into thin air, leaving no trace behind."

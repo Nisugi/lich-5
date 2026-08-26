@@ -52,7 +52,7 @@
     melee: (89..99),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 170,
     bar_td: nil,
     cle_td: nil,
     emp_td: 88,
@@ -87,7 +87,9 @@
       "Like its cousin, the stone gargoyle, the lesser stone gargoyle was a grey, granite carving originally placed to overlook the castle's walls. Now animated, it pounds about on powerful hind legs looking for beings it can smash into dust. It has a demon's face, with pointed beard, ruby eyes and long, sweeping goat horns. Bat wings, useless for flying, adorn its scaly back."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A lesser stone gargoyle heads {direction}."
+    ],
     death: [
       "A lesser stone gargoyle goes limp as it is rendered unconscious!"
     ],

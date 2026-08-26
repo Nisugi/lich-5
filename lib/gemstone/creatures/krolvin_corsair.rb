@@ -45,7 +45,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (239..273),
+    melee: (211..273),
     ranged: 211,
     bolt: 211,
     udf: 311,
@@ -87,7 +87,9 @@
       "More muscular and agile than the average krolvin, the corsair's distinctive rolling gait is evidence of a life spent seafaring. His sturdy musculature is apparent beneath the grey-blue skin. Thick, coarse, white hair covers his head and spreads across his shoulders and down his back."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A krolvin corsair stumps {direction}."
+    ],
     death: [
       "A krolvin corsair goes limp as he is rendered unconscious!",
       "The krolvin corsair tries to crawl away on the deck but collapses and goes still."

@@ -119,7 +119,10 @@
       "An emaciated hierophant just arrived.",
       "An emaciated hierophant strides into the area!"
     ],
-    flee: [],
+    flee: [
+      "An emaciated hierophant heads {direction}.",
+      "An emaciated hierophant limps {direction}."
+    ],
     death: [
       "An emaciated hierophant dies and collapses to the floor.",
       "With an ear-piercing cry of agony, the emaciated hierophant dies.",

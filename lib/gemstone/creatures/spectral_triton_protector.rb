@@ -105,7 +105,9 @@
       "A spectral triton protector just arrived.",
       "A triton warlock arrives, striding forth with her robes trailing behind her."
     ],
-    flee: [],
+    flee: [
+      "A spectral triton protector heads {direction}."
+    ],
     death: [
       "The triton protector fades into transparency, his remnants rapidly dissolving into the air.",
       "The triton protector fades into transparency, her remnants rapidly dissolving into the air."

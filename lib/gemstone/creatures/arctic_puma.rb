@@ -101,7 +101,8 @@
       "The arctic puma lets out a final caterwaul and dies.",
       "An arctic puma goes limp as he is rendered unconscious!",
       "The arctic puma mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The arctic puma mewls in pain as he slumps to the ground and licks his wounded left foreleg."
+      "The arctic puma mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The arctic puma mewls in pain as she slumps to the ground and licks her wounded left foreleg."
     ],
     decay: [
       "An arctic puma decays into a compost of fangs, fur and claws."

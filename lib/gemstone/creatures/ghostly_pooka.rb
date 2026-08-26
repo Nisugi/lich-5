@@ -46,7 +46,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (121..268),
+    melee: (113..268),
     ranged: (113..142),
     bolt: (113..142),
     udf: 329,
@@ -87,9 +87,15 @@
       "The most stunning thing about the appearance of a ghostly pooka is the odd illusion surrounding this pitiful equine which seems to absorb all the color from everything around it. The ghostly horse appears to be weighed down by some heavy chains which cover its entire body. The sight of its obvious torment tears at the souls of all who lay eyes upon it."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A shimmering ghostly pooka gallops {direction}.",
+      "A ghostly pooka trots {direction}.",
+      "A ghostly pooka runs {direction}.",
+      "A ghostly pooka gallops {direction}."
+    ],
     death: [
-      "The ghostly pooka falls to the ground motionless."
+      "The ghostly pooka falls to the ground motionless.",
+      "The ghostly pooka goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

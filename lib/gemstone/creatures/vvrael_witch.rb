@@ -136,9 +136,15 @@
       "The Vvrael witch rises from the ground in a pillar of shadow, tall and slim, the outline of her perfect form frayed by a strange atmospheric disturbance. Her face is a vision of beauty. However, darkness fills her features like a secret biding in her glance, lending her visage an indistinct appearance. Her eyes are dark and wide, framed with fringes of long lashes, and in the depths of those expressive wells there flickers highlights of energy. Or perhaps they are coals of hatred waiting to be unearthed. The witch's hands move constantly, her long fingers and elegant nails making constant motions as if they have manic agendas of their own."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A Vvrael witch glides {direction}."
+    ],
     death: [
-      "The Vvrael witch writhes in black agony and dies."
+      "The Vvrael witch writhes in black agony and dies.",
+      "The Vvrael witch wails with rage as she crumples to the ground!  A viscous black liquid sprays out from her severed left leg thrashing on the ground!",
+      "The Vvrael witch crumples to the ground motionless.",
+      "The Vvrael witch wails with rage as she crumples to the ground!  A viscous black liquid sprays out from her severed right leg thrashing on the ground!",
+      "The Vvrael witch crumples to the floor motionless."
     ],
     decay: [],
     search: [],

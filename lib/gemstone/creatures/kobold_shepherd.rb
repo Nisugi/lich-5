@@ -109,7 +109,10 @@
     arrival: [
       "A kobold shepherd just arrived."
     ],
-    flee: [],
+    flee: [
+      "A kobold shepherd heads {direction}.",
+      "A kobold shepherd limps {direction}."
+    ],
     death: [
       "The kobold shepherd howls in agony one last time and dies.",
       "The kobold shepherd crumples to the ground motionless."

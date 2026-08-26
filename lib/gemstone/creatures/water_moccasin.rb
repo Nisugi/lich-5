@@ -52,7 +52,7 @@
     melee: 37,
     ranged: 33,
     bolt: 33,
-    udf: nil,
+    udf: 21,
     bar_td: 12,
     cle_td: 12,
     emp_td: 12,
@@ -92,7 +92,9 @@
     flee: [
       "A water moccasin slithers {direction}."
     ],
-    death: [],
+    death: [
+      "The water moccasin slumps to the ground."
+    ],
     decay: [
       "A water moccasin decays into compost."
     ],

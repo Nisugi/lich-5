@@ -82,9 +82,12 @@
       "The spectral servant silently floats several inches above the ground. His eyes gaze downward submissively as his gaunt form, dressed in the ragged remains of livery, waivers in and out of visibility. Scabs and open sores cover his features, while patches of transparent hair fall from his skull, vanishing into the air at his feet."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A gaunt spectral servant silently floats {direction}."
+    ],
     death: [
-      "A low sigh fills the air and the spectral servant fades to nothing."
+      "A low sigh fills the air and the spectral servant fades to nothing.",
+      "The spectral servant goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

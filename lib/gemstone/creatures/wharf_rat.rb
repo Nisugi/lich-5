@@ -46,12 +46,12 @@
     melee: 14,
     ranged: 12,
     bolt: 12,
-    udf: nil,
+    udf: 24,
     bar_td: nil,
     cle_td: 3,
     emp_td: 3,
     pal_td: 3,
-    ran_td: nil,
+    ran_td: 3,
     sor_td: 3,
     wiz_td: nil,
     mje_td: 3,
@@ -90,7 +90,10 @@
     death: [
       "The wharf rat collapses to the ground, emits a final squeal, and dies.",
       "The wharf rat twitches and dies.",
-      "The wharf rat collapses to the ground, emits a final silent squeal, and dies."
+      "The wharf rat collapses to the ground, emits a final silent squeal, and dies.",
+      "The wharf rat shrieks as it slumps to the ground and licks at its wounded left foreleg.",
+      "The wharf rat shrieks as it slumps to the ground and licks at its wounded right foreleg.",
+      "The wharf rat shrieks as it slumps to the ground and licks at its wounded right claw."
     ],
     decay: [
       "A wharf rat decays into a pile of mangy hair and bone."

@@ -57,7 +57,7 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: 114,
+    melee: (56..114),
     ranged: (56..73),
     bolt: (56..73),
     udf: 128,
@@ -95,13 +95,17 @@
       "The black boar snorts and snuffles at the ground, peering around with his close-set, bloodshot eyes in hopes of finding a target for his anger and aggression. Any who get in his way will most likely rapidly regret having done so. His body is covered with coarse, black hair, and yellowed tusks protrude from each side of his gaping mouth. Larger than most men, he is a good six feet long from dripping snout to curly tail and weighs more than a quarter ton. When in motion, the black boar moves with a surprising speed and dexterity for a beast his size. It is not unusual to find oneself snacked by this beast if not properly prepared."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A black boar grunts and barrels {direction}."
+    ],
     death: [
       "The black boar lets out a final agonized squeal and dies.",
       "The black boar collapses to the ground, emits a final squeal, and dies.",
       "A black boar goes limp as he is rendered unconscious!",
       "The black boar silently lets out a final agonized squeal and dies.",
-      "The black boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg."
+      "The black boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The black boar squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The black boar squeals loudly as he slumps to the ground and cradles his wounded left hoof."
     ],
     decay: [
       "A black boar decays into a pile of fur and bone."

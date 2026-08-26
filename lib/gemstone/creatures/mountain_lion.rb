@@ -63,7 +63,7 @@
     cle_td: (54..60),
     emp_td: (54..62),
     pal_td: (48..57),
-    ran_td: nil,
+    ran_td: (51..57),
     sor_td: (48..57),
     wiz_td: nil,
     mje_td: 54,
@@ -102,7 +102,12 @@
     ],
     death: [
       "The mountain lion crumples to the ground and dies.",
-      "The mountain lion lets out a final caterwaul and dies."
+      "The mountain lion lets out a final caterwaul and dies.",
+      "The mountain lion mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The mountain lion mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The mountain lion mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The mountain lion mewls in pain as he slumps to the ground and licks his wounded right paw.",
+      "The mountain lion mewls in pain as she slumps to the ground and licks her wounded right foreleg."
     ],
     decay: [
       "A mountain lion decays into a compost of fangs, fur and claws."

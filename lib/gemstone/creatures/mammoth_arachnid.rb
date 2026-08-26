@@ -70,8 +70,8 @@
     asg: "12N",
     immunities: [],
     melee: (167..289),
-    ranged: 120,
-    bolt: nil,
+    ranged: (141..142),
+    bolt: (141..142),
     udf: 317,
     bar_td: (90..96),
     cle_td: (87..96),
@@ -113,7 +113,9 @@
     ],
     arrival: [],
     flee: [
-      "A mammoth arachnid crawls {direction}."
+      "A mammoth arachnid crawls {direction}.",
+      "A mammoth arachnid scurries {direction}.",
+      "A mammoth arachnid hobbles {direction}."
     ],
     death: [
       "The mammoth arachnid collapses to the ground and dies.",

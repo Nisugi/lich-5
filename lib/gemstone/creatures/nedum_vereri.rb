@@ -109,7 +109,9 @@
     arrival: [
       "A nedum vereri just arrived."
     ],
-    flee: [],
+    flee: [
+      "A nedum vereri heads {direction}."
+    ],
     death: [
       "A nedum vereri exhales a sigh of relief and slumps to the ground motionless.",
       "A nedum vereri exhales a sigh of relief and goes still."

@@ -86,7 +86,9 @@
     arrival: [
       "A Grimswarm orc pillager just arrived."
     ],
-    flee: [],
+    flee: [
+      "A Grimswarm orc pillager heads {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

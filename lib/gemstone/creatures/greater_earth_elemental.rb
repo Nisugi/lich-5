@@ -49,6 +49,10 @@
       {
         name: "Large rock",
         as: 423
+      },
+      {
+        name: "Foot",
+        as: 440
       }
     ],
     bolt_spells: [],
@@ -66,14 +70,14 @@
     asg: "20N",
     immunities: [],
     melee: (166..314),
-    ranged: nil,
-    bolt: nil,
+    ranged: 274,
+    bolt: 274,
     udf: 657,
     bar_td: (326..332),
     cle_td: 358,
     emp_td: 343,
     pal_td: (287..296),
-    ran_td: nil,
+    ran_td: (299..308),
     sor_td: 372,
     wiz_td: nil,
     mje_td: (402..405),
@@ -109,7 +113,11 @@
       "The boulder comes to a sudden stop and rises into the form of a greater krynch!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "The earth elemental topples to the ground motionless.",
+      "The earth elemental shudders violently for a moment, then goes still.",
+      "Beautiful shot pierces both lungs, the earth elemental makes a wheezing noise, and drops dead!"
+    ],
     decay: [
       "Tiny fissures quickly spread over the entire form of a greater earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
       "Acid dissolves the knee ligaments.  The earth elemental's tibia passes its femur in a very unpleasant manner!",
@@ -122,7 +130,8 @@
       "A greater earth elemental pounds at you with greater earth elemental heavy earthen fists!",
       "A greater earth elemental pounds at you with {pronoun} fist!",
       "A greater earth elemental throws {weapon} at you!",
-      "An earth elemental pounds at you with greater earth elemental heavy earthen fists!"
+      "An earth elemental pounds at you with greater earth elemental heavy earthen fists!",
+      "A greater earth elemental stomps at you with {pronoun} foot!"
     ],
     bite: [],
     claw: [],

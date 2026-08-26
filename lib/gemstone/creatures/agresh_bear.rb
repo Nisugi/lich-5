@@ -49,7 +49,7 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (117..160),
+    melee: (96..160),
     ranged: (96..105),
     bolt: (96..105),
     udf: 164,
@@ -99,7 +99,13 @@
       "The Agresh bear lets out a blood-curdling roar and dies.",
       "An Agresh bear goes limp as he is rendered unconscious!",
       "An Agresh bear goes limp as she is rendered unconscious!",
-      "The Agresh bear roars loudly as she slumps to the ground and licks her wounded left foreleg."
+      "The Agresh bear roars loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The Agresh bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The Agresh bear roars loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The Agresh bear roars loudly as she slumps to the ground and licks her wounded left paw.",
+      "The Agresh bear roars loudly as he slumps to the ground and licks his wounded left paw.",
+      "The Agresh bear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The Agresh bear roars loudly as she slumps to the ground and licks her wounded right paw."
     ],
     decay: [
       "An Agresh bear decays into a compost of fangs, fur and claws."

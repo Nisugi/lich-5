@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Claw (attack)",
-        as: 385
+        as: (288..385)
       },
       {
         name: "Bite (attack)",
@@ -105,9 +105,9 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: 344,
+    cle_td: (341..344),
     emp_td: (328..337),
-    pal_td: nil,
+    pal_td: (298..307),
     ran_td: nil,
     sor_td: (359..368),
     wiz_td: nil,
@@ -154,7 +154,8 @@
       "A firebird cranes firebird neck, snapping at you with firebird sharp beak!",
       "A firebird hurls {weapon} at you!",
       "A firebird tries to spear you with firebird beak!",
-      "In a trail of flames, a firebird extends firebird fearsome talons as it dives at you!"
+      "In a trail of flames, a firebird extends firebird fearsome talons as it dives at you!",
+      "A firebird rakes at you with a razor-sharp claw!"
     ],
     bite: [],
     claw: [],

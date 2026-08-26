@@ -58,14 +58,14 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: nil,
+    melee: 206,
     ranged: 206,
     bolt: 206,
-    udf: nil,
+    udf: 143,
     bar_td: nil,
     cle_td: 74,
     emp_td: 76,
-    pal_td: nil,
+    pal_td: (69..72),
     ran_td: nil,
     sor_td: 79,
     wiz_td: nil,
@@ -102,7 +102,9 @@
     death: [
       "The storm hound lets out one last whimpering sigh of sparks and blue mist and dies.",
       "A storm hound goes limp as it is rendered unconscious!",
-      "The storm hound yelps loudly as it slumps to the ground and licks its wounded right foreleg."
+      "The storm hound yelps loudly as it slumps to the ground and licks its wounded right foreleg.",
+      "The storm hound yelps loudly as it slumps to the ground and licks its wounded left foreleg.",
+      "The storm hound yelps loudly as it slumps to the ground and licks its wounded right paw."
     ],
     decay: [
       "A storm hound decays into a compost of fur and fangs."

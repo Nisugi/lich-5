@@ -98,7 +98,8 @@
     ],
     death: [
       "The wolfshade falls back into a heap and dies.",
-      "The wolfshade hisses one last time and dies."
+      "The wolfshade hisses one last time and dies.",
+      "The wolfshade goes still for a moment while its head reshapes."
     ],
     decay: [
       "A wolfshade decays into compost."

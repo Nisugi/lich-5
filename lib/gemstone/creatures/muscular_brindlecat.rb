@@ -91,13 +91,22 @@
     arrival: [
       "A muscular brindlecat stalks in!"
     ],
-    flee: [],
+    flee: [
+      "A muscular brindlecat bounds {direction}.",
+      "A muscular brindlecat roars loudly as she stands {direction}!"
+    ],
     death: [
       "The muscular brindlecat's tail twitches feebly as she dies.",
       "The muscular brindlecat's tail twitches feebly as he dies.",
       "A muscular brindlecat goes limp as he is rendered unconscious!",
       "The muscular brindlecat mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The muscular brindlecat mewls in pain as he slumps to the ground and licks his wounded right foreleg."
+      "The muscular brindlecat mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The muscular brindlecat mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The muscular brindlecat mewls in pain as she slumps to the ground and licks her wounded left paw.",
+      "The muscular brindlecat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The muscular brindlecat mewls in pain as he slumps to the ground and licks his wounded left paw.",
+      "The muscular brindlecat mewls in pain as he slumps to the ground and licks his wounded right paw.",
+      "The muscular brindlecat mewls in pain as she slumps to the ground and licks her wounded right paw."
     ],
     decay: [
       "A muscular brindlecat decays into a compost of fangs, fur and claws."

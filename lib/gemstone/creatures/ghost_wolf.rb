@@ -57,7 +57,7 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (91..101),
+    melee: (76..101),
     ranged: (76..84),
     bolt: (76..84),
     udf: 117,
@@ -102,7 +102,8 @@
     ],
     death: [
       "The ghost wolf falls back into a heap and dies.",
-      "The ghost wolf hisses one last time and dies."
+      "The ghost wolf hisses one last time and dies.",
+      "The ghost wolf goes still for a moment while its head reshapes."
     ],
     decay: [
       "A ghost wolf decays into compost."

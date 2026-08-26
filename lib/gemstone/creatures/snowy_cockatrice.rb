@@ -103,7 +103,9 @@
     arrival: [
       "A snowy cockatrice just arrived!"
     ],
-    flee: [],
+    flee: [
+      "A snowy cockatrice thunders {direction}."
+    ],
     death: [
       "The snowy cockatrice rolls over on its back, emits a final screech and dies."
     ],

@@ -130,7 +130,8 @@
     death: [
       "A wood sprite goes limp as he is rendered unconscious!",
       "The wood sprite's eyes grow dim as his lifeforce fades away.",
-      "The wood sprite's eyes grow dim as her lifeforce fades away."
+      "The wood sprite's eyes grow dim as her lifeforce fades away.",
+      "The wood sprite slumps to the ground."
     ],
     decay: [
       "A wood sprite crumbles into a pile of dry splinters.",

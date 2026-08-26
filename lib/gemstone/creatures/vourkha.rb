@@ -62,7 +62,7 @@
   defense_attributes: {
     asg: "7N",
     immunities: [],
-    melee: (186..283),
+    melee: (145..283),
     ranged: (145..170),
     bolt: (145..170),
     udf: 195,
@@ -110,11 +110,13 @@
       "An evil hiss fills the air as a vourkha stalks in!"
     ],
     flee: [
-      "An evil hiss fills the air as a vourkha stalks {direction}."
+      "An evil hiss fills the air as a vourkha stalks {direction}.",
+      "A vourkha totters momentarily and then heads {direction}."
     ],
     death: [
       "The vourkha slumps to the ground as the light departs his eyes.",
-      "The vourkha slumps to the ground as the light departs her eyes."
+      "The vourkha slumps to the ground as the light departs her eyes.",
+      "The vourkha slumps to the ground."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the vourkha's ribs to move independently.",

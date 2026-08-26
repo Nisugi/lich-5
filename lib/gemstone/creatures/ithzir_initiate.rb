@@ -107,7 +107,7 @@
     bolt: (362..387),
     udf: 562,
     bar_td: (351..363),
-    cle_td: (370..380),
+    cle_td: (370..385),
     emp_td: (375..385),
     pal_td: nil,
     ran_td: nil,
@@ -159,7 +159,8 @@
     flee: [],
     death: [
       "The Ithzir initiate vainly struggles to rise, then goes still.",
-      "An Ithzir initiate's body shimmers slightly, then fades from view like a dissipating phantom."
+      "An Ithzir initiate's body shimmers slightly, then fades from view like a dissipating phantom.",
+      "Just as you incant, the Ithzir initiate shimmers and fades away, leaving you gesturing at nothingness!"
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the Ithzir initiate's ribs to move independently."

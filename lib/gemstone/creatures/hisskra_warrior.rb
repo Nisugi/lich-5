@@ -100,12 +100,15 @@
       "Nearly as tall as a typical human, the humanoid reptilian hisskra shares many characteristics with mankind. A long snout filled with an array of sharp teeth dominates the hisskra's facial features, giving him the appearance of a bipedal iguana. Well-defined pectorals and a muscular torso are nearly man-like, but for the dull, dark green scales that fade to a paler shade at the throat, and the ridge of mottled, boney spines that runs from between the hisskra warrior's shoulder blades to the tip of his four-foot tail. The hisskra's muscular limbs end in thick-fingered, partially-webbed hands and feet tipped with blackened claws, which are formidable weapons should the creature lose his more civilized martial implements. The hisskra warrior peers about with milky white eyes, his tongue flicking over his scaly lips."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A hisskra warrior slinks {direction}."
+    ],
     death: [
       "The hisskra warrior rolls over on his back and dies.",
       "A hisskra warrior goes limp as he is rendered unconscious!",
       "The hisskra warrior collapses in a motionless heap.",
-      "The hisskra warrior contorts in a tortured spasm, then goes still."
+      "The hisskra warrior contorts in a tortured spasm, then goes still.",
+      "The hisskra warrior twitches violently in his death throes before finally going still."
     ],
     decay: [
       "A hisskra warrior collapses into a putrid lump of scaly flesh.",

@@ -62,7 +62,7 @@
     bar_td: 116,
     cle_td: nil,
     emp_td: (124..133),
-    pal_td: nil,
+    pal_td: (105..114),
     ran_td: nil,
     sor_td: (125..142),
     wiz_td: nil,
@@ -106,12 +106,15 @@
     ],
     flee: [
       "A fire giant lumbers {direction}, engulfed in a fiery blaze.",
-      "A fire giant crawls {direction}."
+      "A fire giant crawls {direction}.",
+      "A fire giant seethes in pain as he limps {direction}."
     ],
     death: [
       "A fire giant goes limp as he is rendered unconscious!"
     ],
-    decay: [],
+    decay: [
+      "The fire giant's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

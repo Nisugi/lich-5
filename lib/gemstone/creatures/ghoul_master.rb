@@ -117,7 +117,9 @@
       "A ghoul master just arrived.",
       "A ghoul master just arrived, limping."
     ],
-    flee: [],
+    flee: [
+      "A ghoul master runs {direction}."
+    ],
     death: [
       "The ghoul master falls to the ground motionless.",
       "The ghoul master screams evilly one last time and goes still."

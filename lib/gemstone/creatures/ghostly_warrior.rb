@@ -53,7 +53,7 @@
   defense_attributes: {
     asg: "various",
     immunities: [],
-    melee: (107..152),
+    melee: (90..152),
     ranged: (90..131),
     bolt: (90..131),
     udf: 170,
@@ -61,7 +61,7 @@
     cle_td: (48..60),
     emp_td: 54,
     pal_td: (51..60),
-    ran_td: nil,
+    ran_td: (51..60),
     sor_td: (51..54),
     wiz_td: nil,
     mje_td: (48..60),
@@ -98,8 +98,12 @@
       "You are not quite sure what to make of the ghostly warrior, as you have never seen anything that looks quite like it. Stopping a moment, you try to commit this creature to memory so that you can tell tales of it to your fellow adventurers back in the safety of the local tavern."
     ],
     arrival: [],
-    flee: [],
-    death: [],
+    flee: [
+      "A ghostly warrior creeps {direction}!"
+    ],
+    death: [
+      "The ghostly warrior goes still for a moment while its head reshapes."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

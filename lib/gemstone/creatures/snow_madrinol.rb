@@ -102,7 +102,8 @@
       "A snow madrinol lumbers in, grumbling in pain."
     ],
     flee: [
-      "A snow madrinol lumbers {direction}, grumbling in pain."
+      "A snow madrinol lumbers {direction}, grumbling in pain.",
+      "A snow madrinol rumbles {direction}."
     ],
     death: [
       "The snow madrinol flips onto its back, kicks several times and dies.",

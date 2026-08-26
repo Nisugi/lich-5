@@ -59,7 +59,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (171..250),
+    melee: (164..250),
     ranged: 164,
     bolt: 164,
     udf: 303,
@@ -101,7 +101,9 @@
       "Although taller than the average krolvin, the slaver retains the characteristic long-fingered hands. His sturdy musculature is apparent beneath the grey-blue skin. Thick, coarse, white hair covers his head and spreads across his shoulders and down his back."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A krolvin slaver slinks {direction}."
+    ],
     death: [
       "The krolvin slaver's body goes stiff and cold as he dies.",
       "A krolvin slaver goes limp as he is rendered unconscious!"

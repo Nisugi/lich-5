@@ -76,7 +76,7 @@
     bolt: nil,
     udf: nil,
     bar_td: 110,
-    cle_td: nil,
+    cle_td: (99..107),
     emp_td: (111..117),
     pal_td: nil,
     ran_td: nil,
@@ -119,12 +119,15 @@
       "Hunched shoulders and a stooping posture, the mezic is humanoid in appearance, her clothes ill-fitting and made of simple cloth. Dark, beady eyes stare at you from beneath a mass of tangled grey hair as the mezic shuffles her hunched form back and forth. Its long, gnarled fingers contort in magical configurations as it glances maliciously about the area."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A mezic hobbles {direction}."
+    ],
     death: [
       "A mezic goes limp as he is rendered unconscious!",
       "The mezic twitches violently, then dies.",
       "The mezic falls to the ground motionless.",
-      "The mezic cries out one last time and lies still."
+      "The mezic cries out one last time and lies still.",
+      "The mezic slumps to the ground."
     ],
     decay: [],
     search: [],

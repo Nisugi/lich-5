@@ -126,7 +126,10 @@
       "A pale scaled shaper just arrived."
     ],
     flee: [],
-    death: [],
+    death: [
+      "A spectral howl echoes through the air, resonant with pain and anguish, and then fades into heavy silence.  The scaly veneer covering a pale scaled shaper shimmers briefly before melting into his skin.",
+      "A spectral howl echoes through the air, resonant with pain and anguish, and then fades into heavy silence.  The scaly veneer covering a pale scaled shaper shimmers briefly before melting into her skin."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

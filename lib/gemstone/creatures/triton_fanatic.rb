@@ -137,7 +137,10 @@
       "A triton assassin stalks in silently, her cold eyes gleaming with hatred.",
       "A triton fanatic just arrived."
     ],
-    flee: [],
+    flee: [
+      "A triton fanatic heads {direction}.",
+      "A triton fanatic limps {direction}."
+    ],
     death: [
       "A triton fanatic goes limp as she is rendered unconscious!",
       "The triton fanatic gurgles once and goes still, a wrathful look on her face.",

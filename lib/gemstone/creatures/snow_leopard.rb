@@ -101,7 +101,9 @@
     arrival: [
       "A snow leopard just arrived."
     ],
-    flee: [],
+    flee: [
+      "A snow leopard bounds {direction}."
+    ],
     death: [
       "The snow leopard lets out a final caterwaul and dies.",
       "The snow leopard crumples to the ground and dies.",
@@ -110,7 +112,12 @@
       "The snow leopard mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
       "The snow leopard mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
       "The snow leopard mewls in pain as she slumps to the ground and licks her wounded right paw.",
-      "The snow leopard mewls in pain as she slumps to the ground and licks her wounded right foreleg."
+      "The snow leopard mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The snow leopard mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The snow leopard mewls in pain as he slumps to the ground and licks his wounded right paw.",
+      "The snow leopard slumps to the ground and licks his wounded right foreleg.",
+      "The snow leopard mewls in pain as she slumps to the ground and licks her wounded left paw.",
+      "The snow leopard mewls in pain as he slumps to the ground and licks his wounded left paw."
     ],
     decay: [
       "A snow leopard decays into a compost of fangs, fur and claws.",

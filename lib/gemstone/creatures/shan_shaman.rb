@@ -45,7 +45,7 @@
     bolt: nil,
     udf: 558,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (313..323),
     emp_td: (310..320),
     pal_td: nil,
     ran_td: nil,
@@ -84,7 +84,9 @@
     arrival: [
       "A shan shaman wanders in chanting an orison!"
     ],
-    flee: [],
+    flee: [
+      "A shan shaman pads {direction}."
+    ],
     death: [
       "The shan shaman yips in pain as she falls to the ground motionless.",
       "The shan shaman howls out one last time and dies.",

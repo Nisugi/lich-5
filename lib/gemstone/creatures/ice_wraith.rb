@@ -59,7 +59,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (132..312),
+    melee: (124..312),
     ranged: (124..158),
     bolt: (124..158),
     udf: 270,
@@ -107,7 +107,8 @@
     arrival: [],
     flee: [],
     death: [
-      "An ice wraith fades into oblivion."
+      "An ice wraith fades into oblivion.",
+      "The ice wraith goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

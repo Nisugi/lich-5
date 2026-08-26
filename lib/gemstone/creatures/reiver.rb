@@ -65,7 +65,7 @@
   defense_attributes: {
     asg: "various",
     immunities: [],
-    melee: (113..144),
+    melee: (92..144),
     ranged: (92..118),
     bolt: (92..118),
     udf: 155,
@@ -119,7 +119,10 @@
       "A reiver just arrived.",
       "A reiver just arrived, limping."
     ],
-    flee: [],
+    flee: [
+      "A reiver heads {direction}.",
+      "A reiver limps {direction}."
+    ],
     death: [
       "The reiver takes one last breath, then dies.",
       "A reiver goes limp as it is rendered unconscious!",

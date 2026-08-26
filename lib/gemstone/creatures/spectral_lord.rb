@@ -101,9 +101,12 @@
       "But a shade of its original self, the spectral lord is a dim and flickering image of a noble. Sharp, hawk-like features, and narrowed brilliant eyes give the appearance of a keen intellect. Worn and rotting gear hangs from its body, deteriorating from centuries of disuse."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A spectral lord floats {direction}."
+    ],
     death: [
-      "A spectral lord dissipates into ethereal wisps."
+      "A spectral lord dissipates into ethereal wisps.",
+      "The spectral lord goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

@@ -105,7 +105,8 @@
     death: [
       "The colossus vulture writhes in agony, its wings flapping fruitlessly as it dies.",
       "A colossus vulture goes limp as it is rendered unconscious!",
-      "The colossus vulture crashes to the ground, motionless."
+      "The colossus vulture crashes to the ground, motionless.",
+      "The colossus vulture slumps to the ground."
     ],
     decay: [
       "The colossus vulture decays into a pile of feathers."

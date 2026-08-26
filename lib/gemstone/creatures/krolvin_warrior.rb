@@ -104,10 +104,15 @@
       "As tall as the average human, the warrior has the characteristic long-fingered hands and sturdy musculature that denote most of the krolvin race. The warrior also sports the trademark grey-blue skin and thick, coarse, white hair covers his head and spreads across his shoulders and down his back."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A krolvin warrior stumps {direction}.",
+      "A gleaming krolvin warrior stumps {direction}.",
+      "A shimmering krolvin warrior stumps {direction}."
+    ],
     death: [
       "A krolvin warrior goes limp as he is rendered unconscious!",
-      "The krolvin warrior rolls over on the floor and goes still."
+      "The krolvin warrior rolls over on the floor and goes still.",
+      "The krolvin warrior rolls over on the ground and goes still."
     ],
     decay: [
       "A krolvin warrior's body decays into a pile of compost."

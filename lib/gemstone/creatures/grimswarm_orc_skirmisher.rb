@@ -82,7 +82,9 @@
     arrival: [
       "A Grimswarm orc skirmisher just arrived."
     ],
-    flee: [],
+    flee: [
+      "A Grimswarm orc skirmisher heads {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

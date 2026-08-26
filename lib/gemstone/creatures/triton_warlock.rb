@@ -33,7 +33,7 @@
     physical_attacks: [
       {
         name: "Runestaff",
-        as: 427
+        as: (402..427)
       },
       {
         name: "Claw",
@@ -66,6 +66,10 @@
       {
         name: "Claw",
         cs: 449
+      },
+      {
+        name: "Twisted soot black runestaff",
+        cs: 399
       }
     ],
     offensive_spells: [],
@@ -132,7 +136,10 @@
       "An unyielding triton warlock just arrived.",
       "A triton warlock just arrived, limping badly."
     ],
-    flee: [],
+    flee: [
+      "A triton warlock limps {direction}.",
+      "A triton warlock heads {direction}."
+    ],
     death: [
       "The triton warlock gurgles once and goes still, a wrathful look on her face."
     ],
@@ -142,7 +149,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A triton warlock points a single golden nail toward you!"
+      "A triton warlock points a single golden nail toward you!",
+      "A triton warlock swings {weapon} at you!"
     ],
     bite: [],
     claw: [

@@ -105,7 +105,8 @@
     death: [
       "A forest bendith goes limp as she is rendered unconscious!",
       "The forest bendith's eyes grow dim as her lifeforce fades away.",
-      "Just as you move to cast, the forest bendith grins slightly, and then fades into the thick undergrowth to avoid your spell."
+      "Just as you move to cast, the forest bendith grins slightly, and then fades into the thick undergrowth to avoid your spell.",
+      "The forest bendith slumps to the ground."
     ],
     decay: [],
     search: [],

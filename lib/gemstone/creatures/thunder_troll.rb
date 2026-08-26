@@ -90,7 +90,7 @@
     cle_td: (49..59),
     emp_td: (49..59),
     pal_td: (49..59),
-    ran_td: nil,
+    ran_td: (49..59),
     sor_td: (57..64),
     wiz_td: nil,
     mje_td: 53,

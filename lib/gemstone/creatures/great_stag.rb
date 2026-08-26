@@ -69,7 +69,7 @@
     cle_td: (33..42),
     emp_td: (39..47),
     pal_td: (36..45),
-    ran_td: 39,
+    ran_td: (33..39),
     sor_td: (36..45),
     wiz_td: nil,
     mje_td: 39,
@@ -101,7 +101,9 @@
       "Standing almost a foot taller than an average human, the great stag is the preeminent example of majesty in the wilds. Its soft brown coat and strong muscled legs offer the duality of nature incarnate, calm and peaceful but powerful. The antlers atop the stag's head reach towards the sky in regal beauty."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A great stag trots {direction}."
+    ],
     death: [
       "The great stag collapses to the ground, emits a final sigh, and dies.",
       "The great stag lets out a final agonized sigh and dies.",
@@ -109,7 +111,8 @@
       "The great stag silently lets out a final agonized sigh and dies.",
       "The great stag groans loudly as he slumps to the ground and cradles his wounded left foreleg.",
       "The great stag groans loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The great stag groans loudly as he slumps to the ground and cradles his wounded right hoof."
+      "The great stag groans loudly as he slumps to the ground and cradles his wounded right hoof.",
+      "The great stag groans loudly as he slumps to the ground and cradles his wounded left hoof."
     ],
     decay: [
       "A great stag decays into a pile of fur and bone."

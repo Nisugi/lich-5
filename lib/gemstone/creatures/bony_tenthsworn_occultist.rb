@@ -110,7 +110,8 @@
     ],
     death: [
       "The Tenthsworn occultist twitches violently, then dies.",
-      "A bony Tenthsworn occultist goes limp as she is rendered unconscious!"
+      "A bony Tenthsworn occultist goes limp as she is rendered unconscious!",
+      "The Tenthsworn occultist slumps to the ground."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the Tenthsworn occultist's ribs to move independently."

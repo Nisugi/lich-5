@@ -87,13 +87,19 @@
       "Oh, what a thing of horror is the curl-horned spotted gnarp! Huge floppy ears stand out from her long snout like horizontal bunny ears, and her eyes are deep, liquid pools of irascibility and indecision. The creature's ponderous spotted belly hangs from a ridge-like backbone, which tapers in a long tail with a curly tip. Swishing her tail viciously, the gnarp minces about on cloven hooves, her massive curled horns overbalancing her head as she tears at the scattered herbage with her large, formidable teeth."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A spotted gnarp trots {direction}."
+    ],
     death: [
       "The spotted gnarp collapses to the ground, emits a final cry, and dies.",
       "The spotted gnarp lets out a final agonized cry and dies.",
       "The spotted gnarp collapses to the ground, emits a final silent cry, and dies.",
       "The spotted gnarp shrieks loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The spotted gnarp shrieks loudly as he slumps to the ground and cradles his wounded right foreleg."
+      "The spotted gnarp shrieks loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The spotted gnarp shrieks loudly as he slumps to the ground and cradles his wounded left hoof.",
+      "The spotted gnarp shrieks loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "The spotted gnarp shrieks loudly as she slumps to the ground and cradles her wounded left hoof.",
+      "The spotted gnarp shrieks loudly as he slumps to the ground and cradles his wounded left foreleg."
     ],
     decay: [
       "A spotted gnarp decays into a pile of fur and bone."

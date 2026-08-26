@@ -91,7 +91,9 @@
       "Graceful as an antelope, this member of the deer family stands proud and fierce before you. The velnalin is covered with thick mottled brown and white fur, and from his head, long, straight horns the length of a good sword taper to points that glimmer like hard, polished bone. The beast moves like quicksilver as he brings his formidable weapons to bear."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A velnalin trots {direction}."
+    ],
     death: [
       "The velnalin collapses to the ground, emits a final sigh, and dies.",
       "The velnalin lets out a final agonized sigh and dies.",
@@ -99,7 +101,8 @@
       "The velnalin groans loudly as she slumps to the ground and cradles her wounded right foreleg.",
       "The velnalin groans loudly as he slumps to the ground and cradles his wounded left foreleg.",
       "The velnalin groans loudly as she slumps to the ground and cradles her wounded left foreleg.",
-      "The velnalin groans loudly as he slumps to the ground and cradles his wounded right foreleg."
+      "The velnalin groans loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The velnalin groans loudly as she slumps to the ground and cradles her wounded right hoof."
     ],
     decay: [
       "A velnalin decays into a pile of fur and bone."

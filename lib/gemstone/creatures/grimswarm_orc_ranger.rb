@@ -42,7 +42,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Stomp"
+      }
+    ],
     special_abilities: [],
     special_notes: [
       "Grimswarm spawn in warcamps; level, AS/DS and TDs scale with the camp, so fixed values are not recorded.",
@@ -90,7 +94,9 @@
     arrival: [
       "A Grimswarm orc ranger just arrived."
     ],
-    flee: [],
+    flee: [
+      "A Grimswarm orc ranger heads {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

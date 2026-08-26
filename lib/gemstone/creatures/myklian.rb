@@ -101,7 +101,13 @@
       "You hear a low growl and feel a sudden chill as an orange myklian arrives.",
       "You hear a low growl and feel a sudden chill as a yellow myklian arrives."
     ],
-    flee: [],
+    flee: [
+      "A red myklian heads {direction}.",
+      "A blue myklian heads {direction}.",
+      "A yellow myklian heads {direction}.",
+      "An orange myklian heads {direction}.",
+      "A young myklian heads {direction}."
+    ],
     death: [
       "The blue myklian falls back into a heap and dies.",
       "The red myklian falls back into a heap and dies.",
@@ -113,7 +119,10 @@
       "The yellow myklian falls back into a heap and dies.",
       "The orange myklian falls back into a heap and dies.",
       "A red myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled left foreleg.",
-      "The orange myklian hisses one last time and dies."
+      "The orange myklian hisses one last time and dies.",
+      "A yellow myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled left claw.",
+      "A young myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled right foreleg.",
+      "A red myklian screeches loudly and slumps to the ground as a whitish-grey ichor oozes from its mangled right foreleg."
     ],
     decay: [
       "A blue myklian crumbles away into dust.",

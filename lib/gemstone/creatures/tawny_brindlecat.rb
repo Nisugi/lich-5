@@ -95,13 +95,19 @@
     arrival: [
       "A tawny brindlecat stalks in!"
     ],
-    flee: [],
+    flee: [
+      "A tawny brindlecat bounds {direction}.",
+      "A tawny brindlecat roars loudly as she stands {direction}!"
+    ],
     death: [
       "The tawny brindlecat's tail twitches feebly as she dies.",
       "The tawny brindlecat's tail twitches feebly as he dies.",
       "The tawny brindlecat mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
       "The tawny brindlecat mewls in pain as she slumps to the ground and licks her wounded right paw.",
-      "The tawny brindlecat mewls in pain as he slumps to the ground and licks his wounded left foreleg."
+      "The tawny brindlecat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The tawny brindlecat mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The tawny brindlecat mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The tawny brindlecat mewls in pain as he slumps to the ground and licks his wounded left paw."
     ],
     decay: [
       "A tawny brindlecat decays into a compost of fangs, fur and claws.",

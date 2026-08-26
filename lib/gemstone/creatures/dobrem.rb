@@ -96,7 +96,9 @@
     flee: [],
     death: [
       "The dobrem falls to the ground and dies.",
-      "The dobrem rolls over and dies."
+      "The dobrem rolls over and dies.",
+      "The dobrem yelps loudly as she slumps to the ground and licks her wounded right paw.",
+      "The dobrem yelps loudly as she slumps to the ground and licks her wounded right foreleg."
     ],
     decay: [
       "A dobrem decays into a compost of fangs and fur."

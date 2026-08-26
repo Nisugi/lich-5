@@ -89,12 +89,15 @@
     arrival: [
       "An arctic manticore just arrived."
     ],
-    flee: [],
+    flee: [
+      "An arctic manticore heads {direction}."
+    ],
     death: [
       "The arctic manticore falls to the ground and dies.",
       "The arctic manticore screams one last time and dies.",
       "The arctic manticore twitches violently, then dies.",
-      "An arctic manticore goes limp as it is rendered unconscious!"
+      "An arctic manticore goes limp as it is rendered unconscious!",
+      "The arctic manticore slumps to the ground."
     ],
     decay: [
       "An arctic manticore decays into compost."

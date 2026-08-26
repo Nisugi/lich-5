@@ -107,9 +107,12 @@
       "A krag yeti stomps in, a fetid odor wafting before it.",
       "The boulder comes to a sudden stop and rises into the form of a krag dweller!"
     ],
-    flee: [],
+    flee: [
+      "A krag yeti rumbles {direction}."
+    ],
     death: [
-      "The krag yeti shudders once before it finally goes still."
+      "The krag yeti shudders once before it finally goes still.",
+      "The krag yeti collapses to the ground and shudders once before finally going still."
     ],
     decay: [],
     search: [],

@@ -79,14 +79,14 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: 400,
+    melee: (256..400),
     ranged: (256..380),
     bolt: (256..380),
     udf: 352,
     bar_td: (251..285),
     cle_td: nil,
     emp_td: (294..302),
-    pal_td: nil,
+    pal_td: (253..263),
     ran_td: nil,
     sor_td: (316..328),
     wiz_td: nil,
@@ -135,7 +135,8 @@
       "An apt fire mage strides in!"
     ],
     flee: [
-      "A fire mage crawls {direction}."
+      "A fire mage crawls {direction}.",
+      "A fire mage walks {direction}."
     ],
     death: [
       "The fire mage goes limp and she falls over as the fire slowly fades from her eyes.",

@@ -52,7 +52,7 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (85..92),
+    melee: (62..92),
     ranged: 62,
     bolt: 62,
     udf: 125,
@@ -60,7 +60,7 @@
     cle_td: (51..57),
     emp_td: (51..59),
     pal_td: (45..54),
-    ran_td: nil,
+    ran_td: (45..54),
     sor_td: (48..57),
     wiz_td: nil,
     mje_td: 54,

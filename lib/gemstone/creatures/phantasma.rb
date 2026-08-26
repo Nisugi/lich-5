@@ -129,9 +129,12 @@
       "A barely visible spirit, the phantasma floats silently across the room. Its bald head, thick neck, muscular forearms and fixed sneer reflect its former positions of jailer and torturer. Rotting leather armor drapes the phantasma, providing it with its only solid link to the living past."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A phantasma floats {direction}."
+    ],
     death: [
-      "A phantasma fades into oblivion."
+      "A phantasma fades into oblivion.",
+      "The phantasma goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

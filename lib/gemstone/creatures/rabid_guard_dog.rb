@@ -94,10 +94,18 @@
       "Smaller than most dogs, the short hair of this beast is mangy and unkempt. Its beady eyes gaze alertly in all directions, while his stubby tail flicks back and forth with rhythmic precision."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A rabid guard dog rushes {direction}!"
+    ],
     death: [
       "The guard dog falls to the ground and dies.",
-      "The guard dog rolls over and dies."
+      "The guard dog rolls over and dies.",
+      "The guard dog slumps to the ground.",
+      "The guard dog yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The guard dog yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The guard dog yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The guard dog yelps loudly as she slumps to the ground and licks her wounded left paw.",
+      "The guard dog yelps loudly as he slumps to the ground and licks his wounded left paw."
     ],
     decay: [
       "A rabid guard dog decays into a compost of fangs and fur."

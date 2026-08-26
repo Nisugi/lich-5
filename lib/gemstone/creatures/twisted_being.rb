@@ -97,8 +97,13 @@
     description: [
       "The twisted being is a twisted amalgamation of flesh and other, less mentionable things. The chalky white skin of this being is rough and pebbly, similar to a reptile's. Two beady black eyes peer out from a snake-shaped head that is topped with a twisted, spiked crest which runs all the way down the being's spine and along its whip-like tail. Row upon row of deadly, razor-sharp teeth fill the being's mouth, and saliva drips from its thick purple tongue."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A twisted being stalks in, its tail swishing back and forth menacingly."
+    ],
+    flee: [
+      "A twisted being stoops low and darts {direction}.",
+      "A twisted being quickly limps {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

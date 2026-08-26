@@ -113,11 +113,13 @@
       "A sea nymph just arrived."
     ],
     flee: [
-      "A sea nymph draped in seaweed and a wet, clinging robe slithers {direction} {direction} of a crevice."
+      "A sea nymph draped in seaweed and a wet, clinging robe slithers {direction} {direction} of a crevice.",
+      "A sea nymph heads {direction}."
     ],
     death: [
       "The sea nymph falls to the ground and dies.",
-      "The sea nymph screams one last time and dies."
+      "The sea nymph screams one last time and dies.",
+      "The sea nymph slumps to the ground."
     ],
     decay: [
       "A sea nymph decays into compost."

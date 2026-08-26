@@ -82,7 +82,7 @@
     bar_td: (69..75),
     cle_td: (66..75),
     emp_td: (69..77),
-    pal_td: nil,
+    pal_td: (66..75),
     ran_td: nil,
     sor_td: (66..75),
     wiz_td: nil,
@@ -121,7 +121,13 @@
       "Seeming to be a blend of mannish torso upon the body of a light horse, the centaur has a certain charm and aura of mystery. That is, until you encounter one, for the centaur is a savage and wilder cousin to the great centaurs of legend and will lash out in terrible fury when it deems a threat is at hand. Their hide which varies in color from tan, black, white or roan is valued for its toughness and durability and thus, many will brave the danger of flying hooves and the threat held by these fierce creatures to gain this prize."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A black centaur gallops {direction}.",
+      "A tan centaur gallops {direction}.",
+      "A white centaur gallops {direction}.",
+      "A roan centaur gallops {direction}.",
+      "A bay centaur gallops {direction}."
+    ],
     death: [
       "The white centaur falls to the ground and dies.",
       "The white centaur screams one last time and dies.",

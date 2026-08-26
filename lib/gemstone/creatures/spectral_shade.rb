@@ -54,7 +54,7 @@
     bolt: nil,
     udf: 324,
     bar_td: nil,
-    cle_td: 123,
+    cle_td: (129..137),
     emp_td: (136..145),
     pal_td: nil,
     ran_td: nil,
@@ -91,9 +91,12 @@
       "The spectral shade is a mere shadow of a creature most of the time, yet it can resolve itself into immediate solidity when on the attack. Possessed of both potent physical and magical attacks, the spectral shade calls upon its many offensive capabilities to strike the living whenever possible. The spectral shade is best hunted in the daytime, as it blends easily into the darkness of night."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A spectral shade floats {direction}."
+    ],
     death: [
-      "A spectral shade fades into oblivion."
+      "A spectral shade fades into oblivion.",
+      "The spectral shade goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

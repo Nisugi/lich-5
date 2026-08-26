@@ -47,7 +47,7 @@
       },
       {
         name: "Massive granite hammer",
-        as: 325
+        as: (325..335)
       }
     ],
     bolt_spells: [],
@@ -92,7 +92,7 @@
     cle_td: (263..272),
     emp_td: (266..274),
     pal_td: (231..240),
-    ran_td: nil,
+    ran_td: (230..234),
     sor_td: (285..291),
     wiz_td: nil,
     mje_td: 301,

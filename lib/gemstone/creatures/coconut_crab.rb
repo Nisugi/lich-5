@@ -46,12 +46,12 @@
     melee: 37,
     ranged: 34,
     bolt: 34,
-    udf: nil,
+    udf: 44,
     bar_td: nil,
     cle_td: 6,
     emp_td: 6,
     pal_td: 6,
-    ran_td: nil,
+    ran_td: 6,
     sor_td: 6,
     wiz_td: nil,
     mje_td: 6,
@@ -81,10 +81,13 @@
       ""
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "The crab skitters {direction}."
+    ],
     death: [
       "The coconut crab falls back into a heap and dies.",
-      "The coconut crab hisses one last time and dies."
+      "The coconut crab hisses one last time and dies.",
+      "Beautiful shot pierces both lungs, the coconut crab makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A coconut crab decays into compost."

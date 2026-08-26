@@ -112,9 +112,12 @@
       "The lost soul appears as the flickering shade of a normal humanoid, his face contorted into a soundless, agonized scream. His flesh slowly melts off his frame, bubbling, dripping to the ground, and his clothing turns into rags, dropping off in shreds, until nothing is left but a skeleton with hate-filled red eyes. Slowly the flesh reforms, the clothing regains its form, all in nearly reverse order, until the lost soul is once again whole. Then, horribly, he begins to deteriorate again."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A lost soul floats {direction}."
+    ],
     death: [
-      "A lost soul fades into oblivion."
+      "A lost soul fades into oblivion.",
+      "The lost soul goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

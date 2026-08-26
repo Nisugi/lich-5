@@ -69,7 +69,7 @@
     bar_td: (66..72),
     cle_td: (72..78),
     emp_td: (68..76),
-    pal_td: nil,
+    pal_td: (63..66),
     ran_td: nil,
     sor_td: (64..73),
     wiz_td: 72,
@@ -105,13 +105,18 @@
       "A belligerent crested basilisk stomps in and glares about.",
       "A canny crested basilisk stomps in and glares about."
     ],
-    flee: [],
+    flee: [
+      "A crested basilisk hisses and stomps {direction}.",
+      "A combative crested basilisk hisses and stomps {direction}.",
+      "A belligerent crested basilisk hisses and stomps {direction}."
+    ],
     death: [
       "The crested basilisk rolls over on its back, emits a final hiss and dies.",
       "The crested basilisk emits a final hiss and dies.",
       "The crested basilisk emits a final silent hiss and dies.",
       "A crested basilisk goes limp as it is rendered unconscious!",
-      "The crested basilisk rolls over on its back, emits a final silent hiss and dies."
+      "The crested basilisk rolls over on its back, emits a final silent hiss and dies.",
+      "The crested basilisk slumps to the ground."
     ],
     decay: [],
     search: [],

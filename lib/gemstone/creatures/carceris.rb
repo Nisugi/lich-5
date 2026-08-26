@@ -79,7 +79,7 @@
     cle_td: (80..87),
     emp_td: (82..89),
     pal_td: (70..80),
-    ran_td: nil,
+    ran_td: (73..80),
     sor_td: (87..97),
     wiz_td: nil,
     mje_td: (96..101),
@@ -116,10 +116,14 @@
     arrival: [
       "A carceris shambles in!"
     ],
-    flee: [],
+    flee: [
+      "A carceris shambles {direction}.",
+      "A carceris wails madly as she limps {direction}."
+    ],
     death: [
       "The carceris falls to the ground motionless.",
-      "The carceris wails in terrifying pain one last time and lies still."
+      "The carceris wails in terrifying pain one last time and lies still.",
+      "Beautiful shot pierces both lungs, the carceris makes a wheezing noise, and drops dead!"
     ],
     decay: [],
     search: [],

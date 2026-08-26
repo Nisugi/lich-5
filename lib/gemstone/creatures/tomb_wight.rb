@@ -110,7 +110,10 @@
       "A tomb wight just arrived, limping.",
       "A tomb wight just arrived, limping badly."
     ],
-    flee: [],
+    flee: [
+      "A tomb wight runs {direction}.",
+      "A tomb wight limps {direction}."
+    ],
     death: [
       "The tomb wight falls to the ground motionless.",
       "The tomb wight screams evilly one last time and goes still."

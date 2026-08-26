@@ -115,11 +115,14 @@
       "A mountain troll just arrived!",
       "A mountain troll just arrived."
     ],
-    flee: [],
+    flee: [
+      "A mountain troll runs {direction}."
+    ],
     death: [
       "The mountain troll screams one last time and dies.",
       "The mountain troll falls to the ground and dies.",
-      "The mountain troll twitches violently, then dies."
+      "The mountain troll twitches violently, then dies.",
+      "The mountain troll slumps to the ground."
     ],
     decay: [
       "A mountain troll decays into compost."

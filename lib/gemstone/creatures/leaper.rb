@@ -99,13 +99,17 @@
       "The leaper appears a bizarre cross between a wolf and a frog. Perhaps six feet from snout to rump, covered with slick, hairless skin in a dark green, it lacks all trace of fur but has a set of fangs worthy of any wolf that ever strode the land. Extra long front legs tipped with raking claws give it the bounding gait that has earned its name.\n\nThe leaper is medium in size and about three feet high."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A leaper bounds {direction}."
+    ],
     death: [
       "The leaper collapses to the ground, emits a final snarl, and dies.",
       "The leaper twitches and dies.",
       "The leaper collapses to the ground, emits a final silent snarl, and dies.",
       "A leaper goes limp as it is rendered unconscious!",
-      "The leaper growls as it slumps to the ground and licks at its wounded left foreleg."
+      "The leaper growls as it slumps to the ground and licks at its wounded left foreleg.",
+      "The leaper growls as it slumps to the ground and licks at its wounded left claw.",
+      "The leaper growls as it slumps to the ground and licks at its wounded right foreleg."
     ],
     decay: [
       "A leaper decays into a pile of hair and bone."

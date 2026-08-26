@@ -73,7 +73,7 @@
     cle_td: 15,
     emp_td: 15,
     pal_td: (12..15),
-    ran_td: nil,
+    ran_td: 15,
     sor_td: 15,
     wiz_td: nil,
     mje_td: 15,
@@ -103,13 +103,19 @@
       "The coyote, a quick, buff-colored creature, is a smaller cousin of the wolf. However, the coyote lacks the wolf's braver tendencies, preferring to slash and run rather than risk a frontal assault in an attempt to go for the throat. The coyote must be approached with care, as the coyote has been known to take an adventurer's hand off with one quick snap of the jaws."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A coyote pads {direction}."
+    ],
     death: [
       "The coyote falls to the ground and dies.",
       "The coyote rolls over and dies.",
       "A greater orc breathes his last gasp and dies.",
       "A greater orc breathes her last gasp and dies.",
-      "The coyote yelps loudly as he slumps to the ground and licks his wounded right foreleg."
+      "The coyote yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The coyote yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The coyote yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The coyote yelps loudly as she slumps to the ground and licks her wounded left paw.",
+      "The coyote yelps loudly as she slumps to the ground and licks her wounded right foreleg."
     ],
     decay: [
       "A coyote decays into a compost of fangs and fur."

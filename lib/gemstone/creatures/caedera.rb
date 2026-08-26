@@ -106,7 +106,8 @@
     arrival: [],
     flee: [],
     death: [
-      "A caedera goes limp as it is rendered unconscious!"
+      "A caedera goes limp as it is rendered unconscious!",
+      "The caedera slumps to the ground."
     ],
     decay: [],
     search: [],

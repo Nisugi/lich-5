@@ -44,7 +44,7 @@
       },
       {
         name: "Ensnare",
-        as: (23..43)
+        as: (23..53)
       }
     ],
     bolt_spells: [],
@@ -95,7 +95,9 @@
       "The giant pale crab is about a foot across and has large pincers at the end of each of its two arms. Its multiple legs make a skittering noise as it walks. The pale color seems to be the result of living in dark, wet caves for its entire life."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "The crab skitters {direction}."
+    ],
     death: [
       "The pale crab falls back into a heap and dies.",
       "The pale crab hisses one last time and dies."

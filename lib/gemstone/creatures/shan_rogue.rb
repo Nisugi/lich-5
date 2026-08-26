@@ -45,7 +45,7 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (236..245),
     emp_td: (232..235),
     pal_td: nil,
     ran_td: nil,
@@ -84,7 +84,9 @@
       ""
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A shan rogue pads {direction}."
+    ],
     death: [
       "The shan rogue yips in pain as he falls to the ground motionless.",
       "The shan rogue howls out one last time and dies.",

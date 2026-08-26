@@ -163,10 +163,13 @@
     arrival: [
       "A faint rippling in the air heralds the arrival of an Ithzir seer!"
     ],
-    flee: [],
+    flee: [
+      "An Ithzir seer walks {direction}."
+    ],
     death: [
       "The Ithzir seer vainly struggles to rise, then goes still.",
-      "An Ithzir seer's body shimmers slightly, then fades from view like a dissipating phantom."
+      "An Ithzir seer's body shimmers slightly, then fades from view like a dissipating phantom.",
+      "Just as you incant, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!"
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The Ithzir seer's tibia passes his femur in a very unpleasant manner!",

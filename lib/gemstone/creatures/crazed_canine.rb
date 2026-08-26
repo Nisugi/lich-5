@@ -95,11 +95,17 @@
       ""
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A crazed canine rushes {direction}!"
+    ],
     death: [
       "The crazed canine falls to the ground and dies.",
       "The crazed canine rolls over and dies.",
-      "A crazed canine goes limp as he is rendered unconscious!"
+      "A crazed canine goes limp as he is rendered unconscious!",
+      "The crazed canine yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The crazed canine yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The crazed canine yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The crazed canine yelps loudly as she slumps to the ground and licks her wounded left paw."
     ],
     decay: [
       "A crazed canine decays into a compost of fangs and fur."

@@ -103,7 +103,8 @@
     death: [
       "The striped relnak hisses one last time and dies.",
       "The striped relnak falls back into a heap and dies.",
-      "A striped relnak screeches loudly and slumps to the ground while frantically licking its wounded right foreleg."
+      "A striped relnak screeches loudly and slumps to the ground while frantically licking its wounded right foreleg.",
+      "A striped relnak screeches loudly and slumps to the ground while frantically licking its wounded left foreleg."
     ],
     decay: [
       "A striped relnak decays into compost."

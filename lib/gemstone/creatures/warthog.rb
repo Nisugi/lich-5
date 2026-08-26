@@ -101,12 +101,16 @@
     arrival: [
       "A warthog just arrived."
     ],
-    flee: [],
+    flee: [
+      "A warthog grunts and barrels {direction}."
+    ],
     death: [
       "The warthog collapses to the ground, emits a final snuffle, and dies.",
       "The warthog lets out a final agonized snuffle and dies.",
       "The warthog snuffles loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The warthog snuffles loudly as he slumps to the ground and cradles his wounded left hoof."
+      "The warthog snuffles loudly as he slumps to the ground and cradles his wounded left hoof.",
+      "The warthog snuffles loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The warthog snuffles loudly as he slumps to the ground and cradles his wounded right hoof."
     ],
     decay: [
       "A warthog decays into a pile of fur and bone.",

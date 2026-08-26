@@ -74,7 +74,7 @@
     cle_td: (39..42),
     emp_td: (42..46),
     pal_td: (39..48),
-    ran_td: 39,
+    ran_td: (39..42),
     sor_td: (42..45),
     wiz_td: 42,
     mje_td: 45,
@@ -111,7 +111,9 @@
       "This orc, midway in size between a lesser and a greater orc, the grey orc has a greyish cast to its skin, lending an unhealthy pallor to an already hideous countenance. Dim intelligence flickers behind the narrow eyes and a mocking grin shows blackened and rotting teeth."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A grey orc treks {direction}."
+    ],
     death: [
       "A grey orc gazes upward one last time and dies."
     ],

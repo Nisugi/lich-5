@@ -66,7 +66,7 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: (290..305),
+    melee: (215..305),
     ranged: (215..291),
     bolt: (215..291),
     udf: 463,
@@ -74,7 +74,7 @@
     cle_td: (312..321),
     emp_td: 329,
     pal_td: (280..283),
-    ran_td: nil,
+    ran_td: 271,
     sor_td: (272..284),
     wiz_td: nil,
     mje_td: 303,
@@ -116,7 +116,14 @@
     ],
     death: [
       "The monstrous direwolf rolls over and dies.",
-      "The monstrous direwolf falls to the ground and dies."
+      "The monstrous direwolf falls to the ground and dies.",
+      "The monstrous direwolf yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The monstrous direwolf yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The monstrous direwolf yelps loudly as she slumps to the ground and licks her wounded left paw.",
+      "The monstrous direwolf yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The monstrous direwolf yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The monstrous direwolf yelps loudly as she slumps to the ground and licks her wounded right paw.",
+      "The monstrous direwolf yelps loudly as he slumps to the ground and licks his wounded left paw."
     ],
     decay: [
       "A monstrous direwolf decays into a mound of fur and bone."

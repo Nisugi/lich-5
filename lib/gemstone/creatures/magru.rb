@@ -53,7 +53,7 @@
     immunities: [
       "Fire"
     ],
-    melee: nil,
+    melee: (107..119),
     ranged: (107..119),
     bolt: (107..119),
     udf: nil,
@@ -93,7 +93,9 @@
     arrival: [
       "A magru just arrived."
     ],
-    flee: [],
+    flee: [
+      "A magru heads {direction}."
+    ],
     death: [],
     decay: [
       "The magru collapses into a heap of quivering jelly."

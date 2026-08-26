@@ -72,7 +72,7 @@
   defense_attributes: {
     asg: "11",
     immunities: [],
-    melee: (284..371),
+    melee: (242..371),
     ranged: (242..246),
     bolt: (242..246),
     udf: 578,
@@ -122,7 +122,8 @@
     flee: [],
     death: [
       "The Ivasian inciter twitches violently, then dies.",
-      "A supple Ivasian inciter goes limp as he is rendered unconscious!"
+      "A supple Ivasian inciter goes limp as he is rendered unconscious!",
+      "The Ivasian inciter slumps to the ground."
     ],
     decay: [
       "The Ivasian inciter's right leg crumbles briefly and explodes in a shower of gore.",

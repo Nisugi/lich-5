@@ -58,7 +58,7 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (195..239),
+    melee: (90..239),
     ranged: (90..141),
     bolt: (90..141),
     udf: 288,
@@ -97,7 +97,8 @@
     ],
     arrival: [],
     flee: [
-      "A giant fog beetle crawls {direction}."
+      "A giant fog beetle crawls {direction}.",
+      "A giant fog beetle meanders {direction}."
     ],
     death: [
       "A giant fog beetle goes limp as it is rendered unconscious!",

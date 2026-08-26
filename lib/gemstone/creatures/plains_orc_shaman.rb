@@ -116,7 +116,9 @@
       "The plains orc shaman watches his surroundings diligently through shifting yellow eyes that hint at a cunning and dangerous intelligence. His heavily-muscled limbs bear an almost runelike pattern of ritually inflicted scars, and his tangled red beard is adorned with crude bone and wood beads. The shaman mutters to himself in a series of guttural incantations."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A plains orc shaman traipses {direction}."
+    ],
     death: [
       "A plains orc shaman mutters belaboring his fate and then dies.",
       "A plains orc shaman mutters belaboring her fate and then dies."

@@ -102,7 +102,9 @@
     arrival: [
       "A thyril just arrived."
     ],
-    flee: [],
+    flee: [
+      "A thyril heads {direction}."
+    ],
     death: [
       "The thyril falls to the ground and dies.",
       "The thyril screams one last time and dies."

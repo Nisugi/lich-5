@@ -56,7 +56,7 @@
     bar_td: 89,
     cle_td: (105..115),
     emp_td: (115..125),
-    pal_td: nil,
+    pal_td: (99..107),
     ran_td: nil,
     sor_td: (103..128),
     wiz_td: nil,
@@ -95,7 +95,10 @@
       "The pra'eda before you stands on two legs, but the golden eyes that glare from either side of its fanged, canine snout and its coat of grizzled fur make it difficult to determine whether it is more human or wolf in nature. A stench of blood and rotting flesh emanates from its fanged jaws, and its rough, tattered clothing is stained with dirt and gore."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A pra'eda runs {direction}.",
+      "A pra'eda limps {direction}."
+    ],
     death: [
       "The pra'eda falls to the ground motionless.",
       "A pra'eda goes limp as it is rendered unconscious!",

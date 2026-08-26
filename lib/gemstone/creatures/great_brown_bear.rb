@@ -114,7 +114,10 @@
       "A great brown bear goes limp as he is rendered unconscious!",
       "The great brown bear roars loudly as she slumps to the ground and licks her wounded left foreleg.",
       "The great brown bear roars loudly as he slumps to the ground and licks his wounded right foreleg.",
-      "The great brown bear roars loudly as she slumps to the ground and licks her wounded right foreleg."
+      "The great brown bear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The great brown bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The great brown bear roars loudly as he slumps to the ground and licks his wounded right paw.",
+      "The great brown bear roars loudly as he slumps to the ground and licks his wounded left paw."
     ],
     decay: [
       "A great brown bear decays into a compost of fangs, fur and claws.",

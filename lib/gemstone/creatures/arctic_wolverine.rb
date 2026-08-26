@@ -57,7 +57,7 @@
   defense_attributes: {
     asg: "10N",
     immunities: [],
-    melee: (123..180),
+    melee: (121..180),
     ranged: (121..145),
     bolt: (121..145),
     udf: 194,
@@ -105,7 +105,13 @@
     death: [
       "An arctic wolverine goes limp as he is rendered unconscious!",
       "An arctic wolverine goes limp as she is rendered unconscious!",
-      "The arctic wolverine snarls loudly as he slumps to the ground and licks his wounded left foreleg."
+      "The arctic wolverine snarls loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The arctic wolverine snarls loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The arctic wolverine snarls loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The arctic wolverine slumps to the ground.",
+      "The arctic wolverine snarls loudly as she slumps to the ground and licks her wounded right paw.",
+      "The arctic wolverine snarls loudly as she slumps to the ground and licks her wounded left paw.",
+      "The arctic wolverine snarls loudly as she slumps to the ground and licks her wounded right foreleg."
     ],
     decay: [],
     search: [],

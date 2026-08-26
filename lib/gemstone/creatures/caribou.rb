@@ -64,7 +64,7 @@
     melee: 218,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 250,
     bar_td: 96,
     cle_td: (89..98),
     emp_td: (91..99),
@@ -99,11 +99,17 @@
       "A hoofed herbivore of the northern snowfields, the caribou is very similar to a large deer with a bad attitude. The caribou uses her large rack of antlers to eagerly impale anything that would encroach upon her territory. Light brown hide affords the caribou some camouflage against the more barren slopes, but the caribou relies on her defenses and running in herds to handle most predators."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A caribou lopes {direction}."
+    ],
     death: [
       "A caribou goes limp as he is rendered unconscious!",
       "The caribou bellows loudly as she slumps to the ground and licks her wounded left foreleg.",
-      "The caribou bellows loudly as she slumps to the ground and licks her wounded right foreleg."
+      "The caribou bellows loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The caribou slumps to the ground.",
+      "The caribou bellows loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The caribou bellows loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The caribou bellows loudly as he slumps to the ground and licks his wounded left hoof."
     ],
     decay: [],
     search: [],

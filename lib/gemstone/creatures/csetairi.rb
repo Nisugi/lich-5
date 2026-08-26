@@ -138,7 +138,8 @@
       "A csetairi slithers {direction}."
     ],
     death: [
-      "Intestines rupture from intense heat; a csetairi dies a slow, painful death."
+      "Intestines rupture from intense heat; a csetairi dies a slow, painful death.",
+      "A csetairi slumps to the ground unconscious."
     ],
     decay: [],
     search: [],

@@ -44,7 +44,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (120..211),
+    melee: (106..211),
     ranged: (106..146),
     bolt: (106..146),
     udf: 231,
@@ -52,7 +52,7 @@
     cle_td: (54..60),
     emp_td: (45..73),
     pal_td: (57..63),
-    ran_td: nil,
+    ran_td: (57..66),
     sor_td: (59..66),
     wiz_td: nil,
     mje_td: nil,
@@ -87,7 +87,9 @@
     arrival: [
       "An ogre sentry just arrived."
     ],
-    flee: [],
+    flee: [
+      "An ogre sentry runs {direction}."
+    ],
     death: [
       "The ogre sentry screams one last time and dies.",
       "The ogre sentry falls to the floor and dies.",

@@ -57,10 +57,10 @@
   defense_attributes: {
     asg: "11",
     immunities: [],
-    melee: (39..42),
+    melee: (6..42),
     ranged: 6,
     bolt: 6,
-    udf: nil,
+    udf: 80,
     bar_td: 33,
     cle_td: 33,
     emp_td: 33,
@@ -99,7 +99,9 @@
     arrival: [
       "A shelfae chieftain just arrived."
     ],
-    flee: [],
+    flee: [
+      "A shelfae chieftain runs {direction}."
+    ],
     death: [
       "The shelfae chieftain falls to the ground and dies.",
       "The shelfae chieftain screams one last time and dies.",

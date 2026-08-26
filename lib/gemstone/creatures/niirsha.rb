@@ -96,7 +96,10 @@
     arrival: [
       "A niirsha shambles in!"
     ],
-    flee: [],
+    flee: [
+      "A niirsha wails madly as he limps {direction}.",
+      "A niirsha shambles {direction}."
+    ],
     death: [
       "The niirsha falls to the ground motionless.",
       "The niirsha wails in terrifying pain one last time and lies still."

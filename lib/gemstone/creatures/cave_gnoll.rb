@@ -89,7 +89,9 @@
     arrival: [
       "A cave gnoll just arrived."
     ],
-    flee: [],
+    flee: [
+      "A cave gnoll heads {direction}."
+    ],
     death: [
       "The cave gnoll falls to the ground and dies.",
       "The cave gnoll screams one last time and dies."

@@ -112,10 +112,14 @@
       "A lesser orc wanders in looking a bit unsteady on her feet.",
       "A lesser orc wanders in looking a bit unsteady on his feet."
     ],
-    flee: [],
+    flee: [
+      "A lesser orc tramps {direction}.",
+      "A lesser orc wobbles slightly and then heads {direction}."
+    ],
     death: [
       "A lesser orc screams one last time and dies.",
-      "A lesser orc screams silently one last time and dies."
+      "A lesser orc screams silently one last time and dies.",
+      "A lesser orc's looks dazed and confused.  The orc stumbles and slumps to the ground!"
     ],
     decay: [],
     search: [],

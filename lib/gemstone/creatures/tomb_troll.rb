@@ -96,12 +96,16 @@
       "Shorter than the common troll, but no less ugly, the tomb troll is squat and covered in a mottled and oily albino skin. Bare but for patches of lanky yellow strands of hair that cover the back, chest and arms of the troll, the tomb troll has adapted to a world far from the sun -- the darkness of crypts, the source of her favorite food. Fat, pointed ears extend from the side of her head, framing larger than normal silver eyes with horizontal slits set above a maw full of jagged teeth."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A tomb troll lopes {direction}.",
+      "A tomb troll limps {direction}."
+    ],
     death: [
       "A tomb troll goes limp as he is rendered unconscious!",
       "A tomb troll goes limp as she is rendered unconscious!",
       "A low sigh fills the air and the tomb troll fades to nothing.",
-      "A tomb troll blinks in astonishment, then collapses in a motionless heap."
+      "A tomb troll blinks in astonishment, then collapses in a motionless heap.",
+      "The tomb troll slumps to the ground."
     ],
     decay: [
       "The tomb troll's left leg crumbles briefly and explodes in a shower of gore."

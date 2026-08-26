@@ -67,7 +67,7 @@
     bolt: (330..365),
     udf: 452,
     bar_td: "179 to 209",
-    cle_td: nil,
+    cle_td: (234..240),
     emp_td: (213..222),
     pal_td: nil,
     ran_td: 204,
@@ -110,9 +110,12 @@
       "The eidolon is a nightmarish vision of pure evil, appearing from the shadows like a disconcerting fragment of thought that haunts you relentlessly. The eidolon's eyes shine out of its ephemeral silhouette like twin coals, radiating hatred and hunger. The monstrous apparition is as big as it is misshapen, towering over a tall giantman as it moves in rapid spurts that defy the eye's ability to follow its progress. As it conjures and strikes, its extremities contort and blur through each other, amplifying its grotesque demeanor."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "An eidolon floats {direction}."
+    ],
     death: [
-      "An eidolon fades into oblivion."
+      "An eidolon fades into oblivion.",
+      "The eidolon goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

@@ -137,7 +137,9 @@
       "The spectral woodsman floats through the forests it once knew in life, but the forests no longer know it. Now locked into an undead state, the spectral woodsman is merely a shade of its former self. The woodsman's sunken eyes stare out from darkened sockets and its long, unkempt hair flutters wildly as if in a strong wind. The spectral woodsman unceasingly seeks to destroy the living. If it cannot return to life, perhaps making everything dead will bring it all back to it."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A spectral woodsman floats {direction}."
+    ],
     death: [
       "A spectral woodsman fades into oblivion."
     ],

@@ -52,11 +52,11 @@
     melee: nil,
     ranged: 186,
     bolt: 166,
-    udf: nil,
+    udf: 230,
     bar_td: (113..122),
     cle_td: (120..134),
     emp_td: (126..135),
-    pal_td: 108,
+    pal_td: (105..108),
     ran_td: nil,
     sor_td: (132..138),
     wiz_td: nil,
@@ -87,12 +87,16 @@
       "A rodent-like creature with a small head and distinct ears, its head covered with a fine textured short fur. The undertaker bat's leathery wings outstretch to three times its body length, with its skeletal features visable through its black skin. Small fangs protrude beyond its closed mouth."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "An undertaker bat wafts {direction}.",
+      "An undertaker bat haphazardly glides {direction}."
+    ],
     death: [
       "The undertaker bat twitches violently, then dies.",
       "An undertaker bat goes limp as it is rendered unconscious!",
       "The undertaker bat flaps its wings in a last ditch effort to ascend from the ground, but fails and finally lies still.",
-      "As the strength drains out of the undertaker bat's wings, it falls to the ground in a motionless heap."
+      "As the strength drains out of the undertaker bat's wings, it falls to the ground in a motionless heap.",
+      "The undertaker bat slumps to the ground."
     ],
     decay: [
       "The undertaker bat decays into a tuft of matted hair and leathery wings."

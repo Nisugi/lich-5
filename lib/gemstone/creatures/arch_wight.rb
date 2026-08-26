@@ -142,7 +142,10 @@
     arrival: [
       "An arch wight just arrived."
     ],
-    flee: [],
+    flee: [
+      "An arch wight runs {direction}.",
+      "An arch wight limps {direction}."
+    ],
     death: [
       "The arch wight falls to the ground motionless.",
       "The arch wight screams evilly one last time and goes still."

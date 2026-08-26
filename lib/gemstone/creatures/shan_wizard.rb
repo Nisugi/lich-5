@@ -72,7 +72,7 @@
     bolt: nil,
     udf: 323,
     bar_td: (138..157),
-    cle_td: (162..165),
+    cle_td: (156..165),
     emp_td: (161..170),
     pal_td: nil,
     ran_td: nil,
@@ -121,7 +121,9 @@
       "A shan wizard's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
       "A shan wizard's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
     ],
-    decay: [],
+    decay: [
+      "The shan wizard's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

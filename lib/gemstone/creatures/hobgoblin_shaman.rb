@@ -66,7 +66,7 @@
     cle_td: 18,
     emp_td: 18,
     pal_td: (15..18),
-    ran_td: nil,
+    ran_td: (18..28),
     sor_td: 20,
     wiz_td: nil,
     mje_td: 19,
@@ -106,10 +106,13 @@
       "The shaman has a surprisingly intelligent look for a hobgoblin shaman, though he is no less primitive and vicious than his tribesmen. His voice seems to be constantly uttering the harsh, guttural prayers that appease his barbaric deity. The fervor in the shaman's heart is clear from the frenzied gleam in his eyes."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A hobgoblin shaman struts {direction}."
+    ],
     death: [
       "The hobgoblin shaman screams up at the heavens, then collapses and dies.",
-      "The hobgoblin shaman struggles to utter a final prayer, then goes still."
+      "The hobgoblin shaman struggles to utter a final prayer, then goes still.",
+      "The hobgoblin shaman twitches violently before finally going still."
     ],
     decay: [
       "A hobgoblin shaman decays into a pile of compost."

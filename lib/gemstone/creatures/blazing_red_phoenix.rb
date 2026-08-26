@@ -21,7 +21,7 @@
   bcs: true,
   max_hp: 320,
   speed: nil,
-  height: nil,
+  height: 6,
   size: "large",
   areas: [
     {
@@ -33,7 +33,7 @@
     physical_attacks: [
       {
         name: "Claw (attack)",
-        as: 390
+        as: (330..390)
       },
       {
         name: "Bite (attack)",
@@ -107,9 +107,9 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: 375,
+    cle_td: (384..387),
     emp_td: (371..380),
-    pal_td: nil,
+    pal_td: (330..336),
     ran_td: nil,
     sor_td: (391..397),
     wiz_td: nil,
@@ -155,7 +155,8 @@
       "A firebird cranes blazing red phoenix neck, snapping at you with blazing red phoenix sharp beak!",
       "A firebird tries to spear you with blazing red phoenix beak!",
       "Fiery talons lash out at you as a blazing red phoenix dives on your position!",
-      "In a trail of flames, a firebird extends blazing red phoenix fearsome talons as it dives at you!"
+      "In a trail of flames, a firebird extends blazing red phoenix fearsome talons as it dives at you!",
+      "A blazing red phoenix rakes at you with a razor-sharp claw!"
     ],
     bite: [],
     claw: [],

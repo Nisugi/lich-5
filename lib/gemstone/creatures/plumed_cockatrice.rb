@@ -102,9 +102,12 @@
       "A plumed cockatrice just arrived!",
       "A Neartofar orc stalks in purposefully, his nose raised as he sniffs at the air."
     ],
-    flee: [],
+    flee: [
+      "A plumed cockatrice thunders {direction}."
+    ],
     death: [
-      "The plumed cockatrice rolls over on its back, emits a final screech and dies."
+      "The plumed cockatrice rolls over on its back, emits a final screech and dies.",
+      "The plumed cockatrice slumps to the ground."
     ],
     decay: [
       "A plumed cockatrice decays into a useless pile of scales and feathers."

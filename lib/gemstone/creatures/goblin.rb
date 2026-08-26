@@ -115,7 +115,9 @@
       "Round-headed with a squat nose and a wide mouth, the goblin has greenish skin with a sickly yellow cast over all. Roughly as tall as a dwarf or halfling, the goblin moves with a nervous energy but rarely looks directly at you. A yeasty smell as of molding bread or of something left to rot in a dark damp place completes the goblin's aura of repulsivenss."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A goblin tramps {direction}."
+    ],
     death: [
       "The goblin falls to the ground, kicks several times and dies.",
       "The goblin screams, shudders one last time and dies."

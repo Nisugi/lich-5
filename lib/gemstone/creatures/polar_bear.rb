@@ -95,10 +95,18 @@
       "The polar bear is the largest of all bears, weighing in at close to 2000 pounds with an overall body length of around nine feet long. The bear has a distinctive all white coat, triangular profile, long neck, and small ears. The polar bear's nose, lips and all skin under his fur are black. This bear's front paws are very wide for paddling through arctic waters. Heavy fur, dense underfur, and thick layer of insulating fat allow the bear to maintain a normal body temperature when the outside temperature drops far below freezing."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A polar bear trundles {direction}.",
+      "A polar bear roars loudly as she stands {direction}!"
+    ],
     death: [
       "The polar bear collapses heavily into a heap on the ground and dies.",
-      "The polar bear lets out a blood-curdling roar and dies."
+      "The polar bear lets out a blood-curdling roar and dies.",
+      "The polar bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The polar bear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The polar bear roars loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The polar bear roars loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The polar bear roars loudly as he slumps to the ground and licks his wounded right paw."
     ],
     decay: [
       "A polar bear decays into a compost of fangs, fur and claws."

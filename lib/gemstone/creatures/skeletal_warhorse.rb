@@ -57,7 +57,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (183..248),
+    melee: (182..248),
     ranged: 194,
     bolt: 194,
     udf: 220,
@@ -101,7 +101,9 @@
     arrival: [
       "A skeletal warhorse just arrived."
     ],
-    flee: [],
+    flee: [
+      "A skeletal warhorse gallops {direction}."
+    ],
     death: [
       "The skeletal warhorse falls to the ground motionless.",
       "The skeletal warhorse wails in terrifying pain one last time and lies still."

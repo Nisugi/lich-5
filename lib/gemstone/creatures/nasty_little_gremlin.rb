@@ -53,7 +53,7 @@
     cle_td: 10,
     emp_td: nil,
     pal_td: (7..10),
-    ran_td: nil,
+    ran_td: 10,
     sor_td: (10..11),
     wiz_td: nil,
     mje_td: 10,
@@ -87,7 +87,11 @@
     ],
     flee: [
       "A nasty little blue gremlin scampers {direction}.",
-      "A nasty little red gremlin scampers {direction}."
+      "A nasty little red gremlin scampers {direction}.",
+      "A nasty little green gremlin scampers {direction}.",
+      "A nasty little orange gremlin scampers {direction}.",
+      "A nasty little yellow gremlin scampers {direction}.",
+      "A nasty little black gremlin scampers {direction}."
     ],
     death: [
       "The green gremlin falls to the ground and dies with a gentle sigh.",

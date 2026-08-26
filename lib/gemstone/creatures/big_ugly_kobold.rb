@@ -86,7 +86,10 @@
       "This big ugly kobold is large for a kobold and ugly, even by kobold beauty standards. Smaller than a dwarf and even many halflings, she has ruddy skin and a hairless pate topped with small horns. Long-limbed for her size, the big ugly kobold eschews any display of brute strength and relies on what agility she pretends to have. The big ugly kobold stares back at you with beady little black eyes, sizing you up as a foe."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A big ugly kobold limps {direction}.",
+      "A big ugly kobold heads {direction}."
+    ],
     death: [],
     decay: [
       "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost.",

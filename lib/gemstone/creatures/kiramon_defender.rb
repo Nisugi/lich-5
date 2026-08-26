@@ -98,7 +98,7 @@
     bar_td: (160..163),
     cle_td: (178..187),
     emp_td: (168..177),
-    pal_td: nil,
+    pal_td: (152..161),
     ran_td: nil,
     sor_td: (177..195),
     wiz_td: nil,
@@ -131,7 +131,10 @@
     arrival: [
       "You hear a strange clicking that makes your hair stand on end as a kiramon defender arrives."
     ],
-    flee: [],
+    flee: [
+      "A kiramon defender heads {direction}.",
+      "A kiramon defender limps {direction}."
+    ],
     death: [
       "The kiramon defender falls back into a heap and dies.",
       "The kiramon defender clicks one last time and dies.",

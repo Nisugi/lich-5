@@ -63,15 +63,15 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (177..326),
-    ranged: (181..214),
-    bolt: (181..214),
+    melee: (175..326),
+    ranged: (178..210),
+    bolt: (178..210),
     udf: 333,
     bar_td: (230..242),
     cle_td: (252..261),
     emp_td: 269,
     pal_td: (214..223),
-    ran_td: nil,
+    ran_td: (223..232),
     sor_td: (249..261),
     wiz_td: nil,
     mje_td: 290,
@@ -103,7 +103,9 @@
     arrival: [
       "A warped tree spirit just arrived."
     ],
-    flee: [],
+    flee: [
+      "A warped tree spirit heads {direction}."
+    ],
     death: [
       "The tree spirit slowly settles to the ground and begins to dissipate."
     ],

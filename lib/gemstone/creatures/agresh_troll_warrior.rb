@@ -91,7 +91,10 @@
     arrival: [
       "An Agresh troll warrior just arrived!"
     ],
-    flee: [],
+    flee: [
+      "An Agresh troll warrior runs {direction}.",
+      "An Agresh troll warrior limps {direction}."
+    ],
     death: [
       "An Agresh troll warrior goes limp as she is rendered unconscious!"
     ],

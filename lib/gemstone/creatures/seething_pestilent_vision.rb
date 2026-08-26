@@ -109,7 +109,9 @@
       "A seething pestilent vision just arrived from a torchlit overgrown grotto."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The pestilent vision goes still for a moment while its head reshapes."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

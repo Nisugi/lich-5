@@ -95,10 +95,14 @@
       "Nearly four feet at the shoulder, and graced with a pair of large, curled horns, the Bresnahanini rolton is a larger and meaner version of his standard cousin. Sometimes called the curly-horned rolton, this species is reputed to have even killed a lord or two."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A Bresnahanini rolton trots {direction}."
+    ],
     death: [
       "The Bresnahanini rolton collapses to the ground, emits a final bleat, and dies.",
-      "The Bresnahanini rolton lets out a final agonized bleat and dies."
+      "The Bresnahanini rolton lets out a final agonized bleat and dies.",
+      "The Bresnahanini rolton bleats loudly as he slumps to the ground and cradles his wounded left hoof.",
+      "The Bresnahanini rolton bleats loudly as he slumps to the ground and cradles his wounded right foreleg."
     ],
     decay: [
       "A Bresnahanini rolton decays into a pile of fur and bone."

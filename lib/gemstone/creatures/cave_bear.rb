@@ -102,7 +102,12 @@
     death: [
       "The cave bear collapses heavily into a heap on the ground and dies.",
       "The cave bear lets out a blood-curdling roar and dies.",
-      "The cave bear roars loudly as he slumps to the ground and licks his wounded right foreleg."
+      "The cave bear roars loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The cave bear roars loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The cave bear roars loudly as he slumps to the ground and licks his wounded right paw.",
+      "The cave bear roars loudly as she slumps to the ground and licks her wounded right paw.",
+      "The cave bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The cave bear roars loudly as he slumps to the ground and licks his wounded left paw."
     ],
     decay: [
       "A cave bear decays into a compost of fangs, fur and claws."

@@ -47,7 +47,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: nil,
+    melee: (65..67),
     ranged: (65..67),
     bolt: (65..67),
     udf: nil,
@@ -85,14 +85,22 @@
       ""
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A muddy hog trots {direction}."
+    ],
     death: [
       "The muddy hog collapses to the ground, emits a final squeal, and dies.",
       "The muddy hog lets out a final agonized squeal and dies.",
       "The muddy hog collapses to the ground, emits a final silent squeal, and dies.",
       "A muddy hog goes limp as she is rendered unconscious!",
       "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded left hoof."
+      "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded left hoof.",
+      "The muddy hog squeals loudly as he slumps to the ground and cradles his wounded left hoof.",
+      "The muddy hog squeals loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The muddy hog squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The muddy hog squeals loudly as he slumps to the ground and cradles his wounded right hoof.",
+      "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded right hoof."
     ],
     decay: [
       "A muddy hog decays into a pile of fur and bone."

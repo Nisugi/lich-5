@@ -90,7 +90,11 @@
     arrival: [
       "A rotting farmhand shambles in!"
     ],
-    flee: [],
+    flee: [
+      "A rotting farmhand shambles {direction}.",
+      "A rotting farmhand wails madly as she limps {direction}.",
+      "A rotting farmhand wails madly as he limps {direction}."
+    ],
     death: [
       "The rotting farmhand twitches violently, then dies.",
       "The rotting farmhand wails in terrifying pain one last time and lies still."

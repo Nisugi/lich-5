@@ -81,7 +81,7 @@
   defense_attributes: {
     asg: "various",
     immunities: [],
-    melee: 114,
+    melee: (111..133),
     ranged: 133,
     bolt: 133,
     udf: 130,
@@ -89,7 +89,7 @@
     cle_td: 63,
     emp_td: 63,
     pal_td: (60..63),
-    ran_td: nil,
+    ran_td: 63,
     sor_td: 59,
     wiz_td: nil,
     mje_td: 55,
@@ -131,7 +131,9 @@
     arrival: [
       "A hill troll just arrived!"
     ],
-    flee: [],
+    flee: [
+      "A hill troll heads {direction}."
+    ],
     death: [
       "The hill troll screams one last time and dies.",
       "The hill troll falls to the ground and dies.",

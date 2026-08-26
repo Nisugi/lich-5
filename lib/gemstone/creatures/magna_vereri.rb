@@ -110,7 +110,10 @@
       "A horrific magna vereri just arrived from a torchlit overgrown grotto."
     ],
     flee: [],
-    death: [],
+    death: [
+      "A bloodcurdling screech tears from the throat of a horrific magna vereri as she slumps to the ground.",
+      "A bloodcurdling screech tears from the throat of a voluptuous magna vereri as she slumps to the ground."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

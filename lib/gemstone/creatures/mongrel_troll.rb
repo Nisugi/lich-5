@@ -45,7 +45,7 @@
   defense_attributes: {
     asg: "11N",
     immunities: [],
-    melee: (81..100),
+    melee: (81..109),
     ranged: (87..109),
     bolt: (87..109),
     udf: 133,
@@ -93,7 +93,9 @@
       "A mongrel troll shambles in!",
       "A mongrel troll just arrived, limping in!"
     ],
-    flee: [],
+    flee: [
+      "A mongrel troll limps {direction}."
+    ],
     death: [
       "The mongrel troll twitches violently, then dies.",
       "The mongrel troll whimpers pitifully one last time and dies."

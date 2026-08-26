@@ -51,7 +51,7 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: (82..96),
+    melee: (64..96),
     ranged: (64..87),
     bolt: (64..87),
     udf: 183,
@@ -91,7 +91,9 @@
     arrival: [
       "A skeletal ice troll just arrived."
     ],
-    flee: [],
+    flee: [
+      "A skeletal ice troll runs {direction}."
+    ],
     death: [
       "The ice troll falls to the ground motionless.",
       "The ice troll screams evilly one last time and goes still."

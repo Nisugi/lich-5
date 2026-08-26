@@ -96,7 +96,9 @@
       "Speculated to have been a female wizard or sorcerer, this horrible creature has been bound to life after death by some horrible magic. Her rotting teeth, decaying flesh, and tattered robes leave little evidence left of her original appearance. Fading in and out of view, at times you can even see straight through her to the other side!\n\nAppraisal: The banshee is medium in size and about five feet high in her current state."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A banshee floats {direction}."
+    ],
     death: [
       "The banshee goes still for a moment while its head reshapes."
     ],

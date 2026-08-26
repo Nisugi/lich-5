@@ -54,7 +54,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 160,
     bar_td: nil,
     cle_td: (48..54),
     emp_td: (29..59),
@@ -100,7 +100,13 @@
       "A spectacled bear goes limp as she is rendered unconscious!",
       "A spectacled bear goes limp as he is rendered unconscious!",
       "The spectacled bear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
-      "The spectacled bear roars loudly as he slumps to the ground and licks his wounded left foreleg."
+      "The spectacled bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The spectacled bear roars loudly as she slumps to the ground and licks her wounded left paw.",
+      "The spectacled bear roars loudly as she slumps to the ground and licks her wounded right paw.",
+      "The spectacled bear roars loudly as he slumps to the ground and licks his wounded left paw.",
+      "The spectacled bear roars loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The spectacled bear roars loudly as he slumps to the ground and licks his wounded right paw.",
+      "The spectacled bear roars loudly as she slumps to the ground and licks her wounded left foreleg."
     ],
     decay: [
       "A spectacled bear decays into a compost of fangs, fur and claws."

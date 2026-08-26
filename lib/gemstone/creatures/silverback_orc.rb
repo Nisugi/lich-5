@@ -87,7 +87,9 @@
       "Silver-flecked eyes match the garish silver stripe down the silverback orc's back. It stands a hearty six feet tall, with pale white skin. Were it not for the flecks of blood and bits of tattered flesh sticking to its skin, it mayhaps be attractive. Or perhaps not."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A silverback orc runs {direction}."
+    ],
     death: [
       "A silverback orc curls up in the snow and dies.",
       "A silverback orc goes limp as he is rendered unconscious!",

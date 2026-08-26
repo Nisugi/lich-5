@@ -99,10 +99,14 @@
       "You are not quite sure what to make of the moor witch, as you have never seen anything that looks quite like it. Stopping a moment, you try to commit this creature to memory so that you can tell tales of it to your fellow adventurers back in the safety of the local tavern."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A moor witch hobbles {direction}.",
+      "A wavering moor witch hobbles {direction}."
+    ],
     death: [
       "A moor witch goes limp as she is rendered unconscious!",
-      "The moor witch's face takes on a surprised expression and she collapses, motionless."
+      "The moor witch's face takes on a surprised expression and she collapses, motionless.",
+      "The moor witch slumps to the ground."
     ],
     decay: [],
     search: [],

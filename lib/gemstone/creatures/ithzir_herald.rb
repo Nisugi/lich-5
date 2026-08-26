@@ -88,7 +88,7 @@
     bolt: 386,
     udf: 579,
     bar_td: (358..371),
-    cle_td: (364..380),
+    cle_td: (364..382),
     emp_td: (361..370),
     pal_td: nil,
     ran_td: nil,
@@ -138,7 +138,8 @@
     flee: [],
     death: [
       "The Ithzir herald vainly struggles to rise, then goes still.",
-      "An Ithzir herald's body shimmers slightly, then fades from view like a dissipating phantom."
+      "An Ithzir herald's body shimmers slightly, then fades from view like a dissipating phantom.",
+      "Just as you incant, the Ithzir herald shimmers and fades away, leaving you gesturing at nothingness!"
     ],
     decay: [],
     search: [],

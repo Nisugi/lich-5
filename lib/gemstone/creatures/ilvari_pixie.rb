@@ -75,7 +75,7 @@
     cle_td: (300..307),
     emp_td: (302..308),
     pal_td: (260..268),
-    ran_td: nil,
+    ran_td: 265,
     sor_td: (311..333),
     wiz_td: nil,
     mje_td: nil,
@@ -114,8 +114,12 @@
       "This smallish humanoid sports a pair of expressive sparkling eyes, lightly tanned skin, and a wide grin from ear to ear. Cute is too kind of a word for this caricature of elven descent. A faintly shimmering golden aura surrounds him."
     ],
     arrival: [],
-    flee: [],
-    death: [],
+    flee: [
+      "An Ilvari pixie limps {direction}."
+    ],
+    death: [
+      "The Ilvari pixie's eyes grow dim as his lifeforce fades away."
+    ],
     decay: [
       "The layer of bark on an Ilvari pixie hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
       "Acid dissolves connecting cartilage, freeing the Ilvari pixie's ribs to move independently.",

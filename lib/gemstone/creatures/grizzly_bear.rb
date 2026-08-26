@@ -105,7 +105,11 @@
       "The grizzly bear lets out a blood-curdling roar and dies.",
       "The grizzly bear collapses heavily into a heap on the ground and dies.",
       "A grizzly bear goes limp as he is rendered unconscious!",
-      "A grizzly bear goes limp as she is rendered unconscious!"
+      "A grizzly bear goes limp as she is rendered unconscious!",
+      "The grizzly bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The grizzly bear roars loudly as he slumps to the ground and licks his wounded right paw.",
+      "The grizzly bear roars loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The grizzly bear roars loudly as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [
       "A grizzly bear decays into a compost of fangs, fur and claws."

@@ -137,7 +137,9 @@
     flee: [],
     death: [
       "The lesser vruul twitches violently, then dies.",
-      "The lesser vruul screams one last time and lies still."
+      "The lesser vruul screams one last time and lies still.",
+      "The lesser vruul falls to the ground and lies still.",
+      "The lesser vruul slumps to the ground."
     ],
     decay: [],
     search: [],

@@ -93,7 +93,11 @@
       "The features of this horror are difficult to make out due to the shifting of its shadowy hide which instantly assumes the color of its surroundings. Despite the strange effect, its eyes glow red and a wave of ethereal light flashes across its mane."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A shadow mare trots {direction}.",
+      "A shadow mare gallops {direction}.",
+      "A shadow mare runs {direction}."
+    ],
     death: [
       "The shadow mare falls to the ground motionless.",
       "The shadow mare goes still for a moment while its head reshapes."

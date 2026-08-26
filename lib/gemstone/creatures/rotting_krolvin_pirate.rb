@@ -61,7 +61,7 @@
   defense_attributes: {
     asg: "11",
     immunities: [],
-    melee: (86..130),
+    melee: (46..130),
     ranged: (46..81),
     bolt: (46..81),
     udf: 122,
@@ -99,7 +99,10 @@
       "Gnarled white hair drapes in locks over the krolvin pirate's face, which is fixed in a constant murderous leer. The pirate's puffy grayish-blue skin is slashed and punctured with what must have been mortal wounds, but the foul creature before you pays the ancient injuries no heed as she seeks to continue her plundering ways well beyond the grave."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A rotting krolvin pirate swaggers {direction}.",
+      "A rotting krolvin pirate limps as he staggers {direction}."
+    ],
     death: [
       "The krolvin pirate spits out one last curse and lies still.",
       "The krolvin pirate vainly struggles to rise, then goes still."

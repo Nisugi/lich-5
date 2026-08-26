@@ -97,13 +97,21 @@
       "A sparkling sabre-tooth tiger prowls in!",
       "A shadowy sabre-tooth tiger prowls in!"
     ],
-    flee: [],
+    flee: [
+      "A sabre-tooth tiger prowls {direction}."
+    ],
     death: [
       "The sabre-tooth tiger crumples to the ground and dies.",
       "The sabre-tooth tiger lets out a final caterwaul and dies.",
       "A sabre-tooth tiger goes limp as she is rendered unconscious!",
       "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded left foreleg."
+      "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The sabre-tooth tiger mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The sabre-tooth tiger mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The sabre-tooth tiger mewls in pain as he slumps to the ground and licks his wounded right paw.",
+      "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded left paw.",
+      "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded right paw.",
+      "The sabre-tooth tiger mewls in pain as he slumps to the ground and licks his wounded left paw."
     ],
     decay: [
       "A sabre-tooth tiger decays into a compost of fangs, fur and claws.",

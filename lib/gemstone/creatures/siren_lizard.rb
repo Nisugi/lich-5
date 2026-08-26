@@ -87,9 +87,9 @@
     bolt: 173,
     udf: 248,
     bar_td: 137,
-    cle_td: nil,
+    cle_td: 151,
     emp_td: 150,
-    pal_td: nil,
+    pal_td: (124..127),
     ran_td: nil,
     sor_td: 159,
     wiz_td: nil,
@@ -122,12 +122,15 @@
     arrival: [
       "A siren lizard just arrived."
     ],
-    flee: [],
+    flee: [
+      "A siren lizard heads {direction}."
+    ],
     death: [
       "The siren lizard falls to the ground and dies.",
       "The siren lizard hisses one last time and dies.",
       "A siren lizard goes limp as it is rendered unconscious!",
-      "The siren lizard twitches violently, then dies."
+      "The siren lizard twitches violently, then dies.",
+      "The siren lizard slumps to the ground."
     ],
     decay: [
       "A siren lizard decays into compost."

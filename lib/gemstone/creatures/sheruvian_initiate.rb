@@ -102,7 +102,9 @@
     death: [
       "A Sheruvian initiate goes limp as it is rendered unconscious!",
       "A Sheruvian initiate lunges at you, exclaiming, \"I've seen children put up a better fight than this fool!  Now he dies!\"",
-      "The Sheruvian initiate screams emotionlessly one last time and lies still."
+      "The Sheruvian initiate screams emotionlessly one last time and lies still.",
+      "The Sheruvian initiate falls to the ground and lies still.",
+      "The Sheruvian initiate slumps to the ground."
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The Sheruvian initiate's tibia passes its femur in a very unpleasant manner!"

@@ -106,7 +106,11 @@
       "The dark panther lets out a final caterwaul and dies.",
       "The dark panther crumples to the ground and dies.",
       "The dark panther mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The dark panther mewls in pain as she slumps to the ground and licks her wounded right foreleg."
+      "The dark panther mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The dark panther mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The dark panther mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The dark panther mewls in pain as he slumps to the ground and licks his wounded left paw.",
+      "The dark panther mewls in pain as he slumps to the ground and licks his wounded right paw."
     ],
     decay: [
       "A dark panther decays into a compost of fangs, fur and claws."

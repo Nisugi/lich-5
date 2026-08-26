@@ -102,7 +102,8 @@
     ],
     flee: [],
     death: [
-      "A bog wraith's form dissipates into a purple haze."
+      "A bog wraith's form dissipates into a purple haze.",
+      "The bog wraith goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

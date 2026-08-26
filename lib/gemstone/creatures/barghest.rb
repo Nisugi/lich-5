@@ -96,7 +96,8 @@
     flee: [],
     death: [
       "The barghest falls to the ground and dies.",
-      "The barghest rolls over and dies."
+      "The barghest rolls over and dies.",
+      "The barghest goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

@@ -70,7 +70,7 @@
     bar_td: nil,
     cle_td: nil,
     emp_td: (213..219),
-    pal_td: nil,
+    pal_td: (198..208),
     ran_td: nil,
     sor_td: "229; 238",
     wiz_td: nil,
@@ -113,7 +113,11 @@
       "A massive pyrothag crawls {direction}."
     ],
     death: [
-      "The massive pyrothag vibrates violently one final time and then lies still."
+      "The massive pyrothag vibrates violently one final time and then lies still.",
+      "A massive pyrothag rumbles loudly as it leans to the left and topples to the ground with a loud *THUD*!",
+      "The massive pyrothag falls to the ground and lies still.",
+      "A massive pyrothag rumbles loudly as it leans to the right and topples to the ground with a loud *THUD*!",
+      "A grotesque massive pyrothag rumbles loudly as it leans to the right and topples to the ground with a loud *THUD*!"
     ],
     decay: [],
     search: [],

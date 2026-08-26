@@ -99,7 +99,8 @@
       "A bog troll goes limp as she is rendered unconscious!",
       "A bog troll goes limp as he is rendered unconscious!",
       "The bog troll twitches violently, then dies.",
-      "The bog troll tries to get back up but finally collapses and goes still."
+      "The bog troll tries to get back up but finally collapses and goes still.",
+      "The bog troll slumps to the ground."
     ],
     decay: [
       "A bog troll decays into compost."

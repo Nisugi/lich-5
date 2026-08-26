@@ -58,7 +58,7 @@
     bolt: 92,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 102,
     emp_td: 103,
     pal_td: nil,
     ran_td: nil,
@@ -91,7 +91,9 @@
       "The sand beetle appears to be some sort of giant insect. It looks a little like some misshapen scorpion, but the tail on it is not as long as a scorpion's would be, and it flares like the tail of a lobster rather than ending in a poison sting. The segmented body is wide, supported by six short multi-jointed legs. A dull red chitinous shell covers most of its body, and a broad carapace protects its head. Two massive claws provide the creature with formidable weapons."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A sand beetle meanders {direction}."
+    ],
     death: [
       "The sand beetle falls to the ground and lies twitching for a moment before going still.",
       "The sand beetle kicks a leg one last time and lies still."

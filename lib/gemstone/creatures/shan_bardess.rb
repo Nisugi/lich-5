@@ -50,7 +50,7 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 238,
     emp_td: (229..238),
     pal_td: nil,
     ran_td: nil,
@@ -88,15 +88,22 @@
     arrival: [
       "A shan bardess arrives barking a rhythmic verse!",
       "A shan bard just arrived.",
-      "A shan bard arrives barking a rhythmic verse!"
+      "A shan bard arrives barking a rhythmic verse!",
+      "A shan bardess just arrived."
     ],
-    flee: [],
+    flee: [
+      "A shan bardess pads {direction}.",
+      "A shan bard pads {direction}.",
+      "A shan bardess limps {direction}."
+    ],
     death: [
       "The shan bard yips in pain as he falls to the ground motionless.",
       "A shan bard's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
       "The shan bard howls out one last time and dies."
     ],
-    decay: [],
+    decay: [
+      "The shan bard's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

@@ -58,14 +58,14 @@
     asg: "20N",
     immunities: [],
     melee: (232..294),
-    ranged: nil,
-    bolt: nil,
+    ranged: 221,
+    bolt: 221,
     udf: 456,
     bar_td: (206..227),
     cle_td: (236..245),
     emp_td: (236..245),
     pal_td: (198..207),
-    ran_td: nil,
+    ran_td: (201..210),
     sor_td: (247..259),
     wiz_td: nil,
     mje_td: 265,
@@ -95,10 +95,20 @@
       "The stone mastiff is a huge grey dog that seems to be formed of living stone. The mastiff is rectangular in shape, and the length of the mastiff from forechest to rear is around five feet. Massive and heavy boned, with a powerful muscle structure, this stone mastiff presents a formidable foe."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A stone mastiff barrels {direction}."
+    ],
     death: [
       "The stone mastiff falls to the ground and dies.",
-      "The stone mastiff rolls over and dies."
+      "The stone mastiff rolls over and dies.",
+      "The stone mastiff yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The stone mastiff yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The stone mastiff yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The stone mastiff yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The stone mastiff yelps loudly as he slumps to the ground and licks his wounded left paw.",
+      "The stone mastiff yelps loudly as she slumps to the ground and licks her wounded right paw.",
+      "The stone mastiff yelps loudly as she slumps to the ground and licks her wounded left paw.",
+      "The stone mastiff yelps loudly as he slumps to the ground and licks his wounded right paw."
     ],
     decay: [
       "A stone mastiff crumbles into a pile of rubble."

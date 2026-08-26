@@ -68,7 +68,7 @@
     melee: (273..352),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 276,
     bar_td: (116..157),
     cle_td: (160..170),
     emp_td: (159..169),
@@ -113,7 +113,10 @@
       "The shan cleric stands in a half-crouch, her long, knotty legs giving her that lanky, dangerous look of a wolf. Walking upright, the body covered with mottled grey fur and her long arms conclude in large, clawed hands with semi-opposable thumbs. The shan cleric's dog-like visage is fierce, with slavering jaws and eyes that glow like something out of a bad dream."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A shan cleric pads {direction}.",
+      "A shan cleric limps {direction}."
+    ],
     death: [
       "The shan cleric howls out one last time and dies.",
       "The shan cleric yips in pain as she falls to the ground motionless.",

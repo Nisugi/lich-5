@@ -62,7 +62,7 @@
     bar_td: 51,
     cle_td: (75..81),
     emp_td: 75,
-    pal_td: nil,
+    pal_td: (72..75),
     ran_td: nil,
     sor_td: (45..51),
     wiz_td: nil,
@@ -102,7 +102,8 @@
     death: [
       "A giant veaba shudders violently as it dies.",
       "A giant veaba dies in a squirming, quivering heap.",
-      "A giant veaba dies; vitreous fluids escape its body."
+      "A giant veaba dies; vitreous fluids escape its body.",
+      "A giant veaba slumps to the ground unconscious."
     ],
     decay: [],
     search: [],

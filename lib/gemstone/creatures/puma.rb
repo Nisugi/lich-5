@@ -114,7 +114,12 @@
       "The puma crumples to the ground and dies.",
       "The puma mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
       "The puma mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The puma mewls in pain as he slumps to the ground and licks his wounded right foreleg."
+      "The puma mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The puma mewls in pain as she slumps to the ground and licks her wounded left paw.",
+      "The puma mewls in pain as he slumps to the ground and licks his wounded right paw.",
+      "The puma mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The puma mewls in pain as he slumps to the ground and licks his wounded left paw.",
+      "The puma mewls in pain as she slumps to the ground and licks her wounded right paw."
     ],
     decay: [
       "A puma decays into a compost of fangs, fur and claws.",

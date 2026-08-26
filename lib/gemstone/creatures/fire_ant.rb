@@ -94,9 +94,12 @@
       "A fire ant just arrived.",
       "A fire ant crawls in, feelers twitching."
     ],
-    flee: [],
+    flee: [
+      "A fire ant heads {direction}."
+    ],
     death: [
-      "The fire ant falls to the ground and dies, its feelers twitching."
+      "The fire ant falls to the ground and dies, its feelers twitching.",
+      "The fire ant feebly twitches a feeler one last time and dies."
     ],
     decay: [
       "A fire ant decays into compost."

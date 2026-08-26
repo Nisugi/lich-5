@@ -53,7 +53,7 @@
   defense_attributes: {
     asg: "7",
     immunities: [],
-    melee: (148..271),
+    melee: (139..271),
     ranged: (139..185),
     bolt: (139..185),
     udf: 319,
@@ -103,9 +103,12 @@
       "The image of a wandering minstrel greets the scrutinizing eye. The ghostly mara takes many forms, often times wearing the rotting and wornout gear of foreign lands. Her voice, so essential to her lifestyle in the former life, has taken on the unearthly sounds of a spirit long dead."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A ghostly mara floats {direction}."
+    ],
     death: [
-      "A haunting melody fills the air and fades as a ghostly mara dissipates into nothing."
+      "A haunting melody fills the air and fades as a ghostly mara dissipates into nothing.",
+      "The ghostly mara goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

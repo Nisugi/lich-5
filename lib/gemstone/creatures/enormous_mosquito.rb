@@ -56,7 +56,7 @@
     melee: 140,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 280,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -93,7 +93,8 @@
     arrival: [],
     flee: [],
     death: [
-      "An enormous mosquito goes limp as it is rendered unconscious!"
+      "An enormous mosquito goes limp as it is rendered unconscious!",
+      "The enormous mosquito slumps to the ground."
     ],
     decay: [
       "Growing brittle, the enormous mosquito's body suddenly caves in and turns to dust."

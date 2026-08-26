@@ -50,7 +50,7 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (112..149),
+    melee: (93..150),
     ranged: (93..132),
     bolt: (93..132),
     udf: 169,
@@ -93,7 +93,10 @@
       "A glittering crazed zombie shambles in!",
       "A luminous crazed zombie shambles in!"
     ],
-    flee: [],
+    flee: [
+      "A crazed zombie shambles {direction}.",
+      "A crazed zombie wails madly as she limps {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

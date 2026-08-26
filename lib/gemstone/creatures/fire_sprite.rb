@@ -61,7 +61,7 @@
     bar_td: nil,
     cle_td: nil,
     emp_td: 268,
-    pal_td: nil,
+    pal_td: (213..221),
     ran_td: nil,
     sor_td: (268..275),
     wiz_td: nil,
@@ -99,7 +99,9 @@
       "At first glance, the fire sprite looks like nothing more than a ball of whirling flame, spitting smoke and ricocheting about the rocks like a dervish. Gradually, her form coalesces, extending elongated arms and fingers, and short gnarled legs from the sphere of fire. The fire sprite's hideous features are pulled into a grimace of hate, and her eyes are like two glowing coals, which spout sparks as the creature wavers in and out of her tenuous configuration."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A fire sprite flits {direction}."
+    ],
     death: [
       "The fire sprite goes limp and she falls over as the fire slowly fades from her eyes."
     ],

@@ -54,7 +54,7 @@
   defense_attributes: {
     asg: "5",
     immunities: [],
-    melee: 114,
+    melee: 115,
     ranged: 115,
     bolt: 119,
     udf: 128,
@@ -97,7 +97,9 @@
       "An Agresh troll scout just arrived!",
       "An Agresh troll scout stalks in, glancing warily side to each side!"
     ],
-    flee: [],
+    flee: [
+      "An Agresh troll scout runs {direction}."
+    ],
     death: [
       "An Agresh troll scout goes limp as he is rendered unconscious!",
       "Intestines rupture from intense heat; an Agresh troll scout dies a slow, painful death."

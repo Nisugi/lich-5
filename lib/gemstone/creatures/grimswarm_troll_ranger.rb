@@ -91,7 +91,9 @@
       "A Grimswarm troll ranger just arrived.",
       "A Grimswarm troll ranger strides in, glowering upon the scene."
     ],
-    flee: [],
+    flee: [
+      "A Grimswarm troll ranger heads {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

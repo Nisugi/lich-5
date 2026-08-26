@@ -61,7 +61,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (80..151),
+    melee: (65..151),
     ranged: (65..78),
     bolt: (65..78),
     udf: 166,
@@ -110,7 +110,8 @@
     flee: [],
     death: [
       "The wraith falls to the ground motionless.",
-      "The wraith screams evilly one last time and goes still."
+      "The wraith screams evilly one last time and goes still.",
+      "The wraith goes still for a moment while its head reshapes."
     ],
     decay: [
       "A wraith turns to dust."

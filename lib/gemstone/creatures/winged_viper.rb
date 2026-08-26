@@ -98,7 +98,7 @@
     cle_td: (221..225),
     emp_td: (225..234),
     pal_td: (188..191),
-    ran_td: nil,
+    ran_td: 191,
     sor_td: (231..241),
     wiz_td: nil,
     mje_td: nil,
@@ -134,7 +134,10 @@
     flee: [
       "A winged viper flies {direction}."
     ],
-    death: [],
+    death: [
+      "The winged viper crashes to the ground, motionless.",
+      "The winged viper dissolves as the acidic poison consumes it from within."
+    ],
     decay: [
       "The winged viper dissolves as the acidic poison consumes it from within."
     ],

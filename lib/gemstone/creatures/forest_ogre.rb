@@ -69,7 +69,7 @@
     bolt: 82,
     udf: 192,
     bar_td: (45..51),
-    cle_td: nil,
+    cle_td: 51,
     emp_td: (51..59),
     pal_td: (48..51),
     ran_td: 54,
@@ -109,7 +109,10 @@
       "A forest ogre just arrived.",
       "A forest ogre just arrived, limping badly."
     ],
-    flee: [],
+    flee: [
+      "A forest ogre runs {direction}.",
+      "A forest ogre limps {direction}."
+    ],
     death: [
       "The forest ogre falls to the ground and dies.",
       "The forest ogre screams one last time and dies."

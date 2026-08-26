@@ -91,10 +91,13 @@
     arrival: [
       "A shelfae soldier just arrived."
     ],
-    flee: [],
+    flee: [
+      "A shelfae soldier runs {direction}."
+    ],
     death: [
       "The shelfae soldier falls to the ground and dies.",
-      "The shelfae soldier screams one last time and dies."
+      "The shelfae soldier screams one last time and dies.",
+      "The shelfae soldier slumps to the ground."
     ],
     decay: [
       "A soldier crumbles into dust."

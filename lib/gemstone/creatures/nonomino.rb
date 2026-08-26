@@ -62,7 +62,7 @@
     cle_td: (92..98),
     emp_td: (84..94),
     pal_td: (75..81),
-    ran_td: nil,
+    ran_td: (71..81),
     sor_td: (88..95),
     wiz_td: nil,
     mje_td: (85..98),
@@ -103,7 +103,10 @@
     arrival: [
       "A nonomino shambles in!"
     ],
-    flee: [],
+    flee: [
+      "A nonomino shambles {direction}.",
+      "A nonomino wails madly as he limps {direction}."
+    ],
     death: [
       "The nonomino falls to the ground motionless.",
       "The nonomino wails in terrifying pain one last time and lies still."

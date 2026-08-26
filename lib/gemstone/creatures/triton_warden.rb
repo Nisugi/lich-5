@@ -121,7 +121,10 @@
     arrival: [
       "A triton warden just arrived."
     ],
-    flee: [],
+    flee: [
+      "A triton warden heads {direction}.",
+      "A triton warden limps {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

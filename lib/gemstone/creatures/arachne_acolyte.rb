@@ -118,7 +118,9 @@
       "An Arachne acolyte just arrived."
     ],
     flee: [
-      "An Arachne acolyte winces and anxiously retreats!"
+      "An Arachne acolyte winces and anxiously retreats!",
+      "An Arachne acolyte heads {direction}.",
+      "An Arachne acolyte limps {direction}."
     ],
     death: [
       "The Arachne acolyte slumps to the ground and dies.",

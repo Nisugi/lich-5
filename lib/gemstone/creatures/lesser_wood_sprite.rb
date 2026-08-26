@@ -112,11 +112,14 @@
       "Seemingly from nowhere, a lesser wood sprite wanders in!"
     ],
     flee: [
-      "A lesser wood sprite glances around and then wanders {direction}!"
+      "A lesser wood sprite glances around and then wanders {direction}!",
+      "A lesser wood sprite screams loudly as she stands {direction}!"
     ],
     death: [
       "The lesser wood sprite twitches violently, then dies.",
-      "A lesser wood sprite goes limp as he is rendered unconscious!"
+      "A lesser wood sprite goes limp as he is rendered unconscious!",
+      "The lesser wood sprite's eyes grow dim as her lifeforce fades away.",
+      "The lesser wood sprite's eyes grow dim as his lifeforce fades away."
     ],
     decay: [
       "A lesser wood sprite crumbles into a pile of dry splinters.",

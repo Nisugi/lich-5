@@ -105,14 +105,18 @@
       "A moor hound stalks into the area with a sickly vapor pouring from her nostrils!",
       "A moor hound stalks into the room with a sickly vapor pouring from her nostrils!"
     ],
-    flee: [],
+    flee: [
+      "A moor hound plods {direction}."
+    ],
     death: [
       "The moor hound falls to the ground and dies.",
       "The moor hound rolls over and dies.",
       "A moor hound goes limp as she is rendered unconscious!",
       "A moor hound goes limp as he is rendered unconscious!",
       "The moor hound yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
-      "The moor hound yelps loudly as he slumps to the ground and licks his wounded right foreleg."
+      "The moor hound yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The moor hound yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The moor hound yelps loudly as he slumps to the ground and licks his wounded right paw."
     ],
     decay: [],
     search: [],

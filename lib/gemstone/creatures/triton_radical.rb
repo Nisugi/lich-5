@@ -32,7 +32,7 @@
     physical_attacks: [
       {
         name: "Scaling fork",
-        as: (430..505)
+        as: (430..520)
       },
       {
         name: "Trident",
@@ -96,9 +96,9 @@
     bolt: (275..326),
     udf: 649,
     bar_td: 375,
-    cle_td: nil,
+    cle_td: (402..407),
     emp_td: (369..372),
-    pal_td: 345,
+    pal_td: (335..338),
     ran_td: nil,
     sor_td: (416..420),
     wiz_td: nil,
@@ -141,13 +141,17 @@
       "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
       "A triton radical strides in, a wary look on his face.",
       "A triton executioner strides in, a wary look on her face.",
-      "A triton executioner stalks in silently, her cold eyes gleaming with hatred."
+      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
+      "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
+      "A triton combatant strides in, a wary look on her face.",
+      "A triton combatant strides in, a wary look on his face."
     ],
     flee: [],
     death: [
       "The siren gives a plaintive wail before she slumps to her side and dies.",
       "The triton radical gurgles once and goes still, a wrathful look on her face.",
-      "The triton radical gurgles once and goes still, a wrathful look on his face."
+      "The triton radical gurgles once and goes still, a wrathful look on his face.",
+      "The triton radical slumps to the ground."
     ],
     decay: [],
     search: [],

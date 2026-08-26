@@ -104,7 +104,8 @@
     ],
     flee: [],
     death: [
-      "The phantom slowly settles to the ground and begins to dissipate."
+      "The phantom slowly settles to the ground and begins to dissipate.",
+      "The phantom goes still for a moment while its head reshapes."
     ],
     decay: [
       "A phantom vanishes into thin air, leaving no trace behind."

@@ -69,7 +69,7 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: (227..573),
+    melee: (149..573),
     ranged: (149..222),
     bolt: (149..222),
     udf: 474,
@@ -77,7 +77,7 @@
     cle_td: (219..222),
     emp_td: 228,
     pal_td: (186..195),
-    ran_td: nil,
+    ran_td: (192..198),
     sor_td: (235..241),
     wiz_td: nil,
     mje_td: (240..243),
@@ -120,7 +120,8 @@
       "A stone giant crawls {direction}."
     ],
     death: [
-      "The stone giant rumbles in agony and goes still."
+      "The stone giant rumbles in agony and goes still.",
+      "The stone giant shudders and goes still."
     ],
     decay: [
       "The stone giant's right leg crumbles briefly and explodes in a shower of gore."

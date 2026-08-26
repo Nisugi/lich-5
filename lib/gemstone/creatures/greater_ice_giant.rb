@@ -100,7 +100,9 @@
       "The ice giant cries out in cold agony one last time and dies.",
       "The ice giant falls to the ground motionless."
     ],
-    decay: [],
+    decay: [
+      "The ice giant's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

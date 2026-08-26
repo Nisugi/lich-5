@@ -66,7 +66,7 @@
   defense_attributes: {
     asg: "8",
     immunities: [],
-    melee: (136..219),
+    melee: (103..219),
     ranged: (103..113),
     bolt: (103..113),
     udf: 243,

@@ -91,9 +91,12 @@
     arrival: [
       "A bog troll lumbers in, his face set in an angry scowl!"
     ],
-    flee: [],
+    flee: [
+      "A skeletal soldier clatters {direction}."
+    ],
     death: [
-      "The skeletal soldier struggles to rise to its feet, but soon lies still."
+      "The skeletal soldier struggles to rise to its feet, but soon lies still.",
+      "The skeletal soldier slumps to the ground."
     ],
     decay: [
       "A skeletal soldier crumbles to a fine white powder.",

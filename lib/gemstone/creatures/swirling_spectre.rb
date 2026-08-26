@@ -78,7 +78,7 @@
     bar_td: nil,
     cle_td: nil,
     emp_td: (134..136),
-    pal_td: nil,
+    pal_td: (108..118),
     ran_td: nil,
     sor_td: (139..145),
     wiz_td: nil,
@@ -119,7 +119,9 @@
     arrival: [
       "The wind manifests into a swirling spectre!"
     ],
-    flee: [],
+    flee: [
+      "A swirling spectre floats {direction}."
+    ],
     death: [
       "The swirling spectre goes still for a moment while its head reshapes."
     ],

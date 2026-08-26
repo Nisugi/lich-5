@@ -123,7 +123,10 @@
       "An Arachne priest just arrived.",
       "An Arachne priestess just arrived."
     ],
-    flee: [],
+    flee: [
+      "An Arachne priest heads {direction}.",
+      "An Arachne priestess heads {direction}."
+    ],
     death: [
       "The Arachne priest exhales a final curse and dies.",
       "The Arachne priest slumps to the ground and dies.",

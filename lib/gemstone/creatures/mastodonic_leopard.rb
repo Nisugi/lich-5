@@ -104,12 +104,22 @@
       "A mastodonic leopard crouches as he stalks into view!",
       "A stalwart mastodonic leopard prowls in!"
     ],
-    flee: [],
+    flee: [
+      "A mastodonic leopard prowls {direction}.",
+      "A mastodonic leopard roars loudly as he stands {direction}!",
+      "A mastodonic leopard roars loudly as she stands {direction}!"
+    ],
     death: [
       "The mastodonic leopard lets out a final caterwaul and dies.",
       "The mastodonic leopard crumples to the ground and dies.",
       "A mastodonic leopard goes limp as he is rendered unconscious!",
-      "A mastodonic leopard goes limp as she is rendered unconscious!"
+      "A mastodonic leopard goes limp as she is rendered unconscious!",
+      "The mastodonic leopard mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The mastodonic leopard mewls in pain as she slumps to the ground and licks her wounded left paw.",
+      "The mastodonic leopard slumps to the ground.",
+      "The mastodonic leopard mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The mastodonic leopard mewls in pain as he slumps to the ground and licks his wounded right paw.",
+      "The mastodonic leopard mewls in pain as he slumps to the ground and licks his wounded left foreleg."
     ],
     decay: [
       "A mastodonic leopard decays into a compost of fangs, fur and claws.",

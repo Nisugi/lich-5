@@ -53,7 +53,7 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (87..90),
+    melee: (56..90),
     ranged: (56..73),
     bolt: (56..73),
     udf: 122,
@@ -61,7 +61,7 @@
     cle_td: (45..54),
     emp_td: (45..54),
     pal_td: (45..54),
-    ran_td: nil,
+    ran_td: (45..54),
     sor_td: (42..54),
     wiz_td: nil,
     mje_td: 48,
@@ -96,7 +96,8 @@
     flee: [],
     death: [
       "A phosphorescent worm goes limp as it is rendered unconscious!",
-      "A phosphorescent worm slumps to the ground, its glowing form now motionless and dull."
+      "A phosphorescent worm slumps to the ground, its glowing form now motionless and dull.",
+      "The phosphorescent worm slumps to the ground."
     ],
     decay: [],
     search: [],

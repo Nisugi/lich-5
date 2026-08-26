@@ -168,9 +168,15 @@
       "The air becomes deathly cold as a Vvrael warlock strides into view!",
       "A Vvrael warlock strides in!"
     ],
-    flee: [],
+    flee: [
+      "A Vvrael warlock strides {direction}."
+    ],
     death: [
-      "The Vvrael warlock writhes in black agony and dies."
+      "The Vvrael warlock writhes in black agony and dies.",
+      "The Vvrael warlock crumples to the floor motionless.",
+      "The Vvrael warlock crumples to the ground motionless.",
+      "The Vvrael warlock wails with rage as he crumples to the ground!  A viscous black liquid sprays out from his severed right leg thrashing on the ground!",
+      "The Vvrael warlock wails with rage as he crumples to the ground!  A viscous black liquid sprays out from his severed left leg thrashing on the ground!"
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the Vvrael warlock's ribs to move independently."

@@ -116,8 +116,12 @@
     arrival: [
       "A stone sentinel just arrived."
     ],
-    flee: [],
-    death: [],
+    flee: [
+      "A stone sentinel heads {direction}."
+    ],
+    death: [
+      "The stone sentinel slumps to the ground."
+    ],
     decay: [
       "A stone sentinel crumbles to dust."
     ],

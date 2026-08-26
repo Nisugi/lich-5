@@ -113,14 +113,18 @@
       "The great boar snorts loudly and scrapes at the ground, peering around with his close-set, bloodshot eyes in hopes of finding something he can gore into a bloody pulp or pound into the earth. His body is covered with coarse, mottled, grey-brown hair, and gleaming tusks protrude from each side of his gaping mouth. A good six feet long from dripping snout to curly tail and weighing more than a quarter ton, the great boar moves with surprising speed and dexterity as he bears down, squealing furiously, on his intended prey. This is one mean brute."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A great boar grunts and barrels {direction}."
+    ],
     death: [
       "The great boar collapses to the ground, emits a final squeal, and dies.",
       "The great boar lets out a final agonized squeal and dies.",
       "The great boar collapses to the ground, emits a final silent squeal, and dies.",
       "The great boar silently lets out a final agonized squeal and dies.",
       "The great boar squeals loudly as he slumps to the ground and cradles his wounded left hoof.",
-      "The great boar squeals loudly as he slumps to the ground and cradles his wounded left foreleg."
+      "The great boar squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The great boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The great boar squeals loudly as he slumps to the ground and cradles his wounded right hoof."
     ],
     decay: [
       "A great boar decays into a pile of fur and bone."

@@ -54,7 +54,7 @@
     bar_td: 72,
     cle_td: nil,
     emp_td: 85,
-    pal_td: nil,
+    pal_td: (59..62),
     ran_td: nil,
     sor_td: nil,
     wiz_td: nil,

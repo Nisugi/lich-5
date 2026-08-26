@@ -95,7 +95,10 @@
       "A spectral miner just arrived.",
       "A ready spectral miner just arrived."
     ],
-    flee: [],
+    flee: [
+      "A spectral miner heads {direction}.",
+      "A ready spectral miner heads {direction}."
+    ],
     death: [
       "The spectral miner falls to the ground motionless.",
       "The spectral miner goes still for a moment while its head reshapes."

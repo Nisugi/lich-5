@@ -103,7 +103,9 @@
       "This creature resembles nothing so much as a giant scorpion, easily capable of hunting prey as large as a man. Longer than a halfling is tall, its giant insectile body scuttles about on 8 swift legs, armed with two pincer claws over a foot long. It gazes at its prey with cold-gleaming faceted eyes, while its segmented tail, tipped with a deadly sting, arches over its body, ready to reach out with poisonous agony."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A whiptail scurries {direction}."
+    ],
     death: [
       "The whiptail falls back and dies.",
       "The whiptail hisses one last time and dies."

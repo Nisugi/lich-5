@@ -54,7 +54,7 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: (112..156),
+    melee: (93..156),
     ranged: (93..135),
     bolt: (93..135),
     udf: 169,
@@ -62,7 +62,7 @@
     cle_td: (64..76),
     emp_td: (64..72),
     pal_td: (63..72),
-    ran_td: nil,
+    ran_td: (63..69),
     sor_td: (68..80),
     wiz_td: nil,
     mje_td: 79,
@@ -96,7 +96,11 @@
     arrival: [
       "A zombie shambles in!"
     ],
-    flee: [],
+    flee: [
+      "A zombie wails madly as he limps {direction}.",
+      "A zombie wails madly as she limps {direction}.",
+      "A zombie shambles {direction}."
+    ],
     death: [],
     decay: [
       "Acid dissolves connecting cartilage, freeing the zombie's ribs to move independently."

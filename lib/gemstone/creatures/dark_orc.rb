@@ -114,7 +114,10 @@
       "The dark orc obtains her name not from having dark coloration, but from her proclivity for seeking out dark places in which to live. In fact, the dark orc's body is covered by a fine layer of salt-and-pepper fur, with a preponderance of the lighter shade. Thick of skull and lacking good reasoning ability, the dark orc subsists on whatever creatures are foolish enough to find their way into her line of sight with no real concern as to how tough to kill or dangerous they might be."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A dark orc rambles {direction}.",
+      "A dark orc grunts in pain and runs {direction}."
+    ],
     death: [
       "A dark orc gives a last shudder and dies."
     ],

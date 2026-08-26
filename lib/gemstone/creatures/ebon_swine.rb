@@ -47,10 +47,10 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: 100,
+    melee: 67,
     ranged: 67,
     bolt: 67,
-    udf: nil,
+    udf: 128,
     bar_td: nil,
     cle_td: (39..42),
     emp_td: (21..51),
@@ -85,14 +85,21 @@
       ""
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "An ebon swine trots {direction}."
+    ],
     death: [
       "The ebon swine lets out a final agonized squeal and dies.",
       "The ebon swine collapses to the ground, emits a final squeal, and dies.",
       "The ebon swine twitches violently, then dies.",
       "The ebon swine silently lets out a final agonized squeal and dies.",
       "The ebon swine squeals loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The ebon swine squeals loudly as he slumps to the ground and cradles his wounded left foreleg."
+      "The ebon swine squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The ebon swine squeals loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "The ebon swine squeals loudly as he slumps to the ground and cradles his wounded right hoof.",
+      "The ebon swine squeals loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The ebon swine squeals loudly as he slumps to the ground and cradles his wounded left hoof.",
+      "The ebon swine squeals loudly as she slumps to the ground and cradles her wounded left hoof."
     ],
     decay: [
       "An ebon swine decays into a pile of fur and bone."

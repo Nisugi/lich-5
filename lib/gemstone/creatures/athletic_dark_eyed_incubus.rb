@@ -110,7 +110,8 @@
       "An athletic dark-eyed incubus crawls {direction}."
     ],
     death: [
-      "Intestines rupture from intense heat; an athletic dark-eyed incubus dies a slow, painful death."
+      "Intestines rupture from intense heat; an athletic dark-eyed incubus dies a slow, painful death.",
+      "The dark-eyed incubus slumps to the ground."
     ],
     decay: [
       "Shadows crawl toward the form of an athletic dark-eyed incubus, engulfing it in a stygian tide.  The darkness dissolves into the ground with a faint sound of rushing liquid.",

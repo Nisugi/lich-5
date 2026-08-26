@@ -92,7 +92,9 @@
     arrival: [
       "A blackened decaying tumbleweed spins in kicking up snow as it arrives!"
     ],
-    flee: [],
+    flee: [
+      "A blackened decaying tumbleweed rolls {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

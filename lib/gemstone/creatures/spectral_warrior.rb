@@ -118,9 +118,12 @@
     arrival: [
       "A spectral warrior strides in!"
     ],
-    flee: [],
+    flee: [
+      "A spectral warrior strides {direction}!"
+    ],
     death: [
-      "A spectral warrior dissipates into ethereal wisps."
+      "A spectral warrior dissipates into ethereal wisps.",
+      "The spectral warrior goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

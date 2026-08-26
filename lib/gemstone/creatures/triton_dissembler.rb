@@ -66,11 +66,11 @@
     melee: 291,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 470,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 388,
     emp_td: 380,
-    pal_td: nil,
+    pal_td: (334..337),
     ran_td: nil,
     sor_td: (378..385),
     wiz_td: nil,
@@ -110,7 +110,10 @@
     arrival: [
       "A triton dissembler arrives, striding forth with her robes trailing behind her.",
       "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton dissembler arrives, striding forth with his robes trailing behind him."
+      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
+      "A triton dissembler strides in, a wary look on his face.",
+      "A triton dissembler strides in, a wary look on her face.",
+      "A triton dissembler strides in, gliding swiftly through the water with a wary look on her face."
     ],
     flee: [],
     death: [

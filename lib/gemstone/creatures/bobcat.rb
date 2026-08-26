@@ -109,7 +109,11 @@
       "The bobcat crumples to the ground and dies.",
       "The bobcat lets out a final caterwaul and dies.",
       "The bobcat mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The bobcat mewls in pain as he slumps to the ground and licks his wounded left foreleg."
+      "The bobcat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The bobcat mewls in pain as she slumps to the ground and licks her wounded left paw.",
+      "The bobcat mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The bobcat mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The bobcat mewls in pain as he slumps to the ground and licks his wounded left paw."
     ],
     decay: [
       "A bobcat decays into a compost of fangs, fur and claws."

@@ -100,9 +100,13 @@
       "A troll chieftain just arrived!",
       "A troll chieftain just arrived."
     ],
-    flee: [],
+    flee: [
+      "A troll chieftain runs {direction}."
+    ],
     death: [
-      "The troll chieftain bellows in rage one last time and dies."
+      "The troll chieftain bellows in rage one last time and dies.",
+      "The troll chieftain slumps to the ground.",
+      "The troll chieftain snarls her defiance before collapsing and going still."
     ],
     decay: [
       "A troll chieftain decays into compost."

@@ -101,7 +101,11 @@
       "The wolverine hisses one last time and dies.",
       "A wolverine goes limp as it is rendered unconscious!",
       "The wolverine twitches violently, then dies.",
-      "A wolverine screeches loudly and slumps to the ground while frantically licking its wounded right foreleg."
+      "A wolverine screeches loudly and slumps to the ground while frantically licking its wounded right foreleg.",
+      "A wolverine screeches loudly and slumps to the ground while frantically licking its wounded left foreleg.",
+      "A wolverine screeches loudly and slumps to the ground while frantically licking its wounded left paw.",
+      "The wolverine slumps to the ground.",
+      "A wolverine screeches loudly and slumps to the ground while frantically licking its wounded right paw."
     ],
     decay: [
       "A wolverine decays into compost.",

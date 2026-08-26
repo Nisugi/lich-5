@@ -89,7 +89,9 @@
       "Formed by the alchemists of the Citadel in their service to the Council of Twelve, these 4' tall golems appear to be made of coalesced night sky. Looking closely, you can see stars twinkling within their short, massive bodies."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A night golem lopes {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

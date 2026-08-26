@@ -83,11 +83,16 @@
       "This is obviously a prime example of the beast of legend, the fiend of song and tale. Known near and far as an implacable enemy of early settlers, it was this ferocious sheeplike creature that earned the epithet of Sorcerer-Killer in its sordid past. The black rolton is covered with a dusty, matted, disgusting-looking black pelt that is abysmally smelly. However, it isn't this trait alone that gives her such a terrifying appearance. As the animal bleats at you, it is then you get a view of the 'maw of death', with its long, curved incisors that gnash and gnaw. The critter has some nasty-looking hooves as well."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A black rolton trots {direction}."
+    ],
     death: [
       "The black rolton collapses to the ground, emits a final bleat, and dies.",
       "The black rolton lets out a final agonized bleat and dies.",
-      "The black rolton bleats loudly as he slumps to the ground and cradles his wounded left foreleg."
+      "The black rolton bleats loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The black rolton bleats loudly as he slumps to the ground and cradles his wounded right hoof.",
+      "The black rolton bleats loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The black rolton bleats loudly as she slumps to the ground and cradles her wounded left hoof."
     ],
     decay: [
       "A black rolton decays into a pile of fur and bone."

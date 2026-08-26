@@ -117,7 +117,8 @@
       "A rotting chimera stomps in."
     ],
     flee: [
-      "A rotting chimera crawls {direction}."
+      "A rotting chimera crawls {direction}.",
+      "A rotting chimera lowers its head and stomps {direction}."
     ],
     death: [
       "A rotting chimera releases a loud, weary sigh and slumps to the ground."

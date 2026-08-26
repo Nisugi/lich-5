@@ -87,7 +87,9 @@
     arrival: [
       "A shelfae guard just arrived."
     ],
-    flee: [],
+    flee: [
+      "A shelfae guard runs {direction}."
+    ],
     death: [
       "The shelfae guard falls to the ground and dies.",
       "A shelfae guard goes limp as it is rendered unconscious!",

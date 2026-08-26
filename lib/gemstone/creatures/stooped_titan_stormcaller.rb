@@ -51,7 +51,7 @@
     bar_td: nil,
     cle_td: nil,
     emp_td: (334..344),
-    pal_td: nil,
+    pal_td: (293..303),
     ran_td: nil,
     sor_td: "335 to 365",
     wiz_td: nil,
@@ -92,16 +92,19 @@
     arrival: [
       "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
       "A stooped titan stormcaller strides in, each step like a peal of thunder.",
-      "A stooped titan stormcaller stiffly strides in, each step like a peal of thunder."
+      "A stooped titan stormcaller stiffly strides in, each step like a peal of thunder.",
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
     ],
     flee: [],
     death: [
       "A stooped titan stormcaller goes limp as she is rendered unconscious!",
       "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as she dies.",
-      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as he dies."
+      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as he dies.",
+      "A stooped titan stormcaller slumps to the ground unconscious."
     ],
     decay: [
-      "The titan stormcaller's left leg crumbles briefly and explodes in a shower of gore."
+      "The titan stormcaller's left leg crumbles briefly and explodes in a shower of gore.",
+      "The titan stormcaller's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

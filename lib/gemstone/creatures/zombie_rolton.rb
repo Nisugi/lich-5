@@ -102,7 +102,10 @@
     ],
     death: [
       "The zombie rolton falls back into a heap and dies.",
-      "The zombie rolton hisses one last time and dies."
+      "The zombie rolton hisses one last time and dies.",
+      "A zombie rolton screeches loudly and slumps to the ground while frantically licking its wounded right hoof.",
+      "A zombie rolton screeches loudly and slumps to the ground while frantically licking its wounded left hoof.",
+      "A zombie rolton screeches loudly and slumps to the ground while frantically licking its wounded left foreleg."
     ],
     decay: [
       "A zombie rolton decays into compost."

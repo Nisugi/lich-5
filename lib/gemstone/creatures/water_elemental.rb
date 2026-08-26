@@ -69,9 +69,9 @@
     bolt: nil,
     udf: nil,
     bar_td: 409,
-    cle_td: nil,
+    cle_td: 427,
     emp_td: 407,
-    pal_td: nil,
+    pal_td: (368..377),
     ran_td: nil,
     sor_td: nil,
     wiz_td: nil,
@@ -106,7 +106,8 @@
       "The water elemental's upper body is that of a humanoid, while its lower body forms a turbulent, watery vortex. The facial features of the elemental creature are vague and shifting, rippling with every contortion of its face. Sloshing and splashing noises accompany each movement of the water elemental, along with an odd gurgling."
     ],
     arrival: [
-      "A triton executioner strides in, gliding swiftly through the water with a wary look on his face."
+      "A triton executioner strides in, gliding swiftly through the water with a wary look on his face.",
+      "A water elemental just arrived."
     ],
     flee: [],
     death: [
@@ -139,7 +140,17 @@
       "The glimmer of an uncut ruby catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
       "The glimmer of a blue starstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
       "The glimmer of some asterfire quartz catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
-      "The glimmer of a black moonstone catches your eye as the water elemental gurgles eerily and collapses into the water."
+      "The glimmer of a black moonstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a blue moonstone catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a yellow zircon catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a blue peridot catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a black deathstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a star sapphire catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a yellow zircon catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a red spinel catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
+      "A water elemental decays into compost.",
+      "The glimmer of a white sunstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a green tourmaline catches your eye as the water elemental gurgles eerily and collapses into the water."
     ],
     search: [],
     spell_prep: [],

@@ -130,7 +130,9 @@
       "A tough triton brawler just arrived, limping badly.",
       "A triton brawler just arrived, limping."
     ],
-    flee: [],
+    flee: [
+      "A triton brawler heads {direction}."
+    ],
     death: [
       "The triton brawler gurgles once and goes still, a wrathful look on her face."
     ],

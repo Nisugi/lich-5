@@ -107,7 +107,7 @@
     cle_td: (355..361),
     emp_td: 361,
     pal_td: (305..311),
-    ran_td: nil,
+    ran_td: (308..314),
     sor_td: (365..379),
     wiz_td: nil,
     mje_td: 389,
@@ -150,7 +150,9 @@
       "A treekin druid lumbers {direction}, leaving a trail of leaves of behind it.",
       "A treekin druid shudders and lumbers {direction}, leaving a trail of sap and leaves of behind it."
     ],
-    death: [],
+    death: [
+      "The druid teeters and then topples to the ground!"
+    ],
     decay: [
       "The layer of bark on a treekin druid hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
       "The layer of bark on a treekin druid hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust.",

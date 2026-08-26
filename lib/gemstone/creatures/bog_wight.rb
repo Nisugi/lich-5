@@ -53,11 +53,11 @@
     melee: (225..330),
     ranged: nil,
     bolt: (199..204),
-    udf: nil,
+    udf: 305,
     bar_td: (126..132),
     cle_td: 145,
     emp_td: (141..144),
-    pal_td: nil,
+    pal_td: (123..132),
     ran_td: nil,
     sor_td: (153..162),
     wiz_td: nil,
@@ -92,10 +92,13 @@
     arrival: [
       "A bog wight just arrived."
     ],
-    flee: [],
+    flee: [
+      "A bog wight rushes {direction}."
+    ],
     death: [
       "The bog wight falls to the ground motionless.",
-      "The bog wight wails in terrifying pain one last time and lies still."
+      "The bog wight wails in terrifying pain one last time and lies still.",
+      "The bog wight slumps to the ground."
     ],
     decay: [],
     search: [],

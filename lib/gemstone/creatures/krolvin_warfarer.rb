@@ -141,7 +141,10 @@
       "As tall as the average human, the warfarer has the characteristic long-fingered hands and sturdy musculature that denote most of the krolvin race. The warfarer also sports the trademark grey-blue skin and thick, coarse, white hair covers his head and spreads across his shoulders and down his back."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A krolvin warfarer stumps {direction}.",
+      "A belligerent krolvin warfarer stumps {direction}."
+    ],
     death: [
       "A krolvin warfarer goes limp as he is rendered unconscious!",
       "The krolvin warfarer twitches violently, then dies.",

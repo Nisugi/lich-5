@@ -55,7 +55,7 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (128..151),
+    melee: (85..151),
     ranged: 85,
     bolt: 85,
     udf: 146,
@@ -105,7 +105,12 @@
       "The black leopard lets out a final caterwaul and dies.",
       "The black leopard crumples to the ground and dies.",
       "The black leopard mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The black leopard mewls in pain as he slumps to the ground and licks his wounded right foreleg."
+      "The black leopard mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The black leopard mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The black leopard mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The black leopard mewls in pain as she slumps to the ground and licks her wounded right paw.",
+      "The black leopard mewls in pain as he slumps to the ground and licks his wounded left paw.",
+      "The black leopard mewls in pain as she slumps to the ground and licks her wounded left paw."
     ],
     decay: [
       "A black leopard decays into a compost of fangs, fur and claws."

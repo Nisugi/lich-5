@@ -68,7 +68,7 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (139..160),
+    melee: (69..160),
     ranged: (69..109),
     bolt: (69..109),
     udf: 180,
@@ -109,7 +109,10 @@
       "A wood wight just arrived.",
       "A wood wight just arrived, limping badly."
     ],
-    flee: [],
+    flee: [
+      "A wood wight runs {direction}.",
+      "A wood wight limps {direction}."
+    ],
     death: [
       "The wood wight screams evilly one last time and goes still."
     ],

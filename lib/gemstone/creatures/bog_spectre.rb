@@ -71,7 +71,7 @@
     bar_td: 182,
     cle_td: 185,
     emp_td: (181..190),
-    pal_td: nil,
+    pal_td: (155..160),
     ran_td: nil,
     sor_td: (195..205),
     wiz_td: nil,
@@ -113,7 +113,8 @@
     flee: [],
     death: [
       "A heavy mist pours from the bog spectre as he slumps to the ground.",
-      "A heavy mist pours from the bog spectre as she slumps to the ground."
+      "A heavy mist pours from the bog spectre as she slumps to the ground.",
+      "The bog spectre goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

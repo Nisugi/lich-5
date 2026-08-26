@@ -53,7 +53,7 @@
     cle_td: 12,
     emp_td: 12,
     pal_td: (9..12),
-    ran_td: nil,
+    ran_td: 12,
     sor_td: 12,
     wiz_td: nil,
     mje_td: 12,

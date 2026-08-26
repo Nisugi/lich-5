@@ -109,7 +109,12 @@
     death: [
       "The tusked ursian collapses heavily into a heap on the ground and dies.",
       "The tusked ursian lets out a blood-curdling roar and dies.",
-      "A tusked ursian goes limp as she is rendered unconscious!"
+      "A tusked ursian goes limp as she is rendered unconscious!",
+      "The tusked ursian slumps to the ground.",
+      "The tusked ursian roars loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The tusked ursian roars loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The tusked ursian roars loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The tusked ursian roars loudly as she slumps to the ground and licks her wounded left foreleg."
     ],
     decay: [],
     search: [],

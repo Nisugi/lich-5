@@ -76,7 +76,7 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (112..226),
+    melee: (105..226),
     ranged: (105..126),
     bolt: (105..126),
     udf: 230,
@@ -116,7 +116,9 @@
     arrival: [
       "A tree spirit just arrived."
     ],
-    flee: [],
+    flee: [
+      "A tree spirit heads {direction}."
+    ],
     death: [
       "The tree spirit slowly settles to the ground and begins to dissipate."
     ],

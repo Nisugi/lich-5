@@ -101,7 +101,9 @@
       "A greater ghoul just arrived!",
       "A greater ghoul just arrived."
     ],
-    flee: [],
+    flee: [
+      "A greater ghoul runs {direction}."
+    ],
     death: [
       "The greater ghoul falls to the ground motionless.",
       "The greater ghoul screams evilly one last time and goes still."

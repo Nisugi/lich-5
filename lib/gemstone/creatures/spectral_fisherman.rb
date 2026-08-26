@@ -101,7 +101,8 @@
     ],
     flee: [],
     death: [
-      "The spectral fisherman falls to the ground motionless."
+      "The spectral fisherman falls to the ground motionless.",
+      "The spectral fisherman goes still for a moment while its head reshapes."
     ],
     decay: [
       "A spectral fisherman turns to dust."

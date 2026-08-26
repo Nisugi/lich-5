@@ -97,7 +97,8 @@
     flee: [],
     death: [
       "The snow spectre falls to the ground motionless.",
-      "The snow spectre screams evilly one last time and goes still."
+      "The snow spectre screams evilly one last time and goes still.",
+      "The snow spectre slumps to the ground."
     ],
     decay: [
       "A snow spectre turns to dust."

@@ -53,9 +53,9 @@
   defense_attributes: {
     asg: "11N",
     immunities: [],
-    melee: (64..227),
-    ranged: (60..146),
-    bolt: (60..146),
+    melee: (60..227),
+    ranged: (94..99),
+    bolt: (94..99),
     udf: 225,
     bar_td: nil,
     cle_td: (57..66),
@@ -92,7 +92,9 @@
     ],
     arrival: [],
     flee: [
-      "A major spider crawls {direction}."
+      "A major spider crawls {direction}.",
+      "A major spider scurries {direction}.",
+      "A major spider hobbles {direction}."
     ],
     death: [
       "The major spider collapses to the ground and dies.",

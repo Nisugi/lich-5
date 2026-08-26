@@ -99,7 +99,8 @@
       "A moor eagle flies {direction}."
     ],
     death: [
-      "A moor eagle goes limp as it is rendered unconscious!"
+      "A moor eagle goes limp as it is rendered unconscious!",
+      "The moor eagle slumps to the ground."
     ],
     decay: [
       "The moor eagle decays into a pile of feathers.",

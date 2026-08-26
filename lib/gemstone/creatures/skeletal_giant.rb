@@ -52,7 +52,7 @@
     melee: 197,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 200,
     bar_td: nil,
     cle_td: 105,
     emp_td: 106,
@@ -86,8 +86,12 @@
     description: [
       "Once haughtily roaming the land of the living, this fearsome giant now mindlessly and unceasingly moves from place to place. The skeletal giant glares straight ahead, eyes like smoldering coals contrasting with the bleached white bone of its thick skull. Although its flesh is mostly a memory, the strong, heavy bones are still intact, and an unseen force keeps them connected, driven toward the destruction of all things living."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A skeletal giant just arrived."
+    ],
+    flee: [
+      "A skeletal giant runs {direction}."
+    ],
     death: [
       "A skeletal giant falls to the ground in a clattering, motionless heap.",
       "Beautiful shot pierces both lungs, the skeletal giant makes a wheezing noise, and drops dead!"

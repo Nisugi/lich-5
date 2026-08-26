@@ -112,12 +112,17 @@
     ],
     arrival: [],
     flee: [
-      "A massive black boar crawls {direction}."
+      "A massive black boar crawls {direction}.",
+      "A massive black boar grunts and barrels {direction}."
     ],
     death: [
       "The black boar lets out a final agonized squeal and dies.",
       "The black boar collapses to the ground, emits a final squeal, and dies.",
-      "The black boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg."
+      "The black boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The black boar squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The black boar slumps to the ground.",
+      "The black boar squeals loudly as he slumps to the ground and cradles his wounded right hoof.",
+      "The black boar squeals loudly as he slumps to the ground and cradles his wounded left hoof."
     ],
     decay: [
       "A massive black boar decays into a pile of fur and bone."

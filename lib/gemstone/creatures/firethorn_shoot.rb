@@ -60,9 +60,9 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 159,
     emp_td: 158,
-    pal_td: nil,
+    pal_td: (131..134),
     ran_td: nil,
     sor_td: 167,
     wiz_td: nil,
@@ -96,7 +96,9 @@
       "A firethorn shoot shambles in.",
       "A firethorn shoot just arrived."
     ],
-    flee: [],
+    flee: [
+      "A firethorn shoot heads {direction}."
+    ],
     death: [
       "The firethorn shoot falls to the ground and dies.",
       "A firethorn shoot goes limp as it is rendered unconscious!",

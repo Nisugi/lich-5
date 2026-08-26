@@ -119,7 +119,9 @@
     arrival: [
       "A darkwoode just arrived."
     ],
-    flee: [],
+    flee: [
+      "A darkwoode runs {direction}."
+    ],
     death: [
       "The darkwoode slowly settles to the ground and begins to dissipate."
     ],

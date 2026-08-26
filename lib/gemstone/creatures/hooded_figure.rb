@@ -216,7 +216,8 @@
     death: [
       "A hooded figure goes limp as it is rendered unconscious!",
       "The hooded figure screams one last time and lies still.",
-      "The hooded figure falls to the ground and lies still."
+      "The hooded figure falls to the ground and lies still.",
+      "The hooded figure slumps to the ground."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the hooded figure's ribs to move independently."

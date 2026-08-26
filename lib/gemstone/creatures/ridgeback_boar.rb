@@ -102,14 +102,19 @@
     ],
     arrival: [],
     flee: [
-      "A ridgeback boar crawls {direction}."
+      "A ridgeback boar crawls {direction}.",
+      "A ridgeback boar grunts and barrels {direction}."
     ],
     death: [
       "The ridgeback boar collapses to the ground, emits a final squeal, and dies.",
       "The ridgeback boar lets out a final agonized squeal and dies.",
       "The ridgeback boar silently lets out a final agonized squeal and dies.",
       "The ridgeback boar collapses to the ground, emits a final silent squeal, and dies.",
-      "The ridgeback boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg."
+      "The ridgeback boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The ridgeback boar squeals silently as he slumps to the ground and cradles his wounded right foreleg.",
+      "The ridgeback boar squeals loudly as he slumps to the ground and cradles his wounded right hoof.",
+      "The ridgeback boar squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The ridgeback boar squeals loudly as he slumps to the ground and cradles his wounded left hoof."
     ],
     decay: [
       "A ridgeback boar decays into a pile of fur and bone."

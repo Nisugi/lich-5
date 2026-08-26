@@ -104,7 +104,9 @@
     arrival: [
       "A manticore just arrived."
     ],
-    flee: [],
+    flee: [
+      "A manticore heads {direction}."
+    ],
     death: [
       "The manticore falls to the ground and dies.",
       "The manticore screams one last time and dies."

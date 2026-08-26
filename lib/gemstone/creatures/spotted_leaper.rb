@@ -95,12 +95,17 @@
       "The spotted leaper appears a bizarre cross between a wolf and a frog. Perhaps six feet from snout to rump, covered with slick, hairless skin that is a dark green color with occasional pink splotches, it lacks all trace of fur but has a set of fangs worthy of any wolf that ever strode the land. Extra long front legs tipped with raking claws give it the bounding gait that has earned it its name."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A spotted leaper bounds {direction}."
+    ],
     death: [
       "The spotted leaper collapses to the ground, emits a final snarl, and dies.",
       "The spotted leaper twitches and dies.",
       "The spotted leaper collapses to the ground, emits a final silent snarl, and dies.",
-      "The spotted leaper growls as it slumps to the ground and licks at its wounded right claw."
+      "The spotted leaper growls as it slumps to the ground and licks at its wounded right claw.",
+      "The spotted leaper growls as it slumps to the ground and licks at its wounded right foreleg.",
+      "The spotted leaper growls as it slumps to the ground and licks at its wounded left foreleg.",
+      "The spotted leaper growls as it slumps to the ground and licks at its wounded left claw."
     ],
     decay: [
       "A spotted leaper decays into a pile of hair and bone."

@@ -97,7 +97,10 @@
     arrival: [
       "An Agresh troll chieftain just arrived!"
     ],
-    flee: [],
+    flee: [
+      "An Agresh troll chieftain limps {direction}.",
+      "An Agresh troll chieftain runs {direction}."
+    ],
     death: [
       "The troll chieftain bellows in rage one last time and dies.",
       "An Agresh troll chieftain goes limp as she is rendered unconscious!"

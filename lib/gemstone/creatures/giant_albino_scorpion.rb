@@ -69,7 +69,7 @@
     bar_td: 72,
     cle_td: (68..74),
     emp_td: (73..76),
-    pal_td: nil,
+    pal_td: (66..75),
     ran_td: nil,
     sor_td: (79..85),
     wiz_td: nil,
@@ -102,10 +102,13 @@
     arrival: [
       "The boulder comes to a sudden stop and rises into the form of a krynch!"
     ],
-    flee: [],
+    flee: [
+      "A giant albino scorpion skitters {direction}."
+    ],
     death: [
       "A giant albino scorpion goes limp as it is rendered unconscious!",
-      "The albino scorpion twitches violently, then dies."
+      "The albino scorpion twitches violently, then dies.",
+      "The albino scorpion slumps to the ground."
     ],
     decay: [],
     search: [],

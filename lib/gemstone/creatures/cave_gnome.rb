@@ -108,7 +108,10 @@
       "A cave gnome just arrived.",
       "A cave gnome just arrived, limping."
     ],
-    flee: [],
+    flee: [
+      "A cave gnome heads {direction}.",
+      "A cave gnome limps {direction}."
+    ],
     death: [
       "The cave gnome falls to the ground and dies.",
       "The cave gnome screams one last time and dies."

@@ -110,7 +110,10 @@
       "Similar in appearance to the common tomb troll, the pale skinned necromancer shares the same patches of lanky yellow hair that sporadically cover his squat form. His oversize eyes are filled with a greater intelligence than his cousins', granting him comprehension of the darker arts of necromancy, and making the troll a terror with the magics in the realm of death. Around his wide, disgusting and oily waist, the necromancer wears a string of pouches intermingled with rotting digits of dead kinsmen."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A tomb troll necromancer lopes {direction}.",
+      "A tomb troll necromancer limps {direction}."
+    ],
     death: [
       "A tomb troll necromancer goes limp as she is rendered unconscious!",
       "A tomb troll necromancer glares forward, then collapses in a motionless heap."

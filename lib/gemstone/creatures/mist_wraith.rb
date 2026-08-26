@@ -105,7 +105,8 @@
     flee: [],
     death: [
       "The mist wraith falls to the ground motionless.",
-      "The mist wraith screams evilly one last time and goes still."
+      "The mist wraith screams evilly one last time and goes still.",
+      "The mist wraith goes still for a moment while its head reshapes."
     ],
     decay: [
       "A mist wraith turns to dust."

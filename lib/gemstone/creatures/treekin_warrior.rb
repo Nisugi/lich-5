@@ -78,14 +78,14 @@
       "Stun"
     ],
     melee: (176..283),
-    ranged: nil,
-    bolt: nil,
+    ranged: (262..263),
+    bolt: (262..263),
     udf: 556,
     bar_td: 312,
     cle_td: 334,
     emp_td: (317..326),
     pal_td: (268..277),
-    ran_td: nil,
+    ran_td: (268..277),
     sor_td: (337..343),
     wiz_td: nil,
     mje_td: (349..408),
@@ -125,7 +125,9 @@
       "A treekin warrior lumbers {direction}.",
       "A treekin warrior lumbers {direction}, leaving a trail of leaves of behind it."
     ],
-    death: [],
+    death: [
+      "The warrior teeters and then topples to the ground!"
+    ],
     decay: [
       "A treekin warrior decays into compost.",
       "The layer of bark on a treekin warrior hardens and absorbs the attack!  The bark crackles as it crumbles to dust."

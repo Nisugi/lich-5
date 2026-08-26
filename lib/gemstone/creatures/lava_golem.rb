@@ -65,7 +65,7 @@
     bar_td: nil,
     cle_td: nil,
     emp_td: 248,
-    pal_td: nil,
+    pal_td: (184..190),
     ran_td: nil,
     sor_td: (221..233),
     wiz_td: nil,
@@ -106,7 +106,8 @@
       "A lava golem lumbers {direction}, trailed by black wisps of smoke."
     ],
     death: [
-      "The lava golem writhes in fiery agony and dies."
+      "The lava golem writhes in fiery agony and dies.",
+      "The lava golem topples to the ground as the fire slowly leaves it."
     ],
     decay: [],
     search: [],

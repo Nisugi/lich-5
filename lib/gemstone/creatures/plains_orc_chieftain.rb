@@ -96,7 +96,9 @@
       "As tall as a giantman and twice as muscular as most, the plains orc chieftain is taller and more agile than her more primitive orcish brothers, and judging by the cleverness in her beady yellow eyes, probably quite a bit more intelligent as well. Leathery brown skin covers her bulging limbs, the same color as the crude armor that protects her massive torso, and a scraggly red beard frames her heavy jowls."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A plains orc chieftain barrels {direction}."
+    ],
     death: [
       "A plains orc chieftain's chest heaves one last time then she dies.",
       "A plains orc chieftain's chest heaves one last time then he dies."

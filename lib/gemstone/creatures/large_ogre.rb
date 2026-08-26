@@ -89,7 +89,7 @@
     bolt: 52,
     udf: 188,
     bar_td: 45,
-    cle_td: (42..48),
+    cle_td: (39..48),
     emp_td: (45..53),
     pal_td: (42..51),
     ran_td: (45..51),
@@ -130,7 +130,10 @@
     arrival: [
       "A large ogre just arrived."
     ],
-    flee: [],
+    flee: [
+      "A large ogre runs {direction}.",
+      "A large ogre limps {direction}."
+    ],
     death: [
       "The large ogre screams one last time and dies.",
       "The large ogre falls to the ground and dies.",

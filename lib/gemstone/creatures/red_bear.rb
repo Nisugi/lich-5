@@ -57,7 +57,7 @@
     cle_td: (45..48),
     emp_td: (48..52),
     pal_td: (45..54),
-    ran_td: nil,
+    ran_td: (45..51),
     sor_td: 48,
     wiz_td: nil,
     mje_td: (42..54),
@@ -96,7 +96,12 @@
     ],
     death: [
       "The red bear collapses heavily into a heap on the ground and dies.",
-      "The red bear lets out a blood-curdling roar and dies."
+      "The red bear lets out a blood-curdling roar and dies.",
+      "The red bear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The red bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The red bear roars loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The red bear roars loudly as she slumps to the ground and licks her wounded left paw.",
+      "The red bear roars loudly as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [
       "A red bear decays into a compost of fangs, fur and claws."

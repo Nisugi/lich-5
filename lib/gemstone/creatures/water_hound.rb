@@ -61,11 +61,11 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 145,
     bar_td: nil,
     cle_td: 74,
     emp_td: 76,
-    pal_td: nil,
+    pal_td: (69..72),
     ran_td: nil,
     sor_td: 79,
     wiz_td: nil,
@@ -103,7 +103,12 @@
     flee: [],
     death: [
       "The water hound lets out one last whimpering sigh of water droplets and dies.",
-      "A water hound goes limp as it is rendered unconscious!"
+      "A water hound goes limp as it is rendered unconscious!",
+      "The water hound yelps loudly as it slumps to the ground and licks its wounded right foreleg.",
+      "The water hound yelps loudly as it slumps to the ground and licks its wounded left foreleg.",
+      "The water hound yelps loudly as it slumps to the ground and licks its wounded right paw.",
+      "The water hound yelps loudly as it slumps to the ground and licks its wounded left paw.",
+      "The water hound slumps to the ground."
     ],
     decay: [
       "A water hound decays into a compost of fur and fangs."

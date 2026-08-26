@@ -111,11 +111,15 @@
       "With a spread of nearly eight feet from leg-tip to leg-tip, the greater spider needs fear little as she squats, silent and deadly in her massive web. Shockingly fast for all her bulk, she responds instantly to any vibration along the thousand strands of the web she controls. Her glossy black carapace glistens with the lustre of fine onyx and her multiple eyes stare out at the world with cunning and patience."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A greater spider scurries {direction}.",
+      "A greater spider hobbles {direction}."
+    ],
     death: [
       "The greater spider collapses to the ground and dies.",
       "The greater spider's body jerks one last time and dies.",
-      "A greater spider goes limp as it is rendered unconscious!"
+      "A greater spider goes limp as it is rendered unconscious!",
+      "The greater spider slumps to the ground."
     ],
     decay: [
       "A greater spider's legs shrivel up beneath it as it decays into dust."

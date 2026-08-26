@@ -53,7 +53,7 @@
     bar_td: (118..123),
     cle_td: (129..139),
     emp_td: (130..136),
-    pal_td: nil,
+    pal_td: (109..119),
     ran_td: nil,
     sor_td: (139..142),
     wiz_td: nil,
@@ -89,7 +89,9 @@
       "A sickly, ebony mist encircles the troll wraith, obscuring the entire lower portion of the wraith, if there was one. Brilliant, platinum-hued orbs suspend in the air where the wraith's eyes once resided. The only true evidence of the wraith's former life are remnants of blackened steel gauntlets protecting the hands with only a few boney fingers being exposed."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A troll wraith drifts {direction}."
+    ],
     death: [
       "The troll wraith goes still for a moment while its head reshapes.",
       "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to her side.",

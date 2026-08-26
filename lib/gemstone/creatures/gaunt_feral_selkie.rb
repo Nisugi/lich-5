@@ -127,7 +127,8 @@
     death: [
       "An instant of clarity dawns in a gaunt feral selkie's eyes as he succumbs to his injuries.  Peace blossoms on his face as he dies.",
       "An instant of clarity dawns in a gaunt feral selkie's eyes as she succumbs to her injuries.  Peace blossoms on her face as she dies.",
-      "A gaunt feral selkie goes limp as she is rendered unconscious!"
+      "A gaunt feral selkie goes limp as she is rendered unconscious!",
+      "The feral selkie slumps to the ground."
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The feral selkie's tibia passes his femur in a very unpleasant manner!"

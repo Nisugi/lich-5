@@ -71,7 +71,7 @@
     cle_td: (33..36),
     emp_td: nil,
     pal_td: (33..36),
-    ran_td: nil,
+    ran_td: (36..39),
     sor_td: (30..42),
     wiz_td: nil,
     mje_td: (30..42),
@@ -104,7 +104,9 @@
       "A gnoll ranger wanders in, alertly surveying its surroundings.",
       "A crystal golem stomps in, fiery eyes the only clue to its deadly intent."
     ],
-    flee: [],
+    flee: [
+      "A crystal golem stomps {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

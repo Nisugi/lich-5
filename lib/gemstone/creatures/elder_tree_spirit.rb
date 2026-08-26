@@ -109,7 +109,9 @@
     arrival: [
       "An elder tree spirit just arrived."
     ],
-    flee: [],
+    flee: [
+      "An elder tree spirit heads {direction}."
+    ],
     death: [
       "The tree spirit slowly settles to the ground and begins to dissipate."
     ],

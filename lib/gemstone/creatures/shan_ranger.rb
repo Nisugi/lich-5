@@ -93,7 +93,7 @@
     bolt: nil,
     udf: 373,
     bar_td: 135,
-    cle_td: (143..147),
+    cle_td: (143..153),
     emp_td: (142..152),
     pal_td: nil,
     ran_td: (135..138),
@@ -141,7 +141,10 @@
       "The shan ranger stands in a half-crouch, his long, knotty legs giving him that lanky, dangerous look of a wolf. Walking upright, the body covered with mottled grey fur and his long arms conclude in large, clawed hands with semi-opposable thumbs. The shan ranger's dog-like visage is fierce, with slavering jaws and eyes that glow like something out of a bad dream."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A shan ranger pads {direction}.",
+      "A shan ranger limps {direction}."
+    ],
     death: [
       "The shan ranger howls out one last time and dies.",
       "The shan ranger yips in pain as he falls to the ground motionless.",

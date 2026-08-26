@@ -42,6 +42,9 @@
       },
       {
         name: "Ground Slam"
+      },
+      {
+        name: "Ethereal Wave"
       }
     ],
     special_abilities: [],
@@ -57,7 +60,7 @@
     bar_td: nil,
     cle_td: nil,
     emp_td: (292..301),
-    pal_td: nil,
+    pal_td: (254..263),
     ran_td: nil,
     sor_td: "298 to 328",
     wiz_td: nil,
@@ -96,7 +99,8 @@
       "Though powerfully muscled, the tempest tyrant is so tall and long of limb that she looks well-proportioned, even agile. Ritual scars like lightning bolts fork down her immense arms, and matching tattoos in metallic ink gleam electric blue from her severe face. They curve around each eye and fan out onto her hollow cheeks, lending her unforgiving features an alien cast.\n\n;Assess\nThe tempest tyrant is huge in size and about thirteen feet high in her current state."
     ],
     arrival: [
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in."
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
     ],
     flee: [],
     death: [
@@ -109,7 +113,8 @@
     spell_prep: [],
     attack: [
       "A titan tempest tyrant's feras morning star crackles with corruscating lightning as titan tempest tyrant swings it at you!",
-      "Tightening titan tempest tyrant grip on titan tempest tyrant feras morning star, a titan tempest tyrant strikes out at you with all of titan tempest tyrant might!"
+      "Tightening titan tempest tyrant grip on titan tempest tyrant feras morning star, a titan tempest tyrant strikes out at you with all of titan tempest tyrant might!",
+      "A titan tempest tyrant's feras spikestar crackles with corruscating lightning as titan tempest tyrant swings it at you!"
     ],
     bite: [],
     claw: [],

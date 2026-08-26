@@ -97,7 +97,9 @@
       "A muscular supplicant just arrived.",
       "A muscular supplicant strides into the area!"
     ],
-    flee: [],
+    flee: [
+      "A muscular supplicant heads {direction}."
+    ],
     death: [
       "A muscular supplicant spasms one last time and then dies.",
       "A muscular supplicant thrashes violently and then dies.",

@@ -105,9 +105,9 @@
     bolt: (356..416),
     udf: 560,
     bar_td: (168..171),
-    cle_td: nil,
+    cle_td: 184,
     emp_td: (183..185),
-    pal_td: nil,
+    pal_td: (187..190),
     ran_td: nil,
     sor_td: (196..197),
     wiz_td: nil,
@@ -160,7 +160,8 @@
     death: [
       "The sand devil screams one last time and dies.",
       "The sand devil falls to the ground and dies.",
-      "A sand devil goes limp as it is rendered unconscious!"
+      "A sand devil goes limp as it is rendered unconscious!",
+      "The sand devil slumps to the ground."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the sand devil's ribs to move independently.",

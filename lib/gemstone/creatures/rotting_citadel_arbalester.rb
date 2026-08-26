@@ -101,7 +101,9 @@
       "A rotting Citadel arbalester strides into the area, her crossbow cradled in the crook of an arm.",
       "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm."
     ],
-    flee: [],
+    flee: [
+      "A rotting Citadel arbalester strides {direction}."
+    ],
     death: [
       "A rotting Citadel arbalester collapses motionless to the floor.",
       "A rotting Citadel arbalester collapses motionless to the ground."

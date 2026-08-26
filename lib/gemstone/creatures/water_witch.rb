@@ -90,7 +90,9 @@
     description: [
       "The water witch is never found far from its life-giving oceans. Although the water witch is humanoid in shape, it has well-defined piscatorial features including bright crimson, flaring gills and light green, scaly skin. A spiny, dull red sail stands erect on the top of its head, becoming an angry scarlet when danger approaches. The water witch prefers lonely, shallow bays where it can waylay an occasional single adventurer before returning quickly to the seas."
     ],
-    arrival: [],
+    arrival: [
+      "A water witch just arrived."
+    ],
     flee: [],
     death: [
       "The water witch falls to the ground motionless.",

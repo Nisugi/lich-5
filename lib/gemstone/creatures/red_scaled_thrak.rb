@@ -65,7 +65,7 @@
     bar_td: nil,
     cle_td: nil,
     emp_td: 175,
-    pal_td: nil,
+    pal_td: (146..149),
     ran_td: nil,
     sor_td: 185,
     wiz_td: nil,
@@ -100,12 +100,15 @@
       "A red-scaled thrak is nearly twice the size of its mundane relative, the common thrak. Armed with heavy claws on all four feet and a nasty set of long razor-sharp fangs, it appears rather well equipped for offense. Its skin has a rough pebbled texture, dark gray to black on the back, with a brilliant red underbelly and tail."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A red-scaled thrak darts {direction}."
+    ],
     death: [
       "The red-scaled thrak falls back into a heap and dies.",
       "The red-scaled thrak hisses one last time and dies.",
       "The red-scaled thrak twitches violently, then dies.",
-      "A red-scaled thrak goes limp as it is rendered unconscious!"
+      "A red-scaled thrak goes limp as it is rendered unconscious!",
+      "The red-scaled thrak slumps to the ground."
     ],
     decay: [
       "A red-scaled thrak decays into compost."

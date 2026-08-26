@@ -91,7 +91,9 @@
       "Normally rodents don't grow this big, but these must have been eating something special. The giant marmot is as long as a human is tall. Thick-bodied, with coarse, brown fur and a stubby tail, the giant marmot still moves with amazing speed, zipping around obstacles and through doorways in search of its next meal. Fresh blood and pieces of flesh surrounding its mouth indicate that it's been using its long incisors to gnaw on something that probably didn't wish to be gnawed on."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A giant marmot waddles {direction}."
+    ],
     death: [
       "The giant marmot collapses to the ground, emits a final squeal, and dies.",
       "The giant marmot collapses to the ground, emits a final silent squeal, and dies.",
@@ -99,7 +101,9 @@
       "The giant marmot twitches violently, then dies.",
       "A giant marmot goes limp as it is rendered unconscious!",
       "The giant marmot shrieks as it slumps to the ground and licks at its wounded left foreleg.",
-      "The giant marmot shrieks as it slumps to the ground and licks at its wounded right claw."
+      "The giant marmot shrieks as it slumps to the ground and licks at its wounded right claw.",
+      "The giant marmot shrieks as it slumps to the ground and licks at its wounded right foreleg.",
+      "The giant marmot shrieks as it slumps to the ground and licks at its wounded left claw."
     ],
     decay: [
       "A giant marmot decays into a pile of hair and bone."

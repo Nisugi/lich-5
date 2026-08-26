@@ -102,7 +102,10 @@
       "A cyclops just arrived!",
       "A cyclops just arrived."
     ],
-    flee: [],
+    flee: [
+      "A cyclops heads {direction}.",
+      "A cyclops limps {direction}."
+    ],
     death: [
       "The cyclops rolls over and dies.",
       "The cyclops falls to the ground and dies.",

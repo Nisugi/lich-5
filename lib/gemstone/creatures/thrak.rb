@@ -107,7 +107,8 @@
     death: [
       "The thrak falls back into a heap and dies.",
       "The thrak hisses one last time and dies.",
-      "A thrak screeches loudly and slumps to the ground while frantically licking its wounded right foreleg."
+      "A thrak screeches loudly and slumps to the ground while frantically licking its wounded right foreleg.",
+      "A thrak screeches loudly and slumps to the ground while frantically licking its wounded left foreleg."
     ],
     decay: [
       "A thrak decays into compost."

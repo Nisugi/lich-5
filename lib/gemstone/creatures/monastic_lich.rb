@@ -88,7 +88,7 @@
     melee: (254..272),
     ranged: nil,
     bolt: 220,
-    udf: nil,
+    udf: 261,
     bar_td: nil,
     cle_td: (89..117),
     emp_td: 123,
@@ -139,7 +139,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The monastic lich slumps to the ground."
+    ],
     decay: [
       "A monastic lich dissolves into a foul-smelling miasma."
     ],

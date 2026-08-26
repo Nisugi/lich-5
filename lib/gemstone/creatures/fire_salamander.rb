@@ -100,7 +100,11 @@
     ],
     flee: [],
     death: [
-      "The fire salamander hisses one last time and dies."
+      "The fire salamander hisses one last time and dies.",
+      "A fire salamander wheezes heavily and slumps to the ground while regurgitating a slimy grey fluid over its mangled left foreleg.",
+      "A fire salamander wheezes heavily and slumps to the ground while regurgitating a slimy grey fluid over its mangled left claw.",
+      "A fire salamander wheezes heavily and slumps to the ground while regurgitating a slimy grey fluid over its mangled right foreleg.",
+      "A fire salamander wheezes heavily and slumps to the ground while regurgitating a slimy grey fluid over its mangled right claw."
     ],
     decay: [
       "A fire salamander decays into compost."

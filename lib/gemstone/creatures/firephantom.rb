@@ -105,7 +105,8 @@
     ],
     flee: [],
     death: [
-      "The firephantom slowly settles to the ground and begins to dissipate."
+      "The firephantom slowly settles to the ground and begins to dissipate.",
+      "The firephantom goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

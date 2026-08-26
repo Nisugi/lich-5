@@ -111,7 +111,7 @@
     cle_td: (361..366),
     emp_td: 360,
     pal_td: (311..319),
-    ran_td: nil,
+    ran_td: (324..331),
     sor_td: 393,
     wiz_td: nil,
     mje_td: 425,
@@ -152,12 +152,16 @@
     ],
     flee: [],
     death: [
-      "The Illoke elder grumbles in pain one last time before lying still."
+      "The Illoke elder grumbles in pain one last time before lying still.",
+      "The Illoke elder slumps to the ground.",
+      "The Illoke elder shudders one last time before lying still.",
+      "Beautiful shot pierces both lungs, the Illoke elder makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "An Illoke elder's body shudders and crumbles into itself in a mass of rough grey stone.",
       "The Illoke elder's right leg crumbles briefly and explodes in a shower of gore.",
-      "A dazzling Illoke elder's body shudders and crumbles into itself in a mass of rough grey stone."
+      "A dazzling Illoke elder's body shudders and crumbles into itself in a mass of rough grey stone.",
+      "The Illoke elder's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

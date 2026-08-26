@@ -45,7 +45,7 @@
   defense_attributes: {
     asg: "10",
     immunities: [],
-    melee: 54,
+    melee: (54..92),
     ranged: (57..92),
     bolt: (57..92),
     udf: 112,
@@ -92,7 +92,9 @@
       "A Neartofar orc stalks in purposefully, his nose raised as he sniffs at the air.",
       "A Neartofar orc stalks in purposefully, her nose raised as she sniffs at the air."
     ],
-    flee: [],
+    flee: [
+      "A Neartofar troll heads {direction}."
+    ],
     death: [
       "The Neartofar troll falls to the ground and dies.",
       "The Neartofar troll screams one last time and dies.",

@@ -60,7 +60,7 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: (101..158),
+    melee: (68..158),
     ranged: (68..77),
     bolt: (68..77),
     udf: 205,
@@ -101,12 +101,16 @@
       "Even while slightly hunched over, the plains ogre is taller than any giantman. Long-limbed and lithe for rapid travel over the plains, his body is the antithesis of most of his cousins. The one exception is in his massive hands that can easily crush anything unlucky enough to be in caught in their grasp. The plains ogre's face is pinched in a permanent squint from countless hours out on the sun-baked plains. When standing downwind of this creature, it is evident that he is in much need of a bath."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A plains ogre runs {direction}.",
+      "A plains ogre limps {direction}."
+    ],
     death: [
       "The plains ogre screams one last time and dies.",
       "The plains ogre falls to the ground and dies.",
       "The plains ogre screams silently one last time and dies.",
-      "A plains ogre goes limp as he is rendered unconscious!"
+      "A plains ogre goes limp as he is rendered unconscious!",
+      "The plains ogre slumps to the ground."
     ],
     decay: [
       "A plains ogre decays into compost."

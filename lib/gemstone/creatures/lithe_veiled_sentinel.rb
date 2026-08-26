@@ -160,7 +160,8 @@
     death: [
       "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  She dies with a knowing smile on her face.",
       "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  He dies with a knowing smile on his face.",
-      "Intestines rupture from intense heat; a lithe veiled sentinel dies a slow, painful death."
+      "Intestines rupture from intense heat; a lithe veiled sentinel dies a slow, painful death.",
+      "A lithe veiled sentinel slumps to the ground unconscious."
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The veiled sentinel's tibia passes his femur in a very unpleasant manner!",

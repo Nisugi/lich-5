@@ -107,10 +107,18 @@
       "The medium-sized lynx possesses a lush coat, greyish-white marked with a pattern of black spots and a dark dorsal stripe. Black tufts top both of the lynx's large ears and her jaws sport long whiskery fur, giving the animals a mischievous look. Her black-tipped tail is only a few inches long and it whips back and forth nervously as the lynx moves."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A spotted lynx darts {direction}."
+    ],
     death: [
       "The spotted lynx crumples to the ground and dies.",
-      "The spotted lynx lets out a final caterwaul and dies."
+      "The spotted lynx lets out a final caterwaul and dies.",
+      "The spotted lynx mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The spotted lynx mewls in pain as he slumps to the ground and licks his wounded left paw.",
+      "The spotted lynx mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The spotted lynx mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The spotted lynx mewls in pain as she slumps to the ground and licks her wounded left paw.",
+      "The spotted lynx mewls in pain as she slumps to the ground and licks her wounded right paw."
     ],
     decay: [
       "A spotted lynx decays into a compost of fangs, fur and claws."

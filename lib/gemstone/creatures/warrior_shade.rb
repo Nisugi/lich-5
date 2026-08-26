@@ -57,7 +57,7 @@
     bar_td: 158,
     cle_td: 176,
     emp_td: (172..175),
-    pal_td: nil,
+    pal_td: (146..149),
     ran_td: nil,
     sor_td: (185..194),
     wiz_td: nil,
@@ -93,7 +93,9 @@
       "A warrior shade just arrived."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The warrior shade goes still for a moment while its head reshapes."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

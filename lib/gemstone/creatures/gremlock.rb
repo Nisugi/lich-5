@@ -58,7 +58,7 @@
     bolt: 302,
     udf: 727,
     bar_td: (297..306),
-    cle_td: nil,
+    cle_td: (332..341),
     emp_td: (326..335),
     pal_td: 282,
     ran_td: nil,
@@ -106,13 +106,16 @@
       "A stick flies in and skips along the ground drawing your attention.  As you return to your original focus, you see a gremlock!",
       "A gremlock stomps in angrily!"
     ],
-    flee: [],
+    flee: [
+      "A gremlock sneaks {direction}."
+    ],
     death: [
       "A gremlock's eyes roll up as she dies.",
       "A gremlock collapses and his eyes roll up as he dies.",
       "A gremlock's eyes roll up as he dies.",
       "A gremlock collapses and her eyes roll up as she dies.",
-      "A gremlock goes limp as she is rendered unconscious!"
+      "A gremlock goes limp as she is rendered unconscious!",
+      "The gremlock slumps to the ground."
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The gremlock's tibia passes his femur in a very unpleasant manner!",

@@ -88,7 +88,9 @@
       "Petite in body, the jungle feyling has spindled limbs that are gaunt and wiry. Enormous brown eyes are set within a head that seems almost too large for the neck that supports it, while knotted tufts of coarse dark brown hair falls in erratic coils about her leathery face. Garbed simply in hides and skins, the jungle feyling wears strange armor-like components across her arms, back, chest, and legs, while her head is covered in what looks like the shell of an enormous tropical nut."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "The jungle feyling jogs {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

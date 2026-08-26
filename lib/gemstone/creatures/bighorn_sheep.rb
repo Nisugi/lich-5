@@ -48,7 +48,7 @@
     melee: (76..130),
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 164,
     bar_td: 54,
     cle_td: (51..54),
     emp_td: (54..62),
@@ -88,7 +88,12 @@
     flee: [],
     death: [
       "A bighorn sheep collapses, his head dropping heavily to the ground as he goes still.",
-      "A bighorn sheep collapses, her head dropping heavily to the ground as she goes still."
+      "A bighorn sheep collapses, her head dropping heavily to the ground as she goes still.",
+      "The bighorn sheep snorts loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "A bighorn sheep rolls over, his head dropping heavily to the ground as he goes still.",
+      "The bighorn sheep snorts loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "A bighorn sheep rolls over, her head dropping heavily to the ground as she goes still.",
+      "The bighorn sheep snorts loudly as she slumps to the ground and cradles her wounded right foreleg."
     ],
     decay: [
       "A bighorn sheep decays into a pile of fur and bone."

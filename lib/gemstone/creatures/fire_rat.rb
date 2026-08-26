@@ -52,7 +52,7 @@
     immunities: [
       "Fire"
     ],
-    melee: (97..115),
+    melee: (72..115),
     ranged: (72..101),
     bolt: (72..101),
     udf: 121,
@@ -60,7 +60,7 @@
     cle_td: (45..54),
     emp_td: (40..48),
     pal_td: (45..48),
-    ran_td: nil,
+    ran_td: (42..48),
     sor_td: (42..54),
     wiz_td: nil,
     mje_td: 48,
@@ -99,7 +99,10 @@
     death: [
       "The fire rat collapses to the ground, emits a final squeal, and dies.",
       "The fire rat twitches and dies.",
-      "The fire rat collapses to the ground, emits a final silent squeal, and dies."
+      "The fire rat collapses to the ground, emits a final silent squeal, and dies.",
+      "The fire rat shrieks as it slumps to the ground and licks at its wounded right foreleg.",
+      "The fire rat shrieks as it slumps to the ground and licks at its wounded left foreleg.",
+      "The fire rat shrieks as it slumps to the ground and licks at its wounded left claw."
     ],
     decay: [
       "A fire rat crumbles into a pile of ash.",

@@ -67,7 +67,7 @@
     bar_td: 66,
     cle_td: (60..69),
     emp_td: (66..76),
-    pal_td: nil,
+    pal_td: (63..72),
     ran_td: nil,
     sor_td: (63..72),
     wiz_td: nil,
@@ -128,7 +128,13 @@
       "The cougar mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
       "The cougar mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
       "The cougar mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The cougar mewls in pain as he slumps to the ground and licks his wounded right paw."
+      "The cougar mewls in pain as he slumps to the ground and licks his wounded right paw.",
+      "The cougar slumps to the ground.",
+      "The cougar slumps to the ground and licks his wounded left foreleg.",
+      "The cougar mewls in pain as she slumps to the ground and licks her wounded right paw.",
+      "The cougar mewls in pain as he slumps to the ground and licks his wounded left paw.",
+      "The cougar mewls in pain as she slumps to the ground and licks her wounded left paw.",
+      "The cougar slumps to the ground and licks her wounded left foreleg."
     ],
     decay: [
       "A cougar decays into a compost of fangs, fur and claws.",

@@ -70,7 +70,7 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: (272..347),
+    melee: (217..347),
     ranged: (217..283),
     bolt: (217..283),
     udf: 417,
@@ -78,7 +78,7 @@
     cle_td: 306,
     emp_td: 305,
     pal_td: (281..284),
-    ran_td: nil,
+    ran_td: 272,
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -117,11 +117,19 @@
       "A direbear lumbers {direction}.",
       "A direbear slowly lumbers {direction}, growling in pain.",
       "A direbear shudders and lumbers {direction}, snarling in agony.",
-      "A direbear crawls {direction}."
+      "A direbear crawls {direction}.",
+      "A direbear roars loudly as she stands {direction}!",
+      "A direbear roars loudly as he stands {direction}!"
     ],
     death: [
       "The direbear collapses heavily into a heap on the ground and dies.",
-      "The direbear lets out a blood-curdling roar and dies."
+      "The direbear lets out a blood-curdling roar and dies.",
+      "The direbear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The direbear roars loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The direbear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The direbear roars loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "Beautiful shot pierces both lungs, the direbear makes a wheezing noise, and drops dead!",
+      "The direbear roars loudly as she slumps to the ground and licks her wounded left paw."
     ],
     decay: [
       "A direbear decays into a compost of fangs, fur and claws."

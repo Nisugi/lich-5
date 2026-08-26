@@ -91,7 +91,11 @@
       "The large canine is obviously closely related to her domestic cousins, but her vicious growl and the feral gleam in her intelligent eyes speak of her far wilder nature. Ticks and burs speckle her matted, dusty fur, and her wolflike tail sweeps from side to side as she prepares to spring on her intended prey."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A black mongrel wolfhound dashes {direction}.",
+      "A mongrel wild dog dashes {direction}.",
+      "A mongrel wolfhound dashes {direction}."
+    ],
     death: [
       "The mongrel wolfhound falls to the ground and dies.",
       "The mangy wild hound rolls over and dies.",
@@ -99,7 +103,9 @@
       "The black mongrel wolfhound falls to the ground and dies.",
       "The black mongrel wolfhound rolls over and dies.",
       "The mongrel wild dog falls to the ground and dies.",
-      "The mongrel wolfhound rolls over and dies."
+      "The mongrel wolfhound rolls over and dies.",
+      "The mongrel wild dog yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The black mongrel wolfhound yelps loudly as he slumps to the ground and licks his wounded right foreleg."
     ],
     decay: [
       "A mongrel wolfhound decays into a pile of matted fur.",

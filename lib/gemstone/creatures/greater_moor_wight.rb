@@ -73,7 +73,7 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (182..315),
+    melee: (173..315),
     ranged: (195..250),
     bolt: (195..250),
     udf: 372,
@@ -117,7 +117,9 @@
       "Once beautiful beyond comprehension, the moor wight before you is now as disgusting as it was once charming. The wight has a slender, decaying body hidden by tattered and fading robes. Plainly written across the moor wight's face is an expression of eternal anguish and pain, silently speaking of the horrific events which unfolded during its life to bring it to this sad state."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A greater moor wight wails madly as it limps {direction}."
+    ],
     death: [],
     decay: [
       "The moor wight's right leg crumbles briefly and explodes in a shower of gore."

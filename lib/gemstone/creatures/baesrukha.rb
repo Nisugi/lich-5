@@ -66,7 +66,7 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (188..303),
+    melee: (187..303),
     ranged: (187..195),
     bolt: (187..195),
     udf: 330,
@@ -113,7 +113,8 @@
     flee: [],
     death: [
       "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from his unwashed body.",
-      "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from her unwashed body."
+      "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from her unwashed body.",
+      "The baesrukha slumps to the ground."
     ],
     decay: [
       "The baesrukha's right leg crumbles briefly and explodes in a shower of gore."

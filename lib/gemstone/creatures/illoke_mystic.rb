@@ -65,7 +65,7 @@
     cle_td: (244..251),
     emp_td: (238..246),
     pal_td: (220..225),
-    ran_td: nil,
+    ran_td: (204..211),
     sor_td: (259..269),
     wiz_td: nil,
     mje_td: nil,
@@ -110,7 +110,9 @@
     flee: [],
     death: [
       "An Illoke mystic goes limp as he is rendered unconscious!",
-      "The Illoke mystic grumbles in pain one last time before lying still."
+      "The Illoke mystic grumbles in pain one last time before lying still.",
+      "The Illoke mystic slumps to the ground.",
+      "The Illoke mystic shudders one last time before lying still."
     ],
     decay: [
       "An Illoke mystic crumbles into a mound of sand that quickly blows away.",

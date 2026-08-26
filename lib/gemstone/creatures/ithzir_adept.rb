@@ -104,7 +104,7 @@
     bolt: (364..421),
     udf: 579,
     bar_td: (379..391),
-    cle_td: (398..409),
+    cle_td: (391..409),
     emp_td: (397..405),
     pal_td: nil,
     ran_td: nil,
@@ -158,7 +158,8 @@
     death: [
       "An Ithzir adept goes limp as she is rendered unconscious!",
       "The Ithzir adept vainly struggles to rise, then goes still.",
-      "An Ithzir adept's body shimmers slightly, then fades from view like a dissipating phantom."
+      "An Ithzir adept's body shimmers slightly, then fades from view like a dissipating phantom.",
+      "Just as you incant, the Ithzir adept shimmers and fades away, leaving you gesturing at nothingness!"
     ],
     decay: [
       "The crystal crumbles into a fine blue powder that sifts through the adept's fingers."

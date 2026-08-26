@@ -97,7 +97,8 @@
       "A rabid squirrel scampers {direction}."
     ],
     death: [
-      "The rabid squirrel twitches its tail one last time and dies."
+      "The rabid squirrel twitches its tail one last time and dies.",
+      "The rabid squirrel chitters as it slumps to the ground and licks at its wounded right claw."
     ],
     decay: [
       "A rabid squirrel decays into a pile of hair and bone."

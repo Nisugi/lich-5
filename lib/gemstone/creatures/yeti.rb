@@ -107,7 +107,9 @@
       "A yeti roars in pain as it stomps in!"
     ],
     flee: [
-      "A yeti spins around and retreats as far as it can."
+      "A yeti spins around and retreats as far as it can.",
+      "A yeti stomps {direction}.",
+      "A yeti moans as it stomps {direction}."
     ],
     death: [
       "A yeti goes limp as it is rendered unconscious!",

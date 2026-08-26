@@ -104,7 +104,10 @@
       "The giant weasel collapses to the ground, emits a final cry, and dies.",
       "The giant weasel lets out a final agonized cry and dies.",
       "The giant weasel cries loudly as it slumps to the ground and cradles its wounded left foreleg.",
-      "The giant weasel cries loudly as it slumps to the ground and cradles its wounded right foreleg."
+      "The giant weasel cries loudly as it slumps to the ground and cradles its wounded right foreleg.",
+      "The giant weasel cries loudly as it slumps to the ground and cradles its wounded left paw.",
+      "The giant weasel slumps to the ground.",
+      "The giant weasel cries loudly as it slumps to the ground and cradles its wounded right paw."
     ],
     decay: [
       "A giant weasel decays into a pile of fur and bone."

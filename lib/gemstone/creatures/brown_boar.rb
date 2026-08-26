@@ -57,7 +57,7 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (119..124),
+    melee: (55..124),
     ranged: (55..67),
     bolt: (55..67),
     udf: 140,
@@ -95,13 +95,19 @@
       "The brown boar noses along the ground, peering at everything with his close-set, bloodshot eyes in hopes of finding something to satisfy his insatiable hunger. Any who get in his way will most likely rapidly regret having done so. His body is covered with stringy, brown hair, and mud-caked greyish tusks protrude from each side of his slit of a mouth. The largest can easily reach a good six feet long from dripping snout to curly tail and weigh more than a quarter ton. When in motion, the brown boar moves with a surprising speed and dexterity for a beast his size. It is not unusual to find oneself snacked on by this beast if not properly prepared."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A brown boar grunts and barrels {direction}."
+    ],
     death: [
       "The brown boar collapses to the ground, emits a final squeal, and dies.",
       "The brown boar lets out a final agonized squeal and dies.",
       "The brown boar silently lets out a final agonized squeal and dies.",
       "A brown boar goes limp as he is rendered unconscious!",
-      "The brown boar collapses to the ground, emits a final silent squeal, and dies."
+      "The brown boar collapses to the ground, emits a final silent squeal, and dies.",
+      "The brown boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The brown boar squeals loudly as he slumps to the ground and cradles his wounded left hoof.",
+      "The brown boar squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The brown boar squeals loudly as he slumps to the ground and cradles his wounded right hoof."
     ],
     decay: [
       "A brown boar decays into a pile of fur and bone."

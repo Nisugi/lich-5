@@ -99,13 +99,19 @@
       "The dark, beady eyes of the scaly burgee gleam with feral menace beneath two jutting ridges. Flexible diamond-shaped scales cover its carapace and its small, triangular head. Thinly coated around its surprisingly wide mouth is a greyish substance."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A scaly burgee grunts and waddles {direction}."
+    ],
     death: [
       "A scaly burgee goes limp as it is rendered unconscious!",
       "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled left claw.",
       "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled left foreleg.",
       "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled right foreleg.",
-      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled right claw."
+      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled right claw.",
+      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled left hind leg.",
+      "The scaly burgee slumps to the ground.",
+      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled right hind leg.",
+      "The scaly burgee silently squeals as it slumps to the ground in agony, favoring its mangled left foreleg."
     ],
     decay: [
       "Acid dissolves the knee ligaments.  The scaly burgee's tibia passes its femur in a very unpleasant manner!",

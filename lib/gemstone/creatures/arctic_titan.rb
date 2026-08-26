@@ -77,7 +77,7 @@
     melee: 177,
     ranged: 195,
     bolt: 165,
-    udf: nil,
+    udf: 213,
     bar_td: nil,
     cle_td: 110,
     emp_td: 111,
@@ -122,7 +122,8 @@
     death: [
       "An arctic titan goes limp as it is rendered unconscious!",
       "The arctic titan screams evilly one last time and goes still.",
-      "The arctic titan falls to the ground motionless."
+      "The arctic titan falls to the ground motionless.",
+      "The arctic titan slumps to the ground."
     ],
     decay: [
       "An arctic titan turns to dust."

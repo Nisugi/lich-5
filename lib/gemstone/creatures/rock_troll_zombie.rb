@@ -66,7 +66,7 @@
     bar_td: nil,
     cle_td: (116..119),
     emp_td: (117..127),
-    pal_td: nil,
+    pal_td: (99..108),
     ran_td: nil,
     sor_td: (123..132),
     wiz_td: nil,
@@ -102,12 +102,14 @@
     ],
     flee: [
       "A rock troll zombie lumbers {direction}.",
-      "A rock troll zombie lumbers {direction} with a slight limp."
+      "A rock troll zombie lumbers {direction} with a slight limp.",
+      "A rock troll zombie grimaces and slowly limps {direction}."
     ],
     death: [
       "The troll zombie tears off a piece of her flesh, gnawing upon the decayed meat in a vain attempt to nourish her continued tormented existence.  With the attempt failing, the troll zombie slumps to the ground motionless.",
       "The troll zombie tears off a piece of his flesh, gnawing upon the decayed meat in a vain attempt to nourish his continued tormented existence.  With the attempt failing, the troll zombie slumps to the ground motionless.",
-      "The troll zombie tears off a piece of his flesh, gnawing upon the decayed meat in a vain attempt to nourish his continued tormented existence.  With the attempt failing, the troll zombie topples to the ground motionless."
+      "The troll zombie tears off a piece of his flesh, gnawing upon the decayed meat in a vain attempt to nourish his continued tormented existence.  With the attempt failing, the troll zombie topples to the ground motionless.",
+      "The troll zombie tears off a piece of her flesh, gnawing upon the decayed meat in a vain attempt to nourish her continued tormented existence.  With the attempt failing, the troll zombie topples to the ground motionless."
     ],
     decay: [],
     search: [],

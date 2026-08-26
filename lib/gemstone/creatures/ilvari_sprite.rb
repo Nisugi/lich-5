@@ -69,7 +69,7 @@
     cle_td: (295..304),
     emp_td: (294..303),
     pal_td: (254..260),
-    ran_td: nil,
+    ran_td: (266..269),
     sor_td: (300..315),
     wiz_td: nil,
     mje_td: 328,
@@ -106,8 +106,12 @@
       "The subtle hourglass figure of this tiny offshoot of an elven female is all you can see due to a strange silvery aura covering her. Her face is the exception, for it shows through as a near picture perfect model of beauty. The only spoiler in the package is the strange look of madness in her shimmering silver eyes."
     ],
     arrival: [],
-    flee: [],
-    death: [],
+    flee: [
+      "An Ilvari sprite shudders and limps {direction}."
+    ],
+    death: [
+      "The Ilvari sprite's eyes grow dim as her lifeforce fades away."
+    ],
     decay: [
       "The layer of bark on an Ilvari sprite hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
       "The layer of bark on an Ilvari sprite hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust.",

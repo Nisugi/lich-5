@@ -65,7 +65,7 @@
     cle_td: 12,
     emp_td: 12,
     pal_td: (9..12),
-    ran_td: nil,
+    ran_td: 12,
     sor_td: 12,
     wiz_td: nil,
     mje_td: 12,
@@ -102,7 +102,10 @@
     arrival: [
       "A mongrel kobold just arrived."
     ],
-    flee: [],
+    flee: [
+      "A mongrel kobold heads {direction}.",
+      "A mongrel kobold limps {direction}."
+    ],
     death: [
       "The mongrel kobold screams one last time and dies.",
       "The mongrel kobold falls to the ground and dies."

@@ -113,7 +113,8 @@
       "An ice golem lumbers {direction}, followed by a hailing icestorm."
     ],
     death: [
-      "The ice golem writhes in cold agony and dies."
+      "The ice golem writhes in cold agony and dies.",
+      "The ice golem slumps to the ground."
     ],
     decay: [],
     search: [],

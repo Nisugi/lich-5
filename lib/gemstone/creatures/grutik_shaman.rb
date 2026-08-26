@@ -79,7 +79,7 @@
     bar_td: 95,
     cle_td: (105..111),
     emp_td: (107..115),
-    pal_td: nil,
+    pal_td: (83..89),
     ran_td: nil,
     sor_td: (111..117),
     wiz_td: 115,
@@ -123,10 +123,14 @@
     arrival: [
       "A Grutik shaman shambles in."
     ],
-    flee: [],
+    flee: [
+      "A Grutik shaman shambles {direction}.",
+      "A Grutik shaman stands {direction}."
+    ],
     death: [
       "A Grutik shaman goes limp as she is rendered unconscious!",
-      "The Grutik shaman twitches violently, then dies."
+      "The Grutik shaman twitches violently, then dies.",
+      "The Grutik shaman slumps to the ground."
     ],
     decay: [
       "A Grutik shaman collapses into a lifeless heap upon the ground.",

@@ -119,12 +119,15 @@
       "A dark shambler just arrived!",
       "A dark shambler just arrived."
     ],
-    flee: [],
+    flee: [
+      "A dark shambler runs {direction}."
+    ],
     death: [
       "A dark shambler goes limp as it is rendered unconscious!",
       "The dark shambler falls to the ground motionless.",
       "The dark shambler screams evilly one last time and goes still.",
-      "The dark shambler twitches violently, then dies."
+      "The dark shambler twitches violently, then dies.",
+      "The dark shambler slumps to the ground."
     ],
     decay: [
       "A dark shambler turns to dust.",

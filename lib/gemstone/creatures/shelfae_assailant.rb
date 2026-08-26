@@ -87,7 +87,10 @@
     arrival: [
       "A shelfae assailant just arrived."
     ],
-    flee: [],
+    flee: [
+      "A shelfae assailant runs {direction}.",
+      "A shelfae assailant limps {direction}."
+    ],
     death: [
       "The shelfae assailant falls to the ground and dies.",
       "The shelfae assailant screams one last time and dies.",

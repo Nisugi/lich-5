@@ -73,7 +73,7 @@
     cle_td: (42..45),
     emp_td: (45..53),
     pal_td: nil,
-    ran_td: nil,
+    ran_td: (45..51),
     sor_td: 45,
     wiz_td: nil,
     mje_td: 45,
@@ -106,12 +106,18 @@
       "A humpbacked puma scampers in!"
     ],
     flee: [
-      "A humpbacked puma scampers {direction}."
+      "A humpbacked puma scampers {direction}.",
+      "A humpbacked puma roars loudly as he stands {direction}!"
     ],
     death: [
       "The humpbacked puma lets out a final caterwaul and dies.",
       "The humpbacked puma crumples to the ground and dies.",
-      "A humpbacked puma goes limp as he is rendered unconscious!"
+      "A humpbacked puma goes limp as he is rendered unconscious!",
+      "The humpbacked puma mewls in pain as she slumps to the ground and licks her wounded right paw.",
+      "The humpbacked puma mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The humpbacked puma mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
+      "The humpbacked puma mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The humpbacked puma mewls in pain as she slumps to the ground and licks her wounded left paw."
     ],
     decay: [
       "A humpbacked puma decays into a compost of fangs, fur and claws."

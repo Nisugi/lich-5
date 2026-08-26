@@ -65,7 +65,7 @@
     cle_td: (45..51),
     emp_td: (51..59),
     pal_td: nil,
-    ran_td: nil,
+    ran_td: 51,
     sor_td: (51..57),
     wiz_td: nil,
     mje_td: 51,
@@ -105,7 +105,9 @@
     arrival: [
       "A krolvin mercenary just arrived."
     ],
-    flee: [],
+    flee: [
+      "A krolvin mercenary stumps {direction}."
+    ],
     death: [
       "The krolvin mercenary rolls over on the ground and goes still.",
       "The krolvin mercenary rolls over on the floor and goes still."

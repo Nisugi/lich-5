@@ -74,9 +74,9 @@
     bolt: nil,
     udf: nil,
     bar_td: 340,
-    cle_td: 358,
+    cle_td: 379,
     emp_td: (359..368),
-    pal_td: nil,
+    pal_td: (312..321),
     ran_td: nil,
     sor_td: (381..396),
     wiz_td: nil,
@@ -122,14 +122,18 @@
       "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
       "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
       "A triton dissembler arrives, striding forth with her robes trailing behind her.",
-      "A triton executioner strides in, a wary look on his face."
+      "A triton executioner strides in, a wary look on his face.",
+      "A triton executioner strides in, gliding swiftly through the water with a wary look on his face.",
+      "A triton executioner just arrived."
     ],
     flee: [],
     death: [
       "The triton executioner gurgles once and goes still, a wrathful look on his face.",
       "The triton executioner gurgles once and goes still, a wrathful look on her face."
     ],
-    decay: [],
+    decay: [
+      "The triton executioner's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

@@ -50,7 +50,7 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 284,
     emp_td: (286..293),
     pal_td: nil,
     ran_td: nil,
@@ -90,7 +90,10 @@
       "A shan sorcerer saunters in growling phrases of magic!",
       "A shan sorceress just arrived."
     ],
-    flee: [],
+    flee: [
+      "A shan sorcerer pads {direction}.",
+      "A shan sorceress pads {direction}."
+    ],
     death: [
       "The shan sorcerer yips in pain as he falls to the ground motionless.",
       "The shan sorceress yips in pain as she falls to the ground motionless.",

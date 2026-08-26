@@ -110,7 +110,13 @@
       "Seeming to be a blend of mannish torso upon the body of a light horse, the ranger has a certain charm and aura of mystery. That is, until you encounter one, for the ranger is a savage and wilder cousin to the great centaurs of legend and will lash out in terrible fury when it deems a threat is at hand. Its hide is valued for its toughness and durability and thus, many will brave the danger of flying hooves and the threat held by these fierce creatures to gain this prize."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A black centaur ranger gallops {direction}.",
+      "A roan centaur ranger gallops {direction}.",
+      "A bay centaur ranger gallops {direction}.",
+      "A tan centaur ranger gallops {direction}.",
+      "A white centaur ranger gallops {direction}."
+    ],
     death: [
       "The tan centaur ranger screams one last time and dies.",
       "The black centaur ranger screams one last time and dies.",
@@ -120,7 +126,8 @@
       "The black centaur ranger falls to the ground and dies.",
       "The tan centaur ranger falls to the ground and dies.",
       "The bay centaur ranger falls to the ground and dies.",
-      "The white centaur ranger falls to the ground and dies."
+      "The white centaur ranger falls to the ground and dies.",
+      "The roan centaur ranger falls to the ground and dies."
     ],
     decay: [
       "A roan centaur ranger dissolves into a puff of red smoke.",

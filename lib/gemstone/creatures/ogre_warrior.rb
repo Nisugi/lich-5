@@ -107,7 +107,10 @@
     arrival: [
       "An ogre warrior just arrived."
     ],
-    flee: [],
+    flee: [
+      "An ogre warrior runs {direction}.",
+      "An ogre warrior limps {direction}."
+    ],
     death: [
       "The ogre warrior falls to the ground and dies.",
       "The ogre warrior screams one last time and dies.",

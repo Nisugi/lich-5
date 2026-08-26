@@ -59,7 +59,7 @@
   defense_attributes: {
     asg: "10N",
     immunities: [],
-    melee: (92..160),
+    melee: (87..160),
     ranged: (87..102),
     bolt: (87..102),
     udf: 166,
@@ -67,7 +67,7 @@
     cle_td: 60,
     emp_td: (60..68),
     pal_td: (57..63),
-    ran_td: nil,
+    ran_td: (54..60),
     sor_td: (58..61),
     wiz_td: 63,
     mje_td: 63,
@@ -104,7 +104,11 @@
     ],
     death: [
       "The striped warcat lets out a final caterwaul and dies.",
-      "The striped warcat crumples to the ground and dies."
+      "The striped warcat crumples to the ground and dies.",
+      "The striped warcat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The striped warcat mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
+      "The striped warcat mewls in pain as he slumps to the ground and licks his wounded left paw.",
+      "Beautiful shot pierces both lungs, the striped warcat makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A striped warcat decays into a compost of fangs, fur and claws."

@@ -32,7 +32,7 @@
     physical_attacks: [
       {
         name: "Ensnare",
-        as: 122
+        as: (109..122)
       },
       {
         name: "Claw",
@@ -88,7 +88,8 @@
     ],
     arrival: [],
     flee: [
-      "A glittering crystal crab retreats back into its shell."
+      "A glittering crystal crab retreats back into its shell.",
+      "A glittering crystal crab twitches and skitters {direction}."
     ],
     death: [
       "The crystal crab collapses to the ground, clacks its pincers and dies.",

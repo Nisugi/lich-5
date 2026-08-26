@@ -66,7 +66,7 @@
     melee: (247..249),
     ranged: 249,
     bolt: 237,
-    udf: nil,
+    udf: 221,
     bar_td: 232,
     cle_td: nil,
     emp_td: 247,
@@ -101,7 +101,8 @@
       "Massive troll kings are the largest, ugliest, dumbest, and most powerful creatures in the troll family.\n\nThis fierce monster is roughly humanoid, standing nearly 9 feet tall, with long arms ending in razor-sharp claws. Dark green and covered with ugly warts, this hideous being appears unintelligent yet incredibly strong."
     ],
     arrival: [
-      "A massive troll king arrives, flexing its massive claws."
+      "A massive troll king arrives, flexing its massive claws.",
+      "A resolute dhu goleras arrives with a loping, uneven gait, her body rocking side-to-side and her head and arms flopping wildly."
     ],
     flee: [],
     death: [

@@ -53,7 +53,7 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (131..149),
+    melee: (112..149),
     ranged: (112..119),
     bolt: (112..119),
     udf: 167,
@@ -96,13 +96,16 @@
     ],
     flee: [
       "A plains lion scampers {direction}.",
-      "A plains lion scampers {direction}, mewling in pain."
+      "A plains lion scampers {direction}, mewling in pain.",
+      "A plains lion roars loudly as he stands {direction}!"
     ],
     death: [
       "The plains lion crumples to the ground and dies.",
       "The plains lion lets out a final caterwaul and dies.",
       "The plains lion mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The plains lion mewls in pain as he slumps to the ground and licks his wounded right foreleg."
+      "The plains lion mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
+      "The plains lion mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
+      "The plains lion mewls in pain as she slumps to the ground and licks her wounded left foreleg."
     ],
     decay: [
       "A plains lion decays into a compost of fangs, fur and claws."

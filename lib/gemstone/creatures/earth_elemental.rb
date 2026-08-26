@@ -55,14 +55,14 @@
     asg: "20N",
     immunities: [],
     melee: (160..293),
-    ranged: nil,
-    bolt: nil,
+    ranged: (157..256),
+    bolt: (157..256),
     udf: 662,
     bar_td: nil,
     cle_td: 333,
     emp_td: 315,
     pal_td: (277..286),
-    ran_td: nil,
+    ran_td: (268..274),
     sor_td: (366..375),
     wiz_td: nil,
     mje_td: 369,
@@ -100,7 +100,10 @@
       "An earth elemental lumbers in slowly."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The earth elemental topples to the ground motionless.",
+      "The earth elemental shudders violently for a moment, then goes still."
+    ],
     decay: [
       "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
       "The earth elemental's left leg crumbles briefly and explodes in a shower of gore."

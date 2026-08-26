@@ -119,7 +119,8 @@
       "The greater bog troll's body goes rigid and his eyes roll back into his head as he dies.",
       "A greater bog troll goes limp as he is rendered unconscious!",
       "A greater bog troll goes limp as she is rendered unconscious!",
-      "The greater bog troll's body goes rigid and collapses to the ground, dead."
+      "The greater bog troll's body goes rigid and collapses to the ground, dead.",
+      "The greater bog troll slumps to the ground."
     ],
     decay: [
       "A greater bog troll decays into compost.",

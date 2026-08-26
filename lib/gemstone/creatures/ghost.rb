@@ -91,7 +91,8 @@
     ],
     flee: [],
     death: [
-      "The ghost slowly settles to the ground and begins to dissipate."
+      "The ghost slowly settles to the ground and begins to dissipate.",
+      "The ghost goes still for a moment while its head reshapes."
     ],
     decay: [
       "A ghost vanishes into thin air, leaving no trace behind."

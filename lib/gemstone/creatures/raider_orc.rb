@@ -89,7 +89,9 @@
     arrival: [
       "A raider orc saunters in looking for something to pillage."
     ],
-    flee: [],
+    flee: [
+      "A raider orc trots {direction}."
+    ],
     death: [
       "A raider orc screams his defiance skyward one last time and dies.",
       "A raider orc screams her defiance skyward one last time and dies.",

@@ -53,14 +53,14 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 328,
+    melee: (166..211),
     ranged: (166..211),
     bolt: (166..211),
     udf: 443,
     bar_td: 254,
     cle_td: nil,
     emp_td: (272..281),
-    pal_td: nil,
+    pal_td: (226..235),
     ran_td: nil,
     sor_td: (285..294),
     wiz_td: nil,
@@ -91,10 +91,14 @@
       "Circling and pacing, the red tsark creeps closer, her eyes glowing red with fury. The scaled creature moves constantly, crouched on her powerful back legs like a tightly wound spring, ready to launch an attack at any opportunity. Small front legs are held poised in front of the reptile's chest, armed with formidable claws that could easily disembowel an unwary adversary. Smoke trails from the red tsark's nostrils, punctuated by flames each time she snorts a challenge."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A red tsark darts {direction}.",
+      "A red tsark slowly trundles {direction}."
+    ],
     death: [
       "The red tsark goes limp and she falls over as the fire slowly fades from her eyes.",
-      "The red tsark goes limp and he falls over as the fire slowly fades from his eyes."
+      "The red tsark goes limp and he falls over as the fire slowly fades from his eyes.",
+      "The red tsark slumps to the ground."
     ],
     decay: [],
     search: [],

@@ -93,7 +93,9 @@
       "Round-headed with a squat nose and a wide mouth, her features occasionally interrupted by warts, the fanged goblin has a dark cast green skin with a sickly yellow tinge to it. Long, sharp fangs poke out of her puffed lips forcing her face into a perpetual sneer. Standing as tall as a dwarf or halfling, the fanged goblin moves with a nervous energy but rarely looks directly at anyone. A yeasty smell as of molding bread or of something left to rot in a dark damp place completes the goblin's aura of repulsiveness."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A fanged goblin tramps {direction}."
+    ],
     death: [
       "The fanged goblin falls to the ground, kicks several times and dies.",
       "The fanged goblin screams silently, shudders one last time and dies.",

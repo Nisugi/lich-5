@@ -125,7 +125,8 @@
     flee: [],
     death: [
       "A hunch-backed dogmatist goes limp as he is rendered unconscious!",
-      "A hunch-backed dogmatist goes limp as she is rendered unconscious!"
+      "A hunch-backed dogmatist goes limp as she is rendered unconscious!",
+      "The hunch-backed dogmatist slumps to the ground."
     ],
     decay: [
       "A hunch-backed dogmatist crumbles in upon herself, her skin flaking away as if it only served as an outer shell.",

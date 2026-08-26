@@ -64,9 +64,9 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (361..367),
     emp_td: 368,
-    pal_td: nil,
+    pal_td: (317..320),
     ran_td: nil,
     sor_td: (376..385),
     wiz_td: nil,
@@ -102,7 +102,8 @@
       "A triton radical strides in, a wary look on her face.",
       "A triton dissembler strides in, a wary look on his face.",
       "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton dissembler arrives, striding forth with his robes trailing behind him."
+      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
+      "A spectral triton defender just arrived."
     ],
     flee: [],
     death: [
@@ -116,7 +117,8 @@
     spell_prep: [],
     attack: [
       "A spectral triton defender swings {weapon} at you!",
-      "A spectral triton defender thrusts with a lackluster blue steel harpoon at you!"
+      "A spectral triton defender thrusts with a lackluster blue steel harpoon at you!",
+      "A spectral triton defender throws {weapon} at you!"
     ],
     bite: [],
     claw: [],

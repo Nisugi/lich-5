@@ -62,7 +62,7 @@
     bar_td: nil,
     cle_td: nil,
     emp_td: (368..376),
-    pal_td: nil,
+    pal_td: (325..328),
     ran_td: nil,
     sor_td: "366 to 396",
     wiz_td: nil,
@@ -112,7 +112,8 @@
     spell_prep: [],
     attack: [
       "Hoisting haggard veiki herald zorchar khopesh high, a haggard Veiki herald strikes brutally at you!",
-      "A titan tempest tyrant's feras morning star crackles with corruscating lightning as haggard veiki herald swings it at you!"
+      "A titan tempest tyrant's feras morning star crackles with corruscating lightning as haggard veiki herald swings it at you!",
+      "Tightening haggard veiki herald grip on haggard veiki herald feras spikestar, a titan tempest tyrant strikes out at you with all of haggard veiki herald might!"
     ],
     bite: [],
     claw: [],

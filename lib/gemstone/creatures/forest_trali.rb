@@ -94,7 +94,10 @@
       "A forest trali arrives, sniffing the air for prey!",
       "A forest trali stalks in."
     ],
-    flee: [],
+    flee: [
+      "A forest trali tramps {direction}.",
+      "A forest trali limps {direction}."
+    ],
     death: [
       "The forest trali twitches violently, then dies.",
       "A forest trali goes limp as she is rendered unconscious!",

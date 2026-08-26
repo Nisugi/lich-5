@@ -56,7 +56,7 @@
     bar_td: 174,
     cle_td: 123,
     emp_td: (180..184),
-    pal_td: nil,
+    pal_td: (171..174),
     ran_td: nil,
     sor_td: (131..191),
     wiz_td: nil,
@@ -94,11 +94,15 @@
       "A mud wasp wobbles as it flies in.",
       "A mud wasp weaves slowly as it flies in."
     ],
-    flee: [],
+    flee: [
+      "A mud wasp heads {direction}.",
+      "A mud wasp wobbles {direction}."
+    ],
     death: [
       "The mud wasp flutters its wings one last time and dies.",
       "The mud wasp twitches violently, then dies.",
-      "A mud wasp goes limp as it is rendered unconscious!"
+      "A mud wasp goes limp as it is rendered unconscious!",
+      "The mud wasp slumps to the ground."
     ],
     decay: [
       "A mud wasp decays into compost."

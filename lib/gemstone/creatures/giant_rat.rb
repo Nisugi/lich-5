@@ -102,7 +102,8 @@
     ],
     death: [
       "The giant rat collapses to the ground, emits a final squeal, and dies.",
-      "The giant rat twitches and dies."
+      "The giant rat twitches and dies.",
+      "The giant rat shrieks as it slumps to the ground and licks at its wounded left foreleg."
     ],
     decay: [
       "A giant rat decays into a pile of mangy hair and bone."

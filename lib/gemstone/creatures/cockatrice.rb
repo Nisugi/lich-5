@@ -101,7 +101,10 @@
     arrival: [
       "A cockatrice just arrived!"
     ],
-    flee: [],
+    flee: [
+      "A cockatrice limps {direction}.",
+      "A cockatrice thunders {direction}."
+    ],
     death: [
       "The cockatrice rolls over on its back, emits a final screech and dies."
     ],

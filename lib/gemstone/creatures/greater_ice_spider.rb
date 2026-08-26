@@ -99,7 +99,9 @@
       "Often first noticed as just a large clump of moving snow, the greater ice spider resolves into a wide, low-slung spider three feet across and half again as long. Covered with thick, white hair to ward against the cold wind, the greater ice spider roams the snowfields looking for anything living it can web and consume."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A greater ice spider scurries {direction}."
+    ],
     death: [
       "The greater ice spider collapses to the ground and dies.",
       "The greater ice spider's body jerks one last time and dies."

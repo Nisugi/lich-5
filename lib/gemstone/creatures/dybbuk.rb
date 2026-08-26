@@ -51,7 +51,7 @@
     bolt: (247..259),
     udf: 266,
     bar_td: (155..161),
-    cle_td: 176,
+    cle_td: (176..185),
     emp_td: (169..175),
     pal_td: nil,
     ran_td: 134,
@@ -88,7 +88,9 @@
     arrival: [
       "A dybbuk shambles in!"
     ],
-    flee: [],
+    flee: [
+      "A dybbuk shambles {direction}."
+    ],
     death: [
       "The dybbuk falls to the ground motionless.",
       "The dybbuk wails in terrifying pain one last time and lies still."

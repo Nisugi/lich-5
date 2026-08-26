@@ -64,12 +64,12 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (607..634),
+    melee: (233..247),
     ranged: (233..247),
     bolt: (233..247),
     udf: 428,
     bar_td: (160..183),
-    cle_td: (174..193),
+    cle_td: (174..199),
     emp_td: (182..192),
     pal_td: nil,
     ran_td: 166,
@@ -111,7 +111,8 @@
     arrival: [],
     flee: [],
     death: [
-      "The horned vor'taz's horn dims as his lifeforce fades away."
+      "The horned vor'taz's horn dims as his lifeforce fades away.",
+      "The horned vor'taz's horn dims as her lifeforce fades away."
     ],
     decay: [
       "A horned vor'taz crumbles away to nothing."

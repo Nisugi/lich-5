@@ -83,7 +83,7 @@
     cle_td: (203..206),
     emp_td: (198..207),
     pal_td: (172..175),
-    ran_td: nil,
+    ran_td: 175,
     sor_td: (216..228),
     wiz_td: nil,
     mje_td: nil,
@@ -122,7 +122,10 @@
     flee: [
       "There is a loud rumbling as a stone troll crawls {direction} of the ground!"
     ],
-    death: [],
+    death: [
+      "The stone troll topples to the ground motionless.",
+      "The stone troll shudders violently for a moment, then goes still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

@@ -135,7 +135,9 @@
     death: [
       "A vesperti goes limp as he is rendered unconscious!",
       "A vesperti goes limp as she is rendered unconscious!",
-      "The vesperti twitches violently, then dies."
+      "The vesperti twitches violently, then dies.",
+      "The vesperti's wings splay out as he goes still.",
+      "The vesperti's wings splay out as she goes still."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the vesperti's ribs to move independently."

@@ -132,7 +132,8 @@
       "Dull, mottled, grey skin covers the dhu goleras's stubby, wrinkled torso. The arms appear twice as long as they should be, ending in long, twig-like fingers. The legs are the opposite. Short and misshapen, they have three knees each, giving the dhu goleras a peculiar, hobbling gait, yet with incredible quickness. Huge, lidless, moon-shaped eyes with white irises bulge from a bony cranium atop a long, thin, rubbery neck. Green ichor drips from around the eyes, running down the sunken cheeks. The dhu goleras extends his long white tongue and licks off what ichor he can reach, consuming it with relish."
     ],
     arrival: [
-      "A dhu goleras arrives with a loping, uneven gait, his body rocking side-to-side and his head and arms flopping wildly."
+      "A dhu goleras arrives with a loping, uneven gait, his body rocking side-to-side and his head and arms flopping wildly.",
+      "A dhu goleras arrives with a loping, uneven gait, her body rocking side-to-side and her head and arms flopping wildly."
     ],
     flee: [],
     death: [

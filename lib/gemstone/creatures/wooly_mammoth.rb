@@ -101,7 +101,13 @@
       "A wooly mammoth lumbers {direction}, trumpeting in pain.",
       "A wooly mammoth slowly lumbers {direction}, trumpeting in agony."
     ],
-    death: [],
+    death: [
+      "The wooly mammoth slumps to the ground and licks his wounded right foreleg.",
+      "The wooly mammoth slumps to the ground and licks his wounded left foreleg.",
+      "The wooly mammoth slumps to the ground and licks her wounded right foreleg.",
+      "The wooly mammoth slumps to the ground and licks her wounded left foreleg.",
+      "The wooly mammoth slumps to the ground and licks his wounded right foot."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

@@ -50,7 +50,7 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (165..181),
+    melee: (115..174),
     ranged: (115..169),
     bolt: (115..169),
     udf: 265,
@@ -95,7 +95,9 @@
       "A rotting woodsman shambles in!"
     ],
     flee: [
-      "A rotting woodsman crawls {direction}."
+      "A rotting woodsman crawls {direction}.",
+      "A rotting woodsman wails madly as he limps {direction}.",
+      "A rotting woodsman shambles {direction}."
     ],
     death: [],
     decay: [],

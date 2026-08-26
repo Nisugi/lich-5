@@ -129,8 +129,12 @@
     arrival: [
       "An ethereal triton psionicist just arrived."
     ],
-    flee: [],
-    death: [],
+    flee: [
+      "An ethereal triton psionicist heads {direction}."
+    ],
+    death: [
+      "The triton psionicist fades into transparency, her remnants rapidly dissolving into the air."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

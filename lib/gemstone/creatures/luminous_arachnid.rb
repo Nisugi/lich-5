@@ -57,7 +57,7 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (67..170),
+    melee: (54..170),
     ranged: (54..80),
     bolt: (54..80),
     udf: 221,
@@ -65,7 +65,7 @@
     cle_td: (45..51),
     emp_td: (42..51),
     pal_td: (42..51),
-    ran_td: nil,
+    ran_td: (45..48),
     sor_td: (42..51),
     wiz_td: nil,
     mje_td: nil,
@@ -96,7 +96,9 @@
     ],
     arrival: [],
     flee: [
-      "A luminous arachnid crawls {direction}."
+      "A luminous arachnid crawls {direction}.",
+      "A luminous arachnid scurries {direction}.",
+      "A luminous arachnid hobbles {direction}."
     ],
     death: [
       "The luminous arachnid collapses to the ground and dies.",

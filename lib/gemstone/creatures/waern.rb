@@ -95,10 +95,16 @@
       "The waern is a vicious-looking embodiment of canine malice and tenacity. The waern's fiendish green eyes glow with insane appetite and her mangy pelt is so ragged, the rotting bones show through in spots. Long, malicious teeth curve out of the waern's rotting muzzle, and the tail that curves over the waern's back is hardly more than segments of bone interspersed with a few pieces of fuzzy, matted hair. Floating over the ground, her paws scarcely leaving a track, the waern dodges almost quicker than the eye can follow."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A waern runs {direction}."
+    ],
     death: [
       "The waern rolls over and dies.",
-      "The waern falls to the ground and dies."
+      "The waern falls to the ground and dies.",
+      "The waern yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
+      "The waern yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
+      "The waern yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
+      "The waern yelps loudly as she slumps to the ground and licks her wounded left foreleg."
     ],
     decay: [
       "A waern decays into a compost of fangs and fur.",

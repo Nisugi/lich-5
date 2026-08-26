@@ -97,9 +97,9 @@
     bolt: nil,
     udf: 285,
     bar_td: 76,
-    cle_td: (78..83),
+    cle_td: 147,
     emp_td: (161..171),
-    pal_td: nil,
+    pal_td: (135..144),
     ran_td: nil,
     sor_td: (94..165),
     wiz_td: nil,
@@ -142,11 +142,16 @@
       "The fenghai seems to be a furry little ball with feet. Sparkling eyes peer out from a mop of russet fur, looking about with a happy curiousity. Stubby arms end in pudgy little hands that appear dextrous despite their dimensions, and the round-toed feet are covered in hair and dirt. While comical in appearance, it is obvious that the furball can take care of itself."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A fenghai scurries {direction}.",
+      "A glowing fenghai scurries {direction}.",
+      "A flashy fenghai scurries {direction}."
+    ],
     death: [
       "The fenghai falls to the ground motionless.",
       "A fenghai goes limp as it is rendered unconscious!",
-      "The fenghai cries out one last time and lies still."
+      "The fenghai cries out one last time and lies still.",
+      "The fenghai slumps to the ground."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the fenghai's ribs to move independently.",

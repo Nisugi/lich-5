@@ -86,7 +86,9 @@
     arrival: [
       "A Grimswarm troll skirmisher just arrived."
     ],
-    flee: [],
+    flee: [
+      "A Grimswarm troll skirmisher heads {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

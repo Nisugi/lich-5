@@ -102,7 +102,8 @@
     flee: [],
     death: [
       "A hunter troll goes limp as he is rendered unconscious!",
-      "The hunter troll slumps to the ground with a final snarl."
+      "The hunter troll slumps to the ground with a final snarl.",
+      "The hunter troll slumps to the ground."
     ],
     decay: [
       "A hunter troll decays into compost."

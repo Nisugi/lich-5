@@ -118,7 +118,9 @@
       "Shadows suddenly converge, revealing the skulking form of a creature with horribly elongated extremities and twisted anatomy. The n'ecare's movements are as fleet as a hare, rendering him difficult to see clearly, and his spidery fingers skitter constantly, as if the n'ecare was using them to taste the air around him. From the dark pools of gloom beneath his cracked brows, the n'ecare's eyes glitter in fanatical mirth, made all the more terrible by the rotting maw of his grin."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A n'ecare grumbles quietly as he limps {direction}."
+    ],
     death: [
       "The n'ecare falls to the ground motionless.",
       "The n'ecare wails in terrifying pain one last time and lies still."

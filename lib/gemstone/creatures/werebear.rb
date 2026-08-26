@@ -101,7 +101,11 @@
       "A werebear lumbers {direction} of the underbrush, uttering a weird, half-human cry!"
     ],
     death: [
-      "A werebear growls one last time, and crumples to the ground in a heap."
+      "A werebear growls one last time, and crumples to the ground in a heap.",
+      "The werebear snarls in agony and slumps to the ground, cradling its wounded left foreleg.",
+      "The werebear snarls viciously and slumps to the ground, favoring its mangled left hind leg.",
+      "The werebear snarls in agony and slumps to the ground, cradling its wounded right foreleg.",
+      "The werebear snarls in agony and slumps to the ground, cradling its wounded right paw."
     ],
     decay: [
       "A werebear turns to dust."

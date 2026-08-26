@@ -87,7 +87,7 @@
     bolt: 249,
     udf: 485,
     bar_td: 299,
-    cle_td: (323..337),
+    cle_td: (337..346),
     emp_td: 344,
     pal_td: nil,
     ran_td: nil,
@@ -127,10 +127,14 @@
     arrival: [
       "An Ithzir janissary strides in, surveying the surroundings alertly."
     ],
-    flee: [],
+    flee: [
+      "An Ithzir janissary strides {direction}."
+    ],
     death: [
       "The Ithzir janissary vainly struggles to rise, then goes still.",
-      "An Ithzir janissary's body shimmers slightly, then fades from view like a dissipating phantom."
+      "An Ithzir janissary's body shimmers slightly, then fades from view like a dissipating phantom.",
+      "Just as you incant, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!",
+      "Just as you cast, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!"
     ],
     decay: [],
     search: [],

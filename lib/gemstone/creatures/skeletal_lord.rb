@@ -104,7 +104,10 @@
     arrival: [
       "A skeletal lord shambles in!"
     ],
-    flee: [],
+    flee: [
+      "A skeletal lord shambles {direction}.",
+      "A skeletal lord wails madly as it limps {direction}."
+    ],
     death: [
       "The skeletal lord falls to the ground motionless.",
       "The skeletal lord wails in terrifying pain one last time and lies still."

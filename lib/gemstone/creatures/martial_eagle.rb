@@ -96,7 +96,8 @@
     ],
     death: [
       "The martial eagle writhes in agony, its wings flapping fruitlessly as it dies.",
-      "A martial eagle goes limp as it is rendered unconscious!"
+      "A martial eagle goes limp as it is rendered unconscious!",
+      "The martial eagle crashes to the ground, motionless."
     ],
     decay: [
       "The martial eagle decays into a pile of feathers."

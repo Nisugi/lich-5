@@ -97,11 +97,14 @@
       "This servant of the huntress is both guardian and warrior for its mistress. Its brown coloring and smaller size makes it seem less dangerous than other, larger spiders. However, the fine brown hair on its body is probably used to seek out hidden spies, and its spinnaret to immobilize them."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A brown spinner scurries {direction}."
+    ],
     death: [
       "The brown spinner's body jerks one last time and dies.",
       "The brown spinner collapses to the ground and dies.",
-      "A brown spinner goes limp as it is rendered unconscious!"
+      "A brown spinner goes limp as it is rendered unconscious!",
+      "The brown spinner slumps to the ground."
     ],
     decay: [
       "A brown spinner's legs shrivel up beneath it as it decays into dust.",

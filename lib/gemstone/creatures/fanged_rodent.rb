@@ -92,7 +92,9 @@
     death: [
       "The fanged rodent collapses to the ground, emits a final squeal, and dies.",
       "The fanged rodent twitches and dies.",
-      "The fanged rodent collapses to the ground, emits a final silent squeal, and dies."
+      "The fanged rodent collapses to the ground, emits a final silent squeal, and dies.",
+      "The fanged rodent shrieks as it slumps to the ground and licks at its wounded left foreleg.",
+      "The fanged rodent shrieks as it slumps to the ground and licks at its wounded right foreleg."
     ],
     decay: [
       "A fanged rodent decays into a pile of hair and bone."

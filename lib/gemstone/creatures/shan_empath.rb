@@ -54,7 +54,7 @@
     bolt: nil,
     udf: 445,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (277..283),
     emp_td: (271..280),
     pal_td: nil,
     ran_td: nil,
@@ -93,16 +93,21 @@
       ""
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A shan empath pads {direction}.",
+      "A shan empath limps {direction}."
+    ],
     death: [
       "The shan empath howls out one last time and dies.",
       "The shan empath yips in pain as he falls to the ground motionless.",
       "The shan empath yips in pain as she falls to the ground motionless.",
       "A shan empath's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
-      "A shan empath's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
+      "A shan empath's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
+      "The shan empath slumps to the ground."
     ],
     decay: [
-      "The shan empath's left leg crumbles briefly and explodes in a shower of gore."
+      "The shan empath's left leg crumbles briefly and explodes in a shower of gore.",
+      "The shan empath's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

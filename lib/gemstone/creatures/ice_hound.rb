@@ -57,7 +57,7 @@
     melee: 117,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 141,
     bar_td: nil,
     cle_td: 74,
     emp_td: 76,
@@ -99,7 +99,9 @@
       "The ice hound lets out one last whimpering sigh of frosty mist and dies.",
       "An ice hound goes limp as it is rendered unconscious!",
       "The ice hound yelps loudly as it slumps to the ground and licks its wounded right foreleg.",
-      "The ice hound yelps loudly as it slumps to the ground and licks its wounded left paw."
+      "The ice hound yelps loudly as it slumps to the ground and licks its wounded left paw.",
+      "The ice hound yelps loudly as it slumps to the ground and licks its wounded right paw.",
+      "The ice hound yelps loudly as it slumps to the ground and licks its wounded left foreleg."
     ],
     decay: [
       "An ice hound decays into a compost of fur and fangs."

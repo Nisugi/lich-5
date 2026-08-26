@@ -112,7 +112,9 @@
       "A lesser moor wight arrives on a cold wind.",
       "A bog troll lumbers in, his face set in an angry scowl!"
     ],
-    flee: [],
+    flee: [
+      "A lesser moor wight wails madly as it limps {direction}."
+    ],
     death: [],
     decay: [],
     search: [],

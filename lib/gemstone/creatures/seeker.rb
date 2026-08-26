@@ -61,7 +61,7 @@
     melee: (342..388),
     ranged: nil,
     bolt: (273..337),
-    udf: nil,
+    udf: 335,
     bar_td: nil,
     cle_td: nil,
     emp_td: (226..228),
@@ -105,9 +105,12 @@
       "Approaching from afar, the seeker looks for all the world like a hunched over traveller, barely getting by with the aid of her walking stick, shuffling along and muttering to herself. Upon close examination, though, the seeker projects a grisly visage of skeletal madness. Some strange magic has caused her eyelids to grow completely over her eyes, rendering her blind, yet the rest of her face is totally fleshless. Grinning fiendishly, the seeker unerringly pursues her goal - the Eye of the Drake and the path through to the Rift."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A seeker moans as she shuffles {direction}."
+    ],
     death: [
-      "The seeker mutters, \"...the Eye, the Eye...\" and lies still."
+      "The seeker mutters, \"...the Eye, the Eye...\" and lies still.",
+      "The seeker slumps to the ground."
     ],
     decay: [],
     search: [],

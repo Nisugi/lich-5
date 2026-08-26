@@ -117,7 +117,10 @@
     arrival: [
       "A mountain ogre just arrived."
     ],
-    flee: [],
+    flee: [
+      "A mountain ogre runs {direction}.",
+      "A mountain ogre limps {direction}."
+    ],
     death: [
       "The mountain ogre falls to the ground and dies.",
       "The mountain ogre screams one last time and dies.",

@@ -73,7 +73,7 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (137..152),
+    melee: (92..152),
     ranged: (92..104),
     bolt: (92..104),
     udf: 160,
@@ -115,7 +115,8 @@
     ],
     flee: [
       "A black bear lumbers {direction}.",
-      "A black bear slowly lumbers {direction}, growling in pain."
+      "A black bear slowly lumbers {direction}, growling in pain.",
+      "A black bear roars loudly as he stands {direction}!"
     ],
     death: [
       "The black bear lets out a blood-curdling roar and dies.",
@@ -125,7 +126,10 @@
       "The black bear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
       "The black bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
       "The black bear roars loudly as he slumps to the ground and licks his wounded right foreleg.",
-      "The black bear roars loudly as she slumps to the ground and licks her wounded left paw."
+      "The black bear roars loudly as she slumps to the ground and licks her wounded left paw.",
+      "The black bear roars loudly as she slumps to the ground and licks her wounded left foreleg.",
+      "The black bear roars loudly as he slumps to the ground and licks his wounded left paw.",
+      "The black bear roars loudly as she slumps to the ground and licks her wounded right paw."
     ],
     decay: [
       "A black bear decays into a compost of fangs, fur and claws."

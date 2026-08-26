@@ -113,7 +113,8 @@
       "The relnak hisses one last time and dies.",
       "A relnak screeches loudly and slumps to the ground while frantically licking its wounded right foreleg.",
       "A relnak screeches loudly and slumps to the ground while frantically licking its wounded left foreleg.",
-      "A relnak screeches loudly and slumps to the ground while frantically licking its wounded left hoof."
+      "A relnak screeches loudly and slumps to the ground while frantically licking its wounded left hoof.",
+      "A relnak screeches loudly and slumps to the ground while frantically licking its wounded right hoof."
     ],
     decay: [
       "A relnak decays into compost."

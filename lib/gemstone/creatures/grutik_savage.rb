@@ -68,7 +68,7 @@
     bar_td: 81,
     cle_td: (81..90),
     emp_td: (88..96),
-    pal_td: nil,
+    pal_td: (78..87),
     ran_td: nil,
     sor_td: 92,
     wiz_td: 96,
@@ -107,9 +107,12 @@
     arrival: [
       "A Grutik savage shambles in."
     ],
-    flee: [],
+    flee: [
+      "A Grutik savage shambles {direction}."
+    ],
     death: [
-      "A Grutik savage goes limp as he is rendered unconscious!"
+      "A Grutik savage goes limp as he is rendered unconscious!",
+      "The Grutik savage slumps to the ground."
     ],
     decay: [
       "A Grutik savage collapses into a lifeless heap upon the ground.",

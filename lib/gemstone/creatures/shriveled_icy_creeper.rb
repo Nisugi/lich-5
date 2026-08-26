@@ -100,7 +100,9 @@
       "Looking nearly to expire, this creeper definitely falls into the unhealthy category but don't let looks fool you. If you or a friend falls into it, it is likely that you or they will fall into an unhealthy ... or dead category too!"
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A shriveled icy creeper creeps {direction}."
+    ],
     death: [
       "A shriveled icy creeper collapses to the ground, twitches one last time and dies.",
       "A shriveled icy creeper twitches one last time and dies."

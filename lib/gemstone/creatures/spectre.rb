@@ -80,7 +80,7 @@
   defense_attributes: {
     asg: "17",
     immunities: [],
-    melee: (57..156),
+    melee: (49..156),
     ranged: (49..52),
     bolt: (49..52),
     udf: 167,
@@ -125,10 +125,14 @@
       "A spectre just arrived.",
       "A shadowy spectre just arrived."
     ],
-    flee: [],
+    flee: [
+      "A luminous spectre floats {direction}."
+    ],
     death: [
       "The spectre falls to the ground motionless.",
-      "The shadowy spectre falls to the ground motionless."
+      "The shadowy spectre falls to the ground motionless.",
+      "The shadowy spectre goes still for a moment while its head reshapes.",
+      "The spectre goes still for a moment while its head reshapes."
     ],
     decay: [
       "A spectre turns to dust.",

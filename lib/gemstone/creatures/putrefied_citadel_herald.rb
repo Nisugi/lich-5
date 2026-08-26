@@ -144,7 +144,9 @@
     flee: [],
     death: [
       "A putrefied Citadel herald collapses in upon herself, leaving behind a pile of dust.",
-      "A putrefied Citadel herald collapses in upon himself, leaving behind a pile of dust."
+      "A putrefied Citadel herald collapses in upon himself, leaving behind a pile of dust.",
+      "A spectral howl echoes through the air, resonant with pain and anguish, and then fades into heavy silence.  The scaly veneer covering a putrefied Citadel herald shimmers briefly before melting into his skin.",
+      "A spectral howl echoes through the air, resonant with pain and anguish, and then fades into heavy silence.  The scaly veneer covering a putrefied Citadel herald shimmers briefly before melting into her skin."
     ],
     decay: [
       "Acid dissolves connecting cartilage, freeing the Citadel herald's ribs to move independently.",

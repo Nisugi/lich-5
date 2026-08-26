@@ -140,7 +140,9 @@
     arrival: [
       "A forest troll just arrived!"
     ],
-    flee: [],
+    flee: [
+      "A forest troll heads {direction}."
+    ],
     death: [
       "The forest troll screams one last time and dies.",
       "The forest troll falls to the ground and dies.",

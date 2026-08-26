@@ -94,9 +94,12 @@
     arrival: [
       "A frozen corpse shambles in!"
     ],
-    flee: [],
+    flee: [
+      "A frozen corpse shambles {direction}."
+    ],
     death: [
-      "The frozen corpse wails in terrifying pain one last time and lies still."
+      "The frozen corpse wails in terrifying pain one last time and lies still.",
+      "The frozen corpse slumps to the ground."
     ],
     decay: [],
     search: [],

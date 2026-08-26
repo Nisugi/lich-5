@@ -62,14 +62,14 @@
     asg: "20N",
     immunities: [],
     melee: (222..438),
-    ranged: nil,
-    bolt: 224,
+    ranged: 240,
+    bolt: 240,
     udf: 653,
     bar_td: (306..315),
     cle_td: 341,
     emp_td: (323..332),
     pal_td: (279..282),
-    ran_td: nil,
+    ran_td: (288..294),
     sor_td: 345,
     wiz_td: nil,
     mje_td: 364,
@@ -103,7 +103,10 @@
       "The boulder comes to a sudden stop and rises into the form of a greater krynch!"
     ],
     flee: [],
-    death: [],
+    death: [
+      "The greater krynch shudders, then topples to the ground.",
+      "The greater krynch shudders violently for a moment, then goes still."
+    ],
     decay: [
       "Tiny fissures quickly spread over a dead greater krynch, and it crumbles into rubble."
     ],

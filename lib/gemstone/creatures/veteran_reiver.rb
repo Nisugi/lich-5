@@ -45,7 +45,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (99..113),
+    melee: (99..116),
     ranged: (110..116),
     bolt: (110..116),
     udf: 137,
@@ -89,7 +89,9 @@
     arrival: [
       "A veteran reiver just arrived."
     ],
-    flee: [],
+    flee: [
+      "A veteran reiver heads {direction}."
+    ],
     death: [
       "The reiver takes one last breath, then dies.",
       "The veteran reiver falls to the ground motionless."

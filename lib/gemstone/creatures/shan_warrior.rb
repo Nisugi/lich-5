@@ -69,7 +69,7 @@
     bolt: nil,
     udf: 407,
     bar_td: (117..150),
-    cle_td: 126,
+    cle_td: (120..129),
     emp_td: (123..132),
     pal_td: 126,
     ran_td: nil,
@@ -113,7 +113,10 @@
       "The shan warrior stands in a half-crouch, her long, knotty legs giving her that lanky, dangerous look of a wolf. Walking upright, the body covered with mottled grey fur and her long arms conclude in large, clawed hands with semi-opposable thumbs. The shan warrior's dog-like visage is fierce, with slavering jaws and eyes that glow like something out of a bad dream."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A shan warrior pads {direction}.",
+      "A shan warrior limps {direction}."
+    ],
     death: [
       "The shan warrior howls out one last time and dies.",
       "The shan warrior yips in pain as she falls to the ground motionless.",

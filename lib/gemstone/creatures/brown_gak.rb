@@ -87,7 +87,9 @@
       "The brown gak is a big, ugly beast with a dirt-encrusted brown pelt. A marked odor of dung and musty wool surround him in a noxious cloud. The gak chomps vicious-looking teeth, a mix of distrust and hatred in his large doe-like eyes. A pair of sharp horns curves up above his short, broad head in a shape that resembles a lyre. The animal looks ungainly with his tall shoulders and shorter hindquarters, which give his a jerky, uneven gait. Suddenly, he bares his bovine ivories and brays loudly!"
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A brown gak gallops {direction}."
+    ],
     death: [
       "The brown gak collapses to the ground, emits a final bellow, and dies.",
       "The brown gak lets out a final agonized bellow and dies.",
@@ -95,7 +97,10 @@
       "A brown gak goes limp as she is rendered unconscious!",
       "The brown gak brays loudly as he slumps to the ground and cradles his wounded right foreleg.",
       "The brown gak brays loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The brown gak brays loudly as he slumps to the ground and cradles his wounded right hoof."
+      "The brown gak brays loudly as he slumps to the ground and cradles his wounded right hoof.",
+      "The brown gak brays loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "The brown gak brays loudly as she slumps to the ground and cradles her wounded left hoof.",
+      "The brown gak brays loudly as he slumps to the ground and cradles his wounded left foreleg."
     ],
     decay: [
       "A brown gak decays into a pile of fur and bone."

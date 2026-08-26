@@ -85,7 +85,9 @@
       ""
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "An imposing elk trots {direction}."
+    ],
     death: [
       "The imposing elk collapses to the ground, emits a final sigh, and dies.",
       "An imposing elk goes limp as she is rendered unconscious!",
@@ -94,7 +96,11 @@
       "The imposing elk collapses to the ground, emits a final silent sigh, and dies.",
       "An imposing elk goes limp as he is rendered unconscious!",
       "The imposing elk groans loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The imposing elk groans loudly as he slumps to the ground and cradles his wounded right hoof."
+      "The imposing elk groans loudly as he slumps to the ground and cradles his wounded right hoof.",
+      "The imposing elk groans loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The imposing elk groans loudly as he slumps to the ground and cradles his wounded left hoof.",
+      "The imposing elk groans loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "The imposing elk groans loudly as he slumps to the ground and cradles his wounded right foreleg."
     ],
     decay: [
       "An imposing elk decays into a pile of fur and bone."

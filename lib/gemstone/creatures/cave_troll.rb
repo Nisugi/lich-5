@@ -58,17 +58,21 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "11N",
     immunities: [],
-    melee: (104..105),
+    melee: (97..105),
     ranged: (97..100),
     bolt: (97..100),
-    udf: nil,
+    udf: 121,
     bar_td: nil,
     cle_td: 63,
     emp_td: 63,

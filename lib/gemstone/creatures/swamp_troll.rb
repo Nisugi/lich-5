@@ -89,7 +89,9 @@
     arrival: [
       "A swamp troll just arrived!"
     ],
-    flee: [],
+    flee: [
+      "A swamp troll heads {direction}."
+    ],
     death: [
       "The swamp troll falls to the ground and dies.",
       "The swamp troll screams one last time and dies."

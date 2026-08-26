@@ -66,6 +66,9 @@
       },
       {
         name: "Charge"
+      },
+      {
+        name: "Stomp"
       }
     ],
     special_notes: []
@@ -73,14 +76,14 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (142..332),
+    melee: (134..332),
     ranged: (134..169),
     bolt: (134..169),
     udf: 323,
     bar_td: nil,
     cle_td: (142..155),
     emp_td: (146..149),
-    pal_td: nil,
+    pal_td: (120..123),
     ran_td: nil,
     sor_td: (151..154),
     wiz_td: nil,

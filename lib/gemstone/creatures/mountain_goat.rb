@@ -85,11 +85,20 @@
     arrival: [
       "A mountain goat just arrived."
     ],
-    flee: [],
+    flee: [
+      "A mountain goat trots {direction}."
+    ],
     death: [
       "The mountain goat collapses to the ground, emits a final bray, and dies.",
       "The mountain goat lets out a final agonized bray and dies.",
-      "The mountain goat brays loudly as she slumps to the ground and cradles her wounded right foreleg."
+      "The mountain goat brays loudly as she slumps to the ground and cradles her wounded right foreleg.",
+      "The mountain goat brays loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The mountain goat brays loudly as she slumps to the ground and cradles her wounded right hoof.",
+      "The mountain goat brays loudly as she slumps to the ground and cradles her wounded left hoof.",
+      "The mountain goat brays loudly as he slumps to the ground and cradles his wounded left hoof.",
+      "The mountain goat brays loudly as he slumps to the ground and cradles his wounded right hoof.",
+      "The mountain goat brays loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "The mountain goat brays loudly as he slumps to the ground and cradles his wounded left foreleg."
     ],
     decay: [
       "A mountain goat decays into a pile of fur and bone."

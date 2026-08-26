@@ -109,7 +109,9 @@
     arrival: [
       "A gnoll ranger wanders in, alertly surveying its surroundings."
     ],
-    flee: [],
+    flee: [
+      "A gnoll thief skulks {direction}."
+    ],
     death: [
       "The gnoll thief rolls over and dies.",
       "The gnoll thief falls to the ground and dies.",

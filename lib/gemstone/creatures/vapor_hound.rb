@@ -56,11 +56,11 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 145,
     bar_td: nil,
     cle_td: 99,
     emp_td: 101,
-    pal_td: nil,
+    pal_td: (94..97),
     ran_td: nil,
     sor_td: 104,
     wiz_td: nil,
@@ -97,7 +97,9 @@
     death: [
       "The vapor hound lets out one last whimpering sigh of chartreuse vapors and dies.",
       "The vapor hound yelps loudly as it slumps to the ground and licks its wounded right foreleg.",
-      "The vapor hound yelps loudly as it slumps to the ground and licks its wounded left foreleg."
+      "The vapor hound yelps loudly as it slumps to the ground and licks its wounded left foreleg.",
+      "The vapor hound yelps loudly as it slumps to the ground and licks its wounded right paw.",
+      "The vapor hound yelps loudly as it slumps to the ground and licks its wounded left paw."
     ],
     decay: [
       "A vapor hound decays into a compost of fur and fangs."

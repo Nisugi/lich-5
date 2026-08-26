@@ -53,7 +53,7 @@
     cle_td: 30,
     emp_td: 30,
     pal_td: (27..30),
-    ran_td: nil,
+    ran_td: 30,
     sor_td: 30,
     wiz_td: nil,
     mje_td: 30,
@@ -92,9 +92,12 @@
     ],
     arrival: [
       "A gnoll ranger wanders in, alertly surveying its surroundings.",
-      "A gnoll worker strides in solemnly."
+      "A gnoll worker strides in solemnly.",
+      "A gnoll worker wanders in, sniffing the air."
     ],
-    flee: [],
+    flee: [
+      "A gnoll worker ambles {direction}."
+    ],
     death: [
       "The gnoll worker falls to the ground and dies.",
       "The gnoll worker rolls over and dies.",

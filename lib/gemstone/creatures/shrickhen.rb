@@ -111,7 +111,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The shrickhen slumps to the ground."
+    ],
     decay: [
       "Acid dissolves the knee ligaments.  The shrickhen's tibia passes his femur in a very unpleasant manner!"
     ],

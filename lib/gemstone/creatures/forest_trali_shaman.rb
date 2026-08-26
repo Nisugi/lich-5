@@ -120,7 +120,10 @@
       "A forest trali shaman arrives, sniffing the air for prey!",
       "A forest trali shaman stalks in."
     ],
-    flee: [],
+    flee: [
+      "A forest trali shaman skulks {direction}.",
+      "A forest trali shaman limps {direction}."
+    ],
     death: [],
     decay: [
       "A forest trali shaman's body crumbles into dust and is scattered by a stiff breeze.",

@@ -83,7 +83,9 @@
       "The burrow orc would stand roughly six feet high, were she not stooped over. She is thinner and more gaunt than the land-roaming orcs, with sickly white skin and no hair on her smelly frame. She seems more interested in stuffing herself and protecting her burrow than anything else."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A lesser burrow orc trudges {direction}."
+    ],
     death: [
       "A lesser burrow orc goes limp as he is rendered unconscious!"
     ],

@@ -93,7 +93,10 @@
     arrival: [
       "A troglodyte just arrived."
     ],
-    flee: [],
+    flee: [
+      "A troglodyte heads {direction}.",
+      "A troglodyte limps {direction}."
+    ],
     death: [
       "The troglodyte falls to the ground and dies.",
       "The troglodyte screams one last time and dies."

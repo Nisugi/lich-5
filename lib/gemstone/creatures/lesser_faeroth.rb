@@ -59,7 +59,7 @@
     bolt: 229,
     udf: 421,
     bar_td: (143..153),
-    cle_td: 158,
+    cle_td: (158..167),
     emp_td: (154..160),
     pal_td: nil,
     ran_td: 138,
@@ -102,7 +102,15 @@
       "A lesser faeroth goes limp as she is rendered unconscious!",
       "A lesser faeroth goes limp as he is rendered unconscious!",
       "A lesser faeroth emits a shriek as he goes still.",
-      "A lesser faeroth emits a shriek as she goes still."
+      "A lesser faeroth emits a shriek as she goes still.",
+      "A lesser faeroth releases a shriek as she falls to the ground and goes still.",
+      "A lesser faeroth releases a shriek as he falls to the ground and goes still.",
+      "A lesser faeroth's face contorts in horror as he goes still.",
+      "A robust lesser faeroth releases a shriek as she falls to the ground and goes still.",
+      "A stalwart lesser faeroth emits a shriek as she goes still.",
+      "A robust lesser faeroth releases a shriek as he falls to the ground and goes still.",
+      "A stalwart lesser faeroth releases a shriek as he falls to the ground and goes still.",
+      "A lesser faeroth releases a shriek as she falls to the floor and goes still."
     ],
     decay: [
       "A lesser faeroth decays into a pile of foul-smelling compost.",

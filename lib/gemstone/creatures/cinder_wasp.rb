@@ -56,7 +56,7 @@
     bar_td: 203,
     cle_td: nil,
     emp_td: 217,
-    pal_td: nil,
+    pal_td: (191..198),
     ran_td: nil,
     sor_td: 226,
     wiz_td: nil,
@@ -95,10 +95,14 @@
       "A cinder wasp weaves slowly as it flies in.",
       "A cinder wasp wobbles as it flies in."
     ],
-    flee: [],
+    flee: [
+      "A cinder wasp heads {direction}.",
+      "A cinder wasp wobbles {direction}."
+    ],
     death: [
       "The cinder wasp flutters its wings one last time and dies.",
-      "The cinder wasp twitches violently, then dies."
+      "The cinder wasp twitches violently, then dies.",
+      "The cinder wasp slumps to the ground."
     ],
     decay: [
       "A cinder wasp decays into compost.",

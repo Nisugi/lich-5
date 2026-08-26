@@ -85,12 +85,20 @@
     arrival: [
       "A mountain rolton just arrived."
     ],
-    flee: [],
+    flee: [
+      "A mountain rolton trots {direction}."
+    ],
     death: [
       "The mountain rolton collapses to the ground, emits a final bleat, and dies.",
       "The mountain rolton lets out a final agonized bleat and dies.",
       "The mountain rolton twitches violently, then dies.",
-      "The mountain rolton collapses to the ground, emits a final silent bleat, and dies."
+      "The mountain rolton collapses to the ground, emits a final silent bleat, and dies.",
+      "The mountain rolton bleats loudly as he slumps to the ground and cradles his wounded right foreleg.",
+      "The mountain rolton bleats loudly as she slumps to the ground and cradles her wounded right hoof.",
+      "The mountain rolton slumps to the ground.",
+      "The mountain rolton bleats loudly as she slumps to the ground and cradles her wounded left foreleg.",
+      "The mountain rolton bleats loudly as he slumps to the ground and cradles his wounded left foreleg.",
+      "The mountain rolton bleats loudly as she slumps to the ground and cradles her wounded right foreleg."
     ],
     decay: [
       "A mountain rolton decays into a pile of fur and bone."

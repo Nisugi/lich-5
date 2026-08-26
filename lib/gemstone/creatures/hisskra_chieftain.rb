@@ -96,14 +96,17 @@
     arrival: [
       "A hisskra chieftain stalks in, gripping his slimy trident menacingly!"
     ],
-    flee: [],
+    flee: [
+      "A hisskra chieftain bounds {direction}."
+    ],
     death: [
       "The hisskra chieftain rolls over on his back and dies.",
       "The hisskra chieftain twitches violently, then dies.",
       "A hisskra chieftain goes limp as he is rendered unconscious!",
       "The hisskra chieftain collapses in a motionless heap.",
       "The hisskra chieftain contorts in a tortured spasm, then goes still.",
-      "The hisskra chieftain twitches violently in his death throes before finally going still."
+      "The hisskra chieftain twitches violently in his death throes before finally going still.",
+      "The hisskra chieftain slumps to the ground."
     ],
     decay: [
       "A hisskra chieftain decays into a pile of scales and bone.",

@@ -105,11 +105,13 @@
     ],
     arrival: [],
     flee: [
-      "A hobgoblin acolyte snarls as he retreats!"
+      "A hobgoblin acolyte snarls as he retreats!",
+      "A hobgoblin acolyte struts {direction}."
     ],
     death: [
       "The hobgoblin acolyte screams up at the heavens, then collapses and dies.",
-      "The hobgoblin acolyte crumples to the ground and dies."
+      "The hobgoblin acolyte crumples to the ground and dies.",
+      "The hobgoblin acolyte struggles to utter a final prayer, then goes still."
     ],
     decay: [
       "A hobgoblin acolyte decays into a pile of compost."

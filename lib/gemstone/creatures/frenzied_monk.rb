@@ -58,7 +58,7 @@
     melee: (242..246),
     ranged: nil,
     bolt: 210,
-    udf: nil,
+    udf: 269,
     bar_td: (96..107),
     cle_td: 114,
     emp_td: (105..113),
@@ -101,7 +101,9 @@
       "A muddy black cowl obscures the monk's face. Given the burning green eyes and foul stench he exudes, perhaps that is for the best. Tattered black rags cloak his form, while the only marking visible on his ragged clothing is that of a haphazardly stitched crescent moon symbol."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A frenzied monk seethes in pain as he limps {direction}."
+    ],
     death: [],
     decay: [
       "A frenzied monk dissolves into a foul-smelling miasma.",

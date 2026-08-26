@@ -57,15 +57,15 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (150..167),
-    ranged: (174..188),
-    bolt: (174..188),
+    melee: (150..188),
+    ranged: (138..148),
+    bolt: (138..148),
     udf: 165,
     bar_td: nil,
     cle_td: 91,
     emp_td: 93,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: 84,
     sor_td: 97,
     wiz_td: nil,
     mje_td: 100,
@@ -101,7 +101,8 @@
     ],
     flee: [],
     death: [
-      "The moaning spirit falls to the ground motionless."
+      "The moaning spirit falls to the ground motionless.",
+      "The moaning spirit goes still for a moment while its head reshapes."
     ],
     decay: [
       "A moaning spirit collapses into a puddle of jelly, falling silent at last."

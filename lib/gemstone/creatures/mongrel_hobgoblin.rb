@@ -65,7 +65,7 @@
     cle_td: 15,
     emp_td: 15,
     pal_td: (12..15),
-    ran_td: nil,
+    ran_td: 15,
     sor_td: 15,
     wiz_td: nil,
     mje_td: 15,
@@ -99,10 +99,12 @@
     ],
     arrival: [],
     flee: [
-      "A mongrel hobgoblin snarls as she retreats!"
+      "A mongrel hobgoblin snarls as she retreats!",
+      "A mongrel hobgoblin shuffles {direction}."
     ],
     death: [
-      "The mongrel hobgoblin crumples to the ground and dies."
+      "The mongrel hobgoblin crumples to the ground and dies.",
+      "The mongrel hobgoblin lets out a final scream and goes still."
     ],
     decay: [
       "A mongrel hobgoblin decays into a pile of compost."

@@ -89,7 +89,9 @@
     arrival: [
       "A giant ant just arrived."
     ],
-    flee: [],
+    flee: [
+      "A giant ant heads {direction}."
+    ],
     death: [
       "The giant ant falls to the ground and dies, its feelers twitching.",
       "The giant ant feebly twitches a feeler one last time and dies.",

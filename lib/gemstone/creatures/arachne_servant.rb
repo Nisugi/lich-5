@@ -96,7 +96,9 @@
     arrival: [
       "An Arachne servant just arrived."
     ],
-    flee: [],
+    flee: [
+      "An Arachne servant heads {direction}."
+    ],
     death: [
       "The Arachne servant exhales a final curse and dies.",
       "The Arachne servant slumps to the ground and dies."
