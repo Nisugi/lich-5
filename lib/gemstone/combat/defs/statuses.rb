@@ -17,13 +17,25 @@ module Lich
           # Core status effects with both add and remove patterns
           STATUS_EFFECTS = [
             StatusDef.new(:blind,
-                          [/You blinded (?<target>[^!]+)!/].freeze,
-                          [/(?<target>.+?) vision clears\./].freeze),
+                          [
+                            /You blinded (?<target>[^!]+)!/,
+                            /You are blinded!/,
+                            /Your eyes suddenly cloud over\.  A moment later you realize you cannot see at all\./,
+                            /Suddenly, a silver mist swirls about you\.  Golden arcs streak across your vision/,
+                            /(?<target>.+?) is blinded!/
+                          ].freeze,
+                          [
+                            /(?<target>.+?) vision clears\./,
+                            /(?<target>.+?) steadies #{MK_PRE}(?:himself|herself|itself)#{MK_POST} as #{MK_PRE}(?:he|she|it)#{MK_POST} recovers from #{MK_PRE}(?:his|her|its)#{MK_POST} blindness\./
+                          ].freeze),
 
             StatusDef.new(:immobilized,
                           [
                             /(?<target>.+?) form is entangled in an unseen force that restricts .+? movement\./,
-                            /(?<target>.+?) shakes in utter terror!/
+                            /(?<target>.+?) shakes in utter terror!/,
+                            /An unseen force entangles you, restricting your movement!/,
+                            /You are pinned in place, unable to move\./,
+                            /(?<target>.+?) is rooted in place!/
                           ].freeze,
                           [
                             /(?<target>.+?) movements no longer appear hampered as the lunar light encircling .+? fades away\./,
@@ -34,8 +46,54 @@ module Lich
                           [
                             /It is knocked to the ground!/,
                             /(?<target>.+?) is knocked to the ground!/,
-                            /(?<target>.+?) falls to the ground!/
+                            /(?<target>.+?) falls to the ground!/,
+                            # second person - the victim is us
+                            /You are knocked to the ground!/,
+                            /You lose your footing and fall to the ground!/,
+                            /Your feet are suddenly swept from under you!/,
+                            /You fall flat on the floor\./,
+                            /You fall to the ground!/,
+                            /(?<target>.+?) loses #{MK_PRE}(?:his|her|its)#{MK_POST} balance and falls to the ground\./,
+                            # bang-form generic knockdown (cman sweep result;
+                            # the period form is item-drop flavor, not this)
+                            /(?<target>.+?) falls to the ground!/,
+                            # crit-free injury knockdowns (add_status is
+                            # idempotent, so overlap with critranks is safe)
+                            /(?<target>.+?) falls to the ground grasping #{MK_PRE}(?:his|her|its)#{MK_POST} mangled (?:right|left) (?:leg|arm)!/,
+                            /(?<target>.+?) falls to #{MK_PRE}(?:his|her|its)#{MK_POST} knees in pain!/,
+                            # "falls over" family: tremors stomp, wind AoE,
+                            # sonic-onslaught proc, burning smother roll
+                            /(?<target>.+?) loses #{MK_PRE}(?:his|her|its)#{MK_POST} balance and falls over\./,
+                            /The wind knocks (?<target>.+?) off balance and #{MK_PRE}(?:he|she|it)#{MK_POST} falls over!/,
+                            /Reeling from the sonic onslaught, (?<target>.+?) staggers and falls over, writh(?:ing|es)/,
+                            /(?<target>.+?) falls to the ground and rolls, trying to smother the flames/,
+                            # round-5 period-form
+                            /(?<target>.+?) wobbles painfully and #{MK_PRE}(?:he|she|it)#{MK_POST} falls to the ground\./
                           ].freeze,
+                          [
+                            /(?<target>.+?) stands back up\./,
+                            /(?<target>.+?) gets back to .+? feet\./,
+                            /(?<target>.+?) rises to .+? feet\./,
+                            /(?<target>.+?) stands up\./,
+                            # round-5
+                            /(?<target>.+?) leaps (?:back )?up from the ground/,
+                            /(?<target>.+?) rises back into a standing position/
+                          ].freeze),
+
+            # round-5: Judgment and knockdown-to-knees results (~200 + every
+            # Judgment blob). The lookbehind keeps the subdue result line
+            # ("is dazed and is driven to its knees!") filing as :paralyzed.
+            StatusDef.new(:kneeling,
+                          [
+                            /(?<target>.+?)(?<! dazed and)(?<! paralyzed and) is (?:knocked|driven) to #{MK_PRE}(?:his|her|its)#{MK_POST} knees!/,
+                            /You crash to the ground, falling to your knees!/
+                          ].freeze,
+                          [].freeze),
+
+            StatusDef.new(:sitting,
+                          [/(?<target>.+?) is knocked into a sitting position!/].freeze,
+                          # standing back up clears sitting - same remove
+                          # messagings as prone
                           [
                             /(?<target>.+?) stands back up\./,
                             /(?<target>.+?) gets back to .+? feet\./,
@@ -44,19 +102,55 @@ module Lich
                           ].freeze),
 
             StatusDef.new(:stunned,
-                          [/The (?<target>.+?) is stunned!/].freeze,
                           [
-                            /(?<target>.+?) shakes off the stun effect\./,
+                            /The (?<target>.+?) is stunned!/,
+                            /(?<target>.+?) is badly stunned!/,
+                            # pronoun confirmations - period (assess/look) and
+                            # bang (combat) forms both live
+                            /^\s*(?<target>#{MK_PRE}(?:He|She|It))#{MK_POST} is stunned[.!]/,
+                            # second person - the victim is us
+                            /You are stunned(?: for (?<rounds>\d+) rounds?)?!/,
+                            /^You are still stunned\./
+                          ].freeze,
+                          [
+                            # "the stun" (no "effect") is the live third-person
+                            # wording; flavor prefixes vary by creature
+                            /(?<target>.+?) shakes off the stun(?: effect)?[.!]/,
+                            /(?<target>.+?) twitches fiercely, shaking off the stun!/,
+                            /(?<target>.+?) throws .+? head back and howls, shaking off the stun!/,
                             /(?<target>.+?) regains .+? composure\./,
-                            /(?<target>.+?) is no longer stunned\./
+                            /(?<target>.+?) is no longer stunned\./,
+                            /You are no longer stunned\./,
+                            /with a sudden surge of strength, you throw off your stunned state!/,
+                            /(?<target>.+?) shudders violently before visibly recovering from #{MK_PRE}(?:his|her|its)#{MK_POST} stunned state\./,
+                            # round-5
+                            /(?<target>.+?) throws off #{MK_PRE}(?:his|her|its)#{MK_POST} dazed state/,
+                            /Rivulets of swirling incarnadine energy envelop (?<target>.+?) scarred flesh, allowing #{MK_PRE}(?:him|her|it)#{MK_POST} to move freely once more\./
                           ].freeze),
+
+            # Dispel landing - a spell stripped from the target (round-6:
+            # 44k; follows the dispel/sigil_dispel flare + its SMR)
+            StatusDef.new(:dispelled,
+                          [/A white glow rushes away from (?<target>[^.]+)\./].freeze,
+                          [].freeze),
+
+            # Weapon knocked from the grip (round-6: 32k+ across spear/
+            # targe/handaxe). Indent-anchored crit-tail form - unindented
+            # period lines are room item-drop flavor, not this
+            StatusDef.new(:disarmed,
+                          [/^#{MK_POST}\s+The (?<target>.+?)'s#{MK_POST} (?<weapon>.+?) falls to the ground\./].freeze,
+                          [].freeze),
 
             StatusDef.new(:sunburst,
                           [/(?<target>.+?) reels and stumbles under the intense flare!/].freeze,
                           [/(?<target>.+?) blinks a few times, regaining a sense of balance\./].freeze),
 
             StatusDef.new(:webbed,
-                          [/(?<target>.+?) becomes ensnared in thick strands of webbing!/].freeze,
+                          [
+                            /(?<target>.+?) becomes ensnared in thick strands of webbing!/,
+                            /You become ensnared in thick strands of webbing!/,
+                            /(?<target>.+?) is firmly webbed in place\./
+                          ].freeze,
                           [
                             /(?<target>.+?) breaks free of the webs\./,
                             /(?<target>.+?) struggles free of the webs\./,
@@ -67,7 +161,10 @@ module Lich
             StatusDef.new(:sleeping,
                           [
                             /(?<target>.+?) falls into a deep slumber\./,
-                            /(?<target>.+?) falls asleep\./
+                            /(?<target>.+?) falls asleep\./,
+                            # Lullabye full-sleep wording (also implies prone)
+                            /(?<target>.+?) falls to the ground in a deep slumber\./,
+                            /(?<target>.+?)'s#{MK_POST} eyes roll up into its head as it slumps to the ground\./
                           ].freeze,
                           [
                             /(?<target>.+?) wakes up\./,
@@ -76,10 +173,17 @@ module Lich
                           ].freeze),
 
             StatusDef.new(:poisoned,
-                          [/(?<target>.+?) appears to be suffering from a poison\./].freeze,
+                          [
+                            /(?<target>.+?) appears to be suffering from a poison\./,
+                            /You feel a fierce poison coursing through your veins!/,
+                            /A virulent poison courses through your veins!/,
+                            /You feel poison coursing through your veins\./,
+                            /Bilious poison seeps into (?<target>.+?) flesh, sending #{MK_PRE}(?:him|her|it)#{MK_POST} into paroxysms of agony!/
+                          ].freeze,
                           [
                             /(?<target>.+?) looks much better\./,
-                            /(?<target>.+?) recovers from the poison\./
+                            /(?<target>.+?) recovers from the poison\./,
+                            /(?<target>.+?) collects #{MK_PRE}(?:himself|herself|itself)#{MK_POST} as the poison afflicting #{MK_PRE}(?:him|her|it)#{MK_POST} finally runs its course\./
                           ].freeze),
 
             StatusDef.new(:roundtime,
@@ -107,6 +211,56 @@ module Lich
 
             StatusDef.new(:tangleweed,
                           [/You notice .+? scrape into (?<target>.+?) skin. .+? suddenly looks very weak!/].freeze,
+                          [/(?<target>.+?) appears to recover some strength\./].freeze),
+
+            # --- catalogued from 2026-08-20 arena spectator logs ---
+            StatusDef.new(:unconscious,
+                          [
+                            /(?<target>.+?) goes limp as #{MK_PRE}(?:he|she|it)#{MK_POST} is rendered unconscious!/,
+                            /You go limp as you are rendered unconscious!/,
+                            /(?<target>.+?) slumps to the ground in an unconscious heap\./
+                          ].freeze,
+                          [/(?<target>.+?) is awakened by (?<attacker>.+?)'s#{MK_POST} attack!/].freeze),
+
+            StatusDef.new(:slowed,
+                          [
+                            /(?<target>.+?) movements slow to a crawl!/,
+                            /(?<target>.+?) suddenly slows all movements\./
+                          ].freeze,
+                          [].freeze),
+
+            # KO-class disable from the rogue subdue strike; "dazed and is
+            # driven to its knees" is the same maneuver's lighter result
+            StatusDef.new(:paralyzed,
+                          [/(?<target>.+?) is (?:paralyzed|dazed)(?: and is driven to #{MK_PRE}(?:his|her|its)#{MK_POST} knees)?!/].freeze,
+                          [].freeze),
+
+            StatusDef.new(:terrified,
+                          [
+                            /Your limbs lock and you quiver with fright!/,
+                            /You shake with terror!/,
+                            /You are immobilized with sheer terror!/,
+                            /(?<target>.+?) freezes in place, quivering with fright!/,
+                            /(?<target>.+?) freezes in place, shaking with terror!/,
+                            /(?<target>.+?) shakes with terror!/,
+                            /(?<target>.+?) freezes in utter terror!/,
+                            /(?<target>.+?) is frozen with fear!/,
+                            # Evil Eye result (round-5)
+                            /(?<target>.+?) is frightened into utter immobility!/
+                          ].freeze,
+                          [/You regain control of your senses!/].freeze),
+
+            StatusDef.new(:silenced,
+                          [/(?<target>.+?) chokes, momentarily unable to speak!/].freeze,
+                          [].freeze),
+
+            StatusDef.new(:weakened,
+                          # standalone strength-drain line (the tangleweed def
+                          # above requires the "You notice ... scrape" prefix)
+                          [
+                            /(?<target>.+?) suddenly looks very weak!/,
+                            /(?<target>.+?) appears weak and feeble, #{MK_PRE}(?:his|her|its)#{MK_POST} movements sluggish\./
+                          ].freeze,
                           [/(?<target>.+?) appears to recover some strength\./].freeze)
           ].freeze
 

@@ -54,12 +54,81 @@ RSpec.describe Lich::Gemstone::Combat::Parser do
       end
     end
 
+    it 'matches 302 Bane living-target messaging' do
+      line = "A sickly, violet haze encompasses #{bolded(452450877, 'mastodon', 'a heavily armored battle mastodon')}."
+      result = described_class.parse_attack(line)
+      expect(result).not_to be_nil
+      expect(result[:name]).to eq(:bane)
+      expect(result[:target][:id]).to eq(452450877)
+    end
+
+    it 'matches 335 Divine Wrath per-target materialize line' do
+      line = "A shadowy figure briefly materializes behind #{bolded(452450877, 'berserker', 'a tattooed gigas berserker')}, and a silent scream courses over a tattooed gigas berserker's visage."
+      result = described_class.parse_attack(line)
+      expect(result).not_to be_nil
+      expect(result[:name]).to eq(:divine_wrath)
+      expect(result[:target][:id]).to eq(452450877)
+    end
+
     it 'does not claim ambient spell messaging with no caster attribution' do
       # "Bloodstained light" fires identically for ANY caster's spell (seen
       # after both "Dicate gestures at..." and "You gesture at..." in logs),
       # so it must not be parsed as one of our attacks.
       line = "Bloodstained light spills down from the heavens in an undulating deluge, bathing #{bolded(416226445, 'skald', 'a grim gigas skald')}'s form in a cascade of transcendent power!"
       expect(described_class.parse_attack(line)).to be_nil
+    end
+  end
+
+  # Inbound attacks (creature -> us). The only creature link on such a line
+  # is the ATTACKER; before this, the line-scan fallback installed it as its
+  # own target and the damage it dealt US was applied to IT (real-feed
+  # replay across the log archive: 268 self-attributed attacks).
+  describe '.parse_attack with inbound attacks' do
+    it 'never resolves the attacker as its own target on a swing at us' do
+      line = "#{bolded(31038708, 'champion', 'A muscular tattooed champion')} swings a dagger at you!"
+      result = described_class.parse_attack(line)
+      expect(result[:inbound]).to be(true)
+      expect(result[:target][:id]).to be_nil
+      expect(result[:attacker][:id]).to eq(31038708)
+    end
+
+    it 'marks a natural-weapon attack against us inbound' do
+      line = "#{bolded(22764224, 'grahnk', 'A burly grahnk')} claws at you!"
+      result = described_class.parse_attack(line)
+      expect(result[:inbound]).to be(true)
+      expect(result[:target][:id]).to be_nil
+    end
+
+    it 'marks inbound defs that name us in the pattern literal, not a capture' do
+      # These have an attacker capture and NO target capture, so they also
+      # fell through to the line-scan.
+      line = "#{bolded(555, 'thing', 'A shadowy thing')} springs from the shadows and strikes at you!"
+      result = described_class.parse_attack(line)
+      expect(result[:inbound]).to be(true)
+      expect(result[:target][:id]).to be_nil
+    end
+
+    it 'still resolves a creature target for our own outbound attacks' do
+      line = "You swing a kelyn-edged slim short sword at #{bolded(4242, 'orc', 'a greater orc')}!"
+      result = described_class.parse_attack(line)
+      expect(result[:inbound]).to be_falsey
+      expect(result[:target][:id]).to eq(4242)
+    end
+
+    it 'still resolves the real target when a creature attacks another creature' do
+      line = "#{bolded(7, 'ogre', 'An ogre')} swings a club at #{bolded(200, 'guard', 'a guard')}!"
+      result = described_class.parse_attack(line)
+      expect(result[:inbound]).to be_falsey
+      expect(result[:target][:id]).to eq(200)
+      expect(result[:attacker][:id]).to eq(7)
+    end
+
+    it 'drops a self-referential target on an untargeted AoE' do
+      # :tremors has an attacker capture and no target capture, so the
+      # line-scan returned the attacker. Nothing can attack itself.
+      line = "#{bolded(22219124, 'mastodon', 'A heavily armored battle mastodon')} slams a gigantic foot down, sending tremors rippling outward from the point of impact!"
+      result = described_class.parse_attack(line)
+      expect(result[:target][:id]).to be_nil
     end
   end
 end
