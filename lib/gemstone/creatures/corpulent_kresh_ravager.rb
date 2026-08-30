@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
+  witherable: true,
+  sympathy: true,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 750,
+  max_hp: 810,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 18,
+  size: "huge",
   areas: [
     {
       name: "The Hive",
@@ -27,7 +29,12 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Bladed forelegs",
+        as: 532
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
@@ -49,14 +56,14 @@
     asg: "8N",
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
+    ranged: (454..622),
+    bolt: (454..622),
     udf: 757,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (418..427),
+    emp_td: 463,
+    pal_td: (390..393),
+    ran_td: 381,
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -87,7 +94,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A corpulent kresh ravager's spasms, rolling over.  Its tiny legs kick at the air before going still.",
+      "With a thunderous crash, a corpulent kresh ravager falls to the ground, tiny legs kicking at the air before going still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

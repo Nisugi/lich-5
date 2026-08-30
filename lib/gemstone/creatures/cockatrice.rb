@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 69,
-  speed: nil,
+  speed: 10,
   height: 3,
   size: "medium",
   areas: [
@@ -44,7 +46,7 @@
       },
       {
         name: "Strike",
-        as: 80
+        as: (80..99)
       }
     ],
     bolt_spells: [],
@@ -61,9 +63,9 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (53..114),
-    ranged: nil,
-    bolt: nil,
+    melee: (38..114),
+    ranged: (26..64),
+    bolt: (26..64),
     udf: (85..138),
     bar_td: nil,
     cle_td: 18,
@@ -73,9 +75,9 @@
     sor_td: 18,
     wiz_td: nil,
     mje_td: 18,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: 18,
+    mne_td: 18,
+    mjs_td: 57,
+    mns_td: 57,
     mnm_td: 18,
     defensive_spells: [],
     defensive_abilities: [],

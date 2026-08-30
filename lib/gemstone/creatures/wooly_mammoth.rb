@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 19,
   height: 12,
   size: "huge",
   areas: [
@@ -40,7 +42,7 @@
       },
       {
         name: "Impale",
-        as: 336
+        as: (266..336)
       }
     ],
     bolt_spells: [],
@@ -56,18 +58,18 @@
     melee: (205..344),
     ranged: nil,
     bolt: 257,
-    udf: nil,
+    udf: 303,
     bar_td: 167,
     cle_td: (183..192),
     emp_td: (178..184),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (150..156),
+    ran_td: (156..165),
     sor_td: (193..199),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
-    mjs_td: 172,
-    mns_td: (181..187),
+    mje_td: 205,
+    mne_td: 205,
+    mjs_td: (172..187),
+    mns_td: (172..187),
     mnm_td: (156..165),
     defensive_spells: [],
     defensive_abilities: [],
@@ -101,14 +103,7 @@
       "A wooly mammoth lumbers {direction}, trumpeting in pain.",
       "A wooly mammoth slowly lumbers {direction}, trumpeting in agony."
     ],
-    death: [
-      "The wooly mammoth slumps to the ground and licks his wounded right foreleg.",
-      "The wooly mammoth slumps to the ground and licks his wounded left foreleg.",
-      "The wooly mammoth slumps to the ground and licks her wounded right foreleg.",
-      "The wooly mammoth slumps to the ground and licks her wounded left foreleg.",
-      "The wooly mammoth slumps to the ground and licks his wounded right foot.",
-      "The wooly mammoth slumps to the ground and licks his wounded left foot."
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],

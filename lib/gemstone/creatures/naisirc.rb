@@ -11,9 +11,11 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
@@ -44,7 +46,7 @@
       },
       {
         name: "Ensnare",
-        as: 366
+        as: (366..370)
       }
     ],
     bolt_spells: [],
@@ -68,21 +70,21 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (264..550),
+    melee: (261..550),
     ranged: nil,
     bolt: 330,
     udf: (416..693),
     bar_td: "274 to 280",
     cle_td: (301..307),
-    emp_td: (293..296),
-    pal_td: nil,
-    ran_td: nil,
+    emp_td: (293..308),
+    pal_td: (258..267),
+    ran_td: (258..264),
     sor_td: (315..327),
     wiz_td: nil,
-    mje_td: 332,
-    mne_td: 330,
-    mjs_td: nil,
-    mns_td: (296..302),
+    mje_td: (330..332),
+    mne_td: (330..332),
+    mjs_td: 317,
+    mns_td: 317,
     mnm_td: (249..258),
     defensive_spells: [
       "Elemental Targeting (425)",

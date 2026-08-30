@@ -12,13 +12,15 @@
   bones: false,
   witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 360,
+  max_hp: 377,
   speed: nil,
   height: 2,
   size: "large",
@@ -53,20 +55,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (94..179),
-    ranged: nil,
-    bolt: 92,
+    melee: (75..190),
+    ranged: (67..122),
+    bolt: (67..122),
     udf: 180,
     bar_td: nil,
     cle_td: 102,
     emp_td: 103,
-    pal_td: nil,
+    pal_td: (87..90),
     ran_td: nil,
     sor_td: nil,
     wiz_td: nil,
     mje_td: 114,
     mne_td: 114,
-    mjs_td: nil,
+    mjs_td: 103,
     mns_td: 103,
     mnm_td: (96..99),
     defensive_spells: [],
@@ -96,7 +98,8 @@
     ],
     death: [
       "The sand beetle falls to the ground and lies twitching for a moment before going still.",
-      "The sand beetle kicks a leg one last time and lies still."
+      "The sand beetle kicks a leg one last time and lies still.",
+      "Beautiful shot pierces both lungs, the sand beetle makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A sand beetle's legs shrivel up beneath it as it decays into dust."

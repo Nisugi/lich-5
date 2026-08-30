@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 325,
+  max_hp: 370,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 4,
+  size: "medium",
   areas: [
     {
       name: "The Hive",
@@ -31,7 +33,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Barbed stinger",
+        as: 565
+      },
+      {
+        name: "Bladed forelegs",
+        as: 519
+      }
+    ],
     bolt_spells: [],
     warding_spells: [
       {
@@ -51,13 +62,13 @@
     asg: "1N",
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    ranged: (517..574),
+    bolt: (517..574),
+    udf: 600,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
+    cle_td: (492..501),
+    emp_td: 501,
+    pal_td: (456..465),
     ran_td: nil,
     sor_td: nil,
     wiz_td: nil,
@@ -90,13 +101,19 @@
     description: [
       "Glistening as if moist, the carapace of the kiramon strandweaver is ghost-pale and translucent in places, revealing pulsating organs and fluid-filled sacs quivering beneath. The strandweaver is around the size of a halfling, her undersized body supported by six segmented legs. Her abdomen tapers toward a pair of spinnerets aglisten with prismatic threads of spent webbing."
     ],
-    arrival: [],
+    arrival: [
+      "The faint, unearthly glow wicking off of a translucent kiramon strandweaver's translucent carapace precedes her as she crawls in uncertainly, antennae twitching."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "A translucent kiramon strandweaver collapses to the ground, her ghostly pale legs kicking spastically before abruptly stilling as she dies."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A translucent kiramon strandweaver twists grotesquely, aiming {pronoun} spinnerets at you before shooting a clot of thick webbing!",
+    ],
     bite: [],
     claw: [],
     info: {

@@ -8,12 +8,14 @@
   family: "Rodent",
   type: "Quadruped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -33,6 +35,10 @@
       {
         name: "Bite",
         as: 44
+      },
+      {
+        name: "Unknown",
+        as: 44
       }
     ],
     bolt_spells: [],
@@ -45,10 +51,10 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (32..34),
-    ranged: nil,
+    melee: (22..34),
+    ranged: 22,
     bolt: 22,
-    udf: 14,
+    udf: (11..14),
     bar_td: 3,
     cle_td: 3,
     emp_td: 3,
@@ -92,9 +98,7 @@
     death: [
       "The fanged rodent collapses to the ground, emits a final squeal, and dies.",
       "The fanged rodent twitches and dies.",
-      "The fanged rodent collapses to the ground, emits a final silent squeal, and dies.",
-      "The fanged rodent shrieks as it slumps to the ground and licks at its wounded left foreleg.",
-      "The fanged rodent shrieks as it slumps to the ground and licks at its wounded right foreleg."
+      "The fanged rodent collapses to the ground, emits a final silent squeal, and dies."
     ],
     decay: [
       "A fanged rodent decays into a pile of hair and bone."

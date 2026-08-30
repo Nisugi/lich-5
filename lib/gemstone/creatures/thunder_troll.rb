@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
   ],
   bcs: true,
   max_hp: 160,
-  speed: nil,
+  speed: 7,
   height: 9,
   size: "large",
   areas: [
@@ -49,6 +51,10 @@
       },
       {
         name: "Nut brown steel bastard sword",
+        as: 163
+      },
+      {
+        name: "Unknown",
         as: 163
       }
     ],
@@ -82,10 +88,10 @@
   defense_attributes: {
     asg: "10N",
     immunities: [],
-    melee: (74..122),
-    ranged: nil,
-    bolt: (91..116),
-    udf: (95..120),
+    melee: (67..132),
+    ranged: (66..135),
+    bolt: (66..135),
+    udf: (91..120),
     bar_td: (41..68),
     cle_td: (49..59),
     emp_td: (49..59),
@@ -93,9 +99,9 @@
     ran_td: (49..59),
     sor_td: (57..64),
     wiz_td: nil,
-    mje_td: 53,
-    mne_td: 53,
-    mjs_td: nil,
+    mje_td: (48..53),
+    mne_td: (48..53),
+    mjs_td: (59..66),
     mns_td: (59..66),
     mnm_td: (61..66),
     defensive_spells: [
@@ -115,7 +121,8 @@
   alchemy: [],
   abilities_misc: [],
   equipment: [
-    "a crude steel maul with forking lightning etchings"
+    "a crude steel maul with forking lightning etchings",
+    "a flamberge"
   ],
   treasure: {
     coins: true,
@@ -135,7 +142,6 @@
     flee: [],
     death: [
       "The thunder troll howls in agony one last time and dies.",
-      "A thunder troll goes limp as it is rendered unconscious!",
       "A thunder troll dissipates into the air, leaving nothing behind.",
       "The thunder troll crumples to the ground motionless."
     ],

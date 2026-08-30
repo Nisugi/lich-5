@@ -13,7 +13,9 @@
   witherable: false,
   sympathy: false,
   muggable: nil,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -62,7 +64,7 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: 250,
+    cle_td: (250..253),
     emp_td: nil,
     pal_td: nil,
     ran_td: nil,

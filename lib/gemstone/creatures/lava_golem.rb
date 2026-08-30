@@ -12,15 +12,17 @@
   bones: false,
   witherable: false,
   sympathy: true,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Magical",
     "Element-based"
   ],
   bcs: true,
-  max_hp: 527,
-  speed: nil,
+  max_hp: 540,
+  speed: 11,
   height: 13,
   size: "huge",
   areas: [
@@ -59,20 +61,20 @@
     asg: "12N",
     immunities: [],
     melee: (205..470),
-    ranged: nil,
-    bolt: nil,
-    udf: (256..296),
+    ranged: (105..232),
+    bolt: (105..232),
+    udf: (187..296),
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (204..213),
     emp_td: 248,
     pal_td: (184..190),
-    ran_td: nil,
+    ran_td: (178..187),
     sor_td: (221..233),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
-    mns_td: 208,
+    mjs_td: (200..208),
+    mns_td: (200..208),
     mnm_td: 180,
     defensive_spells: [],
     defensive_abilities: [],
@@ -84,7 +86,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a firewheel arrow fletched with plain white feathers"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -107,9 +111,12 @@
     ],
     death: [
       "The lava golem writhes in fiery agony and dies.",
-      "The lava golem topples to the ground as the fire slowly leaves it."
+      "The lava golem topples to the ground as the fire slowly leaves it.",
+      "Beautiful shot pierces both lungs, the lava golem makes a wheezing noise, and drops dead!"
     ],
-    decay: [],
+    decay: [
+      "The lava golem's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

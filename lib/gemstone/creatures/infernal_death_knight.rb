@@ -10,18 +10,20 @@
   undead: true,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 500,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "medium",
   areas: [
     {
       name: "Moonsedge",
@@ -29,12 +31,37 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Trio of blue-black diamonds",
+        as: (610..645)
+      },
+      {
+        name: "Bite",
+        as: 520
+      },
+      {
+        name: "Charge",
+        as: 565
+      },
+      {
+        name: "Kick",
+        as: 520
+      }
+    ],
     bolt_spells: [],
     warding_spells: [
       {
         name: "Corrupt Essence",
         cs: 452
+      },
+      {
+        name: "Disarm",
+        cs: 459
+      },
+      {
+        name: "Massive black ora sword adorned with a trio of blue-black diamonds",
+        cs: 456
       }
     ],
     offensive_spells: [
@@ -48,6 +75,9 @@
       },
       {
         name: "Disarm"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -56,19 +86,19 @@
   defense_attributes: {
     asg: "19",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    melee: (369..632),
+    ranged: (383..442),
+    bolt: (383..442),
+    udf: 692,
     bar_td: 426,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (417..426),
+    emp_td: 411,
+    pal_td: (365..408),
+    ran_td: (503..506),
     sor_td: 425,
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
+    mje_td: (342..350),
+    mne_td: (342..350),
     mjs_td: nil,
     mns_td: nil,
     mnm_td: nil,
@@ -80,7 +110,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a massive black ora sword adorned with a trio of blue-black diamonds",
+    "some darkly blued steel half-plate"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -96,10 +129,16 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, his skeletal form collapses into blanched powder and blows away.",
+      "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, her skeletal form collapses into blanched powder and blows away.",
+    ],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "Tightening {pronoun} grip on {pronoun} black ora sword, an infernal death knight strikes out at you with all of infernal death knight might!",
+      "With effortless ease born of martial training, an infernal death knight swings {weapon} at you!",
+    ],
     bite: [],
     claw: [],
     info: {

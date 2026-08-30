@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 190,
-  speed: nil,
+  speed: 14,
   height: 9,
   size: "large",
   areas: [
@@ -65,6 +67,10 @@
       {
         name: "War mattock",
         as: 173
+      },
+      {
+        name: "Unknown",
+        as: 201
       }
     ],
     bolt_spells: [],
@@ -84,9 +90,9 @@
   defense_attributes: {
     asg: "various",
     immunities: [],
-    melee: (55..151),
-    ranged: (65..88),
-    bolt: (65..88),
+    melee: (45..151),
+    ranged: (33..100),
+    bolt: (33..100),
     udf: (99..117),
     bar_td: 49,
     cle_td: 57,
@@ -97,8 +103,8 @@
     wiz_td: nil,
     mje_td: (42..49),
     mne_td: (42..49),
-    mjs_td: (42..57),
-    mns_td: (42..57),
+    mjs_td: (42..63),
+    mns_td: (42..63),
     mnm_td: (42..49),
     defensive_spells: [
       "Spirit Warding II (107)"
@@ -146,7 +152,6 @@
     death: [
       "The forest troll screams one last time and dies.",
       "The forest troll falls to the ground and dies.",
-      "A forest troll goes limp as he is rendered unconscious!",
       "Beautiful shot pierces both lungs, the forest troll makes a wheezing noise, and drops dead!"
     ],
     decay: [

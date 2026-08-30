@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 60,
-  speed: nil,
+  speed: 15,
   height: 3,
   size: "medium",
   areas: [
@@ -37,6 +39,14 @@
       {
         name: "Cudgel",
         as: 68
+      },
+      {
+        name: "Unknown",
+        as: 68
+      },
+      {
+        name: "Closed fist",
+        as: 46
       }
     ],
     bolt_spells: [],
@@ -50,8 +60,8 @@
     asg: "5",
     immunities: [],
     melee: (16..32),
-    ranged: nil,
-    bolt: 11,
+    ranged: 13,
+    bolt: (11..13),
     udf: 45,
     bar_td: nil,
     cle_td: 9,

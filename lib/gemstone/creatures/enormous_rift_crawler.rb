@@ -10,10 +10,12 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Living",
@@ -21,9 +23,9 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
-  height: nil,
-  size: "",
+  speed: 6,
+  height: 4,
+  size: "huge",
   areas: [
     {
       name: "The Rift",
@@ -34,7 +36,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 461
+        as: (449..461)
       },
       {
         name: "Charge (attack)",
@@ -42,7 +44,7 @@
       },
       {
         name: "Charge",
-        as: 475
+        as: (459..475)
       }
     ],
     bolt_spells: [],
@@ -57,6 +59,9 @@
       },
       {
         name: "Tail Swipe"
+      },
+      {
+        name: "Shield Charge"
       }
     ],
     special_notes: []
@@ -67,12 +72,12 @@
     melee: 483,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: (437..536),
     bar_td: (388..397),
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (422..425),
+    emp_td: 423,
+    pal_td: (360..363),
+    ran_td: 366,
     sor_td: (420..429),
     wiz_td: nil,
     mje_td: nil,
@@ -103,7 +108,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "As the rift crawler dies, the beast's massive body curls in on itself, convulses once, and stills."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

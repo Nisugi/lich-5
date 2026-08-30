@@ -10,18 +10,20 @@
   undead: true,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Moonsedge",
@@ -29,11 +31,29 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Bite",
+        as: 520
+      },
+      {
+        name: "Kick",
+        as: 555
+      }
+    ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Point",
+        cs: 448
+      }
+    ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [
       {
         name: "Dispel"
@@ -44,19 +64,19 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    melee: (390..583),
+    ranged: (370..468),
+    bolt: (370..468),
+    udf: (409..552),
     bar_td: (464..494),
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: 497,
+    emp_td: 484,
+    pal_td: (452..459),
+    ran_td: (455..467),
     sor_td: "487 to 517",
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
+    mje_td: (409..419),
+    mne_td: (409..419),
     mjs_td: nil,
     mns_td: nil,
     mnm_td: nil,
@@ -68,7 +88,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a tattered grey gown"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -87,7 +109,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A flickering mist-wreathed banshee lifts mist-wreathed banshee voice in a terrible screech at you!",
+      "A flickering mist-wreathed banshee's shrieking takes on a sepulchral resonance!  A flickering mist-wreathed banshee lifts mist-wreathed banshee voice in a terrible screech at you!",
+      "A mist-wreathed banshee lifts a slender hand and points unerringly at you!",
+      "A flickering mist-wreathed banshee lifts a slender hand and points unerringly at you!",
+      "A flickering mist-wreathed banshee lifts {pronoun} voice in a terrible screech at you!",
+      "A flickering mist-wreathed banshee's shrieking takes on a sepulchral resonance!  A flickering mist-wreathed banshee lifts {pronoun} voice in a terrible screech at you!"
+    ],
     bite: [],
     claw: [],
     info: {

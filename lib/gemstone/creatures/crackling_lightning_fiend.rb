@@ -11,9 +11,11 @@
   blood: nil,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: 265,
@@ -58,19 +60,19 @@
     asg: "6N",
     immunities: [],
     melee: (276..521),
-    ranged: nil,
-    bolt: nil,
-    udf: (340..573),
+    ranged: (241..385),
+    bolt: (241..385),
+    udf: (319..573),
     bar_td: nil,
-    cle_td: nil,
-    emp_td: (316..324),
+    cle_td: (319..327),
+    emp_td: (314..324),
     pal_td: (276..286),
-    ran_td: nil,
+    ran_td: (274..281),
     sor_td: "330 to 360",
     wiz_td: nil,
     mje_td: 379,
     mne_td: "352 to 382",
-    mjs_td: nil,
+    mjs_td: (319..327),
     mns_td: "306 to 336",
     mnm_td: 276,
     defensive_spells: [
@@ -101,12 +103,9 @@
     ],
     arrival: [
       "A jolting charge in the air heralds the arrival of a crackling lightning fiend!",
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
     ],
     flee: [],
     death: [
-      "A crackling lightning fiend goes limp as it is rendered unconscious!",
       "With a last crackle and a burst of ozone, a crackling lightning fiend dissipates into nothingness."
     ],
     decay: [
@@ -117,8 +116,6 @@
     attack: [
       "A crackling lightning fiend launches a crackling blue and golden spark at you!",
       "A crackling lightning fiend raises a luminous hand and sends a bolt of blue and golden lightning streaking toward you!",
-      "A titan tempest tyrant's feras morning star crackles with corruscating lightning as crackling lightning fiend swings it at you!",
-      "Hoisting crackling lightning fiend zorchar khopesh high, a haggard Veiki herald strikes brutally at you!"
     ],
     bite: [],
     claw: [],

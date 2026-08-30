@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -31,7 +33,8 @@
   attack_attributes: {
     physical_attacks: [
       {
-        name: "Falchion"
+        name: "Falchion",
+        as: 207
       },
       {
         name: "Jeddart-axe",
@@ -47,6 +50,9 @@
       },
       {
         name: "Tail Swipe"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_abilities: [
@@ -59,20 +65,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (226..326),
-    ranged: 189,
-    bolt: 197,
-    udf: (206..336),
+    melee: (190..326),
+    ranged: (119..225),
+    bolt: (119..225),
+    udf: (198..336),
     bar_td: 96,
-    cle_td: nil,
+    cle_td: (103..115),
     emp_td: (111..119),
     pal_td: (87..96),
-    ran_td: nil,
+    ran_td: (93..96),
     sor_td: (109..118),
     wiz_td: nil,
-    mje_td: 123,
-    mne_td: 120,
-    mjs_td: 111,
+    mje_td: (120..123),
+    mne_td: (120..123),
+    mjs_td: (108..117),
     mns_td: (108..117),
     mnm_td: (87..96),
     defensive_spells: [],
@@ -109,11 +115,10 @@
     flee: [],
     death: [
       "A tegursh sentry rasps a final scream and dies.",
-      "A tegursh sentry silently rasps a final scream and dies."
+      "A tegursh sentry silently rasps a final scream and dies.",
+      "Beautiful shot pierces both lungs, the tegursh sentry makes a wheezing noise, and drops dead!"
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the tegursh sentry's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [

@@ -7,12 +7,14 @@
   family: "humanoid",
   type: "biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -42,6 +44,38 @@
       {
         name: "wiry arms",
         as: (464..544)
+      },
+      {
+        name: "Clawed fists",
+        as: (475..585)
+      },
+      {
+        name: "Feras mattock",
+        as: 489
+      },
+      {
+        name: "Twisted obsidian dagger",
+        as: (584..606)
+      },
+      {
+        name: "Charge",
+        as: 529
+      },
+      {
+        name: "Huge hooves",
+        as: 525
+      },
+      {
+        name: "Shark-like teeth",
+        as: 505
+      },
+      {
+        name: "Tusks",
+        as: (531..544)
+      },
+      {
+        name: "Lunge",
+        as: 520
       }
     ],
     bolt_spells: [],
@@ -63,19 +97,19 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: (379..383),
-    ranged: (353..366),
-    bolt: (353..366),
+    melee: (269..646),
+    ranged: (353..432),
+    bolt: (353..432),
     udf: (586..805),
     bar_td: (364..379),
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: (335..350),
-    sor_td: nil,
+    cle_td: (378..464),
+    emp_td: 428,
+    pal_td: (338..347),
+    ran_td: (335..396),
+    sor_td: (413..422),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: 428,
+    mje_td: (428..445),
+    mne_td: (428..445),
     mjs_td: nil,
     mns_td: 381,
     mnm_td: nil,
@@ -95,7 +129,10 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "a twisted obsidian dagger",
+    "some frayed armor scraps adorned with glinting blue-white scales"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -116,16 +153,30 @@
       "You hear soft footfalls."
     ],
     death: [
-      "A monstrous, too-wide smile spreads across the cannibal's face as {pronoun} collapses to the ground, dead."
+      "A monstrous, too-wide smile spreads across the cannibal's face as {pronoun} collapses to the ground, dead.",
+      "A monstrous, too-wide smile spreads across the cannibal's face as he collapses to the ground, dead.",
+      "A monstrous, too-wide smile spreads across the cannibal's face as she collapses to the ground, dead."
     ],
     decay: [
-      "A bloody halfling cannibal's body rots away, leaving only a small stain on the ground."
+      "A bloody halfling cannibal's body rots away, leaving only a small stain on the ground.",
+      "With a moan, a bloody halfling cannibal begins to weep piteously, but the sound swiftly dissolves into a cascade of insane laughter."
     ],
     search: [
       "A bloody halfling cannibal sniffs at the air, {pronoun} eyes glinting as {pronoun} searches the shadows.",
       "a bloody halfling cannibal's eyes dart around, suspicion warring with hunger in {pronoun} beady eyes."
     ],
-    attack: [],
+    attack: [
+      "A bloody halfling cannibal bares {pronoun} sharpened teeth as he tries to bite into you!",
+      "A bloody halfling cannibal hammers blindly at you with grimy little fists!",
+      "A bloody halfling cannibal hurtles at you, swinging wildly with a feras mattock!",
+      "A bloody halfling cannibal hurtles at you, swinging wildly with a twisted obsidian dagger!",
+      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and bares {pronoun} sharpened teeth as he tries to bite into you!",
+      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hammers blindly at you with grimy little fists!",
+      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hurtles at you, swinging wildly with a feras mattock!",
+      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hurtles at you, swinging wildly with a twisted obsidian dagger!",
+      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and bares {pronoun} sharpened teeth as she tries to bite into you!",
+      "A bloody halfling cannibal bares {pronoun} sharpened teeth as she tries to bite into you!",
+    ],
     claw: [],
     hide: "A bloody halfling cannibal darts into the shadows.",
     vanish: "As you move to attack a bloody halfling cannibal, the cannibal shrinks away from you, baring sharpened teeth as {pronoun} darts into the shadows!",

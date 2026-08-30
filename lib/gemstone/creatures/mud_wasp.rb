@@ -9,17 +9,19 @@
   type: "Insect",
   undead: false,
   blood: true,
-  bones: nil,
+  bones: false,
   witherable: true,
   sympathy: true,
-  muggable: nil,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 260,
-  speed: nil,
+  max_hp: 300,
+  speed: 7,
   height: 1,
   size: "small",
   areas: [
@@ -50,20 +52,20 @@
     asg: "8N",
     immunities: [],
     melee: (210..250),
-    ranged: nil,
-    bolt: nil,
+    ranged: (184..252),
+    bolt: (184..252),
     udf: 238,
     bar_td: 174,
     cle_td: 123,
     emp_td: (180..184),
     pal_td: (171..174),
-    ran_td: nil,
+    ran_td: 174,
     sor_td: (131..191),
     wiz_td: nil,
-    mje_td: 198,
-    mne_td: 138,
-    mjs_td: nil,
-    mns_td: 184,
+    mje_td: (138..198),
+    mne_td: (138..198),
+    mjs_td: (183..184),
+    mns_td: (183..184),
     mnm_td: 174,
     defensive_spells: [],
     defensive_abilities: [],
@@ -75,7 +77,11 @@
   abilities_misc: [],
   equipment: [
     "a bruised left eye",
-    "a bruised right eye"
+    "a bruised right eye",
+    "a completely severed left foreleg",
+    "a completely severed left hind leg",
+    "a completely severed left leg",
+    "a completely severed right leg"
   ],
   treasure: {
     coins: nil,
@@ -100,9 +106,7 @@
     ],
     death: [
       "The mud wasp flutters its wings one last time and dies.",
-      "The mud wasp twitches violently, then dies.",
-      "A mud wasp goes limp as it is rendered unconscious!",
-      "The mud wasp slumps to the ground."
+      "The mud wasp twitches violently, then dies."
     ],
     decay: [
       "A mud wasp decays into compost."

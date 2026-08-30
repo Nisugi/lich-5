@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 432,
-  speed: nil,
+  speed: 10,
   height: 8,
   size: "large",
   areas: [
@@ -53,6 +55,9 @@
     maneuvers: [
       {
         name: "Tackle"
+      },
+      {
+        name: "Lash"
       }
     ],
     special_abilities: [
@@ -65,21 +70,21 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (178..385),
+    melee: (148..424),
     ranged: nil,
     bolt: nil,
-    udf: (391..469),
+    udf: (304..469),
     bar_td: nil,
-    cle_td: nil,
-    emp_td: (184..188),
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (175..184),
+    emp_td: (184..207),
+    pal_td: (157..167),
+    ran_td: (156..166),
     sor_td: (187..197),
     wiz_td: nil,
     mje_td: 197,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (176..186),
+    mne_td: 197,
+    mjs_td: (249..255),
+    mns_td: (249..255),
     mnm_td: 168,
     defensive_spells: [],
     defensive_abilities: [],
@@ -111,9 +116,7 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A desiccated half-krolvin strigoi flings grisly corpse hulk arms wide and throws herself at you, trying to trap you in a deadly embrace!",
-      "A desiccated half-krolvin strigoi flings grisly corpse hulk arms wide and throws himself at you, trying to trap you in a deadly embrace!",
-      "A grisly corpse hulk spreads grisly corpse hulk sloughing arms and tries to lock you in a bearhug!",
+      "A grisly corpse hulk spreads {pronoun} sloughing arms and tries to lock you in a bearhug!",
       "A grisly corpse hulk tries to stomp on you with one massive, rotting foot!"
     ],
     bite: [],

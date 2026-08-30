@@ -10,17 +10,19 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 3,
   height: 6,
   size: "medium",
   areas: [
@@ -89,21 +91,21 @@
   defense_attributes: {
     asg: "17N",
     immunities: [],
-    melee: (246..282),
-    ranged: nil,
-    bolt: nil,
-    udf: (387..455),
+    melee: (80..344),
+    ranged: (106..286),
+    bolt: (106..286),
+    udf: (374..455),
     bar_td: nil,
     cle_td: 469,
-    emp_td: (418..423),
-    pal_td: nil,
-    ran_td: nil,
+    emp_td: (418..440),
+    pal_td: (360..370),
+    ran_td: 414,
     sor_td: "422 to 455",
     wiz_td: nil,
     mje_td: 451,
     mne_td: "433 to 468",
-    mjs_td: nil,
-    mns_td: (423..433),
+    mjs_td: (354..444),
+    mns_td: (354..444),
     mnm_td: (408..417),
     defensive_spells: [
       "Mantle of Faith (1601)",
@@ -134,15 +136,13 @@
       "A triton fanatic visibly twitches as he clutches a contorted driftwood fetish within his sigil-gouged fingers, his crazed bloodshot eyes darting to and fro beneath a shredded miter of dark oilskin. The last vestiges of a hair-sewn tunic barely cling to his emaciated form, stained in rust-colored splotches from collar to knee, and lashed together with knots of thick sinew. Branded across his forehead is the image of a broken trident, the forks splayed between his brows."
     ],
     arrival: [
-      "A triton assassin stalks in silently, her cold eyes gleaming with hatred.",
-      "A triton fanatic just arrived."
+      "A triton fanatic just arrived.",
     ],
     flee: [
       "A triton fanatic heads {direction}.",
       "A triton fanatic limps {direction}."
     ],
     death: [
-      "A triton fanatic goes limp as she is rendered unconscious!",
       "The triton fanatic gurgles once and goes still, a wrathful look on her face.",
       "The triton fanatic gurgles once and goes still, a wrathful look on his face."
     ],

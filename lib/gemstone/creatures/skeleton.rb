@@ -8,18 +8,20 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 40,
-  speed: nil,
+  speed: 15,
   height: 5,
   size: "medium",
   areas: [
@@ -44,6 +46,14 @@
       {
         name: "Dagger",
         as: 31
+      },
+      {
+        name: "Unknown",
+        as: 31
+      },
+      {
+        name: "Bite",
+        as: 11
       }
     ],
     bolt_spells: [],
@@ -57,8 +67,8 @@
     asg: "5",
     immunities: [],
     melee: (0..21),
-    ranged: -1,
-    bolt: -1,
+    ranged: (-13..19),
+    bolt: (-13..19),
     udf: 34,
     bar_td: 3,
     cle_td: 3,
@@ -115,7 +125,9 @@
     attack: [
       "A skeleton swings {weapon} at you!"
     ],
-    bite: [],
+    bite: [
+      "A skeleton tries to bite you!"
+    ],
     claw: [],
     info: {
       general: [],

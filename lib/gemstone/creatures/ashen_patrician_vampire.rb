@@ -10,18 +10,20 @@
   undead: true,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 375,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Moonsedge",
@@ -33,6 +35,10 @@
       {
         name: "Rapier",
         as: "566 to"
+      },
+      {
+        name: "Charge",
+        as: 530
       }
     ],
     bolt_spells: [],
@@ -49,6 +55,9 @@
       },
       {
         name: "Feint"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [
@@ -64,19 +73,19 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: 480,
-    ranged: nil,
-    bolt: 490,
+    melee: (427..567),
+    ranged: (446..704),
+    bolt: (446..704),
     udf: 530,
     bar_td: (503..507),
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (486..492),
+    emp_td: 488,
+    pal_td: (470..476),
+    ran_td: 521,
     sor_td: "503 to 527",
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: 544,
+    mje_td: (419..544),
+    mne_td: (419..544),
     mjs_td: nil,
     mns_td: 492,
     mnm_td: nil,
@@ -93,7 +102,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a swept-hilt veil iron rapier adorned with jewels"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -106,7 +117,10 @@
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "An ashen patrician vampire prowls in, deadly grace in every fluid step.  With a smirk that twists her exquisite features, she bares her shining white fangs.",
+      "An ashen patrician vampire strides in, moving like flowing water."
+    ],
     flee: [],
     death: [],
     decay: [],

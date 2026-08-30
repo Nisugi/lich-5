@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 240,
-  speed: nil,
+  speed: 10,
   height: 5,
   size: "medium",
   areas: [
@@ -58,22 +60,22 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (342..388),
+    melee: (286..388),
     ranged: nil,
     bolt: (273..337),
-    udf: 335,
+    udf: (335..456),
     bar_td: nil,
     cle_td: (203..212),
-    emp_td: (226..228),
-    pal_td: nil,
-    ran_td: nil,
+    emp_td: (219..228),
+    pal_td: (192..201),
+    ran_td: (184..190),
     sor_td: (224..233),
     wiz_td: nil,
-    mje_td: 246,
-    mne_td: nil,
-    mjs_td: 201,
+    mje_td: (227..246),
+    mne_td: (227..246),
+    mjs_td: (196..201),
     mns_td: (196..201),
-    mnm_td: (178..187),
+    mnm_td: (175..187),
     defensive_spells: [
       "Elemental Defense I (401)",
       "Elemental Defense II (406)",
@@ -109,10 +111,11 @@
       "A seeker moans as she shuffles {direction}."
     ],
     death: [
-      "The seeker mutters, \"...the Eye, the Eye...\" and lies still.",
-      "The seeker slumps to the ground."
+      "The seeker mutters, \"...the Eye, the Eye...\" and lies still."
     ],
-    decay: [],
+    decay: [
+      "The seeker's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

@@ -9,10 +9,12 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
+  witherable: true,
+  sympathy: true,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -30,6 +32,26 @@
       {
         name: "Lance",
         as: ""
+      },
+      {
+        name: "Dagger-sharp beak",
+        as: 610
+      },
+      {
+        name: "Shining metallic spear",
+        as: (654..670)
+      },
+      {
+        name: "Talons",
+        as: (600..610)
+      },
+      {
+        name: "Huge black alloy greatsword",
+        as: 667
+      },
+      {
+        name: "Yellowed brittle bone cudgel",
+        as: 583
       }
     ],
     bolt_spells: [],
@@ -37,10 +59,24 @@
       {
         name: "Censure",
         cs: ""
+      },
+      {
+        name: "Polearm Plant",
+        cs: 502
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Feint"
+      },
+      {
+        name: "Lash"
+      },
+      {
+        name: "Polearm Plant"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -48,18 +84,18 @@
     asg: nil,
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
+    ranged: (394..888),
+    bolt: (394..888),
     udf: 1001,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: 457,
+    emp_td: 484,
+    pal_td: (423..426),
+    ran_td: (441..444),
     sor_td: nil,
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
+    mje_td: 497,
+    mne_td: 497,
     mjs_td: nil,
     mns_td: nil,
     mnm_td: nil,
@@ -70,7 +106,11 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "a gleaming golden aegis",
+    "a shining metallic spear",
+    "a shroud of radiant golden mist"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -82,7 +122,13 @@
   },
   messaging: {
     attack: [
-      "Gilded brilliance twinkles along the edges of a shining winged disir's metallic spear as winged disir swings it at you!"
+      "Gilded brilliance twinkles along the edges of a shining winged disir's metallic spear as winged disir swings it at you!",
+      "A shining winged disir focuses winged disir luminous gaze upon you!",
+      "Spreading winged disir resplendent wings, a shining winged disir thrusts down at you with a shining metallic spear!",
+      "A shining winged disir focuses {pronoun} luminous gaze upon you!",
+      "Gilded brilliance twinkles along the edges of a shining winged disir's metallic spear as shining winged disir swings it at you!",
+      "Spreading {pronoun} resplendent wings, a shining winged disir thrusts down at you with a shining metallic spear!",
+      "A shining winged disir settles into a firm stance and flings {pronoun} golden aegis at you!** Branching filaments of power snap outward from your mist tartan cloak in a lambent multicolored corona! **",
     ],
     bite: [],
     claw: [],

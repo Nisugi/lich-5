@@ -9,17 +9,19 @@
   type: "Worm",
   undead: false,
   blood: true,
-  bones: nil,
+  bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: false,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 222,
-  speed: nil,
+  max_hp: 250,
+  speed: 7,
   height: 2,
   size: "medium",
   areas: [
@@ -53,20 +55,20 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (136..273),
-    ranged: (140..179),
-    bolt: (140..179),
-    udf: (223..267),
+    melee: (129..273),
+    ranged: (130..179),
+    bolt: (130..179),
+    udf: (98..267),
     bar_td: 78,
     cle_td: (68..77),
     emp_td: (73..82),
     pal_td: (66..72),
-    ran_td: nil,
+    ran_td: (72..78),
     sor_td: (76..82),
     wiz_td: nil,
-    mje_td: 81,
-    mne_td: 82,
-    mjs_td: 73,
+    mje_td: (75..82),
+    mne_td: (75..82),
+    mjs_td: (73..76),
     mns_td: (73..76),
     mnm_td: (72..78),
     defensive_spells: [],
@@ -92,16 +94,19 @@
     ],
     arrival: [],
     flee: [
-      "A roa'ter wormling slithers {direction}."
+      "A roa'ter wormling slithers {direction}.",
+      "A flashy roa'ter wormling slithers {direction}.",
+      "A dazzling roa'ter wormling slithers {direction}."
     ],
     death: [
-      "The wormling rolls over and dies.",
-      "A roa'ter wormling goes limp as it is rendered unconscious!"
+      "The wormling rolls over and dies."
     ],
     decay: [
       "A roa'ter wormling decays into compost.",
       "A combative roa'ter wormling decays into compost.",
-      "A belligerent roa'ter wormling decays into compost."
+      "A belligerent roa'ter wormling decays into compost.",
+      "A dazzling roa'ter wormling decays into compost.",
+      "A flashy roa'ter wormling decays into compost."
     ],
     search: [],
     spell_prep: [],

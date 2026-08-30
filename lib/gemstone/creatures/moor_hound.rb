@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Living",
     "Boss"
@@ -62,20 +64,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (207..222),
-    ranged: nil,
-    bolt: nil,
+    melee: (199..233),
+    ranged: (162..222),
+    bolt: (162..222),
     udf: (238..277),
     bar_td: 101,
     cle_td: (109..115),
-    emp_td: (113..121),
+    emp_td: (113..122),
     pal_td: (96..99),
-    ran_td: nil,
+    ran_td: (99..108),
     sor_td: 119,
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: 124,
-    mjs_td: nil,
+    mje_td: (124..133),
+    mne_td: (124..133),
+    mjs_td: 113,
     mns_td: 113,
     mnm_td: (99..108),
     defensive_spells: [],
@@ -106,18 +108,13 @@
       "A moor hound stalks into the room with a sickly vapor pouring from her nostrils!"
     ],
     flee: [
-      "A moor hound plods {direction}."
+      "A moor hound plods {direction}.",
+      "A spiny moor hound plods {direction}."
     ],
     death: [
       "The moor hound falls to the ground and dies.",
       "The moor hound rolls over and dies.",
-      "A moor hound goes limp as she is rendered unconscious!",
-      "A moor hound goes limp as he is rendered unconscious!",
-      "The moor hound yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
-      "The moor hound yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
-      "The moor hound yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
-      "The moor hound yelps loudly as he slumps to the ground and licks his wounded right paw.",
-      "The moor hound yelps loudly as he slumps to the ground and licks his wounded left foreleg."
+      "Beautiful shot pierces both lungs, the moor hound makes a wheezing noise, and drops dead!"
     ],
     decay: [],
     search: [],

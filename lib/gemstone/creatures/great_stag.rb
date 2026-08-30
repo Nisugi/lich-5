@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 121,
+  max_hp: 123,
   speed: nil,
   height: 6,
   size: "medium",
@@ -61,9 +63,9 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (93..142),
-    ranged: 84,
-    bolt: 84,
+    melee: (71..142),
+    ranged: (67..93),
+    bolt: (67..93),
     udf: (106..141),
     bar_td: 39,
     cle_td: (33..42),
@@ -72,9 +74,9 @@
     ran_td: (33..39),
     sor_td: (36..45),
     wiz_td: nil,
-    mje_td: 39,
+    mje_td: (33..39),
     mne_td: (33..39),
-    mjs_td: nil,
+    mjs_td: (36..39),
     mns_td: (36..39),
     mnm_td: (39..45),
     defensive_spells: [],
@@ -109,10 +111,7 @@
       "The great stag lets out a final agonized sigh and dies.",
       "The great stag collapses to the ground, emits a final silent sigh, and dies.",
       "The great stag silently lets out a final agonized sigh and dies.",
-      "The great stag groans loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The great stag groans loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The great stag groans loudly as he slumps to the ground and cradles his wounded right hoof.",
-      "The great stag groans loudly as he slumps to the ground and cradles his wounded left hoof."
+      "Beautiful shot pierces both lungs, the great stag makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A great stag decays into a pile of fur and bone."
@@ -122,7 +121,7 @@
     attack: [
       "A great stag charges at you!",
       "A great stag tries to impale you with {pronoun} antlers!",
-      "A great stag tries to impale you with great stag antlers!"
+      "A great stag tries to impale you with {pronoun} antlers!"
     ],
     bite: [],
     claw: [],

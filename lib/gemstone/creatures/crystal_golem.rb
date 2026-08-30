@@ -9,17 +9,19 @@
   type: "Biped",
   undead: false,
   blood: false,
-  bones: nil,
+  bones: false,
   witherable: false,
   sympathy: false,
-  muggable: nil,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Magical"
   ],
   bcs: true,
   max_hp: 140,
-  speed: nil,
+  speed: 11,
   height: 9,
   size: "large",
   areas: [
@@ -63,10 +65,10 @@
   defense_attributes: {
     asg: "14N",
     immunities: [],
-    melee: (60..130),
-    ranged: nil,
-    bolt: 60,
-    udf: (88..158),
+    melee: (53..130),
+    ranged: (49..67),
+    bolt: (49..67),
+    udf: (78..158),
     bar_td: nil,
     cle_td: (33..36),
     emp_td: nil,
@@ -76,7 +78,7 @@
     wiz_td: nil,
     mje_td: (30..42),
     mne_td: (30..42),
-    mjs_td: nil,
+    mjs_td: (33..42),
     mns_td: (33..42),
     mnm_td: (36..39),
     defensive_spells: [],
@@ -101,7 +103,6 @@
       "Towering about three yards tall, a crystal golem's form is nothing short of massive. Deeply set fires glimmer coldly from its eye sockets, throwing a myriad of colors throughout the large crystal spikes jutting sharply away from its thick crystalline skin. As it moves, the rainbow color flickers through the facets of its body in a dizzying array of color."
     ],
     arrival: [
-      "A gnoll ranger wanders in, alertly surveying its surroundings.",
       "A crystal golem stomps in, fiery eyes the only clue to its deadly intent."
     ],
     flee: [

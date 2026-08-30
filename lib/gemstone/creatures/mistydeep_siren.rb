@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 42,
+  max_hp: 43,
   speed: nil,
   height: 5,
   size: "medium",
@@ -33,6 +35,10 @@
       {
         name: "Dagger",
         as: 50
+      },
+      {
+        name: "Unknown",
+        as: 30
       }
     ],
     bolt_spells: [],
@@ -54,7 +60,7 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: 10,
+    melee: (0..30),
     ranged: 7,
     bolt: (7..28),
     udf: 39,
@@ -67,7 +73,7 @@
     wiz_td: nil,
     mje_td: 6,
     mne_td: 6,
-    mjs_td: nil,
+    mjs_td: 6,
     mns_td: 6,
     mnm_td: 6,
     defensive_spells: [],

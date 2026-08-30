@@ -10,19 +10,21 @@
   undead: true,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "non-corporeal undead",
     "Boss"
   ],
   bcs: true,
-  max_hp: 240,
-  speed: nil,
-  height: nil,
-  size: "",
+  max_hp: 257,
+  speed: 8,
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Atoll",
@@ -70,30 +72,38 @@
       {
         name: "Lash",
         cs: 448
+      },
+      {
+        name: "Claw Curse",
+        cs: 460
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Claw Curse"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "11N",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    melee: (204..501),
+    ranged: (240..363),
+    bolt: (240..363),
+    udf: 472,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
+    cle_td: 463,
+    emp_td: (440..447),
     pal_td: "~380",
-    ran_td: nil,
+    ran_td: 415,
     sor_td: "447 to 480",
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 404,
     mne_td: "485 to 498",
-    mjs_td: nil,
+    mjs_td: (348..355),
     mns_td: "435 to 457",
     mnm_td: nil,
     defensive_spells: [
@@ -139,7 +149,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "An triton psionicist points a clawed finger toward you!"
+      "An triton psionicist points a clawed finger toward you!",
+      "An ethereal triton psionicist points a clawed finger toward you!"
     ],
     bite: [],
     claw: [],

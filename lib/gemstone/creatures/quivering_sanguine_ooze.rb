@@ -9,10 +9,12 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -21,19 +23,39 @@
     }
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
-  height: nil,
-  size: nil,
+  max_hp: 573,
+  speed: 12,
+  height: 12,
+  size: "huge",
   attack_attributes: {
     physical_attacks: [
       {
         name: "Huge black alloy greatsword",
-        as: 679
+        as: (596..679)
       },
       {
         name: "Yellowed brittle bone cudgel",
         as: 583
+      },
+      {
+        name: "Fists",
+        as: (558..559)
+      },
+      {
+        name: "Glistening tendril",
+        as: (595..606)
+      },
+      {
+        name: "Talons",
+        as: 600
+      },
+      {
+        name: "Crush",
+        as: 614
+      },
+      {
+        name: "Shark-like teeth",
+        as: 505
       }
     ],
     bolt_spells: [],
@@ -41,6 +63,10 @@
       {
         name: "Yellowed brittle bone cudgel",
         cs: 460
+      },
+      {
+        name: "Lash",
+        cs: 389
       }
     ],
     offensive_spells: [],
@@ -51,19 +77,19 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
+    melee: (464..847),
+    ranged: (365..631),
+    bolt: (365..631),
     udf: 627,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: 447,
+    emp_td: 481,
+    pal_td: (420..423),
+    ran_td: (424..430),
     sor_td: nil,
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
+    mje_td: 451,
+    mne_td: 451,
     mjs_td: nil,
     mns_td: nil,
     mnm_td: nil,
@@ -86,8 +112,7 @@
   },
   messaging: {
     attack: [
-      "Hampered by quivering sanguine ooze deformities, a squamous reptilian mutant clumsily swings {weapon} at you!",
-      "Wisps of shadow follow the arc of a withered shadow-cloaked draugr's arm as quivering sanguine ooze swings {weapon} at you!"
+      "A quivering sanguine ooze tries to strangle you with a glistening tendril!",
     ],
     bite: [],
     claw: [],

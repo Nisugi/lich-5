@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 50,
-  speed: nil,
+  speed: 12,
   height: 4,
   size: "small",
   areas: [
@@ -40,7 +42,11 @@
       },
       {
         name: "Fist",
-        as: 34
+        as: (34..44)
+      },
+      {
+        name: "Unknown",
+        as: 44
       }
     ],
     bolt_spells: [],
@@ -66,8 +72,8 @@
     wiz_td: nil,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: nil,
-    mns_td: 9,
+    mjs_td: (9..15),
+    mns_td: (9..15),
     mnm_td: 9,
     defensive_spells: [],
     defensive_abilities: [],
@@ -100,7 +106,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A white vysan pounds at you with {pronoun} fist!"
+      "A white vysan pounds at you with {pronoun} fist!",
+      "A white vysan tries to ensnare you!"
     ],
     bite: [],
     claw: [],

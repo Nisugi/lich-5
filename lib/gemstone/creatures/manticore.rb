@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -49,6 +51,10 @@
       {
         name: "Closed fist",
         as: 122
+      },
+      {
+        name: "Unknown",
+        as: 122
       }
     ],
     bolt_spells: [],
@@ -62,8 +68,8 @@
     asg: "7N",
     immunities: [],
     melee: (35..40),
-    ranged: (27..30),
-    bolt: 27,
+    ranged: (23..30),
+    bolt: (23..27),
     udf: 74,
     bar_td: 27,
     cle_td: 27,
@@ -74,8 +80,8 @@
     wiz_td: nil,
     mje_td: 27,
     mne_td: 27,
-    mjs_td: nil,
-    mns_td: 27,
+    mjs_td: (27..30),
+    mns_td: (27..30),
     mnm_td: 27,
     defensive_spells: [],
     defensive_abilities: [],
@@ -87,7 +93,9 @@
   abilities_misc: [],
   equipment: [
     "a bruised left eye",
-    "a bruised right eye"
+    "a bruised right eye",
+    "a completely severed left foreleg",
+    "a completely severed right foreleg"
   ],
   treasure: {
     coins: true,

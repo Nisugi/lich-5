@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -45,6 +47,10 @@
       {
         name: "Claw",
         as: 142
+      },
+      {
+        name: "Unknown",
+        as: 145
       }
     ],
     bolt_spells: [],
@@ -65,9 +71,9 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (153..166),
-    ranged: 119,
-    bolt: 119,
+    melee: (125..181),
+    ranged: (93..131),
+    bolt: (93..131),
     udf: (147..197),
     bar_td: nil,
     cle_td: (42..45),
@@ -78,7 +84,7 @@
     wiz_td: nil,
     mje_td: 45,
     mne_td: 45,
-    mjs_td: nil,
+    mjs_td: (45..51),
     mns_td: (45..51),
     mnm_td: (45..51),
     defensive_spells: [],
@@ -107,17 +113,12 @@
     ],
     flee: [
       "A humpbacked puma scampers {direction}.",
-      "A humpbacked puma roars loudly as he stands {direction}!"
+      "A humpbacked puma roars loudly as he stands {direction}!",
+      "A humpbacked puma scampers {direction}, mewling in pain."
     ],
     death: [
       "The humpbacked puma lets out a final caterwaul and dies.",
-      "The humpbacked puma crumples to the ground and dies.",
-      "A humpbacked puma goes limp as he is rendered unconscious!",
-      "The humpbacked puma mewls in pain as she slumps to the ground and licks her wounded right paw.",
-      "The humpbacked puma mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The humpbacked puma mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The humpbacked puma mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The humpbacked puma mewls in pain as she slumps to the ground and licks her wounded left paw."
+      "The humpbacked puma crumples to the ground and dies."
     ],
     decay: [
       "A humpbacked puma decays into a compost of fangs, fur and claws."

@@ -12,13 +12,15 @@
   bones: false,
   witherable: false,
   sympathy: true,
-  muggable: nil,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 318,
+  max_hp: 323,
   speed: nil,
   height: 13,
   size: "huge",
@@ -49,20 +51,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (89..99),
+    melee: (72..130),
     ranged: nil,
     bolt: nil,
-    udf: 170,
+    udf: (140..206),
     bar_td: nil,
     cle_td: 87,
     emp_td: 88,
-    pal_td: nil,
+    pal_td: (78..81),
     ran_td: nil,
     sor_td: 92,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
+    mjs_td: 88,
     mns_td: 88,
     mnm_td: 81,
     defensive_spells: [],
@@ -90,9 +92,7 @@
     flee: [
       "A lesser stone gargoyle heads {direction}."
     ],
-    death: [
-      "A lesser stone gargoyle goes limp as it is rendered unconscious!"
-    ],
+    death: [],
     decay: [
       "A lesser stone gargoyle crumbles to dust.",
       "The stone gargoyle's left leg crumbles briefly and explodes in a shower of gore."

@@ -9,11 +9,13 @@
   type: "Worm",
   undead: false,
   blood: true,
-  bones: nil,
+  bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -41,6 +43,10 @@
       {
         name: "Bite",
         as: 29
+      },
+      {
+        name: "Unknown",
+        as: 29
       }
     ],
     bolt_spells: [],
@@ -53,8 +59,8 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (24..71),
-    ranged: nil,
+    melee: (15..71),
+    ranged: (5..26),
     bolt: 25,
     udf: 71,
     bar_td: 3,
@@ -97,8 +103,7 @@
       "A carrion worm slithers {direction}."
     ],
     death: [
-      "The worm rolls over and dies.",
-      "The carrion worm slumps to the ground."
+      "The worm rolls over and dies."
     ],
     decay: [
       "A carrion worm decays into compost."

@@ -11,9 +11,11 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
@@ -36,11 +38,11 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 235
+        as: (218..235)
       },
       {
         name: "Closed fist",
-        as: 245
+        as: (228..245)
       }
     ],
     bolt_spells: [],
@@ -58,9 +60,9 @@
     asg: nil,
     immunities: [],
     melee: (150..188),
-    ranged: (138..148),
-    bolt: (138..148),
-    udf: (155..165),
+    ranged: (134..188),
+    bolt: (134..188),
+    udf: (153..165),
     bar_td: nil,
     cle_td: 91,
     emp_td: 93,
@@ -69,9 +71,9 @@
     sor_td: 97,
     wiz_td: nil,
     mje_td: 100,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: 93,
+    mne_td: 100,
+    mjs_td: (93..101),
+    mns_td: (93..101),
     mnm_td: nil,
     defensive_spells: [],
     defensive_abilities: [],
@@ -105,7 +107,7 @@
       "The moaning spirit goes still for a moment while its head reshapes."
     ],
     decay: [
-      "A moaning spirit collapses into a puddle of jelly, falling silent at last."
+      "A moaning spirit collapses into a puddle of jelly, falling silent at last.",
     ],
     search: [],
     spell_prep: [],

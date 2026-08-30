@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
   ],
   bcs: true,
-  max_hp: 307,
-  speed: nil,
+  max_hp: 380,
+  speed: 6,
   height: 2,
   size: "medium",
   areas: [
@@ -59,20 +61,20 @@
     asg: "12N",
     immunities: [],
     melee: (226..492),
-    ranged: nil,
-    bolt: nil,
+    ranged: (149..232),
+    bolt: (149..232),
     udf: 264,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 176,
     emp_td: 175,
     pal_td: (146..149),
-    ran_td: nil,
+    ran_td: 149,
     sor_td: 185,
     wiz_td: nil,
-    mje_td: 196,
-    mne_td: 195,
-    mjs_td: nil,
-    mns_td: 175,
+    mje_td: (195..196),
+    mne_td: (195..196),
+    mjs_td: (213..216),
+    mns_td: (213..216),
     mnm_td: 144,
     defensive_spells: [],
     defensive_abilities: [],
@@ -85,7 +87,9 @@
   equipment: [
     "a bruised left eye",
     "a bruised right eye",
-    "a completely severed left foreleg"
+    "a completely severed left foreleg",
+    "a blinded left eye",
+    "a completely severed right foreleg"
   ],
   treasure: {
     coins: true,
@@ -107,8 +111,7 @@
       "The red-scaled thrak falls back into a heap and dies.",
       "The red-scaled thrak hisses one last time and dies.",
       "The red-scaled thrak twitches violently, then dies.",
-      "A red-scaled thrak goes limp as it is rendered unconscious!",
-      "The red-scaled thrak slumps to the ground."
+      "Beautiful shot pierces both lungs, the red-scaled thrak makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A red-scaled thrak decays into compost."

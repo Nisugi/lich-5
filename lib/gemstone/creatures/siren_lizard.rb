@@ -11,15 +11,17 @@
   blood: true,
   bones: true,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 8,
   height: 2,
   size: "large",
   areas: [
@@ -82,21 +84,21 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: 164,
-    ranged: nil,
-    bolt: 173,
+    melee: (154..194),
+    ranged: (153..203),
+    bolt: (153..203),
     udf: 248,
     bar_td: 137,
     cle_td: 151,
     emp_td: 150,
     pal_td: (124..127),
-    ran_td: nil,
+    ran_td: 127,
     sor_td: 159,
     wiz_td: nil,
-    mje_td: (265..275),
-    mne_td: 167,
-    mjs_td: nil,
-    mns_td: 150,
+    mje_td: (167..275),
+    mne_td: (167..275),
+    mjs_td: 184,
+    mns_td: 184,
     mnm_td: 126,
     defensive_spells: [],
     defensive_abilities: [],
@@ -128,9 +130,7 @@
     death: [
       "The siren lizard falls to the ground and dies.",
       "The siren lizard hisses one last time and dies.",
-      "A siren lizard goes limp as it is rendered unconscious!",
-      "The siren lizard twitches violently, then dies.",
-      "The siren lizard slumps to the ground."
+      "The siren lizard twitches violently, then dies."
     ],
     decay: [
       "A siren lizard decays into compost."

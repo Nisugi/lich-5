@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
@@ -50,20 +52,20 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (41..43),
-    ranged: nil,
-    bolt: 16,
+    melee: (27..43),
+    ranged: (16..23),
+    bolt: (16..23),
     udf: 97,
     bar_td: 15,
     cle_td: 15,
     emp_td: 15,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (12..15),
+    ran_td: 15,
     sor_td: 15,
     wiz_td: nil,
     mje_td: 15,
     mne_td: 15,
-    mjs_td: nil,
+    mjs_td: 15,
     mns_td: 15,
     mnm_td: 15,
     defensive_spells: [],
@@ -96,8 +98,7 @@
     flee: [],
     death: [
       "The water witch falls to the ground motionless.",
-      "The water witch screams evilly one last time and goes still.",
-      "A water witch goes limp as it is rendered unconscious!"
+      "The water witch screams evilly one last time and goes still."
     ],
     decay: [
       "A water witch turns to dust."

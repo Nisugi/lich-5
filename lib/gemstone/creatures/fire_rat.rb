@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
@@ -53,19 +55,19 @@
       "Fire"
     ],
     melee: (72..115),
-    ranged: (72..101),
-    bolt: (72..101),
-    udf: (110..121),
+    ranged: (69..101),
+    bolt: (69..101),
+    udf: (78..121),
     bar_td: 42,
     cle_td: (45..54),
-    emp_td: (40..48),
+    emp_td: (40..51),
     pal_td: (45..48),
     ran_td: (42..48),
     sor_td: (42..54),
     wiz_td: nil,
-    mje_td: 48,
-    mne_td: 42,
-    mjs_td: nil,
+    mje_td: (42..48),
+    mne_td: (42..48),
+    mjs_td: (48..54),
     mns_td: (48..54),
     mnm_td: (48..54),
     defensive_spells: [],
@@ -99,14 +101,10 @@
     death: [
       "The fire rat collapses to the ground, emits a final squeal, and dies.",
       "The fire rat twitches and dies.",
-      "The fire rat collapses to the ground, emits a final silent squeal, and dies.",
-      "The fire rat shrieks as it slumps to the ground and licks at its wounded right foreleg.",
-      "The fire rat shrieks as it slumps to the ground and licks at its wounded left foreleg.",
-      "The fire rat shrieks as it slumps to the ground and licks at its wounded left claw."
+      "The fire rat collapses to the ground, emits a final silent squeal, and dies."
     ],
     decay: [
-      "A fire rat crumbles into a pile of ash.",
-      "Acid dissolves the knee ligaments.  The fire rat's tibia passes its femur in a very unpleasant manner!"
+      "A fire rat crumbles into a pile of ash."
     ],
     search: [],
     spell_prep: [],

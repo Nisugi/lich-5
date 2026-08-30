@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: false,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 325,
+  max_hp: 331,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "The Hive",
@@ -36,11 +38,20 @@
         name: "Claw"
       },
       {
-        name: "Stinger (attack)"
+        name: "Stinger (attack)",
+        as: (591..597)
       },
       {
         name: "Bite",
-        as: 565
+        as: (565..597)
+      },
+      {
+        name: "Bladed forelegs",
+        as: 519
+      },
+      {
+        name: "Razor-sharp foreleg",
+        as: (600..607)
       }
     ],
     bolt_spells: [],
@@ -55,6 +66,12 @@
       },
       {
         name: "Dirtkick"
+      },
+      {
+        name: "Charge"
+      },
+      {
+        name: "Dust Kick"
       }
     ],
     special_abilities: [
@@ -77,14 +94,14 @@
     asg: "12N",
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
+    ranged: (490..505),
+    bolt: (490..505),
     udf: 782,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (454..463),
+    emp_td: 463,
+    pal_td: (425..428),
+    ran_td: (416..422),
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -116,15 +133,23 @@
     arrival: [],
     flee: [],
     death: [
-      "A sleek black kiramon stalker grabs you by the head and twists violently.  You hear a loud *CRACK* as your neck bones snap and your body goes limp!"
+      "A sleek black kiramon stalker grabs you by the head and twists violently.  You hear a loud *CRACK* as your neck bones snap and your body goes limp!",
+      "A sleek black kiramon stalker goes still, and for a moment she seems to blend with the surrounding shadows.",
+      "A sleek black kiramon stalker goes still, and for a moment it seems to blend with the surrounding shadows."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A sleek black kiramon stalker skitters mercilessly forward to slash at you with a razor-sharp foreleg!",
+      "A sleek black kiramon stalker twists fluidly to spear you with {pronoun} barbed stinger!",
+      "Without warning, a sleek black kiramon stalker glides from the shadows and skitters mercilessly forward to slash at you with a razor-sharp foreleg!",
+      "Without warning, a sleek black kiramon stalker glides from the shadows and twists fluidly to spear you with {pronoun} barbed stinger!"
+    ],
     bite: [
       "A sleek black kiramon stalker aims a preternaturally swift bite at you!",
-      "Without warning, a sleek black kiramon stalker glides from the shadows and aims a preternaturally swift bite at you!"
+      "Without warning, a sleek black kiramon stalker glides from the shadows and aims a preternaturally swift bite at you!",
+      "NoneWithout warning, a sleek black kiramon stalker glides from the shadows and aims a preternaturally swift bite at you!"
     ],
     claw: [],
     info: {

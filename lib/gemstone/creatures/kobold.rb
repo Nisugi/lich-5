@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -61,6 +63,10 @@
       {
         name: "Javelin",
         as: 36
+      },
+      {
+        name: "Unknown",
+        as: 36
       }
     ],
     bolt_spells: [],
@@ -73,21 +79,21 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (37..78),
-    ranged: nil,
-    bolt: nil,
+    melee: (14..78),
+    ranged: (-7..47),
+    bolt: (-7..47),
     udf: (24..77),
     bar_td: 3,
     cle_td: 3,
     emp_td: 3,
-    pal_td: 3,
+    pal_td: (0..3),
     ran_td: 3,
     sor_td: 3,
     wiz_td: nil,
     mje_td: 3,
     mne_td: 3,
-    mjs_td: 3,
-    mns_td: 3,
+    mjs_td: (3..12),
+    mns_td: (3..12),
     mnm_td: nil,
     defensive_spells: [],
     defensive_abilities: [],
@@ -126,8 +132,7 @@
       "The kobold crumples to a heap on the ground and dies.",
       "The kobold cries out in pain one last time and dies.",
       "The kobold crumples to a heap on the floor and dies.",
-      "Beautiful shot pierces both lungs, the kobold makes a wheezing noise, and drops dead!",
-      "The kobold slumps to the ground."
+      "Beautiful shot pierces both lungs, the kobold makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A small, green cloud of smelly gas rises from the body of a kobold as she decays into compost.",

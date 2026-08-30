@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 28,
-  speed: nil,
+  speed: 15,
   height: 3,
   size: "medium",
   areas: [
@@ -45,6 +47,10 @@
       {
         name: "Bite",
         as: 32
+      },
+      {
+        name: "Unknown",
+        as: 36
       }
     ],
     bolt_spells: [],
@@ -57,10 +63,10 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (28..78),
-    ranged: "+5",
-    bolt: "+5",
-    udf: 58,
+    melee: (-5..78),
+    ranged: (-5..25),
+    bolt: (-5..25),
+    udf: (34..58),
     bar_td: "+3",
     cle_td: "+3",
     emp_td: 3,
@@ -101,13 +107,7 @@
     death: [
       "The rolton collapses to the ground, emits a final bleat, and dies.",
       "The rolton collapses to the ground, emits a final silent bleat, and dies.",
-      "The rolton lets out a final agonized bleat and dies.",
-      "The rolton bleats loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The rolton bleats loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The rolton bleats loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The rolton bleats loudly as she slumps to the ground and cradles her wounded left foreleg.",
-      "The rolton bleats loudly as she slumps to the ground and cradles her wounded left hoof.",
-      "The rolton bleats loudly as he slumps to the ground and cradles his wounded left hoof."
+      "The rolton lets out a final agonized bleat and dies."
     ],
     decay: [
       "A rolton decays into a pile of fur and bone."

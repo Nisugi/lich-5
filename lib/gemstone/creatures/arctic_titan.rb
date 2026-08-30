@@ -11,15 +11,17 @@
   blood: nil,
   bones: true,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Elemental family"
   ],
   bcs: true,
-  max_hp: 397,
+  max_hp: 399,
   speed: nil,
   height: 18,
   size: "huge",
@@ -74,10 +76,10 @@
   defense_attributes: {
     asg: "10",
     immunities: [],
-    melee: 177,
+    melee: (172..177),
     ranged: 195,
-    bolt: 165,
-    udf: 213,
+    bolt: (123..165),
+    udf: (199..213),
     bar_td: nil,
     cle_td: 110,
     emp_td: 111,
@@ -86,8 +88,8 @@
     sor_td: 117,
     wiz_td: nil,
     mje_td: 124,
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: 124,
+    mjs_td: 111,
     mns_td: 111,
     mnm_td: 108,
     defensive_spells: [],
@@ -120,10 +122,8 @@
     ],
     flee: [],
     death: [
-      "An arctic titan goes limp as it is rendered unconscious!",
       "The arctic titan screams evilly one last time and goes still.",
-      "The arctic titan falls to the ground motionless.",
-      "The arctic titan slumps to the ground."
+      "The arctic titan falls to the ground motionless."
     ],
     decay: [
       "An arctic titan turns to dust."

@@ -9,10 +9,12 @@
   undead: true,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -23,19 +25,48 @@
     }
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 387,
+  speed: 6,
   height: 5,
   size: "medium",
   attack_attributes: {
     physical_attacks: [
       {
         name: "Talons",
-        as: 600
+        as: (600..620)
+      },
+      {
+        name: "Dagger-sharp beak",
+        as: (610..620)
+      },
+      {
+        name: "Yellowed brittle bone cudgel",
+        as: 603
+      },
+      {
+        name: "?: Blow raises a welt",
+        as: 582
+      },
+      {
+        name: "Crush",
+        as: 614
+      },
+      {
+        name: "Huge black alloy greatsword",
+        as: 679
+      },
+      {
+        name: "Shining metallic spear",
+        as: (628..657)
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Yellowed brittle bone cudgel",
+        cs: 404
+      }
+    ],
     offensive_spells: [],
     maneuvers: [],
     special_abilities: [],
@@ -45,13 +76,13 @@
     asg: "1",
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: 960,
+    ranged: (400..727),
+    bolt: (400..727),
+    udf: (846..1009),
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (487..496),
     emp_td: "493",
-    pal_td: nil,
+    pal_td: (454..457),
     ran_td: "457",
     sor_td: "527",
     wiz_td: nil,
@@ -79,7 +110,8 @@
   },
   messaging: {
     attack: [
-      "Soaring by on inky wings, an eyeless black valravn rakes at you with eyeless black valravn talons!"
+      "Soaring by on inky wings, an eyeless black valravn rakes at you with {pronoun} talons!",
+      "An eyeless black valravn pecks viciously at you with {pronoun} dagger-sharp beak!",
     ],
     bite: [],
     claw: [],

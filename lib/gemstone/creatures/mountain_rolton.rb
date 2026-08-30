@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -33,6 +35,10 @@
       {
         name: "Bite",
         as: (28..36)
+      },
+      {
+        name: "Unknown",
+        as: 28
       }
     ],
     bolt_spells: [],
@@ -46,19 +52,19 @@
     asg: "1N",
     immunities: [],
     melee: (7..28),
-    ranged: nil,
+    ranged: (-5..5),
     bolt: 5,
     udf: (26..47),
     bar_td: nil,
     cle_td: 3,
     emp_td: 3,
     pal_td: 3,
-    ran_td: nil,
+    ran_td: 3,
     sor_td: 3,
     wiz_td: nil,
     mje_td: 3,
     mne_td: 3,
-    mjs_td: nil,
+    mjs_td: 3,
     mns_td: 3,
     mnm_td: 3,
     defensive_spells: [],
@@ -92,13 +98,7 @@
       "The mountain rolton collapses to the ground, emits a final bleat, and dies.",
       "The mountain rolton lets out a final agonized bleat and dies.",
       "The mountain rolton twitches violently, then dies.",
-      "The mountain rolton collapses to the ground, emits a final silent bleat, and dies.",
-      "The mountain rolton bleats loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The mountain rolton bleats loudly as she slumps to the ground and cradles her wounded right hoof.",
-      "The mountain rolton slumps to the ground.",
-      "The mountain rolton bleats loudly as she slumps to the ground and cradles her wounded left foreleg.",
-      "The mountain rolton bleats loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The mountain rolton bleats loudly as she slumps to the ground and cradles her wounded right foreleg."
+      "The mountain rolton collapses to the ground, emits a final silent bleat, and dies."
     ],
     decay: [
       "A mountain rolton decays into a pile of fur and bone."

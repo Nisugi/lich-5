@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
+  witherable: true,
+  sympathy: true,
   muggable: nil,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 230,
-  speed: nil,
+  speed: 9,
   height: 10,
   size: "large",
   areas: [
@@ -40,6 +42,10 @@
       {
         name: "War hammer",
         as: 175
+      },
+      {
+        name: "Unknown",
+        as: 211
       }
     ],
     bolt_spells: [],
@@ -56,21 +62,21 @@
   defense_attributes: {
     asg: "various",
     immunities: [],
-    melee: (61..76),
-    ranged: (61..76),
-    bolt: (61..76),
-    udf: 118,
+    melee: (44..108),
+    ranged: (35..53),
+    bolt: (35..53),
+    udf: (89..202),
     bar_td: nil,
     cle_td: 69,
     emp_td: 69,
     pal_td: (66..69),
-    ran_td: 54,
+    ran_td: 69,
     sor_td: 65,
     wiz_td: nil,
-    mje_td: (61..69),
-    mne_td: (61..69),
-    mjs_td: nil,
-    mns_td: 42,
+    mje_td: (54..69),
+    mne_td: (54..69),
+    mjs_td: 69,
+    mns_td: 69,
     mnm_td: (54..61),
     defensive_spells: [
       "Spirit Warding II (107)"

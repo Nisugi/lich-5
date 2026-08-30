@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 600,
-  speed: nil,
+  max_hp: 619,
+  speed: 9,
   height: 22,
   size: "huge",
   areas: [
@@ -84,9 +86,9 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: (301..385),
-    ranged: nil,
-    bolt: nil,
+    melee: (219..385),
+    ranged: (164..286),
+    bolt: (164..286),
     udf: (297..302),
     bar_td: (244..259),
     cle_td: (263..272),
@@ -95,9 +97,9 @@
     ran_td: (230..234),
     sor_td: (285..291),
     wiz_td: nil,
-    mje_td: 301,
-    mne_td: nil,
-    mjs_td: 268,
+    mje_td: (300..306),
+    mne_td: (300..306),
+    mjs_td: (261..271),
     mns_td: (261..271),
     mnm_td: (218..227),
     defensive_spells: [
@@ -136,7 +138,6 @@
     arrival: [],
     flee: [],
     death: [
-      "An Illoke shaman goes limp as he is rendered unconscious!",
       "The Illoke shaman grumbles in pain one last time before lying still."
     ],
     decay: [

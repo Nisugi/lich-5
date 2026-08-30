@@ -10,10 +10,12 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -53,10 +55,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (17..41),
-    ranged: (4..14),
+    melee: (3..41),
+    ranged: (0..14),
     bolt: 13,
-    udf: 71,
+    udf: (68..71),
     bar_td: nil,
     cle_td: 9,
     emp_td: 9,
@@ -66,7 +68,7 @@
     wiz_td: nil,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: nil,
+    mjs_td: 9,
     mns_td: 9,
     mnm_td: nil,
     defensive_spells: [],
@@ -97,12 +99,7 @@
     death: [
       "The velnalin collapses to the ground, emits a final sigh, and dies.",
       "The velnalin lets out a final agonized sigh and dies.",
-      "The velnalin collapses to the ground, emits a final silent sigh, and dies.",
-      "The velnalin groans loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The velnalin groans loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The velnalin groans loudly as she slumps to the ground and cradles her wounded left foreleg.",
-      "The velnalin groans loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The velnalin groans loudly as she slumps to the ground and cradles her wounded right hoof."
+      "The velnalin collapses to the ground, emits a final silent sigh, and dies."
     ],
     decay: [
       "A velnalin decays into a pile of fur and bone."

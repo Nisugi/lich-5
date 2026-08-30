@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 60,
-  speed: nil,
+  speed: 6,
   height: 2,
   size: "small",
   areas: [
@@ -45,6 +47,10 @@
       {
         name: "Bite",
         as: 72
+      },
+      {
+        name: "Claw",
+        as: 81
       }
     ],
     bolt_spells: [],
@@ -61,21 +67,21 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (29..65),
-    ranged: 27,
-    bolt: 27,
+    melee: (26..65),
+    ranged: (27..33),
+    bolt: (27..33),
     udf: (60..93),
     bar_td: nil,
     cle_td: 15,
     emp_td: 15,
     pal_td: (12..15),
-    ran_td: nil,
+    ran_td: 15,
     sor_td: 15,
     wiz_td: nil,
     mje_td: 15,
     mne_td: 15,
-    mjs_td: nil,
-    mns_td: 15,
+    mjs_td: 39,
+    mns_td: 39,
     mnm_td: 15,
     defensive_spells: [],
     defensive_abilities: [],
@@ -103,17 +109,12 @@
     ],
     flee: [
       "A bobcat scampers {direction}.",
-      "A bobcat scampers {direction}, mewling in pain."
+      "A bobcat scampers {direction}, mewling in pain.",
+      "A bobcat roars loudly as she stands {direction}!"
     ],
     death: [
       "The bobcat crumples to the ground and dies.",
-      "The bobcat lets out a final caterwaul and dies.",
-      "The bobcat mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The bobcat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The bobcat mewls in pain as she slumps to the ground and licks her wounded left paw.",
-      "The bobcat mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The bobcat mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The bobcat mewls in pain as he slumps to the ground and licks his wounded left paw."
+      "The bobcat lets out a final caterwaul and dies."
     ],
     decay: [
       "A bobcat decays into a compost of fangs, fur and claws."
@@ -124,7 +125,9 @@
     bite: [
       "A bobcat tries to bite you!"
     ],
-    claw: [],
+    claw: [
+      "A bobcat claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

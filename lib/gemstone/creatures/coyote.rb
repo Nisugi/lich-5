@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 60,
-  speed: nil,
+  speed: 6,
   height: 3,
   size: "medium",
   areas: [
@@ -65,10 +67,10 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (17..54),
-    ranged: nil,
-    bolt: nil,
-    udf: (71..83),
+    melee: (7..54),
+    ranged: (12..22),
+    bolt: (12..22),
+    udf: (53..83),
     bar_td: 15,
     cle_td: 15,
     emp_td: 15,
@@ -78,8 +80,8 @@
     wiz_td: nil,
     mje_td: 15,
     mne_td: 15,
-    mjs_td: nil,
-    mns_td: 15,
+    mjs_td: 57,
+    mns_td: 57,
     mnm_td: 15,
     defensive_spells: [],
     defensive_abilities: [],
@@ -109,13 +111,6 @@
     death: [
       "The coyote falls to the ground and dies.",
       "The coyote rolls over and dies.",
-      "A greater orc breathes his last gasp and dies.",
-      "A greater orc breathes her last gasp and dies.",
-      "The coyote yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
-      "The coyote yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
-      "The coyote yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
-      "The coyote yelps loudly as she slumps to the ground and licks her wounded left paw.",
-      "The coyote yelps loudly as she slumps to the ground and licks her wounded right foreleg."
     ],
     decay: [
       "A coyote decays into a compost of fangs and fur."

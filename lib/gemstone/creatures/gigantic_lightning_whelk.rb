@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: nil,
   max_hp: 500,
@@ -31,7 +33,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Huge hooves",
+        as: 519
+      },
+      {
+        name: "Tusks",
+        as: 519
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

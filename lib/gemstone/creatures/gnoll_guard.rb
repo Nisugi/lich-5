@@ -12,8 +12,10 @@
   bones: true,
   witherable: nil,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -41,8 +43,8 @@
     asg: nil,
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
+    ranged: (84..86),
+    bolt: (84..86),
     udf: 223,
     bar_td: nil,
     cle_td: (48..51),
@@ -53,7 +55,7 @@
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
+    mjs_td: (51..57),
     mns_td: (51..57),
     mnm_td: 51,
     defensive_spells: [],
@@ -87,9 +89,7 @@
     flee: [],
     death: [
       "The gnoll guard rolls over and dies.",
-      "The gnoll guard falls to the ground and dies.",
-      "A gnoll guard goes limp as she is rendered unconscious!",
-      "A gnoll guard goes limp as he is rendered unconscious!"
+      "The gnoll guard falls to the ground and dies."
     ],
     decay: [],
     search: [],

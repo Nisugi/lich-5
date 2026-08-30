@@ -12,15 +12,17 @@
   bones: false,
   witherable: false,
   sympathy: false,
-  muggable: nil,
+  muggable: false,
+  sleepable: nil,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Magical",
     "Boss"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 7,
   height: 5,
   size: "medium",
   areas: [
@@ -46,7 +48,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (25..136),
+    melee: (24..141),
     ranged: nil,
     bolt: nil,
     udf: nil,

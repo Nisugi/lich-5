@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 60,
-  speed: nil,
+  max_hp: 75,
+  speed: 12,
   height: 4,
   size: "small",
   areas: [
@@ -49,6 +51,14 @@
       {
         name: "Fist",
         as: 44
+      },
+      {
+        name: "Unknown",
+        as: 44
+      },
+      {
+        name: "Charge",
+        as: 54
       }
     ],
     bolt_spells: [],
@@ -62,7 +72,7 @@
     asg: "1N",
     immunities: [],
     melee: 22,
-    ranged: nil,
+    ranged: 17,
     bolt: 17,
     udf: 50,
     bar_td: 9,
@@ -74,8 +84,8 @@
     wiz_td: 9,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: 9,
-    mns_td: 9,
+    mjs_td: (6..9),
+    mns_td: (6..9),
     mnm_td: 9,
     defensive_spells: [],
     defensive_abilities: [],
@@ -109,7 +119,8 @@
     spell_prep: [],
     attack: [
       "A dark vysan pounds at you with {pronoun} fist!",
-      "A dark vysan tries to ensnare you!"
+      "A dark vysan tries to ensnare you!",
+      "A dark vysan charges at you!"
     ],
     bite: [],
     claw: [],

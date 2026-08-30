@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 49,
-  speed: nil,
+  speed: 10,
   height: 3,
   size: "small",
   areas: [
@@ -49,6 +51,10 @@
       {
         name: "Scimitar",
         as: 36
+      },
+      {
+        name: "Unknown",
+        as: 46
       }
     ],
     bolt_spells: [],
@@ -61,10 +67,10 @@
   defense_attributes: {
     asg: "5",
     immunities: [],
-    melee: (54..68),
-    ranged: -10,
+    melee: (44..68),
+    ranged: (-21..17),
     bolt: 6,
-    udf: (27..102),
+    udf: (26..102),
     bar_td: 6,
     cle_td: 6,
     emp_td: 6,
@@ -74,7 +80,7 @@
     wiz_td: nil,
     mje_td: 6,
     mne_td: 6,
-    mjs_td: nil,
+    mjs_td: 6,
     mns_td: 6,
     mnm_td: 6,
     defensive_spells: [],
@@ -120,7 +126,8 @@
     ],
     death: [
       "The goblin falls to the ground, kicks several times and dies.",
-      "The goblin screams, shudders one last time and dies."
+      "The goblin screams, shudders one last time and dies.",
+      "The goblin twitches violently, then dies."
     ],
     decay: [
       "A goblin's carcass collapses into a gooey mess."

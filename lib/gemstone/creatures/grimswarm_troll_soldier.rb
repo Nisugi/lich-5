@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Grimswarm"
@@ -93,7 +95,7 @@
     spell_prep: [],
     attack: [
       "A Grimswarm troll soldier swings {weapon} at you!",
-      "Tightening grimswarm troll soldier grip on grimswarm troll soldier twohanded sword, a Grimswarm troll soldier strikes out at you with all of grimswarm troll soldier might!"
+      "Tightening {pronoun} grip on {pronoun} twohanded sword, a Grimswarm troll soldier strikes out at you with all of grimswarm troll soldier might!"
     ],
     bite: [],
     claw: [],

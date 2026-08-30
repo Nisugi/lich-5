@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -57,21 +59,21 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: (242..466),
-    ranged: 261,
-    bolt: 251,
+    melee: (230..466),
+    ranged: (227..300),
+    bolt: (227..300),
     udf: 486,
     bar_td: 185,
     cle_td: (196..205),
     emp_td: (202..211),
     pal_td: (183..186),
-    ran_td: nil,
+    ran_td: (177..186),
     sor_td: (206..224),
     wiz_td: nil,
     mje_td: (220..408),
-    mne_td: 224,
-    mjs_td: nil,
-    mns_td: 199,
+    mne_td: (220..408),
+    mjs_td: 282,
+    mns_td: 282,
     mnm_td: (174..183),
     defensive_spells: [],
     defensive_abilities: [],
@@ -81,7 +83,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a dusty black oak and steel arbalest",
+    "some rotting buff and blue brigandine"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -106,7 +111,8 @@
     ],
     death: [
       "A rotting Citadel arbalester collapses motionless to the floor.",
-      "A rotting Citadel arbalester collapses motionless to the ground."
+      "A rotting Citadel arbalester collapses motionless to the ground.",
+      "Beautiful shot pierces both lungs, the Citadel arbalester makes a wheezing noise, and drops dead!"
     ],
     decay: [],
     search: [],

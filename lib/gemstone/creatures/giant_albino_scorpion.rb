@@ -12,15 +12,17 @@
   bones: false,
   witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: true,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
-  max_hp: 229,
-  speed: nil,
+  max_hp: 275,
+  speed: 7,
   height: 1,
   size: "medium",
   areas: [
@@ -62,21 +64,21 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (154..219),
-    ranged: nil,
-    bolt: 146,
-    udf: (160..207),
+    melee: (138..219),
+    ranged: (133..172),
+    bolt: (133..172),
+    udf: (140..220),
     bar_td: 72,
     cle_td: (68..74),
     emp_td: (73..76),
     pal_td: (66..75),
-    ran_td: nil,
+    ran_td: (66..72),
     sor_td: (79..85),
     wiz_td: nil,
-    mje_td: 81,
-    mne_td: 82,
-    mjs_td: 76,
-    mns_td: (76..82),
+    mje_td: (78..82),
+    mne_td: (78..82),
+    mjs_td: (76..99),
+    mns_td: (76..99),
     mnm_td: 72,
     defensive_spells: [],
     defensive_abilities: [],
@@ -99,16 +101,12 @@
     description: [
       "The scorpion is like any other scorpion in general body structure. This particular variety, however, is about seven feet in length, with potent venom brewing in its cauda. The huge insectoid creature is entirely white, except for its pincers and stinger, which are a light pink. The eyes of the albino scorpion are crimson -- not to mention entirely blind."
     ],
-    arrival: [
-      "The boulder comes to a sudden stop and rises into the form of a krynch!"
-    ],
+    arrival: [],
     flee: [
       "A giant albino scorpion skitters {direction}."
     ],
     death: [
-      "A giant albino scorpion goes limp as it is rendered unconscious!",
-      "The albino scorpion twitches violently, then dies.",
-      "The albino scorpion slumps to the ground."
+      "The albino scorpion twitches violently, then dies."
     ],
     decay: [],
     search: [],

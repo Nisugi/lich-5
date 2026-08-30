@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 89,
-  speed: nil,
+  max_hp: 96,
+  speed: 15,
   height: 5,
   size: "medium",
   areas: [
@@ -49,6 +51,10 @@
       {
         name: "Short sword",
         as: (88..108)
+      },
+      {
+        name: "Unknown",
+        as: 108
       }
     ],
     bolt_spells: [],
@@ -61,10 +67,10 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (37..114),
-    ranged: (32..37),
-    bolt: (32..37),
-    udf: (64..127),
+    melee: (36..114),
+    ranged: (29..37),
+    bolt: (29..37),
+    udf: (63..127),
     bar_td: 18,
     cle_td: 18,
     emp_td: 18,
@@ -73,7 +79,7 @@
     sor_td: 18,
     wiz_td: nil,
     mje_td: 18,
-    mne_td: nil,
+    mne_td: 18,
     mjs_td: 18,
     mns_td: 18,
     mnm_td: 18,

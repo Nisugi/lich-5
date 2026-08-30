@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -45,6 +47,10 @@
       {
         name: "Foot",
         as: 61
+      },
+      {
+        name: "Unknown",
+        as: 41
       }
     ],
     bolt_spells: [],
@@ -57,21 +63,21 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (31..41),
+    melee: (27..41),
     ranged: 37,
-    bolt: 34,
-    udf: 51,
+    bolt: (34..37),
+    udf: (46..51),
     bar_td: 9,
     cle_td: 9,
     emp_td: 9,
-    pal_td: nil,
+    pal_td: (6..9),
     ran_td: 9,
     sor_td: 9,
     wiz_td: 9,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: 9,
-    mns_td: 9,
+    mjs_td: (9..12),
+    mns_td: (9..12),
     mnm_td: 9,
     defensive_spells: [],
     defensive_abilities: [],
@@ -102,9 +108,7 @@
     ],
     death: [
       "The striped relnak hisses one last time and dies.",
-      "The striped relnak falls back into a heap and dies.",
-      "A striped relnak screeches loudly and slumps to the ground while frantically licking its wounded right foreleg.",
-      "A striped relnak screeches loudly and slumps to the ground while frantically licking its wounded left foreleg."
+      "The striped relnak falls back into a heap and dies."
     ],
     decay: [
       "A striped relnak decays into compost."

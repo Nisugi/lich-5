@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
   ],
   bcs: true,
   max_hp: 44,
-  speed: nil,
+  speed: 11,
   height: 1,
   size: "medium",
   areas: [
@@ -46,6 +48,10 @@
       {
         name: "Claw",
         as: 42
+      },
+      {
+        name: "Unknown",
+        as: 52
       }
     ],
     bolt_spells: [],
@@ -58,15 +64,15 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (38..59),
-    ranged: 55,
-    bolt: 55,
+    melee: (36..59),
+    ranged: (35..55),
+    bolt: (35..55),
     udf: 49,
     bar_td: nil,
     cle_td: 9,
     emp_td: 9,
-    pal_td: 9,
-    ran_td: nil,
+    pal_td: (6..9),
+    ran_td: 9,
     sor_td: 9,
     wiz_td: nil,
     mje_td: 9,
@@ -98,7 +104,9 @@
     arrival: [
       "A fire salamander slithers in!"
     ],
-    flee: [],
+    flee: [
+      "A fire salamander slithers {direction}."
+    ],
     death: [
       "The fire salamander hisses one last time and dies.",
       "A fire salamander wheezes heavily and slumps to the ground while regurgitating a slimy grey fluid over its mangled left foreleg.",
@@ -117,7 +125,9 @@
     bite: [
       "A fire salamander tries to bite you!"
     ],
-    claw: [],
+    claw: [
+      "A fire salamander claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

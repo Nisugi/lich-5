@@ -10,18 +10,20 @@
   undead: true,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 325,
-  speed: nil,
-  height: nil,
-  size: "",
+  speed: 4,
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Moonsedge",
@@ -37,6 +39,22 @@
       {
         name: "Pound (attack)",
         as: 484
+      },
+      {
+        name: "Bite",
+        as: (524..555)
+      },
+      {
+        name: "Fist",
+        as: (484..519)
+      },
+      {
+        name: "Kick",
+        as: 530
+      },
+      {
+        name: "Charge",
+        as: 565
       }
     ],
     bolt_spells: [],
@@ -48,6 +66,9 @@
       },
       {
         name: "Swiftkick"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [
@@ -60,15 +81,15 @@
   defense_attributes: {
     asg: "5",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    melee: (433..731),
+    ranged: (434..436),
+    bolt: (434..436),
+    udf: 595,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: 439,
+    emp_td: (419..427),
+    pal_td: (390..412),
+    ran_td: (372..381),
     sor_td: 453,
     wiz_td: nil,
     mje_td: nil,
@@ -84,7 +105,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some faded sackcloth garments"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -99,11 +122,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A cadaverous tatterdemalion ghast lets out a hoarse cry that devolves into dry, rasping coughs.  Spasms race through his form, dead muscles seizing and clenching before at last going still.",
+      "A cadaverous tatterdemalion ghast lets out a hoarse cry that devolves into dry, rasping coughs.  Spasms race through her form, dead muscles seizing and clenching before at last going still.",
+      "A cadaverous tatterdemalion ghast grabs you by the head and twists violently.  You hear a loud *CRACK* as your neck bones snap and your body goes limp!"
+    ],
+    decay: [
+      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as his skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones.",
+      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as her skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones."
+    ],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A cadaverous tatterdemalion ghast desperately swings {weapon} at you!",
+      "A cadaverous tatterdemalion ghast raises {pronoun} fists overhead and flails violently at you!",
+      "A cadaverous tatterdemalion ghast slashes relentlessly at you with long, yellowed nails!",
+    ],
     bite: [],
     claw: [],
     info: {

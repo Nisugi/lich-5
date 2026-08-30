@@ -11,15 +11,17 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: nil,
   max_hp: 44,
-  speed: nil,
+  speed: 8,
   height: 4,
   size: "medium",
   areas: [
@@ -32,6 +34,10 @@
     physical_attacks: [
       {
         name: "Closed fist",
+        as: 28
+      },
+      {
+        name: "Unknown",
         as: 28
       }
     ],
@@ -101,7 +107,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A moaning phantom swings {weapon} at you!"
+      "A moaning phantom swings {weapon} at you!",
+      "A moaning phantom gestures at you!"
     ],
     bite: [],
     claw: [],

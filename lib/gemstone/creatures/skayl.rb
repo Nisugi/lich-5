@@ -12,8 +12,10 @@
   bones: false,
   witherable: false,
   sympathy: true,
-  muggable: nil,
+  muggable: true,
+  sleepable: false,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Element-based",
     "Magical",
@@ -43,6 +45,10 @@
       {
         name: "Ensnare (attack)",
         as: 328
+      },
+      {
+        name: "Ensnare",
+        as: 302
       }
     ],
     bolt_spells: [],
@@ -67,20 +73,20 @@
     asg: "16N",
     immunities: [],
     melee: (418..469),
-    ranged: nil,
-    bolt: nil,
+    ranged: (109..178),
+    bolt: (109..178),
     udf: 312,
     bar_td: 197,
-    cle_td: nil,
-    emp_td: 191,
+    cle_td: (201..211),
+    emp_td: (191..200),
     pal_td: (168..174),
-    ran_td: nil,
+    ran_td: (165..171),
     sor_td: (212..221),
     wiz_td: nil,
-    mje_td: 224,
-    mne_td: 235,
-    mjs_td: nil,
-    mns_td: (194..202),
+    mje_td: (224..235),
+    mne_td: (224..235),
+    mjs_td: (194..208),
+    mns_td: (194..208),
     mnm_td: (172..175),
     defensive_spells: [
       "Elemental Bias (508)",
@@ -118,7 +124,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A skayl swings {weapon} at you!"
+      "A skayl swings {weapon} at you!",
+      "A skayl tries to ensnare you!"
     ],
     bite: [],
     claw: [],

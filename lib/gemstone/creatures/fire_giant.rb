@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
@@ -56,19 +58,19 @@
     asg: "16N",
     immunities: [],
     melee: 103,
-    ranged: 127,
-    bolt: 106,
-    udf: (319..327),
+    ranged: (108..142),
+    bolt: (106..142),
+    udf: (275..342),
     bar_td: 116,
-    cle_td: nil,
+    cle_td: (129..137),
     emp_td: (124..133),
     pal_td: (105..114),
-    ran_td: nil,
+    ran_td: (106..113),
     sor_td: (125..142),
     wiz_td: nil,
-    mje_td: 145,
-    mne_td: nil,
-    mjs_td: nil,
+    mje_td: (142..145),
+    mne_td: (142..145),
+    mjs_td: 152,
     mns_td: 152,
     mnm_td: (115..123),
     defensive_spells: [
@@ -110,7 +112,7 @@
       "A fire giant seethes in pain as he limps {direction}."
     ],
     death: [
-      "A fire giant goes limp as he is rendered unconscious!"
+      "Beautiful shot pierces both lungs, the fire giant makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The fire giant's right leg crumbles briefly and explodes in a shower of gore."

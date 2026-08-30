@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
   max_hp: 610,
-  speed: nil,
+  speed: 9,
   height: 21,
   size: "huge",
   areas: [
@@ -103,22 +105,22 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: (259..504),
-    ranged: "+285-309",
-    bolt: "+202",
-    udf: (555..759),
+    melee: (198..504),
+    ranged: (152..311),
+    bolt: (152..311),
+    udf: (446..759),
     bar_td: nil,
     cle_td: (361..366),
-    emp_td: 360,
+    emp_td: (360..372),
     pal_td: (311..319),
     ran_td: (324..331),
     sor_td: 393,
     wiz_td: nil,
     mje_td: 425,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (355..365),
-    mnm_td: 307,
+    mne_td: 425,
+    mjs_td: (355..366),
+    mns_td: (355..366),
+    mnm_td: (277..307),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -147,9 +149,7 @@
     description: [
       "The enormous form of the Illoke elder occupies a large section of the area, over twenty feet at his full height. He carries himself with an air of confident superiority, casting a hate-filled gaze around him. Thick and rough grey skin covers him from head to toe, providing protection against all but the strongest of blows. A deep crimson symbol of Illoke is chiseled into his forehead, bathing his face in a lurid illumination."
     ],
-    arrival: [
-      "The boulder comes to a sudden stop and rises into the form of a greater krynch!"
-    ],
+    arrival: [],
     flee: [],
     death: [
       "The Illoke elder grumbles in pain one last time before lying still.",
@@ -166,12 +166,10 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A greater earth elemental pounds at you with illoke elder heavy earthen fists!",
       "An Illoke elder pounds at you with {pronoun} fist!",
       "An Illoke elder stomps at you with {pronoun} foot!",
       "An Illoke elder swings {weapon} at you!",
       "An Illoke elder throws {weapon} at you!",
-      "An earth elemental pounds at you with illoke elder heavy earthen fists!"
     ],
     bite: [],
     claw: [],

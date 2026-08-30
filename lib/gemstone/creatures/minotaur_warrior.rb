@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 8,
   height: 8,
   size: "medium",
   areas: [
@@ -66,10 +68,10 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: (293..489),
-    ranged: nil,
-    bolt: nil,
-    udf: (542..660),
+    melee: (187..489),
+    ranged: (178..338),
+    bolt: (178..338),
+    udf: (379..660),
     bar_td: nil,
     cle_td: (274..280),
     emp_td: (260..263),
@@ -77,10 +79,10 @@
     ran_td: (228..237),
     sor_td: (273..294),
     wiz_td: nil,
-    mje_td: 297,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (251..269),
+    mje_td: (297..300),
+    mne_td: (297..300),
+    mjs_td: 299,
+    mns_td: 299,
     mnm_td: (222..228),
     defensive_spells: [],
     defensive_abilities: [],
@@ -112,14 +114,13 @@
     flee: [],
     death: [],
     decay: [
-      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust.",
-      "Acid dissolves connecting cartilage, freeing the minotaur warrior's ribs to move independently."
+      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust."
     ],
     search: [],
     spell_prep: [],
     attack: [
       "A minotaur warrior swings {weapon} at you!",
-      "Tightening minotaur warrior grip on minotaur warrior steel battle axe, a minotaur warrior strikes out at you with all of minotaur warrior might!"
+      "Tightening {pronoun} grip on {pronoun} steel battle axe, a minotaur warrior strikes out at you with all of minotaur warrior might!"
     ],
     bite: [],
     claw: [],

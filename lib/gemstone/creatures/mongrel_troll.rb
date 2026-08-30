@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 190,
-  speed: nil,
+  speed: 8,
   height: 9,
   size: "large",
   areas: [
@@ -45,21 +47,21 @@
   defense_attributes: {
     asg: "11N",
     immunities: [],
-    melee: (81..109),
-    ranged: (87..109),
-    bolt: (87..109),
+    melee: (68..109),
+    ranged: (62..116),
+    bolt: (62..116),
     udf: (114..133),
     bar_td: 55,
     cle_td: 63,
     emp_td: 63,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (60..63),
+    ran_td: 63,
     sor_td: 59,
     wiz_td: nil,
     mje_td: 55,
     mne_td: 55,
-    mjs_td: nil,
-    mns_td: 63,
+    mjs_td: (57..63),
+    mns_td: (57..63),
     mnm_td: (48..55),
     defensive_spells: [
       "Spirit Warding II (107)"
@@ -98,7 +100,8 @@
     ],
     death: [
       "The mongrel troll twitches violently, then dies.",
-      "The mongrel troll whimpers pitifully one last time and dies."
+      "The mongrel troll whimpers pitifully one last time and dies.",
+      "Beautiful shot pierces both lungs, the mongrel troll makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A mongrel troll decays into compost."

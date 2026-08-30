@@ -12,11 +12,13 @@
   bones: nil,
   witherable: nil,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 207,
+  max_hp: 214,
   speed: nil,
   height: nil,
   size: "",
@@ -53,15 +55,15 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: 140,
-    ranged: nil,
-    bolt: nil,
-    udf: (280..300),
+    melee: (108..140),
+    ranged: (103..112),
+    bolt: (103..112),
+    udf: (262..300),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: (63..66),
     sor_td: 70,
     wiz_td: nil,
     mje_td: 72,
@@ -77,7 +79,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blinded left eye",
+    "a possible mild concussion"
+  ],
   treasure: {
     coins: false,
     magic_items: false,
@@ -93,8 +98,7 @@
     arrival: [],
     flee: [],
     death: [
-      "An enormous mosquito goes limp as it is rendered unconscious!",
-      "The enormous mosquito slumps to the ground."
+      "Beautiful shot pierces both lungs, the enormous mosquito makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "Growing brittle, the enormous mosquito's body suddenly caves in and turns to dust."

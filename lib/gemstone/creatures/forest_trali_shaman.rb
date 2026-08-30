@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: "miniboss",
   otherclass: [
     "Living"
   ],
@@ -73,20 +75,20 @@
   defense_attributes: {
     asg: "9",
     immunities: [],
-    melee: (261..318),
-    ranged: 273,
-    bolt: 273,
-    udf: (327..336),
+    melee: (197..318),
+    ranged: (186..275),
+    bolt: (186..275),
+    udf: (301..374),
     bar_td: (149..172),
     cle_td: (162..171),
-    emp_td: (167..170),
+    emp_td: (164..170),
     pal_td: (145..155),
-    ran_td: nil,
+    ran_td: (145..155),
     sor_td: (171..193),
     wiz_td: nil,
-    mje_td: 200,
-    mne_td: 198,
-    mjs_td: nil,
+    mje_td: (198..200),
+    mne_td: (198..200),
+    mjs_td: (170..183),
     mns_td: (170..183),
     mnm_td: (163..166),
     defensive_spells: [
@@ -103,7 +105,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a battered breastplate",
+    "a battered shield",
+    "a carved wooden talisman",
+    "a metal-banded mace",
+    "a smooth wooden talisman"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -126,8 +134,7 @@
     ],
     death: [],
     decay: [
-      "A forest trali shaman's body crumbles into dust and is scattered by a stiff breeze.",
-      "Acid dissolves connecting cartilage, freeing the trali shaman's ribs to move independently."
+      "A forest trali shaman's body crumbles into dust and is scattered by a stiff breeze."
     ],
     search: [],
     spell_prep: [],

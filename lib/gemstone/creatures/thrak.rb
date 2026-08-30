@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
+  witherable: true,
+  sympathy: true,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 80,
-  speed: nil,
+  speed: 7,
   height: 1,
   size: "medium",
   areas: [
@@ -49,6 +51,10 @@
       {
         name: "Claw",
         as: 110
+      },
+      {
+        name: "Unknown",
+        as: 120
       }
     ],
     bolt_spells: [],
@@ -61,10 +67,10 @@
   defense_attributes: {
     asg: "11N",
     immunities: [],
-    melee: (51..68),
-    ranged: (52..57),
-    bolt: (52..57),
-    udf: 79,
+    melee: (47..68),
+    ranged: (48..57),
+    bolt: (48..57),
+    udf: (77..79),
     bar_td: 24,
     cle_td: 24,
     emp_td: 24,
@@ -74,8 +80,8 @@
     wiz_td: 24,
     mje_td: 24,
     mne_td: 24,
-    mjs_td: 24,
-    mns_td: 24,
+    mjs_td: (24..27),
+    mns_td: (24..27),
     mnm_td: 24,
     defensive_spells: [],
     defensive_abilities: [],
@@ -106,9 +112,7 @@
     ],
     death: [
       "The thrak falls back into a heap and dies.",
-      "The thrak hisses one last time and dies.",
-      "A thrak screeches loudly and slumps to the ground while frantically licking its wounded right foreleg.",
-      "A thrak screeches loudly and slumps to the ground while frantically licking its wounded left foreleg."
+      "The thrak hisses one last time and dies."
     ],
     decay: [
       "A thrak decays into compost."

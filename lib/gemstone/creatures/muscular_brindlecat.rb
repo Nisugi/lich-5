@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: 158,
@@ -35,6 +37,10 @@
       {
         name: "Claw",
         as: 119
+      },
+      {
+        name: "Unknown",
+        as: 137
       }
     ],
     bolt_spells: [],
@@ -52,20 +58,20 @@
     asg: nil,
     immunities: [],
     melee: (92..130),
-    ranged: nil,
-    bolt: nil,
-    udf: (125..166),
+    ranged: (-53..100),
+    bolt: (-53..100),
+    udf: (59..166),
     bar_td: nil,
-    cle_td: (36..45),
+    cle_td: (36..48),
     emp_td: (17..47),
-    pal_td: (36..39),
-    ran_td: nil,
+    pal_td: (36..45),
+    ran_td: (39..45),
     sor_td: (36..45),
     wiz_td: nil,
     mje_td: 45,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (39..45),
+    mne_td: 45,
+    mjs_td: (36..45),
+    mns_td: (36..45),
     mnm_td: (36..39),
     defensive_spells: [],
     defensive_abilities: [],
@@ -93,20 +99,12 @@
     ],
     flee: [
       "A muscular brindlecat bounds {direction}.",
-      "A muscular brindlecat roars loudly as she stands {direction}!"
+      "A muscular brindlecat roars loudly as she stands {direction}!",
+      "A muscular brindlecat roars loudly as he stands {direction}!"
     ],
     death: [
       "The muscular brindlecat's tail twitches feebly as she dies.",
-      "The muscular brindlecat's tail twitches feebly as he dies.",
-      "A muscular brindlecat goes limp as he is rendered unconscious!",
-      "The muscular brindlecat mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The muscular brindlecat mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The muscular brindlecat mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The muscular brindlecat mewls in pain as she slumps to the ground and licks her wounded left paw.",
-      "The muscular brindlecat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The muscular brindlecat mewls in pain as he slumps to the ground and licks his wounded left paw.",
-      "The muscular brindlecat mewls in pain as he slumps to the ground and licks his wounded right paw.",
-      "The muscular brindlecat mewls in pain as she slumps to the ground and licks her wounded right paw."
+      "The muscular brindlecat's tail twitches feebly as he dies."
     ],
     decay: [
       "A muscular brindlecat decays into a compost of fangs, fur and claws."

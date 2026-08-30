@@ -11,9 +11,11 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
@@ -52,6 +54,10 @@
       {
         name: "Repel (fear)",
         cs: 14
+      },
+      {
+        name: "Mottled grey falchion",
+        cs: 10
       }
     ],
     offensive_spells: [],

@@ -10,10 +10,12 @@
   undead: false,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
@@ -51,21 +53,21 @@
   defense_attributes: {
     asg: "17N",
     immunities: [],
-    melee: (104..203),
-    ranged: (92..123),
-    bolt: 111,
-    udf: (178..271),
+    melee: (102..205),
+    ranged: (92..126),
+    bolt: (102..126),
+    udf: (178..281),
     bar_td: (101..115),
-    cle_td: nil,
+    cle_td: (95..105),
     emp_td: (101..109),
     pal_td: (74..83),
-    ran_td: nil,
+    ran_td: (82..89),
     sor_td: (104..111),
     wiz_td: nil,
-    mje_td: 113,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (106..114),
+    mje_td: (113..137),
+    mne_td: (113..137),
+    mjs_td: (114..124),
+    mns_td: (114..124),
     mnm_td: (86..95),
     defensive_spells: [
       "Elemental Defense I",
@@ -98,16 +100,14 @@
       "A fire ogre stomps in, covered in black soot!"
     ],
     flee: [],
-    death: [
-      "A fire ogre goes limp as she is rendered unconscious!"
-    ],
+    death: [],
     decay: [
       "A fire ogre burns down to a husk, that crumbles to ash."
     ],
     search: [],
     spell_prep: [],
     attack: [
-      "A fire ogre blows fire ogre fiery breath at you!"
+      "A fire ogre blows {pronoun} fiery breath at you!"
     ],
     bite: [],
     claw: [],

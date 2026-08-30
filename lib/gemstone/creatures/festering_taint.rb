@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 240,
+  max_hp: 267,
   speed: nil,
   height: 6,
   size: "medium",
@@ -36,7 +38,7 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 370
+        as: (370..408)
       }
     ],
     bolt_spells: [
@@ -96,20 +98,20 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (382..472),
+    melee: (327..472),
     ranged: 291,
-    bolt: nil,
-    udf: 549,
+    bolt: 344,
+    udf: (396..549),
     bar_td: 327,
-    cle_td: (345..354),
-    emp_td: (339..349),
+    cle_td: 367,
+    emp_td: (339..352),
     pal_td: (305..315),
-    ran_td: nil,
+    ran_td: (290..296),
     sor_td: (340..380),
     wiz_td: nil,
-    mje_td: 384,
-    mne_td: 378,
-    mjs_td: nil,
+    mje_td: (378..384),
+    mne_td: (378..384),
+    mjs_td: (339..349),
     mns_td: (339..349),
     mnm_td: (303..310),
     defensive_spells: [
@@ -126,7 +128,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a possible mild concussion"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -152,7 +156,8 @@
       "The festering taint spasms uncontrollably as it goes into shock and dies.",
       "The festering taint lets out a final curse as it dies.",
       "The festering taint screams with rage as it falls to the ground and dies.",
-      "The festering taint curses the day it was created and dies."
+      "The festering taint curses the day it was created and dies.",
+      "Beautiful shot pierces both lungs, the festering taint makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A festering taint's corpse falls apart and dissolves with a sudden hiss.",

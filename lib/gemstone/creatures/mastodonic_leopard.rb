@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
+  witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Living",
     "Boss"
@@ -61,20 +63,20 @@
   defense_attributes: {
     asg: "10N",
     immunities: [],
-    melee: (235..252),
-    ranged: 211,
-    bolt: nil,
-    udf: (274..296),
+    melee: (168..252),
+    ranged: (201..211),
+    bolt: (201..205),
+    udf: (273..313),
     bar_td: 135,
     cle_td: (140..149),
     emp_td: (148..157),
     pal_td: (129..138),
-    ran_td: 132,
+    ran_td: (126..135),
     sor_td: (157..163),
     wiz_td: nil,
-    mje_td: 158,
-    mne_td: 166,
-    mjs_td: nil,
+    mje_td: (158..166),
+    mne_td: (158..166),
+    mjs_td: (139..148),
     mns_td: (139..148),
     mnm_td: (132..138),
     defensive_spells: [],
@@ -102,31 +104,27 @@
       "A mastodonic leopard prowls in!",
       "A mastodonic leopard crouches as she stalks into view!",
       "A mastodonic leopard crouches as he stalks into view!",
-      "A stalwart mastodonic leopard prowls in!"
+      "A stalwart mastodonic leopard prowls in!",
+      "A flashy mastodonic leopard prowls in!"
     ],
     flee: [
       "A mastodonic leopard prowls {direction}.",
       "A mastodonic leopard roars loudly as he stands {direction}!",
       "A mastodonic leopard roars loudly as she stands {direction}!",
-      "A stalwart mastodonic leopard prowls {direction}."
+      "A stalwart mastodonic leopard prowls {direction}.",
+      "A dazzling mastodonic leopard prowls {direction}."
     ],
     death: [
       "The mastodonic leopard lets out a final caterwaul and dies.",
-      "The mastodonic leopard crumples to the ground and dies.",
-      "A mastodonic leopard goes limp as he is rendered unconscious!",
-      "A mastodonic leopard goes limp as she is rendered unconscious!",
-      "The mastodonic leopard mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The mastodonic leopard mewls in pain as she slumps to the ground and licks her wounded left paw.",
-      "The mastodonic leopard slumps to the ground.",
-      "The mastodonic leopard mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The mastodonic leopard mewls in pain as he slumps to the ground and licks his wounded right paw.",
-      "The mastodonic leopard mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The mastodonic leopard mewls in pain as she slumps to the ground and licks her wounded left foreleg."
+      "The mastodonic leopard crumples to the ground and dies."
     ],
     decay: [
       "A mastodonic leopard decays into a compost of fangs, fur and claws.",
       "A robust mastodonic leopard decays into a compost of fangs, fur and claws.",
-      "A stalwart mastodonic leopard decays into a compost of fangs, fur and claws."
+      "A stalwart mastodonic leopard decays into a compost of fangs, fur and claws.",
+      "A dazzling mastodonic leopard decays into a compost of fangs, fur and claws.",
+      "A flashy mastodonic leopard decays into a compost of fangs, fur and claws.",
+      "A glittering mastodonic leopard decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],

@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -53,21 +55,21 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (132..166),
-    ranged: nil,
-    bolt: 131,
+    melee: (106..166),
+    ranged: (113..139),
+    bolt: (113..139),
     udf: (133..190),
     bar_td: (39..51),
     cle_td: (42..45),
     emp_td: (37..45),
     pal_td: (39..45),
-    ran_td: 39,
+    ran_td: (39..45),
     sor_td: (39..51),
     wiz_td: nil,
     mje_td: (39..51),
     mne_td: (39..51),
-    mjs_td: nil,
-    mns_td: (39..51),
+    mjs_td: (39..54),
+    mns_td: (39..54),
     mnm_td: (45..51),
     defensive_spells: [],
     defensive_abilities: [],
@@ -98,13 +100,7 @@
     ],
     death: [
       "The arctic puma crumples to the ground and dies.",
-      "The arctic puma lets out a final caterwaul and dies.",
-      "An arctic puma goes limp as he is rendered unconscious!",
-      "The arctic puma mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The arctic puma mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The arctic puma mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The arctic puma mewls in pain as she slumps to the ground and licks her wounded left paw.",
-      "The arctic puma mewls in pain as she slumps to the ground and licks her wounded right paw."
+      "The arctic puma lets out a final caterwaul and dies."
     ],
     decay: [
       "An arctic puma decays into a compost of fangs, fur and claws."

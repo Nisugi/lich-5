@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 112,
-  speed: nil,
+  speed: 15,
   height: 7,
   size: "medium",
   areas: [
@@ -78,8 +80,8 @@
     asg: "varies",
     immunities: [],
     melee: (55..177),
-    ranged: 80,
-    bolt: 80,
+    ranged: (46..83),
+    bolt: (46..83),
     udf: (69..155),
     bar_td: 24,
     cle_td: 24,
@@ -132,8 +134,7 @@
     ],
     death: [
       "A greater orc breathes his last gasp and dies.",
-      "A greater orc breathes her last gasp and dies.",
-      "A greater orc goes limp as he is rendered unconscious!"
+      "A greater orc breathes her last gasp and dies."
     ],
     decay: [
       "A greater orc collapses into a pile of dust."

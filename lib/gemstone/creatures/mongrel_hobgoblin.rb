@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 80,
-  speed: nil,
+  speed: 15,
   height: 5,
   size: "medium",
   areas: [
@@ -44,7 +46,11 @@
       },
       {
         name: "Spiked club",
-        as: 79
+        as: (79..89)
+      },
+      {
+        name: "Unknown",
+        as: 99
       }
     ],
     bolt_spells: [],
@@ -57,10 +63,10 @@
   defense_attributes: {
     asg: "8",
     immunities: [],
-    melee: (13..72),
-    ranged: 0,
-    bolt: 0,
-    udf: (83..113),
+    melee: (10..72),
+    ranged: 1,
+    bolt: 1,
+    udf: (52..113),
     bar_td: nil,
     cle_td: 15,
     emp_td: 15,
@@ -70,8 +76,8 @@
     wiz_td: nil,
     mje_td: 15,
     mne_td: 15,
-    mjs_td: nil,
-    mns_td: 15,
+    mjs_td: 36,
+    mns_td: 36,
     mnm_td: 15,
     defensive_spells: [],
     defensive_abilities: [],

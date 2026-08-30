@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 240,
-  speed: nil,
+  speed: 5,
   height: 2,
   size: "medium",
   areas: [
@@ -100,20 +102,20 @@
   defense_attributes: {
     asg: "2N",
     immunities: [],
-    melee: (298..477),
-    ranged: (356..416),
-    bolt: (356..416),
+    melee: (249..477),
+    ranged: (317..416),
+    bolt: (317..416),
     udf: (505..560),
     bar_td: (168..171),
     cle_td: 184,
     emp_td: (183..185),
     pal_td: (187..190),
-    ran_td: nil,
+    ran_td: (157..159),
     sor_td: (196..197),
     wiz_td: nil,
     mje_td: (203..206),
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: (203..206),
+    mjs_td: (183..185),
     mns_td: (183..185),
     mnm_td: 172,
     defensive_spells: [
@@ -159,14 +161,9 @@
     flee: [],
     death: [
       "The sand devil screams one last time and dies.",
-      "The sand devil falls to the ground and dies.",
-      "A sand devil goes limp as it is rendered unconscious!",
-      "The sand devil slumps to the ground."
+      "The sand devil falls to the ground and dies."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the sand devil's ribs to move independently.",
-      "Acid dissolves the knee ligaments.  The sand devil's tibia passes its femur in a very unpleasant manner!"
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [

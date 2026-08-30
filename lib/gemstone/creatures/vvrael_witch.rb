@@ -12,15 +12,17 @@
   bones: false,
   witherable: false,
   sympathy: false,
-  muggable: nil,
+  muggable: true,
+  sleepable: false,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Extraplanar",
     "Anti-mana",
     "Boss"
   ],
   bcs: true,
-  max_hp: 234,
+  max_hp: 250,
   speed: nil,
   height: 5,
   size: "medium",
@@ -41,19 +43,27 @@
       },
       {
         name: "Large boulder",
-        as: 349
+        as: (314..349)
       },
       {
         name: "Midnight black morning star",
-        as: 323
+        as: (323..355)
       },
       {
         name: "Powerful lightning bolt",
-        as: 360
+        as: (314..360)
       },
       {
         name: "Stream of fire",
         as: 349
+      },
+      {
+        name: "Midnight black curved dagger",
+        as: 374
+      },
+      {
+        name: "Midnight black spiked whip",
+        as: 362
       }
     ],
     warding_spells: [
@@ -82,10 +92,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: ["magic"],
-    melee: (405..602),
+    melee: (366..602),
     ranged: nil,
     bolt: nil,
-    udf: 581,
+    udf: (517..644),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,

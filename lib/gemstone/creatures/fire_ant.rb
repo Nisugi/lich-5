@@ -11,9 +11,11 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: false,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -41,6 +43,10 @@
       {
         name: "Charge",
         as: 51
+      },
+      {
+        name: "Unknown",
+        as: 6
       }
     ],
     bolt_spells: [],
@@ -53,14 +59,14 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (25..27),
-    ranged: 25,
-    bolt: 25,
+    melee: (15..35),
+    ranged: (15..25),
+    bolt: (15..25),
     udf: 33,
     bar_td: 3,
     cle_td: 3,
     emp_td: 3,
-    pal_td: 3,
+    pal_td: (3..6),
     ran_td: 3,
     sor_td: 3,
     wiz_td: 3,

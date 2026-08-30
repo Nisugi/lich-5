@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 200,
-  speed: nil,
+  speed: 14,
   height: 9,
   size: "large",
   areas: [
@@ -46,19 +48,19 @@
     asg: "10",
     immunities: [],
     melee: (54..92),
-    ranged: (57..92),
-    bolt: (57..92),
+    ranged: (42..92),
+    bolt: (42..92),
     udf: 112,
     bar_td: 52,
     cle_td: 60,
     emp_td: 60,
     pal_td: (57..60),
-    ran_td: nil,
+    ran_td: 60,
     sor_td: 56,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
+    mjs_td: 60,
     mns_td: 60,
     mnm_td: (45..52),
     defensive_spells: [
@@ -89,8 +91,6 @@
     ],
     arrival: [
       "A Neartofar troll just arrived!",
-      "A Neartofar orc stalks in purposefully, his nose raised as he sniffs at the air.",
-      "A Neartofar orc stalks in purposefully, her nose raised as she sniffs at the air."
     ],
     flee: [
       "A Neartofar troll heads {direction}."
@@ -98,8 +98,6 @@
     death: [
       "The Neartofar troll falls to the ground and dies.",
       "The Neartofar troll screams one last time and dies.",
-      "A Neartofar troll goes limp as he is rendered unconscious!",
-      "A Neartofar troll goes limp as she is rendered unconscious!"
     ],
     decay: [
       "A Neartofar troll decays into compost."

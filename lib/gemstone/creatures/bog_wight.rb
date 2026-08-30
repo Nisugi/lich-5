@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Corporeal undead",
     "Boss"
@@ -37,7 +39,7 @@
       },
       {
         name: "Claw",
-        as: (264..284)
+        as: (204..284)
       }
     ],
     bolt_spells: [],
@@ -50,21 +52,21 @@
   defense_attributes: {
     asg: "9",
     immunities: [],
-    melee: (225..330),
-    ranged: nil,
-    bolt: (199..204),
-    udf: (242..305),
+    melee: (148..330),
+    ranged: (221..244),
+    bolt: (199..244),
+    udf: (208..305),
     bar_td: (126..132),
-    cle_td: 145,
+    cle_td: (145..154),
     emp_td: (141..144),
     pal_td: (123..132),
-    ran_td: nil,
+    ran_td: (126..132),
     sor_td: (153..162),
     wiz_td: nil,
-    mje_td: 163,
-    mne_td: 153,
-    mjs_td: nil,
-    mns_td: (141..150),
+    mje_td: (153..163),
+    mne_td: (153..163),
+    mjs_td: (181..185),
+    mns_td: (181..185),
     mnm_td: (132..141),
     defensive_spells: [],
     defensive_abilities: [],
@@ -97,8 +99,7 @@
     ],
     death: [
       "The bog wight falls to the ground motionless.",
-      "The bog wight wails in terrifying pain one last time and lies still.",
-      "The bog wight slumps to the ground."
+      "The bog wight wails in terrifying pain one last time and lies still."
     ],
     decay: [],
     search: [],

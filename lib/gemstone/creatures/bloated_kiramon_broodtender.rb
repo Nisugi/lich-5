@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
+  witherable: true,
+  sympathy: true,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 500,
+  max_hp: 573,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 8,
+  size: "large",
   areas: [
     {
       name: "The Hive",
@@ -31,11 +33,24 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Barbed stinger",
+        as: 557
+      },
+      {
+        name: "Bladed forelegs",
+        as: 523
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Leap"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -43,13 +58,13 @@
     asg: "14N",
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    ranged: (692..815),
+    bolt: (692..815),
+    udf: 824,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
+    cle_td: (480..483),
+    emp_td: 480,
+    pal_td: (459..462),
     ran_td: nil,
     sor_td: nil,
     wiz_td: nil,
@@ -81,11 +96,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A bloated kiramon broodtender's legs kick savagely as she collapses, belching swarms of tiny, pale larvae.  They scatter wildly as she surrenders to death.",
+    ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A bloated kiramon broodtender scuttles in a wary semicircle before lunging at you, pincers clacking!",
+      "A bloated kiramon broodtender's mandibles spread viciously wide as bloated kiramon broodtender tries to savage you!",
+      "Dripping stringy gunk, viscous tendrils unfurl from the bloated kiramon broodtender back and whip at you!",
+    ],
     bite: [],
     claw: [],
     info: {

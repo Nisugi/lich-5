@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -53,10 +55,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (32..59),
+    melee: (31..59),
     ranged: 34,
     bolt: 34,
-    udf: (67..78),
+    udf: (54..78),
     bar_td: nil,
     cle_td: 9,
     emp_td: 9,
@@ -66,7 +68,7 @@
     wiz_td: nil,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: nil,
+    mjs_td: 9,
     mns_td: 9,
     mnm_td: 9,
     defensive_spells: [],
@@ -94,14 +96,12 @@
       "A mountain snowcat scampers in!"
     ],
     flee: [
-      "A mountain snowcat scampers {direction}."
+      "A mountain snowcat scampers {direction}.",
+      "A mountain snowcat scampers {direction}, mewling in pain."
     ],
     death: [
       "The mountain snowcat crumples to the ground and dies.",
-      "The mountain snowcat lets out a final caterwaul and dies.",
-      "The mountain snowcat mewls in pain as he slumps to the ground and licks his wounded left paw.",
-      "The mountain snowcat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The mountain snowcat mewls in pain as she slumps to the ground and licks her wounded left foreleg."
+      "The mountain snowcat lets out a final caterwaul and dies."
     ],
     decay: [
       "A mountain snowcat decays into a compost of fangs, fur and claws.",

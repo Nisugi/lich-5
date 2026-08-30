@@ -10,10 +10,12 @@
   undead: false,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: 403,
@@ -68,10 +70,10 @@
       "Fire",
       "Web (118)"
     ],
-    melee: (188..445),
-    ranged: (194..260),
-    bolt: (194..260),
-    udf: (385..561),
+    melee: (146..445),
+    ranged: (179..262),
+    bolt: (179..262),
+    udf: (300..561),
     bar_td: (246..264),
     cle_td: (278..281),
     emp_td: (274..283),
@@ -80,8 +82,8 @@
     sor_td: (280..301),
     wiz_td: nil,
     mje_td: 317,
-    mne_td: nil,
-    mjs_td: (274..277),
+    mne_td: 317,
+    mjs_td: (274..280),
     mns_td: (274..280),
     mnm_td: 228,
     defensive_spells: [],
@@ -92,7 +94,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -108,7 +112,6 @@
     arrival: [
       "The boulder comes to a sudden stop and rises into the form of a krag dweller!",
       "A krag dweller lumbers in, causing the ground to tremble with each passing step!",
-      "A krag yeti stomps in, a fetid odor wafting before it."
     ],
     flee: [
       "A krag dweller lumbers {direction}, causing the ground to tremble with each passing step!"

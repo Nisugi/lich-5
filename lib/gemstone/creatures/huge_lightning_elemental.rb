@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Magical"
@@ -21,8 +23,8 @@
   bcs: true,
   max_hp: nil,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 15,
+  size: "huge",
   areas: [
     {
       name: "Elemental Confluence",
@@ -33,7 +35,11 @@
     physical_attacks: [
       {
         name: "Charge",
-        as: 460
+        as: (460..495)
+      },
+      {
+        name: "Powerful lightning bolt",
+        as: 469
       }
     ],
     bolt_spells: [
@@ -67,6 +73,9 @@
       },
       {
         name: "Major Elemental Wave"
+      },
+      {
+        name: "Burrow Ambush"
       }
     ],
     special_abilities: [],
@@ -83,7 +92,7 @@
     cle_td: 431,
     emp_td: 431,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: (362..372),
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -125,7 +134,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A huge lightning elemental charges at you, crackling with power!",
+      "A huge lightning elemental hurls {weapon} at you!",
+      "A huge lightning elemental releases sparks towards you!"
+    ],
     bite: [],
     claw: [],
     info: {

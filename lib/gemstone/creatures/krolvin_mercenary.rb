@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -41,6 +43,10 @@
       {
         name: "Broadsword",
         as: 178
+      },
+      {
+        name: "Unknown",
+        as: 178
       }
     ],
     bolt_spells: [],
@@ -49,6 +55,9 @@
     maneuvers: [
       {
         name: "Cheapshot"
+      },
+      {
+        name: "Stomp"
       }
     ],
     special_abilities: [],
@@ -57,20 +66,20 @@
   defense_attributes: {
     asg: "11",
     immunities: [],
-    melee: (194..224),
-    ranged: nil,
-    bolt: nil,
+    melee: (109..224),
+    ranged: (91..108),
+    bolt: (91..108),
     udf: 127,
     bar_td: 51,
     cle_td: (45..57),
     emp_td: (51..59),
-    pal_td: nil,
-    ran_td: 51,
+    pal_td: (48..57),
+    ran_td: (45..51),
     sor_td: (51..57),
     wiz_td: nil,
     mje_td: 51,
     mne_td: 51,
-    mjs_td: nil,
+    mjs_td: (51..57),
     mns_td: (51..57),
     mnm_td: (51..57),
     defensive_spells: [],

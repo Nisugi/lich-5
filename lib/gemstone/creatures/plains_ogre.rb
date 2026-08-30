@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -61,19 +63,19 @@
     asg: "6",
     immunities: [],
     melee: (68..158),
-    ranged: (68..77),
-    bolt: (68..77),
+    ranged: (57..95),
+    bolt: (57..95),
     udf: (124..205),
     bar_td: 51,
     cle_td: (45..54),
     emp_td: (51..59),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (48..57),
+    ran_td: (48..57),
     sor_td: (45..54),
     wiz_td: nil,
     mje_td: 51,
     mne_td: 51,
-    mjs_td: 51,
+    mjs_td: (48..54),
     mns_td: (48..54),
     mnm_td: (51..57),
     defensive_spells: [],
@@ -100,7 +102,9 @@
     description: [
       "Even while slightly hunched over, the plains ogre is taller than any giantman. Long-limbed and lithe for rapid travel over the plains, his body is the antithesis of most of his cousins. The one exception is in his massive hands that can easily crush anything unlucky enough to be in caught in their grasp. The plains ogre's face is pinched in a permanent squint from countless hours out on the sun-baked plains. When standing downwind of this creature, it is evident that he is in much need of a bath."
     ],
-    arrival: [],
+    arrival: [
+      "A plains ogre just arrived."
+    ],
     flee: [
       "A plains ogre runs {direction}.",
       "A plains ogre limps {direction}."
@@ -109,8 +113,7 @@
       "The plains ogre screams one last time and dies.",
       "The plains ogre falls to the ground and dies.",
       "The plains ogre screams silently one last time and dies.",
-      "A plains ogre goes limp as he is rendered unconscious!",
-      "The plains ogre slumps to the ground."
+      "Beautiful shot pierces both lungs, the plains ogre makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A plains ogre decays into compost."

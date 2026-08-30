@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: nil,
-  speed: nil,
+  speed: 8,
   height: 8,
   size: "large",
   areas: [
@@ -49,20 +51,20 @@
   defense_attributes: {
     asg: "13",
     immunities: [],
-    melee: 96,
-    ranged: nil,
-    bolt: 89,
+    melee: (86..96),
+    ranged: (79..114),
+    bolt: (79..114),
     udf: nil,
     bar_td: nil,
     cle_td: 96,
     emp_td: 96,
     pal_td: (78..81),
-    ran_td: nil,
+    ran_td: 96,
     sor_td: 92,
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 88,
     mne_td: 88,
-    mjs_td: nil,
+    mjs_td: 96,
     mns_td: 96,
     mnm_td: (81..88),
     defensive_spells: [],
@@ -105,8 +107,10 @@
     ],
     death: [
       "The troll chieftain bellows in rage one last time and dies.",
-      "The troll chieftain slumps to the ground.",
-      "The troll chieftain snarls her defiance before collapsing and going still."
+      "The troll chieftain snarls her defiance before collapsing and going still.",
+      "The troll chieftain snarls his defiance before collapsing and going still.",
+      "The troll chieftain snarls her defiance one last time before going still.",
+      "The troll chieftain snarls his defiance one last time before going still."
     ],
     decay: [
       "A troll chieftain decays into compost."

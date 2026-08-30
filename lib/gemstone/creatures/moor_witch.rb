@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
@@ -50,20 +52,20 @@
   defense_attributes: {
     asg: "2",
     immunities: [],
-    melee: (251..301),
-    ranged: 197,
-    bolt: nil,
-    udf: (279..320),
+    melee: (228..301),
+    ranged: (164..242),
+    bolt: (164..242),
+    udf: (224..320),
     bar_td: 135,
     cle_td: (121..130),
     emp_td: (125..135),
     pal_td: (106..115),
-    ran_td: nil,
+    ran_td: (106..115),
     sor_td: (134..147),
     wiz_td: nil,
-    mje_td: 135,
-    mne_td: nil,
-    mjs_td: nil,
+    mje_td: (126..135),
+    mne_td: (126..135),
+    mjs_td: (116..125),
     mns_td: (116..125),
     mnm_td: (129..139),
     defensive_spells: [
@@ -104,9 +106,7 @@
       "A wavering moor witch hobbles {direction}."
     ],
     death: [
-      "A moor witch goes limp as she is rendered unconscious!",
-      "The moor witch's face takes on a surprised expression and she collapses, motionless.",
-      "The moor witch slumps to the ground."
+      "The moor witch's face takes on a surprised expression and she collapses, motionless."
     ],
     decay: [],
     search: [],

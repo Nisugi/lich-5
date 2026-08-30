@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 236,
+  max_hp: 260,
   speed: nil,
   height: 6,
   size: "medium",
@@ -130,20 +132,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (210..300),
-    ranged: (210..213),
-    bolt: (210..213),
-    udf: (150..212),
+    melee: (140..300),
+    ranged: (166..244),
+    bolt: (166..244),
+    udf: (150..279),
     bar_td: nil,
     cle_td: (131..141),
     emp_td: (136..146),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (112..122),
+    ran_td: (111..114),
     sor_td: (118..160),
     wiz_td: nil,
     mje_td: 136,
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: 136,
+    mjs_td: (131..134),
     mns_td: (131..134),
     mnm_td: (122..129),
     defensive_spells: [
@@ -210,18 +212,15 @@
       "It is hard to see much of the hooded figure because of the voluminous hooded cloak. However, the figure does appear to be that of a young human, or humanoid, male. His skin is very pale, almost an opalescent white in color and his eyes are an ominous dull grey. You can see a few locks of curly black hair streaked with stark white tufts concealed by the hood of his cloak. When he glances in your direction, you can feel his gaze almost as a physical blow. He holds himself erect, a tall and imposing figure giving evidence of great pride."
     ],
     arrival: [
-      "A hooded figure just arrived."
+      "A hooded figure just arrived.",
+      "A hooded figure just arrived, limping."
     ],
     flee: [],
     death: [
-      "A hooded figure goes limp as it is rendered unconscious!",
       "The hooded figure screams one last time and lies still.",
-      "The hooded figure falls to the ground and lies still.",
-      "The hooded figure slumps to the ground."
+      "The hooded figure falls to the ground and lies still."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the hooded figure's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [

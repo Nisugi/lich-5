@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -50,20 +52,20 @@
     asg: nil,
     immunities: [],
     melee: (135..243),
-    ranged: 147,
-    bolt: 172,
+    ranged: (121..177),
+    bolt: (121..177),
     udf: 214,
     bar_td: nil,
     cle_td: 120,
     emp_td: 120,
     pal_td: (117..120),
-    ran_td: nil,
+    ran_td: 120,
     sor_td: (122..130),
     wiz_td: nil,
     mje_td: 124,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: 120,
+    mne_td: 124,
+    mjs_td: (156..164),
+    mns_td: (156..164),
     mnm_td: (105..112),
     defensive_spells: [],
     defensive_abilities: [],
@@ -94,13 +96,13 @@
       "A bog troll lumbers in, her face set in an angry scowl!",
       "A bog troll just arrived!"
     ],
-    flee: [],
+    flee: [
+      "A bog troll runs {direction}."
+    ],
     death: [
-      "A bog troll goes limp as she is rendered unconscious!",
-      "A bog troll goes limp as he is rendered unconscious!",
       "The bog troll twitches violently, then dies.",
       "The bog troll tries to get back up but finally collapses and goes still.",
-      "The bog troll slumps to the ground."
+      "Beautiful shot pierces both lungs, the bog troll makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A bog troll decays into compost."

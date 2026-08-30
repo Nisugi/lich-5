@@ -10,10 +10,12 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
+  witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -44,7 +46,7 @@
       },
       {
         name: "Smash",
-        as: 412
+        as: (398..412)
       },
       {
         name: "Tusk",
@@ -68,7 +70,7 @@
     melee: 509,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 381,
     bar_td: (315..335),
     cle_td: nil,
     emp_td: (335..341),
@@ -78,8 +80,8 @@
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
-    mns_td: (326..335),
+    mjs_td: 392,
+    mns_td: 392,
     mnm_td: (276..285),
     defensive_spells: [],
     defensive_abilities: [],
@@ -106,12 +108,10 @@
     ],
     arrival: [
       "A gnarled being strides in with a snort of derision.",
-      "A twisted being stalks in, its tail swishing back and forth menacingly."
     ],
     flee: [],
     death: [
       "A gnarled being coughs up some blood and dies.",
-      "A bent being curses through its teeth as it dies."
     ],
     decay: [
       "A gnarled being crumbles away into nothing."
@@ -120,7 +120,6 @@
     spell_prep: [],
     attack: [
       "A gnarled being charges at you with {pronoun} tusk!",
-      "A lesser construct raises gnarled being massive foot and attempts to smash you!"
     ],
     bite: [],
     claw: [],

@@ -7,12 +7,14 @@
   family: "humanoid",
   type: "biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -22,7 +24,7 @@
   ],
   bcs: true,
   max_hp: 367,
-  speed: nil,
+  speed: 7,
   height: 3,
   size: "small",
   attack_attributes: {
@@ -30,6 +32,26 @@
       {
         name: "attack",
         as: (420..550)
+      },
+      {
+        name: "Shark-like teeth",
+        as: (505..522)
+      },
+      {
+        name: "Tusks",
+        as: (499..519)
+      },
+      {
+        name: "Charge",
+        as: (504..529)
+      },
+      {
+        name: "Huge hooves",
+        as: 529
+      },
+      {
+        name: "Misshapen limbs",
+        as: 499
       }
     ],
     bolt_spells: [],
@@ -53,29 +75,37 @@
       {
         name: "wither (1115)",
         cs: (439..454)
+      },
+      {
+        name: "Point",
+        cs: 467
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "2",
     immunities: [],
-    melee: (467..502),
-    ranged: (521..530),
-    bolt: (451..541),
+    melee: (438..675),
+    ranged: (492..548),
+    bolt: (451..548),
     udf: (542..568),
     bar_td: 470,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: (400..412),
-    sor_td: 482,
+    cle_td: (455..476),
+    emp_td: 461,
+    pal_td: (424..433),
+    ran_td: (400..421),
+    sor_td: (482..503),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: 537,
+    mje_td: (506..537),
+    mne_td: (506..537),
     mjs_td: nil,
     mns_td: (450..461),
     mnm_td: nil,
@@ -105,7 +135,10 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "a gnarled dark wooden crook adorned with sinuous patterns",
+    "some dark homespun robes patterned with serpentine symbols"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -118,7 +151,8 @@
   messaging: {
     description: "Small even for a halfling, the bloodspeaker is twisted of limb and stunted of form.  Bulging eyes the color of dried blood peer out from a face like molten wax.  The ritualistic burn scars marring {pronoun} flesh look painful beyond the most grotesque of imaginings.  The bloodspeaker wears heavy robes of red velvet that do little to conceal the broken-puppet jangle of {pronoun} misshapen body beneath them.  {pronoun} tongue is bisected and lolls forth from a mouth that looks like a wet gash in {pronoun} obscene face.",
     arrival: [
-      "A stunted halfling bloodspeaker hurries in, ebon eyes darting about in paranoia."
+      "A stunted halfling bloodspeaker hurries in, ebon eyes darting about in paranoia.",
+      "A stunted halfling bloodspeaker just arrived."
     ],
     flee: [
       "Ebon eyes darting about in paranoia, a stunted halfling bloodspeaker hurries {direction}."
@@ -127,7 +161,10 @@
       "A stunted halfling bloodspeaker utters a garbled, sibilant phrase as globules of crimson light spin around {pronoun} gnarled hands."
     ],
     death: [
-      "A stunted halfling bloodspeaker's eyes bulge as {pronoun} stares toward the heavens, mouthing a gurgling prayer as {pronoun} succumbs to death."
+      "A stunted halfling bloodspeaker's eyes bulge as {pronoun} stares toward the heavens, mouthing a gurgling prayer as {pronoun} succumbs to death.",
+      "A stunted halfling bloodspeaker's eyes bulge as she stares toward the heavens, mouthing a gurgling prayer as she succumbs to death.",
+      "A stunted halfling bloodspeaker's body collapses in upon itself as if everything solid within has turned to liquid, the sanguine remains oozing out of the remaining folds of skin.",
+      "A stunted halfling bloodspeaker's eyes bulge as he stares toward the heavens, mouthing a gurgling prayer as he succumbs to death."
     ],
     decay: [
       "A stunted halfling bloodspeaker's body collapses in upon itself as if everything solid within has turned to liquid, the sanguine remains oozing out of the remaining folds of skin."

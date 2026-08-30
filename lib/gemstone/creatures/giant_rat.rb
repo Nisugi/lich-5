@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -45,6 +47,10 @@
       {
         name: "Bite",
         as: 34
+      },
+      {
+        name: "Unknown",
+        as: 34
       }
     ],
     bolt_spells: [],
@@ -57,9 +63,9 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (24..34),
-    ranged: 22,
-    bolt: 22,
+    melee: (12..34),
+    ranged: (12..22),
+    bolt: (12..22),
     udf: (22..32),
     bar_td: 3,
     cle_td: 3,
@@ -102,8 +108,7 @@
     ],
     death: [
       "The giant rat collapses to the ground, emits a final squeal, and dies.",
-      "The giant rat twitches and dies.",
-      "The giant rat shrieks as it slumps to the ground and licks at its wounded left foreleg."
+      "The giant rat twitches and dies."
     ],
     decay: [
       "A giant rat decays into a pile of mangy hair and bone."

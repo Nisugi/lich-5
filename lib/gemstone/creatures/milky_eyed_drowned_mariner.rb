@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Undead"
   ],

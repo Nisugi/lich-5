@@ -7,12 +7,14 @@
   family: "Gigas",
   type: "Biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -21,12 +23,37 @@
     }
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 607,
+  speed: 8,
   height: 28,
   size: "huge",
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Immense fel-hafted handaxe",
+        as: (520..566)
+      },
+      {
+        name: "Enormous tusks",
+        as: (529..549)
+      },
+      {
+        name: "Lunge",
+        as: (520..560)
+      },
+      {
+        name: "Golden targe",
+        as: 581
+      },
+      {
+        name: "Clawed fists",
+        as: 560
+      },
+      {
+        name: "Shark-like teeth",
+        as: 450
+      }
+    ],
     bolt_spells: [],
     warding_spells: [
       {
@@ -35,28 +62,35 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Pounce"
+      },
+      {
+        name: "Charge"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: (504..690),
-    ranged: (510..554),
-    bolt: nil,
-    udf: nil,
+    melee: (423..775),
+    ranged: (416..557),
+    bolt: (416..557),
+    udf: (479..731),
     bar_td: (430..443),
-    cle_td: nil,
-    emp_td: (449..461),
-    pal_td: nil,
-    ran_td: (381..396),
-    sor_td: nil,
+    cle_td: (452..498),
+    emp_td: (449..464),
+    pal_td: (413..423),
+    ran_td: (381..414),
+    sor_td: (486..496),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (445..461),
+    mje_td: (513..522),
+    mne_td: (513..522),
+    mjs_td: (381..461),
+    mns_td: (381..461),
     mnm_td: nil,
     defensive_spells: [
       {
@@ -75,7 +109,10 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "a ceremonial boarskin garment adorned with semiprecious gems",
+    "an ornate ruic lyre with shimmering silver strings"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -89,10 +126,15 @@
     description: "A grim gigas skald is not especially tall for one of {pronoun} kind, but still stands just under two stories tall.  {Pronoun} has a raw-boned face and a grim gaze.  The robes he wears are of dusky golden boarskin and appear ceremonial, having been stitched with hundreds of beads made from semiprecious gems.  A grim gigas skald wears a tremendous drinking horn at {pronoun} belt.",
     arrival: [
       "Preceded by a mournful dirge, a grim gigas skald stalks in, his song accompanied by the clacking of the crude jeweled beads adorning the ceremonial garb that he wears.",
-      "A grim gigas skald meanders in, dourly taking in the surroundings."
+      "A grim gigas skald meanders in, dourly taking in the surroundings.",
+      "A grim gigas skald arrives, stiffly favoring one leg.",
+      "Preceded by a mournful dirge, a grim gigas skald stalks in, her song accompanied by the clacking of the crude jeweled beads adorning the ceremonial garb that she wears.",
+      "A grim gigas skald just arrived."
     ],
     death: [
-      "A grim gigas skald raises a hand as if to grasp for support as she collapses, life going out of her form."
+      "A grim gigas skald raises a hand as if to grasp for support as she collapses, life going out of her form.",
+      "A grim gigas skald raises a hand as if to grasp for support as he collapses, life going out of his form.",
+      "Intestines rupture from intense heat; a grim gigas skald dies a slow, painful death."
     ],
     decay: [
       "A grim gigas skald's corpse succumbs to rot, collapsing in upon itself until naught but dust remains."

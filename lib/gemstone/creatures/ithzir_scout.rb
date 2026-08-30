@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Extraplanar"
   ],
   bcs: true,
-  max_hp: 300,
-  speed: nil,
+  max_hp: 340,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -33,7 +35,7 @@
     physical_attacks: [
       {
         name: "Broadsword",
-        as: (414..429)
+        as: (414..436)
       },
       {
         name: "Closed fist",
@@ -41,7 +43,7 @@
       },
       {
         name: "Smash",
-        as: 443
+        as: (443..459)
       }
     ],
     bolt_spells: [],
@@ -64,21 +66,21 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: (328..552),
+    melee: (303..552),
     ranged: (323..343),
     bolt: (346..392),
-    udf: 434,
+    udf: (405..512),
     bar_td: nil,
     cle_td: (335..344),
-    emp_td: (325..334),
+    emp_td: (325..363),
     pal_td: (284..293),
-    ran_td: nil,
+    ran_td: (284..291),
     sor_td: (339..363),
     wiz_td: nil,
-    mje_td: 380,
-    mne_td: 368,
-    mjs_td: nil,
-    mns_td: (328..334),
+    mje_td: (368..429),
+    mne_td: (368..429),
+    mjs_td: (373..378),
+    mns_td: (373..378),
     mnm_td: (273..279),
     defensive_spells: [],
     defensive_abilities: [],
@@ -107,27 +109,21 @@
     description: [
       "Wide, pupil-less green eyes peer about, quickly assessing both threats and terrain. The Ithzir scout stalks in a fluid, half-crouch that is as graceful as it is lightning fast, his whole demeanor underscoring his menace and obvious intelligence. The Ithzir scout is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The scout wears a charcoal grey tunic with no apparent identifiers of his station."
     ],
-    arrival: [
-      "An Ithzir initiate strides in, his hands clasped before him.",
-      "An Ithzir initiate strides in, her hands clasped before her."
-    ],
+    arrival: [],
     flee: [],
     death: [
       "The Ithzir scout twitches violently, then dies.",
       "The Ithzir scout vainly struggles to rise, then goes still.",
-      "An Ithzir scout's body shimmers slightly, then fades from view like a dissipating phantom.",
-      "Just as you incant, the Ithzir scout shimmers and fades away, leaving you gesturing at nothingness!"
+      "Just as you incant, the Ithzir scout shimmers and fades away, leaving you gesturing at nothingness!",
+      "Just as you move to cast, the Ithzir scout shimmers and fades away, leaving you gesturing at nothingness!"
     ],
-    decay: [
-      "Acid dissolves the knee ligaments.  The Ithzir scout's tibia passes her femur in a very unpleasant manner!"
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [
-      "A greater construct raises ithzir scout massive foot and attempts to smash you!",
       "An Ithzir scout swings {weapon} at you!",
       "An Ithzir scout throws {weapon} at you!",
-      "The Ithzir scout points at you for emphasis."
+      "The Ithzir scout points at you for emphasis.",
     ],
     bite: [],
     claw: [],

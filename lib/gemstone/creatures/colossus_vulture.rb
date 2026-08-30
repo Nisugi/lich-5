@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -61,20 +63,20 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (192..207),
-    ranged: 165,
-    bolt: 150,
-    udf: 207,
+    melee: (163..212),
+    ranged: (165..183),
+    bolt: (150..183),
+    udf: (207..248),
     bar_td: (93..102),
     cle_td: (100..106),
     emp_td: (107..114),
     pal_td: (102..111),
-    ran_td: 102,
+    ran_td: (99..105),
     sor_td: (113..122),
     wiz_td: nil,
     mje_td: 119,
     mne_td: 119,
-    mjs_td: nil,
+    mjs_td: (146..155),
     mns_td: (146..155),
     mnm_td: (93..102),
     defensive_spells: [],
@@ -104,9 +106,7 @@
     ],
     death: [
       "The colossus vulture writhes in agony, its wings flapping fruitlessly as it dies.",
-      "A colossus vulture goes limp as it is rendered unconscious!",
-      "The colossus vulture crashes to the ground, motionless.",
-      "The colossus vulture slumps to the ground."
+      "The colossus vulture crashes to the ground, motionless."
     ],
     decay: [
       "The colossus vulture decays into a pile of feathers."

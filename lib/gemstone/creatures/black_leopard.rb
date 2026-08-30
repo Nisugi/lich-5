@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 140,
+  max_hp: 172,
   speed: nil,
   height: 3,
   size: "medium",
@@ -56,20 +58,20 @@
     asg: "6N",
     immunities: [],
     melee: (85..151),
-    ranged: 85,
-    bolt: 85,
+    ranged: (75..100),
+    bolt: (75..100),
     udf: (107..146),
     bar_td: 45,
     cle_td: (39..51),
     emp_td: (45..53),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (39..48),
+    ran_td: (45..51),
     sor_td: (42..51),
     wiz_td: nil,
     mje_td: (39..45),
-    mne_td: 45,
-    mjs_td: 45,
-    mns_td: (42..51),
+    mne_td: (39..45),
+    mjs_td: (42..57),
+    mns_td: (42..57),
     mnm_td: (42..51),
     defensive_spells: [],
     defensive_abilities: [],
@@ -95,7 +97,6 @@
     arrival: [
       "A black leopard scampers in!",
       "A black leopard scampers in, mewling in pain!",
-      "An Agresh bear lumbers in, flecks of drool flinging with each of its strides."
     ],
     flee: [
       "A black leopard scampers {direction}.",
@@ -104,13 +105,7 @@
     death: [
       "The black leopard lets out a final caterwaul and dies.",
       "The black leopard crumples to the ground and dies.",
-      "The black leopard mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The black leopard mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The black leopard mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The black leopard mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The black leopard mewls in pain as she slumps to the ground and licks her wounded right paw.",
-      "The black leopard mewls in pain as he slumps to the ground and licks his wounded left paw.",
-      "The black leopard mewls in pain as she slumps to the ground and licks her wounded left paw."
+      "Beautiful shot pierces both lungs, the black leopard makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A black leopard decays into a compost of fangs, fur and claws."

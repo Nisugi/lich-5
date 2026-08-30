@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 270,
-  speed: nil,
+  speed: 12,
   height: 6,
   size: "medium",
   areas: [
@@ -53,6 +55,10 @@
       {
         name: "Fist",
         as: 202
+      },
+      {
+        name: "Unknown",
+        as: 222
       }
     ],
     bolt_spells: [],
@@ -66,19 +72,19 @@
     asg: "various",
     immunities: [],
     melee: (92..144),
-    ranged: (92..118),
-    bolt: (92..118),
-    udf: 155,
+    ranged: (90..118),
+    bolt: (90..118),
+    udf: (151..155),
     bar_td: 72,
-    cle_td: nil,
+    cle_td: 72,
     emp_td: 72,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (69..72),
+    ran_td: 72,
     sor_td: 72,
     wiz_td: nil,
     mje_td: 72,
     mne_td: 72,
-    mjs_td: nil,
+    mjs_td: (72..97),
     mns_td: (72..97),
     mnm_td: 72,
     defensive_spells: [],
@@ -125,12 +131,11 @@
     ],
     death: [
       "The reiver takes one last breath, then dies.",
-      "A reiver goes limp as it is rendered unconscious!",
-      "The reiver falls to the ground motionless."
+      "The reiver falls to the ground motionless.",
+      "Beautiful shot pierces both lungs, the reiver makes a wheezing noise, and drops dead!"
     ],
     decay: [
-      "A reiver turns to dust.",
-      "Acid dissolves connecting cartilage, freeing the reiver's ribs to move independently."
+      "A reiver turns to dust."
     ],
     search: [],
     spell_prep: [],

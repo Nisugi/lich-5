@@ -10,15 +10,17 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 80,
+  max_hp: 90,
   speed: nil,
   height: 4,
   size: "large",
@@ -49,10 +51,10 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (20..40),
+    melee: (11..40),
     ranged: (11..14),
     bolt: (11..14),
-    udf: 48,
+    udf: (48..73),
     bar_td: nil,
     cle_td: 9,
     emp_td: 9,
@@ -62,7 +64,7 @@
     wiz_td: nil,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: nil,
+    mjs_td: 9,
     mns_td: 9,
     mnm_td: 9,
     defensive_spells: [],
@@ -93,14 +95,7 @@
     death: [
       "The striped gak collapses to the ground, emits a final bellow, and dies.",
       "The striped gak lets out a final agonized bellow and dies.",
-      "The striped gak collapses to the ground, emits a final silent bellow, and dies.",
-      "The striped gak brays loudly as she slumps to the ground and cradles her wounded left foreleg.",
-      "The striped gak brays loudly as she slumps to the ground and cradles her wounded left hoof.",
-      "The striped gak brays loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The striped gak brays loudly as she slumps to the ground and cradles her wounded right hoof.",
-      "The striped gak brays loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The striped gak brays loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "A striped gak goes limp as she is rendered unconscious!"
+      "The striped gak collapses to the ground, emits a final silent bellow, and dies."
     ],
     decay: [
       "A striped gak decays into a pile of fur and bone."

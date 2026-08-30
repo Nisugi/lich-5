@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Corporeal undead",
     "Boss"
@@ -69,21 +71,21 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: (148..268),
-    ranged: 186,
-    bolt: 133,
-    udf: (239..339),
+    melee: (138..268),
+    ranged: (125..186),
+    bolt: (125..186),
+    udf: (235..352),
     bar_td: (110..115),
     cle_td: (100..119),
     emp_td: (110..120),
     pal_td: (108..118),
-    ran_td: nil,
+    ran_td: (117..121),
     sor_td: (119..128),
     wiz_td: nil,
     mje_td: (119..134),
-    mne_td: 130,
-    mjs_td: nil,
-    mns_td: 129,
+    mne_td: (119..134),
+    mjs_td: (120..129),
+    mns_td: (120..129),
     mnm_td: (108..116),
     defensive_spells: [
       "Thurfel's Ward (503)"
@@ -95,7 +97,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blackened twisted steel longsword"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -110,7 +114,6 @@
     ],
     arrival: [
       "A lesser moor wight arrives on a cold wind.",
-      "A bog troll lumbers in, his face set in an angry scowl!"
     ],
     flee: [
       "A lesser moor wight wails madly as it limps {direction}."

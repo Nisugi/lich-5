@@ -10,14 +10,16 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 135,
-  speed: nil,
+  max_hp: 145,
+  speed: 7,
   height: 7,
   size: "medium",
   areas: [
@@ -47,7 +49,7 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: 25,
+    melee: (19..25),
     ranged: 6,
     bolt: 6,
     udf: (65..73),
@@ -55,12 +57,12 @@
     cle_td: 33,
     emp_td: (9..37),
     pal_td: (30..33),
-    ran_td: nil,
+    ran_td: 33,
     sor_td: 33,
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
-    mjs_td: nil,
+    mje_td: 33,
+    mne_td: 33,
+    mjs_td: 33,
     mns_td: 33,
     mnm_td: 33,
     defensive_spells: [],
@@ -93,8 +95,7 @@
     ],
     death: [
       "The shelfae assailant falls to the ground and dies.",
-      "The shelfae assailant screams one last time and dies.",
-      "A shelfae assailant goes limp as it is rendered unconscious!"
+      "The shelfae assailant screams one last time and dies."
     ],
     decay: [
       "A assailant crumbles into dust."

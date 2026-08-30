@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 44,
-  speed: nil,
+  speed: 13,
   height: 5,
   size: "medium",
   areas: [
@@ -45,6 +47,10 @@
       {
         name: "Spear",
         as: 50
+      },
+      {
+        name: "Unknown",
+        as: 50
       }
     ],
     bolt_spells: [],
@@ -56,6 +62,10 @@
       {
         name: "Vibration Chant (1002)",
         cs: 2
+      },
+      {
+        name: "Dagger",
+        cs: 10
       }
     ],
     offensive_spells: [],
@@ -66,14 +76,14 @@
   defense_attributes: {
     asg: "2",
     immunities: [],
-    melee: 10,
+    melee: (0..10),
     ranged: 7,
     bolt: 7,
     udf: 42,
     bar_td: 6,
     cle_td: 6,
     emp_td: 6,
-    pal_td: 6,
+    pal_td: (3..6),
     ran_td: 6,
     sor_td: 6,
     wiz_td: nil,
@@ -118,8 +128,7 @@
     ],
     death: [
       "The sea nymph falls to the ground and dies.",
-      "The sea nymph screams one last time and dies.",
-      "The sea nymph slumps to the ground."
+      "The sea nymph screams one last time and dies."
     ],
     decay: [
       "A sea nymph decays into compost."

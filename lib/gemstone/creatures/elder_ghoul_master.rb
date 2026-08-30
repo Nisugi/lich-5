@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
+  witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -46,20 +48,20 @@
     asg: "12",
     immunities: [],
     melee: 148,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    ranged: (48..59),
+    bolt: (48..59),
+    udf: 118,
     bar_td: nil,
     cle_td: 54,
     emp_td: 54,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: 54,
     sor_td: nil,
     wiz_td: nil,
     mje_td: 54,
     mne_td: 54,
-    mjs_td: nil,
-    mns_td: 54,
+    mjs_td: (45..54),
+    mns_td: (45..54),
     mnm_td: 54,
     defensive_spells: [],
     defensive_abilities: [],
@@ -85,14 +87,16 @@
     description: [
       "The elder ghoul master is a mass of blackened muscle in humanoid form. Striding boldly upright and with a determined gaze, the elder ghoul master marches through the world of the dead, seeking the bodies of the recently deceased. Though, in fact, dead itself, its putrid breath reveals its consumption of a steady diet of decayed flesh. If none can be found, the elder ghoul master is more than happy to cause the living to become the recently deceased."
     ],
-    arrival: [],
+    arrival: [
+      "An elder ghoul master just arrived."
+    ],
     flee: [],
     death: [
       "The elder ghoul master falls to the ground motionless.",
       "The elder ghoul master screams evilly one last time and goes still."
     ],
     decay: [
-      "An elder ghoul master turns to dust."
+      "An elder ghoul master turns to dust.",
     ],
     search: [],
     spell_prep: [],

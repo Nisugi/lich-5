@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 210,
-  speed: nil,
+  speed: 9,
   height: 8,
   size: "large",
   areas: [
@@ -49,22 +51,22 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: (51..156),
-    ranged: (52..100),
-    bolt: (52..100),
-    udf: 114,
+    melee: (46..156),
+    ranged: (26..100),
+    bolt: (26..100),
+    udf: (105..173),
     bar_td: 55,
     cle_td: 63,
     emp_td: 63,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (60..63),
+    ran_td: 63,
     sor_td: 59,
     wiz_td: 55,
-    mje_td: 55,
+    mje_td: (55..59),
     mne_td: (55..59),
     mjs_td: 63,
     mns_td: 63,
-    mnm_td: 48,
+    mnm_td: (48..55),
     defensive_spells: [
       "Spirit Warding II (107)"
     ],
@@ -75,7 +77,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a chain hauberk",
+    "a war hammer",
+    "a wooden shield"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -95,9 +101,7 @@
       "An Agresh troll warrior runs {direction}.",
       "An Agresh troll warrior limps {direction}."
     ],
-    death: [
-      "An Agresh troll warrior goes limp as she is rendered unconscious!"
-    ],
+    death: [],
     decay: [
       "An Agresh troll warrior decays into compost."
     ],

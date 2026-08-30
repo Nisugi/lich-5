@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -53,21 +55,21 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (127..153),
-    ranged: nil,
-    bolt: nil,
+    melee: (113..153),
+    ranged: (102..122),
+    bolt: (102..122),
     udf: 136,
     bar_td: (42..48),
     cle_td: (36..45),
     emp_td: (42..50),
     pal_td: (36..45),
-    ran_td: nil,
+    ran_td: (42..48),
     sor_td: (36..45),
     wiz_td: nil,
     mje_td: nil,
     mne_td: (42..48),
-    mjs_td: nil,
-    mns_td: (39..48),
+    mjs_td: (68..69),
+    mns_td: (68..69),
     mnm_td: (39..48),
     defensive_spells: [],
     defensive_abilities: [],
@@ -103,11 +105,7 @@
     death: [
       "The giant weasel collapses to the ground, emits a final cry, and dies.",
       "The giant weasel lets out a final agonized cry and dies.",
-      "The giant weasel cries loudly as it slumps to the ground and cradles its wounded left foreleg.",
-      "The giant weasel cries loudly as it slumps to the ground and cradles its wounded right foreleg.",
-      "The giant weasel cries loudly as it slumps to the ground and cradles its wounded left paw.",
-      "The giant weasel slumps to the ground.",
-      "The giant weasel cries loudly as it slumps to the ground and cradles its wounded right paw."
+      "Beautiful shot pierces both lungs, the giant weasel makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A giant weasel decays into a pile of fur and bone."

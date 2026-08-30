@@ -11,15 +11,17 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: nil,
   max_hp: 400,
-  speed: nil,
+  speed: 8,
   height: 6,
   size: "large",
   areas: [
@@ -36,7 +38,7 @@
       },
       {
         name: "Foot",
-        as: 228
+        as: (228..242)
       }
     ],
     bolt_spells: [],
@@ -54,16 +56,16 @@
     bolt: (148..211),
     udf: (192..290),
     bar_td: nil,
-    cle_td: (127..137),
+    cle_td: (127..141),
     emp_td: (131..141),
-    pal_td: nil,
+    pal_td: (119..122),
     ran_td: nil,
     sor_td: (144..151),
     wiz_td: nil,
     mje_td: (154..157),
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (132..140),
+    mne_td: (154..157),
+    mjs_td: (130..140),
+    mns_td: (130..140),
     mnm_td: (115..125),
     defensive_spells: [],
     defensive_abilities: [],

@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 200,
+  max_hp: 203,
   speed: nil,
   height: 3,
   size: "medium",
@@ -50,28 +52,32 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Leap"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (154..181),
-    ranged: nil,
-    bolt: 123,
-    udf: (187..190),
+    melee: (122..181),
+    ranged: (112..123),
+    bolt: (112..123),
+    udf: (187..204),
     bar_td: nil,
     cle_td: (63..72),
     emp_td: (68..76),
     pal_td: (60..66),
-    ran_td: nil,
+    ran_td: (60..66),
     sor_td: (70..76),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 72,
-    mjs_td: nil,
-    mns_td: (65..74),
+    mjs_td: 99,
+    mns_td: 99,
     mnm_td: 66,
     defensive_spells: [],
     defensive_abilities: [],
@@ -105,12 +111,7 @@
     death: [
       "The dark panther lets out a final caterwaul and dies.",
       "The dark panther crumples to the ground and dies.",
-      "The dark panther mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The dark panther mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The dark panther mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The dark panther mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The dark panther mewls in pain as he slumps to the ground and licks his wounded left paw.",
-      "The dark panther mewls in pain as he slumps to the ground and licks his wounded right paw."
+      "Beautiful shot pierces both lungs, the dark panther makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A dark panther decays into a compost of fangs, fur and claws."

@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Magical"
   ],
   bcs: true,
-  max_hp: 400,
+  max_hp: 435,
   speed: nil,
   height: 7,
   size: "large",
@@ -64,20 +66,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (233..247),
-    ranged: (233..247),
-    bolt: (233..247),
-    udf: 369,
+    melee: (196..309),
+    ranged: (190..247),
+    bolt: (190..247),
+    udf: (287..428),
     bar_td: (160..183),
     cle_td: (174..199),
     emp_td: (182..192),
     pal_td: (156..166),
-    ran_td: 166,
+    ran_td: (156..166),
     sor_td: (194..202),
     wiz_td: nil,
-    mje_td: 204,
-    mne_td: 208,
-    mjs_td: nil,
+    mje_td: (204..208),
+    mne_td: (204..208),
+    mjs_td: (182..192),
     mns_td: (182..192),
     mnm_td: (153..162),
     defensive_spells: [
@@ -112,7 +114,8 @@
     flee: [],
     death: [
       "The horned vor'taz's horn dims as his lifeforce fades away.",
-      "The horned vor'taz's horn dims as her lifeforce fades away."
+      "The horned vor'taz's horn dims as her lifeforce fades away.",
+      "Beautiful shot pierces both lungs, the horned vor'taz makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A horned vor'taz crumbles away to nothing."

@@ -11,9 +11,11 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: false,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -54,9 +56,9 @@
     asg: "8N",
     immunities: [],
     melee: (56..90),
-    ranged: (56..73),
-    bolt: (56..73),
-    udf: (106..122),
+    ranged: (52..82),
+    bolt: (52..82),
+    udf: (73..122),
     bar_td: (45..51),
     cle_td: (45..54),
     emp_td: (45..54),
@@ -66,8 +68,8 @@
     wiz_td: nil,
     mje_td: 48,
     mne_td: 48,
-    mjs_td: nil,
-    mns_td: (48..54),
+    mjs_td: (45..54),
+    mns_td: (45..54),
     mnm_td: (42..48),
     defensive_spells: [],
     defensive_abilities: [],
@@ -95,9 +97,7 @@
     ],
     flee: [],
     death: [
-      "A phosphorescent worm goes limp as it is rendered unconscious!",
-      "A phosphorescent worm slumps to the ground, its glowing form now motionless and dull.",
-      "The phosphorescent worm slumps to the ground."
+      "A phosphorescent worm slumps to the ground, its glowing form now motionless and dull."
     ],
     decay: [],
     search: [],

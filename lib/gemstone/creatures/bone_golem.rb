@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: false,
+  sympathy: false,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -70,7 +72,7 @@
     melee: (2..93),
     ranged: (13..16),
     bolt: (13..16),
-    udf: (65..146),
+    udf: (43..146),
     bar_td: (24..27),
     cle_td: 24,
     emp_td: 24,
@@ -111,7 +113,7 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A bone golem pounds at you with bone golem skeletal fist!",
+      "A bone golem pounds at you with {pronoun} skeletal fist!",
       "A bone golem pounds at you with {pronoun} skeletal fist!"
     ],
     bite: [],

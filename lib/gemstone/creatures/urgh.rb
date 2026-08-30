@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -74,8 +76,8 @@
     wiz_td: nil,
     mje_td: 12,
     mne_td: 12,
-    mjs_td: nil,
-    mns_td: 12,
+    mjs_td: (12..15),
+    mns_td: (12..15),
     mnm_td: 12,
     defensive_spells: [],
     defensive_abilities: [],
@@ -104,11 +106,7 @@
     ],
     death: [
       "The urgh collapses to the ground, emits a final squeal, and dies.",
-      "The urgh lets out a final agonized squeal and dies.",
-      "The urgh squeals loudly as she slumps to the ground and cradles her wounded left foreleg.",
-      "The urgh squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The urgh squeals loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The urgh squeals loudly as he slumps to the ground and cradles his wounded right foreleg."
+      "The urgh lets out a final agonized squeal and dies."
     ],
     decay: [
       "An urgh decays into a pile of fur and bone."

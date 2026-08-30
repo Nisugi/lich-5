@@ -12,8 +12,10 @@
   bones: false,
   witherable: false,
   sympathy: true,
-  muggable: nil,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Magical",
     "Element-based"
@@ -37,11 +39,11 @@
       },
       {
         name: "Ensnare",
-        as: 424
+        as: (404..424)
       },
       {
         name: "Fist",
-        as: 410
+        as: (358..410)
       }
     ],
     bolt_spells: [
@@ -67,20 +69,20 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: (275..411),
-    ranged: nil,
-    bolt: nil,
+    melee: (230..411),
+    ranged: (192..231),
+    bolt: (192..231),
     udf: 508,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: 321,
+    cle_td: (317..327),
+    emp_td: (321..333),
     pal_td: (280..289),
-    ran_td: nil,
+    ran_td: (280..289),
     sor_td: (346..358),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 379,
-    mjs_td: nil,
+    mjs_td: (321..327),
     mns_td: (321..327),
     mnm_td: (263..266),
     defensive_spells: [
@@ -114,7 +116,8 @@
     arrival: [],
     flee: [],
     death: [
-      "The greater skayl goes limp and it falls over as the fire slowly fades from its eyes."
+      "The greater skayl goes limp and it falls over as the fire slowly fades from its eyes.",
+      "Beautiful shot pierces both lungs, the greater skayl makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "Bright orange lava oozes out of the greater skayl before it crumbles into a lifeless pile of glaes."

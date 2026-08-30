@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Living",
     "Boss"
@@ -65,15 +67,15 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: 197,
-    ranged: nil,
-    bolt: nil,
+    melee: (194..229),
+    ranged: 214,
+    bolt: 214,
     udf: (240..272),
     bar_td: (122..131),
     cle_td: (142..151),
     emp_td: (138..147),
     pal_td: (129..138),
-    ran_td: nil,
+    ran_td: (129..135),
     sor_td: (144..153),
     wiz_td: nil,
     mje_td: nil,
@@ -108,8 +110,8 @@
     ],
     death: [
       "The dreadnought raptor writhes in agony, its wings flapping fruitlessly as it dies.",
-      "A dreadnought raptor goes limp as it is rendered unconscious!",
-      "The dreadnought raptor crashes to the ground, motionless."
+      "The dreadnought raptor crashes to the ground, motionless.",
+      "Beautiful shot pierces both lungs, the dreadnought raptor makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The dreadnought raptor decays into a pile of feathers."
@@ -117,7 +119,7 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A dazzling dreadnought raptor tries to impale you on dreadnought raptor beak!"
+      "A dazzling dreadnought raptor tries to impale you on {pronoun} beak!"
     ],
     bite: [],
     claw: [],

@@ -8,18 +8,20 @@
   family: "Tree",
   type: "Plantlife",
   undead: true,
-  blood: nil,
-  bones: nil,
+  blood: false,
+  bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
-  max_hp: 120,
-  speed: "5",
+  max_hp: 135,
+  speed: 8,
   height: 8,
   size: "large",
   areas: [
@@ -77,10 +79,10 @@
   defense_attributes: {
     asg: "7N",
     immunities: [],
-    melee: (63..142),
-    ranged: (52..63),
-    bolt: (52..63),
-    udf: (86..175),
+    melee: (54..142),
+    ranged: (49..93),
+    bolt: (49..93),
+    udf: (78..175),
     bar_td: 39,
     cle_td: 39,
     emp_td: 39,
@@ -117,7 +119,8 @@
       "A skeletal tree-trunk with long straggling branches, the darkwoode holds the unliving force of a once sentient tree-spirit. An unfelt breeze seems to stir the dead and decaying leaves that still cling to it, giving it a travesty of the beauty it once held as a living tree. Given its original form long ago to protect sacred groves, it remains now, warped and twisted, yet still attempting to carry out the duties it failed in long ago."
     ],
     arrival: [
-      "A darkwoode just arrived."
+      "A darkwoode just arrived.",
+      "A darkwoode just arrived, limping badly."
     ],
     flee: [
       "A darkwoode runs {direction}."
@@ -126,7 +129,6 @@
       "The darkwoode slowly settles to the ground and begins to dissipate."
     ],
     decay: [
-      "Acid dissolves connecting cartilage, freeing the darkwoode's ribs to move independently.",
       "The darkwoode's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],

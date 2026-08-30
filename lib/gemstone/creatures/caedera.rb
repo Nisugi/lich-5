@@ -11,16 +11,18 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Magical"
   ],
   bcs: true,
   max_hp: 600,
-  speed: nil,
+  speed: 10,
   height: 3,
   size: "large",
   areas: [
@@ -33,7 +35,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 411
+        as: (369..411)
       },
       {
         name: "Charge (attack)"
@@ -66,20 +68,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (369..414),
+    melee: (301..414),
     ranged: "+321",
     bolt: nil,
-    udf: (400..450),
+    udf: (380..450),
     bar_td: nil,
     cle_td: 323,
     emp_td: (305..311),
-    pal_td: nil,
+    pal_td: (261..267),
     ran_td: nil,
     sor_td: (326..338),
     wiz_td: nil,
-    mje_td: 345,
-    mne_td: nil,
-    mjs_td: nil,
+    mje_td: (345..354),
+    mne_td: (345..354),
+    mjs_td: (305..311),
     mns_td: (305..311),
     mnm_td: (246..252),
     defensive_spells: [],
@@ -90,7 +92,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye"
+  ],
   treasure: {
     coins: false,
     magic_items: false,
@@ -106,7 +111,6 @@
     arrival: [],
     flee: [],
     death: [
-      "A caedera goes limp as it is rendered unconscious!",
       "The caedera slumps to the ground."
     ],
     decay: [],

@@ -9,18 +9,20 @@
   type: "Quadruped",
   undead: false,
   blood: true,
-  bones: nil,
+  bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Magical"
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 6,
   height: 4,
   size: "large",
   areas: [
@@ -57,9 +59,9 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: (232..294),
-    ranged: 221,
-    bolt: 221,
+    melee: (173..294),
+    ranged: (151..242),
+    bolt: (151..242),
     udf: (341..456),
     bar_td: (206..227),
     cle_td: (236..245),
@@ -68,10 +70,10 @@
     ran_td: (201..210),
     sor_td: (247..259),
     wiz_td: nil,
-    mje_td: 265,
-    mne_td: 260,
-    mjs_td: nil,
-    mns_td: (233..242),
+    mje_td: (260..274),
+    mne_td: (260..274),
+    mjs_td: 268,
+    mns_td: 268,
     mnm_td: 186,
     defensive_spells: [],
     defensive_abilities: [],
@@ -81,7 +83,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -96,19 +101,12 @@
     ],
     arrival: [],
     flee: [
-      "A stone mastiff barrels {direction}."
+      "A stone mastiff barrels {direction}.",
+      "A stone mastiff crawls {direction}."
     ],
     death: [
       "The stone mastiff falls to the ground and dies.",
-      "The stone mastiff rolls over and dies.",
-      "The stone mastiff yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
-      "The stone mastiff yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
-      "The stone mastiff yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
-      "The stone mastiff yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
-      "The stone mastiff yelps loudly as he slumps to the ground and licks his wounded left paw.",
-      "The stone mastiff yelps loudly as she slumps to the ground and licks her wounded right paw.",
-      "The stone mastiff yelps loudly as she slumps to the ground and licks her wounded left paw.",
-      "The stone mastiff yelps loudly as he slumps to the ground and licks his wounded right paw."
+      "The stone mastiff rolls over and dies."
     ],
     decay: [
       "A stone mastiff crumbles into a pile of rubble."

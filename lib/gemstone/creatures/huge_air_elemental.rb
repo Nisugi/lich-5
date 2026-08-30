@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Magical"
@@ -65,7 +67,7 @@
     asg: "10",
     immunities: [],
     melee: nil,
-    ranged: nil,
+    ranged: (320..328),
     bolt: 312,
     udf: nil,
     bar_td: nil,

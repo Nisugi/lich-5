@@ -9,17 +9,19 @@
   type: "Quadruped",
   undead: true,
   blood: false,
-  bones: nil,
+  bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: nil,
   max_hp: 150,
-  speed: nil,
+  speed: 5,
   height: 3,
   size: "medium",
   areas: [
@@ -45,6 +47,10 @@
       {
         name: "Claw",
         as: 143
+      },
+      {
+        name: "Unknown",
+        as: 143
       }
     ],
     bolt_spells: [],
@@ -58,9 +64,9 @@
     asg: "1N",
     immunities: [],
     melee: (76..101),
-    ranged: 84,
-    bolt: 84,
-    udf: (107..117),
+    ranged: (73..84),
+    bolt: (73..84),
+    udf: (104..117),
     bar_td: 48,
     cle_td: 48,
     emp_td: 48,
@@ -70,8 +76,8 @@
     wiz_td: 48,
     mje_td: 48,
     mne_td: 48,
-    mjs_td: 48,
-    mns_td: 48,
+    mjs_td: (48..60),
+    mns_td: (48..60),
     mnm_td: 48,
     defensive_spells: [],
     defensive_abilities: [],

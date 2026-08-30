@@ -11,9 +11,11 @@
   blood: true,
   bones: nil,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Extraplanar"
@@ -40,7 +42,7 @@
       },
       {
         name: "Curved silvery blade",
-        as: 413
+        as: (413..416)
       }
     ],
     bolt_spells: [],
@@ -83,21 +85,21 @@
   defense_attributes: {
     asg: "9",
     immunities: [],
-    melee: (377..570),
+    melee: (346..570),
     ranged: nil,
     bolt: 386,
-    udf: (449..579),
+    udf: (449..621),
     bar_td: (358..371),
     cle_td: (364..382),
     emp_td: (361..370),
     pal_td: (312..322),
-    ran_td: nil,
+    ran_td: (311..316),
     sor_td: (399..409),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (349..369),
+    mje_td: 477,
+    mne_td: 477,
+    mjs_td: 385,
+    mns_td: 385,
     mnm_td: (322..330),
     defensive_spells: [
       "Elemental Defense I (401)",
@@ -131,22 +133,21 @@
     description: [
       "A trio of black tattooed stripes run from center of the Ithzir herald's forehead and over the crown of his bald, blue-skinned head. The Ithzir herald is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue body is nonetheless alien in its appearance. The herald wears a fine silvery-blue tunic crossed with a green tabard."
     ],
-    arrival: [
-      "An Ithzir initiate strides in, his hands clasped before him.",
-      "An Ithzir initiate strides in, her hands clasped before her."
+    arrival: [],
+    flee: [
+      "An Ithzir herald limps {direction}."
     ],
-    flee: [],
     death: [
       "The Ithzir herald vainly struggles to rise, then goes still.",
-      "An Ithzir herald's body shimmers slightly, then fades from view like a dissipating phantom.",
-      "Just as you incant, the Ithzir herald shimmers and fades away, leaving you gesturing at nothingness!"
+      "Just as you incant, the Ithzir herald shimmers and fades away, leaving you gesturing at nothingness!",
+      "Just as you move to cast, the Ithzir herald shimmers and fades away, leaving you gesturing at nothingness!",
+      "Beautiful shot pierces both lungs, the Ithzir herald makes a wheezing noise, and drops dead!"
     ],
     decay: [],
     search: [],
     spell_prep: [],
     attack: [
       "An Ithzir herald swings {weapon} at you!",
-      "An Ithzir initiate places one palm on ithzir herald chest, and raises the other toward you!",
       "The Ithzir herald points at you for emphasis.",
       "The Ithzir herald points at you."
     ],

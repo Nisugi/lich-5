@@ -11,9 +11,11 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Element-based",
@@ -62,20 +64,20 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: 148,
-    ranged: 148,
-    bolt: 136,
-    udf: (238..260),
+    melee: (102..260),
+    ranged: (98..173),
+    bolt: (98..173),
+    udf: (156..292),
     bar_td: (105..111),
-    cle_td: nil,
+    cle_td: (110..119),
     emp_td: (111..120),
     pal_td: (102..111),
-    ran_td: nil,
+    ran_td: (102..111),
     sor_td: (123..132),
     wiz_td: nil,
     mje_td: 129,
     mne_td: 129,
-    mjs_td: nil,
+    mjs_td: (117..126),
     mns_td: (117..126),
     mnm_td: (102..111),
     defensive_spells: [],
@@ -103,9 +105,7 @@
     flee: [
       "A lava troll crawls {direction}."
     ],
-    death: [
-      "A lava troll goes limp as she is rendered unconscious!"
-    ],
+    death: [],
     decay: [
       "A lava troll burns down to a husk, that crumbles to ash."
     ],

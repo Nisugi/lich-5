@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -46,14 +48,18 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Web"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "9N",
     immunities: [],
-    melee: nil,
+    melee: (147..172),
     ranged: 139,
     bolt: nil,
     udf: (167..178),
@@ -96,11 +102,10 @@
     ],
     death: [
       "The martial eagle writhes in agony, its wings flapping fruitlessly as it dies.",
-      "A martial eagle goes limp as it is rendered unconscious!",
       "The martial eagle crashes to the ground, motionless."
     ],
     decay: [
-      "The martial eagle decays into a pile of feathers."
+      "The martial eagle decays into a pile of feathers.",
     ],
     search: [],
     spell_prep: [],

@@ -10,10 +10,12 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
+  witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Living",
     "Boss"
@@ -36,7 +38,7 @@
       },
       {
         name: "Claw",
-        as: 198
+        as: (198..249)
       }
     ],
     bolt_spells: [],
@@ -55,9 +57,9 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: "+140 to +160 DS",
-    ranged: nil,
-    bolt: "+154 DS",
+    melee: (140..195),
+    ranged: (128..153),
+    bolt: (128..154),
     udf: 172,
     bar_td: "+84 TD",
     cle_td: "+84 TD",
@@ -96,9 +98,7 @@
     flee: [],
     death: [
       "The dobrem falls to the ground and dies.",
-      "The dobrem rolls over and dies.",
-      "The dobrem yelps loudly as she slumps to the ground and licks her wounded right paw.",
-      "The dobrem yelps loudly as she slumps to the ground and licks her wounded right foreleg."
+      "The dobrem rolls over and dies."
     ],
     decay: [
       "A dobrem decays into a compost of fangs and fur."

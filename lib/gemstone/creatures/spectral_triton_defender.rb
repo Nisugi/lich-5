@@ -11,15 +11,17 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 540,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -36,7 +38,15 @@
       },
       {
         name: "Seaweed-wound rusted steel hatchet",
-        as: 424
+        as: (424..433)
+      },
+      {
+        name: "Curved vaalorn handaxe",
+        as: 432
+      },
+      {
+        name: "Tarnished dark silver harpoon",
+        as: 433
       }
     ],
     bolt_spells: [],
@@ -60,20 +70,20 @@
     asg: nil,
     immunities: [],
     melee: (236..446),
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    ranged: (215..390),
+    bolt: (215..390),
+    udf: (501..744),
     bar_td: nil,
-    cle_td: (361..367),
+    cle_td: (358..367),
     emp_td: 368,
-    pal_td: (317..320),
-    ran_td: nil,
+    pal_td: (311..320),
+    ran_td: (305..314),
     sor_td: (376..385),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
-    mns_td: (365..368),
+    mjs_td: 391,
+    mns_td: 391,
     mnm_td: (294..300),
     defensive_spells: [],
     defensive_abilities: [],
@@ -83,7 +93,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a lackluster blue steel harpoon",
+    "a thick canvas sling"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -97,17 +110,10 @@
       "The triton defender forges ahead on powerful legs, as if unaware of their lack of substance, while thick and ropey muscles bunch powerfully along her oddly translucent arms. The skin covering her squat ethereal frame is the color of bleached, dirty leather and seems to retain the clammy wetness of living amphibians. Sweeping behind her muscled limbs, a long tail floats after the creature like a recently abandoned child."
     ],
     arrival: [
-      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
-      "A triton combatant strides in, a wary look on her face.",
-      "A triton radical strides in, a wary look on her face.",
-      "A triton dissembler strides in, a wary look on his face.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
-      "A spectral triton defender just arrived."
+      "A spectral triton defender just arrived.",
     ],
     flee: [],
     death: [
-      "The siren gives a plaintive wail before she slumps to her side and dies.",
       "The triton defender fades into transparency, her remnants rapidly dissolving into the air.",
       "The triton defender fades into transparency, his remnants rapidly dissolving into the air.",
       "The triton defender goes still for a moment while its head reshapes."
@@ -118,7 +124,8 @@
     attack: [
       "A spectral triton defender swings {weapon} at you!",
       "A spectral triton defender thrusts with a lackluster blue steel harpoon at you!",
-      "A spectral triton defender throws {weapon} at you!"
+      "A spectral triton defender throws {weapon} at you!",
+      "A spectral triton defender thrusts with a tarnished dark silver harpoon at you!"
     ],
     bite: [],
     claw: [],

@@ -10,17 +10,19 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead",
     "Extraplanar"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 8,
   height: 6,
   size: "medium",
   areas: [
@@ -48,6 +50,9 @@
     maneuvers: [
       {
         name: "Skeletal Finger"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -56,21 +61,21 @@
   defense_attributes: {
     asg: "2",
     immunities: [],
-    melee: (374..377),
-    ranged: nil,
-    bolt: nil,
-    udf: (397..617),
+    melee: (283..521),
+    ranged: (256..423),
+    bolt: (256..423),
+    udf: (381..617),
     bar_td: nil,
     cle_td: (399..409),
     emp_td: (385..391),
-    pal_td: 334,
-    ran_td: nil,
+    pal_td: (359..362),
+    ran_td: (347..356),
     sor_td: (416..425),
     wiz_td: nil,
     mje_td: (434..439),
-    mne_td: 436,
-    mjs_td: nil,
-    mns_td: (389..397),
+    mne_td: (434..439),
+    mjs_td: 419,
+    mns_td: 419,
     mnm_td: (365..369),
     defensive_spells: [
       "Spirit Warding I (101)",
@@ -118,8 +123,7 @@
       "The vaespilon wails in terrifying pain one last time and lies still."
     ],
     decay: [
-      "All the malice and magic that once held the vaespilon together dissipates, leaving nothing but a husk which crumbles to dust.",
-      "Acid dissolves connecting cartilage, freeing the vaespilon's ribs to move independently."
+      "All the malice and magic that once held the vaespilon together dissipates, leaving nothing but a husk which crumbles to dust."
     ],
     search: [],
     spell_prep: [],

@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 68,
-  speed: nil,
+  max_hp: 74,
+  speed: 6,
   height: 2,
   size: "small",
   areas: [
@@ -53,12 +55,20 @@
       {
         name: "Claw",
         as: (91..102)
+      },
+      {
+        name: "Unknown",
+        as: 102
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Leap"
+      }
+    ],
     special_abilities: [
       {
         name: "Pounce"
@@ -69,10 +79,10 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (37..77),
-    ranged: 41,
-    bolt: 41,
-    udf: (66..98),
+    melee: (26..77),
+    ranged: (26..41),
+    bolt: (26..41),
+    udf: (66..101),
     bar_td: 18,
     cle_td: 18,
     emp_td: 18,
@@ -82,7 +92,7 @@
     wiz_td: nil,
     mje_td: 18,
     mne_td: 18,
-    mjs_td: nil,
+    mjs_td: 18,
     mns_td: 18,
     mnm_td: 18,
     defensive_spells: [],
@@ -108,17 +118,12 @@
     ],
     arrival: [],
     flee: [
-      "A spotted lynx darts {direction}."
+      "A spotted lynx darts {direction}.",
+      "A spotted lynx roars loudly as she stands {direction}!"
     ],
     death: [
       "The spotted lynx crumples to the ground and dies.",
-      "The spotted lynx lets out a final caterwaul and dies.",
-      "The spotted lynx mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The spotted lynx mewls in pain as he slumps to the ground and licks his wounded left paw.",
-      "The spotted lynx mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The spotted lynx mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The spotted lynx mewls in pain as she slumps to the ground and licks her wounded left paw.",
-      "The spotted lynx mewls in pain as she slumps to the ground and licks her wounded right paw."
+      "The spotted lynx lets out a final caterwaul and dies."
     ],
     decay: [
       "A spotted lynx decays into a compost of fangs, fur and claws."

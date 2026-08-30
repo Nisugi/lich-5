@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -64,7 +66,7 @@
     melee: (12..29),
     ranged: 9,
     bolt: 9,
-    udf: (77..80),
+    udf: (63..80),
     bar_td: 18,
     cle_td: 18,
     emp_td: 18,
@@ -105,11 +107,7 @@
     death: [
       "The leaper collapses to the ground, emits a final snarl, and dies.",
       "The leaper twitches and dies.",
-      "The leaper collapses to the ground, emits a final silent snarl, and dies.",
-      "A leaper goes limp as it is rendered unconscious!",
-      "The leaper growls as it slumps to the ground and licks at its wounded left foreleg.",
-      "The leaper growls as it slumps to the ground and licks at its wounded left claw.",
-      "The leaper growls as it slumps to the ground and licks at its wounded right foreleg."
+      "The leaper collapses to the ground, emits a final silent snarl, and dies."
     ],
     decay: [
       "A leaper decays into a pile of hair and bone."

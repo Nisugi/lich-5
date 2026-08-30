@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
@@ -80,20 +82,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: 297,
-    ranged: nil,
+    melee: (229..297),
+    ranged: (207..219),
     bolt: 309,
     udf: (238..309),
     bar_td: nil,
     cle_td: (149..159),
-    emp_td: (148..154),
+    emp_td: (148..157),
     pal_td: (133..136),
-    ran_td: nil,
+    ran_td: (116..125),
     sor_td: (155..161),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
-    mjs_td: nil,
+    mje_td: 163,
+    mne_td: 163,
+    mjs_td: (148..153),
     mns_td: (148..153),
     mnm_td: (143..150),
     defensive_spells: [
@@ -133,12 +135,9 @@
       "A swamp hag hobbles {direction}."
     ],
     death: [
-      "A swamp hag goes limp as she is rendered unconscious!",
       "The swamp hag slumps to the ground."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the swamp hag's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [],

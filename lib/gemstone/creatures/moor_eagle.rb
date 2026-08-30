@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -57,20 +59,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (171..198),
-    ranged: 173,
-    bolt: nil,
+    melee: (171..213),
+    ranged: (143..203),
+    bolt: (143..203),
     udf: (196..238),
     bar_td: 109,
     cle_td: (118..127),
-    emp_td: (117..127),
+    emp_td: (117..130),
     pal_td: (105..114),
-    ran_td: nil,
+    ran_td: (105..111),
     sor_td: (125..134),
     wiz_td: nil,
     mje_td: 134,
     mne_td: 134,
-    mjs_td: nil,
+    mjs_td: (113..121),
     mns_td: (113..121),
     mnm_td: (105..111),
     defensive_spells: [],
@@ -99,12 +101,10 @@
       "A moor eagle flies {direction}."
     ],
     death: [
-      "A moor eagle goes limp as it is rendered unconscious!",
       "The moor eagle slumps to the ground."
     ],
     decay: [
-      "The moor eagle decays into a pile of feathers.",
-      "Acid dissolves connecting cartilage, freeing the moor eagle's ribs to move independently."
+      "The moor eagle decays into a pile of feathers."
     ],
     search: [],
     spell_prep: [],

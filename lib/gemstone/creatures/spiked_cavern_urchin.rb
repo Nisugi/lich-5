@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Living",
     "Boss"
@@ -52,10 +54,10 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (62..92),
-    ranged: 62,
-    bolt: 62,
-    udf: (125..139),
+    melee: (62..100),
+    ranged: (62..80),
+    bolt: (62..80),
+    udf: (105..139),
     bar_td: 51,
     cle_td: (51..57),
     emp_td: (51..59),
@@ -63,9 +65,9 @@
     ran_td: (45..54),
     sor_td: (48..57),
     wiz_td: nil,
-    mje_td: 54,
-    mne_td: 51,
-    mjs_td: nil,
+    mje_td: (51..54),
+    mne_td: (51..54),
+    mjs_td: (48..57),
     mns_td: (48..57),
     mnm_td: (51..54),
     defensive_spells: [],
@@ -91,12 +93,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [
-      "A spiked cavern urchin goes limp as it is rendered unconscious!"
-    ],
+    death: [],
     decay: [
       "Spines litter the ground as the cavern urchin crumbles into a pile of splinters and skin.",
-      "A spiked cavern urchin simply withers away, bits of grayish dust scattered about in its wake."
+      "A spiked cavern urchin simply withers away, bits of grayish dust scattered about in its wake.",
     ],
     search: [],
     spell_prep: [],

@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Extraplanar"
@@ -37,7 +39,7 @@
       },
       {
         name: "Twisted crystal-tipped staff",
-        as: 428
+        as: (408..428)
       }
     ],
     bolt_spells: [
@@ -99,21 +101,21 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: (386..605),
+    melee: (364..605),
     ranged: (369..413),
     bolt: (364..421),
-    udf: (522..579),
+    udf: (506..579),
     bar_td: (379..391),
     cle_td: (391..409),
     emp_td: (397..405),
     pal_td: (348..351),
-    ran_td: nil,
+    ran_td: (353..356),
     sor_td: (411..436),
     wiz_td: nil,
-    mje_td: 440,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (376..398),
+    mje_td: (440..498),
+    mne_td: (440..498),
+    mjs_td: 420,
+    mns_td: 420,
     mnm_td: (355..357),
     defensive_spells: [
       "Elemental Defense I (401)",
@@ -150,16 +152,15 @@
     description: [
       "The Ithzir adept carries a bearing of absolute confidence, his piercing, pupil-less green eyes shrewdly taking in his surroundings. The Ithzir adept is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The adept wears a crisply-cut, silvery-blue tunic with high shoulders and a deep vee-neck. Emblazoned on the right breast of the tunic is a single green eye."
     ],
-    arrival: [
-      "An Ithzir initiate strides in, her hands clasped before her.",
-      "An Ithzir initiate strides in, his hands clasped before him."
+    arrival: [],
+    flee: [
+      "An Ithzir adept walks {direction}.",
+      "An Ithzir adept limps {direction}."
     ],
-    flee: [],
     death: [
-      "An Ithzir adept goes limp as she is rendered unconscious!",
       "The Ithzir adept vainly struggles to rise, then goes still.",
-      "An Ithzir adept's body shimmers slightly, then fades from view like a dissipating phantom.",
-      "Just as you incant, the Ithzir adept shimmers and fades away, leaving you gesturing at nothingness!"
+      "Just as you incant, the Ithzir adept shimmers and fades away, leaving you gesturing at nothingness!",
+      "Just as you move to cast, the Ithzir adept shimmers and fades away, leaving you gesturing at nothingness!"
     ],
     decay: [
       "The crystal crumbles into a fine blue powder that sifts through the adept's fingers."
@@ -169,8 +170,6 @@
     attack: [
       "An Ithzir adept swings {weapon} at you!",
       "An Ithzir adept thrusts both palms toward you!",
-      "An Ithzir initiate places one palm on ithzir adept chest, and raises the other toward you!",
-      "An Ithzir seer suddenly opens ithzir adept eyes and stares directly at you!"
     ],
     bite: [],
     claw: [],

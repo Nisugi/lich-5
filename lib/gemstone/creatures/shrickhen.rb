@@ -10,17 +10,19 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead",
     "Magical"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 6,
   height: 5,
   size: "medium",
   areas: [
@@ -41,7 +43,7 @@
       },
       {
         name: "Severed shrickhen arm",
-        as: 50
+        as: (50..411)
       }
     ],
     bolt_spells: [],
@@ -68,20 +70,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (327..450),
-    ranged: 265,
-    bolt: 285,
-    udf: (457..648),
+    melee: (260..450),
+    ranged: (227..294),
+    bolt: (227..294),
+    udf: (397..648),
     bar_td: (281..285),
     cle_td: (295..320),
     emp_td: (296..303),
     pal_td: (268..277),
-    ran_td: nil,
+    ran_td: (260..270),
     sor_td: (306..338),
     wiz_td: nil,
     mje_td: 344,
     mne_td: nil,
-    mjs_td: nil,
+    mjs_td: (290..315),
     mns_td: (290..315),
     mnm_td: (245..253),
     defensive_spells: [
@@ -114,16 +116,10 @@
     death: [
       "The shrickhen slumps to the ground."
     ],
-    decay: [
-      "Acid dissolves the knee ligaments.  The shrickhen's tibia passes his femur in a very unpleasant manner!"
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [
-      "A moulis bud rolls into a ball and flings shrickhen at you!",
-      "A moulis scraping rolls into a ball and flings shrickhen at you!",
-      "A moulis sprout rolls into a ball and flings shrickhen at you!",
-      "A moulis stalk rolls into a ball and flings shrickhen at you!",
       "A shrickhen throws {weapon} at you!"
     ],
     bite: [

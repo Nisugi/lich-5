@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 145,
-  speed: nil,
+  speed: 8,
   height: 7,
   size: "large",
   areas: [
@@ -70,9 +72,9 @@
   defense_attributes: {
     asg: "14",
     immunities: [],
-    melee: (49..151),
-    ranged: 59,
-    bolt: 59,
+    melee: (41..151),
+    ranged: (49..59),
+    bolt: (49..59),
     udf: 211,
     bar_td: 48,
     cle_td: 48,
@@ -83,7 +85,7 @@
     wiz_td: nil,
     mje_td: 48,
     mne_td: 48,
-    mjs_td: nil,
+    mjs_td: (48..60),
     mns_td: (48..60),
     mnm_td: 48,
     defensive_spells: [],
@@ -122,7 +124,8 @@
     ],
     death: [
       "The ghoul master falls to the ground motionless.",
-      "The ghoul master screams evilly one last time and goes still."
+      "The ghoul master screams evilly one last time and goes still.",
+      "Beautiful shot pierces both lungs, the ghoul master makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A ghoul master turns to dust.",

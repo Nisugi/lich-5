@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -45,6 +47,10 @@
       {
         name: "Stomp",
         as: 76
+      },
+      {
+        name: "Unknown",
+        as: 76
       }
     ],
     bolt_spells: [],
@@ -58,9 +64,9 @@
     asg: "5N",
     immunities: [],
     melee: (9..33),
-    ranged: 17,
-    bolt: 15,
-    udf: (72..74),
+    ranged: (15..17),
+    bolt: (15..17),
+    udf: (56..76),
     bar_td: 12,
     cle_td: 12,
     emp_td: 12,
@@ -101,11 +107,7 @@
     death: [
       "The spotted leaper collapses to the ground, emits a final snarl, and dies.",
       "The spotted leaper twitches and dies.",
-      "The spotted leaper collapses to the ground, emits a final silent snarl, and dies.",
-      "The spotted leaper growls as it slumps to the ground and licks at its wounded right claw.",
-      "The spotted leaper growls as it slumps to the ground and licks at its wounded right foreleg.",
-      "The spotted leaper growls as it slumps to the ground and licks at its wounded left foreleg.",
-      "The spotted leaper growls as it slumps to the ground and licks at its wounded left claw."
+      "The spotted leaper collapses to the ground, emits a final silent snarl, and dies."
     ],
     decay: [
       "A spotted leaper decays into a pile of hair and bone."

@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
@@ -54,21 +56,21 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: (192..352),
-    ranged: nil,
-    bolt: 196,
+    melee: (187..352),
+    ranged: (155..295),
+    bolt: (155..295),
     udf: (281..453),
     bar_td: 177,
-    cle_td: 214,
+    cle_td: (193..214),
     emp_td: (191..197),
     pal_td: (164..173),
-    ran_td: nil,
+    ran_td: (164..170),
     sor_td: (194..214),
     wiz_td: nil,
-    mje_td: 215,
-    mne_td: 213,
-    mjs_td: nil,
-    mns_td: (182..191),
+    mje_td: (213..215),
+    mne_td: (213..215),
+    mjs_td: 248,
+    mns_td: 248,
     mnm_td: (159..168),
     defensive_spells: [],
     defensive_abilities: [],
@@ -101,11 +103,9 @@
       "A tomb troll limps {direction}."
     ],
     death: [
-      "A tomb troll goes limp as he is rendered unconscious!",
-      "A tomb troll goes limp as she is rendered unconscious!",
       "A low sigh fills the air and the tomb troll fades to nothing.",
       "A tomb troll blinks in astonishment, then collapses in a motionless heap.",
-      "The tomb troll slumps to the ground."
+      "Beautiful shot pierces both lungs, the tomb troll makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The tomb troll's left leg crumbles briefly and explodes in a shower of gore."
@@ -113,8 +113,7 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A flesh golem pounds at you with tomb troll huge swollen right fist!",
-      "A tomb troll swings {weapon} at you!"
+      "A tomb troll swings {weapon} at you!",
     ],
     bite: [],
     claw: [],

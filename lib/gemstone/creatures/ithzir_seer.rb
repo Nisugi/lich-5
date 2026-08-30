@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Extraplanar"
@@ -37,7 +39,11 @@
       },
       {
         name: "Twisted crystal-tipped staff",
-        as: 411
+        as: (411..499)
+      },
+      {
+        name: "Gleaming crystal-edged broadsword",
+        as: 341
       }
     ],
     bolt_spells: [
@@ -109,7 +115,7 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: (363..591),
+    melee: (308..591),
     ranged: 279,
     bolt: (369..386),
     udf: (408..540),
@@ -117,12 +123,12 @@
     cle_td: (371..431),
     emp_td: (414..423),
     pal_td: (357..360),
-    ran_td: nil,
+    ran_td: (360..363),
     sor_td: (431..445),
     wiz_td: nil,
     mje_td: (450..459),
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: (450..459),
+    mjs_td: (363..423),
     mns_td: (363..423),
     mnm_td: (380..386),
     defensive_spells: [
@@ -169,18 +175,14 @@
     ],
     death: [
       "The Ithzir seer vainly struggles to rise, then goes still.",
-      "An Ithzir seer's body shimmers slightly, then fades from view like a dissipating phantom.",
       "Just as you incant, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!",
       "Just as you cast, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!"
     ],
-    decay: [
-      "Acid dissolves the knee ligaments.  The Ithzir seer's tibia passes his femur in a very unpleasant manner!",
-      "Acid dissolves connecting cartilage, freeing the Ithzir seer's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [
-      "An Ithzir seer suddenly opens ithzir seer eyes and stares directly at you!",
+      "An Ithzir seer suddenly opens {pronoun} eyes and stares directly at you!",
       "An Ithzir seer swings {weapon} at you!",
       "An Ithzir seer throws {weapon} at you!",
       "The Ithzir seer points at you."

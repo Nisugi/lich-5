@@ -11,15 +11,17 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: false,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 170,
-  speed: nil,
+  speed: 5,
   height: 1,
   size: "small",
   areas: [
@@ -53,9 +55,9 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (132..142),
-    ranged: nil,
-    bolt: 120,
+    melee: (128..142),
+    ranged: 130,
+    bolt: (120..130),
     udf: 140,
     bar_td: nil,
     cle_td: 54,
@@ -66,8 +68,8 @@
     wiz_td: nil,
     mje_td: 54,
     mne_td: 54,
-    mjs_td: nil,
-    mns_td: 54,
+    mjs_td: 100,
+    mns_td: 100,
     mnm_td: 54,
     defensive_spells: [],
     defensive_abilities: [],
@@ -77,7 +79,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye",
+    "a completely severed left leg"
+  ],
   treasure: {
     coins: false,
     magic_items: false,
@@ -94,8 +100,7 @@
     flee: [],
     death: [
       "The greenwing hornet falls back into a heap and dies.",
-      "The greenwing hornet flutters its wings one last time and dies.",
-      "A greenwing hornet goes limp as it is rendered unconscious!"
+      "The greenwing hornet flutters its wings one last time and dies."
     ],
     decay: [
       "A greenwing hornet decays into compost."

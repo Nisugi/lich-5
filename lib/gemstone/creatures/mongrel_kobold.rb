@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 80,
-  speed: nil,
+  speed: 8,
   height: 3,
   size: "small",
   areas: [
@@ -57,9 +59,9 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (29..97),
-    ranged: (32..33),
-    bolt: (32..33),
+    melee: (28..97),
+    ranged: (15..60),
+    bolt: (15..60),
     udf: (61..126),
     bar_td: 12,
     cle_td: 12,
@@ -70,8 +72,8 @@
     wiz_td: nil,
     mje_td: 12,
     mne_td: 12,
-    mjs_td: nil,
-    mns_td: 12,
+    mjs_td: (3..12),
+    mns_td: (3..12),
     mnm_td: 12,
     defensive_spells: [],
     defensive_abilities: [],
@@ -112,7 +114,8 @@
     ],
     decay: [
       "A small, green cloud of smelly gas rises from the body of a mongrel kobold as she decays into compost.",
-      "A small, green cloud of smelly gas rises from the body of a mongrel kobold as he decays into compost."
+      "A small, green cloud of smelly gas rises from the body of a mongrel kobold as he decays into compost.",
+      "The mongrel kobold's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

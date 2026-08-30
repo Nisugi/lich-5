@@ -10,10 +10,12 @@
   undead: false,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -45,21 +47,21 @@
   defense_attributes: {
     asg: "11N",
     immunities: [],
-    melee: (76..130),
-    ranged: nil,
-    bolt: nil,
+    melee: (67..130),
+    ranged: (65..72),
+    bolt: (65..72),
     udf: 164,
     bar_td: 54,
     cle_td: (51..54),
     emp_td: (54..62),
     pal_td: (48..57),
-    ran_td: nil,
+    ran_td: (54..60),
     sor_td: 54,
     wiz_td: nil,
     mje_td: 54,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (51..54),
+    mne_td: 54,
+    mjs_td: 81,
+    mns_td: 81,
     mnm_td: (51..60),
     defensive_spells: [],
     defensive_abilities: [],
@@ -89,12 +91,8 @@
     death: [
       "A bighorn sheep collapses, his head dropping heavily to the ground as he goes still.",
       "A bighorn sheep collapses, her head dropping heavily to the ground as she goes still.",
-      "The bighorn sheep snorts loudly as he slumps to the ground and cradles his wounded right foreleg.",
       "A bighorn sheep rolls over, his head dropping heavily to the ground as he goes still.",
-      "The bighorn sheep snorts loudly as she slumps to the ground and cradles her wounded left foreleg.",
-      "A bighorn sheep rolls over, her head dropping heavily to the ground as she goes still.",
-      "The bighorn sheep snorts loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The bighorn sheep snorts loudly as he slumps to the ground and cradles his wounded left foreleg."
+      "A bighorn sheep rolls over, her head dropping heavily to the ground as she goes still."
     ],
     decay: [
       "A bighorn sheep decays into a pile of fur and bone."

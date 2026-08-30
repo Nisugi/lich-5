@@ -12,8 +12,10 @@
   bones: false,
   witherable: false,
   sympathy: true,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Magical"
   ],
@@ -40,7 +42,7 @@
       },
       {
         name: "Strike",
-        as: 281
+        as: (234..281)
       }
     ],
     bolt_spells: [
@@ -58,20 +60,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (123..265),
+    melee: (120..265),
     ranged: (145..178),
     bolt: (145..178),
     udf: (179..324),
     bar_td: (172..211),
-    cle_td: (180..189),
-    emp_td: 173,
-    pal_td: (150..155),
-    ran_td: nil,
+    cle_td: (180..196),
+    emp_td: (173..189),
+    pal_td: (158..167),
+    ran_td: 160,
     sor_td: (191..200),
     wiz_td: nil,
     mje_td: (206..212),
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: (206..212),
+    mjs_td: (177..186),
     mns_td: (177..186),
     mnm_td: (155..165),
     defensive_spells: [],

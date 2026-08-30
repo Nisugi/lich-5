@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: nil,
@@ -31,22 +33,26 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Lash"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "2",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
+    melee: (691..724),
+    ranged: (597..605),
+    bolt: (597..605),
     udf: nil,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: 458,
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,

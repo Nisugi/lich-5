@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -53,18 +55,18 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (137..149),
+    melee: (124..149),
     ranged: nil,
     bolt: 143,
-    udf: 141,
+    udf: (111..143),
     bar_td: 97,
     cle_td: 99,
     emp_td: 101,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: 97,
     sor_td: 104,
     wiz_td: nil,
-    mje_td: 106,
+    mje_td: (101..107),
     mne_td: (101..107),
     mjs_td: nil,
     mns_td: nil,
@@ -77,7 +79,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye",
+    "a completely severed right paw"
+  ],
   treasure: {
     coins: false,
     magic_items: false,
@@ -93,10 +99,7 @@
     arrival: [],
     flee: [],
     death: [
-      "The night hound lets out one last whimpering sigh of dark and shadowy whirlwinds and dies.",
-      "The night hound yelps loudly as it slumps to the ground and licks its wounded left foreleg.",
-      "The night hound yelps loudly as it slumps to the ground and licks its wounded right paw.",
-      "The night hound yelps loudly as it slumps to the ground and licks its wounded right foreleg."
+      "The night hound lets out one last whimpering sigh of dark and shadowy whirlwinds and dies."
     ],
     decay: [
       "A night hound decays into a compost of fur and fangs."

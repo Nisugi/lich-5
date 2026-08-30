@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
+  witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -49,21 +51,21 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: (49..65),
-    ranged: nil,
+    melee: (48..65),
+    ranged: 36,
     bolt: 50,
-    udf: nil,
+    udf: 77,
     bar_td: 54,
     cle_td: (53..54),
     emp_td: 54,
-    pal_td: nil,
+    pal_td: (51..54),
     ran_td: nil,
     sor_td: 54,
     wiz_td: nil,
     mje_td: 54,
     mne_td: 54,
-    mjs_td: nil,
-    mns_td: 54,
+    mjs_td: (48..54),
+    mns_td: (48..54),
     mnm_td: (53..54),
     defensive_spells: [],
     defensive_abilities: [],
@@ -95,7 +97,8 @@
     flee: [],
     death: [
       "The shelfae warlord falls to the ground and dies.",
-      "The shelfae warlord screams one last time and dies."
+      "The shelfae warlord screams one last time and dies.",
+      "Beautiful shot pierces both lungs, the shelfae warlord makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A warlord crumbles into dust."

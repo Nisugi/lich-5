@@ -10,15 +10,17 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 130,
+  max_hp: 134,
   speed: nil,
   height: 3,
   size: "small",
@@ -33,6 +35,10 @@
       {
         name: "Handaxe",
         as: 171
+      },
+      {
+        name: "Unknown",
+        as: 150
       }
     ],
     bolt_spells: [],
@@ -50,19 +56,19 @@
     asg: "8",
     immunities: [],
     melee: (156..198),
-    ranged: nil,
+    ranged: (15..108),
     bolt: 135,
     udf: 172,
     bar_td: nil,
     cle_td: (42..48),
-    emp_td: (38..46),
+    emp_td: (38..48),
     pal_td: (42..52),
     ran_td: (42..45),
     sor_td: 45,
     wiz_td: nil,
     mje_td: (44..55),
     mne_td: (44..55),
-    mjs_td: nil,
+    mjs_td: (39..48),
     mns_td: (39..48),
     mnm_td: (39..45),
     defensive_spells: [
@@ -106,12 +112,9 @@
     ],
     death: [
       "The gnoll ranger falls to the ground and dies.",
-      "The gnoll ranger rolls over and dies.",
-      "A gnoll ranger goes limp as she is rendered unconscious!"
+      "The gnoll ranger rolls over and dies."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the gnoll ranger's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [],

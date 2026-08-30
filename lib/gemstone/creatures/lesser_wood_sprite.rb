@@ -12,8 +12,10 @@
   bones: true,
   witherable: nil,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Magical"
@@ -37,6 +39,10 @@
       },
       {
         name: "Composite bow"
+      },
+      {
+        name: "Impale",
+        as: 198
       }
     ],
     bolt_spells: [],
@@ -56,10 +62,10 @@
   defense_attributes: {
     asg: "9N",
     immunities: [],
-    melee: (239..286),
+    melee: (190..286),
     ranged: nil,
     bolt: nil,
-    udf: (196..296),
+    udf: (195..316),
     bar_td: 55,
     cle_td: nil,
     emp_td: (140..150),
@@ -67,10 +73,10 @@
     ran_td: nil,
     sor_td: (74..82),
     wiz_td: nil,
-    mje_td: 49,
-    mne_td: 109,
-    mjs_td: nil,
-    mns_td: (85..94),
+    mje_td: (49..109),
+    mne_td: (49..109),
+    mjs_td: (111..117),
+    mns_td: (111..117),
     mnm_td: (117..125),
     defensive_spells: [
       "Lesser Shroud (120)",
@@ -117,18 +123,17 @@
     ],
     death: [
       "The lesser wood sprite twitches violently, then dies.",
-      "A lesser wood sprite goes limp as he is rendered unconscious!",
       "The lesser wood sprite's eyes grow dim as her lifeforce fades away.",
       "The lesser wood sprite's eyes grow dim as his lifeforce fades away."
     ],
     decay: [
       "A lesser wood sprite crumbles into a pile of dry splinters.",
-      "The lesser wood sprite's left leg crumbles briefly and explodes in a shower of gore."
+      "The lesser wood sprite's left leg crumbles briefly and explodes in a shower of gore.",
     ],
     search: [],
     spell_prep: [],
     attack: [
-      "A lesser wood sprite thrusts with a wood-gripped estoc at you!"
+      "A lesser wood sprite thrusts with a wood-gripped estoc at you!",
     ],
     bite: [],
     claw: [],

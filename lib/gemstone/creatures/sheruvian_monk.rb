@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 311,
-  speed: nil,
+  speed: 5,
   height: 6,
   size: "medium",
   areas: [
@@ -36,7 +38,7 @@
     physical_attacks: [
       {
         name: "Jeddart-axe",
-        as: 314
+        as: (239..314)
       },
       {
         name: "Lunge",
@@ -57,20 +59,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: 340,
-    ranged: nil,
-    bolt: 260,
+    melee: (255..340),
+    ranged: (250..260),
+    bolt: (250..260),
     udf: 276,
     bar_td: 143,
     cle_td: 156,
     emp_td: 231,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (130..133),
+    ran_td: 133,
     sor_td: (164..231),
     wiz_td: nil,
     mje_td: 172,
     mne_td: 172,
-    mjs_td: nil,
+    mjs_td: 231,
     mns_td: 231,
     mnm_td: 123,
     defensive_spells: [],
@@ -102,9 +104,9 @@
     ],
     flee: [],
     death: [
-      "A Sheruvian monk goes limp as it is rendered unconscious!",
       "The Sheruvian monk screams emotionlessly one last time and lies still.",
-      "The Sheruvian monk falls to the ground and lies still."
+      "The Sheruvian monk falls to the ground and lies still.",
+      "Beautiful shot pierces both lungs, the Sheruvian monk makes a wheezing noise, and drops dead!"
     ],
     decay: [],
     search: [],

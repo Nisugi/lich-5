@@ -13,12 +13,14 @@
   witherable: false,
   sympathy: true,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Magical"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 615,
   speed: nil,
   height: 8,
   size: "large",
@@ -63,7 +65,11 @@
         name: "Earthen Fury (917)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [
       {
         name: "Stone-spitting"
@@ -76,20 +82,20 @@
     immunities: [
       "Stun"
     ],
-    melee: 59,
+    melee: (23..109),
     ranged: (63..103),
     bolt: nil,
     udf: (294..446),
     bar_td: nil,
     cle_td: (202..212),
-    emp_td: 203,
-    pal_td: nil,
+    emp_td: (203..213),
+    pal_td: (184..194),
     ran_td: nil,
     sor_td: (216..226),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
-    mjs_td: nil,
+    mje_td: 235,
+    mne_td: 235,
+    mjs_td: (203..213),
     mns_td: (203..213),
     mnm_td: (180..190),
     defensive_spells: [],
@@ -100,7 +106,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blinded left eye",
+    "a bruised right eye"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

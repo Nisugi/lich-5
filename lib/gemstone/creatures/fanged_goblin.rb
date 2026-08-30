@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -37,6 +39,10 @@
       {
         name: "Spear",
         as: (36..46)
+      },
+      {
+        name: "Unknown",
+        as: 36
       }
     ],
     bolt_spells: [],
@@ -49,10 +55,10 @@
   defense_attributes: {
     asg: "7",
     immunities: [],
-    melee: (5..68),
-    ranged: -17,
-    bolt: 0,
-    udf: (68..116),
+    melee: (-11..68),
+    ranged: (-26..4),
+    bolt: (-26..4),
+    udf: (57..116),
     bar_td: 6,
     cle_td: 6,
     emp_td: 6,
@@ -62,7 +68,7 @@
     wiz_td: nil,
     mje_td: 6,
     mne_td: 6,
-    mjs_td: nil,
+    mjs_td: 6,
     mns_td: 6,
     mnm_td: 6,
     defensive_spells: [],

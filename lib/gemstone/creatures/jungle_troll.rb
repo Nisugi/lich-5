@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 310,
-  speed: nil,
+  speed: 7,
   height: 9,
   size: "large",
   areas: [
@@ -65,20 +67,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 116,
-    ranged: 91,
-    bolt: 91,
+    melee: (89..119),
+    ranged: (89..116),
+    bolt: (89..116),
     udf: 157,
     bar_td: nil,
     cle_td: 97,
     emp_td: 99,
     pal_td: (90..93),
-    ran_td: nil,
+    ran_td: 93,
     sor_td: 99,
     wiz_td: nil,
     mje_td: 98,
     mne_td: 98,
-    mjs_td: nil,
+    mjs_td: 99,
     mns_td: 99,
     mnm_td: (78..85),
     defensive_spells: [
@@ -113,11 +115,9 @@
     flee: [
       "A jungle troll runs {direction}."
     ],
-    death: [
-      "A jungle troll goes limp as she is rendered unconscious!"
-    ],
+    death: [],
     decay: [
-      "A jungle troll decays into compost."
+      "A jungle troll decays into compost.",
     ],
     search: [],
     spell_prep: [],

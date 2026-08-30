@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
+  witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: false,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "corporeal undead",
     "Boss"
@@ -55,20 +57,20 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: (242..246),
-    ranged: nil,
-    bolt: 210,
-    udf: (234..269),
+    melee: (174..250),
+    ranged: (140..182),
+    bolt: (140..210),
+    udf: (197..269),
     bar_td: (96..107),
-    cle_td: 114,
+    cle_td: 104,
     emp_td: (105..113),
     pal_td: (86..95),
-    ran_td: 105,
+    ran_td: (86..105),
     sor_td: (112..120),
     wiz_td: nil,
     mje_td: nil,
     mne_td: (115..126),
-    mjs_td: nil,
+    mjs_td: (105..115),
     mns_td: (105..115),
     mnm_td: (75..84),
     defensive_spells: [
@@ -104,10 +106,14 @@
     flee: [
       "A frenzied monk seethes in pain as he limps {direction}."
     ],
-    death: [],
+    death: [
+      "Beautiful shot pierces both lungs, the frenzied monk makes a wheezing noise, and drops dead!"
+    ],
     decay: [
       "A frenzied monk dissolves into a foul-smelling miasma.",
-      "A nebulous frenzied monk dissolves into a foul-smelling miasma."
+      "A nebulous frenzied monk dissolves into a foul-smelling miasma.",
+      "An unyielding frenzied monk dissolves into a foul-smelling miasma.",
+      "An adroit frenzied monk dissolves into a foul-smelling miasma."
     ],
     search: [],
     spell_prep: [],

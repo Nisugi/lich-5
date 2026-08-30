@@ -11,16 +11,18 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
-  max_hp: 300,
-  speed: "6",
+  max_hp: 360,
+  speed: 6,
   height: 5,
   size: "medium",
   areas: [
@@ -91,20 +93,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (223..402),
-    ranged: 205,
-    bolt: 195,
-    udf: (403..431),
+    melee: (192..402),
+    ranged: (198..260),
+    bolt: (195..260),
+    udf: (275..431),
     bar_td: (160..163),
     cle_td: (178..187),
     emp_td: (168..177),
     pal_td: (152..161),
-    ran_td: nil,
+    ran_td: (152..158),
     sor_td: (177..195),
     wiz_td: nil,
     mje_td: nil,
     mne_td: (198..201),
-    mjs_td: 177,
+    mjs_td: (168..183),
     mns_td: (168..183),
     mnm_td: (138..147),
     defensive_spells: [],
@@ -137,8 +139,7 @@
     ],
     death: [
       "The kiramon defender falls back into a heap and dies.",
-      "The kiramon defender clicks one last time and dies.",
-      "A kiramon defender goes limp as it is rendered unconscious!"
+      "The kiramon defender clicks one last time and dies."
     ],
     decay: [
       "A kiramon defender crumbles away into dust."

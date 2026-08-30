@@ -11,9 +11,11 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead",
     "Extraplanar"
@@ -33,11 +35,11 @@
     physical_attacks: [
       {
         name: "Scythe",
-        as: (418..493)
+        as: (370..493)
       },
       {
         name: "Scorched black ball and chain",
-        as: 501
+        as: (404..501)
       }
     ],
     bolt_spells: [],
@@ -57,6 +59,9 @@
     maneuvers: [
       {
         name: "Point"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -66,19 +71,19 @@
     asg: "8N",
     immunities: [],
     melee: (270..520),
-    ranged: nil,
-    bolt: nil,
-    udf: (364..630),
+    ranged: (251..409),
+    bolt: (251..409),
+    udf: (360..630),
     bar_td: nil,
     cle_td: 407,
     emp_td: (419..428),
-    pal_td: 324,
-    ran_td: nil,
+    pal_td: 370,
+    ran_td: (329..332),
     sor_td: (379..442),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
+    mjs_td: 430,
     mns_td: 430,
     mnm_td: (321..327),
     defensive_spells: [

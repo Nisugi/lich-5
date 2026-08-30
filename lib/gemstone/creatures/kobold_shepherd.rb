@@ -10,15 +10,17 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 51,
+  max_hp: 53,
   speed: nil,
   height: 3,
   size: "small",
@@ -32,6 +34,10 @@
     physical_attacks: [
       {
         name: "Quarterstaff",
+        as: 50
+      },
+      {
+        name: "Unknown",
         as: 50
       }
     ],
@@ -60,9 +66,9 @@
     asg: "2",
     immunities: [],
     melee: (36..68),
-    ranged: (30..46),
-    bolt: (30..46),
-    udf: (71..76),
+    ranged: (3..61),
+    bolt: (3..61),
+    udf: (11..76),
     bar_td: nil,
     cle_td: (14..16),
     emp_td: (4..14),
@@ -70,9 +76,9 @@
     ran_td: 4,
     sor_td: (5..12),
     wiz_td: nil,
-    mje_td: 8,
-    mne_td: 3,
-    mjs_td: 14,
+    mje_td: (3..8),
+    mne_td: (3..8),
+    mjs_td: (4..14),
     mns_td: (4..14),
     mnm_td: 16,
     defensive_spells: [
@@ -123,6 +129,7 @@
     search: [],
     spell_prep: [],
     attack: [
+      "A kobold shepherd claps {pronoun} hands together in front of you!",
       "A kobold shepherd claps {pronoun} hands together in front of you!"
     ],
     bite: [],

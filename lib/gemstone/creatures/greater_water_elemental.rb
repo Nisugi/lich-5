@@ -10,18 +10,20 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: false,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Magical"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 399,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 12,
+  size: "large",
   areas: [
     {
       name: "Ruined Temple",
@@ -36,7 +38,7 @@
       },
       {
         name: "Fist",
-        as: 425
+        as: (425..500)
       }
     ],
     bolt_spells: [
@@ -62,6 +64,12 @@
     maneuvers: [
       {
         name: "Water blast"
+      },
+      {
+        name: "Charge"
+      },
+      {
+        name: "Repel"
       }
     ],
     special_abilities: [],
@@ -71,14 +79,14 @@
     asg: nil,
     immunities: [],
     melee: 348,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    ranged: (367..402),
+    bolt: (367..402),
+    udf: (579..799),
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (516..526),
+    emp_td: 343,
+    pal_td: (451..461),
+    ran_td: 432,
     sor_td: 534,
     wiz_td: nil,
     mje_td: nil,
@@ -115,14 +123,29 @@
     description: [
       "The water elemental's upper body is that of a humanoid, while its lower body forms a turbulent, watery vortex. The facial features of the elemental creature are vague and shifting, rippling with every contortion of its face. Sloshing and splashing noises accompany each movement of the water elemental, along with an odd gurgling."
     ],
-    arrival: [],
+    arrival: [
+      "A greater water elemental just arrived."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a golden topaz catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a black deathstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a white dreamstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a star sapphire catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a pink peridot catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a yellow zircon catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a smoky topaz catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a large white pearl catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a white opal catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a blue sapphire catches your eye as the water elemental gurgles eerily and collapses into the water."
+    ],
     search: [],
     spell_prep: [],
     attack: [
-      "A greater water elemental pounds at you with {pronoun} fist!"
+      "A greater water elemental pounds at you with {pronoun} fist!",
+      "A greater water elemental raises {pronoun} hands, palms outward toward you!"
     ],
     bite: [],
     claw: [],

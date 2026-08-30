@@ -10,13 +10,15 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 209,
+  max_hp: 255,
   speed: nil,
   height: 3,
   size: "large",
@@ -51,20 +53,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
+    melee: (38..152),
+    ranged: (-39..104),
+    bolt: (-39..104),
     udf: (125..160),
     bar_td: nil,
     cle_td: (48..54),
     emp_td: (29..59),
     pal_td: (45..54),
-    ran_td: nil,
+    ran_td: (42..55),
     sor_td: (48..54),
     wiz_td: nil,
     mje_td: 48,
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: 48,
+    mjs_td: (48..54),
     mns_td: (48..54),
     mnm_td: (45..54),
     defensive_spells: [],
@@ -89,24 +91,16 @@
       ""
     ],
     arrival: [
-      "A spectacled bear lumbers in!"
+      "A spectacled bear lumbers in!",
+      "A spectacled bear slowly lumbers in, growling in pain!"
     ],
     flee: [
-      "A spectacled bear lumbers {direction}."
+      "A spectacled bear lumbers {direction}.",
+      "A spectacled bear slowly lumbers {direction}, growling in pain."
     ],
     death: [
       "The spectacled bear collapses heavily into a heap on the ground and dies.",
-      "The spectacled bear lets out a blood-curdling roar and dies.",
-      "A spectacled bear goes limp as she is rendered unconscious!",
-      "A spectacled bear goes limp as he is rendered unconscious!",
-      "The spectacled bear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
-      "The spectacled bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
-      "The spectacled bear roars loudly as she slumps to the ground and licks her wounded left paw.",
-      "The spectacled bear roars loudly as she slumps to the ground and licks her wounded right paw.",
-      "The spectacled bear roars loudly as he slumps to the ground and licks his wounded left paw.",
-      "The spectacled bear roars loudly as he slumps to the ground and licks his wounded right foreleg.",
-      "The spectacled bear roars loudly as he slumps to the ground and licks his wounded right paw.",
-      "The spectacled bear roars loudly as she slumps to the ground and licks her wounded left foreleg."
+      "The spectacled bear lets out a blood-curdling roar and dies."
     ],
     decay: [
       "A spectacled bear decays into a compost of fangs, fur and claws."

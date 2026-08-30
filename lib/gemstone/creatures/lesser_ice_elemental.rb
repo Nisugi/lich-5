@@ -12,8 +12,10 @@
   bones: false,
   witherable: false,
   sympathy: true,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Magical"
@@ -36,7 +38,7 @@
       },
       {
         name: "Lash",
-        as: 301
+        as: (255..301)
       }
     ],
     bolt_spells: [
@@ -68,20 +70,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (297..386),
+    melee: (262..386),
     ranged: nil,
     bolt: (256..302),
-    udf: (340..416),
+    udf: (327..416),
     bar_td: nil,
     cle_td: (204..214),
     emp_td: (203..204),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (181..191),
+    ran_td: (163..168),
     sor_td: (216..223),
     wiz_td: nil,
     mje_td: (216..240),
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: (216..240),
+    mjs_td: (203..211),
     mns_td: (203..211),
     mnm_td: 187,
     defensive_spells: [

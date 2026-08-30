@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 16,
   height: 7,
   size: "medium",
   areas: [
@@ -61,10 +63,10 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: (222..438),
-    ranged: 240,
-    bolt: 240,
-    udf: (464..653),
+    melee: (217..438),
+    ranged: (213..271),
+    bolt: (213..271),
+    udf: (450..653),
     bar_td: (306..315),
     cle_td: 341,
     emp_td: (323..332),
@@ -73,9 +75,9 @@
     sor_td: 345,
     wiz_td: nil,
     mje_td: 364,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: 354,
+    mne_td: 364,
+    mjs_td: (360..366),
+    mns_td: (360..366),
     mnm_td: (258..264),
     defensive_spells: [],
     defensive_abilities: [],
@@ -85,7 +87,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a massive pitted iron pavis"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -108,12 +112,11 @@
       "The greater krynch shudders violently for a moment, then goes still."
     ],
     decay: [
-      "Tiny fissures quickly spread over a dead greater krynch, and it crumbles into rubble."
+      "Tiny fissures quickly spread over a dead greater krynch, and it crumbles into rubble.",
     ],
     search: [],
     spell_prep: [],
     attack: [
-      "A greater earth elemental pounds at you with greater krynch heavy earthen fists!",
       "A greater krynch pounds at you with {pronoun} fist!"
     ],
     bite: [],

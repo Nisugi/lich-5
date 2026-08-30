@@ -10,10 +10,12 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -66,10 +68,10 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: (215..305),
-    ranged: (215..291),
-    bolt: (215..291),
-    udf: (433..463),
+    melee: (205..355),
+    ranged: (165..294),
+    bolt: (165..294),
+    udf: (337..497),
     bar_td: 240,
     cle_td: (312..321),
     emp_td: 329,
@@ -77,8 +79,8 @@
     ran_td: 271,
     sor_td: (272..284),
     wiz_td: nil,
-    mje_td: 303,
-    mne_td: 298,
+    mje_td: (298..303),
+    mne_td: (298..303),
     mjs_td: nil,
     mns_td: 267,
     mnm_td: 266,
@@ -116,14 +118,7 @@
     ],
     death: [
       "The monstrous direwolf rolls over and dies.",
-      "The monstrous direwolf falls to the ground and dies.",
-      "The monstrous direwolf yelps loudly as he slumps to the ground and licks his wounded right foreleg.",
-      "The monstrous direwolf yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
-      "The monstrous direwolf yelps loudly as she slumps to the ground and licks her wounded left paw.",
-      "The monstrous direwolf yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
-      "The monstrous direwolf yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
-      "The monstrous direwolf yelps loudly as she slumps to the ground and licks her wounded right paw.",
-      "The monstrous direwolf yelps loudly as he slumps to the ground and licks his wounded left paw."
+      "The monstrous direwolf falls to the ground and dies."
     ],
     decay: [
       "A monstrous direwolf decays into a mound of fur and bone."

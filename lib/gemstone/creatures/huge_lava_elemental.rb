@@ -13,16 +13,18 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Magical"
   ],
   bcs: true,
   max_hp: nil,
-  speed: nil,
-  height: nil,
-  size: "",
+  speed: 7,
+  height: 15,
+  size: "huge",
   areas: [
     {
       name: "Elemental Confluence",
@@ -34,6 +36,14 @@
       {
         name: "Pound (double attack)",
         as: 450
+      },
+      {
+        name: "Molten fist",
+        as: (409..496)
+      },
+      {
+        name: "Roaring ball of fire",
+        as: 469
       }
     ],
     bolt_spells: [
@@ -63,7 +73,7 @@
     cle_td: 428,
     emp_td: 428,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: (352..387),
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -102,10 +112,15 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The lava elemental hardens into a chalky rock that quickly crumbles away into nothingness."
+    ],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A huge lava elemental pounds at you with a molten fist!",
+      "A huge lava elemental hurls {weapon} at you!"
+    ],
     bite: [],
     claw: [],
     info: {

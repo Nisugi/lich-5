@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
+  witherable: true,
+  sympathy: true,
   muggable: nil,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
-  max_hp: 210,
-  speed: nil,
+  max_hp: 215,
+  speed: 6,
   height: 4,
   size: "medium",
   areas: [
@@ -71,8 +73,8 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: (167..311),
-    ranged: nil,
+    melee: (150..311),
+    ranged: (153..164),
     bolt: (140..210),
     udf: (267..301),
     bar_td: 86,
@@ -84,7 +86,7 @@
     wiz_td: nil,
     mje_td: (96..101),
     mne_td: (96..101),
-    mjs_td: nil,
+    mjs_td: (82..89),
     mns_td: (82..89),
     mnm_td: (75..82),
     defensive_spells: [
@@ -100,7 +102,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some old tattered armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

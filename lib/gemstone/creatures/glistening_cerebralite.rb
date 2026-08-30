@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: false,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Living"
@@ -30,7 +32,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Barbed tentacle",
+        as: (176..410)
+      },
+      {
+        name: "Bladed forearms",
+        as: 476
+      }
+    ],
     bolt_spells: [
       {
         name: "Balefire (713)",
@@ -69,6 +80,9 @@
     maneuvers: [
       {
         name: "Tail Swipe"
+      },
+      {
+        name: "Lash"
       }
     ],
     special_abilities: [],
@@ -78,19 +92,19 @@
     asg: "12N",
     immunities: [],
     melee: (339..473),
-    ranged: nil,
-    bolt: 338,
-    udf: (407..514),
+    ranged: (331..339),
+    bolt: (331..339),
+    udf: (401..531),
     bar_td: (381..398),
-    cle_td: (425..434),
+    cle_td: (440..450),
     emp_td: (434..439),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (380..390),
+    ran_td: (368..376),
     sor_td: (442..446),
     wiz_td: nil,
-    mje_td: 449,
-    mne_td: 455,
-    mjs_td: nil,
+    mje_td: (403..455),
+    mne_td: (403..455),
+    mjs_td: (423..425),
     mns_td: (423..425),
     mnm_td: (320..327),
     defensive_spells: [
@@ -107,7 +121,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye",
+    "a reinforced dark steel kite shield"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -133,7 +151,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A glistening cerebralite focuses glistening cerebralite eye-stalks on you!"
+      "A glistening cerebralite focuses {pronoun} eye-stalks on you!",
+      "A glistening cerebralite lashes at you with {pronoun} barbed tentacle!",
     ],
     bite: [],
     claw: [],

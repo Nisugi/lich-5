@@ -8,18 +8,20 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: true,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 95,
-  speed: nil,
+  speed: 5,
   height: 6,
   size: "medium",
   areas: [
@@ -70,14 +72,14 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (-1..34),
+    melee: (-5..34),
     ranged: (4..17),
     bolt: (4..17),
-    udf: (53..67),
+    udf: (49..67),
     bar_td: 27,
     cle_td: 27,
     emp_td: 27,
-    pal_td: 27,
+    pal_td: (24..27),
     ran_td: 27,
     sor_td: 27,
     wiz_td: 27,
@@ -118,8 +120,7 @@
     ],
     death: [
       "The death dirge falls to the ground motionless.",
-      "The death dirge screams evilly one last time and goes still.",
-      "The death dirge slumps to the ground."
+      "The death dirge screams evilly one last time and goes still."
     ],
     decay: [
       "A death dirge turns to dust."

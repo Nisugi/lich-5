@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -105,9 +107,9 @@
     asg: "16N",
     immunities: [],
     melee: (256..268),
-    ranged: 395,
-    bolt: 395,
-    udf: (471..699),
+    ranged: (251..395),
+    bolt: (251..395),
+    udf: (470..699),
     bar_td: 336,
     cle_td: (364..373),
     emp_td: (354..363),
@@ -116,9 +118,9 @@
     sor_td: (373..382),
     wiz_td: nil,
     mje_td: 397,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (351..360),
+    mne_td: 397,
+    mjs_td: (351..366),
+    mns_td: (351..366),
     mnm_td: (280..289),
     defensive_spells: [
       "Divine Shield",
@@ -155,25 +157,21 @@
     arrival: [],
     flee: [],
     death: [
-      "An Illoke jarl's form goes limp as he falls unconscious.",
       "The Illoke jarl grumbles in pain one last time before lying still.",
       "The Illoke jarl shudders one last time before lying still.",
-      "An Illoke jarl slumps to the ground unconscious.",
       "Beautiful shot pierces both lungs, the Illoke jarl makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "An Illoke jarl cracks and collapses into a pile of craggy dark rock that rapidly disappears without a trace.",
-      "The Illoke jarl's left leg crumbles briefly and explodes in a shower of gore."
+      "The Illoke jarl's left leg crumbles briefly and explodes in a shower of gore.",
     ],
     search: [],
     spell_prep: [],
     attack: [
-      "A greater earth elemental pounds at you with illoke jarl heavy earthen fists!",
       "An Illoke jarl pounds at you with {pronoun} fist!",
       "An Illoke jarl stomps at you with {pronoun} foot!",
       "An Illoke jarl swings {weapon} at you!",
       "An Illoke jarl throws {weapon} at you!",
-      "An earth elemental pounds at you with illoke jarl heavy earthen fists!"
     ],
     bite: [],
     claw: [],

@@ -7,12 +7,14 @@
   family: "gigas",
   type: "biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -21,7 +23,7 @@
     }
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 981,
   speed: nil,
   height: 30,
   size: "huge",
@@ -33,7 +35,27 @@
       },
       {
         name: "spear",
-        as: (525..566)
+        as: (525..590)
+      },
+      {
+        name: "Charge",
+        as: 529
+      },
+      {
+        name: "Enormous tusks",
+        as: (529..538)
+      },
+      {
+        name: "Golden targe",
+        as: (536..590)
+      },
+      {
+        name: "Immense fel-hafted handaxe",
+        as: (540..566)
+      },
+      {
+        name: "Lunge",
+        as: (524..570)
       }
     ],
     bolt_spells: [],
@@ -45,6 +67,10 @@
       {
         name: "judgment (1630)",
         cs: (443..482)
+      },
+      {
+        name: "Shield Bash",
+        cs: 443
       }
     ],
     offensive_spells: [],
@@ -65,21 +91,21 @@
   defense_attributes: {
     asg: "17",
     immunities: [],
-    melee: (463..695),
-    ranged: (383..548),
-    bolt: nil,
-    udf: 621,
+    melee: (272..770),
+    ranged: (247..565),
+    bolt: (247..565),
+    udf: (490..878),
     bar_td: (377..380),
-    cle_td: nil,
-    emp_td: 411,
-    pal_td: nil,
-    ran_td: (311..341),
-    sor_td: nil,
+    cle_td: (387..476),
+    emp_td: (411..455),
+    pal_td: (362..371),
+    ran_td: (311..356),
+    sor_td: (428..438),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: 462,
-    mjs_td: nil,
-    mns_td: (396..408),
+    mje_td: (452..462),
+    mne_td: (452..462),
+    mjs_td: (390..408),
+    mns_td: (390..408),
     mnm_td: nil,
     defensive_spells: [
       {
@@ -100,7 +126,11 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "a gilded steel breastplate adorned with faint scrollwork",
+    "a gold-tipped heavy spear",
+    "a riveted golden targe"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -115,24 +145,28 @@
     arrival: [
       "A brawny gigas shield-maiden marches in with the grace of a seasoned warrior.",
       "A brawny gigas shield-maiden marches into the area, grim purpose written across {pronoun} face.",
-      "A brawny gigas shield-maiden rides a heavily armored battle mastodon in, swaying with every heavy footfall."
     ],
     flee: [
       "Warily scanning the area for threats, a brawny gigas shield-maiden marches {direction}.",
       "Keeping {pronoun} head held high in spite of {pronoun} wounds, a brawny gigas shield-maiden struggles {direction}.",
-      "A brawny gigas shield-maiden just went into a thatched timber smithy.", # need to deal with portals
-      "A brawny gigas shield-maiden rides a heavily armored battle mastodon {direction}, the mastodon limping with every great step."
+      "A brawny gigas shield-maiden just went into a thatched timber smithy.",
+      "Amber radiance flickers around a brawny gigas shield-maiden's corpse, swelling into a golden pillar of light that is blinding to behold.  When the brilliance retreats, the shield-maiden's body is no more."
     ],
     spell_prep: [
       "A brawny gigas shield-maiden raises a fist to the heavens as {pronoun} eyes begin to glow like molten gold."
     ],
     attack: [
-      "In a display of martial precision, a brawny gigas shield-maiden thrusts with a gold-tipped heavy spear at you!"
+      "In a display of martial precision, a brawny gigas shield-maiden thrusts with a gold-tipped heavy spear at you!",
+      "A brawny gigas shield-maiden launches a quick bash with {pronoun} golden targe at you!",
+      "A brawny gigas shield-maiden rushes at you in a thundering charge!",
+      "A brawny gigas shield-maiden slams a fist down at you with earthshattering force!",
+      "In a display of martial precision, a brawny gigas shield-maiden thrusts with an immense fel-hafted handaxe at you!"
     ],
     bite: [],
     claw: [],
     death: [
-      "A plaintive look passes across a brawny gigas shield-maiden's eyes like a fleeting shadow as {pronoun} goes still in death."
+      "A plaintive look passes across a brawny gigas shield-maiden's eyes like a fleeting shadow as {pronoun} goes still in death.",
+      "A plaintive look passes across a brawny gigas shield-maiden's eyes like a fleeting shadow as she goes still in death.",
     ],
     decay: [
       "Rot consumes a brawny gigas shield-maiden's body, leaving little behind."

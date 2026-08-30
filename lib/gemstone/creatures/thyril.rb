@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 51,
-  speed: nil,
+  speed: 15,
   height: 2,
   size: "small",
   areas: [
@@ -44,6 +46,10 @@
       },
       {
         name: "Scimitar",
+        as: 52
+      },
+      {
+        name: "Unknown",
         as: 52
       }
     ],
@@ -100,17 +106,19 @@
       "This soldier of the small mammal legions resembles an overgrown mole, except that it stands upright. Intelligence is apparent in its bulbous, yellow eyes, and its clawed feet give it exceptional agility in moist areas. The skin of the thyril is a muddy, mottled mass of light brown and dark brown hair, allowing it to blend in well with the decayed vegetation and soil in underground lairs and other dank locales."
     ],
     arrival: [
-      "A thyril just arrived."
+      "A thyril just arrived.",
+      "A thyril just arrived, limping."
     ],
     flee: [
-      "A thyril heads {direction}."
+      "A thyril heads {direction}.",
+      "A thyril limps {direction}."
     ],
     death: [
       "The thyril falls to the ground and dies.",
       "The thyril screams one last time and dies."
     ],
     decay: [
-      "A thyril decays into compost."
+      "A thyril decays into compost.",
     ],
     search: [],
     spell_prep: [],

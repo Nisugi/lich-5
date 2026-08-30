@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Magical"
@@ -71,21 +73,21 @@
   defense_attributes: {
     asg: "5",
     immunities: [],
-    melee: (245..293),
-    ranged: nil,
-    bolt: nil,
-    udf: (220..290),
+    melee: (209..305),
+    ranged: (214..237),
+    bolt: (214..237),
+    udf: (209..290),
     bar_td: 110,
-    cle_td: (99..107),
+    cle_td: (99..114),
     emp_td: (111..117),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (92..102),
+    ran_td: (103..113),
     sor_td: (113..132),
     wiz_td: nil,
-    mje_td: 124,
-    mne_td: 130,
-    mjs_td: nil,
-    mns_td: (103..111),
+    mje_td: (124..130),
+    mne_td: (124..130),
+    mjs_td: 134,
+    mns_td: 134,
     mnm_td: (105..113),
     defensive_spells: [
       "Elemental Defense I (401)",
@@ -104,7 +106,8 @@
   abilities_misc: [],
   equipment: [
     "a ball",
-    "some tattered rags"
+    "some tattered rags",
+    "a ball and chain"
   ],
   treasure: {
     coins: true,
@@ -123,13 +126,13 @@
       "A mezic hobbles {direction}."
     ],
     death: [
-      "A mezic goes limp as he is rendered unconscious!",
       "The mezic twitches violently, then dies.",
       "The mezic falls to the ground motionless.",
-      "The mezic cries out one last time and lies still.",
-      "The mezic slumps to the ground."
+      "The mezic cries out one last time and lies still."
     ],
-    decay: [],
+    decay: [
+      "The mezic's right leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

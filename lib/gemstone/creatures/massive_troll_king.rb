@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
+  witherable: true,
+  sympathy: true,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: false,
   max_hp: 400,
-  speed: nil,
+  speed: 9,
   height: 11,
   size: "huge",
   areas: [
@@ -70,13 +72,13 @@
     bar_td: 232,
     cle_td: 250,
     emp_td: 247,
-    pal_td: 214,
-    ran_td: nil,
+    pal_td: (211..214),
+    ran_td: 214,
     sor_td: 262,
     wiz_td: nil,
     mje_td: (207..276),
-    mne_td: 275,
-    mjs_td: nil,
+    mne_td: (207..276),
+    mjs_td: 247,
     mns_td: 247,
     mnm_td: 199,
     defensive_spells: [],
@@ -102,16 +104,13 @@
     ],
     arrival: [
       "A massive troll king arrives, flexing its massive claws.",
-      "A resolute dhu goleras arrives with a loping, uneven gait, her body rocking side-to-side and her head and arms flopping wildly."
     ],
     flee: [],
     death: [
-      "A massive troll king goes limp as it is rendered unconscious!",
       "The troll king lies still."
     ],
     decay: [
       "A massive troll king decays away into compost.",
-      "Acid dissolves connecting cartilage, freeing the troll king's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

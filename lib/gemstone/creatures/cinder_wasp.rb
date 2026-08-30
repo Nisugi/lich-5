@@ -11,15 +11,17 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: false,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 260,
-  speed: nil,
+  speed: 6,
   height: 1,
   size: "small",
   areas: [
@@ -49,21 +51,21 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (240..247),
-    ranged: 255,
-    bolt: 255,
+    melee: (197..247),
+    ranged: (206..255),
+    bolt: (206..255),
     udf: 273,
     bar_td: 203,
-    cle_td: nil,
+    cle_td: 218,
     emp_td: 217,
     pal_td: (191..198),
-    ran_td: nil,
+    ran_td: 198,
     sor_td: 226,
     wiz_td: nil,
-    mje_td: 236,
-    mne_td: 235,
-    mjs_td: nil,
-    mns_td: (211..217),
+    mje_td: (235..236),
+    mne_td: (235..236),
+    mjs_td: (225..228),
+    mns_td: (225..228),
     mnm_td: 198,
     defensive_spells: [],
     defensive_abilities: [],
@@ -102,11 +104,10 @@
     death: [
       "The cinder wasp flutters its wings one last time and dies.",
       "The cinder wasp twitches violently, then dies.",
-      "The cinder wasp slumps to the ground."
+      "Beautiful shot pierces both lungs, the cinder wasp makes a wheezing noise, and drops dead!"
     ],
     decay: [
-      "A cinder wasp decays into compost.",
-      "Acid dissolves the knee ligaments.  The cinder wasp's tibia passes its femur in a very unpleasant manner!"
+      "A cinder wasp decays into compost."
     ],
     search: [],
     spell_prep: [],

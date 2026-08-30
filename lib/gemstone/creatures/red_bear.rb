@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 210,
+  max_hp: 213,
   speed: nil,
   height: 4,
   size: "large",
@@ -49,10 +51,10 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (121..194),
-    ranged: nil,
-    bolt: 100,
-    udf: nil,
+    melee: (97..194),
+    ranged: (97..125),
+    bolt: (97..125),
+    udf: 129,
     bar_td: nil,
     cle_td: (45..48),
     emp_td: (48..52),
@@ -62,7 +64,7 @@
     wiz_td: nil,
     mje_td: (42..54),
     mne_td: (42..54),
-    mjs_td: nil,
+    mjs_td: (45..48),
     mns_td: (45..48),
     mnm_td: (45..54),
     defensive_spells: [],
@@ -96,12 +98,7 @@
     ],
     death: [
       "The red bear collapses heavily into a heap on the ground and dies.",
-      "The red bear lets out a blood-curdling roar and dies.",
-      "The red bear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
-      "The red bear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
-      "The red bear roars loudly as she slumps to the ground and licks her wounded left foreleg.",
-      "The red bear roars loudly as she slumps to the ground and licks her wounded left paw.",
-      "The red bear roars loudly as he slumps to the ground and licks his wounded right foreleg."
+      "The red bear lets out a blood-curdling roar and dies."
     ],
     decay: [
       "A red bear decays into a compost of fangs, fur and claws."

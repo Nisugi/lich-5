@@ -7,12 +7,14 @@
   family: "gigas",
   type: "biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -21,42 +23,85 @@
     }
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 923,
+  speed: 8,
   height: 30,
   size: "huge",
   attack_attributes: {
     physical_attacks: [
       {
         name: "hatchet",
-        as: 531
+        as: (531..563)
+      },
+      {
+        name: "Charge",
+        as: (529..535)
+      },
+      {
+        name: "Enormous tusks",
+        as: (529..539)
+      },
+      {
+        name: "Golden targe",
+        as: 556
+      },
+      {
+        name: "Immense fel-hafted handaxe",
+        as: (520..545)
+      },
+      {
+        name: "Lunge",
+        as: (520..545)
+      },
+      {
+        name: "Crush",
+        as: 500
+      },
+      {
+        name: "Tusks",
+        as: 519
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Shield Bash",
+        cs: 437
+      }
+    ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Charge"
+      },
+      {
+        name: "Pounce"
+      },
+      {
+        name: "Shield Bash"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "10",
     immunities: [],
-    melee: (462..659),
-    ranged: (423..550),
-    bolt: nil,
-    udf: nil,
+    melee: (243..762),
+    ranged: (304..615),
+    bolt: (304..615),
+    udf: (466..913),
     bar_td: 401,
-    cle_td: nil,
-    emp_td: 418,
-    pal_td: nil,
-    ran_td: (333..348),
-    sor_td: nil,
+    cle_td: (406..476),
+    emp_td: (406..418),
+    pal_td: (366..375),
+    ran_td: (333..442),
+    sor_td: (438..448),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: 462,
-    mjs_td: nil,
-    mns_td: (406..418),
+    mje_td: (461..471),
+    mne_td: (461..471),
+    mjs_td: (360..418),
+    mns_td: (360..418),
     mnm_td: nil,
     defensive_spells: [],
     defensive_abilities: [],
@@ -65,7 +110,10 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "a suit of tanned boarhide adorned with crudely etched bronze disks",
+    "an immense fel-hafted handaxe"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -82,7 +130,9 @@
       "A tattooed gigas berserker charges in, madness twisting his features.",
     ],
     death: [
-      "A tattooed gigas berserker's fists tense with impotent rage as she surrenders to death."
+      "A tattooed gigas berserker's fists tense with impotent rage as she surrenders to death.",
+      "A tattooed gigas berserker's fists tense with impotent rage as he surrenders to death.",
+      "Beautiful shot pierces both lungs, the gigas berserker makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "Creeping decay races across a tattooed gigas berserker's prone form, swiftly consuming the body despite its colossal size."
@@ -91,7 +141,10 @@
       "A tattooed gigas berserker raises his great head, bulging eyes searching the shadows.",
       "A tattooed gigas berserker's brow knits sneers as his eyes fruitlessly search the shadows."
     ],
-    attack: [],
+    attack: [
+      "Froth bubbling on {pronoun} lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!",
+      "Looming over you, a tattooed gigas berserker tries to reach down and crush you in a massive fist!",
+    ],
     bite: [],
     claw: [],
 

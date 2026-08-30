@@ -12,16 +12,18 @@
   bones: nil,
   witherable: nil,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "non-corporeal undead"
   ],
   bcs: true,
   max_hp: 300,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Wraithenmist",
@@ -43,9 +45,9 @@
     melee: 127,
     ranged: nil,
     bolt: nil,
-    udf: 176,
+    udf: (162..176),
     bar_td: 87,
-    cle_td: nil,
+    cle_td: 97,
     emp_td: nil,
     pal_td: nil,
     ran_td: nil,

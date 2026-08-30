@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -57,21 +59,21 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: 87,
-    ranged: nil,
-    bolt: nil,
+    melee: (52..87),
+    ranged: (41..49),
+    bolt: (41..49),
     udf: (62..97),
     bar_td: nil,
     cle_td: 30,
     emp_td: 30,
     pal_td: (27..30),
-    ran_td: nil,
+    ran_td: 30,
     sor_td: 30,
     wiz_td: nil,
     mje_td: 30,
     mne_td: 30,
-    mjs_td: nil,
-    mns_td: 30,
+    mjs_td: (30..33),
+    mns_td: (30..33),
     mnm_td: 30,
     defensive_spells: [],
     defensive_abilities: [],
@@ -100,13 +102,7 @@
     ],
     death: [
       "The crazed canine falls to the ground and dies.",
-      "The crazed canine rolls over and dies.",
-      "A crazed canine goes limp as he is rendered unconscious!",
-      "The crazed canine yelps loudly as she slumps to the ground and licks her wounded right foreleg.",
-      "The crazed canine yelps loudly as he slumps to the ground and licks his wounded left foreleg.",
-      "The crazed canine yelps loudly as she slumps to the ground and licks her wounded left foreleg.",
-      "The crazed canine yelps loudly as she slumps to the ground and licks her wounded left paw.",
-      "The crazed canine yelps loudly as he slumps to the ground and licks his wounded right foreleg."
+      "The crazed canine rolls over and dies."
     ],
     decay: [
       "A crazed canine decays into a compost of fangs and fur."

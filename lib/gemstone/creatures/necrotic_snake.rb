@@ -8,18 +8,20 @@
   family: "Reptilian",
   type: "Ophidian",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 290,
-  speed: nil,
+  speed: 8,
   height: 1,
   size: "medium",
   areas: [
@@ -40,7 +42,7 @@
     physical_attacks: [
       {
         name: "Strike",
-        as: 288
+        as: (254..288)
       }
     ],
     bolt_spells: [],
@@ -58,6 +60,9 @@
       },
       {
         name: "Strike"
+      },
+      {
+        name: "Glob"
       }
     ],
     special_abilities: [],
@@ -66,21 +71,21 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (255..488),
-    ranged: nil,
-    bolt: nil,
-    udf: (283..475),
+    melee: (234..488),
+    ranged: 294,
+    bolt: 294,
+    udf: (283..482),
     bar_td: 161,
-    cle_td: (182..185),
+    cle_td: (167..185),
     emp_td: (175..184),
     pal_td: (146..158),
     ran_td: 119,
     sor_td: (176..194),
     wiz_td: nil,
     mje_td: (196..202),
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (175..184),
+    mne_td: (196..202),
+    mjs_td: (175..186),
+    mns_td: (175..186),
     mnm_td: (144..153),
     defensive_spells: [],
     defensive_abilities: [],
@@ -115,9 +120,7 @@
       "A sinuous necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp.",
       "A flexile necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the necrotic snake's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [

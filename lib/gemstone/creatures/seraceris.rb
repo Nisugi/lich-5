@@ -11,15 +11,17 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: true,
   max_hp: 240,
-  speed: nil,
+  speed: 7,
   height: 7,
   size: "medium",
   areas: [
@@ -36,7 +38,7 @@
       },
       {
         name: "Claw",
-        as: 384
+        as: (380..384)
       }
     ],
     bolt_spells: [],
@@ -66,7 +68,14 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Air Blast"
+      },
+      {
+        name: "Anti-mana Wave"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -80,14 +89,14 @@
     bar_td: nil,
     cle_td: (324..333),
     emp_td: (324..331),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (277..284),
+    ran_td: (282..291),
     sor_td: (339..351),
     wiz_td: nil,
-    mje_td: 364,
-    mne_td: 365,
-    mjs_td: 336,
-    mns_td: (317..324),
+    mje_td: (364..365),
+    mne_td: (364..365),
+    mjs_td: (317..336),
+    mns_td: (317..336),
     mnm_td: (289..297),
     defensive_spells: [
       "Elemental Defense I (401)",

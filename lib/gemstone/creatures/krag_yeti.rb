@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 400,
+  max_hp: 443,
   speed: nil,
   height: 10,
   size: "large",
@@ -66,21 +68,21 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (317..526),
-    ranged: 288,
-    bolt: (283..308),
+    melee: (265..526),
+    ranged: (258..350),
+    bolt: (258..350),
     udf: 357,
     bar_td: (210..262),
-    cle_td: 270,
+    cle_td: (270..276),
     emp_td: (272..278),
     pal_td: (227..230),
     ran_td: 230,
     sor_td: (280..289),
     wiz_td: nil,
     mje_td: (293..302),
-    mne_td: 297,
-    mjs_td: nil,
-    mns_td: (266..272),
+    mne_td: (293..302),
+    mjs_td: (266..274),
+    mns_td: (266..274),
     mnm_td: (204..213),
     defensive_spells: [],
     defensive_abilities: [],
@@ -90,7 +92,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye",
+    "a possible mild concussion"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -105,7 +111,6 @@
     ],
     arrival: [
       "A krag yeti stomps in, a fetid odor wafting before it.",
-      "The boulder comes to a sudden stop and rises into the form of a krag dweller!"
     ],
     flee: [
       "A krag yeti rumbles {direction}."

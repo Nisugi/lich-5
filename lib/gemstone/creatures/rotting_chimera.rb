@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -52,7 +54,7 @@
       },
       {
         name: "Enormous humanoid fist",
-        as: 248
+        as: (230..248)
       }
     ],
     bolt_spells: [],
@@ -75,10 +77,10 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (224..382),
-    ranged: nil,
-    bolt: 188,
-    udf: (346..398),
+    melee: (173..382),
+    ranged: (196..255),
+    bolt: (188..255),
+    udf: (329..398),
     bar_td: nil,
     cle_td: (168..177),
     emp_td: (167..170),
@@ -87,8 +89,8 @@
     sor_td: (167..185),
     wiz_td: nil,
     mje_td: 186,
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: 186,
+    mjs_td: (161..170),
     mns_td: (161..170),
     mnm_td: (135..138),
     defensive_spells: [],
@@ -129,7 +131,7 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A rotting chimera bites at you with rotting chimera bestial jaws!",
+      "A rotting chimera bites at you with {pronoun} bestial jaws!",
       "A rotting chimera pounds at you with an enormous humanoid fist!"
     ],
     bite: [],

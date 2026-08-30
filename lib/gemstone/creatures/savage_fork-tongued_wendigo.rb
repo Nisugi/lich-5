@@ -7,11 +7,13 @@
   family: "humanoid",
   type: "biped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
-  witherable: nil,
-  muggable: nil,
+  witherable: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -20,8 +22,8 @@
     }
   ],
   bcs: true,
-  max_hp: 600,
-  speed: nil,
+  max_hp: 636,
+  speed: 6,
   height: 8,
   size: "large",
   attack_attributes: {
@@ -40,7 +42,27 @@
       },
       {
         name: "Elongated talon",
-        as: 481
+        as: (481..628)
+      },
+      {
+        name: "Clawed fists",
+        as: (475..636)
+      },
+      {
+        name: "Shark-like teeth",
+        as: (612..625)
+      },
+      {
+        name: "Charge",
+        as: 529
+      },
+      {
+        name: "Huge hooves",
+        as: 517
+      },
+      {
+        name: "Tusks",
+        as: 525
       }
     ],
     bolt_spells: [],
@@ -70,19 +92,19 @@
   defense_attributes: {
     asg: "10N",
     immunities: [],
-    melee: (428),
-    ranged: (404),
-    bolt: (404),
-    udf: (656),
+    melee: (285..711),
+    ranged: (295..447),
+    bolt: (295..447),
+    udf: (619..749),
     bar_td: (432..434),
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: (398..403),
-    sor_td: (471..483),
+    cle_td: (447..459),
+    emp_td: 461,
+    pal_td: (406..415),
+    ran_td: (396..403),
+    sor_td: (471..486),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: (489..495),
+    mje_td: (489..510),
+    mne_td: (489..510),
     mjs_td: nil,
     mns_td: (444),
     mnm_td: nil,
@@ -93,7 +115,11 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "a firewheel arrow fletched with plain white feathers",
+    "a twisted obsidian dagger",
+    "a riveted golden targe"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -108,7 +134,9 @@
     arrival: [
       "A savage fork-tongued wendigo steps in, eyes like luminous pools searching the surroundings.",
       "A savage fork-tongued wendigo steps in, luminous eyes hungrily eyeing the surroundings despite its grievous wounds.",
-      "Eyes like twin pools of ghostly light materialize through the falling snow, illuminating the abominable shape of a savage fork-tongued wendigo.  The creature races forward with unnatural speed, mouth opening unnaturally wide as it bares rows of shark-like teeth."
+      "Eyes like twin pools of ghostly light materialize through the falling snow, illuminating the abominable shape of a savage fork-tongued wendigo.  The creature races forward with unnatural speed, mouth opening unnaturally wide as it bares rows of shark-like teeth.",
+      "A savage fork-tongued wendigo stalks in, eyes like luminous pools searching the surroundings.",
+      "A savage fork-tongued wendigo just arrived."
     ],
     flee: [
       "Heedless of its grievous wounds, a savage fork-tongued wendigo stalks {direction}.",
@@ -116,7 +144,8 @@
       "A savage fork-tongued wendigo's luminous eyes flare with unnatural light as it turns and stalks {direction}."
     ],
     death: [
-      "Rage flickers in the wendigo's eyes as it collapses, bloody maw still working hungrily until the last hint of life goes out of its form."
+      "Rage flickers in the wendigo's eyes as it collapses, bloody maw still working hungrily until the last hint of life goes out of its form.",
+      "Beautiful shot pierces both lungs, the fork-tongued wendigo makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "Rot sets into a savage fork-tongued wendigo's body with unnatural speed, skin sloughing away to reveal greying muscle and rampant suppuration.  In moments, all that remain are yellowing bones and stinking effluvia."
@@ -130,7 +159,7 @@
     ],
 
     frenzy: "A savage fork-tongued wendigo crooks an oddly elongated finger at you!",
-    sympathy: "A savage fork-tongued wendigo points skyward with a single gristly talon!",
+    sympathy: true,
     bite: "A savage fork-tongued wendigo's jaw unhinges as it tries to ravage you with its shark-like teeth!",
     claw: [
       "Lashing out unpredictably, a savage fork-tongued wendigo slices at you with an elongated talon!",

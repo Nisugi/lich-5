@@ -10,19 +10,21 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: false,
+  sympathy: false,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Anti-mana"
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
-  height: nil,
-  size: "",
+  max_hp: 345,
+  speed: 6,
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "The Rift",
@@ -37,7 +39,7 @@
       },
       {
         name: "Maul",
-        as: (450..469)
+        as: (450..470)
       }
     ],
     bolt_spells: [],
@@ -58,6 +60,12 @@
       },
       {
         name: "Weapon Bonding"
+      },
+      {
+        name: "Lash"
+      },
+      {
+        name: "Pounce"
       }
     ],
     special_abilities: [],
@@ -69,7 +77,7 @@
     melee: nil,
     ranged: 375,
     bolt: nil,
-    udf: nil,
+    udf: 586,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -90,7 +98,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a crackling black steel maul",
+    "some acid-pitted black steel full plate"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -103,13 +114,25 @@
     description: [
       "A Vvrael destroyer can be found in the Scatter in the Rift. This is a greater servant of the Vvrael, sent to dispatch the strongest of their foes. These are warrior type creatures; very powerful and highly destructive.\n\nA strong jawline and shrewd, narrowed eyes are prominent in the features of the Vvrael destroyer's countenance, creating of his mouth a severe line and of his gaze an openly vicious stare. All the malice caught in the creature's eyes make promises to be answered by the muscular, though ephemeral physique obvious even below his segmented pieces of armor. Despite the bulk of his form, the destroyer moves with the militant grace of a seasoned warrior, precise and purposeful."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A Vvrael destroyer strides in!",
+      "A Vvrael destroyer just arrived!"
+    ],
+    flee: [
+      "A Vvrael destroyer strides {direction}."
+    ],
+    death: [
+      "The Vvrael destroyer crumples to the ground motionless.",
+      "The body of the destroyer twists and distorts until he shatters and dissipates into aether.",
+      "The Vvrael destroyer crumples to the floor motionless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A Vvrael destroyer swings {weapon} at you!",
+      "Tightening {pronoun} grip on {pronoun} black steel maul, a Vvrael destroyer strikes out at you with all of vvrael destroyer might!",
+    ],
     bite: [],
     claw: [],
     info: {

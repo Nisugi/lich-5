@@ -13,13 +13,15 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: nil,
   max_hp: nil,
-  speed: nil,
+  speed: 5,
   height: nil,
   size: "",
   areas: [

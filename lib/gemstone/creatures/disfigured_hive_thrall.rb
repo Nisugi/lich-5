@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 375,
+  max_hp: 408,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "The Hive",
@@ -37,6 +39,10 @@
       },
       {
         name: "Claw"
+      },
+      {
+        name: "Barbed stinger",
+        as: 557
       }
     ],
     bolt_spells: [
@@ -50,6 +56,10 @@
     warding_spells: [
       {
         name: "Wild Entropy"
+      },
+      {
+        name: "Charge",
+        cs: 447
       }
     ],
     offensive_spells: [
@@ -63,6 +73,9 @@
       },
       {
         name: "Bearhug"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_abilities: [
@@ -82,18 +95,18 @@
     asg: "6",
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
+    ranged: (376..498),
+    bolt: (376..498),
     udf: (650..662),
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (400..409),
+    emp_td: 424,
+    pal_td: (366..375),
+    ran_td: (369..378),
     sor_td: nil,
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
+    mje_td: 475,
+    mne_td: 475,
     mjs_td: nil,
     mns_td: nil,
     mnm_td: nil,
@@ -109,7 +122,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some tattered clothing scraps"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -123,12 +138,20 @@
       "The thrall looks to have once been humanoid, but her form has been mutilated into a tortured, stooped shape with a mismatch of clashing parts. One eye is huge and insectoid, but the other remains painfully close to mammalian, its pupil bleeding into the bright green iris. Her jaw hangs slack, forced open at all times by a set of bristled mandibles that seem to have a mind of their own as they twitch and clench. Tumorous growths stud the thrall's spine, unsavory green where they are not blotchy violet-red with pustules. One has burst to reveal a single rudimentary wing that resembles a fly's."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A disfigured hive thrall gibbers pathetically as she flees {direction}.",
+      "A disfigured hive thrall gibbers pathetically as he flees {direction}.",
+      "A disfigured hive thrall gibbers pathetically as she flees {direction}, burning ichor seeping from her wounds."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A disfigured hive thrall desperately thrusts {weapon} at you!",
+      "Misshapen limbs flail as a disfigured hive thrall flings {pronoun} at you!",
+      "Twisted desperation contorts a disfigured hive thrall's warped features as disfigured hive thrall tries to grab at you!",
+    ],
     bite: [],
     claw: [],
     info: {

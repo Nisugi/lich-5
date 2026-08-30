@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 70,
-  speed: nil,
+  speed: 12,
   height: 4,
   size: "large",
   areas: [
@@ -49,8 +51,8 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (11..36),
-    ranged: 11,
+    melee: (1..36),
+    ranged: (8..11),
     bolt: 18,
     udf: (38..60),
     bar_td: nil,
@@ -62,8 +64,8 @@
     wiz_td: nil,
     mje_td: 6,
     mne_td: 6,
-    mjs_td: nil,
-    mns_td: 6,
+    mjs_td: (4..6),
+    mns_td: (4..6),
     mnm_td: 6,
     defensive_spells: [],
     defensive_abilities: [],
@@ -92,15 +94,7 @@
     ],
     death: [
       "The spotted gak collapses to the ground, emits a final bellow, and dies.",
-      "The spotted gak lets out a final agonized bellow and dies.",
-      "The spotted gak brays loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The spotted gak brays loudly as she slumps to the ground and cradles her wounded left foreleg.",
-      "The spotted gak brays loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The spotted gak brays loudly as he slumps to the ground and cradles his wounded left hoof.",
-      "The spotted gak brays loudly as she slumps to the ground and cradles her wounded left hoof.",
-      "The spotted gak brays loudly as she slumps to the ground and cradles her wounded right hoof.",
-      "The spotted gak brays loudly as he slumps to the ground and cradles his wounded right hoof.",
-      "A spotted gak goes limp as she is rendered unconscious!"
+      "The spotted gak lets out a final agonized bellow and dies."
     ],
     decay: [
       "A spotted gak decays into a pile of fur and bone."

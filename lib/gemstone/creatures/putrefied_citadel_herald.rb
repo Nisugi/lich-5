@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "corporeal undead"
   ],
   bcs: true,
   max_hp: 241,
-  speed: nil,
+  speed: 7,
   height: 6,
   size: "medium",
   areas: [
@@ -93,19 +95,19 @@
     asg: "2",
     immunities: [],
     melee: (279..472),
-    ranged: 279,
-    bolt: 239,
-    udf: (423..486),
+    ranged: (181..332),
+    bolt: (181..332),
+    udf: (341..502),
     bar_td: 232,
     cle_td: (279..288),
     emp_td: (268..276),
     pal_td: (231..236),
-    ran_td: nil,
+    ran_td: (251..257),
     sor_td: (268..280),
     wiz_td: nil,
-    mje_td: 296,
-    mne_td: 283,
-    mjs_td: nil,
+    mje_td: (283..296),
+    mne_td: (283..296),
+    mjs_td: (267..276),
     mns_td: (267..276),
     mnm_td: 212,
     defensive_spells: [
@@ -121,7 +123,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a polished red steel Hammer of Kai",
+    "an elongated star-topped runestaff",
+    "some worn dark opulent leather robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -136,21 +142,18 @@
     ],
     arrival: [
       "A putrefied Citadel herald strides in confidently.",
-      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm.",
-      "A rotting Citadel arbalester strides into the room, his crossbow cradled in the crook of an arm.",
-      "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm.",
-      "A rotting Citadel arbalester strides into the area, her crossbow cradled in the crook of an arm."
     ],
     flee: [],
     death: [
       "A putrefied Citadel herald collapses in upon herself, leaving behind a pile of dust.",
       "A putrefied Citadel herald collapses in upon himself, leaving behind a pile of dust.",
       "A spectral howl echoes through the air, resonant with pain and anguish, and then fades into heavy silence.  The scaly veneer covering a putrefied Citadel herald shimmers briefly before melting into his skin.",
-      "A spectral howl echoes through the air, resonant with pain and anguish, and then fades into heavy silence.  The scaly veneer covering a putrefied Citadel herald shimmers briefly before melting into her skin."
+      "A spectral howl echoes through the air, resonant with pain and anguish, and then fades into heavy silence.  The scaly veneer covering a putrefied Citadel herald shimmers briefly before melting into her skin.",
+      "Beautiful shot pierces both lungs, the Citadel herald makes a wheezing noise, and drops dead!"
     ],
     decay: [
-      "Acid dissolves connecting cartilage, freeing the Citadel herald's ribs to move independently.",
-      "The Citadel herald's right leg crumbles briefly and explodes in a shower of gore."
+      "The Citadel herald's right leg crumbles briefly and explodes in a shower of gore.",
+      "The Citadel herald's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

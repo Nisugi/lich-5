@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 218,
-  speed: nil,
+  speed: 9,
   height: 5,
   size: "medium",
   areas: [
@@ -65,9 +67,9 @@
   defense_attributes: {
     asg: "10",
     immunities: [],
-    melee: (118..238),
-    ranged: 110,
-    bolt: 110,
+    melee: (115..238),
+    ranged: (48..140),
+    bolt: (48..140),
     udf: (145..235),
     bar_td: 51,
     cle_td: 51,
@@ -78,8 +80,8 @@
     wiz_td: 51,
     mje_td: 51,
     mne_td: 51,
-    mjs_td: 51,
-    mns_td: 51,
+    mjs_td: (51..54),
+    mns_td: (51..54),
     mnm_td: (49..51),
     defensive_spells: [],
     defensive_abilities: [],
@@ -123,11 +125,9 @@
       "A dark shambler runs {direction}."
     ],
     death: [
-      "A dark shambler goes limp as it is rendered unconscious!",
       "The dark shambler falls to the ground motionless.",
       "The dark shambler screams evilly one last time and goes still.",
       "The dark shambler twitches violently, then dies.",
-      "The dark shambler slumps to the ground.",
       "Beautiful shot pierces both lungs, the dark shambler makes a wheezing noise, and drops dead!"
     ],
     decay: [

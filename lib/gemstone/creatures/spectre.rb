@@ -11,9 +11,11 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
@@ -81,9 +83,9 @@
     asg: "17",
     immunities: [],
     melee: (49..156),
-    ranged: (49..52),
-    bolt: (49..52),
-    udf: (72..167),
+    ranged: (33..52),
+    bolt: (33..52),
+    udf: (71..167),
     bar_td: nil,
     cle_td: 42,
     emp_td: 42,
@@ -93,7 +95,7 @@
     wiz_td: nil,
     mje_td: 42,
     mne_td: 42,
-    mjs_td: nil,
+    mjs_td: 42,
     mns_td: 42,
     mnm_td: 42,
     defensive_spells: [],
@@ -106,7 +108,9 @@
   abilities_misc: [],
   equipment: [
     "a pitted battle axe",
-    "a rusty metal breastplate"
+    "a rusty metal breastplate",
+    "a halberd",
+    "some double leather"
   ],
   treasure: {
     coins: true,
@@ -121,7 +125,6 @@
       "You have never seen anything quite like a spectre, so you are not really sure what to make of it or how dangerous it might be."
     ],
     arrival: [
-      "A gnoll ranger wanders in, alertly surveying its surroundings.",
       "A spectre just arrived.",
       "A shadowy spectre just arrived."
     ],

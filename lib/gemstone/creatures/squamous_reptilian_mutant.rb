@@ -9,10 +9,12 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -21,21 +23,45 @@
     }
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
-  height: nil,
-  size: nil,
+  max_hp: 660,
+  speed: 8,
+  height: 22,
+  size: "huge",
   attack_attributes: {
     physical_attacks: [
       {
         name: "Cudgel",
-        as: 598
+        as: (573..598)
+      },
+      {
+        name: "Crush",
+        as: 614
+      },
+      {
+        name: "Fists",
+        as: (543..554)
+      },
+      {
+        name: "Slash",
+        as: (568..583)
+      },
+      {
+        name: "?: Blow raises a welt",
+        as: 546
       }
     ],
     bolt_spells: [],
     warding_spells: [
       {
         name: "Bind",
+        cs: 475
+      },
+      {
+        name: "Lash",
+        cs: 469
+      },
+      {
+        name: "Yellowed brittle bone cudgel",
         cs: 475
       }
     ],
@@ -47,15 +73,15 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    melee: (530..710),
+    ranged: (309..537),
+    bolt: (309..537),
+    udf: 666,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (487..496),
     emp_td: "496",
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (450..459),
+    ran_td: 454,
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -70,7 +96,10 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "a yellowed brittle bone cudgel",
+    "some greying corroded rags"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -81,7 +110,12 @@
     blunt_required: false
   },
   messaging: {
-    attack: [],
+    attack: [
+      "A squamous reptilian mutant bares a mouthful of mismatched teeth and snaps at you!",
+      "A squamous reptilian mutant flaily wildly with {pronoun} fists at you!",
+      "A squamous reptilian mutant splays one gnarled claw and slashes at you!",
+      "Hampered by {pronoun} deformities, a squamous reptilian mutant clumsily swings {weapon} at you!"
+    ],
     bite: [],
     claw: [],
     general_advice: "* As primarily casting creatures, mutants are fairly vulnerable to SMR-based spells and attacks like Condemn (309), Earthen Fury (917), Hamstring, Spike Thorn (616), Twin Hammerfists, and so on. This is offset somewhat by their high level, though.\n* Mutants have exceptionally high CS--over 520--that leaves their Thought Lash (1210), Bind (214), and Vertigo (1219) spells nearly guaranteed to hit against every profession and leave characters stunned or disabled. Keep them from casting by any means including Sweep, Feint, Corrupt Essence (703), Moonbeam (611), Condemn, Earthen Fury, or other options that keep them stalled out, unable to cast, or repeatedly stunned.\n* Mutants have Brace (1214), which can disarm against many forms of physical attacks. However, many combat maneuvers and SMR-based weapon techniques bypass this, as do ranged attacks and unarmed combat. Brace can also be removed via dispelling magic such as Spirit Dispel (119), Spiritual Abolition (230), Elemental Dispel (417), Mental Dispel (1218), and Song of Unravelling (1013) or other similar effects like Spell Cleave.",

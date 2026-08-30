@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 160,
-  speed: nil,
+  speed: 7,
   height: 3,
   size: "small",
   areas: [
@@ -33,6 +35,10 @@
       {
         name: "Short sword",
         as: 162
+      },
+      {
+        name: "Unknown",
+        as: 159
       }
     ],
     bolt_spells: [],
@@ -50,8 +56,8 @@
     asg: "6",
     immunities: [],
     melee: 176,
-    ranged: nil,
-    bolt: (72..109),
+    ranged: (67..100),
+    bolt: (67..109),
     udf: (197..202),
     bar_td: nil,
     cle_td: (39..45),
@@ -62,7 +68,7 @@
     wiz_td: nil,
     mje_td: (33..45),
     mne_td: (33..45),
-    mjs_td: nil,
+    mjs_td: (33..39),
     mns_td: (33..39),
     mnm_td: (36..45),
     defensive_spells: [],
@@ -106,20 +112,15 @@
     description: [
       "Light fingered and agile, the gnoll thief is easily at home in both the dark stone corridors of his lair and anywhere that loot may be gained. Wiry and lithe, with pale skin and large, colorless eyes, the thief stands around three feet tall as it regards you uneasily."
     ],
-    arrival: [
-      "A gnoll ranger wanders in, alertly surveying its surroundings."
-    ],
+    arrival: [],
     flee: [
       "A gnoll thief skulks {direction}."
     ],
     death: [
       "The gnoll thief rolls over and dies.",
-      "The gnoll thief falls to the ground and dies.",
-      "A gnoll thief goes limp as she is rendered unconscious!"
+      "The gnoll thief falls to the ground and dies."
     ],
-    decay: [
-      "Acid dissolves the knee ligaments.  The gnoll thief's tibia passes her femur in a very unpleasant manner!"
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [],

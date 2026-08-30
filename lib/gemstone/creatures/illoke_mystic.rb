@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 600,
-  speed: nil,
+  speed: 8,
   height: 22,
   size: "huge",
   areas: [
@@ -57,21 +59,21 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: (294..345),
-    ranged: nil,
-    bolt: nil,
-    udf: (312..407),
+    melee: (234..345),
+    ranged: (99..165),
+    bolt: (99..165),
+    udf: (215..407),
     bar_td: (229..234),
     cle_td: (244..251),
-    emp_td: (238..246),
+    emp_td: (237..246),
     pal_td: (220..225),
     ran_td: (204..211),
     sor_td: (259..269),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (241..252),
+    mje_td: 273,
+    mne_td: 273,
+    mjs_td: 277,
+    mns_td: 277,
     mnm_td: (200..210),
     defensive_spells: [
       "Elemental Defense I (401)",
@@ -106,10 +108,11 @@
     description: [
       "Massive and imposing, the Illoke mystic towers over adventurers. It is more than three times the size of the largest giantman, with smooth grey skin and deep black eyes that glare out from under a heavy brow. The eyes regard potential victims with disdain, as if they were nothing more than an offering to be sacrificed. Chiseled deep into the forehead of the shaman, the symbol of Illoke glows red with power."
     ],
-    arrival: [],
+    arrival: [
+      "An Illoke mystic just arrived."
+    ],
     flee: [],
     death: [
-      "An Illoke mystic goes limp as he is rendered unconscious!",
       "The Illoke mystic grumbles in pain one last time before lying still.",
       "The Illoke mystic slumps to the ground.",
       "The Illoke mystic shudders one last time before lying still."

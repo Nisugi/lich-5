@@ -10,10 +10,12 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -54,10 +56,10 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: 117,
-    ranged: nil,
-    bolt: nil,
-    udf: 141,
+    melee: (91..117),
+    ranged: (96..111),
+    bolt: (96..111),
+    udf: (134..141),
     bar_td: nil,
     cle_td: 74,
     emp_td: 76,
@@ -65,9 +67,9 @@
     ran_td: nil,
     sor_td: 79,
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
-    mjs_td: nil,
+    mje_td: 81,
+    mne_td: 81,
+    mjs_td: 76,
     mns_td: 76,
     mnm_td: 72,
     defensive_spells: [],
@@ -96,12 +98,7 @@
     ],
     flee: [],
     death: [
-      "The ice hound lets out one last whimpering sigh of frosty mist and dies.",
-      "An ice hound goes limp as it is rendered unconscious!",
-      "The ice hound yelps loudly as it slumps to the ground and licks its wounded right foreleg.",
-      "The ice hound yelps loudly as it slumps to the ground and licks its wounded left paw.",
-      "The ice hound yelps loudly as it slumps to the ground and licks its wounded right paw.",
-      "The ice hound yelps loudly as it slumps to the ground and licks its wounded left foreleg."
+      "The ice hound lets out one last whimpering sigh of frosty mist and dies."
     ],
     decay: [
       "An ice hound decays into a compost of fur and fangs."

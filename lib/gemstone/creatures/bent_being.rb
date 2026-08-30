@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -37,6 +39,10 @@
       {
         name: "Claw",
         as: 356
+      },
+      {
+        name: "Foot",
+        as: 386
       }
     ],
     bolt_spells: [
@@ -108,7 +114,10 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A bent being cries out in an acidic tongue, pointing at you!",
+      "A bent being stomps at you with {pronoun} foot!"
+    ],
     bite: [],
     claw: [
       "A bent being claws at you!"

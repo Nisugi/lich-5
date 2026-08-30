@@ -11,16 +11,18 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
   ],
   bcs: true,
-  max_hp: 240,
-  speed: nil,
+  max_hp: 270,
+  speed: 4,
   height: 8,
   size: "medium",
   areas: [
@@ -46,6 +48,10 @@
       {
         name: "Sharp beak",
         as: 295
+      },
+      {
+        name: "Beak",
+        as: 375
       }
     ],
     bolt_spells: [],
@@ -71,20 +77,20 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: (241..494),
-    ranged: nil,
-    bolt: nil,
-    udf: (469..616),
+    melee: (212..494),
+    ranged: (156..431),
+    bolt: (156..431),
+    udf: (410..616),
     bar_td: nil,
     cle_td: 354,
     emp_td: (336..342),
     pal_td: (290..299),
-    ran_td: nil,
+    ran_td: (293..299),
     sor_td: (370..397),
     wiz_td: nil,
     mje_td: 390,
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: 390,
+    mjs_td: (327..336),
     mns_td: (327..336),
     mnm_td: (261..264),
     defensive_spells: [],
@@ -122,10 +128,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A firebird cranes ash guardian neck, snapping at you with ash guardian sharp beak!",
       "An ash guardian swings {weapon} at you!",
       "An ash guardian tries to ensnare you!",
-      "In a trail of flames, a firebird extends ash guardian fearsome talons as it dives at you!"
     ],
     bite: [],
     claw: [],

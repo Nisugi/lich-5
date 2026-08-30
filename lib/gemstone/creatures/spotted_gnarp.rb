@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -37,6 +39,10 @@
       {
         name: "Tusk",
         as: (23..36)
+      },
+      {
+        name: "Unknown",
+        as: 23
       }
     ],
     bolt_spells: [],
@@ -52,11 +58,11 @@
     melee: (14..37),
     ranged: 14,
     bolt: 14,
-    udf: (52..61),
+    udf: (40..61),
     bar_td: 3,
     cle_td: 3,
     emp_td: 3,
-    pal_td: 3,
+    pal_td: (0..3),
     ran_td: 3,
     sor_td: 3,
     wiz_td: 3,
@@ -93,16 +99,11 @@
     death: [
       "The spotted gnarp collapses to the ground, emits a final cry, and dies.",
       "The spotted gnarp lets out a final agonized cry and dies.",
-      "The spotted gnarp collapses to the ground, emits a final silent cry, and dies.",
-      "The spotted gnarp shrieks loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The spotted gnarp shrieks loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The spotted gnarp shrieks loudly as he slumps to the ground and cradles his wounded left hoof.",
-      "The spotted gnarp shrieks loudly as she slumps to the ground and cradles her wounded left foreleg.",
-      "The spotted gnarp shrieks loudly as she slumps to the ground and cradles her wounded left hoof.",
-      "The spotted gnarp shrieks loudly as he slumps to the ground and cradles his wounded left foreleg."
+      "The spotted gnarp collapses to the ground, emits a final silent cry, and dies."
     ],
     decay: [
-      "A spotted gnarp decays into a pile of fur and bone."
+      "A spotted gnarp decays into a pile of fur and bone.",
+      "The spotted gnarp's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],

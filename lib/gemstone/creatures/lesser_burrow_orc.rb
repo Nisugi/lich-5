@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -32,7 +34,7 @@
     physical_attacks: [
       {
         name: "Short sword",
-        as: (107..127)
+        as: (101..127)
       }
     ],
     bolt_spells: [],
@@ -45,10 +47,10 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: (44..119),
-    ranged: 41,
-    bolt: 40,
-    udf: 126,
+    melee: (42..119),
+    ranged: (34..45),
+    bolt: (34..45),
+    udf: (60..126),
     bar_td: nil,
     cle_td: 21,
     emp_td: (-7..21),
@@ -58,7 +60,7 @@
     wiz_td: nil,
     mje_td: 21,
     mne_td: 21,
-    mjs_td: nil,
+    mjs_td: 21,
     mns_td: 21,
     mnm_td: 21,
     defensive_spells: [],
@@ -86,9 +88,7 @@
     flee: [
       "A lesser burrow orc trudges {direction}."
     ],
-    death: [
-      "A lesser burrow orc goes limp as he is rendered unconscious!"
-    ],
+    death: [],
     decay: [
       "A lesser burrow orc's body crumbles into dust."
     ],

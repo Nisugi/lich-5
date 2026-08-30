@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Extraplanar"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 7,
   height: 6,
   size: "medium",
   areas: [
@@ -48,15 +50,19 @@
       },
       {
         name: "Spiral-hafted crystal-edged handaxe",
-        as: 423
+        as: (402..423)
       },
       {
         name: "Spiral-hafted handaxe",
-        as: 421
+        as: (413..421)
       },
       {
         name: "Twisted crystal-tipped staff",
         as: 431
+      },
+      {
+        name: "Gleaming crystal-edged broadsword",
+        as: 413
       }
     ],
     bolt_spells: [],
@@ -82,20 +88,20 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: (240..490),
+    melee: (207..490),
     ranged: 289,
     bolt: 249,
-    udf: (453..485),
+    udf: (431..485),
     bar_td: 299,
     cle_td: (337..346),
-    emp_td: 344,
+    emp_td: (338..344),
     pal_td: (275..284),
-    ran_td: nil,
+    ran_td: 299,
     sor_td: (353..368),
     wiz_td: nil,
-    mje_td: 377,
-    mne_td: 376,
-    mjs_td: nil,
+    mje_td: (376..436),
+    mne_td: (376..436),
+    mjs_td: 408,
     mns_td: 408,
     mnm_td: 291,
     defensive_spells: [],
@@ -132,15 +138,14 @@
     ],
     death: [
       "The Ithzir janissary vainly struggles to rise, then goes still.",
-      "An Ithzir janissary's body shimmers slightly, then fades from view like a dissipating phantom.",
       "Just as you incant, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!",
-      "Just as you cast, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!"
+      "Just as you cast, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!",
+      "Just as you move to cast, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!"
     ],
     decay: [],
     search: [],
     spell_prep: [],
     attack: [
-      "A greater construct raises ithzir janissary massive foot and attempts to smash you!",
       "An Ithzir janissary swings {weapon} at you!",
       "The Ithzir janissary points at you for emphasis.",
       "The Ithzir janissary points at you."

@@ -13,16 +13,18 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Magical"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 296,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 15,
+  size: "huge",
   areas: [
     {
       name: "Elemental Confluence",
@@ -34,6 +36,14 @@
       {
         name: "Claw",
         as: 460
+      },
+      {
+        name: "Roaring ball of fire",
+        as: 469
+      },
+      {
+        name: "Stream of fire",
+        as: 469
       }
     ],
     bolt_spells: [
@@ -108,11 +118,16 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The fire elemental sputters violently, cascading flames all around as it collapses in a final fiery display."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A huge fire elemental rakes at you with tendrils of flame!",
+      "A huge fire elemental hurls {weapon} at you!"
+    ],
     bite: [],
     claw: [],
     info: {

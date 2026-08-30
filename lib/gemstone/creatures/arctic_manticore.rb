@@ -12,8 +12,10 @@
   bones: nil,
   witherable: nil,
   sympathy: nil,
-  muggable: nil,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -49,9 +51,9 @@
   defense_attributes: {
     asg: "7N",
     immunities: [],
-    melee: 150,
-    ranged: 140,
-    bolt: 140,
+    melee: (150..170),
+    ranged: (140..141),
+    bolt: (140..141),
     udf: 179,
     bar_td: nil,
     cle_td: 95,
@@ -62,8 +64,8 @@
     wiz_td: nil,
     mje_td: nil,
     mne_td: 105,
-    mjs_td: nil,
-    mns_td: 97,
+    mjs_td: (145..155),
+    mns_td: (145..155),
     mnm_td: 87,
     defensive_spells: [],
     defensive_abilities: [],
@@ -95,9 +97,7 @@
     death: [
       "The arctic manticore falls to the ground and dies.",
       "The arctic manticore screams one last time and dies.",
-      "The arctic manticore twitches violently, then dies.",
-      "An arctic manticore goes limp as it is rendered unconscious!",
-      "The arctic manticore slumps to the ground."
+      "The arctic manticore twitches violently, then dies."
     ],
     decay: [
       "An arctic manticore decays into compost."

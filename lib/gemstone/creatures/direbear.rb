@@ -10,15 +10,17 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 400,
+  max_hp: 416,
   speed: nil,
   height: 4,
   size: "large",
@@ -70,10 +72,10 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: (217..347),
-    ranged: (217..283),
-    bolt: (217..283),
-    udf: (335..417),
+    melee: (162..357),
+    ranged: (158..283),
+    bolt: (158..283),
+    udf: (208..446),
     bar_td: (234..240),
     cle_td: 306,
     emp_td: 305,
@@ -85,7 +87,7 @@
     mne_td: nil,
     mjs_td: nil,
     mns_td: 255,
-    mnm_td: 245,
+    mnm_td: (245..248),
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -124,21 +126,14 @@
     death: [
       "The direbear collapses heavily into a heap on the ground and dies.",
       "The direbear lets out a blood-curdling roar and dies.",
-      "The direbear roars loudly as he slumps to the ground and licks his wounded left foreleg.",
-      "The direbear roars loudly as he slumps to the ground and licks his wounded right foreleg.",
-      "The direbear roars loudly as she slumps to the ground and licks her wounded right foreleg.",
-      "The direbear roars loudly as she slumps to the ground and licks her wounded left foreleg.",
-      "Beautiful shot pierces both lungs, the direbear makes a wheezing noise, and drops dead!",
-      "The direbear roars loudly as she slumps to the ground and licks her wounded left paw."
+      "Beautiful shot pierces both lungs, the direbear makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A direbear decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A monstrous direwolf focuses direbear glare on you and looses an eerie, bone-chilling howl!"
-    ],
+    attack: [],
     bite: [
       "A direbear tries to bite you!"
     ],

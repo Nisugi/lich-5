@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -53,6 +55,10 @@
       {
         name: "Pitted battle axe",
         as: 191
+      },
+      {
+        name: "Unknown",
+        as: 191
       }
     ],
     bolt_spells: [],
@@ -69,19 +75,19 @@
   defense_attributes: {
     asg: "11N",
     immunities: [],
-    melee: (97..105),
-    ranged: (97..100),
-    bolt: (97..100),
-    udf: 121,
+    melee: (84..105),
+    ranged: (75..121),
+    bolt: (75..121),
+    udf: (102..121),
     bar_td: nil,
     cle_td: 63,
     emp_td: 63,
     pal_td: (60..63),
-    ran_td: nil,
+    ran_td: 63,
     sor_td: 59,
     wiz_td: nil,
-    mje_td: 55,
-    mne_td: 63,
+    mje_td: (55..63),
+    mne_td: (55..63),
     mjs_td: 63,
     mns_td: 63,
     mnm_td: (48..55),

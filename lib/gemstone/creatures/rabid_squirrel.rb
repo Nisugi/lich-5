@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -39,7 +41,7 @@
       },
       {
         name: "Nip",
-        as: 36
+        as: (36..46)
       }
     ],
     bolt_spells: [],
@@ -52,9 +54,9 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: 29,
-    ranged: nil,
-    bolt: 27,
+    melee: (23..29),
+    ranged: (17..27),
+    bolt: (17..27),
     udf: 48,
     bar_td: nil,
     cle_td: 6,
@@ -97,8 +99,7 @@
       "A rabid squirrel scampers {direction}."
     ],
     death: [
-      "The rabid squirrel twitches its tail one last time and dies.",
-      "The rabid squirrel chitters as it slumps to the ground and licks at its wounded right claw."
+      "The rabid squirrel twitches its tail one last time and dies."
     ],
     decay: [
       "A rabid squirrel decays into a pile of hair and bone."

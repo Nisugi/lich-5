@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Magical"
   ],
   bcs: true,
-  max_hp: 350,
-  speed: "10",
+  max_hp: 352,
+  speed: 10,
   height: 15,
   size: "huge",
   areas: [
@@ -58,20 +60,20 @@
   defense_attributes: {
     asg: "11",
     immunities: [],
-    melee: (247..265),
-    ranged: nil,
-    bolt: 148,
+    melee: (179..265),
+    ranged: (129..168),
+    bolt: (129..168),
     udf: (216..264),
     bar_td: 84,
     cle_td: (78..84),
     emp_td: (81..89),
-    pal_td: 84,
-    ran_td: 84,
+    pal_td: (75..84),
+    ran_td: (78..84),
     sor_td: (75..84),
     wiz_td: 84,
-    mje_td: 81,
-    mne_td: 84,
-    mjs_td: 84,
+    mje_td: (81..84),
+    mne_td: (81..84),
+    mjs_td: (75..84),
     mns_td: (75..84),
     mnm_td: (81..87),
     defensive_spells: [],
@@ -108,8 +110,7 @@
     ],
     death: [
       "The cyclops rolls over and dies.",
-      "The cyclops falls to the ground and dies.",
-      "A cyclops goes limp as it is rendered unconscious!"
+      "The cyclops falls to the ground and dies."
     ],
     decay: [
       "A cyclops decays into compost."

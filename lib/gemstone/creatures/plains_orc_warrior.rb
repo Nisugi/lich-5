@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -56,21 +58,21 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: (88..185),
-    ranged: nil,
-    bolt: nil,
-    udf: (112..167),
+    melee: (78..185),
+    ranged: (61..110),
+    bolt: (61..110),
+    udf: (112..188),
     bar_td: 48,
     cle_td: (45..51),
     emp_td: (48..56),
-    pal_td: (42..51),
-    ran_td: nil,
+    pal_td: (42..54),
+    ran_td: (45..54),
     sor_td: (48..54),
     wiz_td: nil,
     mje_td: (45..48),
-    mne_td: 48,
-    mjs_td: nil,
-    mns_td: 70,
+    mne_td: (45..48),
+    mjs_td: (66..75),
+    mns_td: (66..75),
     mnm_td: (42..51),
     defensive_spells: [],
     defensive_abilities: [],
@@ -103,7 +105,9 @@
       "A plains orc warrior struts {direction}.",
       "A plains orc warrior hunches over and limps {direction}."
     ],
-    death: [],
+    death: [
+      "Beautiful shot pierces both lungs, the plains orc warrior makes a wheezing noise, and drops dead!"
+    ],
     decay: [
       "The plains orc warrior's left leg crumbles briefly and explodes in a shower of gore."
     ],

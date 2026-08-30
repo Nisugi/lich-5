@@ -11,14 +11,16 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: false,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 350,
+  max_hp: 420,
   speed: nil,
   height: 5,
   size: "large",
@@ -44,11 +46,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 215
+        as: (190..215)
       },
       {
         name: "Ensnare",
-        as: 226
+        as: (204..226)
       }
     ],
     bolt_spells: [],
@@ -69,7 +71,7 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (167..289),
+    melee: (103..289),
     ranged: (141..142),
     bolt: (141..142),
     udf: 188,
@@ -77,13 +79,13 @@
     cle_td: (87..96),
     emp_td: (88..97),
     pal_td: (87..96),
-    ran_td: nil,
+    ran_td: (87..96),
     sor_td: (89..101),
     wiz_td: nil,
-    mje_td: 100,
-    mne_td: 100,
-    mjs_td: nil,
-    mns_td: (88..97),
+    mje_td: (100..106),
+    mne_td: (100..106),
+    mjs_td: (104..114),
+    mns_td: (104..114),
     mnm_td: 90,
     defensive_spells: [],
     defensive_abilities: [],

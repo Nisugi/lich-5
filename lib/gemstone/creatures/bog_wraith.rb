@@ -11,14 +11,16 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: true,
-  max_hp: 240,
+  max_hp: 300,
   speed: nil,
   height: 6,
   size: "medium",
@@ -40,7 +42,7 @@
       },
       {
         name: "Ensnare",
-        as: 239
+        as: (94..239)
       }
     ],
     bolt_spells: [],
@@ -57,20 +59,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (190..270),
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    melee: (187..270),
+    ranged: (173..202),
+    bolt: (173..202),
+    udf: 196,
     bar_td: nil,
     cle_td: (160..170),
     emp_td: (166..176),
     pal_td: (140..150),
-    ran_td: nil,
+    ran_td: (143..150),
     sor_td: (173..183),
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
+    mjs_td: (166..176),
     mns_td: (166..176),
     mnm_td: (176..185),
     defensive_spells: [],
@@ -96,10 +98,7 @@
     description: [
       "A haze of cloaked blackness and violet vapors, the bog wraith floats in the air just above the ground. Its violet eyes illuminate between a soft glow and an angry blazoned appearance. A pair of clawed hands extend from the middle of its being, abnormally tiny in comparison to the rest of its body."
     ],
-    arrival: [
-      "A bog troll lumbers in, her face set in an angry scowl!",
-      "A bog troll lumbers in, his face set in an angry scowl!"
-    ],
+    arrival: [],
     flee: [],
     death: [
       "A bog wraith's form dissipates into a purple haze.",

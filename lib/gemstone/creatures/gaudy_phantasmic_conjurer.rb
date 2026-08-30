@@ -10,18 +10,20 @@
   undead: true,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: true,
   max_hp: 325,
-  speed: nil,
-  height: nil,
-  size: "",
+  speed: 7,
+  height: 5,
+  size: "medium",
   areas: [
     {
       name: "Moonsedge",
@@ -29,7 +31,12 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Bite",
+        as: (520..547)
+      }
+    ],
     bolt_spells: [],
     warding_spells: [
       {
@@ -37,26 +44,30 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Pounce"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    melee: (527..735),
+    ranged: (531..654),
+    bolt: (531..654),
+    udf: 572,
     bar_td: (544..574),
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: 561,
+    emp_td: 561,
+    pal_td: (521..527),
+    ran_td: (494..503),
     sor_td: 558,
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
+    mje_td: 476,
+    mne_td: 476,
     mjs_td: nil,
     mns_td: nil,
     mnm_td: nil,
@@ -73,7 +84,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a glowing ethereal staff capped with a flickering crystal sphere"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -86,13 +99,19 @@
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A gaudy phantasmic conjurer stalks in impatiently, his gaudy robes drifting several inches above the floor.",
+      "A gaudy phantasmic conjurer stalks in impatiently, her gaudy robes drifting several inches above the floor."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A gaudy phantasmic conjurer shouts out a single mystical syllable, thrusting {pronoun} ghostly hands at you!",
+      "With an artful flick of gaudy phantasmic conjurer wrist, a gaudy phantasmic conjurer flourishes a filigreed golden wand at you.  A roaring ball of liquid fire erupts toward you!"
+    ],
     bite: [],
     claw: [],
     info: {

@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Grimswarm"
@@ -32,7 +34,7 @@
       },
       {
         name: "Plain wooden arrow",
-        as: 465
+        as: (274..465)
       },
       {
         name: "Trident",

@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 3,
   height: 12,
   size: "huge",
   areas: [
@@ -93,9 +95,9 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: 176,
-    ranged: nil,
-    bolt: 161,
+    melee: (136..176),
+    ranged: (127..209),
+    bolt: (127..209),
     udf: (175..216),
     bar_td: nil,
     cle_td: (145..155),
@@ -104,9 +106,9 @@
     ran_td: (123..133),
     sor_td: (155..163),
     wiz_td: nil,
-    mje_td: 167,
-    mne_td: 166,
-    mjs_td: nil,
+    mje_td: (162..167),
+    mne_td: (162..167),
+    mjs_td: (145..155),
     mns_td: (145..155),
     mnm_td: (117..122),
     defensive_spells: [
@@ -145,12 +147,10 @@
     death: [
       "The storm giant howls in agony one last time and dies.",
       "The storm giant twitches violently, then dies.",
-      "A storm giant goes limp as it is rendered unconscious!",
       "The storm giant crumples to the ground motionless.",
       "Beautiful shot pierces both lungs, the storm giant makes a wheezing noise, and drops dead!"
     ],
     decay: [
-      "Acid dissolves the knee ligaments.  The storm giant's tibia passes its femur in a very unpleasant manner!",
       "The storm giant's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],

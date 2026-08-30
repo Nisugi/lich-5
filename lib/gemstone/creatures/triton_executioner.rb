@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 465,
+  speed: 4,
   height: 6,
   size: "medium",
   areas: [
@@ -32,18 +34,18 @@
     physical_attacks: [
       {
         name: "Handaxe",
-        as: (433..445)
+        as: (433..451)
       },
       {
         name: "Heavy crossbow"
       },
       {
         name: "longsword",
-        as: (433..441)
+        as: (433..453)
       },
       {
         name: "Streaked pale driftwood bolt",
-        as: 453
+        as: (433..453)
       }
     ],
     bolt_spells: [],
@@ -69,20 +71,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (342..528),
-    ranged: nil,
-    bolt: nil,
+    melee: (325..528),
+    ranged: (310..356),
+    bolt: (310..356),
     udf: (498..555),
     bar_td: 340,
     cle_td: 379,
-    emp_td: (359..368),
+    emp_td: (359..371),
     pal_td: (312..321),
-    ran_td: nil,
+    ran_td: (303..309),
     sor_td: (381..396),
     wiz_td: nil,
-    mje_td: (393..408),
-    mne_td: nil,
-    mjs_td: nil,
+    mje_td: (393..411),
+    mne_td: (393..411),
+    mjs_td: 371,
     mns_td: 371,
     mnm_td: (294..303),
     defensive_spells: [],
@@ -118,10 +120,7 @@
     arrival: [
       "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
       "A triton executioner strides in, a wary look on her face.",
-      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
-      "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
       "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton dissembler arrives, striding forth with her robes trailing behind her.",
       "A triton executioner strides in, a wary look on his face.",
       "A triton executioner strides in, gliding swiftly through the water with a wary look on his face.",
       "A triton executioner just arrived."

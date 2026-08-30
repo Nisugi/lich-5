@@ -7,12 +7,14 @@
   family: "elephantid",
   type: "quadruped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -21,8 +23,8 @@
     }
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 1012,
+  speed: 12,
   height: 30,
   size: "huge",
   attack_attributes: {
@@ -30,33 +32,80 @@
       {
         name: "trunk slam",
         as: 532
+      },
+      {
+        name: "Enormous tusks",
+        as: (527..566)
+      },
+      {
+        name: "Golden targe",
+        as: (556..562)
+      },
+      {
+        name: "Great foot",
+        as: (531..575)
+      },
+      {
+        name: "Lunge",
+        as: (520..551)
+      },
+      {
+        name: "Charge",
+        as: 529
+      },
+      {
+        name: "Clawed fists",
+        as: 475
+      },
+      {
+        name: "Copper-traced dark steel hatchet",
+        as: 535
+      },
+      {
+        name: "Huge hooves",
+        as: 519
+      },
+      {
+        name: "Shark-like teeth",
+        as: 498
+      },
+      {
+        name: "Tusks",
+        as: 521
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Pounce"
+      },
+      {
+        name: "Charge"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (425..746),
-    ranged: (447..509),
-    bolt: nil,
-    udf: 600,
+    melee: (215..777),
+    ranged: (205..518),
+    bolt: (205..518),
+    udf: (427..920),
     bar_td: (408..415),
-    cle_td: nil,
-    emp_td: 427,
-    pal_td: nil,
-    ran_td: (293..305),
-    sor_td: nil,
+    cle_td: (377..383),
+    emp_td: (377..427),
+    pal_td: (335..344),
+    ran_td: (293..341),
+    sor_td: (408..418),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: 480,
-    mjs_td: nil,
-    mns_td: (377..392),
+    mje_td: (431..480),
+    mne_td: (431..480),
+    mjs_td: (302..396),
+    mns_td: (302..396),
     mnm_td: nil,
     defensive_spells: [],
     defensive_abilities: [],
@@ -65,7 +114,9 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "some studded leather barding"
+  ],
   treasure: {
     coins: false,
     magic_items: nil,
@@ -80,6 +131,7 @@
     arrival: [
       "A heavily armored battle mastodon stomps in, trunk swinging between its huge forelegs.",
       "A heavily armored battle mastodon just came through a rune-carved white granite arch.",
+      "A heavily armored battle mastodon just arrived."
     ],
     flee: [
       "A heavily armored battle mastodon just went through a rune-carved white granite arch.",
@@ -93,7 +145,9 @@
       "A heavily armored battle mastodon looks about in alarm as its trunk tests the air."
     ],
     attack: [
-      "A heavily armored battle mastodon raises heavily armored battle mastodon trunk and slams it down toward you!"
+      "A heavily armored battle mastodon raises {pronoun} trunk and slams it down toward you!",
+      "A heavily armored battle mastodon rears back and tries to stomp you with a great foot!",
+      "A heavily armored battle mastodon tries to spear you with {pronoun} enormous tusks!",
     ],
     bite: [],
     claw: [],

@@ -10,19 +10,21 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Extraplanar"
   ],
   bcs: true,
-  max_hp: 300,
-  speed: "~4 sec.",
-  height: nil,
-  size: "",
+  max_hp: 307,
+  speed: 4,
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Old Ta'Faendryl",
@@ -33,11 +35,11 @@
     physical_attacks: [
       {
         name: "Flamberge",
-        as: 450
+        as: (446..456)
       },
       {
         name: "Maul",
-        as: (450..461)
+        as: (440..461)
       }
     ],
     bolt_spells: [],
@@ -56,6 +58,9 @@
       },
       {
         name: "True Strike"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_abilities: [
@@ -76,12 +81,12 @@
     melee: "304 DS",
     ranged: "296-342 DS",
     bolt: "340-370 DS",
-    udf: nil,
+    udf: 558,
     bar_td: 406,
-    cle_td: 440,
-    emp_td: 440,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (440..445),
+    emp_td: (409..440),
+    pal_td: (387..390),
+    ran_td: (371..381),
     sor_td: 453,
     wiz_td: 466,
     mje_td: 466,
@@ -101,7 +106,13 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a gornar flail",
+    "a jagged steel flamberge",
+    "a segmented steel breastplate",
+    "a twisted steel talisman",
+    "a heavy steel maul"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -116,12 +127,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "Just as you incant, the Ithzir champion shimmers and fades away, leaving you gesturing at nothingness!",
+      "The Ithzir champion vainly struggles to rise, then goes still.",
+    ],
     decay: [],
     search: [],
     spell_prep: [],
     attack: [
-      "An Ithzir champion swings {weapon} at you!"
+      "An Ithzir champion swings {weapon} at you!",
+      "Tightening {pronoun} grip on {pronoun} gornar flail, an Ithzir champion strikes out at you with all of ithzir champion might!",
+      "Tightening {pronoun} grip on {pronoun} steel maul, an Ithzir champion strikes out at you with all of ithzir champion might!"
     ],
     bite: [],
     claw: [],

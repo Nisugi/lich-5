@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 160,
+  max_hp: 175,
   speed: nil,
   height: 3,
   size: "medium",
@@ -55,9 +57,9 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (122..189),
-    ranged: nil,
-    bolt: 95,
+    melee: (107..189),
+    ranged: (75..133),
+    bolt: (75..133),
     udf: (125..184),
     bar_td: nil,
     cle_td: (54..60),
@@ -66,9 +68,9 @@
     ran_td: (51..57),
     sor_td: (48..57),
     wiz_td: nil,
-    mje_td: 54,
-    mne_td: 54,
-    mjs_td: nil,
+    mje_td: (54..60),
+    mne_td: (54..60),
+    mjs_td: (54..60),
     mns_td: (54..60),
     mnm_td: (51..57),
     defensive_spells: [],
@@ -98,16 +100,12 @@
     ],
     flee: [
       "A mountain lion scampers {direction}.",
-      "A mountain lion scampers {direction}, mewling in pain."
+      "A mountain lion scampers {direction}, mewling in pain.",
+      "A mountain lion roars loudly as she stands {direction}!"
     ],
     death: [
       "The mountain lion crumples to the ground and dies.",
-      "The mountain lion lets out a final caterwaul and dies.",
-      "The mountain lion mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The mountain lion mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The mountain lion mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The mountain lion mewls in pain as he slumps to the ground and licks his wounded right paw.",
-      "The mountain lion mewls in pain as she slumps to the ground and licks her wounded right foreleg."
+      "The mountain lion lets out a final caterwaul and dies."
     ],
     decay: [
       "A mountain lion decays into a compost of fangs, fur and claws."

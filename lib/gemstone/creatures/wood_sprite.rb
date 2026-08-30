@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Magical"
   ],
   bcs: true,
-  max_hp: 240,
+  max_hp: 246,
   speed: nil,
   height: 3,
   size: "tiny",
@@ -67,20 +69,20 @@
   defense_attributes: {
     asg: "9N",
     immunities: [],
-    melee: (238..353),
+    melee: (196..353),
     ranged: 107,
-    bolt: nil,
-    udf: (226..371),
+    bolt: (156..160),
+    udf: (211..371),
     bar_td: (119..124),
     cle_td: (130..140),
     emp_td: (140..150),
     pal_td: (111..120),
-    ran_td: nil,
+    ran_td: (121..127),
     sor_td: (140..149),
     wiz_td: nil,
-    mje_td: 146,
-    mne_td: 157,
-    mjs_td: nil,
+    mje_td: (146..157),
+    mne_td: (146..157),
+    mjs_td: (131..141),
     mns_td: (131..141),
     mnm_td: (122..127),
     defensive_spells: [
@@ -129,15 +131,11 @@
       "A wood sprite screams loudly as he stands {direction}!"
     ],
     death: [
-      "A wood sprite goes limp as he is rendered unconscious!",
       "The wood sprite's eyes grow dim as his lifeforce fades away.",
-      "The wood sprite's eyes grow dim as her lifeforce fades away.",
-      "The wood sprite slumps to the ground."
+      "The wood sprite's eyes grow dim as her lifeforce fades away."
     ],
     decay: [
       "A wood sprite crumbles into a pile of dry splinters.",
-      "Acid dissolves connecting cartilage, freeing the wood sprite's ribs to move independently.",
-      "Acid dissolves the knee ligaments.  The wood sprite's tibia passes her femur in a very unpleasant manner!",
       "The wood sprite's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],

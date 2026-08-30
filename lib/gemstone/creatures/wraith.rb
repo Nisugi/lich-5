@@ -11,9 +11,11 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
@@ -64,7 +66,7 @@
     melee: (65..151),
     ranged: (65..78),
     bolt: (65..78),
-    udf: (111..166),
+    udf: (105..166),
     bar_td: nil,
     cle_td: 45,
     emp_td: 45,
@@ -73,8 +75,8 @@
     sor_td: 45,
     wiz_td: nil,
     mje_td: 45,
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: 45,
+    mjs_td: 45,
     mns_td: 45,
     mnm_td: 45,
     defensive_spells: [],
@@ -111,7 +113,9 @@
     death: [
       "The wraith falls to the ground motionless.",
       "The wraith screams evilly one last time and goes still.",
-      "The wraith goes still for a moment while its head reshapes."
+      "The wraith goes still for a moment while its head reshapes.",
+      "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to his side.",
+      "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to her side."
     ],
     decay: [
       "A wraith turns to dust."

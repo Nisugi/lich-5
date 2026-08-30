@@ -12,14 +12,16 @@
   bones: false,
   witherable: false,
   sympathy: false,
-  muggable: nil,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Magical"
   ],
   bcs: true,
-  max_hp: 505,
-  speed: nil,
+  max_hp: 534,
+  speed: 9,
   height: 17,
   size: "huge",
   areas: [
@@ -43,11 +45,11 @@
       },
       {
         name: "Massive arm",
-        as: 412
+        as: (404..424)
       },
       {
         name: "Smash",
-        as: 416
+        as: (404..416)
       }
     ],
     bolt_spells: [],
@@ -66,10 +68,10 @@
   defense_attributes: {
     asg: "19",
     immunities: ["magic"],
-    melee: (262..510),
+    melee: (176..510),
     ranged: nil,
     bolt: nil,
-    udf: (435..640),
+    udf: (391..640),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -107,14 +109,15 @@
       "A lesser construct lumbers in!"
     ],
     flee: [
-      "A lesser construct crawls {direction}."
+      "A lesser construct crawls {direction}.",
+      "A lesser construct grumbles as it heads {direction}."
     ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
     attack: [
-      "A lesser construct raises lesser construct massive foot and attempts to smash you!",
+      "A lesser construct raises {pronoun} massive foot and attempts to smash you!",
       "A lesser construct swings {weapon} at you!"
     ],
     bite: [],

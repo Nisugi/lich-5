@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: 500,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 7,
+  size: "large",
   areas: [
     {
       name: "The Hive",
@@ -37,6 +39,10 @@
       },
       {
         name: "Pincer (attack)"
+      },
+      {
+        name: "Bladed forelegs",
+        as: (532..541)
       }
     ],
     bolt_spells: [],
@@ -51,6 +57,9 @@
       },
       {
         name: "Crowd Press"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_abilities: [
@@ -70,14 +79,14 @@
     asg: "20N",
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
+    ranged: (225..474),
+    bolt: (225..474),
     udf: 822,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (402..408),
+    emp_td: 420,
+    pal_td: (360..369),
+    ran_td: (366..375),
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -111,11 +120,18 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A chitinous kiramon myrmidon collapses, its forelegs spasming and twitching before it at last surrenders to death.",
+      "A chitinous kiramon myrmidon collapses, his forelegs spasming and twitching before he at last surrenders to death."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A chitinous kiramon myrmidon strikes out at you with all of chitinous kiramon myrmidon might!",
+      "Bringing {pronoun} forelegs together, a chitinous kiramon myrmidon attempts to pincer you!",
+      "Surging forward powerfully, a chitinous kiramon myrmidon slashes at you with {pronoun} bladed forelegs!"
+    ],
     bite: [],
     claw: [],
     info: {

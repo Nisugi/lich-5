@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 28,
-  speed: nil,
+  speed: 8,
   height: 1,
   size: "small",
   areas: [
@@ -32,6 +34,10 @@
     physical_attacks: [
       {
         name: "Bite",
+        as: 23
+      },
+      {
+        name: "Unknown",
         as: 23
       }
     ],
@@ -48,11 +54,11 @@
     melee: 23,
     ranged: 22,
     bolt: 22,
-    udf: 41,
+    udf: (32..41),
     bar_td: 3,
     cle_td: 3,
     emp_td: 3,
-    pal_td: nil,
+    pal_td: 3,
     ran_td: 3,
     sor_td: 3,
     wiz_td: nil,

@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 290,
+  max_hp: 298,
   speed: nil,
   height: 5,
   size: "medium",
@@ -61,20 +63,20 @@
   defense_attributes: {
     asg: "5N",
     immunities: [],
-    melee: (273..306),
-    ranged: nil,
-    bolt: 167,
+    melee: (190..306),
+    ranged: (167..218),
+    bolt: (167..218),
     udf: (189..300),
     bar_td: 81,
     cle_td: (81..90),
     emp_td: (88..96),
     pal_td: (78..87),
-    ran_td: nil,
+    ran_td: (75..84),
     sor_td: 92,
     wiz_td: 96,
     mje_td: 96,
     mne_td: 96,
-    mjs_td: 88,
+    mjs_td: (82..91),
     mns_td: (82..91),
     mnm_td: (81..84),
     defensive_spells: [],
@@ -111,13 +113,12 @@
       "A Grutik savage shambles {direction}."
     ],
     death: [
-      "A Grutik savage goes limp as he is rendered unconscious!",
-      "The Grutik savage slumps to the ground."
+      "The Grutik savage slumps to the ground.",
+      "Beautiful shot pierces both lungs, the Grutik savage makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A Grutik savage collapses into a lifeless heap upon the ground.",
-      "A Grutik savage's body turns to dust.",
-      "Acid dissolves connecting cartilage, freeing the Grutik savage's ribs to move independently."
+      "A Grutik savage's body turns to dust."
     ],
     search: [],
     spell_prep: [],

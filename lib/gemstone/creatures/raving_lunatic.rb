@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Extraplanar",
@@ -21,7 +23,7 @@
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 5,
   height: 5,
   size: "medium",
   areas: [
@@ -38,11 +40,11 @@
       },
       {
         name: "Bite",
-        as: 367
+        as: (315..367)
       },
       {
         name: "Claw",
-        as: 398
+        as: (351..398)
       },
       {
         name: "Midnight black spiked whip",
@@ -50,7 +52,7 @@
       },
       {
         name: "Twisted kris",
-        as: 401
+        as: (391..401)
       }
     ],
     bolt_spells: [],
@@ -63,21 +65,21 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (379..499),
+    melee: (336..499),
     ranged: (276..346),
     bolt: (339..359),
-    udf: (401..579),
+    udf: (398..579),
     bar_td: 278,
     cle_td: (300..306),
-    emp_td: (294..300),
-    pal_td: nil,
-    ran_td: nil,
+    emp_td: (294..305),
+    pal_td: (253..262),
+    ran_td: 256,
     sor_td: (315..326),
     wiz_td: 330,
-    mje_td: (330..331),
-    mne_td: 330,
-    mjs_td: nil,
-    mns_td: 317,
+    mje_td: (330..337),
+    mne_td: (330..337),
+    mjs_td: (316..319),
+    mns_td: (316..319),
     mnm_td: (242..251),
     defensive_spells: [],
     defensive_abilities: [],
@@ -106,11 +108,9 @@
     arrival: [],
     flee: [],
     death: [
-      "A raving lunatic goes limp as he is rendered unconscious!",
       "The raving lunatic twitches violently, then dies."
     ],
     decay: [
-      "Acid dissolves connecting cartilage, freeing the raving lunatic's ribs to move independently.",
       "The raving lunatic's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],

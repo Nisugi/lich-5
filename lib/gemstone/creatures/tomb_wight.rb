@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -32,7 +34,7 @@
     physical_attacks: [
       {
         name: "Broadsword",
-        as: 131
+        as: (131..163)
       },
       {
         name: "Two-handed sword",
@@ -40,7 +42,11 @@
       },
       {
         name: "Twohanded sword",
-        as: 157
+        as: (127..157)
+      },
+      {
+        name: "Blackened claidhmore",
+        as: 141
       }
     ],
     bolt_spells: [],
@@ -63,19 +69,19 @@
     asg: "18",
     immunities: [],
     melee: (64..187),
-    ranged: nil,
-    bolt: nil,
-    udf: (86..166),
+    ranged: (7..115),
+    bolt: (7..115),
+    udf: (75..166),
     bar_td: 45,
-    cle_td: (39..45),
+    cle_td: (39..51),
     emp_td: (45..53),
     pal_td: (42..51),
-    ran_td: 45,
+    ran_td: (39..51),
     sor_td: 45,
     wiz_td: 45,
     mje_td: 45,
     mne_td: 45,
-    mjs_td: 45,
+    mjs_td: (45..60),
     mns_td: (45..60),
     mnm_td: (42..51),
     defensive_spells: [],

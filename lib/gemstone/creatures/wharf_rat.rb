@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: 24,
@@ -56,8 +58,8 @@
     wiz_td: nil,
     mje_td: 3,
     mne_td: 3,
-    mjs_td: nil,
-    mns_td: 3,
+    mjs_td: (3..6),
+    mns_td: (3..6),
     mnm_td: 3,
     defensive_spells: [],
     defensive_abilities: [],
@@ -90,10 +92,7 @@
     death: [
       "The wharf rat collapses to the ground, emits a final squeal, and dies.",
       "The wharf rat twitches and dies.",
-      "The wharf rat collapses to the ground, emits a final silent squeal, and dies.",
-      "The wharf rat shrieks as it slumps to the ground and licks at its wounded left foreleg.",
-      "The wharf rat shrieks as it slumps to the ground and licks at its wounded right foreleg.",
-      "The wharf rat shrieks as it slumps to the ground and licks at its wounded right claw."
+      "The wharf rat collapses to the ground, emits a final silent squeal, and dies."
     ],
     decay: [
       "A wharf rat decays into a pile of mangy hair and bone."

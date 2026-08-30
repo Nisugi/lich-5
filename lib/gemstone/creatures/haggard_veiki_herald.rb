@@ -11,9 +11,11 @@
   blood: true,
   bones: nil,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -55,20 +57,20 @@
   defense_attributes: {
     asg: "8",
     immunities: [],
-    melee: (372..507),
-    ranged: nil,
-    bolt: nil,
+    melee: (353..507),
+    ranged: (350..465),
+    bolt: (350..465),
     udf: 485,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (359..364),
     emp_td: (368..376),
     pal_td: (325..328),
-    ran_td: nil,
+    ran_td: (322..329),
     sor_td: "366 to 396",
     wiz_td: nil,
     mje_td: 400,
     mne_td: "385 to 415",
-    mjs_td: nil,
+    mjs_td: (359..364),
     mns_td: "364 to 374",
     mnm_td: 313,
     defensive_spells: [
@@ -101,19 +103,14 @@
     description: [
       "Power rumbles and thrums through the limbs of the Veiki herald. That barely contained might and the intensity of his devotion have colluded to burn the meat from his bones, leaving him skeletally thin. The hollows of his face are deep and haunted, the crags cast in deep shadow by the flashes of brilliant azure that flicker and fade within his mesmerizing stare. The herald's hair is brittle and blanched, starkly pale against his sun-darkened skin.\n\n;Assess\nThe Veiki herald is huge in size and about thirteen feet high in his current state."
     ],
-    arrival: [
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in.",
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in."
-    ],
+    arrival: [],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
     attack: [
-      "Hoisting haggard veiki herald zorchar khopesh high, a haggard Veiki herald strikes brutally at you!",
-      "A titan tempest tyrant's feras morning star crackles with corruscating lightning as haggard veiki herald swings it at you!",
-      "Tightening haggard veiki herald grip on haggard veiki herald feras spikestar, a titan tempest tyrant strikes out at you with all of haggard veiki herald might!"
+      "Hoisting {pronoun} zorchar khopesh high, a haggard Veiki herald strikes brutally at you!",
     ],
     bite: [],
     claw: [],

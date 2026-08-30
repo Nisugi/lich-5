@@ -10,18 +10,20 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Magical",
     "Element-based"
   ],
   bcs: true,
-  max_hp: 174,
-  speed: "10 sec",
+  max_hp: 215,
+  speed: 10,
   height: 4,
   size: "medium",
   areas: [
@@ -58,9 +60,9 @@
       "Fire"
     ],
     melee: (83..155),
-    ranged: (83..101),
-    bolt: (83..101),
-    udf: (124..175),
+    ranged: (76..111),
+    bolt: (76..111),
+    udf: (116..175),
     bar_td: 54,
     cle_td: (48..57),
     emp_td: (54..58),
@@ -70,7 +72,7 @@
     wiz_td: 54,
     mje_td: 54,
     mne_td: 54,
-    mjs_td: 54,
+    mjs_td: (51..60),
     mns_td: (51..60),
     mnm_td: (48..57),
     defensive_spells: [],
@@ -103,15 +105,7 @@
     ],
     death: [
       "The fire cat lets out a final caterwaul and dies.",
-      "The fire cat crumples to the ground and dies.",
-      "A fire cat goes limp as he is rendered unconscious!",
-      "The fire cat mewls in pain as he slumps to the ground and licks his wounded left paw.",
-      "The fire cat mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The fire cat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The fire cat mewls in pain as he slumps to the ground and licks his wounded right paw.",
-      "The fire cat mewls in pain as she slumps to the ground and licks her wounded left paw.",
-      "The fire cat mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The fire cat mewls in pain as she slumps to the ground and licks her wounded right foreleg."
+      "The fire cat crumples to the ground and dies."
     ],
     decay: [
       "A fire cat decays into a compost of fangs, fur and claws."

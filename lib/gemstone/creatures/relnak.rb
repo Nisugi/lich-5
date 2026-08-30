@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 44,
-  speed: nil,
+  speed: 10,
   height: 1,
   size: "small",
   areas: [
@@ -53,6 +55,10 @@
       {
         name: "Foot",
         as: 61
+      },
+      {
+        name: "Unknown",
+        as: 71
       }
     ],
     bolt_spells: [],
@@ -65,10 +71,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (39..61),
-    ranged: (54..57),
-    bolt: (54..57),
-    udf: 46,
+    melee: (36..61),
+    ranged: (34..57),
+    bolt: (34..57),
+    udf: (41..46),
     bar_td: nil,
     cle_td: 9,
     emp_td: 9,
@@ -78,7 +84,7 @@
     wiz_td: nil,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: nil,
+    mjs_td: 9,
     mns_td: 9,
     mnm_td: 9,
     defensive_spells: [],
@@ -110,11 +116,7 @@
     ],
     death: [
       "The relnak falls back into a heap and dies.",
-      "The relnak hisses one last time and dies.",
-      "A relnak screeches loudly and slumps to the ground while frantically licking its wounded right foreleg.",
-      "A relnak screeches loudly and slumps to the ground while frantically licking its wounded left foreleg.",
-      "A relnak screeches loudly and slumps to the ground while frantically licking its wounded left hoof.",
-      "A relnak screeches loudly and slumps to the ground while frantically licking its wounded right hoof."
+      "The relnak hisses one last time and dies."
     ],
     decay: [
       "A relnak decays into compost."

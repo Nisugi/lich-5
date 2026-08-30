@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 278,
-  speed: nil,
+  max_hp: 293,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -36,7 +38,7 @@
     physical_attacks: [
       {
         name: "Jeddart-axe",
-        as: 230
+        as: (230..280)
       },
       {
         name: "Lunge",
@@ -57,21 +59,21 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (242..319),
-    ranged: nil,
-    bolt: (188..234),
+    melee: (212..319),
+    ranged: (204..254),
+    bolt: (188..254),
     udf: 259,
     bar_td: 127,
     cle_td: 139,
     emp_td: 140,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (116..119),
+    ran_td: 119,
     sor_td: 146,
     wiz_td: nil,
     mje_td: 153,
-    mne_td: nil,
-    mjs_td: 155,
-    mns_td: 140,
+    mne_td: 153,
+    mjs_td: (155..190),
+    mns_td: (155..190),
     mnm_td: 111,
     defensive_spells: [],
     defensive_abilities: [],
@@ -100,15 +102,12 @@
     arrival: [],
     flee: [],
     death: [
-      "A Sheruvian initiate goes limp as it is rendered unconscious!",
       "A Sheruvian initiate lunges at you, exclaiming, \"I've seen children put up a better fight than this fool!  Now he dies!\"",
       "The Sheruvian initiate screams emotionlessly one last time and lies still.",
       "The Sheruvian initiate falls to the ground and lies still.",
       "The Sheruvian initiate slumps to the ground."
     ],
-    decay: [
-      "Acid dissolves the knee ligaments.  The Sheruvian initiate's tibia passes its femur in a very unpleasant manner!"
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [

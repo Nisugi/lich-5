@@ -12,8 +12,10 @@
   bones: nil,
   witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
@@ -76,9 +78,9 @@
     asg: "16N",
     immunities: [],
     melee: (492..613),
-    ranged: 182,
-    bolt: 182,
-    udf: nil,
+    ranged: (182..186),
+    bolt: (182..186),
+    udf: 212,
     bar_td: (183..195),
     cle_td: (203..206),
     emp_td: (198..207),
@@ -88,7 +90,7 @@
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
+    mjs_td: (204..216),
     mns_td: (204..216),
     mnm_td: (165..174),
     defensive_spells: [],
@@ -132,8 +134,6 @@
     attack: [
       "A stone troll stomps at you with {pronoun} foot!",
       "A stone troll swings {weapon} at you!",
-      "The stone giant rumbles in agony as he teeters for a moment, then falls directly at you!",
-      "The stone giant rumbles in agony as she teeters for a moment, then falls directly at you!"
     ],
     bite: [],
     claw: [],

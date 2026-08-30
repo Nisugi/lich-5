@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 28,
-  speed: nil,
+  speed: 8,
   height: 1,
   size: "medium",
   areas: [
@@ -32,7 +34,15 @@
     physical_attacks: [
       {
         name: "Charge",
-        as: 43
+        as: (43..63)
+      },
+      {
+        name: "Unknown",
+        as: 53
+      },
+      {
+        name: "Claw",
+        as: 53
       }
     ],
     bolt_spells: [],
@@ -45,9 +55,9 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: 33,
-    ranged: 30,
-    bolt: 30,
+    melee: (26..33),
+    ranged: (20..30),
+    bolt: (20..30),
     udf: 45,
     bar_td: nil,
     cle_td: 9,
@@ -58,8 +68,8 @@
     wiz_td: nil,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: nil,
-    mns_td: 9,
+    mjs_td: (6..9),
+    mns_td: (6..9),
     mnm_td: 9,
     defensive_spells: [],
     defensive_abilities: [],
@@ -88,7 +98,9 @@
     flee: [
       "A cave nipper slithers {direction}."
     ],
-    death: [],
+    death: [
+      "The cave nipper hisses one last time and dies."
+    ],
     decay: [
       "A cave nipper decays into compost."
     ],
@@ -98,7 +110,9 @@
       "A cave nipper charges at you!"
     ],
     bite: [],
-    claw: [],
+    claw: [
+      "A cave nipper claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

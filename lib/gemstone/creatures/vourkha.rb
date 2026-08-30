@@ -10,15 +10,17 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
-  max_hp: 240,
+  max_hp: 261,
   speed: nil,
   height: 5,
   size: "medium",
@@ -62,20 +64,20 @@
   defense_attributes: {
     asg: "7N",
     immunities: [],
-    melee: (145..283),
-    ranged: (145..170),
-    bolt: (145..170),
-    udf: (246..322),
+    melee: (136..283),
+    ranged: (134..180),
+    bolt: (134..180),
+    udf: (163..322),
     bar_td: 135,
     cle_td: (148..157),
     emp_td: (148..154),
     pal_td: (126..135),
-    ran_td: 126,
+    ran_td: (122..132),
     sor_td: (149..164),
     wiz_td: nil,
-    mje_td: 163,
-    mne_td: 162,
-    mjs_td: nil,
+    mje_td: (162..163),
+    mne_td: (162..163),
+    mjs_td: (148..157),
     mns_td: (148..157),
     mnm_td: (127..136),
     defensive_spells: [
@@ -92,7 +94,8 @@
   equipment: [
     "a bruised left eye",
     "a bruised right eye",
-    "a completely severed left arm"
+    "a completely severed left arm",
+    "a completely severed left hand"
   ],
   treasure: {
     coins: true,
@@ -116,10 +119,9 @@
     death: [
       "The vourkha slumps to the ground as the light departs his eyes.",
       "The vourkha slumps to the ground as the light departs her eyes.",
-      "The vourkha slumps to the ground."
+      "Beautiful shot pierces both lungs, the vourkha makes a wheezing noise, and drops dead!"
     ],
     decay: [
-      "Acid dissolves connecting cartilage, freeing the vourkha's ribs to move independently.",
       "The vourkha's right leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],

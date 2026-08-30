@@ -12,8 +12,10 @@
   bones: nil,
   witherable: nil,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Magical"
@@ -80,7 +82,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The ice elemental dissipates into a cool breeze that fades rapidly away."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

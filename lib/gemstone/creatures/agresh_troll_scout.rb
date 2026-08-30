@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -54,20 +56,20 @@
   defense_attributes: {
     asg: "5",
     immunities: [],
-    melee: 115,
-    ranged: 115,
-    bolt: 119,
+    melee: (114..115),
+    ranged: (90..115),
+    bolt: (90..119),
     udf: 128,
     bar_td: 49,
     cle_td: 57,
     emp_td: 57,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (54..57),
+    ran_td: 57,
     sor_td: 53,
     wiz_td: 49,
     mje_td: 49,
     mne_td: 49,
-    mjs_td: nil,
+    mjs_td: 57,
     mns_td: 57,
     mnm_td: (42..49),
     defensive_spells: [
@@ -80,7 +82,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a war hammer",
+    "a wooden shield",
+    "some light leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -101,7 +107,6 @@
       "An Agresh troll scout runs {direction}."
     ],
     death: [
-      "An Agresh troll scout goes limp as he is rendered unconscious!",
       "Intestines rupture from intense heat; an Agresh troll scout dies a slow, painful death."
     ],
     decay: [

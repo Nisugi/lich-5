@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Living",
     "Magical",
@@ -67,21 +69,21 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (183..221),
-    ranged: (200..221),
-    bolt: (200..221),
+    melee: (182..320),
+    ranged: (171..223),
+    bolt: (171..223),
     udf: (298..395),
     bar_td: (264..270),
     cle_td: (282..297),
     emp_td: (276..286),
     pal_td: (238..248),
-    ran_td: nil,
+    ran_td: (238..248),
     sor_td: (299..317),
     wiz_td: nil,
-    mje_td: (316..322),
-    mne_td: 332,
-    mjs_td: nil,
-    mns_td: (306..311),
+    mje_td: (316..332),
+    mne_td: (316..332),
+    mjs_td: (286..311),
+    mns_td: (286..311),
     mnm_td: (235..245),
     defensive_spells: [
       "Elemental Bias (508)",
@@ -116,8 +118,7 @@
     ],
     death: [
       "The moulis twitches violently, then dies.",
-      "The moulis flails wildly for a moment before going still, its appendages dropping lifelessly to the ground.",
-      "The moulis slumps to the ground."
+      "The moulis flails wildly for a moment before going still, its appendages dropping lifelessly to the ground."
     ],
     decay: [
       "A moulis crumbles into a putrid compost.",
@@ -131,7 +132,7 @@
     attack: [
       "A moulis extrudes a flattened fiber and swings it at you!",
       "A moulis hurls {weapon} at you!",
-      "A moulis scraping rolls into a ball and flings moulis at you!"
+      "A moulis scraping rolls into a ball and flings {pronoun} at you!"
     ],
     bite: [],
     claw: [],

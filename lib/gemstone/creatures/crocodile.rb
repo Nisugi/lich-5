@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 129,
-  speed: nil,
+  speed: 14,
   height: 1,
   size: "medium",
   areas: [
@@ -52,7 +54,7 @@
       },
       {
         name: "Charge",
-        as: 137
+        as: (70..137)
       }
     ],
     bolt_spells: [],
@@ -69,21 +71,21 @@
   defense_attributes: {
     asg: "16N",
     immunities: [],
-    melee: (47..81),
+    melee: (45..81),
     ranged: (31..50),
     bolt: (31..50),
-    udf: (79..96),
+    udf: (74..96),
     bar_td: 33,
     cle_td: (18..27),
-    emp_td: 27,
+    emp_td: (18..27),
     pal_td: (18..27),
-    ran_td: nil,
+    ran_td: (18..27),
     sor_td: (18..27),
     wiz_td: nil,
     mje_td: (18..27),
-    mne_td: 27,
-    mjs_td: 27,
-    mns_td: (18..27),
+    mne_td: (18..27),
+    mjs_td: (27..48),
+    mns_td: (27..48),
     mnm_td: (18..27),
     defensive_spells: [],
     defensive_abilities: [],
@@ -119,7 +121,6 @@
     death: [
       "The crocodile falls back into a heap and dies.",
       "The crocodile hisses one last time and dies.",
-      "A crocodile goes limp as it is rendered unconscious!",
       "The blue crocodile falls back into a heap and dies.",
       "The mauve crocodile falls back into a heap and dies.",
       "The blue crocodile hisses one last time and dies.",

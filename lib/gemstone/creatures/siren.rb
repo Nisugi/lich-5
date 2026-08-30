@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
@@ -33,7 +35,7 @@
     physical_attacks: [
       {
         name: "Ensnare",
-        as: 449
+        as: (446..449)
       },
       {
         name: "Coral-hilted sharply tapered longsword",
@@ -79,20 +81,20 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (413..577),
-    ranged: nil,
-    bolt: (336..453),
-    udf: (560..613),
+    melee: (408..577),
+    ranged: (431..483),
+    bolt: (336..483),
+    udf: (542..619),
     bar_td: 363,
     cle_td: (389..391),
-    emp_td: (417..424),
+    emp_td: (391..424),
     pal_td: (336..344),
-    ran_td: nil,
+    ran_td: (321..324),
     sor_td: (398..407),
     wiz_td: nil,
     mje_td: (403..435),
-    mne_td: (411..423),
-    mjs_td: nil,
+    mne_td: (403..435),
+    mjs_td: (391..400),
     mns_td: (391..400),
     mnm_td: (302..310),
     defensive_spells: [
@@ -135,7 +137,6 @@
       "The siren gives a plaintive wail before she slumps to her side and dies."
     ],
     decay: [
-      "Acid dissolves connecting cartilage, freeing the siren's ribs to move independently.",
       "A siren decays into compost.",
       "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away.",
       "A deft siren decays into compost."

@@ -9,17 +9,19 @@
   type: "Arachnid",
   undead: false,
   blood: true,
-  bones: nil,
+  bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: false,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 90,
-  speed: nil,
+  speed: 10,
   height: 3,
   size: "medium",
   areas: [
@@ -53,6 +55,10 @@
       {
         name: "Pincer",
         as: 104
+      },
+      {
+        name: "Unknown",
+        as: 116
       }
     ],
     bolt_spells: [],
@@ -73,10 +79,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (61..137),
-    ranged: nil,
-    bolt: 48,
-    udf: (69..145),
+    melee: (56..137),
+    ranged: (47..59),
+    bolt: (47..59),
+    udf: (63..145),
     bar_td: 24,
     cle_td: 24,
     emp_td: 24,
@@ -86,8 +92,8 @@
     wiz_td: nil,
     mje_td: 24,
     mne_td: 24,
-    mjs_td: nil,
-    mns_td: 24,
+    mjs_td: 63,
+    mns_td: 63,
     mnm_td: 24,
     defensive_spells: [],
     defensive_abilities: [],
@@ -97,7 +103,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye",
+    "a completely severed left foreleg"
+  ],
   treasure: {
     coins: false,
     magic_items: false,
@@ -117,9 +127,7 @@
     ],
     death: [
       "The greater spider collapses to the ground and dies.",
-      "The greater spider's body jerks one last time and dies.",
-      "A greater spider goes limp as it is rendered unconscious!",
-      "The greater spider slumps to the ground."
+      "The greater spider's body jerks one last time and dies."
     ],
     decay: [
       "A greater spider's legs shrivel up beneath it as it decays into dust."

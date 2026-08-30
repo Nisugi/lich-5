@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "corporeal undead"
   ],
   bcs: true,
-  max_hp: 300,
-  speed: nil,
+  max_hp: 333,
+  speed: 8,
   height: 6,
   size: "medium",
   areas: [
@@ -55,21 +57,21 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: (205..436),
-    ranged: 216,
-    bolt: 259,
+    melee: (197..436),
+    ranged: (181..292),
+    bolt: (181..292),
     udf: (288..469),
     bar_td: 168,
-    cle_td: 171,
+    cle_td: (183..192),
     emp_td: (184..193),
-    pal_td: 197,
-    ran_td: nil,
+    pal_td: (168..197),
+    ran_td: (177..180),
     sor_td: (188..197),
     wiz_td: nil,
-    mje_td: 218,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: 181,
+    mje_td: (216..218),
+    mne_td: (216..218),
+    mjs_td: (181..187),
+    mns_td: (181..187),
     mnm_td: (168..177),
     defensive_spells: [],
     defensive_abilities: [],
@@ -79,7 +81,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a tarnished and rusted Hammer of Kai",
+    "some faded buff and blue hauberk"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -94,17 +99,15 @@
     ],
     arrival: [
       "A decaying Citadel guardsman strides in.",
-      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm."
     ],
     flee: [],
     death: [
       "A decaying Citadel guardsman collapses sobbing silently before lying motionless on the floor.",
-      "A decaying Citadel guardsman collapses sobbing silently before lying motionless on the ground."
+      "A decaying Citadel guardsman collapses sobbing silently before lying motionless on the ground.",
     ],
     decay: [
       "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant draft.",
-      "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant breeze.",
-      "Acid dissolves connecting cartilage, freeing the Citadel guardsman's ribs to move independently."
+      "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant breeze."
     ],
     search: [],
     spell_prep: [],

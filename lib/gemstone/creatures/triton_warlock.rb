@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
   max_hp: 240,
-  speed: nil,
+  speed: 8,
   height: 6,
   size: "medium",
   areas: [
@@ -80,20 +82,20 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (334..496),
-    ranged: nil,
-    bolt: nil,
+    melee: (242..554),
+    ranged: (329..478),
+    bolt: (329..478),
     udf: (387..590),
     bar_td: 400,
-    cle_td: (391..401),
+    cle_td: (391..408),
     emp_td: 409,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (341..351),
+    ran_td: (346..354),
     sor_td: "410 to 440",
     wiz_td: nil,
-    mje_td: 436,
-    mne_td: 446,
-    mjs_td: nil,
+    mje_td: (436..446),
+    mne_td: (436..446),
+    mjs_td: (392..399),
     mns_td: (392..399),
     mnm_td: (393..403),
     defensive_spells: [
@@ -129,8 +131,6 @@
     ],
     arrival: [
       "A triton warlock arrives, striding forth with her robes trailing behind her.",
-      "A triton assassin stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton assassin stalks in silently, her cold eyes gleaming with hatred.",
       "A glowing triton warlock just arrived.",
       "A triton warlock just arrived.",
       "An unyielding triton warlock just arrived.",
@@ -143,9 +143,7 @@
     death: [
       "The triton warlock gurgles once and goes still, a wrathful look on her face."
     ],
-    decay: [
-      "Acid dissolves the knee ligaments.  The triton warlock's tibia passes her femur in a very unpleasant manner!"
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [

@@ -12,14 +12,16 @@
   bones: false,
   witherable: false,
   sympathy: true,
-  muggable: nil,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Element-based"
   ],
   bcs: true,
-  max_hp: 140,
-  speed: nil,
+  max_hp: 141,
+  speed: 16,
   height: 6,
   size: "medium",
   areas: [
@@ -36,7 +38,7 @@
     physical_attacks: [
       {
         name: "Closed fist",
-        as: 152
+        as: (122..152)
       },
       {
         name: "Ensnare (attack)",
@@ -67,19 +69,19 @@
     asg: "7N",
     immunities: [],
     melee: (37..51),
-    ranged: 37,
-    bolt: 37,
-    udf: 67,
+    ranged: (27..37),
+    bolt: (27..37),
+    udf: (60..67),
     bar_td: nil,
     cle_td: 48,
     emp_td: 48,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (45..48),
+    ran_td: 48,
     sor_td: 48,
     wiz_td: nil,
     mje_td: 48,
     mne_td: 48,
-    mjs_td: nil,
+    mjs_td: 48,
     mns_td: 48,
     mnm_td: 48,
     defensive_spells: [],
@@ -115,7 +117,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A fire guardian gestures at you!"
+      "A fire guardian gestures at you!",
+      "A fire guardian swings {weapon} at you!"
     ],
     bite: [],
     claw: [],

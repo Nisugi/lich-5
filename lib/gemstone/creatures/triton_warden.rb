@@ -10,19 +10,21 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
-  height: nil,
-  size: "",
+  speed: 4,
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Atoll",
@@ -36,11 +38,15 @@
       },
       {
         name: "Pale driftwood arrow",
-        as: 456
+        as: (431..456)
       },
       {
         name: "Sapphire-tipped arrow",
-        as: 456
+        as: (431..456)
+      },
+      {
+        name: "Brackish green arrow",
+        as: 446
       }
     ],
     bolt_spells: [],
@@ -71,21 +77,21 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    melee: (130..646),
+    ranged: (259..390),
+    bolt: (259..390),
+    udf: 514,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (426..432),
+    emp_td: (421..423),
+    pal_td: (371..381),
+    ran_td: (365..375),
     sor_td: "433 to 471",
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: 480,
-    mjs_td: nil,
-    mns_td: nil,
+    mje_td: (401..480),
+    mne_td: (401..480),
+    mjs_td: (341..366),
+    mns_td: (341..366),
     mnm_td: nil,
     defensive_spells: [
       "Spirit Warding I (101)",
@@ -105,7 +111,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a dried seaweed-wrapped longbow",
+    "a mildewed rough leather quiver"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -125,7 +134,10 @@
       "A triton warden heads {direction}.",
       "A triton warden limps {direction}."
     ],
-    death: [],
+    death: [
+      "The triton warden gurgles once and goes still, a wrathful look on his face.",
+      "The triton warden gurgles once and goes still, a wrathful look on her face."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

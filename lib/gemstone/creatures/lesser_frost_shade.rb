@@ -11,16 +11,18 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead",
     "Element-based"
   ],
   bcs: nil,
   max_hp: 44,
-  speed: nil,
+  speed: 12,
   height: 5,
   size: "medium",
   areas: [
@@ -34,6 +36,10 @@
       {
         name: "Handaxe",
         as: (33..43)
+      },
+      {
+        name: "Unknown",
+        as: 23
       }
     ],
     bolt_spells: [],
@@ -45,6 +51,10 @@
       {
         name: "Repel",
         cs: 14
+      },
+      {
+        name: "Handaxe",
+        cs: 14
       }
     ],
     offensive_spells: [],
@@ -55,7 +65,7 @@
   defense_attributes: {
     asg: "5",
     immunities: [],
-    melee: -16,
+    melee: (-17..-16),
     ranged: -18,
     bolt: -18,
     udf: 22,
@@ -68,7 +78,7 @@
     wiz_td: nil,
     mje_td: 6,
     mne_td: 6,
-    mjs_td: nil,
+    mjs_td: 6,
     mns_td: 6,
     mnm_td: 6,
     defensive_spells: [],
@@ -79,7 +89,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a handaxe",
+    "some light leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -45,6 +47,10 @@
       {
         name: "Broad-bladed steel hatchet",
         as: 169
+      },
+      {
+        name: "Unknown",
+        as: 173
       }
     ],
     bolt_spells: [],
@@ -64,20 +70,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (100..211),
-    ranged: (116..121),
-    bolt: (116..121),
-    udf: (181..232),
+    melee: (90..211),
+    ranged: (90..129),
+    bolt: (90..129),
+    udf: (171..232),
     bar_td: 60,
     cle_td: (60..66),
-    emp_td: (60..64),
+    emp_td: (57..64),
     pal_td: (54..60),
     ran_td: (57..63),
     sor_td: (57..66),
     wiz_td: nil,
     mje_td: (60..66),
-    mne_td: 60,
-    mjs_td: nil,
+    mne_td: (60..66),
+    mjs_td: (60..66),
     mns_td: (60..66),
     mnm_td: (57..66),
     defensive_spells: [],
@@ -90,7 +96,12 @@
   abilities_misc: [],
   equipment: [
     "a broad-bladed steel hatchet",
-    "a slatted reinforced wooden shield"
+    "a slatted reinforced wooden shield",
+    "a black steel shield",
+    "a red-trimmed black wool cape",
+    "an iron studded mace",
+    "some oiled red cuirboulli leather",
+    "some steel-toed black leather boots"
   ],
   treasure: {
     coins: true,
@@ -115,12 +126,10 @@
       "The ogre warrior falls to the ground and dies.",
       "The ogre warrior screams one last time and dies.",
       "The ogre warrior falls to the floor and dies.",
-      "The ogre warrior screams silently one last time and dies.",
-      "An ogre warrior goes limp as he is rendered unconscious!"
+      "The ogre warrior screams silently one last time and dies."
     ],
     decay: [
-      "An ogre warrior decays into compost.",
-      "Acid dissolves the knee ligaments.  The ogre warrior's tibia passes his femur in a very unpleasant manner!"
+      "An ogre warrior decays into compost."
     ],
     search: [],
     spell_prep: [],

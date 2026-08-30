@@ -12,8 +12,10 @@
   bones: false,
   witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -70,7 +72,7 @@
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
+    mjs_td: (98..101),
     mns_td: (98..101),
     mnm_td: 90,
     defensive_spells: [],
@@ -104,12 +106,14 @@
     ],
     decay: [
       "A giant albino tomb spider's legs shrivel up beneath it as it decays into dust.",
-      "An albino tomb spider's legs shrivel up beneath it as it decays into dust."
+      "An albino tomb spider's legs shrivel up beneath it as it decays into dust.",
     ],
     search: [],
     spell_prep: [],
     attack: [],
-    bite: [],
+    bite: [
+      "A giant albino tomb spider tries to bite you!"
+    ],
     claw: [],
     info: {
       general: [],

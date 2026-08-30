@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 60,
-  speed: nil,
+  speed: 15,
   height: 3,
   size: "medium",
   areas: [
@@ -33,6 +35,14 @@
       {
         name: "Scimitar",
         as: (58..68)
+      },
+      {
+        name: "Unknown",
+        as: 73
+      },
+      {
+        name: "Closed fist",
+        as: 52
       }
     ],
     bolt_spells: [],
@@ -45,7 +55,7 @@
   defense_attributes: {
     asg: "7",
     immunities: [],
-    melee: (21..26),
+    melee: (11..37),
     ranged: 9,
     bolt: 9,
     udf: 44,
@@ -58,8 +68,8 @@
     wiz_td: nil,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: 9,
-    mns_td: 9,
+    mjs_td: (6..9),
+    mns_td: (6..9),
     mnm_td: 9,
     defensive_spells: [],
     defensive_abilities: [],

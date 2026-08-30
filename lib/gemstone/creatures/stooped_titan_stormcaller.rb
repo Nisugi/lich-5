@@ -10,15 +10,17 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 400,
+  max_hp: 402,
   speed: nil,
   height: 12,
   size: "huge",
@@ -45,19 +47,19 @@
     asg: "2",
     immunities: [],
     melee: (412..531),
-    ranged: nil,
-    bolt: nil,
-    udf: (391..477),
+    ranged: (415..501),
+    bolt: (415..501),
+    udf: (389..477),
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (325..334),
     emp_td: (334..344),
     pal_td: (293..303),
-    ran_td: nil,
+    ran_td: (296..306),
     sor_td: "335 to 365",
     wiz_td: nil,
     mje_td: (366..372),
     mne_td: "351 to 381",
-    mjs_td: nil,
+    mjs_td: 364,
     mns_td: "319 to 349",
     mnm_td: (273..276),
     defensive_spells: [
@@ -97,10 +99,9 @@
     ],
     flee: [],
     death: [
-      "A stooped titan stormcaller goes limp as she is rendered unconscious!",
       "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as she dies.",
       "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as he dies.",
-      "A stooped titan stormcaller slumps to the ground unconscious."
+      "Beautiful shot pierces both lungs, the titan stormcaller makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The titan stormcaller's left leg crumbles briefly and explodes in a shower of gore.",
@@ -110,7 +111,7 @@
     spell_prep: [],
     attack: [
       "A stooped titan stormcaller gestures with a glowing hand at you!",
-      "A stooped titan stormcaller twirls stooped titan stormcaller modwir staff theatrically before lashing out at you!"
+      "A stooped titan stormcaller twirls {pronoun} modwir staff theatrically before lashing out at you!"
     ],
     bite: [],
     claw: [],

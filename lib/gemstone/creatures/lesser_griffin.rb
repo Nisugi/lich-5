@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 9,
   height: 5,
   size: "large",
   areas: [
@@ -49,7 +51,7 @@
       },
       {
         name: "Swoop",
-        as: (320..344)
+        as: (315..344)
       }
     ],
     bolt_spells: [],
@@ -85,19 +87,19 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 252,
-    ranged: nil,
-    bolt: 244,
-    udf: nil,
+    melee: (206..324),
+    ranged: (218..275),
+    bolt: (218..275),
+    udf: 392,
     bar_td: 246,
     cle_td: (269..278),
     emp_td: (267..273),
     pal_td: (226..235),
-    ran_td: nil,
+    ran_td: 226,
     sor_td: (278..290),
     wiz_td: nil,
-    mje_td: 285,
-    mne_td: (292..304),
+    mje_td: (285..304),
+    mne_td: (285..304),
     mjs_td: nil,
     mns_td: nil,
     mnm_td: (213..222),
@@ -109,7 +111,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a blinded left eye",
+    "a completely severed left front leg"
+  ],
   treasure: {
     coins: false,
     magic_items: false,
@@ -122,13 +127,16 @@
     description: [
       "The lesser griffin is a magnificent beast, as if designed by the gods to embody fierce and graceful predation. Its front legs, forebody, wings, and head are those of a great eagle, complete with large white feathers and aquiline beak. The rear half of the creature's body is that of a powerful lion, with short tawny fur and a long feline tail. Emphasized by its size, which is larger than a warhorse, the griffin's renowned majestic presence and great bravery have earned the creature a place on many nobles' coats-of-arms."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser griffin just arrived."
+    ],
     flee: [
       "A lesser griffin flies {direction}."
     ],
     death: [
       "The lesser griffin writhes in agony, its wings flapping fruitlessly as it dies.",
-      "The lesser griffin crashes to the ground, motionless."
+      "The lesser griffin crashes to the ground, motionless.",
+      "Beautiful shot pierces both lungs, the lesser griffin makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The lesser griffin decays into a pile of feathers and fur."
@@ -137,7 +145,7 @@
     spell_prep: [],
     attack: [
       "A lesser griffin rakes at you with a razor-sharp claw!",
-      "A lesser griffin tries to spear you with lesser griffin beak!"
+      "A lesser griffin tries to spear you with {pronoun} beak!"
     ],
     bite: [
       "A lesser griffin tries to bite you!"

@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -57,21 +59,21 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (56..114),
-    ranged: (56..73),
-    bolt: (56..73),
-    udf: (96..128),
+    melee: (56..124),
+    ranged: (53..73),
+    bolt: (53..73),
+    udf: (86..134),
     bar_td: 42,
     cle_td: 42,
     emp_td: (38..46),
     pal_td: (39..48),
-    ran_td: 48,
+    ran_td: (42..48),
     sor_td: (42..48),
     wiz_td: nil,
     mje_td: nil,
     mne_td: (36..42),
-    mjs_td: nil,
-    mns_td: 42,
+    mjs_td: (42..48),
+    mns_td: (42..48),
     mnm_td: (39..48),
     defensive_spells: [],
     defensive_abilities: [],
@@ -101,11 +103,7 @@
     death: [
       "The black boar lets out a final agonized squeal and dies.",
       "The black boar collapses to the ground, emits a final squeal, and dies.",
-      "A black boar goes limp as he is rendered unconscious!",
-      "The black boar silently lets out a final agonized squeal and dies.",
-      "The black boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The black boar squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The black boar squeals loudly as he slumps to the ground and cradles his wounded left hoof."
+      "The black boar silently lets out a final agonized squeal and dies."
     ],
     decay: [
       "A black boar decays into a pile of fur and bone."

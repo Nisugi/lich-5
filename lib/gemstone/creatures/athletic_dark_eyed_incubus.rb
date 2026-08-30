@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar"
   ],
@@ -65,10 +67,10 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (275..504),
-    ranged: (306..311),
-    bolt: (306..311),
-    udf: (482..666),
+    melee: (219..504),
+    ranged: (238..315),
+    bolt: (238..315),
+    udf: (410..692),
     bar_td: (243..249),
     cle_td: (277..286),
     emp_td: (276..285),
@@ -77,9 +79,9 @@
     sor_td: 310,
     wiz_td: nil,
     mje_td: 303,
-    mne_td: nil,
-    mjs_td: 273,
-    mns_td: (275..285),
+    mne_td: 303,
+    mjs_td: (273..306),
+    mns_td: (273..306),
     mnm_td: (198..207),
     defensive_spells: [],
     defensive_abilities: [],
@@ -89,7 +91,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a pair of tight leather trousers"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -110,8 +114,7 @@
       "An athletic dark-eyed incubus crawls {direction}."
     ],
     death: [
-      "Intestines rupture from intense heat; an athletic dark-eyed incubus dies a slow, painful death.",
-      "The dark-eyed incubus slumps to the ground."
+      "Intestines rupture from intense heat; an athletic dark-eyed incubus dies a slow, painful death."
     ],
     decay: [
       "Shadows crawl toward the form of an athletic dark-eyed incubus, engulfing it in a stygian tide.  The darkness dissolves into the ground with a faint sound of rushing liquid.",
@@ -121,8 +124,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "An athletic dark-eyed incubus directs athletic dark-eyed incubus otherworldly spellsong at you!",
-      "An athletic dark-eyed incubus tries to wrap you in athletic dark-eyed incubus well-muscled arms!"
+      "An athletic dark-eyed incubus directs {pronoun} otherworldly spellsong at you!",
+      "An athletic dark-eyed incubus tries to wrap you in {pronoun} well-muscled arms!"
     ],
     bite: [],
     claw: [],

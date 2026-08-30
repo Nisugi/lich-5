@@ -8,12 +8,14 @@
   family: "Wight",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -84,6 +86,9 @@
     maneuvers: [
       {
         name: "Gesture"
+      },
+      {
+        name: "Web"
       }
     ],
     special_abilities: [],
@@ -92,20 +97,20 @@
   defense_attributes: {
     asg: "10",
     immunities: [],
-    melee: (62..165),
-    ranged: (51..70),
-    bolt: (51..70),
-    udf: (85..152),
+    melee: (59..165),
+    ranged: (38..70),
+    bolt: (38..70),
+    udf: (73..163),
     bar_td: 66,
     cle_td: (57..66),
     emp_td: (60..68),
     pal_td: (57..66),
-    ran_td: (60..63),
+    ran_td: (54..63),
     sor_td: 60,
     wiz_td: 60,
     mje_td: 60,
     mne_td: 60,
-    mjs_td: 60,
+    mjs_td: (57..66),
     mns_td: (57..66),
     mnm_td: (57..60),
     defensive_spells: [

@@ -12,8 +12,10 @@
   bones: false,
   witherable: false,
   sympathy: false,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: "miniboss",
   otherclass: [
     "Anti-mana"
   ],
@@ -81,9 +83,9 @@
   defense_attributes: {
     asg: "6N",
     immunities: ["magic"],
-    melee: (254..268),
-    ranged: 261,
-    bolt: 261,
+    melee: (218..281),
+    ranged: (172..263),
+    bolt: (172..263),
     udf: (232..331),
     bar_td: nil,
     cle_td: nil,
@@ -133,15 +135,12 @@
       "With a flurry of her wings, a vesperti flies {direction}."
     ],
     death: [
-      "A vesperti goes limp as he is rendered unconscious!",
-      "A vesperti goes limp as she is rendered unconscious!",
       "The vesperti twitches violently, then dies.",
       "The vesperti's wings splay out as he goes still.",
-      "The vesperti's wings splay out as she goes still."
+      "The vesperti's wings splay out as she goes still.",
+      "Beautiful shot pierces both lungs, the vesperti makes a wheezing noise, and drops dead!"
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the vesperti's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [

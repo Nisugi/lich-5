@@ -7,12 +7,14 @@
   family: "canine",
   type: "quadruped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -21,8 +23,8 @@
     }
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 603,
+  speed: 6,
   height: 15,
   size: "large",
   attack_attributes: {
@@ -30,6 +32,38 @@
       {
         name: "bite",
         as: 527
+      },
+      {
+        name: "Foreclaw",
+        as: (553..610)
+      },
+      {
+        name: "Lunge",
+        as: (545..608)
+      },
+      {
+        name: "Charge",
+        as: 525
+      },
+      {
+        name: "Golden targe",
+        as: 556
+      },
+      {
+        name: "Huge hooves",
+        as: 515
+      },
+      {
+        name: "Immense fel-hafted handaxe",
+        as: 559
+      },
+      {
+        name: "Shark-like teeth",
+        as: 501
+      },
+      {
+        name: "Tusks",
+        as: (501..529)
       }
     ],
     bolt_spells: [],
@@ -38,6 +72,15 @@
     maneuvers: [
       {
         name: "Pounce"
+      },
+      {
+        name: "Lunge"
+      },
+      {
+        name: "Charge"
+      },
+      {
+        name: "Shield Bash"
       }
     ],
     special_abilities: [],
@@ -45,21 +88,21 @@
   },
   defense_attributes: {
     asg: "1",
-    melee: (432..701),
-    ranged: (389..491),
-    bolt: nil,
-    udf: 615,
+    melee: (164..801),
+    ranged: (168..528),
+    bolt: (168..528),
+    udf: (405..988),
     bar_td: 410,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: (339..360),
-    sor_td: nil,
+    cle_td: (409..513),
+    emp_td: 464,
+    pal_td: (381..390),
+    ran_td: (339..408),
+    sor_td: (449..459),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (403..433),
+    mje_td: (473..483),
+    mne_td: (473..483),
+    mjs_td: (366..433),
+    mns_td: (366..433),
     mnm_td: nil,
     defensive_spells: [],
     defensive_abilities: [],
@@ -69,7 +112,9 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "a firewheel arrow fletched with plain white feathers"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -94,7 +139,10 @@
       "A niveous giant warg sniffs after unseen prey.",
       "A niveous giant warg sniffs around, its hackles rising in agitation."
     ],
-    attack: [],
+    attack: [
+      "A niveous giant warg bounds forward and slashes at you with a foreclaw!",
+      "A niveous giant warg lunges at you, maw slathering as niveous giant warg tries to take a ferocious bite!",
+    ],
     bite: [],
     claw: [],
 

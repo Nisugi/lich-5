@@ -11,16 +11,18 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
   max_hp: 300,
-  speed: "8",
+  speed: 8,
   height: 5,
   size: "medium",
   areas: [
@@ -82,21 +84,21 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (249..343),
-    ranged: 217,
+    melee: (223..343),
+    ranged: (217..229),
     bolt: 170,
     udf: (185..363),
     bar_td: "123 to 135",
     cle_td: (142..148),
     emp_td: (142..151),
     pal_td: (117..126),
-    ran_td: nil,
+    ran_td: (120..126),
     sor_td: "141 to 150",
     wiz_td: nil,
     mje_td: 158,
     mne_td: "154 to 157",
-    mjs_td: 142,
-    mns_td: (142..151),
+    mjs_td: (142..177),
+    mns_td: (142..177),
     mnm_td: 120,
     defensive_spells: [],
     defensive_abilities: [],
@@ -128,8 +130,7 @@
     ],
     death: [
       "The kiramon worker falls back into a heap and dies.",
-      "The kiramon worker clicks one last time and dies.",
-      "A kiramon worker goes limp as it is rendered unconscious!"
+      "The kiramon worker clicks one last time and dies."
     ],
     decay: [
       "A kiramon worker crumbles away into dust."

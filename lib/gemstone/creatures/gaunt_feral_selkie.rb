@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: 259,
@@ -72,20 +74,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (326..472),
-    ranged: nil,
-    bolt: nil,
-    udf: (401..511),
+    melee: (246..472),
+    ranged: 264,
+    bolt: 264,
+    udf: (350..511),
     bar_td: nil,
-    cle_td: nil,
+    cle_td: (259..269),
     emp_td: (252..261),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (226..235),
+    ran_td: (220..227),
     sor_td: (272..281),
     wiz_td: nil,
-    mje_td: (281..282),
-    mne_td: nil,
-    mjs_td: nil,
+    mje_td: (279..282),
+    mne_td: (279..282),
+    mjs_td: (251..261),
     mns_td: (251..261),
     mnm_td: (210..215),
     defensive_spells: [
@@ -126,20 +128,17 @@
     ],
     death: [
       "An instant of clarity dawns in a gaunt feral selkie's eyes as he succumbs to his injuries.  Peace blossoms on his face as he dies.",
-      "An instant of clarity dawns in a gaunt feral selkie's eyes as she succumbs to her injuries.  Peace blossoms on her face as she dies.",
-      "A gaunt feral selkie goes limp as she is rendered unconscious!",
-      "The feral selkie slumps to the ground."
+      "An instant of clarity dawns in a gaunt feral selkie's eyes as she succumbs to her injuries.  Peace blossoms on her face as she dies."
     ],
     decay: [
-      "Acid dissolves the knee ligaments.  The feral selkie's tibia passes his femur in a very unpleasant manner!"
+      "The feral selkie's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],
     attack: [
-      "A desiccated half-krolvin strigoi flings gaunt feral selkie arms wide and throws himself at you, trying to trap you in a deadly embrace!",
       "A gaunt feral selkie balls up a grimy hand and takes a swing at you!",
-      "Leading with gaunt feral selkie shoulder, a gaunt feral selkie barrels into a charge at you!",
-      "Propelling gaunt feral selkie forward with {pronoun} flippers, a gaunt feral selkie charges at you!"
+      "Leading with {pronoun} shoulder, a gaunt feral selkie barrels into a charge at you!",
+      "Propelling {pronoun} forward with {pronoun} flippers, a gaunt feral selkie charges at you!"
     ],
     bite: [],
     claw: [],

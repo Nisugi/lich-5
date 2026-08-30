@@ -11,9 +11,11 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
@@ -36,7 +38,11 @@
       },
       {
         name: "Foot",
-        as: 211
+        as: (188..211)
+      },
+      {
+        name: "Charge",
+        as: 175
       }
     ],
     bolt_spells: [],
@@ -53,21 +59,21 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (204..333),
-    ranged: nil,
-    bolt: nil,
-    udf: 318,
+    melee: (144..333),
+    ranged: (148..201),
+    bolt: (148..201),
+    udf: (188..343),
     bar_td: nil,
     cle_td: (129..138),
     emp_td: (130..139),
-    pal_td: nil,
+    pal_td: (111..120),
     ran_td: nil,
     sor_td: (136..145),
     wiz_td: nil,
     mje_td: (137..143),
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (130..139),
+    mne_td: (137..143),
+    mjs_td: 285,
+    mns_td: 285,
     mnm_td: (123..132),
     defensive_spells: [],
     defensive_abilities: [],
@@ -108,7 +114,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A shadow mare stomps at you with {pronoun} foot!"
+      "A shadow mare stomps at you with {pronoun} foot!",
+      "A shadow mare charges at you!"
     ],
     bite: [
       "A shadow mare tries to bite you!"

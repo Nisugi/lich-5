@@ -11,9 +11,11 @@
   blood: true,
   bones: nil,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Extraplanar"
@@ -37,7 +39,7 @@
       },
       {
         name: "Twisted crystal-tipped staff",
-        as: 503
+        as: (428..503)
       }
     ],
     bolt_spells: [
@@ -102,21 +104,21 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: (434..579),
+    melee: (354..579),
     ranged: nil,
     bolt: (362..387),
-    udf: (534..562),
+    udf: (452..562),
     bar_td: (351..363),
     cle_td: (370..385),
     emp_td: (375..385),
     pal_td: (328..337),
-    ran_td: nil,
+    ran_td: 328,
     sor_td: (394..403),
     wiz_td: nil,
-    mje_td: 408,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: 388,
+    mje_td: (408..458),
+    mne_td: (408..458),
+    mjs_td: (388..398),
+    mns_td: (388..398),
     mnm_td: (355..364),
     defensive_spells: [
       "Lesser Shroud (120)",
@@ -161,16 +163,15 @@
     ],
     death: [
       "The Ithzir initiate vainly struggles to rise, then goes still.",
-      "An Ithzir initiate's body shimmers slightly, then fades from view like a dissipating phantom.",
-      "Just as you incant, the Ithzir initiate shimmers and fades away, leaving you gesturing at nothingness!"
+      "Just as you incant, the Ithzir initiate shimmers and fades away, leaving you gesturing at nothingness!",
+      "Just as you move to cast, the Ithzir initiate shimmers and fades away, leaving you gesturing at nothingness!",
+      "Beautiful shot pierces both lungs, the Ithzir initiate makes a wheezing noise, and drops dead!"
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the Ithzir initiate's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [
-      "An Ithzir initiate places one palm on ithzir initiate chest, and raises the other toward you!",
+      "An Ithzir initiate places one palm on {pronoun} chest, and raises the other toward you!",
       "An Ithzir initiate swings {weapon} at you!"
     ],
     bite: [],

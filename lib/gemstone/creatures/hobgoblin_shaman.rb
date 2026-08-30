@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -58,7 +60,7 @@
   defense_attributes: {
     asg: "5",
     immunities: [],
-    melee: (51..79),
+    melee: (24..92),
     ranged: 19,
     bolt: 19,
     udf: (31..86),
@@ -69,9 +71,9 @@
     ran_td: (18..28),
     sor_td: 20,
     wiz_td: nil,
-    mje_td: 19,
-    mne_td: 20,
-    mjs_td: nil,
+    mje_td: (19..20),
+    mne_td: (19..20),
+    mjs_td: 18,
     mns_td: 18,
     mnm_td: 28,
     defensive_spells: [

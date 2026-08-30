@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: 300,
@@ -72,9 +74,9 @@
   defense_attributes: {
     asg: "11",
     immunities: [],
-    melee: (242..371),
-    ranged: (242..246),
-    bolt: (242..246),
+    melee: (205..371),
+    ranged: (197..246),
+    bolt: (197..246),
     udf: (509..578),
     bar_td: (215..227),
     cle_td: (255..265),
@@ -83,10 +85,10 @@
     ran_td: nil,
     sor_td: (271..284),
     wiz_td: nil,
-    mje_td: (273..276),
-    mne_td: nil,
-    mjs_td: 265,
-    mns_td: 294,
+    mje_td: (270..276),
+    mne_td: (270..276),
+    mjs_td: (265..300),
+    mns_td: (265..300),
     mnm_td: (192..202),
     defensive_spells: [
       "Pestilence (716)"
@@ -98,7 +100,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a green leather whip",
+    "a pair of tight leather armbands"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -122,7 +127,6 @@
     flee: [],
     death: [
       "The Ivasian inciter twitches violently, then dies.",
-      "A supple Ivasian inciter goes limp as he is rendered unconscious!",
       "The Ivasian inciter slumps to the ground."
     ],
     decay: [
@@ -134,7 +138,7 @@
     attack: [
       "A supple Ivasian inciter leaps forward and aims a series of lightning-swift kicks at you!",
       "Lean muscles knitting with intensity, a supple Ivasian inciter throws {weapon} at you!",
-      "With a vicious flick of supple ivasian inciter wrist, a supple Ivasian inciter lashes at you with supple ivasian inciter leather whip!"
+      "With a vicious flick of supple ivasian inciter wrist, a supple Ivasian inciter lashes at you with {pronoun} leather whip!"
     ],
     bite: [],
     claw: [],

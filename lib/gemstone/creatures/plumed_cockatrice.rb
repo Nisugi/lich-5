@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -61,10 +63,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (126..197),
-    ranged: 93,
+    melee: (111..197),
+    ranged: (89..119),
     bolt: 67,
-    udf: (134..212),
+    udf: (124..212),
     bar_td: nil,
     cle_td: (39..45),
     emp_td: (31..39),
@@ -73,9 +75,9 @@
     sor_td: (39..45),
     wiz_td: nil,
     mje_td: (39..42),
-    mne_td: 39,
-    mjs_td: nil,
-    mns_td: (33..39),
+    mne_td: (39..42),
+    mjs_td: 60,
+    mns_td: 60,
     mnm_td: (33..39),
     defensive_spells: [],
     defensive_abilities: [],
@@ -100,14 +102,12 @@
     ],
     arrival: [
       "A plumed cockatrice just arrived!",
-      "A Neartofar orc stalks in purposefully, his nose raised as he sniffs at the air."
     ],
     flee: [
       "A plumed cockatrice thunders {direction}."
     ],
     death: [
-      "The plumed cockatrice rolls over on its back, emits a final screech and dies.",
-      "The plumed cockatrice slumps to the ground."
+      "The plumed cockatrice rolls over on its back, emits a final screech and dies."
     ],
     decay: [
       "A plumed cockatrice decays into a useless pile of scales and feathers."

@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: nil,
   max_hp: 150,
-  speed: "10",
+  speed: 10,
   height: 3,
   size: "large",
   areas: [
@@ -57,20 +59,20 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: 87,
-    ranged: nil,
-    bolt: 75,
+    melee: (57..87),
+    ranged: (55..85),
+    bolt: (55..85),
     udf: 85,
     bar_td: nil,
     cle_td: 30,
-    emp_td: 30,
+    emp_td: (30..39),
     pal_td: (27..30),
-    ran_td: nil,
+    ran_td: 30,
     sor_td: 30,
     wiz_td: nil,
     mje_td: nil,
     mne_td: 30,
-    mjs_td: nil,
+    mjs_td: (30..39),
     mns_td: (30..39),
     mnm_td: 30,
     defensive_spells: [],
@@ -102,10 +104,8 @@
     ],
     death: [
       "A werebear growls one last time, and crumples to the ground in a heap.",
-      "The werebear snarls in agony and slumps to the ground, cradling its wounded left foreleg.",
       "The werebear snarls viciously and slumps to the ground, favoring its mangled left hind leg.",
-      "The werebear snarls in agony and slumps to the ground, cradling its wounded right foreleg.",
-      "The werebear snarls in agony and slumps to the ground, cradling its wounded right paw."
+      "The werebear snarls viciously and slumps to the ground, favoring its mangled right hind leg."
     ],
     decay: [
       "A werebear turns to dust."

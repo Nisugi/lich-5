@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: 124,
@@ -35,6 +37,10 @@
       {
         name: "Charge",
         as: 171
+      },
+      {
+        name: "Unknown",
+        as: 171
       }
     ],
     bolt_spells: [],
@@ -50,18 +56,18 @@
     melee: (65..67),
     ranged: (65..67),
     bolt: (65..67),
-    udf: (110..128),
+    udf: (85..128),
     bar_td: nil,
-    cle_td: (42..48),
+    cle_td: (39..48),
     emp_td: (21..51),
-    pal_td: (36..42),
-    ran_td: nil,
+    pal_td: (36..48),
+    ran_td: 42,
     sor_td: (39..48),
     wiz_td: nil,
     mje_td: 42,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (36..45),
+    mne_td: 42,
+    mjs_td: (36..48),
+    mns_td: (36..48),
     mnm_td: (42..48),
     defensive_spells: [],
     defensive_abilities: [],
@@ -91,16 +97,7 @@
     death: [
       "The muddy hog collapses to the ground, emits a final squeal, and dies.",
       "The muddy hog lets out a final agonized squeal and dies.",
-      "The muddy hog collapses to the ground, emits a final silent squeal, and dies.",
-      "A muddy hog goes limp as she is rendered unconscious!",
-      "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded right foreleg.",
-      "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded left hoof.",
-      "The muddy hog squeals loudly as he slumps to the ground and cradles his wounded left hoof.",
-      "The muddy hog squeals loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The muddy hog squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The muddy hog squeals loudly as he slumps to the ground and cradles his wounded right hoof.",
-      "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded left foreleg.",
-      "The muddy hog squeals loudly as she slumps to the ground and cradles her wounded right hoof."
+      "The muddy hog collapses to the ground, emits a final silent squeal, and dies."
     ],
     decay: [
       "A muddy hog decays into a pile of fur and bone."

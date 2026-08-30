@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
-  max_hp: 550,
-  speed: nil,
+  max_hp: 568,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -36,7 +38,7 @@
       },
       {
         name: "Bloated arms",
-        as: 470
+        as: (438..470)
       },
       {
         name: "Strike",
@@ -44,7 +46,7 @@
       },
       {
         name: "Bronze cutlass",
-        as: 452
+        as: (452..533)
       }
     ],
     bolt_spells: [
@@ -81,21 +83,21 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (329..584),
-    ranged: (358..377),
-    bolt: nil,
-    udf: (484..700),
+    melee: (290..584),
+    ranged: (329..377),
+    bolt: (329..347),
+    udf: (428..730),
     bar_td: nil,
     cle_td: (425..434),
-    emp_td: 416,
-    pal_td: 342,
-    ran_td: 352,
+    emp_td: (416..422),
+    pal_td: (364..367),
+    ran_td: (352..386),
     sor_td: 443,
     wiz_td: nil,
-    mje_td: 465,
-    mne_td: 461,
-    mjs_td: nil,
-    mns_td: 432,
+    mje_td: (461..465),
+    mne_td: (461..465),
+    mjs_td: (432..440),
+    mns_td: (432..440),
     mnm_td: (276..285),
     defensive_spells: [],
     defensive_abilities: [],
@@ -133,12 +135,9 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A patchwork flesh monstrosity tries to ensnare you with shambling lurk bloated arms!",
       "A shambling lurk manages a fumbling gesture toward you!",
-      "A sheen of venom glistening from shambling lurk needle-sharp fangs, a white sidewinder strikes at you!",
-      "Desperate in shambling lurk hunger for flesh, a shambling lurk throws itself at you!",
+      "Desperate in {pronoun} hunger for flesh, a shambling lurk throws itself at you!",
       "Gnawing blindly with shattered teeth, a shambling lurk tries to bite into you!",
-      "With an eerie, boneless fluidity, a lithe veiled sentinel slashes at you with shambling lurk bronze cutlass!"
     ],
     bite: [],
     claw: [],

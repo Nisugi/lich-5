@@ -12,8 +12,10 @@
   bones: nil,
   witherable: nil,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead",
     "Extraplanar"
@@ -34,6 +36,18 @@
       {
         name: "Runestaff",
         as: 466
+      },
+      {
+        name: "Crystal-set smooth ironwood scepter",
+        as: 466
+      },
+      {
+        name: "Barbed tentacle",
+        as: 430
+      },
+      {
+        name: "Bladed forearms",
+        as: 487
       }
     ],
     bolt_spells: [
@@ -50,6 +64,10 @@
       {
         name: "Dark Catalyst (719)",
         cs: (477..489)
+      },
+      {
+        name: "Burrow Ambush",
+        cs: 477
       }
     ],
     offensive_spells: [
@@ -63,7 +81,17 @@
         name: "Elemental Disjunction (530)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      },
+      {
+        name: "Lash"
+      },
+      {
+        name: "Pounce"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -73,7 +101,7 @@
     melee: 661,
     ranged: nil,
     bolt: 550,
-    udf: nil,
+    udf: 721,
     bar_td: 439,
     cle_td: nil,
     emp_td: nil,
@@ -94,7 +122,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a crystal-set smooth ironwood scepter",
+    "an ancient gnarled bone phylactery",
+    "some disheveled deep grey robes"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -107,13 +139,22 @@
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "An infernal lich strides in, leaving a scorched path in her wake.",
+      "A frostborne lich strides in, leaving thin layer of frost in her wake.",
+      "A frostborne lich strides in, leaving thin layer of frost in his wake.",
+      "A frostborne lich just arrived.  Wait, wasn't he here already?"
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "An infernal lich assumes a wild-eyed expression as lich points a finger at you!",
+      "An lich swings {weapon} at you!",
+      "A frostborne lich assumes a wild-eyed expression as lich points a finger at you!",
+    ],
     bite: [],
     claw: [],
     info: {

@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -53,9 +55,9 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: 115,
-    ranged: 63,
-    bolt: nil,
+    melee: (86..115),
+    ranged: (53..87),
+    bolt: (53..87),
     udf: (171..190),
     bar_td: 90,
     cle_td: 90,
@@ -101,9 +103,7 @@
     ],
     flee: [],
     death: [
-      "A hunter troll goes limp as he is rendered unconscious!",
-      "The hunter troll slumps to the ground with a final snarl.",
-      "The hunter troll slumps to the ground."
+      "The hunter troll slumps to the ground with a final snarl."
     ],
     decay: [
       "A hunter troll decays into compost."

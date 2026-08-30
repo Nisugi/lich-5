@@ -12,15 +12,17 @@
   bones: false,
   witherable: false,
   sympathy: false,
-  muggable: nil,
+  muggable: true,
+  sleepable: false,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Magical",
     "Boss"
   ],
   bcs: true,
-  max_hp: 500,
-  speed: nil,
+  max_hp: 517,
+  speed: 9,
   height: 18,
   size: "huge",
   areas: [
@@ -40,7 +42,7 @@
       },
       {
         name: "Smash",
-        as: 468
+        as: (459..468)
       }
     ],
     bolt_spells: [],
@@ -69,7 +71,7 @@
   defense_attributes: {
     asg: "20N",
     immunities: ["magic"],
-    melee: (260..499),
+    melee: (219..499),
     ranged: (299..344),
     bolt: nil,
     udf: (456..487),
@@ -77,7 +79,7 @@
     cle_td: (366..387),
     emp_td: (358..379),
     pal_td: nil,
-    ran_td: nil,
+    ran_td: 326,
     sor_td: 398,
     wiz_td: nil,
     mje_td: nil,
@@ -95,7 +97,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a polished steel shield"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -113,9 +117,10 @@
       "A glorious greater construct stomps in.",
       "A hoarse rumbling heralds the arrival of a greater construct!",
       "A deep humming sound comes from a greater construct as it lumbers in.",
-      "An Ithzir initiate strides in, her hands clasped before her."
     ],
-    flee: [],
+    flee: [
+      "A greater construct stomps {direction}."
+    ],
     death: [],
     decay: [
       "A greater construct's body crumbles until only a pile of rubble marks its remains."
@@ -123,11 +128,9 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A glorious greater construct raises greater construct massive foot and attempts to smash you!",
-      "A greater construct raises greater construct massive foot and attempts to smash you!",
+      "A glorious greater construct raises {pronoun} massive foot and attempts to smash you!",
+      "A greater construct raises {pronoun} massive foot and attempts to smash you!",
       "A greater construct swings {weapon} at you!",
-      "An Ithzir initiate places one palm on greater construct chest, and raises the other toward you!",
-      "An Ithzir seer suddenly opens greater construct eyes and stares directly at you!"
     ],
     bite: [],
     claw: [],

@@ -11,15 +11,17 @@
   blood: nil,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: false,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 29,
-  speed: nil,
+  speed: 15,
   height: 1,
   size: "small",
   areas: [
@@ -37,6 +39,10 @@
       {
         name: "Charge (attack)",
         as: 46
+      },
+      {
+        name: "Unknown",
+        as: 46
       }
     ],
     bolt_spells: [],
@@ -49,20 +55,20 @@
   defense_attributes: {
     asg: "5N",
     immunities: [],
-    melee: (25..47),
-    ranged: (25..33),
-    bolt: (25..33),
-    udf: (33..42),
+    melee: (17..47),
+    ranged: (23..33),
+    bolt: (23..33),
+    udf: (30..42),
     bar_td: nil,
     cle_td: (3..6),
     emp_td: (3..6),
-    pal_td: (3..6),
+    pal_td: (0..6),
     ran_td: 3,
     sor_td: (3..6),
     wiz_td: nil,
     mje_td: 3,
     mne_td: 3,
-    mjs_td: 3,
+    mjs_td: (3..6),
     mns_td: (3..6),
     mnm_td: 3,
     defensive_spells: [],

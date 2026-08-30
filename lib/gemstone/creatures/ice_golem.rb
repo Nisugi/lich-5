@@ -12,8 +12,10 @@
   bones: false,
   witherable: false,
   sympathy: true,
-  muggable: nil,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Magical",
     "Element-based"
@@ -48,7 +50,7 @@
       },
       {
         name: "Foot",
-        as: 333
+        as: (265..333)
       }
     ],
     bolt_spells: [],
@@ -61,28 +63,32 @@
         name: "Tremors (909)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Ground Slam"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (203..233),
+    melee: (154..233),
     ranged: nil,
     bolt: (196..225),
-    udf: nil,
+    udf: (266..274),
     bar_td: nil,
     cle_td: (203..209),
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    emp_td: 207,
+    pal_td: (173..179),
+    ran_td: 167,
     sor_td: 207,
     wiz_td: nil,
     mje_td: (210..219),
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (195..205),
+    mne_td: (210..219),
+    mjs_td: (195..211),
+    mns_td: (195..211),
     mnm_td: 159,
     defensive_spells: [],
     defensive_abilities: [],
@@ -114,7 +120,7 @@
     ],
     death: [
       "The ice golem writhes in cold agony and dies.",
-      "The ice golem slumps to the ground."
+      "Beautiful shot pierces both lungs, the ice golem makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The ice golem's left leg crumbles briefly and explodes in a shower of gore."

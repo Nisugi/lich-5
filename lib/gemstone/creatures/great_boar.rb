@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 100,
-  speed: nil,
+  speed: 15,
   height: 3,
   size: "medium",
   areas: [
@@ -73,10 +75,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (41..79),
-    ranged: (17..29),
-    bolt: (17..29),
-    udf: (74..113),
+    melee: (31..79),
+    ranged: (10..29),
+    bolt: (10..29),
+    udf: (63..113),
     bar_td: 30,
     cle_td: 30,
     emp_td: 30,
@@ -86,8 +88,8 @@
     wiz_td: nil,
     mje_td: 30,
     mne_td: 30,
-    mjs_td: nil,
-    mns_td: 30,
+    mjs_td: (45..54),
+    mns_td: (45..54),
     mnm_td: 30,
     defensive_spells: [],
     defensive_abilities: [],
@@ -120,11 +122,7 @@
       "The great boar collapses to the ground, emits a final squeal, and dies.",
       "The great boar lets out a final agonized squeal and dies.",
       "The great boar collapses to the ground, emits a final silent squeal, and dies.",
-      "The great boar silently lets out a final agonized squeal and dies.",
-      "The great boar squeals loudly as he slumps to the ground and cradles his wounded left hoof.",
-      "The great boar squeals loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The great boar squeals loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The great boar squeals loudly as he slumps to the ground and cradles his wounded right hoof."
+      "The great boar silently lets out a final agonized squeal and dies."
     ],
     decay: [
       "A great boar decays into a pile of fur and bone."

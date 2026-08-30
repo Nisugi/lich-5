@@ -10,15 +10,17 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
-  max_hp: 190,
+  max_hp: 194,
   speed: nil,
   height: 5,
   size: "medium",
@@ -44,6 +46,10 @@
       {
         name: "Blind (311)",
         cs: 139
+      },
+      {
+        name: "Point",
+        cs: 139
       }
     ],
     offensive_spells: [],
@@ -54,9 +60,9 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (156..253),
-    ranged: nil,
-    bolt: 223,
+    melee: (155..253),
+    ranged: (164..253),
+    bolt: (164..253),
     udf: (183..241),
     bar_td: 74,
     cle_td: (92..98),
@@ -67,9 +73,9 @@
     wiz_td: nil,
     mje_td: (85..98),
     mne_td: (85..98),
-    mjs_td: nil,
+    mjs_td: (94..100),
     mns_td: (94..100),
-    mnm_td: (81..87),
+    mnm_td: (80..87),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Warding II (107)",

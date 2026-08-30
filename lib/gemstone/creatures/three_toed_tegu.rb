@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -57,20 +59,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (227..247),
-    ranged: 159,
-    bolt: nil,
+    melee: (166..247),
+    ranged: (156..183),
+    bolt: (156..183),
     udf: (198..250),
     bar_td: (96..99),
     cle_td: (96..105),
-    emp_td: (99..103),
+    emp_td: (97..106),
     pal_td: (99..108),
-    ran_td: (99..105),
+    ran_td: (99..108),
     sor_td: (103..120),
     wiz_td: nil,
-    mje_td: 114,
+    mje_td: (111..114),
     mne_td: (111..114),
-    mjs_td: (103..106),
+    mjs_td: (97..106),
     mns_td: (97..106),
     mnm_td: 99,
     defensive_spells: [],
@@ -102,8 +104,7 @@
     ],
     death: [
       "The three-toed tegu arches its back in a tortured spasm and dies.",
-      "The three-toed tegu stumbles and falls to the ground, twitches and dies.",
-      "A three-toed tegu goes limp as it is rendered unconscious!"
+      "The three-toed tegu stumbles and falls to the ground, twitches and dies."
     ],
     decay: [
       "A three-toed tegu's leathered hide and scaly armor collapses into dust."

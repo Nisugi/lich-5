@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: nil,
   max_hp: nil,
@@ -27,7 +29,12 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Huge black alloy greatsword",
+        as: 592
+      }
+    ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],

@@ -10,19 +10,21 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Living"
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
-  height: nil,
-  size: "",
+  max_hp: 258,
+  speed: 7,
+  height: 4,
+  size: "small",
   areas: [
     {
       name: "The Rift",
@@ -59,16 +61,16 @@
     melee: nil,
     ranged: 488,
     bolt: 388,
-    udf: nil,
+    udf: 651,
     bar_td: 411,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: 401,
-    ran_td: nil,
+    cle_td: (452..461),
+    emp_td: (443..449),
+    pal_td: (407..410),
+    ran_td: (405..407),
     sor_td: nil,
     wiz_td: 495,
-    mje_td: 449,
-    mne_td: 491,
+    mje_td: (449..491),
+    mne_td: (449..491),
     mjs_td: nil,
     mns_td: nil,
     mnm_td: nil,
@@ -80,7 +82,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a stout rotting wood staff",
+    "some loosely fitted torn ochre robes"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -93,9 +98,15 @@
     description: [
       "A darkly inked fetish master can be found in the Scatter in the Rift. This creature is a child-like voodoo witch doctor, drawing upon elaborate inked designs on its skin for its dark powers. The masters cast mostly Sorcerer spells and can summon a cluster of wooden dolls on their current target, who would lay down a barrage of attacks.\n\nDark-ringed eyes stare out of a face that is gaunt and ashen as a darkly inked fetish master looks on. Beginning at its hairline, a labyrinthine pattern of tattoos in ebon ink crawl across the fetish master's skin, spanning brow and cheeks alike. The designs sheath every inch of exposed skin not shrouded beneath its tattered robes. In a grotesque display, the fetish master's lips have been peeled back from its gums, secured in place by a set of discolored hooks. Perhaps not the intention, but the effect creates a perpetual, toothy grin that seems to hold no amusement, but ample amounts of malice."
     ],
-    arrival: [],
+    arrival: [
+      "A darkly inked fetish master arrives, the skulls on its belt clacking with a hollow resonance.",
+      "A darkly inked fetish master wanders in, set with a distant gaze focused on seemingly nothing at all."
+    ],
     flee: [],
-    death: [],
+    death: [
+      "As a darkly inked fetish master slumps to the ground, the darkly lined tattoos traversing its skin lose the luminescence that had seemed to radiate from them.",
+      "Beautiful shot pierces both lungs, the fetish master makes a wheezing noise, and drops dead!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],

@@ -10,18 +10,20 @@
   undead: true,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 239,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Ruined Temple",
@@ -57,7 +59,11 @@
         name: "Major Elemental Wave (435)"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Claw Curse"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -65,14 +71,14 @@
     asg: nil,
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    ranged: (373..461),
+    bolt: (373..461),
+    udf: 539,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (440..450),
+    emp_td: (432..442),
+    pal_td: (379..389),
+    ran_td: 392,
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -88,7 +94,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a twisted soot black runestaff capped with a gold-caged crystal drop of water"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -103,7 +111,10 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The triton sentry fades into transparency, her remnants rapidly dissolving into the air.",
+      "The triton sentry fades into transparency, his remnants rapidly dissolving into the air."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

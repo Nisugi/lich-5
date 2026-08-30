@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 40,
-  speed: nil,
+  speed: 15,
   height: 4,
   size: "medium",
   areas: [
@@ -37,6 +39,10 @@
       {
         name: "Claw",
         as: 31
+      },
+      {
+        name: "Unknown",
+        as: 31
       }
     ],
     bolt_spells: [],
@@ -50,8 +56,8 @@
     asg: "1N",
     immunities: [],
     melee: (-12..50),
-    ranged: 19,
-    bolt: 19,
+    ranged: (-13..49),
+    bolt: (-13..49),
     udf: 46,
     bar_td: 3,
     cle_td: 3,
@@ -62,8 +68,8 @@
     wiz_td: 3,
     mje_td: 3,
     mne_td: 3,
-    mjs_td: 3,
-    mns_td: 3,
+    mjs_td: (3..9),
+    mns_td: (3..9),
     mnm_td: 3,
     defensive_spells: [],
     defensive_abilities: [],

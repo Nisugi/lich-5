@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 60,
-  speed: nil,
+  speed: 15,
   height: 5,
   size: "medium",
   areas: [
@@ -45,6 +47,10 @@
       {
         name: "Claw",
         as: 63
+      },
+      {
+        name: "Unknown",
+        as: 63
       }
     ],
     bolt_spells: [],
@@ -57,10 +63,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (1..69),
+    melee: (0..69),
     ranged: (7..8),
     bolt: (7..8),
-    udf: 51,
+    udf: (46..51),
     bar_td: 9,
     cle_td: 9,
     emp_td: 9,
@@ -99,14 +105,16 @@
     ],
     arrival: [
       "A greater ghoul just arrived!",
-      "A greater ghoul just arrived."
+      "A greater ghoul just arrived.",
+      "A greater ghoul just arrived, limping badly."
     ],
     flee: [
       "A greater ghoul runs {direction}."
     ],
     death: [
       "The greater ghoul falls to the ground motionless.",
-      "The greater ghoul screams evilly one last time and goes still."
+      "The greater ghoul screams evilly one last time and goes still.",
+      "Beautiful shot pierces both lungs, the greater ghoul makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A greater ghoul turns to dust."

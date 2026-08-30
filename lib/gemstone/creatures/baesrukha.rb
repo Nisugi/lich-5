@@ -10,15 +10,17 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
-  max_hp: 240,
+  max_hp: 250,
   speed: nil,
   height: 5,
   size: "medium",
@@ -66,20 +68,20 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (187..303),
-    ranged: (187..195),
-    bolt: (187..195),
-    udf: (251..330),
+    melee: (118..303),
+    ranged: (172..195),
+    bolt: (172..195),
+    udf: (157..330),
     bar_td: "140 to 153",
     cle_td: (158..165),
-    emp_td: (164..167),
+    emp_td: (158..167),
     pal_td: (135..144),
-    ran_td: nil,
+    ran_td: (135..138),
     sor_td: (162..179),
     wiz_td: nil,
-    mje_td: 173,
-    mne_td: 188,
-    mjs_td: nil,
+    mje_td: (173..188),
+    mne_td: (173..188),
+    mjs_td: (161..168),
     mns_td: (161..168),
     mnm_td: (143..152),
     defensive_spells: [
@@ -113,8 +115,7 @@
     flee: [],
     death: [
       "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from his unwashed body.",
-      "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from her unwashed body.",
-      "The baesrukha slumps to the ground."
+      "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from her unwashed body."
     ],
     decay: [
       "The baesrukha's right leg crumbles briefly and explodes in a shower of gore."

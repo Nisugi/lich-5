@@ -10,18 +10,20 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 299,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 6,
+  size: "medium",
   areas: [
     {
       name: "Ruined Temple",
@@ -33,6 +35,10 @@
       {
         name: "Arrow",
         as: 431
+      },
+      {
+        name: "Powerful lightning bolt",
+        as: 409
       }
     ],
     bolt_spells: [],
@@ -62,13 +68,13 @@
     asg: "8",
     immunities: [],
     melee: (345..443),
-    ranged: nil,
-    bolt: nil,
+    ranged: 333,
+    bolt: 333,
     udf: 433,
     bar_td: 373,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
+    cle_td: (430..433),
+    emp_td: (406..414),
+    pal_td: (362..372),
     ran_td: nil,
     sor_td: nil,
     wiz_td: nil,
@@ -94,7 +100,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a dried seaweed-wrapped longbow",
+    "a mildewed rough leather quiver"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -107,13 +116,21 @@
     description: [
       "Moving quietly on wide, webbed feet, the triton magus seems to slip between the shadows, her damp mottled flesh shifting colors with the surroundings. The creature pauses frequently, her flared nostrils quivering as if seeking beings as nearly invisible as herself. A long row of tiny needle-sharp teeth protrudes from grey gums, visible behind her curled, wet lips. A loose robe in varying shades of grey and green covers the magus, hanging just below her twitching tail."
     ],
-    arrival: [],
+    arrival: [
+      "A triton magus just arrived.",
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The triton magus gurgles once and goes still, a wrathful look on her face.",
+      "The triton magus gurgles once and goes still, a wrathful look on his face."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A triton magus fires {weapon} at you!",
+      "A triton magus hurls {weapon} at you!"
+    ],
     bite: [],
     claw: [],
     info: {

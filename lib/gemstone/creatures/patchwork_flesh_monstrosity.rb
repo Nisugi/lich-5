@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 550,
-  speed: nil,
+  speed: 6,
   height: 15,
   size: "huge",
   areas: [
@@ -39,7 +41,7 @@
       },
       {
         name: "Bloated arms",
-        as: 480
+        as: (438..480)
       },
       {
         name: "Bronze cutlass",
@@ -52,6 +54,10 @@
       {
         name: "Kick",
         as: 390
+      },
+      {
+        name: "Heel of her hand",
+        as: 427
       }
     ],
     bolt_spells: [],
@@ -84,21 +90,21 @@
   defense_attributes: {
     asg: "5",
     immunities: [],
-    melee: (215..562),
-    ranged: nil,
-    bolt: nil,
-    udf: (318..646),
+    melee: (81..562),
+    ranged: (92..351),
+    bolt: (92..351),
+    udf: (291..646),
     bar_td: nil,
     cle_td: (409..418),
     emp_td: (401..407),
-    pal_td: 343,
-    ran_td: nil,
+    pal_td: (353..362),
+    ran_td: (347..361),
     sor_td: (421..430),
     wiz_td: nil,
-    mje_td: 448,
-    mne_td: 444,
-    mjs_td: nil,
-    mns_td: (401..411),
+    mje_td: (444..448),
+    mne_td: (444..448),
+    mjs_td: 453,
+    mns_td: 453,
     mnm_td: (300..309),
     defensive_spells: [],
     defensive_abilities: [],
@@ -128,12 +134,9 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A lithe veiled sentinel throws patchwork flesh monstrosity arms outward for balance and leaps into the air, executing a series of kicks at you!",
       "A patchwork flesh monstrosity raises a hamhock-sized fist overhead and brings it swiftly down at you!",
-      "A patchwork flesh monstrosity tries to ensnare you with patchwork flesh monstrosity bloated arms!",
-      "Moving with preternatural speed, a lithe veiled sentinel strikes at you with the heel of patchwork flesh monstrosity hand!",
+      "A patchwork flesh monstrosity tries to ensnare you with {pronoun} bloated arms!",
       "Raising one immense foot, a patchwork flesh monstrosity tries to stomp on you!",
-      "With an eerie, boneless fluidity, a lithe veiled sentinel slashes at you with patchwork flesh monstrosity bronze cutlass!"
     ],
     bite: [],
     claw: [],

@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 180,
-  speed: "~8 sec",
+  speed: 9,
   height: 3,
   size: "medium",
   areas: [
@@ -41,6 +43,10 @@
       {
         name: "Bite",
         as: (185..193)
+      },
+      {
+        name: "Unknown",
+        as: 185
       }
     ],
     bolt_spells: [],
@@ -59,10 +65,10 @@
   defense_attributes: {
     asg: "10N",
     immunities: [],
-    melee: (87..160),
-    ranged: (87..102),
-    bolt: (87..102),
-    udf: (120..166),
+    melee: (80..160),
+    ranged: (68..111),
+    bolt: (68..111),
+    udf: (120..176),
     bar_td: 60,
     cle_td: 60,
     emp_td: (60..68),
@@ -72,7 +78,7 @@
     wiz_td: 63,
     mje_td: 63,
     mne_td: 63,
-    mjs_td: 60,
+    mjs_td: (60..66),
     mns_td: (60..66),
     mnm_td: 60,
     defensive_spells: [],
@@ -105,11 +111,7 @@
     death: [
       "The striped warcat lets out a final caterwaul and dies.",
       "The striped warcat crumples to the ground and dies.",
-      "The striped warcat mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The striped warcat mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The striped warcat mewls in pain as he slumps to the ground and licks his wounded left paw.",
-      "Beautiful shot pierces both lungs, the striped warcat makes a wheezing noise, and drops dead!",
-      "The striped warcat mewls in pain as she slumps to the ground and licks her wounded right paw."
+      "Beautiful shot pierces both lungs, the striped warcat makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A striped warcat decays into a compost of fangs, fur and claws."

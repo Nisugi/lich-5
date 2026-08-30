@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: nil,
-  speed: nil,
-  height: nil,
-  size: "",
+  speed: 6,
+  height: 30,
+  size: "huge",
   areas: [
     {
       name: "Hinterwilds",
@@ -27,7 +29,16 @@
     }
   ],
   attack_attributes: {
-    physical_attacks: [],
+    physical_attacks: [
+      {
+        name: "Gigantic hand",
+        as: 597
+      },
+      {
+        name: "Skinless fist down",
+        as: 587
+      }
+    ],
     bolt_spells: [
       {
         name: "903",
@@ -49,7 +60,11 @@
       }
     ],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -57,18 +72,18 @@
     asg: nil,
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: nil,
+    ranged: (520..625),
+    bolt: (520..625),
     udf: 680,
     bar_td: nil,
     cle_td: nil,
-    emp_td: nil,
+    emp_td: 504,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: 421,
     sor_td: nil,
     wiz_td: nil,
-    mje_td: 525,
-    mne_td: nil,
+    mje_td: (405..525),
+    mne_td: (405..525),
     mjs_td: nil,
     mns_td: nil,
     mnm_td: nil,
@@ -80,7 +95,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a crude wooden cudgel",
+    "a tattered hide cloak painted with dark sigils"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -99,7 +117,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A flayed gigas disciple attempts to stamp you out with one great foot!",
+      "A flayed gigas disciple raises {pronoun} hand and conjures a fountain of steaming blood to gush at you!",
+      "A flayed gigas disciple swings {weapon} at you!",
+      "A flayed gigas disciple tries to strangle you with a gigantic hand!",
+      "A flayed gigas disciple whirls into a deadly form, swinging a crude wooden cudgel at you!",
+      "A flayed gigas disciple whirls into a deadly form, swinging a gnarled dark wooden crook adorned with sinuous patterns at you!"
+    ],
     bite: [],
     claw: [],
     info: {

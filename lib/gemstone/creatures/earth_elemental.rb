@@ -9,18 +9,20 @@
   type: "Elemental",
   undead: false,
   blood: false,
-  bones: nil,
+  bones: false,
   witherable: false,
   sympathy: true,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Magical"
   ],
   bcs: true,
   max_hp: 443,
-  speed: nil,
+  speed: 10,
   height: 10,
   size: "huge",
   areas: [
@@ -54,19 +56,19 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: (160..293),
-    ranged: (157..256),
-    bolt: (157..256),
-    udf: (469..662),
+    melee: (102..293),
+    ranged: (146..274),
+    bolt: (146..274),
+    udf: (421..662),
     bar_td: nil,
     cle_td: 333,
-    emp_td: 315,
+    emp_td: (312..315),
     pal_td: (277..286),
     ran_td: (268..274),
     sor_td: (366..375),
     wiz_td: nil,
     mje_td: 369,
-    mne_td: nil,
+    mne_td: 369,
     mjs_td: nil,
     mns_td: nil,
     mnm_td: (246..252),
@@ -81,7 +83,8 @@
   alchemy: [],
   abilities_misc: [],
   equipment: [
-    "a massive iron-banded greatshield"
+    "a massive iron-banded greatshield",
+    "a massive pitted iron pavis"
   ],
   treasure: {
     coins: false,
@@ -96,7 +99,6 @@
       "Massive and thick, with broad shoulders but no apparent head, the earth elemental appears to be a composite of the earth itself. A large, craggy maw in the middle of the elemental's chest appears to be the creature's mouth, and the earth elemental's huge feet and giant-sized fists look like they would pulverize flesh without much effort at all."
     ],
     arrival: [
-      "The boulder comes to a sudden stop and rises into the form of a greater krynch!",
       "An earth elemental lumbers in slowly."
     ],
     flee: [],
@@ -106,12 +108,13 @@
     ],
     decay: [
       "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
-      "The earth elemental's left leg crumbles briefly and explodes in a shower of gore."
+      "The earth elemental's left leg crumbles briefly and explodes in a shower of gore.",
+      "Tiny fissures quickly spread over the entire form of a greater earth elemental.  Within moments, it crumbles into a pile of dirt and rubble."
     ],
     search: [],
     spell_prep: [],
     attack: [
-      "An earth elemental pounds at you with earth elemental heavy earthen fists!",
+      "An earth elemental pounds at you with {pronoun} heavy earthen fists!",
       "An earth elemental stomps at you with {pronoun} foot!"
     ],
     bite: [],

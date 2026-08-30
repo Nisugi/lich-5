@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -33,6 +35,10 @@
       {
         name: "Bite",
         as: 23
+      },
+      {
+        name: "Unknown",
+        as: 36
       }
     ],
     bolt_spells: [],
@@ -45,10 +51,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: 28,
-    ranged: "+5",
-    bolt: "+5",
-    udf: 58,
+    melee: (5..28),
+    ranged: 5,
+    bolt: 5,
+    udf: (37..58),
     bar_td: "+3",
     cle_td: "+3",
     emp_td: 3,
@@ -88,11 +94,7 @@
     ],
     death: [
       "The black rolton collapses to the ground, emits a final bleat, and dies.",
-      "The black rolton lets out a final agonized bleat and dies.",
-      "The black rolton bleats loudly as he slumps to the ground and cradles his wounded left foreleg.",
-      "The black rolton bleats loudly as he slumps to the ground and cradles his wounded right hoof.",
-      "The black rolton bleats loudly as he slumps to the ground and cradles his wounded right foreleg.",
-      "The black rolton bleats loudly as she slumps to the ground and cradles her wounded left hoof."
+      "The black rolton lets out a final agonized bleat and dies."
     ],
     decay: [
       "A black rolton decays into a pile of fur and bone."

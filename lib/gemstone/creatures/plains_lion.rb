@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -53,21 +55,21 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (112..149),
-    ranged: (112..119),
-    bolt: (112..119),
-    udf: 167,
+    melee: (107..149),
+    ranged: (80..119),
+    bolt: (80..119),
+    udf: (167..191),
     bar_td: (54..60),
     cle_td: (54..60),
-    emp_td: (46..54),
-    pal_td: nil,
-    ran_td: nil,
+    emp_td: (46..60),
+    pal_td: (48..57),
+    ran_td: (48..54),
     sor_td: (51..60),
     wiz_td: nil,
     mje_td: 54,
     mne_td: 54,
-    mjs_td: 48,
-    mns_td: (51..57),
+    mjs_td: (48..57),
+    mns_td: (48..57),
     mnm_td: (54..60),
     defensive_spells: [],
     defensive_abilities: [],
@@ -102,10 +104,7 @@
     death: [
       "The plains lion crumples to the ground and dies.",
       "The plains lion lets out a final caterwaul and dies.",
-      "The plains lion mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The plains lion mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The plains lion mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The plains lion mewls in pain as she slumps to the ground and licks her wounded left foreleg."
+      "Beautiful shot pierces both lungs, the plains lion makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A plains lion decays into a compost of fangs, fur and claws."

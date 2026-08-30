@@ -8,12 +8,14 @@
   family: "Humanoid",
   type: "Biped",
   undead: true,
-  blood: nil,
+  blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -48,20 +50,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: 238,
-    ranged: nil,
-    bolt: nil,
-    udf: (242..253),
+    melee: (217..251),
+    ranged: (193..223),
+    bolt: (193..223),
+    udf: (242..303),
     bar_td: (102..111),
     cle_td: (108..114),
     emp_td: (109..116),
     pal_td: (102..111),
-    ran_td: nil,
+    ran_td: (102..111),
     sor_td: (115..124),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 121,
-    mjs_td: nil,
+    mjs_td: (109..118),
     mns_td: (109..118),
     mnm_td: (102..105),
     defensive_spells: [],
@@ -88,19 +90,16 @@
     description: [
       "Clad in broken chain armor, the soldier's pale white bones are exposed in certain points in which the armor has completely rusted away. Dark leather gloves cover its bony hands. A very small glimmer of life can be seen in the depths of the soldier's eye sockets."
     ],
-    arrival: [
-      "A bog troll lumbers in, his face set in an angry scowl!"
-    ],
+    arrival: [],
     flee: [
       "A skeletal soldier clatters {direction}."
     ],
     death: [
       "The skeletal soldier struggles to rise to its feet, but soon lies still.",
-      "The skeletal soldier slumps to the ground."
+      "Beautiful shot pierces both lungs, the skeletal soldier makes a wheezing noise, and drops dead!"
     ],
     decay: [
-      "A skeletal soldier crumbles to a fine white powder.",
-      "Acid dissolves connecting cartilage, freeing the skeletal soldier's ribs to move independently."
+      "A skeletal soldier crumbles to a fine white powder."
     ],
     search: [],
     spell_prep: [],

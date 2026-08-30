@@ -11,9 +11,11 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Element-based",
     "Magical"
@@ -102,15 +104,15 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: nil,
-    ranged: 293,
-    bolt: nil,
-    udf: nil,
+    melee: (314..319),
+    ranged: (234..330),
+    bolt: (234..330),
+    udf: 410,
     bar_td: nil,
     cle_td: (384..387),
     emp_td: (371..380),
     pal_td: (330..336),
-    ran_td: nil,
+    ran_td: (321..330),
     sor_td: (391..397),
     wiz_td: nil,
     mje_td: nil,
@@ -126,7 +128,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a firewheel arrow fletched with plain white feathers"
+  ],
   treasure: {
     coins: nil,
     magic_items: nil,
@@ -144,18 +148,17 @@
       "A blazing red phoenix flies in on wobbly wings."
     ],
     flee: [],
-    death: [],
+    death: [
+      "Beautiful shot pierces both lungs, the blazing red phoenix makes a wheezing noise, and drops dead!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
     attack: [
       "A blazing red phoenix gnashes at you with a flaming maw!",
       "A blazing red phoenix hurls {weapon} at you!",
-      "A blazing red phoenix tries to spear you with blazing red phoenix beak of flame!",
-      "A firebird cranes blazing red phoenix neck, snapping at you with blazing red phoenix sharp beak!",
-      "A firebird tries to spear you with blazing red phoenix beak!",
+      "A blazing red phoenix tries to spear you with {pronoun} beak of flame!",
       "Fiery talons lash out at you as a blazing red phoenix dives on your position!",
-      "In a trail of flames, a firebird extends blazing red phoenix fearsome talons as it dives at you!",
       "A blazing red phoenix rakes at you with a razor-sharp claw!"
     ],
     bite: [],

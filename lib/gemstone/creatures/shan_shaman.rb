@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -40,20 +42,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (387..498),
-    ranged: nil,
-    bolt: nil,
+    melee: (378..498),
+    ranged: (278..456),
+    bolt: (278..456),
     udf: (341..558),
     bar_td: nil,
     cle_td: (313..323),
     emp_td: (310..320),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (277..287),
+    ran_td: (275..284),
     sor_td: (310..320),
     wiz_td: nil,
     mje_td: (317..322),
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: (317..322),
+    mjs_td: (311..320),
     mns_td: (311..320),
     mnm_td: (219..228),
     defensive_spells: [],
@@ -93,7 +95,8 @@
       "The shan shaman shudders and falls to the ground motionless.",
       "The shan shaman yips in pain as he falls to the ground motionless.",
       "A shan shaman's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
-      "A shan shaman's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
+      "A shan shaman's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
+      "Beautiful shot pierces both lungs, the shan shaman makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The shan shaman's right leg crumbles briefly and explodes in a shower of gore."

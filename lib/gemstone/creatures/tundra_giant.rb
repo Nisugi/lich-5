@@ -12,8 +12,10 @@
   bones: nil,
   witherable: nil,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Element-based"
@@ -51,10 +53,10 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 216,
-    ranged: (90..111),
-    bolt: (90..111),
-    udf: 278,
+    melee: (137..216),
+    ranged: (90..143),
+    bolt: (90..143),
+    udf: (205..278),
     bar_td: nil,
     cle_td: (113..123),
     emp_td: nil,
@@ -62,9 +64,9 @@
     ran_td: (99..108),
     sor_td: (121..139),
     wiz_td: nil,
-    mje_td: 132,
-    mne_td: 141,
-    mjs_td: nil,
+    mje_td: (132..141),
+    mne_td: (132..141),
+    mjs_td: (114..124),
     mns_td: (114..124),
     mnm_td: (109..117),
     defensive_spells: [
@@ -100,8 +102,6 @@
     ],
     death: [
       "The tundra giant cries out in cold agony one last time and dies.",
-      "A tundra giant goes limp as he is rendered unconscious!",
-      "A tundra giant goes limp as she is rendered unconscious!",
       "The tundra giant falls to the ground motionless."
     ],
     decay: [],

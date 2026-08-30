@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: nil,
   max_hp: 375,
@@ -35,6 +37,10 @@
       {
         name: "Cudgel",
         as: 605
+      },
+      {
+        name: "Huge black alloy greatsword",
+        as: 592
       }
     ],
     bolt_spells: [],

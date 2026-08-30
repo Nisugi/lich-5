@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 7,
   height: 6,
   size: "large",
   areas: [
@@ -32,11 +34,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 465
+        as: (465..475)
       },
       {
         name: "Claw",
-        as: 465
+        as: (465..467)
       },
       {
         name: "Impale",
@@ -44,7 +46,7 @@
       },
       {
         name: "Beak",
-        as: (444..451)
+        as: (444..471)
       },
       {
         name: "Smash",
@@ -52,7 +54,7 @@
       },
       {
         name: "Swoop",
-        as: (457..460)
+        as: (457..475)
       }
     ],
     bolt_spells: [],
@@ -81,20 +83,20 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: 343,
+    melee: (168..348),
     ranged: nil,
     bolt: 347,
-    udf: 537,
+    udf: (415..542),
     bar_td: 390,
-    cle_td: (424..430),
-    emp_td: (415..421),
+    cle_td: (424..433),
+    emp_td: (415..424),
     pal_td: (366..375),
-    ran_td: nil,
+    ran_td: 360,
     sor_td: (439..448),
     wiz_td: nil,
-    mje_td: (457..463),
-    mne_td: nil,
-    mjs_td: nil,
+    mje_td: (457..561),
+    mne_td: (457..561),
+    mjs_td: (381..388),
     mns_td: (381..388),
     mnm_td: (351..360),
     defensive_spells: [],
@@ -118,15 +120,14 @@
     description: [
       "The war griffin is a magnificent beast, as if designed by the gods to embody fierce and graceful predation. Its front legs, forebody, wings, and head are those of a great eagle, complete with large golden feathers and aquiline beak. The rear half of the creature's body is that of a powerful lion, with short white fur and a long feline tail. Trained by its captors to enhance its fighting prowess, the massive war griffin is poetry in motion, its beautiful ferocity the last sight its foes ever see."
     ],
-    arrival: [
-      "An Ithzir initiate strides in, his hands clasped before him."
-    ],
+    arrival: [],
     flee: [
       "A war griffin flies {direction}."
     ],
     death: [
       "The war griffin writhes in agony, its wings flapping fruitlessly as it dies.",
-      "The war griffin crashes to the ground, motionless."
+      "The war griffin crashes to the ground, motionless.",
+      "Beautiful shot pierces both lungs, the war griffin makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The war griffin decays into a pile of feathers and fur."
@@ -134,9 +135,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A greater construct raises war griffin massive foot and attempts to smash you!",
       "A war griffin rakes at you with a razor-sharp claw!",
-      "A war griffin tries to spear you with war griffin beak!"
+      "A war griffin tries to spear you with {pronoun} beak!"
     ],
     bite: [
       "A war griffin tries to bite you!"

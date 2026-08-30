@@ -11,16 +11,18 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Non-corporeal undead",
     "Boss"
   ],
   bcs: true,
   max_hp: 323,
-  speed: nil,
+  speed: 6,
   height: 5,
   size: "medium",
   areas: [
@@ -37,7 +39,7 @@
       },
       {
         name: "Claw",
-        as: (300..302)
+        as: (300..303)
       }
     ],
     bolt_spells: [],
@@ -56,19 +58,19 @@
     asg: "8N",
     immunities: [],
     melee: (231..450),
-    ranged: nil,
-    bolt: 275,
+    ranged: (208..284),
+    bolt: (208..284),
     udf: (230..534),
     bar_td: nil,
-    cle_td: (247..256),
+    cle_td: (247..259),
     emp_td: (250..259),
     pal_td: (208..217),
-    ran_td: nil,
+    ran_td: (211..220),
     sor_td: (256..265),
     wiz_td: nil,
-    mje_td: 276,
-    mne_td: 284,
-    mjs_td: nil,
+    mje_td: (276..284),
+    mne_td: (276..284),
+    mjs_td: (247..250),
     mns_td: (247..250),
     mnm_td: (183..189),
     defensive_spells: [],
@@ -79,7 +81,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye"
+  ],
   treasure: {
     coins: false,
     magic_items: false,
@@ -105,7 +109,8 @@
       "A sinuous wind wraith releases a groan of mingled ecstasy and relief as it fades away.",
       "The wind wraith goes still for a moment while its head reshapes.",
       "A dazzling wind wraith releases a groan of mingled ecstasy and relief as it fades away.",
-      "A flashy wind wraith releases a groan of mingled ecstasy and relief as it fades away."
+      "A flashy wind wraith releases a groan of mingled ecstasy and relief as it fades away.",
+      "A robust wind wraith releases a groan of mingled ecstasy and relief as it fades away."
     ],
     decay: [],
     search: [],

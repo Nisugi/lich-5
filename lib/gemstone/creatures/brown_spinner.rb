@@ -11,9 +11,11 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -59,20 +61,20 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (94..168),
-    ranged: nil,
+    melee: (79..168),
+    ranged: (60..108),
     bolt: 60,
-    udf: (97..160),
+    udf: (93..160),
     bar_td: nil,
     cle_td: 27,
     emp_td: 27,
     pal_td: (24..27),
-    ran_td: nil,
+    ran_td: 27,
     sor_td: 27,
     wiz_td: nil,
     mje_td: 27,
     mne_td: 27,
-    mjs_td: nil,
+    mjs_td: 27,
     mns_td: 27,
     mnm_td: 27,
     defensive_spells: [],
@@ -102,9 +104,7 @@
     ],
     death: [
       "The brown spinner's body jerks one last time and dies.",
-      "The brown spinner collapses to the ground and dies.",
-      "A brown spinner goes limp as it is rendered unconscious!",
-      "The brown spinner slumps to the ground."
+      "The brown spinner collapses to the ground and dies."
     ],
     decay: [
       "A brown spinner's legs shrivel up beneath it as it decays into dust.",

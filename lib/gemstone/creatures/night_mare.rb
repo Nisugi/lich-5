@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: false,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Corporeal undead",
     "Boss"
@@ -45,22 +47,22 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: 210,
+    melee: (191..226),
     ranged: nil,
     bolt: nil,
     udf: nil,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
-    pal_td: nil,
+    pal_td: 340,
     ran_td: nil,
     sor_td: 161,
     wiz_td: nil,
-    mje_td: 474,
+    mje_td: (474..494),
     mne_td: nil,
-    mjs_td: nil,
+    mjs_td: 295,
     mns_td: 295,
-    mnm_td: nil,
+    mnm_td: 361,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -69,7 +71,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

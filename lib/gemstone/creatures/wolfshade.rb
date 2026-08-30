@@ -11,15 +11,17 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: nil,
   max_hp: 140,
-  speed: nil,
+  speed: 5,
   height: 3,
   size: "medium",
   areas: [
@@ -53,10 +55,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (82..95),
-    ranged: 68,
-    bolt: 68,
-    udf: (102..110),
+    melee: (74..95),
+    ranged: (68..78),
+    bolt: (68..78),
+    udf: (97..110),
     bar_td: 45,
     cle_td: 45,
     emp_td: 45,
@@ -77,7 +79,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye"
+  ],
   treasure: {
     coins: false,
     magic_items: false,

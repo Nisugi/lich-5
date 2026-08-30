@@ -10,17 +10,19 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead",
     "Extraplanar"
   ],
   bcs: true,
-  max_hp: 349,
-  speed: nil,
+  max_hp: 432,
+  speed: 4,
   height: 6,
   size: "medium",
   areas: [
@@ -41,7 +43,7 @@
       },
       {
         name: "Long blackened jeddart-axe",
-        as: 520
+        as: (491..520)
       }
     ],
     bolt_spells: [],
@@ -67,20 +69,20 @@
   defense_attributes: {
     asg: "(see other info)",
     immunities: [],
-    melee: (236..412),
-    ranged: nil,
-    bolt: nil,
-    udf: (420..613),
+    melee: (227..419),
+    ranged: (171..412),
+    bolt: (171..412),
+    udf: (412..630),
     bar_td: 308,
-    cle_td: (326..335),
+    cle_td: (326..338),
     emp_td: (326..332),
-    pal_td: 277,
-    ran_td: nil,
+    pal_td: (277..289),
+    ran_td: 277,
     sor_td: (333..342),
     wiz_td: nil,
     mje_td: (362..371),
-    mne_td: nil,
-    mjs_td: 320,
+    mne_td: (362..371),
+    mjs_td: (320..359),
     mns_td: (320..359),
     mnm_td: (252..261),
     defensive_spells: [],
@@ -125,9 +127,7 @@
       "The n'ecare falls to the ground motionless.",
       "The n'ecare wails in terrifying pain one last time and lies still."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the n'ecare's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [

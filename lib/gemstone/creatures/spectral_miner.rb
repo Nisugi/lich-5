@@ -11,9 +11,11 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Non-corporeal undead",
     "Boss"
@@ -33,33 +35,37 @@
     physical_attacks: [
       {
         name: "Mining pick",
-        as: 311
+        as: (243..311)
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Gesture"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
   defense_attributes: {
     asg: "7",
     immunities: [],
-    melee: (219..225),
-    ranged: nil,
-    bolt: (152..187),
-    udf: (271..322),
+    melee: (123..225),
+    ranged: (148..201),
+    bolt: (148..201),
+    udf: (220..340),
     bar_td: 158,
     cle_td: (142..152),
     emp_td: (142..151),
-    pal_td: nil,
+    pal_td: (130..139),
     ran_td: nil,
     sor_td: (143..166),
     wiz_td: 164,
-    mje_td: 164,
-    mne_td: 163,
-    mjs_td: nil,
+    mje_td: (163..164),
+    mne_td: (163..164),
+    mjs_td: (142..152),
     mns_td: (142..152),
     mnm_td: (125..135),
     defensive_spells: [

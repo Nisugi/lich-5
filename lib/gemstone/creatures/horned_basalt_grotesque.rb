@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
+  witherable: true,
+  sympathy: true,
   muggable: nil,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   bcs: true,
   max_hp: 750,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 8,
+  size: "large",
   areas: [
     {
       name: "Moonsedge",
@@ -34,7 +36,7 @@
       },
       {
         name: "Stomp",
-        as: 526
+        as: (526..555)
       },
       {
         name: "Bite",
@@ -70,6 +72,9 @@
       },
       {
         name: "Bearhug"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_abilities: [],
@@ -78,18 +83,18 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: 518,
-    ranged: nil,
-    bolt: "409 to 429",
+    melee: (294..607),
+    ranged: (247..423),
+    bolt: (247..423),
     udf: nil,
     bar_td: (490..520),
     cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    emp_td: 471,
+    pal_td: (439..442),
+    ran_td: 521,
     sor_td: "483 to 504",
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 476,
     mne_td: "487 to 522",
     mjs_td: nil,
     mns_td: 471,
@@ -118,13 +123,22 @@
     description: [
       "Huge and hulking, the basalt grotesque is an imposing figure cut from black basalt. Roughly humanoid in shape though not in particulars, the grotesque has a bestial visage. The carved musculature of its back joins with two great wings that span wider than it is tall. From its head sprouts a quintet of rounded horns. Its eyes, a burning green, match the hue of a viridian soulstone embedded into the rock of its broad chest.\n\nAppraisal:\nThe basalt grotesque is large in size, about eight feet high in its current state, appears to be of exceptionally hardy constitution, is in a guarded stance, and is in relatively good shape."
     ],
-    arrival: [],
+    arrival: [
+      "A horned basalt grotesque stomps in, stony wings spread behind it like a flourished cloak."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Cracks race across a horned basalt grotesque's carved stone physique, deepening into jagged chasms.  The grotesque crumbles swiftly, its composite pieces breaking into fine black powder."
+    ],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A horned basalt grotesque opens {pronoun} stony jaws and tries to savage you with jaggedly carved teeth!",
+      "A horned basalt grotesque twists a stony claw toward you!",
+      "Clenching a carved claw into an unyielding fist, a horned basalt grotesque takes a swing at you!",
+      "Raising a heavy stone foot, a horned basalt grotesque attempts to crush you with a vicious stomp!"
+    ],
     bite: [],
     claw: [],
     info: {

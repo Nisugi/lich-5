@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 211,
-  speed: nil,
+  speed: 7,
   height: 3,
   size: "medium",
   areas: [
@@ -53,19 +55,19 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: 145,
+    melee: (126..141),
+    ranged: (107..131),
+    bolt: (107..131),
+    udf: (141..145),
     bar_td: nil,
     cle_td: 99,
     emp_td: 101,
     pal_td: (94..97),
-    ran_td: nil,
+    ran_td: 97,
     sor_td: 104,
     wiz_td: nil,
-    mje_td: 106,
-    mne_td: 107,
+    mje_td: (106..107),
+    mne_td: (106..107),
     mjs_td: 101,
     mns_td: 101,
     mnm_td: 97,
@@ -79,7 +81,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye",
+    "a bruised right eye",
+    "a completely severed right foreleg"
+  ],
   treasure: {
     coins: false,
     magic_items: false,
@@ -95,11 +101,7 @@
     arrival: [],
     flee: [],
     death: [
-      "The vapor hound lets out one last whimpering sigh of chartreuse vapors and dies.",
-      "The vapor hound yelps loudly as it slumps to the ground and licks its wounded right foreleg.",
-      "The vapor hound yelps loudly as it slumps to the ground and licks its wounded left foreleg.",
-      "The vapor hound yelps loudly as it slumps to the ground and licks its wounded right paw.",
-      "The vapor hound yelps loudly as it slumps to the ground and licks its wounded left paw."
+      "The vapor hound lets out one last whimpering sigh of chartreuse vapors and dies."
     ],
     decay: [
       "A vapor hound decays into a compost of fur and fangs."

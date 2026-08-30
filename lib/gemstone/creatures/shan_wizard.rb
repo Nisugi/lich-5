@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -67,20 +69,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (306..324),
-    ranged: nil,
-    bolt: nil,
+    melee: (238..348),
+    ranged: 241,
+    bolt: 241,
     udf: 323,
     bar_td: (138..157),
     cle_td: (156..165),
     emp_td: (161..170),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (135..145),
+    ran_td: (138..144),
     sor_td: (170..187),
     wiz_td: nil,
     mje_td: 168,
     mne_td: 168,
-    mjs_td: nil,
+    mjs_td: (164..173),
     mns_td: (164..173),
     mnm_td: (128..134),
     defensive_spells: [
@@ -119,7 +121,7 @@
       "The shan wizard yips in pain as she falls to the ground motionless.",
       "The shan wizard howls out one last time and dies.",
       "A shan wizard's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
-      "A shan wizard's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
+      "A shan wizard's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
     ],
     decay: [
       "The shan wizard's left leg crumbles briefly and explodes in a shower of gore."

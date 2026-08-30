@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 205,
-  speed: nil,
+  speed: 3,
   height: 6,
   size: "medium",
   areas: [
@@ -91,21 +93,21 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: (308..567),
-    ranged: nil,
+    melee: (291..567),
+    ranged: (271..481),
     bolt: (275..326),
     udf: (520..649),
     bar_td: 375,
     cle_td: (402..407),
-    emp_td: (369..372),
-    pal_td: (335..338),
-    ran_td: nil,
+    emp_td: (369..445),
+    pal_td: (335..352),
+    ran_td: 355,
     sor_td: (416..420),
     wiz_td: nil,
-    mje_td: (428..453),
-    mne_td: (414..438),
-    mjs_td: nil,
-    mns_td: 392,
+    mje_td: (414..453),
+    mne_td: (414..453),
+    mjs_td: (384..392),
+    mns_td: (384..392),
     mnm_td: (317..327),
     defensive_spells: [
       "Divine Shield",
@@ -122,7 +124,9 @@
   alchemy: [],
   abilities_misc: [],
   equipment: [
-    "a corroded bronze scaling fork"
+    "a corroded bronze scaling fork",
+    "a spike-studded silvery blue round shield",
+    "a wide silvery green trident"
   ],
   treasure: {
     coins: true,
@@ -138,20 +142,14 @@
     ],
     arrival: [
       "A triton radical strides in, a wary look on her face.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
       "A triton radical strides in, a wary look on his face.",
-      "A triton executioner strides in, a wary look on her face.",
-      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
       "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
-      "A triton combatant strides in, a wary look on her face.",
-      "A triton combatant strides in, a wary look on his face."
+      "A triton radical just arrived."
     ],
     flee: [],
     death: [
-      "The siren gives a plaintive wail before she slumps to her side and dies.",
       "The triton radical gurgles once and goes still, a wrathful look on her face.",
-      "The triton radical gurgles once and goes still, a wrathful look on his face.",
-      "The triton radical slumps to the ground."
+      "The triton radical gurgles once and goes still, a wrathful look on his face."
     ],
     decay: [],
     search: [],

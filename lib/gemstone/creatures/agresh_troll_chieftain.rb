@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 250,
-  speed: nil,
+  speed: 14,
   height: 9,
   size: "large",
   areas: [
@@ -56,19 +58,19 @@
     asg: "12",
     immunities: [],
     melee: (75..195),
-    ranged: (89..104),
-    bolt: (89..104),
-    udf: (132..133),
+    ranged: (76..113),
+    bolt: (76..113),
+    udf: (126..133),
     bar_td: 67,
     cle_td: 75,
     emp_td: 75,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (72..75),
+    ran_td: 75,
     sor_td: 71,
     wiz_td: nil,
     mje_td: 67,
     mne_td: 67,
-    mjs_td: nil,
+    mjs_td: 75,
     mns_td: 75,
     mnm_td: (60..67),
     defensive_spells: [
@@ -81,7 +83,14 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a flail",
+    "a leather helm",
+    "a military pick",
+    "a visored helm",
+    "an augmented breastplate",
+    "some brigandine armor"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -102,8 +111,7 @@
       "An Agresh troll chieftain runs {direction}."
     ],
     death: [
-      "The troll chieftain bellows in rage one last time and dies.",
-      "An Agresh troll chieftain goes limp as she is rendered unconscious!"
+      "The troll chieftain bellows in rage one last time and dies."
     ],
     decay: [
       "An Agresh troll chieftain decays into compost."

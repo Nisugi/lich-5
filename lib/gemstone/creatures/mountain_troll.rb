@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 200,
-  speed: nil,
+  speed: 14,
   height: 10,
   size: "large",
   areas: [
@@ -64,8 +66,8 @@
   defense_attributes: {
     asg: "various",
     immunities: [],
-    melee: (63..183),
-    ranged: nil,
+    melee: (62..183),
+    ranged: (35..94),
     bolt: 90,
     udf: (108..113),
     bar_td: 58,
@@ -75,10 +77,10 @@
     ran_td: 36,
     sor_td: 62,
     wiz_td: nil,
-    mje_td: 58,
-    mne_td: 58,
-    mjs_td: nil,
-    mns_td: 66,
+    mje_td: (51..58),
+    mne_td: (51..58),
+    mjs_td: 96,
+    mns_td: 96,
     mnm_td: (51..58),
     defensive_spells: [
       "Spirit Warding II (107)"
@@ -122,7 +124,7 @@
       "The mountain troll screams one last time and dies.",
       "The mountain troll falls to the ground and dies.",
       "The mountain troll twitches violently, then dies.",
-      "The mountain troll slumps to the ground."
+      "Beautiful shot pierces both lungs, the mountain troll makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A mountain troll decays into compost."

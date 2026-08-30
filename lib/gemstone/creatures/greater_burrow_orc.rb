@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 110,
-  speed: nil,
+  speed: 11,
   height: 6,
   size: "medium",
   areas: [
@@ -33,6 +35,10 @@
       {
         name: "Short sword",
         as: (118..128)
+      },
+      {
+        name: "Unknown",
+        as: 108
       }
     ],
     bolt_spells: [],
@@ -46,9 +52,9 @@
     asg: "8",
     immunities: [],
     melee: (49..121),
-    ranged: (39..45),
-    bolt: (39..45),
-    udf: (95..129),
+    ranged: (28..45),
+    bolt: (28..45),
+    udf: (61..129),
     bar_td: 24,
     cle_td: 24,
     emp_td: 24,
@@ -58,7 +64,7 @@
     wiz_td: nil,
     mje_td: 24,
     mne_td: 24,
-    mjs_td: nil,
+    mjs_td: 24,
     mns_td: 24,
     mnm_td: 24,
     defensive_spells: [],
@@ -69,7 +75,11 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a short sword",
+    "a wooden shield",
+    "some double leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -86,8 +96,7 @@
     flee: [],
     death: [
       "A greater burrow orc growls one last time and dies.",
-      "A greater burrow orc growls silently one last time and dies.",
-      "A greater burrow orc goes limp as he is rendered unconscious!"
+      "A greater burrow orc growls silently one last time and dies."
     ],
     decay: [],
     search: [],

@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 307,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -40,7 +42,7 @@
       },
       {
         name: "Seaweed-wound rusted steel hatchet",
-        as: 424
+        as: (424..426)
       }
     ],
     bolt_spells: [],
@@ -75,21 +77,21 @@
   defense_attributes: {
     asg: "20",
     immunities: [],
-    melee: (269..375),
-    ranged: nil,
-    bolt: nil,
+    melee: (248..375),
+    ranged: (243..418),
+    bolt: (243..418),
     udf: (526..539),
     bar_td: 324,
     cle_td: (351..360),
     emp_td: (349..358),
-    pal_td: (301..307),
-    ran_td: nil,
+    pal_td: (301..330),
+    ran_td: 295,
     sor_td: (369..384),
     wiz_td: nil,
-    mje_td: (375..390),
-    mne_td: 386,
-    mjs_td: nil,
-    mns_td: (349..355),
+    mje_td: (375..399),
+    mne_td: (375..399),
+    mjs_td: 391,
+    mns_td: 391,
     mnm_td: (294..303),
     defensive_spells: [],
     defensive_abilities: [],
@@ -118,9 +120,7 @@
     ],
     arrival: [
       "A triton combatant strides in, a wary look on his face.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
       "A triton combatant strides in, a wary look on her face.",
-      "A triton executioner stalks in silently, her cold eyes gleaming with hatred."
     ],
     flee: [],
     death: [
@@ -133,7 +133,8 @@
     attack: [
       "A triton combatant swings {weapon} at you!",
       "A triton combatant throws {weapon} at you!",
-      "A triton combatant thrusts with an oak-shafted silvery blue trident at you!"
+      "A triton combatant thrusts with an oak-shafted silvery blue trident at you!",
+      "A triton combatant thrusts with a razor-tined pale green trident at you!"
     ],
     bite: [],
     claw: [],

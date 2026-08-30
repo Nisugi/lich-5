@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -33,6 +35,14 @@
       {
         name: "Dagger",
         as: 100
+      },
+      {
+        name: "Unknown",
+        as: 100
+      },
+      {
+        name: "Nip",
+        as: 80
       }
     ],
     bolt_spells: [],
@@ -46,20 +56,20 @@
     asg: "1N",
     immunities: [],
     melee: (22..91),
-    ranged: nil,
-    bolt: 30,
+    ranged: (15..30),
+    bolt: (15..30),
     udf: 96,
     bar_td: 10,
     cle_td: 10,
-    emp_td: nil,
+    emp_td: 10,
     pal_td: (7..10),
     ran_td: 10,
     sor_td: (10..11),
     wiz_td: nil,
     mje_td: 10,
     mne_td: 10,
-    mjs_td: nil,
-    mns_td: 10,
+    mjs_td: (3..10),
+    mns_td: (3..10),
     mnm_td: 10,
     defensive_spells: [],
     defensive_abilities: [],
@@ -69,7 +79,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a dagger",
+    "a large blue sack",
+    "a large orange sack",
+    "a large yellow sack"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -82,9 +97,7 @@
     description: [
       "The little gremlin is a small furless creature with beady little eyes and sharp teeth that have been filed into triangular fangs. It has long, metal capped, nails protruding several inches from the tip of each finger. Though humanoid in form, it has a natural facial expression that is as wicked as any other known to nature."
     ],
-    arrival: [
-      "A slimy little grub crawls in, leaving a trail of slime in its wake."
-    ],
+    arrival: [],
     flee: [
       "A nasty little blue gremlin scampers {direction}.",
       "A nasty little red gremlin scampers {direction}.",
@@ -112,12 +125,13 @@
       "A nasty little yellow gremlin decays into compost.",
       "A nasty little blue gremlin decays into compost.",
       "A nasty little black gremlin decays into compost.",
-      "A nasty little orange gremlin decays into compost."
+      "A nasty little orange gremlin decays into compost.",
     ],
     search: [],
     spell_prep: [],
     attack: [
-      "A nasty little gremlin swings {weapon} at you!"
+      "A nasty little gremlin swings {weapon} at you!",
+      "A nasty little gremlin nips at you!"
     ],
     bite: [],
     claw: [],

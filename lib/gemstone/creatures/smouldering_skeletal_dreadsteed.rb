@@ -10,18 +10,20 @@
   undead: true,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: false,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
-  max_hp: 500,
+  max_hp: 523,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 5,
+  size: "large",
   areas: [
     {
       name: "Moonsedge",
@@ -41,6 +43,18 @@
       {
         name: "Stomp (attack)",
         as: 520
+      },
+      {
+        name: "Bite",
+        as: (567..575)
+      },
+      {
+        name: "Charge",
+        as: (530..576)
+      },
+      {
+        name: "Kick",
+        as: (555..561)
       }
     ],
     bolt_spells: [],
@@ -56,6 +70,12 @@
       },
       {
         name: "Headbutt"
+      },
+      {
+        name: "Charge"
+      },
+      {
+        name: "Lash"
       }
     ],
     special_abilities: [
@@ -68,18 +88,18 @@
   defense_attributes: {
     asg: "15N",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: nil,
+    melee: (392..735),
+    ranged: (431..470),
+    bolt: (431..470),
+    udf: 605,
     bar_td: 395,
-    cle_td: nil,
-    emp_td: nil,
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (397..406),
+    emp_td: 400,
+    pal_td: (362..393),
+    ran_td: 503,
     sor_td: "408 to 437",
     wiz_td: nil,
-    mje_td: nil,
+    mje_td: 351,
     mne_td: "425 to 447",
     mjs_td: nil,
     mns_td: 388,
@@ -92,7 +112,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "some black steel chain barding"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -111,8 +133,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
+    attack: [
+      "A smouldering skeletal dreadsteed gallops into a deadly charge at you!",
+      "A smouldering skeletal dreadsteed rears up onto {pronoun} ossified hind legs and kicks at you with steel-shod hooves!",
+      "Urged on by the knight riding smouldering skeletal dreadsteed, a smouldering skeletal dreadsteed gallops into a deadly charge at you!"
+    ],
+    bite: [
+      "A smouldering skeletal dreadsteed opens {pronoun} skeletal maw and tries to bite you!"
+    ],
     claw: [],
     info: {
       general: [],

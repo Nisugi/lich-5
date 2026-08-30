@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -58,19 +60,19 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: nil,
-    ranged: nil,
-    bolt: nil,
-    udf: 145,
+    melee: (133..141),
+    ranged: (104..206),
+    bolt: (104..206),
+    udf: (141..145),
     bar_td: nil,
     cle_td: 74,
     emp_td: 76,
     pal_td: (69..72),
-    ran_td: nil,
+    ran_td: 72,
     sor_td: 79,
     wiz_td: nil,
-    mje_td: 81,
-    mne_td: 82,
+    mje_td: (81..82),
+    mne_td: (81..82),
     mjs_td: 76,
     mns_td: 76,
     mnm_td: 72,
@@ -84,7 +86,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a case of sporadic convulsions"
+  ],
   treasure: {
     coins: false,
     magic_items: false,
@@ -102,13 +106,7 @@
     ],
     flee: [],
     death: [
-      "The water hound lets out one last whimpering sigh of water droplets and dies.",
-      "A water hound goes limp as it is rendered unconscious!",
-      "The water hound yelps loudly as it slumps to the ground and licks its wounded right foreleg.",
-      "The water hound yelps loudly as it slumps to the ground and licks its wounded left foreleg.",
-      "The water hound yelps loudly as it slumps to the ground and licks its wounded right paw.",
-      "The water hound yelps loudly as it slumps to the ground and licks its wounded left paw.",
-      "The water hound slumps to the ground."
+      "The water hound lets out one last whimpering sigh of water droplets and dies."
     ],
     decay: [
       "A water hound decays into a compost of fur and fangs."
@@ -121,7 +119,9 @@
     bite: [
       "A water hound tries to bite you!"
     ],
-    claw: [],
+    claw: [
+      "A water hound claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

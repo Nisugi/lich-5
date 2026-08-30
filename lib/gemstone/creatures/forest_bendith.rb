@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -53,20 +55,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (268..290),
-    ranged: nil,
-    bolt: nil,
-    udf: 330,
+    melee: (134..290),
+    ranged: (151..199),
+    bolt: (151..199),
+    udf: (183..330),
     bar_td: (136..148),
     cle_td: (149..152),
     emp_td: (152..161),
     pal_td: (127..136),
-    ran_td: 130,
+    ran_td: (127..130),
     sor_td: (160..166),
     wiz_td: nil,
-    mje_td: (168..171),
-    mne_td: 167,
-    mjs_td: nil,
+    mje_td: (167..171),
+    mne_td: (167..171),
+    mjs_td: (152..161),
     mns_td: (152..161),
     mnm_td: (120..129),
     defensive_spells: [],
@@ -103,12 +105,13 @@
     arrival: [],
     flee: [],
     death: [
-      "A forest bendith goes limp as she is rendered unconscious!",
       "The forest bendith's eyes grow dim as her lifeforce fades away.",
       "Just as you move to cast, the forest bendith grins slightly, and then fades into the thick undergrowth to avoid your spell.",
-      "The forest bendith slumps to the ground."
+      "Beautiful shot pierces both lungs, the forest bendith makes a wheezing noise, and drops dead!"
     ],
-    decay: [],
+    decay: [
+      "The forest bendith's left leg crumbles briefly and explodes in a shower of gore."
+    ],
     search: [],
     spell_prep: [],
     attack: [

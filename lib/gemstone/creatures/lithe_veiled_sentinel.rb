@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -32,7 +34,7 @@
     physical_attacks: [
       {
         name: "Kick",
-        as: 484
+        as: (418..484)
       },
       {
         name: "Bloated arms",
@@ -40,15 +42,15 @@
       },
       {
         name: "Bronze cutlass",
-        as: 553
+        as: (481..553)
       },
       {
         name: "Heel of her hand",
-        as: 438
+        as: (433..438)
       },
       {
         name: "Heel of his hand",
-        as: 483
+        as: (408..483)
       }
     ],
     bolt_spells: [],
@@ -107,20 +109,20 @@
       "Stun"
     ],
     melee: (294..539),
-    ranged: (320..364),
-    bolt: 331,
+    ranged: (235..382),
+    bolt: (235..382),
     udf: (478..741),
     bar_td: nil,
-    cle_td: 413,
-    emp_td: 450,
-    pal_td: 403,
-    ran_td: 331,
+    cle_td: (413..422),
+    emp_td: (450..453),
+    pal_td: (382..391),
+    ran_td: (331..366),
     sor_td: 473,
     wiz_td: nil,
     mje_td: (443..502),
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: 450,
+    mne_td: (443..502),
+    mjs_td: (440..450),
+    mns_td: (440..450),
     mnm_td: (333..340),
     defensive_spells: [
       "Iron Skin",
@@ -139,7 +141,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a flowing green shroud",
+    "a patterned bronze cutlass"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -160,22 +165,17 @@
     death: [
       "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  She dies with a knowing smile on her face.",
       "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  He dies with a knowing smile on his face.",
-      "Intestines rupture from intense heat; a lithe veiled sentinel dies a slow, painful death.",
-      "A lithe veiled sentinel slumps to the ground unconscious."
+      "Intestines rupture from intense heat; a lithe veiled sentinel dies a slow, painful death."
     ],
-    decay: [
-      "Acid dissolves the knee ligaments.  The veiled sentinel's tibia passes his femur in a very unpleasant manner!",
-      "Acid dissolves connecting cartilage, freeing the veiled sentinel's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [
       "A lithe veiled sentinel delivers a vicious kick at you!",
-      "A lithe veiled sentinel throws lithe veiled sentinel arms outward for balance and leaps into the air, executing a series of kicks at you!",
-      "A patchwork flesh monstrosity tries to ensnare you with lithe veiled sentinel bloated arms!",
+      "A lithe veiled sentinel throws {pronoun} arms outward for balance and leaps into the air, executing a series of kicks at you!",
       "Moving with preternatural speed, a lithe veiled sentinel strikes at you with the heel of lithe veiled sentinel hand!",
       "Snarling, a lithe veiled sentinel charges toward you, fists flying with deadly precision!",
-      "With an eerie, boneless fluidity, a lithe veiled sentinel slashes at you with lithe veiled sentinel bronze cutlass!"
+      "With an eerie, boneless fluidity, a lithe veiled sentinel slashes at you with {pronoun} bronze cutlass!"
     ],
     bite: [],
     claw: [],

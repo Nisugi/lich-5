@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -44,7 +46,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: (156..171)
+        as: (134..171)
       },
       {
         name: "Claw",
@@ -65,10 +67,10 @@
   defense_attributes: {
     asg: "6N",
     immunities: [],
-    melee: (148..151),
-    ranged: (81..100),
-    bolt: 85,
-    udf: (112..146),
+    melee: (108..151),
+    ranged: (81..105),
+    bolt: (81..105),
+    udf: (101..146),
     bar_td: 51,
     cle_td: (42..51),
     emp_td: (45..53),
@@ -76,9 +78,9 @@
     ran_td: (45..51),
     sor_td: (39..51),
     wiz_td: nil,
-    mje_td: 45,
-    mne_td: 45,
-    mjs_td: nil,
+    mje_td: (39..45),
+    mne_td: (39..45),
+    mjs_td: (39..48),
     mns_td: (39..48),
     mnm_td: (42..51),
     defensive_spells: [],
@@ -111,15 +113,7 @@
     ],
     death: [
       "The puma lets out a final caterwaul and dies.",
-      "The puma crumples to the ground and dies.",
-      "The puma mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The puma mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The puma mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The puma mewls in pain as she slumps to the ground and licks her wounded left paw.",
-      "The puma mewls in pain as he slumps to the ground and licks his wounded right paw.",
-      "The puma mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The puma mewls in pain as he slumps to the ground and licks his wounded left paw.",
-      "The puma mewls in pain as she slumps to the ground and licks her wounded right paw."
+      "The puma crumples to the ground and dies."
     ],
     decay: [
       "A puma decays into a compost of fangs, fur and claws.",

@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 100,
-  speed: nil,
+  speed: 7,
   height: 5,
   size: "medium",
   areas: [
@@ -50,20 +52,20 @@
     asg: "11",
     immunities: [],
     melee: 32,
-    ranged: 10,
-    bolt: 13,
-    udf: (66..74),
+    ranged: (3..18),
+    bolt: (3..18),
+    udf: (63..74),
     bar_td: 21,
     cle_td: 21,
     emp_td: 21,
     pal_td: (18..21),
-    ran_td: nil,
+    ran_td: 21,
     sor_td: 21,
     wiz_td: nil,
     mje_td: 21,
     mne_td: 21,
-    mjs_td: 21,
-    mns_td: 21,
+    mjs_td: (21..51),
+    mns_td: (21..51),
     mnm_td: 21,
     defensive_spells: [],
     defensive_abilities: [],
@@ -97,7 +99,7 @@
     death: [
       "The shelfae soldier falls to the ground and dies.",
       "The shelfae soldier screams one last time and dies.",
-      "The shelfae soldier slumps to the ground."
+      "Beautiful shot pierces both lungs, the shelfae soldier makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A soldier crumbles into dust."

@@ -10,16 +10,18 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 130,
-  speed: nil,
+  speed: 7,
   height: 3,
   size: "small",
   areas: [
@@ -33,6 +35,10 @@
       {
         name: "Hatchet",
         as: (112..125)
+      },
+      {
+        name: "Unknown",
+        as: 125
       }
     ],
     bolt_spells: [],
@@ -45,9 +51,9 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: 159,
-    ranged: nil,
-    bolt: (58..95),
+    melee: (124..159),
+    ranged: (42..95),
+    bolt: (42..95),
     udf: (83..158),
     bar_td: nil,
     cle_td: 30,
@@ -58,7 +64,7 @@
     wiz_td: nil,
     mje_td: 30,
     mne_td: 30,
-    mjs_td: nil,
+    mjs_td: 30,
     mns_td: 30,
     mnm_td: 30,
     defensive_spells: [],
@@ -91,7 +97,6 @@
       "The gnoll worker is about three feet tall and vaguely man-like. Gnolls in general have a dwarven or gnomish appearance, but are markedly different in a way that can't quite be pin-pointed. This particular gnoll is part of the working class with well-muscled arms and callused hands. There is little doubt that the gnoll would be a formidable opponent if the need should arise, or if backed into a corner."
     ],
     arrival: [
-      "A gnoll ranger wanders in, alertly surveying its surroundings.",
       "A gnoll worker strides in solemnly.",
       "A gnoll worker wanders in, sniffing the air."
     ],
@@ -100,8 +105,7 @@
     ],
     death: [
       "The gnoll worker falls to the ground and dies.",
-      "The gnoll worker rolls over and dies.",
-      "A gnoll worker goes limp as she is rendered unconscious!"
+      "The gnoll worker rolls over and dies."
     ],
     decay: [],
     search: [],

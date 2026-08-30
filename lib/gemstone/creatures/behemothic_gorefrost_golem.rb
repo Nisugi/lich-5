@@ -9,10 +9,12 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -38,6 +40,26 @@
       {
         name: "stomp",
         as: (495..505)
+      },
+      {
+        name: "Colossal fist of ice",
+        as: (502..527)
+      },
+      {
+        name: "Charge",
+        as: 529
+      },
+      {
+        name: "Clawed fists",
+        as: 475
+      },
+      {
+        name: "Huge hooves",
+        as: 521
+      },
+      {
+        name: "Tusks",
+        as: 519
       }
     ],
     bolt_spells: [
@@ -70,6 +92,9 @@
       {
         name: "colossal fist"
       },
+      {
+        name: "Charge"
+      }
     ],
     special_abilities: [
       {
@@ -82,19 +107,19 @@
   defense_attributes: {
     asg: "20N",
     immunities: [],
-    melee: 339,
-    ranged: 317,
-    bolt: 325,
+    melee: (217..568),
+    ranged: (187..365),
+    bolt: (187..365),
     udf: 765,
     bar_td: 428,
-    cle_td: nil,
-    emp_td: 426,
-    pal_td: nil,
-    ran_td: 395,
+    cle_td: (428..444),
+    emp_td: (426..428),
+    pal_td: (382..392),
+    ran_td: (376..396),
     sor_td: 454,
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: 457,
+    mje_td: (457..490),
+    mne_td: (457..490),
     mjs_td: nil,
     mns_td: 428,
     mnm_td: nil,
@@ -105,7 +130,9 @@
   special_other: "",
   abilities: [],
   alchemy: [],
-  equipment: [],
+  equipment: [
+    "a firewheel arrow fletched with plain white feathers"
+  ],
   treasure: {
     coins: true,
     magic_items: nil,
@@ -119,7 +146,8 @@
     description: "The golem stands taller than a two-story building, a crude and blocky humanoid shape of ice that glows with an unsavory sanguine aura.  Clouds of frozen blood and bits of viscera are trapped in its frosty depths.  All are lifeless and still save for a single preserved organ at the golem's core: a humanoid heart.  The heart is shrouded in a swirl of slushy red fluid and, impossibly, it pulses with a sluggish, uneven beat, giving off coruscations of sanguine light.",
     arrival: [
       "The ground shudders as a behemothic gorefrost golem stomps in.",
-      "The frozen earth underfoot shifts precipitously as an arm of blood-flecked ice erupts upward, followed by the towering form of a behemothic gorefrost golem.  The golem straightens its massive bulk with a sound like shattering glass."
+      "The frozen earth underfoot shifts precipitously as an arm of blood-flecked ice erupts upward, followed by the towering form of a behemothic gorefrost golem.  The golem straightens its massive bulk with a sound like shattering glass.",
+      "A behemothic gorefrost golem just arrived."
     ],
     flee: [
       "A behemothic gorefrost golem stomps {direction}, shedding bits of broken ice and detritus.",
@@ -128,7 +156,16 @@
     spell_prep: [
       "A behemothic gorefrost golem glows with shimmering incarnadine light that suffuses its monstrous form with power."
     ],
-    attack: [],
+    attack: [
+      "A behemothic gorefrost golem rears back slowly and swings {weapon} at you!",
+      "A behemothic gorefrost golem swings {weapon} at you!",
+      "A behemothic gorefrost golem thrusts {weapon} toward you!",
+      "Raising a prodigious foot, a behemothic gorefrost golem tries to stomp on you!",
+      "A behemothic gorefrost golem swings {pronoun} dark wooden crook in an immense sweep at you!",
+      "A behemothic gorefrost golem swings {pronoun} obsidian dagger in an immense sweep at you!",
+      "NoneA {pronoun} rears back slowly and swings {weapon} at you!",
+      "A behemothic gorefrost golem swings {pronoun} fel-hafted handaxe in an immense sweep at you!"
+    ],
     bite: [],
     claw: [],
     death: [

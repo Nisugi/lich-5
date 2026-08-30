@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Magical"
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 6,
   height: 5,
   size: "large",
   areas: [
@@ -49,11 +51,19 @@
       },
       {
         name: "Bite",
-        as: (327..358)
+        as: (327..362)
       },
       {
         name: "Swoop",
-        as: 368
+        as: (331..368)
+      },
+      {
+        name: "Beak",
+        as: 325
+      },
+      {
+        name: "Powerful lightning bolt",
+        as: 293
       }
     ],
     bolt_spells: [
@@ -85,20 +95,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 264,
-    ranged: nil,
-    bolt: 263,
-    udf: (413..421),
+    melee: (155..347),
+    ranged: (173..287),
+    bolt: (173..287),
+    udf: (262..509),
     bar_td: nil,
     cle_td: (287..293),
-    emp_td: 288,
+    emp_td: (288..294),
     pal_td: (242..251),
-    ran_td: nil,
+    ran_td: (242..251),
     sor_td: (297..315),
     wiz_td: nil,
     mje_td: 314,
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: 314,
+    mjs_td: 279,
     mns_td: 279,
     mnm_td: (234..243),
     defensive_spells: [],
@@ -125,9 +135,10 @@
     arrival: [
       "A storm griffin just arrived."
     ],
-    flee: [],
+    flee: [
+      "A storm griffin flies {direction}."
+    ],
     death: [
-      "A storm griffin goes limp as it is rendered unconscious!",
       "The storm griffin writhes in agony, its wings flapping fruitlessly as it dies.",
       "The storm griffin crashes to the ground, motionless."
     ],
@@ -137,7 +148,9 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A storm griffin rakes at you with a razor-sharp claw!"
+      "A storm griffin rakes at you with a razor-sharp claw!",
+      "A storm griffin hurls {weapon} at you!",
+      "A storm griffin tries to spear you with {pronoun} beak!"
     ],
     bite: [
       "A storm griffin tries to bite you!"

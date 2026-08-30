@@ -7,12 +7,14 @@
   family: "suine",
   type: "quadruped",
   undead: false,
-  blood: nil,
+  blood: true,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [],
   areas: [
     {
@@ -21,8 +23,8 @@
     }
   ],
   bcs: true,
-  max_hp: 600,
-  speed: nil,
+  max_hp: 656,
+  speed: 3,
   height: 25,
   size: "huge",
   attack_attributes: {
@@ -38,6 +40,22 @@
       {
         name: "charge (attack)",
         as: (529)
+      },
+      {
+        name: "Charge",
+        as: (529..557)
+      },
+      {
+        name: "Huge hooves",
+        as: (519..549)
+      },
+      {
+        name: "Tusks",
+        as: (519..549)
+      },
+      {
+        name: "Lunge",
+        as: 557
       }
     ],
     bolt_spells: [],
@@ -49,6 +67,9 @@
       },
       {
         name: "feint"
+      },
+      {
+        name: "Charge"
       }
     ],
     special_abilities: [],
@@ -57,19 +78,19 @@
   defense_attributes: {
     asg: "1",
     immunities: [],
-    melee: (546),
-    ranged: nil,
-    bolt: (451..460),
+    melee: (236..752),
+    ranged: (339..471),
+    bolt: (339..471),
     udf: (582..584),
     bar_td: (402..409),
-    cle_td: nil,
+    cle_td: (399..452),
     emp_td: (404),
-    pal_td: nil,
+    pal_td: (366..375),
     ran_td: (360),
     sor_td: (431),
     wiz_td: nil,
-    mje_td: nil,
-    mne_td: (454..467),
+    mje_td: (454..469),
+    mne_td: (454..469),
     mjs_td: (405),
     mns_td: nil,
     mnm_td: nil,
@@ -94,22 +115,31 @@
     description: "Squinty eyes the color of molten copper dart here and there as if the immense boar is always on the alert for predators, but given its tremendous mass, it likely has little cause for worry.  The hinterboar's pelt is a glittering, metallic golden in hue, but is shot through with a hypnotic pattern of duskier bristles.  The line of raised bristles down the center of the beast's spine seems to radiate faint luminescence, warm and honey-hued.",
     arrival: [
       "Heavy hoofbeats herald the arrival of an immense gold-bristled hinterboar.",
-      "An immense gold-bristled hinterboar trots in with its tusks lifted skyward.  Its great hooves shake the ground with every step."
+      "An immense gold-bristled hinterboar trots in with its tusks lifted skyward.  Its great hooves shake the ground with every step.",
+      "An immense gold-bristled hinterboar just arrived."
     ],
     flee: [
       "An immense gold-bristled hinterboar charges {direction}, shaking the ground with each hoofbeat."
     ],
     death: [
-      "With a final discordant squeal, an immense gold-bristled hinterboar's great head sinks to the ground as its form goes still."
+      "With a final discordant squeal, an immense gold-bristled hinterboar's great head sinks to the ground as its form goes still.",
+      "Beautiful shot pierces both lungs, the gold-bristled hinterboar makes a wheezing noise, and drops dead!",
+      "An immense gold-bristled hinterboar's great head sinks to the ground as its form goes still."
     ],
     decay: [
-      "An immense gold-bristled hinterboar's form succumbs to decay, collapsing into ruined meat and patchy bristles."
+      "An immense gold-bristled hinterboar's form succumbs to decay, collapsing into ruined meat and patchy bristles.",
+      "The gold-bristled hinterboar's right leg crumbles briefly and explodes in a shower of gore.",
+      "The gold-bristled hinterboar's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [
       "An immense gold-bristled hinterboar puts its snout to the ground and snuffles for unseen prey.",
       "An immense gold-bristled hinterboar snuffles at the ground, trying to ferret out hidden threats."
     ],
-    attack: [],
+    attack: [
+      "Lowering {pronoun} head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
+      "Murder in {pronoun} eyes, an immense gold-bristled hinterboar tries to gore you with {pronoun} tusks!",
+      "Rearing up on {pronoun} hind legs, an immense gold-bristled hinterboar stomps at you with {pronoun} huge hooves!",
+    ],
     bite: [],
     claw: [],
     charge: "Lowering its head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",

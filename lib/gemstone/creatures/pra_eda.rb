@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -49,21 +51,21 @@
   defense_attributes: {
     asg: "18N",
     immunities: [],
-    melee: (151..241),
-    ranged: 132,
-    bolt: nil,
+    melee: (119..241),
+    ranged: (57..177),
+    bolt: (57..177),
     udf: (152..235),
     bar_td: 89,
-    cle_td: (105..115),
+    cle_td: (105..118),
     emp_td: (115..125),
-    pal_td: (99..107),
-    ran_td: nil,
+    pal_td: (98..107),
+    ran_td: (89..99),
     sor_td: (103..128),
     wiz_td: nil,
-    mje_td: (113..130),
-    mne_td: 109,
-    mjs_td: nil,
-    mns_td: (114..123),
+    mje_td: (109..130),
+    mne_td: (109..130),
+    mjs_td: (114..131),
+    mns_td: (114..131),
     mnm_td: (107..117),
     defensive_spells: [
       "Elemental Defense III (414)",
@@ -80,7 +82,9 @@
   abilities_misc: [],
   equipment: [
     "a bruised left eye",
-    "a bruised right eye"
+    "a bruised right eye",
+    "a completely severed left arm",
+    "a completely severed right arm"
   ],
   treasure: {
     coins: true,
@@ -101,7 +105,6 @@
     ],
     death: [
       "The pra'eda falls to the ground motionless.",
-      "A pra'eda goes limp as it is rendered unconscious!",
       "The pra'eda cries out one last time and lies still."
     ],
     decay: [

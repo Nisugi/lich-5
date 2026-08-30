@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -56,9 +58,9 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: (311..495),
-    ranged: 260,
-    bolt: nil,
+    melee: (257..495),
+    ranged: (183..355),
+    bolt: (183..355),
     udf: (357..561),
     bar_td: (239..251),
     cle_td: (254..269),
@@ -67,9 +69,9 @@
     ran_td: (219..222),
     sor_td: (261..285),
     wiz_td: nil,
-    mje_td: (290..299),
-    mne_td: (288..297),
-    mjs_td: (249..264),
+    mje_td: (288..299),
+    mne_td: (288..299),
+    mjs_td: (249..267),
     mns_td: (249..267),
     mnm_td: (225..234),
     defensive_spells: [],
@@ -104,11 +106,12 @@
       "A lesser minotaur stomps in!",
       "A lesser minotaur stomps in, squinting warily."
     ],
-    flee: [],
+    flee: [
+      "The lesser minotaur lumbers {direction}."
+    ],
     death: [
       "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the ground.",
-      "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the floor.",
-      "The lesser minotaur slumps to the ground."
+      "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the floor."
     ],
     decay: [],
     search: [],

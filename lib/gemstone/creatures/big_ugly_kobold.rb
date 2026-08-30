@@ -10,10 +10,12 @@
   undead: false,
   blood: nil,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -33,6 +35,10 @@
       {
         name: "Short sword",
         as: 55
+      },
+      {
+        name: "Unknown",
+        as: 62
       }
     ],
     bolt_spells: [],
@@ -45,10 +51,10 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (34..66),
-    ranged: nil,
-    bolt: 23,
-    udf: 96,
+    melee: (22..109),
+    ranged: (12..44),
+    bolt: (12..44),
+    udf: (67..96),
     bar_td: nil,
     cle_td: 6,
     emp_td: 6,
@@ -85,7 +91,9 @@
     description: [
       "This big ugly kobold is large for a kobold and ugly, even by kobold beauty standards. Smaller than a dwarf and even many halflings, she has ruddy skin and a hairless pate topped with small horns. Long-limbed for her size, the big ugly kobold eschews any display of brute strength and relies on what agility she pretends to have. The big ugly kobold stares back at you with beady little black eyes, sizing you up as a foe."
     ],
-    arrival: [],
+    arrival: [
+      "A big ugly kobold just arrived."
+    ],
     flee: [
       "A big ugly kobold limps {direction}.",
       "A big ugly kobold heads {direction}."
@@ -93,7 +101,8 @@
     death: [],
     decay: [
       "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost.",
-      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost."
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a kobold as he decays into compost."
     ],
     search: [],
     spell_prep: [],

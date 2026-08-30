@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
   max_hp: 265,
-  speed: nil,
+  speed: 10,
   height: 7,
   size: "large",
   areas: [
@@ -75,10 +77,10 @@
   defense_attributes: {
     asg: "10",
     immunities: [],
-    melee: (127..233),
-    ranged: (125..155),
-    bolt: nil,
-    udf: (135..251),
+    melee: (113..233),
+    ranged: (125..177),
+    bolt: (136..177),
+    udf: (131..251),
     bar_td: (69..75),
     cle_td: (66..75),
     emp_td: (69..77),
@@ -87,9 +89,9 @@
     sor_td: (66..75),
     wiz_td: nil,
     mje_td: (63..72),
-    mne_td: 69,
-    mjs_td: nil,
-    mns_td: (66..75),
+    mne_td: (63..72),
+    mjs_td: 162,
+    mns_td: 162,
     mnm_td: (66..75),
     defensive_spells: [],
     defensive_abilities: [],
@@ -139,13 +141,8 @@
       "The tan centaur falls to the ground and dies.",
       "The roan centaur screams one last time and dies.",
       "The black centaur screams one last time and dies.",
-      "A roan centaur goes limp as he is rendered unconscious!",
-      "A black centaur goes limp as he is rendered unconscious!",
-      "A tan centaur goes limp as she is rendered unconscious!",
-      "A roan centaur goes limp as she is rendered unconscious!",
-      "A white centaur goes limp as she is rendered unconscious!",
-      "A white centaur goes limp as he is rendered unconscious!",
-      "A bay centaur goes limp as he is rendered unconscious!"
+      "Beautiful shot pierces both lungs, the tan centaur makes a wheezing noise, and drops dead!",
+      "Beautiful shot pierces both lungs, the roan centaur makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A white centaur dissolves into a puff of red smoke.",
@@ -153,16 +150,16 @@
       "A tan centaur dissolves into a puff of red smoke.",
       "A roan centaur dissolves into a puff of red smoke.",
       "A black centaur dissolves into a puff of red smoke.",
-      "Acid dissolves connecting cartilage, freeing the bay centaur's ribs to move independently."
+      "The roan centaur's left leg crumbles briefly and explodes in a shower of gore."
     ],
     search: [],
     spell_prep: [],
     attack: [
       "A centaur swings {weapon} at you!",
       "A centaur throws {weapon} at you!",
-      "Tightening centaur grip on centaur greatsword, a black centaur strikes out at you with all of centaur might!",
-      "Tightening centaur grip on centaur polished longsword, a tan centaur strikes out at you with all of centaur might!",
-      "Tightening centaur grip on centaur polished longsword, a white centaur strikes out at you with all of centaur might!"
+      "Tightening {pronoun} grip on {pronoun} greatsword, a black centaur strikes out at you with all of centaur might!",
+      "Tightening {pronoun} grip on {pronoun} polished longsword, a tan centaur strikes out at you with all of centaur might!",
+      "Tightening {pronoun} grip on {pronoun} polished longsword, a white centaur strikes out at you with all of centaur might!"
     ],
     bite: [],
     claw: [],

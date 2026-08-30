@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
@@ -60,21 +62,21 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: 163,
+    melee: (113..166),
     ranged: 97,
-    bolt: (150..163),
+    bolt: (97..195),
     udf: (266..286),
     bar_td: nil,
     cle_td: 121,
     emp_td: 121,
     pal_td: (114..117),
-    ran_td: 102,
+    ran_td: (102..117),
     sor_td: 130,
     wiz_td: nil,
-    mje_td: 136,
-    mne_td: 135,
-    mjs_td: 121,
-    mns_td: 158,
+    mje_td: (135..136),
+    mne_td: (135..136),
+    mjs_td: (121..158),
+    mns_td: (121..158),
     mnm_td: (127..134),
     defensive_spells: [
       "Mobility (618)",
@@ -117,14 +119,13 @@
     death: [
       "The greater bog troll's body goes rigid and her eyes roll back into her head as she dies.",
       "The greater bog troll's body goes rigid and his eyes roll back into his head as he dies.",
-      "A greater bog troll goes limp as he is rendered unconscious!",
-      "A greater bog troll goes limp as she is rendered unconscious!",
       "The greater bog troll's body goes rigid and collapses to the ground, dead.",
-      "The greater bog troll slumps to the ground."
+      "Beautiful shot pierces both lungs, the greater bog troll makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A greater bog troll decays into compost.",
-      "The greater bog troll's left leg crumbles briefly and explodes in a shower of gore."
+      "The greater bog troll's left leg crumbles briefly and explodes in a shower of gore.",
+      "A tenebrous greater bog troll decays into compost."
     ],
     search: [],
     spell_prep: [],

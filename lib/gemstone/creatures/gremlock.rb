@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 4,
   height: 5,
   size: "medium",
   areas: [
@@ -36,7 +38,7 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 427
+        as: (325..427)
       }
     ],
     bolt_spells: [],
@@ -53,21 +55,21 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (381..614),
+    melee: (339..614),
     ranged: nil,
     bolt: 302,
-    udf: (422..727),
+    udf: (388..727),
     bar_td: (297..306),
     cle_td: (332..341),
     emp_td: (326..335),
     pal_td: (282..294),
-    ran_td: nil,
+    ran_td: (282..288),
     sor_td: (338..357),
     wiz_td: nil,
-    mje_td: 364,
-    mne_td: 361,
-    mjs_td: nil,
-    mns_td: (326..335),
+    mje_td: (361..364),
+    mne_td: (361..364),
+    mjs_td: (347..351),
+    mns_td: (347..351),
     mnm_td: (264..273),
     defensive_spells: [],
     defensive_abilities: [],
@@ -114,14 +116,9 @@
       "A gremlock collapses and his eyes roll up as he dies.",
       "A gremlock's eyes roll up as he dies.",
       "A gremlock collapses and her eyes roll up as she dies.",
-      "A gremlock goes limp as she is rendered unconscious!",
-      "The gremlock slumps to the ground."
+      "Beautiful shot pierces both lungs, the gremlock makes a wheezing noise, and drops dead!"
     ],
-    decay: [
-      "Acid dissolves the knee ligaments.  The gremlock's tibia passes his femur in a very unpleasant manner!",
-      "Acid dissolves connecting cartilage, freeing the gremlock's ribs to move independently.",
-      "Acid dissolves the knee ligaments.  The gremlock's tibia passes her femur in a very unpleasant manner!"
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [],

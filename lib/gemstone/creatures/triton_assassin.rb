@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -79,20 +81,20 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (370..592),
-    ranged: nil,
-    bolt: nil,
+    melee: (228..662),
+    ranged: (270..471),
+    bolt: (270..471),
     udf: 483,
     bar_td: 375,
-    cle_td: (379..385),
-    emp_td: (379..384),
-    pal_td: nil,
-    ran_td: nil,
+    cle_td: (379..397),
+    emp_td: (379..389),
+    pal_td: (339..342),
+    ran_td: (329..339),
     sor_td: "396 to 426",
     wiz_td: nil,
     mje_td: (432..440),
     mne_td: "413 to 441",
-    mjs_td: nil,
+    mjs_td: 398,
     mns_td: "364 to 381",
     mnm_td: (379..381),
     defensive_spells: [],
@@ -121,16 +123,14 @@
     arrival: [
       "A triton assassin stalks in silently, his cold eyes gleaming with hatred.",
       "A triton assassin stalks in silently, her cold eyes gleaming with hatred.",
-      "A triton warlock arrives, striding forth with her robes trailing behind her."
     ],
     flee: [],
     death: [
       "The triton assassin gurgles once and goes still, a wrathful look on her face.",
-      "The triton assassin gurgles once and goes still, a wrathful look on his face."
+      "The triton assassin gurgles once and goes still, a wrathful look on his face.",
+      "Beautiful shot pierces both lungs, the triton assassin makes a wheezing noise, and drops dead!"
     ],
-    decay: [
-      "Acid dissolves the knee ligaments.  The triton assassin's tibia passes her femur in a very unpleasant manner!"
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [

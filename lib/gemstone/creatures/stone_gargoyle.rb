@@ -12,14 +12,16 @@
   bones: false,
   witherable: false,
   sympathy: true,
-  muggable: nil,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 399,
-  speed: nil,
+  max_hp: 437,
+  speed: 8,
   height: 16,
   size: "huge",
   areas: [
@@ -50,18 +52,18 @@
     asg: nil,
     immunities: [],
     melee: (30..131),
-    ranged: (30..131),
-    bolt: (30..131),
-    udf: 228,
+    ranged: (18..131),
+    bolt: (18..131),
+    udf: (178..228),
     bar_td: nil,
     cle_td: 138,
     emp_td: 138,
-    pal_td: 117,
+    pal_td: (114..117),
     ran_td: nil,
     sor_td: 145,
     wiz_td: nil,
     mje_td: 153,
-    mne_td: nil,
+    mne_td: 153,
     mjs_td: nil,
     mns_td: nil,
     mnm_td: 117,
@@ -86,13 +88,14 @@
     description: [
       "The stone gargoyle, an animated being, was once a huge, grey, granite carving that overlooked the castle walls. Standing over fifteen feet tall on its powerful hind legs, the stone gargoyle was sculpted with a body similar to a lion's and a head that is a grotesque union between a human and a bat. Long horns protrude from the forehead and needle-like fangs extend menacingly below the upper lip. Swirling, yellow-green eyes, the only non-rock portion of the beast's anatomy, coldly examine the surrounding area."
     ],
-    arrival: [],
+    arrival: [
+      "A stone gargoyle just arrived."
+    ],
     flee: [
       "A stone gargoyle heads {direction}.",
       "A stone gargoyle limps {direction}."
     ],
     death: [
-      "A stone gargoyle goes limp as it is rendered unconscious!",
       "The stone gargoyle slumps to the ground."
     ],
     decay: [

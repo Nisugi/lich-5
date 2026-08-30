@@ -11,15 +11,17 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: false,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 179,
-  speed: nil,
+  speed: 9,
   height: 1,
   size: "medium",
   areas: [
@@ -36,7 +38,7 @@
       },
       {
         name: "Charge",
-        as: (156..162)
+        as: (154..162)
       }
     ],
     bolt_spells: [],
@@ -50,9 +52,9 @@
     asg: nil,
     immunities: [],
     melee: (62..98),
-    ranged: (62..73),
-    bolt: (62..73),
-    udf: (106..122),
+    ranged: (47..82),
+    bolt: (47..82),
+    udf: (73..122),
     bar_td: nil,
     cle_td: (45..54),
     emp_td: (42..48),
@@ -61,9 +63,9 @@
     sor_td: (48..51),
     wiz_td: nil,
     mje_td: 51,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (48..54),
+    mne_td: 51,
+    mjs_td: (48..63),
+    mns_td: (48..63),
     mnm_td: (42..51),
     defensive_spells: [],
     defensive_abilities: [],
@@ -89,14 +91,14 @@
     ],
     flee: [],
     death: [
-      "A luminous worm goes limp as it is rendered unconscious!",
       "A luminous worm slumps to the ground, its glowing form now motionless and dull."
     ],
     decay: [],
     search: [],
     spell_prep: [],
     attack: [
-      "A worm charges at you!"
+      "A worm charges at you!",
+      "A luminous worm charges at you!"
     ],
     bite: [],
     claw: [],

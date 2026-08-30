@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -75,12 +77,12 @@
     cle_td: 21,
     emp_td: 21,
     pal_td: (18..21),
-    ran_td: nil,
+    ran_td: 21,
     sor_td: 21,
     wiz_td: nil,
     mje_td: 21,
     mne_td: 21,
-    mjs_td: nil,
+    mjs_td: 21,
     mns_td: 21,
     mnm_td: 21,
     defensive_spells: [],
@@ -115,10 +117,7 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A night golem tries to ensnare you in blood eagle black arms!",
-      "A night golem pounds at you with blood eagle black fists!"
-    ],
+    attack: [],
     bite: [],
     claw: [
       "A blood eagle claws at you!"

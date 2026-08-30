@@ -11,9 +11,11 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: false,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -69,13 +71,13 @@
     cle_td: 24,
     emp_td: 24,
     pal_td: (21..24),
-    ran_td: nil,
+    ran_td: 24,
     sor_td: 24,
     wiz_td: nil,
     mje_td: 24,
     mne_td: 24,
-    mjs_td: nil,
-    mns_td: 24,
+    mjs_td: (60..66),
+    mns_td: (60..66),
     mnm_td: 24,
     defensive_spells: [],
     defensive_abilities: [],
@@ -105,10 +107,12 @@
     ],
     death: [
       "The tomb spider's body jerks one last time and dies.",
-      "The tomb spider collapses to the ground and dies."
+      "The tomb spider collapses to the ground and dies.",
+      "The albino tomb spider collapses to the ground and dies."
     ],
     decay: [
-      "An albino tomb spider's legs shrivel up beneath it as it decays into dust."
+      "An albino tomb spider's legs shrivel up beneath it as it decays into dust.",
+      "A giant albino tomb spider's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],

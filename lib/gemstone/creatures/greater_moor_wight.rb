@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -73,20 +75,20 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: (173..315),
-    ranged: (195..250),
-    bolt: (195..250),
+    melee: (150..315),
+    ranged: (163..250),
+    bolt: (163..250),
     udf: (241..372),
     bar_td: 133,
     cle_td: (152..164),
     emp_td: (155..164),
     pal_td: (133..142),
-    ran_td: nil,
+    ran_td: (132..142),
     sor_td: (162..171),
     wiz_td: nil,
     mje_td: (158..167),
-    mne_td: 160,
-    mjs_td: nil,
+    mne_td: (158..167),
+    mjs_td: (145..155),
     mns_td: (145..155),
     mnm_td: (119..128),
     defensive_spells: [
@@ -103,7 +105,12 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a rusty steel flyssa",
+    "a wickedly curved scimitar",
+    "a large dual-bit handaxe",
+    "some rancid brown brigandine"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -120,7 +127,9 @@
     flee: [
       "A greater moor wight wails madly as it limps {direction}."
     ],
-    death: [],
+    death: [
+      "Beautiful shot pierces both lungs, the moor wight makes a wheezing noise, and drops dead!"
+    ],
     decay: [
       "The moor wight's right leg crumbles briefly and explodes in a shower of gore."
     ],

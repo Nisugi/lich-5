@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead",
     "Magical"
@@ -33,7 +35,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 382
+        as: (368..382)
       },
       {
         name: "Smash",
@@ -75,20 +77,20 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: (312..447),
+    melee: (290..447),
     ranged: nil,
     bolt: nil,
-    udf: (498..564),
+    udf: (379..564),
     bar_td: (333..336),
-    cle_td: nil,
-    emp_td: nil,
+    cle_td: (350..359),
+    emp_td: 353,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: (318..324),
     sor_td: (368..377),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 391,
-    mjs_td: nil,
+    mjs_td: (353..359),
     mns_td: (353..359),
     mnm_td: (305..311),
     defensive_spells: [
@@ -124,14 +126,12 @@
       "The lich qyn'arj spasms violently and suddenly goes still, its body turning to stone."
     ],
     decay: [
-      "The stone form of a lich qyn'arj crumbles away to dust.",
-      "Acid dissolves connecting cartilage, freeing the lich qyn'arj's ribs to move independently."
+      "The stone form of a lich qyn'arj crumbles away to dust."
     ],
     search: [],
     spell_prep: [],
     attack: [
       "A lich qyn'arj gestures with rotting mottled wings at you!",
-      "A lesser construct raises lich qyn'arj massive foot and attempts to smash you!"
     ],
     bite: [
       "A lich qyn'arj tries to bite you!"

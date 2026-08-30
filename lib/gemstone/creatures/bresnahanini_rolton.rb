@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -40,7 +42,7 @@
       },
       {
         name: "Bite",
-        as: 50
+        as: (48..50)
       },
       {
         name: "Charge",
@@ -57,20 +59,20 @@
   defense_attributes: {
     asg: "5N",
     immunities: [],
-    melee: (19..45),
+    melee: (18..45),
     ranged: 17,
     bolt: 17,
-    udf: 74,
+    udf: (63..74),
     bar_td: nil,
     cle_td: 9,
     emp_td: 9,
     pal_td: (6..9),
-    ran_td: nil,
+    ran_td: 9,
     sor_td: 9,
     wiz_td: nil,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: nil,
+    mjs_td: 9,
     mns_td: 9,
     mnm_td: 9,
     defensive_spells: [],
@@ -100,9 +102,7 @@
     ],
     death: [
       "The Bresnahanini rolton collapses to the ground, emits a final bleat, and dies.",
-      "The Bresnahanini rolton lets out a final agonized bleat and dies.",
-      "The Bresnahanini rolton bleats loudly as he slumps to the ground and cradles his wounded left hoof.",
-      "The Bresnahanini rolton bleats loudly as he slumps to the ground and cradles his wounded right foreleg."
+      "The Bresnahanini rolton lets out a final agonized bleat and dies."
     ],
     decay: [
       "A Bresnahanini rolton decays into a pile of fur and bone."

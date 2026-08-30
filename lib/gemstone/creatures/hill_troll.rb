@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: true,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
   max_hp: 210,
-  speed: nil,
+  speed: 13,
   height: 9,
   size: "large",
   areas: [
@@ -62,6 +64,10 @@
       {
         name: "Military pick",
         as: 194
+      },
+      {
+        name: "Unknown",
+        as: 182
       }
     ],
     bolt_spells: [],
@@ -81,10 +87,10 @@
   defense_attributes: {
     asg: "various",
     immunities: [],
-    melee: (111..133),
-    ranged: 133,
-    bolt: 133,
-    udf: 130,
+    melee: (111..234),
+    ranged: (108..189),
+    bolt: (108..189),
+    udf: (128..130),
     bar_td: 55,
     cle_td: 63,
     emp_td: 63,
@@ -136,9 +142,7 @@
     ],
     death: [
       "The hill troll screams one last time and dies.",
-      "The hill troll falls to the ground and dies.",
-      "A hill troll goes limp as she is rendered unconscious!",
-      "A hill troll goes limp as he is rendered unconscious!"
+      "The hill troll falls to the ground and dies."
     ],
     decay: [
       "A hill troll decays into compost."

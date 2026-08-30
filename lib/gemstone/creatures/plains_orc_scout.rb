@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -55,21 +57,21 @@
   defense_attributes: {
     asg: "12",
     immunities: [],
-    melee: (116..181),
-    ranged: nil,
-    bolt: nil,
-    udf: 219,
+    melee: (95..181),
+    ranged: (57..88),
+    bolt: (57..88),
+    udf: (151..219),
     bar_td: (51..57),
     cle_td: (48..57),
     emp_td: (51..59),
     pal_td: (48..57),
-    ran_td: nil,
+    ran_td: 51,
     sor_td: (45..54),
     wiz_td: 57,
-    mje_td: 51,
+    mje_td: (51..57),
     mne_td: (51..57),
-    mjs_td: nil,
-    mns_td: (48..57),
+    mjs_td: (48..66),
+    mns_td: (48..66),
     mnm_td: (57..67),
     defensive_spells: [
       "Natural Colors (601)",
@@ -108,7 +110,8 @@
       "A plains orc scout wanders {direction}."
     ],
     death: [
-      "A plains orc scout collapses until all that is left is a few scraps of hide."
+      "A plains orc scout collapses until all that is left is a few scraps of hide.",
+      "Beautiful shot pierces both lungs, the plains orc scout makes a wheezing noise, and drops dead!"
     ],
     decay: [],
     search: [],

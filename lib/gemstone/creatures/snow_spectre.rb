@@ -10,17 +10,19 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead",
     "Element-based"
   ],
   bcs: nil,
   max_hp: 91,
-  speed: nil,
+  speed: 5,
   height: 4,
   size: "medium",
   areas: [
@@ -51,20 +53,20 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (10..35),
-    ranged: (-13..0),
-    bolt: (-13..0),
+    melee: (2..35),
+    ranged: (-14..0),
+    bolt: (-14..0),
     udf: 24,
     bar_td: 27,
     cle_td: 27,
     emp_td: 27,
     pal_td: (24..27),
-    ran_td: nil,
+    ran_td: 27,
     sor_td: 27,
     wiz_td: nil,
     mje_td: 27,
     mne_td: 27,
-    mjs_td: nil,
+    mjs_td: 27,
     mns_td: 27,
     mnm_td: 27,
     defensive_spells: [],
@@ -98,7 +100,7 @@
     death: [
       "The snow spectre falls to the ground motionless.",
       "The snow spectre screams evilly one last time and goes still.",
-      "The snow spectre slumps to the ground."
+      "Beautiful shot pierces both lungs, the snow spectre makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A snow spectre turns to dust."

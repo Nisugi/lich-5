@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 231,
-  speed: nil,
+  speed: 9,
   height: 6,
   size: "medium",
   areas: [
@@ -64,20 +66,20 @@
     asg: nil,
     immunities: [],
     melee: 291,
-    ranged: nil,
-    bolt: nil,
+    ranged: (317..387),
+    bolt: (317..387),
     udf: 470,
     bar_td: nil,
     cle_td: 388,
     emp_td: 380,
     pal_td: (334..337),
-    ran_td: nil,
+    ran_td: 312,
     sor_td: (378..385),
     wiz_td: nil,
-    mje_td: 502,
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (364..374),
+    mje_td: (415..524),
+    mne_td: (415..524),
+    mjs_td: 433,
+    mns_td: 433,
     mnm_td: (316..323),
     defensive_spells: [
       "Cloak of Shadows (712)",
@@ -109,19 +111,20 @@
     ],
     arrival: [
       "A triton dissembler arrives, striding forth with her robes trailing behind her.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
       "A triton dissembler arrives, striding forth with his robes trailing behind him.",
       "A triton dissembler strides in, a wary look on his face.",
       "A triton dissembler strides in, a wary look on her face.",
-      "A triton dissembler strides in, gliding swiftly through the water with a wary look on her face."
+      "A triton dissembler strides in, gliding swiftly through the water with a wary look on her face.",
+      "A triton dissembler just arrived."
     ],
     flee: [],
     death: [
       "The triton dissembler gurgles once and goes still, a wrathful look on her face.",
-      "The triton dissembler gurgles once and goes still, a wrathful look on his face."
+      "The triton dissembler gurgles once and goes still, a wrathful look on his face.",
+      "Beautiful shot pierces both lungs, the triton dissembler makes a wheezing noise, and drops dead!"
     ],
     decay: [
-      "The triton dissembler's left leg crumbles briefly and explodes in a shower of gore."
+      "The triton dissembler's left leg crumbles briefly and explodes in a shower of gore.",
     ],
     search: [],
     spell_prep: [],

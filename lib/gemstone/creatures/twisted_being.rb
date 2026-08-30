@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -45,6 +47,9 @@
     maneuvers: [
       {
         name: "Firebreathing"
+      },
+      {
+        name: "Lash"
       }
     ],
     special_abilities: [],

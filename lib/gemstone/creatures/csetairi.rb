@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
+  witherable: true,
+  sympathy: true,
   muggable: nil,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Magical"
@@ -83,20 +85,20 @@
   defense_attributes: {
     asg: "5N",
     immunities: [],
-    melee: (366..545),
+    melee: (357..545),
     ranged: (272..334),
     bolt: nil,
-    udf: (450..486),
+    udf: (409..497),
     bar_td: (292..300),
     cle_td: (327..337),
     emp_td: (322..332),
-    pal_td: nil,
+    pal_td: (296..306),
     ran_td: nil,
     sor_td: (341..349),
     wiz_td: nil,
-    mje_td: 365,
-    mne_td: 362,
-    mjs_td: nil,
+    mje_td: (360..365),
+    mne_td: (360..365),
+    mjs_td: (322..332),
     mns_td: (322..332),
     mnm_td: (310..319),
     defensive_spells: [
@@ -138,8 +140,7 @@
       "A csetairi slithers {direction}."
     ],
     death: [
-      "Intestines rupture from intense heat; a csetairi dies a slow, painful death.",
-      "A csetairi slumps to the ground unconscious."
+      "Intestines rupture from intense heat; a csetairi dies a slow, painful death."
     ],
     decay: [],
     search: [],

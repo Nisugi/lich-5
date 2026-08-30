@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
-  max_hp: 50,
-  speed: nil,
+  max_hp: 51,
+  speed: 8,
   height: 1,
   size: "small",
   areas: [
@@ -33,6 +35,10 @@
       {
         name: "Bite",
         as: 68
+      },
+      {
+        name: "Unknown",
+        as: 68
       }
     ],
     bolt_spells: [],
@@ -45,7 +51,7 @@
   defense_attributes: {
     asg: "5N",
     immunities: [],
-    melee: 37,
+    melee: (31..37),
     ranged: 33,
     bolt: 33,
     udf: 51,
@@ -58,7 +64,7 @@
     wiz_td: nil,
     mje_td: 12,
     mne_td: 12,
-    mjs_td: nil,
+    mjs_td: 12,
     mns_td: 12,
     mnm_td: 12,
     defensive_spells: [],

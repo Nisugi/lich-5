@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 350,
-  speed: nil,
+  speed: 7,
   height: 10,
   size: "large",
   areas: [
@@ -68,21 +70,21 @@
   defense_attributes: {
     asg: "12N",
     immunities: [],
-    melee: 109,
-    ranged: 86,
-    bolt: 102,
+    melee: (102..122),
+    ranged: (82..127),
+    bolt: (82..127),
     udf: (226..236),
     bar_td: 89,
     cle_td: (96..106),
     emp_td: (98..108),
     pal_td: (84..87),
-    ran_td: nil,
+    ran_td: (87..97),
     sor_td: (105..112),
     wiz_td: nil,
-    mje_td: (109..114),
-    mne_td: 98,
-    mjs_td: nil,
-    mns_td: 98,
+    mje_td: (98..114),
+    mne_td: (98..114),
+    mjs_td: (98..99),
+    mns_td: (98..99),
     mnm_td: (100..105),
     defensive_spells: [
       "Natural Colors (601)",
@@ -97,7 +99,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a vine-wrapped rusting bastard sword"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -115,15 +119,14 @@
     ],
     flee: [],
     death: [
-      "A jungle troll chieftain goes limp as he is rendered unconscious!",
-      "A jungle troll chieftain goes limp as she is rendered unconscious!",
       "The troll chieftain snarls his defiance before collapsing and going still.",
       "The troll chieftain snarls her defiance one last time before going still.",
       "The troll chieftain snarls her defiance before collapsing and going still.",
-      "The troll chieftain snarls his defiance one last time before going still."
+      "The troll chieftain snarls his defiance one last time before going still.",
+      "Beautiful shot pierces both lungs, the troll chieftain makes a wheezing noise, and drops dead!"
     ],
     decay: [
-      "A jungle troll chieftain decays into compost."
+      "A jungle troll chieftain decays into compost.",
     ],
     search: [],
     spell_prep: [],

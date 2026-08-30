@@ -13,16 +13,18 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Extraplanar",
     "Magical"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 351,
   speed: nil,
-  height: nil,
-  size: "",
+  height: 15,
+  size: "huge",
   areas: [
     {
       name: "Elemental Confluence",
@@ -34,6 +36,10 @@
       {
         name: "Ensnare",
         as: 460
+      },
+      {
+        name: "Boiling tendril",
+        as: (469..491)
       }
     ],
     bolt_spells: [
@@ -51,6 +57,9 @@
     maneuvers: [
       {
         name: "Major Elemental Wave"
+      },
+      {
+        name: "Ethereal Wave"
       }
     ],
     special_abilities: [],
@@ -67,7 +76,7 @@
     cle_td: 428,
     emp_td: 428,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: (359..365),
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -105,11 +114,15 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The steam elemental dissipates into a warm breeze that fades rapidly away."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A huge steam elemental lashes out at you with a boiling tendril!"
+    ],
     bite: [],
     claw: [],
     info: {

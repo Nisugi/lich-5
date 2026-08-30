@@ -10,17 +10,19 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: true,
+  boss_type: "pack",
   otherclass: [
     "Living",
     "Boss"
   ],
   bcs: true,
-  max_hp: 400,
-  speed: nil,
+  max_hp: 411,
+  speed: 6,
   height: 4,
   size: "large",
   areas: [
@@ -54,21 +56,21 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (196..467),
-    ranged: nil,
+    melee: (173..467),
+    ranged: 228,
     bolt: (225..243),
-    udf: 345,
+    udf: (345..374),
     bar_td: nil,
     cle_td: (187..193),
     emp_td: (186..195),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (159..168),
+    ran_td: (159..168),
     sor_td: (197..206),
     wiz_td: nil,
     mje_td: (209..218),
-    mne_td: nil,
-    mjs_td: nil,
-    mns_td: (186..195),
+    mne_td: (209..218),
+    mjs_td: (186..199),
+    mns_td: (186..199),
     mnm_td: (150..165),
     defensive_spells: [],
     defensive_abilities: [],
@@ -95,23 +97,17 @@
       "A sabre-tooth tiger prowls in!",
       "A shining sabre-tooth tiger prowls in!",
       "A sparkling sabre-tooth tiger prowls in!",
-      "A shadowy sabre-tooth tiger prowls in!"
+      "A shadowy sabre-tooth tiger prowls in!",
+      "A shielded sabre-tooth tiger prowls in!"
     ],
     flee: [
-      "A sabre-tooth tiger prowls {direction}."
+      "A sabre-tooth tiger prowls {direction}.",
+      "A shielded sabre-tooth tiger prowls {direction}."
     ],
     death: [
       "The sabre-tooth tiger crumples to the ground and dies.",
       "The sabre-tooth tiger lets out a final caterwaul and dies.",
-      "A sabre-tooth tiger goes limp as she is rendered unconscious!",
-      "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded right foreleg.",
-      "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded left foreleg.",
-      "The sabre-tooth tiger mewls in pain as he slumps to the ground and licks his wounded right foreleg.",
-      "The sabre-tooth tiger mewls in pain as he slumps to the ground and licks his wounded left foreleg.",
-      "The sabre-tooth tiger mewls in pain as he slumps to the ground and licks his wounded right paw.",
-      "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded left paw.",
-      "The sabre-tooth tiger mewls in pain as she slumps to the ground and licks her wounded right paw.",
-      "The sabre-tooth tiger mewls in pain as he slumps to the ground and licks his wounded left paw."
+      "Beautiful shot pierces both lungs, the sabre-tooth tiger makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A sabre-tooth tiger decays into a compost of fangs, fur and claws.",

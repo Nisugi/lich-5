@@ -11,15 +11,17 @@
   blood: false,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead"
   ],
   bcs: nil,
   max_hp: 65,
-  speed: nil,
+  speed: 8,
   height: 5,
   size: "medium",
   areas: [
@@ -52,6 +54,14 @@
       {
         name: "Mana Disruption (702)",
         cs: 46
+      },
+      {
+        name: "Bite",
+        cs: 46
+      },
+      {
+        name: "Claw",
+        cs: 46
       }
     ],
     offensive_spells: [],
@@ -62,9 +72,9 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: (-11..54),
-    ranged: (-18..-10),
-    bolt: (-18..-10),
+    melee: (-15..54),
+    ranged: (-21..-10),
+    bolt: (-21..-10),
     udf: (1..59),
     bar_td: 15,
     cle_td: 15,
@@ -86,7 +96,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a bruised left eye"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

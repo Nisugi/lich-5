@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living",
     "Grimswarm"
@@ -49,10 +51,10 @@
     bolt: nil,
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 394,
     emp_td: nil,
     pal_td: nil,
-    ran_td: nil,
+    ran_td: 296,
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,

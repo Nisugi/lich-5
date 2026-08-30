@@ -10,16 +10,18 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 28,
-  speed: nil,
+  speed: 20,
   height: 3,
   size: "medium",
   areas: [
@@ -45,6 +47,10 @@
       {
         name: "Claw",
         as: 32
+      },
+      {
+        name: "Unknown",
+        as: 32
       }
     ],
     bolt_spells: [],
@@ -57,7 +63,7 @@
   defense_attributes: {
     asg: "1N",
     immunities: [],
-    melee: 7,
+    melee: (5..7),
     ranged: 5,
     bolt: 5,
     udf: 42,
@@ -102,10 +108,7 @@
     ],
     death: [
       "The zombie rolton falls back into a heap and dies.",
-      "The zombie rolton hisses one last time and dies.",
-      "A zombie rolton screeches loudly and slumps to the ground while frantically licking its wounded right hoof.",
-      "A zombie rolton screeches loudly and slumps to the ground while frantically licking its wounded left hoof.",
-      "A zombie rolton screeches loudly and slumps to the ground while frantically licking its wounded left foreleg."
+      "The zombie rolton hisses one last time and dies."
     ],
     decay: [
       "A zombie rolton decays into compost."
@@ -113,7 +116,9 @@
     search: [],
     spell_prep: [],
     attack: [],
-    bite: [],
+    bite: [
+      "A zombie rolton tries to bite you!"
+    ],
     claw: [
       "A zombie rolton claws at you!"
     ],

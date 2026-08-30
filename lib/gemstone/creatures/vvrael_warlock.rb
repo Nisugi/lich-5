@@ -12,8 +12,10 @@
   bones: false,
   witherable: false,
   sympathy: false,
-  muggable: nil,
+  muggable: true,
+  sleepable: false,
   boss: true,
+  boss_type: "miniboss",
   otherclass: [
     "Extraplanar",
     "Anti-mana",
@@ -21,7 +23,7 @@
   ],
   bcs: true,
   max_hp: 240,
-  speed: nil,
+  speed: 7,
   height: 6,
   size: "medium",
   areas: [
@@ -34,11 +36,11 @@
     physical_attacks: [
       {
         name: "Whip",
-        as: 356
+        as: (356..401)
       },
       {
         name: "Ball of greenish-black flame",
-        as: 466
+        as: (459..466)
       },
       {
         name: "Midnight black longsword",
@@ -113,10 +115,10 @@
   defense_attributes: {
     asg: "2",
     immunities: ["magic"],
-    melee: (388..657),
+    melee: (360..657),
     ranged: (312..328),
     bolt: nil,
-    udf: (502..682),
+    udf: (388..682),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -166,7 +168,8 @@
     ],
     arrival: [
       "The air becomes deathly cold as a Vvrael warlock strides into view!",
-      "A Vvrael warlock strides in!"
+      "A Vvrael warlock strides in!",
+      "A flickering Vvrael warlock strides in!"
     ],
     flee: [
       "A Vvrael warlock strides {direction}."
@@ -178,9 +181,7 @@
       "The Vvrael warlock wails with rage as he crumples to the ground!  A viscous black liquid sprays out from his severed right leg thrashing on the ground!",
       "The Vvrael warlock wails with rage as he crumples to the ground!  A viscous black liquid sprays out from his severed left leg thrashing on the ground!"
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the Vvrael warlock's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
     attack: [

@@ -10,10 +10,12 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
@@ -85,20 +87,20 @@
   defense_attributes: {
     asg: "2",
     immunities: [],
-    melee: (254..272),
-    ranged: nil,
+    melee: (210..272),
+    ranged: (136..187),
     bolt: 220,
     udf: 261,
     bar_td: nil,
     cle_td: (89..117),
     emp_td: 123,
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (92..102),
+    ran_td: (89..99),
     sor_td: (106..126),
     wiz_td: nil,
     mje_td: 120,
     mne_td: 120,
-    mjs_td: nil,
+    mjs_td: (115..121),
     mns_td: (115..121),
     mnm_td: (81..87),
     defensive_spells: [
@@ -140,7 +142,7 @@
     arrival: [],
     flee: [],
     death: [
-      "The monastic lich slumps to the ground."
+      "Beautiful shot pierces both lungs, the monastic lich makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A monastic lich dissolves into a foul-smelling miasma."

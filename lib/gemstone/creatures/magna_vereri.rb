@@ -11,15 +11,17 @@
   blood: false,
   bones: true,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 6,
   height: 5,
   size: "medium",
   areas: [
@@ -47,17 +49,20 @@
       },
       {
         name: "Mouth full of rotting teeth",
-        as: (338..364)
+        as: (327..364)
       },
       {
         name: "Slash",
-        as: 354
+        as: (354..360)
       }
     ],
     offensive_spells: [],
     maneuvers: [
       {
         name: "Gesture"
+      },
+      {
+        name: "Spellsong"
       }
     ],
     special_abilities: [],
@@ -66,10 +71,10 @@
   defense_attributes: {
     asg: "8N",
     immunities: [],
-    melee: (387..549),
+    melee: (320..549),
     ranged: nil,
     bolt: "319 (in offensive)",
-    udf: (372..567),
+    udf: (372..601),
     bar_td: 290,
     cle_td: (301..310),
     emp_td: (297..306),
@@ -78,9 +83,9 @@
     sor_td: nil,
     wiz_td: nil,
     mje_td: 328,
-    mne_td: nil,
-    mjs_td: 254,
-    mns_td: 306,
+    mne_td: 328,
+    mjs_td: (254..306),
+    mns_td: (254..306),
     mnm_td: (213..222),
     defensive_spells: [],
     defensive_abilities: [],
@@ -109,7 +114,9 @@
       "A horrific magna vereri just arrived from some lichen-clad dark wooden docks.",
       "A horrific magna vereri just arrived from a torchlit overgrown grotto."
     ],
-    flee: [],
+    flee: [
+      "A horrific magna vereri crawls {direction}."
+    ],
     death: [
       "A bloodcurdling screech tears from the throat of a horrific magna vereri as she slumps to the ground.",
       "A bloodcurdling screech tears from the throat of a voluptuous magna vereri as she slumps to the ground."
@@ -118,10 +125,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "Screaming out an insensate series of curses, a horrific magna vereri pounds at you with magna vereri decaying fists!",
-      "With a vicious flick of magna vereri wrist, a supple Ivasian inciter lashes at you with magna vereri leather whip!",
+      "Screaming out an insensate series of curses, a horrific magna vereri pounds at you with {pronoun} decaying fists!",
       "A magna vereri gnashes at you with a mouth full of rotting teeth!",
-      "An athletic dark-eyed incubus tries to wrap you in magna vereri well-muscled arms!",
       "Screeching with mindless rage, a magna vereri slashes at you with maggot-gnawed talons!"
     ],
     bite: [],

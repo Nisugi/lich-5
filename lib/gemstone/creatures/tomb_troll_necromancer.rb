@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -68,20 +70,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (270..362),
-    ranged: (239..311),
+    melee: (246..362),
+    ranged: (233..311),
     bolt: 203,
-    udf: (286..371),
+    udf: (263..397),
     bar_td: (212..242),
     cle_td: (259..269),
     emp_td: (257..267),
     pal_td: (238..247),
-    ran_td: nil,
+    ran_td: (207..213),
     sor_td: (252..285),
     wiz_td: nil,
     mje_td: 276,
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: 276,
+    mjs_td: (230..237),
     mns_td: (230..237),
     mnm_td: (198..208),
     defensive_spells: [
@@ -96,7 +98,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a slime-covered willow runestaff"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -115,7 +119,6 @@
       "A tomb troll necromancer limps {direction}."
     ],
     death: [
-      "A tomb troll necromancer goes limp as she is rendered unconscious!",
       "A tomb troll necromancer glares forward, then collapses in a motionless heap."
     ],
     decay: [

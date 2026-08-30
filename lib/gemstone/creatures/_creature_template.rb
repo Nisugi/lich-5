@@ -14,8 +14,10 @@
   bones: nil,               # true/false/nil if unknown - has a skeletal structure
   witherable: nil,           # true/false/nil - has a body Wither (1115) can attack
   sympathy: nil,             # true/false/nil - can be affected by Sympathy (1120)
-  muggable: nil,                # true/false/nil if unknown - typically humanoid + carries coin
+  muggable: nil, # true/false/nil if unknown - typically humanoid + carries coin
+  sleepable: nil, # true/false/nil - can be put to sleep ("does not seem to be affected" = false)
   boss: false,                  # special encounter flag (optional)
+  boss_type: nil,               # nil | "pack" | "miniboss" | "boss" - bestiary classification
   otherclass: [],               # any extra tags you keep (optional)
   bcs: nil,                     # true/false/nil if unknown
 

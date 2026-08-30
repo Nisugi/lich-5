@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -59,20 +61,20 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (164..250),
-    ranged: 164,
-    bolt: 164,
-    udf: (235..259),
+    melee: (140..250),
+    ranged: (144..165),
+    bolt: (144..165),
+    udf: (235..303),
     bar_td: (99..117),
     cle_td: (108..117),
     emp_td: (108..117),
-    pal_td: (96..105),
-    ran_td: nil,
+    pal_td: (96..108),
+    ran_td: (99..108),
     sor_td: (99..117),
     wiz_td: nil,
-    mje_td: 123,
-    mne_td: (104..122),
-    mjs_td: nil,
+    mje_td: (104..123),
+    mne_td: (104..123),
+    mjs_td: (99..117),
     mns_td: (99..117),
     mnm_td: (108..114),
     defensive_spells: [],
@@ -105,11 +107,10 @@
       "A krolvin slaver slinks {direction}."
     ],
     death: [
-      "The krolvin slaver's body goes stiff and cold as he dies.",
-      "A krolvin slaver goes limp as he is rendered unconscious!"
+      "The krolvin slaver's body goes stiff and cold as he dies."
     ],
     decay: [
-      "A krolvin slaver collapses into a pile of dirty rags."
+      "A krolvin slaver collapses into a pile of dirty rags.",
     ],
     search: [],
     spell_prep: [],

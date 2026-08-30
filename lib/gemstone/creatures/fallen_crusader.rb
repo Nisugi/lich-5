@@ -11,9 +11,11 @@
   blood: nil,
   bones: false,
   witherable: true,
-  sympathy: nil,
-  muggable: nil,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Non-corporeal undead",
     "Extraplanar"
@@ -33,15 +35,15 @@
     physical_attacks: [
       {
         name: "Barbed tentacle",
-        as: 428
+        as: (428..450)
       },
       {
         name: "Gilt-edged steel talon sword",
-        as: 515
+        as: (506..515)
       },
       {
         name: "Gold-spiked black morning star",
-        as: 451
+        as: (440..506)
       }
     ],
     bolt_spells: [],
@@ -68,6 +70,9 @@
       },
       {
         name: "Tail Swipe"
+      },
+      {
+        name: "Gesture"
       }
     ],
     special_abilities: [],
@@ -77,21 +82,21 @@
     asg: "16",
     immunities: [],
     melee: (338..585),
-    ranged: nil,
-    bolt: nil,
-    udf: (429..716),
+    ranged: (342..350),
+    bolt: (342..350),
+    udf: (399..716),
     bar_td: "+338 to +360",
-    cle_td: (361..367),
+    cle_td: (361..371),
     emp_td: (373..383),
-    pal_td: nil,
-    ran_td: nil,
+    pal_td: (317..326),
+    ran_td: (320..329),
     sor_td: "+392",
     wiz_td: nil,
     mje_td: 411,
-    mne_td: nil,
-    mjs_td: nil,
+    mne_td: 411,
+    mjs_td: (423..425),
     mns_td: (423..425),
-    mnm_td: (296..305),
+    mnm_td: (296..315),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Defense (103)",
@@ -140,8 +145,6 @@
     spell_prep: [],
     attack: [
       "A fallen crusader swings {weapon} at you!",
-      "A glistening cerebralite focuses fallen crusader eye-stalks on you!",
-      "A glistening cerebralite lashes at you with fallen crusader barbed tentacle!"
     ],
     bite: [],
     claw: [],

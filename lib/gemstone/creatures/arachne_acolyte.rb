@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: true,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -68,22 +70,22 @@
   defense_attributes: {
     asg: "16",
     immunities: [],
-    melee: (106..219),
-    ranged: nil,
-    bolt: 114,
+    melee: (98..246),
+    ranged: (49..199),
+    bolt: (49..199),
     udf: (132..245),
     bar_td: 67,
-    cle_td: 66,
+    cle_td: (76..82),
     emp_td: (70..80),
-    pal_td: (63..73),
-    ran_td: nil,
+    pal_td: (63..82),
+    ran_td: (72..82),
     sor_td: 57,
     wiz_td: (67..72),
-    mje_td: (67..72),
-    mne_td: 73,
-    mjs_td: 76,
+    mje_td: (67..73),
+    mne_td: (67..73),
+    mjs_td: (66..104),
     mns_td: (66..104),
-    mnm_td: nil,
+    mnm_td: (76..81),
     defensive_spells: [
       "Spirit Warding I (101)",
       "Spirit Defense (103)",
@@ -124,8 +126,7 @@
     ],
     death: [
       "The Arachne acolyte slumps to the ground and dies.",
-      "The Arachne acolyte exhales a final curse and dies.",
-      "An Arachne acolyte goes limp as he is rendered unconscious!"
+      "The Arachne acolyte exhales a final curse and dies."
     ],
     decay: [
       "The Arachne acolyte's body dissolves into a puff of lingering red smoke.",

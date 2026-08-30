@@ -10,10 +10,12 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -33,6 +35,10 @@
       {
         name: "Old claidhmore",
         as: 207
+      },
+      {
+        name: "Unknown",
+        as: 207
       }
     ],
     bolt_spells: [],
@@ -45,21 +51,21 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (99..116),
-    ranged: (110..116),
-    bolt: (110..116),
+    melee: (89..116),
+    ranged: (104..116),
+    bolt: (104..116),
     udf: 137,
     bar_td: nil,
-    cle_td: nil,
+    cle_td: 72,
     emp_td: (61..72),
     pal_td: (69..72),
-    ran_td: nil,
+    ran_td: 72,
     sor_td: 72,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
-    mjs_td: nil,
-    mns_td: nil,
+    mjs_td: 72,
+    mns_td: 72,
     mnm_td: 72,
     defensive_spells: [],
     defensive_abilities: [],

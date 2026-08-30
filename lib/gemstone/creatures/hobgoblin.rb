@@ -12,14 +12,16 @@
   bones: true,
   witherable: true,
   sympathy: nil,
-  muggable: nil,
+  muggable: true,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 60,
-  speed: nil,
+  speed: 15,
   height: 5,
   size: "medium",
   areas: [
@@ -73,6 +75,10 @@
       {
         name: "Morning star",
         as: 54
+      },
+      {
+        name: "Unknown",
+        as: 68
       }
     ],
     bolt_spells: [],
@@ -85,21 +91,21 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (4..93),
-    ranged: (-17..11),
-    bolt: (-17..11),
+    melee: (-6..93),
+    ranged: (-20..14),
+    bolt: (-20..14),
     udf: (34..111),
     bar_td: nil,
     cle_td: 9,
     emp_td: 9,
     pal_td: (6..9),
-    ran_td: nil,
+    ran_td: 9,
     sor_td: 9,
     wiz_td: nil,
     mje_td: 9,
     mne_td: 9,
-    mjs_td: nil,
-    mns_td: 9,
+    mjs_td: (27..34),
+    mns_td: (27..34),
     mnm_td: 9,
     defensive_spells: [],
     defensive_abilities: [],
@@ -147,8 +153,8 @@
     ],
     death: [
       "The hobgoblin crumples to the ground and dies.",
-      "A hobgoblin goes limp as she is rendered unconscious!",
-      "The hobgoblin lets out a final scream and goes still."
+      "The hobgoblin lets out a final scream and goes still.",
+      "Beautiful shot pierces both lungs, the hobgoblin makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A hobgoblin decays into a pile of compost."

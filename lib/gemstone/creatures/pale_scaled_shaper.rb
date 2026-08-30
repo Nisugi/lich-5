@@ -10,18 +10,20 @@
   undead: false,
   blood: nil,
   bones: nil,
-  witherable: nil,
-  sympathy: nil,
+  witherable: true,
+  sympathy: true,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 265,
-  speed: nil,
-  height: nil,
-  size: "",
+  speed: 8,
+  height: 7,
+  size: "medium",
   areas: [
     {
       name: "Shadow of the Sanctum",
@@ -79,11 +81,11 @@
     immunities: [],
     melee: "555+",
     ranged: (429..616),
-    bolt: nil,
+    bolt: (567..598),
     udf: nil,
     bar_td: nil,
-    cle_td: nil,
-    emp_td: nil,
+    cle_td: 441,
+    emp_td: (432..442),
     pal_td: 349,
     ran_td: 368,
     sor_td: nil,
@@ -109,7 +111,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a long acacia runestaff capped with a carved ivory serpent",
+    "some pallid robes"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -135,7 +140,7 @@
     spell_prep: [],
     attack: [
       "A pale scaled shaper smirks, flicking a skeletal finger toward you!",
-      "With serpentine speed, a pale scaled shaper swings {weapon} at you!"
+      "With serpentine speed, a pale scaled shaper swings {weapon} at you!",
     ],
     bite: [],
     claw: [],

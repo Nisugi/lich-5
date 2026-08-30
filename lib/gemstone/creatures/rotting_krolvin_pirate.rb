@@ -10,15 +10,17 @@
   undead: true,
   blood: false,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: true,
+  sleepable: false,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Corporeal undead"
   ],
   bcs: true,
-  max_hp: 210,
+  max_hp: 220,
   speed: nil,
   height: 5,
   size: "medium",
@@ -62,14 +64,14 @@
     asg: "11",
     immunities: [],
     melee: (46..130),
-    ranged: (46..81),
-    bolt: (46..81),
-    udf: (113..134),
+    ranged: (43..81),
+    bolt: (43..81),
+    udf: (81..134),
     bar_td: 54,
     cle_td: 54,
     emp_td: 54,
     pal_td: (51..54),
-    ran_td: nil,
+    ran_td: (54..60),
     sor_td: 54,
     wiz_td: nil,
     mje_td: (51..60),
@@ -85,7 +87,10 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a corroded long-handled gaff",
+    "some rotting studded leather"
+  ],
   treasure: {
     coins: true,
     magic_items: true,
@@ -105,7 +110,8 @@
     ],
     death: [
       "The krolvin pirate spits out one last curse and lies still.",
-      "The krolvin pirate vainly struggles to rise, then goes still."
+      "The krolvin pirate vainly struggles to rise, then goes still.",
+      "Beautiful shot pierces both lungs, the krolvin pirate makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The krolvin pirate decays into a pile of compost, releasing a stench of rotting seaweed."

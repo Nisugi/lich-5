@@ -10,16 +10,18 @@
   undead: false,
   blood: true,
   bones: true,
-  witherable: nil,
-  sympathy: nil,
-  muggable: nil,
+  witherable: true,
+  sympathy: true,
+  muggable: false,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
   bcs: true,
   max_hp: 51,
-  speed: nil,
+  speed: 15,
   height: 3,
   size: "small",
   areas: [
@@ -49,6 +51,14 @@
       {
         name: "Short sword",
         as: 52
+      },
+      {
+        name: "Unknown",
+        as: 52
+      },
+      {
+        name: "Closed fist",
+        as: 42
       }
     ],
     bolt_spells: [],
@@ -61,10 +71,10 @@
   defense_attributes: {
     asg: nil,
     immunities: [],
-    melee: (7..94),
-    ranged: 10,
-    bolt: 10,
-    udf: (57..61),
+    melee: (0..94),
+    ranged: (7..10),
+    bolt: (7..10),
+    udf: (37..61),
     bar_td: nil,
     cle_td: 6,
     emp_td: 6,

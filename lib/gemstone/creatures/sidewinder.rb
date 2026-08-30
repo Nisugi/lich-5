@@ -13,7 +13,9 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
+  sleepable: nil,
   boss: false,
+  boss_type: nil,
   otherclass: [
     "Living"
   ],
@@ -105,7 +107,7 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A sheen of venom glistening from sidewinder needle-sharp fangs, a white sidewinder strikes at you!",
+      "A sheen of venom glistening from {pronoun} needle-sharp fangs, a white sidewinder strikes at you!",
       "A sidewinder darts in for a quick strike at you!"
     ],
     bite: [],
