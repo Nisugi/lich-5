@@ -21,7 +21,7 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
   def known_top_level_keys
     %i[
       schema_version name noun url picture level family type undead
-      blood bones witherable sympathy muggable boss otherclass bcs max_hp speed height
+      blood bones witherable sympathy muggable sleepable boss boss_type otherclass bcs max_hp speed height
       size areas attack_attributes defense_attributes special_other
       abilities alchemy abilities_misc equipment treasure messaging
     ]
@@ -150,10 +150,38 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
       data = load_data(path)
       next unless data.is_a?(Hash)
 
-      %i[blood bones witherable sympathy muggable].each do |field|
+      %i[blood bones witherable sympathy muggable sleepable].each do |field|
         value = data[field]
         offenders << "#{File.basename(path)} #{field}=#{value.inspect}" unless value.nil? || value == true || value == false
       end
+    end
+
+    expect(offenders).to be_empty
+  end
+
+  it 'speed is Integer seconds, an ascending Range, or nil - never a wiki string' do
+    offenders = []
+    creature_files.each do |path|
+      data = load_data(path)
+      next unless data.is_a?(Hash)
+
+      value = data[:speed]
+      ok = value.nil? || value.is_a?(Integer) ||
+           (value.is_a?(Range) && value.first.is_a?(Integer) && value.first <= value.last)
+      offenders << "#{File.basename(path)} speed=#{value.inspect}" unless ok
+    end
+
+    expect(offenders).to be_empty
+  end
+
+  it 'boss_type is nil, "pack", "miniboss", or "boss" - never a typo or a bare symbol' do
+    offenders = []
+    creature_files.each do |path|
+      data = load_data(path)
+      next unless data.is_a?(Hash)
+
+      value = data[:boss_type]
+      offenders << "#{File.basename(path)} boss_type=#{value.inspect}" unless value.nil? || %w[pack miniboss boss].include?(value)
     end
 
     expect(offenders).to be_empty

@@ -12,7 +12,7 @@ module Lich
       @@loaded = false
 
       attr_reader :name, :url, :picture, :level, :family, :type,
-                  :undead, :otherclass, :areas, :bcs, :max_hp,
+                  :undead, :boss, :boss_type, :otherclass, :areas, :bcs, :max_hp,
                   :speed, :height, :size, :attack_attributes,
                   :defense_attributes, :treasure, :messaging,
                   :special_other, :abilities, :alchemy, :equipment
@@ -21,9 +21,9 @@ module Lich
         adroit afflicted apt barbed belligerent blurry canny combative dazzling deft diseased drab
         dreary ethereal flashy flexile flickering flinty frenzied ghastly ghostly gleaming glittering
         glorious glowing grotesque hardy illustrious indistinct keen lanky luminous lustrous muculent
-        nebulous oozing pestilent radiant raging ready resolute robust rune-covered shadowy shifting
-        shimmering shining sickly green sinuous slimy sparkling spindly spiny stalwart steadfast stout
-        tattoed tenebrous tough twinkling unflinching unyielding wavering wispy
+        nebulous oozing pestilent radiant raging ready resolute robust rune-covered shadowy shielded
+        shifting shimmering shining sickly green sinuous slimy sparkling spindly spiny stalwart steadfast stout
+        tattoed tattooed tenebrous tough twinkling unflinching unyielding wavering wispy
       ]
 
       def initialize(data)
@@ -40,6 +40,12 @@ module Lich
         @witherable = data[:witherable]
         @sympathy = data[:sympathy]
         @muggable = data[:muggable]
+        @sleepable = data[:sleepable]
+        @boss = data[:boss]
+        # nil | "pack" | "miniboss" | "boss" - bestiary classification
+        # ("boss" = the once-per-30-days uniques). Zone-dependent for a
+        # few creatures; the template carries the highest tier.
+        @boss_type = data[:boss_type]
         @otherclass = data[:otherclass] || []
         @areas = data[:areas] || []
         @bcs = data[:bcs]
@@ -262,6 +268,14 @@ module Lich
       # @return [Boolean, nil] true or false when catalogued; nil when unknown.
       def muggable?
         @muggable
+      end
+
+      # Returns whether the creature can be put to sleep. False comes from
+      # the game's own refusal ("does not seem to be affected").
+      #
+      # @return [Boolean, nil] true or false when catalogued; nil when unknown.
+      def sleepable?
+        @sleepable
       end
 
       private
