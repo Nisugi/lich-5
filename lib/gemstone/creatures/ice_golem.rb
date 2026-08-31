@@ -46,7 +46,7 @@
       },
       {
         name: "Fist",
-        as: 327
+        as: (327..335)
       },
       {
         name: "Foot",
@@ -75,8 +75,8 @@
     asg: nil,
     immunities: [],
     melee: (154..233),
-    ranged: nil,
-    bolt: (196..225),
+    ranged: (160..234),
+    bolt: (160..234),
     udf: (266..274),
     bar_td: nil,
     cle_td: (203..209),
@@ -120,7 +120,8 @@
     ],
     death: [
       "The ice golem writhes in cold agony and dies.",
-      "Beautiful shot pierces both lungs, the ice golem makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the ice golem makes a wheezing noise, and drops dead!",
+      "The ice golem slumps to the ground."
     ],
     decay: [
       "The ice golem's left leg crumbles briefly and explodes in a shower of gore."

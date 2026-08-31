@@ -80,7 +80,7 @@
     cle_td: 338,
     emp_td: (332..341),
     pal_td: (289..301),
-    ran_td: nil,
+    ran_td: 301,
     sor_td: 354,
     wiz_td: nil,
     mje_td: (367..373),

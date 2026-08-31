@@ -11,7 +11,7 @@
   blood: true,
   bones: false,
   witherable: true,
-  sympathy: true,
+  sympathy: false,
   muggable: true,
   sleepable: true,
   boss: false,
@@ -104,7 +104,8 @@
     ],
     death: [
       "The brown spinner's body jerks one last time and dies.",
-      "The brown spinner collapses to the ground and dies."
+      "The brown spinner collapses to the ground and dies.",
+      "The brown spinner slumps to the ground."
     ],
     decay: [
       "A brown spinner's legs shrivel up beneath it as it decays into dust.",

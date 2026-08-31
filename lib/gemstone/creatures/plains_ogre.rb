@@ -113,7 +113,8 @@
       "The plains ogre screams one last time and dies.",
       "The plains ogre falls to the ground and dies.",
       "The plains ogre screams silently one last time and dies.",
-      "Beautiful shot pierces both lungs, the plains ogre makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the plains ogre makes a wheezing noise, and drops dead!",
+      "The plains ogre slumps to the ground."
     ],
     decay: [
       "A plains ogre decays into compost."

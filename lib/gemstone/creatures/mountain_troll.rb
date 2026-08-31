@@ -124,7 +124,8 @@
       "The mountain troll screams one last time and dies.",
       "The mountain troll falls to the ground and dies.",
       "The mountain troll twitches violently, then dies.",
-      "Beautiful shot pierces both lungs, the mountain troll makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the mountain troll makes a wheezing noise, and drops dead!",
+      "The mountain troll slumps to the ground."
     ],
     decay: [
       "A mountain troll decays into compost."

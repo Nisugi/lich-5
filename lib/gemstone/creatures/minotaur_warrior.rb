@@ -114,7 +114,8 @@
     flee: [],
     death: [],
     decay: [
-      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust."
+      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust.",
+      "Acid dissolves connecting cartilage, freeing the minotaur warrior's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

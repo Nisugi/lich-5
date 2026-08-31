@@ -111,6 +111,8 @@
     ],
     decay: [
       "A krolvin slaver collapses into a pile of dirty rags.",
+      "A raider orc withers away until she is no more.",
+      "A raider orc withers away until he is no more."
     ],
     search: [],
     spell_prep: [],

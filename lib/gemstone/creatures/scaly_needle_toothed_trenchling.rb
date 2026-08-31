@@ -18,8 +18,8 @@
   boss_type: nil,
   otherclass: [],
   bcs: nil,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 344,
+  speed: 4,
   height: nil,
   size: "",
   areas: [
@@ -47,7 +47,7 @@
     melee: (662..682),
     ranged: 430,
     bolt: 430,
-    udf: nil,
+    udf: (609..654),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -82,7 +82,10 @@
       ""
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A scaly needle-toothed trenchling lifts her head, cocking it as if hearing something in the distance.  She abruptly flees, eyes glowing fiercely!",
+      "A scaly needle-toothed trenchling lifts his head, cocking it as if hearing something in the distance.  He abruptly flees, eyes glowing fiercely!"
+    ],
     death: [],
     decay: [],
     search: [],

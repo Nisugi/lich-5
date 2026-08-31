@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Morning star",
-        as: 190
+        as: (150..190)
       }
     ],
     bolt_spells: [],

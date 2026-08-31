@@ -35,11 +35,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 313
+        as: (244..313)
       },
       {
         name: "Charge",
-        as: (297..315)
+        as: (283..315)
       }
     ],
     bolt_spells: [],
@@ -57,8 +57,8 @@
     asg: nil,
     immunities: [],
     melee: (173..467),
-    ranged: 228,
-    bolt: (225..243),
+    ranged: (225..258),
+    bolt: (225..258),
     udf: (345..374),
     bar_td: nil,
     cle_td: (187..193),

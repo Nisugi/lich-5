@@ -46,7 +46,11 @@
     ],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Ground Slam"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },

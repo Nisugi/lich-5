@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 8,
   height: 3,
   size: "large",
   areas: [
@@ -116,7 +116,8 @@
     ],
     death: [
       "The mastodonic leopard lets out a final caterwaul and dies.",
-      "The mastodonic leopard crumples to the ground and dies."
+      "The mastodonic leopard crumples to the ground and dies.",
+      "The mastodonic leopard slumps to the ground."
     ],
     decay: [
       "A mastodonic leopard decays into a compost of fangs, fur and claws.",

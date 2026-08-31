@@ -90,7 +90,9 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A shadow mare's eyes go dim as she dissolves into the shadows."
+    ],
     search: [],
     spell_prep: [],
     attack: [],

@@ -99,7 +99,8 @@
     ],
     death: [
       "The red tsark goes limp and she falls over as the fire slowly fades from her eyes.",
-      "The red tsark goes limp and he falls over as the fire slowly fades from his eyes."
+      "The red tsark goes limp and he falls over as the fire slowly fades from his eyes.",
+      "The red tsark slumps to the ground."
     ],
     decay: [],
     search: [],

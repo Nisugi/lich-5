@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 11,
   height: 6,
   size: "medium",
   areas: [
@@ -42,6 +42,10 @@
       {
         name: "Crude black iron morning star",
         as: 224
+      },
+      {
+        name: "Claw",
+        as: 207
       }
     ],
     special_abilities: [],
@@ -96,10 +100,12 @@
     ],
     death: [
       "The skeletal soldier struggles to rise to its feet, but soon lies still.",
-      "Beautiful shot pierces both lungs, the skeletal soldier makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the skeletal soldier makes a wheezing noise, and drops dead!",
+      "The skeletal soldier slumps to the ground."
     ],
     decay: [
-      "A skeletal soldier crumbles to a fine white powder."
+      "A skeletal soldier crumbles to a fine white powder.",
+      "Acid dissolves connecting cartilage, freeing the skeletal soldier's ribs to move independently."
     ],
     search: [],
     spell_prep: [],
@@ -107,7 +113,9 @@
       "A skeletal soldier swings {weapon} at you!"
     ],
     bite: [],
-    claw: [],
+    claw: [
+      "A skeletal soldier claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

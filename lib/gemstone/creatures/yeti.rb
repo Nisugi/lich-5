@@ -70,8 +70,8 @@
     asg: "12N",
     immunities: [],
     melee: (357..465),
-    ranged: (246..303),
-    bolt: (246..303),
+    ranged: (243..303),
+    bolt: (243..303),
     udf: (376..565),
     bar_td: (226..247),
     cle_td: (251..257),
@@ -112,21 +112,25 @@
       "A yeti moans as it stomps in!",
       "A yeti roars in pain as it stomps in!",
       "A yeti just arrived.",
-      "A giant shadow darkens the room as a yeti stomps in!"
+      "A giant shadow darkens the room as a yeti stomps in!",
+      "A keen yeti stomps in!"
     ],
     flee: [
       "A yeti spins around and retreats as far as it can.",
       "A yeti stomps {direction}.",
       "A yeti moans as it stomps {direction}.",
-      "A yeti roars in pain as it stomps {direction}."
+      "A yeti roars in pain as it stomps {direction}.",
+      "A canny yeti stomps {direction}."
     ],
     death: [
       "The mass of hair and bone that was the yeti finally goes still.",
-      "The yeti collapses into a pile of hair and bones and goes still."
+      "The yeti collapses into a pile of hair and bones and goes still.",
+      "Awesome shot skewers skull!  The yeti blinks once and falls quite dead!"
     ],
     decay: [
       "The yeti collapses into a pile of hair and bones and goes still.",
-      "The yeti's left leg crumbles briefly and explodes in a shower of gore."
+      "The yeti's left leg crumbles briefly and explodes in a shower of gore.",
+      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
     ],
     search: [],
     spell_prep: [],

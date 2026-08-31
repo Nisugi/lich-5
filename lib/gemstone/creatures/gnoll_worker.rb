@@ -98,7 +98,8 @@
     ],
     arrival: [
       "A gnoll worker strides in solemnly.",
-      "A gnoll worker wanders in, sniffing the air."
+      "A gnoll worker wanders in, sniffing the air.",
+      "A gnoll ranger wanders in, alertly surveying its surroundings."
     ],
     flee: [
       "A gnoll worker ambles {direction}."

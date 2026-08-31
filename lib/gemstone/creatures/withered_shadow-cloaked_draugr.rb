@@ -33,11 +33,11 @@
     physical_attacks: [
       {
         name: "greatsword",
-        as: (592..693)
+        as: (586..693)
       },
       {
         name: "Dagger-sharp beak",
-        as: (613..622)
+        as: (610..622)
       },
       {
         name: "Lunge",
@@ -92,7 +92,7 @@
     melee: nil,
     ranged: (351..638),
     bolt: (351..638),
-    udf: 813,
+    udf: (609..899),
     bar_td: nil,
     cle_td: (459..462),
     emp_td: 447,
@@ -130,6 +130,9 @@
       "Wisps of shadow follow the arc of a withered shadow-cloaked draugr's arm as withered shadow-cloaked draugr swings {weapon} at you!",
       "A withered shadow-cloaked draugr lifts one foot and tries to smash you!",
       "A withered shadow-cloaked draugr swings {weapon} at you!",
+      "A shining winged disir focuses withered shadow-cloaked draugr luminous gaze upon you!",
+      "An eyeless black valravn pecks viciously at you with withered shadow-cloaked draugr dagger-sharp beak!",
+      "Soaring by on inky wings, an eyeless black valravn rakes at you with withered shadow-cloaked draugr talons!"
     ],
     bite: [],
     claw: [],

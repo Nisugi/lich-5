@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 323,
-  speed: nil,
+  speed: 8,
   height: 13,
   size: "huge",
   areas: [
@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 180
+        as: (180..201)
       },
       {
         name: "Claw",
@@ -52,14 +52,14 @@
     asg: nil,
     immunities: [],
     melee: (72..130),
-    ranged: nil,
-    bolt: nil,
+    ranged: (83..88),
+    bolt: (83..88),
     udf: (140..206),
     bar_td: nil,
     cle_td: 87,
     emp_td: 88,
     pal_td: (78..81),
-    ran_td: nil,
+    ran_td: 81,
     sor_td: 92,
     wiz_td: nil,
     mje_td: nil,
@@ -88,7 +88,9 @@
     description: [
       "Like its cousin, the stone gargoyle, the lesser stone gargoyle was a grey, granite carving originally placed to overlook the castle's walls. Now animated, it pounds about on powerful hind legs looking for beings it can smash into dust. It has a demon's face, with pointed beard, ruby eyes and long, sweeping goat horns. Bat wings, useless for flying, adorn its scaly back."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser stone gargoyle just arrived."
+    ],
     flee: [
       "A lesser stone gargoyle heads {direction}."
     ],

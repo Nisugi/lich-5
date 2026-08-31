@@ -82,14 +82,14 @@
     asg: "1",
     immunities: [],
     melee: (408..577),
-    ranged: (431..483),
-    bolt: (336..483),
+    ranged: (413..572),
+    bolt: (336..572),
     udf: (542..619),
     bar_td: 363,
     cle_td: (389..391),
     emp_td: (391..424),
     pal_td: (336..344),
-    ran_td: (321..324),
+    ran_td: (317..324),
     sor_td: (398..407),
     wiz_td: nil,
     mje_td: (403..435),
@@ -134,12 +134,15 @@
     ],
     flee: [],
     death: [
-      "The siren gives a plaintive wail before she slumps to her side and dies."
+      "The siren gives a plaintive wail before she slumps to her side and dies.",
+      "Awesome shot skewers skull!  The siren blinks once and falls quite dead!"
     ],
     decay: [
       "A siren decays into compost.",
       "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away.",
-      "A deft siren decays into compost."
+      "A deft siren decays into compost.",
+      "Acid dissolves connecting cartilage, freeing the siren's ribs to move independently.",
+      "A sickly green siren decays into compost."
     ],
     search: [],
     spell_prep: [],

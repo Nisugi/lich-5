@@ -38,7 +38,7 @@
       },
       {
         name: "Bite",
-        as: 168
+        as: (132..168)
       }
     ],
     bolt_spells: [],

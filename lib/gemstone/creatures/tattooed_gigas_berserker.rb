@@ -128,11 +128,15 @@
     arrival: [
       "A tattooed gigas berserker barrels in, bellowing a mad battlecry that shakes the ground with its intensity!",
       "A tattooed gigas berserker charges in, madness twisting his features.",
+      "Preceded by a mournful dirge, a grim gigas skald stalks in, her song accompanied by the clacking of the crude jeweled beads adorning the ceremonial garb that she wears.",
+      "Preceded by a mournful dirge, a grim gigas skald stalks in, his song accompanied by the clacking of the crude jeweled beads adorning the ceremonial garb that he wears."
     ],
     death: [
       "A tattooed gigas berserker's fists tense with impotent rage as she surrenders to death.",
       "A tattooed gigas berserker's fists tense with impotent rage as he surrenders to death.",
-      "Beautiful shot pierces both lungs, the gigas berserker makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the gigas berserker makes a wheezing noise, and drops dead!",
+      "A grim gigas skald raises a hand as if to grasp for support as she collapses, life going out of her form.",
+      "A grim gigas skald raises a hand as if to grasp for support as he collapses, life going out of his form."
     ],
     decay: [
       "Creeping decay races across a tattooed gigas berserker's prone form, swiftly consuming the body despite its colossal size."
@@ -144,6 +148,10 @@
     attack: [
       "Froth bubbling on {pronoun} lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!",
       "Looming over you, a tattooed gigas berserker tries to reach down and crush you in a massive fist!",
+      "A heavily armored battle mastodon tries to spear you with tattooed gigas berserker enormous tusks!",
+      "A niveous giant warg lunges at you, maw slathering as tattooed gigas berserker tries to take a ferocious bite!",
+      "Froth bubbling on tattooed gigas berserker lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!",
+      "Murder in tattooed gigas berserker eyes, an immense gold-bristled hinterboar tries to gore you with tattooed gigas berserker tusks!"
     ],
     bite: [],
     claw: [],

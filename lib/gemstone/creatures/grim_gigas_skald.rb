@@ -139,7 +139,13 @@
     decay: [
       "A grim gigas skald's corpse succumbs to rot, collapsing in upon itself until naught but dust remains."
     ],
-    attack: [],
+    attack: [
+      "A brawny gigas shield-maiden launches a quick bash with grim gigas skald golden targe at you!",
+      "A heavily armored battle mastodon raises grim gigas skald trunk and slams it down toward you!",
+      "A heavily armored battle mastodon tries to spear you with grim gigas skald enormous tusks!",
+      "A niveous giant warg lunges at you, maw slathering as grim gigas skald tries to take a ferocious bite!",
+      "Froth bubbling on grim gigas skald lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!"
+    ],
     bite: [],
     claw: [],
 

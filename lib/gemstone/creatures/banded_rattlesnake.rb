@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 150,
-  speed: nil,
+  speed: 8,
   height: 1,
   size: "small",
   areas: [
@@ -98,7 +98,8 @@
     arrival: [
       "A banded rattlesnake slithers in, its tongue darting out to taste the air around it.",
       "A banded rattlesnake slithers in.",
-      "A banded rattlesnake slowly slithers in."
+      "A banded rattlesnake slowly slithers in.",
+      "A banded rattlesnake just arrived."
     ],
     flee: [
       "A banded rattlesnake slithers {direction}.",

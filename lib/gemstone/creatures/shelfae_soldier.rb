@@ -99,7 +99,8 @@
     death: [
       "The shelfae soldier falls to the ground and dies.",
       "The shelfae soldier screams one last time and dies.",
-      "Beautiful shot pierces both lungs, the shelfae soldier makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the shelfae soldier makes a wheezing noise, and drops dead!",
+      "The shelfae soldier slumps to the ground."
     ],
     decay: [
       "A soldier crumbles into dust."

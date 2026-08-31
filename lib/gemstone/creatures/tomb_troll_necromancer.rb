@@ -71,7 +71,7 @@
     asg: nil,
     immunities: [],
     melee: (246..362),
-    ranged: (233..311),
+    ranged: (232..311),
     bolt: 203,
     udf: (263..397),
     bar_td: (212..242),

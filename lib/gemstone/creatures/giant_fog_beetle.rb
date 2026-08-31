@@ -43,7 +43,7 @@
       },
       {
         name: "Pincer",
-        as: 208
+        as: (205..208)
       }
     ],
     bolt_spells: [],

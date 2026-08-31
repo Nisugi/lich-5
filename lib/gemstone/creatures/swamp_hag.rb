@@ -74,6 +74,9 @@
       },
       {
         name: "Lash"
+      },
+      {
+        name: "Point"
       }
     ],
     special_abilities: [],
@@ -83,7 +86,7 @@
     asg: nil,
     immunities: [],
     melee: (229..297),
-    ranged: (207..219),
+    ranged: (175..223),
     bolt: 309,
     udf: (238..309),
     bar_td: nil,
@@ -137,10 +140,14 @@
     death: [
       "The swamp hag slumps to the ground."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the swamp hag's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A swamp hag screams an angry torrent of curses and points at you!"
+    ],
     bite: [],
     claw: [],
     info: {

@@ -112,7 +112,9 @@
     death: [
       "A rotting Citadel arbalester collapses motionless to the floor.",
       "A rotting Citadel arbalester collapses motionless to the ground.",
-      "Beautiful shot pierces both lungs, the Citadel arbalester makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the Citadel arbalester makes a wheezing noise, and drops dead!",
+      "A putrefied Citadel herald collapses in upon himself, leaving behind a pile of dust.",
+      "A putrefied Citadel herald collapses in upon herself, leaving behind a pile of dust."
     ],
     decay: [],
     search: [],

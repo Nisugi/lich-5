@@ -20,7 +20,7 @@
     "Non-corporeal undead"
   ],
   bcs: true,
-  max_hp: 300,
+  max_hp: 302,
   speed: nil,
   height: 5,
   size: "medium",
@@ -65,9 +65,9 @@
     asg: "1N",
     immunities: [],
     melee: (390..583),
-    ranged: (370..468),
-    bolt: (370..468),
-    udf: (409..552),
+    ranged: (370..520),
+    bolt: (370..520),
+    udf: (320..583),
     bar_td: (464..494),
     cle_td: 497,
     emp_td: 484,
@@ -106,7 +106,10 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as his skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones.",
+      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as her skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones."
+    ],
     search: [],
     spell_prep: [],
     attack: [

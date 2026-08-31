@@ -59,7 +59,7 @@
     cle_td: (277..283),
     emp_td: (271..286),
     pal_td: (240..249),
-    ran_td: (216..221),
+    ran_td: (216..228),
     sor_td: (254..276),
     wiz_td: nil,
     mje_td: (270..279),
@@ -107,7 +107,8 @@
       "The shan empath yips in pain as she falls to the ground motionless.",
       "A shan empath's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
       "A shan empath's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
-      "Beautiful shot pierces both lungs, the shan empath makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the shan empath makes a wheezing noise, and drops dead!",
+      "The shan empath slumps to the ground."
     ],
     decay: [
       "The shan empath's left leg crumbles briefly and explodes in a shower of gore.",

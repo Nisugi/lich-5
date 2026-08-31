@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 12,
   height: nil,
   size: "",
   areas: [
@@ -40,7 +40,7 @@
       },
       {
         name: "Bite",
-        as: 230
+        as: (199..230)
       }
     ],
     bolt_spells: [],

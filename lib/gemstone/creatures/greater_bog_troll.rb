@@ -120,7 +120,8 @@
       "The greater bog troll's body goes rigid and her eyes roll back into her head as she dies.",
       "The greater bog troll's body goes rigid and his eyes roll back into his head as he dies.",
       "The greater bog troll's body goes rigid and collapses to the ground, dead.",
-      "Beautiful shot pierces both lungs, the greater bog troll makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the greater bog troll makes a wheezing noise, and drops dead!",
+      "The greater bog troll slumps to the ground."
     ],
     decay: [
       "A greater bog troll decays into compost.",

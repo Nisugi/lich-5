@@ -85,14 +85,14 @@
     asg: nil,
     immunities: [],
     melee: 430,
-    ranged: nil,
-    bolt: nil,
+    ranged: (131..167),
+    bolt: (131..167),
     udf: nil,
     bar_td: nil,
     cle_td: (180..190),
     emp_td: (180..190),
     pal_td: (155..165),
-    ran_td: nil,
+    ran_td: (155..165),
     sor_td: (190..198),
     wiz_td: nil,
     mje_td: nil,
@@ -140,7 +140,8 @@
     death: [
       "The lesser vruul twitches violently, then dies.",
       "The lesser vruul screams one last time and lies still.",
-      "The lesser vruul falls to the ground and lies still."
+      "The lesser vruul falls to the ground and lies still.",
+      "The lesser vruul slumps to the ground."
     ],
     decay: [
       "The lesser vruul's right leg crumbles briefly and explodes in a shower of gore."

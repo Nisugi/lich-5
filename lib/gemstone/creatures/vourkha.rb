@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 261,
-  speed: nil,
+  speed: 5,
   height: 5,
   size: "medium",
   areas: [
@@ -38,7 +38,7 @@
       },
       {
         name: "Claw",
-        as: 262
+        as: (235..262)
       },
       {
         name: "Swoop",
@@ -72,7 +72,7 @@
     cle_td: (148..157),
     emp_td: (148..154),
     pal_td: (126..135),
-    ran_td: (122..132),
+    ran_td: (122..135),
     sor_td: (149..164),
     wiz_td: nil,
     mje_td: (162..163),
@@ -119,10 +119,13 @@
     death: [
       "The vourkha slumps to the ground as the light departs his eyes.",
       "The vourkha slumps to the ground as the light departs her eyes.",
-      "Beautiful shot pierces both lungs, the vourkha makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the vourkha makes a wheezing noise, and drops dead!",
+      "The vourkha slumps to the ground.",
+      "Awesome shot skewers skull!  The vourkha blinks once and falls quite dead!"
     ],
     decay: [
-      "The vourkha's right leg crumbles briefly and explodes in a shower of gore."
+      "The vourkha's right leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the vourkha's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

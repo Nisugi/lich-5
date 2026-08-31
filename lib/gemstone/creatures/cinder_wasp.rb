@@ -104,7 +104,8 @@
     death: [
       "The cinder wasp flutters its wings one last time and dies.",
       "The cinder wasp twitches violently, then dies.",
-      "Beautiful shot pierces both lungs, the cinder wasp makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the cinder wasp makes a wheezing noise, and drops dead!",
+      "The cinder wasp slumps to the ground."
     ],
     decay: [
       "A cinder wasp decays into compost."

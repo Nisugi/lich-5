@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 8,
   height: 2,
   size: "large",
   areas: [
@@ -104,7 +104,8 @@
       "The moor eagle slumps to the ground."
     ],
     decay: [
-      "The moor eagle decays into a pile of feathers."
+      "The moor eagle decays into a pile of feathers.",
+      "Acid dissolves connecting cartilage, freeing the moor eagle's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

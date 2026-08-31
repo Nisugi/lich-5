@@ -68,14 +68,14 @@
     asg: "6N",
     immunities: [],
     melee: (219..504),
-    ranged: (238..315),
-    bolt: (238..315),
+    ranged: (161..333),
+    bolt: (161..333),
     udf: (410..692),
     bar_td: (243..249),
     cle_td: (277..286),
     emp_td: (276..285),
     pal_td: (239..248),
-    ran_td: nil,
+    ran_td: (239..248),
     sor_td: 310,
     wiz_td: nil,
     mje_td: 303,
@@ -114,7 +114,10 @@
       "An athletic dark-eyed incubus crawls {direction}."
     ],
     death: [
-      "Intestines rupture from intense heat; an athletic dark-eyed incubus dies a slow, painful death."
+      "Intestines rupture from intense heat; an athletic dark-eyed incubus dies a slow, painful death.",
+      "The dark-eyed incubus slumps to the ground.",
+      "Beautiful shot pierces both lungs, the dark-eyed incubus makes a wheezing noise, and drops dead!",
+      "Awesome shot skewers skull!  The dark-eyed incubus blinks once and falls quite dead!"
     ],
     decay: [
       "Shadows crawl toward the form of an athletic dark-eyed incubus, engulfing it in a stygian tide.  The darkness dissolves into the ground with a faint sound of rushing liquid.",

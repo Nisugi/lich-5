@@ -18,8 +18,8 @@
   boss_type: nil,
   otherclass: [],
   bcs: nil,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 756,
+  speed: 8,
   height: nil,
   size: "",
   areas: [
@@ -43,7 +43,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: (608..887),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -79,7 +79,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "An amaranthine kraken tentacle writhes, twitches and spasms going down its length before it crumples, going still."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

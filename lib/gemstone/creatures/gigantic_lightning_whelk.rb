@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: nil,
   max_hp: 500,
-  speed: nil,
+  speed: 10,
   height: nil,
   size: "",
   areas: [
@@ -70,7 +70,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: (538..952),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -105,8 +105,13 @@
       ";Out of Shell\nThe lightning whelk's spiraled shell is a marvel of natural artistry. Each ridge and every curve shimmers with iridescent hues like a storm of empyrean color captured in glass. Beneath its luminous armor, the mollusk's incandescent flesh pulses with electrical charges that awaken stunning colors beneath its semitranslucent skin. In a striking contrast to its natural beauty, the whelk's underbelly emits a constant froth of bubbling mucus to facilitate its locomotion.\n\n;In Shell\nThe lightning whelk's spiraled shell is a marvel of natural artistry. Each ridge and every curve shimmers with iridescent hues like a storm of empyrean color captured in glass. Most of the whelk's body is coiled into its shell for protection, though its visible flesh is slightly incandescent and pulses with electrical charges that awaken stunning colors beneath its semitranslucent skin. In a striking contrast to its natural beauty, the whelk's underbelly emits a constant froth of bubbling mucus to facilitate its locomotion."
     ],
     arrival: [],
-    flee: [],
-    death: [],
+    flee: [
+      "Warning hues flush through a gigantic lightning whelk's semitranslucent flesh as its head retreats into the safety of its opalescent shell."
+    ],
+    death: [
+      "Chaotic pulses of color explode through a gigantic lightning whelk's flesh like fireworks as it collapses, letting out a pained rumble as it dies in a froth of bubbling mucus.",
+      "Chaotic pulses of color explode through a gigantic lightning whelk's flesh like fireworks as it collapses.  It dies in a froth of bubbling mucus."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

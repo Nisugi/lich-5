@@ -93,7 +93,8 @@
       "A crazed zombie shambles in!",
       "A lustrous crazed zombie shambles in!",
       "A glittering crazed zombie shambles in!",
-      "A luminous crazed zombie shambles in!"
+      "A luminous crazed zombie shambles in!",
+      "A slimy crazed zombie shambles in!"
     ],
     flee: [
       "A crazed zombie shambles {direction}.",

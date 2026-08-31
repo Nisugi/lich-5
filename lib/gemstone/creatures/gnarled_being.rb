@@ -68,8 +68,8 @@
     asg: "12N",
     immunities: [],
     melee: 509,
-    ranged: nil,
-    bolt: nil,
+    ranged: (339..364),
+    bolt: (339..364),
     udf: 381,
     bar_td: (315..335),
     cle_td: nil,
@@ -108,10 +108,12 @@
     ],
     arrival: [
       "A gnarled being strides in with a snort of derision.",
+      "A twisted being stalks in, its tail swishing back and forth menacingly."
     ],
     flee: [],
     death: [
       "A gnarled being coughs up some blood and dies.",
+      "A bent being curses through its teeth as it dies."
     ],
     decay: [
       "A gnarled being crumbles away into nothing."
@@ -120,6 +122,8 @@
     spell_prep: [],
     attack: [
       "A gnarled being charges at you with {pronoun} tusk!",
+      "A lesser construct raises gnarled being massive foot and attempts to smash you!",
+      "An Ithzir initiate places one palm on gnarled being chest, and raises the other toward you!"
     ],
     bite: [],
     claw: [],

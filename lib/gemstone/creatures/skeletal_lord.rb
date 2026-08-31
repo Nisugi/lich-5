@@ -114,7 +114,9 @@
       "The skeletal lord falls to the ground motionless.",
       "The skeletal lord wails in terrifying pain one last time and lies still."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the skeletal lord's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [

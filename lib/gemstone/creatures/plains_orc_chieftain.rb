@@ -103,7 +103,9 @@
     ],
     death: [
       "A plains orc chieftain's chest heaves one last time then she dies.",
-      "A plains orc chieftain's chest heaves one last time then he dies."
+      "A plains orc chieftain's chest heaves one last time then he dies.",
+      "Awesome shot skewers skull!  The plains orc chieftain blinks once and falls quite dead!",
+      "Beautiful shot pierces both lungs, the plains orc chieftain makes a wheezing noise, and drops dead!"
     ],
     decay: [],
     search: [],

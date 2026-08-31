@@ -125,7 +125,8 @@
     decay: [
       "The layer of bark on an Ilvari pixie hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
       "The layer of bark on an Ilvari pixie hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust.",
-      "The Ilvari pixie's left leg crumbles briefly and explodes in a shower of gore."
+      "The Ilvari pixie's left leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the Ilvari pixie's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

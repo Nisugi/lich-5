@@ -91,8 +91,8 @@
     asg: "5",
     immunities: [],
     melee: (81..562),
-    ranged: (92..351),
-    bolt: (92..351),
+    ranged: (92..372),
+    bolt: (92..372),
     udf: (291..646),
     bar_td: nil,
     cle_td: (409..418),
@@ -130,7 +130,9 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
+    ],
     search: [],
     spell_prep: [],
     attack: [

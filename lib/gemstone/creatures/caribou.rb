@@ -104,7 +104,9 @@
     flee: [
       "A caribou lopes {direction}."
     ],
-    death: [],
+    death: [
+      "The caribou slumps to the ground."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

@@ -23,7 +23,7 @@
   ],
   bcs: true,
   max_hp: 190,
-  speed: nil,
+  speed: 6,
   height: 2,
   size: "medium",
   areas: [
@@ -36,7 +36,7 @@
     physical_attacks: [
       {
         name: "kris",
-        as: 173
+        as: (146..173)
       },
       {
         name: "Freezing ball of pure cold",
@@ -65,6 +65,10 @@
       {
         name: "Stream of fire",
         as: 167
+      },
+      {
+        name: "Fist",
+        as: 133
       }
     ],
     bolt_spells: [
@@ -85,7 +89,12 @@
         as: 167
       }
     ],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Point",
+        cs: 145
+      }
+    ],
     offensive_spells: [],
     maneuvers: [],
     special_abilities: [],
@@ -95,14 +104,14 @@
     asg: "1N",
     immunities: [],
     melee: (158..333),
-    ranged: (162..195),
-    bolt: (162..195),
+    ranged: (116..200),
+    bolt: (116..200),
     udf: (146..285),
     bar_td: 76,
     cle_td: (146..161),
     emp_td: (161..171),
     pal_td: (135..146),
-    ran_td: 143,
+    ran_td: (143..149),
     sor_td: (94..165),
     wiz_td: nil,
     mje_td: (83..97),
@@ -151,11 +160,15 @@
     ],
     death: [
       "The fenghai falls to the ground motionless.",
-      "The fenghai cries out one last time and lies still."
+      "The fenghai cries out one last time and lies still.",
+      "The fenghai slumps to the ground.",
+      "Beautiful shot pierces both lungs, the fenghai makes a wheezing noise, and drops dead!",
+      "Awesome shot skewers skull!  The fenghai blinks once and falls quite dead!"
     ],
     decay: [
       "The fenghai's left leg crumbles briefly and explodes in a shower of gore.",
-      "The fenghai's right leg crumbles briefly and explodes in a shower of gore."
+      "The fenghai's right leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the fenghai's ribs to move independently."
     ],
     search: [],
     spell_prep: [],
@@ -163,7 +176,8 @@
       "A fenghai hurls {weapon} at you!",
       "A fenghai points a furry finger at you!",
       "A fenghai spins {pronoun} head in your direction and spews a massive stream of spittle and blood at you!  With a quick duck of your head, you step out of {pronoun} path.",
-      "A fenghai swings {weapon} at you!"
+      "A fenghai swings {weapon} at you!",
+      "A fenghai pounds at you with {pronoun} fist!"
     ],
     bite: [],
     claw: [],

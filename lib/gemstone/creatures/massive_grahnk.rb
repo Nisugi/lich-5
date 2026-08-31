@@ -112,7 +112,8 @@
       "A massive grahnk roars with pain and staggers {direction}."
     ],
     death: [
-      "The massive grahnk growls one last time in defiance, then goes still."
+      "The massive grahnk growls one last time in defiance, then goes still.",
+      "The massive grahnk growls one last time in defiance, then slumps to the ground."
     ],
     decay: [],
     search: [],

@@ -56,7 +56,11 @@
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Leap"
+      }
+    ],
     special_abilities: [
       {
         name: "Pounce"
@@ -109,7 +113,8 @@
     ],
     flee: [
       "A puma scampers {direction}.",
-      "A puma scampers {direction}, mewling in pain."
+      "A puma scampers {direction}, mewling in pain.",
+      "A puma roars loudly as she stands {direction}!"
     ],
     death: [
       "The puma lets out a final caterwaul and dies.",

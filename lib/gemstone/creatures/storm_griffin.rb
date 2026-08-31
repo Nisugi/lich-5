@@ -96,14 +96,14 @@
     asg: "12N",
     immunities: [],
     melee: (155..347),
-    ranged: (173..287),
-    bolt: (173..287),
+    ranged: (173..306),
+    bolt: (173..306),
     udf: (262..509),
     bar_td: nil,
     cle_td: (287..293),
     emp_td: (288..294),
     pal_td: (242..251),
-    ran_td: (242..251),
+    ran_td: (251..257),
     sor_td: (297..315),
     wiz_td: nil,
     mje_td: 314,
@@ -140,7 +140,8 @@
     ],
     death: [
       "The storm griffin writhes in agony, its wings flapping fruitlessly as it dies.",
-      "The storm griffin crashes to the ground, motionless."
+      "The storm griffin crashes to the ground, motionless.",
+      "Beautiful shot pierces both lungs, the storm griffin makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The storm griffin decays into a pile of feathers and fur."

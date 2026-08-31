@@ -111,7 +111,8 @@
       "The red-scaled thrak falls back into a heap and dies.",
       "The red-scaled thrak hisses one last time and dies.",
       "The red-scaled thrak twitches violently, then dies.",
-      "Beautiful shot pierces both lungs, the red-scaled thrak makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the red-scaled thrak makes a wheezing noise, and drops dead!",
+      "The red-scaled thrak slumps to the ground."
     ],
     decay: [
       "A red-scaled thrak decays into compost."

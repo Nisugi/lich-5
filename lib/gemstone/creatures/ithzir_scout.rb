@@ -67,8 +67,8 @@
     asg: "12",
     immunities: [],
     melee: (303..552),
-    ranged: (323..343),
-    bolt: (346..392),
+    ranged: (291..444),
+    bolt: (291..444),
     udf: (405..512),
     bar_td: nil,
     cle_td: (335..344),
@@ -109,13 +109,17 @@
     description: [
       "Wide, pupil-less green eyes peer about, quickly assessing both threats and terrain. The Ithzir scout stalks in a fluid, half-crouch that is as graceful as it is lightning fast, his whole demeanor underscoring his menace and obvious intelligence. The Ithzir scout is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The scout wears a charcoal grey tunic with no apparent identifiers of his station."
     ],
-    arrival: [],
+    arrival: [
+      "An Ithzir initiate strides in, his hands clasped before him.",
+      "An Ithzir initiate strides in, her hands clasped before her."
+    ],
     flee: [],
     death: [
       "The Ithzir scout twitches violently, then dies.",
       "The Ithzir scout vainly struggles to rise, then goes still.",
       "Just as you incant, the Ithzir scout shimmers and fades away, leaving you gesturing at nothingness!",
-      "Just as you move to cast, the Ithzir scout shimmers and fades away, leaving you gesturing at nothingness!"
+      "Just as you move to cast, the Ithzir scout shimmers and fades away, leaving you gesturing at nothingness!",
+      "An Ithzir scout's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
     decay: [],
     search: [],
@@ -124,6 +128,8 @@
       "An Ithzir scout swings {weapon} at you!",
       "An Ithzir scout throws {weapon} at you!",
       "The Ithzir scout points at you for emphasis.",
+      "A greater construct raises ithzir scout massive foot and attempts to smash you!",
+      "An Ithzir seer suddenly opens ithzir scout eyes and stares directly at you!"
     ],
     bite: [],
     claw: [],

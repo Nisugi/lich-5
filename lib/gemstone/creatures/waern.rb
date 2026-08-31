@@ -35,11 +35,11 @@
     physical_attacks: [
       {
         name: "Claw",
-        as: 295
+        as: (257..295)
       },
       {
         name: "Charge",
-        as: 294
+        as: (286..294)
       }
     ],
     bolt_spells: [],
@@ -96,7 +96,9 @@
     description: [
       "The waern is a vicious-looking embodiment of canine malice and tenacity. The waern's fiendish green eyes glow with insane appetite and her mangy pelt is so ragged, the rotting bones show through in spots. Long, malicious teeth curve out of the waern's rotting muzzle, and the tail that curves over the waern's back is hardly more than segments of bone interspersed with a few pieces of fuzzy, matted hair. Floating over the ground, her paws scarcely leaving a track, the waern dodges almost quicker than the eye can follow."
     ],
-    arrival: [],
+    arrival: [
+      "A waern just arrived."
+    ],
     flee: [
       "A waern runs {direction}."
     ],
@@ -108,6 +110,7 @@
       "A waern decays into a compost of fangs and fur.",
       "A muculent waern decays into a compost of fangs and fur.",
       "A slimy waern decays into a compost of fangs and fur.",
+      "A shadow mare's eyes go dim as she dissolves into the shadows."
     ],
     search: [],
     spell_prep: [],

@@ -72,8 +72,8 @@
     asg: "20N",
     immunities: ["magic"],
     melee: (219..499),
-    ranged: (299..344),
-    bolt: nil,
+    ranged: (192..387),
+    bolt: (192..387),
     udf: (456..487),
     bar_td: nil,
     cle_td: (366..387),
@@ -131,6 +131,7 @@
       "A glorious greater construct raises {pronoun} massive foot and attempts to smash you!",
       "A greater construct raises {pronoun} massive foot and attempts to smash you!",
       "A greater construct swings {weapon} at you!",
+      "A greater construct raises greater construct massive foot and attempts to smash you!"
     ],
     bite: [],
     claw: [],

@@ -101,7 +101,8 @@
     death: [
       "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as she dies.",
       "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as he dies.",
-      "Beautiful shot pierces both lungs, the titan stormcaller makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the titan stormcaller makes a wheezing noise, and drops dead!",
+      "A titan tempest tyrant stretches a hand skyward, fumbling for something unseen as he surrenders to death."
     ],
     decay: [
       "The titan stormcaller's left leg crumbles briefly and explodes in a shower of gore.",

@@ -99,15 +99,19 @@
     ],
     arrival: [
       "A decaying Citadel guardsman strides in.",
+      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm."
     ],
     flee: [],
     death: [
       "A decaying Citadel guardsman collapses sobbing silently before lying motionless on the floor.",
       "A decaying Citadel guardsman collapses sobbing silently before lying motionless on the ground.",
+      "A putrefied Citadel herald collapses in upon herself, leaving behind a pile of dust.",
+      "A putrefied Citadel herald collapses in upon himself, leaving behind a pile of dust."
     ],
     decay: [
       "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant draft.",
-      "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant breeze."
+      "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant breeze.",
+      "Acid dissolves connecting cartilage, freeing the Citadel guardsman's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

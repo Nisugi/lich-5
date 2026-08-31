@@ -105,8 +105,8 @@
     asg: "6",
     immunities: [],
     melee: (354..579),
-    ranged: nil,
-    bolt: (362..387),
+    ranged: (254..496),
+    bolt: (254..496),
     udf: (452..562),
     bar_td: (351..363),
     cle_td: (370..385),
@@ -165,14 +165,18 @@
       "The Ithzir initiate vainly struggles to rise, then goes still.",
       "Just as you incant, the Ithzir initiate shimmers and fades away, leaving you gesturing at nothingness!",
       "Just as you move to cast, the Ithzir initiate shimmers and fades away, leaving you gesturing at nothingness!",
-      "Beautiful shot pierces both lungs, the Ithzir initiate makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the Ithzir initiate makes a wheezing noise, and drops dead!",
+      "An Ithzir initiate's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the Ithzir initiate's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [
       "An Ithzir initiate places one palm on {pronoun} chest, and raises the other toward you!",
-      "An Ithzir initiate swings {weapon} at you!"
+      "An Ithzir initiate swings {weapon} at you!",
+      "An Ithzir initiate places one palm on ithzir initiate chest, and raises the other toward you!"
     ],
     bite: [],
     claw: [],

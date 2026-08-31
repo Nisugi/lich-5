@@ -64,7 +64,7 @@
     asg: "1N",
     immunities: [],
     melee: (27..41),
-    ranged: 37,
+    ranged: (36..37),
     bolt: (34..37),
     udf: (46..51),
     bar_td: 9,
@@ -108,7 +108,8 @@
     ],
     death: [
       "The striped relnak hisses one last time and dies.",
-      "The striped relnak falls back into a heap and dies."
+      "The striped relnak falls back into a heap and dies.",
+      "Beautiful shot pierces both lungs, the striped relnak makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A striped relnak decays into compost."

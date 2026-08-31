@@ -38,7 +38,7 @@
       },
       {
         name: "Heavy mein right fist",
-        as: 234
+        as: (234..255)
       }
     ],
     bolt_spells: [],
@@ -63,7 +63,7 @@
     cle_td: (129..132),
     emp_td: nil,
     pal_td: (108..117),
-    ran_td: nil,
+    ran_td: 111,
     sor_td: (133..142),
     wiz_td: nil,
     mje_td: 143,
@@ -97,13 +97,16 @@
       "A huge mein golem strides in, a terrible creaking sound coming from cracks in its glass body."
     ],
     flee: [],
-    death: [],
+    death: [
+      "Awesome shot skewers skull!  The mein golem blinks once and falls quite dead!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],
     attack: [
       "A huge mein golem pounds at you with {pronoun} heavy mein right fist!",
-      "A huge mein golem tries to ensnare you in {pronoun} solid mein arms!"
+      "A huge mein golem tries to ensnare you in {pronoun} solid mein arms!",
+      "A huge mein golem pounds at you with huge mein golem heavy mein right fist!"
     ],
     bite: [],
     claw: [],

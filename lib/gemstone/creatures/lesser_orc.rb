@@ -127,7 +127,9 @@
       "A lesser orc screams silently one last time and dies.",
       "A lesser orc's looks dazed and confused.  The orc stumbles and slumps to the ground!"
     ],
-    decay: [],
+    decay: [
+      "A small, green cloud of smelly gas rises from the body of a kobold as he decays into compost."
+    ],
     search: [],
     spell_prep: [],
     attack: [

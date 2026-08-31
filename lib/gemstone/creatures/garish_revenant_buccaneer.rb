@@ -13,14 +13,14 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
-  sleepable: nil,
+  sleepable: false,
   boss: false,
   boss_type: nil,
   otherclass: [
     "Undead"
   ],
   bcs: nil,
-  max_hp: nil,
+  max_hp: 73,
   speed: nil,
   height: nil,
   size: "",
@@ -45,7 +45,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: (560..767),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -79,9 +79,13 @@
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A garish revenant buccaneer just arrived.  Wait, wasn't he here already?"
+    ],
     flee: [],
-    death: [],
+    death: [
+      "Haunting blue light wreathes a garish revenant buccaneer's form as he stretches out a desperate hand.  Hiseyes widen and he goes still and lifeless, deprived of whatever unholy forces were animating him."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

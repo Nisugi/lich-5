@@ -85,8 +85,8 @@
     asg: "10",
     immunities: [],
     melee: nil,
-    ranged: nil,
-    bolt: 331,
+    ranged: (280..358),
+    bolt: (280..358),
     udf: nil,
     bar_td: 406,
     cle_td: 431,
@@ -128,10 +128,18 @@
     description: [
       "The lightning elemental is a crackling mass of solidified power, definitely alien to Elanthia. Nearly gelatinous in substance, solid bolts of lightning weave themselves into the skeletal form of some horrible beast, only to arc in an instant to a vaguely humanoid form and then back again."
     ],
-    arrival: [],
+    arrival: [
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
+    ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A raider orc withers away until he is no more.",
+      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away.",
+      "A shadow mare's eyes go dim as she dissolves into the shadows.",
+      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
+    ],
     search: [],
     spell_prep: [],
     attack: [

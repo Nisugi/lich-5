@@ -106,6 +106,7 @@
     ],
     decay: [
       "The martial eagle decays into a pile of feathers.",
+      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],

@@ -124,7 +124,8 @@
     death: [
       "A plains orc shaman mutters belaboring his fate and then dies.",
       "A plains orc shaman mutters belaboring her fate and then dies.",
-      "Beautiful shot pierces both lungs, the plains orc shaman makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the plains orc shaman makes a wheezing noise, and drops dead!",
+      "Awesome shot skewers skull!  The plains orc shaman blinks once and falls quite dead!"
     ],
     decay: [],
     search: [],

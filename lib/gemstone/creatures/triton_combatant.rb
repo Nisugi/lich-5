@@ -78,14 +78,14 @@
     asg: "20",
     immunities: [],
     melee: (248..375),
-    ranged: (243..418),
-    bolt: (243..418),
+    ranged: (137..418),
+    bolt: (137..418),
     udf: (526..539),
     bar_td: 324,
     cle_td: (351..360),
     emp_td: (349..358),
     pal_td: (301..330),
-    ran_td: 295,
+    ran_td: (295..304),
     sor_td: (369..384),
     wiz_td: nil,
     mje_td: (375..399),
@@ -104,7 +104,8 @@
   equipment: [
     "a reinforced canvas bandolier",
     "an elliptical brine-stained parma",
-    "an oak-shafted silvery blue trident"
+    "an oak-shafted silvery blue trident",
+    "a razor-tined pale green trident"
   ],
   treasure: {
     coins: nil,
@@ -121,11 +122,17 @@
     arrival: [
       "A triton combatant strides in, a wary look on his face.",
       "A triton combatant strides in, a wary look on her face.",
+      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
+      "A triton combatant strides in, gliding swiftly through the water with a wary look on his face.",
+      "A triton combatant strides in, gliding swiftly through the water with a wary look on her face.",
+      "A triton combatant just arrived."
     ],
     flee: [],
     death: [
       "The triton combatant gurgles once and goes still, a wrathful look on her face.",
-      "The triton combatant gurgles once and goes still, a wrathful look on his face."
+      "The triton combatant gurgles once and goes still, a wrathful look on his face.",
+      "Beautiful shot pierces both lungs, the triton combatant makes a wheezing noise, and drops dead!"
     ],
     decay: [],
     search: [],

@@ -112,7 +112,8 @@
       "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled left hind leg.",
       "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled right hind leg.",
       "The scaly burgee silently squeals as it slumps to the ground in agony, favoring its mangled left foreleg.",
-      "Beautiful shot pierces both lungs, the scaly burgee makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the scaly burgee makes a wheezing noise, and drops dead!",
+      "The scaly burgee slumps to the ground."
     ],
     decay: [
       "The scaly burgee's left leg crumbles briefly and explodes in a shower of gore."

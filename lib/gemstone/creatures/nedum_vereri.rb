@@ -43,6 +43,10 @@
       {
         name: "Gilt-thorned steel spikestar",
         as: 120
+      },
+      {
+        name: "Claw",
+        as: 141
       }
     ],
     bolt_spells: [],
@@ -57,6 +61,10 @@
       },
       {
         name: "Gilt-thorned steel spikestar",
+        cs: 95
+      },
+      {
+        name: "Morning star",
         cs: 95
       }
     ],
@@ -109,7 +117,9 @@
       "Once a priestess, this woman's service to her deity has ended tragically with her binding to life after death. Tattered robes hang from her form, and although she is lovely in spite of her glowing eyes, you cannot look upon her for long without feeling that you might run from her in fear."
     ],
     arrival: [
-      "A nedum vereri just arrived."
+      "A nedum vereri just arrived.",
+      "A nedum vereri just arrived from the altar.",
+      "A nedum vereri just arrived from the sanctuary."
     ],
     flee: [
       "A nedum vereri heads {direction}."
@@ -118,14 +128,18 @@
       "A nedum vereri exhales a sigh of relief and slumps to the ground motionless.",
       "A nedum vereri exhales a sigh of relief and goes still."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the nedum vereri's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [
       "A nedum vereri swings {weapon} at you!"
     ],
     bite: [],
-    claw: [],
+    claw: [
+      "A nedum vereri claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

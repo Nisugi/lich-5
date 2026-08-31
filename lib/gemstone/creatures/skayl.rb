@@ -48,7 +48,7 @@
       },
       {
         name: "Ensnare",
-        as: 302
+        as: (257..302)
       }
     ],
     bolt_spells: [],
@@ -59,6 +59,10 @@
       {
         name: "Burrow Ambush",
         cs: 265
+      },
+      {
+        name: "Ensnare",
+        cs: 253
       }
     ],
     maneuvers: [
@@ -73,8 +77,8 @@
     asg: "16N",
     immunities: [],
     melee: (418..469),
-    ranged: (109..178),
-    bolt: (109..178),
+    ranged: (109..198),
+    bolt: (109..198),
     udf: 312,
     bar_td: 197,
     cle_td: (201..211),

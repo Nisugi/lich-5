@@ -38,7 +38,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: (178..194)
+        as: (155..194)
       },
       {
         name: "Claw",
@@ -104,7 +104,9 @@
       "An arctic wolverine scampers {direction}, growling in pain.",
       "An arctic wolverine scampers {direction}."
     ],
-    death: [],
+    death: [
+      "The arctic wolverine slumps to the ground."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

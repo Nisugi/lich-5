@@ -74,7 +74,7 @@
     asg: "6",
     immunities: [],
     melee: (150..311),
-    ranged: (153..164),
+    ranged: (153..193),
     bolt: (140..210),
     udf: (267..301),
     bar_td: 86,
@@ -103,7 +103,8 @@
   alchemy: [],
   abilities_misc: [],
   equipment: [
-    "some old tattered armor"
+    "some old tattered armor",
+    "a mangled shield"
   ],
   treasure: {
     coins: true,

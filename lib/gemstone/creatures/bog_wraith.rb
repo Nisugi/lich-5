@@ -46,7 +46,12 @@
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Ensnare",
+        cs: 206
+      }
+    ],
     offensive_spells: [],
     maneuvers: [
       {
@@ -60,8 +65,8 @@
     asg: nil,
     immunities: [],
     melee: (187..270),
-    ranged: (173..202),
-    bolt: (173..202),
+    ranged: (173..273),
+    bolt: (173..273),
     udf: 196,
     bar_td: nil,
     cle_td: (160..170),

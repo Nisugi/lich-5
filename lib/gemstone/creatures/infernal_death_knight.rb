@@ -87,9 +87,9 @@
     asg: "19",
     immunities: [],
     melee: (369..632),
-    ranged: (383..442),
-    bolt: (383..442),
-    udf: 692,
+    ranged: (353..463),
+    bolt: (353..463),
+    udf: (409..715),
     bar_td: 426,
     cle_td: (417..426),
     emp_td: 411,
@@ -132,6 +132,8 @@
     decay: [
       "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, his skeletal form collapses into blanched powder and blows away.",
       "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, her skeletal form collapses into blanched powder and blows away.",
+      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as her skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones.",
+      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as his skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones."
     ],
     search: [],
     spell_prep: [],

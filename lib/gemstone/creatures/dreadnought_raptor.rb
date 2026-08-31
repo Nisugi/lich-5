@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 260,
-  speed: nil,
+  speed: 8,
   height: nil,
   size: "large",
   areas: [
@@ -35,18 +35,22 @@
     physical_attacks: [
       {
         name: "Impale",
-        as: 274
+        as: (271..274)
       },
       {
         name: "Bite"
       },
       {
         name: "Claw",
-        as: 275
+        as: (275..281)
       },
       {
         name: "Swoop",
-        as: 281
+        as: (252..281)
+      },
+      {
+        name: "Beak",
+        as: 234
       }
     ],
     bolt_spells: [],
@@ -119,7 +123,10 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A dazzling dreadnought raptor tries to impale you on {pronoun} beak!"
+      "A dazzling dreadnought raptor tries to impale you on {pronoun} beak!",
+      "A dreadnought raptor rakes at you with a razor-sharp claw!",
+      "A dreadnought raptor tries to impale you on dreadnought raptor beak!",
+      "A dreadnought raptor tries to spear you with dreadnought raptor beak!"
     ],
     bite: [],
     claw: [],

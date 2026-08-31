@@ -99,7 +99,8 @@
     flee: [],
     death: [
       "The lesser ghoul falls to the ground motionless.",
-      "The lesser ghoul screams evilly one last time and goes still."
+      "The lesser ghoul screams evilly one last time and goes still.",
+      "Awesome shot skewers skull!  The lesser ghoul blinks once and falls quite dead!"
     ],
     decay: [
       "A lesser ghoul turns to dust."

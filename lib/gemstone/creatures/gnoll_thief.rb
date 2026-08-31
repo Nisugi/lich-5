@@ -112,7 +112,9 @@
     description: [
       "Light fingered and agile, the gnoll thief is easily at home in both the dark stone corridors of his lair and anywhere that loot may be gained. Wiry and lithe, with pale skin and large, colorless eyes, the thief stands around three feet tall as it regards you uneasily."
     ],
-    arrival: [],
+    arrival: [
+      "A gnoll ranger wanders in, alertly surveying its surroundings."
+    ],
     flee: [
       "A gnoll thief skulks {direction}."
     ],

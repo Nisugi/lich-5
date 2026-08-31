@@ -91,6 +91,8 @@
     ],
     arrival: [
       "A Neartofar troll just arrived!",
+      "A Neartofar orc stalks in purposefully, his nose raised as he sniffs at the air.",
+      "A Neartofar orc stalks in purposefully, her nose raised as she sniffs at the air."
     ],
     flee: [
       "A Neartofar troll heads {direction}."
@@ -98,6 +100,8 @@
     death: [
       "The Neartofar troll falls to the ground and dies.",
       "The Neartofar troll screams one last time and dies.",
+      "A Neartofar orc breathes his last gasp and dies.",
+      "A Neartofar orc breathes her last gasp and dies."
     ],
     decay: [
       "A Neartofar troll decays into compost."

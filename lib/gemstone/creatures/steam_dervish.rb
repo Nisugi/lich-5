@@ -61,8 +61,8 @@
     asg: "16",
     immunities: [],
     melee: (223..487),
-    ranged: (297..379),
-    bolt: (290..379),
+    ranged: (215..379),
+    bolt: (215..379),
     udf: (493..561),
     bar_td: "325 to 349",
     cle_td: 335,
@@ -108,7 +108,12 @@
       "The steam dervish fumes with rage as she crumples to the ground!  Hot steam sprays out from her severed right leg thrashing on the ground!",
       "The steam dervish fumes with rage as he crumples to the ground!  Hot steam sprays out from his severed left leg thrashing on the ground!"
     ],
-    decay: [],
+    decay: [
+      "Thin blue lines of magical energy crackle over the body of a phantasmal bestial swordsman before he dissolves, leaving a puddle of liquid and the smell of ozone in the air.",
+      "A raider orc withers away until he is no more.",
+      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust.",
+      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
+    ],
     search: [],
     spell_prep: [],
     attack: [

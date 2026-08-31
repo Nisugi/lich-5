@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 298,
-  speed: nil,
+  speed: 11,
   height: 5,
   size: "medium",
   areas: [
@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Spear",
-        as: (206..230)
+        as: (188..230)
       },
       {
         name: "Dart",
@@ -118,7 +118,8 @@
     ],
     decay: [
       "A Grutik savage collapses into a lifeless heap upon the ground.",
-      "A Grutik savage's body turns to dust."
+      "A Grutik savage's body turns to dust.",
+      "Acid dissolves connecting cartilage, freeing the Grutik savage's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

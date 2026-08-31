@@ -94,8 +94,8 @@
     asg: "12",
     immunities: [],
     melee: (291..567),
-    ranged: (271..481),
-    bolt: (275..326),
+    ranged: (229..510),
+    bolt: (229..510),
     udf: (520..649),
     bar_td: 375,
     cle_td: (402..407),
@@ -144,14 +144,25 @@
       "A triton radical strides in, a wary look on her face.",
       "A triton radical strides in, a wary look on his face.",
       "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
-      "A triton radical just arrived."
+      "A triton radical just arrived.",
+      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton executioner strides in, a wary look on her face.",
+      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
+      "A triton combatant strides in, a wary look on her face.",
+      "A triton combatant strides in, a wary look on his face.",
+      "A triton radical strides in, gliding swiftly through the water with a wary look on her face."
     ],
     flee: [],
     death: [
       "The triton radical gurgles once and goes still, a wrathful look on her face.",
-      "The triton radical gurgles once and goes still, a wrathful look on his face."
+      "The triton radical gurgles once and goes still, a wrathful look on his face.",
+      "The triton radical slumps to the ground.",
+      "Beautiful shot pierces both lungs, the triton radical makes a wheezing noise, and drops dead!",
+      "Awesome shot skewers skull!  The triton radical blinks once and falls quite dead!"
     ],
-    decay: [],
+    decay: [
+      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
+    ],
     search: [],
     spell_prep: [],
     attack: [

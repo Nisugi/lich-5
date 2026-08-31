@@ -84,8 +84,8 @@
     asg: "1",
     immunities: [],
     melee: (290..584),
-    ranged: (329..377),
-    bolt: (329..347),
+    ranged: (318..377),
+    bolt: (318..377),
     udf: (428..730),
     bar_td: nil,
     cle_td: (425..434),
@@ -128,7 +128,9 @@
       "Vital fluids seeping from its orifices, a shambling lurk shambles in with a piteous moan."
     ],
     flee: [],
-    death: [],
+    death: [
+      "Awesome shot skewers skull!  The shambling lurk blinks once and falls quite dead!"
+    ],
     decay: [
       "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
     ],

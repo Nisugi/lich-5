@@ -142,6 +142,10 @@
     ],
     arrival: [
       "A putrefied Citadel herald strides in confidently.",
+      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the room, his crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the area, her crossbow cradled in the crook of an arm."
     ],
     flee: [],
     death: [
@@ -153,7 +157,8 @@
     ],
     decay: [
       "The Citadel herald's right leg crumbles briefly and explodes in a shower of gore.",
-      "The Citadel herald's left leg crumbles briefly and explodes in a shower of gore."
+      "The Citadel herald's left leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the Citadel herald's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

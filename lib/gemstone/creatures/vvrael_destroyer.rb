@@ -13,7 +13,7 @@
   witherable: false,
   sympathy: false,
   muggable: true,
-  sleepable: nil,
+  sleepable: false,
   boss: false,
   boss_type: nil,
   otherclass: [
@@ -75,9 +75,9 @@
     asg: "20",
     immunities: [],
     melee: nil,
-    ranged: 375,
-    bolt: nil,
-    udf: 586,
+    ranged: (246..426),
+    bolt: (246..426),
+    udf: (424..769),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -124,7 +124,9 @@
     death: [
       "The Vvrael destroyer crumples to the ground motionless.",
       "The body of the destroyer twists and distorts until he shatters and dissipates into aether.",
-      "The Vvrael destroyer crumples to the floor motionless."
+      "The Vvrael destroyer crumples to the floor motionless.",
+      "The Vvrael destroyer writhes in black agony and dies.",
+      "The Vvrael destroyer wails with rage as he crumples to the ground!  A viscous black liquid sprays out from his severed left leg thrashing on the ground!"
     ],
     decay: [],
     search: [],

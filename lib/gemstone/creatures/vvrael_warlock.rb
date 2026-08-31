@@ -116,8 +116,8 @@
     asg: "2",
     immunities: ["magic"],
     melee: (360..657),
-    ranged: (312..328),
-    bolt: nil,
+    ranged: (301..335),
+    bolt: (301..335),
     udf: (388..682),
     bar_td: nil,
     cle_td: nil,
@@ -181,7 +181,9 @@
       "The Vvrael warlock wails with rage as he crumples to the ground!  A viscous black liquid sprays out from his severed right leg thrashing on the ground!",
       "The Vvrael warlock wails with rage as he crumples to the ground!  A viscous black liquid sprays out from his severed left leg thrashing on the ground!"
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the Vvrael warlock's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [

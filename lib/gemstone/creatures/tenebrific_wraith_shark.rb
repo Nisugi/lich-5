@@ -13,7 +13,7 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
-  sleepable: nil,
+  sleepable: false,
   boss: false,
   boss_type: nil,
   otherclass: [
@@ -50,7 +50,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: 642,
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,

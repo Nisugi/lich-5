@@ -161,9 +161,13 @@
     flee: [],
     death: [
       "The sand devil screams one last time and dies.",
-      "The sand devil falls to the ground and dies."
+      "The sand devil falls to the ground and dies.",
+      "The sand devil slumps to the ground."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the sand devil's ribs to move independently.",
+      "A shadow mare's eyes go dim as she dissolves into the shadows."
+    ],
     search: [],
     spell_prep: [],
     attack: [

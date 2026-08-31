@@ -95,9 +95,9 @@
     asg: "6",
     immunities: [],
     melee: nil,
-    ranged: (376..498),
-    bolt: (376..498),
-    udf: (650..662),
+    ranged: (376..501),
+    bolt: (376..501),
+    udf: (587..896),
     bar_td: nil,
     cle_td: (400..409),
     emp_td: 424,
@@ -105,8 +105,8 @@
     ran_td: (369..378),
     sor_td: nil,
     wiz_td: nil,
-    mje_td: 475,
-    mne_td: 475,
+    mje_td: (469..475),
+    mne_td: (469..475),
     mjs_td: nil,
     mns_td: nil,
     mnm_td: nil,
@@ -141,9 +141,12 @@
     flee: [
       "A disfigured hive thrall gibbers pathetically as she flees {direction}.",
       "A disfigured hive thrall gibbers pathetically as he flees {direction}.",
-      "A disfigured hive thrall gibbers pathetically as she flees {direction}, burning ichor seeping from her wounds."
+      "A disfigured hive thrall gibbers pathetically as she flees {direction}, burning ichor seeping from her wounds.",
+      "A disfigured hive thrall gibbers pathetically as he flees {direction}, burning ichor seeping from his wounds."
     ],
-    death: [],
+    death: [
+      "Beautiful shot pierces both lungs, the hive thrall makes a wheezing noise, and drops dead!"
+    ],
     decay: [],
     search: [],
     spell_prep: [],

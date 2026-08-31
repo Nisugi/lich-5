@@ -72,8 +72,8 @@
     asg: nil,
     immunities: [],
     melee: (234..488),
-    ranged: 294,
-    bolt: 294,
+    ranged: (270..314),
+    bolt: (270..314),
     udf: (283..482),
     bar_td: 161,
     cle_td: (167..185),
@@ -120,7 +120,9 @@
       "A sinuous necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp.",
       "A flexile necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the necrotic snake's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [

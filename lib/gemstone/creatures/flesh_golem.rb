@@ -78,8 +78,8 @@
     asg: nil,
     immunities: [],
     melee: (87..341),
-    ranged: (125..210),
-    bolt: (125..210),
+    ranged: (125..241),
+    bolt: (125..241),
     udf: (218..442),
     bar_td: 169,
     cle_td: (185..194),
@@ -132,7 +132,8 @@
       "A flesh golem pounds at you with {pronoun} huge swollen right fist!",
       "A flesh golem pounds at you with {pronoun} fist!",
       "A slimy flesh golem lifts {pronoun} fat fleshy foot and tries to stomp on you!",
-      "A slimy flesh golem pounds at you with {pronoun} huge swollen right fist!"
+      "A slimy flesh golem pounds at you with {pronoun} huge swollen right fist!",
+      "A flesh golem lifts flesh golem fat fleshy foot and tries to stomp on you!"
     ],
     bite: [],
     claw: [],

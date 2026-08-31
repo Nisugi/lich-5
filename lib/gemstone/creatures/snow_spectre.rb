@@ -100,7 +100,8 @@
     death: [
       "The snow spectre falls to the ground motionless.",
       "The snow spectre screams evilly one last time and goes still.",
-      "Beautiful shot pierces both lungs, the snow spectre makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the snow spectre makes a wheezing noise, and drops dead!",
+      "The snow spectre slumps to the ground."
     ],
     decay: [
       "A snow spectre turns to dust."

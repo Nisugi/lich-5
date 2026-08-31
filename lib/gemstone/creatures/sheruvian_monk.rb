@@ -42,7 +42,7 @@
       },
       {
         name: "Lunge",
-        as: 269
+        as: (269..299)
       }
     ],
     bolt_spells: [],
@@ -60,8 +60,8 @@
     asg: nil,
     immunities: [],
     melee: (255..340),
-    ranged: (250..260),
-    bolt: (250..260),
+    ranged: (220..305),
+    bolt: (220..305),
     udf: 276,
     bar_td: 143,
     cle_td: 156,
@@ -114,7 +114,8 @@
     attack: [
       "A Sheruvian monk lunges at you!  As you shift to block the blow, the monk reverses {pronoun} swing, coming in low to your left side!",
       "A Sheruvian monk snarls as it launches itself at you!",
-      "A Sheruvian monk swings {weapon} at you!"
+      "A Sheruvian monk swings {weapon} at you!",
+      "A Sheruvian sheruvian monk lunges at you!  As you shift to block the blow, the sheruvian monk reverses {pronoun} swing, coming in low to your left side!"
     ],
     bite: [],
     claw: [],

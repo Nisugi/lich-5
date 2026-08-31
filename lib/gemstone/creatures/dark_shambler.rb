@@ -55,6 +55,10 @@
       {
         name: "Twohanded sword",
         as: 175
+      },
+      {
+        name: "Broadsword",
+        as: 175
       }
     ],
     bolt_spells: [],
@@ -68,8 +72,8 @@
     asg: "10",
     immunities: [],
     melee: (115..238),
-    ranged: (48..140),
-    bolt: (48..140),
+    ranged: (41..140),
+    bolt: (41..140),
     udf: (145..235),
     bar_td: 51,
     cle_td: 51,
@@ -128,7 +132,9 @@
       "The dark shambler falls to the ground motionless.",
       "The dark shambler screams evilly one last time and goes still.",
       "The dark shambler twitches violently, then dies.",
-      "Beautiful shot pierces both lungs, the dark shambler makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the dark shambler makes a wheezing noise, and drops dead!",
+      "The dark shambler slumps to the ground.",
+      "Awesome shot skewers skull!  The dark shambler blinks once and falls quite dead!"
     ],
     decay: [
       "A dark shambler turns to dust.",

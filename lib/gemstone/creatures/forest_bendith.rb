@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 6,
   height: 3,
   size: "small",
   areas: [
@@ -107,7 +107,8 @@
     death: [
       "The forest bendith's eyes grow dim as her lifeforce fades away.",
       "Just as you move to cast, the forest bendith grins slightly, and then fades into the thick undergrowth to avoid your spell.",
-      "Beautiful shot pierces both lungs, the forest bendith makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the forest bendith makes a wheezing noise, and drops dead!",
+      "The forest bendith slumps to the ground."
     ],
     decay: [
       "The forest bendith's left leg crumbles briefly and explodes in a shower of gore."

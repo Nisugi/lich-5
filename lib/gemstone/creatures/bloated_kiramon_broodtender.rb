@@ -13,12 +13,12 @@
   witherable: true,
   sympathy: true,
   muggable: nil,
-  sleepable: nil,
+  sleepable: false,
   boss: false,
   boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 573,
+  max_hp: 631,
   speed: nil,
   height: 8,
   size: "large",
@@ -58,14 +58,14 @@
     asg: "14N",
     immunities: [],
     melee: nil,
-    ranged: (692..815),
-    bolt: (692..815),
-    udf: 824,
+    ranged: (619..815),
+    bolt: (619..815),
+    udf: (621..960),
     bar_td: nil,
     cle_td: (480..483),
     emp_td: 480,
     pal_td: (459..462),
-    ran_td: nil,
+    ran_td: (447..453),
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -94,10 +94,15 @@
     description: [
       "Possessed of a small, glossy black head with a long proboscis, the kiramon broodtender would be comical in shape were it not so grotesque. Most of its abdomen is bloated, gelatinous, and yielding. Riotous colors ooze across flesh like the surface hues of an oil slick. Eight glinting black eyes stare from her undersized head, nestled amidst a thicket of coarse hairs. Wrapped around the monstrosity's abdomen are a number of gooey sensory tendrils."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "The faint, unearthly glow wicking off of a translucent kiramon strandweaver's translucent carapace precedes her as she crawls in uncertainly, antennae twitching."
+    ],
+    flee: [
+      "A bloated kiramon broodtender's multifarious sensory tendrils curl inward as she retreats."
+    ],
     death: [
       "A bloated kiramon broodtender's legs kick savagely as she collapses, belching swarms of tiny, pale larvae.  They scatter wildly as she surrenders to death.",
+      "A chitinous kiramon myrmidon collapses, his forelegs spasming and twitching before he at last surrenders to death."
     ],
     decay: [],
     search: [],

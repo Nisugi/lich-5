@@ -52,14 +52,14 @@
     asg: nil,
     immunities: [],
     melee: (140..293),
-    ranged: (148..211),
-    bolt: (148..211),
+    ranged: (128..216),
+    bolt: (128..216),
     udf: (192..290),
     bar_td: nil,
     cle_td: (127..141),
     emp_td: (131..141),
     pal_td: (119..122),
-    ran_td: nil,
+    ran_td: (112..121),
     sor_td: (144..151),
     wiz_td: nil,
     mje_td: (154..157),
@@ -96,7 +96,9 @@
       "The shadow steed goes still for a moment while its head reshapes.",
       "A shadow steed fades into oblivion."
     ],
-    decay: [],
+    decay: [
+      "A shadow mare's eyes go dim as she dissolves into the shadows."
+    ],
     search: [],
     spell_prep: [],
     attack: [

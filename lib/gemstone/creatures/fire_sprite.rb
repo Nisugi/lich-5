@@ -35,7 +35,7 @@
     physical_attacks: [
       {
         name: "Closed fist",
-        as: 327
+        as: (294..327)
       }
     ],
     bolt_spells: [
@@ -111,7 +111,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A fire sprite swings {weapon} at you!"
+      "A fire sprite swings {weapon} at you!",
+      "A fire sprite leaves a trail of flames while gesturing with both hands at you!"
     ],
     bite: [],
     claw: [],

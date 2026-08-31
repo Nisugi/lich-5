@@ -119,6 +119,7 @@
     ],
     decay: [
       "A thyril decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost."
     ],
     search: [],
     spell_prep: [],

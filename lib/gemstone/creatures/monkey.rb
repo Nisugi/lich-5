@@ -145,7 +145,9 @@
       "A stout bright orange {pronoun} scampers in at a reckless tear!",
       "A bright green monkey scampers in at a reckless tear!",
       "A bright green monkey scampers in!",
-      "A stout bright orange {pronoun} scampers in!"
+      "A stout bright orange {pronoun} scampers in!",
+      "A stout bright orange monkey scampers in at a reckless tear!",
+      "A stout bright orange monkey scampers in!"
     ],
     flee: [
       "A monkey scampers {direction}.",
@@ -157,7 +159,9 @@
       "A stout bright orange {pronoun} scampers {direction} of sight!",
       "A monkey scampers {direction} of sight!",
       "A bright green monkey scampers {direction} of sight!",
-      "A brilliant violet monkey scampers {direction} of sight!"
+      "A brilliant violet monkey scampers {direction} of sight!",
+      "A stout bright orange monkey scampers {direction}.",
+      "A stout bright orange monkey scampers {direction} of sight!"
     ],
     death: [
       "The monkey screeches one last time and dies.",
@@ -171,14 +175,16 @@
       "The orange monkey falls back into a heap and dies.",
       "The green monkey screeches one last time and dies.",
       "The orange monkey screeches one last time and dies.",
-      "Beautiful shot pierces both lungs, the green monkey makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the green monkey makes a wheezing noise, and drops dead!",
+      "The monkey slumps to the ground."
     ],
     decay: [
       "A monkey decays into compost.",
       "A deep pink monkey decays into compost.",
       "A brilliant violet monkey decays into compost.",
       "A bright green monkey decays into compost.",
-      "A stout bright orange {pronoun} decays into compost."
+      "A stout bright orange {pronoun} decays into compost.",
+      "A stout bright orange monkey decays into compost."
     ],
     search: [],
     spell_prep: [],

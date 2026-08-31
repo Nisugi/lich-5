@@ -128,7 +128,9 @@
       "The red crocodile falls back into a heap and dies.",
       "The tangerine crocodile hisses one last time and dies.",
       "The red crocodile hisses one last time and dies.",
-      "The tangerine crocodile falls back into a heap and dies."
+      "The tangerine crocodile falls back into a heap and dies.",
+      "Beautiful shot pierces both lungs, the crocodile makes a wheezing noise, and drops dead!",
+      "Awesome shot skewers skull!  The crocodile blinks once and falls quite dead!"
     ],
     decay: [
       "A crocodile decays into compost.",

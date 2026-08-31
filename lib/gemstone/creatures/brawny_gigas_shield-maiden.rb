@@ -145,6 +145,8 @@
     arrival: [
       "A brawny gigas shield-maiden marches in with the grace of a seasoned warrior.",
       "A brawny gigas shield-maiden marches into the area, grim purpose written across {pronoun} face.",
+      "Preceded by a mournful dirge, a grim gigas skald stalks in, her song accompanied by the clacking of the crude jeweled beads adorning the ceremonial garb that she wears.",
+      "Preceded by a mournful dirge, a grim gigas skald stalks in, his song accompanied by the clacking of the crude jeweled beads adorning the ceremonial garb that he wears."
     ],
     flee: [
       "Warily scanning the area for threats, a brawny gigas shield-maiden marches {direction}.",
@@ -160,13 +162,21 @@
       "A brawny gigas shield-maiden launches a quick bash with {pronoun} golden targe at you!",
       "A brawny gigas shield-maiden rushes at you in a thundering charge!",
       "A brawny gigas shield-maiden slams a fist down at you with earthshattering force!",
-      "In a display of martial precision, a brawny gigas shield-maiden thrusts with an immense fel-hafted handaxe at you!"
+      "In a display of martial precision, a brawny gigas shield-maiden thrusts with an immense fel-hafted handaxe at you!",
+      "A brawny gigas shield-maiden launches a quick bash with brawny gigas shield-maiden golden targe at you!",
+      "A heavily armored battle mastodon tries to spear you with brawny gigas shield-maiden enormous tusks!",
+      "A niveous giant warg lunges at you, maw slathering as brawny gigas shield-maiden tries to take a ferocious bite!",
+      "Froth bubbling on brawny gigas shield-maiden lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!"
     ],
     bite: [],
     claw: [],
     death: [
       "A plaintive look passes across a brawny gigas shield-maiden's eyes like a fleeting shadow as {pronoun} goes still in death.",
       "A plaintive look passes across a brawny gigas shield-maiden's eyes like a fleeting shadow as she goes still in death.",
+      "A tattooed gigas berserker's fists tense with impotent rage as he surrenders to death.",
+      "A grim gigas skald raises a hand as if to grasp for support as he collapses, life going out of his form.",
+      "A grim gigas skald raises a hand as if to grasp for support as she collapses, life going out of her form.",
+      "A tattooed gigas berserker's fists tense with impotent rage as she surrenders to death."
     ],
     decay: [
       "Rot consumes a brawny gigas shield-maiden's body, leaving little behind."

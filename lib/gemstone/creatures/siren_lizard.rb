@@ -130,7 +130,8 @@
     death: [
       "The siren lizard falls to the ground and dies.",
       "The siren lizard hisses one last time and dies.",
-      "The siren lizard twitches violently, then dies."
+      "The siren lizard twitches violently, then dies.",
+      "The siren lizard slumps to the ground."
     ],
     decay: [
       "A siren lizard decays into compost."

@@ -106,7 +106,8 @@
     ],
     death: [
       "The mud wasp flutters its wings one last time and dies.",
-      "The mud wasp twitches violently, then dies."
+      "The mud wasp twitches violently, then dies.",
+      "The mud wasp slumps to the ground."
     ],
     decay: [
       "A mud wasp decays into compost."

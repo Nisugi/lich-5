@@ -61,8 +61,8 @@
     asg: "2",
     immunities: [],
     melee: (307..472),
-    ranged: nil,
-    bolt: nil,
+    ranged: (324..363),
+    bolt: (324..363),
     udf: (256..305),
     bar_td: nil,
     cle_td: (261..264),
@@ -114,7 +114,9 @@
       "The Tenthsworn occultist twitches violently, then dies.",
       "The Tenthsworn occultist slumps to the ground."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the Tenthsworn occultist's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [],

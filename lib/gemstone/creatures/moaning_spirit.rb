@@ -21,7 +21,7 @@
   ],
   bcs: nil,
   max_hp: 225,
-  speed: nil,
+  speed: 12,
   height: 5,
   size: "medium",
   areas: [
@@ -46,7 +46,16 @@
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Claw",
+        cs: 159
+      },
+      {
+        name: "Closed fist",
+        cs: 154
+      }
+    ],
     offensive_spells: [],
     maneuvers: [
       {
@@ -60,8 +69,8 @@
     asg: nil,
     immunities: [],
     melee: (150..188),
-    ranged: (134..188),
-    bolt: (134..188),
+    ranged: (94..188),
+    bolt: (94..188),
     udf: (153..165),
     bar_td: nil,
     cle_td: 91,
@@ -108,6 +117,8 @@
     ],
     decay: [
       "A moaning spirit collapses into a puddle of jelly, falling silent at last.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost."
     ],
     search: [],
     spell_prep: [],

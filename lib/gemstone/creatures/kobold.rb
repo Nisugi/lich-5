@@ -132,7 +132,8 @@
       "The kobold crumples to a heap on the ground and dies.",
       "The kobold cries out in pain one last time and dies.",
       "The kobold crumples to a heap on the floor and dies.",
-      "Beautiful shot pierces both lungs, the kobold makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the kobold makes a wheezing noise, and drops dead!",
+      "The kobold slumps to the ground."
     ],
     decay: [
       "A small, green cloud of smelly gas rises from the body of a kobold as she decays into compost.",

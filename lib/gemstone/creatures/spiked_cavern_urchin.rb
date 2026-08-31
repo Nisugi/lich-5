@@ -97,6 +97,7 @@
     decay: [
       "Spines litter the ground as the cavern urchin crumbles into a pile of splinters and skin.",
       "A spiked cavern urchin simply withers away, bits of grayish dust scattered about in its wake.",
+      "A luminous arachnid's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],

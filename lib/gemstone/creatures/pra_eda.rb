@@ -52,8 +52,8 @@
     asg: "18N",
     immunities: [],
     melee: (119..241),
-    ranged: (57..177),
-    bolt: (57..177),
+    ranged: (52..177),
+    bolt: (52..177),
     udf: (152..235),
     bar_td: 89,
     cle_td: (105..118),
@@ -105,7 +105,8 @@
     ],
     death: [
       "The pra'eda falls to the ground motionless.",
-      "The pra'eda cries out one last time and lies still."
+      "The pra'eda cries out one last time and lies still.",
+      "Beautiful shot pierces both lungs, the pra'eda makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "The pra'eda's left leg crumbles briefly and explodes in a shower of gore.",

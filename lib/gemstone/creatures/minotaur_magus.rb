@@ -117,7 +117,10 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust.",
+      "A raider orc withers away until he is no more."
+    ],
     search: [],
     spell_prep: [],
     attack: [],

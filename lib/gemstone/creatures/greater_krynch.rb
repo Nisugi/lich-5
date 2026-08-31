@@ -113,6 +113,7 @@
     ],
     decay: [
       "Tiny fissures quickly spread over a dead greater krynch, and it crumbles into rubble.",
+      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble."
     ],
     search: [],
     spell_prep: [],

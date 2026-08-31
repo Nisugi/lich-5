@@ -48,8 +48,8 @@
     asg: "12",
     immunities: [],
     melee: 148,
-    ranged: (48..59),
-    bolt: (48..59),
+    ranged: (33..59),
+    bolt: (33..59),
     udf: 118,
     bar_td: nil,
     cle_td: 54,
@@ -97,6 +97,8 @@
     ],
     decay: [
       "An elder ghoul master turns to dust.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost."
     ],
     search: [],
     spell_prep: [],

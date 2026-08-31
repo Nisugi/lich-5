@@ -89,8 +89,8 @@
     asg: "16",
     immunities: [],
     melee: (207..490),
-    ranged: 289,
-    bolt: 249,
+    ranged: (160..397),
+    bolt: (160..397),
     udf: (431..485),
     bar_td: 299,
     cle_td: (337..346),
@@ -140,7 +140,8 @@
       "The Ithzir janissary vainly struggles to rise, then goes still.",
       "Just as you incant, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!",
       "Just as you cast, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!",
-      "Just as you move to cast, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!"
+      "Just as you move to cast, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!",
+      "An Ithzir janissary's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
     decay: [],
     search: [],

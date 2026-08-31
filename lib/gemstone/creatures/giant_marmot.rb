@@ -100,10 +100,12 @@
       "The giant marmot collapses to the ground, emits a final squeal, and dies.",
       "The giant marmot collapses to the ground, emits a final silent squeal, and dies.",
       "The giant marmot twitches and dies.",
-      "The giant marmot twitches violently, then dies."
+      "The giant marmot twitches violently, then dies.",
+      "Awesome shot skewers skull!  The giant marmot blinks once and falls quite dead!"
     ],
     decay: [
       "A giant marmot decays into a pile of hair and bone.",
+      "A raider orc withers away until he is no more."
     ],
     search: [],
     spell_prep: [],

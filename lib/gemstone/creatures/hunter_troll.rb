@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 9,
   height: 9,
   size: "large",
   areas: [
@@ -38,7 +38,11 @@
       },
       {
         name: "Bite",
-        as: 222
+        as: (212..222)
+      },
+      {
+        name: "Claw",
+        as: 212
       }
     ],
     bolt_spells: [],
@@ -101,9 +105,12 @@
     arrival: [
       "A hunter troll just arrived!"
     ],
-    flee: [],
+    flee: [
+      "A hunter troll runs {direction}."
+    ],
     death: [
-      "The hunter troll slumps to the ground with a final snarl."
+      "The hunter troll slumps to the ground with a final snarl.",
+      "The hunter troll slumps to the ground."
     ],
     decay: [
       "A hunter troll decays into compost."
@@ -116,7 +123,9 @@
     bite: [
       "A hunter troll tries to bite you!"
     ],
-    claw: [],
+    claw: [
+      "A hunter troll claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

@@ -97,7 +97,9 @@
     description: [
       "The little gremlin is a small furless creature with beady little eyes and sharp teeth that have been filed into triangular fangs. It has long, metal capped, nails protruding several inches from the tip of each finger. Though humanoid in form, it has a natural facial expression that is as wicked as any other known to nature."
     ],
-    arrival: [],
+    arrival: [
+      "A slimy little grub crawls in, leaving a trail of slime in its wake."
+    ],
     flee: [
       "A nasty little blue gremlin scampers {direction}.",
       "A nasty little red gremlin scampers {direction}.",
@@ -126,6 +128,8 @@
       "A nasty little blue gremlin decays into compost.",
       "A nasty little black gremlin decays into compost.",
       "A nasty little orange gremlin decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost."
     ],
     search: [],
     spell_prep: [],

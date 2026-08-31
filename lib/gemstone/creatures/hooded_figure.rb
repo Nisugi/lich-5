@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 260,
-  speed: nil,
+  speed: 7,
   height: 6,
   size: "medium",
   areas: [
@@ -44,7 +44,11 @@
       },
       {
         name: "Falchion",
-        as: 186
+        as: (186..231)
+      },
+      {
+        name: "Short sword",
+        as: 231
       }
     ],
     bolt_spells: [
@@ -105,6 +109,18 @@
       {
         name: "Mana Disruption (702)",
         cs: (168..195)
+      },
+      {
+        name: "Dagger",
+        cs: 168
+      },
+      {
+        name: "Falchion",
+        cs: 195
+      },
+      {
+        name: "Short sword",
+        cs: 195
       }
     ],
     offensive_spells: [
@@ -133,8 +149,8 @@
     asg: nil,
     immunities: [],
     melee: (140..300),
-    ranged: (166..244),
-    bolt: (166..244),
+    ranged: (116..244),
+    bolt: (116..244),
     udf: (150..279),
     bar_td: nil,
     cle_td: (131..141),
@@ -215,12 +231,17 @@
       "A hooded figure just arrived.",
       "A hooded figure just arrived, limping."
     ],
-    flee: [],
+    flee: [
+      "A hooded figure heads {direction}."
+    ],
     death: [
       "The hooded figure screams one last time and lies still.",
-      "The hooded figure falls to the ground and lies still."
+      "The hooded figure falls to the ground and lies still.",
+      "The hooded figure slumps to the ground."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the hooded figure's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [

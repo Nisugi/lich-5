@@ -56,6 +56,10 @@
       {
         name: "Unknown",
         as: 163
+      },
+      {
+        name: "Claw",
+        as: 153
       }
     ],
     bolt_spells: [
@@ -67,6 +71,14 @@
     warding_spells: [
       {
         name: "Pain (711)",
+        cs: 98
+      },
+      {
+        name: "Claw",
+        cs: 98
+      },
+      {
+        name: "Flamberge",
         cs: 98
       }
     ],
@@ -139,7 +151,9 @@
     arrival: [
       "A thunder troll just arrived!"
     ],
-    flee: [],
+    flee: [
+      "A thunder troll runs {direction}."
+    ],
     death: [
       "The thunder troll howls in agony one last time and dies.",
       "A thunder troll dissipates into the air, leaving nothing behind.",
@@ -153,7 +167,9 @@
       "A thunder troll swings {weapon} at you!"
     ],
     bite: [],
-    claw: [],
+    claw: [
+      "A thunder troll claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

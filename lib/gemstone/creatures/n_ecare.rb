@@ -77,7 +77,7 @@
     cle_td: (326..338),
     emp_td: (326..332),
     pal_td: (277..289),
-    ran_td: 277,
+    ran_td: (274..277),
     sor_td: (333..342),
     wiz_td: nil,
     mje_td: (362..371),
@@ -127,7 +127,9 @@
       "The n'ecare falls to the ground motionless.",
       "The n'ecare wails in terrifying pain one last time and lies still."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the n'ecare's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [

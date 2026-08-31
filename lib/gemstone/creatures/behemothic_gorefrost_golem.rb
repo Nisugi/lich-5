@@ -164,7 +164,8 @@
       "A behemothic gorefrost golem swings {pronoun} dark wooden crook in an immense sweep at you!",
       "A behemothic gorefrost golem swings {pronoun} obsidian dagger in an immense sweep at you!",
       "NoneA {pronoun} rears back slowly and swings {weapon} at you!",
-      "A behemothic gorefrost golem swings {pronoun} fel-hafted handaxe in an immense sweep at you!"
+      "A behemothic gorefrost golem swings {pronoun} fel-hafted handaxe in an immense sweep at you!",
+      "Murder in behemothic gorefrost golem eyes, an immense gold-bristled hinterboar tries to gore you with behemothic gorefrost golem tusks!"
     ],
     bite: [],
     claw: [],

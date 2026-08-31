@@ -109,8 +109,8 @@
       "Stun"
     ],
     melee: (294..539),
-    ranged: (235..382),
-    bolt: (235..382),
+    ranged: (235..406),
+    bolt: (235..406),
     udf: (478..741),
     bar_td: nil,
     cle_td: (413..422),
@@ -167,7 +167,9 @@
       "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  He dies with a knowing smile on his face.",
       "Intestines rupture from intense heat; a lithe veiled sentinel dies a slow, painful death."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the veiled sentinel's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [

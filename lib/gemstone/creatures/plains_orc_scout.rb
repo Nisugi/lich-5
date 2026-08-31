@@ -65,7 +65,7 @@
     cle_td: (48..57),
     emp_td: (51..59),
     pal_td: (48..57),
-    ran_td: 51,
+    ran_td: (45..51),
     sor_td: (45..54),
     wiz_td: 57,
     mje_td: (51..57),

@@ -84,8 +84,8 @@
     asg: "12",
     immunities: [],
     melee: (168..348),
-    ranged: nil,
-    bolt: 347,
+    ranged: (184..358),
+    bolt: (184..358),
     udf: (415..542),
     bar_td: 390,
     cle_td: (424..433),
@@ -136,7 +136,8 @@
     spell_prep: [],
     attack: [
       "A war griffin rakes at you with a razor-sharp claw!",
-      "A war griffin tries to spear you with {pronoun} beak!"
+      "A war griffin tries to spear you with {pronoun} beak!",
+      "A war griffin tries to spear you with war griffin beak!"
     ],
     bite: [
       "A war griffin tries to bite you!"

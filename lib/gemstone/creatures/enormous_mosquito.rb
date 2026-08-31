@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: true,
   max_hp: 214,
-  speed: nil,
+  speed: 10,
   height: nil,
   size: "",
   areas: [
@@ -98,7 +98,8 @@
     arrival: [],
     flee: [],
     death: [
-      "Beautiful shot pierces both lungs, the enormous mosquito makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the enormous mosquito makes a wheezing noise, and drops dead!",
+      "The enormous mosquito slumps to the ground."
     ],
     decay: [
       "Growing brittle, the enormous mosquito's body suddenly caves in and turns to dust."

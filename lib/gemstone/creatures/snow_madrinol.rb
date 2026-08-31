@@ -70,7 +70,7 @@
     cle_td: (199..205),
     emp_td: (191..194),
     pal_td: (173..176),
-    ran_td: nil,
+    ran_td: 176,
     sor_td: (203..212),
     wiz_td: nil,
     mje_td: (222..224),

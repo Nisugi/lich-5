@@ -53,8 +53,8 @@
     asg: nil,
     immunities: [],
     melee: (181..278),
-    ranged: (238..239),
-    bolt: (238..239),
+    ranged: (221..254),
+    bolt: (221..254),
     udf: (239..272),
     bar_td: 123,
     cle_td: (143..152),
@@ -101,7 +101,8 @@
     ],
     death: [
       "The frozen corpse wails in terrifying pain one last time and lies still.",
-      "Beautiful shot pierces both lungs, the frozen corpse makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the frozen corpse makes a wheezing noise, and drops dead!",
+      "The frozen corpse slumps to the ground."
     ],
     decay: [],
     search: [],

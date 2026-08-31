@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 260,
-  speed: nil,
+  speed: 13,
   height: 8,
   size: "large",
   areas: [
@@ -65,7 +65,7 @@
     cle_td: (204..222),
     emp_td: (205..208),
     pal_td: (181..190),
-    ran_td: 221,
+    ran_td: 178,
     sor_td: 221,
     wiz_td: nil,
     mje_td: (232..245),

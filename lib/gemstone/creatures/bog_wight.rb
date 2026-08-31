@@ -53,8 +53,8 @@
     asg: "9",
     immunities: [],
     melee: (148..330),
-    ranged: (221..244),
-    bolt: (199..244),
+    ranged: (157..244),
+    bolt: (157..244),
     udf: (208..305),
     bar_td: (126..132),
     cle_td: (145..154),
@@ -99,7 +99,8 @@
     ],
     death: [
       "The bog wight falls to the ground motionless.",
-      "The bog wight wails in terrifying pain one last time and lies still."
+      "The bog wight wails in terrifying pain one last time and lies still.",
+      "The bog wight slumps to the ground."
     ],
     decay: [],
     search: [],

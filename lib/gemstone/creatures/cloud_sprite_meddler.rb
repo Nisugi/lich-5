@@ -109,7 +109,9 @@
     description: [
       "Diminutive in size and with long, spindly limbs, a cloud sprite meddler has enormous almond-shaped eyes that peer curiously out of a heart-shaped face. Tresses of chestnut brown hair fall in a wild mane to just beneath her shoulders, complementing her nut brown skin."
     ],
-    arrival: [],
+    arrival: [
+      "Smacking one fist into his opposite hand in a menacing manner, a cloud sprite bully wanders in."
+    ],
     flee: [],
     death: [
       "Beautiful shot pierces both lungs, the sprite meddler makes a wheezing noise, and drops dead!"

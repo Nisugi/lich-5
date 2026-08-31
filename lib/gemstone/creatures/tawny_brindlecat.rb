@@ -103,7 +103,8 @@
     ],
     death: [
       "The tawny brindlecat's tail twitches feebly as she dies.",
-      "The tawny brindlecat's tail twitches feebly as he dies."
+      "The tawny brindlecat's tail twitches feebly as he dies.",
+      "Beautiful shot pierces both lungs, the tawny brindlecat makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A tawny brindlecat decays into a compost of fangs, fur and claws."

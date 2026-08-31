@@ -61,6 +61,10 @@
       {
         name: "Cold Snap (512)",
         cs: 203
+      },
+      {
+        name: "Claw Curse",
+        cs: 189
       }
     ],
     offensive_spells: [

@@ -35,11 +35,11 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: (271..281)
+        as: (257..281)
       },
       {
         name: "Claw",
-        as: (281..291)
+        as: (236..291)
       },
       {
         name: "Pound",
@@ -57,8 +57,8 @@
     asg: "8N",
     immunities: [],
     melee: 472,
-    ranged: (205..237),
-    bolt: (210..237),
+    ranged: (205..258),
+    bolt: (210..258),
     udf: (254..421),
     bar_td: (143..153),
     cle_td: (158..167),
@@ -122,8 +122,12 @@
     search: [],
     spell_prep: [],
     attack: [],
-    bite: [],
-    claw: [],
+    bite: [
+      "A lesser faeroth tries to bite you!"
+    ],
+    claw: [
+      "A lesser faeroth claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

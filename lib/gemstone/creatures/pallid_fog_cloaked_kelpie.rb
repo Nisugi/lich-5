@@ -13,14 +13,14 @@
   witherable: nil,
   sympathy: nil,
   muggable: nil,
-  sleepable: nil,
+  sleepable: false,
   boss: false,
   boss_type: nil,
   otherclass: [
     "Undead"
   ],
   bcs: nil,
-  max_hp: nil,
+  max_hp: 288,
   speed: nil,
   height: nil,
   size: "",
@@ -62,7 +62,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: (352..602),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -98,8 +98,13 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A pallid fog-cloaked kelpie's dreamy gaze goes lifeless."
+    ],
+    decay: [
+      "A pallid fog-cloaked kelpie dissolves into froth, bubbling back into a standing position before transitioning back into a humanoid form.",
+      "A pallid fog-cloaked kelpie's remains shiver and ripple.  His body collapses into a puddle of saltwater and rotting sargassum."
+    ],
     search: [],
     spell_prep: [],
     attack: [],

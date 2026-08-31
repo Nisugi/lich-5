@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: nil,
   max_hp: nil,
-  speed: nil,
+  speed: 8,
   height: nil,
   size: "",
   areas: [],

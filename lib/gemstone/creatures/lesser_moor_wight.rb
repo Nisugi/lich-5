@@ -47,7 +47,7 @@
       },
       {
         name: "Blackened twisted steel longsword",
-        as: 250
+        as: (225..250)
       },
       {
         name: "Slender enruned steel longsword",
@@ -64,7 +64,11 @@
         name: "Gas cloud"
       }
     ],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Point"
+      }
+    ],
     special_abilities: [],
     special_notes: []
   },
@@ -72,8 +76,8 @@
     asg: "12",
     immunities: [],
     melee: (138..268),
-    ranged: (125..186),
-    bolt: (125..186),
+    ranged: (123..186),
+    bolt: (123..186),
     udf: (235..352),
     bar_td: (110..115),
     cle_td: (100..119),

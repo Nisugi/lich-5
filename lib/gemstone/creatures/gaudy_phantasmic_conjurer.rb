@@ -56,14 +56,14 @@
     asg: "1N",
     immunities: [],
     melee: (527..735),
-    ranged: (531..654),
-    bolt: (531..654),
-    udf: 572,
+    ranged: (531..754),
+    bolt: (531..754),
+    udf: (376..657),
     bar_td: (544..574),
     cle_td: 561,
     emp_td: 561,
     pal_td: (521..527),
-    ran_td: (494..503),
+    ran_td: (521..524),
     sor_td: 558,
     wiz_td: nil,
     mje_td: 476,
@@ -104,8 +104,13 @@
       "A gaudy phantasmic conjurer stalks in impatiently, her gaudy robes drifting several inches above the floor."
     ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "The phantasmic conjurer goes still for a moment while its head reshapes."
+    ],
+    decay: [
+      "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, his skeletal form collapses into blanched powder and blows away.",
+      "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, her skeletal form collapses into blanched powder and blows away."
+    ],
     search: [],
     spell_prep: [],
     attack: [

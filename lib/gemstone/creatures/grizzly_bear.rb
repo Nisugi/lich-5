@@ -38,7 +38,7 @@
       },
       {
         name: "Claw",
-        as: 285
+        as: (242..285)
       },
       {
         name: "Bite",

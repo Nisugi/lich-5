@@ -43,6 +43,10 @@
       {
         name: "Lunge",
         as: 220
+      },
+      {
+        name: "Closed fist",
+        as: 220
       }
     ],
     bolt_spells: [],
@@ -60,8 +64,8 @@
     asg: nil,
     immunities: [],
     melee: (212..319),
-    ranged: (204..254),
-    bolt: (188..254),
+    ranged: (196..284),
+    bolt: (188..284),
     udf: 259,
     bar_td: 127,
     cle_td: 139,

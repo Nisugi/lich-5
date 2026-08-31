@@ -102,7 +102,7 @@
     ran_td: 414,
     sor_td: "422 to 455",
     wiz_td: nil,
-    mje_td: 451,
+    mje_td: (462..472),
     mne_td: "433 to 468",
     mjs_td: (354..444),
     mns_td: (354..444),
@@ -137,6 +137,9 @@
     ],
     arrival: [
       "A triton fanatic just arrived.",
+      "A triton assassin stalks in silently, her cold eyes gleaming with hatred.",
+      "A triton assassin stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton fanatic just arrived, limping."
     ],
     flee: [
       "A triton fanatic heads {direction}.",

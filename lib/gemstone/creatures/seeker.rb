@@ -46,7 +46,7 @@
       },
       {
         name: "Ancient walking stick",
-        as: 271
+        as: (243..271)
       }
     ],
     maneuvers: [
@@ -61,8 +61,8 @@
     asg: "1",
     immunities: [],
     melee: (286..388),
-    ranged: nil,
-    bolt: (273..337),
+    ranged: (258..332),
+    bolt: (258..337),
     udf: (335..456),
     bar_td: nil,
     cle_td: (203..212),
@@ -111,7 +111,8 @@
       "A seeker moans as she shuffles {direction}."
     ],
     death: [
-      "The seeker mutters, \"...the Eye, the Eye...\" and lies still."
+      "The seeker mutters, \"...the Eye, the Eye...\" and lies still.",
+      "The seeker slumps to the ground."
     ],
     decay: [
       "The seeker's left leg crumbles briefly and explodes in a shower of gore."

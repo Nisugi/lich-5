@@ -91,9 +91,9 @@
     asg: "11N",
     immunities: [],
     melee: (204..501),
-    ranged: (240..363),
-    bolt: (240..363),
-    udf: 472,
+    ranged: (240..408),
+    bolt: (240..408),
+    udf: (406..542),
     bar_td: nil,
     cle_td: 463,
     emp_td: (440..447),
@@ -103,7 +103,7 @@
     wiz_td: nil,
     mje_td: 404,
     mne_td: "485 to 498",
-    mjs_td: (348..355),
+    mjs_td: (348..398),
     mns_td: "435 to 457",
     mnm_td: nil,
     defensive_spells: [
@@ -143,7 +143,8 @@
       "An ethereal triton psionicist heads {direction}."
     ],
     death: [
-      "The triton psionicist fades into transparency, her remnants rapidly dissolving into the air."
+      "The triton psionicist fades into transparency, her remnants rapidly dissolving into the air.",
+      "An ethereal triton psionicist's dreamy gaze goes lifeless."
     ],
     decay: [],
     search: [],

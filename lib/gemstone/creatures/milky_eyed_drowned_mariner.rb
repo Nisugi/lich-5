@@ -20,7 +20,7 @@
     "Undead"
   ],
   bcs: nil,
-  max_hp: nil,
+  max_hp: 370,
   speed: nil,
   height: nil,
   size: "",
@@ -45,7 +45,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: (609..722),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,

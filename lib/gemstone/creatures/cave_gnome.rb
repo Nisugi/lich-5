@@ -50,7 +50,7 @@
       },
       {
         name: "Short sword",
-        as: 52
+        as: (46..52)
       },
       {
         name: "Unknown",

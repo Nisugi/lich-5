@@ -61,8 +61,8 @@
     asg: "8N",
     immunities: [],
     melee: (133..141),
-    ranged: (104..206),
-    bolt: (104..206),
+    ranged: (86..206),
+    bolt: (86..206),
     udf: (141..145),
     bar_td: nil,
     cle_td: 74,
@@ -106,7 +106,8 @@
     ],
     flee: [],
     death: [
-      "The water hound lets out one last whimpering sigh of water droplets and dies."
+      "The water hound lets out one last whimpering sigh of water droplets and dies.",
+      "The water hound slumps to the ground."
     ],
     decay: [
       "A water hound decays into a compost of fur and fangs."

@@ -211,7 +211,9 @@
       "The glimmer of a three-lined nassa shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
       "The glimmer of a pink-banded coquina shell catches your eye as the water wyrd gurgles and collapses into the small puddle on the floor.",
       "The glimmer of a violet spinel catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water.",
-      "The glimmer of a pink spinel catches your eye as the water wyrd gurgles and collapses into the large puddle on the floor."
+      "The glimmer of a pink spinel catches your eye as the water wyrd gurgles and collapses into the large puddle on the floor.",
+      "The glimmer of a spiny siren's-comb shell catches your eye as the water wyrd gurgles and collapses into the small pool on the floor.",
+      "The glimmer of a spiny siren's-comb shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water."
     ],
     search: [],
     spell_prep: [],

@@ -106,7 +106,8 @@
       "A wavering moor witch hobbles {direction}."
     ],
     death: [
-      "The moor witch's face takes on a surprised expression and she collapses, motionless."
+      "The moor witch's face takes on a surprised expression and she collapses, motionless.",
+      "The moor witch slumps to the ground."
     ],
     decay: [],
     search: [],

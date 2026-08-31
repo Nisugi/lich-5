@@ -56,7 +56,7 @@
     asg: "8N",
     immunities: [],
     melee: (339..614),
-    ranged: nil,
+    ranged: (319..451),
     bolt: 302,
     udf: (388..727),
     bar_td: (297..306),
@@ -116,9 +116,12 @@
       "A gremlock collapses and his eyes roll up as he dies.",
       "A gremlock's eyes roll up as he dies.",
       "A gremlock collapses and her eyes roll up as she dies.",
-      "Beautiful shot pierces both lungs, the gremlock makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the gremlock makes a wheezing noise, and drops dead!",
+      "The gremlock slumps to the ground."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the gremlock's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [],

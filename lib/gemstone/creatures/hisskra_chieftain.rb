@@ -106,7 +106,8 @@
       "The hisskra chieftain twitches violently, then dies.",
       "The hisskra chieftain collapses in a motionless heap.",
       "The hisskra chieftain contorts in a tortured spasm, then goes still.",
-      "The hisskra chieftain twitches violently in his death throes before finally going still."
+      "The hisskra chieftain twitches violently in his death throes before finally going still.",
+      "The hisskra chieftain slumps to the ground."
     ],
     decay: [
       "A hisskra chieftain decays into a pile of scales and bone.",

@@ -66,14 +66,14 @@
     asg: nil,
     immunities: [],
     melee: 291,
-    ranged: (317..387),
-    bolt: (317..387),
+    ranged: (307..419),
+    bolt: (307..419),
     udf: 470,
     bar_td: nil,
     cle_td: 388,
     emp_td: 380,
     pal_td: (334..337),
-    ran_td: 312,
+    ran_td: 327,
     sor_td: (378..385),
     wiz_td: nil,
     mje_td: (415..524),
@@ -115,7 +115,8 @@
       "A triton dissembler strides in, a wary look on his face.",
       "A triton dissembler strides in, a wary look on her face.",
       "A triton dissembler strides in, gliding swiftly through the water with a wary look on her face.",
-      "A triton dissembler just arrived."
+      "A triton dissembler just arrived.",
+      "A triton executioner stalks in silently, his cold eyes gleaming with hatred."
     ],
     flee: [],
     death: [
@@ -125,6 +126,7 @@
     ],
     decay: [
       "The triton dissembler's left leg crumbles briefly and explodes in a shower of gore.",
+      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
     ],
     search: [],
     spell_prep: [],

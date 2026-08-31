@@ -130,7 +130,8 @@
     spell_prep: [],
     attack: [
       "A kobold shepherd claps {pronoun} hands together in front of you!",
-      "A kobold shepherd claps {pronoun} hands together in front of you!"
+      "A kobold shepherd claps {pronoun} hands together in front of you!",
+      "A kobold shepherd claps kobold shepherd hands together in front of you!"
     ],
     bite: [],
     claw: [],

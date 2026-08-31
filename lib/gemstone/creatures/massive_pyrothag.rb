@@ -48,7 +48,7 @@
       },
       {
         name: "Massive glaes club",
-        as: 302
+        as: (243..302)
       }
     ],
     bolt_spells: [],
@@ -66,8 +66,8 @@
     asg: "12N",
     immunities: [],
     melee: (466..492),
-    ranged: (181..193),
-    bolt: (181..193),
+    ranged: (179..233),
+    bolt: (179..233),
     udf: (336..417),
     bar_td: nil,
     cle_td: 231,

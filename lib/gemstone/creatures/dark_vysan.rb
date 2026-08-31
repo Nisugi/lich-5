@@ -114,7 +114,9 @@
       "The dark vysan falls to the ground motionless.",
       "The dark vysan screams evilly one last time and goes still."
     ],
-    decay: [],
+    decay: [
+      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
+    ],
     search: [],
     spell_prep: [],
     attack: [

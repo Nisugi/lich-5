@@ -88,8 +88,8 @@
     asg: "12N",
     immunities: [],
     melee: (206..324),
-    ranged: (218..275),
-    bolt: (218..275),
+    ranged: (180..293),
+    bolt: (180..293),
     udf: 392,
     bar_td: 246,
     cle_td: (269..278),
@@ -136,7 +136,8 @@
     death: [
       "The lesser griffin writhes in agony, its wings flapping fruitlessly as it dies.",
       "The lesser griffin crashes to the ground, motionless.",
-      "Beautiful shot pierces both lungs, the lesser griffin makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the lesser griffin makes a wheezing noise, and drops dead!",
+      "Awesome shot skewers skull!  The lesser griffin blinks once and falls quite dead!"
     ],
     decay: [
       "The lesser griffin decays into a pile of feathers and fur."

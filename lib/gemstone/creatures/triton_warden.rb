@@ -78,9 +78,9 @@
     asg: "12N",
     immunities: [],
     melee: (130..646),
-    ranged: (259..390),
-    bolt: (259..390),
-    udf: 514,
+    ranged: (259..422),
+    bolt: (259..422),
+    udf: (419..620),
     bar_td: nil,
     cle_td: (426..432),
     emp_td: (421..423),
@@ -88,8 +88,8 @@
     ran_td: (365..375),
     sor_td: "433 to 471",
     wiz_td: nil,
-    mje_td: (401..480),
-    mne_td: (401..480),
+    mje_td: (401..481),
+    mne_td: (401..481),
     mjs_td: (341..366),
     mns_td: (341..366),
     mnm_td: nil,
@@ -128,7 +128,8 @@
       "A faded coat of sun-bleached oilskin graces the muscular shoulders of a triton warden, the rusted ornamentations covered in grey-cast barnacles and dried kelp. His trident-branded knuckles are exposed through his desiccated leather gloves, the shreds of hide clinging tightly to his green-tinged forearms. The warden growls softly through his clenched teeth, the sharp protrusions biting down on a broken driftwood pipe."
     ],
     arrival: [
-      "A triton warden just arrived."
+      "A triton warden just arrived.",
+      "A triton warlock arrives, striding forth with her robes trailing behind her."
     ],
     flee: [
       "A triton warden heads {direction}.",

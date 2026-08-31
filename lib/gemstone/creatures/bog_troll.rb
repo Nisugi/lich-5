@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 8,
   height: 10,
   size: "large",
   areas: [
@@ -39,6 +39,10 @@
       {
         name: "Thick Wooden Knurl",
         as: (244..314)
+      },
+      {
+        name: "Claw",
+        as: 234
       }
     ],
     bolt_spells: [],
@@ -102,7 +106,8 @@
     death: [
       "The bog troll twitches violently, then dies.",
       "The bog troll tries to get back up but finally collapses and goes still.",
-      "Beautiful shot pierces both lungs, the bog troll makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the bog troll makes a wheezing noise, and drops dead!",
+      "The bog troll slumps to the ground."
     ],
     decay: [
       "A bog troll decays into compost."
@@ -113,7 +118,9 @@
       "A bog troll swings {weapon} at you!"
     ],
     bite: [],
-    claw: [],
+    claw: [
+      "A bog troll claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

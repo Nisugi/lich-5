@@ -75,14 +75,14 @@
     asg: "11",
     immunities: [],
     melee: (205..371),
-    ranged: (197..246),
-    bolt: (197..246),
+    ranged: (127..254),
+    bolt: (127..254),
     udf: (509..578),
     bar_td: (215..227),
     cle_td: (255..265),
     emp_td: (254..264),
     pal_td: (214..217),
-    ran_td: nil,
+    ran_td: (217..220),
     sor_td: (271..284),
     wiz_td: nil,
     mje_td: (270..276),
@@ -127,7 +127,9 @@
     flee: [],
     death: [
       "The Ivasian inciter twitches violently, then dies.",
-      "The Ivasian inciter slumps to the ground."
+      "The Ivasian inciter slumps to the ground.",
+      "Beautiful shot pierces both lungs, the Ivasian inciter makes a wheezing noise, and drops dead!",
+      "Awesome shot skewers skull!  The Ivasian inciter blinks once and falls quite dead!"
     ],
     decay: [
       "The Ivasian inciter's right leg crumbles briefly and explodes in a shower of gore.",

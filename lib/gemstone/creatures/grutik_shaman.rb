@@ -47,6 +47,14 @@
       {
         name: "Sleep (501)",
         cs: 165
+      },
+      {
+        name: "Burrow Ambush",
+        cs: 165
+      },
+      {
+        name: "Gnarled wooden staff",
+        cs: 165
       }
     ],
     offensive_spells: [

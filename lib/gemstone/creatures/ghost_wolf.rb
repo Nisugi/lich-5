@@ -120,7 +120,9 @@
     bite: [
       "A ghost wolf tries to bite you!"
     ],
-    claw: [],
+    claw: [
+      "A ghost wolf claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

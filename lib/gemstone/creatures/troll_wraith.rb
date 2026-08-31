@@ -39,7 +39,12 @@
       }
     ],
     bolt_spells: [],
-    warding_spells: [],
+    warding_spells: [
+      {
+        name: "Point",
+        cs: 177
+      }
+    ],
     offensive_spells: [],
     maneuvers: [],
     special_abilities: [],

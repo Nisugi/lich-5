@@ -96,7 +96,8 @@
     death: [
       "The undertaker bat twitches violently, then dies.",
       "The undertaker bat flaps its wings in a last ditch effort to ascend from the ground, but fails and finally lies still.",
-      "As the strength drains out of the undertaker bat's wings, it falls to the ground in a motionless heap."
+      "As the strength drains out of the undertaker bat's wings, it falls to the ground in a motionless heap.",
+      "The undertaker bat slumps to the ground."
     ],
     decay: [
       "The undertaker bat decays into a tuft of matted hair and leathery wings."

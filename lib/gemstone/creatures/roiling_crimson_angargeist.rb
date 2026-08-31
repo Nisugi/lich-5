@@ -22,7 +22,7 @@
     }
   ],
   bcs: true,
-  max_hp: 603,
+  max_hp: 622,
   speed: nil,
   height: 13,
   size: "large",
@@ -70,7 +70,7 @@
     melee: (530..739),
     ranged: (452..600),
     bolt: (452..600),
-    udf: 559,
+    udf: (490..652),
     bar_td: nil,
     cle_td: (486..492),
     emp_td: 477,

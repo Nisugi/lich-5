@@ -134,7 +134,8 @@
     ],
     death: [],
     decay: [
-      "A forest trali shaman's body crumbles into dust and is scattered by a stiff breeze."
+      "A forest trali shaman's body crumbles into dust and is scattered by a stiff breeze.",
+      "Acid dissolves connecting cartilage, freeing the trali shaman's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

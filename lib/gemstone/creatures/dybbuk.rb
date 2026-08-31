@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 12,
   height: 8,
   size: "large",
   areas: [
@@ -35,7 +35,7 @@
     physical_attacks: [
       {
         name: "Length of Rusted Chain",
-        as: 298
+        as: (293..298)
       }
     ],
     bolt_spells: [],
@@ -88,7 +88,8 @@
       "The dybbuk is a piecemeal composition of horror, its mismatched sections of body coalesced into a whole that would frighten a banshee. The thing lumbers, managing to look clumsy and menacing at the same time. The skin is pallid and stretched, and in places, gaping wounds reveal worse atrophy than that evident on the abomination's exterior. Huge hands grope before the dybbuk's trunk, sweeping around it in flailing arcs and leaving no doubt that close proximity to the creature spells dire results."
     ],
     arrival: [
-      "A dybbuk shambles in!"
+      "A dybbuk shambles in!",
+      "A dybbuk just arrived."
     ],
     flee: [
       "A dybbuk shambles {direction}."

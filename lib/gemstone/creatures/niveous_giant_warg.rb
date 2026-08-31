@@ -142,6 +142,12 @@
     attack: [
       "A niveous giant warg bounds forward and slashes at you with a foreclaw!",
       "A niveous giant warg lunges at you, maw slathering as niveous giant warg tries to take a ferocious bite!",
+      "A brawny gigas shield-maiden launches a quick bash with niveous giant warg golden targe at you!",
+      "A savage fork-tongued wendigo's jaw unhinges as it tries to ravage you with niveous giant warg shark-like teeth!",
+      "Froth bubbling on niveous giant warg lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!",
+      "Lowering niveous giant warg head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
+      "Murder in niveous giant warg eyes, an immense gold-bristled hinterboar tries to gore you with niveous giant warg tusks!",
+      "Rearing up on niveous giant warg hind legs, an immense gold-bristled hinterboar stomps at you with niveous giant warg huge hooves!"
     ],
     bite: [],
     claw: [],

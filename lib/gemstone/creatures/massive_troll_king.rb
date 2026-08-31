@@ -104,6 +104,7 @@
     ],
     arrival: [
       "A massive troll king arrives, flexing its massive claws.",
+      "A resolute dhu goleras arrives with a loping, uneven gait, her body rocking side-to-side and her head and arms flopping wildly."
     ],
     flee: [],
     death: [
@@ -111,6 +112,8 @@
     ],
     decay: [
       "A massive troll king decays away into compost.",
+      "Acid dissolves connecting cartilage, freeing the troll king's ribs to move independently.",
+      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust."
     ],
     search: [],
     spell_prep: [],

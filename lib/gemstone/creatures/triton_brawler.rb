@@ -139,7 +139,9 @@
       "The triton brawler gurgles once and goes still, a wrathful look on her face.",
       "The triton brawler gurgles once and goes still, a wrathful look on his face."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the triton brawler's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [],

@@ -42,7 +42,7 @@
       },
       {
         name: "Trident",
-        as: (222..227)
+        as: (205..227)
       }
     ],
     bolt_spells: [],
@@ -117,7 +117,8 @@
       "A hisskra warrior decays into a pile of scales and bone.",
       "A hisskra warrior's scales wither as he decays into dust.",
       "A hisskra warrior withers away, leaving nothing but a few scales that blow away on a gentle breeze.",
-      "The hisskra warrior's left leg crumbles briefly and explodes in a shower of gore."
+      "The hisskra warrior's left leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the hisskra warrior's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

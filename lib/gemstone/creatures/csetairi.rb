@@ -86,14 +86,14 @@
     asg: "5N",
     immunities: [],
     melee: (357..545),
-    ranged: (272..334),
-    bolt: nil,
+    ranged: (269..385),
+    bolt: (269..385),
     udf: (409..497),
     bar_td: (292..300),
     cle_td: (327..337),
     emp_td: (322..332),
     pal_td: (296..306),
-    ran_td: nil,
+    ran_td: (284..294),
     sor_td: (341..349),
     wiz_td: nil,
     mje_td: (360..365),
@@ -140,7 +140,8 @@
       "A csetairi slithers {direction}."
     ],
     death: [
-      "Intestines rupture from intense heat; a csetairi dies a slow, painful death."
+      "Intestines rupture from intense heat; a csetairi dies a slow, painful death.",
+      "Beautiful shot pierces both lungs, the csetairi makes a wheezing noise, and drops dead!"
     ],
     decay: [],
     search: [],

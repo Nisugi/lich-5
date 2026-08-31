@@ -102,7 +102,8 @@
       "The wolverine falls back into a heap and dies.",
       "The wolverine hisses one last time and dies.",
       "The wolverine twitches violently, then dies.",
-      "Beautiful shot pierces both lungs, the wolverine makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the wolverine makes a wheezing noise, and drops dead!",
+      "The wolverine slumps to the ground."
     ],
     decay: [
       "A wolverine decays into compost."

@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 150,
-  speed: nil,
+  speed: 7,
   height: 1,
   size: "medium",
   areas: [
@@ -97,9 +97,12 @@
     ],
     flee: [],
     death: [
-      "A phosphorescent worm slumps to the ground, its glowing form now motionless and dull."
+      "A phosphorescent worm slumps to the ground, its glowing form now motionless and dull.",
+      "The phosphorescent worm slumps to the ground."
     ],
-    decay: [],
+    decay: [
+      "A luminous arachnid's legs shrivel up beneath it as it decays into dust."
+    ],
     search: [],
     spell_prep: [],
     attack: [

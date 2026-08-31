@@ -43,7 +43,7 @@
       },
       {
         name: "Fist",
-        as: 331
+        as: (331..345)
       },
       {
         name: "Foot",

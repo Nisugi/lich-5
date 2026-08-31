@@ -21,7 +21,7 @@
     "Extraplanar"
   ],
   bcs: true,
-  max_hp: 307,
+  max_hp: 346,
   speed: 4,
   height: 6,
   size: "medium",
@@ -79,9 +79,9 @@
       "stun"
     ],
     melee: "304 DS",
-    ranged: "296-342 DS",
-    bolt: "340-370 DS",
-    udf: 558,
+    ranged: (268..468),
+    bolt: (268..468),
+    udf: (476..826),
     bar_td: 406,
     cle_td: (440..445),
     emp_td: (409..440),
@@ -89,8 +89,8 @@
     ran_td: (371..381),
     sor_td: 453,
     wiz_td: 466,
-    mje_td: 466,
-    mne_td: 466,
+    mje_td: (466..521),
+    mne_td: (466..521),
     mjs_td: 440,
     mns_td: 440,
     mnm_td: nil,
@@ -130,6 +130,8 @@
     death: [
       "Just as you incant, the Ithzir champion shimmers and fades away, leaving you gesturing at nothingness!",
       "The Ithzir champion vainly struggles to rise, then goes still.",
+      "An Ithzir champion's body shimmers slightly, then fades from view like a dissipating phantom.",
+      "Just as you move to cast, the Ithzir champion shimmers and fades away, leaving you gesturing at nothingness!"
     ],
     decay: [],
     search: [],

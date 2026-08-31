@@ -98,7 +98,8 @@
       "The mountain rolton collapses to the ground, emits a final bleat, and dies.",
       "The mountain rolton lets out a final agonized bleat and dies.",
       "The mountain rolton twitches violently, then dies.",
-      "The mountain rolton collapses to the ground, emits a final silent bleat, and dies."
+      "The mountain rolton collapses to the ground, emits a final silent bleat, and dies.",
+      "The mountain rolton slumps to the ground."
     ],
     decay: [
       "A mountain rolton decays into a pile of fur and bone."

@@ -63,6 +63,10 @@
       {
         name: "Silence (210)",
         cs: 150
+      },
+      {
+        name: "Wickedly barbed leather whip",
+        cs: 156
       }
     ],
     offensive_spells: [
@@ -88,7 +92,7 @@
     asg: "2",
     immunities: [],
     melee: (210..272),
-    ranged: (136..187),
+    ranged: (135..190),
     bolt: 220,
     udf: 261,
     bar_td: nil,
@@ -142,7 +146,8 @@
     arrival: [],
     flee: [],
     death: [
-      "Beautiful shot pierces both lungs, the monastic lich makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the monastic lich makes a wheezing noise, and drops dead!",
+      "The monastic lich slumps to the ground."
     ],
     decay: [
       "A monastic lich dissolves into a foul-smelling miasma."

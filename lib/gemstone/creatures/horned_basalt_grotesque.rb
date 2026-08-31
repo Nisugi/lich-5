@@ -18,7 +18,7 @@
   boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 750,
+  max_hp: 794,
   speed: nil,
   height: 8,
   size: "large",
@@ -84,9 +84,9 @@
     asg: "20N",
     immunities: [],
     melee: (294..607),
-    ranged: (247..423),
-    bolt: (247..423),
-    udf: nil,
+    ranged: (247..448),
+    bolt: (247..448),
+    udf: (481..693),
     bar_td: (490..520),
     cle_td: nil,
     emp_td: 471,
@@ -124,7 +124,8 @@
       "Huge and hulking, the basalt grotesque is an imposing figure cut from black basalt. Roughly humanoid in shape though not in particulars, the grotesque has a bestial visage. The carved musculature of its back joins with two great wings that span wider than it is tall. From its head sprouts a quintet of rounded horns. Its eyes, a burning green, match the hue of a viridian soulstone embedded into the rock of its broad chest.\n\nAppraisal:\nThe basalt grotesque is large in size, about eight feet high in its current state, appears to be of exceptionally hardy constitution, is in a guarded stance, and is in relatively good shape."
     ],
     arrival: [
-      "A horned basalt grotesque stomps in, stony wings spread behind it like a flourished cloak."
+      "A horned basalt grotesque stomps in, stony wings spread behind it like a flourished cloak.",
+      "A horned basalt grotesque stomps in, shedding chips of stone from cracks along its limbs."
     ],
     flee: [],
     death: [],

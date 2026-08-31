@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 10,
   height: 7,
   size: "large",
   areas: [
@@ -44,6 +44,10 @@
       {
         name: "Pound",
         as: (305..338)
+      },
+      {
+        name: "Fist",
+        as: 297
       }
     ],
     bolt_spells: [],
@@ -108,9 +112,15 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attack: [
+      "A greater faeroth pounds at you with {pronoun} fist!"
+    ],
+    bite: [
+      "A greater faeroth tries to bite you!"
+    ],
+    claw: [
+      "A greater faeroth claws at you!"
+    ],
     info: {
       general: [],
       class_tips: {

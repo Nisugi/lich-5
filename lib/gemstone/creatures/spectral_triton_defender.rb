@@ -70,14 +70,14 @@
     asg: nil,
     immunities: [],
     melee: (236..446),
-    ranged: (215..390),
-    bolt: (215..390),
+    ranged: (206..428),
+    bolt: (206..428),
     udf: (501..744),
     bar_td: nil,
     cle_td: (358..367),
     emp_td: 368,
     pal_td: (311..320),
-    ran_td: (305..314),
+    ran_td: (305..317),
     sor_td: (376..385),
     wiz_td: nil,
     mje_td: nil,
@@ -95,7 +95,9 @@
   abilities_misc: [],
   equipment: [
     "a lackluster blue steel harpoon",
-    "a thick canvas sling"
+    "a thick canvas sling",
+    "a bronze-bound large driftwood shield",
+    "a tarnished dark silver harpoon"
   ],
   treasure: {
     coins: nil,
@@ -111,14 +113,26 @@
     ],
     arrival: [
       "A spectral triton defender just arrived.",
+      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
+      "A triton combatant strides in, a wary look on her face.",
+      "A triton radical strides in, a wary look on her face.",
+      "A triton dissembler strides in, a wary look on his face.",
+      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
+      "A triton radical strides in, a wary look on his face.",
+      "A triton executioner strides in, a wary look on her face."
     ],
     flee: [],
     death: [
       "The triton defender fades into transparency, her remnants rapidly dissolving into the air.",
       "The triton defender fades into transparency, his remnants rapidly dissolving into the air.",
-      "The triton defender goes still for a moment while its head reshapes."
+      "The triton defender goes still for a moment while its head reshapes.",
+      "The spectral form of the triton defender tenses in agony as she begins to dissolve from the bottom up!",
+      "The spectral form of the triton defender tenses in agony as he begins to dissolve from the bottom up!"
     ],
-    decay: [],
+    decay: [
+      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
+    ],
     search: [],
     spell_prep: [],
     attack: [

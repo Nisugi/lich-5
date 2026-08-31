@@ -62,8 +62,8 @@
     asg: "2",
     immunities: [],
     melee: (283..521),
-    ranged: (256..423),
-    bolt: (256..423),
+    ranged: (201..423),
+    bolt: (201..423),
     udf: (381..617),
     bar_td: nil,
     cle_td: (399..409),
@@ -123,7 +123,8 @@
       "The vaespilon wails in terrifying pain one last time and lies still."
     ],
     decay: [
-      "All the malice and magic that once held the vaespilon together dissipates, leaving nothing but a husk which crumbles to dust."
+      "All the malice and magic that once held the vaespilon together dissipates, leaving nothing but a husk which crumbles to dust.",
+      "Acid dissolves connecting cartilage, freeing the vaespilon's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

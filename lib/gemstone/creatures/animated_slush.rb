@@ -41,7 +41,7 @@
       },
       {
         name: "Icy appendage",
-        as: 263
+        as: (263..267)
       },
       {
         name: "Stream of water",
@@ -92,7 +92,7 @@
     cle_td: (202..208),
     emp_td: (200..208),
     pal_td: (171..180),
-    ran_td: nil,
+    ran_td: (171..180),
     sor_td: (206..212),
     wiz_td: nil,
     mje_td: (215..224),

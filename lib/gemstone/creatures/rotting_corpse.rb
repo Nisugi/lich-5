@@ -34,7 +34,7 @@
     physical_attacks: [
       {
         name: "Scythe",
-        as: 266
+        as: (236..266)
       },
       {
         name: "Bite (attack)",
@@ -91,7 +91,9 @@
     description: [
       "Stumbling, staggering, cartwheeling wildly, the rotting corpse moves like a large marionette controlled by a drunken hand. Bits of flesh, sinew and disintegrating rags hang from its bony humanoid skeleton. The corpse hunts the living relentlessly, driven by an envy of the living world apparent in her hate-filled eyes."
     ],
-    arrival: [],
+    arrival: [
+      "A rotting corpse shambles in!"
+    ],
     flee: [
       "A rotting corpse shambles {direction}."
     ],
@@ -101,7 +103,9 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A rotting corpse swings {weapon} at you!"
+    ],
     bite: [],
     claw: [],
     info: {

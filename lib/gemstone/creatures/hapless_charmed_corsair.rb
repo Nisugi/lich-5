@@ -80,7 +80,7 @@
     melee: nil,
     ranged: nil,
     bolt: nil,
-    udf: nil,
+    udf: (564..892),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -114,9 +114,14 @@
     description: [
       "Only tattered rags are left of the corsair's colorfully piratical attire. The remnants are faded by sun and stained with salt, their ragged holes revealing sunburnt skin beneath. Despite her tatterdemain state and the ravages of the elements to her exposed flesh, the charmed corsair's expression is dispassionate and her eyes devoid of sentience. A faint aura of magic tinged an unsavory pink enshrouds her."
     ],
-    arrival: [],
+    arrival: [
+      "A hapless charmed corsair flies into a sudden fit of rage!"
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The fury twitching across a hapless charmed corsair's features dies away, leaving him looking empty and mindless.",
+      "The fury twitching across a hapless charmed corsair's features dies away, leaving her looking empty and mindless."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

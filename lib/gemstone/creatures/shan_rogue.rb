@@ -43,8 +43,8 @@
     asg: nil,
     immunities: [],
     melee: (271..436),
-    ranged: (260..284),
-    bolt: (260..284),
+    ranged: (260..336),
+    bolt: (260..336),
     udf: 323,
     bar_td: nil,
     cle_td: (236..245),
@@ -95,6 +95,7 @@
       "A shan rogue's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
       "A shan rogue's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
       "The shan rogue yips in pain as she falls to the ground motionless.",
+      "A shan shaman's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
     ],
     decay: [],
     search: [],

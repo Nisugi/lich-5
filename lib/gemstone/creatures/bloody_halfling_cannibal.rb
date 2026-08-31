@@ -67,7 +67,7 @@
       },
       {
         name: "Shark-like teeth",
-        as: 505
+        as: (505..573)
       },
       {
         name: "Tusks",
@@ -98,9 +98,9 @@
     asg: "12",
     immunities: [],
     melee: (269..646),
-    ranged: (353..432),
-    bolt: (353..432),
-    udf: (586..805),
+    ranged: (269..471),
+    bolt: (269..471),
+    udf: (535..805),
     bar_td: (364..379),
     cle_td: (378..464),
     emp_td: 428,
@@ -155,7 +155,8 @@
     death: [
       "A monstrous, too-wide smile spreads across the cannibal's face as {pronoun} collapses to the ground, dead.",
       "A monstrous, too-wide smile spreads across the cannibal's face as he collapses to the ground, dead.",
-      "A monstrous, too-wide smile spreads across the cannibal's face as she collapses to the ground, dead."
+      "A monstrous, too-wide smile spreads across the cannibal's face as she collapses to the ground, dead.",
+      "The halfling cannibal slumps to the ground."
     ],
     decay: [
       "A bloody halfling cannibal's body rots away, leaving only a small stain on the ground.",
@@ -176,6 +177,13 @@
       "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hurtles at you, swinging wildly with a twisted obsidian dagger!",
       "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and bares {pronoun} sharpened teeth as she tries to bite into you!",
       "A bloody halfling cannibal bares {pronoun} sharpened teeth as she tries to bite into you!",
+      "A bloody halfling cannibal bares bloody halfling cannibal sharpened teeth as he tries to bite into you!",
+      "A bloody halfling cannibal bares bloody halfling cannibal sharpened teeth as she tries to bite into you!",
+      "A niveous giant warg lunges at you, maw slathering as bloody halfling cannibal tries to take a ferocious bite!",
+      "A savage fork-tongued wendigo flails with bloody halfling cannibal clawed fists at you!",
+      "A savage fork-tongued wendigo's jaw unhinges as it tries to ravage you with bloody halfling cannibal shark-like teeth!",
+      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and bares bloody halfling cannibal sharpened teeth as he tries to bite into you!",
+      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and bares bloody halfling cannibal sharpened teeth as she tries to bite into you!"
     ],
     claw: [],
     hide: "A bloody halfling cannibal darts into the shadows.",

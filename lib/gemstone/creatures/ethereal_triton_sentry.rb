@@ -20,7 +20,7 @@
     "Non-corporeal undead"
   ],
   bcs: true,
-  max_hp: 239,
+  max_hp: 265,
   speed: nil,
   height: 6,
   size: "medium",
@@ -71,14 +71,14 @@
     asg: nil,
     immunities: [],
     melee: nil,
-    ranged: (373..461),
-    bolt: (373..461),
-    udf: 539,
+    ranged: (364..483),
+    bolt: (364..483),
+    udf: (382..648),
     bar_td: nil,
     cle_td: (440..450),
     emp_td: (432..442),
     pal_td: (379..389),
-    ran_td: 392,
+    ran_td: (385..392),
     sor_td: nil,
     wiz_td: nil,
     mje_td: nil,
@@ -109,11 +109,17 @@
     description: [
       "The triton sentry holds himself erect, as he skims along the ground on long-nailed translucent webbed feet. Obsessively alert, the creature sniffs constantly and halts to listen every few moments. Despite empty eye sockets, constantly weeping viscous green mucus, he peers into the shadows for infiltrators, his head constantly turning with rapid, jerky motions. Threadbare green-belted robes cover his insubstantial frame."
     ],
-    arrival: [],
+    arrival: [
+      "A triton radical strides in, gliding swiftly through the water with a wary look on her face.",
+      "A triton combatant strides in, gliding swiftly through the water with a wary look on his face.",
+      "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
+      "An ethereal triton sentry just arrived."
+    ],
     flee: [],
     death: [
       "The triton sentry fades into transparency, her remnants rapidly dissolving into the air.",
-      "The triton sentry fades into transparency, his remnants rapidly dissolving into the air."
+      "The triton sentry fades into transparency, his remnants rapidly dissolving into the air.",
+      "The triton sentry goes still for a moment while its head reshapes."
     ],
     decay: [],
     search: [],

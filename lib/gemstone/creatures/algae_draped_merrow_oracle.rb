@@ -18,8 +18,8 @@
   boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: nil,
-  speed: nil,
+  max_hp: 1616,
+  speed: 6,
   height: nil,
   size: "",
   areas: [
@@ -47,7 +47,7 @@
     melee: (691..724),
     ranged: (597..605),
     bolt: (597..605),
-    udf: nil,
+    udf: (586..943),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -85,7 +85,10 @@
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "An algae-draped merrow oracle just arrived.  Wait, wasn't she here already?",
+      "An algae-draped merrow oracle just arrived.  Wait, wasn't he here already?"
+    ],
     flee: [],
     death: [],
     decay: [],

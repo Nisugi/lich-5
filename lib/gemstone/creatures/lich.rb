@@ -143,7 +143,8 @@
       "An infernal lich strides in, leaving a scorched path in her wake.",
       "A frostborne lich strides in, leaving thin layer of frost in her wake.",
       "A frostborne lich strides in, leaving thin layer of frost in his wake.",
-      "A frostborne lich just arrived.  Wait, wasn't he here already?"
+      "A frostborne lich just arrived.  Wait, wasn't he here already?",
+      "A frostborne lich just arrived.  Wait, wasn't she here already?"
     ],
     flee: [],
     death: [],

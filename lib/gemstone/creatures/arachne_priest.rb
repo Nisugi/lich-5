@@ -134,7 +134,9 @@
       "The Arachne priest slumps to the ground and dies.",
       "The Arachne priestess exhales a final curse and dies."
     ],
-    decay: [],
+    decay: [
+      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
+    ],
     search: [],
     spell_prep: [],
     attack: [

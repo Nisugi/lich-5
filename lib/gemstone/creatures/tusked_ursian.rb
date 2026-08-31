@@ -110,7 +110,8 @@
     ],
     death: [
       "The tusked ursian collapses heavily into a heap on the ground and dies.",
-      "The tusked ursian lets out a blood-curdling roar and dies."
+      "The tusked ursian lets out a blood-curdling roar and dies.",
+      "The tusked ursian slumps to the ground."
     ],
     decay: [],
     search: [],

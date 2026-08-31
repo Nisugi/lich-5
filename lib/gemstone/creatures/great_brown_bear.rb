@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 190,
-  speed: nil,
+  speed: 14,
   height: 4,
   size: "large",
   areas: [
@@ -103,7 +103,8 @@
       "The great brown bear weighs around 500 pounds and is about eight feet long. This bear is dark brown in color and has a characteristic muscle hump over the shoulders and longer claws on her front paws than on her rear paws."
     ],
     arrival: [
-      "A great brown bear lumbers in!"
+      "A great brown bear lumbers in!",
+      "A great brown bear slowly lumbers in, growling in pain!"
     ],
     flee: [
       "A great brown bear slowly lumbers {direction}, growling in pain.",
@@ -115,6 +116,7 @@
     ],
     decay: [
       "A great brown bear decays into a compost of fangs, fur and claws.",
+      "A small, green cloud of smelly gas rises from the body of a kobold as he decays into compost."
     ],
     search: [],
     spell_prep: [],

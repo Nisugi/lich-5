@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 390,
-  speed: nil,
+  speed: 8,
   height: nil,
   size: "large",
   areas: [
@@ -38,7 +38,7 @@
       },
       {
         name: "Claw",
-        as: 245
+        as: (220..245)
       },
       {
         name: "Impale",
@@ -46,13 +46,21 @@
       },
       {
         name: "Swoop",
-        as: 245
+        as: (220..245)
+      },
+      {
+        name: "Beak",
+        as: 211
       }
     ],
     bolt_spells: [],
     warding_spells: [],
     offensive_spells: [],
-    maneuvers: [],
+    maneuvers: [
+      {
+        name: "Wing Buffet"
+      }
+    ],
     special_abilities: [
       {
         name: "Wing buffet"
@@ -71,7 +79,7 @@
     cle_td: (100..106),
     emp_td: (107..114),
     pal_td: (102..111),
-    ran_td: (99..105),
+    ran_td: (99..108),
     sor_td: (113..122),
     wiz_td: nil,
     mje_td: 119,
@@ -106,14 +114,18 @@
     ],
     death: [
       "The colossus vulture writhes in agony, its wings flapping fruitlessly as it dies.",
-      "The colossus vulture crashes to the ground, motionless."
+      "The colossus vulture crashes to the ground, motionless.",
+      "The colossus vulture slumps to the ground."
     ],
     decay: [
       "The colossus vulture decays into a pile of feathers."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
+    attack: [
+      "A colossus vulture rakes at you with a razor-sharp claw!",
+      "A colossus vulture tries to spear you with colossus vulture beak!"
+    ],
     bite: [],
     claw: [],
     info: {

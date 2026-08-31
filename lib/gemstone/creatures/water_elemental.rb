@@ -74,7 +74,7 @@
     cle_td: 427,
     emp_td: 407,
     pal_td: (368..377),
-    ran_td: nil,
+    ran_td: 383,
     sor_td: nil,
     wiz_td: nil,
     mje_td: 502,
@@ -112,7 +112,9 @@
       "The water elemental's upper body is that of a humanoid, while its lower body forms a turbulent, watery vortex. The facial features of the elemental creature are vague and shifting, rippling with every contortion of its face. Sloshing and splashing noises accompany each movement of the water elemental, along with an odd gurgling."
     ],
     arrival: [
-      "A water elemental just arrived."
+      "A water elemental just arrived.",
+      "A triton executioner strides in, gliding swiftly through the water with a wary look on his face.",
+      "A triton executioner strides in, gliding swiftly through the water with a wary look on her face."
     ],
     flee: [],
     death: [],
@@ -169,7 +171,11 @@
       "The glimmer of a pink dreamstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
       "The glimmer of a violet spinel catches your eye as the water elemental gurgles eerily and collapses into the water.",
       "The glimmer of a dragonfire opal catches your eye as the water elemental gurgles eerily and collapses into the water.",
-      "The glimmer of a golden moonstone catches your eye as the water elemental gurgles eerily and collapses into the water."
+      "The glimmer of a golden moonstone catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a star sapphire catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
+      "The glimmer of a yellow sapphire catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a pink rhodochrosite stone catches your eye as the water elemental gurgles eerily and collapses into the water.",
+      "The glimmer of a light pink morganite stone catches your eye as the water elemental gurgles eerily and collapses into the water."
     ],
     search: [],
     spell_prep: [],

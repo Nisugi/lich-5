@@ -73,7 +73,7 @@
     cle_td: 45,
     emp_td: (45..53),
     pal_td: (39..48),
-    ran_td: (39..45),
+    ran_td: (39..51),
     sor_td: (42..51),
     wiz_td: nil,
     mje_td: (42..45),

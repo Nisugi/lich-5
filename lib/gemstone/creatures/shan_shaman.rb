@@ -43,14 +43,14 @@
     asg: nil,
     immunities: [],
     melee: (378..498),
-    ranged: (278..456),
-    bolt: (278..456),
+    ranged: (257..458),
+    bolt: (257..458),
     udf: (341..558),
     bar_td: nil,
     cle_td: (313..323),
     emp_td: (310..320),
     pal_td: (277..287),
-    ran_td: (275..284),
+    ran_td: (275..287),
     sor_td: (310..320),
     wiz_td: nil,
     mje_td: (317..322),
@@ -96,7 +96,8 @@
       "The shan shaman yips in pain as he falls to the ground motionless.",
       "A shan shaman's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
       "A shan shaman's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
-      "Beautiful shot pierces both lungs, the shan shaman makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the shan shaman makes a wheezing noise, and drops dead!",
+      "Awesome shot skewers skull!  The shan shaman blinks once and falls quite dead!"
     ],
     decay: [
       "The shan shaman's right leg crumbles briefly and explodes in a shower of gore."

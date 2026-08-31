@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 375,
-  speed: nil,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -74,9 +74,9 @@
     asg: "8N",
     immunities: [],
     melee: (427..567),
-    ranged: (446..704),
-    bolt: (446..704),
-    udf: 530,
+    ranged: (379..710),
+    bolt: (379..710),
+    udf: (498..727),
     bar_td: (503..507),
     cle_td: (486..492),
     emp_td: 488,
@@ -119,11 +119,15 @@
     ],
     arrival: [
       "An ashen patrician vampire prowls in, deadly grace in every fluid step.  With a smirk that twists her exquisite features, she bares her shining white fangs.",
-      "An ashen patrician vampire strides in, moving like flowing water."
+      "An ashen patrician vampire strides in, moving like flowing water.",
+      "An ashen patrician vampire prowls in, deadly grace in every fluid step.  With a smirk that twists his exquisite features, he bares his shining white fangs."
     ],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, his skeletal form collapses into blanched powder and blows away.",
+      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as her skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones."
+    ],
     search: [],
     spell_prep: [],
     attack: [],

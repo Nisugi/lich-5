@@ -118,7 +118,8 @@
     ],
     death: [
       "The moulis twitches violently, then dies.",
-      "The moulis flails wildly for a moment before going still, its appendages dropping lifelessly to the ground."
+      "The moulis flails wildly for a moment before going still, its appendages dropping lifelessly to the ground.",
+      "The moulis slumps to the ground."
     ],
     decay: [
       "A moulis crumbles into a putrid compost.",

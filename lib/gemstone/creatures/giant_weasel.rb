@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 130,
-  speed: nil,
+  speed: 7,
   height: 2,
   size: "medium",
   areas: [
@@ -105,7 +105,8 @@
     death: [
       "The giant weasel collapses to the ground, emits a final cry, and dies.",
       "The giant weasel lets out a final agonized cry and dies.",
-      "Beautiful shot pierces both lungs, the giant weasel makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the giant weasel makes a wheezing noise, and drops dead!",
+      "The giant weasel slumps to the ground."
     ],
     decay: [
       "A giant weasel decays into a pile of fur and bone."

@@ -127,6 +127,7 @@
     ],
     decay: [
       "A jungle troll chieftain decays into compost.",
+      "A giant fog beetle's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],

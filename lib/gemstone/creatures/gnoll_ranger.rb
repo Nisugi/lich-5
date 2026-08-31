@@ -114,7 +114,9 @@
       "The gnoll ranger falls to the ground and dies.",
       "The gnoll ranger rolls over and dies."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the gnoll ranger's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [],

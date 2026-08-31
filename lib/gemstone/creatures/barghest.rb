@@ -38,11 +38,11 @@
       },
       {
         name: "Bite",
-        as: (206..234)
+        as: (197..234)
       },
       {
         name: "Charge",
-        as: 214
+        as: (206..214)
       }
     ],
     bolt_spells: [],
@@ -56,8 +56,8 @@
     asg: "8N",
     immunities: [],
     melee: (129..250),
-    ranged: (137..190),
-    bolt: (137..190),
+    ranged: (123..190),
+    bolt: (123..190),
     udf: (160..272),
     bar_td: 109,
     cle_td: (121..130),

@@ -72,8 +72,8 @@
     asg: "various",
     immunities: [],
     melee: (92..144),
-    ranged: (90..118),
-    bolt: (90..118),
+    ranged: (47..118),
+    bolt: (47..118),
     udf: (151..155),
     bar_td: 72,
     cle_td: 72,
@@ -135,7 +135,8 @@
       "Beautiful shot pierces both lungs, the reiver makes a wheezing noise, and drops dead!"
     ],
     decay: [
-      "A reiver turns to dust."
+      "A reiver turns to dust.",
+      "Acid dissolves connecting cartilage, freeing the reiver's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

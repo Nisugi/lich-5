@@ -58,6 +58,10 @@
       {
         name: "Mind Jolt (706)",
         cs: 146
+      },
+      {
+        name: "Long blackened scythe",
+        cs: 148
       }
     ],
     offensive_spells: [
@@ -73,8 +77,8 @@
     asg: "8",
     immunities: [],
     melee: (98..219),
-    ranged: (98..131),
-    bolt: (98..131),
+    ranged: (93..135),
+    bolt: (93..135),
     udf: (144..239),
     bar_td: nil,
     cle_td: (76..101),

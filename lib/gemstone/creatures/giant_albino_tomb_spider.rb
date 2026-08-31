@@ -60,7 +60,7 @@
     asg: "12N",
     immunities: [],
     melee: nil,
-    ranged: nil,
+    ranged: 100,
     bolt: 93,
     udf: (132..226),
     bar_td: nil,
@@ -107,6 +107,7 @@
     decay: [
       "A giant albino tomb spider's legs shrivel up beneath it as it decays into dust.",
       "An albino tomb spider's legs shrivel up beneath it as it decays into dust.",
+      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
     ],
     search: [],
     spell_prep: [],

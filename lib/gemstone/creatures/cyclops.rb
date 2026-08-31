@@ -48,6 +48,10 @@
       {
         name: "Splintered tree trunk",
         as: 187
+      },
+      {
+        name: "Fist",
+        as: 175
       }
     ],
     bolt_spells: [],
@@ -118,7 +122,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A cyclops swings {weapon} at you!"
+      "A cyclops swings {weapon} at you!",
+      "A cyclops pounds at you with {pronoun} fist!"
     ],
     bite: [],
     claw: [],

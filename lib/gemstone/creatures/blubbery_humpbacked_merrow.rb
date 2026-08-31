@@ -18,7 +18,7 @@
   boss_type: nil,
   otherclass: [],
   bcs: nil,
-  max_hp: nil,
+  max_hp: 865,
   speed: nil,
   height: nil,
   size: "",
@@ -53,7 +53,7 @@
     melee: (593..598),
     ranged: (571..573),
     bolt: (571..573),
-    udf: nil,
+    udf: (646..818),
     bar_td: nil,
     cle_td: nil,
     emp_td: nil,
@@ -89,8 +89,15 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A blubbery humpbacked merrow's dreamy gaze goes lifeless.",
+      "A blubbery humpbacked merrow's spell meets an algae-draped merrow oracle's scaled hide and dissipates into raw mana, untangling into hissing threads of of dying radiance.",
+      "A blubbery humpbacked merrow's spell meets a blubbery humpbacked merrow's scaled hide and dissipates into raw mana, untangling into hissing threads of of dying radiance."
+    ],
+    decay: [
+      "Colored spittle tinged with venom explodes from a blubbery humpbacked merrow's mouth as he chokes on his final breaths and collapses into a blubbery heap.",
+      "A blubbery humpbacked merrow's flesh sinks in upon itself, contorting the merrow's features as moisture leaches from the corpse.  All at once, the body collapses into a fine, pearlescent dust that shimmers as it blows away."
+    ],
     search: [],
     spell_prep: [],
     attack: [],

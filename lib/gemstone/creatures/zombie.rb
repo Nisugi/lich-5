@@ -39,7 +39,7 @@
     physical_attacks: [
       {
         name: "Bite",
-        as: 206
+        as: (202..206)
       },
       {
         name: "Claw",
@@ -104,11 +104,15 @@
       "A zombie shambles {direction}."
     ],
     death: [],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the zombie's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [
-      "A zombie waves {pronoun} arms around flinging bits of flesh towards you."
+      "A zombie waves {pronoun} arms around flinging bits of flesh towards you.",
+      "A zombie points at you and gurgles, \"Fresh meat!\"",
+      "A zombie waves zombie arms around flinging bits of flesh towards you."
     ],
     bite: [
       "A zombie tries to bite you!"

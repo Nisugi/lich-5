@@ -134,7 +134,9 @@
       "A glowing triton warlock just arrived.",
       "A triton warlock just arrived.",
       "An unyielding triton warlock just arrived.",
-      "A triton warlock just arrived, limping badly."
+      "A triton warlock just arrived, limping badly.",
+      "A triton assassin stalks in silently, his cold eyes gleaming with hatred.",
+      "A triton assassin stalks in silently, her cold eyes gleaming with hatred."
     ],
     flee: [
       "A triton warlock limps {direction}.",

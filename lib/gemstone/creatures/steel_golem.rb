@@ -44,7 +44,7 @@
       },
       {
         name: "Metallic hand",
-        as: 169
+        as: (150..169)
       }
     ],
     bolt_spells: [],
@@ -119,7 +119,8 @@
     attack: [
       "A steel golem pounds at you with {pronoun} metallic hand!",
       "A steel golem pounds at you with {pronoun} metallic hand!",
-      "The gears of a steel golem spin viciously as it tries to ensnare you!"
+      "The gears of a steel golem spin viciously as it tries to ensnare you!",
+      "A steel golem pounds at you with steel golem metallic hand!"
     ],
     bite: [],
     claw: [],

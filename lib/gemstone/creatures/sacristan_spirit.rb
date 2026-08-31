@@ -38,7 +38,7 @@
       },
       {
         name: "Twisted black steel half moon",
-        as: 172
+        as: (172..207)
       }
     ],
     bolt_spells: [],
@@ -58,6 +58,10 @@
       {
         name: "Silence (210)",
         cs: 142
+      },
+      {
+        name: "Twisted black steel half moon",
+        cs: 145
       }
     ],
     offensive_spells: [

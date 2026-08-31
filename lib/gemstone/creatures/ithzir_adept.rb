@@ -102,8 +102,8 @@
     asg: "6",
     immunities: [],
     melee: (364..605),
-    ranged: (369..413),
-    bolt: (364..421),
+    ranged: (342..507),
+    bolt: (342..507),
     udf: (506..579),
     bar_td: (379..391),
     cle_td: (391..409),
@@ -152,7 +152,10 @@
     description: [
       "The Ithzir adept carries a bearing of absolute confidence, his piercing, pupil-less green eyes shrewdly taking in his surroundings. The Ithzir adept is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The adept wears a crisply-cut, silvery-blue tunic with high shoulders and a deep vee-neck. Emblazoned on the right breast of the tunic is a single green eye."
     ],
-    arrival: [],
+    arrival: [
+      "An Ithzir initiate strides in, her hands clasped before her.",
+      "An Ithzir initiate strides in, his hands clasped before him."
+    ],
     flee: [
       "An Ithzir adept walks {direction}.",
       "An Ithzir adept limps {direction}."
@@ -160,7 +163,8 @@
     death: [
       "The Ithzir adept vainly struggles to rise, then goes still.",
       "Just as you incant, the Ithzir adept shimmers and fades away, leaving you gesturing at nothingness!",
-      "Just as you move to cast, the Ithzir adept shimmers and fades away, leaving you gesturing at nothingness!"
+      "Just as you move to cast, the Ithzir adept shimmers and fades away, leaving you gesturing at nothingness!",
+      "An Ithzir adept's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
     decay: [
       "The crystal crumbles into a fine blue powder that sifts through the adept's fingers."

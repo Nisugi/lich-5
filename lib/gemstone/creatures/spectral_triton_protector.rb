@@ -67,8 +67,8 @@
     asg: "20N",
     immunities: [],
     melee: (270..277),
-    ranged: (142..435),
-    bolt: (142..435),
+    ranged: (128..435),
+    bolt: (128..435),
     udf: (358..628),
     bar_td: 390,
     cle_td: (392..417),
@@ -108,6 +108,7 @@
     ],
     arrival: [
       "A spectral triton protector just arrived.",
+      "A triton warlock arrives, striding forth with her robes trailing behind her."
     ],
     flee: [
       "A spectral triton protector heads {direction}."

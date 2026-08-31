@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 399,
-  speed: nil,
+  speed: 11,
   height: 18,
   size: "huge",
   areas: [
@@ -120,10 +120,13 @@
     arrival: [
       "An arctic titan lumbers into view."
     ],
-    flee: [],
+    flee: [
+      "An arctic titan lumbers {direction}."
+    ],
     death: [
       "The arctic titan screams evilly one last time and goes still.",
-      "The arctic titan falls to the ground motionless."
+      "The arctic titan falls to the ground motionless.",
+      "The arctic titan slumps to the ground."
     ],
     decay: [
       "An arctic titan turns to dust."

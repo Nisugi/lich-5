@@ -103,7 +103,8 @@
       "A carrion worm slithers {direction}."
     ],
     death: [
-      "The worm rolls over and dies."
+      "The worm rolls over and dies.",
+      "The carrion worm slumps to the ground."
     ],
     decay: [
       "A carrion worm decays into compost."

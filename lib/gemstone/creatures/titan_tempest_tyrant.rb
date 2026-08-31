@@ -105,12 +105,17 @@
     description: [
       "Though powerfully muscled, the tempest tyrant is so tall and long of limb that she looks well-proportioned, even agile. Ritual scars like lightning bolts fork down her immense arms, and matching tattoos in metallic ink gleam electric blue from her severe face. They curve around each eye and fan out onto her hollow cheeks, lending her unforgiving features an alien cast.\n\n;Assess\nThe tempest tyrant is huge in size and about thirteen feet high in her current state."
     ],
-    arrival: [],
+    arrival: [
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
+    ],
     flee: [],
     death: [
       "A titan tempest tyrant stretches a hand skyward, fumbling for something unseen as he surrenders to death.",
       "An odor of burnt ozone fills the air as a titan tempest tyrant's body collapses in upon itself, drying into fine-grained dust that fills the air with grit.",
       "A titan tempest tyrant stretches a hand skyward, fumbling for something unseen as she surrenders to death.",
+      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as she dies.",
+      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as he dies."
     ],
     decay: [
       "The tempest tyrant's right leg crumbles briefly and explodes in a shower of gore."

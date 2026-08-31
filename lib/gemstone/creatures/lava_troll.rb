@@ -88,7 +88,9 @@
   abilities: [],
   alchemy: [],
   abilities_misc: [],
-  equipment: [],
+  equipment: [
+    "a leather-wound ruddy steel sledgehammer"
+  ],
   treasure: {
     coins: true,
     magic_items: true,

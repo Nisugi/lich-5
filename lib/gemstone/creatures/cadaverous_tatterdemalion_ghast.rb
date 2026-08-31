@@ -82,9 +82,9 @@
     asg: "5",
     immunities: [],
     melee: (433..731),
-    ranged: (434..436),
-    bolt: (434..436),
-    udf: 595,
+    ranged: (337..562),
+    bolt: (337..562),
+    udf: (502..888),
     bar_td: nil,
     cle_td: 439,
     emp_td: (419..427),
@@ -125,7 +125,8 @@
     death: [
       "A cadaverous tatterdemalion ghast lets out a hoarse cry that devolves into dry, rasping coughs.  Spasms race through his form, dead muscles seizing and clenching before at last going still.",
       "A cadaverous tatterdemalion ghast lets out a hoarse cry that devolves into dry, rasping coughs.  Spasms race through her form, dead muscles seizing and clenching before at last going still.",
-      "A cadaverous tatterdemalion ghast grabs you by the head and twists violently.  You hear a loud *CRACK* as your neck bones snap and your body goes limp!"
+      "A cadaverous tatterdemalion ghast grabs you by the head and twists violently.  You hear a loud *CRACK* as your neck bones snap and your body goes limp!",
+      "Beautiful shot pierces both lungs, the tatterdemalion ghast makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as his skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones.",

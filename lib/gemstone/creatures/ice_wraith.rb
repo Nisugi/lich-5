@@ -62,8 +62,8 @@
     asg: nil,
     immunities: [],
     melee: (124..312),
-    ranged: (124..158),
-    bolt: (124..158),
+    ranged: (121..221),
+    bolt: (121..221),
     udf: (177..270),
     bar_td: nil,
     cle_td: (178..187),
@@ -111,6 +111,7 @@
     death: [
       "An ice wraith fades into oblivion.",
       "The ice wraith goes still for a moment while its head reshapes.",
+      "A wind wraith releases a groan of mingled ecstasy and relief as it fades away."
     ],
     decay: [],
     search: [],

@@ -92,8 +92,8 @@
     asg: "12N",
     immunities: [],
     melee: (339..473),
-    ranged: (331..339),
-    bolt: (331..339),
+    ranged: (299..479),
+    bolt: (299..479),
     udf: (401..531),
     bar_td: (381..398),
     cle_td: (440..450),
@@ -147,7 +147,10 @@
     death: [
       "An intangible ripple of pure energy courses through the air as the cerebralite's pupils widen a final time, its eyes clouding over as it dies."
     ],
-    decay: [],
+    decay: [
+      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away.",
+      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
+    ],
     search: [],
     spell_prep: [],
     attack: [

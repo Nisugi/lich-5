@@ -78,14 +78,14 @@
     asg: "10",
     immunities: [],
     melee: (113..233),
-    ranged: (125..177),
-    bolt: (136..177),
+    ranged: (80..197),
+    bolt: (80..197),
     udf: (131..251),
     bar_td: (69..75),
     cle_td: (66..75),
     emp_td: (69..77),
     pal_td: (66..75),
-    ran_td: nil,
+    ran_td: (66..75),
     sor_td: (66..75),
     wiz_td: nil,
     mje_td: (63..72),
@@ -142,7 +142,9 @@
       "The roan centaur screams one last time and dies.",
       "The black centaur screams one last time and dies.",
       "Beautiful shot pierces both lungs, the tan centaur makes a wheezing noise, and drops dead!",
-      "Beautiful shot pierces both lungs, the roan centaur makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the roan centaur makes a wheezing noise, and drops dead!",
+      "Beautiful shot pierces both lungs, the black centaur makes a wheezing noise, and drops dead!",
+      "Beautiful shot pierces both lungs, the white centaur makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A white centaur dissolves into a puff of red smoke.",
@@ -150,7 +152,10 @@
       "A tan centaur dissolves into a puff of red smoke.",
       "A roan centaur dissolves into a puff of red smoke.",
       "A black centaur dissolves into a puff of red smoke.",
-      "The roan centaur's left leg crumbles briefly and explodes in a shower of gore."
+      "The roan centaur's left leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the bay centaur's ribs to move independently.",
+      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust.",
+      "A raider orc withers away until he is no more."
     ],
     search: [],
     spell_prep: [],

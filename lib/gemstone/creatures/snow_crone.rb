@@ -47,6 +47,10 @@
       {
         name: "Mana Disruption (702)",
         cs: 201
+      },
+      {
+        name: "Point",
+        cs: 192
       }
     ],
     offensive_spells: [],

@@ -128,7 +128,8 @@
     ],
     death: [
       "The sea nymph falls to the ground and dies.",
-      "The sea nymph screams one last time and dies."
+      "The sea nymph screams one last time and dies.",
+      "The sea nymph slumps to the ground."
     ],
     decay: [
       "A sea nymph decays into compost."

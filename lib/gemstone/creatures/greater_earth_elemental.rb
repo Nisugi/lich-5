@@ -112,6 +112,7 @@
     ],
     arrival: [
       "A greater earth elemental lumbers in slowly.",
+      "The boulder comes to a sudden stop and rises into the form of a greater krynch!"
     ],
     flee: [],
     death: [
@@ -121,7 +122,8 @@
     ],
     decay: [
       "Tiny fissures quickly spread over the entire form of a greater earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
-      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble."
+      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
+      "Acid dissolves connecting cartilage, freeing the earth elemental's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

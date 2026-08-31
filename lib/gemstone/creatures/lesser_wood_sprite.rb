@@ -129,11 +129,13 @@
     decay: [
       "A lesser wood sprite crumbles into a pile of dry splinters.",
       "The lesser wood sprite's left leg crumbles briefly and explodes in a shower of gore.",
+      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],
     attack: [
       "A lesser wood sprite thrusts with a wood-gripped estoc at you!",
+      "A giant hawk-owl tries to impale you on lesser wood sprite beak!"
     ],
     bite: [],
     claw: [],

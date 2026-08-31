@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 240,
-  speed: nil,
+  speed: 5,
   height: 3,
   size: "medium",
   areas: [
@@ -111,7 +111,8 @@
       "The snow leopard crumples to the ground and dies."
     ],
     decay: [
-      "A snow leopard decays into a compost of fangs, fur and claws."
+      "A snow leopard decays into a compost of fangs, fur and claws.",
+      "Acid dissolves connecting cartilage, freeing the snow leopard's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

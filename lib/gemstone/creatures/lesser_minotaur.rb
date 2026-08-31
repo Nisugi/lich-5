@@ -111,7 +111,8 @@
     ],
     death: [
       "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the ground.",
-      "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the floor."
+      "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the floor.",
+      "The lesser minotaur slumps to the ground."
     ],
     decay: [],
     search: [],

@@ -42,6 +42,10 @@
       {
         name: "Bind (214)",
         cs: 133
+      },
+      {
+        name: "Point",
+        cs: 139
       }
     ],
     offensive_spells: [],

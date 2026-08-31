@@ -96,7 +96,8 @@
       "A mongrel troll just arrived, limping in!"
     ],
     flee: [
-      "A mongrel troll limps {direction}."
+      "A mongrel troll limps {direction}.",
+      "A mongrel troll runs {direction}."
     ],
     death: [
       "The mongrel troll twitches violently, then dies.",

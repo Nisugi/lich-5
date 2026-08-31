@@ -42,7 +42,7 @@
       },
       {
         name: "Bite",
-        as: (185..193)
+        as: (166..193)
       },
       {
         name: "Unknown",
@@ -106,7 +106,8 @@
       "A striped warcat stalks in!"
     ],
     flee: [
-      "A striped warcat stalks {direction}."
+      "A striped warcat stalks {direction}.",
+      "A striped warcat roars loudly as he stands {direction}!"
     ],
     death: [
       "The striped warcat lets out a final caterwaul and dies.",

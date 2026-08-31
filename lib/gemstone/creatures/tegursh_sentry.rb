@@ -66,8 +66,8 @@
     asg: "12N",
     immunities: [],
     melee: (190..326),
-    ranged: (119..225),
-    bolt: (119..225),
+    ranged: (113..225),
+    bolt: (113..225),
     udf: (198..336),
     bar_td: 96,
     cle_td: (103..115),
@@ -118,7 +118,9 @@
       "A tegursh sentry silently rasps a final scream and dies.",
       "Beautiful shot pierces both lungs, the tegursh sentry makes a wheezing noise, and drops dead!"
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the tegursh sentry's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [

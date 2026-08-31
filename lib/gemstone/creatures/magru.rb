@@ -56,8 +56,8 @@
       "Fire"
     ],
     melee: (107..119),
-    ranged: (98..119),
-    bolt: (98..119),
+    ranged: (98..125),
+    bolt: (98..125),
     udf: nil,
     bar_td: nil,
     cle_td: 129,

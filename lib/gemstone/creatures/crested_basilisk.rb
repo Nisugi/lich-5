@@ -65,8 +65,8 @@
     asg: "12N",
     immunities: [],
     melee: (100..198),
-    ranged: (115..145),
-    bolt: (115..145),
+    ranged: (111..145),
+    bolt: (111..145),
     udf: (149..216),
     bar_td: (66..72),
     cle_td: (66..78),
@@ -119,7 +119,9 @@
       "The crested basilisk rolls over on its back, emits a final hiss and dies.",
       "The crested basilisk emits a final hiss and dies.",
       "The crested basilisk emits a final silent hiss and dies.",
-      "The crested basilisk rolls over on its back, emits a final silent hiss and dies."
+      "The crested basilisk rolls over on its back, emits a final silent hiss and dies.",
+      "The crested basilisk slumps to the ground.",
+      "Beautiful shot pierces both lungs, the crested basilisk makes a wheezing noise, and drops dead!"
     ],
     decay: [],
     search: [],

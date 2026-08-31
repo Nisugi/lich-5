@@ -107,7 +107,9 @@
     death: [
       "The shelfae chieftain falls to the ground and dies.",
       "The shelfae chieftain screams one last time and dies.",
-      "The shelfae chieftain twitches violently, then dies."
+      "The shelfae chieftain twitches violently, then dies.",
+      "Awesome shot skewers skull!  The shelfae chieftain blinks once and falls quite dead!",
+      "Beautiful shot pierces both lungs, the shelfae chieftain makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A chieftain crumbles into dust."

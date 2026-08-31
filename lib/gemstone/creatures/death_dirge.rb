@@ -120,7 +120,8 @@
     ],
     death: [
       "The death dirge falls to the ground motionless.",
-      "The death dirge screams evilly one last time and goes still."
+      "The death dirge screams evilly one last time and goes still.",
+      "The death dirge slumps to the ground."
     ],
     decay: [
       "A death dirge turns to dust."

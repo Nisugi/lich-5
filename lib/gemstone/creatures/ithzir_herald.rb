@@ -86,8 +86,8 @@
     asg: "9",
     immunities: [],
     melee: (346..570),
-    ranged: nil,
-    bolt: 386,
+    ranged: (327..477),
+    bolt: (327..477),
     udf: (449..621),
     bar_td: (358..371),
     cle_td: (364..382),
@@ -133,7 +133,10 @@
     description: [
       "A trio of black tattooed stripes run from center of the Ithzir herald's forehead and over the crown of his bald, blue-skinned head. The Ithzir herald is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue body is nonetheless alien in its appearance. The herald wears a fine silvery-blue tunic crossed with a green tabard."
     ],
-    arrival: [],
+    arrival: [
+      "An Ithzir initiate strides in, his hands clasped before him.",
+      "An Ithzir initiate strides in, her hands clasped before her."
+    ],
     flee: [
       "An Ithzir herald limps {direction}."
     ],
@@ -141,7 +144,8 @@
       "The Ithzir herald vainly struggles to rise, then goes still.",
       "Just as you incant, the Ithzir herald shimmers and fades away, leaving you gesturing at nothingness!",
       "Just as you move to cast, the Ithzir herald shimmers and fades away, leaving you gesturing at nothingness!",
-      "Beautiful shot pierces both lungs, the Ithzir herald makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the Ithzir herald makes a wheezing noise, and drops dead!",
+      "An Ithzir herald's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
     decay: [],
     search: [],

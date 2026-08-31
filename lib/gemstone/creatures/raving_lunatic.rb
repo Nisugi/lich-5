@@ -66,14 +66,14 @@
     asg: "8N",
     immunities: [],
     melee: (336..499),
-    ranged: (276..346),
-    bolt: (339..359),
+    ranged: (276..411),
+    bolt: (320..411),
     udf: (398..579),
     bar_td: 278,
     cle_td: (300..306),
     emp_td: (294..305),
     pal_td: (253..262),
-    ran_td: 256,
+    ran_td: (256..265),
     sor_td: (315..326),
     wiz_td: 330,
     mje_td: (330..337),
@@ -111,7 +111,8 @@
       "The raving lunatic twitches violently, then dies."
     ],
     decay: [
-      "The raving lunatic's left leg crumbles briefly and explodes in a shower of gore."
+      "The raving lunatic's left leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the raving lunatic's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

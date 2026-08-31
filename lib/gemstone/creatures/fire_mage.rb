@@ -149,7 +149,8 @@
     decay: [
       "A fire mage decays into a fine grey ash that quickly blows away.",
       "An apt fire mage decays into a fine grey ash that quickly blows away.",
-      "The fire mage's right leg crumbles briefly and explodes in a shower of gore."
+      "The fire mage's right leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the fire mage's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

@@ -123,6 +123,7 @@
     arrival: [
       "A triton assassin stalks in silently, his cold eyes gleaming with hatred.",
       "A triton assassin stalks in silently, her cold eyes gleaming with hatred.",
+      "A triton warlock arrives, striding forth with her robes trailing behind her."
     ],
     flee: [],
     death: [

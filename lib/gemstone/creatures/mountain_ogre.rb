@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 210,
-  speed: nil,
+  speed: 11,
   height: 8,
   size: "large",
   areas: [
@@ -130,7 +130,8 @@
     ],
     decay: [
       "A mountain ogre decays into compost.",
-      "The mountain ogre's right leg crumbles briefly and explodes in a shower of gore."
+      "The mountain ogre's right leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the mountain ogre's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

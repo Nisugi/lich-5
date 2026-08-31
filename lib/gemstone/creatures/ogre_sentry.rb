@@ -100,6 +100,13 @@
     ],
     decay: [
       "An ogre sentry decays into compost.",
+      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
+      "Tiny fissures quickly spread over the entire form of a greater earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
+      "A small, green cloud of smelly gas rises from the body of a mongrel kobold as he decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a kobold as he decays into compost.",
+      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],

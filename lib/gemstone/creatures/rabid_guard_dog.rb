@@ -101,7 +101,8 @@
     ],
     death: [
       "The guard dog falls to the ground and dies.",
-      "The guard dog rolls over and dies."
+      "The guard dog rolls over and dies.",
+      "The guard dog slumps to the ground."
     ],
     decay: [
       "A rabid guard dog decays into a compost of fangs and fur."

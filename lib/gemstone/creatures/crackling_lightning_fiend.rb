@@ -103,6 +103,8 @@
     ],
     arrival: [
       "A jolting charge in the air heralds the arrival of a crackling lightning fiend!",
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
     ],
     flee: [],
     death: [

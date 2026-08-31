@@ -59,7 +59,7 @@
     cle_td: 138,
     emp_td: 138,
     pal_td: (114..117),
-    ran_td: nil,
+    ran_td: 117,
     sor_td: 145,
     wiz_td: nil,
     mje_td: 153,

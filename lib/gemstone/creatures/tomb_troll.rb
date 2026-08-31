@@ -105,7 +105,8 @@
     death: [
       "A low sigh fills the air and the tomb troll fades to nothing.",
       "A tomb troll blinks in astonishment, then collapses in a motionless heap.",
-      "Beautiful shot pierces both lungs, the tomb troll makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the tomb troll makes a wheezing noise, and drops dead!",
+      "The tomb troll slumps to the ground."
     ],
     decay: [
       "The tomb troll's left leg crumbles briefly and explodes in a shower of gore."
@@ -114,6 +115,7 @@
     spell_prep: [],
     attack: [
       "A tomb troll swings {weapon} at you!",
+      "A flesh golem lifts tomb troll fat fleshy foot and tries to stomp on you!"
     ],
     bite: [],
     claw: [],

@@ -128,7 +128,9 @@
       "Standing in the center of a swirling whorl of wind, the wind witch cackles evilly. Dull grey eyes stare out at you from under an unruly mop of tangled grey hair. The wind witch's bluish skin stands out against the tattered robes it wears."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A wind witch glides {direction}."
+    ],
     death: [
       "The wind witch howls in agony one last time and dies.",
       "A wind witch dissipates into the air, leaving nothing behind.",

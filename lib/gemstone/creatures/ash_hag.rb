@@ -119,7 +119,8 @@
       "The ash hag twitches violently, then dies."
     ],
     decay: [
-      "An ash hag crumbles into a pile of ash."
+      "An ash hag crumbles into a pile of ash.",
+      "Acid dissolves connecting cartilage, freeing the ash hag's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

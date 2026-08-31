@@ -10,7 +10,7 @@
   blood: true,
   bones: nil,
   witherable: true,
-  sympathy: true,
+  sympathy: false,
   muggable: true,
   sleepable: nil,
   boss: false,
@@ -59,7 +59,7 @@
       },
       {
         name: "Copper-traced dark steel hatchet",
-        as: 535
+        as: (532..535)
       },
       {
         name: "Huge hooves",
@@ -148,6 +148,16 @@
       "A heavily armored battle mastodon raises {pronoun} trunk and slams it down toward you!",
       "A heavily armored battle mastodon rears back and tries to stomp you with a great foot!",
       "A heavily armored battle mastodon tries to spear you with {pronoun} enormous tusks!",
+      "A brawny gigas shield-maiden launches a quick bash with heavily armored battle mastodon golden targe at you!",
+      "A heavily armored battle mastodon raises heavily armored battle mastodon trunk and slams it down toward you!",
+      "A heavily armored battle mastodon tries to spear you with heavily armored battle mastodon enormous tusks!",
+      "A niveous giant warg lunges at you, maw slathering as heavily armored battle mastodon tries to take a ferocious bite!",
+      "A savage fork-tongued wendigo flails with heavily armored battle mastodon clawed fists at you!",
+      "A savage fork-tongued wendigo's jaw unhinges as it tries to ravage you with heavily armored battle mastodon shark-like teeth!",
+      "Froth bubbling on heavily armored battle mastodon lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!",
+      "Lowering heavily armored battle mastodon head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
+      "Murder in heavily armored battle mastodon eyes, an immense gold-bristled hinterboar tries to gore you with heavily armored battle mastodon tusks!",
+      "Rearing up on heavily armored battle mastodon hind legs, an immense gold-bristled hinterboar stomps at you with heavily armored battle mastodon huge hooves!"
     ],
     bite: [],
     claw: [],

@@ -47,7 +47,7 @@
       },
       {
         name: "Pincer",
-        as: 177
+        as: (157..177)
       },
       {
         name: "Stinger",
@@ -106,7 +106,8 @@
       "A giant albino scorpion skitters {direction}."
     ],
     death: [
-      "The albino scorpion twitches violently, then dies."
+      "The albino scorpion twitches violently, then dies.",
+      "The albino scorpion slumps to the ground."
     ],
     decay: [],
     search: [],

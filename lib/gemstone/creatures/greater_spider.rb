@@ -127,7 +127,8 @@
     ],
     death: [
       "The greater spider collapses to the ground and dies.",
-      "The greater spider's body jerks one last time and dies."
+      "The greater spider's body jerks one last time and dies.",
+      "The greater spider slumps to the ground."
     ],
     decay: [
       "A greater spider's legs shrivel up beneath it as it decays into dust."

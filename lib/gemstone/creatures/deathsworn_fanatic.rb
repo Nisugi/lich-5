@@ -85,14 +85,14 @@
     asg: "1",
     immunities: [],
     melee: (402..612),
-    ranged: (371..446),
-    bolt: (371..446),
+    ranged: (336..578),
+    bolt: (336..578),
     udf: (447..618),
     bar_td: 405,
     cle_td: 451,
     emp_td: (440..443),
     pal_td: 392,
-    ran_td: (352..377),
+    ran_td: 392,
     sor_td: (452..455),
     wiz_td: nil,
     mje_td: (466..476),
@@ -138,8 +138,13 @@
       "A deathsworn fanatic just arrived."
     ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "Beautiful shot pierces both lungs, the deathsworn fanatic makes a wheezing noise, and drops dead!"
+    ],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the deathsworn fanatic's ribs to move independently.",
+      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
+    ],
     search: [],
     spell_prep: [],
     attack: [

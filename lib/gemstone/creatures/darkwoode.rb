@@ -80,8 +80,8 @@
     asg: "7N",
     immunities: [],
     melee: (54..142),
-    ranged: (49..93),
-    bolt: (49..93),
+    ranged: (49..98),
+    bolt: (49..98),
     udf: (78..175),
     bar_td: 39,
     cle_td: 39,
@@ -129,7 +129,8 @@
       "The darkwoode slowly settles to the ground and begins to dissipate."
     ],
     decay: [
-      "The darkwoode's right leg crumbles briefly and explodes in a shower of gore."
+      "The darkwoode's right leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the darkwoode's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

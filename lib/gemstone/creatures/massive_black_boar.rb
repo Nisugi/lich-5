@@ -120,7 +120,8 @@
     death: [
       "The black boar lets out a final agonized squeal and dies.",
       "The black boar collapses to the ground, emits a final squeal, and dies.",
-      "Beautiful shot pierces both lungs, the black boar makes a wheezing noise, and drops dead!"
+      "Beautiful shot pierces both lungs, the black boar makes a wheezing noise, and drops dead!",
+      "The black boar slumps to the ground."
     ],
     decay: [
       "A massive black boar decays into a pile of fur and bone."

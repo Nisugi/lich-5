@@ -128,7 +128,8 @@
     death: [
       "The mezic twitches violently, then dies.",
       "The mezic falls to the ground motionless.",
-      "The mezic cries out one last time and lies still."
+      "The mezic cries out one last time and lies still.",
+      "The mezic slumps to the ground."
     ],
     decay: [
       "The mezic's right leg crumbles briefly and explodes in a shower of gore."

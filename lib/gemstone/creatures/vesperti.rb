@@ -65,6 +65,10 @@
       },
       {
         name: "Mana Drain"
+      },
+      {
+        name: "Claw Curse",
+        cs: 206
       }
     ],
     offensive_spells: [],
@@ -140,7 +144,9 @@
       "The vesperti's wings splay out as she goes still.",
       "Beautiful shot pierces both lungs, the vesperti makes a wheezing noise, and drops dead!"
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the vesperti's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [

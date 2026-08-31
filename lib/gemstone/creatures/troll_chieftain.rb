@@ -38,7 +38,7 @@
     physical_attacks: [
       {
         name: "Battle axe",
-        as: 270
+        as: (216..270)
       }
     ],
     bolt_spells: [],
@@ -110,7 +110,8 @@
       "The troll chieftain snarls her defiance before collapsing and going still.",
       "The troll chieftain snarls his defiance before collapsing and going still.",
       "The troll chieftain snarls her defiance one last time before going still.",
-      "The troll chieftain snarls his defiance one last time before going still."
+      "The troll chieftain snarls his defiance one last time before going still.",
+      "The troll chieftain slumps to the ground."
     ],
     decay: [
       "A troll chieftain decays into compost."

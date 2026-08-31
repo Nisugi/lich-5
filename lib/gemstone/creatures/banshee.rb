@@ -21,7 +21,7 @@
   ],
   bcs: nil,
   max_hp: 365,
-  speed: nil,
+  speed: 14,
   height: 5,
   size: "medium",
   areas: [
@@ -42,13 +42,17 @@
       },
       {
         name: "Claw",
-        as: (265..267)
+        as: (265..275)
       }
     ],
     bolt_spells: [],
     warding_spells: [
       {
         name: "Scream",
+        cs: 230
+      },
+      {
+        name: "Claw",
         cs: 230
       }
     ],
@@ -61,14 +65,14 @@
     asg: "6N",
     immunities: [],
     melee: (199..415),
-    ranged: "221 to 278",
-    bolt: 271,
+    ranged: (210..384),
+    bolt: (210..384),
     udf: (325..417),
     bar_td: 179,
     cle_td: 279,
     emp_td: (193..202),
     pal_td: (166..175),
-    ran_td: nil,
+    ran_td: (157..166),
     sor_td: (204..213),
     wiz_td: nil,
     mje_td: (214..215),

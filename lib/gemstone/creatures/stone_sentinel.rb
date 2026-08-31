@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 615,
-  speed: nil,
+  speed: 8,
   height: 8,
   size: "large",
   areas: [
@@ -38,7 +38,7 @@
       },
       {
         name: "Fist",
-        as: 350
+        as: (350..380)
       }
     ],
     bolt_spells: [
@@ -83,14 +83,14 @@
       "Stun"
     ],
     melee: (23..109),
-    ranged: (63..103),
-    bolt: nil,
+    ranged: (27..113),
+    bolt: (27..113),
     udf: (294..446),
     bar_td: nil,
     cle_td: (202..212),
     emp_td: (203..213),
     pal_td: (184..194),
-    ran_td: nil,
+    ran_td: (174..184),
     sor_td: (216..226),
     wiz_td: nil,
     mje_td: 235,
@@ -137,7 +137,8 @@
     search: [],
     spell_prep: [],
     attack: [
-      "A stone sentinel pounds at you with {pronoun} fist!"
+      "A stone sentinel pounds at you with {pronoun} fist!",
+      "A stone sentinel points at you!"
     ],
     bite: [],
     claw: [],

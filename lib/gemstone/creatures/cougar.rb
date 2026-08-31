@@ -63,8 +63,8 @@
     asg: nil,
     immunities: [],
     melee: (139..239),
-    ranged: (144..159),
-    bolt: (144..159),
+    ranged: (64..176),
+    bolt: (64..176),
     udf: (147..195),
     bar_td: 66,
     cle_td: (60..80),
@@ -108,7 +108,8 @@
       "A keen cougar scampers in!",
       "A belligerent cougar scampers in!",
       "A luminous cougar scampers in!",
-      "A dreary cougar scampers in!"
+      "A dreary cougar scampers in!",
+      "A glittering cougar scampers in!"
     ],
     flee: [
       "A cougar scampers {direction}.",
@@ -122,12 +123,16 @@
       "A canny cougar scampers {direction}.",
       "A shielded cougar scampers {direction}.",
       "A cougar roars loudly as she stands {direction}!",
-      "A cougar roars loudly as he stands {direction}!"
+      "A cougar roars loudly as he stands {direction}!",
+      "A glittering cougar scampers {direction}."
     ],
     death: [
       "The cougar lets out a final caterwaul and dies.",
       "The cougar crumples to the ground and dies.",
-      "The cougar twitches violently, then dies."
+      "The cougar twitches violently, then dies.",
+      "The cougar slumps to the ground.",
+      "Awesome shot skewers skull!  The cougar blinks once and falls quite dead!",
+      "Beautiful shot pierces both lungs, the cougar makes a wheezing noise, and drops dead!"
     ],
     decay: [
       "A cougar decays into a compost of fangs, fur and claws.",
@@ -147,7 +152,8 @@
       "A luminous cougar decays into a compost of fangs, fur and claws.",
       "A dreary cougar decays into a compost of fangs, fur and claws.",
       "A drab cougar decays into a compost of fangs, fur and claws.",
-      "A shielded cougar decays into a compost of fangs, fur and claws."
+      "A shielded cougar decays into a compost of fangs, fur and claws.",
+      "A glittering cougar decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],

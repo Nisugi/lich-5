@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 340,
-  speed: nil,
+  speed: 6,
   height: 3,
   size: "large",
   areas: [
@@ -97,7 +97,8 @@
     death: [
       "The arctic manticore falls to the ground and dies.",
       "The arctic manticore screams one last time and dies.",
-      "The arctic manticore twitches violently, then dies."
+      "The arctic manticore twitches violently, then dies.",
+      "The arctic manticore slumps to the ground."
     ],
     decay: [
       "An arctic manticore decays into compost."

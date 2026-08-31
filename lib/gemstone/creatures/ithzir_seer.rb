@@ -116,8 +116,8 @@
     asg: "6",
     immunities: [],
     melee: (308..591),
-    ranged: 279,
-    bolt: (369..386),
+    ranged: (260..396),
+    bolt: (260..396),
     udf: (408..540),
     bar_td: (373..385),
     cle_td: (371..431),
@@ -176,16 +176,20 @@
     death: [
       "The Ithzir seer vainly struggles to rise, then goes still.",
       "Just as you incant, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!",
-      "Just as you cast, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!"
+      "Just as you cast, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!",
+      "An Ithzir seer's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
-    decay: [],
+    decay: [
+      "Acid dissolves connecting cartilage, freeing the Ithzir seer's ribs to move independently."
+    ],
     search: [],
     spell_prep: [],
     attack: [
       "An Ithzir seer suddenly opens {pronoun} eyes and stares directly at you!",
       "An Ithzir seer swings {weapon} at you!",
       "An Ithzir seer throws {weapon} at you!",
-      "The Ithzir seer points at you."
+      "The Ithzir seer points at you.",
+      "An Ithzir seer suddenly opens ithzir seer eyes and stares directly at you!"
     ],
     bite: [],
     claw: [],

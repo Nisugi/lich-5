@@ -123,7 +123,10 @@
     death: [
       "A dark orc gives a last shudder and dies."
     ],
-    decay: [],
+    decay: [
+      "A small, green cloud of smelly gas rises from the body of a mongrel kobold as he decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost."
+    ],
     search: [],
     spell_prep: [],
     attack: [

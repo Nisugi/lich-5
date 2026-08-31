@@ -35,7 +35,7 @@
     physical_attacks: [
       {
         name: "Jeddart-axe",
-        as: 214
+        as: (201..214)
       },
       {
         name: "Spear",
@@ -132,11 +132,13 @@
     ],
     death: [
       "The wood sprite's eyes grow dim as his lifeforce fades away.",
-      "The wood sprite's eyes grow dim as her lifeforce fades away."
+      "The wood sprite's eyes grow dim as her lifeforce fades away.",
+      "The wood sprite slumps to the ground."
     ],
     decay: [
       "A wood sprite crumbles into a pile of dry splinters.",
-      "The wood sprite's right leg crumbles briefly and explodes in a shower of gore."
+      "The wood sprite's right leg crumbles briefly and explodes in a shower of gore.",
+      "Acid dissolves connecting cartilage, freeing the wood sprite's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

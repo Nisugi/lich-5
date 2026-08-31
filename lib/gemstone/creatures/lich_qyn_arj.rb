@@ -78,8 +78,8 @@
     asg: "6",
     immunities: [],
     melee: (290..447),
-    ranged: nil,
-    bolt: nil,
+    ranged: (283..331),
+    bolt: (283..331),
     udf: (379..564),
     bar_td: (333..336),
     cle_td: (350..359),
@@ -126,7 +126,8 @@
       "The lich qyn'arj spasms violently and suddenly goes still, its body turning to stone."
     ],
     decay: [
-      "The stone form of a lich qyn'arj crumbles away to dust."
+      "The stone form of a lich qyn'arj crumbles away to dust.",
+      "Acid dissolves connecting cartilage, freeing the lich qyn'arj's ribs to move independently."
     ],
     search: [],
     spell_prep: [],

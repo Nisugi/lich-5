@@ -164,6 +164,8 @@
     decay: [
       "An Illoke jarl cracks and collapses into a pile of craggy dark rock that rapidly disappears without a trace.",
       "The Illoke jarl's left leg crumbles briefly and explodes in a shower of gore.",
+      "Tiny fissures quickly spread over the entire form of a greater earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
+      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble."
     ],
     search: [],
     spell_prep: [],
