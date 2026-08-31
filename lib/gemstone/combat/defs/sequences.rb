@@ -8,8 +8,9 @@
 # it, per-target attack events unfold inside it, and the end line closes
 # it. Used to attribute spawned casts (a Blink flare firing an imbedded
 # Nature's Fury produces a full AoE sequence whose per-target events are
-# children of the flare, not independent casts) and to bound multi-strike
-# attacks like mstrike and flurry.
+# children of the flare, not independent casts) and to bound multi-TARGET
+# attacks like mstrike and volley. Single-target multi-round attacks
+# (flurry, barrage, pummel...) are ASSAULTS - see defs/assaults.rb.
 #
 
 require_relative 'pattern_gate'
@@ -28,14 +29,6 @@ module Lich
               /The ground beneath (?<target>.+?) boils with renewed vigor!/,
               /The ground beneath (?<target>.+?) rumbles with renewed vigor!/
             ].freeze, [/The ground beneath (?<target>.+?) suddenly calms\./].freeze),
-            SequenceDef.new(:flurry, [
-              /You rotate your wrist, your .+? executing a casual spin to establish your flow as you advance upon (?<target>.+?)!/,
-              /You rotate your wrists, your .+? and .+? executing a casual spin to establish your flow as you advance upon (?<target>[^!]+)!/
-            ].freeze, [
-              # person-agnostic: "your blades" or a group member's ("Tabubu's silk fan")
-              /The mesmerizing sway of body and blade glides to its inevitable end with one final twirl of (?:your|.+?'s) .+?\./,
-              /Distracted, you hesitate, and your assault is broken.  You give your blades a quick, sweeping flick of annoyance as you lower them\./
-            ].freeze),
             SequenceDef.new(:mstrike, [
               /With great haste, you let loose a volley of shots!/,
               /With instinctive motions, you weave to and fro striking with deliberate and unrelenting fury!/,
@@ -53,10 +46,7 @@ module Lich
             # The 2p bow-raise line is this sequence's PREFIX - not a def.
             SequenceDef.new(:volley, [
               /An ominous shadow falls over your surroundings as a whistling hail of arrows arcs down from above!/
-            ].freeze, [/The air clears as the deadly volley of arrows abates\./].freeze),
-            SequenceDef.new(:barrage, [
-              /Drawing several arrows from your .+?, you grip them loosely between your fingers in preparation for a rapid barrage\./
-            ].freeze, [/Upon firing your last arrow, you release a measured breath and lower your .+?\./].freeze)
+            ].freeze, [/The air clears as the deadly volley of arrows abates\./].freeze)
           ].freeze
 
           START_LOOKUP = SEQUENCE_DEFS.flat_map { |d| d.start_patterns.map { |rx| [rx, d.name] } }.freeze

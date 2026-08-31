@@ -47,6 +47,12 @@ module Lich
                             /It is knocked to the ground!/,
                             /(?<target>.+?) is knocked to the ground!/,
                             /(?<target>.+?) falls to the ground!/,
+                            # 501 landing on a STANDING target: the sleep
+                            # def registers sleeping off the same line;
+                            # the fall itself is also a knockdown (the
+                            # goes-limp variant is the already-prone form
+                            # and deliberately absent here).
+                            /(?<target>.+?) slumps to the ground unconscious\./,
                             # second person - the victim is us
                             /You are knocked to the ground!/,
                             /You lose your footing and fall to the ground!/,
@@ -164,7 +170,13 @@ module Lich
                             /(?<target>.+?) falls asleep\./,
                             # Lullabye full-sleep wording (also implies prone)
                             /(?<target>.+?) falls to the ground in a deep slumber\./,
-                            /(?<target>.+?)'s#{MK_POST} eyes roll up into its head as it slumps to the ground\./
+                            /(?<target>.+?)'s#{MK_POST} eyes roll up into its head as it slumps to the ground\./,
+                            # 501 Sleep landing (forge test server, 2026-08-28):
+                            # both wordings read as deaths before this - the
+                            # death-lore grammar guards on \bunconscious\b, and
+                            # these are the lines that guard exists for.
+                            /(?<target>.+?) slumps to the ground unconscious\./,
+                            /(?<target>.+?) goes limp as #{MK_PRE}(?:he|she|it)#{MK_POST} falls unconscious[.!]/
                           ].freeze,
                           [
                             /(?<target>.+?) wakes up\./,

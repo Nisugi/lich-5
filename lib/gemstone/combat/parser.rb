@@ -5,6 +5,7 @@
 # Performance-optimized with lazy loading and selective pattern matching
 #
 
+require_relative 'defs/assaults'
 require_relative 'defs/attacks'
 require_relative 'defs/damage'
 require_relative 'defs/flares'
@@ -195,13 +196,23 @@ module Lich
             Definitions::Resolutions.parse(line)
           end
 
-          # Multi-part action brackets (mstrike, flurry, spawned casts)
+          # Multi-TARGET action brackets (mstrike, volley, spawned casts)
           def parse_sequence_start(line)
             Definitions::Sequences.parse_start(line)
           end
 
           def parse_sequence_end(line)
             Definitions::Sequences.parse_end(line)
+          end
+
+          # Single-target multi-round assault brackets (flurry, barrage,
+          # pummel, guardant thrusts, thrash) - see defs/assaults.rb
+          def parse_assault_start(line)
+            Definitions::Assaults.parse_start(line)
+          end
+
+          def parse_assault_end(line)
+            Definitions::Assaults.parse_end(line)
           end
 
           # The weapon a swing line names, in plain text (swing lines do

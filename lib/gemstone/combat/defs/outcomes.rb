@@ -1,78 +1,62 @@
 # frozen_string_literal: true
 
-#
-# Outcome & Resolution Pattern Definitions
-# Converted from ctparser/OUTCOME_DEFS + RESOLUTION_DEFS to
-# Lich::Gemstone::Combat namespace
-#
-# Outcomes are the WHY of a swing that produced no damage: evaded,
-# blocked, parried, warded, clean miss. Resolutions are the roll lines
-# (AS/DS, CS/TD, UAF/UDF, SMR) - the numbers a subscriber needs to judge
-# whether an engagement is worth continuing.
-#
-# :warded / :ward_failed are not in ctparser; catalogued from session
-# logs (8357 "Warding failed!" / 537 "Warded off!" in one month).
-#
-
 require_relative 'pattern_gate'
 
 module Lich
   module Gemstone
     module Combat
       module Definitions
+        # Classifies attack-outcome lines - the line that says how a swing,
+        # bolt, or maneuver resolved (miss, hit, evade, block, parry, warded,
+        # intercepted, resisted, ...). One outcome type per line; an attack
+        # event may accumulate several outcomes (multi-strike attacks).
         module Outcomes
+          # One outcome category and the game lines that signal it.
+          #
+          # @!attribute type
+          #   @return [Symbol] outcome category (:miss, :hit, :evade, ...)
+          # @!attribute patterns
+          #   @return [Array<Regexp>] lines that signal this outcome; may
+          #     carry named captures (target, attacker, weapon, armor)
           OutcomeDef = Struct.new(:type, :patterns)
 
+          # All outcome definitions, in match-priority order (parse is
+          # first-match-wins, so more specific categories precede the
+          # broad :evade/:block pools).
+          #
+          # @return [Array<OutcomeDef>]
           OUTCOME_DEFS = [
             OutcomeDef.new(:miss, [
-              # [.!] - the UAC forms end with a bang
-              /A clean miss[.!]/,
-              /A close miss[.!]/,
-              /Nowhere close!/,
-              # third person (spectator/group members)
-              /(?<attacker>.+?)'s#{MK_POST} swing goes wide!/,
-              /The (?:arrow|bolt) streaks off into the distance!/,
-              # ambush/maneuver misses ("thwarted" is just a fancy miss)
-              /Though (?<target>.+?) is caught unaware, you manage to completely miss your strike/,
-              /You make a grab for (?<target>.+?) but miss, leaving yourself open/,
-              /You stumble slightly as you leap from hiding, revealing yourself in the process\./,
-              /You move towards (?<target>.+?) to finish your kill, but .+? thwarts your attempt\./,
-              /The shadowy barb strikes harmlessly at the ground near (?<target>[^.]+)\./,
-              # volley per-target misses (each follows its own low SMR).
-              # ground|floor: both surfaces are live and the floor variant
-              # was missing entirely (1,070 occurrences in archive replay).
-              /A falling arrow flashes past (?<target>.+?) and shatters against the (?:ground|floor)!/,
-              /An incoming arrow just misses (?<target>[^!]+)!/,
-              /An arrow falls to the (?:ground|floor), narrowly missing (?<target>[^!]+)!/,
-              # target dodges the incoming shot - names the target, so it
-              # binds the event that the miss belongs to
-              /(?<target>.+?) moves at the last moment to avoid an incoming arrow!/,
-              # volley/pindown whiff against one target in the spray
-              /The spray of arrows leaves (?<target>.+?) unscathed and undeterred!/,
-              # tangleweed whiff (targeted form; the targetless idle whiff
-              # fires after the target died - no event - and stays un-def'd)
+              /A clean miss./,
+              /A close miss./,
+              /Nowhere close./,
+              /(?<attacker>.+?)'s#{MK_POST} swing goes wide./,
+              /The (?:arrow|bolt) streaks off into the distance./,
+              /Though (?<target>.+?) is caught unaware, you manage to completely miss your strike./,
+              /You make a grab for (?<target>.+?) but miss, leaving yourself open./,
+              /You stumble slightly as you leap from hiding, revealing yourself in the process./,
+              /You move towards (?<target>.+?) to finish your kill, but .+? thwarts your attempt./,
+              /The shadowy barb strikes harmlessly at the ground near (?<target>[^.]+)./,
+              /A falling arrow flashes past (?<target>.+?) and shatters against the (?:ground|floor)./,
+              /An incoming arrow just misses (?<target>[^!]+)./,
+              /An arrow falls to the (?:ground|floor), narrowly missing (?<target>[^!]+)./,
+              /(?<target>.+?) moves at the last moment to avoid an incoming arrow./,
+              /The spray of arrows leaves (?<target>.+?) unscathed and undeterred./,
               /The .+? vine#{MK_POST} (?:lashes out at|grabs at) (?<target>.+?),? (?:but is unable to grasp|unable to find a purchase)/,
-              /Your strike misses its mark!/,
-              /(?<attacker>.+?) whacks your legs to no effect!/,
-              # 2p sweep whiff (logs/examples/cman_sweep.txt)
-              /You whack (?<target>.+?'s)#{MK_POST} legs futilely!/,
-              # groin-kick whiff; "slighty" is the game's own typo, slightl?y
-              # tolerates it being fixed someday
-              /You end up missing entirely, leaving you slightl?y off balance\./,
-              # round-5 maneuver/SMR closers (each follows its own roll)
-              /(?<target>.+?) avoids your bash!/,
-              /(?<target>.+?) is unaffected by your futile bash!/,
-              /Your (?<weapon>.+?) flies wide, narrowly missing (?<target>[^!]+)!/,
-              /The net flies past you and collapses into a useless heap!/,
-              /(?<attacker>.+?) stumbles behind you like a top out of control!/,
-              /The enormous hand attempts to grab you, but you manage to avoid it at the last moment\./
+              /Your strike misses its mark./,
+              /(?<attacker>.+?) whacks your legs to no effect./,
+              /You whack (?<target>.+?'s)#{MK_POST} legs futilely./,
+              /You end up missing entirely, leaving you slightl?y off balance./,
+              /(?<target>.+?) avoids your bash./,
+              /(?<target>.+?) is unaffected by your futile bash./,
+              /Your (?<weapon>.+?) flies wide, narrowly missing (?<target>[^!]+)./,
+              /The net flies past you and collapses into a useless heap./,
+              /(?<attacker>.+?) stumbles behind you like a top out of control./,
+              /The enormous hand attempts to grab you, but you manage to avoid it at the last moment./
             ].freeze),
-            # Spectator-level hit confirm (round-6: 109k "A hit!", 5.8k
-            # "Good hit!") - another player's swing connecting, rendered
-            # without the roll/damage detail
-            OutcomeDef.new(:hit, [/^#{MK_POST}\s*(?:A|Good) hit!\s*$/].freeze),
-            OutcomeDef.new(:warded, [/^#{MK_POST}\s*Warded off!/].freeze),
-            OutcomeDef.new(:ward_failed, [/^#{MK_POST}\s*Warding failed!/].freeze),
+            OutcomeDef.new(:hit, [/(?:A|Good) hit!/].freeze),
+            OutcomeDef.new(:warded, [/Warded off!/].freeze),
+            OutcomeDef.new(:ward_failed, [/Warding failed!/].freeze),
             # INTERCEPTS - the attack is nullified BEFORE it resolves, by a
             # barrier/shield/ward standing between attacker and defender.
             # Categorically NOT :block or :evade: nothing was blocked or
@@ -102,9 +86,6 @@ module Lich
               %r{Your spell is deflected by (?:<pushBold/>)?the (?<target>.+?)'s#{MK_POST} barrier in a flash of \w+ light!},
               # mirror image - the image takes the hit, not the character
               /A mirror image of (?:you|.+?) shimmers into view, gaining substance just long enough to intercept the attack!/,
-              # outmaneuver: the attack is avoided outright, no roll involved
-              /(?<target>.+?) outmaneuvers the attack and completely avoids it!/,
-              /You outmaneuver the attack and completely avoid it!/
             ].freeze),
             OutcomeDef.new(:evade, [
               /By amazing chance, (?<target>.+?) evades the .+?!/,
@@ -125,14 +106,11 @@ module Lich
               /(?<target>.+?) rolls to one side and evades the .+?!/,
               /(?<target>.+?) skillfully dodges the .+?!/,
               /(?<target>.+?) stumbles dazedly, somehow managing to evade the .+?!/,
-              # NOTE: "outmaneuvers the attack and completely avoids it" moved
-              # to :intercept - it nullifies the attack rather than dodging it.
+              /(?<target>.+?) outmaneuvers the attack and completely avoids it!/,
+              /You outmaneuver the attack and completely avoid it!/,
               /(?<target>.+?) dodges an incoming arrow!/,
-              # mstrike per-target pre-empt (logs/examples/mstrike.txt):
-              # the swing never happens, so this IS that strike's outcome
               /Sensing your attack coming, (?<target>.+?) leaps to safety as you move to attack (?:him|her|it), leaving you out of position!/,
               /Unable to focus clearly, you blindly evade the attack!/,
-              # second person - we are the one evading
               /You barely dodge the attack!/,
               /Unfortunately, your aim is off and your attack goes wide!/,
               /You evade the (?:attack|missile|bolt) by inches!/,
@@ -152,20 +130,14 @@ module Lich
               /Staggering like a punch-drunk brawler, you dodge the .+?!/,
               /Sensing an impending attack, you manage to roll hard to the side/,
               /Stupefied, you evade the .+? by blind luck!/,
-              # NOTE: "You outmaneuver the attack..." moved to :intercept.
-              # round-5: haymaker dodge + maneuver/SMR closers
               /You manage to dodge (?<attacker>.+?)'s#{MK_POST} blow!/,
               /(?<attacker>.+?) attempts to bearhug (?<target>.+?), but .+? to evade #{MK_PRE}(?:his|her|its)#{MK_POST} grasp!/,
               /You dodge the .+? with barely a hair's breadth to spare!/,
               /You manage to dodge .+?(?:, and it passes harmlessly by| in the nick of time)!/,
               /You dodge the .+? by a hair!/,
               /Bobbing and weaving, you dodge the .+?!/,
-              # trip whiff (logs/examples/cman_trip.txt; leading article is
-              # lowercase live)
               /(?<target>.+?) deftly avoids the stroke\./
             ].freeze),
-            # NOTE: barrier/shield/bark/deflect patterns live in :intercept
-            # above - they nullify the attack rather than blocking it.
             OutcomeDef.new(:block, [
               /Amazingly, (?<target>.+?) manages to block the .+? with .+?!/,
               /At the last moment, (?<target>.+?) blocks the .+? with .+?!/,
@@ -176,9 +148,6 @@ module Lich
               /Nearly insensible, (?<target>.+?) wildly blocks the .+? with .+?!/,
               /Reeling and staggering, (?<target>.+?) barely blocks the .+? with .+?!/,
               /Stupefied, (?<target>.+?) blocks the .+? by blind luck!/,
-              # full spell-deflect barrier - replaces the roll line entirely;
-              # color varies ("ghostly blue", "pale") and either party can be
-              # the first operand
               /You harmlessly deflect the charge!/,
               /Unable to focus clearly, (?<target>.+?) blindly blocks the .+?!/,
               /With extreme effort, (?<target>.+?) blocks the .+? with .+?!/,
@@ -193,34 +162,25 @@ module Lich
               /(?<target>.+?) rolls to one side and deflects the .+? with .+?!/,
               /(?<target>.+?) skillfully blocks the .+? with .+?!/,
               /(?<target>.+?) skillfully interposes .+? between .+? and the .+?!/,
-              # "manages to" optional: "stumbles dazedly, but blocks the
-              # missile with her mattock!" is live (round-5)
               /(?<target>.+?) stumbles dazedly, but (?:manages to )?blocks? the .+? with .+?!/,
               /(?<target>.+?) deflects your (?<weapon>.+?) with #{MK_PRE}(?:his|her|its)#{MK_POST} .+?!/,
               /(?<target>.+?) stumbles dazedly, somehow managing to block the .+? with .+?!/,
               /(?<target>.+?) tumbles to the side and deflects the .+? with .+?!/,
               /(?<target>.+?) harmlessly deflects the charge!/,
-              # second person - we are the one blocking
               /You gauge the attack and expertly deflect it with your .+?!/,
               /At the last moment, you block the missile with your .+?!/,
               /In the nick of time, you interpose your .+? between yourself and the (?:missile|blow)!/,
               /Though dazed, you easily deflect the .+? with your .+?!/,
               /Although completely oblivious, you instinctively block the .+? with your .+?!/,
               /You skillfully block the missile with your .+?!/,
-              # round-5: 2p block family (~1,350 - the largest outcome hole).
-              # Ordered specific-first; the bare last pattern catches the
-              # plain wording.
               /(?:With no room to spare|With blinding speed|With extreme effort|Amazingly), you(?: manage to)? block the .+? with your .+?!/,
               /At the last moment, you block the (?:attack|missile|bolt|blow) with your .+?!/,
               /You (?:easily|skillfully) block the (?:attack|missile|bolt|blow) with your .+?!/,
               /You barely manage to block the .+? with your .+?!/,
               /With incredible finesse, you deflect the .+? with your .+?!/,
               /You block the (?:attack|missile|bolt|blow) with your .+?!/,
-              # haymaker deflect (2p)
               /You manage to deflect (?<attacker>.+?)'s#{MK_POST} blow in the nick of time!/,
-              # maneuver/SMR closers (each directly follows its own roll)
               /(?<attacker>.+?)'s#{MK_POST} spell is deflected by your barrier in a flash of \w+ light!/,
-              # 2p attacker - our spell eaten by the target's barrier
               %r{Your spell is deflected by (?:<pushBold/>)?the (?<target>.+?)'s#{MK_POST} barrier in a flash of \w+ light!}
             ].freeze),
             OutcomeDef.new(:parry, [
@@ -232,7 +192,6 @@ module Lich
               /(?<target>.+?) barely manages to fend off the .+? with .+?!/,
               /(?<target>.+?) flails on the ground but manages to parry the .+? with .+?!/,
               /(?<target>.+?) rolls to one side and parries the .+? with .+?!/,
-              # second person - we are the one parrying
               /With no room to spare, you manage to parry the blow with your .+?!/,
               /Using the bone plates surrounding your forearms, you parry the attack!/,
               /(?<target>.+?) manages to fend off (?:your|(?<attacker>.+?)'s#{MK_POST}) attack!/,
@@ -242,36 +201,56 @@ module Lich
               /With extreme effort, you beat back the .+? with your .+?!/,
               /You gauge the attack and expertly parry it with your .+?!/
             ].freeze),
-            # Hit landed (or attack resolved) but the effect was reduced or
-            # negated by a defense that is not evade/block/parry/ward
             OutcomeDef.new(:resisted, [
               /(?<target>.+?) shrugs off some of the damage!/,
               /(?<target>.+?)'s#{MK_POST} exterior hardens for a moment and softens the attack!/,
-              /A dull grey beam snakes out toward you, but dissipates upon impact\./,
-              /The web turns away harmlessly from (?<target>[^.]+)\./,
-              /The wisps dissipate harmlessly into the air\./,
-              /Your attack whistles right through (?<target>[^.]+)\./,
-              /(?<target>.+?) wavers as your attack passes right through #{MK_PRE}(?:it|him|her)#{MK_POST}!/,
-              # partial mitigation - precedes a visibly reduced damage line
               /(?<target>.+?) aura absorbs some of the damage!/,
               /(?<target>.+?) manages to block some of the (?:elemental )?damage with #{MK_PRE}(?:his|her|its)#{MK_POST} .+?!/,
               /(?<armor>.+?) partially deflects the onslaught of the \w+ attack\./,
-              # fear-save resists (follow the SSR roll)
-              /Your heart leaps for an instant, but you control the urge to run\./,
-              /(?<target>.+?) remains resolute in the face of the tremendous sound!/,
-              # round-5 maneuver/SMR closers
-              /(?<attacker>.+?) attempts to jab (?<weapon>.+?) into your .+?, but it doesn't faze you\./,
               /Your body resists the \w+ damage and lessens the severity of the attack!/
+            ].freeze),
+            # Immunity: the spell simply has no effect - no CS/TD roll is
+            # printed at all (e.g. 501 Sleep vs a troll wraith, forge
+            # capture), so this line is the ONLY thing that settles the
+            # cast event. Distinct from :warded (a roll happened and failed).
+            OutcomeDef.new(:unaffected, [
+              /(?<target>.+?) does not seem to be affected\./
             ].freeze),
             OutcomeDef.new(:fumble, [/d100 == 1 FUMBLE!/].freeze),
             OutcomeDef.new(:hindrance, [/\[Spell Hindrance for (?<armor>.+?) is (?<hindrance_amount>\d+)% with current Armor Use skill, d100= (?<roll>\d+)\]/].freeze),
             OutcomeDef.new(:confused, [/Something confusing enters your mind at the worst possible moment, and the distraction disrupts your .+?!/].freeze)
           ].freeze
 
+          # PARKED - flavor lines that accompany a failed warding attempt.
+          # Believed redundant: the result is already established by the
+          # "Warded off!" line / CS-vs-TD resolution, so matching these would
+          # only double-record the outcome. Kept here in case any of them
+          # turns out to be the ONLY line a given spell prints on failure,
+          # in which case it should be promoted back into :warded.
+          #   /A dull grey beam snakes out toward you, but dissipates upon impact\./
+          #   /The web turns away harmlessly from (?<target>[^.]+)\./
+          #   /The wisps dissipate harmlessly into the air\./
+          #   /Your attack whistles right through (?<target>[^.]+)\./
+          #   /(?<target>.+?) wavers as your attack passes right through #{MK_PRE}(?:it|him|her)#{MK_POST}!/
+          #   /Your heart leaps for an instant, but you control the urge to run\./
+          #   /(?<attacker>.+?) attempts to jab (?<weapon>.+?) into your .+?, but it doesn't faze you\./
+          #   /(?<target>.+?) remains resolute in the face of the tremendous sound!/
+
+          # Flattened [pattern, type] pairs in definition order, used for
+          # first-match-wins scanning.
+          #
+          # @return [Array<Array(Regexp, Symbol)>]
           OUTCOME_LOOKUP = OUTCOME_DEFS.flat_map { |d| d.patterns.map { |rx| [rx, d.type] } }.freeze
+
+          # Cheap literal pre-filter over all outcome patterns; ALWAYS_SCAN
+          # holds the few patterns the gate cannot cover.
           GATE, ALWAYS_SCAN = PatternGate.build(OUTCOME_LOOKUP.map(&:first))
 
-          # @return [Symbol, nil] outcome type
+          # Classifies a single game line as an attack outcome.
+          #
+          # @param line [String] one line of game text (tags included)
+          # @return [Symbol, nil] outcome type (:miss, :hit, :evade, ...),
+          #   or nil when the line is not an outcome line
           def self.parse(line)
             return nil unless GATE.match?(line) || ALWAYS_SCAN.any? { |rx| rx.match?(line) }
 
@@ -280,9 +259,22 @@ module Lich
           end
         end
 
+        # Parses combat resolution (roll) lines - the numeric line that
+        # decides an attack (AS/DS, CS/TD, UAF/UDF, SMR/SSR, and friends) -
+        # into a typed hash of its components.
         module Resolutions
+          # One roll grammar and the line format(s) that carry it.
+          #
+          # @!attribute type
+          #   @return [Symbol] roll family (:as_ds, :cs_td, :smr, ...)
+          # @!attribute patterns
+          #   @return [Array<Regexp>] roll-line formats; every named capture
+          #     becomes a key in the parsed hash
           ResolutionDef = Struct.new(:type, :patterns)
 
+          # All resolution definitions, in match-priority order.
+          #
+          # @return [Array<ResolutionDef>]
           RESOLUTION_DEFS = [
             ResolutionDef.new(:as_ds, [
               # optional "+ N +" term = True Strike bonus; the die is not
@@ -324,12 +316,22 @@ module Lich
             ].freeze)
           ].freeze
 
+          # Flattened [pattern, type] pairs in definition order.
+          #
+          # @return [Array<Array(Regexp, Symbol)>]
           RESOLUTION_LOOKUP = RESOLUTION_DEFS.flat_map { |d| d.patterns.map { |rx| [rx, d.type] } }.freeze
+
+          # Cheap literal pre-filter over all resolution patterns; ALWAYS_SCAN
+          # holds the few patterns the gate cannot cover.
           GATE, ALWAYS_SCAN = PatternGate.build(RESOLUTION_LOOKUP.map(&:first))
 
+          # Parses a single roll line into its numeric components.
+          #
+          # @param line [String] one line of game text
           # @return [Hash, nil] { type: :as_ds, as: 739, ds: 376, ..., result: 469 }
           #   with every named capture converted to Integer (total, which can
-          #   be fractional in UCS, converts to Float when it contains a dot).
+          #   be fractional in UCS, converts to Float when it contains a dot),
+          #   or nil when the line is not a resolution line
           def self.parse(line)
             return nil unless GATE.match?(line) || ALWAYS_SCAN.any? { |rx| rx.match?(line) }
 

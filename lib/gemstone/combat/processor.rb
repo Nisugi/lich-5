@@ -278,6 +278,20 @@ module Lich
               active_spawn = nil
             end
 
+            # Assault brackets (single-target multi-round attacks: flurry,
+            # barrage, pummel, guardant thrusts, thrash). The opener names
+            # the ONLY target the whole assault can strike; the rounds in
+            # between usually don't. MODULE state, not a local - the middle
+            # rounds arrive in later chunks. The end line also prints when
+            # the target dies mid-assault, so death needs no special case.
+            if (assault = Parser.parse_assault_start(line))
+              @active_assault = { name: assault[:name], target: line_target }
+              respond "[Combat] Assault started: #{assault[:name]} on #{line_target ? line_target[:name] : '(unknown)'}" if Tracker.debug?(:verbose)
+            elsif @active_assault && Parser.parse_assault_end(line) == @active_assault[:name]
+              respond "[Combat] Assault ended: #{@active_assault[:name]}" if Tracker.debug?(:verbose)
+              @active_assault = nil
+            end
+
             # Handle target switching (for multi-target attacks like volley).
             # An INBOUND event is aimed at us and has no creature target by
             # construction. It must never adopt one: any creature link later
@@ -534,6 +548,40 @@ module Lich
               # Claimed - the ambush belongs to this attack only.
               pending_ambush = nil
               current_target = current_event[:target][:id] ? current_event[:target] : nil
+
+              # Assault binding: while an assault is open, its own targetless
+              # rounds (barrage's re-nock, flurry's direction-reverse) strike
+              # the assault target by definition. :ambush is neutral - the
+              # restealth re-emerge line rides inside shadow-mastery assaults
+              # (see weapon_pulverize.txt) and binds the same way. Any OTHER
+              # outbound attack def is impossible during an assault, so it
+              # means our bracket state is stale (missed end line, script
+              # restart) - drop the context rather than misattribute.
+              if @active_assault && !current_event[:inbound] && !current_event[:foreign_target]
+                if current_event[:name] == @active_assault[:name] || current_event[:name] == :ambush
+                  if current_target.nil? && @active_assault[:target] && @active_assault[:target][:id]
+                    current_event[:target] = @active_assault[:target]
+                    current_target = @active_assault[:target]
+                    respond "[Combat] Assault bound target: #{current_target[:name]}" if Tracker.debug?(:verbose)
+                  elsif current_target && @active_assault[:target].nil?
+                    # barrage's opener names no target - the first named
+                    # round inside the bracket backfills it
+                    @active_assault[:target] = current_target
+                  end
+                elsif current_event[:attacker].nil? &&
+                      !%i[unknown companion].include?(current_event[:name])
+                  # Only OUR OWN attacks are impossible mid-assault. A third
+                  # party's are normal and must not disturb the bracket:
+                  # :companion defs capture (?<companion>) not (?<attacker>)
+                  # so they parse attackerless, hence the explicit exemption;
+                  # creature-vs-groupmate defs carry :attacker and fall out
+                  # on the nil check. Those events keep their own captured
+                  # targets and attribute normally either way - this guard
+                  # only decides whether the assault context survives them.
+                  respond "[Combat] Assault context dropped (unexpected attack: #{current_event[:name]})" if Tracker.debug?(:verbose)
+                  @active_assault = nil
+                end
+              end
 
               # Some initiation lines carry their damage INLINE rather than on
               # a following "... N points of damage!" line - the damage-over-
