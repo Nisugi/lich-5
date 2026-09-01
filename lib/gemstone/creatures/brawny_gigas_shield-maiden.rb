@@ -133,13 +133,24 @@
   ],
   treasure: {
     coins: true,
-    magic_items: nil,
+    magic_items: true,
     gems: true,
     boxes: true,
     skin: false,
-    other: "gigas fragment",
+    other: [
+      "gigas fragment",
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "petrified mammoth tusk"
+    ],
     blunt_required: false,
-    armaments: nil,
+    armaments: [
+      "drake falchion",
+      "drake greatsword",
+      "drake mace",
+      "feras mattock",
+      "drake greataxe"
+    ],
     transmogs: nil
   },
   messaging: {

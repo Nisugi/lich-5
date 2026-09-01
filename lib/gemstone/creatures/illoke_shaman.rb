@@ -129,7 +129,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet mote of essence",
+    other: [
+      "Glowing violet mote of essence",
+      "essence of earth"
+    ],
     armaments: nil,
     transmogs: nil
   },

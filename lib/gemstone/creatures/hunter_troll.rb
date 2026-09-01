@@ -96,7 +96,12 @@
     gems: true,
     boxes: true,
     skin: "a troll tongue",
-    other: "a small troll tooth",
+    other: [
+      "a small troll tooth",
+      "glimmering blue mote of essence",
+      "glimmering blue essence shard",
+      "large troll tooth"
+    ],
     armaments: nil,
     transmogs: nil
   },

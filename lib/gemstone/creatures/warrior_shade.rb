@@ -85,7 +85,7 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: "glowing violet essence shard",
     armaments: nil,
     transmogs: nil
   },

@@ -90,7 +90,7 @@
     gems: false,
     boxes: false,
     skin: "a sidewinder scale",
-    other: "no",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

@@ -110,12 +110,12 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
-    gems: nil,
+    gems: true,
     boxes: false,
     skin: "a kiramon mandible",
-    other: nil,
+    other: "corked crystalline globe filled with glowing mineral water",
     armaments: nil,
     transmogs: nil
   },

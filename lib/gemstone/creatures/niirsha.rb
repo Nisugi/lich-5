@@ -93,7 +93,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Reticulated orbsGlimmering blue essence shard",
+    other: [
+      "Reticulated orbsGlimmering blue essence shard",
+      "glimmering blue mote of essence"
+    ],
     armaments: nil,
     transmogs: nil
   },

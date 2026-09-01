@@ -96,7 +96,7 @@
     magic_items: nil,
     gems: true,
     boxes: true,
-    skin: "No",
+    skin: nil,
     other: nil,
     armaments: nil,
     transmogs: nil

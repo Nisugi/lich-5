@@ -128,7 +128,7 @@
     gems: true,
     boxes: true,
     skin: "a troll beard",
-    other: nil,
+    other: "small troll tooth",
     armaments: nil,
     transmogs: nil
   },

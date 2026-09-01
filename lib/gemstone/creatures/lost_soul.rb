@@ -109,8 +109,8 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "No",
-    other: nil,
+    skin: nil,
+    other: "inky necrotic core",
     armaments: nil,
     transmogs: nil
   },

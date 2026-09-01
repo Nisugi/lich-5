@@ -119,12 +119,15 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: true,
     boxes: nil,
     skin: "a kiramon tongue",
-    other: "glowing mineral water",
+    other: [
+      "glowing mineral water",
+      "tiny golden seed"
+    ],
     armaments: nil,
     transmogs: nil
   },

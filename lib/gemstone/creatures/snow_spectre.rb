@@ -87,7 +87,7 @@
     gems: true,
     boxes: true,
     skin: "a spectre nail",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

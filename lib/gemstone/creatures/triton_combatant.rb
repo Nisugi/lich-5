@@ -108,13 +108,22 @@
     "a razor-tined pale green trident"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
-    armaments: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "tiny golden seed",
+      "radiant crimson essence shard"
+    ],
+    armaments: [
+      "drake greataxe",
+      "drake greatsword",
+      "corroded black ora awl-pike"
+    ],
     transmogs: nil
   },
   messaging: {

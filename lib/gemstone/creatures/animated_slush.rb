@@ -115,7 +115,10 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "Gold Dust",
+    other: [
+      "Gold Dust",
+      "essence of water"
+    ],
     armaments: nil,
     transmogs: nil
   },

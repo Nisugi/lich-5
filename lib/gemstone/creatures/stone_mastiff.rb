@@ -88,12 +88,12 @@
     "a bruised right eye"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: nil,
     boxes: nil,
     skin: "a stone heart",
-    other: nil,
+    other: "essence of earth",
     armaments: nil,
     transmogs: nil
   },

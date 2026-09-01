@@ -100,7 +100,7 @@
     gems: true,
     boxes: true,
     skin: "a jagged rift crawler tooth",
-    other: "Yes",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

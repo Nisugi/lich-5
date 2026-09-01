@@ -91,12 +91,12 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,
     skin: "antlers (special)",
-    other: "No",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

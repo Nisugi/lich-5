@@ -117,8 +117,27 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
-    armaments: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "petrified mammoth tusk"
+    ],
+    armaments: [
+      "drake greatsword",
+      "drake greataxe",
+      "feras hammer",
+      "feras mace",
+      "feras tiger-claw",
+      "drake dagger",
+      "feras falchion",
+      "feras dagger",
+      "drake yierka-spur",
+      "drake falchion",
+      "feras mattock",
+      "drake scimitar",
+      "drake mace",
+      "feras rapier"
+    ],
     transmogs: nil
   },
   messaging: {

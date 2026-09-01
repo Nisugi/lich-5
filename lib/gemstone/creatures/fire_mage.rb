@@ -125,7 +125,7 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: "essence of fire",
     armaments: nil,
     transmogs: nil
   },

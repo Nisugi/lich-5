@@ -77,12 +77,12 @@
     "some full plate"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    gems: true,
+    boxes: true,
     skin: nil,
-    other: nil,
+    other: "glimmering blue essence shard",
     armaments: nil,
     transmogs: nil
   },

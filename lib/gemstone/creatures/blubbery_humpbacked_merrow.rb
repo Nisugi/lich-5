@@ -80,9 +80,12 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "No",
+    skin: nil,
     other: nil,
-    armaments: nil,
+    armaments: [
+      "drake yierka-spur",
+      "feras mattock"
+    ],
     transmogs: nil
   },
   messaging: {

@@ -120,7 +120,7 @@
     gems: true,
     boxes: true,
     skin: "an orc scalp",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

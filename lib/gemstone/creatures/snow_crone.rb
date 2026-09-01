@@ -108,7 +108,10 @@
     gems: true,
     boxes: true,
     skin: "a crooked crone finger",
-    other: nil,
+    other: [
+      "essence of water",
+      "glowing violet mote of essence"
+    ],
     armaments: nil,
     transmogs: nil
   },

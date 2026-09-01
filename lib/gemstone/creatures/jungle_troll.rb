@@ -102,7 +102,10 @@
     gems: true,
     boxes: true,
     skin: "a troll knuckle",
-    other: nil,
+    other: [
+      "small troll tooth",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

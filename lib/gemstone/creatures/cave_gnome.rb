@@ -108,7 +108,10 @@
     gems: true,
     boxes: true,
     skin: "a gnome scalp",
-    other: "Alchemy (common)",
+    other: [
+      "Alchemy (common)",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

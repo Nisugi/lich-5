@@ -139,7 +139,7 @@
     gems: true,
     boxes: true,
     skin: "a hobgoblin scalp",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

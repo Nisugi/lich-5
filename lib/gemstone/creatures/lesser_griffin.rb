@@ -116,12 +116,15 @@
     "a completely severed left front leg"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: true,
     boxes: false,
     skin: "ruffed tawny griffin pelt",
-    other: "Glowing violet essence dust",
+    other: [
+      "Glowing violet essence dust",
+      "glowing violet essence shard"
+    ],
     armaments: nil,
     transmogs: nil
   },

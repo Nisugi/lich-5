@@ -97,7 +97,7 @@
     gems: true,
     boxes: true,
     skin: "a ghoul scraping",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

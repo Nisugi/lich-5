@@ -109,7 +109,7 @@
     gems: true,
     boxes: true,
     skin: "a ghoul finger",
-    other: nil,
+    other: "s'ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

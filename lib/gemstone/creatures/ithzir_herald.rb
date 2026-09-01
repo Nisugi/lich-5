@@ -127,7 +127,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "crystal-edged weapons",
+    other: [
+      "crystal-edged weapons",
+      "tiny golden seed"
+    ],
     armaments: nil,
     transmogs: nil
   },

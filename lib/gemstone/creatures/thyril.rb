@@ -98,8 +98,11 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "No",
-    other: "Alchemy (common)",
+    skin: nil,
+    other: [
+      "Alchemy (common)",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

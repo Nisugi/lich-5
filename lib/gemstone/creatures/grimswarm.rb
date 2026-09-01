@@ -67,7 +67,7 @@
     magic_items: true,
     gems: false,
     boxes: false,
-    skin: "No",
+    skin: nil,
     other: "a crude bone key",
     armaments: nil,
     transmogs: nil

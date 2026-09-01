@@ -76,10 +76,10 @@
     "a length of rusted chain"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    gems: true,
+    boxes: true,
     skin: nil,
     other: "Glowing violet essence dust",
     armaments: nil,

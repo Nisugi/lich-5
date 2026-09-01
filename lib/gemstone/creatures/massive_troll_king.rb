@@ -96,7 +96,11 @@
     gems: true,
     boxes: true,
     skin: "a massive troll king hide",
-    other: "trolls blood, Glowing violet essence dust",
+    other: [
+      "trolls blood, Glowing violet essence dust",
+      "small troll tooth",
+      "large troll tooth"
+    ],
     armaments: nil,
     transmogs: nil
   },

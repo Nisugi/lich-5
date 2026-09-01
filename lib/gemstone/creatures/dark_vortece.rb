@@ -79,7 +79,7 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil,
+    other: "essence of air",
     armaments: nil,
     transmogs: nil
   },

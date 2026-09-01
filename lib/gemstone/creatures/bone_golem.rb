@@ -100,7 +100,7 @@
     gems: true,
     boxes: true,
     skin: "a golem bone",
-    other: nil,
+    other: "crystal core",
     armaments: nil,
     transmogs: nil
   },

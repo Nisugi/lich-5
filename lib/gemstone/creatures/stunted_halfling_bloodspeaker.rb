@@ -145,7 +145,7 @@
     gems: true,
     boxes: true,
     skin: false,
-    other: ["herbs", "gigas fragments"],
+    other: ["herbs", "gigas fragments", "ayanad crystal", "n'ayanad crystal", "petrified mammoth tusk"],
     blunt_required: false,
     armaments: nil,
     transmogs: nil

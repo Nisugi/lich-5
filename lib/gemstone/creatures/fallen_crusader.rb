@@ -121,9 +121,9 @@
   ],
   treasure: {
     coins: true,
-    magic_items: nil,
+    magic_items: true,
     gems: true,
-    boxes: nil,
+    boxes: true,
     skin: nil,
     other: "Inky necrotic core",
     armaments: nil,

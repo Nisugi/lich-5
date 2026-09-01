@@ -134,8 +134,15 @@
     gems: true,
     boxes: true,
     skin: "an elongated triton spine",
-    other: nil,
-    armaments: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "tiny golden seed",
+      "radiant crimson essence shard"
+    ],
+    armaments: [
+      "drake greataxe"
+    ],
     transmogs: nil
   },
   messaging: {

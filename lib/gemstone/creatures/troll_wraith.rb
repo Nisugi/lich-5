@@ -84,12 +84,15 @@
     "some blackened steel gauntlets"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
+    boxes: true,
     skin: nil,
-    other: "Glowing Violet Essence Dust,",
+    other: [
+      "Glowing Violet Essence Dust",
+      "glowing violet mote of essence"
+    ],
     armaments: nil,
     transmogs: nil
   },

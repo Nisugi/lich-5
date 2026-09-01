@@ -75,10 +75,10 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: nil,
-    magic_items: nil,
+    coins: true,
+    magic_items: true,
     gems: true,
-    boxes: nil,
+    boxes: true,
     skin: "crest",
     other: nil,
     armaments: nil,

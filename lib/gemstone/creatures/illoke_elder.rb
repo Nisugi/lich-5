@@ -143,7 +143,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "radiant crimson essence shard",
+    other: [
+      "radiant crimson essence shard",
+      "essence of earth"
+    ],
     armaments: nil,
     transmogs: nil
   },

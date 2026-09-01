@@ -91,9 +91,9 @@
     "some rusted double chain"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
-    gems: nil,
+    gems: true,
     boxes: nil,
     skin: nil,
     other: "Glowing violet essence shard",

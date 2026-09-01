@@ -84,7 +84,7 @@
     "a completely severed right leg"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: nil,
     boxes: nil,

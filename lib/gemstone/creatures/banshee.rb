@@ -95,7 +95,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Inky necrotic core",
+    other: [
+      "Inky necrotic core",
+      "glowing violet mote of essence"
+    ],
     armaments: nil,
     transmogs: nil
   },

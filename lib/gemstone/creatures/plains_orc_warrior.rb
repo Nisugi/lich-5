@@ -94,7 +94,7 @@
     gems: true,
     boxes: true,
     skin: "a scraggly orc scalp",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

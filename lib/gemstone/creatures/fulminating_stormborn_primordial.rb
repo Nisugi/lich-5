@@ -113,9 +113,11 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "No",
-    other: nil,
-    armaments: nil,
+    skin: nil,
+    other: "ayanad crystal",
+    armaments: [
+      "drake mace"
+    ],
     transmogs: nil
   },
   messaging: {

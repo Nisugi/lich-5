@@ -103,9 +103,9 @@
     "some acid-pitted black steel full plate"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
     boxes: nil,
     skin: nil,
     other: nil,

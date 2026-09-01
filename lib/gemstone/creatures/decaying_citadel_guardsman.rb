@@ -91,8 +91,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
-    armaments: nil,
+    other: "inky necrotic core",
+    armaments: [
+      "polished red steel Hammer of Kai"
+    ],
     transmogs: nil
   },
   messaging: {

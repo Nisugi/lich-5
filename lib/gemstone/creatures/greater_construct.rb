@@ -102,11 +102,11 @@
   ],
   treasure: {
     coins: true,
-    magic_items: nil,
+    magic_items: true,
     gems: true,
-    boxes: nil,
+    boxes: true,
     skin: nil,
-    other: nil,
+    other: "crystal core",
     armaments: nil,
     transmogs: nil
   },

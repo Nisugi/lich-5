@@ -98,12 +98,15 @@
     "a twisted soot black runestaff capped with a gold-caged crystal drop of water"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
+    boxes: true,
     skin: nil,
-    other: nil,
+    other: [
+      "inky necrotic core",
+      "n'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

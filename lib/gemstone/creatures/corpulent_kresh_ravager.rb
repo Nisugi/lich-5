@@ -81,7 +81,7 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: true,
     boxes: false,

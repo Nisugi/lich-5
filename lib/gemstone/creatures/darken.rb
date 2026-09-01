@@ -73,7 +73,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shard",
+    other: [
+      "Glimmering blue essence shard",
+      "glimmering blue mote of essence"
+    ],
     armaments: nil,
     transmogs: nil
   },

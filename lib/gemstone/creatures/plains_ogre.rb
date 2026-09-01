@@ -96,7 +96,10 @@
     gems: true,
     boxes: true,
     skin: "an ogre nose",
-    other: nil,
+    other: [
+      "ayanad crystal",
+      "s'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

@@ -92,11 +92,11 @@
     "some black velvet robes"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
-    boxes: nil,
-    skin: "No",
+    coins: true,
+    magic_items: true,
+    gems: true,
+    boxes: true,
+    skin: nil,
     other: nil,
     armaments: nil,
     transmogs: nil

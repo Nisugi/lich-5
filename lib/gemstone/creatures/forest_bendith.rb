@@ -94,9 +94,12 @@
     coins: true,
     magic_items: nil,
     gems: true,
-    boxes: nil,
+    boxes: true,
     skin: nil,
-    other: "Glowing violet essence shard",
+    other: [
+      "Glowing violet essence shard",
+      "glowing violet essence dust"
+    ],
     armaments: nil,
     transmogs: nil
   },

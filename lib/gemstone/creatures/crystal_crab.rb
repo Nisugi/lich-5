@@ -78,11 +78,11 @@
   equipment: [],
   treasure: {
     coins: true,
-    magic_items: nil,
+    magic_items: true,
     gems: true,
     boxes: nil,
     skin: "a faceted crystal crab shell",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

@@ -92,7 +92,7 @@
     gems: true,
     boxes: true,
     skin: "a shelfae crest",
-    other: "No",
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

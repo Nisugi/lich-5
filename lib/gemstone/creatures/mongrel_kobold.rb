@@ -95,7 +95,7 @@
     gems: true,
     boxes: true,
     skin: "mangy kobold scalp",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

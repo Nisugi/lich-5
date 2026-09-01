@@ -101,7 +101,7 @@
     gems: true,
     boxes: true,
     skin: "a wight scalp",
-    other: nil,
+    other: "glimmering blue essence dust",
     armaments: nil,
     transmogs: nil
   },

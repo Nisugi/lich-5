@@ -146,8 +146,13 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
-    armaments: nil,
+    other: [
+      "tiny golden seed",
+      "radiant crimson mote of essence"
+    ],
+    armaments: [
+      "heavy crystal-capped maul"
+    ],
     transmogs: nil
   },
   messaging: {

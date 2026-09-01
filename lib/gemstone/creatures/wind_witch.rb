@@ -121,7 +121,10 @@
     gems: true,
     boxes: true,
     skin: "a crooked witch nose",
-    other: nil,
+    other: [
+      "essence of air",
+      "s'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

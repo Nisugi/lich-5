@@ -102,7 +102,7 @@
     "a completely severed right foreleg"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,

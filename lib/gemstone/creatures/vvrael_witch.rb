@@ -136,8 +136,8 @@
   treasure: {
     coins: true,
     magic_items: true,
-    gems: nil,
-    boxes: nil,
+    gems: true,
+    boxes: true,
     skin: nil,
     other: "Radiant crimson essence shardTiny golden seed",
     armaments: nil,

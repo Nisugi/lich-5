@@ -90,12 +90,12 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,
     skin: "an ursian tusk",
-    other: "No",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

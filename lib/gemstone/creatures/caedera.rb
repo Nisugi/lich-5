@@ -102,7 +102,7 @@
     gems: false,
     boxes: false,
     skin: "a caedera's ",
-    other: "No",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

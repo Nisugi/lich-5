@@ -142,7 +142,10 @@
     gems: true,
     boxes: true,
     skin: "a troll scalp",
-    other: nil,
+    other: [
+      "essence of air",
+      "small troll tooth"
+    ],
     armaments: nil,
     transmogs: nil
   },

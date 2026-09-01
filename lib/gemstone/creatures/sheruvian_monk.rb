@@ -88,12 +88,15 @@
     "some black velvet robes"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
-    gems: nil,
+    gems: true,
     boxes: nil,
     skin: nil,
-    other: "Glowing violet essence dust",
+    other: [
+      "Glowing violet essence dust",
+      "tiny golden seed"
+    ],
     armaments: nil,
     transmogs: nil
   },

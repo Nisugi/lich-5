@@ -100,7 +100,7 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: "tiny golden seed",
     armaments: nil,
     transmogs: nil
   },

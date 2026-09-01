@@ -82,12 +82,12 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: nil,
     boxes: nil,
     skin: "an ice hound ear",
-    other: nil,
+    other: "essence of water",
     armaments: nil,
     transmogs: nil
   },

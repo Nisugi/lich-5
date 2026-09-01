@@ -108,7 +108,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Tiny golden seed",
+    other: [
+      "Tiny golden seed",
+      "glowing violet essence dust"
+    ],
     armaments: nil,
     transmogs: nil
   },

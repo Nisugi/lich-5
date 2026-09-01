@@ -91,12 +91,12 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,
     skin: "a warcat whisker",
-    other: "no",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

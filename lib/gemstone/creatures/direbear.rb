@@ -98,12 +98,12 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,
     skin: "direbear fang",
-    other: "No",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

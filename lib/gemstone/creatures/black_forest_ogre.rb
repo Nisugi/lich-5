@@ -162,8 +162,11 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "no",
-    other: "Glowing violet essence shard",
+    skin: nil,
+    other: [
+      "Glowing violet essence shard",
+      "tiny golden seed"
+    ],
     armaments: nil,
     transmogs: nil
   },

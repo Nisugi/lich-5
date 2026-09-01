@@ -86,7 +86,10 @@
     gems: true,
     boxes: true,
     skin: "a trali hide",
-    other: "Glowing violet essence shard",
+    other: [
+      "Glowing violet essence shard",
+      "tiny golden seed"
+    ],
     armaments: nil,
     transmogs: nil
   },

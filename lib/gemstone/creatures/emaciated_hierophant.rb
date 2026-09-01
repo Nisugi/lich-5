@@ -110,8 +110,13 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "No",
-    other: "Glowing violet essence dust",
+    skin: nil,
+    other: [
+      "Glowing violet essence dust",
+      "glowing violet essence shard",
+      "tiny golden seed",
+      "n'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

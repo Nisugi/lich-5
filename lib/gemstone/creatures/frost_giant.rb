@@ -132,7 +132,7 @@
     gems: true,
     boxes: true,
     skin: "a giant toe",
-    other: nil,
+    other: "essence of water",
     armaments: nil,
     transmogs: nil
   },

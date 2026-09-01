@@ -96,7 +96,7 @@
     gems: true,
     boxes: true,
     skin: "luminescent silvery boulder opal",
-    other: nil,
+    other: "essence of earth",
     armaments: nil,
     transmogs: nil
   },

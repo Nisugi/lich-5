@@ -91,7 +91,7 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "No",
+    other: "glowing violet essence dust",
     armaments: nil,
     transmogs: nil
   },

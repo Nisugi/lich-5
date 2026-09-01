@@ -109,7 +109,10 @@
     gems: true,
     boxes: true,
     skin: "an ice troll scalp",
-    other: "essence of water, small troll tooth",
+    other: [
+      "essence of water, small troll tooth",
+      "glimmering blue essence shard"
+    ],
     armaments: nil,
     transmogs: nil
   },

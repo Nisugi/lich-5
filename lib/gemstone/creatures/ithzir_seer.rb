@@ -160,7 +160,9 @@
     boxes: true,
     skin: nil,
     other: nil,
-    armaments: nil,
+    armaments: [
+      "heavy crystal-capped maul"
+    ],
     transmogs: nil
   },
   messaging: {

@@ -105,7 +105,10 @@
     gems: true,
     boxes: true,
     skin: "a wight claw",
-    other: nil,
+    other: [
+      "s'ayanad crystal",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

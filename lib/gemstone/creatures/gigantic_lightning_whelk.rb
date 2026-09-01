@@ -93,12 +93,15 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
     boxes: nil,
     skin: nil,
-    other: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

@@ -83,7 +83,7 @@
     gems: true,
     boxes: true,
     skin: "an orc knuckle",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

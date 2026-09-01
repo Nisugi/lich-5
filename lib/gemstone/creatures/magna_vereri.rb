@@ -104,7 +104,7 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

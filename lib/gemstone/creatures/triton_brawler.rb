@@ -120,7 +120,10 @@
     gems: true,
     boxes: true,
     skin: "darkened triton hide",
-    other: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

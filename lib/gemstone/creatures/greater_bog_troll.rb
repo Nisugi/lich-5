@@ -105,7 +105,11 @@
     gems: true,
     boxes: true,
     skin: "a cracked troll jawbone",
-    other: nil,
+    other: [
+      "small troll tooth",
+      "large troll tooth",
+      "glowing violet mote of essence"
+    ],
     armaments: nil,
     transmogs: nil
   },

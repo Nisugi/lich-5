@@ -83,7 +83,7 @@
     "a bruised left eye"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,

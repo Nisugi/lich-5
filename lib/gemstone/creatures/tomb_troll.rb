@@ -91,7 +91,10 @@
     gems: true,
     boxes: true,
     skin: "troll thumb",
-    other: nil,
+    other: [
+      "small troll tooth",
+      "large troll tooth"
+    ],
     armaments: nil,
     transmogs: nil
   },

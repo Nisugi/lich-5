@@ -97,7 +97,7 @@
     gems: true,
     boxes: true,
     skin: "a mongrel hobgoblin snout",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

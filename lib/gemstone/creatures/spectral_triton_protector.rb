@@ -100,8 +100,16 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
-    armaments: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal"
+    ],
+    armaments: [
+      "drake greatsword",
+      "drake falchion",
+      "black ora morning star",
+      "drake greataxe"
+    ],
     transmogs: nil
   },
   messaging: {

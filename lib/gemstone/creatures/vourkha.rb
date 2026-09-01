@@ -103,7 +103,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet essence dust,",
+    other: [
+      "Glowing violet essence dust",
+      "glowing violet essence shard"
+    ],
     armaments: nil,
     transmogs: nil
   },

@@ -112,12 +112,16 @@
     "a tarnished invar kaskara"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
     boxes: true,
     skin: nil,
-    other: "Farlook vitreous humor",
+    other: [
+      "Farlook vitreous humor",
+      "vial of farlook vitreous humor",
+      "radiant crimson mote of essence"
+    ],
     armaments: nil,
     transmogs: nil
   },

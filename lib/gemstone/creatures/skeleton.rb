@@ -101,7 +101,7 @@
     gems: true,
     boxes: true,
     skin: "skeleton bone",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

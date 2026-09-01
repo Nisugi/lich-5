@@ -105,7 +105,7 @@
     gems: true,
     boxes: true,
     skin: "a tegursh claw",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

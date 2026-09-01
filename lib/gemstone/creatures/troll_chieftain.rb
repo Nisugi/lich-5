@@ -92,7 +92,11 @@
     gems: true,
     boxes: true,
     skin: "troll fang",
-    other: nil,
+    other: [
+      "glimmering blue essence shard",
+      "glimmering blue mote of essence",
+      "t'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

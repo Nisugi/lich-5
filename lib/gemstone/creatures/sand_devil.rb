@@ -150,7 +150,7 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "No",
+    skin: nil,
     other: "glowing violet essence dust",
     armaments: nil,
     transmogs: nil

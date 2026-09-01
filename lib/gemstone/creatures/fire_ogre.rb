@@ -85,10 +85,10 @@
     "a scorched black oak-hafted flail"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    gems: true,
+    boxes: true,
     skin: "ogre tooth",
     other: "shimmering blue essence shardessence of fire",
     armaments: nil,

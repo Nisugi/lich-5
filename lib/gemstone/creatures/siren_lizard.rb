@@ -111,7 +111,7 @@
   equipment: [],
   treasure: {
     coins: true,
-    magic_items: nil,
+    magic_items: true,
     gems: true,
     boxes: nil,
     skin: "a multicolored siren lizard skin",

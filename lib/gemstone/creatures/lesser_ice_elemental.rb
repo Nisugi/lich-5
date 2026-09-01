@@ -106,7 +106,7 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil,
+    other: "essence of water",
     armaments: nil,
     transmogs: nil
   },

@@ -93,7 +93,11 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Radiant crimson essence dust",
+    other: [
+      "Radiant crimson essence dust",
+      "tiny golden seed",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

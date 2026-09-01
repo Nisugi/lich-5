@@ -87,12 +87,12 @@
     "a massive pitted iron pavis"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: true,
     boxes: false,
-    skin: "No",
-    other: "Yes",
+    skin: nil,
+    other: "essence of earth",
     armaments: nil,
     transmogs: nil
   },

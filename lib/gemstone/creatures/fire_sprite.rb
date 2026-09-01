@@ -94,7 +94,11 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet mote of essence",
+    other: [
+      "Glowing violet mote of essence",
+      "essence of fire",
+      "pristine sprite's hair"
+    ],
     armaments: nil,
     transmogs: nil
   },

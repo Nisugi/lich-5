@@ -121,7 +121,11 @@
     gems: true,
     boxes: true,
     skin: "a flame-scarred dreadsteed skull",
-    other: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "petrified mammoth tusk"
+    ],
     armaments: nil,
     transmogs: nil
   },

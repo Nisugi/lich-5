@@ -112,7 +112,7 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "No",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

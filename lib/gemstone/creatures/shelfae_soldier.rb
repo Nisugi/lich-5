@@ -84,7 +84,7 @@
     gems: true,
     boxes: true,
     skin: "a shelfae scale",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

@@ -108,7 +108,7 @@
     gems: true,
     boxes: true,
     skin: "a chimera stinger",
-    other: nil,
+    other: "glowing violet essence dust",
     armaments: nil,
     transmogs: nil
   },

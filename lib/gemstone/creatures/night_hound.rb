@@ -85,12 +85,12 @@
     "a completely severed right paw"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,
     skin: "a night hound hide",
-    other: "No",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

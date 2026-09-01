@@ -146,7 +146,11 @@
     gems: true,
     boxes: true,
     skin: "a fenghai fur",
-    other: "Glimmering blue essence shard",
+    other: [
+      "Glimmering blue essence shard",
+      "s'ayanad crystal",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

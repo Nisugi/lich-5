@@ -103,7 +103,9 @@
     boxes: true,
     skin: nil,
     other: "Alchemy (common)",
-    armaments: nil,
+    armaments: [
+      "mottled grey falchion"
+    ],
     transmogs: nil
   },
   messaging: {

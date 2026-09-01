@@ -115,7 +115,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: [
+      "glimmering blue essence shard",
+      "s'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

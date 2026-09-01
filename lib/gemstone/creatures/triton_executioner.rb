@@ -111,8 +111,19 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
-    armaments: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "tiny golden seed",
+      "radiant crimson essence shard"
+    ],
+    armaments: [
+      "black ora jeddart-axe",
+      "drake greatsword",
+      "drake greataxe",
+      "drake falchion",
+      "corroded black ora awl-pike"
+    ],
     transmogs: nil
   },
   messaging: {

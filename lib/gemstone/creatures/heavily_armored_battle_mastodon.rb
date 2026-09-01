@@ -118,7 +118,7 @@
     "some studded leather barding"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: nil,
     gems: false,
     boxes: false,

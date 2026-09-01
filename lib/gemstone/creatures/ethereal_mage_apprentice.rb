@@ -98,7 +98,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet essence dust",
+    other: [
+      "Glowing violet essence dust",
+      "inky necrotic core"
+    ],
     armaments: nil,
     transmogs: nil
   },

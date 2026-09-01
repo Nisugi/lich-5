@@ -115,7 +115,10 @@
     gems: true,
     boxes: true,
     skin: "a glistening black eye",
-    other: nil,
+    other: [
+      "s'ayanad crystal",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

@@ -123,7 +123,7 @@
     gems: true,
     boxes: true,
     skin: "ogre tusk",
-    other: nil,
+    other: "s'ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

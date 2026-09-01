@@ -88,11 +88,15 @@
   ],
   treasure: {
     coins: true,
-    magic_items: nil,
+    magic_items: true,
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shard",
+    other: [
+      "Glimmering blue essence shard",
+      "t'ayanad crystal",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

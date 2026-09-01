@@ -90,7 +90,7 @@
     gems: true,
     boxes: false,
     skin: "pale crab pincer",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

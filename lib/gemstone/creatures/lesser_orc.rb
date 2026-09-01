@@ -108,7 +108,7 @@
     gems: true,
     boxes: true,
     skin: "an orc hide",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

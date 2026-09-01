@@ -134,7 +134,7 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: "inky necrotic core",
     armaments: nil,
     transmogs: nil
   },

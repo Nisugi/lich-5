@@ -97,7 +97,11 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "petrified mammoth tusk"
+    ],
     armaments: nil,
     transmogs: nil
   },

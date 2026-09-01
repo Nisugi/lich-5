@@ -116,7 +116,7 @@
     "a firewheel arrow fletched with plain white feathers"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: nil,
     boxes: nil,

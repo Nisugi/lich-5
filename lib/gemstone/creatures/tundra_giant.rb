@@ -92,7 +92,10 @@
     gems: true,
     boxes: true,
     skin: "a tundra giant tooth",
-    other: "Glimmering blue essence shard",
+    other: [
+      "Glimmering blue essence shard",
+      "essence of water"
+    ],
     armaments: nil,
     transmogs: nil
   },

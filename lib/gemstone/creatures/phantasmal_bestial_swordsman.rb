@@ -104,7 +104,9 @@
     boxes: true,
     skin: nil,
     other: "Glowing violet mote of essence",
-    armaments: nil,
+    armaments: [
+      "polished red steel Hammer of Kai"
+    ],
     transmogs: nil
   },
   messaging: {

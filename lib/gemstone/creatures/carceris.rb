@@ -112,7 +112,7 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: "glimmering blue essence dust",
     armaments: nil,
     transmogs: nil
   },

@@ -127,7 +127,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: [
+      "tiny golden seed",
+      "n'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

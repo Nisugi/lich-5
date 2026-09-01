@@ -100,13 +100,21 @@
     "a tattered hide cloak painted with dark sigils"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
+    boxes: true,
     skin: nil,
-    other: nil,
-    armaments: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "petrified mammoth tusk"
+    ],
+    armaments: [
+      "feras falchion",
+      "drake greatsword",
+      "feras mattock"
+    ],
     transmogs: nil
   },
   messaging: {

@@ -115,8 +115,11 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "No",
-    other: nil,
+    skin: nil,
+    other: [
+      "crystal core",
+      "essence of earth"
+    ],
     armaments: nil,
     transmogs: nil
   },

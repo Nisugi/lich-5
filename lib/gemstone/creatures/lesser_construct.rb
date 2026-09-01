@@ -99,7 +99,7 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: "crystal core",
     armaments: nil,
     transmogs: nil
   },

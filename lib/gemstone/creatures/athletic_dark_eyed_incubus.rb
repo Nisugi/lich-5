@@ -95,12 +95,12 @@
     "a pair of tight leather trousers"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

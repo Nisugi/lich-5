@@ -96,7 +96,11 @@
     gems: true,
     boxes: true,
     skin: "a krynch shinbone",
-    other: nil,
+    other: [
+      "glimmering blue essence dust",
+      "glimmering blue essence shard",
+      "essence of earth"
+    ],
     armaments: nil,
     transmogs: nil
   },

@@ -122,8 +122,32 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "pristine siren's hair",
-    armaments: nil,
+    other: [
+      "pristine siren's hair",
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "tiny golden seed",
+      "radiant crimson essence shard"
+    ],
+    armaments: [
+      "feras dagger",
+      "feras falchion",
+      "feras rapier",
+      "drake scimitar",
+      "feras mattock",
+      "feras tiger-claw",
+      "feras hammer",
+      "drake falchion",
+      "feras mace",
+      "drake yierka-spur",
+      "drake dagger",
+      "black ora jeddart-axe",
+      "drake greataxe",
+      "drake greatsword",
+      "faenor-tipped black ora broadsword",
+      "drake mace",
+      "black ora pilum"
+    ],
     transmogs: nil
   },
   messaging: {

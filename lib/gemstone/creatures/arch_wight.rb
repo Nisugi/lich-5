@@ -133,12 +133,12 @@
     "some tattered gilt-edged silk robes"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
+    boxes: true,
     skin: "a wight skin",
-    other: nil,
+    other: "glimmering blue essence shard",
     armaments: nil,
     transmogs: nil
   },

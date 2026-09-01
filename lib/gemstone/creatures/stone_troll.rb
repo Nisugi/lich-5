@@ -112,7 +112,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "small troll tooth, large troll tooth",
+    other: [
+      "small troll tooth, large troll tooth",
+      "essence of earth"
+    ],
     armaments: nil,
     transmogs: nil
   },

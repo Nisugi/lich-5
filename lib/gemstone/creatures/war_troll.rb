@@ -102,7 +102,7 @@
     gems: true,
     boxes: true,
     skin: "a troll heart",
-    other: nil,
+    other: "small troll tooth",
     armaments: nil,
     transmogs: nil
   },

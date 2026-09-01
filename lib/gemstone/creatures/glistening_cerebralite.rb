@@ -128,9 +128,9 @@
   ],
   treasure: {
     coins: true,
-    magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    magic_items: true,
+    gems: true,
+    boxes: true,
     skin: "a cerebralite tentacle",
     other: nil,
     armaments: nil,

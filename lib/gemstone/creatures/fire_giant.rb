@@ -92,12 +92,12 @@
     "a rusted silver steel war mattock"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: true,
     boxes: true,
     skin: "a fire giant mane",
-    other: nil,
+    other: "essence of fire",
     armaments: nil,
     transmogs: nil
   },

@@ -97,7 +97,11 @@
     gems: true,
     boxes: true,
     skin: "a troll eye",
-    other: nil,
+    other: [
+      "essence of fire",
+      "small troll tooth",
+      "glimmering blue essence shard"
+    ],
     armaments: nil,
     transmogs: nil
   },

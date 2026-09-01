@@ -84,10 +84,10 @@
   treasure: {
     coins: true,
     magic_items: nil,
-    gems: nil,
+    gems: true,
     boxes: nil,
     skin: nil,
-    other: nil,
+    other: "essence of water",
     armaments: nil,
     transmogs: nil
   },

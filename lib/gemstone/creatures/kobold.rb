@@ -117,7 +117,9 @@
     boxes: true,
     skin: "kobold skin",
     other: nil,
-    armaments: nil,
+    armaments: [
+      "reinforced shield"
+    ],
     transmogs: nil
   },
   messaging: {

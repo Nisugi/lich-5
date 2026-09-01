@@ -110,7 +110,10 @@
     gems: true,
     boxes: true,
     skin: "an iridescent triton hide",
-    other: "a bundle of arrows",
+    other: [
+      "a bundle of arrows",
+      "tiny golden seed"
+    ],
     armaments: nil,
     transmogs: nil
   },

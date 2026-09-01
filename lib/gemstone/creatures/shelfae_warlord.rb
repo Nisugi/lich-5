@@ -81,8 +81,8 @@
   ],
   treasure: {
     coins: true,
-    magic_items: nil,
-    gems: nil,
+    magic_items: true,
+    gems: true,
     boxes: nil,
     skin: "an orange shelfae scale",
     other: nil,

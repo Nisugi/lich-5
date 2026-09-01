@@ -130,7 +130,7 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "no",
+    skin: nil,
     other: nil,
     armaments: nil,
     transmogs: nil

@@ -111,7 +111,10 @@
     gems: true,
     boxes: true,
     skin: "an arctic titan toe",
-    other: "Yes",
+    other: [
+      "essence of water",
+      "t'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

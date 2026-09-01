@@ -121,7 +121,10 @@
     gems: true,
     boxes: true,
     skin: "curved black claw",
-    other: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

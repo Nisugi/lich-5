@@ -99,7 +99,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Tiny golden seed",
+    other: [
+      "Tiny golden seed",
+      "radiant crimson essence shard"
+    ],
     armaments: nil,
     transmogs: nil
   },

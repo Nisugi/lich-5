@@ -129,8 +129,13 @@
     gems: true,
     boxes: true,
     skin: "thick triton spine",
-    other: nil,
-    armaments: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal"
+    ],
+    armaments: [
+      "drake greatsword"
+    ],
     transmogs: nil
   },
   messaging: {

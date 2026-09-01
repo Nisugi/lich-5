@@ -82,7 +82,11 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Essence of earth",
+    other: [
+      "Essence of earth",
+      "crystal core",
+      "glimmering blue essence dust"
+    ],
     armaments: nil,
     transmogs: nil
   },

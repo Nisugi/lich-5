@@ -77,7 +77,7 @@
     "some torn"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: true,
     boxes: true,

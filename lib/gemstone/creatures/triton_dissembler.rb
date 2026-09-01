@@ -98,12 +98,17 @@
     "a fine-grained deep cerulean runestaff"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
+    boxes: true,
     skin: "a curved gold-flecked claw",
-    other: nil,
+    other: [
+      "ayanad crystal",
+      "tiny golden seed",
+      "n'ayanad crystal",
+      "radiant crimson essence shard"
+    ],
     armaments: nil,
     transmogs: nil
   },

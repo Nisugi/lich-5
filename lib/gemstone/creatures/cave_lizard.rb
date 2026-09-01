@@ -83,12 +83,15 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: true,
     boxes: false,
     skin: "a stone-grey lizard tail",
-    other: nil,
+    other: [
+      "s'ayanad crystal",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

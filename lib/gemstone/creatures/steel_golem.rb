@@ -98,8 +98,11 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "No",
-    other: "crystal core (alchemy)",
+    skin: nil,
+    other: [
+      "crystal core (alchemy)",
+      "glimmering blue essence dust"
+    ],
     armaments: nil,
     transmogs: nil
   },

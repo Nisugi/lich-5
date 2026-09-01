@@ -80,8 +80,8 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "No",
-    other: nil,
+    skin: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

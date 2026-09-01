@@ -98,7 +98,7 @@
     gems: true,
     boxes: true,
     skin: "a cyclops eye",
-    other: "no",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

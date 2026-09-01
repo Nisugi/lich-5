@@ -89,7 +89,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Alchemy components, Lockpicks",
+    other: [
+      "Alchemy components, Lockpicks",
+      "essence of water"
+    ],
     armaments: nil,
     transmogs: nil
   },

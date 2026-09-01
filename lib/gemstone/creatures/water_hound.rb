@@ -90,7 +90,7 @@
     "a case of sporadic convulsions"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,

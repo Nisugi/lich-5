@@ -127,7 +127,7 @@
     gems: true,
     boxes: true,
     skin: "a vruul skin",
-    other: nil,
+    other: "glowing violet mote of essence",
     armaments: nil,
     transmogs: nil
   },

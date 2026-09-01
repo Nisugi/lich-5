@@ -98,7 +98,10 @@
     boxes: true,
     skin: nil,
     other: nil,
-    armaments: nil,
+    armaments: [
+      "warped wooden shield",
+      "weathered boarding axe"
+    ],
     transmogs: nil
   },
   messaging: {

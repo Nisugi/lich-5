@@ -95,7 +95,7 @@
     gems: true,
     boxes: true,
     skin: "hisskra skin",
-    other: nil,
+    other: "t'ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

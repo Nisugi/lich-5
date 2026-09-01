@@ -92,12 +92,16 @@
   alchemy: [],
   equipment: [],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
+    boxes: true,
     skin: nil,
-    other: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "petrified mammoth tusk"
+    ],
     blunt_required: false,
     armaments: nil,
     transmogs: nil

@@ -81,12 +81,12 @@
     "some tattered rags"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
-    gems: nil,
+    gems: true,
     boxes: nil,
     skin: nil,
-    other: nil,
+    other: "glowing violet mote of essence",
     armaments: nil,
     transmogs: nil
   },

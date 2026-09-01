@@ -111,7 +111,10 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "a heart of smooth black glaes (cursed)",
+    other: [
+      "a heart of smooth black glaes (cursed)",
+      "essence of fire"
+    ],
     armaments: nil,
     transmogs: nil
   },

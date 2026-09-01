@@ -221,8 +221,13 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
-    armaments: nil,
+    other: [
+      "glimmering blue essence dust",
+      "glowing violet essence dust"
+    ],
+    armaments: [
+      "morning star"
+    ],
     transmogs: nil
   },
   messaging: {

@@ -82,7 +82,7 @@
     gems: true,
     boxes: true,
     skin: "a swamp troll scalp",
-    other: nil,
+    other: "small troll tooth",
     armaments: nil,
     transmogs: nil
   },

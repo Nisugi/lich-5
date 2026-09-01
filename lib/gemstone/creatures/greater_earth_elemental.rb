@@ -99,12 +99,15 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "radiant crimson essence shard",
+    other: [
+      "radiant crimson essence shard",
+      "essence of earth"
+    ],
     armaments: nil,
     transmogs: nil
   },

@@ -100,7 +100,7 @@
     "a pearlescent oyster shell shield"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: nil,
     boxes: nil,

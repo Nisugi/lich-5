@@ -87,12 +87,15 @@
     "a completely severed right foreleg"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,
     skin: "vapor hound tail",
-    other: "Essence of air",
+    other: [
+      "Essence of air",
+      "elemental core"
+    ],
     armaments: nil,
     transmogs: nil
   },

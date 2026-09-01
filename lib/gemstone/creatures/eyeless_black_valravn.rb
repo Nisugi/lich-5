@@ -100,12 +100,16 @@
   alchemy: [],
   equipment: [],
   treasure: {
-    coins: nil,
-    magic_items: nil,
+    coins: true,
+    magic_items: true,
     gems: true,
-    boxes: nil,
+    boxes: true,
     skin: "inky black valravn plume",
-    other: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "petrified mammoth tusk"
+    ],
     blunt_required: false,
     armaments: nil,
     transmogs: nil

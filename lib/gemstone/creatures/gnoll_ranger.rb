@@ -97,8 +97,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "No",
-    armaments: nil,
+    other: nil,
+    armaments: [
+      "green double leather"
+    ],
     transmogs: nil
   },
   messaging: {

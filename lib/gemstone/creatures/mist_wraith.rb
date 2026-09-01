@@ -94,7 +94,7 @@
     gems: true,
     boxes: true,
     skin: "mist wraith eye",
-    other: nil,
+    other: "ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

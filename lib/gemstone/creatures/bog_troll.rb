@@ -89,7 +89,7 @@
     gems: true,
     boxes: true,
     skin: "troll ear",
-    other: nil,
+    other: "small troll tooth",
     armaments: nil,
     transmogs: nil
   },

@@ -86,7 +86,10 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "ghoul nail",
+    other: [
+      "ghoul nail",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

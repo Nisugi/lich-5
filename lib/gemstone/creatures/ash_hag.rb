@@ -103,9 +103,13 @@
     coins: true,
     magic_items: nil,
     gems: true,
-    boxes: nil,
+    boxes: true,
     skin: "a hag nose",
-    other: "glimmering blue essence shard",
+    other: [
+      "glimmering blue essence shard",
+      "essence of fire",
+      "glimmering blue essence dust"
+    ],
     armaments: nil,
     transmogs: nil
   },

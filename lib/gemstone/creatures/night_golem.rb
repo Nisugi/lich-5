@@ -84,7 +84,7 @@
     gems: true,
     boxes: true,
     skin: "night golem finger",
-    other: nil,
+    other: "crystal core",
     armaments: nil,
     transmogs: nil
   },

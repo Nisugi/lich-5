@@ -107,7 +107,11 @@
     gems: true,
     boxes: true,
     skin: "troll toe",
-    other: nil,
+    other: [
+      "small troll tooth",
+      "s'ayanad crystal",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

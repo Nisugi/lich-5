@@ -100,7 +100,7 @@
     gems: true,
     boxes: true,
     skin: "a wraith talon",
-    other: nil,
+    other: "s'ayanad crystal",
     armaments: nil,
     transmogs: nil
   },

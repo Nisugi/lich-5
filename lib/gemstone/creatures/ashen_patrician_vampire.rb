@@ -111,8 +111,16 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil,
-    armaments: nil,
+    other: [
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "petrified mammoth tusk"
+    ],
+    armaments: [
+      "drake greatsword",
+      "drake greataxe",
+      "drake falchion"
+    ],
     transmogs: nil
   },
   messaging: {

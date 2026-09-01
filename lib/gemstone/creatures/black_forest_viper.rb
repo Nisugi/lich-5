@@ -82,12 +82,12 @@
     "a bruised right eye"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,
     skin: "a viper fang",
-    other: "no",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

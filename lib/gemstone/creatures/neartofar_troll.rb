@@ -83,7 +83,7 @@
     gems: true,
     boxes: true,
     skin: "a greasy troll scalp",
-    other: nil,
+    other: "small troll tooth",
     armaments: nil,
     transmogs: nil
   },

@@ -79,12 +79,15 @@
     "a bruised left eye"
   ],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: true,
     boxes: nil,
     skin: "a silvery tail",
-    other: "Glowing violet essence dust",
+    other: [
+      "Glowing violet essence dust",
+      "ayanad crystal"
+    ],
     armaments: nil,
     transmogs: nil
   },

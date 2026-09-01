@@ -70,13 +70,15 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
-    boxes: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
+    boxes: true,
     skin: nil,
-    other: nil,
-    armaments: nil,
+    other: "ayanad crystal",
+    armaments: [
+      "drake mace"
+    ],
     transmogs: nil
   },
   messaging: {

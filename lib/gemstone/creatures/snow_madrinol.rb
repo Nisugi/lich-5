@@ -88,12 +88,15 @@
   abilities_misc: [],
   equipment: [],
   treasure: {
-    coins: nil,
+    coins: true,
     magic_items: nil,
     gems: true,
     boxes: nil,
     skin: "a madrinol skin",
-    other: "Glowing violet essence dust",
+    other: [
+      "Glowing violet essence dust",
+      "glowing violet essence shard"
+    ],
     armaments: nil,
     transmogs: nil
   },

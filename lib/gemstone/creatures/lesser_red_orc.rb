@@ -88,7 +88,9 @@
     boxes: true,
     skin: "a red orc scalp",
     other: nil,
-    armaments: nil,
+    armaments: [
+      "steel-banded shield"
+    ],
     transmogs: nil
   },
   messaging: {

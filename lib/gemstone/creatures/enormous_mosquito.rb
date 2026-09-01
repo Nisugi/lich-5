@@ -84,12 +84,12 @@
     "a possible mild concussion"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: false,
     boxes: false,
     skin: "diaphanous mosquito wing",
-    other: "No",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

@@ -85,12 +85,15 @@
     "a bruised left eye"
   ],
   treasure: {
-    coins: false,
+    coins: true,
     magic_items: false,
     gems: true,
     boxes: false,
     skin: nil,
-    other: "a small glowing vial",
+    other: [
+      "a small glowing vial",
+      "essence of air"
+    ],
     armaments: nil,
     transmogs: nil
   },

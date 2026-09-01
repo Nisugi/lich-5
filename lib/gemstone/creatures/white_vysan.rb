@@ -90,7 +90,7 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Yes",
+    other: nil,
     armaments: nil,
     transmogs: nil
   },

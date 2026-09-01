@@ -104,7 +104,11 @@
     gems: true,
     boxes: true,
     skin: "a vor'taz horn, a shiny vor'taz horn",
-    other: "Glowing violet essence dust",
+    other: [
+      "Glowing violet essence dust",
+      "glowing violet essence shard",
+      "tiny golden seed"
+    ],
     armaments: nil,
     transmogs: nil
   },

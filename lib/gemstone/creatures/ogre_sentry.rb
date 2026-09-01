@@ -80,7 +80,7 @@
     gems: true,
     boxes: true,
     skin: "Ogre tooth",
-    other: nil,
+    other: "glimmering blue essence shard",
     armaments: nil,
     transmogs: nil
   },

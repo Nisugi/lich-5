@@ -93,7 +93,7 @@
   treasure: {
     coins: true,
     magic_items: nil,
-    gems: nil,
+    gems: true,
     boxes: true,
     skin: nil,
     other: nil,

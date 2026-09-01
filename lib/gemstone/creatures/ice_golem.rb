@@ -105,7 +105,7 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil,
+    other: "crystal core",
     armaments: nil,
     transmogs: nil
   },

@@ -115,14 +115,22 @@
     "an immense fel-hafted handaxe"
   ],
   treasure: {
-    coins: nil,
-    magic_items: nil,
-    gems: nil,
+    coins: true,
+    magic_items: true,
+    gems: true,
     boxes: true,
     skin: false,
-    other: "gigas fragments",
+    other: [
+      "gigas fragments",
+      "ayanad crystal",
+      "n'ayanad crystal",
+      "petrified mammoth tusk"
+    ],
     blunt_required: false,
-    armaments: nil,
+    armaments: [
+      "drake greatsword",
+      "drake greataxe"
+    ],
     transmogs: nil
   },
   messaging: {
