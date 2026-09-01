@@ -114,21 +114,22 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The stormborn primordial takes the shape of a living tempest, its form a shifting torrent of roiling clouds and arcs of searing lightning. Shrouded by the perpetual swirl of vertiginous mist, a roughly humanoid form hovers within the eye of the storm. Seething fissures of electric blue energy streak across the nearly corporeal shape, which is mostly featureless save for malevolent eyes of white light blazing from the shadows of the primordial's face."
     ],
-    arrival: [],
+    arrival: [
+      "A fulminating stormborn primordial streaks forward faster than the eye can see, leaving smoking plumes behind as {pronoun} jagged tendrils propel {pronoun} aggressively into the fray."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

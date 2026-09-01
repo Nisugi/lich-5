@@ -103,7 +103,9 @@
     gems: false,
     boxes: false,
     skin: "direbear fang",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -120,24 +122,29 @@
       "A direbear slowly lumbers {direction}, growling in pain.",
       "A direbear shudders and lumbers {direction}, snarling in agony.",
       "A direbear crawls {direction}.",
-      "A direbear roars loudly as she stands {direction}!",
-      "A direbear roars loudly as he stands {direction}!"
+      "A direbear slowly backs away, {pronoun} teeth bared.",
+      "A direbear lumbers {direction}, balefully surveying the area with bloodshot red eyes!"
     ],
     death: [
       "The direbear collapses heavily into a heap on the ground and dies.",
-      "The direbear lets out a blood-curdling roar and dies.",
-      "Beautiful shot pierces both lungs, the direbear makes a wheezing noise, and drops dead!"
+      "The direbear lets out a blood-curdling roar and dies."
     ],
     decay: [
       "A direbear decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A direbear tries to bite you!"
+    stun_break: [
+      "A direbear shakes off the stun!"
     ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A direbear charges at you, but seeing {pronoun} coming, you acrobatically spring over the direbear!"
+      ],
+      bite: [
+        "A direbear tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

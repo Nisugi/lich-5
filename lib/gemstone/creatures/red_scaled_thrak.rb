@@ -97,7 +97,9 @@
     gems: true,
     boxes: nil,
     skin: "a thrak tail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,22 +112,24 @@
     death: [
       "The red-scaled thrak falls back into a heap and dies.",
       "The red-scaled thrak hisses one last time and dies.",
-      "The red-scaled thrak twitches violently, then dies.",
-      "Beautiful shot pierces both lungs, the red-scaled thrak makes a wheezing noise, and drops dead!",
-      "The red-scaled thrak slumps to the ground."
+      "The red-scaled thrak twitches violently, then dies."
     ],
     decay: [
       "A red-scaled thrak decays into compost."
     ],
-    search: [],
+    search: [
+      "A red-scaled thrak sniffs around suspiciously."
+    ],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A red-scaled thrak tries to bite you!"
-    ],
-    claw: [
-      "A red-scaled thrak claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A red-scaled thrak claws at you!"
+      ],
+      bite: [
+        "A red-scaled thrak tries to bite you!",
+        "A red-scaled thrak tries to bite a red-scaled thrak!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

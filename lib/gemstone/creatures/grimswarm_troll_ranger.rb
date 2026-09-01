@@ -85,7 +85,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -99,13 +101,17 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A Grimswarm troll ranger fires {weapon} at you!",
-      "A Grimswarm troll ranger swings {weapon} at you!"
+    spell_prep: [
+      "A Grimswarm troll ranger gestures and utters a phrase of magic."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Grimswarm troll ranger swings {weapon} at you!"
+      ],
+      fire: [
+        "A Grimswarm troll ranger fires {weapon} at you!"
+      ]
+    },
     info: {
       general: [
         "Observed with crossbow and dagger, and casting spiritual-circle spells (CS 234), camp level unknown."

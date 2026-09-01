@@ -113,30 +113,37 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Overlapping layers of skin are stitched together in a patchwork pattern over a frame of bone to resemble the form of a man. Dark creases in the flesh offer the only indication of features in the golem's face, while the rest of its body is composed of blubbery mass and the occasional portion of some humanoid race, from kobold to krolvin. Two lengthy, thick arms that end in huge swollen fists distract from the great height of the golem."
     ],
     arrival: [
-      "A flesh golem arrives with a trail of rotting skin behind it."
+      "A flesh golem arrives with a trail of rotting skin behind it.",
+      "A flesh golem ambles in while adjusting a piece of hanging skin."
     ],
     flee: [],
-    death: [],
+    death: [
+      "A flesh golem collapses in a heap, {pronoun} huge girth shaking the floor around {pronoun}.",
+      "A flesh golem collapses in a heap, {pronoun} huge girth shaking the ground around {pronoun}."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A flesh golem lifts {pronoun} fat fleshy foot and tries to stomp on you!",
-      "A flesh golem pounds at you with {pronoun} huge swollen right fist!",
-      "A flesh golem pounds at you with {pronoun} fist!",
-      "A slimy flesh golem lifts {pronoun} fat fleshy foot and tries to stomp on you!",
-      "A slimy flesh golem pounds at you with {pronoun} huge swollen right fist!",
-      "A flesh golem lifts flesh golem fat fleshy foot and tries to stomp on you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A flesh golem lifts {pronoun} fat fleshy foot and tries to stomp on you!",
+        "A flesh golem pounds at you with {pronoun} huge swollen right fist!",
+        "A flesh golem pounds at you with {pronoun} fist!",
+        "A slimy flesh golem lifts {pronoun} fat fleshy foot and tries to stomp on you!",
+        "A slimy flesh golem pounds at you with {pronoun} huge swollen right fist!",
+        "A flesh golem pounds at you with {pronoun} huge swollen left fist!",
+        "A flesh golem pounds at {target} with {pronoun} huge swollen right fist!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

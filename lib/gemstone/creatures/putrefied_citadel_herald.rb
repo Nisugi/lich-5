@@ -134,7 +134,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -142,32 +144,27 @@
     ],
     arrival: [
       "A putrefied Citadel herald strides in confidently.",
-      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm.",
-      "A rotting Citadel arbalester strides into the room, his crossbow cradled in the crook of an arm.",
-      "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm.",
-      "A rotting Citadel arbalester strides into the area, her crossbow cradled in the crook of an arm."
+      "A rotting Citadel arbalester strides into the room, {pronoun} crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the area, {pronoun} crossbow cradled in the crook of an arm."
     ],
     flee: [],
     death: [
-      "A putrefied Citadel herald collapses in upon herself, leaving behind a pile of dust.",
-      "A putrefied Citadel herald collapses in upon himself, leaving behind a pile of dust.",
-      "A spectral howl echoes through the air, resonant with pain and anguish, and then fades into heavy silence.  The scaly veneer covering a putrefied Citadel herald shimmers briefly before melting into his skin.",
-      "A spectral howl echoes through the air, resonant with pain and anguish, and then fades into heavy silence.  The scaly veneer covering a putrefied Citadel herald shimmers briefly before melting into her skin.",
-      "Beautiful shot pierces both lungs, the Citadel herald makes a wheezing noise, and drops dead!"
+      "A putrefied Citadel herald collapses in upon {pronoun}, leaving behind a pile of dust.",
+      "A spectral howl echoes through the air, resonant with pain and anguish, and then fades into heavy silence.  The scaly veneer covering a putrefied Citadel herald shimmers briefly before melting into {pronoun} skin.",
+      "A putrefied citadel herald collapses in upon {reflexive}, leaving behind a pile of dust."
     ],
-    decay: [
-      "The Citadel herald's right leg crumbles briefly and explodes in a shower of gore.",
-      "The Citadel herald's left leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves connecting cartilage, freeing the Citadel herald's ribs to move independently."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A putrefied Citadel herald decisively points at you!",
-      "A putrefied Citadel herald swings {weapon} at you!"
+    spell_prep: [
+      "A putrefied citadel herald mutters a quick incantation then suddenly springs to {pronoun} feet!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A putrefied Citadel herald decisively points at you!",
+        "A putrefied Citadel herald swings {weapon} at you!",
+        "A putrefied citadel herald swings an elongated star-topped runestaff at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

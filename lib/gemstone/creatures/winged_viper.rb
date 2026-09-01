@@ -126,7 +126,9 @@
     gems: false,
     boxes: false,
     skin: "pure white feather",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -143,11 +145,13 @@
     decay: [
       "The winged viper dissolves as the acidic poison consumes it from within."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    search: [
+      "A winged viper looks around, eyes glowing softly as {pronoun} scour the surroundings."
+    ],
+    spell_prep: [
+      "A winged viper hisses an arcane phrase in an unfamiliar sibilant language.",
+      "A winged viper hisses loudly and soars higher in the air."
+    ],
     info: {
       general: [],
       class_tips: {

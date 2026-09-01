@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "vvrael destroyer",
+  name: "Vvrael destroyer",
   noun: "",
   url: "https://gswiki.play.net/vvrael_destroyer",
   picture: "",
@@ -108,7 +108,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -131,12 +133,20 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A Vvrael destroyer swings {weapon} at you!",
-      "Tightening {pronoun} grip on {pronoun} black steel maul, a Vvrael destroyer strikes out at you with all of vvrael destroyer might!",
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      tackle: [
+        "A Vvrael destroyer hurls {reflexive} at {target}!"
+      ],
+      attack: [
+        "A Vvrael destroyer swings {weapon} at you!",
+        "Tightening {pronoun} grip on {pronoun} black steel maul, a Vvrael destroyer strikes out at you with all of {pronoun} might!",
+        "A Vvrael destroyer swings a crackling black steel maul at {target}!",
+        "A Vvrael destroyer leaps to {pronoun} feet!"
+      ],
+      hurl: [
+        "A Vvrael destroyer hurls {weapon} at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

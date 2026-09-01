@@ -94,29 +94,33 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "You are not quite sure what to make of the moor witch, as you have never seen anything that looks quite like it. Stopping a moment, you try to commit this creature to memory so that you can tell tales of it to your fellow adventurers back in the safety of the local tavern."
+    description: [],
+    arrival: [
+      "A moor witch appears in a graceful glide, small feet carrying {pronoun} almost silently!"
     ],
-    arrival: [],
     flee: [
       "A moor witch hobbles {direction}.",
       "A wavering moor witch hobbles {direction}."
     ],
     death: [
-      "The moor witch's face takes on a surprised expression and she collapses, motionless.",
-      "The moor witch slumps to the ground."
+      "The moor witch's face takes on a surprised expression and she collapses, motionless."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A moor witch swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      bite: [
+        "A moor witch snaps {pronoun} head to the side in a vain attempt to clear {pronoun} thoughts."
+      ],
+      attack: [
+        "A moor witch swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

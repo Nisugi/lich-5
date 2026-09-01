@@ -94,7 +94,9 @@
     gems: false,
     boxes: false,
     skin: "multi-faceted tomb spider eye",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -116,13 +118,18 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An albino tomb spider snaps at you with {pronoun} pincer!"
-    ],
-    bite: [],
-    claw: [
-      "An albino tomb spider claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "An albino tomb spider snaps at you with {pronoun} pincer!"
+      ],
+      bite: [
+        "An albino tomb spider snaps at you with {pronoun} pincer!",
+        "An albino tomb spider snaps at {target} with {pronoun} pincer!"
+      ],
+      claw: [
+        "An albino tomb spider claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

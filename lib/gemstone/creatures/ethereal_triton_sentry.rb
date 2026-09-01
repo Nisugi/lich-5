@@ -103,30 +103,36 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "An ethereal triton sentry points an ethereal, clawed finger toward you!",
+        "An ethereal triton sentry swings a twisted soot black runestaff at you!"
+      ]
+    },
+    stun_break: [
+      "An ethereal triton sentry flares briefly with a dull glow, rousing {reflexive} from slumber.",
+      "An ethereal triton sentry flares briefly with a dull glow, rousing {reflexive} from slumber and righting {pronoun} posture."
+    ],
     description: [
       "The triton sentry holds himself erect, as he skims along the ground on long-nailed translucent webbed feet. Obsessively alert, the creature sniffs constantly and halts to listen every few moments. Despite empty eye sockets, constantly weeping viscous green mucus, he peers into the shadows for infiltrators, his head constantly turning with rapid, jerky motions. Threadbare green-belted robes cover his insubstantial frame."
     ],
     arrival: [
-      "A triton radical strides in, gliding swiftly through the water with a wary look on her face.",
-      "A triton combatant strides in, gliding swiftly through the water with a wary look on his face.",
-      "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
       "An ethereal triton sentry just arrived."
     ],
     flee: [],
     death: [
-      "The triton sentry fades into transparency, her remnants rapidly dissolving into the air.",
-      "The triton sentry fades into transparency, his remnants rapidly dissolving into the air.",
-      "The triton sentry goes still for a moment while its head reshapes."
+      "The triton sentry fades into transparency, {pronoun} remnants rapidly dissolving into the air."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "An ethereal triton sentry chants in an incomprehensible language, causing streams of dim grey energy to lash about {pronoun} hands."
+    ],
     info: {
       general: [],
       class_tips: {

@@ -87,7 +87,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,12 +108,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A moaning phantom swings {weapon} at you!",
-      "A moaning phantom gestures at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A moaning phantom swings {weapon} at you!",
+        "A moaning phantom gestures at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

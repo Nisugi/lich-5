@@ -97,7 +97,9 @@
     gems: true,
     boxes: true,
     skin: "a mongrel hobgoblin snout",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,7 +108,8 @@
     arrival: [],
     flee: [
       "A mongrel hobgoblin snarls as she retreats!",
-      "A mongrel hobgoblin shuffles {direction}."
+      "A mongrel hobgoblin shuffles {direction}.",
+      "A mongrel hobgoblin hobbles slowly {direction}, howling in pain."
     ],
     death: [
       "The mongrel hobgoblin crumples to the ground and dies.",
@@ -115,13 +118,16 @@
     decay: [
       "A mongrel hobgoblin decays into a pile of compost."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A mongrel hobgoblin swings {weapon} at you!"
+    search: [
+      "A mongrel hobgoblin sniffs at the air and glances about with a hungry gleam in {pronoun} eyes."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [],
+    attacks: {
+      attack: [
+        "A mongrel hobgoblin swings {weapon} at you!",
+        "A mongrel hobgoblin swings a spiked club at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

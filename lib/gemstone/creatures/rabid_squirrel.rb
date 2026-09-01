@@ -85,7 +85,9 @@
     gems: nil,
     boxes: nil,
     skin: "a squirrel tail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,11 +108,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A rabid squirrel nips at you!"
+    stun_break: [
+      "A rabid squirrel staggers as {pronoun} tries to regain {pronoun} bearings!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A rabid squirrel nips at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

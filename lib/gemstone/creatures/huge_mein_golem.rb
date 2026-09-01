@@ -86,7 +86,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "mein shards"
+    other: "mein shards",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,18 +100,18 @@
     ],
     flee: [],
     death: [
-      "Awesome shot skewers skull!  The mein golem blinks once and falls quite dead!"
+      "The huge mein golem falls to the ground and stops moving."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A huge mein golem pounds at you with {pronoun} heavy mein right fist!",
-      "A huge mein golem tries to ensnare you in {pronoun} solid mein arms!",
-      "A huge mein golem pounds at you with huge mein golem heavy mein right fist!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A huge mein golem pounds at you with {pronoun} heavy mein right fist!",
+        "A huge mein golem tries to ensnare you in {pronoun} solid mein arms!",
+        "A huge mein golem pounds at you with {pronoun} heavy mein left fist!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

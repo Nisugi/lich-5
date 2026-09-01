@@ -93,21 +93,37 @@
     gems: nil,
     boxes: nil,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A burly goliath engineer is a towering figure of muscle and sinew, clad in simple garments of white cloth that strain against his powerful frame. Broad shoulders and bulging arms speak of great physical strength, while his eyes are sharp and alert, constantly scanning his surroundings with a practised eye. Here and there, stains of oil and smudges of char mar his pale garb."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A burly goliath engineer lumbers in with a grim, purposeful look on {pronoun} face.",
+      "A burly goliath engineer lumbers into view, massive frame casting long shadows as {pronoun} clenches {pronoun} meaty fists in anticipation."
+    ],
+    flee: [
+      "A burly goliath engineer lumbers north with a grim, purposeful look on {pronoun} face.",
+      "A burly goliath engineer lumbers northwest with a grim, purposeful look on {pronoun} face."
+    ],
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A burly goliath engineer mutters a curt incantation, one hand's fingers performing a surprisingly deft dance."
+    ],
+    attacks: {
+      attack: [
+        "A burly goliath engineer swings a mistwood-hafted translucent rainbow glaes warhammer at you!",
+        "A burly goliath engineer leaps from the back of {target} as {target} topples, narrowly avoiding a painful landing!"
+      ],
+      bearhug: [
+        "A burly goliath engineer charges towards you and attempts to grasp you in a ferocious bearhug!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

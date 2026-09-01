@@ -98,7 +98,9 @@
     gems: false,
     boxes: false,
     skin: "a whiptail stinger",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,17 +115,19 @@
       "The whiptail hisses one last time and dies."
     ],
     decay: [
-      "A whiptail decays into compost.",
-      "The whiptail's right leg crumbles briefly and explodes in a shower of gore."
+      "A whiptail decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A whiptail charges at you with {pronoun} tusk!",
-      "A whiptail snaps at you with {pronoun} pincer!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A whiptail charges at you with {pronoun} tusk!",
+        "A whiptail snaps at you with {pronoun} pincer!"
+      ],
+      bite: [
+        "A whiptail snaps at you with {pronoun} pincer!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

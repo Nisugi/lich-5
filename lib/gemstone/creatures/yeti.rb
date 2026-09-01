@@ -100,9 +100,26 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    stun_break: [
+      "A yeti roars in anger and shakes off the stun."
+    ],
+    attacks: {
+      attack: [
+        "A yeti raises {pronoun} hairy foot and attempts to stomp you into the ground!",
+        "A yeti swings {weapon} at you!",
+        "A yeti swings {pronoun} arms together in an attempt to trap you! You scramble back out of the way of its lumbering hug.",
+        "A yeti swings {pronoun} {weapon}! You scrabble out of the way of its lumbering hug.",
+        "A yeti swings {pronoun} arms together in an attempt to trap you! You scrabble out of the way of its lumbering hug."
+      ]
+    },
+    stand: [
+      "A yeti rises to {pronoun} feet and gives a shudder, flinging hair everywhere."
+    ],
     description: [
       "Standing almost twelve feet tall, the yeti is a large humanoid creature covered in long, stringy black and red hair. His domed pate is matted with twigs and dirt, and his heavy brow forms a shelf over his tiny black eyes. With arms nearly long enough to brush the ground, the yeti has a ferociously strong grip and excellent leverage for the tossing of heavy objects. Broad, flat feet provide stability and traction in the icy, mountainous environments that are his normal habitat."
     ],
@@ -124,22 +141,14 @@
     ],
     death: [
       "The mass of hair and bone that was the yeti finally goes still.",
-      "The yeti collapses into a pile of hair and bones and goes still.",
-      "Awesome shot skewers skull!  The yeti blinks once and falls quite dead!"
+      "The yeti collapses into a pile of hair and bones and goes still."
     ],
     decay: [
       "The yeti collapses into a pile of hair and bones and goes still.",
-      "The yeti's left leg crumbles briefly and explodes in a shower of gore.",
       "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A yeti raises yeti hairy foot and attempts to stomp you into the ground!",
-      "A yeti swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -139,34 +139,42 @@
     gems: true,
     boxes: true,
     skin: "a hobgoblin scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "This is a large humanoid creature, similar to its smaller cousin the goblin. It has a snub nose and wide mouth with large and very sharp teeth and a greenish-yellow, leathery skin. Reputed to be uncommonly fond of collecting treasure, these are among the most hunted beings known to exist. But many are the whitening skulls that adorn the crude dwellings of the hobgoblin, for treasure is not all they collect."
     ],
-    arrival: [],
+    arrival: [
+      "A hobgoblin rushes in, howling with rage!"
+    ],
     flee: [
-      "A hobgoblin snarls as she retreats!",
+      "A hobgoblin snarls as {pronoun} retreats!",
       "A hobgoblin flees {direction}.",
-      "A hobgoblin snarls as he retreats!"
+      "A hobgoblin hobbles slowly {direction}, howling in pain."
     ],
     death: [
       "The hobgoblin crumples to the ground and dies.",
-      "The hobgoblin lets out a final scream and goes still.",
-      "Beautiful shot pierces both lungs, the hobgoblin makes a wheezing noise, and drops dead!"
+      "The hobgoblin lets out a final scream and goes still."
     ],
     decay: [
       "A hobgoblin decays into a pile of compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A hobgoblin swings {weapon} at you!",
-      "A hobgoblin thrusts with a rapier at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      cast: [
+        "A hobgoblin points a stubby, clawed finger at you as {pronoun} snarls, \"Go 'way!\""
+      ],
+      attack: [
+        "A hobgoblin swings {weapon} at you!",
+        "A hobgoblin thrusts with a rapier at you!",
+        "A hobgoblin swings a morning star at {target}!",
+        "A hobgoblin thrusts with a feather decorated bone spear at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

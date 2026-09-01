@@ -102,7 +102,9 @@
     gems: false,
     boxes: false,
     skin: "a ruff of vulture feathers",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -114,20 +116,19 @@
     ],
     death: [
       "The colossus vulture writhes in agony, its wings flapping fruitlessly as it dies.",
-      "The colossus vulture crashes to the ground, motionless.",
-      "The colossus vulture slumps to the ground."
+      "The colossus vulture crashes to the ground, motionless."
     ],
     decay: [
       "The colossus vulture decays into a pile of feathers."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A colossus vulture rakes at you with a razor-sharp claw!",
-      "A colossus vulture tries to spear you with colossus vulture beak!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A colossus vulture rakes at you with a razor-sharp claw!",
+        "A colossus vulture tries to spear you with {pronoun} beak!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -94,30 +94,33 @@
     gems: true,
     boxes: true,
     skin: "a scraggly orc scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "As tall as a giantman and twice as muscular as most, the plains orc warrior is taller and more agile than his more primitive orcish brothers, and judging by the cleverness in his beady yellow eyes, probably quite a bit more intelligent as well. Leathery brown skin covers his bulging limbs, the same color as the crude armor that protects his massive torso, and a scraggly red beard frames his heavy jowls."
     ],
-    arrival: [],
+    arrival: [
+      "A plains orc warrior limps in all hunched over."
+    ],
     flee: [
       "A plains orc warrior struts {direction}.",
       "A plains orc warrior hunches over and limps {direction}."
     ],
-    death: [
-      "Beautiful shot pierces both lungs, the plains orc warrior makes a wheezing noise, and drops dead!"
-    ],
-    decay: [
-      "The plains orc warrior's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    death: [],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A plains orc warrior swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A plains orc warrior swings {weapon} at you!",
+        "A plains orc warrior swings a crude iron morning star at {target}!",
+        "A plains orc warrior swings a closed fist at {target}!",
+        "A plains orc warrior swings {pronoun} heavy iron handaxe through the air in several impressive cut and thrust motions."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

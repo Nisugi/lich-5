@@ -108,15 +108,21 @@
     gems: false,
     boxes: false,
     skin: "a boar tusk",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The great boar snorts loudly and scrapes at the ground, peering around with his close-set, bloodshot eyes in hopes of finding something he can gore into a bloody pulp or pound into the earth. His body is covered with coarse, mottled, grey-brown hair, and gleaming tusks protrude from each side of his gaping mouth. A good six feet long from dripping snout to curly tail and weighing more than a quarter ton, the great boar moves with surprising speed and dexterity as he bears down, squealing furiously, on his intended prey. This is one mean brute."
     ],
-    arrival: [],
+    arrival: [
+      "A great boar charges in, grunting an angry challenge!",
+      "A great boar barrels in!"
+    ],
     flee: [
-      "A great boar grunts and barrels {direction}."
+      "A great boar grunts and barrels {direction}.",
+      "A great boar trots {direction}, grunting noisily."
     ],
     death: [
       "The great boar collapses to the ground, emits a final squeal, and dies.",
@@ -129,13 +135,15 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A great boar charges at you!"
-    ],
-    bite: [
-      "A great boar tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A great boar charges at you!",
+        "A great boar charges towards you, but you leap to the side at the last instant, avoiding a gruesome fate! The great boar stumbles and falls!"
+      ],
+      bite: [
+        "A great boar tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

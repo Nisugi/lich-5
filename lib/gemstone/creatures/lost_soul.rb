@@ -110,7 +110,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -121,18 +123,22 @@
       "A lost soul floats {direction}."
     ],
     death: [
-      "A lost soul fades into oblivion.",
-      "The lost soul goes still for a moment while its head reshapes."
+      "A lost soul fades into oblivion."
     ],
-    decay: [],
+    decay: [
+      "A lost soul fades into oblivion."
+    ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A lost soul points both spectral hands at you!",
-      "A lost soul swings {weapon} at you!"
+    spell_prep: [
+      "A lost soul gestures and utters a phrase of arcane magic.",
+      "A lost soul's eyes glow an eerie pale green!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lost soul points both spectral hands at you!",
+        "A lost soul swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

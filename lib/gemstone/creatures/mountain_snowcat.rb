@@ -86,7 +86,9 @@
     gems: false,
     boxes: false,
     skin: "a snowcat pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,16 +106,17 @@
       "The mountain snowcat lets out a final caterwaul and dies."
     ],
     decay: [
-      "A mountain snowcat decays into a compost of fangs, fur and claws.",
-      "The mountain snowcat's right leg crumbles briefly and explodes in a shower of gore."
+      "A mountain snowcat decays into a compost of fangs, fur and claws."
     ],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A mountain snowcat claws at you!"
+    spell_prep: [
+      "A mountain snowcat hisses loudly!"
     ],
+    attacks: {
+      claw: [
+        "A mountain snowcat claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

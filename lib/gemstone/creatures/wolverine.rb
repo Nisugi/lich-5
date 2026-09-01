@@ -86,7 +86,9 @@
     gems: nil,
     boxes: nil,
     skin: "a wolverine pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -101,22 +103,21 @@
     death: [
       "The wolverine falls back into a heap and dies.",
       "The wolverine hisses one last time and dies.",
-      "The wolverine twitches violently, then dies.",
-      "Beautiful shot pierces both lungs, the wolverine makes a wheezing noise, and drops dead!",
-      "The wolverine slumps to the ground."
+      "The wolverine twitches violently, then dies."
     ],
     decay: [
       "A wolverine decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A wolverine tries to bite you!"
-    ],
-    claw: [
-      "A wolverine claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A wolverine claws at you!"
+      ],
+      bite: [
+        "A wolverine tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

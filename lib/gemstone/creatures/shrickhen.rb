@@ -105,29 +105,37 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Seemingly cobbled together from leftover bodily parts, no two shrickhen are alike. One may have the lower body of a troll supporting the torso of a fire salamander from which a dark orc's arm extends on one side and a gremlin's arm extends on the other, all topped by a timberwolf's head. A second may have a mezic's leg, a coyote's leg, a pyrothag's arm, and a shan warrior's arm, each connected in almost the right place to the torso of a krolvin warfarer, with the entire grouping utilizing the one-eyed head of a cyclops for navigation. These hideous conglomerations definitely have two things in common: a total lack of fear and an insatiable need to consume flesh."
     ],
-    arrival: [],
-    flee: [],
-    death: [
-      "The shrickhen slumps to the ground."
+    arrival: [
+      "A shrickhen rushes in, snarling and gibbering!",
+      "A shrickhen rushes in, {pronoun} form weaving and shaking as {pronoun} parts attempt to work together."
     ],
+    flee: [],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A shrickhen throws {weapon} at you!"
-    ],
-    bite: [
-      "A shrickhen tries to bite you!"
-    ],
-    claw: [
-      "A shrickhen claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A shrickhen rushes {direction}, {pronoun} form weaving and shaking as {pronoun} parts attempt to work together."
+      ],
+      bite: [
+        "A shrickhen tries to bite you!"
+      ],
+      claw: [
+        "A shrickhen claws at you!"
+      ],
+      hurl: [
+        "A shrickhen throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

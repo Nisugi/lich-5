@@ -40,8 +40,8 @@
   defense_attributes: {
     asg: "6",
     immunities: [],
-    melee: "+185",
-    ranged: "+185",
+    melee: 185,
+    ranged: 185,
     bolt: nil,
     udf: nil,
     bar_td: nil,
@@ -71,7 +71,9 @@
     gems: nil,
     boxes: nil,
     skin: "fungal cap",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -83,9 +85,6 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

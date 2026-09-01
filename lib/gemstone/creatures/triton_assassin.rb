@@ -90,12 +90,12 @@
     emp_td: (379..389),
     pal_td: (339..342),
     ran_td: (329..339),
-    sor_td: "396 to 426",
+    sor_td: (396..426),
     wiz_td: nil,
     mje_td: (432..440),
-    mne_td: "413 to 441",
+    mne_td: (413..441),
     mjs_td: 398,
-    mns_td: "364 to 381",
+    mns_td: (364..381),
     mnm_td: (379..381),
     defensive_spells: [],
     defensive_abilities: [],
@@ -114,33 +114,56 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Dressed in grey-on-black, a triton assassin watches the area intently. The assassin bares her sharply serrated teeth, and her thick tail twitches silently with each breath. Inked upon one muscular forearm is a broken ivory trident overlaying a series of spiky runes."
     ],
     arrival: [
-      "A triton assassin stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton assassin stalks in silently, her cold eyes gleaming with hatred.",
-      "A triton warlock arrives, striding forth with her robes trailing behind her."
+      "A triton assassin stalks in silently, {pronoun} cold eyes gleaming with hatred.",
+      "A triton assassin slips into hiding."
     ],
     flee: [],
     death: [
-      "The triton assassin gurgles once and goes still, a wrathful look on her face.",
-      "The triton assassin gurgles once and goes still, a wrathful look on his face.",
-      "Beautiful shot pierces both lungs, the triton assassin makes a wheezing noise, and drops dead!"
+      "The triton assassin gurgles once and goes still, a wrathful look on {pronoun} face."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A triton assassin swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [
-      "A triton assassin claws at you!"
-    ],
+    attacks: {
+      hurl: [
+        "A triton assassin throws a twisted soot black runestaff at you!",
+        "A triton assassin throws a severed assassin arm at you!"
+      ],
+      cutthroat: [
+        "A triton assassin springs upon you from behind and attempts to slit your throat!"
+      ],
+      attack: [
+        "A triton assassin swings {weapon} at you!",
+        "A triton assassin leaps from hiding to attack!",
+        "A triton assassin kick connects! Waves of pain instantly shoot through your body. Your face seizes up instantly!",
+        "A triton assassin kick connects! Waves of pain instantly shoot through your body. The pain causes you to cry out!",
+        "A triton assassin kick connects! {target} winces in agony!",
+        "A triton assassin kicks at {target} groin!",
+        "A triton assassin swings a coral-hilted heavy ball and chain at {target}!",
+        "A triton assassin kick connects! Waves of pain instantly shoot through your body. Your eyes snap wide open.",
+        "A triton assassin springs upon you from behind and aims a blow to your head!",
+        "A triton assassin springs from hiding and aims a blow to {target} head!",
+        "A triton assassin swings a twisted soot black runestaff at {target}!",
+        "A triton assassin's kick connects! {target} eyes snap wide open.",
+        "A triton assassin's kick connects! {target} winces in agony!",
+        "A triton assassin's kick connects! {target} mouth opens, but all that comes out is a tiny, high-pitched gasp."
+      ],
+      claw: [
+        "A triton assassin claws at you!"
+      ],
+      groin_kick: [
+        "A triton assassin kicks at your groin!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

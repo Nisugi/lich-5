@@ -107,7 +107,9 @@
     gems: true,
     boxes: true,
     skin: "troll toe",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -123,20 +125,25 @@
     death: [
       "The mountain troll screams one last time and dies.",
       "The mountain troll falls to the ground and dies.",
-      "The mountain troll twitches violently, then dies.",
-      "Beautiful shot pierces both lungs, the mountain troll makes a wheezing noise, and drops dead!",
-      "The mountain troll slumps to the ground."
+      "The mountain troll twitches violently, then dies."
     ],
     decay: [
       "A mountain troll decays into compost."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A mountain troll swings {weapon} at you!"
+    search: [
+      "A mountain troll sniffs around looking for something."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A mountain troll mutters, \"Srlarloror'rt srar 'mrosrdnragh srar 'r'rar s'r'vr'r'rawrd!\"",
+      "A mountain troll mutters, \"Gr'r'r'ra.\"",
+      "A mountain troll mutters, \"Dnuor'rg 'ght ot noirtrid'dra larghufr'r'ruoloro ar karmri slur'riar'rtn ruo.\""
+    ],
+    attacks: {
+      attack: [
+        "A mountain troll swings {weapon} at you!",
+        "A mountain troll throws {pronoun} head back and howls!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -82,7 +82,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Alchemy (common)"
+    other: "Alchemy (common)",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -96,18 +98,19 @@
       "A ghostly pooka gallops {direction}."
     ],
     death: [
-      "The ghostly pooka falls to the ground motionless.",
-      "The ghostly pooka goes still for a moment while its head reshapes."
+      "The ghostly pooka falls to the ground motionless."
     ],
-    decay: [],
+    decay: [
+      "A ghostly pooka fades away as if {pronoun} were never there."
+    ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A ghostly pooka tries to bite you!",
-      "A pooka tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A ghostly pooka tries to bite you!",
+        "A pooka tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

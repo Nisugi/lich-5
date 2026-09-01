@@ -95,7 +95,9 @@
     gems: true,
     boxes: true,
     skin: "scraggly orc scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,23 +106,33 @@
     arrival: [
       "A plains orc scout wanders in!",
       "A plains orc scout wanders in looking a bit unsteady on his feet.",
-      "A plains orc scout just arrived!"
+      "A plains orc scout just arrived!",
+      "A plains orc scout swaggers in, glances around and nods in approval.",
+      "A plains orc scout swaggers in, glances around and rubs {pronoun} claws together in glee.",
+      "A plains orc scout swaggers in, glances around and gives off a low rumbling snicker.",
+      "A plains orc scout swaggers in, glances around and sneers disdainfully.",
+      "A plains orc scout swaggers in, glances around and cackles.",
+      "A plains orc scout swaggers in, glances around and shrugs {pronoun} massive shoulders."
     ],
     flee: [
       "A plains orc scout wanders {direction}."
     ],
     death: [
-      "A plains orc scout collapses until all that is left is a few scraps of hide.",
-      "Beautiful shot pierces both lungs, the plains orc scout makes a wheezing noise, and drops dead!"
+      "A plains orc scout collapses until all that is left is a few scraps of hide."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A plains orc scout swings {weapon} at you!"
+    spell_prep: [
+      "A plains orc scout traces a glowing sigil in the air!",
+      "A plains orc scout closes {pronoun} eyes and gestures at you!",
+      "A plains orc scout closes {pronoun} eyes and gestures at {target}!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A plains orc scout swings {weapon} at you!",
+        "A plains orc scout swings a bone-hilted iron longsword at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

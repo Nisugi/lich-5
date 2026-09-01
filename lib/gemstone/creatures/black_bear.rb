@@ -106,37 +106,39 @@
     gems: nil,
     boxes: nil,
     skin: "a bear hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The black bear is a medium sized bear with a body about six feet long and appears to weigh around 440 pounds. Mostly blackish in color, asone would expect from a black bear, its muzzle is somewhat lighter and a distinct V-shaped patch of cream colored fur can be found on the chest. Also of note are the ears which appear much larger than those of other bears."
     ],
     arrival: [
-      "A black bear lumbers in!"
+      "A black bear lumbers in!",
+      "A black bear lumbers noisily into the area drooling hungrily!"
     ],
     flee: [
       "A black bear lumbers {direction}.",
-      "A black bear slowly lumbers {direction}, growling in pain.",
-      "A black bear roars loudly as he stands {direction}!"
+      "A black bear slowly lumbers {direction}, growling in pain."
     ],
     death: [
       "The black bear lets out a blood-curdling roar and dies.",
       "The black bear collapses heavily into a heap on the ground and dies."
     ],
     decay: [
-      "A black bear decays into a compost of fangs, fur and claws.",
-      "The black bear's left leg crumbles briefly and explodes in a shower of gore."
+      "A black bear decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A black bear tries to bite you!"
-    ],
-    claw: [
-      "A black bear claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A black bear claws at you!"
+      ],
+      bite: [
+        "A black bear tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

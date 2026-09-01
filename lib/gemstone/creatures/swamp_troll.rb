@@ -82,7 +82,9 @@
     gems: true,
     boxes: true,
     skin: "a swamp troll scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -103,11 +105,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A swamp troll swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A swamp troll swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -89,7 +89,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -102,15 +104,20 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A Grimswarm orc ranger fires {weapon} at you!",
-      "A Grimswarm orc ranger gestures at you!",
-      "A Grimswarm orc ranger swings {weapon} at you!",
-      "A Grimswarm orc ranger thrusts with a trident at you!"
+    spell_prep: [
+      "A Grimswarm orc ranger gestures and utters a phrase of magic."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Grimswarm orc ranger gestures at you!",
+        "A Grimswarm orc ranger swings {weapon} at you!",
+        "A Grimswarm orc ranger thrusts with a trident at you!",
+        "A Grimswarm orc ranger tries to stomp on you, but misses!"
+      ],
+      fire: [
+        "A Grimswarm orc ranger fires {weapon} at you!"
+      ]
+    },
     info: {
       general: [
         "Observed with trident (AS 269-350) and casting spiritual-circle spells (CS 213), camp level unknown."

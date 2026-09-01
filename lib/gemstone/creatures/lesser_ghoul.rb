@@ -86,7 +86,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "ghoul nail"
+    other: "ghoul nail",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,19 +101,18 @@
     flee: [],
     death: [
       "The lesser ghoul falls to the ground motionless.",
-      "The lesser ghoul screams evilly one last time and goes still.",
-      "Awesome shot skewers skull!  The lesser ghoul blinks once and falls quite dead!"
+      "The lesser ghoul screams evilly one last time and goes still."
     ],
     decay: [
       "A lesser ghoul turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A lesser ghoul claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A lesser ghoul claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

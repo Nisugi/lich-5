@@ -95,14 +95,18 @@
     gems: true,
     boxes: false,
     skin: "a pallid strandweaver spinnere",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Glistening as if moist, the carapace of the kiramon strandweaver is ghost-pale and translucent in places, revealing pulsating organs and fluid-filled sacs quivering beneath. The strandweaver is around the size of a halfling, her undersized body supported by six segmented legs. Her abdomen tapers toward a pair of spinnerets aglisten with prismatic threads of spent webbing."
     ],
     arrival: [
-      "The faint, unearthly glow wicking off of a translucent kiramon strandweaver's translucent carapace precedes her as she crawls in uncertainly, antennae twitching."
+      "The faint, unearthly glow wicking off of a translucent kiramon strandweaver's translucent carapace precedes her as she crawls in uncertainly, antennae twitching.",
+      "A translucent kiramon strandweaver skitters in awkwardly, hunching over {pronoun} wounds.",
+      "A translucent kiramon strandweaver scuttles in, {pronoun} wounds aglow with restorative ichor."
     ],
     flee: [],
     death: [
@@ -110,12 +114,14 @@
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A translucent kiramon strandweaver twists grotesquely, aiming {pronoun} spinnerets at you before shooting a clot of thick webbing!",
+    spell_prep: [
+      "A translucent kiramon strandweaver concentrates intently on you, and a pulse of pearlescent energy ripples toward you!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A translucent kiramon strandweaver twists grotesquely, aiming {pronoun} spinnerets at you before shooting a clot of thick webbing!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

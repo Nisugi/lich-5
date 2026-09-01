@@ -105,21 +105,25 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Waving its myriad of oddly flexible, root-like appendages, the moulis scuttles about its home area. It is not known what the moulis searches for, as observations have usually yielded a quick death for the observer, yet it is known that the moulis is an intelligent, lethal foe capable of commanding the forces of magic as well as a powerful physical attack. It appears to be nothing more than a writhing mass of tubers, roots and thin hair strands in various shades of brown--until a vicious attack springs from the center of the creature."
     ],
-    arrival: [],
+    arrival: [
+      "A moulis scuttles in and stops, {pronoun} fibrous hair strands waving frantically to and fro!"
+    ],
     flee: [
-      "A moulis suddenly bolts upright, balancing itself on several wooden appendages.",
-      "A nebulous moulis suddenly bolts upright, balancing itself on several wooden appendages."
+      "A moulis moves northwest in a half-scuttling, half-stumbling manner, as {pronoun} appendages do not seem to be properly coordinated.",
+      "A moulis moves northeast in a half-scuttling, half-stumbling manner, as {pronoun} appendages do not seem to be properly coordinated.",
+      "A moulis moves south in a half-scuttling, half-stumbling manner, as {pronoun} appendages do not seem to be properly coordinated."
     ],
     death: [
       "The moulis twitches violently, then dies.",
-      "The moulis flails wildly for a moment before going still, its appendages dropping lifelessly to the ground.",
-      "The moulis slumps to the ground."
+      "The moulis flails wildly for a moment before going still, its appendages dropping lifelessly to the ground."
     ],
     decay: [
       "A moulis crumbles into a putrid compost.",
@@ -130,13 +134,17 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A moulis extrudes a flattened fiber and swings it at you!",
-      "A moulis hurls {weapon} at you!",
-      "A moulis scraping rolls into a ball and flings {pronoun} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      bite: [
+        "A moulis snaps two elongated fibers around you!"
+      ],
+      attack: [
+        "A moulis extrudes a flattened fiber and swings it at you!"
+      ],
+      hurl: [
+        "A moulis hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

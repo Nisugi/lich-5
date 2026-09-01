@@ -82,14 +82,17 @@
     gems: true,
     boxes: true,
     skin: "an arctic manticore mane",
-    other: "Glimmering blue essence dust"
+    other: "Glimmering blue essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The first thing that will strike you about the manticore is its noxious smell. Looking much like a snow-white lion, if such a thing could naturally exist, it appears somewhat like an unkempt lion, but after you wipe away the tears brought to your eyes by its vile stench, you will see that its head is more like that of a man, and it has a long segmented tail like that of a scorpion."
     ],
     arrival: [
-      "An arctic manticore just arrived."
+      "An arctic manticore just arrived.",
+      "An arctic manticore charges in."
     ],
     flee: [
       "An arctic manticore heads {direction}."
@@ -97,21 +100,21 @@
     death: [
       "The arctic manticore falls to the ground and dies.",
       "The arctic manticore screams one last time and dies.",
-      "The arctic manticore twitches violently, then dies.",
-      "The arctic manticore slumps to the ground."
+      "The arctic manticore twitches violently, then dies."
     ],
     decay: [
       "An arctic manticore decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "An arctic manticore tries to bite you!"
-    ],
-    claw: [
-      "An arctic manticore claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "An arctic manticore claws at you!"
+      ],
+      bite: [
+        "An arctic manticore tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

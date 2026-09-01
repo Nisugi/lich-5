@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "illoke mystic",
+  name: "Illoke mystic",
   noun: "",
   url: "https://gswiki.play.net/illoke_mystic",
   picture: "",
@@ -102,33 +102,43 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Massive and imposing, the Illoke mystic towers over adventurers. It is more than three times the size of the largest giantman, with smooth grey skin and deep black eyes that glare out from under a heavy brow. The eyes regard potential victims with disdain, as if they were nothing more than an offering to be sacrificed. Chiseled deep into the forehead of the shaman, the symbol of Illoke glows red with power."
     ],
     arrival: [
-      "An Illoke mystic just arrived."
+      "An Illoke mystic just arrived.",
+      "An Illoke mystic just came through an enormous arched doorway."
     ],
-    flee: [],
+    flee: [
+      "An Illoke mystic sinks into the ground and flows {direction}.",
+      "An Illoke mystic just went through an enormous arched doorway.",
+      "An Illoke mystic just went through a massive ora door."
+    ],
     death: [
       "The Illoke mystic grumbles in pain one last time before lying still.",
-      "The Illoke mystic slumps to the ground.",
       "The Illoke mystic shudders one last time before lying still."
     ],
     decay: [
-      "An Illoke mystic crumbles into a mound of sand that quickly blows away.",
-      "The Illoke mystic's left leg crumbles briefly and explodes in a shower of gore."
+      "An Illoke mystic crumbles into a mound of sand that quickly blows away."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An Illoke mystic swings {weapon} at you!",
-      "An Illoke mystic throws {weapon} at you!"
+    stand: [
+      "An Illoke mystic blinks dazedly a moment before shaking off the stun!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An Illoke mystic swings {weapon} at you!"
+      ],
+      hurl: [
+        "An Illoke mystic throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

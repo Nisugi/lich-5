@@ -80,13 +80,17 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "An ebon swine crashes into view!"
+    ],
     flee: [
       "An ebon swine trots {direction}."
     ],
@@ -99,15 +103,18 @@
     decay: [
       "An ebon swine decays into a pile of fur and bone."
     ],
-    search: [],
+    search: [
+      "An ebon swine sniffs the air anxiously."
+    ],
     spell_prep: [],
-    attack: [
-      "An ebon swine charges at you!"
-    ],
-    bite: [
-      "An ebon swine tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "An ebon swine charges at you!"
+      ],
+      bite: [
+        "An ebon swine tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

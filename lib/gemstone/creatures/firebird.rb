@@ -133,7 +133,9 @@
     gems: true,
     boxes: nil,
     skin: "a red firebird feather",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -151,16 +153,21 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A firebird cranes firebird neck, snapping at you with {pronoun} sharp beak!",
-      "A firebird hurls {weapon} at you!",
-      "A firebird tries to spear you with {pronoun} beak!",
-      "In a trail of flames, a firebird extends firebird fearsome talons as it dives at you!",
-      "A firebird rakes at you with a razor-sharp claw!"
+    spell_prep: [
+      "A firebird's eyes glow brilliantly orange as {pronoun} opens {pronoun} mouth and spits forth a scorching stream of fire!",
+      "A firebird's eyes glow brilliantly orange as {pronoun} opens {pronoun} mouth and spits forth a blazing ball of fire!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A firebird cranes {pronoun} neck, snapping at you with {pronoun} sharp beak!",
+        "A firebird tries to spear you with {pronoun} beak!",
+        "In a trail of flames, a {pronoun} extends {pronoun} fearsome talons as it dives at you!",
+        "A firebird rakes at you with a razor-sharp claw!"
+      ],
+      hurl: [
+        "A firebird hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

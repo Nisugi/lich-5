@@ -105,7 +105,9 @@
     gems: true,
     boxes: true,
     skin: "a cracked troll jawbone",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,28 +115,25 @@
     ],
     arrival: [
       "A greater bog troll just arrived!",
-      "A belligerent greater bog troll just arrived!"
+      "A belligerent greater bog troll just arrived!",
+      "A greater bog troll charges in, breath steaming from {pronoun} nose and mouth!"
     ],
     flee: [],
     death: [
-      "The greater bog troll's body goes rigid and her eyes roll back into her head as she dies.",
-      "The greater bog troll's body goes rigid and his eyes roll back into his head as he dies.",
-      "The greater bog troll's body goes rigid and collapses to the ground, dead.",
-      "Beautiful shot pierces both lungs, the greater bog troll makes a wheezing noise, and drops dead!",
-      "The greater bog troll slumps to the ground."
+      "The greater bog troll's body goes rigid and {pronoun} eyes roll back into {pronoun} head as {pronoun} dies.",
+      "The greater bog troll's body goes rigid and collapses to the ground, dead."
     ],
     decay: [
       "A greater bog troll decays into compost.",
-      "The greater bog troll's left leg crumbles briefly and explodes in a shower of gore.",
       "A tenebrous greater bog troll decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A greater bog troll swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A greater bog troll swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -97,14 +97,14 @@
     bar_td: nil,
     cle_td: 463,
     emp_td: (440..447),
-    pal_td: "~380",
+    pal_td: 380,
     ran_td: 415,
-    sor_td: "447 to 480",
+    sor_td: (447..480),
     wiz_td: nil,
     mje_td: 404,
-    mne_td: "485 to 498",
+    mne_td: (485..498),
     mjs_td: (348..398),
-    mns_td: "435 to 457",
+    mns_td: (435..457),
     mnm_td: nil,
     defensive_spells: [
       "Empathic Focus (1109)",
@@ -130,9 +130,25 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "The ethereal triton psionicist attempts to jab you!",
+        "The ethereal triton psionicist attempts to punch you!"
+      ],
+      creature_spell: [
+        "An ethereal triton psionicist points a clawed finger toward {target}!"
+      ]
+    },
+    stun_break: [
+      "An ethereal triton psionicist looks around as if waking up from a dream.",
+      "An ethereal triton psionicist flares briefly with a dull glow, rousing {reflexive} from slumber and righting {pronoun} posture.",
+      "An ethereal triton psionicist flares briefly with a dull glow, rousing {reflexive} from slumber."
+    ],
     description: [
       "An ethereal triton psionicist scowls about the area, her unsubstantial bluish skin rippling like waves across the ocean. Her tongue flickers out, pierced by a tiny atoll crab, and barnacles encircle each muscular arm. Sigil-carved shell rings adorn each finger, and a broken ivory trident dangles from an intangible coral belt."
     ],
@@ -148,13 +164,9 @@
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An triton psionicist points a clawed finger toward you!",
-      "An ethereal triton psionicist points a clawed finger toward you!"
+    spell_prep: [
+      "An ethereal triton psionicist chants in an incomprehensible language, causing streams of dim grey energy to lash about {pronoun} hands."
     ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

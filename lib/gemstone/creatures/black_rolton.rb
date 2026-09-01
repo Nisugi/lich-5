@@ -55,18 +55,18 @@
     ranged: 5,
     bolt: 5,
     udf: (37..58),
-    bar_td: "+3",
-    cle_td: "+3",
+    bar_td: 3,
+    cle_td: 3,
     emp_td: 3,
-    pal_td: "+3",
-    ran_td: "+3",
-    sor_td: "+3",
-    wiz_td: "+3",
-    mje_td: "+3",
-    mne_td: "+3",
-    mjs_td: "+3",
-    mns_td: "+3",
-    mnm_td: "+3",
+    pal_td: 3,
+    ran_td: 3,
+    sor_td: 3,
+    wiz_td: 3,
+    mje_td: 3,
+    mne_td: 3,
+    mjs_td: 3,
+    mns_td: 3,
+    mnm_td: 3,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -82,15 +82,20 @@
     gems: false,
     boxes: false,
     skin: "a rolton ear",
-    other: "no"
+    other: "no",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "This is obviously a prime example of the beast of legend, the fiend of song and tale. Known near and far as an implacable enemy of early settlers, it was this ferocious sheeplike creature that earned the epithet of Sorcerer-Killer in its sordid past. The black rolton is covered with a dusty, matted, disgusting-looking black pelt that is abysmally smelly. However, it isn't this trait alone that gives her such a terrifying appearance. As the animal bleats at you, it is then you get a view of the 'maw of death', with its long, curved incisors that gnash and gnaw. The critter has some nasty-looking hooves as well."
     ],
-    arrival: [],
+    arrival: [
+      "A black rolton just came through the barn door."
+    ],
     flee: [
-      "A black rolton trots {direction}."
+      "A black rolton trots {direction}.",
+      "A black rolton just went through the barn door."
     ],
     death: [
       "The black rolton collapses to the ground, emits a final bleat, and dies.",
@@ -101,11 +106,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A black rolton tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A black rolton tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

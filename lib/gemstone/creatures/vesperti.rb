@@ -123,37 +123,37 @@
     gems: true,
     boxes: true,
     skin: "a vesperti claw",
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The vesperti stands roughly six feet tall, with coarse black fur covering his willowy frame. A veined membrane of skin extends from his ankle up to his wrists, edges scalloped like those of a bat's wings. Capping off the wings are taloned hands and feet, the long, tapered digits bearing glossy black claws. Intense eyes stare out from beneath a mane of tousled hair, looking far too sentient for any measure of comfort."
     ],
     arrival: [
-      "With a flurry of his wings, a vesperti flies in!",
-      "With a flurry of her wings, a vesperti flies in!"
+      "With a flurry of {pronoun} wings, a vesperti flies in!"
     ],
     flee: [
       "With a flurry of her wings, a lustrous vesperti flies {direction}.",
-      "With a flurry of his wings, a vesperti flies {direction}.",
-      "With a flurry of her wings, a vesperti flies {direction}."
+      "With a flurry of {pronoun} wings, a vesperti flies {direction}."
     ],
     death: [
       "The vesperti twitches violently, then dies.",
-      "The vesperti's wings splay out as he goes still.",
-      "The vesperti's wings splay out as she goes still.",
-      "Beautiful shot pierces both lungs, the vesperti makes a wheezing noise, and drops dead!"
+      "The vesperti's wings splay out as {pronoun} goes still."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the vesperti's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A vesperti swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A vesperti swings {weapon} at you!",
+        "A vesperti exhales the last of a virulent green mist."
+      ],
+      cast: [
+        "A vesperti points a clawed finger at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

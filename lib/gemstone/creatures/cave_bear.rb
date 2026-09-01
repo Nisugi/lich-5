@@ -86,7 +86,9 @@
     gems: false,
     boxes: false,
     skin: "bear claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -94,12 +96,14 @@
     ],
     arrival: [
       "A cave bear lumbers in!",
-      "A cave bear just arrived."
+      "A cave bear just arrived.",
+      "A cave bear lumbers noisily into the area drooling hungrily!"
     ],
     flee: [
       "A cave bear lumbers {direction}.",
       "A cave bear slowly lumbers {direction}, growling in pain.",
-      "A cave bear shudders and lumbers {direction}, snarling in agony."
+      "A cave bear shudders and lumbers {direction}, snarling in agony.",
+      "A cave bear slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The cave bear collapses heavily into a heap on the ground and dies.",
@@ -108,15 +112,18 @@
     decay: [
       "A cave bear decays into a compost of fangs, fur and claws."
     ],
-    search: [],
+    search: [
+      "A cave bear snuffles the ground hungrily."
+    ],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A cave bear tries to bite you!"
-    ],
-    claw: [
-      "A cave bear claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A cave bear claws at you!"
+      ],
+      bite: [
+        "A cave bear tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

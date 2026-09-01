@@ -111,7 +111,9 @@
     gems: true,
     boxes: true,
     skin: "a scraggly orc scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -122,19 +124,24 @@
       "A plains orc shaman traipses {direction}."
     ],
     death: [
-      "A plains orc shaman mutters belaboring his fate and then dies.",
-      "A plains orc shaman mutters belaboring her fate and then dies.",
-      "Beautiful shot pierces both lungs, the plains orc shaman makes a wheezing noise, and drops dead!",
-      "Awesome shot skewers skull!  The plains orc shaman blinks once and falls quite dead!"
+      "A plains orc shaman mutters belaboring {pronoun} fate and then dies."
     ],
-    decay: [],
+    decay: [
+      "A plains orc shaman decays leaving nothing but a pile of bones and bits of teeth."
+    ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A plains orc shaman closes {pronoun} eyes and gestures at you!"
+    spell_prep: [
+      "A plains orc shaman mutters belaboring {pronoun} fate and then dies.",
+      "A plains orc shaman closes {pronoun} eyes and gestures at you!",
+      "A plains orc shaman traces a glowing sigil in the air!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A plains orc shaman closes {pronoun} eyes and gestures at you!",
+        "A plains orc shaman swings a bone-hafted spiked mace at {target}!",
+        "A plains orc shaman swings a bone-handled kris at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

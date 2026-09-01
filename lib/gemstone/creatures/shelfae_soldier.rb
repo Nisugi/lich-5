@@ -84,9 +84,19 @@
     gems: true,
     boxes: true,
     skin: "a shelfae scale",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A shelfae soldier thrusts with a trident at you!"
+      ]
+    },
+    stand: [
+      "A shelfae soldier stands back up with a sibilant hiss."
+    ],
     description: [
       "The shelfae soldier is the vanguard of the shelfae reptilian forces. Bipedal, it stands approximately five feet tall with orange-tinged scales and clawed hands and feet. The shelfae soldier does not range very far from its commanding officer, and usually can be found guarding strategic points in the defensive system. It views the world through cold reptilian eyes and shows little mercy when confronting an enemy to its lands."
     ],
@@ -98,20 +108,13 @@
     ],
     death: [
       "The shelfae soldier falls to the ground and dies.",
-      "The shelfae soldier screams one last time and dies.",
-      "Beautiful shot pierces both lungs, the shelfae soldier makes a wheezing noise, and drops dead!",
-      "The shelfae soldier slumps to the ground."
+      "The shelfae soldier screams one last time and dies."
     ],
     decay: [
       "A soldier crumbles into dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A shelfae soldier thrusts with a trident at you!"
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -92,24 +92,34 @@
     gems: false,
     boxes: false,
     skin: "a dark brown forest ape pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A hulking forest ape lopes in on {pronoun} hind legs and knuckles."
+    ],
+    flee: [
+      "A hulking forest ape backs away on all fours, puffing out {pronoun} chest in an attempt to look bigger."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A hulking forest ape lunges forward at you on {pronoun} powerful limbs!",
-      "A hulking forest ape snaps at you with sharp teeth and strong jaws!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A hulking forest ape lunges forward at you on {pronoun} powerful limbs!",
+        "A hulking forest ape snaps at you with sharp teeth and strong jaws!",
+        "A hulking forest ape pounces at you and connects!"
+      ],
+      bite: [
+        "A hulking forest ape snaps at you with sharp teeth and strong jaws!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -98,7 +98,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -115,9 +117,13 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A gigantic lightning whelk slams {pronoun} head into you!",
+        "The gigantic lightning whelk slams into {target}, who is sent careening headlong into a nearby group of combatants as {target} falls to the ground!",
+        "The gigantic lightning whelk slams into you, and you are sent careening into {target} as you fall to the ground!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

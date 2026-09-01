@@ -105,7 +105,9 @@
     gems: true,
     boxes: true,
     skin: "a centaur ranger hide",
-    other: "Glimmering blue essence shardGlimmering blue mote of essence"
+    other: "Glimmering blue essence shardGlimmering blue mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -140,11 +142,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A centaur ranger fires {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      fire: [
+        "A centaur ranger fires {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

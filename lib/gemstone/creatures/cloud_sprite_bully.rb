@@ -89,26 +89,33 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Long, muscular legs support the small body of the bully. Her skin is nut brown and she has mustard yellow hair that falls to the small of her back in tangled, unwashed locks. She has big almond-shaped eyes that are oddly wide-set and a pointed nose that looks like a thorn sticking out of her round, plump face."
     ],
     arrival: [
-      "Smacking one fist into his opposite hand in a menacing manner, a cloud sprite bully wanders in.",
-      "Smacking one fist into her opposite hand in a menacing manner, a cloud sprite bully wanders in."
+      "Smacking one fist into {pronoun} opposite hand in a menacing manner, a cloud sprite bully wanders in.",
+      "A cloud sprite bully darts out of the shadows! Giggling to {pronoun}, a cloud sprite bully quickly dashes to the {direction}.",
+      "A cloud sprite bully darts out of the shadows! a cloud sprite bully spits a glob of yellowish saliva into {pronoun} hands and rubs {pronoun} together as if looking for a fight.",
+      "A cloud sprite bully darts out of the shadows! Giggling madly, a cloud sprite bully lunges forward and attacks you with {pronoun} wooden mace!",
+      "A cloud sprite bully darts out of the shadows! Whimpering softly, a cloud sprite bully hobbles {direction}."
     ],
-    flee: [],
-    death: [
-      "Beautiful shot pierces both lungs, the sprite bully makes a wheezing noise, and drops dead!"
+    flee: [
+      "A cloud sprite bully hobbles {direction}, whimpering."
     ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      groin_kick: [
+        "A cloud sprite bully kicks at your groin!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

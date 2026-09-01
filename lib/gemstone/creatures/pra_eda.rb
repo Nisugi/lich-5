@@ -92,7 +92,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -105,20 +107,19 @@
     ],
     death: [
       "The pra'eda falls to the ground motionless.",
-      "The pra'eda cries out one last time and lies still.",
-      "Beautiful shot pierces both lungs, the pra'eda makes a wheezing noise, and drops dead!"
+      "The pra'eda cries out one last time and lies still."
     ],
     decay: [
-      "The pra'eda's left leg crumbles briefly and explodes in a shower of gore.",
-      "The pra'eda's right leg crumbles briefly and explodes in a shower of gore."
+      "A pra'eda decays away, leaving nothing behind."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A pra'eda swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A pra'eda swings {weapon} at you!",
+        "A pra'eda throw back {pronoun} head and howls!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

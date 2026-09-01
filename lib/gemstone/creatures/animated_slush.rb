@@ -115,7 +115,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "Gold Dust"
+    other: "Gold Dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -128,13 +130,21 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An animated slush flings an icy appendage at you!",
-      "An animated slush hurls {weapon} at you!"
+    spell_prep: [
+      "An animated slush glows brightly on the inside as tiny sparkles of light coalesce into a ball before brilliantly exploding outward towards you!",
+      "An animated slush glows brightly for a split second!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      bolt: [
+        "An animated slush hurls a stream of water at {target}!"
+      ],
+      attack: [
+        "An animated slush flings an icy appendage at {target}!"
+      ],
+      hurl: [
+        "An animated slush hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

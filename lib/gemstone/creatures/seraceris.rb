@@ -122,7 +122,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -138,11 +140,17 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A seraceris claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A seraceris exhales the last of a virulent green mist."
+      ],
+      cast: [
+        "A seraceris points a ghostly finger at {target}!"
+      ],
+      claw: [
+        "A seraceris claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

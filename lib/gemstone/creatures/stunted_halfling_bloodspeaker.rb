@@ -146,25 +146,30 @@
     boxes: true,
     skin: false,
     other: ["herbs", "gigas fragments"],
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: "Small even for a halfling, the bloodspeaker is twisted of limb and stunted of form.  Bulging eyes the color of dried blood peer out from a face like molten wax.  The ritualistic burn scars marring {pronoun} flesh look painful beyond the most grotesque of imaginings.  The bloodspeaker wears heavy robes of red velvet that do little to conceal the broken-puppet jangle of {pronoun} misshapen body beneath them.  {pronoun} tongue is bisected and lolls forth from a mouth that looks like a wet gash in {pronoun} obscene face.",
     arrival: [
       "A stunted halfling bloodspeaker hurries in, ebon eyes darting about in paranoia.",
-      "A stunted halfling bloodspeaker just arrived."
+      "A stunted halfling bloodspeaker just arrived.",
+      "A stunted halfling bloodspeaker just came through a break in the trees.",
+      "A stunted halfling bloodspeaker just came through a cracked black granite arch."
     ],
     flee: [
-      "Ebon eyes darting about in paranoia, a stunted halfling bloodspeaker hurries {direction}."
+      "Ebon eyes darting about in paranoia, a stunted halfling bloodspeaker hurries {direction}.",
+      "A stunted halfling bloodspeaker just went into a thatched timber smithy."
     ],
     spell_prep: [
-      "A stunted halfling bloodspeaker utters a garbled, sibilant phrase as globules of crimson light spin around {pronoun} gnarled hands."
+      "A stunted halfling bloodspeaker utters a garbled, sibilant phrase as globules of crimson light spin around {pronoun} gnarled hands.",
+      "A stunted halfling bloodspeaker concentrates intently on you, and a pulse of pearlescent energy ripples toward you!",
+      "A stunted halfling bloodspeaker concentrates intently on {target}, and a pulse of pearlescent energy ripples toward {pronoun}!"
     ],
     death: [
       "A stunted halfling bloodspeaker's eyes bulge as {pronoun} stares toward the heavens, mouthing a gurgling prayer as {pronoun} succumbs to death.",
-      "A stunted halfling bloodspeaker's eyes bulge as she stares toward the heavens, mouthing a gurgling prayer as she succumbs to death.",
-      "A stunted halfling bloodspeaker's body collapses in upon itself as if everything solid within has turned to liquid, the sanguine remains oozing out of the remaining folds of skin.",
-      "A stunted halfling bloodspeaker's eyes bulge as he stares toward the heavens, mouthing a gurgling prayer as he succumbs to death."
+      "A stunted halfling bloodspeaker's body collapses in upon itself as if everything solid within has turned to liquid, the sanguine remains oozing out of the remaining folds of skin."
     ],
     decay: [
       "A stunted halfling bloodspeaker's body collapses in upon itself as if everything solid within has turned to liquid, the sanguine remains oozing out of the remaining folds of skin."
@@ -174,17 +179,50 @@
       "a stunted halfling bloodspeaker's sniffs the air, bulging eyes darting about wildly"
     ],
 
-    unstun: "Rivulets of swirling incarnadine energy envelop a stunted halfling bloodspeaker's scarred flesh, allowing {pronoun} to move freely once more.",
-    stand: "A stunted halfling bloodspeaker struggles, grunting and cursing as {pronoun} rises to {pronoun} feet.",
-    health_regen: [
-      "A stunted halfling bloodspeaker raises {pronoun} malformed fingers overhead, contorting them into jarring patterns as globules of carmine radiance pirouette through the air around {pronoun}. The spinning beads of radiance gather into a dripping sanguine orb that hovers in the air nearby, pulsing with otherworldly light.",
-      "Eldritch radiance from a swirling sanguine orb bathes a stunted halfling bloodspeaker, causing {pronoun} wounds to sluggishly tug themselves closed in the sanguine light."
-    ],
-    attack: "With incongruous alacrity, a stunted halfling bloodspeaker swings {weapon} at you!",
-    bone_shatter: "A stunted halfling bloodspeaker concentrates intently on you, and a pulse of pearlescent energy ripples toward you!",
-    wither: "The force of a stunted halfling bloodspeaker's power warps the air as it surges toward you!",
 
-    general_advice: "* Warding casters will have more success against this creature with a high TD if they cast dispelling magic upon it first.\n* SMR-based attacks like Condemn (309), Earthen Fury (917), and Spike Thorn (616) frequently tear through bloodspeakers. Animal companions can also do significant damage.\n* Silencing tactics like Cutthroat and Sucker Punch, or the similar Corrupt Essence (703), will halt their threatening Wither (1115) spell. (Silence (210) itself is unlikely to hit barring an unusual build heavily focused on Major Spiritual ranks.)",
+    stun_break: [
+      "Rivulets of swirling incarnadine energy envelop a stunted halfling bloodspeaker's scarred flesh, allowing {pronoun} to move freely once more."
+    ],
+    attacks: {
+      attack: [
+        "With incongruous alacrity, a stunted halfling bloodspeaker swings {weapon} at you!"
+      ],
+      bone_shatter: [
+        "A stunted halfling bloodspeaker concentrates intently on you, and a pulse of pearlescent energy ripples toward you!"
+      ],
+      cast: [
+        "A stunted halfling bloodspeaker points a blunt, swollen finger at {target}!"
+      ],
+      wither: [
+        "The force of a stunted halfling bloodspeaker's power warps the air as it surges toward you!"
+      ]
+    },
+    triggers: {
+      health_regen: [
+        "A stunted halfling bloodspeaker raises {pronoun} malformed fingers overhead, contorting them into jarring patterns as globules of carmine radiance pirouette through the air around {pronoun}. The spinning beads of radiance gather into a dripping sanguine orb that hovers in the air nearby, pulsing with otherworldly light.",
+        "Eldritch radiance from a swirling sanguine orb bathes a stunted halfling bloodspeaker, causing {pronoun} wounds to sluggishly tug themselves closed in the sanguine light."
+      ]
+    },
+    stand: [
+      "A stunted halfling bloodspeaker struggles, grunting and cursing as {pronoun} rises to {pronoun} feet."
+    ],
+    info: {
+      general: [
+        "* Warding casters will have more success against this creature with a high TD if they cast dispelling magic upon it first.\n* SMR-based attacks like Condemn (309), Earthen Fury (917), and Spike Thorn (616) frequently tear through bloodspeakers. Animal companions can also do significant damage.\n* Silencing tactics like Cutthroat and Sucker Punch, or the similar Corrupt Essence (703), will halt their threatening Wither (1115) spell. (Silence (210) itself is unlikely to hit barring an unusual build heavily focused on Major Spiritual ranks.)"
+      ],
+      class_tips: {
+        cleric: [],
+        paladin: [],
+        ranger: [],
+        bard: [],
+        wizard: [],
+        empath: [],
+        rogue: [],
+        warrior: [],
+        sorcerer: []
+      },
+      miscellany: []
+    },
   }
 }
 

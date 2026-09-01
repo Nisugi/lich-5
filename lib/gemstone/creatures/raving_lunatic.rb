@@ -99,7 +99,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Tiny golden seed"
+    other: "Tiny golden seed",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,26 +112,23 @@
     death: [
       "The raving lunatic twitches violently, then dies."
     ],
-    decay: [
-      "The raving lunatic's left leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves connecting cartilage, freeing the raving lunatic's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A raving lunatic swings {weapon} at you!",
-      "An raving lunatic swings {weapon} at you!",
-      "An raving lunatic throws {weapon} at you!",
-      "A raving lunatic throws {weapon} at you!"
-    ],
-    bite: [
-      "A raving lunatic tries to bite you!",
-      "An raving lunatic tries to bite you!"
-    ],
-    claw: [
-      "A raving lunatic claws at you!",
-      "An raving lunatic claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A raving lunatic swings {weapon} at you!"
+      ],
+      bite: [
+        "A raving lunatic tries to bite you!"
+      ],
+      claw: [
+        "A raving lunatic claws at you!"
+      ],
+      hurl: [
+        "A raving lunatic throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

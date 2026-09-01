@@ -96,7 +96,9 @@
     gems: false,
     boxes: false,
     skin: "antlers (special)",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,27 +106,27 @@
     ],
     arrival: [],
     flee: [
-      "A great stag trots {direction}."
+      "A great stag trots {direction}.",
+      "A great stag trots {direction}, snorting to announce {pronoun} arrival!"
     ],
     death: [
       "The great stag collapses to the ground, emits a final sigh, and dies.",
       "The great stag lets out a final agonized sigh and dies.",
       "The great stag collapses to the ground, emits a final silent sigh, and dies.",
-      "The great stag silently lets out a final agonized sigh and dies.",
-      "Beautiful shot pierces both lungs, the great stag makes a wheezing noise, and drops dead!"
+      "The great stag silently lets out a final agonized sigh and dies."
     ],
     decay: [
       "A great stag decays into a pile of fur and bone."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A great stag charges at you!",
-      "A great stag tries to impale you with {pronoun} antlers!",
-      "A great stag tries to impale you with {pronoun} antlers!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A great stag charges at you!",
+        "A great stag tries to impale you with {pronoun} antlers!",
+        "A great stag charges towards you, but you leap to the side at the last instant, avoiding a gruesome fate! The great stag stumbles and falls!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

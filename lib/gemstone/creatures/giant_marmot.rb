@@ -86,9 +86,26 @@
     gems: false,
     boxes: false,
     skin: "a marmot pelt",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    stun_break: [
+      "A giant marmot staggers as {pronoun} tries to regain {pronoun} bearings!",
+      "A giant marmot twitches as {pronoun} tries to regain {pronoun} bearings!"
+    ],
+    attacks: {
+      claw: [
+        "A giant marmot claws at you!"
+      ],
+      bite: [
+        "A giant marmot tries to bite you!"
+      ]
+    },
+    stand: [
+      "A giant marmot scrambles to {pronoun} feet, baring {pronoun} sharp teeth!"
+    ],
     description: [
       "Normally rodents don't grow this big, but these must have been eating something special. The giant marmot is as long as a human is tall. Thick-bodied, with coarse, brown fur and a stubby tail, the giant marmot still moves with amazing speed, zipping around obstacles and through doorways in search of its next meal. Fresh blood and pieces of flesh surrounding its mouth indicate that it's been using its long incisors to gnaw on something that probably didn't wish to be gnawed on."
     ],
@@ -100,22 +117,13 @@
       "The giant marmot collapses to the ground, emits a final squeal, and dies.",
       "The giant marmot collapses to the ground, emits a final silent squeal, and dies.",
       "The giant marmot twitches and dies.",
-      "The giant marmot twitches violently, then dies.",
-      "Awesome shot skewers skull!  The giant marmot blinks once and falls quite dead!"
+      "The giant marmot twitches violently, then dies."
     ],
     decay: [
-      "A giant marmot decays into a pile of hair and bone.",
-      "A raider orc withers away until he is no more."
+      "A giant marmot decays into a pile of hair and bone."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A giant marmot tries to bite you!"
-    ],
-    claw: [
-      "A giant marmot claws at you!"
-    ],
     info: {
       general: [],
       class_tips: {

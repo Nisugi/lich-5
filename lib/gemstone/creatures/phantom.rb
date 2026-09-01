@@ -94,7 +94,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,20 +108,19 @@
     ],
     flee: [],
     death: [
-      "The phantom slowly settles to the ground and begins to dissipate.",
-      "The phantom goes still for a moment while its head reshapes."
+      "The phantom slowly settles to the ground and begins to dissipate."
     ],
     decay: [
       "A phantom vanishes into thin air, leaving no trace behind."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A phantom gestures at you!",
-      "A phantom swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A phantom gestures at you!",
+        "A phantom swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -102,7 +102,9 @@
     gems: nil,
     boxes: nil,
     skin: "a puma paw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,7 +115,6 @@
     ],
     flee: [
       "A humpbacked puma scampers {direction}.",
-      "A humpbacked puma roars loudly as he stands {direction}!",
       "A humpbacked puma scampers {direction}, mewling in pain."
     ],
     death: [
@@ -125,13 +126,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A humpbacked puma tries to bite you!"
-    ],
-    claw: [
-      "A humpbacked puma claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A humpbacked puma claws at you!"
+      ],
+      bite: [
+        "A humpbacked puma tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

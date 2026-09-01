@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "sheruvian warlock",
+  name: "Sheruvian warlock",
   noun: "",
   url: "https://gswiki.play.net/sheruvian_warlock",
   picture: "",
@@ -76,7 +76,9 @@
     gems: nil,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -88,9 +90,6 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

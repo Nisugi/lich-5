@@ -91,7 +91,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,27 +101,40 @@
     ],
     arrival: [
       "A decaying Citadel guardsman strides in.",
-      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm."
+      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm.",
+      "A decaying Citadel guardsman marches into the room shouting, \"The Citadel will not fall, you krolvin scum!\"",
+      "A decaying Citadel guardsman marches into the room shouting, \"The Citadel will not fall, you troll scum!\"",
+      "A decaying Citadel guardsman marches into the area shouting, \"The Citadel will not fall, you troll scum!\"",
+      "A decaying Citadel guardsman marches into the area shouting, \"The Citadel will not fall, you krolvin scum!\""
     ],
     flee: [],
     death: [
       "A decaying Citadel guardsman collapses sobbing silently before lying motionless on the floor.",
       "A decaying Citadel guardsman collapses sobbing silently before lying motionless on the ground.",
-      "A putrefied Citadel herald collapses in upon herself, leaving behind a pile of dust.",
-      "A putrefied Citadel herald collapses in upon himself, leaving behind a pile of dust."
+      "A putrefied Citadel herald collapses in upon {pronoun}, leaving behind a pile of dust.",
+      "A decaying Citadel guardsman collapses sobbing, \"...the Citadel has fallen,\" before lying motionless and silent on the floor."
     ],
     decay: [
       "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant draft.",
-      "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant breeze.",
-      "Acid dissolves connecting cartilage, freeing the Citadel guardsman's ribs to move independently."
+      "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant breeze."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A decaying Citadel guardsman swings {weapon} at you!"
+    stun_break: [
+      "A decaying citadel guardsman stumbles about trying to regain {pronoun} bearings!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A decaying Citadel guardsman swings {weapon} at you!",
+        "A decaying Citadel guardsman thrusts with a rhimar trident at you!",
+        "A decaying citadel guardsman thrusts with a rhimar trident at you!"
+      ],
+      charge: [
+        "A decaying Citadel guardsman rushes forward at you with {pronoun} rusted Hammer of Kai and attempts a charge!",
+        "A decaying Citadel guardsman rushes forward at you with {pronoun} red steel Hammer of Kai and attempts a charge!",
+        "A decaying citadel guardsman rushes forward at you with {pronoun} {weapon} and attempts a charge!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

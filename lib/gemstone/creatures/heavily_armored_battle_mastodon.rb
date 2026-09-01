@@ -124,45 +124,54 @@
     boxes: false,
     skin: "a woolly mastodon trunk",
     other: nil,
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: "Heavy plates of copper barding shield the flanks of the immense mastodon, a woolly beast covered in dark, matted hair. The mastodon's eyes are dark, round, and surprisingly expressive.  To either side of its long, prehensile trunk are curved tusks that taper to deadly points.  The yellowed bones have been delicately etched with carved runes.",
     arrival: [
       "A heavily armored battle mastodon stomps in, trunk swinging between its huge forelegs.",
       "A heavily armored battle mastodon just came through a rune-carved white granite arch.",
-      "A heavily armored battle mastodon just arrived."
+      "A heavily armored battle mastodon just arrived.",
+      "A heavily armored battle mastodon barrels in, trunk raised in threat and tusks goring the air!"
     ],
     flee: [
       "A heavily armored battle mastodon just went through a rune-carved white granite arch.",
-      "A heavily armored battle mastodon stomps {direction}, trunk swinging between its huge forelegs."
+      "A heavily armored battle mastodon stomps {direction}, trunk swinging between its huge forelegs.",
+      "A heavily armored battle mastodon just went into a huge hoarbeam longhouse.",
+      "A heavily armored battle mastodon just went into a huge hut."
     ],
     death: [
-      "As a heavily armored battle mastodon collapses, it lets out a shrill trumpet of despair.  Its trunk flails futilely before slamming to the ground, still."
+      "As a heavily armored battle mastodon collapses, it lets out a shrill trumpet of despair.  Its trunk flails futilely before slamming to the ground, still.",
+      "A heavily armored battle mastodon collapses into a pile of tangled wool and huge bones."
     ],
     search: [
       "A heavily armored battle mastodon quests about with its trunk, eyes narrowing.",
-      "A heavily armored battle mastodon looks about in alarm as its trunk tests the air."
+      "A heavily armored battle mastodon looks about in alarm as its trunk tests the air.",
+      "A heavily armored battle mastodon snuffles at the air with {pronoun} trunk, the prehensile length curling about {reflexive} as {pronoun} chases after a scent."
     ],
-    attack: [
-      "A heavily armored battle mastodon raises {pronoun} trunk and slams it down toward you!",
-      "A heavily armored battle mastodon rears back and tries to stomp you with a great foot!",
-      "A heavily armored battle mastodon tries to spear you with {pronoun} enormous tusks!",
-      "A brawny gigas shield-maiden launches a quick bash with heavily armored battle mastodon golden targe at you!",
-      "A heavily armored battle mastodon raises heavily armored battle mastodon trunk and slams it down toward you!",
-      "A heavily armored battle mastodon tries to spear you with heavily armored battle mastodon enormous tusks!",
-      "A niveous giant warg lunges at you, maw slathering as heavily armored battle mastodon tries to take a ferocious bite!",
-      "A savage fork-tongued wendigo flails with heavily armored battle mastodon clawed fists at you!",
-      "A savage fork-tongued wendigo's jaw unhinges as it tries to ravage you with heavily armored battle mastodon shark-like teeth!",
-      "Froth bubbling on heavily armored battle mastodon lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!",
-      "Lowering heavily armored battle mastodon head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
-      "Murder in heavily armored battle mastodon eyes, an immense gold-bristled hinterboar tries to gore you with heavily armored battle mastodon tusks!",
-      "Rearing up on heavily armored battle mastodon hind legs, an immense gold-bristled hinterboar stomps at you with heavily armored battle mastodon huge hooves!"
-    ],
-    bite: [],
-    claw: [],
 
-    combat_messaging: "A heavily armored battle mastodon raises its trunk and rears back onto its immense hind legs, blaring out a note of sheer fury!\n[SSR result: 34 (Open d100: 8)]\nYou keep your wits amidst the mastodon's angry trumpeting!\n[SSR result: 138 (Open d100: 87)]\nThe mastodon's angry trumpeting startles XXX!\nA heavily armored battle mastodon slams a gigantic foot down, sending tremors rippling outward from the point of impact!"
+    attacks: {
+      attack: [
+        "A heavily armored battle mastodon raises {pronoun} trunk and slams {pronoun} down toward you!",
+        "A heavily armored battle mastodon rears back and tries to stomp you with a great foot!",
+        "A heavily armored battle mastodon tries to spear you with {pronoun} enormous tusks!",
+        "Froth bubbling on {pronoun} lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!",
+        "Lowering heavily armored battle mastodon head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
+        "Murder in {pronoun} eyes, an immense gold-bristled hinterboar tries to gore you with {pronoun} tusks!",
+        "Rearing up on {pronoun} hind legs, an immense gold-bristled hinterboar stomps at you with {pronoun} huge hooves!",
+        "A heavily armored battle mastodon kicks {pronoun} great legs fretfully in {pronoun} sleep as {pronoun} trunk flops from side to side.",
+        "A heavily armored battle mastodon raises its trunk and rears back onto its immense hind legs, blaring out a note of sheer fury!",
+        "A heavily armored battle mastodon's kicks {pronoun} great legs fretfully in {pronoun} sleep as {pronoun} trunk flops from side to side."
+      ],
+      shield_bash: [
+        "A brawny gigas shield-maiden launches a quick bash with {pronoun} golden targe at you!"
+      ],
+      tremors: [
+        "A heavily armored battle mastodon slams a gigantic foot down, sending tremors rippling outward from the point of impact!"
+      ]
+    },
   }
 }
 

@@ -108,7 +108,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -120,14 +122,16 @@
     flee: [],
     death: [
       "The fury twitching across a hapless charmed corsair's features dies away, leaving him looking empty and mindless.",
-      "The fury twitching across a hapless charmed corsair's features dies away, leaving her looking empty and mindless."
+      "A hapless charmed corsair crumples, a last horrible moment of clarity shining in {pronoun} eyes before death takes {pronoun}."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      bearhug: [
+        "A hapless charmed corsair charges towards you and attempts to grasp you in a ferocious bearhug!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

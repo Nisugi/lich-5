@@ -97,7 +97,9 @@
     gems: true,
     boxes: true,
     skin: "a ghoul scraping",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,21 +115,21 @@
     ],
     death: [
       "The greater ghoul falls to the ground motionless.",
-      "The greater ghoul screams evilly one last time and goes still.",
-      "Beautiful shot pierces both lungs, the greater ghoul makes a wheezing noise, and drops dead!"
+      "The greater ghoul screams evilly one last time and goes still."
     ],
     decay: [
       "A greater ghoul turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A greater ghoul swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [
-      "A greater ghoul claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A greater ghoul swings {weapon} at you!"
+      ],
+      claw: [
+        "A greater ghoul claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

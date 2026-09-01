@@ -106,13 +106,17 @@
     gems: true,
     boxes: true,
     skin: "an orc beard",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "This orc, midway in size between a lesser and a greater orc, the grey orc has a greyish cast to its skin, lending an unhealthy pallor to an already hideous countenance. Dim intelligence flickers behind the narrow eyes and a mocking grin shows blackened and rotting teeth."
     ],
-    arrival: [],
+    arrival: [
+      "A grey orc plods in and sniffs the air!"
+    ],
     flee: [
       "A grey orc treks {direction}."
     ],
@@ -120,11 +124,13 @@
       "A grey orc gazes upward one last time and dies."
     ],
     decay: [],
-    search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    search: [
+      "A grey orc sniffs the air and then whirls around looking for something."
+    ],
+    spell_prep: [
+      "A grey orc gestures into the air!",
+      "A grey orc gestures skyward and grunts a hoarse phrase."
+    ],
     info: {
       general: [],
       class_tips: {

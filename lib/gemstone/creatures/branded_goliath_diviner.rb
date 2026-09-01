@@ -87,21 +87,29 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A branded goliath diviner's is tall and with a rangy build, clad in flowing robes of white and silver that shimmer with faint hints of other colors. His head is shaven bald, or perhaps is naturally that way, and the skin there is decorated with an intricate knotwork tattoo in shades of electric blue and intense violet. Elsewhere on his body, the design recurs in livid-looking brands marring his flesh."
     ],
-    arrival: [],
+    arrival: [
+      "A branded goliath diviner glides in with an otherworldly grace, surveying the surroundings with a knowing look."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A branded goliath diviner raises a clenched fist, opening {pronoun} to reveal a small rune-etched stone pulsing with inner light. The stone hovers momentarily over {pronoun} palm before rising into the air, seeming to expand in every direction until {pronoun} is a pale hovering runestone wreathed in glowing colors!",
+        "A branded goliath diviner throws {pronoun} arms skyward!",
+        "A branded goliath diviner raises a clenched fist, opening {pronoun} to reveal a small rune-etched stone pulsing with inner light. The stone hovers momentarily over his palm before rising into the air, seeming to expand in every direction until it is a pale hovering runestone wreathed in glowing colors!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -86,7 +86,7 @@
     emp_td: (421..423),
     pal_td: (371..381),
     ran_td: (365..375),
-    sor_td: "433 to 471",
+    sor_td: (433..471),
     wiz_td: nil,
     mje_td: (401..481),
     mne_td: (401..481),
@@ -121,7 +121,9 @@
     gems: true,
     boxes: true,
     skin: "curved black claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -129,24 +131,35 @@
     ],
     arrival: [
       "A triton warden just arrived.",
-      "A triton warlock arrives, striding forth with her robes trailing behind her."
+      "A triton warden slips into hiding."
     ],
     flee: [
       "A triton warden heads {direction}.",
       "A triton warden limps {direction}."
     ],
     death: [
-      "The triton warden gurgles once and goes still, a wrathful look on his face.",
-      "The triton warden gurgles once and goes still, a wrathful look on her face."
+      "The triton warden gurgles once and goes still, a wrathful look on {pronoun} face."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A triton warden fires {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      hurl: [
+        "A triton warden throws a drake greatsword at you!",
+        "A triton warden throws a drake greataxe at you!"
+      ],
+      attack: [
+        "A triton warden swings a drake greatsword at you!",
+        "A triton warden swings an onyx-hafted black ora jeddart-axe at you!"
+      ],
+      fire: [
+        "A triton warden fires {weapon} at you!",
+        "A triton warden fires a brackish green arrow at {target}!",
+        "A triton warden fires a silver-streaked arrow at {target}!",
+        "A triton warden fires a sapphire-tipped arrow at {target}!",
+        "A triton warden fires a pale driftwood arrow at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

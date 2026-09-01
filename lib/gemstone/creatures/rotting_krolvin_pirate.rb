@@ -97,33 +97,37 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Gnarled white hair drapes in locks over the krolvin pirate's face, which is fixed in a constant murderous leer. The pirate's puffy grayish-blue skin is slashed and punctured with what must have been mortal wounds, but the foul creature before you pays the ancient injuries no heed as she seeks to continue her plundering ways well beyond the grave."
     ],
-    arrival: [],
+    arrival: [
+      "A rotting krolvin pirate swaggers in."
+    ],
     flee: [
       "A rotting krolvin pirate swaggers {direction}.",
       "A rotting krolvin pirate limps as he staggers {direction}."
     ],
     death: [
       "The krolvin pirate spits out one last curse and lies still.",
-      "The krolvin pirate vainly struggles to rise, then goes still.",
-      "Beautiful shot pierces both lungs, the krolvin pirate makes a wheezing noise, and drops dead!"
+      "The krolvin pirate vainly struggles to rise, then goes still."
     ],
     decay: [
       "The krolvin pirate decays into a pile of compost, releasing a stench of rotting seaweed."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A rotting krolvin pirate swings {weapon} at you!",
-      "A rotting krolvin pirate thrusts with a corroded long-handled gaff at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A rotting krolvin pirate swings {weapon} at you!",
+        "A rotting krolvin pirate thrusts with a corroded long-handled gaff at you!",
+        "A rotting krolvin pirate pounds {pronoun} chest and roars, \"Moradg tezt gno Krol!\""
+      ]
+    },
     info: {
       general: [],
       class_tips: {

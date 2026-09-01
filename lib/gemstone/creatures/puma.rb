@@ -102,7 +102,9 @@
     gems: false,
     boxes: false,
     skin: "a puma hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,26 +115,25 @@
     ],
     flee: [
       "A puma scampers {direction}.",
-      "A puma scampers {direction}, mewling in pain.",
-      "A puma roars loudly as she stands {direction}!"
+      "A puma scampers {direction}, mewling in pain."
     ],
     death: [
       "The puma lets out a final caterwaul and dies.",
       "The puma crumples to the ground and dies."
     ],
     decay: [
-      "A puma decays into a compost of fangs, fur and claws.",
-      "The puma's right leg crumbles briefly and explodes in a shower of gore."
+      "A puma decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A puma tries to bite you!"
-    ],
-    claw: [
-      "A puma claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A puma claws at you!"
+      ],
+      bite: [
+        "A puma tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

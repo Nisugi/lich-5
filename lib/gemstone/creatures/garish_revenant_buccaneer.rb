@@ -73,25 +73,29 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
-    arrival: [
-      "A garish revenant buccaneer just arrived.  Wait, wasn't he here already?"
+    arrival: [],
+    flee: [
+      "A garish revenant buccaneer withdraws, disengaging from {target}."
     ],
-    flee: [],
     death: [
       "Haunting blue light wreathes a garish revenant buccaneer's form as he stretches out a desperate hand.  Hiseyes widen and he goes still and lifeless, deprived of whatever unholy forces were animating him."
     ],
     decay: [],
-    search: [],
+    search: [
+      "A garish revenant buccaneer looks around, certain that {pronoun} has missed something in the shadows."
+    ],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    stun_break: [
+      "A garish revenant buccaneer flickers momentarily into incorporeality, {pronoun} form glowing an ethereal blue as {pronoun} shakes off the stun!"
+    ],
     info: {
       general: [],
       class_tips: {

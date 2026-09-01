@@ -100,7 +100,9 @@
     gems: true,
     boxes: true,
     skin: "a wraith talon",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,21 +115,19 @@
     death: [
       "The wraith falls to the ground motionless.",
       "The wraith screams evilly one last time and goes still.",
-      "The wraith goes still for a moment while its head reshapes.",
-      "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to his side.",
-      "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to her side."
+      "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to {pronoun} side."
     ],
     decay: [
       "A wraith turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A wraith gestures at you!",
-      "A wraith swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A wraith gestures at you!",
+        "A wraith swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

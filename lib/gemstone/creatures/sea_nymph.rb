@@ -113,7 +113,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "pristine nymph's hair"
+    other: "pristine nymph's hair",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -123,25 +125,24 @@
       "A sea nymph just arrived."
     ],
     flee: [
-      "A sea nymph draped in seaweed and a wet, clinging robe slithers {direction} {direction} of a crevice.",
+      "A sea nymph draped in seaweed and a wet, clinging robe slithers {direction} of a crevice.",
       "A sea nymph heads {direction}."
     ],
     death: [
       "The sea nymph falls to the ground and dies.",
-      "The sea nymph screams one last time and dies.",
-      "The sea nymph slumps to the ground."
+      "The sea nymph screams one last time and dies."
     ],
     decay: [
       "A sea nymph decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A sea nymph swings {weapon} at you!",
-      "A sea nymph thrusts with a blue-tasseled white steel spear at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A sea nymph swings {weapon} at you!",
+        "A sea nymph thrusts with a blue-tasseled white steel spear at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

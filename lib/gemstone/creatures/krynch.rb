@@ -71,7 +71,7 @@
     sor_td: (104..113),
     wiz_td: nil,
     mje_td: 115,
-    mne_td: "106 124",
+    mne_td: (106..124),
     mjs_td: (99..108),
     mns_td: (99..108),
     mnm_td: (93..99),
@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: "a krynch shinbone",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,7 +108,9 @@
       "A large boulder comes barrelling into view, abruptly rolls to a stop, and rises into the form of a krynch!",
       "The boulder comes to a sudden stop and rises into the form of a krynch!"
     ],
-    flee: [],
+    flee: [
+      "A krynch sinks into the ground, leaving no trace of {pronoun} passing."
+    ],
     death: [
       "The krynch shudders, then topples to the ground.",
       "The krynch shudders violently for a moment, then goes still."
@@ -116,11 +120,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A krynch pounds at you with {pronoun} fist!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A krynch pounds at you with {pronoun} fist!",
+        "A krynch pounds at {target} with {pronoun} fist!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

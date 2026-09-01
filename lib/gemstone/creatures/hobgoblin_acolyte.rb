@@ -68,12 +68,12 @@
     emp_td: 36,
     pal_td: (36..46),
     ran_td: (36..46),
-    sor_td: "32 to 39",
+    sor_td: (32..39),
     wiz_td: nil,
     mje_td: 28,
-    mne_td: "28 to 33",
+    mne_td: (28..33),
     mjs_td: (36..46),
-    mns_td: "36 to 46",
+    mns_td: (36..46),
     mnm_td: (28..33),
     defensive_spells: [
       "Spirit Warding I (101)",
@@ -99,7 +99,9 @@
     gems: true,
     boxes: true,
     skin: "ear",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -108,7 +110,8 @@
     arrival: [],
     flee: [
       "A hobgoblin acolyte snarls as he retreats!",
-      "A hobgoblin acolyte struts {direction}."
+      "A hobgoblin acolyte struts {direction}.",
+      "A hobgoblin acolyte hobbles slowly {direction}, uttering a prayer under {pronoun} breath."
     ],
     death: [
       "The hobgoblin acolyte screams up at the heavens, then collapses and dies.",
@@ -118,13 +121,16 @@
     decay: [
       "A hobgoblin acolyte decays into a pile of compost."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A hobgoblin acolyte finishes chanting and thrusts {weapon} towards you!"
+    search: [
+      "A hobgoblin acolyte sniffs at the air and glances about with a hungry gleam in {pronoun} eyes."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [],
+    attacks: {
+      attack: [
+        "A hobgoblin acolyte finishes chanting and thrusts {weapon} towards you!",
+        "A hobgoblin acolyte raises a clenched fist into the air!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

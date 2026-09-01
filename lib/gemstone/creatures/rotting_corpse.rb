@@ -85,7 +85,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence dust"
+    other: "Glimmering blue essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -100,14 +102,16 @@
     death: [
       "The rotting corpse wails in terrifying pain one last time and lies still."
     ],
-    decay: [],
+    decay: [
+      "A rotting corpse rots away, leaving nothing behind."
+    ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A rotting corpse swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A rotting corpse swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

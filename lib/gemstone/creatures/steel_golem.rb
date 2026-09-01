@@ -99,7 +99,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: "crystal core (alchemy)"
+    other: "crystal core (alchemy)",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -116,14 +118,12 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A steel golem pounds at you with {pronoun} metallic hand!",
-      "A steel golem pounds at you with {pronoun} metallic hand!",
-      "The gears of a steel golem spin viciously as it tries to ensnare you!",
-      "A steel golem pounds at you with steel golem metallic hand!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A steel golem pounds at you with {pronoun} metallic hand!",
+        "The gears of a steel golem spin viciously as it tries to ensnare you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

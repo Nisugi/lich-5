@@ -128,7 +128,7 @@
     emp_td: 231,
     pal_td: (185..194),
     ran_td: (179..193),
-    sor_td: "231 to 234",
+    sor_td: (231..234),
     wiz_td: 246,
     mje_td: (246..247),
     mne_td: (246..247),
@@ -163,7 +163,9 @@
     gems: true,
     boxes: true,
     skin: "no",
-    other: "Glowing violet essence shard"
+    other: "Glowing violet essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -177,31 +179,38 @@
     ],
     flee: [
       "A black forest ogre lumbers {direction}, growling.",
-      "A black forest ogre lumbers {direction}, a grimace on her face.",
-      "A black forest ogre lumbers {direction}, a grimace on his face.",
+      "A black forest ogre lumbers {direction}, a grimace on {pronoun} face.",
       "A black forest ogre lumbers {direction}, muttering to himself.",
-      "A ghastly black forest ogre lumbers {direction}, muttering to himself."
+      "A ghastly black forest ogre lumbers {direction}, muttering to himself.",
+      "A black forest ogre lumbers {direction}, muttering to {reflexive}."
     ],
     death: [
       "A black forest ogre twitches one last time and dies.",
       "A black forest ogre falls prone to the ground, twitches one last time and dies.",
-      "The light in a black forest ogre's eyes goes out as she collapses and finally dies.",
-      "The light in a black forest ogre's eyes goes out and she finally dies.",
-      "The light in a black forest ogre's eyes goes out as he collapses and finally dies.",
-      "The light in a black forest ogre's eyes goes out and he finally dies.",
+      "The light in a black forest ogre's eyes goes out as {pronoun} collapses and finally dies.",
+      "The light in a black forest ogre's eyes goes out and {pronoun} finally dies.",
       "A ghastly black forest ogre twitches one last time and dies.",
       "A spiny black forest ogre falls prone to the ground, twitches one last time and dies."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A black forest ogre swings {weapon} at you!",
-      "A black forest ogre throws {weapon} at you!",
-      "A black forest ogre waves {pronoun} elongated, clawed hands at you!"
+    spell_prep: [
+      "A black forest ogre gestures rapidly in the air!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A black forest ogre swings {weapon} at you!",
+        "A black forest ogre waves {pronoun} elongated, clawed hands at you!",
+        "A black forest ogre swings a rust-covered dhara at {target}!",
+        "A black forest ogre tries to stomp on you, but misses!",
+        "A black forest ogre swings {pronoun} head back and forth in a frenzied attempt to find a way out of {pronoun} predicament.",
+        "A black forest ogre swings a closed fist at {target}!"
+      ],
+      hurl: [
+        "A black forest ogre throws {weapon} at you!",
+        "A black forest ogre throws a rust-covered dhara at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

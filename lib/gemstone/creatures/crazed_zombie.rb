@@ -64,7 +64,7 @@
     sor_td: (68..74),
     wiz_td: nil,
     mje_td: nil,
-    mne_td: "77 = 83",
+    mne_td: (77..83),
     mjs_td: 100,
     mns_td: 100,
     mnm_td: (63..72),
@@ -83,7 +83,9 @@
     gems: true,
     boxes: true,
     skin: "a zombie scalp",
-    other: "Glimmering blue essence shardGlimmering blue mote of essence"
+    other: "Glimmering blue essence shardGlimmering blue mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,13 +106,17 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A crazed zombie tries to bite you!"
-    ],
-    claw: [
-      "A crazed zombie claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A crazed zombie lashes about the area unsteadily grasping at the air."
+      ],
+      bite: [
+        "A crazed zombie tries to bite you!"
+      ],
+      claw: [
+        "A crazed zombie claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -89,7 +89,9 @@
     gems: nil,
     boxes: nil,
     skin: "a wasp stinger",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,23 +104,25 @@
     ],
     flee: [
       "A mud wasp heads {direction}.",
-      "A mud wasp wobbles {direction}."
+      "A mud wasp wobbles {direction}.",
+      "A mud wasp just went into a warehouse.",
+      "A mud wasp just went across a footbridge.",
+      "A mud wasp just went into a storage building."
     ],
     death: [
       "The mud wasp flutters its wings one last time and dies.",
-      "The mud wasp twitches violently, then dies.",
-      "The mud wasp slumps to the ground."
+      "The mud wasp twitches violently, then dies."
     ],
     decay: [
       "A mud wasp decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A mud wasp stabs at you with {pronoun} stinger!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A mud wasp stabs at you with {pronoun} stinger!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

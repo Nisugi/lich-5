@@ -94,7 +94,9 @@
     gems: true,
     boxes: true,
     skin: "mist wraith eye",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,22 +109,22 @@
     flee: [],
     death: [
       "The mist wraith falls to the ground motionless.",
-      "The mist wraith screams evilly one last time and goes still.",
-      "The mist wraith goes still for a moment while its head reshapes."
+      "The mist wraith screams evilly one last time and goes still."
     ],
     decay: [
       "A mist wraith turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A mist wraith swings {weapon} at you!",
-      "A mist wraith tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [
-      "A mist wraith claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A mist wraith swings {weapon} at you!",
+        "A mist wraith tries to ensnare you!"
+      ],
+      claw: [
+        "A mist wraith claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

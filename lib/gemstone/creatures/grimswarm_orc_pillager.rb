@@ -81,7 +81,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -95,11 +97,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A Grimswarm orc pillager swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Grimswarm orc pillager swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [
         "Observed with longsword (AS 197), camp level unknown."

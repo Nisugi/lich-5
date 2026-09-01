@@ -82,26 +82,30 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
     arrival: [
       "A luminous worm slithers into view, its glow illuminating the area."
     ],
-    flee: [],
+    flee: [
+      "A luminous worm backs away, a foul odor spewing out from {pronoun} as {pronoun} inches backwards."
+    ],
     death: [
       "A luminous worm slumps to the ground, its glowing form now motionless and dull."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A worm charges at you!",
-      "A luminous worm charges at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A worm charges at you!",
+        "A luminous worm charges at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

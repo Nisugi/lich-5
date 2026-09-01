@@ -55,12 +55,12 @@
     emp_td: (334..344),
     pal_td: (293..303),
     ran_td: (296..306),
-    sor_td: "335 to 365",
+    sor_td: (335..365),
     wiz_td: nil,
     mje_td: (366..372),
-    mne_td: "351 to 381",
+    mne_td: (351..381),
     mjs_td: 364,
-    mns_td: "319 to 349",
+    mns_td: (319..349),
     mnm_td: (273..276),
     defensive_spells: [
       "Elemental Defense III (414)",
@@ -85,37 +85,35 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "The power of the storm cannot be contained in the titan stormcaller's body. Jagged bolts of electricity arc up from under her skin and crackle down her limbs, seemingly causing her no pain during their passage. Despite her towering height, the stormcaller's stooped shoulders and spindly limbs make her look less imposing. Her features are plain and unlovely.\n\n;Assess\nThe titan stormcaller is huge in size and about twelve feet high in his current state."
-    ],
+    description: [],
     arrival: [
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as {pronoun} lumbers in.",
       "A stooped titan stormcaller strides in, each step like a peal of thunder.",
-      "A stooped titan stormcaller stiffly strides in, each step like a peal of thunder.",
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
+      "A stooped titan stormcaller stiffly strides in, each step like a peal of thunder."
     ],
     flee: [],
     death: [
-      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as she dies.",
-      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as he dies.",
-      "Beautiful shot pierces both lungs, the titan stormcaller makes a wheezing noise, and drops dead!",
-      "A titan tempest tyrant stretches a hand skyward, fumbling for something unseen as he surrenders to death."
+      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as {pronoun} dies."
     ],
-    decay: [
-      "The titan stormcaller's left leg crumbles briefly and explodes in a shower of gore.",
-      "The titan stormcaller's right leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A stooped titan stormcaller gestures with a glowing hand at you!",
-      "A stooped titan stormcaller twirls {pronoun} modwir staff theatrically before lashing out at you!"
+    spell_prep: [
+      "A stooped titan stormcaller mutters a thunderous chant as {pronoun} lifts {pronoun} eyes skyward.",
+      "A stooped titan stormcaller gestures with a glowing hand at you!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A stooped titan stormcaller gestures with a glowing hand at you!",
+        "A stooped titan stormcaller twirls {pronoun} modwir staff theatrically before lashing out at you!",
+        "A stooped titan stormcaller throws {pronoun} head back and thunder peals through the air as a gust of wind stirs {pronoun} hair. {pronoun} lip curls cruelly as lightning arcs down {pronoun} limbs.",
+        "A stooped titan stormcaller throws {pronoun} head back and thunder peals through the air as a gust of wind stirs {pronoun} hair. {target} lip curls cruelly as lightning arcs down {pronoun} limbs."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

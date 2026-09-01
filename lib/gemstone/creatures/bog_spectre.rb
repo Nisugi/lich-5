@@ -105,7 +105,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet essence shard"
+    other: "Glowing violet essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,21 +115,20 @@
     ],
     arrival: [],
     flee: [],
-    death: [
-      "A heavy mist pours from the bog spectre as he slumps to the ground.",
-      "A heavy mist pours from the bog spectre as she slumps to the ground.",
-      "The bog spectre goes still for a moment while its head reshapes."
-    ],
+    death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A bog spectre tries to ensnare you!"
+    spell_prep: [
+      "A bog spectre glows faintly as a spectral mist begins to swirl around {pronoun}."
     ],
-    bite: [],
-    claw: [
-      "A bog spectre claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A bog spectre tries to ensnare you!"
+      ],
+      claw: [
+        "A bog spectre claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

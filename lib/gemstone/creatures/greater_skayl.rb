@@ -107,30 +107,42 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "Essence of fire"
+    other: "Essence of fire",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A greater skayl pounds at you with {pronoun} fist!",
+        "A greater skayl releases a wave of fiery red energy at you!",
+        "A greater skayl pounds at {target} with {pronoun} fist!",
+        "A greater skayl tries to ensnare {target}!",
+        "A greater skayl pounds at a greater skayl with {pronoun} fist!"
+      ],
+      bolt: [
+        "A greater skayl hurls a ball of greenish-black flame at {target}!"
+      ]
+    },
+    stand: [
+      "A greater skayl melts into a pool of molten glaes and quickly reforms {reflexive} into a standing position."
+    ],
     description: [
       "Flame suddenly hisses and spits from thin air, which shimmers in the resulting smoke like reflective crystal. Then abruptly, the air roils and begins to take on form. In mere heartbeats, it becomes obvious that the transparent bubble of conflagration is a sentient being. The greater skayl opens its gaping maw of fire and bellows a malign growl that is more felt than heard. In the next instant, the greater skayl melts down then reforms a short distance away, leaving a drift of smoke in its wake like a fraying shadow."
     ],
-    arrival: [],
+    arrival: [
+      "A greater skayl rises from a pool of steaming liquid glaes!",
+      "A greater skayl rises from a pool of steaming liquid glaes rumbling in pain!"
+    ],
     flee: [],
     death: [
-      "The greater skayl goes limp and it falls over as the fire slowly fades from its eyes.",
-      "Beautiful shot pierces both lungs, the greater skayl makes a wheezing noise, and drops dead!"
+      "The greater skayl goes limp and it falls over as the fire slowly fades from its eyes."
     ],
     decay: [
       "Bright orange lava oozes out of the greater skayl before it crumbles into a lifeless pile of glaes."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A greater skayl pounds at you with {pronoun} fist!",
-      "A greater skayl releases a wave of fiery red energy at you!",
-      "A greater skayl tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

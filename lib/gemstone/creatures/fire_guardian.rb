@@ -99,7 +99,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Essence of fire"
+    other: "Essence of fire",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -116,12 +118,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A fire guardian gestures at you!",
-      "A fire guardian swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A fire guardian gestures at you!",
+        "A fire guardian swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -86,14 +86,26 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A veteran reiver swings {weapon} at you!",
+        "A veteran reiver swings an old claidhmore at {target}!"
+      ]
+    },
+    stand: [
+      "A veteran reiver stands up and dusts {reflexive} off."
+    ],
     description: [
       "The reiver stands tall and proud. Moss-green eyes dominate the strong face and tousled, dark hair crowns the head. The reiver is well-muscled and toned, with calloused hands used to the wielding of weapons. Forged by a hard history and a harsh climate, the reiver is a tough fighter with a sense of honor and duty. Normally calm and amiable, the reiver's visage is thunderous when kith and kin are threatened or there are krolvins lurking."
     ],
     arrival: [
-      "A veteran reiver just arrived."
+      "A veteran reiver just arrived.",
+      "A veteran reiver just came through a red door."
     ],
     flee: [
       "A veteran reiver heads {direction}."
@@ -107,11 +119,6 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A veteran reiver swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

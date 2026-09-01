@@ -105,30 +105,36 @@
     gems: true,
     boxes: true,
     skin: "a tegursh claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Taller than a common human and of substantially heavier build, the tegursh sentry is a solid mass of bone and gristle overlaid with bony plates that cover most of his torso, legs, and arms. Beady, black eyes rimmed in red peer out from a twisted, deformed face, clearly orcish but with an elongated snout. The sentry's arms are as thick as tree branches, ending in three incredibly sharp claws. Unlike any orc you have seen, this creature has an armored tail tipped with pointy spikes."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A tegursh sentry backs away, the expression on {pronoun} scaly face a mixture of fear and loathing."
+    ],
     death: [
       "A tegursh sentry rasps a final scream and dies.",
-      "A tegursh sentry silently rasps a final scream and dies.",
-      "Beautiful shot pierces both lungs, the tegursh sentry makes a wheezing noise, and drops dead!"
+      "A tegursh sentry silently rasps a final scream and dies."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the tegursh sentry's ribs to move independently."
+    decay: [],
+    search: [
+      "A tegursh sentry scans the area for any signs of intruders."
     ],
-    search: [],
     spell_prep: [],
-    attack: [
-      "A tegursh sentry swings {weapon} at you!",
-      "A tegursh sentry throws {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A tegursh sentry swings {weapon} at you!",
+        "A tegursh sentry lashes {pronoun} tail with lightning speed at your legs!"
+      ],
+      hurl: [
+        "A tegursh sentry throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

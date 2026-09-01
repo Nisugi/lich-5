@@ -20,7 +20,7 @@
     "Living"
   ],
   bcs: true,
-  max_hp: 51,
+  max_hp: 50,
   speed: 15,
   height: 3,
   size: "small",
@@ -108,7 +108,9 @@
     gems: true,
     boxes: true,
     skin: "a gnome scalp",
-    other: "Alchemy (common)"
+    other: "Alchemy (common)",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -131,11 +133,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A cave gnome swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A cave gnome swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

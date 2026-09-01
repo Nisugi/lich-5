@@ -109,7 +109,9 @@
     gems: true,
     boxes: true,
     skin: "an orc ear",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -129,11 +131,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A dark orc swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A dark orc swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

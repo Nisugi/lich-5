@@ -108,7 +108,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Tiny golden seed"
+    other: "Tiny golden seed",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -121,25 +123,18 @@
     ],
     death: [
       "The shan cleric howls out one last time and dies.",
-      "The shan cleric yips in pain as she falls to the ground motionless.",
-      "The shan cleric yips in pain as he falls to the ground motionless.",
-      "A shan cleric's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
-      "A shan cleric's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
-      "Beautiful shot pierces both lungs, the shan cleric makes a wheezing noise, and drops dead!",
-      "A shan warrior's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
-      "A shan wizard's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette."
+      "The shan cleric yips in pain as {pronoun} falls to the ground motionless.",
+      "A shan cleric's body shimmers slightly.  Suddenly, {pronoun} features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of {pronoun} death like a silhouette."
     ],
-    decay: [
-      "A luminous arachnid's legs shrivel up beneath it as it decays into dust.",
-      "A greater spider's legs shrivel up beneath it as it decays into dust."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A shan cleric swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A shan cleric swings {weapon} at you!",
+        "A shan cleric swings a spiked holy-water sprinkler at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

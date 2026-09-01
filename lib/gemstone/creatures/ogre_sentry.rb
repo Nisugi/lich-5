@@ -80,12 +80,12 @@
     gems: true,
     boxes: true,
     skin: "Ogre tooth",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "You are not quite sure what to make of the ogre sentry, as you have never seen anything that looks quite like it. Stopping a moment, you try to commit this creature to memory so that you can tell tales of it to your fellow adventurers back in the safety of the local tavern."
-    ],
+    description: [],
     arrival: [
       "An ogre sentry just arrived."
     ],
@@ -103,18 +103,23 @@
       "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
       "Tiny fissures quickly spread over the entire form of a greater earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
       "A small, green cloud of smelly gas rises from the body of a mongrel kobold as he decays into compost.",
-      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost.",
-      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost.",
-      "A small, green cloud of smelly gas rises from the body of a kobold as he decays into compost.",
-      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as {pronoun} decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a kobold as he decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An ogre sentry swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      tackle: [
+        "An ogre sentry hurls {reflexive} at {target}!"
+      ],
+      attack: [
+        "An ogre sentry swings {weapon} at you!",
+        "An ogre sentry swings a thin-bladed steel handaxe at {target}!"
+      ],
+      creature_spell: [
+        "An ogre sentry glares malevolently at {pronoun} feet."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

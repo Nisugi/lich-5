@@ -82,13 +82,17 @@
     gems: nil,
     boxes: nil,
     skin: "bleached thorn",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Sometime when you are clearing shrubs from your property, think back on how much easier it is than when the shrub decides it should be you that gets cleared."
     ],
-    arrival: [],
+    arrival: [
+      "A large thorned shrub hops in and plants {pronoun} roots."
+    ],
     flee: [],
     death: [
       "A large thorned shrub collapses to the ground, shakes one last time and dies."
@@ -96,11 +100,13 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A large thorned shrub snaps a twig towards you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+      ],
+      bite: [
+        "A large thorned shrub snaps a twig towards {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

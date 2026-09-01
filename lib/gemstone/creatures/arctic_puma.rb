@@ -86,7 +86,9 @@
     gems: false,
     boxes: false,
     skin: "a white puma hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,9 +109,6 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

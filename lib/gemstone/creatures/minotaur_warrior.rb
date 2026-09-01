@@ -104,7 +104,9 @@
     gems: true,
     boxes: true,
     skin: "a minotaur horn",
-    other: "Tiny golden seed"
+    other: "Tiny golden seed",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -114,17 +116,18 @@
     flee: [],
     death: [],
     decay: [
-      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust.",
-      "Acid dissolves connecting cartilage, freeing the minotaur warrior's ribs to move independently."
+      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A minotaur warrior swings {weapon} at you!",
-      "Tightening {pronoun} grip on {pronoun} steel battle axe, a minotaur warrior strikes out at you with all of minotaur warrior might!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A minotaur warrior swings {weapon} at you!",
+        "Tightening {pronoun} grip on {pronoun} steel battle axe, a {pronoun} strikes out at you with all of {pronoun} might!",
+        "A minotaur warrior swings {pronoun} {weapon} at your vultite handaxe!",
+        "A minotaur warrior swings {pronoun} {weapon} at your smooth glowbark staff!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

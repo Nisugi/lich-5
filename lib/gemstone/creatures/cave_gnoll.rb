@@ -90,7 +90,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,16 +109,15 @@
       "The cave gnoll screams one last time and dies."
     ],
     decay: [
-      "A cave gnoll decays into compost.",
-      "The cave gnoll's left leg crumbles briefly and explodes in a shower of gore."
+      "A cave gnoll decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A cave gnoll swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A cave gnoll swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

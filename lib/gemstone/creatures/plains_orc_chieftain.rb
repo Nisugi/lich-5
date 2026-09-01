@@ -91,30 +91,53 @@
     gems: true,
     boxes: true,
     skin: "a scraggly orc scalp",
-    other: "Glimmering blue essence shardGlimmering blue mote of essence"
+    other: "Glimmering blue essence shardGlimmering blue mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "As tall as a giantman and twice as muscular as most, the plains orc chieftain is taller and more agile than her more primitive orcish brothers, and judging by the cleverness in her beady yellow eyes, probably quite a bit more intelligent as well. Leathery brown skin covers her bulging limbs, the same color as the crude armor that protects her massive torso, and a scraggly red beard frames her heavy jowls."
     ],
-    arrival: [],
+    arrival: [
+      "A plains orc chieftain trots in moaning at {pronoun} fate.",
+      "A plains orc chieftain rushes in, howling with rage!",
+      "A plains orc chieftain barrels in."
+    ],
     flee: [
-      "A plains orc chieftain barrels {direction}."
+      "A plains orc chieftain barrels {direction}.",
+      "A plains orc chieftain trots west moaning at {pronoun} fate.",
+      "A plains orc chieftain trots southwest moaning at {pronoun} fate.",
+      "A plains orc chieftain trots south moaning at {pronoun} fate.",
+      "A plains orc chieftain trots east moaning at {pronoun} fate.",
+      "A plains orc chieftain trots northeast moaning at {pronoun} fate.",
+      "A plains orc chieftain trots northwest moaning at {pronoun} fate.",
+      "A plains orc chieftain stomps down on a small rodent as {pronoun} hurries out from under {pronoun} feet. {target} gives a satisfied grunt as squished rodent parts flow from under {pronoun} feet."
     ],
     death: [
-      "A plains orc chieftain's chest heaves one last time then she dies.",
-      "A plains orc chieftain's chest heaves one last time then he dies.",
-      "Awesome shot skewers skull!  The plains orc chieftain blinks once and falls quite dead!",
-      "Beautiful shot pierces both lungs, the plains orc chieftain makes a wheezing noise, and drops dead!"
+      "A plains orc chieftain's chest heaves one last time then {pronoun} dies."
     ],
-    decay: [],
+    decay: [
+      "A plains orc chieftain decays leaving nothing but rancid tufts of fur and scraps of skin."
+    ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A plains orc chieftain swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A plains orc chieftain swings {weapon} at you!",
+        "A plains orc chieftain swings a closed fist at {target}!",
+        "A plains orc chieftain swings a crude iron morning star at {target}!",
+        "A plains orc chieftain swings a bone-hilted iron machete at {target}!"
+      ],
+      bite: [
+        "A plains orc chieftain snaps {pronoun} iron morning star down and past your left ear.",
+        "A plains orc chieftain snaps {pronoun} iron morning star down and past your right ear.",
+        "A plains orc chieftain snaps {pronoun} iron machete down and past your left ear.",
+        "A plains orc chieftain snaps {pronoun} iron machete down and past your right ear.",
+        "A plains orc chieftain snaps {pronoun} {weapon} down and past your right ear.",
+        "A plains orc chieftain snaps {pronoun} {weapon} down and past your left ear."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

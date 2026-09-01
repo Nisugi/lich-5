@@ -89,7 +89,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: "Glowing violet essence dust,"
+    other: "Glowing violet essence dust,",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -97,7 +99,8 @@
     ],
     arrival: [
       "A muscular supplicant just arrived.",
-      "A muscular supplicant strides into the area!"
+      "A muscular supplicant strides into the area!",
+      "A muscular supplicant charges in, sweat beading on {pronoun} forehead!"
     ],
     flee: [
       "A muscular supplicant heads {direction}."
@@ -118,11 +121,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A muscular supplicant swings {weapon} at you!"
+    stun_break: [
+      "A muscular supplicant unleashes an earth-shattering bellow shaking off the stun!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A muscular supplicant swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

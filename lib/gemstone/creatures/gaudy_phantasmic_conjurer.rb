@@ -93,32 +93,45 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
     arrival: [
-      "A gaudy phantasmic conjurer stalks in impatiently, his gaudy robes drifting several inches above the floor.",
-      "A gaudy phantasmic conjurer stalks in impatiently, her gaudy robes drifting several inches above the floor."
+      "A gaudy phantasmic conjurer stalks in impatiently, {pronoun} gaudy robes drifting several inches above the floor.",
+      "A gaudy phantasmic conjurer just came through some vaulting grey stone doors.",
+      "A gaudy phantasmic conjurer just came through a heavy steel portcullis."
     ],
-    flee: [],
-    death: [
-      "The phantasmic conjurer goes still for a moment while its head reshapes."
+    flee: [
+      "A gaudy phantasmic conjurer just went through some vaulting grey stone doors.",
+      "A gaudy phantasmic conjurer just went through a heavy steel portcullis."
     ],
+    death: [],
     decay: [
-      "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, his skeletal form collapses into blanched powder and blows away.",
-      "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, her skeletal form collapses into blanched powder and blows away."
+      "Groans and cracks emanate from an infernal death knight's armor as {pronoun} suddenly succumbs to metal fatigue.  Within seconds, {pronoun} skeletal form collapses into blanched powder and blows away."
     ],
-    search: [],
+    search: [
+      "A gaudy phantasmic conjurer glances around, a suspicious look on {pronoun} translucent features."
+    ],
     spell_prep: [],
-    attack: [
-      "A gaudy phantasmic conjurer shouts out a single mystical syllable, thrusting {pronoun} ghostly hands at you!",
-      "With an artful flick of gaudy phantasmic conjurer wrist, a gaudy phantasmic conjurer flourishes a filigreed golden wand at you.  A roaring ball of liquid fire erupts toward you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      creature_spell: [
+        "A gaudy phantasmic conjurer glares malevolently at {target}."
+      ],
+      bolt: [
+        "A gaudy phantasmic conjurer hurls a freezing ball of pure cold at {target}!"
+      ],
+      attack: [
+        "A gaudy phantasmic conjurer shouts out a single mystical syllable, thrusting {pronoun} ghostly hands at you!"
+      ],
+      wand: [
+        "With an artful flick of {pronoun} wrist, a {pronoun} flourishes a filigreed golden wand at you.  A roaring ball of liquid fire erupts toward you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

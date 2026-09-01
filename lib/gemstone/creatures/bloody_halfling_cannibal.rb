@@ -90,7 +90,7 @@
       {
         name: "hunger",
         note: "+80 AS"
-      },
+      }
     ],
     special_notes: []
   },
@@ -140,23 +140,23 @@
     boxes: true,
     skin: false,
     other: "gigas artifact",
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: "A skim of dark, congealing blood slicks the features of the raw-boned halfling.  {pronoun} eyes are black as burnt coals and feverish with single-minded hunger, a hunger that has burnt away every last shred of fat from {pronoun} body and left behind only knotted sinew.  The cannibal's teeth are sharpened to jagged points, and from between them darts a tiny pink tongue that is constantly tasting the air.  {pronoun} wears tattered, weather-eaten remains of furs and homespun fabric.  They, too, are soaked red with blood.",
     arrival: [
       "Accompanied by the fetid stench of old meat, a bloody halfling cannibal races into the area with a froth of bloody saliva on {pronoun} lips.",
-      "You hear soft footfalls."
+      "A bloody halfling cannibal lurches in, grinning madly despite {pronoun} crippling wounds."
     ],
     flee: [
       "Licking {pronoun} lips ravenously, a bloody halfling cannibal creeps {direction}.",
-      "You hear soft footfalls."
+      "A bloody halfling cannibal just went down a narrow path.",
+      "A bloody halfling cannibal just went into a huge hut."
     ],
     death: [
-      "A monstrous, too-wide smile spreads across the cannibal's face as {pronoun} collapses to the ground, dead.",
-      "A monstrous, too-wide smile spreads across the cannibal's face as he collapses to the ground, dead.",
-      "A monstrous, too-wide smile spreads across the cannibal's face as she collapses to the ground, dead.",
-      "The halfling cannibal slumps to the ground."
+      "A monstrous, too-wide smile spreads across the cannibal's face as {pronoun} collapses to the ground, dead."
     ],
     decay: [
       "A bloody halfling cannibal's body rots away, leaving only a small stain on the ground.",
@@ -166,42 +166,66 @@
       "A bloody halfling cannibal sniffs at the air, {pronoun} eyes glinting as {pronoun} searches the shadows.",
       "a bloody halfling cannibal's eyes dart around, suspicion warring with hunger in {pronoun} beady eyes."
     ],
-    attack: [
-      "A bloody halfling cannibal bares {pronoun} sharpened teeth as he tries to bite into you!",
-      "A bloody halfling cannibal hammers blindly at you with grimy little fists!",
-      "A bloody halfling cannibal hurtles at you, swinging wildly with a feras mattock!",
-      "A bloody halfling cannibal hurtles at you, swinging wildly with a twisted obsidian dagger!",
-      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and bares {pronoun} sharpened teeth as he tries to bite into you!",
-      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hammers blindly at you with grimy little fists!",
-      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hurtles at you, swinging wildly with a feras mattock!",
-      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hurtles at you, swinging wildly with a twisted obsidian dagger!",
-      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and bares {pronoun} sharpened teeth as she tries to bite into you!",
-      "A bloody halfling cannibal bares {pronoun} sharpened teeth as she tries to bite into you!",
-      "A bloody halfling cannibal bares bloody halfling cannibal sharpened teeth as he tries to bite into you!",
-      "A bloody halfling cannibal bares bloody halfling cannibal sharpened teeth as she tries to bite into you!",
-      "A niveous giant warg lunges at you, maw slathering as bloody halfling cannibal tries to take a ferocious bite!",
-      "A savage fork-tongued wendigo flails with bloody halfling cannibal clawed fists at you!",
-      "A savage fork-tongued wendigo's jaw unhinges as it tries to ravage you with bloody halfling cannibal shark-like teeth!",
-      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and bares bloody halfling cannibal sharpened teeth as he tries to bite into you!",
-      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and bares bloody halfling cannibal sharpened teeth as she tries to bite into you!"
-    ],
-    claw: [],
-    hide: "A bloody halfling cannibal darts into the shadows.",
-    vanish: "As you move to attack a bloody halfling cannibal, the cannibal shrinks away from you, baring sharpened teeth as {pronoun} darts into the shadows!",
-    hunger: "A bloody halfling cannibal's eyes grow bloodshot with ravening hunger!",
-    unstun: "A bloody halfling cannibal gurgles out an animalistic shriek of rage, {pronoun} eyes filling with bloody blackness as {pronoun} surges back into action!",
-    cannibalize: "A bloody halfling cannibal falls into a lopsided crouch.  The muscles of {pronoun} hindquarters tense as {pronoun} springs toward you, sharpened teeth gnashing.",
-    wiry_arms: [
-      "A bloody halfling cannibal throws her wiry arms around you, fueled by panicked hunger!",
-      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and throws {pronoun} wiry arms around you, fueled by panicked hunger!"
-    ],
-    hurtle: [
-      "A bloody halfling cannibal hurtles at you, swinging wildly with a twisted obsidian dagger!",
-      "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hurtles at you, swinging wildly with a twisted obsidian dagger!"
-    ],
     bite: "A bloody halfling cannibal bares {pronoun} sharpened teeth as {pronoun} tries to bite into you!",
-    grimy_little_fists: "A bloody halfling cannibal hammers blindly at you with grimy little fists!",
-    general_advice: "* Despite being the lowest level creature in the Hinterwilds, cannibals can't be underestimated or ignored, especially if the Boreal Forest has started filling up. Cannibals' namesake biting maneuver can be lethal if its standard maneuver roll gets a significant bonus from other creatures in the area stunning or otherwise disabling a character. Cannibals also take advantage of stealth, which means they can get stance pushdown from ambush mechanics in situations where you might never have seen them coming. As such, even in cases where relatively low-mana-cost AoE spells like Censure (316), Elemental Wave (410), or Grasp of the Grave (709) might seem unnecessary for the number of visible creatures, sometimes they can still be helpful in revealing the invisible threat of cannibals.",
 
+    stun_break: [
+      "A bloody halfling cannibal gurgles out an animalistic shriek of rage, {pronoun} eyes filling with bloody blackness as {pronoun} surges back into action!"
+    ],
+    attacks: {
+      attack: [
+        "A bloody halfling cannibal bares {pronoun} sharpened teeth as {pronoun} tries to bite into you!",
+        "A bloody halfling cannibal hammers blindly at you with grimy little fists!",
+        "A bloody halfling cannibal hurtles at you, swinging wildly with a feras mattock!",
+        "A bloody halfling cannibal hurtles at you, swinging wildly with a twisted obsidian dagger!",
+        "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and bares {pronoun} sharpened teeth as {pronoun} tries to bite into you!",
+        "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hammers blindly at you with grimy little fists!",
+        "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hurtles at you, swinging wildly with a feras mattock!",
+        "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hurtles at you, swinging wildly with a twisted obsidian dagger!",
+        "A bloody halfling cannibal throws {pronoun} wiry arms around you, fueled by panicked hunger!",
+        "A bloody halfling cannibal throws {pronoun} wiry arms around {target}, fueled by panicked hunger!"
+      ],
+      cannibalize: [
+        "A bloody halfling cannibal falls into a lopsided crouch.  The muscles of {pronoun} hindquarters tense as {pronoun} springs toward you, sharpened teeth gnashing."
+      ],
+      grimy_little_fists: [
+        "A bloody halfling cannibal hammers blindly at you with grimy little fists!"
+      ],
+      hurtle: [
+        "A bloody halfling cannibal hurtles at you, swinging wildly with a twisted obsidian dagger!",
+        "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and hurtles at you, swinging wildly with a twisted obsidian dagger!"
+      ],
+      wiry_arms: [
+        "A bloody halfling cannibal throws her wiry arms around you, fueled by panicked hunger!",
+        "With an ululating shriek, a bloody halfling cannibal leaps from the shadows and throws {pronoun} wiry arms around you, fueled by panicked hunger!"
+      ]
+    },
+    triggers: {
+      hide: [
+        "A bloody halfling cannibal darts into the shadows."
+      ],
+      vanish: [
+        "As you move to attack a bloody halfling cannibal, the cannibal shrinks away from you, baring sharpened teeth as {pronoun} darts into the shadows!"
+      ],
+      hunger: [
+        "A bloody halfling cannibal's eyes grow bloodshot with ravening hunger!"
+      ]
+    },
+    info: {
+      general: [
+        "* Despite being the lowest level creature in the Hinterwilds, cannibals can't be underestimated or ignored, especially if the Boreal Forest has started filling up. Cannibals' namesake biting maneuver can be lethal if its standard maneuver roll gets a significant bonus from other creatures in the area stunning or otherwise disabling a character. Cannibals also take advantage of stealth, which means they can get stance pushdown from ambush mechanics in situations where you might never have seen them coming. As such, even in cases where relatively low-mana-cost AoE spells like Censure (316), Elemental Wave (410), or Grasp of the Grave (709) might seem unnecessary for the number of visible creatures, sometimes they can still be helpful in revealing the invisible threat of cannibals."
+      ],
+      class_tips: {
+        cleric: [],
+        paladin: [],
+        ranger: [],
+        bard: [],
+        wizard: [],
+        empath: [],
+        rogue: [],
+        warrior: [],
+        sorcerer: []
+      },
+      miscellany: []
+    },
   }
 }

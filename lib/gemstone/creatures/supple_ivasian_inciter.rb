@@ -110,40 +110,51 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A supple Ivasian inciter is a surpassingly attractive figure clad in a loose silken shirt of shimmering green cloth of a vivid bile green hue and a darker loincloth. More than just a hint of zealotry glimmers in her kohl-rimmed eyes. She wears a glinting steel symbol, painted red and bordered in a wreath of tentacles, that depicts a stylized wisp of green smoke."
     ],
     arrival: [
-      "A supple Ivasian inciter arrives in a sleek swirl of robes, his tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
+      "A supple Ivasian inciter arrives in a sleek swirl of robes, {pronoun} tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
       "A supple Ivasian inciter strides in with a smooth, rolling gait.",
-      "A supple Ivasian inciter arrives in a sleek swirl of robes, her tattoos flaring a toxic green before settling into an uneven pulsing pattern reminiscent of an erratic heartbeat.",
       "A supple Ivasian inciter strides in with a stiff but rolling gait, his face tight with pain.",
       "A supple Ivasian inciter just arrived from some lichen-clad dark wooden docks.",
-      "A supple Ivasian inciter just arrived."
+      "A supple Ivasian inciter just arrived.",
+      "A supple Ivasian inciter just came through a sculpted stone arch."
     ],
-    flee: [],
+    flee: [
+      "A supple Ivasian inciter just went across a vine-covered wood suspension bridge.",
+      "A supple Ivasian inciter just went to a torchlit overgrown grotto.",
+      "A supple Ivasian inciter just went to some lichen-clad dark wooden docks.",
+      "A supple Ivasian inciter just went through a pair of inlaid bronze doors.",
+      "A supple Ivasian inciter just went up a warped oaken gangplank.",
+      "A supple Ivasian inciter just went down a warped oaken gangplank.",
+      "A supple Ivasian inciter just went through a sculpted stone arch."
+    ],
     death: [
-      "The Ivasian inciter twitches violently, then dies.",
-      "The Ivasian inciter slumps to the ground.",
-      "Beautiful shot pierces both lungs, the Ivasian inciter makes a wheezing noise, and drops dead!",
-      "Awesome shot skewers skull!  The Ivasian inciter blinks once and falls quite dead!"
+      "The Ivasian inciter twitches violently, then dies."
     ],
-    decay: [
-      "The Ivasian inciter's right leg crumbles briefly and explodes in a shower of gore.",
-      "The Ivasian inciter's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A supple Ivasian inciter leaps forward and aims a series of lightning-swift kicks at you!",
-      "Lean muscles knitting with intensity, a supple Ivasian inciter throws {weapon} at you!",
-      "With a vicious flick of supple ivasian inciter wrist, a supple Ivasian inciter lashes at you with {pronoun} leather whip!"
+    spell_prep: [
+      "A supple ivasian inciter raises {pronoun} voice in a ululating chant, surrounding {reflexive} with wisps of sickly green energy."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A supple Ivasian inciter leaps forward and aims a series of lightning-swift kicks at you!",
+        "With a vicious flick of {pronoun} wrist, a supple Ivasian inciter lashes at you with {pronoun} leather whip!",
+        "A supple Ivasian inciter throws {pronoun} head back in pleasure as {pronoun} completes {pronoun} incantation!",
+        "A supple ivasian inciter throws {pronoun} head back in pleasure as {pronoun} completes {pronoun} incantation!",
+        "A supple ivasian inciter leaps forward and aims a series of lightning-swift kicks at you!"
+      ],
+      hurl: [
+        "Lean muscles knitting with intensity, a supple Ivasian inciter throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

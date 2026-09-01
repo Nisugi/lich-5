@@ -114,7 +114,9 @@
     gems: true,
     boxes: true,
     skin: "a troll skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -131,14 +133,20 @@
     decay: [
       "A cave troll decays into compost."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A cave troll swings {weapon} at you!",
-      "A cave troll thrusts with a spear at you!"
+    search: [
+      "A cave troll peers around suspiciously."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A cave troll mutters, \"Trar'rt trast ar karm larlorirw slorlurarbr our'r.\"",
+      "A cave troll mutters, \"Sr'r'wr'ralars 'ght lorlur'ra larlor'rikr.\""
+    ],
+    attacks: {
+      attack: [
+        "A cave troll swings {weapon} at you!",
+        "A cave troll thrusts with a spear at you!",
+        "A cave troll throws {pronoun} head back and howls!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

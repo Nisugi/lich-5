@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "agresh bear",
+  name: "Agresh bear",
   noun: "",
   url: "https://gswiki.play.net/agresh_bear",
   picture: "",
@@ -82,9 +82,22 @@
     gems: false,
     boxes: false,
     skin: "an Agresh bear claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      claw: [
+        "An Agresh bear claws at you!"
+      ],
+      bite: [
+        "An Agresh bear tries to bite you!"
+      ]
+    },
+    stand: [
+      "An Agresh bear stands up and growls!"
+    ],
     description: [
       "The Agresh bear is all muscle and bone and presents a formidable appearance when standing on his hindlegs. He is a tawny gold in color allowing him to blend more easily into his surroundings or at least as much as a 600 pound bear can. The deadly claws that tip each front paw completes the total package of death known as the Agresh bear."
     ],
@@ -94,25 +107,19 @@
     ],
     flee: [
       "An Agresh bear lumbers {direction}.",
-      "An Agresh bear slowly lumbers {direction}, growling in pain."
+      "An Agresh bear slowly lumbers {direction}, growling in pain.",
+      "An Agresh bear slowly backs away, {pronoun} teeth bared.",
+      "An Agresh bear lumbers {direction}, flecks of drool flinging with each of {pronoun} strides."
     ],
     death: [
       "The Agresh bear collapses heavily into a heap on the ground and dies.",
-      "The Agresh bear lets out a blood-curdling roar and dies.",
-      "Beautiful shot pierces both lungs, the Agresh bear makes a wheezing noise, and drops dead!"
+      "The Agresh bear lets out a blood-curdling roar and dies."
     ],
     decay: [
       "An Agresh bear decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "An Agresh bear tries to bite you!"
-    ],
-    claw: [
-      "An Agresh bear claws at you!"
-    ],
     info: {
       general: [],
       class_tips: {

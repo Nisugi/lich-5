@@ -61,18 +61,18 @@
     ranged: (128..153),
     bolt: (128..154),
     udf: 172,
-    bar_td: "+84 TD",
-    cle_td: "+84 TD",
+    bar_td: 84,
+    cle_td: 84,
     emp_td: (76..84),
-    pal_td: "+84 TD",
-    ran_td: "+84 TD",
-    sor_td: "+84 TD",
-    wiz_td: "+84 TD",
-    mje_td: "+84 TD",
-    mne_td: "+84 TD",
-    mjs_td: "+84 TD",
-    mns_td: "+84 TD",
-    mnm_td: "+84 TD",
+    pal_td: 84,
+    ran_td: 84,
+    sor_td: 84,
+    wiz_td: 84,
+    mje_td: 84,
+    mne_td: 84,
+    mjs_td: 84,
+    mns_td: 84,
+    mnm_td: 84,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -88,29 +88,35 @@
     gems: false,
     boxes: false,
     skin: "a dobrem snout",
-    other: "no"
+    other: "no",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The dobrem is a dog of medium size, with a body that is square, compactly built, muscular and powerful. The fierce animal is elegant in appearance, of proud carriage, reflecting great nobility. Almost three feet tall at the shoulders, the dobrem is covered by short black fur with sharply defined rust coloured markings appearing about each eye and on muzzle, throat and forechest, on all legs and feet and below the tail."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A dobrem lopes {direction}!"
+    ],
     death: [
       "The dobrem falls to the ground and dies.",
-      "The dobrem rolls over and dies.",
-      "Beautiful shot pierces both lungs, the dobrem makes a wheezing noise, and drops dead!"
+      "The dobrem rolls over and dies."
     ],
     decay: [
       "A dobrem decays into a compost of fangs and fur."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A dobrem claws at you!"
+    stun_break: [
+      "A dobrem shakes {pronoun} head violently while trying to regain {pronoun} bearings!"
     ],
+    attacks: {
+      claw: [
+        "A dobrem claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

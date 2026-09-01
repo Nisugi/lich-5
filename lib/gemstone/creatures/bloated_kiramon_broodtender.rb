@@ -88,32 +88,35 @@
     gems: true,
     boxes: false,
     skin: "a thin broodtender tendril",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Possessed of a small, glossy black head with a long proboscis, the kiramon broodtender would be comical in shape were it not so grotesque. Most of its abdomen is bloated, gelatinous, and yielding. Riotous colors ooze across flesh like the surface hues of an oil slick. Eight glinting black eyes stare from her undersized head, nestled amidst a thicket of coarse hairs. Wrapped around the monstrosity's abdomen are a number of gooey sensory tendrils."
     ],
     arrival: [
-      "The faint, unearthly glow wicking off of a translucent kiramon strandweaver's translucent carapace precedes her as she crawls in uncertainly, antennae twitching."
+      "The faint, unearthly glow wicking off of a translucent kiramon strandweaver's translucent carapace precedes her as she crawls in uncertainly, antennae twitching.",
+      "A bloated kiramon broodtender scuttles in a wary semicircle before lunging at you, pincers clacking!",
+      "A bloated kiramon broodtender skitters in a small circle as {pronoun} tendrils fan out around {pronoun}."
     ],
     flee: [
       "A bloated kiramon broodtender's multifarious sensory tendrils curl inward as she retreats."
     ],
     death: [
-      "A bloated kiramon broodtender's legs kick savagely as she collapses, belching swarms of tiny, pale larvae.  They scatter wildly as she surrenders to death.",
-      "A chitinous kiramon myrmidon collapses, his forelegs spasming and twitching before he at last surrenders to death."
+      "A bloated kiramon broodtender's legs kick savagely as she collapses, belching swarms of tiny, pale larvae.  They scatter wildly as she surrenders to death."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A bloated kiramon broodtender scuttles in a wary semicircle before lunging at you, pincers clacking!",
-      "A bloated kiramon broodtender's mandibles spread viciously wide as bloated kiramon broodtender tries to savage you!",
-      "Dripping stringy gunk, viscous tendrils unfurl from the bloated kiramon broodtender back and whip at you!",
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A bloated kiramon broodtender scuttles in a wary semicircle before lunging at you, pincers clacking!",
+        "A bloated kiramon broodtender's mandibles spread viciously wide as bloated kiramon broodtender tries to savage you!",
+        "Dripping stringy gunk, viscous tendrils unfurl from the bloated kiramon broodtender back and whip at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

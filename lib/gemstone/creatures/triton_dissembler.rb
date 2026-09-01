@@ -103,39 +103,47 @@
     gems: nil,
     boxes: nil,
     skin: "a curved gold-flecked claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Weight carefully balanced upon her massive tail, the triton dissembler walks rigidly upright, moving with self-absorbed elegance. Luminous dark blue eyes are set deeply in the sockets of her fine-boned head where delicate, fleshy lips curve into an unpleasant smile. The dissembler's long, translucently webbed hands bear curved claws, carefully filed to tapered points and painted with gold lacquer. This pretense to arrogant refinement belies the feverishly clammy sweat covering the creature's slick, sea green hide."
     ],
     arrival: [
-      "A triton dissembler arrives, striding forth with her robes trailing behind her.",
-      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
-      "A triton dissembler strides in, a wary look on his face.",
-      "A triton dissembler strides in, a wary look on her face.",
+      "A triton dissembler arrives, striding forth with {pronoun} robes trailing behind {pronoun}.",
+      "A triton dissembler strides in, a wary look on {pronoun} face.",
       "A triton dissembler strides in, gliding swiftly through the water with a wary look on her face.",
-      "A triton dissembler just arrived.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred."
+      "A triton dissembler just arrived."
     ],
-    flee: [],
+    flee: [
+      "A triton dissembler just went down some descending stairs.",
+      "A triton dissembler just went down a carved marble staircase leading to the submerged dais."
+    ],
     death: [
-      "The triton dissembler gurgles once and goes still, a wrathful look on her face.",
-      "The triton dissembler gurgles once and goes still, a wrathful look on his face.",
-      "Beautiful shot pierces both lungs, the triton dissembler makes a wheezing noise, and drops dead!"
+      "The triton dissembler gurgles once and goes still, a wrathful look on {pronoun} face."
     ],
     decay: [
-      "The triton dissembler's left leg crumbles briefly and explodes in a shower of gore.",
       "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A triton dissembler points a single golden nail toward you!",
-      "A triton dissembler swings {weapon} at you!"
+    spell_prep: [
+      "A triton dissembler chants in an incomprehensible language, causing streams of dim grey energy to lash about {pronoun} golden claws.",
+      "A triton dissembler concentrates intently on you, and a pulse of pearlescent energy ripples toward you!",
+      "A triton dissembler closes {pronoun} eyes in deep concentration..."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A triton dissembler swings {weapon} at you!"
+      ],
+      bolt: [
+        "A triton dissembler hurls a radiant ball of energy at you!"
+      ],
+      creature_spell: [
+        "A triton dissembler points a single golden nail toward {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

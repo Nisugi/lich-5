@@ -111,7 +111,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -124,17 +126,21 @@
       "A spectral warrior strides {direction}!"
     ],
     death: [
-      "A spectral warrior dissipates into ethereal wisps.",
-      "The spectral warrior goes still for a moment while its head reshapes."
+      "A spectral warrior dissipates into ethereal wisps."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A spectral warrior swings {weapon} at you!"
+    stun_break: [
+      "A spectral warrior looses a keening howl, shaking off the stun!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A spectral warrior swings {weapon} at you!",
+        "A spectral warrior swings {pronoun} {weapon} at your mossbark runestaff!",
+        "A spectral warrior swings {pronoun} {weapon} at your vultite bastard sword!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

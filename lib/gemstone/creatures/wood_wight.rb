@@ -101,7 +101,9 @@
     gems: true,
     boxes: true,
     skin: "a wight scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -122,10 +124,9 @@
       "A wood wight crumbles to dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A wood wight chants an evil incantation."
+    ],
     info: {
       general: [],
       class_tips: {

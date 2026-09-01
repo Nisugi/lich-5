@@ -92,7 +92,9 @@
     gems: true,
     boxes: true,
     skin: "a shelfae crest",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,20 +109,18 @@
     death: [
       "The shelfae chieftain falls to the ground and dies.",
       "The shelfae chieftain screams one last time and dies.",
-      "The shelfae chieftain twitches violently, then dies.",
-      "Awesome shot skewers skull!  The shelfae chieftain blinks once and falls quite dead!",
-      "Beautiful shot pierces both lungs, the shelfae chieftain makes a wheezing noise, and drops dead!"
+      "The shelfae chieftain twitches violently, then dies."
     ],
     decay: [
       "A chieftain crumbles into dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A shelfae chieftain swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A shelfae chieftain swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

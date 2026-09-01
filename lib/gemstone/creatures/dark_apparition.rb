@@ -105,7 +105,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -117,21 +119,21 @@
     ],
     flee: [],
     death: [
-      "The dark apparition slowly settles to the ground and begins to dissipate.",
-      "The dark apparition goes still for a moment while its head reshapes."
+      "The dark apparition slowly settles to the ground and begins to dissipate."
     ],
     decay: [
       "A dark apparition vanishes into thin air, leaving no trace behind."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A dark apparition tries to bite you!"
-    ],
-    claw: [
-      "A dark apparition claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A dark apparition claws at you!"
+      ],
+      bite: [
+        "A dark apparition tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

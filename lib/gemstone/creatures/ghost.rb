@@ -81,7 +81,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -93,19 +95,18 @@
     ],
     flee: [],
     death: [
-      "The ghost slowly settles to the ground and begins to dissipate.",
-      "The ghost goes still for a moment while its head reshapes."
+      "The ghost slowly settles to the ground and begins to dissipate."
     ],
     decay: [
       "A ghost vanishes into thin air, leaving no trace behind."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A ghost swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A ghost swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -88,15 +88,15 @@
     ranged: (217..229),
     bolt: 170,
     udf: (185..363),
-    bar_td: "123 to 135",
+    bar_td: (123..135),
     cle_td: (142..148),
     emp_td: (142..151),
     pal_td: (117..126),
     ran_td: (120..126),
-    sor_td: "141 to 150",
+    sor_td: (141..150),
     wiz_td: nil,
     mje_td: 158,
-    mne_td: "154 to 157",
+    mne_td: (154..157),
     mjs_td: (142..177),
     mns_td: (142..177),
     mnm_td: 120,
@@ -115,15 +115,15 @@
     gems: nil,
     boxes: false,
     skin: "a kiramon mandible",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The kiramon worker has a mobile head with huge, bulging, eyes that sparkle in a faceted clustering around a lidless perimeter. Protruding from its massive head is a vicious-looking snout with insectile mandibles, while the back of the cranium is a distended, two-lobed case. Remarkably powerful rear legs jut backward from an extremely hard, resilient exoskeleton that seems to be in constant motion. Though its middle legs have evolved away long ago, the front legs end in strong opposing claws and knobby-jointed fingers. Stunted wings flap uselessly from its long cylindrical body."
     ],
-    arrival: [
-      "You hear a strange clicking that makes your hair stand on end as a kiramon worker arrives."
-    ],
+    arrival: [],
     flee: [
       "A kiramon worker heads {direction}.",
       "A kiramon worker limps {direction}."
@@ -137,13 +137,15 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A kiramon worker charges at you!"
-    ],
-    bite: [],
-    claw: [
-      "A kiramon worker claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A kiramon worker charges at you!",
+        "A kiramon worker leaps up, clicking in agitation!"
+      ],
+      claw: [
+        "A kiramon worker claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -80,7 +80,9 @@
     gems: true,
     boxes: nil,
     skin: "crest",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,17 +100,21 @@
       "The shelfae assailant screams one last time and dies."
     ],
     decay: [
-      "A assailant crumbles into dust."
+      "An assailant crumbles into dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A shelfae assailant tries to bite you!"
+    stand: [
+      "A shelfae assailant stands back up with a sibilant hiss."
     ],
-    claw: [
-      "A shelfae assailant claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A shelfae assailant claws at you!"
+      ],
+      bite: [
+        "A shelfae assailant tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

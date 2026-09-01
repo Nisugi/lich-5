@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: "luminescent silvery boulder opal",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,7 +108,9 @@
       "A massive boulder comes barrelling into view, abruptly rolls to a stop, and rises into the form of a greater krynch!",
       "The boulder comes to a sudden stop and rises into the form of a greater krynch!"
     ],
-    flee: [],
+    flee: [
+      "A greater krynch sinks into the ground, leaving no trace of {pronoun} passing."
+    ],
     death: [
       "The greater krynch shudders, then topples to the ground.",
       "The greater krynch shudders violently for a moment, then goes still."
@@ -117,11 +121,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A greater krynch pounds at you with {pronoun} fist!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A greater krynch pounds at you with {pronoun} fist!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

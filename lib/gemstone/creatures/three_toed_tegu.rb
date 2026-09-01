@@ -90,17 +90,21 @@
     gems: nil,
     boxes: nil,
     skin: "a tailspike",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Despite its lumbering appearance, this heavily plated creature can show surprising bursts of speed. Each of the three toes on the tegu's forelegs are incredibly sharp, capable of slicing through the toughest hide. The armored tail of this male tegu is tipped with pointy spikes."
     ],
     arrival: [
-      "A three-toed tegu slithers in."
+      "A three-toed tegu slithers in.",
+      "A three-toed tegu charges in, {pronoun} tail whipping furiously side-to-side!"
     ],
     flee: [
-      "A three-toed tegu slithers {direction}."
+      "A three-toed tegu slithers {direction}.",
+      "A three-toed tegu crashes out of the undergrowth!"
     ],
     death: [
       "The three-toed tegu arches its back in a tortured spasm and dies.",
@@ -111,11 +115,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A three-toed tegu tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A three-toed tegu tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -105,29 +105,49 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A flayed gigas disciple attempts to stamp you out with one great foot!",
+        "A flayed gigas disciple raises {pronoun} hand and conjures a fountain of steaming blood to gush at you!",
+        "A flayed gigas disciple swings {weapon} at you!",
+        "A flayed gigas disciple tries to strangle you with a gigantic hand!",
+        "A flayed gigas disciple whirls into a deadly form, swinging a crude wooden cudgel at you!",
+        "A flayed gigas disciple whirls into a deadly form, swinging a gnarled dark wooden crook adorned with sinuous patterns at you!"
+      ],
+      cast: [
+        "A flayed gigas disciple points a flayed finger at {target}!"
+      ]
+    },
+    stand: [
+      "A flayed gigas disciple slams a single hand against the ground, leaving a wet red print. Strings of clotted shadow materialize out of thin air, lifting {pronoun} back into a standing position."
+    ],
     description: [
       "A flayed gigas disciple is a hugely imposing figure. His monumental physique is all the more evident because his skin has been torn away, revealing wet and weeping tendons and raw muscle beneath. With no lips to conceal his teeth, the disciple appears to be ever grinning, but above his ruined nose are scarlet eyes ablaze with hateful zeal. A flayed gigas disciple wears a hooded shroud, ragged and threadbare, that is stained through with his own blood."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
+    arrival: [
+      "A flayed gigas disciple just came through a break in the trees.",
+      "A flayed gigas disciple just came through a pocked red stone arch.",
+      "A flayed gigas disciple pounds in, {pronoun} eyes tight with restrained pain."
+    ],
+    flee: [
+      "A flayed gigas disciple just went through a pair of colossal red stone pillars.",
+      "A flayed gigas disciple pounds {direction}, ragged cloak flowing behind {pronoun}.",
+      "A flayed gigas disciple just went through a ragged acid-pocked gash."
+    ],
+    death: [
+      "A flayed gigas disciple goes limp as the last of {pronoun} energy is crushed from {pronoun} by {target} unyielding bearhug!",
+      "The flayed gigas disciple slumps to the ground."
+    ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A flayed gigas disciple attempts to stamp you out with one great foot!",
-      "A flayed gigas disciple raises {pronoun} hand and conjures a fountain of steaming blood to gush at you!",
-      "A flayed gigas disciple swings {weapon} at you!",
-      "A flayed gigas disciple tries to strangle you with a gigantic hand!",
-      "A flayed gigas disciple whirls into a deadly form, swinging a crude wooden cudgel at you!",
-      "A flayed gigas disciple whirls into a deadly form, swinging a gnarled dark wooden crook adorned with sinuous patterns at you!",
-      "A flayed gigas disciple raises flayed gigas disciple hand and conjures a fountain of steaming blood to gush at you!"
+    spell_prep: [
+      "A flayed gigas disciple gestures with one bloody hand, chanting a sibilant prayer."
     ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

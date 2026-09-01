@@ -86,24 +86,25 @@
     gems: false,
     boxes: false,
     skin: "a yellowed canine",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The large canine is obviously closely related to her domestic cousins, but her vicious growl and the feral gleam in her intelligent eyes speak of her far wilder nature. Ticks and burs speckle her matted, dusty fur, and her wolflike tail sweeps from side to side as she prepares to spring on her intended prey."
     ],
-    arrival: [],
+    arrival: [
+      "A mongrel wolfhound bounds in howling at the top of {pronoun} voice."
+    ],
     flee: [
       "A black mongrel wolfhound dashes {direction}.",
-      "A mongrel wild dog dashes {direction}.",
       "A mongrel wolfhound dashes {direction}."
     ],
     death: [
       "The mongrel wolfhound falls to the ground and dies.",
-      "The mongrel wild dog rolls over and dies.",
       "The black mongrel wolfhound falls to the ground and dies.",
       "The black mongrel wolfhound rolls over and dies.",
-      "The mongrel wild dog falls to the ground and dies.",
       "The mongrel wolfhound rolls over and dies."
     ],
     decay: [
@@ -112,13 +113,17 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A mongrel wolfhound charges at you!"
+    stun_break: [
+      "A mongrel wolfhound shakes {pronoun} head violently while trying to regain {pronoun} bearings!"
     ],
-    bite: [
-      "A mongrel wolfhound tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A mongrel wolfhound charges at you!"
+      ],
+      bite: [
+        "A mongrel wolfhound tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

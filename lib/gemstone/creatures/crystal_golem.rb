@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "a crystal core"
+    other: "a crystal core",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -111,13 +113,16 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A crystal golem pounds at you with {pronoun} crystalline fist!",
-      "A crystal golem tries to ensnare you in {pronoun} thick arms!"
+    spell_prep: [
+      "A crystal golem's eyes flare in a final puff of fire before {pronoun} falls to the floor, motionless.",
+      "A crystal golem's eyes flare in a final puff of fire before {pronoun} goes motionless."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A crystal golem pounds at you with {pronoun} crystalline fist!",
+        "A crystal golem tries to ensnare you in {pronoun} thick arms!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

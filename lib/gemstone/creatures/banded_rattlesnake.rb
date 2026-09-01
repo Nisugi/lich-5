@@ -89,7 +89,9 @@
     gems: nil,
     boxes: nil,
     skin: "a rattlesnake rattle, a two-tip rattlesnake rattle",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -105,17 +107,20 @@
       "A banded rattlesnake slithers {direction}.",
       "A banded rattlesnake slowly slithers {direction}."
     ],
-    death: [
-      "Beautiful shot pierces both lungs, the banded rattlesnake makes a wheezing noise, and drops dead!"
+    death: [],
+    decay: [
+      "A banded rattlesnake decays, leaving nothing but bits of rattle and fang in {pronoun} place."
     ],
-    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A banded rattlesnake uncoils suddenly and tries to sink {pronoun} fangs into you!"
+    spell_prep: [
+      "A banded rattlesnake hisses loudly!",
+      "A banded rattlesnake hisses softly."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A banded rattlesnake uncoils suddenly and tries to sink {pronoun} fangs into you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

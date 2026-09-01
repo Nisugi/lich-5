@@ -103,7 +103,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "Essence of earth"
+    other: "Essence of earth",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -111,8 +113,7 @@
     ],
     arrival: [
       "The boulder comes to a sudden stop and rises into the form of a krag dweller!",
-      "A krag dweller lumbers in, causing the ground to tremble with each passing step!",
-      "A krag yeti stomps in, a fetid odor wafting before it."
+      "A krag dweller lumbers in, causing the ground to tremble with each passing step!"
     ],
     flee: [
       "A krag dweller lumbers {direction}, causing the ground to tremble with each passing step!"
@@ -125,11 +126,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A krag dweller pounds at you with {pronoun} fist!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A krag dweller pounds at you with {pronoun} fist!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

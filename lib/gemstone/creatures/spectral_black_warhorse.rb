@@ -82,23 +82,23 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "You are not quite sure what to make of the black warhorse, as you have never seen anything that looks quite like it. Stopping a moment, you try to commit this creature to memory so that you can tell tales of it to your fellow adventurers back in the safety of the local tavern."
-    ],
+    description: [],
     arrival: [],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A spectral black warhorse charges at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A spectral black warhorse charges at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

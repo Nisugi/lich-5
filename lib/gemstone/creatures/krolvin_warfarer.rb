@@ -136,7 +136,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -151,18 +153,18 @@
       "The krolvin warfarer twitches violently, then dies.",
       "The krolvin warfarer rolls over on the floor and goes still."
     ],
-    decay: [
-      "The krolvin warfarer's right leg crumbles briefly and explodes in a shower of gore.",
-      "The krolvin warfarer's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A krolvin warfarer gestures at you!",
-      "A krolvin warfarer swings {weapon} at you!"
+    spell_prep: [
+      "A krolvin warfarer gestures at {target}!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A krolvin warfarer gestures at you!",
+        "A krolvin warfarer swings {weapon} at you!",
+        "A krolvin warfarer swings a broadsword at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

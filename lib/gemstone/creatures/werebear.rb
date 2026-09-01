@@ -90,7 +90,9 @@
     gems: true,
     boxes: true,
     skin: "a werebear paw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,26 +100,26 @@
     ],
     arrival: [
       "A werebear lumbers in, uttering a weird half-human cry!",
-      "A werebear just arrived."
+      "A werebear just arrived.",
+      "A werebear lumbers out of the underbrush, uttering a weird, half-human cry!"
     ],
     flee: [
-      "A werebear lumbers {direction} of the underbrush, uttering a weird, half-human cry!"
+      "A werebear lumbers {direction} of the underbrush, uttering a weird, half-human cry!",
+      "A werebear lumbers {direction}, uttering a weird half-human cry!"
     ],
     death: [
-      "A werebear growls one last time, and crumples to the ground in a heap.",
-      "The werebear snarls viciously and slumps to the ground, favoring its mangled left hind leg.",
-      "The werebear snarls viciously and slumps to the ground, favoring its mangled right hind leg."
+      "A werebear growls one last time, and crumples to the ground in a heap."
     ],
     decay: [
       "A werebear turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A werebear tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A werebear tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

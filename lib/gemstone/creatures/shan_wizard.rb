@@ -107,34 +107,36 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The shan wizard stands in a half-crouch, his long, knotty legs giving him that lanky, dangerous look of a wolf. Walking upright, the body covered with mottled grey fur and his long arms conclude in large, clawed hands with semi-opposable thumbs. The shan wizard's dog-like visage is fierce, with slavering jaws and eyes that glow like something out of a bad dream."
     ],
-    arrival: [],
+    arrival: [
+      "A shan wizard ambles in muttering arcane phrases of magic!"
+    ],
     flee: [],
     death: [
       "The shan wizard twitches violently, then dies.",
-      "The shan wizard yips in pain as he falls to the ground motionless.",
-      "The shan wizard yips in pain as she falls to the ground motionless.",
+      "The shan wizard yips in pain as {pronoun} falls to the ground motionless.",
       "The shan wizard howls out one last time and dies.",
-      "A shan wizard's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
-      "A shan wizard's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
-      "A shan ranger's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
-      "A shan warrior's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
+      "A shan wizard's body shimmers slightly.  Suddenly, {pronoun} features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of {pronoun} death like a silhouette."
     ],
-    decay: [
-      "The shan wizard's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A shan wizard points both hands at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A shan wizard points both hands at you!",
+        "A shan wizard swings a long dagger at you!"
+      ],
+      bite: [
+        "A shan wizard snaps {pronoun} fingers!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

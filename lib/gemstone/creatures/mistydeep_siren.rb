@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Pristine nymph's hair"
+    other: "Pristine nymph's hair",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -115,9 +117,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Mistydeep siren swings a curved bracelet dagger at you!",
+        "A Mistydeep siren swings a wavy silvered dirk at {target}!",
+        "A mistydeep siren swings a curved bracelet dagger at you!",
+        "A mistydeep siren swings a wavy silvered dirk at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

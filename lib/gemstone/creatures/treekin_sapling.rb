@@ -79,7 +79,9 @@
     gems: false,
     boxes: false,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -95,11 +97,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A treekin sapling rakes a branch at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A treekin sapling rakes a branch at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

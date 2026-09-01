@@ -126,7 +126,9 @@
     gems: true,
     boxes: false,
     skin: "soft blue griffin feather",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -140,23 +142,28 @@
     ],
     death: [
       "The storm griffin writhes in agony, its wings flapping fruitlessly as it dies.",
-      "The storm griffin crashes to the ground, motionless.",
-      "Beautiful shot pierces both lungs, the storm griffin makes a wheezing noise, and drops dead!"
+      "The storm griffin crashes to the ground, motionless."
     ],
     decay: [
       "The storm griffin decays into a pile of feathers and fur."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A storm griffin rakes at you with a razor-sharp claw!",
-      "A storm griffin hurls {weapon} at you!",
-      "A storm griffin tries to spear you with {pronoun} beak!"
-    ],
-    bite: [
-      "A storm griffin tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A storm griffin rakes at you with a razor-sharp claw!",
+        "A storm griffin tries to spear you with {pronoun} beak!"
+      ],
+      bite: [
+        "A storm griffin tries to bite you!"
+      ],
+      claw: [
+        "A storm griffin rakes at {target} with a razor-sharp claw!"
+      ],
+      hurl: [
+        "A storm griffin hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

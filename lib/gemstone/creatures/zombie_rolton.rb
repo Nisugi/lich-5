@@ -94,7 +94,9 @@
     gems: false,
     boxes: false,
     skin: "a rotting rolton pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -115,13 +117,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A zombie rolton tries to bite you!"
-    ],
-    claw: [
-      "A zombie rolton claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A zombie rolton claws at you!"
+      ],
+      bite: [
+        "A zombie rolton tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

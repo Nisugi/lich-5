@@ -100,18 +100,22 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A creature of sublime beauty, the nonomino floats just above the ground in a pulsing sphere of unearthly light. As you watch, he abruptly turns his head to stare, as cracks distend across his visage and the glorious mantle peels away to reveal disease and decay. The incarnation constantly molts his epidermis, regenerating it moments later in a hideous parody of the struggle between life and death. Frozen by the hypnotic horror of his appearance, you almost fail to notice the nonomino's fluid movement, and the adept dance of his hands as he summons his theurgical arsenal."
     ],
     arrival: [
-      "A nonomino shambles in!"
+      "A nonomino shambles in!",
+      "A nonomino just came through an arched door leading into the old Castle Keep."
     ],
     flee: [
       "A nonomino shambles {direction}.",
-      "A nonomino wails madly as he limps {direction}."
+      "A nonomino wails madly as he limps {direction}.",
+      "A nonomino just went through an arched door leading into the old Castle Keep."
     ],
     death: [
       "The nonomino falls to the ground motionless.",
@@ -120,11 +124,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A nonomino swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A nonomino swings {weapon} at you!"
+      ],
+      cast: [
+        "A nonomino points a rotting finger at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -97,7 +97,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -115,13 +117,18 @@
       "The gnoll ranger rolls over and dies."
     ],
     decay: [
-      "Acid dissolves connecting cartilage, freeing the gnoll ranger's ribs to move independently."
+      "A gnoll ranger's remains dissolve into the ground."
     ],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A gnoll ranger whispers a string of delicate words.",
+      "A gnoll ranger gestures towards you!"
+    ],
+    attacks: {
+      hurl: [
+        "A gnoll ranger throws a handaxe at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

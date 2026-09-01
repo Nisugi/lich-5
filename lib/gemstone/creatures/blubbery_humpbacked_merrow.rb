@@ -81,7 +81,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -100,9 +102,15 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    stun_break: [
+      "A blubbery humpbacked merrow looks around as if waking up from a dream."
+    ],
+    attacks: {
+      attack: [
+        "A blubbery humpbacked merrow throws {pronoun} great head back, showing rows of terrible teeth as {pronoun} gurgles out the last words of {pronoun} spell!",
+        "A blubbery humpbacked merrow slams {pronoun} head into you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

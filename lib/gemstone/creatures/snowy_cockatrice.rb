@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: "snowy cockatrice tailfeather",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -112,15 +114,16 @@
       "The snowy cockatrice rolls over on its back, emits a final screech and dies."
     ],
     decay: [
-      "A snowy cockatrice decays into a useless pile of scales and feathers.",
+      "A snowy cockatrice decays into a useless pile of scales and feathers."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A snowy cockatrice screeches and strikes at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A snowy cockatrice screeches and strikes at you!",
+        "A snowy cockatrice attempts to kick dust at you, but is unable to kick up a sufficient amount of dust."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -108,7 +108,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -116,28 +118,36 @@
     ],
     arrival: [
       "A stone giant just arrived.",
-      "The ground shakes as an enraged stone giant stomps in!"
+      "The ground shakes as an enraged stone giant stomps in!",
+      "A stone giant just came through an enormous arched doorway."
     ],
     flee: [
-      "A stone giant crawls {direction}."
+      "A stone giant crawls {direction}.",
+      "A stone giant sinks into the ground and tunnels {direction}."
     ],
     death: [
       "The stone giant rumbles in agony and goes still.",
       "The stone giant shudders and goes still."
     ],
     decay: [
-      "The stone giant's right leg crumbles briefly and explodes in a shower of gore."
+      "A stone giant sinks into the ground, leaving nothing behind."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A stone giant swings {weapon} at you!",
-      "A stone giant throws {weapon} at you!",
-      "The stone giant rumbles in agony as he teeters for a moment, then falls directly at you!",
-      "The stone giant rumbles in agony as she teeters for a moment, then falls directly at you!"
+    stand: [
+      "A stone giant throws {pronoun} head back and roars, shaking off the stun!",
+      "A stone giant throws {pronoun} head back and roars silently, shaking off the stun!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A stone giant swings {weapon} at you!",
+        "The stone giant rumbles in agony as {pronoun} teeters for a moment, then falls directly at you!",
+        "A stone giant swings a war mattock at {target}!"
+      ],
+      hurl: [
+        "A stone giant throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

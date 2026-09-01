@@ -90,7 +90,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Yes"
+    other: "Yes",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -105,12 +107,12 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A white vysan pounds at you with {pronoun} fist!",
-      "A white vysan tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A white vysan pounds at you with {pronoun} fist!",
+        "A white vysan tries to ensnare you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

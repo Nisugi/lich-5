@@ -90,26 +90,37 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A pallid fog-cloaked kelpie barrels into a headlong charge at you, {pronoun} hooves leaving behind streamers of fog!",
+        "The pallid fog-cloaked kelpie barrels into you at full speed!"
+      ]
+    },
+    stand: [
+      "A pallid fog-cloaked kelpie dissolves into froth, bubbling back into a standing position before transitioning back into a humanoid form."
+    ],
     description: [
       ""
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A pallid fog-cloaked kelpie trots in with a pained gait, leaving behind puddles of seawater."
+    ],
+    flee: [
+      "A pallid fog-cloaked kelpie gallops {direction}, leaving behind puddles of frothing seawater."
+    ],
     death: [
       "A pallid fog-cloaked kelpie's dreamy gaze goes lifeless."
     ],
     decay: [
-      "A pallid fog-cloaked kelpie dissolves into froth, bubbling back into a standing position before transitioning back into a humanoid form.",
       "A pallid fog-cloaked kelpie's remains shiver and ripple.  His body collapses into a puddle of saltwater and rotting sargassum."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

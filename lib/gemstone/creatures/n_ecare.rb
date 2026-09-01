@@ -113,30 +113,41 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Inky necrotic coreRadiant crimson mote of essence"
+    other: "Inky necrotic coreRadiant crimson mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Shadows suddenly converge, revealing the skulking form of a creature with horribly elongated extremities and twisted anatomy. The n'ecare's movements are as fleet as a hare, rendering him difficult to see clearly, and his spidery fingers skitter constantly, as if the n'ecare was using them to taste the air around him. From the dark pools of gloom beneath his cracked brows, the n'ecare's eyes glitter in fanatical mirth, made all the more terrible by the rotting maw of his grin."
     ],
-    arrival: [],
+    arrival: [
+      "A n'ecare pads in silently!"
+    ],
     flee: [
-      "A n'ecare grumbles quietly as he limps {direction}."
+      "A n'ecare grumbles quietly as he limps {direction}.",
+      "A n'ecare pads east silently.",
+      "A n'ecare pads southeast silently.",
+      "A n'ecare pads west silently.",
+      "A n'ecare pads southwest silently.",
+      "A n'ecare pads northwest silently.",
+      "A n'ecare pads northeast silently.",
+      "A n'ecare pads north silently."
     ],
     death: [
       "The n'ecare falls to the ground motionless.",
       "The n'ecare wails in terrifying pain one last time and lies still."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the n'ecare's ribs to move independently."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A n'ecare swings {weapon} at you!"
+    spell_prep: [
+      "A n'ecare glows with an ice blue light!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A n'ecare swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

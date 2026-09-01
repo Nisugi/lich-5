@@ -77,7 +77,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -91,11 +93,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A Grimswarm orc archer fires {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Grimswarm orc archer swings a greatsword at you!"
+      ],
+      fire: [
+        "A Grimswarm orc archer fires {weapon} at you!"
+      ]
+    },
     info: {
       general: [
         "Ranged attacker (bow). Observed arrow AS 267 at an unknown camp level."

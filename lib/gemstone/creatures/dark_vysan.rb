@@ -102,7 +102,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -119,13 +121,13 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A dark vysan pounds at you with {pronoun} fist!",
-      "A dark vysan tries to ensnare you!",
-      "A dark vysan charges at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A dark vysan pounds at you with {pronoun} fist!",
+        "A dark vysan tries to ensnare you!",
+        "A dark vysan charges at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -80,7 +80,9 @@
     gems: nil,
     boxes: nil,
     skin: "scale",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -94,21 +96,24 @@
     ],
     death: [
       "The shelfae guard falls to the ground and dies.",
-      "The shelfae guard screams one last time and dies.",
-      "Beautiful shot pierces both lungs, the shelfae guard makes a wheezing noise, and drops dead!"
+      "The shelfae guard screams one last time and dies."
     ],
     decay: [
       "A guard crumbles into dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A shelfae guard tries to bite you!"
+    stand: [
+      "A shelfae guard stands back up with a sibilant hiss."
     ],
-    claw: [
-      "A shelfae guard claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A shelfae guard claws at you!"
+      ],
+      bite: [
+        "A shelfae guard tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

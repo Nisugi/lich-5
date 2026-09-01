@@ -94,7 +94,9 @@
     gems: false,
     boxes: false,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -108,21 +110,21 @@
     ],
     death: [
       "The ghost wolf falls back into a heap and dies.",
-      "The ghost wolf hisses one last time and dies.",
-      "The ghost wolf goes still for a moment while its head reshapes."
+      "The ghost wolf hisses one last time and dies."
     ],
     decay: [
       "A ghost wolf decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A ghost wolf tries to bite you!"
-    ],
-    claw: [
-      "A ghost wolf claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A ghost wolf claws at you!"
+      ],
+      bite: [
+        "A ghost wolf tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

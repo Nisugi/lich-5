@@ -108,7 +108,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Tiny golden seed"
+    other: "Tiny golden seed",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -121,19 +123,24 @@
     ],
     death: [
       "The shan warrior howls out one last time and dies.",
-      "The shan warrior yips in pain as she falls to the ground motionless.",
-      "The shan warrior yips in pain as he falls to the ground motionless.",
-      "A shan warrior's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
-      "A shan warrior's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette."
+      "The shan warrior yips in pain as {pronoun} falls to the ground motionless.",
+      "A shan warrior's body shimmers slightly.  Suddenly, {pronoun} features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of {pronoun} death like a silhouette."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A shan warrior swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A shan warrior swings {weapon} at you!",
+        "A shan warrior swings a gleaming silver flamberge at {target}!",
+        "A shan warrior swings an over-sized jeddart-axe at {target}!",
+        "A shan warrior swings a gleaming silver longsword at {target}!",
+        "A shan warrior swings {pronoun} long tail restlessly behind {pronoun}, pausing to study something on the far-horizon.",
+        "A shan warrior swings {pronoun} {weapon} at your vultite handaxe!",
+        "A shan warrior swings a sharply-honed vultite handaxe at {target}!",
+        "A shan warrior rushes toward you, stopping abruptly in an attitude of intimidation with claws extended. Its eyes are arresting, glaring at you with sparks of red hatred in their depths..."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

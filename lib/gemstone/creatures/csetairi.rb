@@ -127,30 +127,27 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "__noTOC__\nThe csetairi has several humanoid features, appearing as a shapely woman with long, silky, black hair. However, the differences are readily apparent. Instead of legs, she has a long, thick, coiled tail, and her locomotion is definitely snakelike. Four arms sprout from her chest, and long, pointed fangs extend down below her upper lip. Her slitted, olive green eyes scan the area rapidly, looking for potential victims."
-    ],
+    description: [],
     arrival: [
       "A csetairi slithers in!"
     ],
     flee: [
       "A csetairi slithers {direction}."
     ],
-    death: [
-      "Intestines rupture from intense heat; a csetairi dies a slow, painful death.",
-      "Beautiful shot pierces both lungs, the csetairi makes a wheezing noise, and drops dead!"
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A csetairi swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A csetairi swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -99,7 +99,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -111,17 +113,16 @@
     flee: [],
     death: [
       "The frost shade falls to the ground motionless.",
-      "The frost shade screams evilly one last time and goes still.",
-      "The frost shade goes still for a moment while its head reshapes."
+      "The frost shade screams evilly one last time and goes still."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser frost shade swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser frost shade swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

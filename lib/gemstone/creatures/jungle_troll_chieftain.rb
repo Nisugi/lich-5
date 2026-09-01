@@ -108,34 +108,34 @@
     gems: true,
     boxes: true,
     skin: "a scrap of troll skin",
-    other: "a glimmering blue essence shard"
+    other: "a glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A thin, tall creature, the troll chieftain scampers over the terrain in quick bursts. The a jungle troll chieftain's dark green, mottled skin displays an oily sheen, and hair is nowhere to be found on its body. An elongated face, perhaps two feet from the end of the exaggerated chin to the tips of the pointed ears, sits atop a thin, rubbery neck. Deep orange, slitted pupils nest horizontally in the steel grey eyes, and clusters of sharp orange horns poke up from the troll chieftain's head to surround the extended ears."
     ],
     arrival: [
-      "A jungle troll chieftain just arrived!"
+      "A jungle troll chieftain just arrived!",
+      "A jungle troll chieftain crashes into view!"
     ],
     flee: [],
     death: [
-      "The troll chieftain snarls his defiance before collapsing and going still.",
-      "The troll chieftain snarls her defiance one last time before going still.",
-      "The troll chieftain snarls her defiance before collapsing and going still.",
-      "The troll chieftain snarls his defiance one last time before going still.",
-      "Beautiful shot pierces both lungs, the troll chieftain makes a wheezing noise, and drops dead!"
+      "The troll chieftain snarls {pronoun} defiance before collapsing and going still.",
+      "The troll chieftain snarls {pronoun} defiance one last time before going still."
     ],
     decay: [
-      "A jungle troll chieftain decays into compost.",
-      "A giant fog beetle's legs shrivel up beneath it as it decays into dust."
+      "A jungle troll chieftain decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A jungle troll chieftain swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A jungle troll chieftain swings {weapon} at you!",
+        "A jungle troll chieftain swings a vine-wrapped rusting bastard sword at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -106,14 +106,17 @@
     gems: true,
     boxes: true,
     skin: "a kobold ear",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The kobold shepherd is very similar to its kobold brethren. Smaller than a dwarf and even many halflings, it has ruddy skin and a hairless pate topped with small horns. The kobold shepherd does, however, have better habits of cleanliness and a better sense of responsibility. It spends long hours herding the roltons that provide sustenance for it and its family. When its herds are threatened, the kobold shepherd fights valiantly in their defense."
     ],
     arrival: [
-      "A kobold shepherd just arrived."
+      "A kobold shepherd just arrived.",
+      "A kobold shepherd ambles in and makes a loud rolton call."
     ],
     flee: [
       "A kobold shepherd heads {direction}.",
@@ -128,13 +131,13 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A kobold shepherd claps {pronoun} hands together in front of you!",
-      "A kobold shepherd claps {pronoun} hands together in front of you!",
-      "A kobold shepherd claps kobold shepherd hands together in front of you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A kobold shepherd claps {pronoun} hands together in front of you!",
+        "A kobold shepherd claps kobold shepherd hands together in front of you!",
+        "A kobold shepherd swings a shepherd's crook at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -82,31 +82,35 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A reiver stands tall and proud. Moss-green eyes dominate its strong face and tousled, dark hair crown its head. The reiver is well-muscled and toned, with calloused hands used to the wielding of weapons. Forged by a hard history and a harsh climate, reivers are tough fighters with a sense of honor and duty. Normally calm and amiable, the reiver's visage is thunderous when kith and kin are threatened or there are krolvins lurking."
     ],
-    arrival: [],
+    arrival: [
+      "A burly reiver just came through a red door."
+    ],
     flee: [
-      "A burly reiver heads {direction}."
+      "A burly reiver heads {direction}.",
+      "A burly reiver just went through a red door."
     ],
     death: [
       "The reiver takes one last breath, then dies.",
       "The burly reiver falls to the ground motionless."
     ],
     decay: [
-      "A burly reiver turns to dust.",
-      "The burly reiver's left leg crumbles briefly and explodes in a shower of gore."
+      "A burly reiver turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A burly reiver swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A burly reiver swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

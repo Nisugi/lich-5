@@ -98,7 +98,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -109,18 +111,17 @@
       "A ghostly mara floats {direction}."
     ],
     death: [
-      "A haunting melody fills the air and fades as a ghostly mara dissipates into nothing.",
-      "The ghostly mara goes still for a moment while its head reshapes."
+      "A haunting melody fills the air and fades as a ghostly mara dissipates into nothing."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A mara swings {weapon} at you!",
-      "A ghostly mara swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A mara swings {weapon} at you!",
+        "A ghostly mara swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -121,7 +121,9 @@
     gems: true,
     boxes: true,
     skin: "a crooked witch nose",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -134,18 +136,23 @@
     death: [
       "The wind witch howls in agony one last time and dies.",
       "A wind witch dissipates into the air, leaving nothing behind.",
-      "The wind witch crumples to the ground motionless.",
-      "Beautiful shot pierces both lungs, the wind witch makes a wheezing noise, and drops dead!"
+      "The wind witch crumples to the ground motionless."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A wind witch points {pronoun} outstretched hands at you!",
-      "A wind witch swings {weapon} at you!"
+    stun_break: [
+      "A wind witch cackles madly, shaking off the stun!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      claw: [
+        "A wind witch claws at your eyes unmercifully!"
+      ],
+      attack: [
+        "A wind witch points {pronoun} outstretched hands at you!",
+        "A wind witch swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

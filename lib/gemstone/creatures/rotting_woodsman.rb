@@ -86,7 +86,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -105,12 +107,13 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A rotting woodsman swings {weapon} at you!",
-      "A rotting woodsman waves {pronoun} arms around flinging bits of flesh towards you."
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A rotting woodsman swings {weapon} at you!",
+        "A rotting woodsman waves {pronoun} arms around flinging bits of flesh towards you.",
+        "A rotting woodsman lashes about the area unsteadily grasping at the air."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -85,27 +85,29 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "But a shadow of its former self, the warrior shade's form is hardly discernable as it flickers in and out of view. At times strange ripples of ethereal light roll across its spectral image, highlighting every horrible scar and festering wound on the shade's translucent body. Its gaunt face stares out from under a ghostly helm, though nothing but deep, hollow pits for eyes can be seen, soulless and unforgiving in their regard."
     ],
     arrival: [
-      "A warrior shade just arrived."
+      "A warrior shade just arrived.",
+      "A warrior shade strides out of the surrounding mist!"
     ],
     flee: [],
-    death: [
-      "The warrior shade goes still for a moment while its head reshapes."
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A warrior shade swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A warrior shade swings {weapon} at you!",
+        "A warrior shade swings a twisted modwir-shafted halberd at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

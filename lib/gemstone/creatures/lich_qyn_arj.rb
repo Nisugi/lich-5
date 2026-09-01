@@ -112,32 +112,39 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The qyn'arj is a creature of legend, a massive serpent held aloft on brightly colored wings. But the lich qyn'arj before you has been animated by some means. The qyn'arj's body seems to hover there without the need to beat its rotting and mottled wings. Decaying flesh covers its body, but the head is completely skeletal and polished to the fine white of bleached bone. Swirling red pinpoints float where eyes used to be, and dagger sharp teeth can be seen inside its maw."
     ],
     arrival: [
-      "A lich qyn'arj arrives on powerful strokes of its rotting wings."
+      "A lich qyn'arj arrives on powerful strokes of its rotting wings.",
+      "A lich qyn'arj floats in on rotting wings with a shrill cry!"
     ],
     flee: [],
     death: [
       "The lich qyn'arj spasms violently and suddenly goes still, its body turning to stone."
     ],
     decay: [
-      "The stone form of a lich qyn'arj crumbles away to dust.",
-      "Acid dissolves connecting cartilage, freeing the lich qyn'arj's ribs to move independently."
+      "The stone form of a lich qyn'arj crumbles away to dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A lich qyn'arj gestures with rotting mottled wings at you!",
+    spell_prep: [
+      "A lich qyn'arj hisses a harsh guttural phrase.",
+      "A lich qyn'arj glows brightly, unleashing a searing white beam at you!",
+      "A lich qyn'arj gestures with rotting mottled wings at you!"
     ],
-    bite: [
-      "A lich qyn'arj tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lich qyn'arj gestures with rotting mottled wings at you!"
+      ],
+      bite: [
+        "A lich qyn'arj tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

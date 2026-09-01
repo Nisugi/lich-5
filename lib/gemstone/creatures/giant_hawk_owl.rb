@@ -98,7 +98,9 @@
     gems: false,
     boxes: false,
     skin: "a tufted hawk-owl ear",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,19 +112,21 @@
     ],
     death: [
       "The giant hawk-owl writhes in agony, its wings flapping fruitlessly as it dies.",
-      "The giant hawk-owl crashes to the ground, motionless.",
-      "Beautiful shot pierces both lungs, the giant hawk-owl makes a wheezing noise, and drops dead!"
+      "The giant hawk-owl crashes to the ground, motionless."
     ],
     decay: [
       "The giant hawk-owl decays into a pile of feathers."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A giant hawk-owl rakes at you with a razor-sharp claw!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A giant hawk-owl rakes at you with a razor-sharp claw!"
+      ],
+      claw: [
+        "A giant hawk-owl rakes at {target} with a razor-sharp claw!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

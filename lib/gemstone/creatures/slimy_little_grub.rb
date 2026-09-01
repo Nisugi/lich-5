@@ -82,7 +82,9 @@
     gems: false,
     boxes: false,
     skin: nil,
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,11 +104,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A little grub stabs at you with {pronoun} stinger!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A little grub stabs at you with {pronoun} stinger!",
+        "A slimy little grub stabs at {target} with {pronoun} stinger!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

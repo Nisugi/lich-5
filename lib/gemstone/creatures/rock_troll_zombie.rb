@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: "a decaying troll eye",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,27 +106,27 @@
     ],
     arrival: [
       "A rock troll zombie lumbers in!",
-      "A rock troll zombie lumbers in, limping slightly!"
+      "A rock troll zombie lumbers in, limping slightly!",
+      "A rock troll zombie limps in with a scowl upon {pronoun} brow!"
     ],
     flee: [
       "A rock troll zombie lumbers {direction}.",
       "A rock troll zombie lumbers {direction} with a slight limp.",
-      "A rock troll zombie grimaces and slowly limps {direction}."
+      "A rock troll zombie grimaces and slowly limps {direction}.",
+      "A rock troll zombie lumbers {direction}, limping slightly!"
     ],
     death: [
-      "The troll zombie tears off a piece of her flesh, gnawing upon the decayed meat in a vain attempt to nourish her continued tormented existence.  With the attempt failing, the troll zombie slumps to the ground motionless.",
-      "The troll zombie tears off a piece of his flesh, gnawing upon the decayed meat in a vain attempt to nourish his continued tormented existence.  With the attempt failing, the troll zombie slumps to the ground motionless.",
-      "The troll zombie tears off a piece of his flesh, gnawing upon the decayed meat in a vain attempt to nourish his continued tormented existence.  With the attempt failing, the troll zombie topples to the ground motionless.",
-      "The troll zombie tears off a piece of her flesh, gnawing upon the decayed meat in a vain attempt to nourish her continued tormented existence.  With the attempt failing, the troll zombie topples to the ground motionless."
+      "The troll zombie tears off a piece of {pronoun} flesh, gnawing upon the decayed meat in a vain attempt to nourish {pronoun} continued tormented existence.  With the attempt failing, the troll zombie slumps to the ground motionless.",
+      "The troll zombie tears off a piece of {pronoun} flesh, gnawing upon the decayed meat in a vain attempt to nourish {pronoun} continued tormented existence.  With the attempt failing, the troll zombie topples to the ground motionless."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A rock troll zombie claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A rock troll zombie claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

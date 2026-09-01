@@ -100,28 +100,42 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Glistening from head to toe with brilliant clear ice, the ice wraith is a picture of deadly beauty. Long, razor-sharp shards of ice form his claws, and two thin ice stalactites serve as fangs. When illuminated by the sun, the crystalline ice wraith reflects all colors of the rainbow, often mesmerizing his prey, then striking with potent magic."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "An ice wraith glides in surrounded by a cloud of swirling snow!"
+    ],
+    flee: [
+      "An ice wraith withdraws, disengaging from {target}."
+    ],
     death: [
-      "An ice wraith fades into oblivion.",
-      "The ice wraith goes still for a moment while its head reshapes.",
-      "A wind wraith releases a groan of mingled ecstasy and relief as it fades away."
+      "An ice wraith fades into oblivion."
     ],
-    decay: [],
+    decay: [
+      "An ice wraith fades into oblivion."
+    ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An ice wraith points a ghostly finger at you!",
-      "An ice wraith swings {weapon} at you!"
+    spell_prep: [
+      "An ice wraith gestures arcanely."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An ice wraith swings {weapon} at you!",
+        "An ice wraith swings a kaskara at {target}!"
+      ],
+      bolt: [
+        "An ice wraith hurls a seething blast of steam at you!"
+      ],
+      cast: [
+        "An ice wraith points a ghostly finger at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

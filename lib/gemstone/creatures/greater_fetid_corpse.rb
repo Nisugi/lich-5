@@ -77,23 +77,26 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
     arrival: [
-      "A greater fetid corpse shambles in!"
+      "A greater fetid corpse shambles in!",
+      "A greater fetid corpse emerges from the stinking mire, moaning evilly!"
     ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A greater fetid corpse tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A greater fetid corpse tries to bite you!"
+      ]
+    },
     info: {
       general: [
         "Observed wandering in level 41-42 hunting areas; spawn zone not yet confirmed (not in Saga mongen data)."

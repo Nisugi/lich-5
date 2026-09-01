@@ -88,7 +88,9 @@
     gems: true,
     boxes: true,
     skin: "a giant scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,11 +109,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser ice giant swings {weapon} at you!"
+    stand: [
+      "A lesser ice giant throws {pronoun} head back and howls, shaking off the stun!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser ice giant swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -73,21 +73,22 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A milky-eyed drowned mariner totters in, filmy eyes empty and face slack-jawed. {pronoun} gropes about with bloated fingers, each step a jerky, unnatural motion."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

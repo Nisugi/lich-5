@@ -112,9 +112,23 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A darkwoode gestures at you!",
+        "A darkwoode tries to ensnare you!"
+      ],
+      claw: [
+        "A darkwoode claws at you!"
+      ]
+    },
+    stand: [
+      "A darkwoode gets up."
+    ],
     description: [
       "A skeletal tree-trunk with long straggling branches, the darkwoode holds the unliving force of a once sentient tree-spirit. An unfelt breeze seems to stir the dead and decaying leaves that still cling to it, giving it a travesty of the beauty it once held as a living tree. Given its original form long ago to protect sacred groves, it remains now, warped and twisted, yet still attempting to carry out the duties it failed in long ago."
     ],
@@ -128,20 +142,9 @@
     death: [
       "The darkwoode slowly settles to the ground and begins to dissipate."
     ],
-    decay: [
-      "The darkwoode's right leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves connecting cartilage, freeing the darkwoode's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A darkwoode gestures at you!",
-      "A darkwoode tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [
-      "A darkwoode claws at you!"
-    ],
     info: {
       general: [],
       class_tips: {

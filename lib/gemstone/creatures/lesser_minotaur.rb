@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: "a minotaur hide",
-    other: "Tiny golden seed"
+    other: "Tiny golden seed",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -111,17 +113,17 @@
     ],
     death: [
       "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the ground.",
-      "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the floor.",
-      "The lesser minotaur slumps to the ground."
+      "A low gurgling sound comes from deep within the chest of the lesser minotaur as he falls slack against the floor."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser minotaur swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser minotaur swings {weapon} at you!",
+        "A lesser minotaur swings a curved silvery white greataxe at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: "an ogre nose",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -112,22 +114,22 @@
     death: [
       "The plains ogre screams one last time and dies.",
       "The plains ogre falls to the ground and dies.",
-      "The plains ogre screams silently one last time and dies.",
-      "Beautiful shot pierces both lungs, the plains ogre makes a wheezing noise, and drops dead!",
-      "The plains ogre slumps to the ground."
+      "The plains ogre screams silently one last time and dies."
     ],
     decay: [
       "A plains ogre decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A plains ogre swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [
-      "A plains ogre claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A plains ogre swings {weapon} at you!",
+        "A plains ogre swings a mace at {target}!"
+      ],
+      claw: [
+        "A plains ogre claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

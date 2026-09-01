@@ -92,7 +92,9 @@
     gems: nil,
     boxes: nil,
     skin: "a silver-tipped horseshoe",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -105,22 +107,22 @@
       "A shadow mare runs {direction}."
     ],
     death: [
-      "The shadow mare falls to the ground motionless.",
-      "The shadow mare goes still for a moment while its head reshapes."
+      "The shadow mare falls to the ground motionless."
     ],
     decay: [
       "A shadow mare's eyes go dim as she dissolves into the shadows."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A shadow mare stomps at you with {pronoun} foot!",
-      "A shadow mare charges at you!"
-    ],
-    bite: [
-      "A shadow mare tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A shadow mare stomps at you with {pronoun} foot!",
+        "A shadow mare charges at you!"
+      ],
+      bite: [
+        "A shadow mare tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

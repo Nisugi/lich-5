@@ -67,18 +67,18 @@
     ranged: (-5..25),
     bolt: (-5..25),
     udf: (34..58),
-    bar_td: "+3",
-    cle_td: "+3",
+    bar_td: 3,
+    cle_td: 3,
     emp_td: 3,
-    pal_td: "+3",
-    ran_td: "+3",
-    sor_td: "+3",
-    wiz_td: "+3",
+    pal_td: 3,
+    ran_td: 3,
+    sor_td: 3,
+    wiz_td: 3,
     mje_td: 3,
     mne_td: 3,
-    mjs_td: "+3",
-    mns_td: "+3",
-    mnm_td: "+3",
+    mjs_td: 3,
+    mns_td: 3,
+    mnm_td: 3,
     defensive_spells: [],
     defensive_abilities: [],
     special_defenses: []
@@ -94,7 +94,9 @@
     gems: false,
     boxes: false,
     skin: "rolton pelt",
-    other: "no"
+    other: "no",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,7 +104,8 @@
     ],
     arrival: [],
     flee: [
-      "A rolton trots {direction}."
+      "A rolton trots {direction}.",
+      "A rolton just went through some reinforced wooden gates."
     ],
     death: [
       "The rolton collapses to the ground, emits a final bleat, and dies.",
@@ -114,11 +117,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A rolton tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A rolton tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

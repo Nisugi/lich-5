@@ -100,7 +100,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,22 +115,29 @@
       "A Grutik savage shambles {direction}."
     ],
     death: [
-      "The Grutik savage slumps to the ground.",
-      "Beautiful shot pierces both lungs, the Grutik savage makes a wheezing noise, and drops dead!"
+      "A Grutik savage collapses into a lifeless heap upon the ground."
     ],
     decay: [
       "A Grutik savage collapses into a lifeless heap upon the ground.",
-      "A Grutik savage's body turns to dust.",
-      "Acid dissolves connecting cartilage, freeing the Grutik savage's ribs to move independently."
+      "A Grutik savage's body turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A Grutik savage swings {weapon} at you!",
-      "A Grutik savage thrusts with a crude wooden spear at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Grutik savage swings {weapon} at you!",
+        "A Grutik savage thrusts with a crude wooden spear at you!",
+        "A Grutik savage shoots a tiny dart at you!",
+        "A grutik savage shoots a tiny dart at you!",
+        "A grutik savage thrusts with a crude wooden spear at you!",
+        "A grutik savage swings a crude stone axe at you!",
+        "A grutik savage swings a crude wooden club at you!"
+      ],
+      hurl: [
+        "A Grutik savage throws a crude wooden club at you!",
+        "A grutik savage throws a crude wooden club at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

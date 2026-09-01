@@ -103,25 +103,30 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Weapons"
+    other: "Weapons",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Diminutive in size and with long, spindly limbs, a cloud sprite meddler has enormous almond-shaped eyes that peer curiously out of a heart-shaped face. Tresses of chestnut brown hair fall in a wild mane to just beneath her shoulders, complementing her nut brown skin."
     ],
     arrival: [
-      "Smacking one fist into his opposite hand in a menacing manner, a cloud sprite bully wanders in."
+      "Smacking one fist into his opposite hand in a menacing manner, a cloud sprite bully wanders in.",
+      "A cloud sprite meddler darts out of the shadows! Gently brushing the foliage aside, a cloud sprite meddler moves {direction}."
     ],
     flee: [],
-    death: [
-      "Beautiful shot pierces both lungs, the sprite meddler makes a wheezing noise, and drops dead!"
-    ],
+    death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A cloud sprite meddler whispers out a spell that sounds like wind playing through trees."
+    ],
+    attacks: {
+      attack: [
+        "A cloud sprite meddler swings in, dropping down from a nearby tree with an expectant look upon {pronoun} face."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

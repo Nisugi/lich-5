@@ -73,7 +73,7 @@
     emp_td: 484,
     pal_td: (452..459),
     ran_td: (455..467),
-    sor_td: "487 to 517",
+    sor_td: (487..517),
     wiz_td: nil,
     mje_td: (409..419),
     mne_td: (409..419),
@@ -97,31 +97,50 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Mists pirouette about the tattered hem of the mist-wreathed banshee's gown so that it is unclear where the garment ends and they begin. Though there are the remnants of loveliness to her visage, the banshee's cheeks are sunken and her eyes are empty chasms of shadow. Dark hair, wild and unkempt, swirls around her face as if constantly blown by a howling breeze. The banshee's form is barely substantial and light filters grimly through her.\n\nAppraisal:\nThe mist-wreathed banshee is medium in size and about five feet high in her current state."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A flickering mist-wreathed banshee drifts in on swirling eddies of silvery mist.",
+      "A flickering mist-wreathed banshee just came through some vaulting grey stone doors."
+    ],
+    flee: [
+      "A flickering mist-wreathed banshee drifts south on swirling eddies of silvery mist.",
+      "A flickering mist-wreathed banshee drifts east on swirling eddies of silvery mist.",
+      "A flickering mist-wreathed banshee drifts west on swirling eddies of silvery mist.",
+      "A flickering mist-wreathed banshee drifts north on swirling eddies of silvery mist.",
+      "A flickering mist-wreathed banshee drifts southeast on swirling eddies of silvery mist.",
+      "A flickering mist-wreathed banshee drifts southwest on swirling eddies of silvery mist.",
+      "A flickering mist-wreathed banshee just went through a heavy steel portcullis."
+    ],
     death: [],
     decay: [
-      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as his skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones.",
-      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as her skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones."
+      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as {pronoun} skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A flickering mist-wreathed banshee lifts mist-wreathed banshee voice in a terrible screech at you!",
-      "A flickering mist-wreathed banshee's shrieking takes on a sepulchral resonance!  A flickering mist-wreathed banshee lifts mist-wreathed banshee voice in a terrible screech at you!",
-      "A mist-wreathed banshee lifts a slender hand and points unerringly at you!",
-      "A flickering mist-wreathed banshee lifts a slender hand and points unerringly at you!",
-      "A flickering mist-wreathed banshee lifts {pronoun} voice in a terrible screech at you!",
-      "A flickering mist-wreathed banshee's shrieking takes on a sepulchral resonance!  A flickering mist-wreathed banshee lifts {pronoun} voice in a terrible screech at you!"
+    spell_prep: [
+      "A flickering mist-wreathed banshee's eyes glow with silvery grey light, and then everything around you shimmers to match the argentine color.",
+      "A flickering mist-wreathed banshee raises {pronoun} arms overhead, {pronoun} frayed garments and wild locks whipping in a ghostly breeze as waves of mist rise around {pronoun}. The fog crashes outward in an inexorable tide, aglow with silvery radiance.",
+      "A flickering mist-wreathed banshee's eyes glow with silvery grey light, and a pillar of argentine radiance manifests around {target}.",
+      "A flickering mist-wreathed banshee raises {pronoun} voice in a shrill, eerie song that makes the surrounding mists dance."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A flickering mist-wreathed banshee lifts mist-wreathed banshee voice in a terrible screech at you!",
+        "A flickering mist-wreathed banshee's shrieking takes on a sepulchral resonance!  A flickering mist-wreathed banshee lifts mist-wreathed banshee voice in a terrible screech at you!",
+        "A mist-wreathed banshee lifts a slender hand and points unerringly at you!",
+        "A flickering mist-wreathed banshee lifts a slender hand and points unerringly at you!",
+        "A flickering mist-wreathed banshee lifts {pronoun} voice in a terrible screech at you!",
+        "A flickering mist-wreathed banshee's shrieking takes on a sepulchral resonance!  A flickering mist-wreathed banshee lifts {pronoun} voice in a terrible screech at you!",
+        "A flickering mist-wreathed banshee throws back {pronoun} head and lets out a shriek of lamentation. Low and mournful, the sound peals outward, stifling other noises, until {pronoun} end is marked by a moment of total silence.",
+        "A flickering mist-wreathed banshee throws {pronoun} head back, {pronoun} disheveled hair roiling about {pronoun} sunken visage!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -97,15 +97,17 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Taller than a giant, the massive grahnk bears similarities to both a troll and an ogre. The beast has rippling muscles easily capable of tearing an arm or leg from its socket."
     ],
     arrival: [
-      "A massive grahnk lumbers in, malice in her eyes!",
-      "A massive grahnk lumbers in, malice in his eyes!"
+      "A massive grahnk lumbers in, malice in {pronoun} eyes!",
+      "A massive grahnk storms in, looking angered as {pronoun} surveys the area!"
     ],
     flee: [
       "A massive grahnk lumbers {direction}, malice in her eyes.",
@@ -118,12 +120,19 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A massive grahnk stomps at you with {pronoun} foot!",
-      "A massive grahnk swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      tackle: [
+        "A massive grahnk hurls {reflexive} at {target}!"
+      ],
+      attack: [
+        "A massive grahnk stomps at you with {pronoun} foot!",
+        "A massive grahnk swings {weapon} at you!",
+        "A massive grahnk swings a heavy stone club at {target}!"
+      ],
+      hurl: [
+        "A massive grahnk hurls {weapon} at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

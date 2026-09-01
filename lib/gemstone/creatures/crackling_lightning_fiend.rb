@@ -68,12 +68,12 @@
     emp_td: (314..324),
     pal_td: (276..286),
     ran_td: (274..281),
-    sor_td: "330 to 360",
+    sor_td: (330..360),
     wiz_td: nil,
     mje_td: 379,
-    mne_td: "352 to 382",
+    mne_td: (352..382),
     mjs_td: (319..327),
-    mns_td: "306 to 336",
+    mns_td: (306..336),
     mnm_td: 276,
     defensive_spells: [
       "Elemental Defense I (401)",
@@ -95,16 +95,15 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      ";Description\nFlashes of brilliant azure flicker and fade within the lightning fiend's mesmerizing shape, an amorphous form woven from threads of wildly dancing electricity. At times, the elemental takes the shape of a vaguely humanoid figure, its translucent helm graced by two wildly twisting horns. Arcing arteries of lightning leap from the heart of the fiend to shimmer up nearby surfaces.\n\n;Assess\n\nThe lightning fiend is medium in size and about six feet high in its current state."
-    ],
+    description: [],
     arrival: [
       "A jolting charge in the air heralds the arrival of a crackling lightning fiend!",
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as {pronoun} lumbers in."
     ],
     flee: [],
     death: [
@@ -115,12 +114,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A crackling lightning fiend launches a crackling blue and golden spark at you!",
-      "A crackling lightning fiend raises a luminous hand and sends a bolt of blue and golden lightning streaking toward you!",
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A crackling lightning fiend launches a crackling blue and golden spark at you!",
+        "A crackling lightning fiend raises a luminous hand and sends a bolt of blue and golden lightning streaking toward you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

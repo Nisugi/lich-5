@@ -124,15 +124,15 @@
     gems: true,
     boxes: nil,
     skin: "a kiramon tongue",
-    other: "glowing mineral water"
+    other: "glowing mineral water",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The kiramon defender has a mobile head with huge, bulging, eyes that sparkle in a faceted clustering around a lidless perimeter. Protruding from his massive head is a vicious-looking snout with insectile mandibles, while the back of his cranium is a distended, two-lobed case. Remarkably powerful rear legs jut backward from an extremely hard, resilient exoskeleton that seems to be in constant motion. Though his middle legs have evolved away long ago, his front legs end in strong opposing claws and knobby-jointed fingers. Stunted wings flap uselessly from his long cylindrical body."
     ],
-    arrival: [
-      "You hear a strange clicking that makes your hair stand on end as a kiramon defender arrives."
-    ],
+    arrival: [],
     flee: [
       "A kiramon defender heads {direction}.",
       "A kiramon defender limps {direction}."
@@ -145,14 +145,20 @@
       "A kiramon defender crumbles away into dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A kiramon defender charges at you!"
+    spell_prep: [
+      "A kiramon defender hisses sharply! {pronoun} long, piercing tongue comes shooting out at you..."
     ],
-    bite: [],
-    claw: [
-      "A kiramon defender claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A kiramon defender charges at you!"
+      ],
+      bite: [
+        "A kiramon defender snaps {pronoun} pincers noisily."
+      ],
+      claw: [
+        "A kiramon defender claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

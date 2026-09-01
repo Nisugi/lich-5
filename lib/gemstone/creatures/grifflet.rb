@@ -97,7 +97,9 @@
     gems: true,
     boxes: false,
     skin: "a grifflet pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -118,9 +120,6 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -82,15 +82,21 @@
     gems: nil,
     boxes: nil,
     skin: "a brown gak hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The brown gak is a big, ugly beast with a dirt-encrusted brown pelt. A marked odor of dung and musty wool surround him in a noxious cloud. The gak chomps vicious-looking teeth, a mix of distrust and hatred in his large doe-like eyes. A pair of sharp horns curves up above his short, broad head in a shape that resembles a lyre. The animal looks ungainly with his tall shoulders and shorter hindquarters, which give his a jerky, uneven gait. Suddenly, he bares his bovine ivories and brays loudly!"
     ],
-    arrival: [],
+    arrival: [
+      "A brown gak just came through the barn door.",
+      "A brown gak charges in, a wild look in {pronoun} eyes."
+    ],
     flee: [
-      "A brown gak gallops {direction}."
+      "A brown gak gallops {direction}.",
+      "A brown gak just went through the barn door."
     ],
     death: [
       "The brown gak collapses to the ground, emits a final bellow, and dies.",
@@ -102,11 +108,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A brown gak charges at you with {pronoun} tusk!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A brown gak charges at you with {pronoun} tusk!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

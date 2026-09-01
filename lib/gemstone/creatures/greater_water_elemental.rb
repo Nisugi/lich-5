@@ -117,20 +117,21 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The water elemental's upper body is that of a humanoid, while its lower body forms a turbulent, watery vortex. The facial features of the elemental creature are vague and shifting, rippling with every contortion of its face. Sloshing and splashing noises accompany each movement of the water elemental, along with an odd gurgling."
     ],
     arrival: [
-      "A greater water elemental just arrived.",
-      "A triton combatant strides in, gliding swiftly through the water with a wary look on her face.",
-      "A triton radical strides in, gliding swiftly through the water with a wary look on her face.",
-      "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
-      "A triton combatant strides in, gliding swiftly through the water with a wary look on his face."
+      "A greater water elemental just arrived."
     ],
-    flee: [],
+    flee: [
+      "A greater water elemental just went down some short descending stairs.",
+      "A greater water elemental just went across a wide stone causeway."
+    ],
     death: [],
     decay: [
       "The water elemental gurgles eerily and collapses into the water.",
@@ -172,13 +173,15 @@
       "The glimmer of a star ruby catches your eye as the water elemental gurgles eerily and collapses into the water."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A greater water elemental pounds at you with {pronoun} fist!",
-      "A greater water elemental raises {pronoun} hands, palms outward toward you!"
+    spell_prep: [
+      "A greater water elemental utters an incantation in an unfamiliar, bubbling language."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A greater water elemental pounds at you with {pronoun} fist!",
+        "A greater water elemental raises {pronoun} hands, palms outward toward you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

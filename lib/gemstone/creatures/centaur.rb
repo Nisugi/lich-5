@@ -116,7 +116,9 @@
     gems: true,
     boxes: true,
     skin: "a centaur hide",
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -140,11 +142,7 @@
       "The black centaur falls to the ground and dies.",
       "The tan centaur falls to the ground and dies.",
       "The roan centaur screams one last time and dies.",
-      "The black centaur screams one last time and dies.",
-      "Beautiful shot pierces both lungs, the tan centaur makes a wheezing noise, and drops dead!",
-      "Beautiful shot pierces both lungs, the roan centaur makes a wheezing noise, and drops dead!",
-      "Beautiful shot pierces both lungs, the black centaur makes a wheezing noise, and drops dead!",
-      "Beautiful shot pierces both lungs, the white centaur makes a wheezing noise, and drops dead!"
+      "The black centaur screams one last time and dies."
     ],
     decay: [
       "A white centaur dissolves into a puff of red smoke.",
@@ -152,22 +150,21 @@
       "A tan centaur dissolves into a puff of red smoke.",
       "A roan centaur dissolves into a puff of red smoke.",
       "A black centaur dissolves into a puff of red smoke.",
-      "The roan centaur's left leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves connecting cartilage, freeing the bay centaur's ribs to move independently.",
-      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust.",
-      "A raider orc withers away until he is no more."
+      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A centaur swings {weapon} at you!",
-      "A centaur throws {weapon} at you!",
-      "Tightening {pronoun} grip on {pronoun} greatsword, a black centaur strikes out at you with all of centaur might!",
-      "Tightening {pronoun} grip on {pronoun} polished longsword, a tan centaur strikes out at you with all of centaur might!",
-      "Tightening {pronoun} grip on {pronoun} polished longsword, a white centaur strikes out at you with all of centaur might!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A centaur swings {weapon} at you!",
+        "Tightening {pronoun} grip on {pronoun} greatsword, a black {pronoun} strikes out at you with all of {pronoun} might!",
+        "Tightening {pronoun} grip on {pronoun} polished longsword, a tan {pronoun} strikes out at you with all of {pronoun} might!",
+        "Tightening {pronoun} grip on {pronoun} polished longsword, a white {pronoun} strikes out at you with all of {pronoun} might!"
+      ],
+      hurl: [
+        "A centaur throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -88,23 +88,26 @@
     gems: false,
     boxes: false,
     skin: "a bristly tapir snout",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Tall and broad of shoulder, the tapir is an enormous beast similar to a boar. A short, thick coat of ebon fur spreads across her tightly muscled body, though the pelt fades to pale brown under the tapir's neck and stomach. Tubular nasal cavities stand out from her snout, while a healthy row of chisel-shaped teeth line her narrow mouth. Twin oval ears, each tipped with white, crown the tapir's head. They are spaced a full hand's span apart over her dark brown eyes. A short, stubby tail lays against her protruding rump, and the beast is supported by thick legs that end in splayed hooves."
     ],
-    arrival: [],
-    flee: [],
-    death: [
-      "Beautiful shot pierces both lungs, the black tapir makes a wheezing noise, and drops dead!"
+    arrival: [
+      "A bristly black tapir charges in, raising {pronoun} proboscis to let out a high-pitched squeal!",
+      "A bristly black tapir charges in!"
     ],
+    flee: [
+      "A bristly black tapir charges {direction}."
+    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {},
     info: {
       general: [],
       class_tips: {

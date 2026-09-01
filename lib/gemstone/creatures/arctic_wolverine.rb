@@ -90,7 +90,9 @@
     gems: nil,
     boxes: nil,
     skin: "a wolverine tail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,19 +106,18 @@
       "An arctic wolverine scampers {direction}, growling in pain.",
       "An arctic wolverine scampers {direction}."
     ],
-    death: [
-      "The arctic wolverine slumps to the ground."
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "An arctic wolverine tries to bite you!"
-    ],
-    claw: [
-      "An arctic wolverine claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "An arctic wolverine claws at you!"
+      ],
+      bite: [
+        "An arctic wolverine tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

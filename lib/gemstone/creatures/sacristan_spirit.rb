@@ -116,7 +116,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shardGlimmering blue mote of essence"
+    other: "Glimmering blue essence shardGlimmering blue mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -125,17 +127,20 @@
     arrival: [],
     flee: [],
     death: [
-      "A sacristan spirit fades into oblivion.",
-      "The sacristan spirit goes still for a moment while its head reshapes."
+      "A sacristan spirit fades into oblivion."
     ],
-    decay: [],
+    decay: [
+      "A sacristan spirit fades into oblivion."
+    ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A sacristan spirit swings {weapon} at you!"
+    spell_prep: [
+      "A sacristan spirit chants eerily for a moment before rising to {pronoun} feet!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A sacristan spirit swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

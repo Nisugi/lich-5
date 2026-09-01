@@ -109,7 +109,9 @@
     gems: true,
     boxes: true,
     skin: "an ice troll scalp",
-    other: "essence of water, small troll tooth"
+    other: "essence of water, small troll tooth",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -122,15 +124,24 @@
       "The ice troll falls to the ground motionless.",
       "The ice troll screams evilly one last time and goes still."
     ],
-    decay: [],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "An ice troll hurls {weapon} at you!",
-      "An ice troll swings {weapon} at you!"
+    decay: [
+      "An ice troll melts into a puddle of slush which sloshes {direction}."
     ],
-    bite: [],
-    claw: [],
+    search: [
+      "An ice troll looks around apprehensively as {pronoun} starts to melt!"
+    ],
+    spell_prep: [],
+    stand: [
+      "An ice troll throws {pronoun} head back and howls, shaking off the stun!"
+    ],
+    attacks: {
+      attack: [
+        "An ice troll swings {weapon} at you!"
+      ],
+      hurl: [
+        "An ice troll hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

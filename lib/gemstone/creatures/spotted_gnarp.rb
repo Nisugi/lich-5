@@ -86,15 +86,21 @@
     gems: false,
     boxes: false,
     skin: "a spotted gnarp horn",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Oh, what a thing of horror is the curl-horned spotted gnarp! Huge floppy ears stand out from her long snout like horizontal bunny ears, and her eyes are deep, liquid pools of irascibility and indecision. The creature's ponderous spotted belly hangs from a ridge-like backbone, which tapers in a long tail with a curly tip. Swishing her tail viciously, the gnarp minces about on cloven hooves, her massive curled horns overbalancing her head as she tears at the scattered herbage with her large, formidable teeth."
     ],
-    arrival: [],
+    arrival: [
+      "A spotted gnarp springs in and lands with a clatter of hooves.",
+      "A spotted gnarp just came through the barn door."
+    ],
     flee: [
-      "A spotted gnarp trots {direction}."
+      "A spotted gnarp trots {direction}.",
+      "A spotted gnarp just went through the barn door."
     ],
     death: [
       "The spotted gnarp collapses to the ground, emits a final cry, and dies.",
@@ -102,16 +108,16 @@
       "The spotted gnarp collapses to the ground, emits a final silent cry, and dies."
     ],
     decay: [
-      "A spotted gnarp decays into a pile of fur and bone.",
-      "The spotted gnarp's right leg crumbles briefly and explodes in a shower of gore."
+      "A spotted gnarp decays into a pile of fur and bone."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A spotted gnarp charges at you with {pronoun} tusk!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A spotted gnarp charges at you with {pronoun} tusk!",
+        "A spotted gnarp charges at {target} with {pronoun} tusk!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

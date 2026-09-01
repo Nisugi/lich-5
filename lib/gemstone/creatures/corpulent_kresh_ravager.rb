@@ -86,25 +86,25 @@
     gems: true,
     boxes: false,
     skin: "a glittering kresh foreclaw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Hugely bloated, the abdomen of the kresh ravager is fleshy and sickly white-yellow. It jiggles as the ravager skitters around on undersized legs that, while thin and short, appear to possess enough strength to support the ticklike monstrosity's great bulk. By contrast, the ravager's forelegs are powerful and armored in a glittering substance that resembles diamond. Comically undersized mandibles frame its small mouth, which constantly drips an unsavory yellow-green ichor."
     ],
-    arrival: [],
+    arrival: [
+      "A corpulent kresh ravager springs in, landing in an earth-shaking crouch."
+    ],
     flee: [],
     death: [
       "A corpulent kresh ravager's spasms, rolling over.  Its tiny legs kick at the air before going still.",
-      "With a thunderous crash, a corpulent kresh ravager falls to the ground, tiny legs kicking at the air before going still.",
-      "Awesome shot skewers skull!  The kresh ravager blinks once and falls quite dead!"
+      "With a thunderous crash, a corpulent kresh ravager falls to the ground, tiny legs kicking at the air before going still."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

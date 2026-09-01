@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "agresh troll scout",
+  name: "Agresh troll scout",
   noun: "",
   url: "https://gswiki.play.net/agresh_troll_scout",
   picture: "",
@@ -93,7 +93,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,19 +108,17 @@
     flee: [
       "An Agresh troll scout runs {direction}."
     ],
-    death: [
-      "Intestines rupture from intense heat; an Agresh troll scout dies a slow, painful death."
-    ],
+    death: [],
     decay: [
       "An Agresh troll scout decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An Agresh troll scout swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An Agresh troll scout swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

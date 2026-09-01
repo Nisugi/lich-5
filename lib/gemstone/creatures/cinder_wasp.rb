@@ -86,7 +86,9 @@
     gems: nil,
     boxes: nil,
     skin: "a shimmering wasp wing",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -103,20 +105,18 @@
     ],
     death: [
       "The cinder wasp flutters its wings one last time and dies.",
-      "The cinder wasp twitches violently, then dies.",
-      "Beautiful shot pierces both lungs, the cinder wasp makes a wheezing noise, and drops dead!",
-      "The cinder wasp slumps to the ground."
+      "The cinder wasp twitches violently, then dies."
     ],
     decay: [
       "A cinder wasp decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A cinder wasp stabs at you with {pronoun} stinger!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A cinder wasp stabs at you with {pronoun} stinger!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

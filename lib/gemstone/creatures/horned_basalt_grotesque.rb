@@ -92,10 +92,10 @@
     emp_td: 471,
     pal_td: (439..442),
     ran_td: 521,
-    sor_td: "483 to 504",
+    sor_td: (483..504),
     wiz_td: nil,
     mje_td: 476,
-    mne_td: "487 to 522",
+    mne_td: (487..522),
     mjs_td: nil,
     mns_td: 471,
     mnm_td: nil,
@@ -117,7 +117,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -125,23 +127,45 @@
     ],
     arrival: [
       "A horned basalt grotesque stomps in, stony wings spread behind it like a flourished cloak.",
-      "A horned basalt grotesque stomps in, shedding chips of stone from cracks along its limbs."
+      "A horned basalt grotesque stomps in, shedding chips of stone from cracks along its limbs.",
+      "A horned basalt grotesque soars in and lands, distributing {pronoun} weight between two heavy stone legs.",
+      "A horned basalt grotesque just came through some vaulting grey stone doors.",
+      "A horned basalt grotesque just came through a wrought black iron gate.",
+      "A horned basalt grotesque pounds in, {pronoun} stony footsteps shaking the ground. With a malevolent glare, {pronoun} spreads great stone wings and gives a single thunderous flap!",
+      "A horned basalt grotesque just came through a heavy steel portcullis."
     ],
-    flee: [],
-    death: [],
+    flee: [
+      "A horned basalt grotesque withdraws, disengaging from you."
+    ],
+    death: [
+      "A horned basalt grotesque falls to the ground! You deftly regain your footing."
+    ],
     decay: [
       "Cracks race across a horned basalt grotesque's carved stone physique, deepening into jagged chasms.  The grotesque crumbles swiftly, its composite pieces breaking into fine black powder."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A horned basalt grotesque opens {pronoun} stony jaws and tries to savage you with jaggedly carved teeth!",
-      "A horned basalt grotesque twists a stony claw toward you!",
-      "Clenching a carved claw into an unyielding fist, a horned basalt grotesque takes a swing at you!",
-      "Raising a heavy stone foot, a horned basalt grotesque attempts to crush you with a vicious stomp!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      bolt: [
+        "A horned basalt grotesque hurls a large boulder at {target}!"
+      ],
+      attack: [
+        "A horned basalt grotesque opens {pronoun} stony jaws and tries to savage you with jaggedly carved teeth!",
+        "A horned basalt grotesque twists a stony claw toward you!",
+        "Clenching a carved claw into an unyielding fist, a horned basalt grotesque takes a swing at you!",
+        "Raising a heavy stone foot, a horned basalt grotesque attempts to crush you with a vicious stomp!",
+        "A horned basalt grotesque raises a claw and clenches {pronoun} into a craggy fist. For a moment, the goliath strikes a heroic silhouette.",
+        "A horned basalt grotesque crushes {target} mercilessly!",
+        "A horned basalt grotesque charges towards {target} and attempts to grasp {pronoun} in a ferocious bearhug!",
+        "A horned basalt grotesque raises a stony claw toward the shadows, revealing you in your hiding place!"
+      ],
+      bearhug: [
+        "A horned basalt grotesque charges towards you and attempts to grasp you in a ferocious bearhug!"
+      ],
+      hurl: [
+        "A horned basalt grotesque hurls a large boulder at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

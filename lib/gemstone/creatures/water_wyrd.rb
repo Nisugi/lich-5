@@ -116,7 +116,9 @@
     gems: true,
     boxes: false,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -215,14 +217,20 @@
       "The glimmer of a spiny siren's-comb shell catches your eye as the water wyrd gurgles and collapses into the small pool on the floor.",
       "The glimmer of a spiny siren's-comb shell catches your eye as the water wyrd gurgles eerily and collapses into a puddle of water."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A water wyrd raises {pronoun} hands, palms outward toward you!",
-      "A water wyrd swings {weapon} at you!"
+    search: [
+      "A water wyrd looks around apprehensively as small droplets of water splash to the floor.",
+      "A water wyrd looks around apprehensively as small droplets of water splash to the ground."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A water wyrd utters an incantation in an unfamiliar, bubbling language."
+    ],
+    attacks: {
+      attack: [
+        "A water wyrd raises {pronoun} hands, palms outward toward you!",
+        "A water wyrd swings {weapon} at you!",
+        "A water wyrd swings a translucent green trident at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

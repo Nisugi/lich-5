@@ -80,7 +80,9 @@
     gems: true,
     boxes: true,
     skin: "a kappa fin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -101,11 +103,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A greater kappa swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A greater kappa swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

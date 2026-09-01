@@ -92,7 +92,9 @@
     gems: true,
     boxes: false,
     skin: "No",
-    other: "Yes"
+    other: "Yes",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -101,24 +103,28 @@
     arrival: [
       "An earth elemental lumbers in slowly."
     ],
-    flee: [],
+    flee: [
+      "An earth elemental lumbers slowly to the {direction}."
+    ],
     death: [
       "The earth elemental topples to the ground motionless.",
       "The earth elemental shudders violently for a moment, then goes still."
     ],
     decay: [
       "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
-      "The earth elemental's left leg crumbles briefly and explodes in a shower of gore.",
       "Tiny fissures quickly spread over the entire form of a greater earth elemental.  Within moments, it crumbles into a pile of dirt and rubble."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An earth elemental pounds at you with {pronoun} heavy earthen fists!",
-      "An earth elemental stomps at you with {pronoun} foot!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An earth elemental pounds at you with {pronoun} heavy earthen fists!",
+        "An earth elemental stomps at you with {pronoun} foot!"
+      ],
+      hurl: [
+        "An earth elemental throws a large rock at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

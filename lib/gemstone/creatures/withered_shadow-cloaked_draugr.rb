@@ -123,20 +123,56 @@
     boxes: nil,
     skin: nil,
     other: nil,
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    attack: [
-      "Wisps of shadow follow the arc of a withered shadow-cloaked draugr's arm as withered shadow-cloaked draugr swings {weapon} at you!",
-      "A withered shadow-cloaked draugr lifts one foot and tries to smash you!",
-      "A withered shadow-cloaked draugr swings {weapon} at you!",
-      "A shining winged disir focuses withered shadow-cloaked draugr luminous gaze upon you!",
-      "An eyeless black valravn pecks viciously at you with withered shadow-cloaked draugr dagger-sharp beak!",
-      "Soaring by on inky wings, an eyeless black valravn rakes at you with withered shadow-cloaked draugr talons!"
+    flee: [
+      "A withered shadow-cloaked draugr just went through a crumbling red stone maw.",
+      "A withered shadow-cloaked draugr just went through a breached red stone wall.",
+      "A withered shadow-cloaked draugr just went through a pocked red stone arch.",
+      "A withered shadow-cloaked draugr lumbers {direction}, swathed in darkness.",
+      "A withered shadow-cloaked draugr lumbers {direction}, desiccated tendons in {pronoun} legs popping as {pronoun} goes."
     ],
-    bite: [],
-    claw: [],
+    arrival: [
+      "A withered shadow-cloaked draugr lurches in, {pronoun} unliving body on the verge of collapse.",
+      "A withered shadow-cloaked draugr just came through a breached red stone wall."
+    ],
     description: "Utterly immense, the draugr's humanoid shape is comprised wholly of inky shadows that drip and pool at its intangible feet.  Cruel eyes of frigid light glare from a face of sharp lines and malevolent angles.  The shade's arms are lightless and devoid of all but the most rudimentary features, but are massively thick and traced with intricate lines of blazing blue radiance.",
-    general_advice: "* Taking out a draugr's greatsword and leaving them swinging a closed fist is as close to taking out the draugr as can be short of actually killing it, so Disarm Weapon, Vibration Chant (1002), or even Limb Disruption (708) work great here. DoT spells like Condemn (309) and Earthen Fury (917) are liable to also sever an arm by sheer probability given enough rounds of going off.\n* In lieu of killing a draugr or getting rid of its weapon, another strong option is taking out its legs or inflicting Rooted since draugrs rely heavily on high AS or maneuvers to be effective. Hamstring (despite Major Bleed not affecting undead), Cripple, Pin Down, and other options can do the trick.\n* In lieu of any of the above, draugrs are also square enemies in light armor, so low TD and low CvA leaves them pretty vulnerable to most CS-based attacks despite their high level."
+    attacks: {
+      attack: [
+        "Wisps of shadow follow the arc of a withered shadow-cloaked draugr's arm as {pronoun} swings {weapon} at you!",
+        "A withered shadow-cloaked draugr lifts one foot and tries to smash you!",
+        "A withered shadow-cloaked draugr swings {weapon} at you!",
+        "A shining winged disir focuses withered shadow-cloaked draugr luminous gaze upon you!",
+        "Soaring by on inky wings, an eyeless black valravn rakes at you with {pronoun} talons!",
+        "A withered shadow-cloaked draugr raises a colossal foot and tries to crush you with {pronoun}! You roll out of the way of the rampaging draugr!",
+        "A withered shadow-cloaked draugr raises a colossal foot and tries to crush you with {pronoun}! The stomp strikes a glancing blow!",
+        "A withered shadow-cloaked draugr raises a colossal foot and tries to crush you with {pronoun}! The force of the stomp flattens you to the ground!",
+        "A withered shadow-cloaked draugr raises a colossal foot and tries to crush you with {pronoun}! The full force of the stomp flattens you to the ground, smashing you painfully!",
+        "A withered shadow-cloaked draugr swings a shadow-drenched fist down at {target}!",
+        "The withered shadow-cloaked draugr slams into you, and you are sent careening into {target} as you fall to the ground!",
+        "A withered shadow-cloaked draugr raises a colossal foot and tries to crush {target} with {pronoun}! {target} rolls out of the way of the rampaging draugr!",
+        "The withered shadow-cloaked draugr slams into you, and you are sent careening headlong into a nearby group of combatants as you fall to the ground!"
+      ]
+    },
+    info: {
+      general: [
+        "* Taking out a draugr's greatsword and leaving them swinging a closed fist is as close to taking out the draugr as can be short of actually killing it, so Disarm Weapon, Vibration Chant (1002), or even Limb Disruption (708) work great here. DoT spells like Condemn (309) and Earthen Fury (917) are liable to also sever an arm by sheer probability given enough rounds of going off.\n* In lieu of killing a draugr or getting rid of its weapon, another strong option is taking out its legs or inflicting Rooted since draugrs rely heavily on high AS or maneuvers to be effective. Hamstring (despite Major Bleed not affecting undead), Cripple, Pin Down, and other options can do the trick.\n* In lieu of any of the above, draugrs are also square enemies in light armor, so low TD and low CvA leaves them pretty vulnerable to most CS-based attacks despite their high level."
+      ],
+      class_tips: {
+        cleric: [],
+        paladin: [],
+        ranger: [],
+        bard: [],
+        wizard: [],
+        empath: [],
+        rogue: [],
+        warrior: [],
+        sorcerer: []
+      },
+      miscellany: []
+    },
   }
 }

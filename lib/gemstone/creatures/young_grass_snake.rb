@@ -82,7 +82,9 @@
     gems: false,
     boxes: false,
     skin: "a snake skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,11 +100,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A young grass snake tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A young grass snake tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

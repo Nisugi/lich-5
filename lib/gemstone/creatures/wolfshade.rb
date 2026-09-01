@@ -88,7 +88,9 @@
     gems: false,
     boxes: false,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,21 +104,21 @@
     ],
     death: [
       "The wolfshade falls back into a heap and dies.",
-      "The wolfshade hisses one last time and dies.",
-      "The wolfshade goes still for a moment while its head reshapes."
+      "The wolfshade hisses one last time and dies."
     ],
     decay: [
       "A wolfshade decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A wolfshade tries to bite you!"
-    ],
-    claw: [
-      "A wolfshade claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A wolfshade claws at you!"
+      ],
+      bite: [
+        "A wolfshade tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

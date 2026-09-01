@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "illoke elder",
+  name: "Illoke elder",
   noun: "",
   url: "https://gswiki.play.net/illoke_elder",
   picture: "",
@@ -143,36 +143,43 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "radiant crimson essence shard"
+    other: "radiant crimson essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The enormous form of the Illoke elder occupies a large section of the area, over twenty feet at his full height. He carries himself with an air of confident superiority, casting a hate-filled gaze around him. Thick and rough grey skin covers him from head to toe, providing protection against all but the strongest of blows. A deep crimson symbol of Illoke is chiseled into his forehead, bathing his face in a lurid illumination."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "An Illoke elder sinks into the ground and flows {direction}."
+    ],
     death: [
       "The Illoke elder grumbles in pain one last time before lying still.",
-      "The Illoke elder slumps to the ground.",
-      "The Illoke elder shudders one last time before lying still.",
-      "Beautiful shot pierces both lungs, the Illoke elder makes a wheezing noise, and drops dead!"
+      "The Illoke elder shudders one last time before lying still."
     ],
     decay: [
       "An Illoke elder's body shudders and crumbles into itself in a mass of rough grey stone.",
-      "The Illoke elder's right leg crumbles briefly and explodes in a shower of gore.",
-      "A dazzling Illoke elder's body shudders and crumbles into itself in a mass of rough grey stone.",
-      "The Illoke elder's left leg crumbles briefly and explodes in a shower of gore."
+      "A dazzling Illoke elder's body shudders and crumbles into itself in a mass of rough grey stone."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An Illoke elder pounds at you with {pronoun} fist!",
-      "An Illoke elder stomps at you with {pronoun} foot!",
-      "An Illoke elder swings {weapon} at you!",
-      "An Illoke elder throws {weapon} at you!",
+    spell_prep: [
+      "An Illoke elder chants, \"From the earth I sprang, to the earth I'll return...\""
     ],
-    bite: [],
-    claw: [],
+    stand: [
+      "An Illoke elder blinks dazedly a moment before shaking off the stun!"
+    ],
+    attacks: {
+      attack: [
+        "An Illoke elder pounds at you with {pronoun} fist!",
+        "An Illoke elder stomps at you with {pronoun} foot!",
+        "An Illoke elder swings {weapon} at you!"
+      ],
+      hurl: [
+        "An Illoke elder throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -87,7 +87,9 @@
     gems: true,
     boxes: true,
     skin: "a spectre nail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,20 +101,18 @@
     flee: [],
     death: [
       "The snow spectre falls to the ground motionless.",
-      "The snow spectre screams evilly one last time and goes still.",
-      "Beautiful shot pierces both lungs, the snow spectre makes a wheezing noise, and drops dead!",
-      "The snow spectre slumps to the ground."
+      "The snow spectre screams evilly one last time and goes still."
     ],
     decay: [
       "A snow spectre turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A snow spectre swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A snow spectre swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

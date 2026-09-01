@@ -80,7 +80,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -92,19 +94,21 @@
     ],
     death: [
       "The coconut crab falls back into a heap and dies.",
-      "The coconut crab hisses one last time and dies.",
-      "Beautiful shot pierces both lungs, the coconut crab makes a wheezing noise, and drops dead!"
+      "The coconut crab hisses one last time and dies."
     ],
     decay: [
       "A coconut crab decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A coconut crab claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A coconut crab tries to ensnare {target}!"
+      ],
+      claw: [
+        "A coconut crab claws at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

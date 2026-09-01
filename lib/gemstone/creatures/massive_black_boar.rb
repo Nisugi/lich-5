@@ -106,36 +106,44 @@
     gems: false,
     boxes: false,
     skin: "a heavy grey tusk",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The black boar snorts loudly and scrapes at the ground, peering around with his close-set, bloodshot eyes in hopes of finding something he can gore into a bloody pulp or pound into the earth. His body is covered with coarse, black hair, and dull grey tusks protrude from each side of his gaping mouth. A good ten feet long from dripping snout to curly tail and weighing more than a ton, the black boar moves with surprising speed and dexterity as he bears down, squealing furiously, on his intended prey. The murderous glint in the boar's eyes betrays an intelligence much greater than his mundane kin."
     ],
-    arrival: [],
+    arrival: [
+      "A massive black boar charges in, grunting an angry challenge!",
+      "A massive black boar barrels in!"
+    ],
     flee: [
       "A massive black boar crawls {direction}.",
-      "A massive black boar grunts and barrels {direction}."
+      "A massive black boar grunts and barrels {direction}.",
+      "A massive black boar trots {direction}, grunting noisily.",
+      "A massive black boar trots {direction}, grunting noisily!"
     ],
     death: [
       "The black boar lets out a final agonized squeal and dies.",
-      "The black boar collapses to the ground, emits a final squeal, and dies.",
-      "Beautiful shot pierces both lungs, the black boar makes a wheezing noise, and drops dead!",
-      "The black boar slumps to the ground."
+      "The black boar collapses to the ground, emits a final squeal, and dies."
     ],
     decay: [
       "A massive black boar decays into a pile of fur and bone."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A massive black boar charges at you with {pronoun} tusk!",
-      "A massive black boar charges at you!"
-    ],
-    bite: [
-      "A massive black boar tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A massive black boar charges at you with {pronoun} tusk!",
+        "A massive black boar charges at you!",
+        "A massive black boar charges at {target} with {pronoun} tusk!",
+        "A massive black boar charges towards you, but you leap to the side at the last instant, avoiding a gruesome fate! The black boar stumbles and falls!"
+      ],
+      bite: [
+        "A massive black boar tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

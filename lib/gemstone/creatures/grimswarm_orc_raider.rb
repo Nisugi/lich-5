@@ -76,7 +76,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -90,9 +92,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      fire: [
+        "A Grimswarm orc raider fires a plain wooden arrow at you!"
+      ],
+      attack: [
+        "A Grimswarm orc raider attempts to kick mud at you, but is unable to kick up a sufficient amount of mud."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

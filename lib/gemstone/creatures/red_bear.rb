@@ -86,19 +86,37 @@
     gems: nil,
     boxes: nil,
     skin: "a bear paw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A red bear charges at you, but seeing {pronoun} coming, you acrobatically spring over the red bear!"
+      ],
+      claw: [
+        "A red bear claws at you!"
+      ],
+      bite: [
+        "A red bear tries to bite you!"
+      ]
+    },
+    stand: [
+      "A red bear stands up and growls!"
+    ],
     description: [
-      "The red bear weighs around 600 pounds and is about seven feet long. This bear is a dark reddish-brown color and has a characteristic muscle hump over the shoulders, and has long vicious looking claws on his front paws.K"
+      "The red bear weighs around 600 pounds and is about seven feet long. This bear is a dark reddish-brown color and has a characteristic muscle hump over the shoulders, and has long vicious looking claws on his front paws."
     ],
     arrival: [
       "A red bear lumbers in!",
-      "A red bear slowly lumbers in, growling in pain!"
+      "A red bear slowly lumbers in, growling in pain!",
+      "A red bear lumbers noisily into the area drooling hungrily!"
     ],
     flee: [
       "A red bear lumbers {direction}.",
-      "A red bear slowly lumbers {direction}, growling in pain."
+      "A red bear slowly lumbers {direction}, growling in pain.",
+      "A red bear slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The red bear collapses heavily into a heap on the ground and dies.",
@@ -107,15 +125,10 @@
     decay: [
       "A red bear decays into a compost of fangs, fur and claws."
     ],
-    search: [],
+    search: [
+      "A red bear snuffles the ground hungrily."
+    ],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A red bear tries to bite you!"
-    ],
-    claw: [
-      "A red bear claws at you!"
-    ],
     info: {
       general: [],
       class_tips: {

@@ -134,43 +134,50 @@
     gems: true,
     boxes: true,
     skin: "an elongated triton spine",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Glaring angrily and gnashing his sharp yellowed teeth, the triton radical stalks along muttering to himself as if involved in angry debate with a phantasmal antagonist. Pale, red-rimmed eyes sit deep in a heavy-boned skull, which perches upon a long, slender neck. The radical's body pitches forward alarmingly, so only the weight of his tail prevents a return to a four-legged posture. Upon his tapered brow is set a golden crown bearing a large, wave-etched crystal drop."
     ],
     arrival: [
-      "A triton radical strides in, a wary look on her face.",
-      "A triton radical strides in, a wary look on his face.",
-      "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
+      "A triton radical strides in, a wary look on {pronoun} face.",
+      "A triton radical strides in, gliding swiftly through the water with a wary look on {pronoun} face.",
       "A triton radical just arrived.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton executioner strides in, a wary look on her face.",
-      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
-      "A triton combatant strides in, a wary look on her face.",
-      "A triton combatant strides in, a wary look on his face.",
-      "A triton radical strides in, gliding swiftly through the water with a wary look on her face."
+      "A triton radical just came through a crumbling arch."
     ],
-    flee: [],
+    flee: [
+      "A triton radical just went through a crumbling arch.",
+      "A triton radical just went across a wide stone causeway."
+    ],
     death: [
-      "The triton radical gurgles once and goes still, a wrathful look on her face.",
-      "The triton radical gurgles once and goes still, a wrathful look on his face.",
-      "The triton radical slumps to the ground.",
-      "Beautiful shot pierces both lungs, the triton radical makes a wheezing noise, and drops dead!",
-      "Awesome shot skewers skull!  The triton radical blinks once and falls quite dead!"
+      "The triton radical gurgles once and goes still, a wrathful look on {pronoun} face."
     ],
     decay: [
       "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A triton radical thrusts with a corroded bronze scaling fork at you!",
-      "A triton radical thrusts with a wide silvery green trident at you!"
+    spell_prep: [
+      "A triton radical's eyes glow with silvery grey light, and then everything around you shimmers to match the argentine color."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A triton radical thrusts with a corroded bronze scaling fork at you!",
+        "A triton radical thrusts with a wide silvery green trident at you!",
+        "A triton radical charges into view, {pronoun} determination clear in {pronoun} battle-ready stance!",
+        "A triton radical thrusts with a razor-tined pale green trident at you!",
+        "The triton radical slams into you, and you are sent careening to the ground!"
+      ],
+      charge: [
+        "A triton radical rushes forward at you with {pronoun} silvery green trident and attempts a charge!",
+        "A triton radical rushes forward at you with {pronoun} bronze scaling fork and attempts a charge!"
+      ],
+      shield_charge: [
+        "A triton radical charges forward at you with {pronoun} blue round shield and attempts a shield charge!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

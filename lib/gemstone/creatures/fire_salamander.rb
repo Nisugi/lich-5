@@ -95,7 +95,9 @@
     gems: nil,
     boxes: nil,
     skin: "a salamander skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -108,26 +110,24 @@
       "A fire salamander slithers {direction}."
     ],
     death: [
-      "The fire salamander hisses one last time and dies.",
-      "A fire salamander wheezes heavily and slumps to the ground while regurgitating a slimy grey fluid over its mangled left foreleg.",
-      "A fire salamander wheezes heavily and slumps to the ground while regurgitating a slimy grey fluid over its mangled left claw.",
-      "A fire salamander wheezes heavily and slumps to the ground while regurgitating a slimy grey fluid over its mangled right foreleg.",
-      "A fire salamander wheezes heavily and slumps to the ground while regurgitating a slimy grey fluid over its mangled right claw."
+      "The fire salamander hisses one last time and dies."
     ],
     decay: [
       "A fire salamander decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A fire salamander charges at you!"
-    ],
-    bite: [
-      "A fire salamander tries to bite you!"
-    ],
-    claw: [
-      "A fire salamander claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A fire salamander charges at you!"
+      ],
+      bite: [
+        "A fire salamander tries to bite you!"
+      ],
+      claw: [
+        "A fire salamander claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

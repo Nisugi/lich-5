@@ -93,7 +93,9 @@
     gems: nil,
     boxes: nil,
     skin: "a cougar tail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -122,17 +124,12 @@
       "A stalwart cougar scampers {direction}.",
       "A canny cougar scampers {direction}.",
       "A shielded cougar scampers {direction}.",
-      "A cougar roars loudly as she stands {direction}!",
-      "A cougar roars loudly as he stands {direction}!",
       "A glittering cougar scampers {direction}."
     ],
     death: [
       "The cougar lets out a final caterwaul and dies.",
       "The cougar crumples to the ground and dies.",
-      "The cougar twitches violently, then dies.",
-      "The cougar slumps to the ground.",
-      "Awesome shot skewers skull!  The cougar blinks once and falls quite dead!",
-      "Beautiful shot pierces both lungs, the cougar makes a wheezing noise, and drops dead!"
+      "The cougar twitches violently, then dies."
     ],
     decay: [
       "A cougar decays into a compost of fangs, fur and claws.",
@@ -157,13 +154,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A cougar tries to bite you!"
-    ],
-    claw: [
-      "A cougar claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A cougar claws at you!"
+      ],
+      bite: [
+        "A cougar tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

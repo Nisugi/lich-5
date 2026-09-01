@@ -90,7 +90,9 @@
     gems: nil,
     boxes: nil,
     skin: "a rolton horn",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,7 +100,8 @@
     ],
     arrival: [],
     flee: [
-      "A Bresnahanini rolton trots {direction}."
+      "A Bresnahanini rolton trots {direction}.",
+      "A bresnahanini rolton trots {direction}, snorting and scanning the area."
     ],
     death: [
       "The Bresnahanini rolton collapses to the ground, emits a final bleat, and dies.",
@@ -109,13 +112,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A Bresnahanini rolton charges at you!"
-    ],
-    bite: [
-      "A Bresnahanini rolton tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Bresnahanini rolton charges at you!"
+      ],
+      bite: [
+        "A Bresnahanini rolton tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

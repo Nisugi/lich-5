@@ -93,7 +93,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Reticulated orbsGlimmering blue essence shard"
+    other: "Reticulated orbsGlimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,9 +115,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      cast: [
+        "A niirsha points a rotting finger at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

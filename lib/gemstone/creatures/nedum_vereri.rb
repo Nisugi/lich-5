@@ -110,7 +110,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -119,27 +121,33 @@
     arrival: [
       "A nedum vereri just arrived.",
       "A nedum vereri just arrived from the altar.",
-      "A nedum vereri just arrived from the sanctuary."
+      "A nedum vereri just arrived from the sanctuary.",
+      "A nedum vereri just came through a pair of double doors."
     ],
     flee: [
-      "A nedum vereri heads {direction}."
+      "A nedum vereri heads {direction}.",
+      "A nedum vereri just went through a pair of double doors."
     ],
     death: [
       "A nedum vereri exhales a sigh of relief and slumps to the ground motionless.",
       "A nedum vereri exhales a sigh of relief and goes still."
     ],
     decay: [
-      "Acid dissolves connecting cartilage, freeing the nedum vereri's ribs to move independently."
+      "A nedum vereri fades away."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A nedum vereri swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [
-      "A nedum vereri claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A nedum vereri swings {weapon} at you!",
+        "A nedum vereri exhales a sigh of relief and slumps to the ground motionless.",
+        "A nedum vereri exhales a sigh of relief and goes still.",
+        "A nedum vereri leaps to {pronoun} feet."
+      ],
+      claw: [
+        "A nedum vereri claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -105,30 +105,38 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "As tall as the average human, the mercenary has the characteristic long-fingered hands and sturdy musculature that denote most of the krolvin race. The mercenary also sports the trademark grey-blue skin and thick, coarse, white hair covers his head and spreads across his shoulders and down his back."
     ],
     arrival: [
-      "A krolvin mercenary just arrived."
+      "A krolvin mercenary just arrived.",
+      "A krolvin mercenary leaps into the room!",
+      "A krolvin mercenary leaps into the area!"
     ],
     flee: [
-      "A krolvin mercenary stumps {direction}."
+      "A krolvin mercenary stumps {direction}.",
+      "A krolvin mercenary just went through a high opening."
     ],
     death: [
       "The krolvin mercenary rolls over on the ground and goes still.",
-      "The krolvin mercenary rolls over on the floor and goes still."
+      "The krolvin mercenary rolls over on the floor and goes still.",
+      "A krolvin mercenary collapses into a pile of dirty rags."
     ],
     decay: [
       "A krolvin mercenary collapses into a pile of dirty rags."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A krolvin mercenary tries to stomp on you, but misses!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

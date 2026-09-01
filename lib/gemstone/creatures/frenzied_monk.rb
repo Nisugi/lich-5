@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shardGlimmering blue mote of essence"
+    other: "Glimmering blue essence shardGlimmering blue mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,9 +108,7 @@
     flee: [
       "A frenzied monk seethes in pain as he limps {direction}."
     ],
-    death: [
-      "Beautiful shot pierces both lungs, the frenzied monk makes a wheezing noise, and drops dead!"
-    ],
+    death: [],
     decay: [
       "A frenzied monk dissolves into a foul-smelling miasma.",
       "A nebulous frenzied monk dissolves into a foul-smelling miasma.",
@@ -117,9 +117,9 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    stun_break: [
+      "A frenzied monk's eyes flash with a baleful green light as {pronoun} shakes off the stun!"
+    ],
     info: {
       general: [],
       class_tips: {

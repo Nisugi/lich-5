@@ -93,7 +93,9 @@
     gems: true,
     boxes: nil,
     skin: "a madrinol skin",
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -114,11 +116,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A snow madrinol tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A snow madrinol charges towards a fellow snow madrinol and the two meet head first, sending both staggering."
+      ],
+      bite: [
+        "A snow madrinol tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

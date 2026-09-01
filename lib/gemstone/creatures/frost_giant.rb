@@ -132,7 +132,9 @@
     gems: true,
     boxes: true,
     skin: "a giant toe",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -150,14 +152,23 @@
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A frost giant hurls {weapon} at you!",
-      "A frost giant points an icy finger at you!",
-      "A frost giant swings {weapon} at you!"
+    spell_prep: [
+      "A frost giant mutters an incantation."
     ],
-    bite: [],
-    claw: [],
+    stand: [
+      "A frost giant throws {pronoun} head back and howls, shaking off the stun!"
+    ],
+    attacks: {
+      attack: [
+        "A frost giant swings {weapon} at you!"
+      ],
+      cast: [
+        "A frost giant points an icy finger at you!"
+      ],
+      hurl: [
+        "A frost giant hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

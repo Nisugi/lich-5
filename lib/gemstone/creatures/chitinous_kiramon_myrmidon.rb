@@ -112,7 +112,9 @@
     gems: true,
     boxes: false,
     skin: "some glossy kiramon chitin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -121,19 +123,28 @@
     arrival: [],
     flee: [],
     death: [
-      "A chitinous kiramon myrmidon collapses, its forelegs spasming and twitching before it at last surrenders to death.",
-      "A chitinous kiramon myrmidon collapses, his forelegs spasming and twitching before he at last surrenders to death."
+      "A chitinous kiramon myrmidon collapses, {pronoun} forelegs spasming and twitching before {pronoun} at last surrenders to death."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A chitinous kiramon myrmidon strikes out at you with all of chitinous kiramon myrmidon might!",
-      "Bringing {pronoun} forelegs together, a chitinous kiramon myrmidon attempts to pincer you!",
-      "Surging forward powerfully, a chitinous kiramon myrmidon slashes at you with {pronoun} bladed forelegs!"
+    spell_prep: [
+      "A chitinous kiramon myrmidon hisses and clicks, cocking {pronoun} head curiously as if not entirely comprehending your death."
     ],
-    bite: [],
-    claw: [],
+    stun_break: [
+      "A chitinous kiramon myrmidon spasms as {pronoun} tries to regain control of {pronoun} scattered senses."
+    ],
+    attacks: {
+      attack: [
+        "A chitinous kiramon myrmidon strikes out at you with all of {pronoun} might!",
+        "Bringing {pronoun} forelegs together, a chitinous kiramon myrmidon attempts to pincer you!",
+        "Surging forward powerfully, a chitinous kiramon myrmidon slashes at you with {pronoun} bladed forelegs!",
+        "A chitinous kiramon myrmidon slams {pronoun} head into you!",
+        "A chitinous kiramon myrmidon vomits a bit of brackish goo onto a crack in {pronoun} chitin, using one foreleg to massage the glutinous muck over the breach."
+      ],
+      bite: [
+        "A chitinous kiramon myrmidon snaps {pronoun} armored head {direction}, a fractured mirror of the surroundings visible in {pronoun} compound eyes."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

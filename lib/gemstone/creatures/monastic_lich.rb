@@ -137,7 +137,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -145,20 +147,22 @@
     ],
     arrival: [],
     flee: [],
-    death: [
-      "Beautiful shot pierces both lungs, the monastic lich makes a wheezing noise, and drops dead!",
-      "The monastic lich slumps to the ground."
-    ],
+    death: [],
     decay: [
       "A monastic lich dissolves into a foul-smelling miasma."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A monastic lich points at you!"
+    spell_prep: [
+      "A monastic lich mutters in agonizing ecstacy."
     ],
-    bite: [],
-    claw: [],
+    stun_break: [
+      "A monastic lich's hollow eye sockets flash with a blood red glow as {pronoun} shakes off the stun!"
+    ],
+    attacks: {
+      attack: [
+        "A monastic lich points at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -1,11 +1,11 @@
 {
   schema_version: 3,
-  name: "ithzir champion",
+  name: "Ithzir champion",
   noun: "",
   url: "https://gswiki.play.net/ithzir_champion",
   picture: "",
   level: 102,
-  family: "ithzir",
+  family: "Ithzir",
   type: "Biped",
   undead: false,
   blood: nil,
@@ -78,7 +78,7 @@
     immunities: [
       "stun"
     ],
-    melee: "304 DS",
+    melee: 304,
     ranged: (268..468),
     bolt: (268..468),
     udf: (476..826),
@@ -119,30 +119,38 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "crystal weapon"
+    other: "crystal weapon",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "An Ithzir champion swings {weapon} at you!",
+        "Tightening {pronoun} grip on {pronoun} gornar flail, an Ithzir champion strikes out at you with all of {pronoun} might!",
+        "Tightening {pronoun} grip on {pronoun} steel maul, an Ithzir champion strikes out at you with all of {pronoun} might!",
+        "An Ithzir champion exhales sharply, exerting mightily.",
+        "The Ithzir champion slams into you, and you are sent careening to the ground!"
+      ]
+    },
+    stand: [
+      "An Ithzir champion rises to {pronoun} feet, {pronoun} green eyes blazing!"
+    ],
     description: [
       "With a competely tattooed forehead and hands, the champion bears an imperious, domineering presence. Muscular and athletic, the Ithzir champion is a full head taller than the average man, and her light-blue skin is completely hairless. Exuding an air of calm and in control, she appears dangerous and fearsome in any situation - and while she seems mostly humanoid, strange proportions and awkward construction make her alien and unknownable. The champion wears a well made royal blue tunic, with the image of a rearing griffin emblazoned in gold thread on the right breast."
     ],
     arrival: [],
     flee: [],
     death: [
-      "Just as you incant, the Ithzir champion shimmers and fades away, leaving you gesturing at nothingness!",
       "The Ithzir champion vainly struggles to rise, then goes still.",
-      "An Ithzir champion's body shimmers slightly, then fades from view like a dissipating phantom.",
-      "Just as you move to cast, the Ithzir champion shimmers and fades away, leaving you gesturing at nothingness!"
+      "An Ithzir champion's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
     decay: [],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "An Ithzir champion swings {weapon} at you!",
-      "Tightening {pronoun} grip on {pronoun} gornar flail, an Ithzir champion strikes out at you with all of ithzir champion might!",
-      "Tightening {pronoun} grip on {pronoun} steel maul, an Ithzir champion strikes out at you with all of ithzir champion might!"
+    search: [
+      "An Ithzir champion looks around for a moment and lets loose an echoing shout! The champion's warcry is clear and triumphant.",
+      "An Ithzir champion looks around for a moment before opening {pronoun} mouth, but no sound seems to come out!"
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [],
     info: {
       general: [],
       class_tips: {

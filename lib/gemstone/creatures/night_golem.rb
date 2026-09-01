@@ -84,7 +84,9 @@
     gems: true,
     boxes: true,
     skin: "night golem finger",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -94,17 +96,18 @@
     flee: [
       "A night golem lopes {direction}."
     ],
-    death: [
-      "Beautiful shot pierces both lungs, the night golem makes a wheezing noise, and drops dead!"
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A night golem pounds at you with {pronoun} black fists!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A night golem pounds at you with {pronoun} black fists!",
+        "A night golem tries to ensnare you in {pronoun} black arms!",
+        "A night golem pounds at {target} with {pronoun} black fists!",
+        "A night golem tries to ensnare {target} in {pronoun} black arms!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

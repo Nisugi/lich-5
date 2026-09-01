@@ -128,32 +128,59 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A deathsworn fanatic tries to ensnare you!",
+        "{Pronoun} face twisting with mad rage, a deathsworn fanatic swings at you!",
+        "A deathsworn fanatic flings a roiling sphere of emerald flame at you!",
+        "A deathsworn fanatic jabs a trembling finger at you. {Pronoun} blood inflamed by the pure zealotry, the fanatic lifts {pronoun} arms toward the heavens and the ground underfoot begins to shake. It buckles and splinters, caving in to several newborn chasms. Ragged arms snatch at the edges, fumbling; seeping blood; searching. Slowly, several lurks crawl forth, letting out ravenous moans!",
+        "A deathsworn fanatic jabs a trembling finger at {target}!",
+        "A deathsworn fanatic rushes northwest in a swirl of dingy green robes."
+      ]
+    },
+    stand: [
+      "A deathsworn fanatic rises to {pronoun} feet in a desperate flurry of robes."
+    ],
     description: [
       "Clad in emerald robes of lush velvet that are stitched with tiny scales of clacking bronze, the fanatic is nearly fleshless, his reserves of fat and muscle burned away by a long war with madness. He has, judging from the stink of body odor and filth about him, not washed in weeks, and his gaze is as inconstant as the quickfire succession of random emotions that play across his tanned face."
     ],
     arrival: [
-      "A deathsworn fanatic just arrived."
+      "A deathsworn fanatic just arrived.",
+      "A deathsworn fanatic just came through a polished acacia archway.",
+      "A deathsworn fanatic just came through a pair of high bronze double doors.",
+      "A deathsworn fanatic just came through some riveted black ora doors.",
+      "A deathsworn fanatic rushes in, dingy green robes swirling around {pronoun}.",
+      "A deathsworn fanatic just came through a towering black ora gate."
     ],
-    flee: [],
+    flee: [
+      "A deathsworn fanatic just went through a pair of high bronze double doors.",
+      "A deathsworn fanatic just went through a polished acacia archway.",
+      "A deathsworn fanatic rushes north in a swirl of dingy green robes."
+    ],
     death: [
-      "Beautiful shot pierces both lungs, the deathsworn fanatic makes a wheezing noise, and drops dead!"
+      "A deathsworn fanatic collapses to the floor in a susurrus of robes.",
+      "A deathsworn fanatic collapses to the ground in a susurrus of robes.",
+      "A deathsworn fanatic collapses to the floor in a susurrus of robes, crying out, \"It is the end, but the moment has been prepared for!\"",
+      "A deathsworn fanatic collapses to the ground in a susurrus of robes, crying out, \"It is the end, but the moment has been prepared for!\"",
+      "A deathsworn fanatic collapses to the floor in a susurrus of robes, {pronoun} last words a ranting, \"His wings are as shadow and blood, and they shall encompass all things!\"",
+      "A deathsworn fanatic collapses to the floor in a susurrus of robes, {pronoun} last words a ranting, \"Shahiath rules in the black heavens, ever hungering! I have seen {pronoun}!\"",
+      "A deathsworn fanatic collapses to the floor in a susurrus of robes, {pronoun} last words a ranting, \"Never dying! Never, never, never dying!\"",
+      "A deathsworn fanatic collapses to the ground in a susurrus of robes, {pronoun} last words a ranting, \"Never dying! Never, never, never dying!\"",
+      "A deathsworn fanatic collapses to the ground in a susurrus of robes, {pronoun} last words a ranting, \"The black star shall fall, and even the God of Death shall die!\"",
+      "A deathsworn fanatic collapses to the ground in a susurrus of robes, {pronoun} last words a ranting, \"Shahiath rules in the black heavens, ever hungering! I have seen {pronoun}!\"",
+      "A deathsworn fanatic collapses to the floor in a susurrus of robes, {pronoun} last words a ranting, \"The black star shall fall, and even the God of Death shall die!\""
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the deathsworn fanatic's ribs to move independently.",
-      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A deathsworn fanatic jabs a trembling finger at you!",
-      "A deathsworn fanatic tries to ensnare you!",
-      "Deathsworn fanatic face twisting with mad rage, a deathsworn fanatic swings at you!",
+    spell_prep: [
+      "A deathsworn fanatic throws back {pronoun} head, quickening the air around {pronoun} with motes of virescent light.",
+      "A deathsworn fanatic gestures at you, sending snatching tendrils of green-black energy crackling in your direction!"
     ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

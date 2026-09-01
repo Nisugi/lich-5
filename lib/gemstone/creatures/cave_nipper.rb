@@ -85,8 +85,10 @@
     magic_items: nil,
     gems: nil,
     boxes: nil,
-    skin: "a cave nipper skin",
-    other: nil
+    skin: "a cave nipper's ",
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,13 +108,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A cave nipper charges at you!"
-    ],
-    bite: [],
-    claw: [
-      "A cave nipper claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A cave nipper charges at you!"
+      ],
+      claw: [
+        "A cave nipper claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

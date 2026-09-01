@@ -100,7 +100,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -108,22 +110,33 @@
     ],
     arrival: [
       "A seething pestilent vision just arrived from some lichen-clad dark wooden docks.",
-      "A seething pestilent vision just arrived from a torchlit overgrown grotto."
+      "A seething pestilent vision just arrived from a torchlit overgrown grotto.",
+      "A seething pestilent vision just came through a sculpted stone arch.",
+      "A seething pestilent vision just came through a pair of inlaid bronze doors."
     ],
-    flee: [],
-    death: [
-      "The pestilent vision goes still for a moment while its head reshapes."
+    flee: [
+      "A seething pestilent vision just went to some lichen-clad dark wooden docks.",
+      "A seething pestilent vision just went through a pair of inlaid bronze doors.",
+      "A seething pestilent vision just went up a warped oaken gangplank.",
+      "A seething pestilent vision just went through a sculpted stone arch.",
+      "A seething pestilent vision just went across a vine-covered wood suspension bridge.",
+      "A seething pestilent vision just went to a torchlit overgrown grotto.",
+      "A seething pestilent vision just went down a warped oaken gangplank."
     ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A seething pestilent vision directs the flow of {pronoun} vile energies toward you!"
-    ],
-    bite: [],
-    claw: [
-      "A seething pestilent vision claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A seething pestilent vision directs the flow of {pronoun} vile energies toward you!",
+        "A seething pestilent vision exhales the last of a virulent green mist.",
+        "A seething pestilent vision exhales a virulent green mist toward you, but you are unaffected."
+      ],
+      claw: [
+        "A seething pestilent vision claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

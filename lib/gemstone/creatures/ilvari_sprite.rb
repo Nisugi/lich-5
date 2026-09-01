@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "ilvari sprite",
+  name: "Ilvari sprite",
   noun: "",
   url: "https://gswiki.play.net/ilvari_sprite",
   picture: "",
@@ -101,7 +101,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -116,14 +118,13 @@
     ],
     decay: [
       "The layer of bark on an Ilvari sprite hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
-      "The layer of bark on an Ilvari sprite hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust.",
-      "The Ilvari sprite's right leg crumbles briefly and explodes in a shower of gore."
+      "The layer of bark on an Ilvari sprite hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "An Ilvari sprite concentrates intently on you, and a pulse of pearlescent energy ripples toward you!",
+      "An Ilvari sprite closes {pronoun} eyes in deep concentration..."
+    ],
     info: {
       general: [],
       class_tips: {

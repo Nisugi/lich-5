@@ -102,15 +102,20 @@
     gems: true,
     boxes: true,
     skin: "a troll heart",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Huge and dangerous, the war troll towers above even a tall giantman. Grey skin so thick that it serves quite well as armor covers most of the troll, with tufts of thick hair sprouting here and there like weeds between cracked stones. A hideous grin splits its face displaying fangs crusted with dried blood and less guessable matter. No light of intellect glows in its narrow piggish eyes. The lust for slaughter and thirst for blood are what drive this hulkish beast's existence.\n\nAppraisal:\nThe war troll is large in size, about ten feet high in his current state, appears to be of hardy constitution, is in an offensive stance, and is in relatively good shape."
     ],
-    arrival: [],
+    arrival: [
+      "A war troll pounds in!"
+    ],
     flee: [
-      "A war troll limps {direction}."
+      "A war troll limps {direction}.",
+      "A war troll pounds {direction}."
     ],
     death: [
       "The war troll falls to the ground and dies.",
@@ -119,13 +124,20 @@
     decay: [
       "A war troll decays into compost."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A war troll swings {weapon} at you!"
+    search: [
+      "A war troll sniffs around looking for something."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A war troll mutters, \"'Nirf od larlorruo.\""
+    ],
+    attacks: {
+      attack: [
+        "A war troll swings {weapon} at you!",
+        "A war troll throws {pronoun} head back and lets out a mighty war bellow!",
+        "A war troll throws {pronoun} head back and howls!",
+        "A war troll swings a war hammer at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

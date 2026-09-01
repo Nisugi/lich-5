@@ -64,12 +64,12 @@
     emp_td: (292..301),
     pal_td: (254..263),
     ran_td: (251..260),
-    sor_td: "298 to 328",
+    sor_td: (298..328),
     wiz_td: nil,
     mje_td: 332,
-    mne_td: "317 to 347",
+    mne_td: (317..347),
     mjs_td: 307,
-    mns_td: "277 to 307",
+    mns_td: (277..307),
     mnm_td: (252..261),
     defensive_spells: [
       "Spirit Warding I (101)",
@@ -99,36 +99,34 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "Though powerfully muscled, the tempest tyrant is so tall and long of limb that she looks well-proportioned, even agile. Ritual scars like lightning bolts fork down her immense arms, and matching tattoos in metallic ink gleam electric blue from her severe face. They curve around each eye and fan out onto her hollow cheeks, lending her unforgiving features an alien cast.\n\n;Assess\nThe tempest tyrant is huge in size and about thirteen feet high in her current state."
-    ],
+    description: [],
     arrival: [
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as {pronoun} lumbers in.",
+      "A titan tempest tyrant charges in, electricity crackling down {pronoun} forearms!",
+      "A titan tempest tyrant thunders in, rage roiling in {pronoun} glowing eyes.",
+      "A titan tempest tyrant thunders in, pain and rage warring in {pronoun} glowing eyes."
     ],
     flee: [],
     death: [
-      "A titan tempest tyrant stretches a hand skyward, fumbling for something unseen as he surrenders to death.",
+      "A titan tempest tyrant stretches a hand skyward, fumbling for something unseen as {pronoun} surrenders to death.",
       "An odor of burnt ozone fills the air as a titan tempest tyrant's body collapses in upon itself, drying into fine-grained dust that fills the air with grit.",
-      "A titan tempest tyrant stretches a hand skyward, fumbling for something unseen as she surrenders to death.",
-      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as she dies.",
-      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as he dies."
+      "A ragged gasp fills a stooped titan stormcaller's lungs with a last breath that wooshes out as {pronoun} dies."
     ],
-    decay: [
-      "The tempest tyrant's right leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A titan tempest tyrant's feras morning star crackles with corruscating lightning as titan tempest tyrant swings it at you!",
-      "Tightening {pronoun} grip on {pronoun} feras morning star, a titan tempest tyrant strikes out at you with all of titan tempest tyrant might!",
-      "A titan tempest tyrant's feras spikestar crackles with corruscating lightning as titan tempest tyrant swings it at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A titan tempest tyrant's feras morning star crackles with corruscating lightning as {pronoun} swings it at you!",
+        "Tightening {pronoun} grip on {pronoun} feras morning star, a {pronoun} strikes out at you with all of {pronoun} might!",
+        "A titan tempest tyrant's feras spikestar crackles with corruscating lightning as {pronoun} swings it at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

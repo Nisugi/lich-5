@@ -88,7 +88,9 @@
     gems: true,
     boxes: false,
     skin: "a stone-grey lizard tail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -96,27 +98,31 @@
     ],
     arrival: [
       "A dance of dust and gravel heralds the arrival of a speckled cave lizard!",
-      "A dance of dust and gravel heralds the arrival of a cave lizard!"
+      "A dance of dust and gravel heralds the arrival of a cave lizard!",
+      "A cave lizard scuttles in, moaning in pain."
     ],
     flee: [
       "A speckled cave lizard plods {direction}.",
       "A cave lizard plods {direction}."
     ],
     death: [
-      "The cave lizard shudders a final time and goes still."
+      "The cave lizard shudders a final time and goes still.",
+      "A cave lizard collapses leaving nothing but a few scales and teeth behind."
     ],
-    decay: [
-      "The cave lizard's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A cave lizard tries to bite you!"
-    ],
-    claw: [
-      "A cave lizard claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "The cave lizard throws up copious amounts of blood and what appears to be an internal organ!"
+      ],
+      claw: [
+        "A cave lizard claws at you!"
+      ],
+      bite: [
+        "A cave lizard tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

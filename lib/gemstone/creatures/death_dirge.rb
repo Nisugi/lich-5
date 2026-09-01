@@ -105,7 +105,9 @@
     gems: true,
     boxes: true,
     skin: "a dirge skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -120,19 +122,18 @@
     ],
     death: [
       "The death dirge falls to the ground motionless.",
-      "The death dirge screams evilly one last time and goes still.",
-      "The death dirge slumps to the ground."
+      "The death dirge screams evilly one last time and goes still."
     ],
     decay: [
       "A death dirge turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A death dirge swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A death dirge swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

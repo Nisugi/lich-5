@@ -104,7 +104,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -117,20 +119,17 @@
     flee: [
       "A horrific magna vereri crawls {direction}."
     ],
-    death: [
-      "A bloodcurdling screech tears from the throat of a horrific magna vereri as she slumps to the ground.",
-      "A bloodcurdling screech tears from the throat of a voluptuous magna vereri as she slumps to the ground."
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "Screaming out an insensate series of curses, a horrific magna vereri pounds at you with {pronoun} decaying fists!",
-      "A magna vereri gnashes at you with a mouth full of rotting teeth!",
-      "Screeching with mindless rage, a magna vereri slashes at you with maggot-gnawed talons!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "Screaming out an insensate series of curses, a horrific magna vereri pounds at you with {pronoun} decaying fists!",
+        "A magna vereri gnashes at you with a mouth full of rotting teeth!",
+        "Screeching with mindless rage, a magna vereri slashes at you with maggot-gnawed talons!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

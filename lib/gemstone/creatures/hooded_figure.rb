@@ -221,7 +221,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -229,27 +231,33 @@
     ],
     arrival: [
       "A hooded figure just arrived.",
-      "A hooded figure just arrived, limping."
+      "A hooded figure just arrived, limping.",
+      "A hooded figure just came through a small wooden door.",
+      "A hooded figure just came through a heavy threadbare curtain.",
+      "A hooded figure just came through an ornate black marble arch.",
+      "A hooded figure just came through a sturdy iron-bound door.",
+      "A hooded figure just came through a threadbare brocade curtain."
     ],
     flee: [
       "A hooded figure heads {direction}."
     ],
     death: [
       "The hooded figure screams one last time and lies still.",
-      "The hooded figure falls to the ground and lies still.",
-      "The hooded figure slumps to the ground."
+      "The hooded figure falls to the ground and lies still."
     ],
     decay: [
-      "Acid dissolves connecting cartilage, freeing the hooded figure's ribs to move independently."
+      "A hooded figure decays away."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A hooded figure gestures at you!",
-      "A hooded figure swings {weapon} at you!"
+    spell_prep: [
+      "A hooded figure mutters a few muted syllables."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A hooded figure gestures at you!",
+        "A hooded figure swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

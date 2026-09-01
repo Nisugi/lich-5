@@ -87,7 +87,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -103,17 +105,15 @@
       "The ice troll falls to the ground motionless.",
       "The ice troll screams evilly one last time and goes still."
     ],
-    decay: [
-      "The ice troll's right leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A skeletal ice troll gestures at you!",
-      "A skeletal ice troll swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A skeletal ice troll gestures at you!",
+        "A skeletal ice troll swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

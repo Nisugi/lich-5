@@ -82,7 +82,9 @@
     gems: nil,
     boxes: nil,
     skin: "a rodent fang",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -90,10 +92,13 @@
     ],
     arrival: [
       "A choking fetid odor heralds the arrival of a fanged rodent!",
-      "A fanged rodent scampers in!"
+      "A fanged rodent scampers in!",
+      "A fanged rodent just came through a woebegone door.",
+      "A fanged rodent just came through an open hatch."
     ],
     flee: [
-      "A fanged rodent scampers {direction}."
+      "A fanged rodent scampers {direction}.",
+      "A fanged rodent just went through a woebegone door."
     ],
     death: [
       "The fanged rodent collapses to the ground, emits a final squeal, and dies.",
@@ -105,9 +110,6 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

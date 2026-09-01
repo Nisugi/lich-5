@@ -99,7 +99,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -116,12 +118,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser construct raises {pronoun} massive foot and attempts to smash you!",
-      "A lesser construct swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser construct raises {pronoun} massive foot and attempts to smash you!",
+        "A lesser construct swings {weapon} at you!",
+        "A lesser construct swings {pronoun} arms together in an attempt to trap you! You scramble back out of the way of {pronoun} lumbering hug.",
+        "A lesser construct swings {pronoun} arms together in an attempt to trap you! You scramble back out of the way of its lumbering hug."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

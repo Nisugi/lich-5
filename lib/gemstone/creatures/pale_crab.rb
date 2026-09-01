@@ -90,7 +90,9 @@
     gems: true,
     boxes: false,
     skin: "pale crab pincer",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,21 +104,21 @@
     ],
     death: [
       "The pale crab falls back into a heap and dies.",
-      "The pale crab hisses one last time and dies.",
-      "Beautiful shot pierces both lungs, the pale crab makes a wheezing noise, and drops dead!"
+      "The pale crab hisses one last time and dies."
     ],
     decay: [
       "A pale crab decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A pale crab tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [
-      "A pale crab claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A pale crab tries to ensnare you!"
+      ],
+      claw: [
+        "A pale crab claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

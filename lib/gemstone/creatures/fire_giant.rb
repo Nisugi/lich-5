@@ -97,7 +97,9 @@
     gems: true,
     boxes: true,
     skin: "a fire giant mane",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -111,20 +113,16 @@
       "A fire giant crawls {direction}.",
       "A fire giant seethes in pain as he limps {direction}."
     ],
-    death: [
-      "Beautiful shot pierces both lungs, the fire giant makes a wheezing noise, and drops dead!"
-    ],
-    decay: [
-      "The fire giant's right leg crumbles briefly and explodes in a shower of gore."
-    ],
+    death: [],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A fire giant points a flaming hand at you!",
-      "A fire giant swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A fire giant points a flaming hand at you!",
+        "A fire giant swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

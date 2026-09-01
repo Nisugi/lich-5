@@ -103,7 +103,9 @@
     gems: true,
     boxes: true,
     skin: "a manticore tail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -124,13 +126,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A manticore swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [
-      "A manticore claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A manticore swings {weapon} at you!"
+      ],
+      claw: [
+        "A manticore claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "ithzir seer",
+  name: "Ithzir seer",
   noun: "",
   url: "https://gswiki.play.net/ithzir_seer",
   picture: "",
@@ -140,8 +140,7 @@
       "Spirit Defense (103)",
       "Spirit Warding II (107)",
       "Spirit Shield (202)",
-      "Spell Shield (219)",
-      "Self Control (613)"
+      "Spell Shield (219)"
     ],
     defensive_abilities: [],
     special_defenses: []
@@ -160,9 +159,26 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "An Ithzir seer suddenly opens {pronoun} eyes and stares directly at you!",
+        "An Ithzir seer swings {weapon} at you!",
+        "The Ithzir seer points at you.",
+        "An Ithzir seer suddenly opens Ithzir seer eyes and stares directly at you!",
+        "An Ithzir seer swings a twisted crystal-tipped staff at {target}!"
+      ],
+      hurl: [
+        "An Ithzir seer throws {weapon} at you!"
+      ]
+    },
+    stand: [
+      "An Ithzir seer rises to {pronoun} feet, {pronoun} green eyes blazing!"
+    ],
     description: [
       "The Ithzir seer carries an authoritative bearing, her arresting, pupil-less green eyes taking in her surroundings with both confidence and cunning. Even when battle rages around her, each movement of the seer seems eerily effortless and calm. The Ithzir seer is slightly taller than a human, and while her humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The seer wears a crisply-cut, silvery-blue tunic with high shoulders and a deep vee-neck. Emblazoned on the right breast of the tunic is a twelve-pointed golden star."
     ],
@@ -175,24 +191,36 @@
     ],
     death: [
       "The Ithzir seer vainly struggles to rise, then goes still.",
-      "Just as you incant, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!",
       "Just as you cast, the Ithzir seer shimmers and fades away, leaving you gesturing at nothingness!",
       "An Ithzir seer's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the Ithzir seer's ribs to move independently."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An Ithzir seer suddenly opens {pronoun} eyes and stares directly at you!",
-      "An Ithzir seer swings {weapon} at you!",
-      "An Ithzir seer throws {weapon} at you!",
-      "The Ithzir seer points at you.",
-      "An Ithzir seer suddenly opens ithzir seer eyes and stares directly at you!"
+    spell_prep: [
+      "An Ithzir seer closes {pronoun} eyes and bows {pronoun} head slightly.",
+      "An Ithzir seer concentrates intently on you, and a pulse of pearlescent energy ripples toward you!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} chest wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} head wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} neck wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} abdomen wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} back wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} right arm wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} right leg wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} left hand wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and  {target}, clearly concentrating. Suddenly {target}  begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} left arm wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and  {target}, clearly concentrating. Suddenly an Ithzir seer left leg wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} right hand wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} left leg wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} right eye wound begins to mend, missing and torn pieces forming together until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} right leg wound begins to mend and extend, forming the missing right leg until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} left leg wound begins to mend and extend, forming the missing left leg until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and  {target}, clearly concentrating. Suddenly an Ithzir seer right hand wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and  {target}, clearly concentrating. Suddenly an Ithzir seer right leg wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and  {target}, clearly concentrating. Suddenly an Ithzir seer left arm wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and  {target}, clearly concentrating. Suddenly an Ithzir seer right arm wound begins to mend together, the flesh melding and smoothing over until there is no sign that the injury ever existed!",
+      "An Ithzir seer closes {pronoun} eyes and holds {pronoun} palms flat over {target}, clearly concentrating. Suddenly {target} right arm wound begins to mend and extend, forming the missing right arm until there is no sign that the injury ever existed!"
     ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

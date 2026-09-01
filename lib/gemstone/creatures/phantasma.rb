@@ -86,12 +86,12 @@
     ranged: (167..254),
     bolt: (167..254),
     udf: (258..391),
-    bar_td: "130 to 135",
+    bar_td: (130..135),
     cle_td: (161..164),
     emp_td: (153..163),
     pal_td: (137..140),
     ran_td: (125..133),
-    sor_td: "160 to 185",
+    sor_td: (160..185),
     wiz_td: nil,
     mje_td: nil,
     mne_td: 169,
@@ -124,7 +124,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet mote of essence"
+    other: "Glowing violet mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -135,18 +137,22 @@
       "A phantasma floats {direction}."
     ],
     death: [
-      "A phantasma fades into oblivion.",
-      "The phantasma goes still for a moment while its head reshapes."
+      "A phantasma fades into oblivion."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A phantasma swings {weapon} at you!",
-      "A phantasma thrusts with a splintered lance at you!"
+    spell_prep: [
+      "A phantasma gestures and utters a phrase of arcane magic."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A phantasma swings {weapon} at you!",
+        "A phantasma thrusts with a splintered lance at you!"
+      ],
+      cast: [
+        "A phantasma points a ghostly finger at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

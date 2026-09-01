@@ -82,7 +82,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -96,18 +98,21 @@
     ],
     death: [],
     decay: [
-      "A lesser stone gargoyle crumbles to dust.",
-      "The stone gargoyle's left leg crumbles briefly and explodes in a shower of gore."
+      "A lesser stone gargoyle crumbles to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A lesser stone gargoyle tries to bite you!"
-    ],
-    claw: [
-      "A lesser stone gargoyle claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A lesser stone gargoyle leaps at you with amazing speed and accuracy."
+      ],
+      bite: [
+        "A lesser stone gargoyle tries to bite you!"
+      ],
+      claw: [
+        "A lesser stone gargoyle claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

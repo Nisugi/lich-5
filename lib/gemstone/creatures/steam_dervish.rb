@@ -64,7 +64,7 @@
     ranged: (215..379),
     bolt: (215..379),
     udf: (493..561),
-    bar_td: "325 to 349",
+    bar_td: (325..349),
     cle_td: 335,
     emp_td: (318..321),
     pal_td: (272..281),
@@ -95,7 +95,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Essence of water"
+    other: "Essence of water",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,17 +112,16 @@
     ],
     decay: [
       "Thin blue lines of magical energy crackle over the body of a phantasmal bestial swordsman before he dissolves, leaving a puddle of liquid and the smell of ozone in the air.",
-      "A raider orc withers away until he is no more.",
       "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust.",
-      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
+      "A steam dervish evaporates away."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A steam dervish swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A steam dervish swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

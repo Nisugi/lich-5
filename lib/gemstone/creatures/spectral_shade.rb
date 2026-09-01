@@ -86,7 +86,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -97,18 +99,22 @@
       "A spectral shade floats {direction}."
     ],
     death: [
-      "A spectral shade fades into oblivion.",
-      "The spectral shade goes still for a moment while its head reshapes."
+      "A spectral shade fades into oblivion."
     ],
-    decay: [],
+    decay: [
+      "A spectral shade fades into oblivion."
+    ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A spectral shade nods at you!",
-      "A spectral shade swings {weapon} at you!"
+    spell_prep: [
+      "A spectral shade utters a phrase of arcane magic."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A spectral shade nods at you!",
+        "A spectral shade swings {weapon} at you!",
+        "A spectral shade swings a blackened scythe at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

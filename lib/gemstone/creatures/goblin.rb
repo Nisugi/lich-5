@@ -113,14 +113,20 @@
     magic_items: nil,
     gems: true,
     boxes: true,
-    skin: "a goblin skin",
-    other: nil
+    skin: "a goblin's ",
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Round-headed with a squat nose and a wide mouth, the goblin has greenish skin with a sickly yellow cast over all. Roughly as tall as a dwarf or halfling, the goblin moves with a nervous energy but rarely looks directly at you. A yeasty smell as of molding bread or of something left to rot in a dark damp place completes the goblin's aura of repulsivenss."
     ],
-    arrival: [],
+    arrival: [
+      "A goblin meanders in waggling {pronoun} fingers at everything {pronoun} sees.",
+      "A goblin rushes in, bows {pronoun} head for a moment and then looks back up.",
+      "A goblin marches in!"
+    ],
     flee: [
       "A goblin tramps {direction}."
     ],
@@ -130,15 +136,18 @@
       "The goblin twitches violently, then dies."
     ],
     decay: [
-      "A goblin's carcass collapses into a gooey mess."
+      "A goblin's carcass collapses into a gooey mess.",
+      "A goblin's remains decompose leaving a horrendous smell in {pronoun} wake."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A goblin swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A goblin swings {weapon} at you!",
+        "A goblin swings a scimitar at {target}!",
+        "A goblin swings a morning star at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

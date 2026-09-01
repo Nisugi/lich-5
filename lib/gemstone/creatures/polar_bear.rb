@@ -89,17 +89,21 @@
     magic_items: nil,
     gems: nil,
     boxes: nil,
-    skin: "a polar bear skin",
-    other: nil
+    skin: "a polar bear's ",
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The polar bear is the largest of all bears, weighing in at close to 2000 pounds with an overall body length of around nine feet long. The bear has a distinctive all white coat, triangular profile, long neck, and small ears. The polar bear's nose, lips and all skin under his fur are black. This bear's front paws are very wide for paddling through arctic waters. Heavy fur, dense underfur, and thick layer of insulating fat allow the bear to maintain a normal body temperature when the outside temperature drops far below freezing."
     ],
-    arrival: [],
+    arrival: [
+      "A polar bear trundles into the area!",
+      "A polar bear trundles in!"
+    ],
     flee: [
-      "A polar bear trundles {direction}.",
-      "A polar bear roars loudly as she stands {direction}!"
+      "A polar bear trundles {direction}."
     ],
     death: [
       "The polar bear collapses heavily into a heap on the ground and dies.",
@@ -110,13 +114,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A polar bear tries to bite you!"
-    ],
-    claw: [
-      "A polar bear claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A polar bear claws at you!"
+      ],
+      bite: [
+        "A polar bear tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

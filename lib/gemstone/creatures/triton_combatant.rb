@@ -113,38 +113,51 @@
     gems: nil,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The triton combatant stands hunched, her head thrust forward, and neck enveloped by heavy, muscled shoulders. Tiny alien eyes stare from a prominently bony brow, regarding the world with stubborn truculence. A mottled brown ridge rises from the amphibian's forehead and sweeps up and back, hugging her skull. This heavy protuberance, covered with damp, leathery skin, provides her with formidable head and neck protection."
     ],
     arrival: [
-      "A triton combatant strides in, a wary look on his face.",
-      "A triton combatant strides in, a wary look on her face.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
-      "A triton combatant strides in, gliding swiftly through the water with a wary look on his face.",
-      "A triton combatant strides in, gliding swiftly through the water with a wary look on her face.",
-      "A triton combatant just arrived."
+      "A triton combatant strides in, a wary look on {pronoun} face.",
+      "A triton combatant strides in, gliding swiftly through the water with a wary look on {pronoun} face.",
+      "A triton combatant just arrived.",
+      "A triton combatant charges briskly into the area, casting wide ripples in {pronoun} wake!",
+      "A triton combatant charges briskly into the area!"
     ],
-    flee: [],
+    flee: [
+      "A triton combatant just went up some short ascending stairs.",
+      "A triton combatant just went through a crumbling arch.",
+      "A triton combatant hurtles {reflexive} at you with great speed, but flies slightly off center of {pronoun} target and tumbles to the water with a splash!",
+      "A triton combatant sweeps {pronoun} pale green trident out in an arc behind {pronoun}, {pronoun} eyes darting around as if seeking out {pronoun} next opponent.",
+      "A triton combatant sweeps {pronoun} rusted steel hatchet out in an arc behind {pronoun}, {pronoun} eyes darting around as if seeking out {pronoun} next opponent."
+    ],
     death: [
-      "The triton combatant gurgles once and goes still, a wrathful look on her face.",
-      "The triton combatant gurgles once and goes still, a wrathful look on his face.",
-      "Beautiful shot pierces both lungs, the triton combatant makes a wheezing noise, and drops dead!"
+      "The triton combatant gurgles once and goes still, a wrathful look on {pronoun} face."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A triton combatant swings {weapon} at you!",
-      "A triton combatant throws {weapon} at you!",
-      "A triton combatant thrusts with an oak-shafted silvery blue trident at you!",
-      "A triton combatant thrusts with a razor-tined pale green trident at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A triton combatant swings {weapon} at you!",
+        "A triton combatant thrusts with an oak-shafted silvery blue trident at you!",
+        "A triton combatant thrusts with a razor-tined pale green trident at you!",
+        "The triton combatant slams into you, and you are sent careening to the ground!",
+        "A triton combatant swings {pronoun} {weapon} at your vultite bastard sword!",
+        "A triton combatant swings {pronoun} {weapon} at your smooth glowbark staff!"
+      ],
+      charge: [
+        "A triton combatant rushes forward at you with {pronoun} pale green trident and attempts a charge!",
+        "A triton combatant rushes forward at you with {pronoun} silvery blue trident and attempts a charge!"
+      ],
+      hurl: [
+        "A triton combatant throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

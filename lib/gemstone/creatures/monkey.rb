@@ -129,7 +129,9 @@
     gems: true,
     boxes: true,
     skin: "a monkey paw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -153,15 +155,16 @@
       "A monkey scampers {direction}.",
       "A deep pink monkey scampers {direction}.",
       "A brilliant violet monkey scampers {direction}.",
-      "A deep pink monkey scampers {direction} of sight!",
+      "A deep pink monkey scampers out of sight!",
       "A stout bright orange {pronoun} scampers {direction}.",
       "A bright green monkey scampers {direction}.",
-      "A stout bright orange {pronoun} scampers {direction} of sight!",
-      "A monkey scampers {direction} of sight!",
-      "A bright green monkey scampers {direction} of sight!",
-      "A brilliant violet monkey scampers {direction} of sight!",
+      "A stout bright orange {pronoun} scampers out of sight!",
+      "A monkey scampers out of sight!",
+      "A bright green monkey scampers out of sight!",
+      "A brilliant violet monkey scampers out of sight!",
       "A stout bright orange monkey scampers {direction}.",
-      "A stout bright orange monkey scampers {direction} of sight!"
+      "A stout bright orange monkey scampers out of sight!",
+      "A monkey just went through a cage door."
     ],
     death: [
       "The monkey screeches one last time and dies.",
@@ -174,9 +177,7 @@
       "The green monkey falls back into a heap and dies.",
       "The orange monkey falls back into a heap and dies.",
       "The green monkey screeches one last time and dies.",
-      "The orange monkey screeches one last time and dies.",
-      "Beautiful shot pierces both lungs, the green monkey makes a wheezing noise, and drops dead!",
-      "The monkey slumps to the ground."
+      "The orange monkey screeches one last time and dies."
     ],
     decay: [
       "A monkey decays into compost.",
@@ -188,13 +189,17 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A monkey swings {weapon} at you!"
-    ],
-    bite: [
-      "A monkey tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A monkey swings {weapon} at you!",
+        "A monkey leaps onto you and pokes your eyes! While rubbing your eyes you hear a monkey scramble off.",
+        "A monkey leaps out of hiding!",
+        "A monkey swings a war hammer at {target}!"
+      ],
+      bite: [
+        "A monkey tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

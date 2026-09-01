@@ -122,33 +122,33 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "essence of air"
+    other: "essence of air",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The lightning elemental is a crackling mass of solidified power, definitely alien to Elanthia. Nearly gelatinous in substance, solid bolts of lightning weave themselves into the skeletal form of some horrible beast, only to arc in an instant to a vaguely humanoid form and then back again."
     ],
     arrival: [
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in.",
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in."
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as {pronoun} lumbers in."
     ],
     flee: [],
     death: [],
     decay: [
-      "A raider orc withers away until he is no more.",
-      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away.",
-      "A shadow mare's eyes go dim as she dissolves into the shadows.",
-      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
+      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A huge lightning elemental charges at you, crackling with power!",
-      "A huge lightning elemental hurls {weapon} at you!",
-      "A huge lightning elemental releases sparks towards you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A huge lightning elemental charges at you, crackling with power!",
+        "A huge lightning elemental releases sparks towards you!"
+      ],
+      hurl: [
+        "A huge lightning elemental hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

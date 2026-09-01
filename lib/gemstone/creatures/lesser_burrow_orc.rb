@@ -78,13 +78,17 @@
     gems: true,
     boxes: true,
     skin: "an orc claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The burrow orc would stand roughly six feet high, were she not stooped over. She is thinner and more gaunt than the land-roaming orcs, with sickly white skin and no hair on her smelly frame. She seems more interested in stuffing herself and protecting her burrow than anything else."
     ],
-    arrival: [],
+    arrival: [
+      "A lesser burrow orc trudges in, spitting and grunting with every step."
+    ],
     flee: [
       "A lesser burrow orc trudges {direction}."
     ],
@@ -94,11 +98,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser burrow orc swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser burrow orc swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

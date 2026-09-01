@@ -124,9 +124,20 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A Grutik shaman finishes the chant and gestures at you!"
+      ]
+    },
+    stand: [
+      "A Grutik shaman stands up.",
+      "A grutik shaman stands up."
+    ],
     description: [
       "This misshapen humanoid has large luminous eyes from many years of living underground. It's dressed in scraps of mismatched cloth in an apparent attempt to make a crude patchwork robe. While not overly muscled, its eyes shine with a crude intelligence."
     ],
@@ -139,20 +150,14 @@
     ],
     death: [
       "The Grutik shaman twitches violently, then dies.",
-      "The Grutik shaman slumps to the ground."
+      "A Grutik shaman collapses into a lifeless heap upon the ground."
     ],
     decay: [
       "A Grutik shaman collapses into a lifeless heap upon the ground.",
-      "A Grutik shaman's body turns to dust.",
-      "The Grutik shaman's left leg crumbles briefly and explodes in a shower of gore."
+      "A Grutik shaman's body turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A Grutik shaman finishes the chant and gestures at you!"
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

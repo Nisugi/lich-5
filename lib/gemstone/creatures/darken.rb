@@ -73,7 +73,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -82,12 +84,15 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [],
+    decay: [
+      "A darken melts into the shadows heading southwestward.",
+      "A darken melts into the shadows heading westward.",
+      "A darken melts into the shadows heading northeastward.",
+      "A darken melts into the shadows heading eastward.",
+      "A darken melts into the shadows heading southeastward."
+    ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

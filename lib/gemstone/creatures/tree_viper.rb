@@ -98,7 +98,9 @@
     gems: false,
     boxes: false,
     skin: "tree viper fang",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,7 +112,8 @@
     ],
     flee: [
       "A tree viper slithers {direction}.",
-      "A tree viper drops from overhead and slithers {direction}."
+      "A tree viper drops from overhead and slithers {direction}.",
+      "A tree viper darts up a tree and slithers through the canopy, heading {direction}."
     ],
     death: [
       "The tree viper twists and coils violently in its death throes, finally going still."
@@ -119,12 +122,15 @@
       "A tree viper decays into a pile of scales and flesh."
     ],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [
-      "A tree viper fangs glisten as it tries to bite you!"
+    spell_prep: [
+      "A tree viper hisses and bares {pronoun} fangs as {pronoun} coils defensively.",
+      "A tree viper hisses loudly!"
     ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A tree viper's eyes glisten as it tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

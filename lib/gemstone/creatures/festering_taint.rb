@@ -137,7 +137,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -156,22 +158,28 @@
       "The festering taint spasms uncontrollably as it goes into shock and dies.",
       "The festering taint lets out a final curse as it dies.",
       "The festering taint screams with rage as it falls to the ground and dies.",
-      "The festering taint curses the day it was created and dies.",
-      "Beautiful shot pierces both lungs, the festering taint makes a wheezing noise, and drops dead!"
+      "The festering taint curses the day it was created and dies."
     ],
     decay: [
       "A festering taint's corpse falls apart and dissolves with a sudden hiss.",
       "A festering taint's body dissolves, bubbling and fizzing until nothing is left."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A festering taint points a putrid hand at you!"
+    spell_prep: [
+      "A festering taint mutters a phrase of magic."
     ],
-    bite: [],
-    claw: [
-      "A festering taint claws at you!"
+    stun_break: [
+      "A festering taint gibbers, spittle flying from {pronoun} mouth as {pronoun} tries to regain {pronoun} senses."
     ],
+    attacks: {
+      attack: [
+        "A festering taint points a putrid hand at you!",
+        "A festering taint exhales the last of a virulent green mist."
+      ],
+      claw: [
+        "A festering taint claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -118,33 +118,89 @@
     boxes: nil,
     skin: nil,
     other: nil,
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    attack: [
-      "Gilded brilliance twinkles along the edges of a shining winged disir's metallic spear as winged disir swings it at you!",
-      "A shining winged disir focuses winged disir luminous gaze upon you!",
-      "Spreading winged disir resplendent wings, a shining winged disir thrusts down at you with a shining metallic spear!",
-      "A shining winged disir focuses {pronoun} luminous gaze upon you!",
-      "Gilded brilliance twinkles along the edges of a shining winged disir's metallic spear as shining winged disir swings it at you!",
-      "Spreading {pronoun} resplendent wings, a shining winged disir thrusts down at you with a shining metallic spear!",
-      "A shining winged disir settles into a firm stance and flings {pronoun} golden aegis at you!** Branching filaments of power snap outward from your mist tartan cloak in a lambent multicolored corona! **",
+    spell_prep: [
+      "A shining winged disir's eyes glow with silvery grey light, and then everything around you shimmers to match the argentine color.",
+      "A shining winged disir's eyes glow with silvery grey light, and a pillar of argentine radiance manifests around {target}."
     ],
-    bite: [],
-    claw: [],
+    flee: [
+      "A shining winged disir withdraws, disengaging from {target}.",
+      "A shining winged disir just went through a crumbling red stone maw.",
+      "A shining winged disir just went through a breached red stone wall.",
+      "A shining winged disir just went through a pocked red stone arch.",
+      "A shining winged disir just went through a pair of colossal red stone pillars."
+    ],
+    arrival: [
+      "A shining winged disir just came through a pocked red stone arch.",
+      "A shining winged disir just came through a breached red stone wall."
+    ],
     description: "Clad from head to toe in armor of shining gold, the disir takes the form of a powerfully built woman with ageless features and eyes like pools of sunlit sky.  On her head, nestled atop curls of shimmering hair, is a winged helm whose visor dips low over her face, lending a grim cast to her features.  The disir's skin is faintly luminous, with hints of rainbowed color pulsing beneath it.",
 
-    bards: "* Vibration Chant (1002) can eliminate their \"spears\" (which hit like lances). Disirs then switch to a magical, non-physical shield which can't be blown up, but many will find that preferable to letting them swing lances with 650 AS.",
-    clerics: "* Disirs behave somewhat unpredictably under the effects of Prayer of Holding (301), as sometimes it'll keep them bound while other times they'll shake it off immediately and counterattack in a single combat round. The fact that it even sometimes holds them makes it viable as a setup leading into Condemn (309), though, as it just means binding them repeatedly until it sticks.",
-    paladins: "* Disirs move fairly quickly in combat, so, in this case, casting Aura of the Arkati (1614) the hard way and then attacking with a beseeched Repentance (1615) is far more reliable than the other way around. Opening with Repentance might allow the disir to get up by the time the paladin's out of cast RT and on to her physical attack, but opening with the Aura of the Arkati debuff will leave that lasting long enough to carry through to the followup.",
-    rangers: "* Moonbeam (611) is a near universal solution in the Hinterwilds and disirs are no exception. However, they can occasionally get out of even that, so tread carefully. A followup Spike Thorn (616) against a bound disir will often miss the kill even with heavy training in Ranger Base and Summoning lore, which is more than most Hinterwilds creatures can say, but repeated casts will still win the day.",
-    retreat: "",
-    divine_intervention: "The winged disir is stunned!",
-    flaming_aura: "The flaming aura surrounding a shining winged disir lashes out at you, but you manage to dodge the licking flames!\n[SMR result: 83 (Open d100: 28, Bonus: 8)]",
-    call_wind: "A shining winged disir throws her shining wings wide, buffeting the area with a cruel gale!\nA gust of wind tugs at your sleeves.  Suddenly, a fierce wind rips through the area, scattering everything in its path and making it difficult to remain standing.",
-    battle_standard_divine_bulwark_effect: "A shining winged disir raises her a gleaming golden aegis and braces for an assault as a luminous barrier momentarily enshrouds her form.\nYou take aim and swing a gleaming rune-scribed maul at a shining winged disir!",
-    shield_throw: "A shining winged disir settles into a firm stance and flings her golden aegis at you![SMR result: 185 (Open d100: 155, Penalty: 12)]\nThe aegis races through the air and strikes you in the left arm!\n... 4 points of damage!\nLight blow to your left arm.",
-    unknown_ability: "A shining winged disir focuses her luminous gaze upon you!\nA shining winged disir silently mouths an incantation that does not seem to be in any language you know."
+    search: [
+      "A shining winged disir looks around, certain that {pronoun} has missed something in the shadows."
+    ],
+    attacks: {
+      attack: [
+        "Gilded brilliance twinkles along the edges of a shining winged disir's metallic spear as winged disir swings it at you!",
+        "A shining winged disir focuses winged disir luminous gaze upon you!",
+        "Spreading winged disir resplendent wings, a shining winged disir thrusts down at you with a shining metallic spear!",
+        "A shining winged disir focuses {pronoun} luminous gaze upon you!",
+        "Gilded brilliance twinkles along the edges of a shining winged disir's metallic spear as {pronoun} swings it at you!",
+        "Spreading {pronoun} resplendent wings, a shining winged disir thrusts down at you with a shining metallic spear!",
+        "A shining winged disir settles into a firm stance and flings {pronoun} golden aegis at you!** Branching filaments of power snap outward from your mist tartan cloak in a lambent multicolored corona! **",
+        "A shining winged disir throws {pronoun} shining wings wide, buffeting the area with a cruel gale!"
+      ],
+      battle_standard_divine_bulwark_effect: [
+        "A shining winged disir raises her a gleaming golden aegis and braces for an assault as a luminous barrier momentarily enshrouds her form.\nYou take aim and swing a gleaming rune-scribed maul at a shining winged disir!"
+      ],
+      call_wind: [
+        "A shining winged disir throws her shining wings wide, buffeting the area with a cruel gale!\nA gust of wind tugs at your sleeves.  Suddenly, a fierce wind rips through the area, scattering everything in its path and making it difficult to remain standing."
+      ],
+      divine_intervention: [
+        "The winged disir is stunned!"
+      ],
+      flaming_aura: [
+        "The flaming aura surrounding a shining winged disir lashes out at you, but you manage to dodge the licking flames!\n[SMR result: 83 (Open d100: 28, Bonus: 8)]"
+      ],
+      shield_throw: [
+        "A shining winged disir settles into a firm stance and flings her golden aegis at you![SMR result: 185 (Open d100: 155, Penalty: 12)]\nThe aegis races through the air and strikes you in the left arm!\n... 4 points of damage!\nLight blow to your left arm."
+      ]
+    },
+    triggers: {
+      retreat: [
+        ""
+      ],
+      unknown_ability: [
+        "A shining winged disir focuses her luminous gaze upon you!\nA shining winged disir silently mouths an incantation that does not seem to be in any language you know."
+      ]
+    },
+    info: {
+      general: [],
+      class_tips: {
+        cleric: [
+          "* Disirs behave somewhat unpredictably under the effects of Prayer of Holding (301), as sometimes it'll keep them bound while other times they'll shake it off immediately and counterattack in a single combat round. The fact that it even sometimes holds them makes it viable as a setup leading into Condemn (309), though, as it just means binding them repeatedly until it sticks."
+        ],
+        paladin: [
+          "* Disirs move fairly quickly in combat, so, in this case, casting Aura of the Arkati (1614) the hard way and then attacking with a beseeched Repentance (1615) is far more reliable than the other way around. Opening with Repentance might allow the disir to get up by the time the paladin's out of cast RT and on to her physical attack, but opening with the Aura of the Arkati debuff will leave that lasting long enough to carry through to the followup."
+        ],
+        ranger: [
+          "* Moonbeam (611) is a near universal solution in the Hinterwilds and disirs are no exception. However, they can occasionally get out of even that, so tread carefully. A followup Spike Thorn (616) against a bound disir will often miss the kill even with heavy training in Ranger Base and Summoning lore, which is more than most Hinterwilds creatures can say, but repeated casts will still win the day."
+        ],
+        bard: [
+          "* Vibration Chant (1002) can eliminate their \"spears\" (which hit like lances). Disirs then switch to a magical, non-physical shield which can't be blown up, but many will find that preferable to letting them swing lances with 650 AS."
+        ],
+        wizard: [],
+        empath: [],
+        rogue: [],
+        warrior: [],
+        sorcerer: []
+      },
+      miscellany: []
+    },
   }
 }
 

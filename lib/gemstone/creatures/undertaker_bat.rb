@@ -82,9 +82,25 @@
     gems: nil,
     boxes: nil,
     skin: "a bat wing",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "An undertaker bat rakes at you with a bony claw!"
+      ],
+      bite: [
+        "An undertaker bat tries to bite you!"
+      ],
+      claw: [
+        "An undertaker bat rakes at you with a bony claw!"
+      ]
+    },
+    stand: [
+      "An undertaker bat struggles to {pronoun} feet."
+    ],
     description: [
       "A rodent-like creature with a small head and distinct ears, its head covered with a fine textured short fur. The undertaker bat's leathery wings outstretch to three times its body length, with its skeletal features visable through its black skin. Small fangs protrude beyond its closed mouth."
     ],
@@ -96,21 +112,13 @@
     death: [
       "The undertaker bat twitches violently, then dies.",
       "The undertaker bat flaps its wings in a last ditch effort to ascend from the ground, but fails and finally lies still.",
-      "As the strength drains out of the undertaker bat's wings, it falls to the ground in a motionless heap.",
-      "The undertaker bat slumps to the ground."
+      "As the strength drains out of the undertaker bat's wings, it falls to the ground in a motionless heap."
     ],
     decay: [
       "The undertaker bat decays into a tuft of matted hair and leathery wings."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An undertaker bat rakes at you with a bony claw!"
-    ],
-    bite: [
-      "An undertaker bat tries to bite you!"
-    ],
-    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -101,8 +101,10 @@
     magic_items: false,
     gems: false,
     boxes: false,
-    skin: "a caedera skin",
-    other: "No"
+    skin: "a caedera's ",
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,20 +112,19 @@
     ],
     arrival: [],
     flee: [],
-    death: [
-      "The caedera slumps to the ground."
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A caedera charges at you!",
-      "A caedera tries to ensnare you!"
-    ],
-    bite: [
-      "A caedera tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A caedera charges at you!",
+        "A caedera tries to ensnare you!"
+      ],
+      bite: [
+        "A caedera tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

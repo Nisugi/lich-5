@@ -81,7 +81,9 @@
     gems: true,
     boxes: true,
     skin: "a ghoul master claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -97,16 +99,17 @@
     ],
     decay: [
       "An elder ghoul master turns to dust.",
-      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost.",
-      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost."
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as {pronoun} decays into compost."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An elder ghoul master swings {weapon} at you!"
+    spell_prep: [
+      "An elder ghoul master gestures and utters a phrase of magic!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An elder ghoul master swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

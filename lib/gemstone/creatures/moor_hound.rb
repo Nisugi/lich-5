@@ -95,17 +95,19 @@
     gems: false,
     boxes: false,
     skin: "moor hound paw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The moor hound stands nearly as tall as a halfling, her broad shoulders easily support the weight of her frame. The jet-black fur is matted and frizzled, giving the hound an unkept appearance. Tiny droplets of perspiration drip from her blood-red eyes as misty vapor wafts out of the nostrils. A curl in her upper lip forms, revealing a massive canine tooth as she hungrily looks upon her pray."
     ],
     arrival: [
-      "A moor hound stalks into the area with a sickly vapor pouring from his nostrils!",
-      "A moor hound stalks into the room with a sickly vapor pouring from his nostrils!",
-      "A moor hound stalks into the area with a sickly vapor pouring from her nostrils!",
-      "A moor hound stalks into the room with a sickly vapor pouring from her nostrils!"
+      "A moor hound stalks into the area with a sickly vapor pouring from {pronoun} nostrils!",
+      "A moor hound stalks into the room with a sickly vapor pouring from {pronoun} nostrils!",
+      "A moor hound stalks into the area with a sickly vapor pouring from {pronoun} {weapon}!",
+      "A moor hound stalks into the room with a sickly vapor pouring from {pronoun} {weapon}!"
     ],
     flee: [
       "A moor hound plods {direction}.",
@@ -113,17 +115,19 @@
     ],
     death: [
       "The moor hound falls to the ground and dies.",
-      "The moor hound rolls over and dies.",
-      "Beautiful shot pierces both lungs, the moor hound makes a wheezing noise, and drops dead!"
+      "The moor hound rolls over and dies."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A moor hound claws at you!"
+    stun_break: [
+      "A moor hound shakes {pronoun} head violently while trying to regain {pronoun} bearings!"
     ],
+    attacks: {
+      claw: [
+        "A moor hound claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

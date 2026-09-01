@@ -82,7 +82,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -95,11 +97,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A cavern urchin thrusts {pronoun} barbed spines at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A cavern urchin thrusts {pronoun} barbed spines at you!",
+        "A barbed cavern urchin thrusts {pronoun} barbed spines at you!"
+      ]
+    },
     info: {
       general: [
         "Sibling of the spiked cavern urchin (also level 17, different zone)."

@@ -124,35 +124,42 @@
     gems: true,
     boxes: false,
     skin: "a mottled kiramon poison gland",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Glittering, spherical eyes stand out from the matte black of the kiramon stalker's carapace, which is so dark that it seems to drink the surrounding light. The stalker is a creature seemingly tailored for speed and stealth. Roughly shaped like a mantis, it balances on stick-like legs with powerful hindquarters, and it looks ever ready to spring. Wings like gossamer shadows enfold the stalker's thorax like a dusky cloak."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A sleek black kiramon stalker creeps in on stick-like legs, making nary a sound."
+    ],
+    flee: [
+      "A sleek black kiramon stalker skitters up to your corpse on silent, chitinous legs, prodding you to see if you will move."
+    ],
     death: [
-      "A sleek black kiramon stalker grabs you by the head and twists violently.  You hear a loud *CRACK* as your neck bones snap and your body goes limp!",
-      "A sleek black kiramon stalker goes still, and for a moment she seems to blend with the surrounding shadows.",
-      "A sleek black kiramon stalker goes still, and for a moment it seems to blend with the surrounding shadows.",
-      "A chitinous kiramon myrmidon collapses, its forelegs spasming and twitching before it at last surrenders to death."
+      "A sleek black kiramon stalker goes still, and for a moment {pronoun} seems to blend with the surrounding shadows."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A sleek black kiramon stalker skitters mercilessly forward to slash at you with a razor-sharp foreleg!",
-      "A sleek black kiramon stalker twists fluidly to spear you with {pronoun} barbed stinger!",
-      "Without warning, a sleek black kiramon stalker glides from the shadows and skitters mercilessly forward to slash at you with a razor-sharp foreleg!",
-      "Without warning, a sleek black kiramon stalker glides from the shadows and twists fluidly to spear you with {pronoun} barbed stinger!"
-    ],
-    bite: [
-      "A sleek black kiramon stalker aims a preternaturally swift bite at you!",
-      "Without warning, a sleek black kiramon stalker glides from the shadows and aims a preternaturally swift bite at you!",
-      "NoneWithout warning, a sleek black kiramon stalker glides from the shadows and aims a preternaturally swift bite at you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A sleek black kiramon stalker skitters mercilessly forward to slash at you with a razor-sharp foreleg!",
+        "A sleek black kiramon stalker twists fluidly to spear you with {pronoun} barbed stinger!",
+        "Without warning, a sleek black kiramon stalker glides from the shadows and skitters mercilessly forward to slash at you with a razor-sharp foreleg!",
+        "Without warning, a sleek black kiramon stalker glides from the shadows and twists fluidly to spear you with {pronoun} barbed stinger!",
+        "A sleek black kiramon stalker attempts to kick dust at you, but is unable to kick up a sufficient amount of dust."
+      ],
+      bite: [
+        "A sleek black kiramon stalker aims a preternaturally swift bite at you!",
+        "Without warning, a sleek black kiramon stalker glides from the shadows and aims a preternaturally swift bite at you!"
+      ],
+      cutthroat: [
+        "A sleek black kiramon stalker springs upon you from behind and attempts to slit your throat!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

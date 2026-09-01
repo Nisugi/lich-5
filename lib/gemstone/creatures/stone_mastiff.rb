@@ -93,13 +93,19 @@
     gems: nil,
     boxes: nil,
     skin: "a stone heart",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The stone mastiff is a huge grey dog that seems to be formed of living stone. The mastiff is rectangular in shape, and the length of the mastiff from forechest to rear is around five feet. Massive and heavy boned, with a powerful muscle structure, this stone mastiff presents a formidable foe."
     ],
-    arrival: [],
+    arrival: [
+      "A stone mastiff just came through an enormous arched doorway.",
+      "A stone mastiff barrels into the area, drooling hungrily!",
+      "A stone mastiff barrels in!"
+    ],
     flee: [
       "A stone mastiff barrels {direction}.",
       "A stone mastiff crawls {direction}."
@@ -113,13 +119,17 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A stone mastiff tries to bite you!"
+    stun_break: [
+      "A stone mastiff shakes {pronoun} head violently as {pronoun} regains {pronoun} bearings!"
     ],
-    claw: [
-      "A stone mastiff claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A stone mastiff claws at you!"
+      ],
+      bite: [
+        "A stone mastiff tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -105,44 +105,53 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A spectral triton defender swings {weapon} at you!",
+        "A spectral triton defender thrusts with a lackluster blue steel harpoon at you!",
+        "A spectral triton defender thrusts with a tarnished dark silver harpoon at you!",
+        "A spectral triton defender thrusts with a razor-tined pale green trident at you!",
+        "A spectral triton defender swings {pronoun} {weapon} at your vultite bastard sword!"
+      ],
+      charge: [
+        "A spectral triton defender rushes forward at you with {pronoun} dark silver harpoon and attempts a charge!",
+        "A spectral triton defender rushes forward at you with {pronoun} blue steel harpoon and attempts a charge!"
+      ],
+      hurl: [
+        "A spectral triton defender throws {weapon} at you!"
+      ]
+    },
+    stun_break: [
+      "A spectral triton defender flares briefly with a dull glow, rousing {reflexive} from slumber and righting {pronoun} posture."
+    ],
     description: [
       "The triton defender forges ahead on powerful legs, as if unaware of their lack of substance, while thick and ropey muscles bunch powerfully along her oddly translucent arms. The skin covering her squat ethereal frame is the color of bleached, dirty leather and seems to retain the clammy wetness of living amphibians. Sweeping behind her muscled limbs, a long tail floats after the creature like a recently abandoned child."
     ],
     arrival: [
       "A spectral triton defender just arrived.",
-      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
-      "A triton combatant strides in, a wary look on her face.",
-      "A triton radical strides in, a wary look on her face.",
-      "A triton dissembler strides in, a wary look on his face.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
-      "A triton radical strides in, a wary look on his face.",
-      "A triton executioner strides in, a wary look on her face."
+      "A spectral triton defender just came through a crumbling arch.",
+      "A spectral triton defender rushes in with powerful strides, {pronoun} slender tail flickering behind {pronoun}!"
     ],
-    flee: [],
+    flee: [
+      "A spectral triton defender just went through a crumbling arch.",
+      "A spectral triton defender just went down some short descending stairs.",
+      "A spectral triton defender just went across a wide stone causeway.",
+      "A spectral triton defender hurtles {reflexive} at you with great speed, but flies slightly off center of {pronoun} target and tumbles to the water with a splash!"
+    ],
     death: [
-      "The triton defender fades into transparency, her remnants rapidly dissolving into the air.",
-      "The triton defender fades into transparency, his remnants rapidly dissolving into the air.",
-      "The triton defender goes still for a moment while its head reshapes.",
-      "The spectral form of the triton defender tenses in agony as she begins to dissolve from the bottom up!",
-      "The spectral form of the triton defender tenses in agony as he begins to dissolve from the bottom up!"
+      "The triton defender fades into transparency, {pronoun} remnants rapidly dissolving into the air.",
+      "The spectral form of the triton defender tenses in agony as {pronoun} begins to dissolve from the bottom up!"
     ],
     decay: [
       "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A spectral triton defender swings {weapon} at you!",
-      "A spectral triton defender thrusts with a lackluster blue steel harpoon at you!",
-      "A spectral triton defender throws {weapon} at you!",
-      "A spectral triton defender thrusts with a tarnished dark silver harpoon at you!"
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

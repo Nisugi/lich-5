@@ -86,14 +86,18 @@
     gems: true,
     boxes: true,
     skin: "an orc claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The burrow orc would stand roughly six feet high, were he not stooped over. He is thinner and more gaunt than the land-roaming orcs, with sickly white skin and no hair on his smelly frame. He seems more interested in stuffing himself and protecting his burrow than anything else."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A greater burrow orc rushes out of a burrow, bellowing a challenge!"
+    ],
     death: [
       "A greater burrow orc growls one last time and dies.",
       "A greater burrow orc growls silently one last time and dies."
@@ -101,11 +105,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A greater burrow orc swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A greater burrow orc swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

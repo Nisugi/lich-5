@@ -94,7 +94,9 @@
     gems: nil,
     boxes: nil,
     skin: "a leopard skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -111,18 +113,20 @@
       "The snow leopard crumples to the ground and dies."
     ],
     decay: [
-      "A snow leopard decays into a compost of fangs, fur and claws.",
-      "Acid dissolves connecting cartilage, freeing the snow leopard's ribs to move independently."
+      "A snow leopard decays into a compost of fangs, fur and claws."
     ],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [
-      "A snow leopard tries to bite you!"
+    spell_prep: [
+      "A snow leopard hisses loudly!"
     ],
-    claw: [
-      "A snow leopard claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A snow leopard claws at you!"
+      ],
+      bite: [
+        "A snow leopard tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

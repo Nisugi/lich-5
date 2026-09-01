@@ -101,7 +101,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,26 +112,31 @@
     arrival: [
       "A moaning spirit just arrived."
     ],
-    flee: [],
+    flee: [
+      "A moaning spirit withdraws, disengaging from {target}."
+    ],
     death: [
       "The moaning spirit falls to the ground motionless.",
-      "The moaning spirit goes still for a moment while its head reshapes."
+      "A moaning spirit collapses into a puddle of jelly, falling silent at last."
     ],
     decay: [
       "A moaning spirit collapses into a puddle of jelly, falling silent at last.",
-      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost.",
-      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost."
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as {pronoun} decays into compost."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A moaning spirit gestures at you!",
-      "A moaning spirit swings {weapon} at you!"
+    spell_prep: [
+      "A moaning spirit begins to chant an eerie tune!"
     ],
-    bite: [],
-    claw: [
-      "A moaning spirit claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A moaning spirit gestures at you!",
+        "A moaning spirit swings {weapon} at you!",
+        "A moaning spirit swings a closed fist at {target}!"
+      ],
+      claw: [
+        "A moaning spirit claws at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -117,7 +117,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -125,24 +127,29 @@
     ],
     arrival: [
       "A shambling lurk just arrived.",
-      "Vital fluids seeping from its orifices, a shambling lurk shambles in with a piteous moan."
+      "Vital fluids seeping from its orifices, a shambling lurk shambles in with a piteous moan.",
+      "A shambling lurk totters in with a famished moan.",
+      "A shambling lurk just came through a polished acacia archway.",
+      "A shambling lurk just came through a pair of high bronze double doors.",
+      "A shambling lurk just came through a towering black ora gate."
     ],
     flee: [],
-    death: [
-      "Awesome shot skewers skull!  The shambling lurk blinks once and falls quite dead!"
-    ],
+    death: [],
     decay: [
       "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A shambling lurk manages a fumbling gesture toward you!",
-      "Desperate in {pronoun} hunger for flesh, a shambling lurk throws itself at you!",
-      "Gnawing blindly with shattered teeth, a shambling lurk tries to bite into you!",
+    spell_prep: [
+      "A shambling lurk moans out a garbled spell."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A shambling lurk manages a fumbling gesture toward you!",
+        "Desperate in {pronoun} hunger for flesh, a shambling lurk throws itself at you!",
+        "Gnawing blindly with shattered teeth, a shambling lurk tries to bite into you!",
+        "A shambling lurk throws {pronoun} head back and gurgles a single syllable!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

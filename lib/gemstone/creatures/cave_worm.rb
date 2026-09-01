@@ -94,7 +94,9 @@
     gems: false,
     boxes: false,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -114,14 +116,15 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A cave worm charges at you!",
-      "A cave worm tries to ensnare you!"
-    ],
-    bite: [
-      "A cave worm tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A cave worm charges at you!",
+        "A cave worm tries to ensnare {target}!"
+      ],
+      bite: [
+        "A cave worm tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

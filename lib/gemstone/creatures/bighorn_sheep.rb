@@ -78,32 +78,38 @@
     gems: nil,
     boxes: nil,
     skin: "a bighorn sheepskin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The bighorn sheep's body is compact and muscular with a short, stubby tail. His triangular-shaped head features a narrow pointed muzzle and short, flopppy ears. The fur is almost deerlike in nature and is shaded brown with the occasional whitish rump patches. The sheep's fur is smooth and composed of an outer coat of brittle guard hairs and short, gray, crimped fleece underfur. Atop his head rest two massive brown horns twisted in a full curl. Each looks out of place on the small triangular-shaped head let alone both. Together they form a symmetry that just looks right."
     ],
     arrival: [
-      "A bighorn sheep just arrived."
+      "A bighorn sheep just arrived.",
+      "A bighorn sheep charges in!",
+      "A bighorn sheep charges in, snorting in pain!"
     ],
-    flee: [],
+    flee: [
+      "A bighorn sheep charges {direction}, snorting in pain."
+    ],
     death: [
-      "A bighorn sheep collapses, his head dropping heavily to the ground as he goes still.",
-      "A bighorn sheep collapses, her head dropping heavily to the ground as she goes still.",
-      "A bighorn sheep rolls over, his head dropping heavily to the ground as he goes still.",
-      "A bighorn sheep rolls over, her head dropping heavily to the ground as she goes still."
+      "A bighorn sheep collapses, {pronoun} head dropping heavily to the ground as {pronoun} goes still.",
+      "A bighorn sheep rolls over, {pronoun} head dropping heavily to the ground as {pronoun} goes still."
     ],
     decay: [
       "A bighorn sheep decays into a pile of fur and bone."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A bighorn sheep lowers {pronoun} head and tries to impale you on {pronoun} horns!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A bighorn sheep lowers {pronoun} head and tries to impale you on {pronoun} horns!",
+        "A bighorn sheep charges into the open, {pronoun} head lowered and hooves flying.",
+        "A bighorn sheep strikes the ground eagerly with one hoof, looking around for a suitable challenger."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

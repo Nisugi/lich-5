@@ -146,7 +146,9 @@
     gems: true,
     boxes: true,
     skin: "a fenghai fur",
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -161,26 +163,32 @@
     death: [
       "The fenghai falls to the ground motionless.",
       "The fenghai cries out one last time and lies still.",
-      "The fenghai slumps to the ground.",
-      "Beautiful shot pierces both lungs, the fenghai makes a wheezing noise, and drops dead!",
-      "Awesome shot skewers skull!  The fenghai blinks once and falls quite dead!"
+      "A fenghai crumples in on {reflexive}, a tangled mess of fur and flesh."
     ],
-    decay: [
-      "The fenghai's left leg crumbles briefly and explodes in a shower of gore.",
-      "The fenghai's right leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves connecting cartilage, freeing the fenghai's ribs to move independently."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A fenghai hurls {weapon} at you!",
-      "A fenghai points a furry finger at you!",
-      "A fenghai spins {pronoun} head in your direction and spews a massive stream of spittle and blood at you!  With a quick duck of your head, you step out of {pronoun} path.",
-      "A fenghai swings {weapon} at you!",
-      "A fenghai pounds at you with {pronoun} fist!"
+    spell_prep: [
+      "A fenghai glows brightly!",
+      "A fenghai murmurs quietly to {reflexive}."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A fenghai swings {weapon} at you!",
+        "A fenghai pounds at you with {pronoun} fist!",
+        "A fenghai swings a scimitar at {target}!",
+        "A fenghai swings a greatsword at {target}!"
+      ],
+      bolt: [
+        "A fenghai hurls a stream of fire at {target}!"
+      ],
+      cast: [
+        "A fenghai points a furry finger at {target}!"
+      ],
+      hurl: [
+        "A fenghai hurls {weapon} at you!",
+        "A fenghai hurls a large boulder at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

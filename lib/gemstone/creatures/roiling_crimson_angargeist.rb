@@ -75,10 +75,10 @@
     cle_td: (486..492),
     emp_td: 477,
     pal_td: (438..447),
-    ran_td: "441",
-    sor_td: "504",
+    ran_td: 441,
+    sor_td: 504,
     wiz_td: nil,
-    mje_td: "541",
+    mje_td: 541,
     mne_td: nil,
     mjs_td: nil,
     mns_td: nil,
@@ -98,19 +98,44 @@
     boxes: nil,
     skin: nil,
     other: nil,
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    attack: [
-      "A roiling crimson angargeist sprouts twitching, misshapen hands that gesture at you!",
-      "Misshapen arms erupt from a roiling crimson angargeist to flail at you!",
-      "Shrieking rage from dozens of phantasmal throats, a roiling crimson angargeist sprouts dripping claws that slash at you!",
+    decay: [
+      "A roiling crimson angargeist dissolves into a pool of ectoplasm that roils over you, snapping with toothless mouths and grasping with desperate fingers before reforming on the other side."
     ],
-    bite: [],
-    claw: [],
+    flee: [
+      "A roiling crimson angargeist flows {direction}, {pronoun} amorphous bulk sprouting appendages and hideous features at random.",
+      "A roiling crimson angargeist just went through a crumbling red stone maw.",
+      "A roiling crimson angargeist just went through a breached red stone wall.",
+      "A roiling crimson angargeist just went through a pocked red stone arch.",
+      "A roiling crimson angargeist just went through a pair of colossal red stone pillars."
+    ],
+    arrival: [
+      "A roiling crimson angargeist just came through a pocked red stone arch.",
+      "A roiling crimson angargeist just came through a breached red stone wall."
+    ],
     description: "Swirling ectoplasm, crimson and black and lit from within by crackles of sickly yellow energy, takes on a rough humanoid shape, but the angargeist is clearly nothing alive.  Where a face ought to be is a molten ruin, lopsided eyes of unholy flame sparking in its ill-made sockets.  Immaterial and dripping essence, the arms and legs are uneven, both ending in straining talons.  The angargeist's form bubbles and simmers in places like fury lent form.",
-    fade: "Angargeist fade similar to Banshee and reappear randomly.",
-    vortex_smr: "The shadows bubble and seethe as a roiling crimson angargeist rematerializes, swirling together into a vortex of vile energies!\nCrackling torrents of spectral energy erupt from the angargeist as it reforms, warping the air as they ripple outward!",
-    sympathy: true
+    sympathy: true,
+    attacks: {
+      bolt: [
+        "A roiling crimson angargeist hurls a ball of greenish-black flame at {target}!"
+      ],
+      attack: [
+        "A roiling crimson angargeist sprouts twitching, misshapen hands that gesture at you!",
+        "Misshapen arms erupt from a roiling crimson angargeist to flail at you!",
+        "Shrieking rage from dozens of phantasmal throats, a roiling crimson angargeist sprouts dripping claws that slash at you!"
+      ],
+      vortex_smr: [
+        "The shadows bubble and seethe as a roiling crimson angargeist rematerializes, swirling together into a vortex of vile energies!\nCrackling torrents of spectral energy erupt from the angargeist as it reforms, warping the air as they ripple outward!"
+      ]
+    },
+    triggers: {
+      fade: [
+        "Angargeist fade similar to Banshee and reappear randomly."
+      ]
+    },
   }
 }

@@ -63,12 +63,12 @@
     emp_td: (138..147),
     pal_td: (108..117),
     ran_td: (111..117),
-    sor_td: "130 to 160",
+    sor_td: (130..160),
     wiz_td: nil,
     mje_td: 150,
-    mne_td: "137 to 167",
+    mne_td: (137..167),
     mjs_td: (183..192),
-    mns_td: "123 to 153",
+    mns_td: (123..153),
     mnm_td: (114..123),
     defensive_spells: [],
     defensive_abilities: [],
@@ -85,12 +85,12 @@
     gems: nil,
     boxes: nil,
     skin: "desiccated stem",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      ";Description\nNot exactly the best representative of its Species, let alone its Genus, none-the-less, the inclusion of this particular tumbleweed would make a fine addition to anyone's tumbleweed collection. Just for its uniqueness if nothing else. Of course unlike most tumbleweed, this one might object to being collected, VIGOUROUSLY.\n\n;Assess\nThe decaying tumbleweed is medium in size and about three feet high in its current state."
-    ],
+    description: [],
     arrival: [
       "A blackened decaying tumbleweed spins in kicking up snow as it arrives!"
     ],
@@ -101,11 +101,12 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A blackened decaying tumbleweed stabs at you with {pronoun} stinger!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A blackened decaying tumbleweed stabs at you with {pronoun} stinger!",
+        "A blackened decaying tumbleweed stabs at {target} with {pronoun} stinger!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

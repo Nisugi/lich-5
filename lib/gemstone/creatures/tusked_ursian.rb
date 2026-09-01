@@ -95,7 +95,9 @@
     gems: false,
     boxes: false,
     skin: "an ursian tusk",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,17 +112,16 @@
     ],
     death: [
       "The tusked ursian collapses heavily into a heap on the ground and dies.",
-      "The tusked ursian lets out a blood-curdling roar and dies.",
-      "The tusked ursian slumps to the ground."
+      "The tusked ursian lets out a blood-curdling roar and dies."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A tusked ursian claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A tusked ursian claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -116,37 +116,39 @@
     gems: true,
     boxes: true,
     skin: "kobold skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Smaller than a dwarf and even many halflings, she has ruddy skin and a hairless pate topped with small horns. Long-limbed for her size, the kobold eschews any display of brute strength and relies on what agility she pretends to have. The kobold stares back at you with beady little black eyes, sizing you up as a foe.\n\nAppraisal:\nThe kobold is small in size, about three feet high in his current state, appears to be of weak constitution, is in a forward stance, and is in relatively good shape."
     ],
     arrival: [
-      "A kobold just arrived."
+      "A kobold just arrived.",
+      "A kobold swaggers in, trying to appear imposing!"
     ],
     flee: [
-      "A kobold heads {direction}."
+      "A kobold heads {direction}.",
+      "A kobold just went through some reinforced wooden gates."
     ],
     death: [
       "The kobold crumples to a heap on the ground and dies.",
       "The kobold cries out in pain one last time and dies.",
-      "The kobold crumples to a heap on the floor and dies.",
-      "Beautiful shot pierces both lungs, the kobold makes a wheezing noise, and drops dead!",
-      "The kobold slumps to the ground."
+      "The kobold crumples to a heap on the floor and dies."
     ],
     decay: [
-      "A small, green cloud of smelly gas rises from the body of a kobold as she decays into compost.",
-      "A small, green cloud of smelly gas rises from the body of a kobold as he decays into compost."
+      "A small, green cloud of smelly gas rises from the body of a kobold as {pronoun} decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A kobold swings {weapon} at you!",
-      "A kobold thrusts with a javelin at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A kobold swings {weapon} at you!",
+        "A kobold thrusts with a javelin at you!",
+        "A kobold swings a short sword at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -86,33 +86,35 @@
     gems: nil,
     boxes: nil,
     skin: "a mammoth tusk",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Very few creatures stand in the path of a wooly mammoth for long. This huge mammal is covered with long, thick, dark brown hair that protects him against freezing conditions. His flexible trunk is flanked by two heavy ivory tusks that curl up and back toward his wide, flapping ears. An angered wooly mammoth has been known to pick up a reckless adventurer and throw the hapless person out of sight."
     ],
     arrival: [
-      "A wooly mammoth trumpets loudly announcing its arrival as she lumbers in!",
+      "A wooly mammoth trumpets loudly announcing {pronoun} arrival as {pronoun} lumbers in!",
       "A wooly mammoth lumbers in!",
-      "A wooly mammoth trumpets loudly announcing its arrival as he lumbers in!",
       "A wooly mammoth lumbers in, trumpeting in pain!"
     ],
     flee: [
       "A wooly mammoth lumbers {direction}.",
       "A wooly mammoth lumbers {direction}, trumpeting in pain.",
-      "A wooly mammoth slowly lumbers {direction}, trumpeting in agony."
+      "A wooly mammoth slowly lumbers {direction}, trumpeting in agony.",
+      "A wooly mammoth slowly backs away, shaking {pronoun} enormous head."
     ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A wooly mammoth stomps at you with {pronoun} foot!",
-      "A wooly mammoth tries to impale you on {pronoun} tusks!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A wooly mammoth stomps at you with {pronoun} foot!",
+        "A wooly mammoth tries to impale you on {pronoun} tusks!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

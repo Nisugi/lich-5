@@ -94,7 +94,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet mote of essence"
+    other: "Glowing violet mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -108,14 +110,18 @@
       "The fire sprite goes limp and she falls over as the fire slowly fades from her eyes."
     ],
     decay: [],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A fire sprite swings {weapon} at you!",
-      "A fire sprite leaves a trail of flames while gesturing with both hands at you!"
+    search: [
+      "A fire sprite looks around apprehensively as {pronoun} takes a step back."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A fire sprite glows with a fiery red light."
+    ],
+    attacks: {
+      attack: [
+        "A fire sprite swings {weapon} at you!",
+        "A fire sprite leaves a trail of flames while gesturing with both hands at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

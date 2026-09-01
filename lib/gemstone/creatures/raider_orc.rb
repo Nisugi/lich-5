@@ -82,7 +82,9 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -92,26 +94,23 @@
       "A raider orc saunters in looking for something to pillage."
     ],
     flee: [
-      "A raider orc trots {direction}."
+      "A raider orc trots {direction}.",
+      "A raider orc trots {direction}, {pronoun} gaze sweeping the area for danger."
     ],
     death: [
-      "A raider orc screams his defiance skyward one last time and dies.",
-      "A raider orc screams her defiance skyward one last time and dies.",
-      "A raider orc screams his defiance silently skyward one last time and dies.",
-      "A raider orc screams her defiance silently skyward one last time and dies."
+      "A raider orc screams {pronoun} defiance skyward one last time and dies.",
+      "A raider orc screams {pronoun} defiance silently skyward one last time and dies."
     ],
     decay: [
-      "A raider orc withers away until he is no more.",
-      "A raider orc withers away until she is no more.",
-      "The raider orc's left leg crumbles briefly and explodes in a shower of gore."
+      "A raider orc withers away until {pronoun} is no more."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A raider orc swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A raider orc swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

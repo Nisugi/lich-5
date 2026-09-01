@@ -79,21 +79,27 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The dark vortece is a mass of dark, swirling shadows. Little more is known about this deadly creature despite many attempts to study their origins. This is understandable when you consider the one well known fact about them: Simply being in the presense of a dark vortece is enough to endanger your life, due to their tendency to drain the life out of everything around them."
     ],
-    arrival: [],
+    arrival: [
+      "A dark vortece drifts in smoothly, trailed by a shadowy haze."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A dark vortece shoots a shaft of pure darkness at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

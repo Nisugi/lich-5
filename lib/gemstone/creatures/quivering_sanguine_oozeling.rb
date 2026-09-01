@@ -70,12 +70,27 @@
     boxes: nil,
     skin: nil,
     other: nil,
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    attack: [],
-    bite: [],
-    claw: [],
-    general_advice: "* Splits off a quivering sanguine ooze when the ooze is hit; oozelings start with a fraction of the ooze's health and grow back into oozes if left alone. See the quivering sanguine ooze entry for AoE tactics."
+    info: {
+      general: [
+        "* Splits off a quivering sanguine ooze when the ooze is hit; oozelings start with a fraction of the ooze's health and grow back into oozes if left alone. See the quivering sanguine ooze entry for AoE tactics."
+      ],
+      class_tips: {
+        cleric: [],
+        paladin: [],
+        ranger: [],
+        bard: [],
+        wizard: [],
+        empath: [],
+        rogue: [],
+        warrior: [],
+        sorcerer: []
+      },
+      miscellany: []
+    },
   }
 }

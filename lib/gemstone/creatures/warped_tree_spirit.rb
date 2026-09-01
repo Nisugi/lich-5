@@ -96,7 +96,9 @@
     gems: nil,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -114,11 +116,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A warped tree spirit tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A warped tree spirit tries to ensnare you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

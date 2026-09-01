@@ -96,7 +96,9 @@
     gems: false,
     boxes: false,
     skin: "a warcat whisker",
-    other: "no"
+    other: "no",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,26 +108,25 @@
       "A striped warcat stalks in!"
     ],
     flee: [
-      "A striped warcat stalks {direction}.",
-      "A striped warcat roars loudly as he stands {direction}!"
+      "A striped warcat stalks {direction}."
     ],
     death: [
       "The striped warcat lets out a final caterwaul and dies.",
-      "The striped warcat crumples to the ground and dies.",
-      "Beautiful shot pierces both lungs, the striped warcat makes a wheezing noise, and drops dead!"
+      "The striped warcat crumples to the ground and dies."
     ],
     decay: [
       "A striped warcat decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A striped warcat tries to bite you!"
-    ],
-    claw: [
-      "A striped warcat claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A striped warcat claws at you!"
+      ],
+      bite: [
+        "A striped warcat tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -121,7 +121,9 @@
     gems: true,
     boxes: true,
     skin: "a wight mane",
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -129,21 +131,25 @@
     ],
     arrival: [],
     flee: [
-      "A greater moor wight wails madly as it limps {direction}."
+      "A greater moor wight wails madly as it limps {direction}.",
+      "A greater moor wight moves off, heading {direction}."
     ],
-    death: [
-      "Beautiful shot pierces both lungs, the moor wight makes a wheezing noise, and drops dead!"
-    ],
-    decay: [
-      "The moor wight's right leg crumbles briefly and explodes in a shower of gore."
-    ],
+    death: [],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A greater moor wight swings {weapon} at you!"
+    spell_prep: [
+      "A greater moor wight gestures arcanely."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A greater moor wight swings {weapon} at you!",
+        "A greater moor wight swings a wickedly curved scimitar at {target}!",
+        "A greater moor wight swings a large dual-bit handaxe at {target}!"
+      ],
+      cast: [
+        "A greater moor wight points a clawed finger at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

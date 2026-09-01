@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "ithzir adept",
+  name: "Ithzir adept",
   noun: "",
   url: "https://gswiki.play.net/ithzir_adept",
   picture: "",
@@ -146,37 +146,56 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    stun_break: [
+      "An Ithzir adept holds {pronoun} head as {pronoun} tries to regain {pronoun} bearings."
+    ],
+    attacks: {
+      bolt: [
+        "An Ithzir adept hurls a chunk of ice at {target}!",
+        "An Ithzir adept hurls a large boulder at {target}!"
+      ],
+      attack: [
+        "An Ithzir adept swings {weapon} at you!",
+        "An Ithzir adept thrusts {pronoun} palms out to {pronoun} sides!",
+        "An Ithzir adept swings a twisted crystal-tipped staff at {target}!",
+        "An Ithzir adept thrusts both palms toward {target}!"
+      ],
+      hurl: [
+        "An Ithzir adept hurls a chunk of ice at {target}!",
+        "An Ithzir adept hurls a large boulder at {target}!"
+      ]
+    },
+    stand: [
+      "An Ithzir adept stands up, an angry look on {pronoun} face.",
+      "An Ithzir adept rises to {pronoun} feet, {pronoun} green eyes blazing!"
+    ],
     description: [
       "The Ithzir adept carries a bearing of absolute confidence, his piercing, pupil-less green eyes shrewdly taking in his surroundings. The Ithzir adept is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The adept wears a crisply-cut, silvery-blue tunic with high shoulders and a deep vee-neck. Emblazoned on the right breast of the tunic is a single green eye."
     ],
     arrival: [
-      "An Ithzir initiate strides in, her hands clasped before her.",
-      "An Ithzir initiate strides in, his hands clasped before him."
+      "An Ithzir initiate strides in, {pronoun} hands clasped before {pronoun}."
     ],
     flee: [
       "An Ithzir adept walks {direction}.",
-      "An Ithzir adept limps {direction}."
+      "An Ithzir adept limps {direction}.",
+      "An Ithzir adept withdraws, disengaging from {target}."
     ],
     death: [
       "The Ithzir adept vainly struggles to rise, then goes still.",
-      "Just as you incant, the Ithzir adept shimmers and fades away, leaving you gesturing at nothingness!",
-      "Just as you move to cast, the Ithzir adept shimmers and fades away, leaving you gesturing at nothingness!",
       "An Ithzir adept's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
     decay: [
       "The crystal crumbles into a fine blue powder that sifts through the adept's fingers."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An Ithzir adept swings {weapon} at you!",
-      "An Ithzir adept thrusts both palms toward you!",
+    spell_prep: [
+      "An Ithzir adept closes {pronoun} eyes while incanting an alien phrase."
     ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

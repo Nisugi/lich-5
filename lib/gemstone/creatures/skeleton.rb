@@ -101,7 +101,9 @@
     gems: true,
     boxes: true,
     skin: "skeleton bone",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -114,21 +116,21 @@
     flee: [],
     death: [
       "The skeleton falls to the ground motionless.",
-      "The skeleton screams evilly one last time and goes still.",
-      "Beautiful shot pierces both lungs, the skeleton makes a wheezing noise, and drops dead!"
+      "The skeleton screams evilly one last time and goes still."
     ],
     decay: [
       "A skeleton turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A skeleton swings {weapon} at you!"
-    ],
-    bite: [
-      "A skeleton tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A skeleton swings {weapon} at you!"
+      ],
+      bite: [
+        "A skeleton tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

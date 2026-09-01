@@ -83,34 +83,38 @@
     gems: true,
     boxes: true,
     skin: "an orc knuckle",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Taller than a common human and of a substantially heavier build, the Neartofar orc has a build of solid bone and gristle. Piercing, yellow eyes glare angrily out from under a thick ridge of bone on his forehead. Irregular clumps of rank hair litter his oddly striking brown and green hued-body from head to toe. His arms resemble thick and twisted tree trunks, ending in ragged claws crusted with dried gore."
     ],
     arrival: [
-      "A Neartofar orc stalks in purposefully, her nose raised as she sniffs at the air.",
-      "A Neartofar orc stalks in purposefully, his nose raised as he sniffs at the air.",
+      "A Neartofar orc stalks in purposefully, {pronoun} nose raised as {pronoun} sniffs at the air.",
       "A Neartofar orc stalks in!"
     ],
     flee: [
-      "A Neartofar orc stalks {direction}."
+      "A Neartofar orc stalks {direction}.",
+      "A neartofar orc hobbles slowly {direction}, uttering a curse under {pronoun} breath."
     ],
     death: [
-      "A Neartofar orc breathes her last gasp and dies.",
-      "A Neartofar orc breathes his last gasp and dies."
+      "A Neartofar orc breathes {pronoun} last gasp and dies.",
+      "A Neartofar orc collapses into a pile of dust."
     ],
     decay: [
       "A Neartofar orc collapses into a pile of dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A Neartofar orc swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Neartofar orc swings {weapon} at you!",
+        "A Neartofar orc swings a rusted morning star at {target}!",
+        "A neartofar orc swings a rusted morning star at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

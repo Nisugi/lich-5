@@ -86,7 +86,9 @@
     gems: true,
     boxes: true,
     skin: "a trali hide",
-    other: "Glowing violet essence shard"
+    other: "Glowing violet essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,21 +100,24 @@
     ],
     flee: [
       "A forest trali tramps {direction}.",
-      "A forest trali limps {direction}."
+      "A forest trali limps {direction}.",
+      "A forest trali just went through a battered maoral door."
     ],
     death: [
-      "The forest trali twitches violently, then dies."
+      "The forest trali twitches violently, then dies.",
+      "A forest trali collapses upon the ground and the life fades from {pronoun} eyes.",
+      "A forest trali collapses upon the floor and the life fades from {pronoun} eyes."
     ],
-    decay: [
-      "The forest trali's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A forest trali swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A forest trali swings {weapon} at you!",
+        "A forest trali shoots a tiny dart at you!",
+        "A forest trali leaps to {pronoun} feet!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

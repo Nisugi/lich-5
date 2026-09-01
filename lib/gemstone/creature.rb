@@ -680,6 +680,8 @@ module Lich
           skin: nil,
           magic_items: nil,
           other: nil,
+          armaments: nil,
+          transmogs: nil,
           blunt_required: false
         }.merge(data)
       end
@@ -688,6 +690,8 @@ module Lich
       def has_gems? = !!@data[:gems]
       def has_boxes? = !!@data[:boxes]
       def has_skin? = !!@data[:skin]
+      def has_armaments? = !!(@data[:armaments] && !Array(@data[:armaments]).empty?)
+      def has_transmogs? = !!(@data[:transmogs] && !Array(@data[:transmogs]).empty?)
       def blunt_required? = !!@data[:blunt_required]
 
       def to_h = @data
@@ -695,16 +699,20 @@ module Lich
 
     class Messaging
       attr_accessor :description, :arrival, :flee, :death,
-                    :spell_prep, :frenzy, :sympathy, :bite,
-                    :claw, :attack, :enrage, :mstrike
+                    :decay, :search, :spell_prep, :frenzy,
+                    :sympathy, :bite, :claw, :attack,
+                    :attacks, :enrage, :mstrike, :stand,
+                    :stun_break
 
       # Every form a placeholder can take in a real game line. The lists
       # are alternatives in the generated regex, so a form that is missing
       # here makes an otherwise-correct message unmatchable - "its" and
       # "their" (possessives) and "out" (a flee direction) were absent.
       PLACEHOLDER_MAP = {
-        Pronoun: %w[He She It His Her Its Their Him Them],
-        pronoun: %w[he she it his her its their him them],
+        Pronoun: %w[He She It His Her Its Their Him Them Himself Herself Itself Themselves],
+        pronoun: %w[he she it his her its their him them himself herself itself themselves],
+        Reflexive: %w[Himself Herself Itself Themselves],
+        reflexive: %w[himself herself itself themselves],
         direction: %w[north south east west up down out northeast northwest southeast southwest],
         weapon: %w[RAW:.+?]
       }

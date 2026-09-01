@@ -151,34 +151,40 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: "glowing violet essence dust"
+    other: "glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Mutiple attack abilities, including a command of many offensive spells, make the sand devil a most dangerous adversary. Its name comes from the appearance of its leathery, yellowish, reptilian head crowned with two long, upright, black horns. The sand devil swirls in and out of areas, constantly rotating to keep the wind and dust whipping around it. This allows its sharp claws to remain hidden, emerging suddenly from the sandstorm to slash at surprised foes."
     ],
-    arrival: [],
+    arrival: [
+      "A sand devil charges in."
+    ],
     flee: [],
     death: [
       "The sand devil screams one last time and dies.",
-      "The sand devil falls to the ground and dies.",
-      "The sand devil slumps to the ground."
+      "The sand devil falls to the ground and dies."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the sand devil's ribs to move independently.",
-      "A shadow mare's eyes go dim as she dissolves into the shadows."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A sand devil hurls {weapon} at you!",
-      "A sand devil pounds at you with {pronoun} fist!",
-      "A sand devil shoots strands of webbing at you!"
+    spell_prep: [
+      "A sand devil mutters some guttural sounds.",
+      "A sand devil gestures at {target}!"
     ],
-    bite: [],
-    claw: [
-      "A sand devil claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A sand devil pounds at you with {pronoun} fist!",
+        "A sand devil shoots strands of webbing at you!"
+      ],
+      claw: [
+        "A sand devil claws at {target}!"
+      ],
+      hurl: [
+        "A sand devil hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

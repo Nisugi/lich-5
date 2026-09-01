@@ -81,21 +81,24 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A kelp-tangled coral golem pounds in, the brittle tines of {pronoun} composite coral scraping against one another.",
+      "A kelp-tangled coral golem drifts in through the water, ragged hunks of kelp swirling around {pronoun} form."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {},
     info: {
       general: [],
       class_tips: {

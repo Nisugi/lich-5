@@ -85,7 +85,9 @@
     gems: nil,
     boxes: nil,
     skin: "an orange shelfae scale",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -97,19 +99,18 @@
     flee: [],
     death: [
       "The shelfae warlord falls to the ground and dies.",
-      "The shelfae warlord screams one last time and dies.",
-      "Beautiful shot pierces both lungs, the shelfae warlord makes a wheezing noise, and drops dead!"
+      "The shelfae warlord screams one last time and dies."
     ],
     decay: [
       "A warlord crumbles into dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A shelfae warlord swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A shelfae warlord swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

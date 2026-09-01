@@ -94,7 +94,9 @@
     gems: false,
     boxes: false,
     skin: "a spider leg",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,11 +115,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A greater ice spider snaps at you with {pronoun} pincer!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A greater ice spider snaps at you with {pronoun} pincer!"
+      ],
+      bite: [
+        "A greater ice spider snaps at you with {pronoun} pincer!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

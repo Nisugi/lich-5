@@ -92,7 +92,9 @@
     gems: true,
     boxes: true,
     skin: "lemur tail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,14 +106,15 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "Launching {pronoun} into the air, the jungle toad charges at you with {pronoun} enormous, flat head!",
-      "Lunging forward, a large ring-tailed lemur swings {weapon} at you and attempts to slash you with {pronoun} sharp claws!"
-    ],
-    bite: [
-      "A large ring-tailed lemur attempts to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "Launching {pronoun} into the air, the jungle toad charges at you with {pronoun} enormous, flat head!",
+        "Lunging forward, a large ring-tailed lemur swings {weapon} at you and attempts to slash you with {pronoun} sharp claws!"
+      ],
+      bite: [
+        "A large ring-tailed lemur attempts to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -107,13 +107,34 @@
     gems: true,
     boxes: true,
     skin: "troll eyeball",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    stun_break: [
+      "A tomb troll necromancer stumbles, nearly dropping to {pronoun} knees as {pronoun} tries to regain {pronoun} composure.",
+      "A tomb troll necromancer tries to regain {pronoun} composure."
+    ],
+    attacks: {
+      attack: [
+        "A tomb troll necromancer swings {weapon} at you!",
+        "A tomb troll necromancer exhales the last of a virulent green mist.",
+        "A tomb troll necromancer exhales a virulent green mist toward you, but you are unaffected."
+      ],
+      pestilence: [
+        "A tomb troll necromancer exhales a virulent green mist toward {target}, instantly infecting {target}. {target} convulses violently!"
+      ]
+    },
+    stand: [
+      "A tomb troll necromancer rolls to {pronoun} feet, grinning wildly."
+    ],
     description: [
       "Similar in appearance to the common tomb troll, the pale skinned necromancer shares the same patches of lanky yellow hair that sporadically cover his squat form. His oversize eyes are filled with a greater intelligence than his cousins', granting him comprehension of the darker arts of necromancy, and making the troll a terror with the magics in the realm of death. Around his wide, disgusting and oily waist, the necromancer wears a string of pouches intermingled with rotting digits of dead kinsmen."
     ],
-    arrival: [],
+    arrival: [
+      "A tomb troll necromancer lopes into the room, sweeping {pronoun} head back and forth."
+    ],
     flee: [
       "A tomb troll necromancer lopes {direction}.",
       "A tomb troll necromancer limps {direction}."
@@ -125,12 +146,9 @@
       "A tomb troll necromancer decays into a pile of skin and bones."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A tomb troll necromancer swings {weapon} at you!"
+    spell_prep: [
+      "A tomb troll necromancer traces a sign that contorts in the air while {pronoun} forcefully incants a dark invocation."
     ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -86,7 +86,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -105,12 +107,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A water witch swings {weapon} at you!",
-      "A water witch thrusts with a spear at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A water witch swings {weapon} at you!",
+        "A water witch thrusts with a spear at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

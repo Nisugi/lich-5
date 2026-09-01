@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "sheruvian initiate",
+  name: "Sheruvian initiate",
   noun: "",
   url: "https://gswiki.play.net/sheruvian_initiate",
   picture: "",
@@ -97,29 +97,40 @@
     gems: nil,
     boxes: nil,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The Sheruvian initiate is much as a monk of the same order, a foul spawn of inhuman parents with a head shaved smooth and covered in dark, mystic runes though fewer and less elaborate. What they appear to lack in intelligence, they make up for in belligerence."
     ],
-    arrival: [],
+    arrival: [
+      "A Sheruvian initiate just came through a sculpted black vaalin arch.",
+      "A Sheruvian initiate just came through a polished engraved maoral door.",
+      "A Sheruvian initiate just came through a small wooden door.",
+      "A Sheruvian initiate just came through a sturdy iron-bound door.",
+      "A Sheruvian initiate just came through a curtained polished ivory arch."
+    ],
     flee: [],
     death: [
       "A Sheruvian initiate lunges at you, exclaiming, \"I've seen children put up a better fight than this fool!  Now he dies!\"",
       "The Sheruvian initiate screams emotionlessly one last time and lies still.",
-      "The Sheruvian initiate falls to the ground and lies still.",
-      "The Sheruvian initiate slumps to the ground."
+      "The Sheruvian initiate falls to the ground and lies still."
     ],
     decay: [],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A Sheruvian initiate lunges at you, exclaiming, \"I've seen children put up a better fight than this fool!  Now he dies!\"",
-      "A Sheruvian initiate swings {weapon} at you!"
+    search: [
+      "The Sheruvian initiate searches around looking for something.",
+      "The Sheruvian initiate glances around, sure {pronoun} has missed something."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [],
+    attacks: {
+      attack: [
+        "A Sheruvian initiate lunges at you, exclaiming, \"I've seen children put up a better fight than this fool!  Now he dies!\"",
+        "A Sheruvian initiate swings {weapon} at you!",
+        "A Sheruvian initiate leaps to {pronoun} feet, {pronoun} eyes darting around looking for trouble."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

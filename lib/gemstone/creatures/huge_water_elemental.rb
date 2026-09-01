@@ -99,7 +99,9 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "essence of water"
+    other: "essence of water",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,10 +112,14 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A huge water elemental utters an incantation in an unfamiliar, bubbling language."
+    ],
+    attacks: {
+      attack: [
+        "A huge water elemental pounds at you with a churning aquatic fist!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

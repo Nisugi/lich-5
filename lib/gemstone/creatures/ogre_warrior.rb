@@ -109,7 +109,9 @@
     gems: true,
     boxes: true,
     skin: "an ogre tooth",
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -133,11 +135,13 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An ogre warrior swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An ogre warrior swings {weapon} at you!",
+        "An ogre warrior spits on the ground defiantly!",
+        "An ogre warrior swings a broad-bladed steel hatchet at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

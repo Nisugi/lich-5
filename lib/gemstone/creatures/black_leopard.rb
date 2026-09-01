@@ -88,7 +88,9 @@
     gems: false,
     boxes: false,
     skin: "a black leopard paw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -96,7 +98,7 @@
     ],
     arrival: [
       "A black leopard scampers in!",
-      "A black leopard scampers in, mewling in pain!",
+      "A black leopard scampers in, mewling in pain!"
     ],
     flee: [
       "A black leopard scampers {direction}.",
@@ -104,21 +106,21 @@
     ],
     death: [
       "The black leopard lets out a final caterwaul and dies.",
-      "The black leopard crumples to the ground and dies.",
-      "Beautiful shot pierces both lungs, the black leopard makes a wheezing noise, and drops dead!"
+      "The black leopard crumples to the ground and dies."
     ],
     decay: [
       "A black leopard decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A black leopard tries to bite you!"
-    ],
-    claw: [
-      "A black leopard claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A black leopard claws at you!"
+      ],
+      bite: [
+        "A black leopard tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

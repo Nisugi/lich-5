@@ -94,7 +94,9 @@
     gems: false,
     boxes: false,
     skin: "a spotted leaper pelt",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -114,11 +116,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A spotted leaper tries to bite you!"
+    stun_break: [
+      "A spotted leaper staggers as {pronoun} tries to regain {pronoun} bearings!"
     ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A spotted leaper tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

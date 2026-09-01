@@ -85,7 +85,9 @@
     gems: true,
     boxes: true,
     skin: "a long fiery red spine",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -96,14 +98,15 @@
     death: [],
     decay: [
       "Spines litter the ground as the cavern urchin crumbles into a pile of splinters and skin.",
-      "A spiked cavern urchin simply withers away, bits of grayish dust scattered about in its wake.",
-      "A luminous arachnid's legs shrivel up beneath it as it decays into dust."
+      "A spiked cavern urchin simply withers away, bits of grayish dust scattered about in its wake."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A spiked cavern urchin thrusts {pronoun} barbed spines at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

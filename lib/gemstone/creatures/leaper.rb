@@ -94,7 +94,9 @@
     gems: nil,
     boxes: nil,
     skin: "a leaper hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,7 +104,8 @@
     ],
     arrival: [],
     flee: [
-      "A leaper bounds {direction}."
+      "A leaper bounds {direction}.",
+      "A leaper lopes {direction}, bounding up and down with {pronoun} powerful front legs!"
     ],
     death: [
       "The leaper collapses to the ground, emits a final snarl, and dies.",
@@ -114,13 +117,17 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A leaper stomps at you with {pronoun} foot!"
+    stun_break: [
+      "A leaper staggers as {pronoun} tries to regain {pronoun} bearings!"
     ],
-    bite: [
-      "A leaper tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A leaper stomps at you with {pronoun} foot!"
+      ],
+      bite: [
+        "A leaper tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

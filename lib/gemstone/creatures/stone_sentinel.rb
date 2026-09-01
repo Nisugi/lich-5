@@ -116,7 +116,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -128,20 +130,25 @@
     flee: [
       "A stone sentinel heads {direction}."
     ],
-    death: [
-      "The stone sentinel slumps to the ground."
-    ],
+    death: [],
     decay: [
       "A stone sentinel crumbles to dust."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A stone sentinel pounds at you with {pronoun} fist!",
-      "A stone sentinel points at you!"
+    search: [
+      "A stone sentinel scans the area slowly and carefully."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A stone sentinel traces a circle in the air."
+    ],
+    attacks: {
+      attack: [
+        "A stone sentinel pounds at you with {pronoun} fist!",
+        "A stone sentinel points at you!",
+        "A stone sentinel pounds at a stone sentinel with {pronoun} fist!",
+        "A stone sentinel pounds at {target} with {pronoun} fist!",
+        "A stone sentinel exhales a virulent green mist toward you, but you are unaffected."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

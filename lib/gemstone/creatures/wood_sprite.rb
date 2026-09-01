@@ -117,7 +117,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet essence shardPristine sprite's hair"
+    other: "Glowing violet essence shardPristine sprite's hair",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -127,26 +129,23 @@
       "Seemingly from nowhere, a wood sprite wanders in!"
     ],
     flee: [
-      "A wood sprite glances around and then wanders {direction}!",
-      "A wood sprite screams loudly as he stands {direction}!"
+      "A wood sprite glances around and then wanders {direction}!"
     ],
     death: [
-      "The wood sprite's eyes grow dim as his lifeforce fades away.",
-      "The wood sprite's eyes grow dim as her lifeforce fades away.",
-      "The wood sprite slumps to the ground."
+      "The wood sprite's eyes grow dim as {pronoun} lifeforce fades away."
     ],
     decay: [
-      "A wood sprite crumbles into a pile of dry splinters.",
-      "The wood sprite's right leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves connecting cartilage, freeing the wood sprite's ribs to move independently."
+      "A wood sprite crumbles into a pile of dry splinters."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A wood sprite swings {weapon} at you!"
+    spell_prep: [
+      "A wood sprite's eyes glow brightly, and {pronoun} motions to you!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A wood sprite swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

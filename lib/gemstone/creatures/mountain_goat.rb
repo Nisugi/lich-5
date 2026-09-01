@@ -78,7 +78,9 @@
     gems: nil,
     boxes: nil,
     skin: "a goat hoof",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,11 +101,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A mountain goat tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A mountain goat tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

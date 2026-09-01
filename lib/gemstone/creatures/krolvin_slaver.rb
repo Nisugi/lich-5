@@ -96,31 +96,36 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Although taller than the average krolvin, the slaver retains the characteristic long-fingered hands. His sturdy musculature is apparent beneath the grey-blue skin. Thick, coarse, white hair covers his head and spreads across his shoulders and down his back."
     ],
-    arrival: [],
+    arrival: [
+      "A krolvin slaver just came through an oaken hatchway."
+    ],
     flee: [
-      "A krolvin slaver slinks {direction}."
+      "A krolvin slaver slinks {direction}.",
+      "A krolvin slaver just went through an oaken hatchway.",
+      "A krolvin slaver just went through a starboard door."
     ],
     death: [
-      "The krolvin slaver's body goes stiff and cold as he dies."
+      "The krolvin slaver's body goes stiff and cold as he dies.",
+      "A krolvin slaver collapses into a pile of dirty rags."
     ],
     decay: [
-      "A krolvin slaver collapses into a pile of dirty rags.",
-      "A raider orc withers away until she is no more.",
-      "A raider orc withers away until he is no more."
+      "A krolvin slaver collapses into a pile of dirty rags."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A krolvin slaver swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A krolvin slaver swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

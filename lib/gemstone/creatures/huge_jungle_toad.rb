@@ -95,7 +95,9 @@
     gems: false,
     boxes: false,
     skin: "green jungle toad hide",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,11 +109,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A huge jungle toad attempts to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A huge jungle toad attempts to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

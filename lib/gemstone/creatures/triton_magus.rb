@@ -110,7 +110,9 @@
     gems: true,
     boxes: true,
     skin: "an iridescent triton hide",
-    other: "a bundle of arrows"
+    other: "a bundle of arrows",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -118,26 +120,26 @@
     ],
     arrival: [
       "A triton magus just arrived.",
-      "A triton combatant strides in, gliding swiftly through the water with a wary look on her face.",
-      "A triton radical strides in, gliding swiftly through the water with a wary look on her face.",
-      "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
-      "A triton combatant strides in, gliding swiftly through the water with a wary look on his face."
+      "A triton magus slips into hiding."
     ],
     flee: [],
     death: [
-      "The triton magus gurgles once and goes still, a wrathful look on her face.",
-      "The triton magus gurgles once and goes still, a wrathful look on his face.",
-      "Beautiful shot pierces both lungs, the triton magus makes a wheezing noise, and drops dead!"
+      "The triton magus gurgles once and goes still, a wrathful look on {pronoun} face."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A triton magus fires {weapon} at you!",
-      "A triton magus hurls {weapon} at you!"
+    spell_prep: [
+      "A triton magus closes {pronoun} eyes for a moment as {pronoun} slowly raises {pronoun} hands to shoulder-level. You hear and feel a resounding low thrumming sound just as a multitude of sharp pieces of debris splinter off from underfoot, savagely assailing the area!",
+      "A triton magus closes {pronoun} eyes for a moment as {pronoun} slowly raises {pronoun} {weapon}. You hear and feel a resounding low thrumming sound just as a multitude of sharp pieces of debris splinter off from underfoot, savagely assailing the area!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      fire: [
+        "A triton magus fires {weapon} at you!"
+      ],
+      hurl: [
+        "A triton magus hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

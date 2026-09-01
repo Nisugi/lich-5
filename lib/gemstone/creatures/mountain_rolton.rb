@@ -82,7 +82,9 @@
     gems: false,
     boxes: false,
     skin: "rolton eye",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,19 +100,18 @@
       "The mountain rolton collapses to the ground, emits a final bleat, and dies.",
       "The mountain rolton lets out a final agonized bleat and dies.",
       "The mountain rolton twitches violently, then dies.",
-      "The mountain rolton collapses to the ground, emits a final silent bleat, and dies.",
-      "The mountain rolton slumps to the ground."
+      "The mountain rolton collapses to the ground, emits a final silent bleat, and dies."
     ],
     decay: [
       "A mountain rolton decays into a pile of fur and bone."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A mountain rolton tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A mountain rolton tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

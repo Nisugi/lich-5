@@ -77,7 +77,9 @@
     gems: nil,
     boxes: nil,
     skin: "thorn-ridden appendage",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -91,11 +93,13 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A writhing frost-glazed vine stabs at you with {pronoun} stinger!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A writhing frost-glazed vine stabs at you with {pronoun} stinger!",
+        "A writhing frost-glazed vine flings a length of vine towards you, but with a flash of incredible reflexes, you skip out of the way and the vine, trailing the rest of {pronoun} body, lands sprawling on the ground.",
+        "A writhing frost-glazed vine stabs at {target} with {pronoun} stinger!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

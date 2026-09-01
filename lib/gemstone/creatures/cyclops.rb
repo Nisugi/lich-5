@@ -98,7 +98,9 @@
     gems: true,
     boxes: true,
     skin: "a cyclops eye",
-    other: "no"
+    other: "no",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -121,12 +123,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A cyclops swings {weapon} at you!",
-      "A cyclops pounds at you with {pronoun} fist!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A cyclops swings {weapon} at you!",
+        "A cyclops pounds at you with {pronoun} fist!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

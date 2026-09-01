@@ -113,7 +113,13 @@
     # prefer object form so we can carry flags
     # { name: "inky black valravn plume", blunt_required: false }
     skin: nil,
-    other: nil # string or [strings]
+    other: nil, # string or [strings]
+    # equipment drops that are real loot, NOT collapsed into "You discard
+    # the creature's useless equipment."
+    armaments: nil,
+    # equipment drops that ANALYZE reveals to be a transmog. No confirmed
+    # examples yet - stays nil until one is analyzed in the wild.
+    transmogs: nil
   },
 
   # ---------- Messaging ----------
@@ -127,9 +133,13 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    # ALL attack messaging lives here, keyed by attack name (snake_case
+    # of the attack/maneuver/spell name). The generic weapon swing is
+    # itself a name: attack. No flat bucket.
+    #   attacks: { attack: [...], bite: [...], charge: [...], impale: [...] }
+    attacks: {},
+    stand: [],                   # rising from prone
+    stun_break: [],              # shaking off a stun / status recovery
 
     # Optional informational block for human tips (NOT triggers)
     info: {

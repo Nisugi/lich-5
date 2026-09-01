@@ -133,7 +133,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -141,23 +143,20 @@
     ],
     arrival: [
       "An infernal lich strides in, leaving a scorched path in her wake.",
-      "A frostborne lich strides in, leaving thin layer of frost in her wake.",
-      "A frostborne lich strides in, leaving thin layer of frost in his wake.",
-      "A frostborne lich just arrived.  Wait, wasn't he here already?",
-      "A frostborne lich just arrived.  Wait, wasn't she here already?"
+      "A frostborne lich strides in, leaving thin layer of frost in {pronoun} wake."
     ],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "An infernal lich assumes a wild-eyed expression as lich points a finger at you!",
-      "An lich swings {weapon} at you!",
-      "A frostborne lich assumes a wild-eyed expression as lich points a finger at you!",
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An infernal {pronoun} assumes a wild-eyed expression as {pronoun} points a finger at you!",
+        "A lich swings {weapon} at you!",
+        "A frostborne {pronoun} assumes a wild-eyed expression as {pronoun} points a finger at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

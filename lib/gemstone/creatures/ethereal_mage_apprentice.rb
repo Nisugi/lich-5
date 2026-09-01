@@ -98,7 +98,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -109,18 +111,22 @@
       "An ethereal mage apprentice floats {direction}.",
       "An ethereal mage apprentice drifts {direction}."
     ],
-    death: [
-      "The mage apprentice goes still for a moment while its head reshapes."
-    ],
+    death: [],
     decay: [],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "An mage apprentice hurls {weapon} at you!",
-      "An mage apprentice swings {weapon} at you!"
+    search: [
+      "An ethereal mage apprentice searches about the room saying, \"We must prevent the krolvin scum from taking the Citadel. Civilization cannot be allowed to be extinguished!\""
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "An ethereal mage apprentice whispers a magical incantation, bending the elements to {pronoun} whim."
+    ],
+    attacks: {
+      attack: [
+        "An ethereal mage apprentice swings {weapon} at you!"
+      ],
+      hurl: [
+        "An ethereal mage apprentice hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

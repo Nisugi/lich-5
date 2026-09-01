@@ -90,7 +90,9 @@
     gems: false,
     boxes: false,
     skin: "a martial eagle talon",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -105,16 +107,15 @@
       "The martial eagle crashes to the ground, motionless."
     ],
     decay: [
-      "The martial eagle decays into a pile of feathers.",
-      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
+      "The martial eagle decays into a pile of feathers."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A martial eagle strikes out at you with all of {pronoun} might!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A martial eagle strikes out at you with all of {pronoun} might!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

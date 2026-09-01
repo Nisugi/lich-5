@@ -89,7 +89,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "glimmering blue essence shard"
+    other: "glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,12 +109,14 @@
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An Arachne servant swings {weapon} at you!"
+    spell_prep: [
+      "An Arachne servant intones threateningly, \"Blasphemer! Infidel! Thou shalt know the eternal pain of Arachne!\""
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An Arachne servant swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -81,7 +81,9 @@
     gems: true,
     boxes: true,
     skin: "a silvery hoof",
-    other: "Glowing violet mote of essence"
+    other: "Glowing violet mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -90,14 +92,14 @@
     arrival: [],
     flee: [],
     death: [],
-    decay: [
-      "A shadow mare's eyes go dim as she dissolves into the shadows."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A night mare flares {pronoun} nostrils."
+    ],
+    stand: [
+      "A night mare throws {pronoun} head back and neighs, shaking off the stun!"
+    ],
     info: {
       general: [],
       class_tips: {

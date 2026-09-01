@@ -117,13 +117,13 @@
     magic_items: true,
     gems: true,
     boxes: true,
-    skin: "a spectre skin",
-    other: "Alchemy (common)"
+    skin: "a spectre's ",
+    other: "Alchemy (common)",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "You have never seen anything quite like a spectre, so you are not really sure what to make of it or how dangerous it might be."
-    ],
+    description: [],
     arrival: [
       "A spectre just arrived.",
       "A shadowy spectre just arrived."
@@ -133,24 +133,25 @@
     ],
     death: [
       "The spectre falls to the ground motionless.",
-      "The shadowy spectre falls to the ground motionless.",
-      "The shadowy spectre goes still for a moment while its head reshapes.",
-      "The spectre goes still for a moment while its head reshapes."
+      "The shadowy spectre falls to the ground motionless."
     ],
     decay: [
       "A spectre turns to dust.",
       "A shadowy spectre turns to dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A spectre gestures at you!",
-      "A spectre nods at you!",
-      "A spectre pounds at you with {pronoun} fist!",
-      "A spectre swings {weapon} at you!"
+    spell_prep: [
+      "A spectre hisses an evil incantation!",
+      "A spectre utters a phrase of arcane magic."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A spectre gestures at you!",
+        "A spectre nods at you!",
+        "A spectre pounds at you with {pronoun} fist!",
+        "A spectre swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [
         "Also encountered as an unarmed (\"monk\") variant at Plains of Bone, using natural attacks instead of weapons."

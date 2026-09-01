@@ -109,47 +109,60 @@
     boxes: nil,
     skin: "golden hinterboar mane",
     other: nil,
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: "Squinty eyes the color of molten copper dart here and there as if the immense boar is always on the alert for predators, but given its tremendous mass, it likely has little cause for worry.  The hinterboar's pelt is a glittering, metallic golden in hue, but is shot through with a hypnotic pattern of duskier bristles.  The line of raised bristles down the center of the beast's spine seems to radiate faint luminescence, warm and honey-hued.",
     arrival: [
       "Heavy hoofbeats herald the arrival of an immense gold-bristled hinterboar.",
       "An immense gold-bristled hinterboar trots in with its tusks lifted skyward.  Its great hooves shake the ground with every step.",
-      "An immense gold-bristled hinterboar just arrived."
+      "An immense gold-bristled hinterboar just arrived.",
+      "An immense gold-bristled hinterboar trots in with {pronoun} {weapon}. Its great hooves shake the ground with every step."
     ],
     flee: [
-      "An immense gold-bristled hinterboar charges {direction}, shaking the ground with each hoofbeat."
+      "An immense gold-bristled hinterboar charges {direction}, shaking the ground with each hoofbeat.",
+      "An immense gold-bristled hinterboar just went down a narrow path.",
+      "An immense gold-bristled hinterboar just went into a huge hoarbeam longhouse."
     ],
     death: [
       "With a final discordant squeal, an immense gold-bristled hinterboar's great head sinks to the ground as its form goes still.",
-      "Beautiful shot pierces both lungs, the gold-bristled hinterboar makes a wheezing noise, and drops dead!",
       "An immense gold-bristled hinterboar's great head sinks to the ground as its form goes still."
     ],
     decay: [
-      "An immense gold-bristled hinterboar's form succumbs to decay, collapsing into ruined meat and patchy bristles.",
-      "The gold-bristled hinterboar's right leg crumbles briefly and explodes in a shower of gore.",
-      "The gold-bristled hinterboar's left leg crumbles briefly and explodes in a shower of gore."
+      "An immense gold-bristled hinterboar's form succumbs to decay, collapsing into ruined meat and patchy bristles."
     ],
     search: [
       "An immense gold-bristled hinterboar puts its snout to the ground and snuffles for unseen prey.",
       "An immense gold-bristled hinterboar snuffles at the ground, trying to ferret out hidden threats."
     ],
-    attack: [
-      "Lowering {pronoun} head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
-      "Murder in {pronoun} eyes, an immense gold-bristled hinterboar tries to gore you with {pronoun} tusks!",
-      "Rearing up on {pronoun} hind legs, an immense gold-bristled hinterboar stomps at you with {pronoun} huge hooves!",
-      "Lowering immense gold-bristled hinterboar head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
-      "Murder in immense gold-bristled hinterboar eyes, an immense gold-bristled hinterboar tries to gore you with immense gold-bristled hinterboar tusks!",
-      "Rearing up on immense gold-bristled hinterboar hind legs, an immense gold-bristled hinterboar stomps at you with immense gold-bristled hinterboar huge hooves!"
-    ],
-    bite: [],
-    claw: [],
-    charge: "Lowering its head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
-    boarrush: "An immense gold-bristled hinterboar scrapes the ground with one forehoof before lowering its huge head.  It barrels into a mighty charge, hooves pounding across the ground as it races toward you.",
-    impale: "Murder in its eyes, an immense gold-bristled hinterboar tries to gore you with its tusks!",
-    feint: "An immense gold-bristled hinterboar feints low.",
-    stomp: "Rearing up on its hind legs, an immense gold-bristled hinterboar stomps at you with its huge hooves!"
+    attacks: {
+      attack: [
+        "Lowering {pronoun} head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
+        "Murder in {pronoun} eyes, an immense gold-bristled hinterboar tries to gore you with {pronoun} tusks!",
+        "Rearing up on {pronoun} hind legs, an immense gold-bristled hinterboar stomps at you with {pronoun} huge hooves!",
+        "Lowering immense gold-bristled hinterboar head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
+        "Murder in {pronoun} eyes, an {pronoun} tries to gore you with {pronoun} tusks!",
+        "Rearing up on {pronoun} hind legs, an {pronoun} stomps at you with {pronoun} huge hooves!",
+        "An immense gold-bristled hinterboar pounds the grounds with {pronoun} hooves, letting out a squeal of bestial triumph."
+      ],
+      boarrush: [
+        "An immense gold-bristled hinterboar scrapes the ground with one forehoof before lowering its huge head.  It barrels into a mighty charge, hooves pounding across the ground as it races toward you."
+      ],
+      charge: [
+        "Lowering its head, an immense gold-bristled hinterboar barrels into a merciless charge at you!"
+      ],
+      feint: [
+        "An immense gold-bristled hinterboar feints low."
+      ],
+      impale: [
+        "Murder in its eyes, an immense gold-bristled hinterboar tries to gore you with its tusks!"
+      ],
+      stomp: [
+        "Rearing up on its hind legs, an immense gold-bristled hinterboar stomps at you with its huge hooves!"
+      ]
+    },
   }
 }
 

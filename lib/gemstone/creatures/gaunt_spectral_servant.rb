@@ -80,7 +80,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet mote of essence"
+    other: "Glowing violet mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -91,15 +93,18 @@
       "A gaunt spectral servant silently floats {direction}."
     ],
     death: [
-      "A low sigh fills the air and the spectral servant fades to nothing.",
-      "The spectral servant goes still for a moment while its head reshapes."
+      "A low sigh fills the air and the spectral servant fades to nothing."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A gaunt spectral servant whispers haunting arcane words that echo eerily."
+    ],
+    attacks: {
+      attack: [
+        "A gaunt spectral servant swings a crooked willow runestaff at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

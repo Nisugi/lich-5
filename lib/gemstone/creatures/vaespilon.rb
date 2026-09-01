@@ -108,7 +108,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Inky necrotic core"
+    other: "Inky necrotic core",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -123,16 +125,18 @@
       "The vaespilon wails in terrifying pain one last time and lies still."
     ],
     decay: [
-      "All the malice and magic that once held the vaespilon together dissipates, leaving nothing but a husk which crumbles to dust.",
-      "Acid dissolves connecting cartilage, freeing the vaespilon's ribs to move independently."
+      "All the malice and magic that once held the vaespilon together dissipates, leaving nothing but a husk which crumbles to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A vaespilon swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A vaespilon swings {weapon} at you!"
+      ],
+      cast: [
+        "A vaespilon points a skeletal finger at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

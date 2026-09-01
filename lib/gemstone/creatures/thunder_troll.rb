@@ -142,7 +142,9 @@
     gems: true,
     boxes: true,
     skin: "a troll scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -162,14 +164,18 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A thunder troll claps {pronoun} hands together in front of you!",
-      "A thunder troll swings {weapon} at you!"
+    stand: [
+      "A thunder troll throws {pronoun} head back and roars in anger, shaking off the stun!"
     ],
-    bite: [],
-    claw: [
-      "A thunder troll claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A thunder troll claps {pronoun} hands together in front of you!",
+        "A thunder troll swings {weapon} at you!"
+      ],
+      claw: [
+        "A thunder troll claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

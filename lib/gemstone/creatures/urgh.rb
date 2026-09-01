@@ -94,13 +94,17 @@
     gems: false,
     boxes: false,
     skin: "urgh hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The herbivorous urgh resembles, if anything, an overgrown, hairy pig. He stands on four feet and has a dark brown coat and curled, hairless tail. Instead of the usual upper and lower jaw in the front of his head, though, the urgh has an extremely long upper lip, which he can extend a good two feet to drag vegetation back into his mouth. Under the mouth reside two long, sharp tusks, used for digging up peat and other grasses upon which the urgh feeds, and for defense."
     ],
-    arrival: [],
+    arrival: [
+      "An urgh charges in, squealing an angry challenge!"
+    ],
     flee: [
       "An urgh trots {direction}."
     ],
@@ -113,11 +117,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An urgh charges at you with {pronoun} tusk!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An urgh charges at you with {pronoun} tusk!",
+        "An urgh charges at {target} with {pronoun} tusk!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

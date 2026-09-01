@@ -82,13 +82,17 @@
     gems: false,
     boxes: false,
     skin: "a gak pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The striped gak is a big, ugly beast with a heavy striped brown pelt. A marked odor of dung and musty wool surrounds him in a noxious cloud. The gak chomps vicious-looking teeth, a mix of distrust and hatred in his large doe-like eyes. A pair of sharp horns curves up above his short, broad head in a shape that resembles a lyre. The animal looks ungainly with his tall shoulders and shorter hindquarters, which give his a jerky, uneven gait. Suddenly, he bares his bovine ivories and brays loudly!"
     ],
-    arrival: [],
+    arrival: [
+      "A striped gak charges in, flaring {pronoun} nostrils angrily!"
+    ],
     flee: [
       "A striped gak gallops {direction}."
     ],
@@ -102,11 +106,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A striped gak charges at you with {pronoun} tusk!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A striped gak charges at you with {pronoun} tusk!",
+        "A striped gak charges at {target} with {pronoun} tusk!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

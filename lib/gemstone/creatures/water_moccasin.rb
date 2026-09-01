@@ -85,8 +85,10 @@
     magic_items: false,
     gems: false,
     boxes: false,
-    skin: "a water moccasin skin",
-    other: nil
+    skin: "a water moccasin's ",
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,19 +100,17 @@
     flee: [
       "A water moccasin slithers {direction}."
     ],
-    death: [
-      "The water moccasin slumps to the ground."
-    ],
+    death: [],
     decay: [
       "A water moccasin decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A water moccasin tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A water moccasin tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

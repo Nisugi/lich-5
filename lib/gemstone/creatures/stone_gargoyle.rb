@@ -82,7 +82,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Essence of earth"
+    other: "Essence of earth",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -95,21 +97,23 @@
       "A stone gargoyle heads {direction}.",
       "A stone gargoyle limps {direction}."
     ],
-    death: [
-      "The stone gargoyle slumps to the ground."
-    ],
+    death: [],
     decay: [
       "A stone gargoyle crumbles to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A stone gargoyle tries to bite you!"
-    ],
-    claw: [
-      "A stone gargoyle claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A stone gargoyle leaps at you with amazing speed and accuracy."
+      ],
+      bite: [
+        "A stone gargoyle tries to bite you!"
+      ],
+      claw: [
+        "A stone gargoyle claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

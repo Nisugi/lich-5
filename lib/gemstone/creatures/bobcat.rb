@@ -98,7 +98,9 @@
     gems: false,
     boxes: false,
     skin: "a bobcat claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -109,8 +111,7 @@
     ],
     flee: [
       "A bobcat scampers {direction}.",
-      "A bobcat scampers {direction}, mewling in pain.",
-      "A bobcat roars loudly as she stands {direction}!"
+      "A bobcat scampers {direction}, mewling in pain."
     ],
     death: [
       "The bobcat crumples to the ground and dies.",
@@ -121,13 +122,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A bobcat tries to bite you!"
-    ],
-    claw: [
-      "A bobcat claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A bobcat claws at you!"
+      ],
+      bite: [
+        "A bobcat tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

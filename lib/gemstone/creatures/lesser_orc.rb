@@ -108,15 +108,16 @@
     gems: true,
     boxes: true,
     skin: "an orc hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The lesser orc stands almost man high but is much thicker so that it appears stunted for its height. Heavy brow ridges and a sloping forehead give the beast a brutish appearance not aided by its rank breath and foul odor. It glares blankly around ignoring anything that it can't eat or pillage."
     ],
     arrival: [
-      "A lesser orc wanders in looking a bit unsteady on her feet.",
-      "A lesser orc wanders in looking a bit unsteady on his feet."
+      "A lesser orc wanders in looking a bit unsteady on {pronoun} feet."
     ],
     flee: [
       "A lesser orc tramps {direction}.",
@@ -132,11 +133,13 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser orc swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser orc swings {weapon} at you!",
+        "A lesser orc swings a short sword at {target}!",
+        "A lesser orc swings a cudgel at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

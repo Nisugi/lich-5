@@ -98,32 +98,40 @@
     gems: false,
     boxes: false,
     skin: "a coyote tail",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The coyote, a quick, buff-colored creature, is a smaller cousin of the wolf. However, the coyote lacks the wolf's braver tendencies, preferring to slash and run rather than risk a frontal assault in an attempt to go for the throat. The coyote must be approached with care, as the coyote has been known to take an adventurer's hand off with one quick snap of the jaws."
     ],
-    arrival: [],
+    arrival: [
+      "A coyote pads in so quietly that you barely notice."
+    ],
     flee: [
       "A coyote pads {direction}."
     ],
     death: [
       "The coyote falls to the ground and dies.",
-      "The coyote rolls over and dies.",
+      "The coyote rolls over and dies."
     ],
     decay: [
       "A coyote decays into a compost of fangs and fur."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A coyote charges at you!"
+    stun_break: [
+      "A coyote shakes {pronoun} head violently while trying to regain {pronoun} bearings!"
     ],
-    bite: [
-      "A coyote tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A coyote charges at you!"
+      ],
+      bite: [
+        "A coyote tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

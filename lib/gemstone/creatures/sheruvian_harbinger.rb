@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "sheruvian harbinger",
+  name: "Sheruvian harbinger",
   noun: "",
   url: "https://gswiki.play.net/sheruvian_harbinger",
   picture: "",
@@ -126,7 +126,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -141,16 +143,18 @@
       "The Sheruvian harbinger collapses on the ground and lies still.",
       "The Sheruvian harbinger releases a horrible wail then lies still."
     ],
-    decay: [
-      "The Sheruvian harbinger's left leg crumbles briefly and explodes in a shower of gore."
+    decay: [],
+    search: [
+      "A Sheruvian harbinger glances around, {pronoun} cold eyes examining the surroundings."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A Sheruvian harbinger swings {weapon} at you!"
+    spell_prep: [
+      "A Sheruvian harbinger hisses an evil incantation."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Sheruvian harbinger swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

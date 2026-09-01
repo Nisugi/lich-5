@@ -115,7 +115,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -123,24 +125,28 @@
     ],
     arrival: [],
     flee: [
-      "A mezic hobbles {direction}."
+      "A mezic hobbles {direction}.",
+      "A mezic hobbles {direction}, grumbling about something or another.",
+      "A mezic hobbles slowly {direction}."
     ],
     death: [
       "The mezic twitches violently, then dies.",
       "The mezic falls to the ground motionless.",
-      "The mezic cries out one last time and lies still.",
-      "The mezic slumps to the ground."
+      "The mezic cries out one last time and lies still."
     ],
     decay: [
-      "The mezic's right leg crumbles briefly and explodes in a shower of gore."
+      "A mezic decays away, leaving nothing behind."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A mezic hurls {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A mezic swings a ball and chain at {target}!"
+      ],
+      hurl: [
+        "A mezic hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

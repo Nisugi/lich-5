@@ -88,40 +88,49 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A shan empath snarls and gestures sharply at you!",
+        "A shan empath swings {weapon} at you!"
+      ],
+      bolt: [
+        "A shan empath hurls a radiant ball of energy at you!"
+      ]
+    },
+    stand: [
+      "A shan empath scrambles to {pronoun} feet!"
+    ],
     description: [
       ""
     ],
     arrival: [
-      "A shan empath just arrived."
+      "A shan empath just arrived.",
+      "A shan empath plods in snarling to the spirits!",
+      "A shan empath just came through a rotting gate leading down to a vineyard."
     ],
     flee: [
       "A shan empath pads {direction}.",
-      "A shan empath limps {direction}."
+      "A shan empath limps {direction}.",
+      "A shan empath just went into a decrepit gazebo.",
+      "A shan empath just went through a rotting gate leading down to a vineyard.",
+      "A shan empath just went into a dark tunnel.",
+      "A shan empath just went through a rotting gate leading up to the overlook."
     ],
     death: [
       "The shan empath howls out one last time and dies.",
-      "The shan empath yips in pain as he falls to the ground motionless.",
-      "The shan empath yips in pain as she falls to the ground motionless.",
-      "A shan empath's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
-      "A shan empath's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
-      "Beautiful shot pierces both lungs, the shan empath makes a wheezing noise, and drops dead!",
-      "The shan empath slumps to the ground."
+      "The shan empath yips in pain as {pronoun} falls to the ground motionless.",
+      "A shan empath's body shimmers slightly.  Suddenly, {pronoun} features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of {pronoun} death like a silhouette."
     ],
-    decay: [
-      "The shan empath's left leg crumbles briefly and explodes in a shower of gore.",
-      "The shan empath's right leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A shan empath snarls and gestures sharply at you!",
-      "A shan empath swings {weapon} at you!"
+    spell_prep: [
+      "A shan empath concentrates intently on you, and a pulse of pearlescent energy ripples toward you!"
     ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

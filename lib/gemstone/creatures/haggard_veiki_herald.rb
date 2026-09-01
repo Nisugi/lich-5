@@ -66,12 +66,12 @@
     emp_td: (368..376),
     pal_td: (325..328),
     ran_td: (322..329),
-    sor_td: "366 to 396",
+    sor_td: (366..396),
     wiz_td: nil,
     mje_td: 400,
-    mne_td: "385 to 415",
+    mne_td: (385..415),
     mjs_td: (359..364),
-    mns_td: "364 to 374",
+    mns_td: (364..374),
     mnm_td: 313,
     defensive_spells: [
       "Mantle of Faith (1601)",
@@ -97,26 +97,30 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "Power rumbles and thrums through the limbs of the Veiki herald. That barely contained might and the intensity of his devotion have colluded to burn the meat from his bones, leaving him skeletally thin. The hollows of his face are deep and haunted, the crags cast in deep shadow by the flashes of brilliant azure that flicker and fade within his mesmerizing stare. The herald's hair is brittle and blanched, starkly pale against his sun-darkened skin.\n\n;Assess\nThe Veiki herald is huge in size and about thirteen feet high in his current state."
-    ],
+    description: [],
     arrival: [
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as he lumbers in.",
-      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as she lumbers in."
+      "A gust of wind and a flash of lightning herald the arrival of a stooped titan stormcaller as {pronoun} lumbers in.",
+      "A haggard veiki herald lumbers ponderously in, azure sparks flickering in {pronoun} eyes to illuminate the ominous crevices of {pronoun} face."
     ],
-    flee: [],
+    flee: [
+      "A haggard veiki herald hobbles {direction}, clenching a fist to distract {reflexive} from pain."
+    ],
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "Hoisting {pronoun} zorchar khopesh high, a haggard Veiki herald strikes brutally at you!",
+    spell_prep: [
+      "A haggard Veiki herald chants in a low, guttural voice."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "Hoisting {pronoun} zorchar khopesh high, a haggard Veiki herald strikes brutally at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

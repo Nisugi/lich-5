@@ -89,7 +89,9 @@
     gems: true,
     boxes: true,
     skin: "zombie scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,27 +101,38 @@
       "A zombie shambles in!"
     ],
     flee: [
-      "A zombie wails madly as he limps {direction}.",
-      "A zombie wails madly as she limps {direction}.",
+      "A zombie wails madly as {pronoun} limps {direction}.",
       "A zombie shambles {direction}."
     ],
     death: [],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the zombie's ribs to move independently."
+    decay: [],
+    search: [
+      "A zombie scans the area, {pronoun} eyes darting wildly about."
     ],
-    search: [],
     spell_prep: [],
-    attack: [
-      "A zombie waves {pronoun} arms around flinging bits of flesh towards you.",
-      "A zombie points at you and gurgles, \"Fresh meat!\"",
-      "A zombie waves zombie arms around flinging bits of flesh towards you."
-    ],
-    bite: [
-      "A zombie tries to bite you!"
-    ],
-    claw: [
-      "A zombie claws at you!"
-    ],
+    attacks: {
+      fire: [
+        "A zombie fires a plain wooden arrow at you!",
+        "A zombie fires a wooden heavy crossbow bolt at you!",
+        "A zombie fires a plain wooden bolt at you!"
+      ],
+      attack: [
+        "A zombie waves {pronoun} arms around flinging bits of flesh towards you.",
+        "A zombie points at you and gurgles, \"Fresh meat!\"",
+        "A zombie waves zombie arms around flinging bits of flesh towards you.",
+        "A zombie lashes about the area unsteadily grasping at the air.",
+        "A zombie swings a military pick at you!",
+        "A zombie slashes with a troll-claw at you!",
+        "A zombie swings a mace at you!",
+        "A zombie swings a handaxe at {target}!"
+      ],
+      bite: [
+        "A zombie tries to bite you!"
+      ],
+      claw: [
+        "A zombie claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

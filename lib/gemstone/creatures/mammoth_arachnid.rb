@@ -107,7 +107,9 @@
     gems: false,
     boxes: false,
     skin: "a mammoth arachnid mandible",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -128,13 +130,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A mammoth arachnid tries to ensnare you!"
-    ],
-    bite: [
-      "A mammoth arachnid tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A mammoth arachnid tries to ensnare {target}!"
+      ],
+      bite: [
+        "A mammoth arachnid tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

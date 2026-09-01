@@ -109,7 +109,9 @@
     gems: true,
     boxes: true,
     skin: "a ghoul finger",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -124,24 +126,28 @@
     ],
     death: [
       "The ghoul master falls to the ground motionless.",
-      "The ghoul master screams evilly one last time and goes still.",
-      "Beautiful shot pierces both lungs, the ghoul master makes a wheezing noise, and drops dead!"
+      "The ghoul master screams evilly one last time and goes still."
     ],
     decay: [
-      "A ghoul master turns to dust.",
-      "The ghoul master's right leg crumbles briefly and explodes in a shower of gore."
+      "A ghoul master turns to dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A ghoul master pounds at you with {pronoun} fist!"
+    spell_prep: [
+      "A ghoul master mutters a chant!",
+      "A ghoul master gestures at {target}!"
     ],
-    bite: [
-      "A ghoul master tries to bite you!"
-    ],
-    claw: [
-      "A ghoul master claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A ghoul master pounds at you with {pronoun} fist!",
+        "A ghoul master pounds at {target} with {pronoun} fist!"
+      ],
+      bite: [
+        "A ghoul master tries to bite you!"
+      ],
+      claw: [
+        "A ghoul master claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

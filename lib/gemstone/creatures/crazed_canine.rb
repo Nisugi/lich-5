@@ -90,7 +90,9 @@
     gems: false,
     boxes: false,
     skin: "a rotted canine",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,20 +104,28 @@
     ],
     death: [
       "The crazed canine falls to the ground and dies.",
-      "The crazed canine rolls over and dies."
+      "The crazed canine rolls over and dies.",
+      "A crazed canine falls to the ground! {target} deftly regains {target} footing."
     ],
     decay: [
       "A crazed canine decays into a compost of fangs and fur."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A crazed canine charges at you!"
+    stun_break: [
+      "A crazed canine shakes {pronoun} head violently while trying to regain {pronoun} bearings!"
     ],
-    bite: [
-      "A crazed canine tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A crazed canine charges at you!",
+        "A crazed canine rushes up!",
+        "A crazed canine leaps towards {target}, but misses and sprawls to the ground!",
+        "A crazed canine rushes down!"
+      ],
+      bite: [
+        "A crazed canine tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -90,7 +90,9 @@
     gems: true,
     boxes: false,
     skin: nil,
-    other: "a small glowing vial"
+    other: "a small glowing vial",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -101,13 +103,13 @@
       "A wind wraith drifts {direction}.",
       "A flexile wind wraith drifts {direction}.",
       "A dazzling wind wraith drifts {direction}.",
-      "A flashy wind wraith drifts {direction}."
+      "A flashy wind wraith drifts {direction}.",
+      "A wind wraith storms about, causing small tornado-like spirals to break off from {pronoun} form in various directions."
     ],
     death: [
       "A wind wraith releases a groan of mingled ecstasy and relief as it fades away.",
       "A flexile wind wraith releases a groan of mingled ecstasy and relief as it fades away.",
       "A sinuous wind wraith releases a groan of mingled ecstasy and relief as it fades away.",
-      "The wind wraith goes still for a moment while its head reshapes.",
       "A dazzling wind wraith releases a groan of mingled ecstasy and relief as it fades away.",
       "A flashy wind wraith releases a groan of mingled ecstasy and relief as it fades away.",
       "A robust wind wraith releases a groan of mingled ecstasy and relief as it fades away."
@@ -115,11 +117,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A wind wraith claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A wind wraith rushes past you, causing your clothing to ripple wildy in the strong winds."
+      ],
+      claw: [
+        "A wind wraith claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -88,7 +88,9 @@
     gems: nil,
     boxes: nil,
     skin: "a pulsating firethorn shoot",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,7 +101,8 @@
       "A firethorn shoot just arrived."
     ],
     flee: [
-      "A firethorn shoot heads {direction}."
+      "A firethorn shoot heads {direction}.",
+      "A firethorn shoot just went across a footbridge."
     ],
     death: [
       "The firethorn shoot falls to the ground and dies.",
@@ -110,11 +113,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A firethorn shoot stabs at you with {pronoun} stinger!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A firethorn shoot stabs at you with {pronoun} stinger!",
+        "A firethorn shoot stabs at {target} with {pronoun} stinger!",
+        "The shoot is too easy for the likes of you!",
+        "A firethorn shoot tries to ensnare {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

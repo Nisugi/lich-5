@@ -100,7 +100,9 @@
     gems: true,
     boxes: true,
     skin: "a seeker eye",
-    other: "Glowing violet mote of essence"
+    other: "Glowing violet mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -111,20 +113,25 @@
       "A seeker moans as she shuffles {direction}."
     ],
     death: [
-      "The seeker mutters, \"...the Eye, the Eye...\" and lies still.",
-      "The seeker slumps to the ground."
+      "The seeker mutters, \"...the Eye, the Eye...\" and lies still."
     ],
-    decay: [
-      "The seeker's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A seeker points a skeletal finger at you!",
-      "A seeker swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A seeker swings {weapon} at you!"
+      ],
+      bolt: [
+        "A seeker hurls a stream of fire at {target}!"
+      ],
+      cast: [
+        "A seeker points a skeletal finger at you!"
+      ],
+      hurl: [
+        "A seeker hurls a large boulder at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -94,7 +94,9 @@
     gems: nil,
     boxes: nil,
     skin: "frosted branch",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -112,14 +114,15 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A dark frosty plant flings a frost-covered crystalline flower towards you!",
-      "A dark frosty plant rotates until it points a large flower at you!",
-      "A dark frosty plant stabs at you with {pronoun} stinger!",
-      "A dark frosty plant turns one of {pronoun} massive flowers towards you and spits a seed in your direction!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A dark frosty plant flings a frost-covered crystalline flower towards you!",
+        "A dark frosty plant rotates until it points a large flower at you!",
+        "A dark frosty plant stabs at you with {pronoun} stinger!",
+        "A dark frosty plant turns one of {pronoun} massive flowers towards you and spits a seed in your direction!",
+        "A dark frosty plant stabs at {target} with {pronoun} stinger!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

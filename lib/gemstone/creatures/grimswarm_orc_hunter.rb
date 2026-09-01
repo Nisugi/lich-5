@@ -77,7 +77,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -90,12 +92,23 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A Grimswarm orc hunter swings {weapon} at you!"
+    spell_prep: [
+      "A Grimswarm orc hunter gestures and utters a phrase of magic."
     ],
-    bite: [],
-    claw: [],
+    stand: [
+      "A Grimswarm orc hunter throws {pronoun} head back and roars, shaking off the stun!"
+    ],
+    stun_break: [
+      "A Grimswarm orc hunter throws {pronoun} head back and roars, shaking off the stun!"
+    ],
+    attacks: {
+      attack: [
+        "A Grimswarm orc hunter swings {weapon} at you!"
+      ],
+      fire: [
+        "A Grimswarm orc hunter fires a plain wooden bolt at you!"
+      ]
+    },
     info: {
       general: [
         "Observed with ball and chain (AS 256, n=8) and casting (CS 198), camp level unknown."

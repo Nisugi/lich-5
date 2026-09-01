@@ -97,7 +97,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -108,22 +110,25 @@
     ],
     flee: [
       "A skeletal lord shambles {direction}.",
-      "A skeletal lord wails madly as it limps {direction}."
+      "A skeletal lord wails madly as it limps {direction}.",
+      "A skeletal lord just went through some barn doors.",
+      "A skeletal lord just went through a stout wooden door.",
+      "A skeletal lord just went through a stone arch."
     ],
     death: [
       "The skeletal lord falls to the ground motionless.",
       "The skeletal lord wails in terrifying pain one last time and lies still."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the skeletal lord's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A skeletal lord thrusts with a splintered lance at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A skeletal lord thrusts with a splintered lance at you!",
+        "A skeletal lord swings {pronoun} {weapon} at your vultite handaxe!",
+        "A skeletal lord swings {pronoun} {weapon} at your mossbark runestaff!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

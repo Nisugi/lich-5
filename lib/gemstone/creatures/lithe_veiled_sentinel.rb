@@ -151,7 +151,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -159,28 +161,41 @@
     ],
     arrival: [
       "A lithe veiled sentinel strides in, eyes surveying the surroundings warily.",
-      "A lithe veiled sentinel just arrived."
+      "A lithe veiled sentinel just arrived.",
+      "A lithe veiled sentinel just came through a polished acacia archway.",
+      "A lithe veiled sentinel just came through a pair of high bronze double doors."
     ],
-    flee: [],
+    flee: [
+      "A lithe veiled sentinel just went through a polished acacia archway.",
+      "A lithe veiled sentinel just went through a pair of high bronze double doors.",
+      "A lithe veiled sentinel just went into a huge sandstone spire."
+    ],
     death: [
       "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  She dies with a knowing smile on her face.",
-      "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  He dies with a knowing smile on his face.",
-      "Intestines rupture from intense heat; a lithe veiled sentinel dies a slow, painful death."
+      "A lithe veiled sentinel lets out a ragged gasp, collapsing to one knee and looking sightlessly to the heavens.  He dies with a knowing smile on his face."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the veiled sentinel's ribs to move independently."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A lithe veiled sentinel delivers a vicious kick at you!",
-      "A lithe veiled sentinel throws {pronoun} arms outward for balance and leaps into the air, executing a series of kicks at you!",
-      "Moving with preternatural speed, a lithe veiled sentinel strikes at you with the heel of lithe veiled sentinel hand!",
-      "Snarling, a lithe veiled sentinel charges toward you, fists flying with deadly precision!",
-      "With an eerie, boneless fluidity, a lithe veiled sentinel slashes at you with {pronoun} bronze cutlass!"
+    spell_prep: [
+      "A lithe veiled sentinel mumbles a silent and sibilant prayer, channeling blue-green energy down {pronoun} arms.",
+      "A lithe veiled sentinel whispers, \"The priests will come for you soon.\""
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lithe veiled sentinel delivers a vicious kick at you!",
+        "A lithe veiled sentinel throws {pronoun} arms outward for balance and leaps into the air, executing a series of kicks at you!",
+        "Moving with preternatural speed, a {pronoun} strikes at you with the heel of {pronoun} hand!",
+        "Snarling, a lithe veiled sentinel charges toward you, fists flying with deadly precision!",
+        "With an eerie, boneless fluidity, a lithe veiled sentinel slashes at you with {pronoun} bronze cutlass!",
+        "A lithe veiled sentinel lashes out in an attempt to disarm your vultite bastard sword, but you are too swift for {pronoun}!",
+        "A lithe veiled sentinel lashes out in an attempt to disarm your smooth glowbark staff, but you are too swift for {pronoun}!",
+        "A lithe veiled sentinel lashes out in an attempt to disarm your mossbark runestaff, but you are too swift for {pronoun}!",
+        "A lithe veiled sentinel lashes out in an attempt to disarm your glowbark long bow, but you are too swift for {pronoun}!",
+        "A lithe veiled sentinel lashes out in an attempt to disarm your ghezyte long bow, but you are too swift for {pronoun}!",
+        "A lithe veiled sentinel lashes out in an attempt to disarm {target} storm surita staff, but {pronoun} is too swift for {pronoun}!",
+        "A lithe veiled sentinel lashes out in an attempt to disarm your slim short sword, but you are too swift for {pronoun}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

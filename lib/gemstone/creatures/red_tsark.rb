@@ -86,7 +86,9 @@
     gems: nil,
     boxes: nil,
     skin: "a tsark skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,22 +100,24 @@
       "A red tsark slowly trundles {direction}."
     ],
     death: [
-      "The red tsark goes limp and she falls over as the fire slowly fades from her eyes.",
-      "The red tsark goes limp and he falls over as the fire slowly fades from his eyes.",
-      "The red tsark slumps to the ground."
+      "The red tsark goes limp and {pronoun} falls over as the fire slowly fades from {pronoun} eyes."
     ],
     decay: [],
-    search: [],
+    search: [
+      "A red tsark looks around apprehensively as {pronoun} takes a step back."
+    ],
     spell_prep: [],
-    attack: [
-      "A red tsark hurls {weapon} at you!"
-    ],
-    bite: [
-      "A red tsark tries to bite you!"
-    ],
-    claw: [
-      "A red tsark claws at you!"
-    ],
+    attacks: {
+      bite: [
+        "A red tsark tries to bite you!"
+      ],
+      claw: [
+        "A red tsark claws at you!"
+      ],
+      hurl: [
+        "A red tsark hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

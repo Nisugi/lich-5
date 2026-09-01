@@ -94,7 +94,9 @@
     gems: true,
     boxes: true,
     skin: "a cockatrice feather",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -115,11 +117,13 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A cockatrice screeches and strikes at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A cockatrice screeches and strikes at you!",
+        "A cockatrice attempts to kick mud at you, but is unable to kick up a sufficient amount of mud.",
+        "A cockatrice attempts to kick water at you, but is unable to kick up a sufficient amount of water."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "agresh troll warrior",
+  name: "Agresh troll warrior",
   noun: "",
   url: "https://gswiki.play.net/agresh_troll_warrior",
   picture: "",
@@ -88,7 +88,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,13 +108,15 @@
       "An Agresh troll warrior decays into compost."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An Agresh troll warrior pounds at you with {pronoun} fist!",
-      "An Agresh troll warrior swings {weapon} at you!"
+    spell_prep: [
+      "An Agresh troll warrior mutters, \"Srlarloror'rt srar 'mrosrdnragh srar 'r'rar s'r'vr'r'rawrd!\""
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An Agresh troll warrior pounds at you with {pronoun} fist!",
+        "An Agresh troll warrior swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

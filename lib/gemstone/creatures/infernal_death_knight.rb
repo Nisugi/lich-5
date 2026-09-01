@@ -120,29 +120,47 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Judging from her height, the death knight is a mummified remnant of a powerful warrior, though the flesh has mostly come free from her animated bones. Now, her heavy armor is all that holds her skeletal form together. Her neck ends in a jagged ruin, but over the shattered fragments of her spine hovers a bleached skull that is wreathed in azure flames. Fires burn malevolently in the skull's empty sockets.\n\nAppraisal:\nThe death knight is medium in size and about seven feet high in her current state."
     ],
-    arrival: [],
+    arrival: [
+      "An infernal death knight just came through a heavy steel portcullis.",
+      "An infernal death knight just came through some vaulting grey stone doors."
+    ],
     flee: [],
     death: [],
     decay: [
-      "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, his skeletal form collapses into blanched powder and blows away.",
-      "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, her skeletal form collapses into blanched powder and blows away.",
-      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as her skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones.",
-      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as his skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones."
+      "Groans and cracks emanate from an infernal death knight's armor as {pronoun} suddenly succumbs to metal fatigue.  Within seconds, {pronoun} skeletal form collapses into blanched powder and blows away.",
+      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as {pronoun} skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "Tightening {pronoun} grip on {pronoun} black ora sword, an infernal death knight strikes out at you with all of infernal death knight might!",
-      "With effortless ease born of martial training, an infernal death knight swings {weapon} at you!",
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "Tightening {pronoun} grip on {pronoun} black ora sword, an {pronoun} strikes out at you with all of {pronoun} might!",
+        "With effortless ease born of martial training, an infernal death knight swings {weapon} at you!",
+        "An infernal death knight throws {pronoun} flaming skull back as {pronoun} unleashes a vile spell!",
+        "An infernal death knight leaps from the back of {target} as {target} topples, narrowly avoiding being pinned beneath {target} mount!",
+        "An infernal death knight swings a bone-handled black ora-studded maul at you!",
+        "An infernal death knight swings a fist at you!",
+        "An infernal death knight swings {pronoun} black ora sword at {target} glowbark long bow!",
+        "An infernal death knight swings {pronoun} {weapon} at your glowbark long bow!",
+        "An infernal death knight swings {pronoun} {weapon} at your black alloy war hammer!",
+        "An infernal death knight swings {pronoun} {weapon} at your golvern katana!",
+        "An infernal death knight swings {pronoun} {weapon} at your ghezyte long bow!",
+        "An infernal death knight swings {pronoun} {weapon} at your smooth glowbark staff!",
+        "An infernal death knight swings {pronoun} {weapon} at your gleaming steel baselard!",
+        "An infernal death knight swings {pronoun} {weapon} at your golvern lance!",
+        "An infernal death knight swings {pronoun} {weapon} at your short sword!",
+        "An infernal death knight swings a massive black ora sword adorned with a trio of blue-black diamonds at {target}!",
+        "An infernal death knight swings {pronoun} {weapon} at {target} glowbark long bow!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

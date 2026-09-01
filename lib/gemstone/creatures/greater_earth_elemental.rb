@@ -104,7 +104,9 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "radiant crimson essence shard"
+    other: "radiant crimson essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -112,30 +114,32 @@
     ],
     arrival: [
       "A greater earth elemental lumbers in slowly.",
-      "The boulder comes to a sudden stop and rises into the form of a greater krynch!"
+      "The boulder comes to a sudden stop and rises into the form of a greater krynch!",
+      "A greater earth elemental lurches in, shuddering with each step."
     ],
     flee: [],
     death: [
       "The earth elemental topples to the ground motionless.",
-      "The earth elemental shudders violently for a moment, then goes still.",
-      "Beautiful shot pierces both lungs, the earth elemental makes a wheezing noise, and drops dead!"
+      "The earth elemental shudders violently for a moment, then goes still."
     ],
     decay: [
       "Tiny fissures quickly spread over the entire form of a greater earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
-      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
-      "Acid dissolves connecting cartilage, freeing the earth elemental's ribs to move independently."
+      "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A greater earth elemental pounds at you with {pronoun} heavy earthen fists!",
-      "A greater earth elemental pounds at you with {pronoun} fist!",
-      "A greater earth elemental throws {weapon} at you!",
-      "An earth elemental pounds at you with {pronoun} heavy earthen fists!",
-      "A greater earth elemental stomps at you with {pronoun} foot!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A greater earth elemental pounds at you with {pronoun} heavy earthen fists!",
+        "A greater earth elemental pounds at you with {pronoun} fist!",
+        "An earth elemental pounds at you with {pronoun} heavy earthen fists!",
+        "A greater earth elemental stomps at you with {pronoun} foot!",
+        "A greater earth elemental pounds at {target} with {pronoun} heavy earthen fists!"
+      ],
+      hurl: [
+        "A greater earth elemental throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

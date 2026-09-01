@@ -82,27 +82,38 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "More muscular and agile than the average krolvin, the corsair's distinctive rolling gait is evidence of a life spent seafaring. His sturdy musculature is apparent beneath the grey-blue skin. Thick, coarse, white hair covers his head and spreads across his shoulders and down his back."
     ],
-    arrival: [],
+    arrival: [
+      "A krolvin corsair just came through an oaken hatchway.",
+      "A krolvin corsair just came through an iron-banded door."
+    ],
     flee: [
-      "A krolvin corsair stumps {direction}."
+      "A krolvin corsair stumps {direction}.",
+      "A krolvin corsair just went through an oaken hatchway.",
+      "A krolvin corsair just went through an iron-banded door.",
+      "A krolvin corsair just went through a portside door."
     ],
     death: [
       "The krolvin corsair tries to crawl away on the deck but collapses and goes still."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A krolvin corsair swings {weapon} at you!"
+    spell_prep: [
+      "A krolvin corsair hisses between gaping teeth as {pronoun} struggles with {pronoun} thoughts.",
+      "A krolvin corsair hisses between gaping teeth as {pronoun} struggles with {pronoun} {weapon}."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A krolvin corsair swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

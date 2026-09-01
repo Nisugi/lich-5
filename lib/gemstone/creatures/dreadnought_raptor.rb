@@ -102,7 +102,9 @@
     gems: nil,
     boxes: nil,
     skin: "raptor feathers",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -114,22 +116,24 @@
     ],
     death: [
       "The dreadnought raptor writhes in agony, its wings flapping fruitlessly as it dies.",
-      "The dreadnought raptor crashes to the ground, motionless.",
-      "Beautiful shot pierces both lungs, the dreadnought raptor makes a wheezing noise, and drops dead!"
+      "The dreadnought raptor crashes to the ground, motionless."
     ],
     decay: [
       "The dreadnought raptor decays into a pile of feathers."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A dazzling dreadnought raptor tries to impale you on {pronoun} beak!",
-      "A dreadnought raptor rakes at you with a razor-sharp claw!",
-      "A dreadnought raptor tries to impale you on dreadnought raptor beak!",
-      "A dreadnought raptor tries to spear you with dreadnought raptor beak!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A dazzling dreadnought raptor tries to impale you on {pronoun} beak!",
+        "A dreadnought raptor rakes at you with a razor-sharp claw!",
+        "A dreadnought raptor tries to impale you on {pronoun} beak!",
+        "A dreadnought raptor tries to spear you with {pronoun} beak!"
+      ],
+      claw: [
+        "A dreadnought raptor rakes at {target} with a razor-sharp claw!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

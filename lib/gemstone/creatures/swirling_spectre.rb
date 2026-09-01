@@ -112,7 +112,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -124,17 +126,18 @@
     flee: [
       "A swirling spectre floats {direction}."
     ],
-    death: [
-      "The swirling spectre goes still for a moment while its head reshapes."
-    ],
+    death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A swirling spectre tries to ensnare you!"
+    spell_prep: [
+      "A swirling spectre gestures and utters a phrase of arcane magic."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A swirling spectre tries to ensnare you!",
+        "A swirling spectre points a wispy claw at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

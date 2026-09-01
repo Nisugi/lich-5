@@ -92,7 +92,9 @@
     gems: true,
     boxes: true,
     skin: "troll fang",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,22 +109,22 @@
     ],
     death: [
       "The troll chieftain bellows in rage one last time and dies.",
-      "The troll chieftain snarls her defiance before collapsing and going still.",
-      "The troll chieftain snarls his defiance before collapsing and going still.",
-      "The troll chieftain snarls her defiance one last time before going still.",
-      "The troll chieftain snarls his defiance one last time before going still.",
-      "The troll chieftain slumps to the ground."
+      "The troll chieftain snarls {pronoun} defiance before collapsing and going still.",
+      "The troll chieftain snarls {pronoun} defiance one last time before going still."
     ],
     decay: [
       "A troll chieftain decays into compost."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A troll chieftain swings {weapon} at you!"
+    search: [
+      "A troll chieftain sniffs the air cautiously."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [],
+    attacks: {
+      attack: [
+        "A troll chieftain swings {weapon} at you!",
+        "A troll chieftain charges towards you shouting, \"Ird nramugh mus ird!\"."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

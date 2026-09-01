@@ -123,7 +123,9 @@
     gems: true,
     boxes: true,
     skin: "ogre tusk",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -146,12 +148,19 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A large ogre swings {weapon} at you!",
-      "A large ogre thrusts with a spear at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      tackle: [
+        "A large ogre hurls {reflexive} at {target}!"
+      ],
+      attack: [
+        "A large ogre swings {weapon} at you!",
+        "A large ogre thrusts with a spear at you!",
+        "A large ogre swings a mace at {target}!"
+      ],
+      hurl: [
+        "A large ogre hurls {weapon} at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -96,21 +96,24 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Draped by diaphanous silks that appear so light as to have been woven from shreds of evening mist, a cinereous chthonian sybil is a thin, almost skeletal figure. Wings with iridescent grey feathers enshroud her form. Her face is unsettling in its agelessness, and her eyes are nothing human. They are two pools of luminous mist, and in their depths flit strange shapes and half-formed figures that are at once tantalizingly familiar and distressingly vague."
     ],
-    arrival: [],
+    arrival: [
+      "A cinereous chthonian sybil glides in on a current of air, settling so that {pronoun} feet drift over the ground."
+    ],
     flee: [],
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A cinereous chthonian sybil gestures elegantly, {pronoun} bony fingers deftly weaving threads of scintillating mana into a spell."
+    ],
     info: {
       general: [],
       class_tips: {

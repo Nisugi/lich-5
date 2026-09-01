@@ -88,7 +88,9 @@
     gems: false,
     boxes: false,
     skin: "a veaba claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,16 +108,19 @@
       "A giant veaba dies in a squirming, quivering heap.",
       "A giant veaba dies; vitreous fluids escape its body."
     ],
-    decay: [],
+    decay: [
+      "A giant veaba disintegrates into a slush that swiftly evaporates."
+    ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A giant veaba tries to bite you!"
-    ],
-    claw: [
-      "A giant veaba claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A giant veaba claws at you!"
+      ],
+      bite: [
+        "A giant veaba tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

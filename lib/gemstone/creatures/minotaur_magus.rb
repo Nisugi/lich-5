@@ -108,24 +108,30 @@
     gems: true,
     boxes: true,
     skin: "a minotaur hoof",
-    other: "Tiny golden seed"
+    other: "Tiny golden seed",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The minotaur magus is an ugly, brutish looking beast. Taller than most average men, the minotaur has a bull-like appearance while his muscular body is humanoid with thick arms and broad shoulders. The minotaur magi feet end in hooves that rattle the ground with every step. Despite his barbaric features, a great intelligence is reflected in the depths of his eyes and mannerisms."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A minotaur magus trots {direction}, whispering a silent prayer as {pronoun} passes.",
+      "A minotaur magus trots {direction}, whispering a silent prayer."
+    ],
     death: [],
     decay: [
-      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust.",
-      "A raider orc withers away until he is no more."
+      "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A minotaur magus swings an onyx-inset carved wooden runestaff at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

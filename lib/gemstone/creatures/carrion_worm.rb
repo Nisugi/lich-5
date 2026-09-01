@@ -90,7 +90,9 @@
     gems: nil,
     boxes: nil,
     skin: "worm skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -103,17 +105,13 @@
       "A carrion worm slithers {direction}."
     ],
     death: [
-      "The worm rolls over and dies.",
-      "The carrion worm slumps to the ground."
+      "The worm rolls over and dies."
     ],
     decay: [
       "A carrion worm decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

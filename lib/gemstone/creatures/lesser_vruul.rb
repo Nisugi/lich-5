@@ -127,32 +127,34 @@
     gems: true,
     boxes: true,
     skin: "a vruul skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The lesser vruul has tough, leathery hide, as black as midnight. Bat-like wings sprout from its back, but they do not look large or strong enough to support its weight in flight. The vruul's claws are long, sharp and appear to be stained with the blood of many victims. Its eyes are eerie, solid green orbs that seem to glow with an inner power."
     ],
     arrival: [
-      "A lesser vruul just arrived."
+      "A lesser vruul just arrived.",
+      "A lesser vruul lopes into the area!"
     ],
     flee: [],
     death: [
       "The lesser vruul twitches violently, then dies.",
       "The lesser vruul screams one last time and lies still.",
-      "The lesser vruul falls to the ground and lies still.",
-      "The lesser vruul slumps to the ground."
+      "The lesser vruul falls to the ground and lies still."
     ],
     decay: [
-      "The lesser vruul's right leg crumbles briefly and explodes in a shower of gore."
+      "A lesser vruul decays away."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser vruul swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser vruul swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

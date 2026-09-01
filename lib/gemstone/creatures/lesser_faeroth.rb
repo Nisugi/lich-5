@@ -87,7 +87,9 @@
     gems: false,
     boxes: false,
     skin: nil,
-    other: "a mottled faeroth crest"
+    other: "a mottled faeroth crest",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,20 +101,21 @@
       "A stalwart lesser faeroth strides in.",
       "A robust lesser faeroth strides in."
     ],
-    flee: [],
+    flee: [
+      "A lesser faeroth hobbles haphazardly westward.",
+      "A lesser faeroth hobbles haphazardly southeastward.",
+      "A lesser faeroth hobbles haphazardly northeastward.",
+      "A lesser faeroth hobbles haphazardly southwestward."
+    ],
     death: [
-      "A lesser faeroth emits a shriek as he goes still.",
-      "A lesser faeroth emits a shriek as she goes still.",
-      "A lesser faeroth releases a shriek as she falls to the ground and goes still.",
-      "A lesser faeroth releases a shriek as he falls to the ground and goes still.",
+      "A lesser faeroth emits a shriek as {pronoun} goes still.",
+      "A lesser faeroth releases a shriek as {pronoun} falls to the ground and goes still.",
       "A lesser faeroth's face contorts in horror as he goes still.",
-      "A robust lesser faeroth releases a shriek as she falls to the ground and goes still.",
+      "A robust lesser faeroth releases a shriek as {pronoun} falls to the ground and goes still.",
       "A stalwart lesser faeroth emits a shriek as she goes still.",
-      "A robust lesser faeroth releases a shriek as he falls to the ground and goes still.",
-      "A stalwart lesser faeroth releases a shriek as he falls to the ground and goes still.",
+      "A stalwart lesser faeroth releases a shriek as {pronoun} falls to the ground and goes still.",
       "A lesser faeroth releases a shriek as she falls to the floor and goes still.",
-      "A robust lesser faeroth emits a shriek as she goes still.",
-      "A stalwart lesser faeroth releases a shriek as she falls to the ground and goes still."
+      "A robust lesser faeroth emits a shriek as she goes still."
     ],
     decay: [
       "A lesser faeroth decays into a pile of foul-smelling compost.",
@@ -121,13 +124,17 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A lesser faeroth tries to bite you!"
-    ],
-    claw: [
-      "A lesser faeroth claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A lesser faeroth swings backward on {pronoun} arms, lips curled in a snarl."
+      ],
+      bite: [
+        "A lesser faeroth tries to bite you!"
+      ],
+      claw: [
+        "A lesser faeroth claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

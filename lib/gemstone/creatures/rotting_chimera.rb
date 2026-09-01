@@ -108,36 +108,43 @@
     gems: true,
     boxes: true,
     skin: "a chimera stinger",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The twisted and confused form of the rotting chimera is a testament to the sacrilege of mortals trying to wield the power of the gods. While its body looks to be primarily formed of a huge jaguar carcass, the degraded nature of the chimera does little to hide the disfigured appearance of a creature crafted from the parts of many beasts. Scales disperse into ragged patches of fur that thin out into dangling flesh. An enormous humanoid arm extends from one of the front shoulder blades of the beast while beneath it, her four legs are borrowed appendages from as many species. A huge scorpion tail rises high from the rear of the chimera, ready to strike. Sorrow-ridden eyes, one slitted, the other round, gaze into the distance as an uneven tempo of labored wheezing fills the fetid air.\n\nThere are two types of rotting chimera. The above description is for the chimeras that have scorpion tails. For the webbing chimeras, the \"A huge scorpion tail rises high from the rear of the chimera, ready to strike.\" line is replaced with:\n\nThe swollen abdomen of a mammoth arachnid has been grafted to the hind-quarters of the the chimera."
     ],
     arrival: [
-      "A rotting chimera arrives, dragging itself in and sobbing slightly from pain.",
-      "A rotting chimera stomps in."
+      "A rotting chimera stomps in.",
+      "A rotting chimera arrives, dragging {reflexive} in and sobbing slightly from pain."
     ],
     flee: [
       "A rotting chimera crawls {direction}.",
       "A rotting chimera lowers its head and stomps {direction}."
     ],
     death: [
-      "A rotting chimera releases a loud, weary sigh and slumps to the ground."
+      "A rotting chimera collapses into a pile of skin and bones.",
+      "A rotting chimera slumps wearily to the ground and ceases to move."
     ],
     decay: [
       "A rotting chimera collapses into a pile of skin and bones."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A rotting chimera bites at you with {pronoun} bestial jaws!",
-      "A rotting chimera pounds at you with an enormous humanoid fist!"
-    ],
-    bite: [],
-    claw: [
-      "A rotting chimera claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A rotting chimera bites at you with {pronoun} bestial jaws!",
+        "A rotting chimera pounds at you with an enormous humanoid fist!"
+      ],
+      bite: [
+        "A rotting chimera bites at you with {pronoun} bestial jaws!"
+      ],
+      claw: [
+        "A rotting chimera claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

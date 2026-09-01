@@ -96,30 +96,33 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "Glowing violet essence shard"
+    other: "Glowing violet essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Short and stumpy with pale yellowish skin, the forest bendith is hunched and her body is covered with greenish mosses of varying thickness. Imbedded into the soft flesh of her bulbous head are a pair of watery purple eyes which peer forth with a sense of malignant inquisitiveness. An odor of damp mold and rotting vegetation seems to hang about the diminutive being."
     ],
-    arrival: [],
+    arrival: [
+      "A forest bendith lurches in, {pronoun} glowering eyes scanning the area."
+    ],
     flee: [],
     death: [
-      "The forest bendith's eyes grow dim as her lifeforce fades away.",
-      "Just as you move to cast, the forest bendith grins slightly, and then fades into the thick undergrowth to avoid your spell.",
-      "Beautiful shot pierces both lungs, the forest bendith makes a wheezing noise, and drops dead!",
-      "The forest bendith slumps to the ground."
+      "The forest bendith's eyes grow dim as her lifeforce fades away."
     ],
-    decay: [
-      "The forest bendith's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A forest bendith swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A forest bendith swings {weapon} at you!",
+        "A forest bendith kicks a nearby bush with one of {pronoun} stumpy legs, and then forages around the shrub's base for any fallen worms or insects."
+      ],
+      hurl: [
+        "A forest bendith throws a morning star at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -128,7 +128,9 @@
     gems: true,
     boxes: true,
     skin: "a troll beard",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -147,13 +149,19 @@
     decay: [
       "A hill troll decays into compost."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A hill troll swings {weapon} at you!"
+    search: [
+      "A hill troll sniffs around looking for something."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A hill troll mutters, \"Sr'r'wr'ralars 'ght lorlur'ra larlor'rikr.\""
+    ],
+    attacks: {
+      attack: [
+        "A hill troll swings {weapon} at you!",
+        "A hill troll throws {pronoun} head back and bellows!",
+        "A hill troll swings a twohanded sword at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

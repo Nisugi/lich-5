@@ -103,7 +103,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Tiny golden seed"
+    other: "Tiny golden seed",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -114,7 +116,8 @@
       "The boulder comes to a sudden stop and rises into the form of a krag dweller!"
     ],
     flee: [
-      "A krag yeti rumbles {direction}."
+      "A krag yeti rumbles {direction}.",
+      "A krag yeti hobbles slowly {direction}, groaning in pain."
     ],
     death: [
       "The krag yeti shudders once before it finally goes still.",
@@ -123,12 +126,15 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A krag yeti swings {weapon} at you!",
-      "A krag yeti tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A krag yeti swings {weapon} at you!",
+        "A krag yeti tries to ensnare you!"
+      ],
+      hurl: [
+        "A krag yeti throws a large rock at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

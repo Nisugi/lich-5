@@ -88,7 +88,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,17 +100,15 @@
     flee: [
       "The jungle feyling jogs {direction}."
     ],
-    death: [
-      "Beautiful shot pierces both lungs, the jungle feyling makes a wheezing noise, and drops dead!"
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A jungle feyling suddenly jabs at you with a fist-scythe."
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A jungle feyling suddenly jabs at you with a fist-scythe."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

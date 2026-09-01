@@ -87,9 +87,22 @@
     gems: false,
     boxes: false,
     skin: "a tiger incisor",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A sabre-tooth tiger charges at you!"
+      ],
+      bite: [
+        "A sabre-tooth tiger tries to bite you!"
+      ]
+    },
+    stand: [
+      "A sabre-tooth tiger stands up and roars!"
+    ],
     description: [
       "The huge sabre-tooth tiger is obviously a formidable predator, measuring more than 15 feet from the nose to the tip of her tail. Flexing massive shoulders above powerful forelegs, the tiger growls and snarls, exposing the elongated canines that give her her name. The tiger's magnificent striped pelt gradates from a soft tan undertone along the spine to a powder white on belly and legs."
     ],
@@ -106,8 +119,7 @@
     ],
     death: [
       "The sabre-tooth tiger crumples to the ground and dies.",
-      "The sabre-tooth tiger lets out a final caterwaul and dies.",
-      "Beautiful shot pierces both lungs, the sabre-tooth tiger makes a wheezing noise, and drops dead!"
+      "The sabre-tooth tiger lets out a final caterwaul and dies."
     ],
     decay: [
       "A sabre-tooth tiger decays into a compost of fangs, fur and claws.",
@@ -120,13 +132,6 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A sabre-tooth tiger charges at you!"
-    ],
-    bite: [
-      "A sabre-tooth tiger tries to bite you!"
-    ],
-    claw: [],
     info: {
       general: [],
       class_tips: {

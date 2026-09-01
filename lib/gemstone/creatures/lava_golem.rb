@@ -95,7 +95,9 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "Essence of fire, Crystal core"
+    other: "Essence of fire, Crystal core",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -112,19 +114,20 @@
     death: [
       "The lava golem writhes in fiery agony and dies.",
       "The lava golem topples to the ground as the fire slowly leaves it.",
-      "Beautiful shot pierces both lungs, the lava golem makes a wheezing noise, and drops dead!"
+      "A lava golem topples heavily to the ground!"
     ],
-    decay: [
-      "The lava golem's right leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lava golem pounds at you with {pronoun} fist!",
-      "A lava golem stomps at you with {pronoun} foot!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lava golem pounds at you with {pronoun} fist!",
+        "A lava golem stomps at you with {pronoun} foot!"
+      ],
+      hurl: [
+        "A lava golem hurls a glob of lava at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

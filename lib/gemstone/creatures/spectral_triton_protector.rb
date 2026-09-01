@@ -100,7 +100,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -108,27 +110,55 @@
     ],
     arrival: [
       "A spectral triton protector just arrived.",
-      "A triton warlock arrives, striding forth with her robes trailing behind her."
+      "A spectral triton protector rushes in with powerful strides, {pronoun} slender tail flickering behind {pronoun}!"
     ],
     flee: [
       "A spectral triton protector heads {direction}."
     ],
     death: [
-      "The triton protector fades into transparency, his remnants rapidly dissolving into the air.",
-      "The triton protector fades into transparency, her remnants rapidly dissolving into the air."
+      "The triton protector fades into transparency, {pronoun} remnants rapidly dissolving into the air.",
+      "A spectral triton protector goes limp as the last of {pronoun} life is crushed from {pronoun} by {target} unyielding bearhug!",
+      "A spectral triton protector goes limp as the last of {pronoun} energy is crushed from {pronoun} by {target} unyielding bearhug!",
+      "A spectral triton protector falls to the ground and rolls, trying to smother the flames that surround {pronoun}."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A spectral triton protector swings {weapon} at you!",
-      "A spectral triton protector throws {weapon} at you!",
-      "Tightening {pronoun} grip on {pronoun} heavy ball and chain, a spectral triton protector strikes out at you with all of spectral triton protector might!"
+    stun_break: [
+      "A spectral triton protector flares briefly with a dull glow, rousing {reflexive} from slumber."
     ],
-    bite: [],
-    claw: [
-      "A spectral triton protector claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A spectral triton protector swings {weapon} at you!",
+        "Tightening {pronoun} grip on {pronoun} heavy ball and chain, a {pronoun} strikes out at you with all of {pronoun} might!",
+        "A spectral triton protector swings a coral-hilted heavy ball and chain at {target}!",
+        "A spectral triton protector strikes out at {target} with all of {pronoun} might!",
+        "A spectral triton protector swings a beech-hafted gornar crowbill at {target}!",
+        "A spectral triton protector swings a drake greatsword at {target}!",
+        "A spectral triton protector swings a fel-handled mithril war hammer at {target}!",
+        "A spectral triton protector swings a veil iron cudgel at {target}!",
+        "A spectral triton protector swings a drake greataxe at {target}!",
+        "A spectral triton protector swings a vultite ball and chain at {target}!",
+        "A spectral triton protector swings a drakar-beaded whip at {target}!",
+        "A spectral triton protector swings a drake falchion at {target}!",
+        "A spectral triton protector swings a black ora morning star at {target}!",
+        "A spectral triton protector swings an archaic black ora mace at {target}!"
+      ],
+      claw: [
+        "A spectral triton protector claws at you!"
+      ],
+      hurl: [
+        "A spectral triton protector throws {weapon} at you!",
+        "A spectral triton protector throws a coral-hilted heavy ball and chain at {target}!",
+        "A spectral triton protector throws a cracked kelyn morning star at {target}!",
+        "A spectral triton protector throws a fel-handled mithril-spiked cudgel at {target}!",
+        "A spectral triton protector throws a drake greatsword at {target}!"
+      ],
+      shield_charge: [
+        "A spectral triton protector charges forward at you with {pronoun} driftwood greatshield and attempts a shield charge!",
+        "A spectral triton protector charges forward at {target} with {pronoun} driftwood greatshield and attempts a shield charge!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

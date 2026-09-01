@@ -77,7 +77,7 @@
     emp_td: (230..233),
     pal_td: (201..213),
     ran_td: 221,
-    sor_td: "+217 to +223",
+    sor_td: (217..223),
     wiz_td: nil,
     mje_td: (265..268),
     mne_td: (265..268),
@@ -103,35 +103,37 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet mote of essence"
+    other: "Glowing violet mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Muscular and lean, a phantasmal bestial swordsman stands shorter than most giantmen, dressed only in the ragged remains of leather pants. His skin is the color of a starless night and is wrapped tightly around brawny arms and legs. Long, pointed ears extend from the sides of his bald head with large, pitch black eyes set closely together over two large slits in place of a proper nose. Long yellow canines stick up from behind the lower lip of the swordsman."
     ],
     arrival: [
-      "A phantasmal bestial swordsman stalks in."
+      "A phantasmal bestial swordsman stalks in.",
+      "A phantasmal bestial swordsman emerges from the surrounding shadows, the tip of {pronoun} blade drawing through the floor before being raised high above {pronoun} head."
     ],
     flee: [
       "A phantasmal bestial swordsman stalks {direction}."
     ],
     death: [
       "Growling lowly, the bestial swordsman falls to one knee, then collapses to the floor.",
-      "The bestial swordsman goes still for a moment while its head reshapes.",
       "The bestial swordsman falls to one knee, then collapses to the floor."
     ],
     decay: [
-      "Thin blue lines of magical energy crackle over the body of a phantasmal bestial swordsman before he dissolves, leaving a puddle of liquid and the smell of ozone in the air.",
-      "Thin blue lines of magical energy crackle over the body of a phantasmal bestial swordsman before she dissolves, leaving a puddle of liquid and the smell of ozone in the air."
+      "Thin blue lines of magical energy crackle over the body of a phantasmal bestial swordsman before {pronoun} dissolves, leaving a puddle of liquid and the smell of ozone in the air."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A phantasmal bestial swordsman swings {weapon} at you!",
-      "A phantasmal bestial swordsman thrusts with a rhimar trident at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A phantasmal bestial swordsman swings {weapon} at you!",
+        "A phantasmal bestial swordsman thrusts with a rhimar trident at you!",
+        "A phantasmal bestial swordsman swings a black steel twohanded sword at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "vvrael witch",
+  name: "Vvrael witch",
   noun: "",
   url: "https://gswiki.play.net/vvrael_witch",
   picture: "",
@@ -139,7 +139,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "Radiant crimson essence shardTiny golden seed"
+    other: "Radiant crimson essence shardTiny golden seed",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -147,7 +149,8 @@
     ],
     arrival: [],
     flee: [
-      "A Vvrael witch glides {direction}."
+      "A Vvrael witch glides {direction}.",
+      "A Vvrael witch withdraws, disengaging from {target}."
     ],
     death: [
       "The Vvrael witch writhes in black agony and dies.",
@@ -158,14 +161,32 @@
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A Vvrael witch gestures gracefully, hurling ebon motes of anti-mana at you!",
-      "A Vvrael witch hurls {weapon} at you!",
-      "A Vvrael witch swings {weapon} at you!"
+    spell_prep: [
+      "A Vvrael witch whispers with an ominously soft voice.",
+      "A Vvrael witch gestures gracefully, hurling ebon motes of anti-mana at you!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Vvrael witch gestures gracefully, hurling ebon motes of anti-mana at you!",
+        "A Vvrael witch swings {weapon} at you!",
+        "A Vvrael witch throws {pronoun} head back, revelling in the anti-essence that flashes around {pronoun}, absorbing the magic!",
+        "A Vvrael witch swings a midnight black spiked whip at {target}!",
+        "A Vvrael witch swings a midnight black morning star at {target}!",
+        "A Vvrael witch points a slender pale finger at you, beckoning you closer, a seductive smile playing across {pronoun} lips.",
+        "A Vvrael witch leaps to {pronoun} feet!"
+      ],
+      bolt: [
+        "A Vvrael witch hurls a stream of fire at {target}!",
+        "A Vvrael witch hurls a chunk of ice at {target}!",
+        "A Vvrael witch hurls a large boulder at {target}!",
+        "A Vvrael witch hurls a powerful lightning bolt at {target}!"
+      ],
+      hurl: [
+        "A Vvrael witch hurls {weapon} at you!",
+        "A Vvrael witch hurls a chunk of ice at {target}!",
+        "A Vvrael witch hurls a large boulder at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

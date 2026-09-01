@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "ilvari pixie",
+  name: "Ilvari pixie",
   noun: "",
   url: "https://gswiki.play.net/ilvari_pixie",
   picture: "",
@@ -109,13 +109,17 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "This smallish humanoid sports a pair of expressive sparkling eyes, lightly tanned skin, and a wide grin from ear to ear. Cute is too kind of a word for this caricature of elven descent. A faintly shimmering golden aura surrounds him."
     ],
-    arrival: [],
+    arrival: [
+      "An Ilvari pixie fades into view."
+    ],
     flee: [
       "An Ilvari pixie limps {direction}."
     ],
@@ -124,18 +128,20 @@
     ],
     decay: [
       "The layer of bark on an Ilvari pixie hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
-      "The layer of bark on an Ilvari pixie hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust.",
-      "The Ilvari pixie's left leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves connecting cartilage, freeing the Ilvari pixie's ribs to move independently."
+      "The layer of bark on an Ilvari pixie hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An Ilvari pixie points precisely at you!",
-      "An Ilvari pixie thrusts with a giant bee stinger at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An Ilvari pixie points precisely at you!",
+        "An Ilvari pixie thrusts with a giant bee stinger at you!",
+        "An Ilvari pixie springs into view!"
+      ],
+      bolt: [
+        "An Ilvari pixie hurls a bubbling ball of acid at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

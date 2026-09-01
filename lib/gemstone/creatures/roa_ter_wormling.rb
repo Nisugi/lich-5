@@ -86,7 +86,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,11 +112,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A roa'ter wormling charges at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A roa'ter wormling charges at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

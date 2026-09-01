@@ -109,7 +109,9 @@
     gems: true,
     boxes: true,
     skin: "roa'ter skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -127,11 +129,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A roa'ter charges at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A roa'ter charges at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -125,7 +125,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -141,25 +143,26 @@
       "A fire mage walks {direction}."
     ],
     death: [
-      "The fire mage goes limp and she falls over as the fire slowly fades from her eyes.",
-      "The fire mage goes limp and he falls over as the fire slowly fades from his eyes.",
+      "The fire mage goes limp and {pronoun} falls over as the fire slowly fades from {pronoun} eyes.",
       "The fire mage twitches violently, then dies.",
       "The fire in the fire mage's eyes slowly fades away."
     ],
     decay: [
       "A fire mage decays into a fine grey ash that quickly blows away.",
-      "An apt fire mage decays into a fine grey ash that quickly blows away.",
-      "The fire mage's right leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves connecting cartilage, freeing the fire mage's ribs to move independently."
+      "An apt fire mage decays into a fine grey ash that quickly blows away."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A fire mage leaves a trail of fire in the air while gesturing at you!",
-      "A fire mage swings {weapon} at you!"
+    search: [
+      "A fire mage looks around apprehensively as {pronoun} takes a step back."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A fire mage gestures mystically, leaving a trail of fire in the air!"
+    ],
+    attacks: {
+      attack: [
+        "A fire mage leaves a trail of fire in the air while gesturing at you!",
+        "A fire mage swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

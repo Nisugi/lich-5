@@ -95,7 +95,9 @@
     gems: nil,
     boxes: nil,
     skin: "shriveled cutting",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -112,11 +114,13 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A shriveled icy creeper stabs at you with {pronoun} stinger!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A shriveled icy creeper stabs at you with {pronoun} stinger!",
+        "A shriveled icy creeper stabs at {target} with {pronoun} stinger!",
+        "A shriveled icy creeper flings a length of creeper vine towards you, but with a flash of incredible reflexes, you skip out of the way and the creeper vine, trailing the rest of {pronoun} body, lands sprawling on the ground."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

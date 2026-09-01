@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "vvrael warlock",
+  name: "Vvrael warlock",
   noun: "",
   url: "https://gswiki.play.net/vvrael_warlock",
   picture: "",
@@ -160,7 +160,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Radiant crimson essence shard"
+    other: "Radiant crimson essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -181,17 +183,22 @@
       "The Vvrael warlock wails with rage as he crumples to the ground!  A viscous black liquid sprays out from his severed right leg thrashing on the ground!",
       "The Vvrael warlock wails with rage as he crumples to the ground!  A viscous black liquid sprays out from his severed left leg thrashing on the ground!"
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the Vvrael warlock's ribs to move independently."
+    decay: [],
+    search: [
+      "A Vvrael warlock looks around apprehensively."
     ],
-    search: [],
     spell_prep: [],
-    attack: [
-      "A Vvrael warlock hurls {weapon} at you!",
-      "A Vvrael warlock swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Vvrael warlock swings {weapon} at you!",
+        "A Vvrael warlock swings a midnight black longsword at {target}!",
+        "A Vvrael warlock swings a midnight black spiked whip at {target}!",
+        "A Vvrael warlock leaps to {pronoun} feet!"
+      ],
+      hurl: [
+        "A Vvrael warlock hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

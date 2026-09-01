@@ -94,7 +94,9 @@
     gems: nil,
     boxes: nil,
     skin: "a spotted leopard pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,22 +104,19 @@
     ],
     arrival: [
       "A mastodonic leopard prowls in!",
-      "A mastodonic leopard crouches as she stalks into view!",
-      "A mastodonic leopard crouches as he stalks into view!",
+      "A mastodonic leopard crouches as {pronoun} stalks into view!",
       "A stalwart mastodonic leopard prowls in!",
       "A flashy mastodonic leopard prowls in!"
     ],
     flee: [
       "A mastodonic leopard prowls {direction}.",
-      "A mastodonic leopard roars loudly as he stands {direction}!",
-      "A mastodonic leopard roars loudly as she stands {direction}!",
       "A stalwart mastodonic leopard prowls {direction}.",
-      "A dazzling mastodonic leopard prowls {direction}."
+      "A dazzling mastodonic leopard prowls {direction}.",
+      "A mastodonic leopard slowly backs away."
     ],
     death: [
       "The mastodonic leopard lets out a final caterwaul and dies.",
-      "The mastodonic leopard crumples to the ground and dies.",
-      "The mastodonic leopard slumps to the ground."
+      "The mastodonic leopard crumples to the ground and dies."
     ],
     decay: [
       "A mastodonic leopard decays into a compost of fangs, fur and claws.",
@@ -129,13 +128,18 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A mastodonic leopard tries to bite you!"
-    ],
-    claw: [
-      "A mastodonic leopard claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A mastodonic leopard leaps from a tree branch overhead!",
+        "A mastodonic leopard leaps from a branch overhead!"
+      ],
+      bite: [
+        "A mastodonic leopard tries to bite you!"
+      ],
+      claw: [
+        "A mastodonic leopard claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

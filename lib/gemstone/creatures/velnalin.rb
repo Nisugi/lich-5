@@ -86,7 +86,9 @@
     gems: false,
     boxes: false,
     skin: "a velnalin hide",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -94,7 +96,8 @@
     ],
     arrival: [],
     flee: [
-      "A velnalin trots {direction}."
+      "A velnalin trots {direction}.",
+      "A velnalin trots {direction}, snorting to announce {pronoun} arrival!"
     ],
     death: [
       "The velnalin collapses to the ground, emits a final sigh, and dies.",
@@ -106,13 +109,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A velnalin charges at you!"
-    ],
-    bite: [
-      "A velnalin tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A velnalin charges at you!"
+      ],
+      bite: [
+        "A velnalin tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

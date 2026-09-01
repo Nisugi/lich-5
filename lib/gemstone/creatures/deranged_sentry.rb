@@ -95,14 +95,17 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Garbed in bright crimson armor, the deranged sentry appears alert and ready for battle. The sentry is haphazardly dressed with unlaced boots, leathers and a helm that looks to be about three sizes to big."
     ],
     arrival: [
-      "A deranged sentry lumbers in."
+      "A deranged sentry lumbers in.",
+      "A deranged sentry charges in, shouting a warning!"
     ],
     flee: [
       "A deranged sentry lumbers {direction}."
@@ -115,11 +118,15 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A deranged sentry swings {weapon} at you!"
+    stun_break: [
+      "A deranged sentry holds {pronoun} head as {pronoun} tries to regain {pronoun} bearings."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A deranged sentry swings {weapon} at you!",
+        "A deranged sentry swings {pronoun} {weapon} at your vultite bastard sword!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

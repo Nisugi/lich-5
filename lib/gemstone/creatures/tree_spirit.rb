@@ -109,7 +109,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -127,11 +129,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A tree spirit gestures at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A tree spirit gestures at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

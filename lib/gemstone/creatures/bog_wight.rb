@@ -85,7 +85,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet mote of essence"
+    other: "Glowing violet mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,19 +101,19 @@
     ],
     death: [
       "The bog wight falls to the ground motionless.",
-      "The bog wight wails in terrifying pain one last time and lies still.",
-      "The bog wight slumps to the ground."
+      "The bog wight wails in terrifying pain one last time and lies still."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A bog wight tries to bite you!"
-    ],
-    claw: [
-      "A bog wight claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A bog wight claws at you!"
+      ],
+      bite: [
+        "A bog wight tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

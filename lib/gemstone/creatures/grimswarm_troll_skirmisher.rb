@@ -81,7 +81,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -95,11 +97,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A Grimswarm troll skirmisher fires {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Grimswarm troll skirmisher thrusts with a rapier at you!"
+      ],
+      fire: [
+        "A Grimswarm troll skirmisher fires {weapon} at you!"
+      ]
+    },
     info: {
       general: [
         "Observed with heavy crossbow (AS 474, n=6), camp level unknown."

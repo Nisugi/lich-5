@@ -90,7 +90,9 @@
     gems: nil,
     boxes: nil,
     skin: "ogre tooth",
-    other: "shimmering blue essence shardessence of fire"
+    other: "shimmering blue essence shardessence of fire",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,18 +101,20 @@
     arrival: [
       "A fire ogre stomps in, covered in black soot!"
     ],
-    flee: [],
+    flee: [
+      "A fire ogre stomps {direction}, leaving a trail of black soot."
+    ],
     death: [],
     decay: [
       "A fire ogre burns down to a husk, that crumbles to ash."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A fire ogre blows {pronoun} fiery breath at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A fire ogre blows {pronoun} fiery breath at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

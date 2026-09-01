@@ -72,7 +72,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -84,9 +86,12 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Grimswarm giant skirmisher tries to stomp on you, but misses!",
+        "A Grimswarm giant skirmisher swings a ball and chain at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

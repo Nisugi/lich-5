@@ -105,7 +105,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,10 +115,12 @@
     ],
     arrival: [
       "A water elemental just arrived.",
-      "A triton executioner strides in, gliding swiftly through the water with a wary look on his face.",
-      "A triton executioner strides in, gliding swiftly through the water with a wary look on her face."
+      "A water elemental just came through a crumbling arch."
     ],
-    flee: [],
+    flee: [
+      "A water elemental just went down some descending stairs.",
+      "A water elemental just went down a carved marble staircase leading to the submerged dais."
+    ],
     death: [],
     decay: [
       "The glimmer of a white dreamstone catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
@@ -177,15 +181,21 @@
       "The glimmer of a pink rhodochrosite stone catches your eye as the water elemental gurgles eerily and collapses into the water.",
       "The glimmer of a light pink morganite stone catches your eye as the water elemental gurgles eerily and collapses into the water."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A water elemental hurls {weapon} at you!",
-      "A water elemental pounds at you with {pronoun} fist!",
-      "A water elemental raises {pronoun} hands, palms outward toward you!"
+    search: [
+      "A water elemental looks around apprehensively as small droplets of water splash to the floor."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A water elemental utters an incantation in an unfamiliar, bubbling language."
+    ],
+    attacks: {
+      attack: [
+        "A water elemental pounds at you with {pronoun} fist!",
+        "A water elemental raises {pronoun} hands, palms outward toward you!"
+      ],
+      hurl: [
+        "A water elemental hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

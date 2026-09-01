@@ -120,7 +120,9 @@
     gems: true,
     boxes: true,
     skin: "an orc scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -130,22 +132,29 @@
       "A greater orc stalks in!"
     ],
     flee: [
-      "A greater orc stalks {direction}."
+      "A greater orc stalks {direction}.",
+      "A greater orc hobbles slowly {direction}, uttering a curse under {pronoun} breath.",
+      "A greater orc hobbles {direction}, uttering a curse under {pronoun} breath!"
     ],
     death: [
-      "A greater orc breathes his last gasp and dies.",
-      "A greater orc breathes her last gasp and dies."
+      "A greater orc breathes {pronoun} last gasp and dies.",
+      "A greater orc collapses into a pile of dust."
     ],
     decay: [
       "A greater orc collapses into a pile of dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A greater orc swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A greater orc swings {weapon} at you!",
+        "A greater orc swings a war mattock at {target}!",
+        "A greater orc thrusts with a spear at {target}!",
+        "A greater orc rushes forward and then at the last moment skids to a stop.",
+        "A greater orc swings a mace at {target}!",
+        "A greater orc swings a short sword at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

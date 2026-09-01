@@ -90,7 +90,9 @@
     gems: nil,
     boxes: nil,
     skin: "a fire ant pincer",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -112,11 +114,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A fire ant tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A fire ant tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

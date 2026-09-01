@@ -87,8 +87,10 @@
     magic_items: false,
     gems: false,
     boxes: false,
-    skin: "a mountain lion skin",
-    other: nil
+    skin: "a mountain lion's ",
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -100,8 +102,7 @@
     ],
     flee: [
       "A mountain lion scampers {direction}.",
-      "A mountain lion scampers {direction}, mewling in pain.",
-      "A mountain lion roars loudly as she stands {direction}!"
+      "A mountain lion scampers {direction}, mewling in pain."
     ],
     death: [
       "The mountain lion crumples to the ground and dies.",
@@ -112,13 +113,17 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A mountain lion tries to bite you!"
-    ],
-    claw: [
-      "A mountain lion claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "The mountain lion throws up copious amounts of blood and what appears to be an internal organ!"
+      ],
+      claw: [
+        "A mountain lion claws at you!"
+      ],
+      bite: [
+        "A mountain lion tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

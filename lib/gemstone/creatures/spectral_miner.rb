@@ -91,7 +91,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,19 +108,21 @@
       "A ready spectral miner heads {direction}."
     ],
     death: [
-      "The spectral miner falls to the ground motionless.",
-      "The spectral miner goes still for a moment while its head reshapes."
+      "The spectral miner falls to the ground motionless."
     ],
     decay: [
       "A spectral miner quickly crumbles into the ground in front of your eyes."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A spectral miner swings {weapon} at you!"
+    spell_prep: [
+      "A spectral miner's eyes flare with evil red light!",
+      "A spectral miner gestures sharply at {target}!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A spectral miner swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

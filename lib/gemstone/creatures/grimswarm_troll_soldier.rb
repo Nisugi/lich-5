@@ -81,7 +81,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -93,12 +95,13 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A Grimswarm troll soldier swings {weapon} at you!",
-      "Tightening {pronoun} grip on {pronoun} twohanded sword, a Grimswarm troll soldier strikes out at you with all of grimswarm troll soldier might!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Grimswarm troll soldier swings {weapon} at you!",
+        "Tightening {pronoun} grip on {pronoun} twohanded sword, a Grimswarm troll soldier strikes out at you with all of {pronoun} might!",
+        "A Grimswarm troll soldier swings a bastard sword at {target}!"
+      ]
+    },
     info: {
       general: [
         "Observed with two-handed sword (AS 456, n=6), camp level unknown."

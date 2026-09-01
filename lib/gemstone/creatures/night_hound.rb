@@ -90,14 +90,16 @@
     gems: false,
     boxes: false,
     skin: "a night hound hide",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "You have never seen anything quite like a night hound, so you are not really sure what to make of it or how dangerous it might be."
-    ],
+    description: [],
     arrival: [],
-    flee: [],
+    flee: [
+      "A night hound pads {direction}, a mist of shadows puffing from {pronoun} nostrils."
+    ],
     death: [
       "The night hound lets out one last whimpering sigh of dark and shadowy whirlwinds and dies."
     ],
@@ -106,13 +108,18 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A night hound tries to bite you!"
+    stun_break: [
+      "A night hound howls in rage as {pronoun} shakes off the stun.",
+      "A night hound howls silently in rage as {pronoun} shakes off the stun."
     ],
-    claw: [
-      "A night hound claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A night hound claws at you!"
+      ],
+      bite: [
+        "A night hound tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "illoke shaman",
+  name: "Illoke shaman",
   noun: "",
   url: "https://gswiki.play.net/illoke_shaman",
   picture: "",
@@ -129,30 +129,45 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet mote of essence"
+    other: "Glowing violet mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Massive and imposing, the Illoke shaman towers over adventurers. It is more than three times the size of the largest giantman, with smooth grey skin and deep black eyes that glare out from under a heavy brow. The eyes regard potential victims with disdain, as if they were nothing more than an offering to be sacrificed. Chiseled deep into the forehead of the shaman, the symbol of Illoke glows red with power."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "An Illoke shaman just came through an enormous arched doorway."
+    ],
+    flee: [
+      "An Illoke shaman sinks into the ground and flows {direction}."
+    ],
     death: [
       "The Illoke shaman grumbles in pain one last time before lying still."
     ],
     decay: [
-      "An Illoke shaman crumbles into a mass of shiny rocks, leaving nothing behind.",
-      "The Illoke shaman's right leg crumbles briefly and explodes in a shower of gore."
+      "An Illoke shaman crumbles into a mass of shiny rocks, leaving nothing behind."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An Illoke shaman pounds at you with {pronoun} fist!",
-      "An Illoke shaman stomps at you with {pronoun} foot!",
-      "An Illoke shaman swings {weapon} at you!"
+    spell_prep: [
+      "An Illoke shaman mutters a prayer to {pronoun} god."
     ],
-    bite: [],
-    claw: [],
+    stand: [
+      "An Illoke shaman blinks dazedly a moment before shaking off the stun!"
+    ],
+    attacks: {
+      attack: [
+        "An Illoke shaman pounds at you with {pronoun} fist!",
+        "An Illoke shaman stomps at you with {pronoun} foot!",
+        "An Illoke shaman swings {weapon} at you!"
+      ],
+      hurl: [
+        "An Illoke shaman throws a large rock at you!",
+        "An Illoke shaman throws a huge stone maul at you!",
+        "An Illoke shaman throws a massive granite hammer at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

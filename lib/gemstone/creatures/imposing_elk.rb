@@ -80,7 +80,9 @@
     gems: nil,
     boxes: nil,
     skin: "antlers",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -88,7 +90,8 @@
     ],
     arrival: [],
     flee: [
-      "An imposing elk trots {direction}."
+      "An imposing elk trots {direction}.",
+      "An imposing elk trots {direction}, snorting to announce {pronoun} arrival!"
     ],
     death: [
       "The imposing elk collapses to the ground, emits a final sigh, and dies.",
@@ -99,14 +102,16 @@
     decay: [
       "An imposing elk decays into a pile of fur and bone."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "An imposing elk charges at you!",
-      "An imposing elk tries to impale you with {pronoun} antlers!"
+    search: [
+      "An imposing elk sniffs the air anxiously."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [],
+    attacks: {
+      attack: [
+        "An imposing elk charges at you!",
+        "An imposing elk tries to impale you with {pronoun} antlers!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

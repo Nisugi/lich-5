@@ -120,9 +120,30 @@
     gems: true,
     boxes: true,
     skin: "darkened triton hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A triton brawler slams {pronoun} head into you!",
+        "The triton brawler attempts to kick {target}!",
+        "The triton brawler attempts to jab you!",
+        "A triton brawler charges towards {target} and attempts to headbutt {pronoun}!",
+        "A triton brawler swings a fist at {target}!",
+        "The triton brawler attempts to punch {target}!",
+        "A triton brawler slams {pronoun} head into {target}!",
+        "The triton brawler attempts to grapple {target}!",
+        "The triton brawler slams into {target}, who is sent careening headlong into a nearby group of combatants as {pronoun} falls to the ground!",
+        "The triton brawler slams into {target}, who is sent careening into {target} as {pronoun} falls to the ground!",
+        "The triton brawler slams into you, and you are sent careening headlong into a nearby group of combatants as you fall to the ground!",
+        "The triton brawler slams into you, and you are sent careening into {target} as you fall to the ground!"
+      ]
+    },
+    stun_break: [
+      "A triton brawler looks around as if waking up from a dream."
+    ],
     description: [
       "Wearing only a linen and leather pteruges, a triton brawler is covered in roughly inked black tattoos, a cavalcade of runes, sigils, and symbols twining about one another and obscuring his grey-blue flesh. Across his amphibian-like head is a tattoo of a powerful tentacle crushing a trident in its suckered grip. The brawler's eyes dart warily this way and that, and his tongue flicks in and out with deceptive laziness."
     ],
@@ -130,23 +151,21 @@
       "A triton brawler just arrived.",
       "A triton brawler just arrived, limping badly.",
       "A tough triton brawler just arrived, limping badly.",
-      "A triton brawler just arrived, limping."
+      "A triton brawler just arrived, limping.",
+      "A triton brawler charges briskly into the area!",
+      "A triton brawler just arrived, crawling along the ground."
     ],
     flee: [
       "A triton brawler heads {direction}."
     ],
     death: [
-      "The triton brawler gurgles once and goes still, a wrathful look on her face.",
-      "The triton brawler gurgles once and goes still, a wrathful look on his face."
+      "The triton brawler gurgles once and goes still, a wrathful look on {pronoun} face.",
+      "A triton brawler's dreamy gaze goes lifeless.",
+      "A triton brawler slumps slowly, {pronoun} skin growing darker from lack of air."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the triton brawler's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

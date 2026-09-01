@@ -86,7 +86,9 @@
     gems: true,
     boxes: true,
     skin: "a faintly glowing worm skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -95,21 +97,20 @@
     arrival: [
       "A phosphorescent worm slithers into view, its glow illuminating the area."
     ],
-    flee: [],
+    flee: [
+      "A phosphorescent worm backs away, a foul odor spewing out from {pronoun} as {pronoun} inches backwards."
+    ],
     death: [
-      "A phosphorescent worm slumps to the ground, its glowing form now motionless and dull.",
-      "The phosphorescent worm slumps to the ground."
+      "A phosphorescent worm slumps to the ground, its glowing form now motionless and dull."
     ],
-    decay: [
-      "A luminous arachnid's legs shrivel up beneath it as it decays into dust."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A phosphorescent worm charges at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A phosphorescent worm charges at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -94,39 +94,34 @@
     gems: false,
     boxes: false,
     skin: "a scaly burgee shell",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The dark, beady eyes of the scaly burgee gleam with feral menace beneath two jutting ridges. Flexible diamond-shaped scales cover its carapace and its small, triangular head. Thinly coated around its surprisingly wide mouth is a greyish substance."
     ],
-    arrival: [],
+    arrival: [
+      "A scaly burgee waddles in and sniffs about."
+    ],
     flee: [
       "A scaly burgee grunts and waddles {direction}."
     ],
-    death: [
-      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled left claw.",
-      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled left foreleg.",
-      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled right foreleg.",
-      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled right claw.",
-      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled left hind leg.",
-      "The scaly burgee loudly squeals as it slumps to the ground in agony, favoring its mangled right hind leg.",
-      "The scaly burgee silently squeals as it slumps to the ground in agony, favoring its mangled left foreleg.",
-      "Beautiful shot pierces both lungs, the scaly burgee makes a wheezing noise, and drops dead!",
-      "The scaly burgee slumps to the ground."
-    ],
+    death: [],
     decay: [
-      "The scaly burgee's left leg crumbles briefly and explodes in a shower of gore."
+      "A scaly burgee decays away, leaving behind little more than dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A scaly burgee charges at you!"
-    ],
-    bite: [],
-    claw: [
-      "A scaly burgee claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A scaly burgee charges at you!"
+      ],
+      claw: [
+        "A scaly burgee claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

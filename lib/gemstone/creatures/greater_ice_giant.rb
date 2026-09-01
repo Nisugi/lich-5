@@ -90,7 +90,9 @@
     gems: true,
     boxes: true,
     skin: "a giant scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,22 +101,30 @@
     arrival: [
       "A greater ice giant lumbers in, followed by a hailing icestorm!"
     ],
-    flee: [],
+    flee: [
+      "A greater ice giant lumbers {direction}, followed by a hailing icestorm!",
+      "A greater ice giant lumbers {direction}, followed by a hailing icestorm."
+    ],
     death: [
       "The ice giant cries out in cold agony one last time and dies.",
       "The ice giant falls to the ground motionless."
     ],
-    decay: [
-      "The ice giant's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A greater ice giant points an icy finger at you!",
-      "A greater ice giant swings {weapon} at you!"
+    spell_prep: [
+      "A greater ice giant mutters an incantation."
     ],
-    bite: [],
-    claw: [],
+    stand: [
+      "A greater ice giant throws {pronoun} head back and howls, shaking off the stun!"
+    ],
+    attacks: {
+      attack: [
+        "A greater ice giant swings {weapon} at you!"
+      ],
+      cast: [
+        "A greater ice giant points an icy finger at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -92,7 +92,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,12 +112,14 @@
       "An ancient ghoul master turns to dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An ancient ghoul master swings {weapon} at you!"
+    spell_prep: [
+      "An ancient ghoul master chants an evil incantation!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An ancient ghoul master swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

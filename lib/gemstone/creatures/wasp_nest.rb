@@ -80,7 +80,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "reticulated orbs"
+    other: "reticulated orbs",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -95,9 +97,6 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

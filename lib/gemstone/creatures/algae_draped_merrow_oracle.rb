@@ -79,24 +79,28 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
-    arrival: [
-      "An algae-draped merrow oracle just arrived.  Wait, wasn't she here already?",
-      "An algae-draped merrow oracle just arrived.  Wait, wasn't he here already?"
-    ],
+    arrival: [],
     flee: [],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      bolt: [
+        "An algae-draped merrow oracle hurls a chunk of ice at {target}!"
+      ],
+      hurl: [
+        "An algae-draped merrow oracle hurls a chunk of ice at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

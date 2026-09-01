@@ -93,27 +93,30 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Alchemy (common)"
+    other: "Alchemy (common)",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "You are not quite sure what to make of the ghostly warrior, as you have never seen anything that looks quite like it. Stopping a moment, you try to commit this creature to memory so that you can tell tales of it to your fellow adventurers back in the safety of the local tavern."
-    ],
+    description: [],
     arrival: [],
     flee: [
       "A ghostly warrior creeps {direction}!"
     ],
-    death: [
-      "The ghostly warrior goes still for a moment while its head reshapes."
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A warrior swings {weapon} at you!"
+    stun_break: [
+      "A ghostly warrior looses a keening howl, shaking off the stun!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A warrior swings {weapon} at you!",
+        "A ghostly warrior swings a broadsword at you!",
+        "A ghostly warrior swings a flail at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

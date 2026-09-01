@@ -89,7 +89,9 @@
     gems: false,
     boxes: false,
     skin: "a rotted canine",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -101,21 +103,24 @@
     ],
     death: [
       "The guard dog falls to the ground and dies.",
-      "The guard dog rolls over and dies.",
-      "The guard dog slumps to the ground."
+      "The guard dog rolls over and dies."
     ],
     decay: [
       "A rabid guard dog decays into a compost of fangs and fur."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A rabid guard dog charges at you!"
+    stun_break: [
+      "A rabid guard dog shakes {pronoun} head violently while trying to regain {pronoun} bearings!"
     ],
-    bite: [
-      "A rabid guard dog tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A rabid guard dog charges at you!"
+      ],
+      bite: [
+        "A rabid guard dog tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

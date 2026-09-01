@@ -90,25 +90,38 @@
     gems: false,
     boxes: nil,
     skin: nil,
-    other: "Gold Dust"
+    other: "Gold Dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Chunks of ice appear to be held together by strands of organic material to form the rough outline of a bipedal creature. The chunks have no specific shape, and some are larger than others without direct relation to placement on glacial morph. Often the glacial morph draws in on itself, the chunks rearranging and reattaching to form a considerably different shape, and it seems to be able to change color at will to match its surroundings. The glacial morph peers out from two malevolent eyes set deeply in a 'head' of ice. Strangely, the head does not always appear to be on top of the torso."
     ],
-    arrival: [],
-    flee: [],
-    death: [],
-    decay: [
-      "The glacial morph's left leg crumbles briefly and explodes in a shower of gore."
+    arrival: [
+      "A glacial morph pounds in.",
+      "A glacial morph pounds in, dropping small ice shards in {pronoun} wake."
     ],
+    flee: [
+      "A glacial morph pounds away headed {direction}.",
+      "A glacial morph pounds south leaving small ice shards in {pronoun} wake."
+    ],
+    death: [
+      "A glacial morph topples over, {pronoun} ice chunks banging against one another."
+    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A glacial morph swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A glacial morph swings {weapon} at you!",
+        "A glacial morph flings a frozen appendage out that tries to grasp you but you dodge away from {pronoun} in time.",
+        "A glacial morph pounds {pronoun} arms together, cracking and chipping the ice at the ends to form vicious spikes.",
+        "The glacial morph attack slides right through {target} leaving no trace of a wound in {pronoun} path!",
+        "A glacial morph swings an elongated block of ice at {target}!",
+        "The glacial morph's attack slides right through {target} leaving no trace of a wound in {pronoun} path!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

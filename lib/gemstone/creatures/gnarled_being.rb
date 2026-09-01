@@ -100,33 +100,35 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Radiant crimson mote of essence"
+    other: "Radiant crimson mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The gnarled being is a twisted amalgamation of flesh and other, less mentionable things. Tusks and horns grow from its head in an impressive array of weaponry. The tough, pale yellow skin of the being looks burnt and scorched in places, but this doesn't seem to bother it. The gnarled being's twisted hands and feet end with wicked, razor-sharp claws that refuse to shine in the light."
     ],
     arrival: [
-      "A gnarled being strides in with a snort of derision.",
-      "A twisted being stalks in, its tail swishing back and forth menacingly."
+      "A gnarled being strides in with a snort of derision."
     ],
     flee: [],
     death: [
-      "A gnarled being coughs up some blood and dies.",
-      "A bent being curses through its teeth as it dies."
+      "A gnarled being coughs up some blood and dies."
     ],
     decay: [
       "A gnarled being crumbles away into nothing."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A gnarled being charges at you with {pronoun} tusk!",
-      "A lesser construct raises gnarled being massive foot and attempts to smash you!",
-      "An Ithzir initiate places one palm on gnarled being chest, and raises the other toward you!"
+    stun_break: [
+      "A gnarled being snorts as {pronoun} tries to regain {pronoun} senses."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A gnarled being charges at you with {pronoun} tusk!",
+        "An Ithzir initiate places one palm on {pronoun} chest, and raises the other toward you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

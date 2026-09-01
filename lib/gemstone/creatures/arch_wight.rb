@@ -138,7 +138,9 @@
     gems: nil,
     boxes: nil,
     skin: "a wight skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -159,12 +161,16 @@
       "An arch wight crumbles to dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An arch wight swings {weapon} at you!"
+    spell_prep: [
+      "An arch wight chants an evil incantation.",
+      "An arch wight gestures at {target}!",
+      "An arch wight's eyes flare with delight as {pronoun} eyes a blackened twohanded sword."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An arch wight swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

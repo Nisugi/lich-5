@@ -102,7 +102,9 @@
     gems: false,
     boxes: false,
     skin: "a relnak sail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -123,14 +125,15 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A relnak charges at you!",
-      "A relnak stomps at you with {pronoun} foot!"
-    ],
-    bite: [
-      "A relnak tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A relnak charges at you!",
+        "A relnak stomps at you with {pronoun} foot!"
+      ],
+      bite: [
+        "A relnak tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

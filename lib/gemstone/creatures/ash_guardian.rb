@@ -111,14 +111,25 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Distinct features are difficult to determine as clouds of ash obscure the form of the ash guardian. What is visible is a towering humanoid shadow that drifts through the ash clouds."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "An ash guardian heads southwest in a roiling cloud of ash.",
+      "An ash guardian heads northeast in a roiling cloud of ash.",
+      "An ash guardian heads east in a roiling cloud of ash.",
+      "An ash guardian heads west in a roiling cloud of ash.",
+      "An ash guardian heads south in a roiling cloud of ash.",
+      "An ash guardian heads southeast in a roiling cloud of ash.",
+      "An ash guardian heads north in a roiling cloud of ash.",
+      "An ash guardian heads northwest in a roiling cloud of ash."
+    ],
     death: [
       "Ash explodes in all directions as an ash guardian succumbs to its final blow."
     ],
@@ -127,12 +138,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An ash guardian swings {weapon} at you!",
-      "An ash guardian tries to ensnare you!",
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An ash guardian swings {weapon} at you!",
+        "An ash guardian tries to ensnare you!",
+        "An ash guardian attempts to kick dust at you, but is unable to kick up a sufficient amount of dust.",
+        "An ash guardian lashes at you with a mediocre shield bash!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

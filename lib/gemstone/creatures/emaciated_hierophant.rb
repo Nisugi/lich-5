@@ -73,7 +73,7 @@
     ranged: 293,
     bolt: 293,
     udf: (313..484),
-    bar_td: "234 to 244",
+    bar_td: (234..244),
     cle_td: 276,
     emp_td: (249..272),
     pal_td: (225..234),
@@ -111,7 +111,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -119,7 +121,8 @@
     ],
     arrival: [
       "An emaciated hierophant just arrived.",
-      "An emaciated hierophant strides into the area!"
+      "An emaciated hierophant strides into the area!",
+      "An emaciated hierophant charges in, sweat beading on {pronoun} forehead!"
     ],
     flee: [
       "An emaciated hierophant heads {direction}.",
@@ -138,14 +141,15 @@
     ],
     decay: [
       "An emaciated hierophant crumbles to dust and blows away on the wind.",
-      "An emaciated hierophant suddenly dissolves into a puddle of viscous ooze.",
-      "The emaciated hierophant's left leg crumbles briefly and explodes in a shower of gore."
+      "An emaciated hierophant suddenly dissolves into a puddle of viscous ooze."
     ],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "An emaciated hierophant gestures and murmurs a quiet prayer.",
+      "An emaciated hierophant mumbles a silent prayer!",
+      "An emaciated hierophant gestures, cracked lips moving in silent prayer as {pronoun} focuses, shaking the stun."
+    ],
+    attacks: {},
     info: {
       general: [],
       class_tips: {

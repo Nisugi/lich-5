@@ -87,7 +87,9 @@
     gems: nil,
     boxes: nil,
     skin: "an ice hound ear",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -96,7 +98,9 @@
     arrival: [
       "An ice hound arrives leaving puffs of ice crystal clouds in its wake."
     ],
-    flee: [],
+    flee: [
+      "An ice hound pads {direction}, a frosty mist puffing from {pronoun} nostrils."
+    ],
     death: [
       "The ice hound lets out one last whimpering sigh of frosty mist and dies."
     ],
@@ -105,13 +109,21 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An ice hound hurls {weapon} at you!"
+    stun_break: [
+      "An ice hound howls in rage as {pronoun} shakes off the stun.",
+      "An ice hound howls silently in rage as {pronoun} shakes off the stun."
     ],
-    bite: [
-      "An ice hound tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "An ice hound breathes an icy blast at you!"
+      ],
+      bite: [
+        "An ice hound tries to bite you!"
+      ],
+      hurl: [
+        "An ice hound hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

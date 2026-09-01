@@ -77,7 +77,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -90,23 +92,19 @@
       "A shan shaman pads {direction}."
     ],
     death: [
-      "The shan shaman yips in pain as she falls to the ground motionless.",
+      "The shan shaman yips in pain as {pronoun} falls to the ground motionless.",
       "The shan shaman howls out one last time and dies.",
       "The shan shaman shudders and falls to the ground motionless.",
-      "The shan shaman yips in pain as he falls to the ground motionless.",
-      "A shan shaman's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette.",
-      "A shan shaman's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
-      "Beautiful shot pierces both lungs, the shan shaman makes a wheezing noise, and drops dead!",
-      "Awesome shot skewers skull!  The shan shaman blinks once and falls quite dead!"
+      "A shan shaman's body shimmers slightly.  Suddenly, {pronoun} features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of {pronoun} death like a silhouette."
     ],
-    decay: [
-      "The shan shaman's right leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A shan shaman swings an ivory-hilted khopesh at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

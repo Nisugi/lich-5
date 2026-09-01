@@ -111,7 +111,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -123,26 +125,24 @@
     ],
     flee: [
       "Lost in a pall of befuddlement, a gaunt feral selkie wanders {direction}.",
-      "Seemingly unaware of his injuries, a gaunt feral selkie wanders {direction}.",
-      "Seemingly unaware of her injuries, a gaunt feral selkie wanders {direction}."
+      "Seemingly unaware of {pronoun} injuries, a gaunt feral selkie wanders {direction}."
     ],
     death: [
-      "An instant of clarity dawns in a gaunt feral selkie's eyes as he succumbs to his injuries.  Peace blossoms on his face as he dies.",
-      "An instant of clarity dawns in a gaunt feral selkie's eyes as she succumbs to her injuries.  Peace blossoms on her face as she dies.",
-      "The feral selkie slumps to the ground."
+      "An instant of clarity dawns in a gaunt feral selkie's eyes as {pronoun} succumbs to {pronoun} injuries.  Peace blossoms on {pronoun} face as {pronoun} dies.",
+      "A gaunt feral selkie slumps, {pronoun} flippers twitching as {pronoun} struggles to regain {pronoun} senses."
     ],
-    decay: [
-      "The feral selkie's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A gaunt feral selkie balls up a grimy hand and takes a swing at you!",
-      "Leading with {pronoun} shoulder, a gaunt feral selkie barrels into a charge at you!",
-      "Propelling {pronoun} forward with {pronoun} flippers, a gaunt feral selkie charges at you!"
+    spell_prep: [
+      "A gaunt feral selkie mutters an old, guttural chant as the surroundings grow terribly silent."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A gaunt feral selkie balls up a grimy hand and takes a swing at you!",
+        "Leading with {pronoun} shoulder, a gaunt feral selkie barrels into a charge at you!",
+        "Propelling {pronoun} forward with {pronoun} flippers, a gaunt feral selkie charges at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

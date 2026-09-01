@@ -137,7 +137,9 @@
     gems: true,
     boxes: nil,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -148,21 +150,21 @@
       "A blazing red phoenix flies in on wobbly wings."
     ],
     flee: [],
-    death: [
-      "Beautiful shot pierces both lungs, the blazing red phoenix makes a wheezing noise, and drops dead!"
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A blazing red phoenix gnashes at you with a flaming maw!",
-      "A blazing red phoenix hurls {weapon} at you!",
-      "A blazing red phoenix tries to spear you with {pronoun} beak of flame!",
-      "Fiery talons lash out at you as a blazing red phoenix dives on your position!",
-      "A blazing red phoenix rakes at you with a razor-sharp claw!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A blazing red phoenix gnashes at you with a flaming maw!",
+        "A blazing red phoenix tries to spear you with {pronoun} beak of flame!",
+        "Fiery talons lash out at you as a blazing red phoenix dives on your position!",
+        "A blazing red phoenix rakes at you with a razor-sharp claw!"
+      ],
+      hurl: [
+        "A blazing red phoenix hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

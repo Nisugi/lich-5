@@ -114,7 +114,9 @@
     gems: false,
     boxes: false,
     skin: "a spider leg",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -127,21 +129,25 @@
     ],
     death: [
       "The greater spider collapses to the ground and dies.",
-      "The greater spider's body jerks one last time and dies.",
-      "The greater spider slumps to the ground."
+      "The greater spider's body jerks one last time and dies."
     ],
     decay: [
       "A greater spider's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A greater spider snaps at you with {pronoun} pincer!"
-    ],
-    bite: [],
-    claw: [
-      "A greater spider claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A greater spider snaps at you with {pronoun} pincer!"
+      ],
+      bite: [
+        "A greater spider snaps at you with {pronoun} pincer!",
+        "A greater spider snaps at {target} with {pronoun} pincer!"
+      ],
+      claw: [
+        "A greater spider claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,13 +115,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A twisted being tries to bite you!"
-    ],
-    claw: [
-      "A twisted being claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A twisted being claws at you!"
+      ],
+      bite: [
+        "A twisted being tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

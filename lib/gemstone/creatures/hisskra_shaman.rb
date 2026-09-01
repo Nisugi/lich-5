@@ -103,7 +103,9 @@
     gems: true,
     boxes: true,
     skin: "hisskra tooth",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -119,24 +121,33 @@
       "The hisskra shaman rolls over on his back and dies.",
       "The hisskra shaman collapses in a motionless heap.",
       "The hisskra shaman contorts in a tortured spasm, then goes still.",
-      "The hisskra shaman twitches violently in his death throes before finally going still."
+      "The hisskra shaman twitches violently in his death throes before finally going still.",
+      "A hisskra shaman collapses into a putrid lump of scaly flesh."
     ],
     decay: [
       "A hisskra shaman decays into a pile of scales and bone.",
       "A hisskra shaman collapses into a putrid lump of scaly flesh.",
       "A hisskra shaman withers away, leaving nothing but a few scales that blow away on a gentle breeze.",
-      "A hisskra shaman's scales wither as he decays into dust.",
       "A keen hisskra shaman's scales wither as he decays into dust.",
-      "A spindly hisskra shaman decays into a pile of scales and bone."
+      "A spindly hisskra shaman decays into a pile of scales and bone.",
+      "A hisskra shaman's scales wither as {pronoun} decays into dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An hisskra shaman swings {weapon} at you!",
-      "A hisskra shaman swings {weapon} at you!"
+    spell_prep: [
+      "A hisskra shaman flares {pronoun} throat while hissing an invocation.",
+      "A hisskra shaman hisses fearfully as {pronoun} slowly backs away, seeking an avenue for escape."
     ],
-    bite: [],
-    claw: [],
+    stun_break: [
+      "A hisskra shaman staggers, moving unsteadily as {pronoun} tries to regain {pronoun} bearings."
+    ],
+    attacks: {
+      attack: [
+        "A hisskra shaman swings {weapon} at you!"
+      ],
+      claw: [
+        "A hisskra shaman claws blindly at the air in front of {pronoun} as {pronoun} tries to regain {pronoun} bearings!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

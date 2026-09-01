@@ -90,7 +90,9 @@
     gems: false,
     boxes: false,
     skin: "a sidewinder scale",
-    other: "no"
+    other: "no",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,12 +108,12 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A sheen of venom glistening from {pronoun} needle-sharp fangs, a white sidewinder strikes at you!",
-      "A sidewinder darts in for a quick strike at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A sheen of venom glistening from {pronoun} needle-sharp fangs, a white sidewinder strikes at you!",
+        "A sidewinder darts in for a quick strike at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

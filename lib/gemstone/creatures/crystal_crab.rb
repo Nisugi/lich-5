@@ -82,7 +82,9 @@
     gems: true,
     boxes: nil,
     skin: "a faceted crystal crab shell",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -91,25 +93,32 @@
     arrival: [],
     flee: [
       "A glittering crystal crab retreats back into its shell.",
-      "A glittering crystal crab twitches and skitters {direction}."
+      "A glittering crystal crab twitches and skitters {direction}.",
+      "A crystal crab retreats back into {pronoun} shell."
     ],
     death: [
       "The crystal crab collapses to the ground, clacks its pincers and dies.",
       "The crystal crab clacks its pincers a final agonizing time and dies."
     ],
     decay: [
-      "A glittering crystal crab decays into compost.",
-      "The crystal crab's right leg crumbles briefly and explodes in a shower of gore."
+      "A glittering crystal crab decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A crystal crab tries to ensnare you!"
+    stun_break: [
+      "A crystal crab twitches fiercely, shaking off the stun!"
     ],
-    bite: [],
-    claw: [
-      "A crystal crab claws at you!"
-    ],
+    attacks: {
+      bite: [
+        "A crystal crab snaps {pronoun} pincers, while swaying erratically."
+      ],
+      attack: [
+        "A crystal crab tries to ensnare you!"
+      ],
+      claw: [
+        "A crystal crab claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -106,15 +106,15 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Yes"
+    other: "Yes",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Light fingered and agile, the gnoll thief is easily at home in both the dark stone corridors of his lair and anywhere that loot may be gained. Wiry and lithe, with pale skin and large, colorless eyes, the thief stands around three feet tall as it regards you uneasily."
     ],
-    arrival: [
-      "A gnoll ranger wanders in, alertly surveying its surroundings."
-    ],
+    arrival: [],
     flee: [
       "A gnoll thief skulks {direction}."
     ],
@@ -122,12 +122,19 @@
       "The gnoll thief rolls over and dies.",
       "The gnoll thief falls to the ground and dies."
     ],
-    decay: [],
+    decay: [
+      "A gnoll thief's remains dissolve into the ground."
+    ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      hurl: [
+        "A gnoll thief throws a short sword at you!"
+      ],
+      attack: [
+        "A gnoll thief swings an archaic steel handaxe at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -90,7 +90,9 @@
     gems: false,
     boxes: false,
     skin: "a silver mane",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,22 +100,26 @@
     ],
     arrival: [],
     flee: [
-      "The steed gallops {direction}."
+      "The steed gallops {direction}.",
+      "A nightmare steed gallops {direction}."
     ],
     death: [
       "The nightmare steed screams one last time and dies."
     ],
     decay: [],
-    search: [],
+    search: [
+      "A nightmare steed glances around, sure {pronoun} has missed something."
+    ],
     spell_prep: [],
-    attack: [
-      "A nightmare steed charges at you!",
-      "A nightmare steed stomps at you with {pronoun} foot!"
-    ],
-    bite: [
-      "A nightmare steed tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A nightmare steed charges at you!",
+        "A nightmare steed stomps at you with {pronoun} foot!"
+      ],
+      bite: [
+        "A nightmare steed tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

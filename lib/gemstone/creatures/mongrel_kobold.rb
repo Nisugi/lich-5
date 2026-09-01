@@ -95,14 +95,17 @@
     gems: true,
     boxes: true,
     skin: "mangy kobold scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "This mongrel kobold mostly resembles her kobold brethren. Smaller than a dwarf and even many halflings, she has splotchy skin and a fairly hairy head topped with small horns. Long-limbed for her size, the mongrel kobold eschews any display of brute strength and relies on what agility she pretends to have. The mongrel kobold stares back at you with beady little black eyes, sizing you up as a foe."
     ],
     arrival: [
-      "A mongrel kobold just arrived."
+      "A mongrel kobold just arrived.",
+      "A mongrel kobold swaggers in, trying to appear imposing!"
     ],
     flee: [
       "A mongrel kobold heads {direction}.",
@@ -113,17 +116,15 @@
       "The mongrel kobold falls to the ground and dies."
     ],
     decay: [
-      "A small, green cloud of smelly gas rises from the body of a mongrel kobold as she decays into compost.",
-      "A small, green cloud of smelly gas rises from the body of a mongrel kobold as he decays into compost.",
-      "The mongrel kobold's right leg crumbles briefly and explodes in a shower of gore."
+      "A small, green cloud of smelly gas rises from the body of a mongrel kobold as {pronoun} decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A mongrel kobold swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A mongrel kobold swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

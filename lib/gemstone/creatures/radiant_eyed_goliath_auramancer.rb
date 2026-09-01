@@ -90,7 +90,9 @@
     gems: nil,
     boxes: nil,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -101,10 +103,16 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A radiant-eyed goliath auramancer traces a brightly prismatic sigil in the air with one finger. It sparkles away into harmless motes."
+    ],
+    attacks: {
+      attack: [
+        "The radiant-eyed goliath auramancer attempts to jab you!",
+        "A radiant-eyed goliath auramancer exhales slowly, rainbowed embers drifting on {pronoun} breath before winking out in the air.",
+        "The radiant-eyed goliath auramancer attempts to punch you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -86,7 +86,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -94,19 +96,21 @@
     ],
     arrival: [],
     flee: [
-      "A stooped being looks around, then hobbles {direction}."
+      "A stooped being looks around, then hobbles {direction}.",
+      "A stooped being hobbles {direction}, looking about carefully."
     ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A stooped being tries to bite you!"
-    ],
-    claw: [
-      "A stooped being claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A stooped being claws at you!"
+      ],
+      bite: [
+        "A stooped being tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -90,21 +90,24 @@
     gems: nil,
     boxes: nil,
     skin: "multihued pegasus mane",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A magnificent creature, a tawny armor-clad pegasus has the body of a majestic horse, with a sleek coat that is the pale hue of the sky on a hazy, newborn day. Wings with feathers in all the pigments of the dawn, from soft pinks and corals to strident golds and fiery oranges, sprout from its shoulders, stretching to an impressive span. Its eyes are large and dark, full of intelligence, and its mane flows like liquid silver. The pegasus's hooves are shod in pure golvern."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A tawny armor-clad pegasus soars in on wings aglow with all of the hues of a breaking dawn, throwing back {pronoun} majestic head to tousel a mane seeming spun from threads of sunlight."
+    ],
+    flee: [
+      "A tawny armor-clad pegasus hurtles down from on high, hooves outstretched!"
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

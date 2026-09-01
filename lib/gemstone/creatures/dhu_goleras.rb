@@ -127,35 +127,43 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A dhu goleras swings {weapon} at you!"
+      ],
+      claw: [
+        "A dhu goleras swipes at {pronoun} wide pus-filled eyes and claws hatefully at the air."
+      ]
+    },
+    stand: [
+      "A dhu goleras clambers to {pronoun} feet."
+    ],
     description: [
       "Dull, mottled, grey skin covers the dhu goleras's stubby, wrinkled torso. The arms appear twice as long as they should be, ending in long, twig-like fingers. The legs are the opposite. Short and misshapen, they have three knees each, giving the dhu goleras a peculiar, hobbling gait, yet with incredible quickness. Huge, lidless, moon-shaped eyes with white irises bulge from a bony cranium atop a long, thin, rubbery neck. Green ichor drips from around the eyes, running down the sunken cheeks. The dhu goleras extends his long white tongue and licks off what ichor he can reach, consuming it with relish."
     ],
     arrival: [
-      "A dhu goleras arrives with a loping, uneven gait, his body rocking side-to-side and his head and arms flopping wildly.",
-      "A dhu goleras arrives with a loping, uneven gait, her body rocking side-to-side and her head and arms flopping wildly."
+      "A dhu goleras arrives with a loping, uneven gait, {pronoun} body rocking side-to-side and {pronoun} head and arms flopping wildly."
     ],
-    flee: [],
+    flee: [
+      "A dhu goleras moves off with a loping, uneven gait, {pronoun} body rocking side-to-side and {pronoun} head and arms flopping wildly as {pronoun} heads {direction}.",
+      "A dhu goleras moves off with a loping, uneven gait emitting shrill cries of annoyance as {pronoun} heads {direction}."
+    ],
     death: [
-      "The dhu goleras opens her mouth wide and lets out a choked, shrill scream and her eyes cloud over to a solid milky white as she collapses and dies.",
-      "The dhu goleras opens her mouth wide and lets out a choked, shrill scream and her eyes cloud over to a solid milky white as she dies.",
-      "The dhu goleras opens her mouth wide and lets out a choked, silent scream and her eyes cloud over to a solid milky white as she collapses and dies.",
-      "The dhu goleras opens his mouth wide and lets out a choked, shrill scream and his eyes cloud over to a solid milky white as he dies.",
-      "The dhu goleras opens his mouth wide and lets out a choked, silent scream and his eyes cloud over to a solid milky white as he collapses and dies.",
-      "The dhu goleras opens her mouth wide and lets out a choked, silent scream and her eyes cloud over to a solid milky white as she dies.",
-      "The dhu goleras opens his mouth wide and lets out a choked, shrill scream and his eyes cloud over to a solid milky white as he collapses and dies.",
-      "Beautiful shot pierces both lungs, the dhu goleras makes a wheezing noise, and drops dead!"
+      "The dhu goleras opens {pronoun} mouth wide and lets out a choked, shrill scream and {pronoun} eyes cloud over to a solid milky white as {pronoun} collapses and dies.",
+      "The dhu goleras opens {pronoun} mouth wide and lets out a choked, shrill scream and {pronoun} eyes cloud over to a solid milky white as {pronoun} dies.",
+      "The dhu goleras opens {pronoun} mouth wide and lets out a choked, silent scream and {pronoun} eyes cloud over to a solid milky white as {pronoun} collapses and dies.",
+      "The dhu goleras opens her mouth wide and lets out a choked, silent scream and her eyes cloud over to a solid milky white as she dies."
     ],
-    decay: [],
+    decay: [
+      "A dhu goleras's body decomposes into a foul, acidic liquid that rapidly evaporates."
+    ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A dhu goleras swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

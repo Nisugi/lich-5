@@ -82,13 +82,17 @@
     gems: true,
     boxes: true,
     skin: "a silverback orc knuckle",
-    other: "Alchemy common"
+    other: "Alchemy common",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Silver-flecked eyes match the garish silver stripe down the silverback orc's back. It stands a hearty six feet tall, with pale white skin. Were it not for the flecks of blood and bits of tattered flesh sticking to its skin, it mayhaps be attractive. Or perhaps not."
     ],
-    arrival: [],
+    arrival: [
+      "A silverback orc barrels in, {pronoun} face contorted in anger."
+    ],
     flee: [
       "A silverback orc runs {direction}."
     ],
@@ -99,11 +103,15 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A silverback orc swings {weapon} at you!"
+    stun_break: [
+      "A silverback orc gives a cold shudder as {pronoun} tries to regain {pronoun} composure."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A silverback orc swings {weapon} at you!",
+        "A silverback orc leaps from behind a snow drift!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

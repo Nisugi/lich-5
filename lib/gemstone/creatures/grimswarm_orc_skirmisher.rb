@@ -77,7 +77,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -91,11 +93,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A Grimswarm orc skirmisher swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Grimswarm orc skirmisher swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [
         "Observed with handaxe (AS 87), camp level unknown."

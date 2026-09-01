@@ -85,8 +85,10 @@
     magic_items: nil,
     gems: nil,
     boxes: nil,
-    skin: "a cobra skin",
-    other: nil
+    skin: "a cobra's ",
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,11 +106,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A cobra tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A cobra tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

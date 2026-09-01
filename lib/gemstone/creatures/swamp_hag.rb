@@ -127,29 +127,34 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Small and rather unimposing, the swamp hag is a dangerous, magical foe. Her stringy, oiled-flat hair glistens as her eerie, coal-black eyes dart about her surroundings always searching for victims. Bright red sparks scatter from her fingertips whenever she clenches her clawed hands. Dark grey skin and thin emaciated arms and legs provide stark contrast to the hag's distended, bulbous stomach."
     ],
-    arrival: [],
+    arrival: [
+      "A swamp hag trudges in, a weary mask set on {pronoun} face!"
+    ],
     flee: [
       "A swamp hag hobbles {direction}."
     ],
-    death: [
-      "The swamp hag slumps to the ground."
-    ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the swamp hag's ribs to move independently."
-    ],
+    death: [],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A swamp hag screams an angry torrent of curses and points at you!"
+    spell_prep: [
+      "A swamp hag gestures with a hand and a red-tinged aura grows around {pronoun} hands.",
+      "A swamp hag raises {pronoun} hands to chest height and sweeps {pronoun} up, leaving a glowing trace.",
+      "A swamp hag mutters a phrase, and as {pronoun} does, a gust of wind sweeps in and flips {pronoun} to {pronoun} feet."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A swamp hag screams an angry torrent of curses and points at you!",
+        "A swamp hag spits out a string of vituperative invectives and points at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

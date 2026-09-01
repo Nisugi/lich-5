@@ -101,7 +101,9 @@
     gems: false,
     boxes: false,
     skin: "Red eye",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -125,13 +127,17 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A monstrous direwolf tries to bite you!"
+    stun_break: [
+      "A monstrous direwolf shakes {pronoun} head violently as {pronoun} regains {pronoun} bearings!"
     ],
-    claw: [
-      "A monstrous direwolf claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A monstrous direwolf claws at you!"
+      ],
+      bite: [
+        "A monstrous direwolf tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -92,7 +92,9 @@
     gems: true,
     boxes: false,
     skin: "brown spinner leg",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,20 +106,22 @@
     ],
     death: [
       "The brown spinner's body jerks one last time and dies.",
-      "The brown spinner collapses to the ground and dies.",
-      "The brown spinner slumps to the ground."
+      "The brown spinner collapses to the ground and dies."
     ],
     decay: [
-      "A brown spinner's legs shrivel up beneath it as it decays into dust.",
-      "The brown spinner's left leg crumbles briefly and explodes in a shower of gore."
+      "A brown spinner's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A brown spinner snaps at you with {pronoun} pincer!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A brown spinner snaps at you with {pronoun} pincer!"
+      ],
+      bite: [
+        "A brown spinner snaps at you with {pronoun} pincer!",
+        "A brown spinner snaps at {target} with {pronoun} pincer!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

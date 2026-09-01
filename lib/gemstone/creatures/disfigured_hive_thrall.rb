@@ -131,32 +131,37 @@
     gems: true,
     boxes: true,
     skin: "no",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The thrall looks to have once been humanoid, but her form has been mutilated into a tortured, stooped shape with a mismatch of clashing parts. One eye is huge and insectoid, but the other remains painfully close to mammalian, its pupil bleeding into the bright green iris. Her jaw hangs slack, forced open at all times by a set of bristled mandibles that seem to have a mind of their own as they twitch and clench. Tumorous growths stud the thrall's spine, unsavory green where they are not blotchy violet-red with pustules. One has burst to reveal a single rudimentary wing that resembles a fly's."
     ],
-    arrival: [],
+    arrival: [
+      "A disfigured hive thrall lurches in, burning ichor flowing freely from {pronoun} wounds.",
+      "A disfigured hive thrall lurches in, burning ichor flowing freely from {pronoun} {weapon}."
+    ],
     flee: [
-      "A disfigured hive thrall gibbers pathetically as she flees {direction}.",
-      "A disfigured hive thrall gibbers pathetically as he flees {direction}.",
-      "A disfigured hive thrall gibbers pathetically as she flees {direction}, burning ichor seeping from her wounds.",
-      "A disfigured hive thrall gibbers pathetically as he flees {direction}, burning ichor seeping from his wounds."
+      "A disfigured hive thrall gibbers pathetically as {pronoun} flees {direction}.",
+      "A disfigured hive thrall gibbers pathetically as {pronoun} flees {direction}, burning ichor seeping from {pronoun} wounds."
     ],
-    death: [
-      "Beautiful shot pierces both lungs, the hive thrall makes a wheezing noise, and drops dead!"
-    ],
+    death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A disfigured hive thrall desperately thrusts {weapon} at you!",
-      "Misshapen limbs flail as a disfigured hive thrall flings {pronoun} at you!",
-      "Twisted desperation contorts a disfigured hive thrall's warped features as disfigured hive thrall tries to grab at you!",
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A disfigured hive thrall desperately thrusts {weapon} at you!",
+        "Misshapen limbs flail as a disfigured hive thrall flings {pronoun} at you!",
+        "Twisted desperation contorts a disfigured hive thrall's warped features as disfigured hive thrall tries to grab at you!",
+        "A disfigured hive thrall crushes you mercilessly!"
+      ],
+      bearhug: [
+        "A disfigured hive thrall charges towards you and attempts to grasp you in a ferocious bearhug!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

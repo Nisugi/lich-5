@@ -96,7 +96,9 @@
     gems: false,
     boxes: false,
     skin: "a brown bear skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,11 +106,13 @@
     ],
     arrival: [
       "A great brown bear lumbers in!",
-      "A great brown bear slowly lumbers in, growling in pain!"
+      "A great brown bear slowly lumbers in, growling in pain!",
+      "A great brown bear lumbers noisily into the area drooling hungrily!"
     ],
     flee: [
       "A great brown bear slowly lumbers {direction}, growling in pain.",
-      "A great brown bear lumbers {direction}."
+      "A great brown bear lumbers {direction}.",
+      "A great brown bear slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The great brown bear collapses heavily into a heap on the ground and dies.",
@@ -120,15 +124,18 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A great brown bear charges at you!"
-    ],
-    bite: [
-      "A great brown bear tries to bite you!"
-    ],
-    claw: [
-      "A great brown bear claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A great brown bear charges at you!",
+        "A great brown bear charges at you, but seeing {pronoun} coming, you acrobatically spring over the great brown bear!"
+      ],
+      bite: [
+        "A great brown bear tries to bite you!"
+      ],
+      claw: [
+        "A great brown bear claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

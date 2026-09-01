@@ -87,7 +87,9 @@
     gems: true,
     boxes: true,
     skin: "a red orc scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -95,21 +97,24 @@
     ],
     arrival: [],
     flee: [
-      "A lesser red orc spins about and then runs {direction}."
+      "A lesser red orc spins about and then runs {direction}.",
+      "A lesser red orc lopes {direction}."
     ],
     death: [
-      "A lesser red orc collapses in a red mess and dies."
+      "A lesser red orc collapses in a red mess and dies.",
+      "A lesser red orc collapses into dust."
     ],
     decay: [
       "A lesser red orc collapses into dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser red orc swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser red orc swings {weapon} at you!",
+        "A lesser red orc thrusts {pronoun} scimitar out in front of {pronoun}."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -20,7 +20,7 @@
     "Living"
   ],
   bcs: true,
-  max_hp: 80,
+  max_hp: 70,
   speed: nil,
   height: 6,
   size: "medium",
@@ -81,13 +81,17 @@
     gems: true,
     boxes: true,
     skin: "an orc ear",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Massive and sullen looking, the ridge orc glares and grimaces at all who dare to approach. Unknown power resides in this horrific-appearing monster."
     ],
-    arrival: [],
+    arrival: [
+      "A ridge orc rushes in, howling with rage!"
+    ],
     flee: [
       "A ridge orc flees {direction}."
     ],
@@ -99,11 +103,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A ridge orc swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A ridge orc swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

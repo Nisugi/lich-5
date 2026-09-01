@@ -97,28 +97,42 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A haze of cloaked blackness and violet vapors, the bog wraith floats in the air just above the ground. Its violet eyes illuminate between a soft glow and an angry blazoned appearance. A pair of clawed hands extend from the middle of its being, abnormally tiny in comparison to the rest of its body."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A bog wraith floats in with a purple haze trailing directly behind {pronoun}."
+    ],
+    flee: [
+      "A bog wraith floats southwest leaving a purple haze in {pronoun} wake.",
+      "A bog wraith floats north leaving a purple haze in {pronoun} wake.",
+      "A bog wraith floats south leaving a purple haze in {pronoun} wake.",
+      "A bog wraith floats northeast leaving a purple haze in {pronoun} wake.",
+      "A bog wraith floats southeast leaving a purple haze in {pronoun} wake.",
+      "A bog wraith floats down leaving a purple haze in {pronoun} wake.",
+      "A bog wraith floats northwest leaving a purple haze in {pronoun} wake."
+    ],
     death: [
-      "A bog wraith's form dissipates into a purple haze.",
-      "The bog wraith goes still for a moment while its head reshapes."
+      "A bog wraith's form dissipates into a purple haze."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A bog wraith tries to ensnare you!"
+    spell_prep: [
+      "A bog wraith flares up with a violet aura."
     ],
-    bite: [],
-    claw: [
-      "A bog wraith claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A bog wraith tries to ensnare you!"
+      ],
+      claw: [
+        "A bog wraith claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -82,7 +82,9 @@
     gems: true,
     boxes: true,
     skin: "a skeletal giant bone",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -95,19 +97,18 @@
       "A skeletal giant runs {direction}."
     ],
     death: [
-      "A skeletal giant falls to the ground in a clattering, motionless heap.",
-      "Beautiful shot pierces both lungs, the skeletal giant makes a wheezing noise, and drops dead!"
+      "A skeletal giant falls to the ground in a clattering, motionless heap."
     ],
     decay: [
       "A skeletal giant turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A skeletal giant pounds at you with {pronoun} fist!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A skeletal giant pounds at you with {pronoun} fist!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

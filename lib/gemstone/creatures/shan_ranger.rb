@@ -136,7 +136,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Tiny golden seed"
+    other: "Tiny golden seed",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -149,19 +151,25 @@
     ],
     death: [
       "The shan ranger howls out one last time and dies.",
-      "The shan ranger yips in pain as he falls to the ground motionless.",
-      "The shan ranger yips in pain as she falls to the ground motionless.",
-      "A shan ranger's body shimmers slightly.  Suddenly, his features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of his death like a silhouette.",
-      "A shan ranger's body shimmers slightly.  Suddenly, her features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of her death like a silhouette."
+      "The shan ranger yips in pain as {pronoun} falls to the ground motionless.",
+      "A shan ranger's body shimmers slightly.  Suddenly, {pronoun} features cave in, falling grotesquely into a haunting visage of decay, before abruptly fraying to a pile of fur and fangs that marks the spot of {pronoun} death like a silhouette."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A shan ranger swings {weapon} at you!"
+    spell_prep: [
+      "A shan ranger utters a phrase of magic."
     ],
-    bite: [],
-    claw: [],
+    stand: [
+      "A shan ranger scrambles to {pronoun} feet!"
+    ],
+    attacks: {
+      hurl: [
+        "A shan ranger throws a diamond-hilted longsword at you!"
+      ],
+      attack: [
+        "A shan ranger swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

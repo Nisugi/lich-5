@@ -87,7 +87,9 @@
     gems: true,
     boxes: true,
     skin: "scalp",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -100,18 +102,19 @@
       "A frozen corpse shambles {direction}."
     ],
     death: [
-      "The frozen corpse wails in terrifying pain one last time and lies still.",
-      "Beautiful shot pierces both lungs, the frozen corpse makes a wheezing noise, and drops dead!",
-      "The frozen corpse slumps to the ground."
+      "The frozen corpse wails in terrifying pain one last time and lies still."
     ],
-    decay: [],
+    decay: [
+      "A frozen corpse rots away, leaving nothing behind."
+    ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A frozen corpse swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A frozen corpse swings {weapon} at you!",
+        "A frozen corpse swings a large ice pick at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

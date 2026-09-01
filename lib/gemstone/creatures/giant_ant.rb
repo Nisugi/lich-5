@@ -86,7 +86,9 @@
     gems: false,
     boxes: false,
     skin: "an ant pincer",
-    other: "ant larva"
+    other: "ant larva",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -100,19 +102,18 @@
     ],
     death: [
       "The giant ant falls to the ground and dies, its feelers twitching.",
-      "The giant ant feebly twitches a feeler one last time and dies.",
-      "Beautiful shot pierces both lungs, the giant ant makes a wheezing noise, and drops dead!"
+      "The giant ant feebly twitches a feeler one last time and dies."
     ],
     decay: [
       "A giant ant decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A giant ant tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A giant ant tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

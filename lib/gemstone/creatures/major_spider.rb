@@ -86,7 +86,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,13 +109,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A major spider tries to ensnare you!"
-    ],
-    bite: [
-      "A major spider tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A major spider tries to ensnare you!"
+      ],
+      bite: [
+        "A major spider tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

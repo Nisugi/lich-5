@@ -101,7 +101,9 @@
     gems: true,
     boxes: true,
     skin: "an ogre tusk",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -124,11 +126,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A forest ogre swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A forest ogre swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

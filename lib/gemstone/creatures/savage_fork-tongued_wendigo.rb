@@ -127,7 +127,9 @@
     boxes: true,
     skin: nil,
     other: nil,
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: "The wendigo looks to have once been humanoid.  Magics have contorted and stretched its form into an atrocity of exposed bone and raw tissues that stands several heads taller than a giantman.  Sprouting antlers of bloodstained bone breach up from the sparse flesh of the wendigo's skull.  Its eyes are misty pools of light that cast the rest of the wendigo's face in haunted shadow.  The abomination's maw is forced open by multifarious rows of shark-like teeth, but its tongue is forked like that of a snake.",
@@ -136,36 +138,51 @@
       "A savage fork-tongued wendigo steps in, luminous eyes hungrily eyeing the surroundings despite its grievous wounds.",
       "Eyes like twin pools of ghostly light materialize through the falling snow, illuminating the abominable shape of a savage fork-tongued wendigo.  The creature races forward with unnatural speed, mouth opening unnaturally wide as it bares rows of shark-like teeth.",
       "A savage fork-tongued wendigo stalks in, eyes like luminous pools searching the surroundings.",
-      "A savage fork-tongued wendigo just arrived."
+      "A savage fork-tongued wendigo just arrived.",
+      "A savage fork-tongued wendigo just came through a break in the trees."
     ],
     flee: [
       "Heedless of its grievous wounds, a savage fork-tongued wendigo stalks {direction}.",
       "A savage fork-tongued wendigo gets down on all fours and sprints {direction} at unnatural speed.",
-      "A savage fork-tongued wendigo's luminous eyes flare with unnatural light as it turns and stalks {direction}."
+      "A savage fork-tongued wendigo's luminous eyes flare with unnatural light as it turns and stalks {direction}.",
+      "A savage fork-tongued wendigo just went through a break in the trees.",
+      "A savage fork-tongued wendigo just went into a thatched timber smithy.",
+      "A savage fork-tongued wendigo just went down a shrouded path.",
+      "A savage fork-tongued wendigo just went into a huge hoarbeam longhouse.",
+      "A savage fork-tongued wendigo just went into a huge hut.",
+      "A savage fork-tongued wendigo just went through a crumbling red stone maw."
     ],
     death: [
-      "Rage flickers in the wendigo's eyes as it collapses, bloody maw still working hungrily until the last hint of life goes out of its form.",
-      "Beautiful shot pierces both lungs, the fork-tongued wendigo makes a wheezing noise, and drops dead!"
+      "Rage flickers in the wendigo's eyes as it collapses, bloody maw still working hungrily until the last hint of life goes out of its form."
     ],
     decay: [
       "Rot sets into a savage fork-tongued wendigo's body with unnatural speed, skin sloughing away to reveal greying muscle and rampant suppuration.  In moments, all that remain are yellowing bones and stinking effluvia."
     ],
     search: [
       "A savage fork-tongued wendigo tilts its head, eyeing the shadows with a hideous smile upon its face.",
-      "a savage fork-tongued wendigo's eyes dart around, suspicion warring with hunger in its beady eyes."
+      "A savage fork-tongued wendigo's eyes dart around, suspicion warring with hunger in its beady eyes."
     ],
     spell_prep: [
-      "A savage fork-tongued wendigo rasps out a dissonant, sing-song phrase."
+      "A savage fork-tongued wendigo rasps out a dissonant, sing-song phrase.",
+      "A savage fork-tongued wendigo closes {pronoun} eyes in deep concentration..."
     ],
 
-    frenzy: "A savage fork-tongued wendigo crooks an oddly elongated finger at you!",
-    sympathy: true,
-    bite: "A savage fork-tongued wendigo's jaw unhinges as it tries to ravage you with its shark-like teeth!",
-    claw: [
-      "Lashing out unpredictably, a savage fork-tongued wendigo slices at you with an elongated talon!",
-      "A savage fork-tongued wendigo flails with its clawed fists at you!"
+    attacks: {
+      attack: [
+        "With inhuman swiftness and precision, a savage fork-tongued wendigo swings its {weapon} at you!"
+      ],
+      bite: [
+        "A savage fork-tongued wendigo's jaw unhinges as it tries to ravage you with its shark-like teeth!"
+      ],
+      claw: [
+        "Lashing out unpredictably, a savage fork-tongued wendigo slices at you with an elongated talon!",
+        "A savage fork-tongued wendigo flails with its clawed fists at you!"
+      ]
+    },
+    stun_break: [
+      "A savage fork-tongued wendigo throws {pronoun} head back and lets out a bone-shaking roar, ripping free of the magics restraining {pronoun} in a wash of bloody light."
     ],
-    attack: "With inhuman swiftness and precision, a savage fork-tongued wendigo swings its {weapon} at you!",
+    frenzy: "A savage fork-tongued wendigo crooks an oddly elongated finger at you!",
     enrage: "A savage fork-tongued wendigo's eyes blaze a murderous crimson!",
     mstrike: "In an awe-inspiring display of combat mastery, a savage fork-tongued wendigo engages you in a furious dance macabre, spiraling into a blur of strikes and ripostes!",
   }

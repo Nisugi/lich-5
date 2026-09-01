@@ -174,6 +174,26 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
     expect(offenders).to be_empty
   end
 
+  it 'defense numbers (max_hp, melee/ranged/bolt/udf, every TD) are Integer, ascending Range, or nil - never a wiki string' do
+    numeric_keys = %i[melee ranged bolt udf bar_td cle_td emp_td pal_td ran_td sor_td wiz_td
+                      mje_td mne_td mjs_td mns_td mnm_td]
+    offenders = []
+    creature_files.each do |path|
+      data = load_data(path)
+      next unless data.is_a?(Hash)
+
+      values = { max_hp: data[:max_hp] }
+      numeric_keys.each { |k| values[k] = data.dig(:defense_attributes, k) }
+      values.each do |key, value|
+        ok = value.nil? || value.is_a?(Integer) ||
+             (value.is_a?(Range) && value.first.is_a?(Integer) && value.first <= value.last)
+        offenders << "#{File.basename(path)} #{key}=#{value.inspect}" unless ok
+      end
+    end
+
+    expect(offenders).to be_empty
+  end
+
   it 'boss_type is nil, "pack", "miniboss", or "boss" - never a typo or a bare symbol' do
     offenders = []
     creature_files.each do |path|

@@ -136,7 +136,9 @@
     gems: true,
     boxes: true,
     skin: "mossy beard",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -150,7 +152,8 @@
     flee: [
       "A treekin druid lumbers {direction}.",
       "A treekin druid lumbers {direction}, leaving a trail of leaves of behind it.",
-      "A treekin druid shudders and lumbers {direction}, leaving a trail of sap and leaves of behind it."
+      "A treekin druid shudders and lumbers {direction}, leaving a trail of sap and leaves of behind it.",
+      "A treekin druid lumbers {direction}, leaving a path of leaves behind {pronoun}!"
     ],
     death: [
       "The druid teeters and then topples to the ground!"
@@ -161,15 +164,20 @@
       "A treekin druid decays into compost."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A treekin druid hurls {weapon} at you!",
-      "A treekin druid lashes {weapon} at you!",
-      "A treekin druid raises a large root and slams it down at you!",
-      "A treekin druid pounds at you with a leafy fist!"
+    spell_prep: [
+      "A treekin druid gestures at you! Suddenly, roots spring from the ground and attempt to grab you!",
+      "A treekin druid gestures and then hurls a whirlwind of leaves at you!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A treekin druid lashes {weapon} at you!",
+        "A treekin druid raises a large root and slams it down at you!",
+        "A treekin druid pounds at you with a leafy fist!"
+      ],
+      hurl: [
+        "A treekin druid hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

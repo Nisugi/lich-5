@@ -137,7 +137,9 @@
     gems: true,
     boxes: true,
     skin: "a troll hide",
-    other: "small troll tooth"
+    other: "small troll tooth",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -151,23 +153,28 @@
     ],
     death: [
       "The forest troll screams one last time and dies.",
-      "The forest troll falls to the ground and dies.",
-      "Beautiful shot pierces both lungs, the forest troll makes a wheezing noise, and drops dead!"
+      "The forest troll falls to the ground and dies."
     ],
     decay: [
       "A forest troll decays into compost."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A forest troll swings {weapon} at you!"
+    spell_prep: [
+      "A forest troll mutters, \"Srlarloror'rt srar 'mrosrdnragh srar 'r'rar s'r'vr'r'rawrd!\""
     ],
-    bite: [
-      "A forest troll tries to bite you!"
-    ],
-    claw: [
-      "A forest troll claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A forest troll swings {weapon} at you!",
+        "A forest troll throws {pronoun} head back and howls!",
+        "A forest troll swings a scimitar at {target}!"
+      ],
+      bite: [
+        "A forest troll tries to bite you!"
+      ],
+      claw: [
+        "A forest troll claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

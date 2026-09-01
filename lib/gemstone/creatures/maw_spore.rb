@@ -75,7 +75,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -84,16 +86,24 @@
     arrival: [
       "A maw spore arrives, bobbing haphazardly on a current of air."
     ],
-    flee: [],
+    flee: [
+      "A maw spore bobs haphazardly northwestward on an air current.",
+      "A maw spore bobs haphazardly southeastward on an air current.",
+      "A maw spore bobs haphazardly southwestward on an air current.",
+      "A maw spore bobs haphazardly westward on an air current.",
+      "A maw spore bobs up and down gently in the air.",
+      "A maw spore bobs haphazardly eastward on an air current.",
+      "A maw spore bobs haphazardly southward on an air current."
+    ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A maw spore stabs at you with {pronoun} stinger!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A maw spore stabs at you with {pronoun} stinger!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -111,13 +111,18 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "a heart of smooth black glaes (cursed)"
+    other: "a heart of smooth black glaes (cursed)",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Flame suddenly hisses and spits from thin air, which shimmers in the resulting smoke like reflective crystal. Then abruptly, the air roils and begins to take on form. In mere heartbeats, it becomes obvious that the transparent bubble of conflagration is a sentient being. The skayl opens its gaping maw of fire and bellows a malign growl that is more felt than heard. In the next instant, the skayl melts down then reforms a short distance away, leaving a drift of smoke in its wake like a fraying shadow."
     ],
-    arrival: [],
+    arrival: [
+      "A skayl rises from a pool of steaming liquid glaes!",
+      "A skayl rises from a pool of steaming liquid glaes rumbling in pain!"
+    ],
     flee: [],
     death: [
       "The skayl goes limp and it falls over as the fire slowly fades from its eyes."
@@ -127,12 +132,15 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A skayl swings {weapon} at you!",
-      "A skayl tries to ensnare you!"
+    stand: [
+      "A skayl melts into a pool of molten glaes and quickly reforms {reflexive} into a standing position."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A skayl swings {weapon} at you!",
+        "A skayl tries to ensnare you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

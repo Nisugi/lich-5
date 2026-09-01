@@ -94,7 +94,9 @@
     gems: nil,
     boxes: nil,
     skin: "a skeletal warhorse jaw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,7 +106,10 @@
       "A skeletal warhorse just arrived."
     ],
     flee: [
-      "A skeletal warhorse gallops {direction}."
+      "A skeletal warhorse gallops {direction}.",
+      "A skeletal warhorse just went through a soot-stained wooden door.",
+      "A skeletal warhorse just went through some barn doors.",
+      "A skeletal warhorse just went through a stout wooden door."
     ],
     death: [
       "The skeletal warhorse falls to the ground motionless.",
@@ -113,12 +118,12 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A skeletal warhorse charges at you!",
-      "A skeletal warhorse stomps at you with {pronoun} foot!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A skeletal warhorse charges at you!",
+        "A skeletal warhorse stomps at you with {pronoun} foot!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -104,7 +104,9 @@
     gems: true,
     boxes: true,
     skin: "a vor'taz horn, a shiny vor'taz horn",
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -113,18 +115,13 @@
     arrival: [],
     flee: [],
     death: [
-      "The horned vor'taz's horn dims as his lifeforce fades away.",
-      "The horned vor'taz's horn dims as her lifeforce fades away.",
-      "Beautiful shot pierces both lungs, the horned vor'taz makes a wheezing noise, and drops dead!"
+      "The horned vor'taz's horn dims as {pronoun} lifeforce fades away."
     ],
     decay: [
       "A horned vor'taz crumbles away to nothing."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

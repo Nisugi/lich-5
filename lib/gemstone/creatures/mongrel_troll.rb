@@ -84,7 +84,9 @@
     gems: true,
     boxes: true,
     skin: "a chipped troll tusk",
-    other: "Small troll tooth"
+    other: "Small troll tooth",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -101,19 +103,25 @@
     ],
     death: [
       "The mongrel troll twitches violently, then dies.",
-      "The mongrel troll whimpers pitifully one last time and dies.",
-      "Beautiful shot pierces both lungs, the mongrel troll makes a wheezing noise, and drops dead!"
+      "The mongrel troll whimpers pitifully one last time and dies."
     ],
     decay: [
       "A mongrel troll decays into compost."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A mongrel troll thrusts with a spear at you!"
+    search: [
+      "A mongrel troll sniffs around looking for something."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A mongrel troll mutters, \"Srlarloror'rt srar 'mrosrdnragh srar 'r'rar s'r'vr'r'rawrd!\"",
+      "A mongrel troll mutters to {reflexive}."
+    ],
+    attacks: {
+      attack: [
+        "A mongrel troll thrusts with a spear at you!",
+        "A mongrel troll swings a war mattock at you!",
+        "A mongrel troll throws {pronoun} head back and howls!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

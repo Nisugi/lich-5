@@ -94,34 +94,27 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Robed and hooded, the Tenthsworn occultist has fervent eyes the color of dried blood and the sort of pallor earned from days spent out of the sun. His dark robes are stitched with serpentine patterns in crimson, a theme repeated in the symbol at his throat, which takes the form of a pair of intertwined asps. The occultist's face is hollow and he looks as if he has not eaten in some time, though perhaps the zeal within him has burned all spare flesh away. \n\nAppraisal:\nThe Tenthsworn occultist is small in size, about four feet high in his current state."
     ],
     arrival: [
-      "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon her face.",
-      "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon his face."
+      "A bony Tenthsworn occultist stalks in, overwhelming zeal written upon {pronoun} face."
     ],
     flee: [
-      "Zeal written upon his face, a bony Tenthsworn occultist stalks {direction}.",
-      "Zeal written upon her face, a bony Tenthsworn occultist stalks {direction}.",
-      "Biting her lip in pain, a bony Tenthsworn occultist stalks {direction}.",
-      "Biting his lip in pain, a bony Tenthsworn occultist stalks {direction}."
+      "Zeal written upon {pronoun} face, a bony Tenthsworn occultist stalks {direction}.",
+      "Biting {pronoun} lip in pain, a bony Tenthsworn occultist stalks {direction}."
     ],
     death: [
-      "The Tenthsworn occultist twitches violently, then dies.",
-      "The Tenthsworn occultist slumps to the ground."
+      "The Tenthsworn occultist twitches violently, then dies."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the Tenthsworn occultist's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

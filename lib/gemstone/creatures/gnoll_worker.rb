@@ -90,7 +90,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Yes"
+    other: "Yes",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -99,7 +101,8 @@
     arrival: [
       "A gnoll worker strides in solemnly.",
       "A gnoll worker wanders in, sniffing the air.",
-      "A gnoll ranger wanders in, alertly surveying its surroundings."
+      "A gnoll worker strolls in.",
+      "A gnoll worker rushes in, waving {pronoun} arms wildly."
     ],
     flee: [
       "A gnoll worker ambles {direction}."
@@ -108,14 +111,16 @@
       "The gnoll worker falls to the ground and dies.",
       "The gnoll worker rolls over and dies."
     ],
-    decay: [],
+    decay: [
+      "A gnoll worker's remains dissolve into the ground."
+    ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A gnoll worker swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A gnoll worker swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,18 +109,17 @@
     ],
     flee: [],
     death: [
-      "The firephantom slowly settles to the ground and begins to dissipate.",
-      "The firephantom goes still for a moment while its head reshapes."
+      "The firephantom slowly settles to the ground and begins to dissipate."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A firephantom swings {weapon} at you!",
-      "A firephantom gestures at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A firephantom swings {weapon} at you!",
+        "A firephantom gestures at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

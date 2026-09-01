@@ -110,7 +110,9 @@
     gems: false,
     boxes: false,
     skin: "a lynx pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -118,8 +120,7 @@
     ],
     arrival: [],
     flee: [
-      "A spotted lynx darts {direction}.",
-      "A spotted lynx roars loudly as she stands {direction}!"
+      "A spotted lynx darts {direction}."
     ],
     death: [
       "The spotted lynx crumples to the ground and dies.",
@@ -129,14 +130,17 @@
       "A spotted lynx decays into a compost of fangs, fur and claws."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A spotted lynx charges at you!"
+    spell_prep: [
+      "A spotted lynx hisses loudly!"
     ],
-    bite: [],
-    claw: [
-      "A spotted lynx claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A spotted lynx charges at you!"
+      ],
+      claw: [
+        "A spotted lynx claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

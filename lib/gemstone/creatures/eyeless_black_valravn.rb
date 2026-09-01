@@ -81,10 +81,10 @@
     udf: (846..1009),
     bar_td: nil,
     cle_td: (487..496),
-    emp_td: "493",
+    emp_td: 493,
     pal_td: (454..457),
-    ran_td: "457",
-    sor_td: "527",
+    ran_td: 457,
+    sor_td: 527,
     wiz_td: nil,
     mje_td: nil,
     mne_td: nil,
@@ -106,26 +106,74 @@
     boxes: nil,
     skin: "inky black valravn plume",
     other: nil,
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    attack: [
-      "Soaring by on inky wings, an eyeless black valravn rakes at you with {pronoun} talons!",
-      "An eyeless black valravn pecks viciously at you with {pronoun} dagger-sharp beak!",
+    death: [
+      "An eyeless black valravn collapses to the ground in an awful tangle of talons and feathers.",
+      "An eyeless black valravn tumbles to the ground, landing in an awful tangle of talons and feathers."
     ],
-    bite: [],
-    claw: [],
+    flee: [
+      "An eyeless black valravn just went through a crumbling red stone maw.",
+      "An eyeless black valravn just went through a breached red stone wall.",
+      "An eyeless black valravn just went through a pocked red stone arch."
+    ],
+    arrival: [
+      "An eyeless black valravn soars in on wings darker than night.",
+      "An eyeless black valravn soars in, favoring one wing.",
+      "An eyeless black valravn just came through a pocked red stone arch.",
+      "An eyeless black valravn just came through a breached red stone wall.",
+      "An eyeless black valravn soars in, barely able to keep {reflexive} aloft."
+    ],
     description: "Wings of stygian darkness enshroud the huge black bird.  When not in motion, there is an ominous and unnatural stillness to the valravn that marks it as otherworldly.  Where eyes should be, there are strange hollows that occasionally flicker with scintillating golden light.",
-    general_advice: "* Broadly speaking, valravns are a \"glass cannon\" type of creature. Their \"glass\" is durable in the sense of high DS and TD, but when attacks get past those thresholds--or attacks that bypass them, like SMR-based attacks or unarmed combat--they're likely to hit these unarmored creatures hard and they have a fairly small amount of health.\n* Valravns are primarily magical creatures and are fairly vulnerable to maneuver-based spells and attacks like Earthen Fury (917), Hamstring, Spike Thorn (616), Twin Hammerfists, and more. This is offset somewhat by their high level, however.",
-    voln: "* Symbol of Diminishment can make valravns far more manageable. However, their high level imposes a penalty against the standard success resolution system that Voln symbols use, so it might take multiple tries. High Influence can counteract level disadvantage somewhat.",
-    clerics: "* Valravns have high TD, but Prayer of Holding (301) only needs a 101 endroll to set up for one or two strong casts of Condemn (309) afterward.",
-    paladins: "* High Religion lore is doubly helpful against valravns, as Zealot (1617) can push paladins' AS over the top and Divine Incarnation (1650) Smite, given enough lore to reliably hit twice, frequently destroys valravns while divine energy lasts.\n* Either Aura of the Arkati (1614) or Repentance (1615) as the infused spell in a paladin's bonded weapon works well, since in either case they only need a 101 endroll to accomplish their main goals of, respectively, a debuff or forcing a valravn to kneel.",
-    rangers: "* Moonbeam (611) is a near universal solution in the Hinterwilds and valravns are no exception.",
-    arrival_messaging: "An eyeless black valravn soars in on wings darker than night.",
-    unstun_messaging: "An eyeless black valravn ruffles its feathers in a single, precise shake as it recovers its wits.",
-    death_messaging: "An eyeless black valravn tumbles to the ground, landing in an awful tangle of talons and feathers.",
-    search_messaging: "Shadows coil around the broken form of an eyeless black valravn, collapsing into a lightless sphere that erupts soundlessly, bathing the area in momentary darkness.",
-    combat_messaging: "An eyeless black valravn swoops down, extending its talons in a display of blatant threat.\nAn eyeless black valravn turns to look at you, the empty pits where its eyes should be swelling into lightless pools that hungrily drink the surrounding light.\nCS: +500 - TD: +410 + CvA: -4 + d100: +19 == +105\nWarding failed!"
+    attacks: {
+      claw: [
+        "An eyeless black valravn tries to slash at you with a black talon!"
+      ],
+      attack: [
+        "Soaring by on inky wings, an eyeless black valravn rakes at you with {pronoun} talons!",
+        "An eyeless black valravn pecks viciously at you with {pronoun} dagger-sharp beak!",
+        "An eyeless black valravn swoops down, extending its talons in a display of blatant threat.",
+        "Warding failed!"
+      ],
+      creature_spell: [
+        "An eyeless black valravn turns to look at you, the empty pits where {pronoun} eyes should be swelling into lightless pools that hungrily drink the surrounding light.",
+        "An eyeless black valravn turns to look at {target}, the empty pits where {pronoun} eyes should be swelling into lightless pools that hungrily drink the surrounding light."
+      ]
+    },
+    stun_break: [
+      "An eyeless black valravn ruffles its feathers in a single, precise shake as it recovers its wits."
+    ],
+    search: [
+      "Shadows coil around the broken form of an eyeless black valravn, collapsing into a lightless sphere that erupts soundlessly, bathing the area in momentary darkness."
+    ],
+    info: {
+      general: [
+        "* Broadly speaking, valravns are a \"glass cannon\" type of creature. Their \"glass\" is durable in the sense of high DS and TD, but when attacks get past those thresholds--or attacks that bypass them, like SMR-based attacks or unarmed combat--they're likely to hit these unarmored creatures hard and they have a fairly small amount of health.\n* Valravns are primarily magical creatures and are fairly vulnerable to maneuver-based spells and attacks like Earthen Fury (917), Hamstring, Spike Thorn (616), Twin Hammerfists, and more. This is offset somewhat by their high level, however."
+      ],
+      class_tips: {
+        cleric: [
+          "* Valravns have high TD, but Prayer of Holding (301) only needs a 101 endroll to set up for one or two strong casts of Condemn (309) afterward."
+        ],
+        paladin: [
+          "* High Religion lore is doubly helpful against valravns, as Zealot (1617) can push paladins' AS over the top and Divine Incarnation (1650) Smite, given enough lore to reliably hit twice, frequently destroys valravns while divine energy lasts.\n* Either Aura of the Arkati (1614) or Repentance (1615) as the infused spell in a paladin's bonded weapon works well, since in either case they only need a 101 endroll to accomplish their main goals of, respectively, a debuff or forcing a valravn to kneel."
+        ],
+        ranger: [
+          "* Moonbeam (611) is a near universal solution in the Hinterwilds and valravns are no exception."
+        ],
+        bard: [],
+        wizard: [],
+        empath: [],
+        rogue: [],
+        warrior: [],
+        sorcerer: []
+      },
+      miscellany: [
+        "* Symbol of Diminishment can make valravns far more manageable. However, their high level imposes a penalty against the standard success resolution system that Voln symbols use, so it might take multiple tries. High Influence can counteract level disadvantage somewhat."
+      ]
+    },
   }
 }
 

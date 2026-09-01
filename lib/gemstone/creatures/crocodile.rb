@@ -102,7 +102,9 @@
     gems: false,
     boxes: false,
     skin: "a crocodile snout",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -128,27 +130,25 @@
       "The red crocodile falls back into a heap and dies.",
       "The tangerine crocodile hisses one last time and dies.",
       "The red crocodile hisses one last time and dies.",
-      "The tangerine crocodile falls back into a heap and dies.",
-      "Beautiful shot pierces both lungs, the crocodile makes a wheezing noise, and drops dead!",
-      "Awesome shot skewers skull!  The crocodile blinks once and falls quite dead!"
+      "The tangerine crocodile falls back into a heap and dies."
     ],
     decay: [
       "A crocodile decays into compost.",
       "A striped blue crocodile decays into compost.",
       "A florid mauve crocodile decays into compost.",
       "A brilliant red crocodile decays into compost.",
-      "A speckled tangerine crocodile decays into compost.",
-      "The tangerine crocodile's right leg crumbles briefly and explodes in a shower of gore."
+      "A speckled tangerine crocodile decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A crocodile charges at you!"
-    ],
-    bite: [
-      "A crocodile tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A crocodile charges at you!"
+      ],
+      bite: [
+        "A crocodile tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

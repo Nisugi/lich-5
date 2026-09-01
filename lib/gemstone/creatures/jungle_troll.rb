@@ -102,7 +102,9 @@
     gems: true,
     boxes: true,
     skin: "a troll knuckle",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -117,16 +119,15 @@
     ],
     death: [],
     decay: [
-      "A jungle troll decays into compost.",
-      "A giant fog beetle's legs shrivel up beneath it as it decays into dust."
+      "A jungle troll decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A jungle troll swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A jungle troll swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

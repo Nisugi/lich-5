@@ -95,34 +95,42 @@
     gems: false,
     boxes: false,
     skin: "water hound pelt",
-    other: "Essence of water"
+    other: "Essence of water",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "You have never seen anything quite like a water hound, so you are not really sure what to make of it or how dangerous it might be.\n\n;Assess\nThe water hound is medium in size and about three feet high in its current state."
-    ],
+    description: [],
     arrival: [
-      "A water hound arrives, shaking droplets of water from its slick, blue fur ruff!"
+      "A water hound arrives, shaking droplets of water from {pronoun} {weapon}, blue fur ruff!",
+      "A water hound arrives, shaking droplets of water from {pronoun} slick, blue fur ruff!"
     ],
-    flee: [],
+    flee: [
+      "A water hound pads {direction}, a dense mist puffing from {pronoun} nostrils."
+    ],
     death: [
-      "The water hound lets out one last whimpering sigh of water droplets and dies.",
-      "The water hound slumps to the ground."
+      "The water hound lets out one last whimpering sigh of water droplets and dies."
     ],
     decay: [
       "A water hound decays into a compost of fur and fangs."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A water hound hurls {weapon} at you!"
+    stun_break: [
+      "A water hound howls in rage as {pronoun} shakes off the stun.",
+      "A water hound howls silently in rage as {pronoun} shakes off the stun."
     ],
-    bite: [
-      "A water hound tries to bite you!"
-    ],
-    claw: [
-      "A water hound claws at you!"
-    ],
+    attacks: {
+      bite: [
+        "A water hound tries to bite you!"
+      ],
+      claw: [
+        "A water hound claws at you!"
+      ],
+      hurl: [
+        "A water hound hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

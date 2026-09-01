@@ -108,7 +108,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Pristine sprite's hairGlowing violet essence shard"
+    other: "Pristine sprite's hairGlowing violet essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -118,27 +120,28 @@
       "Seemingly from nowhere, a lesser wood sprite wanders in!"
     ],
     flee: [
-      "A lesser wood sprite glances around and then wanders {direction}!",
-      "A lesser wood sprite screams loudly as she stands {direction}!"
+      "A lesser wood sprite glances around and then wanders {direction}!"
     ],
     death: [
       "The lesser wood sprite twitches violently, then dies.",
-      "The lesser wood sprite's eyes grow dim as her lifeforce fades away.",
-      "The lesser wood sprite's eyes grow dim as his lifeforce fades away."
+      "The lesser wood sprite's eyes grow dim as {pronoun} lifeforce fades away."
     ],
     decay: [
-      "A lesser wood sprite crumbles into a pile of dry splinters.",
-      "The lesser wood sprite's left leg crumbles briefly and explodes in a shower of gore.",
-      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
+      "A lesser wood sprite crumbles into a pile of dry splinters."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A lesser wood sprite thrusts with a wood-gripped estoc at you!",
-      "A giant hawk-owl tries to impale you on lesser wood sprite beak!"
+    search: [
+      "A lesser wood sprite glances around and then wanders down!",
+      "A lesser wood sprite glances around and then wanders up!"
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A lesser wood sprite's eyes glow brightly, and {pronoun} motions to you!"
+    ],
+    attacks: {
+      attack: [
+        "A lesser wood sprite thrusts with a wood-gripped estoc at you!",
+        "A lesser wood sprite swings a pitted iron falchion at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

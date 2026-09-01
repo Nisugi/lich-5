@@ -121,27 +121,47 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A patchwork flesh monstrosity is near as tall as a giant and twice as broad, a lumbering monstrosity cobbled together from spare parts in tactless parody of a human form. Red-tinged serum leaks constantly from the straining stitches that maintain the monster's integrity. Only the barest glimmer of intelligence lurks in the monstrosity's eyes, and that, perhaps, is a blessing: anything with even half of a brain would be horrified to be such an abominable figure. From the looks of it, the monstrosity's has barely a quarter of one."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A patchwork flesh monstrosity shakes the ground as {pronoun} trundles in, belching serum from {pronoun} stitched flesh with every heavy step.",
+      "A patchwork flesh monstrosity trundles in, shaking the floor with {pronoun} footsteps.",
+      "A patchwork flesh monstrosity just came through a polished acacia archway.",
+      "A patchwork flesh monstrosity trundles in, shaking the ground with {pronoun} footsteps.",
+      "A patchwork flesh monstrosity just came through some riveted black ora doors.",
+      "A patchwork flesh monstrosity just came through a pair of high bronze double doors."
+    ],
+    flee: [
+      "A patchwork flesh monstrosity just went through a pair of high bronze double doors.",
+      "A patchwork flesh monstrosity just went through some riveted black ora doors.",
+      "A patchwork flesh monstrosity trundles noisily {direction}.",
+      "A patchwork flesh monstrosity stomps the ground, sending vibrations trembling outward from the point of impact."
+    ],
     death: [],
-    decay: [
-      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
+    decay: [],
+    search: [
+      "A patchwork flesh monstrosity looks around, obviously confused."
     ],
-    search: [],
     spell_prep: [],
-    attack: [
-      "A patchwork flesh monstrosity raises a hamhock-sized fist overhead and brings it swiftly down at you!",
-      "A patchwork flesh monstrosity tries to ensnare you with {pronoun} bloated arms!",
-      "Raising one immense foot, a patchwork flesh monstrosity tries to stomp on you!",
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A patchwork flesh monstrosity tries to ensnare you with {pronoun} bloated arms!",
+        "Raising one immense foot, a patchwork flesh monstrosity tries to stomp on you!",
+        "A patchwork flesh monstrosity slams {pronoun} foot down, sending tremors rumbling through the area!",
+        "A patchwork flesh monstrosity barrels into motion, flinging {reflexive} at you!",
+        "A patchwork flesh monstrosity raises a hamhock-sized fist overhead and brings {pronoun} swiftly down at you!",
+        "A patchwork flesh monstrosity barrels into motion, flinging {reflexive} at {target}!",
+        "A patchwork flesh monstrosity tries to ensnare {target} with {pronoun} bloated arms!",
+        "A patchwork flesh monstrosity raises a hamhock-sized fist overhead and brings {pronoun} swiftly down at {target}!",
+        "The patchwork flesh monstrosity crushes {target} beneath {pronoun} fetid body and struggles to {pronoun} feet, leaving {target} weakened and sprawled out on the ground."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -82,7 +82,9 @@
     gems: false,
     boxes: false,
     skin: "a panther pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,21 +100,21 @@
     ],
     death: [
       "The panther lets out a final caterwaul and dies.",
-      "The panther crumples to the ground and dies.",
-      "Beautiful shot pierces both lungs, the panther makes a wheezing noise, and drops dead!"
+      "The panther crumples to the ground and dies."
     ],
     decay: [
       "A panther decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A panther tries to bite you!"
-    ],
-    claw: [
-      "A panther claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A panther claws at you!"
+      ],
+      bite: [
+        "A panther tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

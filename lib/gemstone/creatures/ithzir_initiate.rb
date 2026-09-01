@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "ithzir initiate",
+  name: "Ithzir initiate",
   noun: "",
   url: "https://gswiki.play.net/ithzir_initiate",
   picture: "",
@@ -147,15 +147,16 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The Ithzir initiate carries herself with a humble bearing, her arresting, pupil-less green eyes taking in her surroundings with confidence and surety. Even when battle rages around her, each movement of the initiate seems eerily effortless and calm. The Ithzir initiate is slightly taller than a human, and while her humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The initiate wears a crisply-cut, blue tunic with a green palm-print emblazoned on the right breast."
     ],
     arrival: [
-      "An Ithzir initiate strides in, his hands clasped before him.",
-      "An Ithzir initiate strides in, her hands clasped before her.",
+      "An Ithzir initiate strides in, {pronoun} hands clasped before him.",
       "An Ithzir initiate strides in."
     ],
     flee: [
@@ -163,23 +164,23 @@
     ],
     death: [
       "The Ithzir initiate vainly struggles to rise, then goes still.",
-      "Just as you incant, the Ithzir initiate shimmers and fades away, leaving you gesturing at nothingness!",
-      "Just as you move to cast, the Ithzir initiate shimmers and fades away, leaving you gesturing at nothingness!",
-      "Beautiful shot pierces both lungs, the Ithzir initiate makes a wheezing noise, and drops dead!",
       "An Ithzir initiate's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the Ithzir initiate's ribs to move independently."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An Ithzir initiate places one palm on {pronoun} chest, and raises the other toward you!",
-      "An Ithzir initiate swings {weapon} at you!",
-      "An Ithzir initiate places one palm on ithzir initiate chest, and raises the other toward you!"
+    spell_prep: [
+      "An Ithzir initiate closes {pronoun} eyes while uttering a hollow, alien chant."
     ],
-    bite: [],
-    claw: [],
+    stun_break: [
+      "An Ithzir initiate holds {pronoun} head as {pronoun} tries to regain {pronoun} bearings."
+    ],
+    attacks: {
+      attack: [
+        "An Ithzir initiate places one palm on {pronoun} chest, and raises the other toward you!",
+        "An Ithzir initiate swings {weapon} at you!",
+        "An Ithzir initiate swings a twisted crystal-tipped staff at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

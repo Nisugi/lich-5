@@ -82,7 +82,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -101,9 +103,6 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [
         "Not in the Bestiary. Uncommon; shares the Wehnimer's Landing ant nest with giant ants (mongen profile 1194, rooms u47001-u47033).",

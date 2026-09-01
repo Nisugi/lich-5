@@ -88,29 +88,43 @@
     gems: false,
     boxes: false,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The ghostly counterpart of her living canine brothers, the barghest shimmers like a growling mass of mist as she raises her spectral head in a piercing, mournful howl. The undead beast appears to be nearly transparent, but the blood and shreds of flesh on her slavering jaws suggest that she is capable of considerable corpoeral harm."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A barghest pads in on ghostly quiet paws."
+    ],
+    flee: [
+      "A barghest pads west in a ghostly silence.",
+      "A barghest pads east in a ghostly silence.",
+      "A barghest pads southeast in a ghostly silence.",
+      "A barghest pads northwest in a ghostly silence.",
+      "A barghest pads southwest in a ghostly silence.",
+      "A barghest pads south in a ghostly silence.",
+      "A barghest pads north in a ghostly silence.",
+      "A barghest pads northeast in a ghostly silence.",
+      "A barghest bounds forward while giving off a deep-throated howl."
+    ],
     death: [
       "The barghest falls to the ground and dies.",
-      "The barghest rolls over and dies.",
-      "The barghest goes still for a moment while its head reshapes."
+      "The barghest rolls over and dies."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A barghest charges at you!"
-    ],
-    bite: [
-      "A barghest tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A barghest charges at you!"
+      ],
+      bite: [
+        "A barghest tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

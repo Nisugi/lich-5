@@ -88,7 +88,9 @@
     gems: nil,
     boxes: nil,
     skin: "a weasel pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,20 +106,18 @@
     ],
     death: [
       "The giant weasel collapses to the ground, emits a final cry, and dies.",
-      "The giant weasel lets out a final agonized cry and dies.",
-      "Beautiful shot pierces both lungs, the giant weasel makes a wheezing noise, and drops dead!",
-      "The giant weasel slumps to the ground."
+      "The giant weasel lets out a final agonized cry and dies."
     ],
     decay: [
       "A giant weasel decays into a pile of fur and bone."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A giant weasel claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A giant weasel claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

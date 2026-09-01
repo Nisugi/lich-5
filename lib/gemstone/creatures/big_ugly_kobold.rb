@@ -85,14 +85,17 @@
     gems: true,
     boxes: true,
     skin: "a kobold skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "This big ugly kobold is large for a kobold and ugly, even by kobold beauty standards. Smaller than a dwarf and even many halflings, she has ruddy skin and a hairless pate topped with small horns. Long-limbed for her size, the big ugly kobold eschews any display of brute strength and relies on what agility she pretends to have. The big ugly kobold stares back at you with beady little black eyes, sizing you up as a foe."
     ],
     arrival: [
-      "A big ugly kobold just arrived."
+      "A big ugly kobold just arrived.",
+      "A big ugly kobold swaggers in, trying to appear imposing!"
     ],
     flee: [
       "A big ugly kobold limps {direction}.",
@@ -100,17 +103,16 @@
     ],
     death: [],
     decay: [
-      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as she decays into compost.",
-      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as he decays into compost.",
+      "A small, green cloud of smelly gas rises from the body of a big ugly kobold as {pronoun} decays into compost.",
       "A small, green cloud of smelly gas rises from the body of a kobold as he decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A big ugly kobold swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A big ugly kobold swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -101,7 +101,9 @@
     gems: true,
     boxes: true,
     skin: "a shaman ear",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -109,7 +111,8 @@
     ],
     arrival: [],
     flee: [
-      "A hobgoblin shaman struts {direction}."
+      "A hobgoblin shaman struts {direction}.",
+      "A hobgoblin shaman hobbles slowly {direction}, uttering a prayer under {pronoun} breath."
     ],
     death: [
       "The hobgoblin shaman screams up at the heavens, then collapses and dies.",
@@ -121,11 +124,12 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A hobgoblin shaman finishes chanting and thrusts {weapon} towards you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A hobgoblin shaman finishes chanting and thrusts {weapon} towards you!",
+        "A hobgoblin shaman raises a clenched fist into the air!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

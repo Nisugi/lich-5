@@ -90,17 +90,23 @@
     gems: false,
     boxes: true,
     skin: "a waern fur",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The waern is a vicious-looking embodiment of canine malice and tenacity. The waern's fiendish green eyes glow with insane appetite and her mangy pelt is so ragged, the rotting bones show through in spots. Long, malicious teeth curve out of the waern's rotting muzzle, and the tail that curves over the waern's back is hardly more than segments of bone interspersed with a few pieces of fuzzy, matted hair. Floating over the ground, her paws scarcely leaving a track, the waern dodges almost quicker than the eye can follow."
     ],
     arrival: [
-      "A waern just arrived."
+      "A waern just arrived.",
+      "A waern pads into the area, slavering hungrily!",
+      "A waern just came through an iron door.",
+      "A waern just came through a tall archway."
     ],
     flee: [
-      "A waern runs {direction}."
+      "A waern runs {direction}.",
+      "A waern just went through an iron door."
     ],
     death: [
       "The waern rolls over and dies.",
@@ -109,18 +115,21 @@
     decay: [
       "A waern decays into a compost of fangs and fur.",
       "A muculent waern decays into a compost of fangs and fur.",
-      "A slimy waern decays into a compost of fangs and fur.",
-      "A shadow mare's eyes go dim as she dissolves into the shadows."
+      "A slimy waern decays into a compost of fangs and fur."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A waern charges at you!"
+    stun_break: [
+      "A waern shakes {pronoun} head violently while trying to regain {pronoun} bearings!"
     ],
-    bite: [],
-    claw: [
-      "A waern claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A waern charges at you!"
+      ],
+      claw: [
+        "A waern claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

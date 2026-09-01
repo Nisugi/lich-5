@@ -105,28 +105,31 @@
     gems: true,
     boxes: nil,
     skin: "a hag nose",
-    other: "glimmering blue essence shard"
+    other: "glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "You are not quite sure what to make of the ash hag, as you have never seen anything that looks quite like it. Stopping a moment, you try to commit this creature to memory so that you can tell tales of it to your fellow adventurers back in the safety of the local tavern."
-    ],
+    description: [],
     arrival: [
       "An ash hag just arrived, shrieking in pain!"
     ],
-    flee: [],
+    flee: [
+      "An ash hag bursts into flame, leaving nothing behind but a cloud of ash that wafts {direction}."
+    ],
     death: [
       "The ash hag twitches violently, then dies."
     ],
     decay: [
-      "An ash hag crumbles into a pile of ash.",
-      "Acid dissolves connecting cartilage, freeing the ash hag's ribs to move independently."
+      "An ash hag crumbles into a pile of ash."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      bite: [
+        "An ash hag snaps {pronoun} fingers and blinks out of existence."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

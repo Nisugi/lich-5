@@ -85,8 +85,10 @@
     magic_items: false,
     gems: false,
     boxes: false,
-    skin: "a plains lion skin",
-    other: nil
+    skin: "a plains lion's ",
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,22 +100,17 @@
     ],
     flee: [
       "A plains lion scampers {direction}.",
-      "A plains lion scampers {direction}, mewling in pain.",
-      "A plains lion roars loudly as he stands {direction}!"
+      "A plains lion scampers {direction}, mewling in pain."
     ],
     death: [
       "The plains lion crumples to the ground and dies.",
-      "The plains lion lets out a final caterwaul and dies.",
-      "Beautiful shot pierces both lungs, the plains lion makes a wheezing noise, and drops dead!"
+      "The plains lion lets out a final caterwaul and dies."
     ],
     decay: [
       "A plains lion decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

@@ -99,7 +99,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: "Alchemy (common)"
+    other: "Alchemy (common)",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -123,11 +125,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A thyril swings {weapon} at you!"
+    stand: [
+      "A thyril stands back up with a grunt."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A thyril swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

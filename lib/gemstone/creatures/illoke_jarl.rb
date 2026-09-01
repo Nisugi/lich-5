@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "illoke jarl",
+  name: "Illoke jarl",
   noun: "",
   url: "https://gswiki.play.net/illoke_jarl",
   picture: "",
@@ -148,35 +148,53 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "radiant crimson essence shard"
+    other: "radiant crimson essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The hulking frame of the Illoke jarl towers high overhead, ready to obliterate any who would intrude upon his territory. Craggy, deep grey skin sheathes him in a natural armor, with little hindrance to his movements. A pair of piercing black eyes stare out with contempt, barely distinguishable against his dark complexion. In contrast, a shimmering crimson symbol of Illoke is chiseled deep into his forehead, radiating a dull red glow."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "An Illoke jarl sinks into the ground and flows {direction}."
+    ],
     death: [
       "The Illoke jarl grumbles in pain one last time before lying still.",
-      "The Illoke jarl shudders one last time before lying still.",
-      "Beautiful shot pierces both lungs, the Illoke jarl makes a wheezing noise, and drops dead!"
+      "The Illoke jarl shudders one last time before lying still."
     ],
     decay: [
       "An Illoke jarl cracks and collapses into a pile of craggy dark rock that rapidly disappears without a trace.",
-      "The Illoke jarl's left leg crumbles briefly and explodes in a shower of gore.",
       "Tiny fissures quickly spread over the entire form of a greater earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",
       "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An Illoke jarl pounds at you with {pronoun} fist!",
-      "An Illoke jarl stomps at you with {pronoun} foot!",
-      "An Illoke jarl swings {weapon} at you!",
-      "An Illoke jarl throws {weapon} at you!",
+    spell_prep: [
+      "An Illoke jarl eyes glow with silvery grey light, and then everything around you shimmers to match the argentine color.",
+      "An Illoke jarl mutters a prayer to {pronoun} god.",
+      "An Illoke jarl chants, \"Master of the dark, cold and deep...\"",
+      "An Illoke jarl's eyes glow with silvery grey light, and then everything around you shimmers to match the argentine color."
     ],
-    bite: [],
-    claw: [],
+    stand: [
+      "An Illoke jarl blinks dazedly a moment before shaking off the stun!"
+    ],
+    attacks: {
+      attack: [
+        "An Illoke jarl pounds at you with {pronoun} fist!",
+        "An Illoke jarl stomps at you with {pronoun} foot!",
+        "An Illoke jarl swings {weapon} at you!",
+        "An Illoke jarl punches {pronoun} fist into the ground!",
+        "The Illoke jarl slams into you, and you are sent careening to the ground!"
+      ],
+      hurl: [
+        "An Illoke jarl throws {weapon} at you!"
+      ],
+      shield_charge: [
+        "An Illoke jarl charges forward at you with {pronoun} pitted iron pavis and attempts a shield charge!",
+        "An Illoke jarl charges forward at you with {pronoun} iron-banded greatshield and attempts a shield charge!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

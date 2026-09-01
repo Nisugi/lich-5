@@ -82,7 +82,7 @@
     emp_td: 488,
     pal_td: (470..476),
     ran_td: 521,
-    sor_td: "503 to 527",
+    sor_td: (503..527),
     wiz_td: nil,
     mje_td: (419..544),
     mne_td: (419..544),
@@ -111,18 +111,24 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
     arrival: [
-      "An ashen patrician vampire prowls in, deadly grace in every fluid step.  With a smirk that twists her exquisite features, she bares her shining white fangs.",
+      "An ashen patrician vampire prowls in, deadly grace in every fluid step.  With a smirk that twists {pronoun} exquisite features, {pronoun} bares {pronoun} shining white fangs.",
       "An ashen patrician vampire strides in, moving like flowing water.",
-      "An ashen patrician vampire prowls in, deadly grace in every fluid step.  With a smirk that twists his exquisite features, he bares his shining white fangs."
+      "An ashen patrician vampire just came through some vaulting grey stone doors.",
+      "An ashen patrician vampire just came through a heavy steel portcullis."
     ],
-    flee: [],
+    flee: [
+      "An ashen patrician vampire just went through some vaulting grey stone doors.",
+      "An ashen patrician vampire just went through a heavy steel portcullis."
+    ],
     death: [],
     decay: [
       "Groans and cracks emanate from an infernal death knight's armor as it suddenly succumbs to metal fatigue.  Within seconds, his skeletal form collapses into blanched powder and blows away.",
@@ -130,9 +136,17 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An ashen patrician vampire swings {pronoun} {weapon} at your ghezyte long bow!",
+        "An ashen patrician vampire swings {pronoun} {weapon} at your gleaming steel baselard!",
+        "An ashen patrician vampire swings {pronoun} {weapon} at your smooth glowbark staff!",
+        "An ashen patrician vampire swings {pronoun} {weapon} at your glowbark long bow!"
+      ],
+      bite: [
+        "An ashen patrician vampire snaps {pronoun} fingers with an artful flourish!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

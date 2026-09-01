@@ -85,12 +85,12 @@
     ranged: (307..501),
     bolt: (307..501),
     udf: (399..716),
-    bar_td: "+338 to +360",
+    bar_td: (338..360),
     cle_td: (361..371),
     emp_td: (373..383),
     pal_td: (317..326),
     ran_td: (320..329),
-    sor_td: "+392",
+    sor_td: 392,
     wiz_td: nil,
     mje_td: 411,
     mne_td: 411,
@@ -125,7 +125,9 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "Inky necrotic core"
+    other: "Inky necrotic core",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -135,19 +137,28 @@
       "A fallen crusader just arrived, looking terrified!"
     ],
     flee: [
-      "A fallen crusader bolts {direction}!"
+      "A fallen crusader bolts {direction}!",
+      "A fallen crusader trots {direction}, {pronoun} spectral armor clattering with each stride."
     ],
-    death: [
-      "The fallen crusader goes still for a moment while its head reshapes."
-    ],
+    death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A fallen crusader swings {weapon} at you!",
+    spell_prep: [
+      "A fallen crusader's eyes glow with silvery grey light, and then everything around you shimmers to match the argentine color.",
+      "A fallen crusader gestures sharply toward {target}!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A fallen crusader swings {weapon} at you!",
+        "A fallen crusader swings a gilt-edged steel talon sword at {target}!",
+        "The fallen crusader slams into {target}, who is sent careening into another {target}!",
+        "A fallen crusader swings a gold-spiked black morning star at {target}!",
+        "The fallen crusader slams into you, and you are sent careening to the ground!"
+      ],
+      shield_charge: [
+        "A fallen crusader charges forward at you with {pronoun} dark steel kite shield and attempts a shield charge!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -90,7 +90,9 @@
     gems: false,
     boxes: false,
     skin: "a sheer white spider mandible",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -106,16 +108,15 @@
     ],
     decay: [
       "A giant albino tomb spider's legs shrivel up beneath it as it decays into dust.",
-      "An albino tomb spider's legs shrivel up beneath it as it decays into dust.",
-      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
+      "An albino tomb spider's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A giant albino tomb spider tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A giant albino tomb spider tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

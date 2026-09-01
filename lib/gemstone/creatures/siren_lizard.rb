@@ -115,38 +115,46 @@
     gems: true,
     boxes: nil,
     skin: "a multicolored siren lizard skin",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The siren lizard has multicolored pastel skin which appears to be rather scaly, a long, blunt snout, sharp teeth, and a swiftly moving tail."
     ],
     arrival: [
-      "A siren lizard just arrived."
+      "A siren lizard just arrived.",
+      "A siren lizard charges in."
     ],
     flee: [
-      "A siren lizard heads {direction}."
+      "A siren lizard heads {direction}.",
+      "A siren lizard just went across a footbridge.",
+      "A siren lizard just went into a storage building.",
+      "A siren lizard just went into a warehouse."
     ],
     death: [
       "The siren lizard falls to the ground and dies.",
       "The siren lizard hisses one last time and dies.",
-      "The siren lizard twitches violently, then dies.",
-      "The siren lizard slumps to the ground."
+      "The siren lizard twitches violently, then dies."
     ],
     decay: [
       "A siren lizard decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A siren lizard pounds at you with {pronoun} fist!",
-      "A siren lizard swings {pronoun} swift tail at you!",
-      "A siren lizard tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [
-      "A siren lizard claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A siren lizard pounds at you with {pronoun} fist!",
+        "A siren lizard swings {pronoun} swift tail at you!",
+        "A siren lizard tries to ensnare you!",
+        "A siren lizard lashes {pronoun} tail with lightning speed at your legs!",
+        "A siren lizard pounds at {target} with {pronoun} fist!"
+      ],
+      claw: [
+        "A siren lizard claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

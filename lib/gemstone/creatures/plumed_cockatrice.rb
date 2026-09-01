@@ -94,32 +94,34 @@
     gems: true,
     boxes: true,
     skin: "a cockatrice plume",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A smaller relative of the basilisk, the plumed cockatrice has a snake-like body, plumes of feathers spearing up from its head, dapple grey wings, and short, stout legs. Its cold, penetrating gaze is not nearly as deadly as that of its larger cousin but the plumed cockatrice should not be treated lightly. Its vicious use of its sharp beak and raking claws make it a fierce opponent even in the best of situations."
     ],
     arrival: [
-      "A plumed cockatrice just arrived!",
+      "A plumed cockatrice just arrived!"
     ],
     flee: [
       "A plumed cockatrice thunders {direction}."
     ],
     death: [
-      "The plumed cockatrice rolls over on its back, emits a final screech and dies.",
-      "The plumed cockatrice slumps to the ground."
+      "The plumed cockatrice rolls over on its back, emits a final screech and dies."
     ],
     decay: [
       "A plumed cockatrice decays into a useless pile of scales and feathers."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A plumed cockatrice screeches and strikes at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A plumed cockatrice screeches and strikes at you!",
+        "A plumed cockatrice attempts to kick dust at you, but is unable to kick up a sufficient amount of dust."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

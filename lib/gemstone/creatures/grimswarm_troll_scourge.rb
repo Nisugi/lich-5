@@ -77,7 +77,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -88,12 +90,14 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A Grimswarm troll scourge swings {weapon} at you!"
+    spell_prep: [
+      "A Grimswarm troll scourge gestures and utters a phrase of magic."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A Grimswarm troll scourge swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [
         "Observed with dagger (AS 228), camp level unknown."

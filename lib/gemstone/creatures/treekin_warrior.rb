@@ -110,7 +110,9 @@
     gems: true,
     boxes: true,
     skin: "blood-stained bark",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -125,7 +127,8 @@
     flee: [
       "A treekin warrior shudders and lumbers {direction}, leaving a trail of sap and leaves of behind it.",
       "A treekin warrior lumbers {direction}.",
-      "A treekin warrior lumbers {direction}, leaving a trail of leaves of behind it."
+      "A treekin warrior lumbers {direction}, leaving a trail of leaves of behind it.",
+      "A treekin warrior lumbers {direction}, leaving a path of leaves behind {pronoun}!"
     ],
     death: [
       "The warrior teeters and then topples to the ground!"
@@ -136,14 +139,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A treekin warrior lashes {weapon} at you!",
-      "A treekin warrior pounds at you with a leafy fist!",
-      "A treekin warrior raises a large root and slams it down at you!",
-      "A treekin warrior strikes out at you with all of treekin warrior might!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A treekin warrior lashes {weapon} at you!",
+        "A treekin warrior pounds at you with a leafy fist!",
+        "A treekin warrior raises a large root and slams it down at you!",
+        "A treekin warrior strikes out at you with all of {pronoun} might!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

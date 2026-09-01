@@ -94,7 +94,9 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -116,11 +118,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A troglodyte swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A troglodyte swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

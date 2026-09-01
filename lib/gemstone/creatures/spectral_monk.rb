@@ -118,7 +118,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -127,15 +129,19 @@
     arrival: [],
     flee: [],
     death: [
-      "A spectral monk fades into oblivion.",
-      "The spectral monk goes still for a moment while its head reshapes."
+      "A spectral monk fades into oblivion."
     ],
-    decay: [],
+    decay: [
+      "A spectral monk fades into oblivion."
+    ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A spectral monk swings a long blackened scythe at you!",
+        "A spectral monk swings a rusty claidhmore at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

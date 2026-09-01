@@ -89,7 +89,9 @@
     gems: false,
     boxes: false,
     skin: "diaphanous mosquito wing",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -97,20 +99,17 @@
     ],
     arrival: [],
     flee: [],
-    death: [
-      "Beautiful shot pierces both lungs, the enormous mosquito makes a wheezing noise, and drops dead!",
-      "The enormous mosquito slumps to the ground."
-    ],
+    death: [],
     decay: [
       "Growing brittle, the enormous mosquito's body suddenly caves in and turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "An enormous mosquito suddenly dives at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An enormous mosquito suddenly dives at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

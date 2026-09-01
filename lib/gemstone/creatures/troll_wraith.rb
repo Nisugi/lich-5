@@ -89,7 +89,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "Glowing Violet Essence Dust,"
+    other: "Glowing Violet Essence Dust,",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -100,18 +102,23 @@
       "A troll wraith drifts {direction}."
     ],
     death: [
-      "The troll wraith goes still for a moment while its head reshapes.",
-      "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to her side.",
-      "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to his side."
+      "A troll wraith slumps to the ground, lying completely motionless.  A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to {pronoun} side.",
+      "A troll wraith falls to the ground, lying completely motionless. A last minute twitch causes the wraith's arm to spasm up into the air before falling limply back to {pronoun} side."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A troll wraith claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A troll wraith throws {pronoun} arms up to the heavens and wails, \"Tghgrrilarbr sirght 'rghudn' ri tr'srumor r'r'gnolor ghrumr wrogh?\""
+      ],
+      cast: [
+        "A troll wraith points a boney finger at {target}!"
+      ],
+      claw: [
+        "A troll wraith claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

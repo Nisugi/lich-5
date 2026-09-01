@@ -93,7 +93,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Radiant crimson essence dust"
+    other: "Radiant crimson essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -109,26 +111,22 @@
       "A gremlock stomps in angrily!"
     ],
     flee: [
-      "A gremlock sneaks {direction}."
+      "A gremlock sneaks {direction}.",
+      "A gremlock shambles northeast shrieking at the top of {pronoun} voice.",
+      "A gremlock shambles north shrieking at the top of {pronoun} voice."
     ],
     death: [
-      "A gremlock's eyes roll up as she dies.",
-      "A gremlock collapses and his eyes roll up as he dies.",
-      "A gremlock's eyes roll up as he dies.",
-      "A gremlock collapses and her eyes roll up as she dies.",
-      "Beautiful shot pierces both lungs, the gremlock makes a wheezing noise, and drops dead!",
-      "The gremlock slumps to the ground."
+      "A gremlock's eyes roll up as {pronoun} dies.",
+      "A gremlock collapses and {pronoun} eyes roll up as {pronoun} dies."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the gremlock's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A gremlock claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A gremlock claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

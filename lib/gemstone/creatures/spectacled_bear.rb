@@ -84,7 +84,9 @@
     gems: nil,
     boxes: nil,
     skin: "hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -92,11 +94,13 @@
     ],
     arrival: [
       "A spectacled bear lumbers in!",
-      "A spectacled bear slowly lumbers in, growling in pain!"
+      "A spectacled bear slowly lumbers in, growling in pain!",
+      "A spectacled bear lumbers noisily into the area drooling hungrily!"
     ],
     flee: [
       "A spectacled bear lumbers {direction}.",
-      "A spectacled bear slowly lumbers {direction}, growling in pain."
+      "A spectacled bear slowly lumbers {direction}, growling in pain.",
+      "A spectacled bear slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The spectacled bear collapses heavily into a heap on the ground and dies.",
@@ -105,17 +109,27 @@
     decay: [
       "A spectacled bear decays into a compost of fangs, fur and claws."
     ],
-    search: [],
+    search: [
+      "A spectacled bear sniffs the air carefully..",
+      "A spectacled bear snuffles the ground a moment looking for something to eat.",
+      "A spectacled bear discovers you in your hiding place!"
+    ],
     spell_prep: [],
-    attack: [
-      "A spectacled bear charges at you!"
-    ],
-    bite: [
-      "A spectacled bear tries to bite you!"
-    ],
-    claw: [
-      "A spectacled bear claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A spectacled bear charges at you!",
+        "A spectacled bear charges at you, but seeing {pronoun} coming, you acrobatically spring over the spectacled bear!",
+        "A spectacled bear charges at {target}, but seeing {pronoun} coming, {target} acrobatically springs over the spectacled bear, inspiring you!",
+        "A spectacled bear charges at you, but you move out of the way at the last second!",
+        "A spectacled bear charges at you, but seeing {pronoun} coming, you acrobatically spring over the spectacled bear, inspiring everyone around you!"
+      ],
+      bite: [
+        "A spectacled bear tries to bite you!"
+      ],
+      claw: [
+        "A spectacled bear claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

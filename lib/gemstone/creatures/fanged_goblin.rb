@@ -92,14 +92,19 @@
     gems: true,
     boxes: true,
     skin: "a goblin fang",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Round-headed with a squat nose and a wide mouth, her features occasionally interrupted by warts, the fanged goblin has a dark cast green skin with a sickly yellow tinge to it. Long, sharp fangs poke out of her puffed lips forcing her face into a perpetual sneer. Standing as tall as a dwarf or halfling, the fanged goblin moves with a nervous energy but rarely looks directly at anyone. A yeasty smell as of molding bread or of something left to rot in a dark damp place completes the goblin's aura of repulsiveness."
     ],
     arrival: [
-      "A fanged goblin just arrived!"
+      "A fanged goblin just arrived!",
+      "A fanged goblin meanders in waggling {pronoun} fingers at everything {pronoun} sees.",
+      "A fanged goblin rushes in, bows {pronoun} head for a moment and then looks back up.",
+      "A fanged goblin marches in!"
     ],
     flee: [
       "A fanged goblin tramps {direction}."
@@ -110,16 +115,17 @@
       "The fanged goblin screams, shudders one last time and dies."
     ],
     decay: [
-      "A fanged goblin's carcass collapses into a gooey mess."
+      "A fanged goblin's carcass collapses into a gooey mess.",
+      "A fanged goblin's remains decompose leaving a horrendous smell in {pronoun} wake."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A fanged goblin swings {weapon} at you!",
-      "A fanged goblin thrusts with a spear at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A fanged goblin swings {weapon} at you!",
+        "A fanged goblin thrusts with a spear at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

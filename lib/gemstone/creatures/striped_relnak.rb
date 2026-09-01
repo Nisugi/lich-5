@@ -94,35 +94,38 @@
     gems: false,
     boxes: false,
     skin: "a striped relnak sail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The striped relnak is a low-slung, wide-bodied reptile of the chameleon family. Only a few feet long, it is deceptively fast despite its girth. Its skin is scaly and rough with alternating strips of red and charcoal grey, except for the flaring, spiny sail that stands erect on its back which is solid grey. Extending from its thick neck to nearly the tip of its flicking tail, the sail's charcoal grey is punctuated by evenly spaced iridescent blue spines which glow brightly when the relnak is agitated."
     ],
     arrival: [
-      "A striped relnak scampers in."
+      "A striped relnak scampers in.",
+      "A striped relnak charges into the area!"
     ],
     flee: [
       "The relnak scampers {direction}."
     ],
     death: [
       "The striped relnak hisses one last time and dies.",
-      "The striped relnak falls back into a heap and dies.",
-      "Beautiful shot pierces both lungs, the striped relnak makes a wheezing noise, and drops dead!"
+      "The striped relnak falls back into a heap and dies."
     ],
     decay: [
       "A striped relnak decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A striped relnak stomps at you with {pronoun} foot!"
-    ],
-    bite: [
-      "A striped relnak tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A striped relnak stomps at you with {pronoun} foot!"
+      ],
+      bite: [
+        "A striped relnak tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

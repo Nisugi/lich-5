@@ -100,13 +100,18 @@
     gems: true,
     boxes: nil,
     skin: "a blood red eagle feather",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "With a body length of nearly 3 feet and a wingspan of 8 feet, the blood eagle is without a doubt the largest eagle you've ever seen. The body is covered with brown and black feathers and its powerful wings raise dust whenever the eagle nears ground. Large black eyes gleam with intelligence and claws sharp enough to rip apart a bear give this creature a distinctively threatening appearance."
     ],
-    arrival: [],
+    arrival: [
+      "A blood eagle dives in.",
+      "A blood eagle swoops in."
+    ],
     flee: [],
     death: [
       "The blood eagle squawks as it falls back into a heap and dies.",
@@ -117,11 +122,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A blood eagle claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A blood eagle claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

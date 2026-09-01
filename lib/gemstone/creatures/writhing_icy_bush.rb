@@ -71,12 +71,12 @@
     emp_td: (117..135),
     pal_td: (105..111),
     ran_td: (102..108),
-    sor_td: "117 to 147",
+    sor_td: (117..147),
     wiz_td: nil,
     mje_td: 139,
-    mne_td: "123 to 153",
+    mne_td: (123..153),
     mjs_td: (165..171),
-    mns_td: "111 to 141",
+    mns_td: (111..141),
     mnm_td: (105..108),
     defensive_spells: [],
     defensive_abilities: [],
@@ -93,14 +93,15 @@
     gems: nil,
     boxes: nil,
     skin: "blood-stained leaf",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      ";Description\nWhen planting a garden or a yard, often one will plant these to prevent unwanted guests and prying eyes. If that was the case for these, they apparently have taken their job a bit too seriously.\n\n;Assess\nThe icy bush is medium in size and about three feet high in its current state."
-    ],
+    description: [],
     arrival: [
-      "A writhing icy bush just arrived!"
+      "A writhing icy bush just arrived!",
+      "A writhing icy bush hops in and plants {pronoun} roots."
     ],
     flee: [],
     death: [
@@ -109,11 +110,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A writhing icy bush spits a thorn towards you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A writhing icy bush spits a thorn towards {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

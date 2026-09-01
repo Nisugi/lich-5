@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: "a massive troll king hide",
-    other: "trolls blood, Glowing violet essence dust"
+    other: "trolls blood, Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -112,18 +114,19 @@
     ],
     decay: [
       "A massive troll king decays away into compost.",
-      "Acid dissolves connecting cartilage, freeing the troll king's ribs to move independently.",
       "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A massive troll king pounds at you with {pronoun} fist!"
-    ],
-    bite: [],
-    claw: [
-      "A massive troll king claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A massive troll king pounds at you with {pronoun} fist!",
+        "A massive troll king pounds at {target} with {pronoun} fist!"
+      ],
+      claw: [
+        "A massive troll king claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

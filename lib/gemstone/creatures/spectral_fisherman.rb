@@ -91,7 +91,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -103,19 +105,18 @@
     ],
     flee: [],
     death: [
-      "The spectral fisherman falls to the ground motionless.",
-      "The spectral fisherman goes still for a moment while its head reshapes."
+      "The spectral fisherman falls to the ground motionless."
     ],
     decay: [
       "A spectral fisherman turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A spectral fisherman thrusts with a trident at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A spectral fisherman thrusts with a trident at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -99,17 +99,22 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "As tall as the average human, the warrior has the characteristic long-fingered hands and sturdy musculature that denote most of the krolvin race. The warrior also sports the trademark grey-blue skin and thick, coarse, white hair covers his head and spreads across his shoulders and down his back."
     ],
-    arrival: [],
+    arrival: [
+      "A krolvin warrior just came through a high opening."
+    ],
     flee: [
       "A krolvin warrior stumps {direction}.",
       "A gleaming krolvin warrior stumps {direction}.",
-      "A shimmering krolvin warrior stumps {direction}."
+      "A shimmering krolvin warrior stumps {direction}.",
+      "A krolvin warrior just went through a high opening."
     ],
     death: [
       "The krolvin warrior rolls over on the floor and goes still.",
@@ -120,11 +125,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A krolvin warrior swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A krolvin warrior swings {weapon} at you!"
+      ],
+      bite: [
+        "A krolvin warrior gnaws idly at {pronoun} arm."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

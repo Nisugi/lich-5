@@ -88,7 +88,9 @@
     gems: false,
     boxes: false,
     skin: "a tawny brindlecat hide",
-    other: "no"
+    other: "no",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,26 +100,27 @@
       "A tawny brindlecat stalks in!"
     ],
     flee: [
-      "A tawny brindlecat bounds {direction}.",
-      "A tawny brindlecat roars loudly as she stands {direction}!"
+      "A tawny brindlecat bounds {direction}."
     ],
     death: [
-      "The tawny brindlecat's tail twitches feebly as she dies.",
-      "The tawny brindlecat's tail twitches feebly as he dies.",
-      "Beautiful shot pierces both lungs, the tawny brindlecat makes a wheezing noise, and drops dead!"
+      "The tawny brindlecat's tail twitches feebly as {pronoun} dies."
     ],
     decay: [
       "A tawny brindlecat decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A tawny brindlecat tries to bite you!"
-    ],
-    claw: [
-      "A tawny brindlecat claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A tawny brindlecat pounces on you, knocking you painfully to the ground!"
+      ],
+      bite: [
+        "A tawny brindlecat tries to bite you!"
+      ],
+      claw: [
+        "A tawny brindlecat claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -93,18 +93,18 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A rusted conical helmet, wrapped in a band of buff and blue, sits above the empty eye sockets of a skull draped in the rotting remains of a rotting Citadel arbalester's face. Residual juices drip from the head of the arbalester and down a ragged surcoat of buff and blue cinched with a tattered leather belt buckled with a rusted shield stamped with a large letter \"E.\" A quiver hangs from the belt, flush with feathered bolts and within easy reach of the arbalester's gloved hands."
     ],
     arrival: [
-      "A rotting Citadel arbalester strides into the room, her crossbow cradled in the crook of an arm.",
-      "A rotting Citadel arbalester strides into the room, his crossbow cradled in the crook of an arm.",
+      "A rotting Citadel arbalester strides into the room, {pronoun} crossbow cradled in the crook of an arm.",
       "A rotting Citadel arbalester strides in.",
-      "A rotting Citadel arbalester strides into the area, her crossbow cradled in the crook of an arm.",
-      "A rotting Citadel arbalester strides into the area, his crossbow cradled in the crook of an arm."
+      "A rotting Citadel arbalester strides into the area, {pronoun} crossbow cradled in the crook of an arm."
     ],
     flee: [
       "A rotting Citadel arbalester strides {direction}."
@@ -112,18 +112,18 @@
     death: [
       "A rotting Citadel arbalester collapses motionless to the floor.",
       "A rotting Citadel arbalester collapses motionless to the ground.",
-      "Beautiful shot pierces both lungs, the Citadel arbalester makes a wheezing noise, and drops dead!",
-      "A putrefied Citadel herald collapses in upon himself, leaving behind a pile of dust.",
-      "A putrefied Citadel herald collapses in upon herself, leaving behind a pile of dust."
+      "A putrefied Citadel herald collapses in upon {pronoun}, leaving behind a pile of dust."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A rotting Citadel arbalester fires {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      fire: [
+        "A rotting Citadel arbalester fires {weapon} at you!",
+        "A rotting citadel arbalester fires a wooden heavy crossbow bolt at you!",
+        "A rotting citadel arbalester fires a wooden burning bolt at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

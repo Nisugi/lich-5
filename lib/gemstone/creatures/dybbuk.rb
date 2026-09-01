@@ -81,7 +81,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -92,7 +94,8 @@
       "A dybbuk just arrived."
     ],
     flee: [
-      "A dybbuk shambles {direction}."
+      "A dybbuk shambles {direction}.",
+      "A dybbuk just went through an iron door."
     ],
     death: [
       "The dybbuk falls to the ground motionless.",
@@ -101,11 +104,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A dybbuk swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A dybbuk swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

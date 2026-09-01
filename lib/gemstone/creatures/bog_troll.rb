@@ -89,38 +89,41 @@
     gems: true,
     boxes: true,
     skin: "troll ear",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Hunched over and bow-legged, the bog troll bears many resemblances to the frogs that inhabit the bogs along with it. Its skin is a dark yellow mottled with patches of brownish green. Its mouth, wide and thick-lipped, displays rows of misaligned, jagged teeth, and the troll keeps a constant grin, as if its teeth are too large for it to completely close its mouth. Bulbous green eyes sit nearly atop its flat cranium, and sharp claws extend from its oversized, webbed hands and feet."
     ],
     arrival: [
-      "A bog troll lumbers in, his face set in an angry scowl!",
-      "A bog troll lumbers in, her face set in an angry scowl!",
+      "A bog troll lumbers in, {pronoun} face set in an angry scowl!",
       "A bog troll just arrived!"
     ],
     flee: [
-      "A bog troll runs {direction}."
+      "A bog troll runs {direction}.",
+      "A bog troll lumbers {direction}, {pronoun} face set in an angry scowl!"
     ],
     death: [
       "The bog troll twitches violently, then dies.",
-      "The bog troll tries to get back up but finally collapses and goes still.",
-      "Beautiful shot pierces both lungs, the bog troll makes a wheezing noise, and drops dead!",
-      "The bog troll slumps to the ground."
+      "The bog troll tries to get back up but finally collapses and goes still."
     ],
     decay: [
       "A bog troll decays into compost."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A bog troll swings {weapon} at you!"
+    spell_prep: [
+      "A bog troll mutters, \"Gr'r'r'ra.\""
     ],
-    bite: [],
-    claw: [
-      "A bog troll claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A bog troll swings {weapon} at you!"
+      ],
+      claw: [
+        "A bog troll claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

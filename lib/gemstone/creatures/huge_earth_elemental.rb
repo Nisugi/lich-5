@@ -106,13 +106,17 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "essence of earth"
+    other: "essence of earth",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Massive and thick, with broad shoulders but no apparent head, the earth elemental appears to be a composite of the earth itself. A large, craggy maw in the middle of the elemental's chest appears to be the creature's mouth, and the earth elemental's huge feet and giant-sized fists look like they would pulverize flesh without much effort at all."
     ],
-    arrival: [],
+    arrival: [
+      "A huge earth elemental lurches in, shuddering with each step."
+    ],
     flee: [],
     death: [],
     decay: [
@@ -120,9 +124,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A huge earth elemental pounds at you with a heavy earthen fist!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

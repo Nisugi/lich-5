@@ -100,13 +100,17 @@
     gems: true,
     boxes: true,
     skin: "a jagged rift crawler tooth",
-    other: "Yes"
+    other: "Yes",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "This creature's monstrous form has the appearance of liquid, distorted glass overlying a fog-swamped night. Its outer flesh is translucent and glossy, run through with thready veins of black and purple. Beneath, the creature seems to have a secondary skin of darkest grey. Not scaled, but segmented, the body within its vitreous shell undulates in a way only smoke can. It roils and shifts as though it were an insubstantial core within a confining barrier. Its maw is a gaping round of ring upon ring of jagged, obsidian-like teeth."
     ],
-    arrival: [],
+    arrival: [
+      "The enormous rift crawler lurches through the air before finally landing with a solid thud."
+    ],
     flee: [],
     death: [
       "As the rift crawler dies, the beast's massive body curls in on itself, convulses once, and stills."
@@ -114,13 +118,17 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "An enormous rift crawler charges at you!"
+    stun_break: [
+      "An enormous rift crawler shakes off the stun."
     ],
-    bite: [
-      "An enormous rift crawler tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "An enormous rift crawler charges at you!"
+      ],
+      bite: [
+        "An enormous rift crawler tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

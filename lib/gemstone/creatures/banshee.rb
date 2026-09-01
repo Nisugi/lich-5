@@ -95,7 +95,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Inky necrotic core"
+    other: "Inky necrotic core",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -105,19 +107,19 @@
     flee: [
       "A banshee floats {direction}."
     ],
-    death: [
-      "The banshee goes still for a moment while its head reshapes."
-    ],
+    death: [],
     decay: [
       "A banshee dissolves away."
     ],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A banshee claws at you!"
+    spell_prep: [
+      "The banshee whispers, \"Soon, soon, soon, soon...\" and then shrieks with laughter, an ear-piercing sound of such abysmal power that {pronoun} rattles straight through your bones."
     ],
+    attacks: {
+      claw: [
+        "A banshee claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

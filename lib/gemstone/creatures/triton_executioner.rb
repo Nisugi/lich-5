@@ -111,39 +111,43 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The triton executioner scans his surroundings with merciless eyes as if seeking his next client. Heavy, leathery lips are pulled into a perpetually disgusted sneer, pinching the creature's nostrils into narrow slits. Animal muscles, powerfully knotted beneath his moist blue-green skin, seem ready to spring in any direction. The executioner wears a dark blue tabard emblazoned with a silver wave upon the chest."
     ],
     arrival: [
-      "A triton executioner stalks in silently, her cold eyes gleaming with hatred.",
-      "A triton executioner strides in, a wary look on her face.",
-      "A triton executioner stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton executioner strides in, a wary look on his face.",
+      "A triton executioner stalks in silently, {pronoun} cold eyes gleaming with hatred.",
+      "A triton executioner strides in, a wary look on {pronoun} face.",
       "A triton executioner strides in, gliding swiftly through the water with a wary look on his face.",
       "A triton executioner just arrived.",
-      "A triton dissembler arrives, striding forth with his robes trailing behind him.",
-      "A triton radical strides in, gliding swiftly through the water with a wary look on his face.",
-      "A triton dissembler arrives, striding forth with her robes trailing behind her."
+      "A triton executioner slips into hiding."
     ],
-    flee: [],
+    flee: [
+      "A triton executioner hurtles {reflexive} at you with great speed, but flies slightly off center of {pronoun} target and tumbles to the water with a splash!"
+    ],
     death: [
-      "The triton executioner gurgles once and goes still, a wrathful look on his face.",
-      "The triton executioner gurgles once and goes still, a wrathful look on her face."
+      "The triton executioner gurgles once and goes still, a wrathful look on {pronoun} face."
     ],
-    decay: [
-      "The triton executioner's right leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A triton executioner fires {weapon} at you!",
-      "A triton executioner swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      cutthroat: [
+        "A triton executioner springs upon you from behind and attempts to slit your throat!"
+      ],
+      attack: [
+        "A triton executioner swings {weapon} at you!",
+        "A triton executioner leaps from hiding to attack!",
+        "A triton executioner thrusts with a corroded bronze scaling fork at you!"
+      ],
+      fire: [
+        "A triton executioner fires {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

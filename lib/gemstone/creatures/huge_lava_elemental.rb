@@ -103,26 +103,36 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "essence of fire"
+    other: "essence of fire",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The lava elemental is a bubbling mound of lava, across which an occasional warped face appears before dissolving away. Various appendages form and melt away constantly, as the alien creature goes about its business."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A huge lava elemental flows {direction}, scorching the ground in {pronoun} wake.",
+      "A huge lava elemental flows {direction}, leaving the ground scorched in {pronoun} wake!"
+    ],
     death: [],
     decay: [
       "The lava elemental hardens into a chalky rock that quickly crumbles away into nothingness."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A huge lava elemental pounds at you with a molten fist!",
-      "A huge lava elemental hurls {weapon} at you!"
+    spell_prep: [
+      "A huge lava elemental's eyes glow brilliantly orange as {pronoun} opens {pronoun} mouth and spits forth a blazing ball of fire!",
+      "A huge lava elemental glows with wild elemental energy as {pronoun} shrugs off the force controlling {pronoun}!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A huge lava elemental pounds at you with a molten fist!"
+      ],
+      hurl: [
+        "A huge lava elemental hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -93,7 +93,9 @@
     gems: false,
     boxes: false,
     skin: "no",
-    other: "no"
+    other: "no",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -105,9 +107,13 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A silver-scaled cold wyrm lashes out with a scythe-like talon at {target}!",
+        "A silver-scaled cold wyrm charges toward the nearby shadows, revealing you in your hiding place!",
+        "A silver-scaled cold wyrm charges toward the nearby shadows, revealing {target}, who was hidden!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -106,7 +106,9 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "essence of water"
+    other: "essence of water",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -120,11 +122,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A huge steam elemental lashes out at you with a boiling tendril!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A huge steam elemental lashes out at you with a boiling tendril!"
+      ],
+      bolt: [
+        "A huge steam elemental hurls a seething blast of steam at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

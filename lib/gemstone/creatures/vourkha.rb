@@ -103,7 +103,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet essence dust,"
+    other: "Glowing violet essence dust,",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -117,27 +119,22 @@
       "A vourkha totters momentarily and then heads {direction}."
     ],
     death: [
-      "The vourkha slumps to the ground as the light departs his eyes.",
-      "The vourkha slumps to the ground as the light departs her eyes.",
-      "Beautiful shot pierces both lungs, the vourkha makes a wheezing noise, and drops dead!",
-      "The vourkha slumps to the ground.",
-      "Awesome shot skewers skull!  The vourkha blinks once and falls quite dead!"
+      "The vourkha slumps to the ground as the light departs {pronoun} eyes."
     ],
-    decay: [
-      "The vourkha's right leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves connecting cartilage, freeing the vourkha's ribs to move independently."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A vourkha tosses {pronoun} head back and points towards you!"
-    ],
-    bite: [
-      "A vourkha tries to bite you!"
-    ],
-    claw: [
-      "A vourkha claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A vourkha tosses {pronoun} head back and points towards you!"
+      ],
+      bite: [
+        "A vourkha tries to bite you!"
+      ],
+      claw: [
+        "A vourkha claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

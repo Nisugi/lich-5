@@ -97,10 +97,10 @@
     emp_td: (124..134),
     pal_td: (103..112),
     ran_td: (102..112),
-    sor_td: "125 to146",
+    sor_td: (125..146),
     wiz_td: nil,
     mje_td: 144,
-    mne_td: "135 to 159",
+    mne_td: (135..159),
     mjs_td: (131..140),
     mns_td: (131..140),
     mnm_td: (107..116),
@@ -132,7 +132,9 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -145,15 +147,20 @@
     death: [
       "A spectral woodsman fades into oblivion."
     ],
-    decay: [],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A spectral woodsman nods at you!",
-      "A spectral woodsman swings {weapon} at you!"
+    decay: [
+      "A spectral woodsman fades into oblivion."
     ],
-    bite: [],
-    claw: [],
+    search: [],
+    spell_prep: [
+      "A spectral woodsman utters a phrase of arcane magic."
+    ],
+    attacks: {
+      attack: [
+        "A spectral woodsman nods at you!",
+        "A spectral woodsman swings {weapon} at you!",
+        "A spectral woodsman swings a rusty woodsman's axe at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

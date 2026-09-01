@@ -92,7 +92,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -104,15 +106,19 @@
     ],
     flee: [],
     death: [
-      "As a darkly inked fetish master slumps to the ground, the darkly lined tattoos traversing its skin lose the luminescence that had seemed to radiate from them.",
-      "Beautiful shot pierces both lungs, the fetish master makes a wheezing noise, and drops dead!"
+      "As a darkly inked fetish master slumps to the ground, the darkly lined tattoos traversing its skin lose the luminescence that had seemed to radiate from them."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A darkly inked fetish master raises {pronoun} hands while emitting a dissonant sing-song rhythm, causing the tattoos along {pronoun} forearms and hands to flare to life with a dark light.",
+      "A darkly inked fetish master mumbles a few words, {pronoun} voice small and quiet as tendrils of purple crawl along the tattoos lining {pronoun} forearms!"
+    ],
+    attacks: {
+      attack: [
+        "A darkly inked fetish master swings a stout rotting wood staff at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

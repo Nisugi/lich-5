@@ -110,7 +110,9 @@
     gems: true,
     boxes: true,
     skin: "an ogre nose",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -129,17 +131,19 @@
       "The mountain ogre screams silently one last time and dies."
     ],
     decay: [
-      "A mountain ogre decays into compost.",
-      "The mountain ogre's right leg crumbles briefly and explodes in a shower of gore.",
-      "Acid dissolves connecting cartilage, freeing the mountain ogre's ribs to move independently."
+      "A mountain ogre decays into compost."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A mountain ogre swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A mountain ogre swings {weapon} at you!",
+        "A mountain ogre swings a crude pine mattock at {target}!",
+        "A mountain ogre throws {pronoun} head back with a vicious roar!",
+        "A mountain ogre swings a cudgel at {target}!",
+        "A mountain ogre throws {pronoun} head back and laughs hysterically."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

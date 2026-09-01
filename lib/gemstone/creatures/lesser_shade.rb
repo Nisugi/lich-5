@@ -102,7 +102,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Alchemy (common)"
+    other: "Alchemy (common)",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -118,11 +120,11 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser shade swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser shade swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -118,7 +118,9 @@
     gems: true,
     boxes: true,
     skin: "a trali scalp",
-    other: "Glowing violet essence dust,"
+    other: "Glowing violet essence dust,",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -126,24 +128,34 @@
     ],
     arrival: [
       "A forest trali shaman arrives, sniffing the air for prey!",
-      "A forest trali shaman stalks in."
+      "A forest trali shaman stalks in.",
+      "A forest trali shaman limps into the area."
     ],
     flee: [
       "A forest trali shaman skulks {direction}.",
       "A forest trali shaman limps {direction}."
     ],
-    death: [],
+    death: [
+      "A forest trali shaman collapses upon the ground and the life fades from {pronoun} eyes.",
+      "A forest trali shaman collapses upon the floor and the life fades from {pronoun} eyes."
+    ],
     decay: [
-      "A forest trali shaman's body crumbles into dust and is scattered by a stiff breeze.",
-      "Acid dissolves connecting cartilage, freeing the trali shaman's ribs to move independently."
+      "A forest trali shaman's body crumbles into dust and is scattered by a stiff breeze."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A forest trali shaman swings {weapon} at you!"
+    spell_prep: [
+      "A forest trali shaman closes {pronoun} eyes, clutches {pronoun} talisman and begins chanting.",
+      "A forest trali shaman chants, \"Laag O'mahn, saaf zris hatan!\"",
+      "A forest trali shaman chants, \"Wraatk o'mahnes var tik frarat, surot E an pratka!\"",
+      "A forest trali shaman chants, \"Laag O'mahn, hodt zris hatan os usk mah smat tik kraat var u!\"",
+      "A forest trali shaman gestures and mutters a hurried chant. After a moment, {pronoun} looks somewhat better.",
+      "A forest trali shaman closes {pronoun} eyes and concentrates, trying to regain control of {pronoun} senses."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A forest trali shaman swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

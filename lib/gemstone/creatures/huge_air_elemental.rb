@@ -104,7 +104,9 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: "essence of air"
+    other: "essence of air",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -115,10 +117,9 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A huge air elemental whispers an incantation into the wind."
+    ],
     info: {
       general: [],
       class_tips: {

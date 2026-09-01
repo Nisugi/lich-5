@@ -91,7 +91,7 @@
     emp_td: 409,
     pal_td: (341..351),
     ran_td: (346..354),
-    sor_td: "410 to 440",
+    sor_td: (410..440),
     wiz_td: nil,
     mje_td: (436..446),
     mne_td: (436..446),
@@ -123,7 +123,9 @@
     gems: true,
     boxes: true,
     skin: "curved black claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -134,9 +136,7 @@
       "A glowing triton warlock just arrived.",
       "A triton warlock just arrived.",
       "An unyielding triton warlock just arrived.",
-      "A triton warlock just arrived, limping badly.",
-      "A triton assassin stalks in silently, his cold eyes gleaming with hatred.",
-      "A triton assassin stalks in silently, her cold eyes gleaming with hatred."
+      "A triton warlock just arrived, limping badly."
     ],
     flee: [
       "A triton warlock limps {direction}.",
@@ -147,15 +147,25 @@
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A triton warlock points a single golden nail toward you!",
-      "A triton warlock swings {weapon} at you!"
+    spell_prep: [
+      "A triton warlock chants in an incomprehensible language, causing streams of dim grey energy to lash about {pronoun} golden claws."
     ],
-    bite: [],
-    claw: [
-      "A triton warlock claws at you!"
-    ],
+    attacks: {
+      bolt: [
+        "A triton warlock hurls a ball of greenish-black flame at {target}!"
+      ],
+      attack: [
+        "A triton warlock swings {weapon} at you!",
+        "A triton warlock swings a twisted soot black runestaff at {target}!"
+      ],
+      claw: [
+        "A triton warlock claws at you!"
+      ],
+      creature_spell: [
+        "A triton warlock points a single golden nail toward {target}!",
+        "A triton warlock glares malevolently at {target}."
+      ]
+    },
     info: {
       general: [],
       class_tips: {

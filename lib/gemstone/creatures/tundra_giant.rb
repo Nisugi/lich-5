@@ -92,7 +92,9 @@
     gems: true,
     boxes: true,
     skin: "a tundra giant tooth",
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,10 +112,12 @@
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A tundra giant mutters an incantation."
+    ],
+    stand: [
+      "A tundra giant throws {pronoun} head back and howls, shaking off the stun!"
+    ],
     info: {
       general: [],
       class_tips: {

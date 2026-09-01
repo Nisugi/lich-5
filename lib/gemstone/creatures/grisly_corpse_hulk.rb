@@ -101,13 +101,17 @@
     gems: true,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A grisly corpse hulk is a collection of corpse parts roughly arranged into a humanoid form within a handspan of a giant's height. Milky pinkish fluid drips from the uneven stitches that hold its body together. Its eyes are tiny and appear piggish in such an oversized head. They hold only a rudimentary spark of intellect. \n\nAppraisal:\nThe corpse hulk is large in size, about eight feet high in its current state."
     ],
-    arrival: [],
+    arrival: [
+      "A grisly corpse hulk trundles in, gurgling grotesquely."
+    ],
     flee: [],
     death: [
       "Torn and strained stitches pop all over a grisly corpse hulk's body as it surrenders to death, allowing necrotic organs and ichor to spill free."
@@ -115,12 +119,14 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A grisly corpse hulk spreads {pronoun} sloughing arms and tries to lock you in a bearhug!",
-      "A grisly corpse hulk tries to stomp on you with one massive, rotting foot!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A grisly corpse hulk spreads {pronoun} sloughing arms and tries to lock you in a bearhug!",
+        "A grisly corpse hulk tries to stomp on you with one massive, rotting foot!",
+        "A grisly corpse hulk slams {pronoun} foot down, sending tremors rumbling through the area!",
+        "A grisly corpse hulk barrels forward on squat, mismatched legs, flinging {reflexive} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

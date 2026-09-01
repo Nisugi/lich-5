@@ -92,14 +92,16 @@
     gems: false,
     boxes: false,
     skin: "vapor hound tail",
-    other: "Essence of air"
+    other: "Essence of air",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    description: [
-      "You have never seen anything quite like a vapor hound, so you are not really sure what to make of it or how dangerous it might be.\n\n;Assess\nThe vapor hound is medium in size and about three feet high in its current state."
-    ],
+    description: [],
     arrival: [],
-    flee: [],
+    flee: [
+      "A vapor hound pads {direction}, a fog of green vapor puffing from {pronoun} nostrils."
+    ],
     death: [
       "The vapor hound lets out one last whimpering sigh of chartreuse vapors and dies."
     ],
@@ -108,11 +110,15 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A vapor hound tries to bite you!"
+    stun_break: [
+      "A vapor hound howls in rage as {pronoun} shakes off the stun.",
+      "A vapor hound howls silently in rage as {pronoun} shakes off the stun."
     ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A vapor hound tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

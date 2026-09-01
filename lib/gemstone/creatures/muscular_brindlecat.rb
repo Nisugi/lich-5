@@ -88,7 +88,9 @@
     gems: nil,
     boxes: nil,
     skin: "tawny brindlecat hide.",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,26 +100,31 @@
       "A muscular brindlecat stalks in!"
     ],
     flee: [
-      "A muscular brindlecat bounds {direction}.",
-      "A muscular brindlecat roars loudly as she stands {direction}!",
-      "A muscular brindlecat roars loudly as he stands {direction}!"
+      "A muscular brindlecat bounds {direction}."
     ],
     death: [
-      "The muscular brindlecat's tail twitches feebly as she dies.",
-      "The muscular brindlecat's tail twitches feebly as he dies."
+      "The muscular brindlecat's tail twitches feebly as {pronoun} dies."
     ],
     decay: [
       "A muscular brindlecat decays into a compost of fangs, fur and claws."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [
-      "A muscular brindlecat tries to bite you!"
+    search: [
+      "A muscular brindlecat twitches {pronoun} whiskers while sniffing the air."
     ],
-    claw: [
-      "A muscular brindlecat claws at you!"
+    spell_prep: [
+      "A muscular brindlecat hisses loudly!"
     ],
+    attacks: {
+      attack: [
+        "A muscular brindlecat leaps towards {target}, but misses and sprawls to the ground!"
+      ],
+      claw: [
+        "A muscular brindlecat claws at you!"
+      ],
+      bite: [
+        "A muscular brindlecat tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

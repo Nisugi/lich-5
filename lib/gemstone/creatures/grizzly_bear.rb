@@ -90,18 +90,37 @@
     gems: nil,
     boxes: nil,
     skin: "a grizzly bear hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A grizzly bear charges at you!",
+        "A grizzly bear charges at you, but seeing {pronoun} coming, you acrobatically spring over the grizzly bear!"
+      ],
+      bite: [
+        "A grizzly bear tries to bite you!"
+      ],
+      claw: [
+        "A grizzly bear claws at you!"
+      ]
+    },
+    stand: [
+      "A grizzly bear stands up on {pronoun} hind legs and roars!"
+    ],
     description: [
       "One of the largest of the bears, the grizzly bear weighs around 860 pounds and has about ten feet of total body length. This bear is dark brown in color. The tips of her guard hairs are white, giving the bear a grizzled appearance. The grizzly bear has a characteristic muscle hump over the shoulders, and longer claws on her front paws than on her rear paws."
     ],
     arrival: [
       "A grizzly bear lumbers in!",
-      "A grizzly bear shudders and lumbers in, snarling in agony!"
+      "A grizzly bear shudders and lumbers in, snarling in agony!",
+      "A grizzly bear lumbers noisily into the area drooling hungrily!"
     ],
     flee: [
-      "A grizzly bear lumbers {direction}."
+      "A grizzly bear lumbers {direction}.",
+      "A grizzly bear slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The grizzly bear lets out a blood-curdling roar and dies.",
@@ -110,17 +129,10 @@
     decay: [
       "A grizzly bear decays into a compost of fangs, fur and claws."
     ],
-    search: [],
+    search: [
+      "A grizzly bear snuffles the ground hungrily."
+    ],
     spell_prep: [],
-    attack: [
-      "A grizzly bear charges at you!"
-    ],
-    bite: [
-      "A grizzly bear tries to bite you!"
-    ],
-    claw: [
-      "A grizzly bear claws at you!"
-    ],
     info: {
       general: [],
       class_tips: {

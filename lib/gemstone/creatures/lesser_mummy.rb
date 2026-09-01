@@ -82,7 +82,9 @@
     gems: true,
     boxes: true,
     skin: "a mummy shroud",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,13 +104,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser mummy tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [
-      "A lesser mummy claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A lesser mummy tries to ensnare you!"
+      ],
+      claw: [
+        "A lesser mummy claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

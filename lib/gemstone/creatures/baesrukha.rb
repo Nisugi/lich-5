@@ -72,7 +72,7 @@
     ranged: (172..195),
     bolt: (172..195),
     udf: (157..330),
-    bar_td: "140 to 153",
+    bar_td: (140..153),
     cle_td: (158..165),
     emp_td: (158..167),
     pal_td: (135..144),
@@ -105,33 +105,37 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glowing violet essence dust,"
+    other: "Glowing violet essence dust,",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Her emaciated form roughly humanoid, the baesrukha glides along the ground, clawing at the air with bloodied talons. Her burning red eyes stare malevolently at any intruder, gazing out from a nearly featureless face above a fanged, lipless mouth. Whitish tendrils of ectoplasm coil and whip around her tattered robes, writhing in the miasma that surrounds the ancient wraithlike creature like hungry snakes."
     ],
-    arrival: [],
+    arrival: [
+      "A baesrukha sweeps in, {pronoun} haunted eyes darting about."
+    ],
     flee: [],
     death: [
-      "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from his unwashed body.",
-      "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from her unwashed body.",
-      "The baesrukha slumps to the ground."
+      "The baesrukha collapses to the ground in a motionless heap, sending a plume of dust up from {pronoun} unwashed body."
     ],
-    decay: [
-      "The baesrukha's right leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A baesrukha hurls {weapon} at you!"
+    spell_prep: [
+      "A baesrukha closes {pronoun} eyes and holds {pronoun} palm out towards you!"
     ],
-    bite: [
-      "A baesrukha tries to bite you!"
-    ],
-    claw: [
-      "A baesrukha claws at you!"
-    ],
+    attacks: {
+      bite: [
+        "A baesrukha tries to bite you!"
+      ],
+      claw: [
+        "A baesrukha claws at you!"
+      ],
+      hurl: [
+        "A baesrukha hurls {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

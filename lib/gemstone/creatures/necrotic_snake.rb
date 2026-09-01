@@ -102,7 +102,9 @@
     gems: false,
     boxes: false,
     skin: "a snake fang",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -120,16 +122,20 @@
       "A sinuous necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp.",
       "A flexile necrotic snake's tail trembles then falls to the ground as the rest of its body goes limp."
     ],
-    decay: [
-      "Acid dissolves connecting cartilage, freeing the necrotic snake's ribs to move independently."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A necrotic snake hisses and strikes at you!"
+    spell_prep: [
+      "A necrotic snake hisses and strikes at you!",
+      "A necrotic snake hisses and whips {pronoun} tail violently against the ground."
     ],
-    bite: [],
-    claw: [],
+    stun_break: [
+      "A necrotic snake writhes wildly trying to regain {pronoun} bearings!"
+    ],
+    attacks: {
+      attack: [
+        "A necrotic snake hisses and strikes at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

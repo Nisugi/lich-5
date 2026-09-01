@@ -91,7 +91,9 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,14 +104,20 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A major glacei focuses a wave of cold energy at you!",
-      "A major glacei lashes out at you!",
-      "A major glacei strikes at you!"
+    spell_prep: [
+      "A major glacei flares with a deep blue glow.",
+      "A major glacei glows blue while absorbing the energy!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A major glacei focuses a wave of cold energy at you!",
+        "A major glacei lashes out at {target}!",
+        "A major glacei strikes at {target}!"
+      ],
+      hurl: [
+        "A major glacei hurls a chunk of ice at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

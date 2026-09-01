@@ -114,33 +114,45 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Clad in the dilapidated remains of homespun clothing, the ghast's form is only passingly humanoid. Death has transformed his features, filming over his eyes and leaving him with only a sloughing remnant of a nose. His hind legs are powerfully muscled, but his hands have atrophied into long talons that are unsettlingly spare of flesh. He is a scabrous and unwholesome beast, and the smear of dried blood and effluvia around his mouth hints at distasteful appetites. \n\nAppraisal:\n\nThe tatterdemalion ghast is medium in size and about five feet high in her current state."
     ],
-    arrival: [],
-    flee: [],
+    arrival: [
+      "A cadaverous tatterdemalion ghast leaps in, landing awkwardly due to {pronoun} injuries.",
+      "A cadaverous tatterdemalion ghast just came through some vaulting grey stone doors.",
+      "A cadaverous tatterdemalion ghast just came through a heavy steel portcullis.",
+      "A cadaverous tatterdemalion ghast just came through a wrought black iron gate."
+    ],
+    flee: [
+      "A cadaverous tatterdemalion ghast bounds {direction}, landing with surprising grace.",
+      "A cadaverous tatterdemalion ghast bounds {direction}, {pronoun} fraying clothing flapping as {pronoun} lands in a predatory crouch. {target} bares {pronoun} yellowed teeth in a rasping hiss!"
+    ],
     death: [
-      "A cadaverous tatterdemalion ghast lets out a hoarse cry that devolves into dry, rasping coughs.  Spasms race through his form, dead muscles seizing and clenching before at last going still.",
-      "A cadaverous tatterdemalion ghast lets out a hoarse cry that devolves into dry, rasping coughs.  Spasms race through her form, dead muscles seizing and clenching before at last going still.",
-      "A cadaverous tatterdemalion ghast grabs you by the head and twists violently.  You hear a loud *CRACK* as your neck bones snap and your body goes limp!",
-      "Beautiful shot pierces both lungs, the tatterdemalion ghast makes a wheezing noise, and drops dead!"
+      "A cadaverous tatterdemalion ghast lets out a hoarse cry that devolves into dry, rasping coughs.  Spasms race through {pronoun} form, dead muscles seizing and clenching before at last going still."
     ],
     decay: [
-      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as his skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones.",
-      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as her skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones."
+      "Maggots and buzzing flies burst from a cadaverous tatterdemalion ghast's flesh as {pronoun} skin peels and crumbles.  The scavenging insects rapidly consume the remains, leaving little but brittle bones."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A cadaverous tatterdemalion ghast desperately swings {weapon} at you!",
-      "A cadaverous tatterdemalion ghast raises {pronoun} fists overhead and flails violently at you!",
-      "A cadaverous tatterdemalion ghast slashes relentlessly at you with long, yellowed nails!",
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A cadaverous tatterdemalion ghast desperately swings {weapon} at you!",
+        "A cadaverous tatterdemalion ghast raises {pronoun} fists overhead and flails violently at you!",
+        "A cadaverous tatterdemalion ghast exhales the last of a virulent green mist.",
+        "A cadaverous tatterdemalion ghast exhales a virulent green mist toward you, but you are unaffected.",
+        "A cadaverous tatterdemalion ghast exhales a virulent green mist toward {target}, but {pronoun} is unaffected.",
+        "A cadaverous tatterdemalion ghast slashes relentlessly at {target} with long, yellowed nails!"
+      ],
+      pestilence: [
+        "A cadaverous tatterdemalion ghast exhales a virulent green mist toward you, instantly infecting you. You convulse violently!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

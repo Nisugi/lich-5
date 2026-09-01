@@ -98,7 +98,9 @@
     gems: true,
     boxes: true,
     skin: "a thrak hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -119,15 +121,17 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A thrak charges at you!"
-    ],
-    bite: [
-      "A thrak tries to bite you!"
-    ],
-    claw: [
-      "A thrak claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A thrak charges at you!"
+      ],
+      bite: [
+        "A thrak tries to bite you!"
+      ],
+      claw: [
+        "A thrak claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

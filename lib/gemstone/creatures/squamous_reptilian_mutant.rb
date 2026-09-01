@@ -79,7 +79,7 @@
     udf: (614..858),
     bar_td: nil,
     cle_td: (487..496),
-    emp_td: "496",
+    emp_td: 496,
     pal_td: (450..459),
     ran_td: (453..456),
     sor_td: nil,
@@ -107,23 +107,65 @@
     boxes: nil,
     skin: nil,
     other: nil,
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
-    attack: [
-      "A squamous reptilian mutant bares a mouthful of mismatched teeth and snaps at you!",
-      "A squamous reptilian mutant flaily wildly with {pronoun} fists at you!",
-      "A squamous reptilian mutant splays one gnarled claw and slashes at you!",
-      "Hampered by {pronoun} deformities, a squamous reptilian mutant clumsily swings {weapon} at you!"
+    spell_prep: [
+      "A squamous reptilian mutant hisses out a garbled gurgle of triumph, one eye bulging as if {pronoun} is about to burst!"
     ],
-    bite: [],
-    claw: [],
-    general_advice: "* As primarily casting creatures, mutants are fairly vulnerable to SMR-based spells and attacks like Condemn (309), Earthen Fury (917), Hamstring, Spike Thorn (616), Twin Hammerfists, and so on. This is offset somewhat by their high level, though.\n* Mutants have exceptionally high CS--over 520--that leaves their Thought Lash (1210), Bind (214), and Vertigo (1219) spells nearly guaranteed to hit against every profession and leave characters stunned or disabled. Keep them from casting by any means including Sweep, Feint, Corrupt Essence (703), Moonbeam (611), Condemn, Earthen Fury, or other options that keep them stalled out, unable to cast, or repeatedly stunned.\n* Mutants have Brace (1214), which can disarm against many forms of physical attacks. However, many combat maneuvers and SMR-based weapon techniques bypass this, as do ranged attacks and unarmed combat. Brace can also be removed via dispelling magic such as Spirit Dispel (119), Spiritual Abolition (230), Elemental Dispel (417), Mental Dispel (1218), and Song of Unravelling (1013) or other similar effects like Spell Cleave.",
-    voln: "* Symbol of Transcendence can sometimes salvage a bad situation, either preemptively or used with its emergency cooldown. High CS aside, mutants are still mostly casting disablers or attacking with one of the weaker weapon bases, the cudgel, so it's possible to survive even ten rounds of stun with enough luck.\n* Symbol of Restoration can be used while Immobilized by Bind.",
-    bards: "* Vibration Chant (1002) can destroy their weapons and has at least a chance to kill outright.\n* Be ready to shout Troubadour's Rally (1040) at a moment's notice to get away safely after being hit by any of a mutant's dangerous spells.",
-    clerics: "* The INFUSE SPIRIT option of Soul Ward (319) can sometimes delay mutants long enough to keep a cleric alive through lengthy stun.",
-    empaths: "* The REGENERATE option of Regeneration (1150) can sometimes keep an empath healed and padded to survive lengthy stun a limited number of times per day, depending on Transformation lore.",
-    paladins: "* Divine Incarnation (1650) Smite with enough Religion lore to reliably hit twice will usually do substantial damage to mutants, if not outright kill them, while divine energy lasts.\n* Be ready to beseech Divine Intervention (1635) at a moment's notice to get away safely after being hit by any of a mutant's dangerous spells.",
-    rangers: "* With enough Ranger Base ranks, Moonbeam is a nearly universal solution in the Hinterwilds and mutants are no exception."
+    death: [
+      "A squamous reptilian mutant collapses, reaching out one clawed hand to the heavens. A look of sorrow crosses {pronoun} face as death claims {pronoun} and the misshapen hand falls to {pronoun} side."
+    ],
+    flee: [
+      "A squamous reptilian mutant just went through a pair of colossal red stone pillars.",
+      "A squamous reptilian mutant just went through a ragged acid-pocked gash.",
+      "A squamous reptilian mutant just went through a pocked red stone arch."
+    ],
+    arrival: [
+      "A squamous reptilian mutant crawls in before rising into a lopsided crouch.",
+      "A squamous reptilian mutant scuttles in, a pained expression further twisting {pronoun} disfigured features.",
+      "A squamous reptilian mutant just came through a break in the trees.",
+      "A squamous reptilian mutant just came through a pocked red stone arch."
+    ],
+    attacks: {
+      attack: [
+        "A squamous reptilian mutant bares a mouthful of mismatched teeth and snaps at you!",
+        "A squamous reptilian mutant flails wildly with {pronoun} fists at you!",
+        "A squamous reptilian mutant splays one gnarled claw and slashes at you!",
+        "Hampered by {pronoun} deformities, a squamous reptilian mutant clumsily swings {weapon} at you!",
+        "A squamous reptilian mutant swings a shadow-drenched fist down at {target}!"
+      ]
+    },
+    info: {
+      general: [
+        "* As primarily casting creatures, mutants are fairly vulnerable to SMR-based spells and attacks like Condemn (309), Earthen Fury (917), Hamstring, Spike Thorn (616), Twin Hammerfists, and so on. This is offset somewhat by their high level, though.\n* Mutants have exceptionally high CS--over 520--that leaves their Thought Lash (1210), Bind (214), and Vertigo (1219) spells nearly guaranteed to hit against every profession and leave characters stunned or disabled. Keep them from casting by any means including Sweep, Feint, Corrupt Essence (703), Moonbeam (611), Condemn, Earthen Fury, or other options that keep them stalled out, unable to cast, or repeatedly stunned.\n* Mutants have Brace (1214), which can disarm against many forms of physical attacks. However, many combat maneuvers and SMR-based weapon techniques bypass this, as do ranged attacks and unarmed combat. Brace can also be removed via dispelling magic such as Spirit Dispel (119), Spiritual Abolition (230), Elemental Dispel (417), Mental Dispel (1218), and Song of Unravelling (1013) or other similar effects like Spell Cleave."
+      ],
+      class_tips: {
+        cleric: [
+          "* The INFUSE SPIRIT option of Soul Ward (319) can sometimes delay mutants long enough to keep a cleric alive through lengthy stun."
+        ],
+        paladin: [
+          "* Divine Incarnation (1650) Smite with enough Religion lore to reliably hit twice will usually do substantial damage to mutants, if not outright kill them, while divine energy lasts.\n* Be ready to beseech Divine Intervention (1635) at a moment's notice to get away safely after being hit by any of a mutant's dangerous spells."
+        ],
+        ranger: [
+          "* With enough Ranger Base ranks, Moonbeam is a nearly universal solution in the Hinterwilds and mutants are no exception."
+        ],
+        bard: [
+          "* Vibration Chant (1002) can destroy their weapons and has at least a chance to kill outright.\n* Be ready to shout Troubadour's Rally (1040) at a moment's notice to get away safely after being hit by any of a mutant's dangerous spells."
+        ],
+        wizard: [],
+        empath: [
+          "* The REGENERATE option of Regeneration (1150) can sometimes keep an empath healed and padded to survive lengthy stun a limited number of times per day, depending on Transformation lore."
+        ],
+        rogue: [],
+        warrior: [],
+        sorcerer: []
+      },
+      miscellany: [
+        "* Symbol of Transcendence can sometimes salvage a bad situation, either preemptively or used with its emergency cooldown. High CS aside, mutants are still mostly casting disablers or attacking with one of the weaker weapon bases, the cudgel, so it's possible to survive even ten rounds of stun with enough luck.\n* Symbol of Restoration can be used while Immobilized by Bind."
+      ]
+    },
   }
 }

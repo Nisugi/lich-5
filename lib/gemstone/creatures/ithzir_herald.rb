@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "ithzir herald",
+  name: "Ithzir herald",
   noun: "",
   url: "https://gswiki.play.net/ithzir_herald",
   picture: "",
@@ -127,36 +127,42 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "crystal-edged weapons"
+    other: "crystal-edged weapons",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    stun_break: [
+      "An Ithzir herald holds {pronoun} head as {pronoun} tries to regain {pronoun} bearings."
+    ],
+    attacks: {
+      attack: [
+        "An Ithzir herald swings {weapon} at you!",
+        "The Ithzir herald points at you for emphasis.",
+        "The Ithzir herald points at you."
+      ]
+    },
+    stand: [
+      "An Ithzir herald rises to {pronoun} feet, {pronoun} green eyes blazing!"
+    ],
     description: [
       "A trio of black tattooed stripes run from center of the Ithzir herald's forehead and over the crown of his bald, blue-skinned head. The Ithzir herald is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue body is nonetheless alien in its appearance. The herald wears a fine silvery-blue tunic crossed with a green tabard."
     ],
     arrival: [
-      "An Ithzir initiate strides in, his hands clasped before him.",
-      "An Ithzir initiate strides in, her hands clasped before her."
+      "An Ithzir initiate strides in, {pronoun} hands clasped before him.",
+      "An Ithzir herald strolls in, humming softly to {pronoun}.",
+      "An Ithzir herald strolls in, humming softly to {reflexive}."
     ],
     flee: [
       "An Ithzir herald limps {direction}."
     ],
     death: [
       "The Ithzir herald vainly struggles to rise, then goes still.",
-      "Just as you incant, the Ithzir herald shimmers and fades away, leaving you gesturing at nothingness!",
-      "Just as you move to cast, the Ithzir herald shimmers and fades away, leaving you gesturing at nothingness!",
-      "Beautiful shot pierces both lungs, the Ithzir herald makes a wheezing noise, and drops dead!",
       "An Ithzir herald's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "An Ithzir herald swings {weapon} at you!",
-      "The Ithzir herald points at you for emphasis.",
-      "The Ithzir herald points at you."
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

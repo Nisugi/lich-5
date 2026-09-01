@@ -98,7 +98,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -114,14 +116,15 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A bent being cries out in an acidic tongue, pointing at you!",
-      "A bent being stomps at you with {pronoun} foot!"
-    ],
-    bite: [],
-    claw: [
-      "A bent being claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A bent being cries out in an acidic tongue, pointing at you!",
+        "A bent being stomps at you with {pronoun} foot!"
+      ],
+      claw: [
+        "A bent being claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

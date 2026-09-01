@@ -115,37 +115,44 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A reiver pounds at you with {pronoun} fist!",
+        "A reiver swings {weapon} at you!",
+        "A reiver swings a broadsword at {target}!",
+        "A reiver swings a handaxe at {target}!"
+      ]
+    },
+    stand: [
+      "A reiver stands up and dusts {reflexive} off."
+    ],
     description: [
       "The reiver stands tall and proud. Moss-green eyes dominate the strong face and tousled, dark hair crowns the head. The reiver is well-muscled and toned, with calloused hands used to the wielding of weapons. Forged by a hard history and a harsh climate, the reiver is a tough fighter with a sense of honor and duty. Normally calm and amiable, the reiver's visage is thunderous when kith and kin are threatened or there are krolvins lurking."
     ],
     arrival: [
       "A reiver just arrived.",
-      "A reiver just arrived, limping."
+      "A reiver just arrived, limping.",
+      "A reiver just came through a red door."
     ],
     flee: [
       "A reiver heads {direction}.",
-      "A reiver limps {direction}."
+      "A reiver limps {direction}.",
+      "A reiver just went through a red door."
     ],
     death: [
       "The reiver takes one last breath, then dies.",
-      "The reiver falls to the ground motionless.",
-      "Beautiful shot pierces both lungs, the reiver makes a wheezing noise, and drops dead!"
+      "The reiver falls to the ground motionless."
     ],
     decay: [
-      "A reiver turns to dust.",
-      "Acid dissolves connecting cartilage, freeing the reiver's ribs to move independently."
+      "A reiver turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A reiver pounds at you with {pronoun} fist!",
-      "A reiver swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

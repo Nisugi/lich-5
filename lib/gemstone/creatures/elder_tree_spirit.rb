@@ -102,7 +102,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence dust"
+    other: "Glimmering blue essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -120,12 +122,12 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "An elder tree spirit gestures at you!",
-      "An elder tree spirit tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An elder tree spirit gestures at you!",
+        "An elder tree spirit tries to ensnare you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

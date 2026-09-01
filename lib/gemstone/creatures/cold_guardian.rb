@@ -89,7 +89,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Alchemy components, Lockpicks"
+    other: "Alchemy components, Lockpicks",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -105,13 +107,18 @@
       "A cold guardian turns to dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A cold guardian gestures at you!",
-      "A cold guardian swings {weapon} at you!"
+    spell_prep: [
+      "A cold guardian gestures at {target}!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A cold guardian gestures at you!",
+        "A cold guardian swings {weapon} at you!"
+      ],
+      bolt: [
+        "A cold guardian hurls a freezing ball of pure cold at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

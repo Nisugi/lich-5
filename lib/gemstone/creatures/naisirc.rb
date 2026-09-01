@@ -74,7 +74,7 @@
     ranged: (221..373),
     bolt: (221..373),
     udf: (416..693),
-    bar_td: "274 to 280",
+    bar_td: (274..280),
     cle_td: (301..307),
     emp_td: (293..308),
     pal_td: (258..267),
@@ -105,7 +105,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Inky necrotic core"
+    other: "Inky necrotic core",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -118,13 +120,17 @@
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A naisirc charges at you!",
-      "A naisirc tries to ensnare you!"
+    spell_prep: [
+      "A naisirc glows with an eerie green light.",
+      "A naisirc glows with a bright green light!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A naisirc charges at you!",
+        "A naisirc lashes out at {target}!",
+        "A naisirc tries to ensnare {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

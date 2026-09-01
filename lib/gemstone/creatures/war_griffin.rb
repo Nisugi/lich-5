@@ -114,7 +114,9 @@
     gems: true,
     boxes: nil,
     skin: "a war griffin talon",
-    other: "Alchemy"
+    other: "Alchemy",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -126,23 +128,25 @@
     ],
     death: [
       "The war griffin writhes in agony, its wings flapping fruitlessly as it dies.",
-      "The war griffin crashes to the ground, motionless.",
-      "Beautiful shot pierces both lungs, the war griffin makes a wheezing noise, and drops dead!"
+      "The war griffin crashes to the ground, motionless."
     ],
     decay: [
       "The war griffin decays into a pile of feathers and fur."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A war griffin rakes at you with a razor-sharp claw!",
-      "A war griffin tries to spear you with {pronoun} beak!",
-      "A war griffin tries to spear you with war griffin beak!"
-    ],
-    bite: [
-      "A war griffin tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A war griffin rakes at you with a razor-sharp claw!",
+        "A war griffin tries to spear you with {pronoun} beak!"
+      ],
+      bite: [
+        "A war griffin tries to bite you!"
+      ],
+      claw: [
+        "A war griffin rakes at {target} with a razor-sharp claw!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

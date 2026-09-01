@@ -134,7 +134,9 @@
     gems: true,
     boxes: true,
     skin: "a giant skin",
-    other: "essence of air"
+    other: "essence of air",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -143,25 +145,28 @@
     arrival: [
       "A storm giant lumbers in, surrounded by a raging storm!"
     ],
-    flee: [],
+    flee: [
+      "A storm giant lumbers {direction}, surrounded by a raging storm!",
+      "A storm giant lumbers {direction}, surrounded by a raging storm."
+    ],
     death: [
       "The storm giant howls in agony one last time and dies.",
       "The storm giant twitches violently, then dies.",
-      "The storm giant crumples to the ground motionless.",
-      "Beautiful shot pierces both lungs, the storm giant makes a wheezing noise, and drops dead!"
+      "The storm giant crumples to the ground motionless."
     ],
-    decay: [
-      "The storm giant's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A storm giant claps {pronoun} hands together in front of you!",
-      "A storm giant swings {weapon} at you!",
-      "A storm giant thrusts with a spear at you!"
+    stand: [
+      "A storm giant throws {pronoun} head back and roars in anger, shaking off the stun!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A storm giant claps {pronoun} hands together in front of you!",
+        "A storm giant swings {weapon} at you!",
+        "A storm giant thrusts with a spear at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

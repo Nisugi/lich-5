@@ -81,13 +81,18 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The wall guardian is a bit taller than a halfling, but not by much. Filthy, stinky and smelly, she looks as if she hasn't bathed in years. A faint smirk is etched on the face of the guardian."
     ],
-    arrival: [],
+    arrival: [
+      "A wall guardian marches in.",
+      "A wall guardian rushes in with a shout!"
+    ],
     flee: [],
     death: [
       "The wall guardian vainly tries to shout a warning, then goes still."
@@ -97,11 +102,16 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A wall guardian swings {weapon} at you!"
+    stun_break: [
+      "A wall guardian holds {pronoun} head as {pronoun} tries to regain {pronoun} bearings."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A wall guardian swings {weapon} at you!",
+        "A wall guardian charges into view, a surprised look on {pronoun} face!",
+        "A wall guardian swings a coral-shafted military pick at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

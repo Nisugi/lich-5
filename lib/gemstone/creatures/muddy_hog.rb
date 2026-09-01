@@ -84,13 +84,17 @@
     gems: nil,
     boxes: nil,
     skin: "brown boar hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A muddy hog barrels in!"
+    ],
     flee: [
       "A muddy hog trots {direction}."
     ],
@@ -102,15 +106,18 @@
     decay: [
       "A muddy hog decays into a pile of fur and bone."
     ],
-    search: [],
+    search: [
+      "A muddy hog sniffs the air anxiously."
+    ],
     spell_prep: [],
-    attack: [
-      "A muddy hog charges at you!"
-    ],
-    bite: [
-      "A muddy hog tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A muddy hog charges at you!"
+      ],
+      bite: [
+        "A muddy hog tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

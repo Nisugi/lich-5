@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "agresh troll chieftain",
+  name: "Agresh troll chieftain",
   noun: "",
   url: "https://gswiki.play.net/agresh_troll_chieftain",
   picture: "",
@@ -97,14 +97,17 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shardGlimmering blue mote of essence"
+    other: "Glimmering blue essence shardGlimmering blue mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The troll chieftain splatters its surroundings with flecks of spittle as it lifts its head and snarls. Crudely drawn symbols painted with ash on its face do little to improve its gruesome visage as it scrunches its face into an expression of rage. Tufts of golden hair on its otherwise barren body make it look that much more ugly."
     ],
     arrival: [
-      "An Agresh troll chieftain just arrived!"
+      "An Agresh troll chieftain just arrived!",
+      "An Agresh troll chieftain charges in, {pronoun} eyes gleaming with hate!"
     ],
     flee: [
       "An Agresh troll chieftain limps {direction}.",
@@ -116,13 +119,18 @@
     decay: [
       "An Agresh troll chieftain decays into compost."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "An Agresh troll chieftain swings {weapon} at you!"
+    search: [
+      "An Agresh troll chieftain sniffs the air cautiously."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "An Agresh troll chieftain mutters, \"Srlarloror'rt srar 'mrosrdnragh srar 'r'rar s'r'vr'r'rawrd!\""
+    ],
+    attacks: {
+      attack: [
+        "An Agresh troll chieftain swings {weapon} at you!",
+        "An Agresh troll chieftain charges in, {pronoun} eyes gleaming with hate!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

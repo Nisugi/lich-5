@@ -1,6 +1,6 @@
 {
   schema_version: 3,
-  name: "ithzir janissary",
+  name: "Ithzir janissary",
   noun: "",
   url: "https://gswiki.play.net/ithzir_janissary",
   picture: "",
@@ -124,9 +124,26 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "crystal-edged weapons"
+    other: "crystal-edged weapons",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "An Ithzir janissary swings {weapon} at you!",
+        "The Ithzir janissary points at you for emphasis.",
+        "The Ithzir janissary points at you.",
+        "An Ithzir janissary swings a spiral-hafted crystal-edged handaxe at {target}!",
+        "An Ithzir janissary swings a twisted crystal-tipped staff at {target}!",
+        "An Ithzir janissary swings {pronoun} {weapon} at your vultite handaxe!",
+        "An Ithzir janissary swings {pronoun} {weapon} at your smooth glowbark staff!",
+        "An Ithzir janissary swings a gleaming crystal-edged broadsword at {target}!"
+      ]
+    },
+    stand: [
+      "An Ithzir janissary rises to {pronoun} feet, {pronoun} green eyes blazing!"
+    ],
     description: [
       "The Ithzir janissary's movements are both aggressive and graceful, his muscular, lithe form the envy of any acrobat or student of the martial arts. Wide, upward-slanted, green eyes take in his surroundings with an easy confidence, as if the fate of any opponent is not a matter of chance, only of time. The Ithzir janissary is a head taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The janissary wears a crisply-cut silvery blue tunic emblazoned with a feline silhouette on the right breast."
     ],
@@ -134,25 +151,18 @@
       "An Ithzir janissary strides in, surveying the surroundings alertly."
     ],
     flee: [
-      "An Ithzir janissary strides {direction}."
+      "An Ithzir janissary strides {direction}.",
+      "An Ithzir janissary slowly backs away with {pronoun} handaxe brandished menacingly in front of {pronoun}.",
+      "An Ithzir janissary slowly backs away with {pronoun} crystal-edged handaxe brandished menacingly in front of {pronoun}."
     ],
     death: [
       "The Ithzir janissary vainly struggles to rise, then goes still.",
-      "Just as you incant, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!",
       "Just as you cast, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!",
-      "Just as you move to cast, the Ithzir janissary shimmers and fades away, leaving you gesturing at nothingness!",
       "An Ithzir janissary's body shimmers slightly, then fades from view like a dissipating phantom."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "An Ithzir janissary swings {weapon} at you!",
-      "The Ithzir janissary points at you for emphasis.",
-      "The Ithzir janissary points at you."
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

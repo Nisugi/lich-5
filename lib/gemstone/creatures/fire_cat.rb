@@ -90,7 +90,9 @@
     gems: nil,
     boxes: nil,
     skin: "a fire cat claw",
-    other: "essence of fire"
+    other: "essence of fire",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -112,13 +114,14 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A fire cat tries to bite you!"
-    ],
-    claw: [
-      "A fire cat claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A fire cat claws at you!"
+      ],
+      bite: [
+        "A fire cat tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

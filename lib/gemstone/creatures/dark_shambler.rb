@@ -115,7 +115,9 @@
     gems: true,
     boxes: true,
     skin: "a glistening black eye",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -131,22 +133,19 @@
     death: [
       "The dark shambler falls to the ground motionless.",
       "The dark shambler screams evilly one last time and goes still.",
-      "The dark shambler twitches violently, then dies.",
-      "Beautiful shot pierces both lungs, the dark shambler makes a wheezing noise, and drops dead!",
-      "The dark shambler slumps to the ground.",
-      "Awesome shot skewers skull!  The dark shambler blinks once and falls quite dead!"
+      "The dark shambler twitches violently, then dies."
     ],
     decay: [
-      "A dark shambler turns to dust.",
-      "The dark shambler's left leg crumbles briefly and explodes in a shower of gore."
+      "A dark shambler turns to dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A dark shambler swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A dark shambler swings {weapon} at you!",
+        "A dark shambler swings a twohanded sword at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -85,17 +85,17 @@
     ranged: (261..270),
     bolt: (261..270),
     udf: (354..463),
-    bar_td: "268 to 277",
-    cle_td: "281 to 397",
+    bar_td: (268..277),
+    cle_td: (281..397),
     emp_td: (283..293),
     pal_td: (247..257),
     ran_td: (247..256),
-    sor_td: "315 to 322",
-    wiz_td: "315 to 322",
-    mje_td: "315 to 322",
-    mne_td: "315 to 322",
-    mjs_td: "277 to 293",
-    mns_td: "277 to 293",
+    sor_td: (315..322),
+    wiz_td: (315..322),
+    mje_td: (315..322),
+    mne_td: (315..322),
+    mjs_td: (277..293),
+    mns_td: (277..293),
     mnm_td: (271..280),
     defensive_spells: [
       "Wall of Force (140)"
@@ -117,26 +117,27 @@
     gems: nil,
     boxes: true,
     skin: nil,
-    other: "Farlook vitreous humor"
+    other: "Farlook vitreous humor",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A hunch-backed dogmatist's frail frame has seen many years of toil and abuse. Evidence of such hardship appears in the stooped posture of the dogmatist. A defined hump protrudes from behind the dogmatist's head, easily discerned through layers of clothing and leather armor. The hunch-backed dogmatist's eyes glance frequently from side-to-side, as if constantly waiting for something to appear."
     ],
-    arrival: [],
-    flee: [],
-    death: [
-      "The hunch-backed dogmatist slumps to the ground."
+    arrival: [
+      "A hunch-backed dogmatist trots in with {pronoun} hands clasped together!",
+      "A hunch-backed dogmatist trots in with {pronoun} {weapon}!"
     ],
+    flee: [],
+    death: [],
     decay: [
-      "A hunch-backed dogmatist crumbles in upon herself, her skin flaking away as if it only served as an outer shell.",
-      "A hunch-backed dogmatist crumbles in upon himself, his skin flaking away as if it only served as an outer shell."
+      "A hunch-backed dogmatist crumbles in upon {reflexive}, {pronoun} skin flaking away as if {pronoun} only served as an outer shell."
     ],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A hunch-backed dogmatist mutters a harsh rite."
+    ],
     info: {
       general: [],
       class_tips: {

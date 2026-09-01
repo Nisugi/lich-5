@@ -75,24 +75,48 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
-    arrival: [],
+    arrival: [
+      "A scaly needle-toothed trenchling charges in on rawboned legs, {pronoun} webbed feet slapping the ground.",
+      "A scaly needle-toothed trenchling limps in on rawboned legs, {pronoun} webbed feet slapping the ground."
+    ],
     flee: [
       "A scaly needle-toothed trenchling lifts her head, cocking it as if hearing something in the distance.  She abruptly flees, eyes glowing fiercely!",
-      "A scaly needle-toothed trenchling lifts his head, cocking it as if hearing something in the distance.  He abruptly flees, eyes glowing fiercely!"
+      "A scaly needle-toothed trenchling lifts his head, cocking it as if hearing something in the distance.  He abruptly flees, eyes glowing fiercely!",
+      "A scaly needle-toothed trenchling charges southwest on rawboned legs, {pronoun} webbed feet slapping the ground.",
+      "A scaly needle-toothed trenchling charges south on rawboned legs, {pronoun} webbed feet slapping the ground.",
+      "A scaly needle-toothed trenchling charges northeast on rawboned legs, {pronoun} webbed feet slapping the ground.",
+      "A scaly needle-toothed trenchling limps south on rawboned legs, {pronoun} webbed feet slapping the ground."
     ],
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A scaly needle-toothed trenchling lifts {pronoun} head, cocking {pronoun} as if hearing something in the distance. {pronoun} abruptly flees, eyes glowing fiercely!",
+      "A scaly needle-toothed trenchling's eyes glow brighter and {target} lets out a animalistic hiss as {target} catches trying to hide."
+    ],
+    attacks: {
+      attack: [
+        "A scaly needle-toothed trenchling raises a yellowed fish spine sword dangling broken rib bones in a clenched, webbed claw and swings {pronoun} at you!",
+        "A scaly needle-toothed trenchling barrels into a charge, webbed feet slapping like a drumbeat. {pronoun} propels {pronoun} into the air, hurtingly at you!",
+        "A scaly needle-toothed trenchling barrels into a charge, webbed feet slapping like a drumbeat. {pronoun} propels {pronoun} into the air, hurtingly at {target}!",
+        "A scaly needle-toothed trenchling raises a yellowed fish spine sword dangling broken rib bones in a clenched, webbed claw and swings {pronoun} at {target}!",
+        "A scaly needle-toothed trenchling charges down on rawboned legs, {pronoun} webbed feet slapping the ground.",
+        "A scaly needle-toothed trenchling barrels into a charge, webbed feet slapping like a drumbeat. {target} propels {reflexive} into the air, hurtingly at you!",
+        "A scaly needle-toothed trenchling barrels into a charge, webbed feet slapping like a drumbeat. {target} propels {reflexive} into the air, hurtingly at {target}!",
+        "A scaly needle-toothed trenchling charges northwest on rawboned legs, {pronoun} webbed feet slapping the ground.",
+        "A scaly needle-toothed trenchling charges east on rawboned legs, {pronoun} webbed feet slapping the ground.",
+        "A scaly needle-toothed trenchling charges southeast on rawboned legs, {pronoun} webbed feet slapping the ground.",
+        "A scaly needle-toothed trenchling kicks powerfully with {pronoun} webbed feet, propelling {reflexive} through the water at terrifying speed as {pronoun} hurtles at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

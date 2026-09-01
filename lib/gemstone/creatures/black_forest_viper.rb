@@ -57,11 +57,11 @@
     ranged: (278..321),
     bolt: (278..321),
     udf: 333,
-    bar_td: "200 to 206",
+    bar_td: (200..206),
     cle_td: (229..235),
     emp_td: (220..232),
     pal_td: (199..202),
-    ran_td: "181 to 196",
+    ran_td: (181..196),
     sor_td: (234..246),
     wiz_td: 246,
     mje_td: 246,
@@ -87,7 +87,9 @@
     gems: false,
     boxes: false,
     skin: "a viper fang",
-    other: "no"
+    other: "no",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -109,12 +111,16 @@
       "A black forest viper decays into a pile of scales and flesh."
     ],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [
-      "A black forest viper fangs glisten as it tries to bite you!"
+    spell_prep: [
+      "A black forest viper hisses and bares {pronoun} fangs as {pronoun} coils defensively.",
+      "A black forest viper hisses loudly!",
+      "A black forest viper hisses softly."
     ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A black forest viper's eyes glisten as it tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

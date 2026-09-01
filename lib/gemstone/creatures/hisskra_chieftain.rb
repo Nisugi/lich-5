@@ -89,14 +89,17 @@
     gems: true,
     boxes: true,
     skin: "hisskra crest",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "As tall as a typical human, the humanoid reptilian hisskra shares many characteristics with mankind. A long snout filled with an array of sharp teeth dominates the hisskra's facial features, giving him the appearance of a bipedal, ruby-crested iguana. Well-defined pectorals and a muscular torso are nearly man-like, but for the dull, dark green scales that fade to a paler shade at the throat, and the ridge of boney, red-tinged spines that runs from between the hisskra chieftain's shoulder blades to the tip of his five-foot tail. The hisskra's muscular limbs end in thick-fingered, partially-webbed hands and feet tipped with blackened claws, which are formidable weapons should the creature lose his more civilized martial implements. A glint of cunning is revealed in the depths of the hisskra chieftain's eyes as he peers about, his tongue flicking over his scaly lips."
     ],
     arrival: [
-      "A hisskra chieftain stalks in, gripping his slimy trident menacingly!"
+      "A hisskra chieftain stalks in, gripping his slimy trident menacingly!",
+      "A hisskra chieftain leaps in, screaming a reptilian challenge!"
     ],
     flee: [
       "A hisskra chieftain bounds {direction}."
@@ -107,23 +110,36 @@
       "The hisskra chieftain collapses in a motionless heap.",
       "The hisskra chieftain contorts in a tortured spasm, then goes still.",
       "The hisskra chieftain twitches violently in his death throes before finally going still.",
-      "The hisskra chieftain slumps to the ground."
+      "A hisskra chieftain collapses into a putrid lump of scaly flesh."
     ],
     decay: [
       "A hisskra chieftain decays into a pile of scales and bone.",
       "A hisskra chieftain withers away, leaving nothing but a few scales that blow away on a gentle breeze.",
-      "A hisskra chieftain's scales wither as he decays into dust.",
       "A hisskra chieftain collapses into a putrid lump of scaly flesh.",
-      "A raging hisskra chieftain collapses into a putrid lump of scaly flesh."
+      "A raging hisskra chieftain collapses into a putrid lump of scaly flesh.",
+      "A hisskra chieftain's scales wither as {pronoun} decays into dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A hisskra chieftain swings {weapon} at you!",
-      "A hisskra chieftain throws {weapon} at you!"
+    spell_prep: [
+      "A hisskra chieftain hisses fearfully as {pronoun} slowly backs away, seeking an avenue for escape."
     ],
-    bite: [],
-    claw: [],
+    stun_break: [
+      "A hisskra chieftain staggers, moving unsteadily as {pronoun} tries to regain {pronoun} bearings."
+    ],
+    attacks: {
+      attack: [
+        "A hisskra chieftain swings {weapon} at you!",
+        "A hisskra chieftain shoots a tiny dart at you!",
+        "A hisskra chieftain springs to {pronoun} feet!",
+        "A hisskra chieftain lashes {pronoun} tail out at your legs with lightning speed!"
+      ],
+      claw: [
+        "A hisskra chieftain claws blindly at the air in front of {pronoun} as {pronoun} tries to regain {pronoun} bearings!"
+      ],
+      hurl: [
+        "A hisskra chieftain throws {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

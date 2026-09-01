@@ -105,7 +105,9 @@
     gems: true,
     boxes: true,
     skin: "a wight claw",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -128,12 +130,16 @@
       "A tomb wight crumbles to dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A tomb wight swings {weapon} at you!"
+    spell_prep: [
+      "A tomb wight chants an evil incantation.",
+      "A tomb wight's eyes flare with delight as {pronoun} eyes a blackened claidhmore."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A tomb wight swings {weapon} at you!",
+        "A tomb wight swings a twohanded sword at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

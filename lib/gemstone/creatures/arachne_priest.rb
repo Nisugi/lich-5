@@ -115,7 +115,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence shard"
+    other: "Glimmering blue essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -123,7 +125,8 @@
     ],
     arrival: [
       "An Arachne priest just arrived.",
-      "An Arachne priestess just arrived."
+      "An Arachne priestess just arrived.",
+      "An Arachne priest strolls in chanting a soft prayer to {pronoun} god!"
     ],
     flee: [
       "An Arachne priest heads {direction}.",
@@ -134,16 +137,16 @@
       "The Arachne priest slumps to the ground and dies.",
       "The Arachne priestess exhales a final curse and dies."
     ],
-    decay: [
-      "A mammoth arachnid's legs shrivel up beneath it as it decays into dust."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An Arachne priest swings {weapon} at you!"
+    spell_prep: [
+      "An Arachne priest gestures!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An Arachne priest swings {weapon} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

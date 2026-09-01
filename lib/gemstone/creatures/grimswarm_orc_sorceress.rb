@@ -76,7 +76,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [],
@@ -89,10 +91,14 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    spell_prep: [
+      "A Grimswarm orc sorceress gestures and utters a phrase of magic."
+    ],
+    attacks: {
+      attack: [
+        "A Grimswarm orc sorceress swings a rune staff at {target}!"
+      ]
+    },
     info: {
       general: [
         "Caster. Observed warding CS 424, camp level unknown."

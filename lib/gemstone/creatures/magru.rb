@@ -86,14 +86,17 @@
     gems: true,
     boxes: nil,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The magru appears to be a huge, gelatinous red lump that pulses, swelling and shrinking slightly with a hypnotic rhythm. Its skin glistens with a dark, disgusting ooze."
     ],
     arrival: [
-      "A magru just arrived."
+      "A magru just arrived.",
+      "A magru slides in."
     ],
     flee: [
       "A magru heads {direction}."
@@ -104,11 +107,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A magru pounds at you with {pronoun} fist!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A magru pounds at you with {pronoun} fist!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

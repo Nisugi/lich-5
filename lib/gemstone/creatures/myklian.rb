@@ -90,19 +90,15 @@
     gems: false,
     boxes: false,
     skin: "a (color) myklian scale",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The myklian is a fearsome beast, some form of large lizard or amphibian that usually travels on four legs, but sometimes stands upright on two legs. It has a short, stubby tail which is triangular in shape and covered with a luminescent, chitinous plate. Hard scales cover the rest of the beast's body, except for the soft underbelly. Bony spikes and knobs guard the beast's joints. The coloration of the myklian species ranges the entire spectrum, red, orange, yellow, green, blue and purple."
     ],
-    arrival: [
-      "You hear a low growl and feel a sudden chill as a young myklian arrives.",
-      "You hear a low growl and feel a sudden chill as a blue myklian arrives.",
-      "You hear a low growl and feel a sudden chill as a red myklian arrives.",
-      "You hear a low growl and feel a sudden chill as an orange myklian arrives.",
-      "You hear a low growl and feel a sudden chill as a yellow myklian arrives."
-    ],
+    arrival: [],
     flee: [
       "A red myklian heads {direction}.",
       "A blue myklian heads {direction}.",
@@ -142,15 +138,15 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A myklian charges at you!",
-      "A myklian stomps at you with {pronoun} foot!",
-      "An myklian stomps at you with {pronoun} foot!"
-    ],
-    bite: [],
-    claw: [
-      "A myklian claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A myklian charges at you!",
+        "A myklian stomps at you with {pronoun} foot!"
+      ],
+      claw: [
+        "A myklian claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

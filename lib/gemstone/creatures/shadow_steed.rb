@@ -84,7 +84,9 @@
     gems: true,
     boxes: nil,
     skin: "a silvery tail",
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -93,20 +95,19 @@
     arrival: [],
     flee: [],
     death: [
-      "The shadow steed goes still for a moment while its head reshapes.",
       "A shadow steed fades into oblivion."
     ],
     decay: [
-      "A shadow mare's eyes go dim as she dissolves into the shadows."
+      "A shadow steed fades into oblivion."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A shadow steed charges at you!",
-      "A shadow steed stomps at you with {pronoun} foot!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A shadow steed charges at you!",
+        "A shadow steed stomps at you with {pronoun} foot!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

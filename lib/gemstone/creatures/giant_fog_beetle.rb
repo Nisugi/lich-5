@@ -91,7 +91,9 @@
     gems: false,
     boxes: false,
     skin: "a fog beetle carapace",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,12 +112,18 @@
       "A giant fog beetle's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A giant fog beetle snaps at you with {pronoun} pincer!"
+    spell_prep: [
+      "A giant fog beetle hisses as {pronoun} slowly raises {reflexive} up on {pronoun} legs."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A giant fog beetle snaps at you with {pronoun} pincer!"
+      ],
+      bite: [
+        "A giant fog beetle snaps at you with {pronoun} pincer!",
+        "A giant fog beetle snaps at {target} with {pronoun} pincer!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

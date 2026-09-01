@@ -96,7 +96,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: "Glowing violet essence shard"
+    other: "Glowing violet essence shard",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,18 +109,19 @@
       "A spectral lord floats {direction}."
     ],
     death: [
-      "A spectral lord dissipates into ethereal wisps.",
-      "The spectral lord goes still for a moment while its head reshapes."
+      "A spectral lord dissipates into ethereal wisps."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A spectral lord swings a black steel ball &amp; chain at you!",
-      "A spectral lord swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A spectral lord swings {weapon} at you!",
+        "A spectral lord swings {pronoun} {weapon} at your vultite handaxe!",
+        "A spectral lord swings {pronoun} black steel ball & chain at your vultite handaxe!",
+        "A spectral lord swings {pronoun} {weapon} at your mossbark runestaff!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

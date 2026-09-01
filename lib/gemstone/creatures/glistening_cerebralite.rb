@@ -132,7 +132,9 @@
     gems: nil,
     boxes: nil,
     skin: "a cerebralite tentacle",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -148,17 +150,29 @@
       "An intangible ripple of pure energy courses through the air as the cerebralite's pupils widen a final time, its eyes clouding over as it dies."
     ],
     decay: [
-      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away.",
-      "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
+      "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A glistening cerebralite focuses {pronoun} eye-stalks on you!",
-      "A glistening cerebralite lashes at you with {pronoun} barbed tentacle!",
+    spell_prep: [
+      "A glistening cerebralite closes {pronoun} eyes in deep concentration..."
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A glistening cerebralite focuses {pronoun} eye-stalks on you!",
+        "A glistening cerebralite lashes at you with {pronoun} barbed tentacle!",
+        "A glistening cerebralite lashes at {target} with {pronoun} barbed tentacle!"
+      ],
+      bolt: [
+        "A glistening cerebralite hurls a radiant ball of energy at you!",
+        "A glistening cerebralite hurls a stream of fire at {target}!"
+      ],
+      hurl: [
+        "A glistening cerebralite hurls a powerful lightning bolt at {target}!",
+        "A glistening cerebralite hurls a chunk of ice at {target}!",
+        "A glistening cerebralite hurls a large boulder at {target}!",
+        "A glistening cerebralite throws a patchwork wool greatcloak at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

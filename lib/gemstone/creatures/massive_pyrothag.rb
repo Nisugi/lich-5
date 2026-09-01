@@ -74,12 +74,12 @@
     emp_td: (213..228),
     pal_td: (189..208),
     ran_td: (177..186),
-    sor_td: "229; 238",
+    sor_td: (229..238),
     wiz_td: nil,
     mje_td: nil,
-    mne_td: "241; 244",
+    mne_td: (241..244),
     mjs_td: (219..228),
-    mns_td: "191; 219",
+    mns_td: (191..219),
     mnm_td: (174..180),
     defensive_spells: [],
     defensive_abilities: [],
@@ -98,7 +98,9 @@
     gems: true,
     boxes: true,
     skin: "a pyrothag hide",
-    other: "glowing violet mote of essence"
+    other: "glowing violet mote of essence",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -112,24 +114,26 @@
     flee: [
       "A massive pyrothag lumbers {direction}.",
       "A massive pyrothag rumbles loudly as it lumbers {direction}.",
-      "A massive pyrothag crawls {direction}."
+      "A massive pyrothag crawls {direction}.",
+      "A massive pyrothag lumbers {direction}, grumbling to {reflexive}!"
     ],
     death: [
       "The massive pyrothag vibrates violently one final time and then lies still.",
       "A massive pyrothag rumbles loudly as it leans to the left and topples to the ground with a loud *THUD*!",
       "The massive pyrothag falls to the ground and lies still.",
       "A massive pyrothag rumbles loudly as it leans to the right and topples to the ground with a loud *THUD*!",
-      "A grotesque massive pyrothag rumbles loudly as it leans to the right and topples to the ground with a loud *THUD*!",
-      "Beautiful shot pierces both lungs, the massive pyrothag makes a wheezing noise, and drops dead!"
+      "A grotesque massive pyrothag rumbles loudly as it leans to the right and topples to the ground with a loud *THUD*!"
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A massive pyrothag swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A massive pyrothag swings {weapon} at you!",
+        "A massive pyrothag pounds at {target} with {pronoun} fist!",
+        "A massive pyrothag swings a massive glaes club at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

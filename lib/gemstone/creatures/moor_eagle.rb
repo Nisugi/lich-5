@@ -90,7 +90,9 @@
     gems: false,
     boxes: false,
     skin: "moor eagle talon",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -100,21 +102,18 @@
     flee: [
       "A moor eagle flies {direction}."
     ],
-    death: [
-      "The moor eagle slumps to the ground."
-    ],
+    death: [],
     decay: [
-      "The moor eagle decays into a pile of feathers.",
-      "Acid dissolves connecting cartilage, freeing the moor eagle's ribs to move independently."
+      "The moor eagle decays into a pile of feathers."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A moor eagle rakes at you with a razor-sharp claw!",
-      "A moor eagle tries to impale you on {pronoun} beak!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A moor eagle rakes at you with a razor-sharp claw!",
+        "A moor eagle tries to impale you on {pronoun} beak!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

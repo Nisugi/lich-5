@@ -95,7 +95,9 @@
     gems: true,
     boxes: nil,
     skin: "a basilisk crest",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -107,7 +109,8 @@
       "A belligerent crested basilisk stomps in and glares about.",
       "A canny crested basilisk stomps in and glares about.",
       "A deft crested basilisk stomps in and glares about.",
-      "An adroit crested basilisk stomps in and glares about."
+      "An adroit crested basilisk stomps in and glares about.",
+      "A crested basilisk trots in and glares about!"
     ],
     flee: [
       "A crested basilisk hisses and stomps {direction}.",
@@ -119,20 +122,23 @@
       "The crested basilisk rolls over on its back, emits a final hiss and dies.",
       "The crested basilisk emits a final hiss and dies.",
       "The crested basilisk emits a final silent hiss and dies.",
-      "The crested basilisk rolls over on its back, emits a final silent hiss and dies.",
-      "The crested basilisk slumps to the ground.",
-      "Beautiful shot pierces both lungs, the crested basilisk makes a wheezing noise, and drops dead!"
+      "The crested basilisk rolls over on its back, emits a final silent hiss and dies."
     ],
     decay: [],
     search: [],
-    spell_prep: [],
-    attack: [],
-    bite: [
-      "A crested basilisk tries to bite you!"
+    spell_prep: [
+      "A crested basilisk hisses as {pronoun} stares hatefully at you.",
+      "A crested basilisk hisses mournfully!",
+      "A crested basilisk hisses deep in {pronoun} throat as {pronoun} fights to clear {pronoun} senses."
     ],
-    claw: [
-      "A crested basilisk claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A crested basilisk claws at you!"
+      ],
+      bite: [
+        "A crested basilisk tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

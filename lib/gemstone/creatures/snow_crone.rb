@@ -108,7 +108,9 @@
     gems: true,
     boxes: true,
     skin: "a crooked crone finger",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -120,16 +122,19 @@
       "The snow crone cries out in cold agony one last time and dies.",
       "The snow crone falls to the ground motionless."
     ],
-    decay: [
-      "The snow crone's left leg crumbles briefly and explodes in a shower of gore."
-    ],
+    decay: [],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A snow crone points a crooked icy finger at you!"
+    spell_prep: [
+      "A snow crone mutters a frosty incantation."
     ],
-    bite: [],
-    claw: [],
+    stand: [
+      "A snow crone throws {pronoun} head back and howls, shaking off the stun!"
+    ],
+    attacks: {
+      cast: [
+        "A snow crone points a crooked icy finger at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -106,9 +106,22 @@
     gems: true,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "A glorious greater construct raises {pronoun} massive foot and attempts to smash you!",
+        "A greater construct raises {pronoun} massive foot and attempts to smash you!",
+        "A greater construct swings {weapon} at you!",
+        "A greater construct slams towards you, but you evade the attack!"
+      ]
+    },
+    stand: [
+      "A greater construct rises slowly until {pronoun} towers overhead once more."
+    ],
     description: [
       "The white granite-like features of the greater construct hold no hints of the giant creature's intentions or motivations. Its alabaster skin made more of the hardest rock than any living tissue makes the construct a formidable opponent for any who dare to trifle with it. Massing more than ten giantmen, it is a mountain of rock when in motion and very little, man or animal can oppose its desired path of travel once it is in motion."
     ],
@@ -116,7 +129,7 @@
       "A greater construct stomps in.",
       "A glorious greater construct stomps in.",
       "A hoarse rumbling heralds the arrival of a greater construct!",
-      "A deep humming sound comes from a greater construct as it lumbers in.",
+      "A deep humming sound comes from a greater construct as it lumbers in."
     ],
     flee: [
       "A greater construct stomps {direction}."
@@ -127,14 +140,6 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A glorious greater construct raises {pronoun} massive foot and attempts to smash you!",
-      "A greater construct raises {pronoun} massive foot and attempts to smash you!",
-      "A greater construct swings {weapon} at you!",
-      "A greater construct raises greater construct massive foot and attempts to smash you!"
-    ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

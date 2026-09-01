@@ -111,7 +111,9 @@
     gems: true,
     boxes: true,
     skin: "an arctic titan toe",
-    other: "Yes"
+    other: "Yes",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -125,20 +127,28 @@
     ],
     death: [
       "The arctic titan screams evilly one last time and goes still.",
-      "The arctic titan falls to the ground motionless.",
-      "The arctic titan slumps to the ground."
+      "The arctic titan falls to the ground motionless."
     ],
     decay: [
       "An arctic titan turns to dust."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An arctic titan gestures at you!",
-      "An arctic titan swings {weapon} at you!"
+    spell_prep: [
+      "An arctic titan gestures at {target}!"
     ],
-    bite: [],
-    claw: [],
+    stun_break: [
+      "An arctic titan shakes off the stun!"
+    ],
+    attacks: {
+      bolt: [
+        "An arctic titan hurls a powerful lightning bolt at {target}!"
+      ],
+      attack: [
+        "An arctic titan gestures at you!",
+        "An arctic titan swings {weapon} at you!",
+        "An arctic titan swings a handaxe at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

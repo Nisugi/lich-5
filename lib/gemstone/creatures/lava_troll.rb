@@ -97,7 +97,9 @@
     gems: true,
     boxes: true,
     skin: "a troll eye",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -109,15 +111,18 @@
     ],
     death: [],
     decay: [
-      "A lava troll burns down to a husk, that crumbles to ash."
+      "A lava troll burns down to a husk, that crumbles to ash.",
+      "A lava troll melts into a flow of molten lava that rises up and reforms into a lava troll!",
+      "A lava troll melts into a flow of molten lava that rises up and reforms into the lava troll!"
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lava troll swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lava troll swings {weapon} at you!",
+        "A lava troll swings a leather-wound ruddy steel sledgehammer at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

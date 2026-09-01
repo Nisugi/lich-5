@@ -85,9 +85,19 @@
     gems: nil,
     boxes: nil,
     skin: "a fire rat tail",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      bite: [
+        "A fire rat tries to bite you!"
+      ]
+    },
+    stand: [
+      "A fire rat scrambles to {pronoun} feet, baring {pronoun} sharp teeth!"
+    ],
     description: [
       "The fire rat is a large animal, roughly the size of a small dog. Its fur is shaggy, and rusty red in color. It has a long hairless tail, and glinting red eyes. Most dangerous are its claws which spark flame when attacking its prey."
     ],
@@ -108,11 +118,6 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A fire rat tries to bite you!"
-    ],
-    claw: [],
     info: {
       general: [],
       class_tips: {

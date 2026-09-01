@@ -103,7 +103,9 @@
     gems: false,
     boxes: false,
     skin: "an aivren gizzard",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -115,16 +117,15 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "An aivren rakes at you with a razor-sharp claw!",
-      "An aivren tries to spear you with {pronoun} massive beak!",
-      "A aivren rakes at you with a razor-sharp claw!"
-    ],
-    bite: [
-      "An aivren tries to bite you!",
-      "A aivren tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "An aivren rakes at you with a razor-sharp claw!",
+        "An aivren tries to spear you with {pronoun} massive beak!"
+      ],
+      bite: [
+        "An aivren tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

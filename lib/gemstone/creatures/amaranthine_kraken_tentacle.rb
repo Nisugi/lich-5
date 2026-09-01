@@ -71,23 +71,31 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       ""
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "An amaranthine kraken tentacle hurtles away from the colored light, which sears a swathe across the ground!"
+    ],
     death: [
       "An amaranthine kraken tentacle writhes, twitches and spasms going down its length before it crumples, going still."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An amaranthine kraken tentacle crushes you mercilessly!",
+        "An amaranthine kraken tentacle lashes out at your legs, flicking seawater in an arcing spray of droplets!",
+        "The amaranthine kraken tentacle slams into your lower back with a brutal thud!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

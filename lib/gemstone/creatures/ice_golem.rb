@@ -105,7 +105,9 @@
     gems: nil,
     boxes: nil,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -116,25 +118,25 @@
       "An ice golem slowly lumbers in, followed by a hailing icestorm!"
     ],
     flee: [
-      "An ice golem lumbers {direction}, followed by a hailing icestorm."
+      "An ice golem lumbers {direction}, followed by a hailing icestorm.",
+      "An ice golem heads {direction}, dragging your battered body behind {pronoun}!"
     ],
     death: [
       "The ice golem writhes in cold agony and dies.",
-      "Beautiful shot pierces both lungs, the ice golem makes a wheezing noise, and drops dead!",
-      "The ice golem slumps to the ground."
+      "An ice golem topples heavily to the ground!"
     ],
-    decay: [
-      "The ice golem's left leg crumbles briefly and explodes in a shower of gore."
+    decay: [],
+    search: [
+      "An ice golem looks around apprehensively as {pronoun} starts to melt!"
     ],
-    search: [],
     spell_prep: [],
-    attack: [
-      "An ice golem pounds at you with {pronoun} fist!",
-      "An ice golem stomps at you with {pronoun} foot!",
-      "An ice golem tries to ensnare you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "An ice golem pounds at you with {pronoun} fist!",
+        "An ice golem stomps at you with {pronoun} foot!",
+        "An ice golem tries to ensnare you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

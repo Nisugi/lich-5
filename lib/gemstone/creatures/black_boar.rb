@@ -90,13 +90,18 @@
     gems: nil,
     boxes: nil,
     skin: "a black boar hide",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The black boar snorts and snuffles at the ground, peering around with his close-set, bloodshot eyes in hopes of finding a target for his anger and aggression. Any who get in his way will most likely rapidly regret having done so. His body is covered with coarse, black hair, and yellowed tusks protrude from each side of his gaping mouth. Larger than most men, he is a good six feet long from dripping snout to curly tail and weighs more than a quarter ton. When in motion, the black boar moves with a surprising speed and dexterity for a beast his size. It is not unusual to find oneself snacked by this beast if not properly prepared."
     ],
-    arrival: [],
+    arrival: [
+      "A black boar barrels in!",
+      "A black boar crashes into view!"
+    ],
     flee: [
       "A black boar grunts and barrels {direction}."
     ],
@@ -110,11 +115,11 @@
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [
-      "A black boar tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      bite: [
+        "A black boar tries to bite you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

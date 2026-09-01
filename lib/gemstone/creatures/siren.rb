@@ -122,7 +122,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "pristine siren's hair"
+    other: "pristine siren's hair",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -130,28 +132,33 @@
     ],
     arrival: [
       "A siren arrives, warbling softly.",
-      "A siren just arrived."
+      "A siren just arrived.",
+      "A siren just came through a crumbling arch."
     ],
-    flee: [],
+    flee: [
+      "A siren just went up a spiral staircase.",
+      "A siren just went down some descending stairs.",
+      "A siren just went down a carved marble staircase leading to the submerged dais."
+    ],
     death: [
-      "The siren gives a plaintive wail before she slumps to her side and dies.",
-      "Awesome shot skewers skull!  The siren blinks once and falls quite dead!"
+      "The siren gives a plaintive wail before she slumps to her side and dies."
     ],
     decay: [
       "A siren decays into compost.",
       "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away.",
       "A deft siren decays into compost.",
-      "Acid dissolves connecting cartilage, freeing the siren's ribs to move independently.",
       "A sickly green siren decays into compost."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "A siren swings {weapon} at you!",
-      "A siren tries to ensnare you!"
+    spell_prep: [
+      "A siren chants hypnotically, swaying {pronoun} body in rhythm!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A siren swings {weapon} at you!",
+        "A siren tries to ensnare you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

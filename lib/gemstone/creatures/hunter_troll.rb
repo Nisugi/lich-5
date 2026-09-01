@@ -96,7 +96,9 @@
     gems: true,
     boxes: true,
     skin: "a troll tongue",
-    other: "a small troll tooth"
+    other: "a small troll tooth",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -109,23 +111,28 @@
       "A hunter troll runs {direction}."
     ],
     death: [
-      "The hunter troll slumps to the ground with a final snarl.",
-      "The hunter troll slumps to the ground."
+      "The hunter troll slumps to the ground with a final snarl."
     ],
     decay: [
       "A hunter troll decays into compost."
     ],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A hunter troll swings {weapon} at you!"
+    search: [
+      "A hunter troll sniffs the air cautiously."
     ],
-    bite: [
-      "A hunter troll tries to bite you!"
+    spell_prep: [
+      "A hunter troll mutters, \"Srlarloror'rt srar 'mrosrdnragh srar 'r'rar s'r'vr'r'rawrd!\""
     ],
-    claw: [
-      "A hunter troll claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A hunter troll swings {weapon} at you!"
+      ],
+      bite: [
+        "A hunter troll tries to bite you!"
+      ],
+      claw: [
+        "A hunter troll claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

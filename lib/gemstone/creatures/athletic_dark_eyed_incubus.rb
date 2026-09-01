@@ -100,38 +100,46 @@
     gems: nil,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
+    attacks: {
+      attack: [
+        "An athletic dark-eyed incubus directs {pronoun} otherworldly spellsong at you!",
+        "An athletic dark-eyed incubus tries to wrap you in {pronoun} well-muscled arms!"
+      ]
+    },
+    stand: [
+      "An athletic dark-eyed incubus melts into shadows and oozes back into a standing position."
+    ],
     description: [
       "Almost lewdly handsome, an athletic dark-eyed incubus moves with the grace of a fencer and has the body of a wrestler. He is bare to the waist and clad only in form-fitting trousers of supple, dark leather. The incubus's eyes are inky black pools that lend an otherworldly quality to his intensely masculine beauty."
     ],
     arrival: [
       "An athletic dark-eyed incubus just arrived from some lichen-clad dark wooden docks.",
-      "An athletic dark-eyed incubus just arrived from a torchlit overgrown grotto."
+      "An athletic dark-eyed incubus just arrived from a torchlit overgrown grotto.",
+      "An athletic dark-eyed incubus just came through a sculpted stone arch."
     ],
     flee: [
-      "An athletic dark-eyed incubus crawls {direction}."
+      "An athletic dark-eyed incubus crawls {direction}.",
+      "An athletic dark-eyed incubus just went to some lichen-clad dark wooden docks.",
+      "An athletic dark-eyed incubus just went to a torchlit overgrown grotto.",
+      "An athletic dark-eyed incubus just went through a sculpted stone arch.",
+      "An athletic dark-eyed incubus just went across a vine-covered wood suspension bridge.",
+      "An athletic dark-eyed incubus just went through a pair of inlaid bronze doors.",
+      "An athletic dark-eyed incubus just went down a warped oaken gangplank.",
+      "An athletic dark-eyed incubus just went up a warped oaken gangplank."
     ],
-    death: [
-      "Intestines rupture from intense heat; an athletic dark-eyed incubus dies a slow, painful death.",
-      "The dark-eyed incubus slumps to the ground.",
-      "Beautiful shot pierces both lungs, the dark-eyed incubus makes a wheezing noise, and drops dead!",
-      "Awesome shot skewers skull!  The dark-eyed incubus blinks once and falls quite dead!"
-    ],
+    death: [],
     decay: [
-      "Shadows crawl toward the form of an athletic dark-eyed incubus, engulfing it in a stygian tide.  The darkness dissolves into the ground with a faint sound of rushing liquid.",
-      "The dark-eyed incubus's left leg crumbles briefly and explodes in a shower of gore.",
-      "The dark-eyed incubus's right leg crumbles briefly and explodes in a shower of gore."
+      "Shadows crawl toward the form of an athletic dark-eyed incubus, engulfing it in a stygian tide.  The darkness dissolves into the ground with a faint sound of rushing liquid."
     ],
     search: [],
-    spell_prep: [],
-    attack: [
-      "An athletic dark-eyed incubus directs {pronoun} otherworldly spellsong at you!",
-      "An athletic dark-eyed incubus tries to wrap you in {pronoun} well-muscled arms!"
+    spell_prep: [
+      "An athletic dark-eyed incubus closes {pronoun} eyes in deep concentration..."
     ],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

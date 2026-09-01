@@ -94,34 +94,40 @@
     gems: nil,
     boxes: nil,
     skin: "a warthog snout",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "The warthog stands level-backed on short, thick legs. His large, angular head is balanced on each side by curved tusks. Used for goring or gashing his enemies, the tusks provide the warthog's primary means of defense. The warthog's bright, attentive eyes are set back and up on his head. Around the edges of the eyes are rows of warts that give this creature his name. Mainly found living in woods or underground burrows, the warthog prefers dark and damp areas to hide in and to provide him concealment until he rushes out after his prey."
     ],
     arrival: [
-      "A warthog just arrived."
+      "A warthog just arrived.",
+      "A warthog crashes into view!"
     ],
     flee: [
-      "A warthog grunts and barrels {direction}."
+      "A warthog grunts and barrels {direction}.",
+      "A warthog trots {direction}, grunting noisily.",
+      "A warthog trots {direction}, grunting noisily!"
     ],
     death: [
       "The warthog collapses to the ground, emits a final snuffle, and dies.",
       "The warthog lets out a final agonized snuffle and dies."
     ],
     decay: [
-      "A warthog decays into a pile of fur and bone.",
-      "The warthog's right leg crumbles briefly and explodes in a shower of gore."
+      "A warthog decays into a pile of fur and bone."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A warthog charges at you with {pronoun} tusk!",
-      "A warthog charges at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A warthog charges at you with {pronoun} tusk!",
+        "A warthog charges at you!",
+        "A warthog charges at {target} with {pronoun} tusk!",
+        "A warthog charges towards you, but you leap to the side at the last instant, avoiding a gruesome fate! The warthog stumbles and falls!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

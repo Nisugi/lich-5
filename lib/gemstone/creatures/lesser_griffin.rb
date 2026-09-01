@@ -121,7 +121,9 @@
     gems: true,
     boxes: false,
     skin: "ruffed tawny griffin pelt",
-    other: "Glowing violet essence dust"
+    other: "Glowing violet essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -135,23 +137,25 @@
     ],
     death: [
       "The lesser griffin writhes in agony, its wings flapping fruitlessly as it dies.",
-      "The lesser griffin crashes to the ground, motionless.",
-      "Beautiful shot pierces both lungs, the lesser griffin makes a wheezing noise, and drops dead!",
-      "Awesome shot skewers skull!  The lesser griffin blinks once and falls quite dead!"
+      "The lesser griffin crashes to the ground, motionless."
     ],
     decay: [
       "The lesser griffin decays into a pile of feathers and fur."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser griffin rakes at you with a razor-sharp claw!",
-      "A lesser griffin tries to spear you with {pronoun} beak!"
-    ],
-    bite: [
-      "A lesser griffin tries to bite you!"
-    ],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser griffin rakes at you with a razor-sharp claw!",
+        "A lesser griffin tries to spear you with {pronoun} beak!"
+      ],
+      bite: [
+        "A lesser griffin tries to bite you!"
+      ],
+      claw: [
+        "A lesser griffin rakes at {target} with a razor-sharp claw!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

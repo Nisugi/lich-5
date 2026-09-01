@@ -95,7 +95,9 @@
     gems: false,
     boxes: false,
     skin: "a scorpion stinger",
-    other: "No"
+    other: "No",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -103,21 +105,34 @@
     ],
     arrival: [],
     flee: [
-      "A giant albino scorpion skitters {direction}."
+      "A giant albino scorpion skitters {direction}.",
+      "A giant albino scorpion skitters south with delicate appendages.",
+      "A giant albino scorpion skitters down with delicate appendages.",
+      "A giant albino scorpion skitters west with delicate appendages.",
+      "A giant albino scorpion skitters east with delicate appendages.",
+      "A giant albino scorpion skitters up with delicate appendages.",
+      "A giant albino scorpion skitters north with delicate appendages.",
+      "A giant albino scorpion skitters northwest with delicate appendages.",
+      "A giant albino scorpion skitters northeast with delicate appendages."
     ],
     death: [
       "The albino scorpion twitches violently, then dies.",
-      "The albino scorpion slumps to the ground."
+      "A giant albino scorpion collapses, leaving behind a hollow exoskeleton.",
+      "A giant albino scorpion falls to the ground with an echoing clatter, dead."
     ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A giant albino scorpion snaps at you with {pronoun} pincer!",
-      "A giant albino scorpion stabs at you with {pronoun} stinger!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A giant albino scorpion snaps at you with {pronoun} pincer!",
+        "A giant albino scorpion stabs at you with {pronoun} stinger!",
+        "A giant albino scorpion lashes out wildly with {pronoun} stinger, hitting only air."
+      ],
+      bite: [
+        "A giant albino scorpion snaps at you with {pronoun} pincer!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

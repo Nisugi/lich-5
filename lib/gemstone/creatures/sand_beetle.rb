@@ -86,7 +86,9 @@
     gems: false,
     boxes: false,
     skin: "a beetle pincer",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -98,17 +100,13 @@
     ],
     death: [
       "The sand beetle falls to the ground and lies twitching for a moment before going still.",
-      "The sand beetle kicks a leg one last time and lies still.",
-      "Beautiful shot pierces both lungs, the sand beetle makes a wheezing noise, and drops dead!"
+      "The sand beetle kicks a leg one last time and lies still."
     ],
     decay: [
       "A sand beetle's legs shrivel up beneath it as it decays into dust."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
     info: {
       general: [],
       class_tips: {

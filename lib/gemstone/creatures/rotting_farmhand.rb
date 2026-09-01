@@ -83,7 +83,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "Glimmering blue essence dust"
+    other: "Glimmering blue essence dust",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -94,22 +96,23 @@
     ],
     flee: [
       "A rotting farmhand shambles {direction}.",
-      "A rotting farmhand wails madly as she limps {direction}.",
-      "A rotting farmhand wails madly as he limps {direction}."
+      "A rotting farmhand wails madly as {pronoun} limps {direction}."
     ],
     death: [
       "The rotting farmhand twitches violently, then dies.",
-      "The rotting farmhand wails in terrifying pain one last time and lies still.",
-      "Beautiful shot pierces both lungs, the rotting farmhand makes a wheezing noise, and drops dead!"
+      "The rotting farmhand wails in terrifying pain one last time and lies still."
     ],
-    decay: [],
+    decay: [
+      "A rotting farmhand rots away, leaving nothing behind."
+    ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A rotting farmhand swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A rotting farmhand swings {weapon} at you!",
+        "A rotting farmhand swings a rusted pitchfork at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

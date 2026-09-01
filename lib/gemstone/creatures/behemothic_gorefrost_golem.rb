@@ -140,35 +140,26 @@
     boxes: true,
     skin: false,
     other: "gigas artifact",
-    blunt_required: false
+    blunt_required: false,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: "The golem stands taller than a two-story building, a crude and blocky humanoid shape of ice that glows with an unsavory sanguine aura.  Clouds of frozen blood and bits of viscera are trapped in its frosty depths.  All are lifeless and still save for a single preserved organ at the golem's core: a humanoid heart.  The heart is shrouded in a swirl of slushy red fluid and, impossibly, it pulses with a sluggish, uneven beat, giving off coruscations of sanguine light.",
     arrival: [
       "The ground shudders as a behemothic gorefrost golem stomps in.",
       "The frozen earth underfoot shifts precipitously as an arm of blood-flecked ice erupts upward, followed by the towering form of a behemothic gorefrost golem.  The golem straightens its massive bulk with a sound like shattering glass.",
-      "A behemothic gorefrost golem just arrived."
+      "A behemothic gorefrost golem just arrived.",
+      "A behemothic gorefrost golem stomps in, shedding bits of broken ice and detritus."
     ],
     flee: [
       "A behemothic gorefrost golem stomps {direction}, shedding bits of broken ice and detritus.",
-      "The ground shudders as a behemothic gorefrost golem stomps {direction}.",
+      "The ground shudders as a behemothic gorefrost golem stomps {direction}."
     ],
     spell_prep: [
-      "A behemothic gorefrost golem glows with shimmering incarnadine light that suffuses its monstrous form with power."
+      "A behemothic gorefrost golem glows with shimmering incarnadine light that suffuses its monstrous form with power.",
+      "The behemothic gorefrost golem glows sapphire blue and emits a burst of intense cold!"
     ],
-    attack: [
-      "A behemothic gorefrost golem rears back slowly and swings {weapon} at you!",
-      "A behemothic gorefrost golem swings {weapon} at you!",
-      "A behemothic gorefrost golem thrusts {weapon} toward you!",
-      "Raising a prodigious foot, a behemothic gorefrost golem tries to stomp on you!",
-      "A behemothic gorefrost golem swings {pronoun} dark wooden crook in an immense sweep at you!",
-      "A behemothic gorefrost golem swings {pronoun} obsidian dagger in an immense sweep at you!",
-      "NoneA {pronoun} rears back slowly and swings {weapon} at you!",
-      "A behemothic gorefrost golem swings {pronoun} fel-hafted handaxe in an immense sweep at you!",
-      "Murder in behemothic gorefrost golem eyes, an immense gold-bristled hinterboar tries to gore you with behemothic gorefrost golem tusks!"
-    ],
-    bite: [],
-    claw: [],
     death: [
       "A rush of silent thunder explodes outward from the golem as the power animating it disperses."
     ],
@@ -179,21 +170,97 @@
       "A behemothic gorefrost golem hesitates for a moment, as if uncertain.",
       "Corruscating light flares where a behemothic gorefrost golem's eyes ought to be as it searches the shadows."
     ],
-    heat_leaching: "Hungering cold tears at your flesh, viciously leaching the heat from your body!",
-    colossal_fist: "A behemothic gorefrost golem raises a colossal fist of enchanted ice overhead and brings it crashing down.  A line of jagged ice streaks along the ground, racing toward you!",
-    topple: "Despite desperate windmilling to catch its balance, a behemothic gorefrost golem topples toward you!  You leap to the side and avoid being flattened as the golem topples over with a thunderous crash!",
-    major_elemental_wave: "Intense light begins to bleed from within a behemothic gorefrost golem, shimmering blue and unsavory scarlet warring with one another for brilliance.  A wave of blinding elemental energy pulses from the golem, so cold that moisture in the air crystallizes into stinging frost.",
-    closed_fist: "A behemothic gorefrost golem swings a colossal fist of ice at you!",
-    stomp: "Raising a prodigious foot, a behemothic gorefrost golem tries to stomp on you!",
-    pound: "A behemothic gorefrost golem rears back slowly and swings a mighty arm of blood-flecked ice down at you!",
-    twin_hammerfists: "A behemothic gorefrost golem raises its hands high, laces them together and brings them crashing down towards you!",
-    haymaker: "A behemothic gorefrost golem clenches its right fist and brings its arm back for a roundhouse punch aimed at you!",
-    headbutt: "A behemothic gorefrost golem charges towards you and attempts a headbutt!",
-    minor_cold: "A behemothic gorefrost golem hurls a chunk of ice at you!",
-    cold_snap: "A behemothic gorefrost golem thrusts a blocky fist toward you!",
 
-    wizards: "* Golems are great targets for Mana Leech (516) as they have a lower TD.\n* Open with Hand of Tonis (505) and prioritize keeping the golems prone. Follow up by bolting.",
-    general_advice: "* Like many other creatures of this type, these golems' high amount of health and immunity to being killed by lethal crits is offset by low DS. This makes flurries of unaimed attacks such as assault techniques or mstrikes backed up by Two Weapon Combat, assault techniques or mstrikes using unarmed combat, or repeated attacks backed up by Celerity (506) relatively effective.\n* These golems take additional damage from fire, though the exact mechanics of how aren't known at the time of this writing.\n* Weapon techniques and combat maneuvers that knock golems prone and inflict Staggered, like Twin Hammerfists, Sweep, or Tackle, can often stall out golems since their combat rounds are fairly slow and they don't have high SMR defense.",
 
+    attacks: {
+      attack: [
+        "A behemothic gorefrost golem rears back slowly and swings {weapon} at you!",
+        "A behemothic gorefrost golem swings {weapon} at you!",
+        "A behemothic gorefrost golem thrusts {weapon} toward you!",
+        "Raising a prodigious foot, a behemothic gorefrost golem tries to stomp on you!",
+        "A behemothic gorefrost golem swings {pronoun} dark wooden crook in an immense sweep at you!",
+        "A behemothic gorefrost golem swings {pronoun} obsidian dagger in an immense sweep at you!",
+        "A {pronoun} rears back slowly and swings {weapon} at you!",
+        "A behemothic gorefrost golem swings {pronoun} fel-hafted handaxe in an immense sweep at you!",
+        "Murder in {pronoun} eyes, an immense gold-bristled hinterboar tries to gore you with {pronoun} tusks!",
+        "A behemothic gorefrost golem raises a colossal fist of enchanted ice overhead and brings {pronoun} crashing down. A line of jagged ice streaks along the ground, racing toward you!",
+        "A behemothic gorefrost golem slams {pronoun} head into you!",
+        "A behemothic gorefrost golem pounds the ground with {pronoun} vast fists of ice!",
+        "A behemothic gorefrost golem swings {pronoun} heavy spear in an immense sweep at you!",
+        "A behemothic gorefrost golem throws {pronoun} arms out wide, wreathing {pronoun} bulk in corruscating radiance!",
+        "A behemothic gorefrost golem slams {pronoun} craggy fists together abruptly, sending a wave of force thrumming through the area.",
+        "A behemothic gorefrost golem charges towards {target} and attempts to headbutt {pronoun}!",
+        "A behemothic gorefrost golem swings {pronoun} fel-hafted handaxe in an immense sweep at {target}!",
+        "A behemothic gorefrost golem slams {pronoun} head into {target}!",
+        "A behemothic gorefrost golem charges towards {target} and attempts to headbutt {target}!",
+        "A behemothic gorefrost golem thrusts a blocky fist toward {target}!",
+        "A behemothic gorefrost golem swings {pronoun} wooden cudgel in an immense sweep at you!",
+        "A behemothic gorefrost golem slams {pronoun}* {pronoun}*d *n*o you!",
+        "A behemothic gorefrost golem swings {pronoun} colossal fist of ice at you!",
+        "A behemothic gorefrost golem swings {pronoun} colossal fist of ice at {target}!",
+        "A behemothic gorefrost golem raises a colossal fist of enchanted ice overhead and brings {pronoun} crashing down. A line of jagged ice streaks along the ground, racing toward {target}!",
+        "A behemothic gorefrost golem swings a colossal fist of ice at {target}!",
+        "A behemothic gorefrost golem swings {pronoun} {weapon} in an immense sweep at you!",
+        "A behemothic gorefrost golem swings {pronoun} {weapon} in an immense sweep at {target}!"
+      ],
+      closed_fist: [
+        "A behemothic gorefrost golem swings a colossal fist of ice at you!"
+      ],
+      cold_snap: [
+        "A behemothic gorefrost golem thrusts a blocky fist toward you!"
+      ],
+      colossal_fist: [
+        "A behemothic gorefrost golem raises a colossal fist of enchanted ice overhead and brings it crashing down.  A line of jagged ice streaks along the ground, racing toward you!"
+      ],
+      haymaker: [
+        "A behemothic gorefrost golem clenches its right fist and brings its arm back for a roundhouse punch aimed at you!"
+      ],
+      headbutt: [
+        "A behemothic gorefrost golem charges towards you and attempts a headbutt!"
+      ],
+      heat_leaching: [
+        "Hungering cold tears at your flesh, viciously leaching the heat from your body!"
+      ],
+      hurl: [
+        "A behemothic gorefrost golem hurls a chunk of ice at {target}!"
+      ],
+      major_elemental_wave: [
+        "Intense light begins to bleed from within a behemothic gorefrost golem, shimmering blue and unsavory scarlet warring with one another for brilliance.  A wave of blinding elemental energy pulses from the golem, so cold that moisture in the air crystallizes into stinging frost."
+      ],
+      minor_cold: [
+        "A behemothic gorefrost golem hurls a chunk of ice at you!"
+      ],
+      pound: [
+        "A behemothic gorefrost golem rears back slowly and swings a mighty arm of blood-flecked ice down at you!"
+      ],
+      stomp: [
+        "Raising a prodigious foot, a behemothic gorefrost golem tries to stomp on you!"
+      ],
+      topple: [
+        "Despite desperate windmilling to catch its balance, a behemothic gorefrost golem topples toward you!  You leap to the side and avoid being flattened as the golem topples over with a thunderous crash!"
+      ],
+      twin_hammerfists: [
+        "A behemothic gorefrost golem raises its hands high, laces them together and brings them crashing down towards you!"
+      ]
+    },
+    info: {
+      general: [
+        "* Like many other creatures of this type, these golems' high amount of health and immunity to being killed by lethal crits is offset by low DS. This makes flurries of unaimed attacks such as assault techniques or mstrikes backed up by Two Weapon Combat, assault techniques or mstrikes using unarmed combat, or repeated attacks backed up by Celerity (506) relatively effective.\n* These golems take additional damage from fire, though the exact mechanics of how aren't known at the time of this writing.\n* Weapon techniques and combat maneuvers that knock golems prone and inflict Staggered, like Twin Hammerfists, Sweep, or Tackle, can often stall out golems since their combat rounds are fairly slow and they don't have high SMR defense."
+      ],
+      class_tips: {
+        cleric: [],
+        paladin: [],
+        ranger: [],
+        bard: [],
+        wizard: [
+          "* Golems are great targets for Mana Leech (516) as they have a lower TD.\n* Open with Hand of Tonis (505) and prioritize keeping the golems prone. Follow up by bolting."
+        ],
+        empath: [],
+        rogue: [],
+        warrior: [],
+        sorcerer: []
+      },
+      miscellany: []
+    },
   }
 }

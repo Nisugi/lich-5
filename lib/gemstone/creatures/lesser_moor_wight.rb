@@ -110,27 +110,35 @@
     gems: true,
     boxes: true,
     skin: "wight skull",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Once beautiful beyond comprehension, the moor wight before you is now as disgusting as it was once charming. The wight has a slender, decaying body hidden by tattered and fading robes. Plainly written across the moor wight's face is an expression of eternal anguish and pain, silently speaking of the horrofic events which unfolded during its life to bring it to this sad state."
     ],
     arrival: [
-      "A lesser moor wight arrives on a cold wind.",
+      "A lesser moor wight arrives on a cold wind."
     ],
     flee: [
-      "A lesser moor wight wails madly as it limps {direction}."
+      "A lesser moor wight wails madly as it limps {direction}.",
+      "A lesser moor wight moves away, striding {direction}."
     ],
-    death: [],
+    death: [
+      "A lesser moor wight crumples to a heap on the ground."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [
-      "A lesser moor wight swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A lesser moor wight swings {weapon} at you!"
+      ],
+      cast: [
+        "A lesser moor wight points a decaying finger at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

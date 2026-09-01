@@ -88,7 +88,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -96,26 +98,28 @@
     ],
     arrival: [],
     flee: [
-      "A skeletal soldier clatters {direction}."
+      "A skeletal soldier clatters {direction}.",
+      "A skeletal soldier backs away.",
+      "A skeletal soldier backs away with {pronoun} iron morning star dragging along the ground in front of {pronoun}.",
+      "A skeletal soldier backs away with {pronoun} {weapon} dragging along the ground in front of {pronoun}."
     ],
     death: [
-      "The skeletal soldier struggles to rise to its feet, but soon lies still.",
-      "Beautiful shot pierces both lungs, the skeletal soldier makes a wheezing noise, and drops dead!",
-      "The skeletal soldier slumps to the ground."
+      "The skeletal soldier struggles to rise to its feet, but soon lies still."
     ],
     decay: [
-      "A skeletal soldier crumbles to a fine white powder.",
-      "Acid dissolves connecting cartilage, freeing the skeletal soldier's ribs to move independently."
+      "A skeletal soldier crumbles to a fine white powder."
     ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A skeletal soldier swings {weapon} at you!"
-    ],
-    bite: [],
-    claw: [
-      "A skeletal soldier claws at you!"
-    ],
+    attacks: {
+      attack: [
+        "A skeletal soldier swings {weapon} at you!",
+        "A skeletal soldier swings a crude black iron morning star at {target}!"
+      ],
+      claw: [
+        "A skeletal soldier claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

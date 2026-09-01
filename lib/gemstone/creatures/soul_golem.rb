@@ -90,7 +90,9 @@
     gems: nil,
     boxes: true,
     skin: "No",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -102,9 +104,13 @@
     decay: [],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A soul golem pounds at you with {pronoun} glaes gauntleted left fist!",
+        "A soul golem pounds at you with {pronoun} glaes gauntleted right fist!",
+        "A soul golem tries to ensnare you in {pronoun} solid glaes arms!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

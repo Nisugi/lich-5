@@ -94,28 +94,35 @@
     gems: nil,
     boxes: nil,
     skin: "a pair of caribou antlers",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "A hoofed herbivore of the northern snowfields, the caribou is very similar to a large deer with a bad attitude. The caribou uses her large rack of antlers to eagerly impale anything that would encroach upon her territory. Light brown hide affords the caribou some camouflage against the more barren slopes, but the caribou relies on her defenses and running in herds to handle most predators."
     ],
-    arrival: [],
+    arrival: [
+      "A caribou lopes into the area!"
+    ],
     flee: [
-      "A caribou lopes {direction}."
+      "A caribou lopes {direction}.",
+      "A caribou lopes {direction}, shuddering in pain.",
+      "A caribou lopes {direction}, shuddering in pain!"
     ],
-    death: [
-      "The caribou slumps to the ground."
-    ],
+    death: [],
     decay: [],
-    search: [],
-    spell_prep: [],
-    attack: [
-      "A caribou charges you with {pronoun} antlers!",
-      "A caribou rears back and kicks {pronoun} front hooves at you!"
+    search: [
+      "A caribou snuffles the ground hungrily."
     ],
-    bite: [],
-    claw: [],
+    spell_prep: [],
+    attacks: {
+      attack: [
+        "A caribou charges you with {pronoun} antlers!",
+        "A caribou rears back and kicks {pronoun} front hooves at you!",
+        "A caribou charges {target} with {pronoun} antlers!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

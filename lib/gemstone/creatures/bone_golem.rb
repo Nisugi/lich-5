@@ -100,24 +100,32 @@
     gems: true,
     boxes: true,
     skin: "a golem bone",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
       "Dried bones send sickening clacking sounds throughout the area at the barest movement of a bone golem. Its large skull capped with twin horns formed of sharply spiraled bone begins a long spine ending in a sharp tail that whips back and forth in a vicious swipe. Even longer than the snout of the bone golem are its sickly jointed claws which have been filed at the ends into terrifying weapons. Contrary to the empty feeling of its bones, it moves with the blocky movement of an enormous, fleshed creature."
     ],
     arrival: [],
-    flee: [],
+    flee: [
+      "A bone golem pounds {direction}, shuffling slowly but surely."
+    ],
     death: [],
-    decay: [],
+    decay: [
+      "A bone golem's remains wither into dust."
+    ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A bone golem pounds at you with {pronoun} skeletal fist!",
-      "A bone golem pounds at you with {pronoun} skeletal fist!"
-    ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A bone golem pounds at you with {pronoun} skeletal fist!",
+        "A bone golem tries to ensnare {target} in {pronoun} bony arms!",
+        "A bone golem tries to ensnare you in {pronoun} bony arms!",
+        "A bone golem swings {pronoun} segmented tail of bestial vertebrae at {target}!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

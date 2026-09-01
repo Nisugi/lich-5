@@ -112,7 +112,9 @@
     gems: true,
     boxes: true,
     skin: nil,
-    other: "small troll tooth, large troll tooth"
+    other: "small troll tooth, large troll tooth",
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -122,21 +124,32 @@
       "The ground shakes as an enraged stone troll stomps in!"
     ],
     flee: [
-      "There is a loud rumbling as a stone troll crawls {direction} of the ground!"
+      "There is a loud rumbling as a stone troll crawls out of the ground!"
     ],
     death: [
       "The stone troll topples to the ground motionless.",
       "The stone troll shudders violently for a moment, then goes still."
     ],
-    decay: [],
+    decay: [
+      "A stone troll sinks into the ground, leaving nothing behind."
+    ],
     search: [],
     spell_prep: [],
-    attack: [
-      "A stone troll stomps at you with {pronoun} foot!",
-      "A stone troll swings {weapon} at you!",
+    stun_break: [
+      "A stone troll flails {pronoun} arms about angrily, shaking off the stun!"
     ],
-    bite: [],
-    claw: [],
+    attacks: {
+      attack: [
+        "A stone troll stomps at you with {pronoun} foot!",
+        "A stone troll swings {weapon} at you!"
+      ],
+      claw: [
+        "A stone troll claws {pronoun} way into the ground and burrows {direction}."
+      ],
+      hurl: [
+        "A stone troll throws a flail at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

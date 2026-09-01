@@ -94,7 +94,9 @@
     gems: nil,
     boxes: nil,
     skin: "dark panther pelt",
-    other: nil
+    other: nil,
+    armaments: nil,
+    transmogs: nil
   },
   messaging: {
     description: [
@@ -110,19 +112,18 @@
     ],
     death: [
       "The dark panther lets out a final caterwaul and dies.",
-      "The dark panther crumples to the ground and dies.",
-      "Beautiful shot pierces both lungs, the dark panther makes a wheezing noise, and drops dead!"
+      "The dark panther crumples to the ground and dies."
     ],
     decay: [
       "A dark panther decays into a compost of fangs, fur and claws."
     ],
     search: [],
     spell_prep: [],
-    attack: [],
-    bite: [],
-    claw: [
-      "A dark panther claws at you!"
-    ],
+    attacks: {
+      claw: [
+        "A dark panther claws at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {
