@@ -101,8 +101,6 @@
     search: [],
     spell_prep: [],
     attacks: {
-      attack: [
-      ],
       bite: [
         "A large thorned shrub snaps a twig towards {target}!"
       ]
