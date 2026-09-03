@@ -22,7 +22,11 @@ module Lich
                             /You are blinded!/,
                             /Your eyes suddenly cloud over\.  A moment later you realize you cannot see at all\./,
                             /Suddenly, a silver mist swirls about you\.  Golden arcs streak across your vision/,
-                            /(?<target>.+?) is blinded!/
+                            /(?<target>.+?) is blinded!/,
+                            # re-blind confirmation (round-11/12 generic
+                            # table: 7,232 lines across 272 creatures);
+                            # add_status is idempotent so re-adding is safe
+                            /(?<target>.+?) is already blinded\./
                           ].freeze,
                           [
                             /(?<target>.+?) vision clears\./,
@@ -83,7 +87,11 @@ module Lich
                             /(?<target>.+?) stands up\./,
                             # round-5
                             /(?<target>.+?) leaps (?:back )?up from the ground/,
-                            /(?<target>.+?) rises back into a standing position/
+                            /(?<target>.+?) rises back into a standing position/,
+                            # round-11/12 generic table: 7,715 lines across
+                            # 45 creatures; the bare "stands up." pattern
+                            # above requires the period right after "up"
+                            /(?<target>.+?) stands up with a grunt\./
                           ].freeze),
 
             # round-5: Judgment and knockdown-to-knees results (~200 + every
@@ -181,7 +189,11 @@ module Lich
                           [
                             /(?<target>.+?) wakes up\./,
                             /(?<target>.+?) awakens\./,
-                            /(?<target>.+?) opens .+? eyes\./
+                            /(?<target>.+?) opens .+? eyes\./,
+                            # 2p-attacker form of the :unconscious remove
+                            # below (round-11/12 generic table: 4,836 lines
+                            # across 124 creatures)
+                            /(?<target>.+?) is awakened by your attack!/
                           ].freeze),
 
             StatusDef.new(:poisoned,
@@ -273,7 +285,20 @@ module Lich
                             /(?<target>.+?) suddenly looks very weak!/,
                             /(?<target>.+?) appears weak and feeble, #{MK_PRE}(?:his|her|its)#{MK_POST} movements sluggish\./
                           ].freeze,
-                          [/(?<target>.+?) appears to recover some strength\./].freeze)
+                          [/(?<target>.+?) appears to recover some strength\./].freeze),
+
+            # Remove-only, like :dispelled/:disarmed: creatures enter hiding
+            # through per-creature flavor lines (creature messaging, not
+            # grammar), but the un-hide transitions are shared wording
+            # (round-11/12 candidate list: "is revealed from hiding."
+            # 2,533x/2, "is forced out of hiding!" 416x/5). Removing a
+            # status that was never added is a harmless no-op.
+            StatusDef.new(:hidden,
+                          [].freeze,
+                          [
+                            /(?<target>.+?) is revealed from hiding\./,
+                            /(?<target>.+?) is forced out of hiding!/
+                          ].freeze)
           ].freeze
 
           # Create lookup tables for fast pattern matching

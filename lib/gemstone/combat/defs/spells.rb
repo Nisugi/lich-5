@@ -31,7 +31,13 @@ module Lich
               /The earth cracks beneath (?<target>[^,]+), releasing a column of frigid air!/,
               /Icy stalagmites burst from the ground beneath (?<target>[^!]+)!/
             ].freeze),
-            AttackDef.new(:ewave, [/(?:An?|Some) (?<target>.+?) is buffeted by the (?:\w+ ethereal waves|formless black (?:waves|sphere))(?: and is knocked to the ground)?\./].freeze),
+            # Sphere descriptors are multi-word ("icy blue", "snapping and
+            # crackling"), hence .+? rather than \w+ (round-12 generic table:
+            # icy blue 3,497x/14, snapping and crackling 3,315x/15,
+            # crimson 3,312x/12). The ", but is unaffected" fused form is
+            # deliberately NOT matched here - it settles through the
+            # :unaffected outcome's named-target fallback instead.
+            AttackDef.new(:ewave, [/(?:An?|Some) (?<target>.+?) is buffeted by the (?:.+? ethereal (?:waves|sphere)|formless black (?:waves|sphere))(?: and is knocked to the ground)?\./].freeze),
             AttackDef.new(:natures_fury, [/The surroundings advance upon (?<target>.+?) with relentless fury!/].freeze),
             AttackDef.new(:searing_light, [/The radiant burst of light engulfs (?<target>[^!]+)!/].freeze),
             AttackDef.new(:spikethorn, [/Dozens of long thorns suddenly grow out from the ground underneath (?<target>[^!]+)!/].freeze),

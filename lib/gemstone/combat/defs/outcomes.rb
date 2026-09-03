@@ -136,7 +136,11 @@ module Lich
               /You manage to dodge .+?(?:, and it passes harmlessly by| in the nick of time)!/,
               /You dodge the .+? by a hair!/,
               /Bobbing and weaving, you dodge the .+?!/,
-              /(?<target>.+?) deftly avoids the stroke\./
+              /(?<target>.+?) deftly avoids the stroke\./,
+              # 1712 Ethereal Censer per-target dodge - pairs with the
+              # :ethereal_censer "becomes enveloped" initiation (round-11/12
+              # coverage channel: 13,713 lines across 12 creatures)
+              /(?<target>.+?) avoids the incense smoke!/
             ].freeze),
             OutcomeDef.new(:block, [
               /Amazingly, (?<target>.+?) manages to block the .+? with .+?!/,
@@ -214,7 +218,22 @@ module Lich
             # capture), so this line is the ONLY thing that settles the
             # cast event. Distinct from :warded (a roll happened and failed).
             OutcomeDef.new(:unaffected, [
-              /(?<target>.+?) does not seem to be affected\./
+              /(?<target>.+?) does not seem to be affected\./,
+              # AoE sweep no-effect lines (round-12 tracker candidates).
+              # The fused "buffeted ..., but is unaffected" form MUST sit
+              # before the bare form: the lazy target capture of the bare
+              # pattern would otherwise swallow "... waves, but" into the
+              # target text.
+              #   "A giant warg is buffeted by the formless black waves,
+              #    but is unaffected."  (~2.0k lines, ewave/sphere family)
+              /(?<target>.+?) is buffeted by the .+?, but is unaffected\./,
+              #   "A tattooed gigas berserker is unaffected."  (~2.2k lines)
+              /(?<target>.+?) is unaffected\./,
+              # Elemental no-effect on immune creatures - per-target line of
+              # our elemental AoEs/flares (round-11/12 status candidate list:
+              # plasma 5,983x/4, electricity 5,571x/5, cold 4,479x/7,
+              # heat 1,094x/4; only the four observed elements listed)
+              /(?<target>.+?) is unharmed by the (?:plasma|electricity|cold|heat)!/
             ].freeze),
             OutcomeDef.new(:fumble, [/d100 == 1 FUMBLE!/].freeze),
             OutcomeDef.new(:hindrance, [/\[Spell Hindrance for (?<armor>.+?) is (?<hindrance_amount>\d+)% with current Armor Use skill, d100= (?<roll>\d+)\]/].freeze),
