@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fanged rodent",
-  noun: "",
+  noun: "rodent",
   url: "https://gswiki.play.net/fanged_rodent",
   picture: "",
   level: 1,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

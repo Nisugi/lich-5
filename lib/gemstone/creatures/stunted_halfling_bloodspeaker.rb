@@ -1,6 +1,6 @@
 {
   name: "stunted halfling bloodspeaker",
-  noun: "",
+  noun: "bloodspeaker",
   url: "https://gswiki.play.net/Stunted_halfling_bloodspeaker",
   picture: "",
   level: 103,
@@ -9,6 +9,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

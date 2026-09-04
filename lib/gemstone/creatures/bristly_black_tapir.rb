@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "bristly black tapir",
-  noun: "",
+  noun: "tapir",
   url: "https://gswiki.play.net/bristly_black_tapir",
   picture: "",
   level: 29,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

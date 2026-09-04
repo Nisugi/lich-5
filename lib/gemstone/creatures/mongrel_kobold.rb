@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mongrel kobold",
-  noun: "",
+  noun: "kobold",
   url: "https://gswiki.play.net/mongrel_kobold",
   picture: "",
   level: 4,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

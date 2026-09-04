@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ash guardian",
-  noun: "",
+  noun: "guardian",
   url: "https://gswiki.play.net/ash_guardian",
   picture: "",
   level: 87,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

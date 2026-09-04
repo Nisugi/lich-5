@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "bony tenthsworn occultist",
-  noun: "",
+  noun: "occultist",
   url: "https://gswiki.play.net/bony_tenthsworn_occultist",
   picture: "",
   level: 59,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

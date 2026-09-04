@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "giant veaba",
-  noun: "",
+  noun: "veaba",
   url: "https://gswiki.play.net/giant_veaba",
   picture: "",
   level: 17,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

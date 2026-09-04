@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "stone giant",
-  noun: "",
+  noun: "giant",
   url: "https://gswiki.play.net/stone_giant",
   picture: "",
   level: 58,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: true,

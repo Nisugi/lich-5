@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "sand devil",
-  noun: "",
+  noun: "devil",
   url: "https://gswiki.play.net/sand_devil",
   picture: "",
   level: 48,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

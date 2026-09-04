@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cave worm",
-  noun: "",
+  noun: "worm",
   url: "https://gswiki.play.net/cave_worm",
   picture: "",
   level: 10,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

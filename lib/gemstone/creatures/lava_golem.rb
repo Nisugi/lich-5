@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lava golem",
-  noun: "",
+  noun: "golem",
   url: "https://gswiki.play.net/lava_golem",
   picture: "",
   level: 56,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

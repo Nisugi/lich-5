@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "veteran reiver",
-  noun: "",
+  noun: "reiver",
   url: "https://gswiki.play.net/veteran_reiver",
   picture: "",
   level: 24,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

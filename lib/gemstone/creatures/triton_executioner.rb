@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "triton executioner",
-  noun: "",
+  noun: "executioner",
   url: "https://gswiki.play.net/triton_executioner",
   picture: "",
   level: 96,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

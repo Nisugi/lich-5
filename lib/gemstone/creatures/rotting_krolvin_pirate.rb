@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "rotting krolvin pirate",
-  noun: "",
+  noun: "pirate",
   url: "https://gswiki.play.net/rotting_krolvin_pirate",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

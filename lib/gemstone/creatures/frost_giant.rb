@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "frost giant",
-  noun: "",
+  noun: "giant",
   url: "https://gswiki.play.net/frost_giant",
   picture: "",
   level: 38,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

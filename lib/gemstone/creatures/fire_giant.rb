@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fire giant",
-  noun: "",
+  noun: "giant",
   url: "https://gswiki.play.net/fire_giant",
   picture: "",
   level: 36,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

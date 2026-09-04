@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater bog troll",
-  noun: "",
+  noun: "troll",
   url: "https://gswiki.play.net/greater_bog_troll",
   picture: "",
   level: 39,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

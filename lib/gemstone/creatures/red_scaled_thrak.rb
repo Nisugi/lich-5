@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "red-scaled thrak",
-  noun: "",
+  noun: "thrak",
   url: "https://gswiki.play.net/red-scaled_thrak",
   picture: "",
   level: 48,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

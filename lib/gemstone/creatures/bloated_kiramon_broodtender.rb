@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "bloated kiramon broodtender",
-  noun: "",
+  noun: "broodtender",
   url: "https://gswiki.play.net/bloated_kiramon_broodtender",
   picture: "",
   level: 112,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: nil,

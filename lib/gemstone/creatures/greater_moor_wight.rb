@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater moor wight",
-  noun: "",
+  noun: "wight",
   url: "https://gswiki.play.net/greater_moor_wight",
   picture: "",
   level: 39,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

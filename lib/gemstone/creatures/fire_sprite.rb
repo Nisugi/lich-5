@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fire sprite",
-  noun: "",
+  noun: "sprite",
   url: "https://gswiki.play.net/fire_sprite",
   picture: "",
   level: 64,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "baesrukha",
-  noun: "",
+  noun: "baesrukha",
   url: "https://gswiki.play.net/baesrukha",
   picture: "",
   level: 42,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

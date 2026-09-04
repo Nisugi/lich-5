@@ -1,6 +1,6 @@
 {
   name: "bloody halfling cannibal",
-  noun: "",
+  noun: "cannibal",
   url: "https://gswiki.play.net/Bloody_halfling_cannibal",
   picture: "",
   level: 101,
@@ -9,6 +9,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

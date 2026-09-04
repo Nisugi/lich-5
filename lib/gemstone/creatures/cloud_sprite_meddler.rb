@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cloud sprite meddler",
-  noun: "",
+  noun: "meddler",
   url: "https://gswiki.play.net/cloud_sprite_meddler",
   picture: "",
   level: 27,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

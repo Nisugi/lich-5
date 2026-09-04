@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mountain snowcat",
-  noun: "",
+  noun: "snowcat",
   url: "https://gswiki.play.net/mountain_snowcat",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

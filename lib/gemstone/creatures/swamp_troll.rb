@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "swamp troll",
-  noun: "",
+  noun: "troll",
   url: "https://gswiki.play.net/swamp_troll",
   picture: "",
   level: 14,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

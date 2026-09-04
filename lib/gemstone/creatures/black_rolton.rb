@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "black rolton",
-  noun: "",
+  noun: "rolton",
   url: "https://gswiki.play.net/black_rolton",
   picture: "",
   level: 1,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

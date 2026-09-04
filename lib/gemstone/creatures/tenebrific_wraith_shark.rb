@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "tenebrific wraith shark",
-  noun: "",
+  noun: "shark",
   url: "https://gswiki.play.net/tenebrific_wraith_shark",
   picture: "",
   level: 110,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

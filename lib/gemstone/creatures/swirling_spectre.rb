@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "swirling spectre",
-  noun: "",
+  noun: "spectre",
   url: "https://gswiki.play.net/swirling_spectre",
   picture: "",
   level: 37,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "n'ecare",
-  noun: "",
+  noun: "n'ecare",
   url: "https://gswiki.play.net/n'ecare",
   picture: "",
   level: 87,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

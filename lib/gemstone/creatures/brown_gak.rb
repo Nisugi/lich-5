@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "brown gak",
-  noun: "",
+  noun: "gak",
   url: "https://gswiki.play.net/brown_gak",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

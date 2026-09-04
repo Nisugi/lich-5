@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "gnoll guard",
-  noun: "",
+  noun: "guard",
   url: "https://gswiki.play.net/gnoll_guard",
   picture: "",
   level: 17,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

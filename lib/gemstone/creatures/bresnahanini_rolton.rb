@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "bresnahanini rolton",
-  noun: "",
+  noun: "rolton",
   url: "https://gswiki.play.net/bresnahanini_rolton",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

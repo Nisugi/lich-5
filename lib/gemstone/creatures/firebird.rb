@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "firebird",
-  noun: "",
+  noun: "firebird",
   url: "https://gswiki.play.net/firebird",
   picture: "",
   level: 85,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

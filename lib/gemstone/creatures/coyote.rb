@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "coyote",
-  noun: "",
+  noun: "coyote",
   url: "https://gswiki.play.net/coyote",
   picture: "",
   level: 5,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "death dirge",
-  noun: "",
+  noun: "dirge",
   url: "https://gswiki.play.net/death_dirge",
   picture: "",
   level: 9,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

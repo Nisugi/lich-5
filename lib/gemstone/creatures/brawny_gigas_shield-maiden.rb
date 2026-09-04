@@ -1,6 +1,6 @@
 {
   name: "brawny gigas shield-maiden",
-  noun: "",
+  noun: "shield-maiden",
   url: "https://gswiki.play.net/Brawny_gigas_shield-maiden",
   picture: "",
   level: 106,
@@ -9,6 +9,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

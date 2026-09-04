@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "phantasma",
-  noun: "",
+  noun: "phantasma",
   url: "https://gswiki.play.net/phantasma",
   picture: "",
   level: 42,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

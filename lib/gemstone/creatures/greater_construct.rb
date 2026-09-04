@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater construct",
-  noun: "",
+  noun: "construct",
   url: "https://gswiki.play.net/greater_construct",
   picture: "",
   level: 96,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: false,
   muggable: true,

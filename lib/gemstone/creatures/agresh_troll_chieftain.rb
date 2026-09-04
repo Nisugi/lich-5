@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Agresh troll chieftain",
-  noun: "",
+  noun: "chieftain",
   url: "https://gswiki.play.net/agresh_troll_chieftain",
   picture: "",
   level: 20,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

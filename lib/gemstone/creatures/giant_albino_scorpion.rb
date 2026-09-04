@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "giant albino scorpion",
-  noun: "",
+  noun: "scorpion",
   url: "https://gswiki.play.net/giant_albino_scorpion",
   picture: "",
   level: 24,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: true,

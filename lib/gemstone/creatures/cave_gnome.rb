@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cave gnome",
-  noun: "",
+  noun: "gnome",
   url: "https://gswiki.play.net/cave_gnome",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

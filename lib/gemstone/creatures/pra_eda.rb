@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "pra'eda",
-  noun: "",
+  noun: "pra'eda",
   url: "https://gswiki.play.net/pra'eda",
   picture: "",
   level: 29,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

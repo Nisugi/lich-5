@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser minotaur",
-  noun: "",
+  noun: "minotaur",
   url: "https://gswiki.play.net/lesser_minotaur",
   picture: "",
   level: 74,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

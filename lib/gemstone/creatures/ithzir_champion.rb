@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Ithzir champion",
-  noun: "",
+  noun: "champion",
   url: "https://gswiki.play.net/ithzir_champion",
   picture: "",
   level: 102,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "zombie rolton",
-  noun: "",
+  noun: "rolton",
   url: "https://gswiki.play.net/zombie_rolton",
   picture: "",
   level: 1,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

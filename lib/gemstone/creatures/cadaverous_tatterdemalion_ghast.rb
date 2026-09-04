@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cadaverous tatterdemalion ghast",
-  noun: "",
+  noun: "ghast",
   url: "https://gswiki.play.net/cadaverous_tatterdemalion_ghast",
   picture: "",
   level: 101,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

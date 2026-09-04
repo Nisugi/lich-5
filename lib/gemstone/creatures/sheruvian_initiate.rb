@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Sheruvian initiate",
-  noun: "",
+  noun: "initiate",
   url: "https://gswiki.play.net/sheruvian_initiate",
   picture: "",
   level: 37,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

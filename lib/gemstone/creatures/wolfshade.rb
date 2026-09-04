@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "wolfshade",
-  noun: "",
+  noun: "wolfshade",
   url: "https://gswiki.play.net/wolfshade",
   picture: "",
   level: 15,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

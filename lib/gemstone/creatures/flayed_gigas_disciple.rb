@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "flayed gigas disciple",
-  noun: "",
+  noun: "disciple",
   url: "https://gswiki.play.net/flayed_gigas_disciple",
   picture: "",
   level: 113,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "triton radical",
-  noun: "",
+  noun: "radical",
   url: "https://gswiki.play.net/triton_radical",
   picture: "",
   level: 100,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

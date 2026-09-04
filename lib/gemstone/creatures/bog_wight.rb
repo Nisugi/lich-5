@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "bog wight",
-  noun: "",
+  noun: "wight",
   url: "https://gswiki.play.net/bog_wight",
   picture: "",
   level: 44,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

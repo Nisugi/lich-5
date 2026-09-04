@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "writhing frost-glazed vine",
-  noun: "",
+  noun: "vine",
   url: "https://gswiki.play.net/writhing_frost-glazed_vine",
   picture: "",
   level: 40,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

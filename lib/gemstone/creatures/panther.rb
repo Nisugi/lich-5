@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "panther",
-  noun: "",
+  noun: "panther",
   url: "https://gswiki.play.net/panther",
   picture: "",
   level: 15,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ghost",
-  noun: "",
+  noun: "ghost",
   url: "https://gswiki.play.net/ghost",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

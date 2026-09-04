@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "kiramon worker",
-  noun: "",
+  noun: "worker",
   url: "https://gswiki.play.net/kiramon_worker",
   picture: "",
   level: 40,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

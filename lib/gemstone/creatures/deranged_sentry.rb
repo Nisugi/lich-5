@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "deranged sentry",
-  noun: "",
+  noun: "sentry",
   url: "https://gswiki.play.net/deranged_sentry",
   picture: "",
   level: 13,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

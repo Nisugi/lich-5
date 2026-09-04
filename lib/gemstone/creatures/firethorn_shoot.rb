@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "firethorn shoot",
-  noun: "",
+  noun: "shoot",
   url: "https://gswiki.play.net/firethorn_shoot",
   picture: "",
   level: 44,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: false,

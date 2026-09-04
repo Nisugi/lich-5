@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater faeroth",
-  noun: "",
+  noun: "faeroth",
   url: "https://gswiki.play.net/greater_faeroth",
   picture: "",
   level: 50,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

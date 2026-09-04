@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "brown spinner",
-  noun: "",
+  noun: "spinner",
   url: "https://gswiki.play.net/brown_spinner",
   picture: "",
   level: 9,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: false,
   muggable: true,

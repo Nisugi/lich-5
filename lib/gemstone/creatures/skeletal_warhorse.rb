@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "skeletal warhorse",
-  noun: "",
+  noun: "warhorse",
   url: "https://gswiki.play.net/skeletal_warhorse",
   picture: "",
   level: 37,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

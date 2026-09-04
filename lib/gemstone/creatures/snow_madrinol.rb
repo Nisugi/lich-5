@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "snow madrinol",
-  noun: "",
+  noun: "madrinol",
   url: "https://gswiki.play.net/snow_madrinol",
   picture: "",
   level: 52,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

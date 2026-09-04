@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "athletic dark-eyed incubus",
-  noun: "",
+  noun: "incubus",
   url: "https://gswiki.play.net/athletic_dark-eyed_incubus",
   picture: "",
   level: 68,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

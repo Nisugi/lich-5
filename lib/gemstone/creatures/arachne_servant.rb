@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "arachne servant",
-  noun: "",
+  noun: "servant",
   url: "https://gswiki.play.net/arachne_servant",
   picture: "",
   level: 21,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "huge water elemental",
-  noun: "",
+  noun: "elemental",
   url: "https://gswiki.play.net/huge_water_elemental",
   picture: "",
   level: 95,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,
@@ -21,7 +22,7 @@
     "Magical"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 300,
   speed: 8,
   height: nil,
   size: "",

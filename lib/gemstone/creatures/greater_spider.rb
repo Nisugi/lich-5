@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater spider",
-  noun: "",
+  noun: "spider",
   url: "https://gswiki.play.net/greater_spider",
   picture: "",
   level: 8,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: false,
   muggable: true,

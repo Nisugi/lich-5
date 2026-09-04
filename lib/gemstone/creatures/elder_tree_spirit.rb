@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "elder tree spirit",
-  noun: "",
+  noun: "spirit",
   url: "https://gswiki.play.net/elder_tree_spirit",
   picture: "",
   level: 30,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

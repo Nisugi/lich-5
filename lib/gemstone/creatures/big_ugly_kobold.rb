@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "big ugly kobold",
-  noun: "",
+  noun: "kobold",
   url: "https://gswiki.play.net/big_ugly_kobold",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Sheruvian monk",
-  noun: "",
+  noun: "monk",
   url: "https://gswiki.play.net/sheruvian_monk",
   picture: "",
   level: 41,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

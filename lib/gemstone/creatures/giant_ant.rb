@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "giant ant",
-  noun: "",
+  noun: "ant",
   url: "https://gswiki.play.net/giant_ant",
   picture: "",
   level: 1,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: false,
   muggable: false,

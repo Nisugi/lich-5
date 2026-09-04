@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "black leopard",
-  noun: "",
+  noun: "leopard",
   url: "https://gswiki.play.net/black_leopard",
   picture: "",
   level: 15,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

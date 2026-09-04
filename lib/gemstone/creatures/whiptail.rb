@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "whiptail",
-  noun: "",
+  noun: "whiptail",
   url: "https://gswiki.play.net/whiptail",
   picture: "",
   level: 4,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

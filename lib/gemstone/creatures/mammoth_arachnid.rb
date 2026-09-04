@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mammoth arachnid",
-  noun: "",
+  noun: "arachnid",
   url: "https://gswiki.play.net/mammoth_arachnid",
   picture: "",
   level: 30,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: false,
   muggable: true,

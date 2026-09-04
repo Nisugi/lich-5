@@ -1,6 +1,6 @@
 {
   name: "savage fork-tongued wendigo",
-  noun: "",
+  noun: "wendigo",
   url: "https://gswiki.play.net/Savage_fork-tongued_wendigo",
   picture: "",
   level: 105,
@@ -9,6 +9,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   muggable: true,
   sleepable: true,

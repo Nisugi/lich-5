@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "radiant-eyed goliath auramancer",
-  noun: "",
+  noun: "auramancer",
   url: "https://gswiki.play.net/radiant-eyed_goliath_auramancer",
   picture: "",
   level: 115,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,
@@ -100,7 +101,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "A radiant-eyed goliath auramancer's eyes roll up into {pronoun} head as {pronoun} body goes limp on the ground."
+    ],
     decay: [],
     search: [],
     spell_prep: [

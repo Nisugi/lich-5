@@ -1,6 +1,6 @@
 {
   name: "Colossal boreal undansormr",
-  noun: "",
+  noun: "undansormr",
   url: "https://gswiki.play.net/Colossal_boreal_undansormr",
   picture: "",
   level: 111,
@@ -9,6 +9,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

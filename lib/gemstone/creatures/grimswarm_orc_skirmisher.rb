@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Grimswarm orc skirmisher",
-  noun: "orc",
+  noun: "skirmisher",
   url: "https://gswiki.play.net/Grimswarm",
   picture: "",
   level: nil,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,
@@ -90,7 +91,9 @@
       "A Grimswarm orc skirmisher heads {direction}."
     ],
     death: [],
-    decay: [],
+    decay: [
+      "A Grimswarm orc skirmisher decays into compost."
+    ],
     search: [],
     spell_prep: [],
     attacks: {

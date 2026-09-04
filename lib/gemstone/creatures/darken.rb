@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "darken",
-  noun: "",
+  noun: "darken",
   url: "https://gswiki.play.net/darken",
   picture: "",
   level: 28,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,
@@ -59,7 +60,12 @@
     mns_td: 93,
     mnm_td: nil,
     defensive_spells: [],
-    defensive_abilities: [],
+    defensive_abilities: [
+      {
+        name: "invisibility",
+        note: "naturally invisible; requires 109 or 205 to reveal"
+      }
+    ],
     special_defenses: []
   },
   special_other: nil,

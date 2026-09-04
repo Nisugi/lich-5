@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "muscular brindlecat",
-  noun: "",
+  noun: "brindlecat",
   url: "https://gswiki.play.net/muscular_brindlecat",
   picture: "",
   level: nil,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

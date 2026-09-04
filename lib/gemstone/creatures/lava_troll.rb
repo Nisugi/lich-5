@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lava troll",
-  noun: "",
+  noun: "troll",
   url: "https://gswiki.play.net/lava_troll",
   picture: "",
   level: 34,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

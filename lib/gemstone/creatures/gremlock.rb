@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "gremlock",
-  noun: "",
+  noun: "gremlock",
   url: "https://gswiki.play.net/gremlock",
   picture: "",
   level: 84,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

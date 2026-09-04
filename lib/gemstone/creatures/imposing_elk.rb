@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "imposing elk",
-  noun: "",
+  noun: "elk",
   url: "https://gswiki.play.net/imposing_elk",
   picture: "",
   level: nil,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

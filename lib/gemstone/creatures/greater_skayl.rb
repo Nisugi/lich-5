@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater skayl",
-  noun: "",
+  noun: "skayl",
   url: "https://gswiki.play.net/greater_skayl",
   picture: "",
   level: 81,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

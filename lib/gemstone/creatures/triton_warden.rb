@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "triton warden",
-  noun: "",
+  noun: "warden",
   url: "https://gswiki.play.net/triton_warden",
   picture: "",
   level: 102,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

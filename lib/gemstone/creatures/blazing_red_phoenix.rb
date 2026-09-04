@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "blazing red phoenix",
-  noun: "",
+  noun: "phoenix",
   url: "https://gswiki.play.net/blazing_red_phoenix",
   picture: "",
   level: 90,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

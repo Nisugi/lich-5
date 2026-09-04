@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "swamp hag",
-  noun: "",
+  noun: "hag",
   url: "https://gswiki.play.net/swamp_hag",
   picture: "",
   level: 42,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

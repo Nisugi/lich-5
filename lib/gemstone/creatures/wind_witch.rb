@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "wind witch",
-  noun: "",
+  noun: "witch",
   url: "https://gswiki.play.net/wind_witch",
   picture: "",
   level: 16,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

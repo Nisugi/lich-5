@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shan empath",
-  noun: "",
+  noun: "empath",
   url: "https://gswiki.play.net/shan_empath",
   picture: "",
   level: 60,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

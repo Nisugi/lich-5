@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater kappa",
-  noun: "",
+  noun: "kappa",
   url: "https://gswiki.play.net/greater_kappa",
   picture: "",
   level: 7,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "giant hawk-owl",
-  noun: "",
+  noun: "hawk-owl",
   url: "https://gswiki.play.net/giant_hawk-owl",
   picture: "",
   level: 28,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

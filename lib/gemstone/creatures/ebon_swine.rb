@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ebon swine",
-  noun: "",
+  noun: "swine",
   url: "https://gswiki.play.net/ebon_swine",
   picture: "",
   level: nil,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: nil,

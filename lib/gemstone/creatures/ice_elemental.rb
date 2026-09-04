@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ice elemental",
-  noun: "",
+  noun: "elemental",
   url: "https://gswiki.play.net/ice_elemental",
   picture: "",
   level: 63,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

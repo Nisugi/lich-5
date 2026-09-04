@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "krolvin mercenary",
-  noun: "",
+  noun: "mercenary",
   url: "https://gswiki.play.net/krolvin_mercenary",
   picture: "",
   level: 17,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

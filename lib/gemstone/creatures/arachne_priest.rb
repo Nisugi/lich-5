@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "arachne priest",
-  noun: "",
+  noun: "priest",
   url: "https://gswiki.play.net/arachne_priest",
   picture: "",
   level: 26,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

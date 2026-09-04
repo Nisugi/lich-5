@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "wolverine",
-  noun: "",
+  noun: "wolverine",
   url: "https://gswiki.play.net/wolverine",
   picture: "",
   level: 24,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

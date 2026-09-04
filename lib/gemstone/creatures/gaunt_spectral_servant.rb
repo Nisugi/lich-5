@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "gaunt spectral servant",
-  noun: "",
+  noun: "servant",
   url: "https://gswiki.play.net/gaunt_spectral_servant",
   picture: "",
   level: 44,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

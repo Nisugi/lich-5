@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "plains orc shaman",
-  noun: "",
+  noun: "shaman",
   url: "https://gswiki.play.net/plains_orc_shaman",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

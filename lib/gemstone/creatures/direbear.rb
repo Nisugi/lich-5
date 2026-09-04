@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "direbear",
-  noun: "",
+  noun: "direbear",
   url: "https://gswiki.play.net/direbear",
   picture: "",
   level: 65,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -139,7 +140,8 @@
     ],
     attacks: {
       attack: [
-        "A direbear charges at you, but seeing {pronoun} coming, you acrobatically spring over the direbear!"
+        "A direbear charges at you, but seeing {pronoun} coming, you acrobatically spring over the direbear!",
+        "A direbear's face contorts as {pronoun} unleashes a gutteral, deep-throated growl at you!"
       ],
       bite: [
         "A direbear tries to bite you!"

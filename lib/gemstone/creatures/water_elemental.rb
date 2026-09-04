@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "water elemental",
-  noun: "",
+  noun: "elemental",
   url: "https://gswiki.play.net/water_elemental",
   picture: "",
   level: 92,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,
@@ -121,7 +122,9 @@
       "A water elemental just went down some descending stairs.",
       "A water elemental just went down a carved marble staircase leading to the submerged dais."
     ],
-    death: [],
+    death: [
+      "The water elemental falls to the floor dead, {pronoun} still pulsating with a blinding white hue."
+    ],
     decay: [
       "The glimmer of a white dreamstone catches your eye as the water elemental gurgles eerily and collapses into a puddle of water.",
       "The glimmer of a red spinel catches your eye as the water elemental gurgles eerily and collapses into the water.",

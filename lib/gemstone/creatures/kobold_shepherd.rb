@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "kobold shepherd",
-  noun: "",
+  noun: "shepherd",
   url: "https://gswiki.play.net/kobold_shepherd",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "yeti",
-  noun: "",
+  noun: "yeti",
   url: "https://gswiki.play.net/yeti",
   picture: "",
   level: 67,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

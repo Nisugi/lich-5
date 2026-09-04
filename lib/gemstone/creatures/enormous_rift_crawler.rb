@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "enormous rift crawler",
-  noun: "",
+  noun: "crawler",
   url: "https://gswiki.play.net/enormous_rift_crawler",
   picture: "",
   level: 103,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "plains orc chieftain",
-  noun: "",
+  noun: "chieftain",
   url: "https://gswiki.play.net/plains_orc_chieftain",
   picture: "",
   level: 21,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

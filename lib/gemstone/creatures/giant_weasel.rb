@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "giant weasel",
-  noun: "",
+  noun: "weasel",
   url: "https://gswiki.play.net/giant_weasel",
   picture: "",
   level: 14,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

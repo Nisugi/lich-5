@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "thrak",
-  noun: "",
+  noun: "thrak",
   url: "https://gswiki.play.net/thrak",
   picture: "",
   level: 8,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: nil,

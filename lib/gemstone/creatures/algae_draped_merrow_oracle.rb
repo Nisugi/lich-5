@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "algae-draped merrow oracle",
-  noun: "",
+  noun: "oracle",
   url: "https://gswiki.play.net/algae-draped_merrow_oracle",
   picture: "",
   level: 115,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

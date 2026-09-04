@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "wood wight",
-  noun: "",
+  noun: "wight",
   url: "https://gswiki.play.net/wood_wight",
   picture: "",
   level: 20,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "wasp nest",
-  noun: "",
+  noun: "nest",
   url: "https://gswiki.play.net/wasp_nest",
   picture: "",
   level: 43,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: false,

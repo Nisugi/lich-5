@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "snow crone",
-  noun: "",
+  noun: "crone",
   url: "https://gswiki.play.net/snow_crone",
   picture: "",
   level: 36,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser burrow orc",
-  noun: "",
+  noun: "orc",
   url: "https://gswiki.play.net/lesser_burrow_orc",
   picture: "",
   level: 7,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

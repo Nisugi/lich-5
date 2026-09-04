@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "dark vortece",
-  noun: "",
+  noun: "vortece",
   url: "https://gswiki.play.net/dark_vortece",
   picture: "",
   level: 42,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: false,
   muggable: false,
@@ -47,7 +48,7 @@
   },
   defense_attributes: {
     asg: nil,
-    immunities: [],
+    immunities: ["magic"],
     melee: (24..141),
     ranged: nil,
     bolt: nil,

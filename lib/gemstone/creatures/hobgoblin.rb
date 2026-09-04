@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "hobgoblin",
-  noun: "",
+  noun: "hobgoblin",
   url: "https://gswiki.play.net/hobgoblin",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: nil,
   muggable: true,

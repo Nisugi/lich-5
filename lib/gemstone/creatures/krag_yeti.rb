@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "krag yeti",
-  noun: "",
+  noun: "yeti",
   url: "https://gswiki.play.net/krag_yeti",
   picture: "",
   level: 70,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

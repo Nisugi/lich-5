@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "spectral miner",
-  noun: "",
+  noun: "miner",
   url: "https://gswiki.play.net/spectral_miner",
   picture: "",
   level: 40,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

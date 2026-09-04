@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fire ant",
-  noun: "",
+  noun: "ant",
   url: "https://gswiki.play.net/fire_ant",
   picture: "",
   level: 1,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: false,

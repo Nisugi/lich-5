@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shambling lurk",
-  noun: "",
+  noun: "lurk",
   url: "https://gswiki.play.net/shambling_lurk",
   picture: "",
   level: 95,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "black forest ogre",
-  noun: "",
+  noun: "ogre",
   url: "https://gswiki.play.net/black_forest_ogre",
   picture: "",
   level: 60,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

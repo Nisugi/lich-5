@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "minor glacei",
-  noun: "",
+  noun: "glacei",
   url: "https://gswiki.play.net/minor_glacei",
   picture: "",
   level: 42,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

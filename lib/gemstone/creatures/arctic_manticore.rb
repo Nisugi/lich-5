@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "arctic manticore",
-  noun: "",
+  noun: "manticore",
   url: "https://gswiki.play.net/arctic_manticore",
   picture: "",
   level: 29,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: false,

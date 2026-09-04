@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shan ranger",
-  noun: "",
+  noun: "ranger",
   url: "https://gswiki.play.net/shan_ranger",
   picture: "",
   level: 42,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

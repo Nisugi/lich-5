@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater ice giant",
-  noun: "",
+  noun: "giant",
   url: "https://gswiki.play.net/greater_ice_giant",
   picture: "",
   level: 46,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

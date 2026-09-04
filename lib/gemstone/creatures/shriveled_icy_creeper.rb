@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shriveled icy creeper",
-  noun: "",
+  noun: "creeper",
   url: "https://gswiki.play.net/shriveled_icy_creeper",
   picture: "",
   level: 50,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

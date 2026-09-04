@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "hunch-backed dogmatist",
-  noun: "",
+  noun: "dogmatist",
   url: "https://gswiki.play.net/hunch-backed_dogmatist",
   picture: "",
   level: 70,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

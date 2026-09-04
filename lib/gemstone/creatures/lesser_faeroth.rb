@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser faeroth",
-  noun: "",
+  noun: "faeroth",
   url: "https://gswiki.play.net/lesser_faeroth",
   picture: "",
   level: 46,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

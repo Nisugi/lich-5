@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "three-toed tegu",
-  noun: "",
+  noun: "tegu",
   url: "https://gswiki.play.net/three-toed_tegu",
   picture: "",
   level: 33,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

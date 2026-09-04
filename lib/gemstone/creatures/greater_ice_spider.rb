@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater ice spider",
-  noun: "",
+  noun: "spider",
   url: "https://gswiki.play.net/greater_ice_spider",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

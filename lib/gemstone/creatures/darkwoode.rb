@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "darkwoode",
-  noun: "",
+  noun: "darkwoode",
   url: "https://gswiki.play.net/darkwoode",
   picture: "",
   level: 13,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

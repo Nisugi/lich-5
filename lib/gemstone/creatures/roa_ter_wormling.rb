@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "roa'ter wormling",
-  noun: "",
+  noun: "wormling",
   url: "https://gswiki.play.net/roa'ter_wormling",
   picture: "",
   level: 24,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ice golem",
-  noun: "",
+  noun: "golem",
   url: "https://gswiki.play.net/ice_golem",
   picture: "",
   level: 53,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

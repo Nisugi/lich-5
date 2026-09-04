@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "seething pestilent vision",
-  noun: "",
+  noun: "vision",
   url: "https://gswiki.play.net/seething_pestilent_vision",
   picture: "",
   level: 70,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

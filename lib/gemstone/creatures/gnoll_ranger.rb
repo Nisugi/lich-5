@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "gnoll ranger",
-  noun: "",
+  noun: "ranger",
   url: "https://gswiki.play.net/gnoll_ranger",
   picture: "",
   level: 15,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

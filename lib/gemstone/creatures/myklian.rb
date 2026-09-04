@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "myklian",
-  noun: "",
+  noun: "myklian",
   url: "https://gswiki.play.net/myklian",
   picture: "",
   level: 40,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

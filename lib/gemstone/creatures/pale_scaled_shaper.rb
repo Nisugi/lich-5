@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "pale scaled shaper",
-  noun: "",
+  noun: "shaper",
   url: "https://gswiki.play.net/pale_scaled_shaper",
   picture: "",
   level: 102,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: nil,
@@ -20,7 +21,7 @@
     "Living"
   ],
   bcs: true,
-  max_hp: 248,
+  max_hp: 238,
   speed: 8,
   height: 7,
   size: "medium",

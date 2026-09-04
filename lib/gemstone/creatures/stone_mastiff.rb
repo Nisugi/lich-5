@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "stone mastiff",
-  noun: "",
+  noun: "mastiff",
   url: "https://gswiki.play.net/stone_mastiff",
   picture: "",
   level: 62,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

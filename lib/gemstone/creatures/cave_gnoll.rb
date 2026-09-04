@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cave gnoll",
-  noun: "",
+  noun: "gnoll",
   url: "https://gswiki.play.net/cave_gnoll",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

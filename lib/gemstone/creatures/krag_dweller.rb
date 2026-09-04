@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "krag dweller",
-  noun: "",
+  noun: "dweller",
   url: "https://gswiki.play.net/krag_dweller",
   picture: "",
   level: 72,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

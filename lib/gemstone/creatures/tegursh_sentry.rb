@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "tegursh sentry",
-  noun: "",
+  noun: "sentry",
   url: "https://gswiki.play.net/tegursh_sentry",
   picture: "",
   level: 30,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

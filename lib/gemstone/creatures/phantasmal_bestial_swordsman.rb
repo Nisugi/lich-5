@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "phantasmal bestial swordsman",
-  noun: "",
+  noun: "swordsman",
   url: "https://gswiki.play.net/phantasmal_bestial_swordsman",
   picture: "",
   level: 62,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

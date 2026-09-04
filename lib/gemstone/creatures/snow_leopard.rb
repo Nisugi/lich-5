@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "snow leopard",
-  noun: "",
+  noun: "leopard",
   url: "https://gswiki.play.net/snow_leopard",
   picture: "",
   level: 27,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

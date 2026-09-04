@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "aivren",
-  noun: "",
+  noun: "aivren",
   url: "https://gswiki.play.net/aivren",
   picture: "",
   level: 86,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

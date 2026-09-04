@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "monastic lich",
-  noun: "",
+  noun: "lich",
   url: "https://gswiki.play.net/monastic_lich",
   picture: "",
   level: 27,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

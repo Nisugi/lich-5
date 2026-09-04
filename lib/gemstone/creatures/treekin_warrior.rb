@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "treekin warrior",
-  noun: "",
+  noun: "warrior",
   url: "https://gswiki.play.net/treekin_warrior",
   picture: "",
   level: 80,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -148,7 +149,8 @@
         "A treekin warrior pounds at you with a leafy fist!",
         "A treekin warrior raises a large root and slams it down at you!",
         "A treekin warrior strikes out at you with all of {pronoun} might!",
-        "A treekin warrior suddenly spits a gob of sap directly at you!"
+        "A treekin warrior suddenly spits a gob of sap directly at you!",
+        "A treekin warrior attempts to grab you!"
       ]
     },
     info: {

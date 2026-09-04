@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "krolvin warfarer",
-  noun: "",
+  noun: "warfarer",
   url: "https://gswiki.play.net/krolvin_warfarer",
   picture: "",
   level: 25,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

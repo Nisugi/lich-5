@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "tomb troll necromancer",
-  noun: "",
+  noun: "necromancer",
   url: "https://gswiki.play.net/tomb_troll_necromancer",
   picture: "",
   level: 54,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

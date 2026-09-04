@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "warthog",
-  noun: "",
+  noun: "warthog",
   url: "https://gswiki.play.net/warthog",
   picture: "",
   level: 22,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

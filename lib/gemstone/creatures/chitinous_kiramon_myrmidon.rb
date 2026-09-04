@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "chitinous kiramon myrmidon",
-  noun: "",
+  noun: "myrmidon",
   url: "https://gswiki.play.net/chitinous_kiramon_myrmidon",
   picture: "",
   level: 102,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -126,7 +127,9 @@
       "A chitinous kiramon myrmidon collapses, {pronoun} forelegs spasming and twitching before {pronoun} at last surrenders to death."
     ],
     decay: [],
-    search: [],
+    search: [
+      "A chitinous kiramon myrmidon's faceted eyes reflect nothing but empty shadows as {pronoun} twitches {pronoun} head to look around, hesitantly, as if {pronoun} has missed something."
+    ],
     spell_prep: [
       "A chitinous kiramon myrmidon hisses and clicks, cocking {pronoun} head curiously as if not entirely comprehending your death."
     ],

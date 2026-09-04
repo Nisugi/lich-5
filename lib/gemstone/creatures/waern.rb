@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "waern",
-  noun: "",
+  noun: "waern",
   url: "https://gswiki.play.net/waern",
   picture: "",
   level: 49,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

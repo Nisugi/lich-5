@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shan bardess",
-  noun: "",
+  noun: "bardess",
   url: "https://gswiki.play.net/shan_bardess",
   picture: "",
   level: 62,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

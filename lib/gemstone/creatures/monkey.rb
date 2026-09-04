@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "monkey",
-  noun: "",
+  noun: "monkey",
   url: "https://gswiki.play.net/monkey",
   picture: "",
   level: 6,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

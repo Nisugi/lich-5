@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "smouldering skeletal dreadsteed",
-  noun: "",
+  noun: "dreadsteed",
   url: "https://gswiki.play.net/smouldering_skeletal_dreadsteed",
   picture: "",
   level: 103,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

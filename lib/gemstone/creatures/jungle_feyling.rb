@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "jungle feyling",
-  noun: "",
+  noun: "feyling",
   url: "https://gswiki.play.net/jungle_feyling",
   picture: "",
   level: 24,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

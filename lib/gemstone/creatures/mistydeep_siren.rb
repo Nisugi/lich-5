@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mistydeep siren",
-  noun: "",
+  noun: "siren",
   url: "https://gswiki.play.net/mistydeep_siren",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

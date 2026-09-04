@@ -21,7 +21,7 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
   def known_top_level_keys
     %i[
       schema_version name noun url picture level family type undead
-      blood bones witherable sympathy muggable sleepable boss boss_type otherclass bcs max_hp speed height
+      blood bones limbs witherable sympathy muggable sleepable boss boss_type otherclass bcs max_hp speed height
       size areas attack_attributes defense_attributes special_other
       abilities alchemy abilities_misc equipment treasure messaging
     ]
@@ -150,7 +150,7 @@ RSpec.describe 'lib/gemstone/creatures data integrity' do
       data = load_data(path)
       next unless data.is_a?(Hash)
 
-      %i[blood bones witherable sympathy muggable sleepable].each do |field|
+      %i[blood bones limbs witherable sympathy muggable sleepable].each do |field|
         value = data[field]
         offenders << "#{File.basename(path)} #{field}=#{value.inspect}" unless value.nil? || value == true || value == false
       end

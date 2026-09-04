@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "spectre",
-  noun: "",
+  noun: "spectre",
   url: "https://gswiki.play.net/spectre",
   picture: "",
   level: 14,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

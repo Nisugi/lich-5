@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mezic",
-  noun: "",
+  noun: "mezic",
   url: "https://gswiki.play.net/mezic",
   picture: "",
   level: 33,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

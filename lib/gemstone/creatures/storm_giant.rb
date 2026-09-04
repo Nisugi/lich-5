@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "storm giant",
-  noun: "",
+  noun: "giant",
   url: "https://gswiki.play.net/storm_giant",
   picture: "",
   level: 39,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

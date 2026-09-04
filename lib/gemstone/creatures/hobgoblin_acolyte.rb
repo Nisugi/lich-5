@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "hobgoblin acolyte",
-  noun: "",
+  noun: "acolyte",
   url: "https://gswiki.play.net/hobgoblin_acolyte",
   picture: "",
   level: 7,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

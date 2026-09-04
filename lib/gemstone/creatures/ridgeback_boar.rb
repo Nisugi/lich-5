@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ridgeback boar",
-  noun: "",
+  noun: "boar",
   url: "https://gswiki.play.net/ridgeback_boar",
   picture: "",
   level: 15,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

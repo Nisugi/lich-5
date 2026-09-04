@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "tawny brindlecat",
-  noun: "",
+  noun: "brindlecat",
   url: "https://gswiki.play.net/tawny_brindlecat",
   picture: "",
   level: 13,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser red orc",
-  noun: "",
+  noun: "orc",
   url: "https://gswiki.play.net/lesser_red_orc",
   picture: "",
   level: 7,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fire guardian",
-  noun: "",
+  noun: "guardian",
   url: "https://gswiki.play.net/fire_guardian",
   picture: "",
   level: 16,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: false,

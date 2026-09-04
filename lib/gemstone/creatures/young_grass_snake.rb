@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "young grass snake",
-  noun: "",
+  noun: "snake",
   url: "https://gswiki.play.net/young_grass_snake",
   picture: "",
   level: 1,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

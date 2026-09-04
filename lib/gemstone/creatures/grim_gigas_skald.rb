@@ -1,6 +1,6 @@
 {
   name: "Grim gigas skald",
-  noun: "",
+  noun: "skald",
   url: "https://gswiki.play.net/Grim_gigas_skald",
   picture: "",
   level: 105,
@@ -9,6 +9,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -154,7 +155,8 @@
     ],
     death: [
       "A grim gigas skald raises a hand as if to grasp for support as {pronoun} collapses, life going out of {pronoun} form.",
-      "A grim gigas skald slumps, {pronoun} eyes dull and unfocused."
+      "A grim gigas skald slumps, {pronoun} eyes dull and unfocused.",
+      "A grim gigas skald's eyes roll up into {pronoun} head as {pronoun} body goes limp on the ground."
     ],
     decay: [
       "A grim gigas skald's corpse succumbs to rot, collapsing in upon {reflexive} until naught but dust remains."

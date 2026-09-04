@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "triton combatant",
-  noun: "",
+  noun: "combatant",
   url: "https://gswiki.play.net/triton_combatant",
   picture: "",
   level: 98,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "spectral monk",
-  noun: "",
+  noun: "monk",
   url: "https://gswiki.play.net/spectral_monk",
   picture: "",
   level: 25,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

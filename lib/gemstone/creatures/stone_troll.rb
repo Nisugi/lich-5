@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "stone troll",
-  noun: "",
+  noun: "troll",
   url: "https://gswiki.play.net/stone_troll",
   picture: "",
   level: 55,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: true,
   witherable: true,
   sympathy: nil,
   muggable: true,

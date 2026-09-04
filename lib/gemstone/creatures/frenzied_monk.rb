@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "frenzied monk",
-  noun: "",
+  noun: "monk",
   url: "https://gswiki.play.net/frenzied_monk",
   picture: "",
   level: 27,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: true,

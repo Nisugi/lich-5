@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shelfae chieftain",
-  noun: "",
+  noun: "chieftain",
   url: "https://gswiki.play.net/shelfae_chieftain",
   picture: "",
   level: 11,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

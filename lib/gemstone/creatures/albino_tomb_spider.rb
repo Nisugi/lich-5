@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "albino tomb spider",
-  noun: "",
+  noun: "spider",
   url: "https://gswiki.play.net/albino_tomb_spider",
   picture: "",
   level: 8,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,
@@ -110,7 +111,8 @@
     death: [
       "The tomb spider's body jerks one last time and dies.",
       "The tomb spider collapses to the ground and dies.",
-      "The albino tomb spider collapses to the ground and dies."
+      "The albino tomb spider collapses to the ground and dies.",
+      "The albino tomb spider's body jerks one last time and dies."
     ],
     decay: [
       "An albino tomb spider's legs shrivel up beneath it as it decays into dust.",

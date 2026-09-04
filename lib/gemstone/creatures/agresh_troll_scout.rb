@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Agresh troll scout",
-  noun: "",
+  noun: "scout",
   url: "https://gswiki.play.net/agresh_troll_scout",
   picture: "",
   level: 14,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ghost wolf",
-  noun: "",
+  noun: "wolf",
   url: "https://gswiki.play.net/ghost_wolf",
   picture: "",
   level: 16,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

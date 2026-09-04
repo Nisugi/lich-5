@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "spiked cavern urchin",
-  noun: "",
+  noun: "urchin",
   url: "https://gswiki.play.net/spiked_cavern_urchin",
   picture: "",
   level: 17,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

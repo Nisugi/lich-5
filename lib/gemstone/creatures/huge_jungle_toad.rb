@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "huge jungle toad",
-  noun: "",
+  noun: "toad",
   url: "https://gswiki.play.net/huge_jungle_toad",
   picture: "",
   level: 25,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

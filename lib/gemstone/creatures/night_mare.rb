@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "night mare",
-  noun: "",
+  noun: "mare",
   url: "https://gswiki.play.net/night_mare",
   picture: "",
   level: 43,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

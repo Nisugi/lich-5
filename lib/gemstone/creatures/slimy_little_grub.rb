@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "slimy little grub",
-  noun: "",
+  noun: "grub",
   url: "https://gswiki.play.net/slimy_little_grub",
   picture: "",
   level: 1,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

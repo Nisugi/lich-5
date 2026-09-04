@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "muscular supplicant",
-  noun: "",
+  noun: "supplicant",
   url: "https://gswiki.play.net/muscular_supplicant",
   picture: "",
   level: 67,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

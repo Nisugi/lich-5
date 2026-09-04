@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "krynch",
-  noun: "",
+  noun: "krynch",
   url: "https://gswiki.play.net/krynch",
   picture: "",
   level: 31,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

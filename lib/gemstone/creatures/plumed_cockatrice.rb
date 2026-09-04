@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "plumed cockatrice",
-  noun: "",
+  noun: "cockatrice",
   url: "https://gswiki.play.net/plumed_cockatrice",
   picture: "",
   level: 13,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

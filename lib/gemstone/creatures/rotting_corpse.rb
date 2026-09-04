@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "rotting corpse",
-  noun: "",
+  noun: "corpse",
   url: "https://gswiki.play.net/rotting_corpse",
   picture: "",
   level: 32,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

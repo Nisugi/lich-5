@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lich qyn'arj",
-  noun: "",
+  noun: "qyn'arj",
   url: "https://gswiki.play.net/lich_qyn'arj",
   picture: "",
   level: 84,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

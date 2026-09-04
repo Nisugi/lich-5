@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "bobcat",
-  noun: "",
+  noun: "bobcat",
   url: "https://gswiki.play.net/bobcat",
   picture: "",
   level: 5,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

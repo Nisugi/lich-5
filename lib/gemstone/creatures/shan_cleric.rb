@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shan cleric",
-  noun: "",
+  noun: "cleric",
   url: "https://gswiki.play.net/shan_cleric",
   picture: "",
   level: 42,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

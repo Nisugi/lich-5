@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "gaudy phantasmic conjurer",
-  noun: "",
+  noun: "conjurer",
   url: "https://gswiki.play.net/gaudy_phantasmic_conjurer",
   picture: "",
   level: 106,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

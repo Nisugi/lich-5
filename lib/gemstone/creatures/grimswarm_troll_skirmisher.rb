@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Grimswarm troll skirmisher",
-  noun: "troll",
+  noun: "skirmisher",
   url: "https://gswiki.play.net/Grimswarm",
   picture: "",
   level: nil,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

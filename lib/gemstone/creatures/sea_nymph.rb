@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "sea nymph",
-  noun: "",
+  noun: "nymph",
   url: "https://gswiki.play.net/sea_nymph",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

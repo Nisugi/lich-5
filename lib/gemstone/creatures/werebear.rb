@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "werebear",
-  noun: "",
+  noun: "werebear",
   url: "https://gswiki.play.net/werebear",
   picture: "",
   level: 10,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

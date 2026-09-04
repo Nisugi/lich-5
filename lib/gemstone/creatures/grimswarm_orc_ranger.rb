@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Grimswarm orc ranger",
-  noun: "orc",
+  noun: "ranger",
   url: "https://gswiki.play.net/Grimswarm",
   picture: "",
   level: nil,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,
@@ -102,7 +103,9 @@
       "A Grimswarm orc ranger heads {direction}."
     ],
     death: [],
-    decay: [],
+    decay: [
+      "A Grimswarm orc ranger decays into compost."
+    ],
     search: [],
     spell_prep: [
       "A Grimswarm orc ranger gestures and utters a phrase of magic."

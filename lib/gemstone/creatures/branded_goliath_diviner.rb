@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "branded goliath diviner",
-  noun: "",
+  noun: "diviner",
   url: "https://gswiki.play.net/branded_goliath_diviner",
   picture: "",
   level: 115,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,
@@ -99,18 +100,25 @@
       "A branded goliath diviner glides in with an otherworldly grace, surveying the surroundings with a knowing look."
     ],
     flee: [],
-    death: [],
+    death: [
+      "A branded goliath diviner's dreamy gaze goes lifeless.",
+      "A branded goliath diviner's eyes roll up into {pronoun} head as {pronoun} body goes limp on the ground."
+    ],
     decay: [],
     search: [],
     spell_prep: [
       "A branded goliath diviner completes {pronoun} silent incantation and, without so much as a glance, flicks a finger at you!"
+    ],
+    stun_break: [
+      "A branded goliath diviner looks around as if waking up from a dream."
     ],
     attacks: {
       attack: [
         "A branded goliath diviner raises a clenched fist, opening {pronoun} to reveal a small rune-etched stone pulsing with inner light. The stone hovers momentarily over {pronoun} palm before rising into the air, seeming to expand in every direction until {pronoun} is a pale hovering runestone wreathed in glowing colors!",
         "A branded goliath diviner throws {pronoun} arms skyward!",
         "A branded goliath diviner raises a clenched fist, opening {pronoun} to reveal a small rune-etched stone pulsing with inner light. The stone hovers momentarily over his palm before rising into the air, seeming to expand in every direction until it is a pale hovering runestone wreathed in glowing colors!",
-        "A branded goliath diviner conjures a swirling orb of hungry flame and hurls {pronoun} toward you!"
+        "A branded goliath diviner conjures a swirling orb of hungry flame and hurls {pronoun} toward you!",
+        "A branded goliath diviner extends {pronoun} hands, palms outward, and a shimmering wave of force thunders toward you!"
       ]
     },
     info: {

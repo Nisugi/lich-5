@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "grey-plumed steelwing harpy",
-  noun: "",
+  noun: "harpy",
   url: "https://gswiki.play.net/grey-plumed_steelwing_harpy",
   picture: "",
   level: 111,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

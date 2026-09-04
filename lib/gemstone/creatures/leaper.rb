@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "leaper",
-  noun: "",
+  noun: "leaper",
   url: "https://gswiki.play.net/leaper",
   picture: "",
   level: 6,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

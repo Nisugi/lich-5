@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ashen patrician vampire",
-  noun: "",
+  noun: "vampire",
   url: "https://gswiki.play.net/ashen_patrician_vampire",
   picture: "",
   level: 107,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

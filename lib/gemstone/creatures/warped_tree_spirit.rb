@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "warped tree spirit",
-  noun: "",
+  noun: "spirit",
   url: "https://gswiki.play.net/warped_tree_spirit",
   picture: "",
   level: 68,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,6 +1,6 @@
 {
   name: "immense gold-bristled hinterboar",
-  noun: "",
+  noun: "hinterboar",
   url: "https://gswiki.play.net/Immense_gold-bristled_hinterboar",
   picture: "",
   level: 102,
@@ -9,6 +9,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

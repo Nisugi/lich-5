@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ghostly pooka",
-  noun: "",
+  noun: "pooka",
   url: "https://gswiki.play.net/ghostly_pooka",
   picture: "",
   level: 33,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

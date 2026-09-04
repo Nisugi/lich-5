@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "gnoll worker",
-  noun: "",
+  noun: "worker",
   url: "https://gswiki.play.net/gnoll_worker",
   picture: "",
   level: 10,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

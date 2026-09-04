@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "dark shambler",
-  noun: "",
+  noun: "shambler",
   url: "https://gswiki.play.net/dark_shambler",
   picture: "",
   level: 17,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

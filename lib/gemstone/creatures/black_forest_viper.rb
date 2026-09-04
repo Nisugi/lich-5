@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "black forest viper",
-  noun: "",
+  noun: "viper",
   url: "https://gswiki.play.net/black_forest_viper",
   picture: "",
   level: 59,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

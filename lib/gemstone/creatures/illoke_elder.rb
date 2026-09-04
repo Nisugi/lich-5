@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Illoke elder",
-  noun: "",
+  noun: "elder",
   url: "https://gswiki.play.net/illoke_elder",
   picture: "",
   level: 86,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "krolvin corsair",
-  noun: "",
+  noun: "corsair",
   url: "https://gswiki.play.net/krolvin_corsair",
   picture: "",
   level: 38,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

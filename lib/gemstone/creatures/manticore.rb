@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "manticore",
-  noun: "",
+  noun: "manticore",
   url: "https://gswiki.play.net/manticore",
   picture: "",
   level: 9,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

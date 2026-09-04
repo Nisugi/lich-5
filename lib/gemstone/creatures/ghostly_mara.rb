@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ghostly mara",
-  noun: "",
+  noun: "mara",
   url: "https://gswiki.play.net/ghostly_mara",
   picture: "",
   level: 32,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

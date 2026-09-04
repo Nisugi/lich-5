@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "red tsark",
-  noun: "",
+  noun: "tsark",
   url: "https://gswiki.play.net/red_tsark",
   picture: "",
   level: 66,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

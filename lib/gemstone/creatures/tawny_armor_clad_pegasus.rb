@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "tawny armor-clad pegasus",
-  noun: "",
+  noun: "pegasus",
   url: "https://gswiki.play.net/tawny_armor-clad_pegasus",
   picture: "",
   level: 115,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,
@@ -99,15 +100,22 @@
       "A magnificent creature, a tawny armor-clad pegasus has the body of a majestic horse, with a sleek coat that is the pale hue of the sky on a hazy, newborn day. Wings with feathers in all the pigments of the dawn, from soft pinks and corals to strident golds and fiery oranges, sprout from its shoulders, stretching to an impressive span. Its eyes are large and dark, full of intelligence, and its mane flows like liquid silver. The pegasus's hooves are shod in pure golvern."
     ],
     arrival: [
-      "A tawny armor-clad pegasus soars in on wings aglow with all of the hues of a breaking dawn, throwing back {pronoun} majestic head to tousel a mane seeming spun from threads of sunlight."
+      "A tawny armor-clad pegasus soars in on wings aglow with all of the hues of a breaking dawn, throwing back {pronoun} majestic head to tousel a mane seeming spun from threads of sunlight.",
+      "A tawny armor-clad pegasus trots in with elegant ease, hooves leaving behind fading pools of colored light."
     ],
     flee: [
-      "A tawny armor-clad pegasus hurtles down from on high, hooves outstretched!"
+      "A tawny armor-clad pegasus hurtles down from on high, hooves outstretched!",
+      "A tawny armor-clad pegasus canters {direction} with elegant ease, hooves leaving behind fading pools of colored light."
     ],
-    death: [],
+    death: [
+      "A tawny armor-clad pegasus's eyes roll up into {pronoun} head as {pronoun} body goes limp on the ground."
+    ],
     decay: [],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A tawny armor-clad pegasus's wings begin to glow, throwing off scintillating sparks, and the forces entangling {pronoun} snap away into flickering threads of spent mana."
+    ],
     info: {
       general: [],
       class_tips: {

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ethereal triton psionicist",
-  noun: "",
+  noun: "psionicist",
   url: "https://gswiki.play.net/ethereal_triton_psionicist",
   picture: "",
   level: 103,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "raider orc",
-  noun: "",
+  noun: "orc",
   url: "https://gswiki.play.net/raider_orc",
   picture: "",
   level: 10,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

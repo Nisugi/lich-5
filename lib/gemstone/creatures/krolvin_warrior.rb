@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "krolvin warrior",
-  noun: "",
+  noun: "warrior",
   url: "https://gswiki.play.net/krolvin_warrior",
   picture: "",
   level: 19,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -128,7 +129,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A krolvin warrior swings {weapon} at you!"
+        "A krolvin warrior swings {weapon} at you!",
+        "A krolvin warrior's face contorts as {pronoun} unleashes a gutteral, deep-throated growl at you!"
       ],
       bite: [
         "A krolvin warrior gnaws idly at {pronoun} arm."

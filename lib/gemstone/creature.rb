@@ -37,6 +37,7 @@ module Lich
         # Tri-state (true/false/nil) - nil means uncatalogued/unknown, not false.
         @blood = data[:blood]
         @bones = data[:bones]
+        @limbs = data[:limbs]
         @witherable = data[:witherable]
         @sympathy = data[:sympathy]
         @muggable = data[:muggable]
@@ -242,6 +243,14 @@ module Lich
       # @return [Boolean, nil] true or false when catalogued; nil when unknown.
       def has_bones?
         @bones
+      end
+
+      # Returns whether Limb Disruption (708) has limbs to target on this
+      # creature ("The X has no limbs left!" on a fresh target = false).
+      #
+      # @return [Boolean, nil] true or false when catalogued; nil when unknown.
+      def has_limbs?
+        @limbs
       end
 
       # Returns whether Wither (1115) has a body to attack on this

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mongrel wolfhound",
-  noun: "",
+  noun: "wolfhound",
   url: "https://gswiki.play.net/mongrel_wolfhound",
   picture: "",
   level: 16,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

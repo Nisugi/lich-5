@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cougar",
-  noun: "",
+  noun: "cougar",
   url: "https://gswiki.play.net/cougar",
   picture: "",
   level: 22,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

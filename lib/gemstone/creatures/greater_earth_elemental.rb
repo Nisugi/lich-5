@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater earth elemental",
-  noun: "",
+  noun: "elemental",
   url: "https://gswiki.play.net/greater_earth_elemental",
   picture: "",
   level: 88,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

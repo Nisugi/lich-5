@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mist wraith",
-  noun: "",
+  noun: "wraith",
   url: "https://gswiki.play.net/mist_wraith",
   picture: "",
   level: 5,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

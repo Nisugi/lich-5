@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "magru",
-  noun: "",
+  noun: "magru",
   url: "https://gswiki.play.net/magru",
   picture: "",
   level: 37,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: nil,

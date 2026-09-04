@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "grutik shaman",
-  noun: "",
+  noun: "shaman",
   url: "https://gswiki.play.net/grutik_shaman",
   picture: "",
   level: 29,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

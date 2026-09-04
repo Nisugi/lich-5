@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fanged viper",
-  noun: "",
+  noun: "viper",
   url: "https://gswiki.play.net/fanged_viper",
   picture: "",
   level: 4,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

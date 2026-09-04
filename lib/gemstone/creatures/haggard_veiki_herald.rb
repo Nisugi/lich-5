@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "haggard veiki herald",
-  noun: "",
+  noun: "herald",
   url: "https://gswiki.play.net/haggard_veiki_herald",
   picture: "",
   level: 85,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

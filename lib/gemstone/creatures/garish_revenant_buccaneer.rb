@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "garish revenant buccaneer",
-  noun: "",
+  noun: "buccaneer",
   url: "https://gswiki.play.net/garish_revenant_buccaneer",
   picture: "",
   level: 108,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

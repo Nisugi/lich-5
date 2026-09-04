@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "massive grahnk",
-  noun: "",
+  noun: "grahnk",
   url: "https://gswiki.play.net/massive_grahnk",
   picture: "",
   level: 20,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

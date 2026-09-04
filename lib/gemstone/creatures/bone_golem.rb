@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "bone golem",
-  noun: "",
+  noun: "golem",
   url: "https://gswiki.play.net/bone_golem",
   picture: "",
   level: 8,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: false,
   sympathy: false,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "crested basilisk",
-  noun: "",
+  noun: "basilisk",
   url: "https://gswiki.play.net/crested_basilisk",
   picture: "",
   level: 22,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

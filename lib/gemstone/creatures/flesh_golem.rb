@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "flesh golem",
-  noun: "",
+  noun: "golem",
   url: "https://gswiki.play.net/flesh_golem",
   picture: "",
   level: 50,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: false,
   sympathy: false,
   muggable: true,

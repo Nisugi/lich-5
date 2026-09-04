@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "great boar",
-  noun: "",
+  noun: "boar",
   url: "https://gswiki.play.net/great_boar",
   picture: "",
   level: 10,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

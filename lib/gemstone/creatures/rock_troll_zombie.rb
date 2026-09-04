@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "rock troll zombie",
-  noun: "",
+  noun: "zombie",
   url: "https://gswiki.play.net/rock_troll_zombie",
   picture: "",
   level: 34,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

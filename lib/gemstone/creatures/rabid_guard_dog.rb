@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "rabid guard dog",
-  noun: "",
+  noun: "dog",
   url: "https://gswiki.play.net/rabid_guard_dog",
   picture: "",
   level: 10,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "colossus vulture",
-  noun: "",
+  noun: "vulture",
   url: "https://gswiki.play.net/colossus_vulture",
   picture: "",
   level: 34,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

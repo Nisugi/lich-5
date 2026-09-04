@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "milky-eyed drowned mariner",
-  noun: "",
+  noun: "mariner",
   url: "https://gswiki.play.net/milky-eyed_drowned_mariner",
   picture: "",
   level: 106,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

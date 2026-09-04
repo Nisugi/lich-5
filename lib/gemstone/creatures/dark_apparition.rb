@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "dark apparition",
-  noun: "",
+  noun: "apparition",
   url: "https://gswiki.play.net/dark_apparition",
   picture: "",
   level: 5,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

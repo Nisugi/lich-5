@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "thunder troll",
-  noun: "",
+  noun: "troll",
   url: "https://gswiki.play.net/thunder_troll",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

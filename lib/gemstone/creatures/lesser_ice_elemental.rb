@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser ice elemental",
-  noun: "",
+  noun: "elemental",
   url: "https://gswiki.play.net/lesser_ice_elemental",
   picture: "",
   level: 53,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

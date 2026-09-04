@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "supple ivasian inciter",
-  noun: "",
+  noun: "inciter",
   url: "https://gswiki.play.net/supple_ivasian_inciter",
   picture: "",
   level: 66,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

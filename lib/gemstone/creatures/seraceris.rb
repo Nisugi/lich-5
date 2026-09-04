@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "seraceris",
-  noun: "",
+  noun: "seraceris",
   url: "https://gswiki.play.net/seraceris",
   picture: "",
   level: 78,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

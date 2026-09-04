@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "blood eagle",
-  noun: "",
+  noun: "eagle",
   url: "https://gswiki.play.net/blood_eagle",
   picture: "",
   level: 7,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

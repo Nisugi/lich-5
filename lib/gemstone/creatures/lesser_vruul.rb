@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser vruul",
-  noun: "",
+  noun: "vruul",
   url: "https://gswiki.play.net/lesser_vruul",
   picture: "",
   level: 45,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: nil,

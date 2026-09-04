@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "gaunt feral selkie",
-  noun: "",
+  noun: "selkie",
   url: "https://gswiki.play.net/gaunt_feral_selkie",
   picture: "",
   level: 57,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

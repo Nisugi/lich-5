@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser stone gargoyle",
-  noun: "",
+  noun: "gargoyle",
   url: "https://gswiki.play.net/lesser_stone_gargoyle",
   picture: "",
   level: 27,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: false,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "crackling lightning fiend",
-  noun: "",
+  noun: "fiend",
   url: "https://gswiki.play.net/crackling_lightning_fiend",
   picture: "",
   level: 79,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

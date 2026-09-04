@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "horned vor'taz",
-  noun: "",
+  noun: "vor'taz",
   url: "https://gswiki.play.net/horned_vor'taz",
   picture: "",
   level: 48,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -119,7 +120,8 @@
     arrival: [],
     flee: [],
     death: [
-      "The horned vor'taz's horn dims as {pronoun} lifeforce fades away."
+      "The horned vor'taz's horn dims as {pronoun} lifeforce fades away.",
+      "The horned vor'taz's horn dims, and {pronoun} falls to the ground dead."
     ],
     decay: [
       "A horned vor'taz crumbles away to nothing."

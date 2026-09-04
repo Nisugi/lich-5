@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "dreadnought raptor",
-  noun: "",
+  noun: "raptor",
   url: "https://gswiki.play.net/dreadnought_raptor",
   picture: "",
   level: 43,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

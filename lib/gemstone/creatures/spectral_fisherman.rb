@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "spectral fisherman",
-  noun: "",
+  noun: "fisherman",
   url: "https://gswiki.play.net/spectral_fisherman",
   picture: "",
   level: 6,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "deathsworn fanatic",
-  noun: "",
+  noun: "fanatic",
   url: "https://gswiki.play.net/deathsworn_fanatic",
   picture: "",
   level: 98,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

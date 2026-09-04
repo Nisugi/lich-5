@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shan shaman",
-  noun: "",
+  noun: "shaman",
   url: "https://gswiki.play.net/shan_shaman",
   picture: "",
   level: 64,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

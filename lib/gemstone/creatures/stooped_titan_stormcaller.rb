@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "stooped titan stormcaller",
-  noun: "",
+  noun: "stormcaller",
   url: "https://gswiki.play.net/stooped_titan_stormcaller",
   picture: "",
   level: 81,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

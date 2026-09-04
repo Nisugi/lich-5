@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "glistening cerebralite",
-  noun: "",
+  noun: "cerebralite",
   url: "https://gswiki.play.net/glistening_cerebralite",
   picture: "",
   level: 100,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

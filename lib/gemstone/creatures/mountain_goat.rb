@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mountain goat",
-  noun: "",
+  noun: "goat",
   url: "https://gswiki.play.net/mountain_goat",
   picture: "",
   level: 17,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

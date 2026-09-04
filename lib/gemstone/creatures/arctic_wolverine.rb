@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "arctic wolverine",
-  noun: "",
+  noun: "wolverine",
   url: "https://gswiki.play.net/arctic_wolverine",
   picture: "",
   level: 24,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

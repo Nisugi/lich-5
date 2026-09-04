@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "tomb troll",
-  noun: "",
+  noun: "troll",
   url: "https://gswiki.play.net/tomb_troll",
   picture: "",
   level: 52,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

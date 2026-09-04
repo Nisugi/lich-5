@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "snowy cockatrice",
-  noun: "",
+  noun: "cockatrice",
   url: "https://gswiki.play.net/snowy_cockatrice",
   picture: "",
   level: 6,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

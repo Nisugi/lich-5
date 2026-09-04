@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater burrow orc",
-  noun: "",
+  noun: "orc",
   url: "https://gswiki.play.net/greater_burrow_orc",
   picture: "",
   level: 8,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

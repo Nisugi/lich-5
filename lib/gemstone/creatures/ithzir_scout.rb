@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Ithzir scout",
-  noun: "",
+  noun: "scout",
   url: "https://gswiki.play.net/ithzir_scout",
   picture: "",
   level: 89,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

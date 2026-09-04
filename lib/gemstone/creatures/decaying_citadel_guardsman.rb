@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "decaying citadel guardsman",
-  noun: "",
+  noun: "guardsman",
   url: "https://gswiki.play.net/decaying_citadel_guardsman",
   picture: "",
   level: 56,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

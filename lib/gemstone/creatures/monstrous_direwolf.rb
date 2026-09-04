@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "monstrous direwolf",
-  noun: "",
+  noun: "direwolf",
   url: "https://gswiki.play.net/monstrous_direwolf",
   picture: "",
   level: 68,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

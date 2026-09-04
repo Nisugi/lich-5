@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater water elemental",
-  noun: "",
+  noun: "elemental",
   url: "https://gswiki.play.net/greater_water_elemental",
   picture: "",
   level: 105,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

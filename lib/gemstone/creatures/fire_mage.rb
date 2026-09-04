@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fire mage",
-  noun: "",
+  noun: "mage",
   url: "https://gswiki.play.net/fire_mage",
   picture: "",
   level: 71,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

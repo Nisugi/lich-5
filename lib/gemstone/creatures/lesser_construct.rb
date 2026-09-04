@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser construct",
-  noun: "",
+  noun: "construct",
   url: "https://gswiki.play.net/lesser_construct",
   picture: "",
   level: 83,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: false,
   muggable: true,

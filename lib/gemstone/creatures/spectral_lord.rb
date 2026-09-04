@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "spectral lord",
-  noun: "",
+  noun: "lord",
   url: "https://gswiki.play.net/spectral_lord",
   picture: "",
   level: 36,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

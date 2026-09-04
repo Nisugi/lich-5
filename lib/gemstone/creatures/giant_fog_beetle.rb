@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "giant fog beetle",
-  noun: "",
+  noun: "beetle",
   url: "https://gswiki.play.net/giant_fog_beetle",
   picture: "",
   level: 32,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

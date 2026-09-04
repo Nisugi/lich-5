@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greater ghoul",
-  noun: "",
+  noun: "ghoul",
   url: "https://gswiki.play.net/greater_ghoul",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

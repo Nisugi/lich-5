@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shan wizard",
-  noun: "",
+  noun: "wizard",
   url: "https://gswiki.play.net/shan_wizard",
   picture: "",
   level: 42,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

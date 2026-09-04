@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "kiramon defender",
-  noun: "",
+  noun: "defender",
   url: "https://gswiki.play.net/kiramon_defender",
   picture: "",
   level: 46,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

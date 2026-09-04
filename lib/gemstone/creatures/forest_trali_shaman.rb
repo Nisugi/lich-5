@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "forest trali shaman",
-  noun: "",
+  noun: "shaman",
   url: "https://gswiki.play.net/forest_trali_shaman",
   picture: "",
   level: 46,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

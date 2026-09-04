@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "bog wraith",
-  noun: "",
+  noun: "wraith",
   url: "https://gswiki.play.net/bog_wraith",
   picture: "",
   level: 41,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

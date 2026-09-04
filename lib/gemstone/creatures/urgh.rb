@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "urgh",
-  noun: "",
+  noun: "urgh",
   url: "https://gswiki.play.net/urgh",
   picture: "",
   level: 4,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

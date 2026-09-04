@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "grifflet",
-  noun: "",
+  noun: "grifflet",
   url: "https://gswiki.play.net/grifflet",
   picture: "",
   level: 64,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

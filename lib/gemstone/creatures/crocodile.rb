@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "crocodile",
-  noun: "",
+  noun: "crocodile",
   url: "https://gswiki.play.net/crocodile",
   picture: "",
   level: 9,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

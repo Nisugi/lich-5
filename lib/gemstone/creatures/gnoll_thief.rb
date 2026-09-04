@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "gnoll thief",
-  noun: "",
+  noun: "thief",
   url: "https://gswiki.play.net/gnoll_thief",
   picture: "",
   level: 13,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

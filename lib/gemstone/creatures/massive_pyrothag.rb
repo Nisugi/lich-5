@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "massive pyrothag",
-  noun: "",
+  noun: "pyrothag",
   url: "https://gswiki.play.net/massive_pyrothag",
   picture: "",
   level: 58,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "great brown bear",
-  noun: "",
+  noun: "bear",
   url: "https://gswiki.play.net/great_brown_bear",
   picture: "",
   level: 14,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

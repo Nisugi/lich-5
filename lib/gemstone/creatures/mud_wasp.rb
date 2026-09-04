@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mud wasp",
-  noun: "",
+  noun: "wasp",
   url: "https://gswiki.play.net/mud_wasp",
   picture: "",
   level: 38,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

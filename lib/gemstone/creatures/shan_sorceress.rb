@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shan sorceress",
-  noun: "",
+  noun: "sorceress",
   url: "https://gswiki.play.net/shan_sorceress",
   picture: "",
   level: 58,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

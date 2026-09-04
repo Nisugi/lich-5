@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shan warrior",
-  noun: "",
+  noun: "warrior",
   url: "https://gswiki.play.net/shan_warrior",
   picture: "",
   level: 42,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "caedera",
-  noun: "",
+  noun: "caedera",
   url: "https://gswiki.play.net/caedera",
   picture: "",
   level: 82,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

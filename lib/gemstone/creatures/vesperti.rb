@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "vesperti",
-  noun: "",
+  noun: "vesperti",
   url: "https://gswiki.play.net/vesperti",
   picture: "",
   level: 38,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: false,
   sympathy: false,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "sabre-tooth tiger",
-  noun: "",
+  noun: "tiger",
   url: "https://gswiki.play.net/sabre-tooth_tiger",
   picture: "",
   level: 53,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

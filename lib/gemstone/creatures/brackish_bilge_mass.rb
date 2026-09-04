@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "brackish bilge mass",
-  noun: "",
+  noun: "mass",
   url: "https://gswiki.play.net/brackish_bilge_mass",
   picture: "",
   level: 104,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

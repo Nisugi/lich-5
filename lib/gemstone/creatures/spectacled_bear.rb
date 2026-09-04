@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "spectacled bear",
-  noun: "",
+  noun: "bear",
   url: "https://gswiki.play.net/spectacled_bear",
   picture: "",
   level: nil,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

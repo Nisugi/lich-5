@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "martial eagle",
-  noun: "",
+  noun: "eagle",
   url: "https://gswiki.play.net/martial_eagle",
   picture: "",
   level: 28,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

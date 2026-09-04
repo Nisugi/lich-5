@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Vvrael witch",
-  noun: "",
+  noun: "witch",
   url: "https://gswiki.play.net/vvrael_witch",
   picture: "",
   level: 80,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: false,
   sympathy: false,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "translucent kiramon strandweaver",
-  noun: "",
+  noun: "strandweaver",
   url: "https://gswiki.play.net/translucent_kiramon_strandweaver",
   picture: "",
   level: 110,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

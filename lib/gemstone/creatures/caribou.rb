@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "caribou",
-  noun: "",
+  noun: "caribou",
   url: "https://gswiki.play.net/caribou",
   picture: "",
   level: 32,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "battle-worn empyrean captain",
-  noun: "",
+  noun: "captain",
   url: "https://gswiki.play.net/battle-worn_empyrean_captain",
   picture: "",
   level: 120,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "desiccated half-krolvin strigoi",
-  noun: "",
+  noun: "strigoi",
   url: "https://gswiki.play.net/desiccated_half-krolvin_strigoi",
   picture: "",
   level: 61,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

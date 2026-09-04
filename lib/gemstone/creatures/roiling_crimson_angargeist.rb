@@ -1,6 +1,6 @@
 {
   name: "Roiling crimson angargeist",
-  noun: "",
+  noun: "angargeist",
   url: "https://gswiki.play.net/Roiling_crimson_angargeist",
   picture: "",
   level: 110,
@@ -9,6 +9,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: true,
   witherable: true,
   muggable: true,
   sleepable: false,

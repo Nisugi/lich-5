@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "large black cat",
-  noun: "",
+  noun: "cat",
   url: "https://gswiki.play.net/large_black_cat",
   picture: "",
   level: 23,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

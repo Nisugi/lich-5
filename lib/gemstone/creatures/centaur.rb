@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "centaur",
-  noun: "",
+  noun: "centaur",
   url: "https://gswiki.play.net/centaur",
   picture: "",
   level: 23,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "sand beetle",
-  noun: "",
+  noun: "beetle",
   url: "https://gswiki.play.net/sand_beetle",
   picture: "",
   level: 33,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: true,

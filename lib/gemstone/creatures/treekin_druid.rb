@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "treekin druid",
-  noun: "",
+  noun: "druid",
   url: "https://gswiki.play.net/treekin_druid",
   picture: "",
   level: 83,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

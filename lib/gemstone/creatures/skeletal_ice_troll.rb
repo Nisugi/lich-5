@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "skeletal ice troll",
-  noun: "",
+  noun: "troll",
   url: "https://gswiki.play.net/skeletal_ice_troll",
   picture: "",
   level: 31,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

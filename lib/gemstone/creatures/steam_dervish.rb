@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "steam dervish",
-  noun: "",
+  noun: "dervish",
   url: "https://gswiki.play.net/steam_dervish",
   picture: "",
   level: 84,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

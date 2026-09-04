@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cinder wasp",
-  noun: "",
+  noun: "wasp",
   url: "https://gswiki.play.net/cinder_wasp",
   picture: "",
   level: 46,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: false,
   muggable: false,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "steel golem",
-  noun: "",
+  noun: "golem",
   url: "https://gswiki.play.net/steel_golem",
   picture: "",
   level: 20,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

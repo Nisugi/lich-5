@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fire salamander",
-  noun: "",
+  noun: "salamander",
   url: "https://gswiki.play.net/fire_salamander",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

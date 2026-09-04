@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shadow steed",
-  noun: "",
+  noun: "steed",
   url: "https://gswiki.play.net/shadow_steed",
   picture: "",
   level: 38,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

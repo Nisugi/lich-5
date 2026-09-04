@@ -1,6 +1,6 @@
 {
   name: "niveous giant warg",
-  noun: "",
+  noun: "warg",
   url: "https://gswiki.play.net/Niveous_giant_warg",
   picture: "",
   level: 104,
@@ -9,6 +9,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -157,7 +158,8 @@
     death: [
       "A niveous giant warg rolls over onto {pronoun} side with a whimper before surrendering to death.",
       "A niveous giant warg goes limp as the last of {pronoun} life is crushed from {pronoun} by {target} unyielding bearhug!",
-      "The niveous giant warg slumps to the ground."
+      "The niveous giant warg slumps to the ground.",
+      "A niveous giant warg's eyes roll up into {pronoun} head as {pronoun} body goes limp on the ground."
     ],
     decay: [
       "A niveous giant warg's immense form decays away into a mound of fur, tooth, and claw."

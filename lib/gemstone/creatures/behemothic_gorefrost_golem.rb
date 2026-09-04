@@ -1,6 +1,6 @@
 {
   name: "Behemothic gorefrost golem",
-  noun: "",
+  noun: "golem",
   url: "https://gswiki.play.net/Behemothic_gorefrost_golem",
   picture: "",
   level: 104,
@@ -9,6 +9,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "banshee",
-  noun: "",
+  noun: "banshee",
   url: "https://gswiki.play.net/banshee",
   picture: "",
   level: 50,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

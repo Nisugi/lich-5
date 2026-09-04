@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "blackened decaying tumbleweed",
-  noun: "",
+  noun: "tumbleweed",
   url: "https://gswiki.play.net/blackened_decaying_tumbleweed",
   picture: "",
   level: 39,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "rabid squirrel",
-  noun: "",
+  noun: "squirrel",
   url: "https://gswiki.play.net/rabid_squirrel",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

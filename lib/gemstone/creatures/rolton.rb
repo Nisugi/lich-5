@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "rolton",
-  noun: "",
+  noun: "rolton",
   url: "https://gswiki.play.net/rolton",
   picture: "",
   level: 1,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

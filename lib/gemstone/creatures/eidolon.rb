@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "eidolon",
-  noun: "",
+  noun: "eidolon",
   url: "https://gswiki.play.net/eidolon",
   picture: "",
   level: 55,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "putrefied citadel herald",
-  noun: "",
+  noun: "herald",
   url: "https://gswiki.play.net/putrefied_citadel_herald",
   picture: "",
   level: 60,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

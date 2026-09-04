@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ethereal triton sentry",
-  noun: "",
+  noun: "sentry",
   url: "https://gswiki.play.net/ethereal_triton_sentry",
   picture: "",
   level: 103,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

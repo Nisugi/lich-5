@@ -1,6 +1,6 @@
 {
   name: "tattooed gigas berserker",
-  noun: "",
+  noun: "berserker",
   url: "https://gswiki.play.net/Tattooed_gigas_berserker",
   picture: "",
   level: 103,
@@ -9,6 +9,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -165,7 +166,8 @@
     death: [
       "A tattooed gigas berserker's fists tense with impotent rage as {pronoun} surrenders to death.",
       "A grim gigas skald raises a hand as if to grasp for support as {pronoun} collapses, life going out of {pronoun} form.",
-      "The tattooed gigas berserker slumps to the ground."
+      "The tattooed gigas berserker slumps to the ground.",
+      "A tattooed gigas berserker's eyes roll up into {pronoun} head as {pronoun} body goes limp on the ground."
     ],
     decay: [
       "Creeping decay races across a tattooed gigas berserker's prone form, swiftly consuming the body despite its colossal size."
@@ -182,6 +184,9 @@
     ],
     spell_prep: [
       "A tattooed gigas berserker's eyes begin to glow purple."
+    ],
+    stun_break: [
+      "A tattooed gigas berserker's eyes open wide, crimson with fury, as {pronoun} breaks free from {pronoun} pacified state!"
     ],
     attacks: {
       attack: [

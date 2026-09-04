@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fire cat",
-  noun: "",
+  noun: "cat",
   url: "https://gswiki.play.net/fire_cat",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

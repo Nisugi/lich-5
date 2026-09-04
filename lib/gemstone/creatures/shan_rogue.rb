@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shan rogue",
-  noun: "",
+  noun: "rogue",
   url: "https://gswiki.play.net/shan_rogue",
   picture: "",
   level: 66,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

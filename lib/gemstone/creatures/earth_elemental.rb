@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "earth elemental",
-  noun: "",
+  noun: "elemental",
   url: "https://gswiki.play.net/earth_elemental",
   picture: "",
   level: 82,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,
@@ -108,7 +109,8 @@
     ],
     death: [
       "The earth elemental topples to the ground motionless.",
-      "The earth elemental shudders violently for a moment, then goes still."
+      "The earth elemental shudders violently for a moment, then goes still.",
+      "The earth elemental falls to the floor dead, {pronoun} still pulsating with a blinding white hue."
     ],
     decay: [
       "Tiny fissures quickly spread over the entire form of an earth elemental.  Within moments, it crumbles into a pile of dirt and rubble.",

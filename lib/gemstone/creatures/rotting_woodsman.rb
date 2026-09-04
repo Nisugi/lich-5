@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "rotting woodsman",
-  noun: "",
+  noun: "woodsman",
   url: "https://gswiki.play.net/rotting_woodsman",
   picture: "",
   level: 23,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

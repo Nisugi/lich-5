@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "revenant",
-  noun: "",
+  noun: "revenant",
   url: "https://gswiki.play.net/revenant",
   picture: "",
   level: 4,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

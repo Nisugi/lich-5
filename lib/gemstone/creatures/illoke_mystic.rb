@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Illoke mystic",
-  noun: "",
+  noun: "mystic",
   url: "https://gswiki.play.net/illoke_mystic",
   picture: "",
   level: 62,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "firephantom",
-  noun: "",
+  noun: "firephantom",
   url: "https://gswiki.play.net/firephantom",
   picture: "",
   level: 6,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

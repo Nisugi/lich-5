@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Ilvari sprite",
-  noun: "",
+  noun: "sprite",
   url: "https://gswiki.play.net/ilvari_sprite",
   picture: "",
   level: 72,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

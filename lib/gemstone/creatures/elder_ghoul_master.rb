@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "elder ghoul master",
-  noun: "",
+  noun: "master",
   url: "https://gswiki.play.net/elder_ghoul_master",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: false,

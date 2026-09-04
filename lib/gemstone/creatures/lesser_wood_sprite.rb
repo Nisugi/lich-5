@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser wood sprite",
-  noun: "",
+  noun: "sprite",
   url: "https://gswiki.play.net/lesser_wood_sprite",
   picture: "",
   level: 30,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

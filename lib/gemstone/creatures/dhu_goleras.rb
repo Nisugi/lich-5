@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "dhu goleras",
-  noun: "",
+  noun: "goleras",
   url: "https://gswiki.play.net/dhu_goleras",
   picture: "",
   level: 78,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

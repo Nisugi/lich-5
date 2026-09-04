@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Ithzir initiate",
-  noun: "",
+  noun: "initiate",
   url: "https://gswiki.play.net/ithzir_initiate",
   picture: "",
   level: 91,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

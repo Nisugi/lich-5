@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fire ogre",
-  noun: "",
+  noun: "ogre",
   url: "https://gswiki.play.net/fire_ogre",
   picture: "",
   level: 28,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

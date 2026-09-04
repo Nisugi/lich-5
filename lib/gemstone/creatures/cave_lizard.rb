@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cave lizard",
-  noun: "",
+  noun: "lizard",
   url: "https://gswiki.play.net/cave_lizard",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

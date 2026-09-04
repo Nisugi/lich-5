@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "vourkha",
-  noun: "",
+  noun: "vourkha",
   url: "https://gswiki.play.net/vourkha",
   picture: "",
   level: 39,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

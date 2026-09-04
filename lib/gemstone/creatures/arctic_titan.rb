@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "arctic titan",
-  noun: "",
+  noun: "titan",
   url: "https://gswiki.play.net/arctic_titan",
   picture: "",
   level: 36,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

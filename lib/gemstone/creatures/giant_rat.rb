@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "giant rat",
-  noun: "",
+  noun: "rat",
   url: "https://gswiki.play.net/giant_rat",
   picture: "",
   level: 1,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

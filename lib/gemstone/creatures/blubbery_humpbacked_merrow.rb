@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "blubbery humpbacked merrow",
-  noun: "",
+  noun: "merrow",
   url: "https://gswiki.play.net/blubbery_humpbacked_merrow",
   picture: "",
   level: 111,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

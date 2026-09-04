@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "minotaur magus",
-  noun: "",
+  noun: "magus",
   url: "https://gswiki.play.net/minotaur_magus",
   picture: "",
   level: 78,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

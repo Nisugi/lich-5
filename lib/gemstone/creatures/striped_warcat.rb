@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "striped warcat",
-  noun: "",
+  noun: "warcat",
   url: "https://gswiki.play.net/striped_warcat",
   picture: "",
   level: 20,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

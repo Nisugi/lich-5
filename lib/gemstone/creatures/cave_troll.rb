@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cave troll",
-  noun: "",
+  noun: "troll",
   url: "https://gswiki.play.net/cave_troll",
   picture: "",
   level: 16,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

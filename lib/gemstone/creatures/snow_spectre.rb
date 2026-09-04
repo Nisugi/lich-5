@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "snow spectre",
-  noun: "",
+  noun: "spectre",
   url: "https://gswiki.play.net/snow_spectre",
   picture: "",
   level: 9,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

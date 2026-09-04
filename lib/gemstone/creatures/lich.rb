@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lich",
-  noun: "",
+  noun: "lich",
   url: "https://gswiki.play.net/lich",
   picture: "",
   level: 110,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,
@@ -21,7 +22,7 @@
     "Extraplanar"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 238,
   speed: nil,
   height: nil,
   size: "",

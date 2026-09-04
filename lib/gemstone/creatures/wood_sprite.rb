@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "wood sprite",
-  noun: "",
+  noun: "sprite",
   url: "https://gswiki.play.net/wood_sprite",
   picture: "",
   level: 38,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "magna vereri",
-  noun: "",
+  noun: "vereri",
   url: "https://gswiki.play.net/magna_vereri",
   picture: "",
   level: 72,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

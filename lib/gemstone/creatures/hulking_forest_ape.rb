@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "hulking forest ape",
-  noun: "",
+  noun: "ape",
   url: "https://gswiki.play.net/hulking_forest_ape",
   picture: "",
   level: 31,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

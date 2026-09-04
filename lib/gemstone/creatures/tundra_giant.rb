@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "tundra giant",
-  noun: "",
+  noun: "giant",
   url: "https://gswiki.play.net/tundra_giant",
   picture: "",
   level: 34,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

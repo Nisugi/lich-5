@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "large thorned shrub",
-  noun: "",
+  noun: "shrub",
   url: "https://gswiki.play.net/large_thorned_shrub",
   picture: "",
   level: 48,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

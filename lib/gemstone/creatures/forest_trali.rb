@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "forest trali",
-  noun: "",
+  noun: "trali",
   url: "https://gswiki.play.net/forest_trali",
   picture: "",
   level: 44,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

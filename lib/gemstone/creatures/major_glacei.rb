@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "major glacei",
-  noun: "",
+  noun: "glacei",
   url: "https://gswiki.play.net/major_glacei",
   picture: "",
   level: 47,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

@@ -1,6 +1,6 @@
 {
   name: "Withered shadow-cloaked draugr",
-  noun: "",
+  noun: "draugr",
   url: "https://gswiki.play.net/Withered_shadow-cloaked_draugr",
   picture: "",
   level: 108,
@@ -9,6 +9,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -152,7 +153,8 @@
       "A withered shadow-cloaked draugr jerks up from the ground, {pronoun} joints bending at painful angles as {pronoun} rises into a standing position."
     ],
     stun_break: [
-      "A withered shadow-cloaked draugr rips free from the webbing, mummified muscles and tendons crackling with the effort!"
+      "A withered shadow-cloaked draugr rips free from the webbing, mummified muscles and tendons crackling with the effort!",
+      "A withered shadow-cloaked draugr's eyes open wide, blue with frigid fury, as {pronoun} breaks free from {pronoun} pacified state!"
     ],
     attacks: {
       attack: [

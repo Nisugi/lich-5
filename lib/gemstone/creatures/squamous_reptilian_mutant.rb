@@ -1,6 +1,6 @@
 {
   name: "Squamous reptilian mutant",
-  noun: "",
+  noun: "mutant",
   url: "https://gswiki.play.net/Squamous_reptilian_mutant",
   picture: "",
   level: 109,
@@ -9,6 +9,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -144,7 +145,8 @@
         "A squamous reptilian mutant splays one gnarled claw and slashes at you!",
         "Hampered by {pronoun} deformities, a squamous reptilian mutant clumsily swings {weapon} at you!",
         "A squamous reptilian mutant swings a shadow-drenched fist down at {target}!",
-        "A squamous reptilian mutant flaily wildly with {pronoun} fists at you!"
+        "A squamous reptilian mutant flaily wildly with {pronoun} fists at you!",
+        "A squamous reptilian mutant's cranium pulses, {pronoun} eyes narrowing to luminous slits as {pronoun} focuses intently upon you!"
       ]
     },
     info: {

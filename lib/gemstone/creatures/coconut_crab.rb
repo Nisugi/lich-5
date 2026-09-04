@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "coconut crab",
-  noun: "",
+  noun: "crab",
   url: "https://gswiki.play.net/coconut_crab",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

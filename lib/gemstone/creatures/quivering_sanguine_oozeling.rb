@@ -1,6 +1,6 @@
 {
   name: "Quivering sanguine oozeling",
-  noun: "",
+  noun: "oozeling",
   url: "",
   picture: "",
   level: nil,
@@ -9,6 +9,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

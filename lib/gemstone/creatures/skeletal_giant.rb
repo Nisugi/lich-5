@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "skeletal giant",
-  noun: "",
+  noun: "giant",
   url: "https://gswiki.play.net/skeletal_giant",
   picture: "",
   level: 33,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

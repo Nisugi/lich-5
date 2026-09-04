@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "grutik savage",
-  noun: "",
+  noun: "savage",
   url: "https://gswiki.play.net/grutik_savage",
   picture: "",
   level: 27,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

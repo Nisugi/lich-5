@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "bent being",
-  noun: "",
+  noun: "being",
   url: "https://gswiki.play.net/bent_being",
   picture: "",
   level: 82,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

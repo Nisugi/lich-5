@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "raving lunatic",
-  noun: "",
+  noun: "lunatic",
   url: "https://gswiki.play.net/raving_lunatic",
   picture: "",
   level: 77,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

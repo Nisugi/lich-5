@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "amaranthine kraken tentacle",
-  noun: "",
+  noun: "tentacle",
   url: "https://gswiki.play.net/amaranthine_kraken_tentacle",
   picture: "",
   level: 113,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

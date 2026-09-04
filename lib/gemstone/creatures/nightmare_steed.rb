@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "nightmare steed",
-  noun: "",
+  noun: "steed",
   url: "https://gswiki.play.net/nightmare_steed",
   picture: "",
   level: 55,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "flickering mist-wreathed banshee",
-  noun: "",
+  noun: "banshee",
   url: "https://gswiki.play.net/flickering_mist-wreathed_banshee",
   picture: "",
   level: 102,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -132,6 +133,9 @@
       "A flickering mist-wreathed banshee raises {pronoun} arms overhead, {pronoun} frayed garments and wild locks whipping in a ghostly breeze as waves of mist rise around {pronoun}. The fog crashes outward in an inexorable tide, aglow with silvery radiance.",
       "A flickering mist-wreathed banshee's eyes glow with silvery grey light, and a pillar of argentine radiance manifests around {target}.",
       "A flickering mist-wreathed banshee raises {pronoun} voice in a shrill, eerie song that makes the surrounding mists dance."
+    ],
+    stun_break: [
+      "A flickering mist-wreathed banshee's sunken black eyes twitch toward you for a bleak instant and a discordant, mournful cry rips free from {pronoun} throat."
     ],
     attacks: {
       attack: [

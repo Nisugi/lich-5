@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "patchwork flesh monstrosity",
-  noun: "",
+  noun: "monstrosity",
   url: "https://gswiki.play.net/patchwork_flesh_monstrosity",
   picture: "",
   level: 98,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -149,6 +150,9 @@
       "A patchwork flesh monstrosity looks around, obviously confused."
     ],
     spell_prep: [],
+    stun_break: [
+      "A patchwork flesh monstrosity's purloined muscles cord violently and {pronoun} rips free from {pronoun} magical maladies!"
+    ],
     attacks: {
       attack: [
         "A patchwork flesh monstrosity tries to ensnare you with {pronoun} bloated arms!",

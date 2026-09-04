@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "giant albino tomb spider",
-  noun: "",
+  noun: "spider",
   url: "https://gswiki.play.net/giant_albino_tomb_spider",
   picture: "",
   level: 30,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: true,

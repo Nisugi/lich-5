@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "night golem",
-  noun: "",
+  noun: "golem",
   url: "https://gswiki.play.net/night_golem",
   picture: "",
   level: 5,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: false,
   muggable: true,

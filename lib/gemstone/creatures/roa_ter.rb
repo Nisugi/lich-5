@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "roa'ter",
-  noun: "",
+  noun: "roa'ter",
   url: "https://gswiki.play.net/roa'ter",
   picture: "",
   level: 41,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: true,

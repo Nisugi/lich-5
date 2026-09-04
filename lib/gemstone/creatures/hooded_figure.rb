@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "hooded figure",
-  noun: "",
+  noun: "figure",
   url: "https://gswiki.play.net/hooded_figure",
   picture: "",
   level: 30,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

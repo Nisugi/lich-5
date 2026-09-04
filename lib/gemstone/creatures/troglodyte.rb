@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "troglodyte",
-  noun: "",
+  noun: "troglodyte",
   url: "https://gswiki.play.net/troglodyte",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "wall guardian",
-  noun: "",
+  noun: "guardian",
   url: "https://gswiki.play.net/wall_guardian",
   picture: "",
   level: 11,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

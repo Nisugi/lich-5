@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "storm hound",
-  noun: "",
+  noun: "hound",
   url: "https://gswiki.play.net/storm_hound",
   picture: "",
   level: 24,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

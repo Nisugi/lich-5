@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "writhing icy bush",
-  noun: "",
+  noun: "bush",
   url: "https://gswiki.play.net/writhing_icy_bush",
   picture: "",
   level: 36,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

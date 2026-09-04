@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "soul golem",
-  noun: "",
+  noun: "golem",
   url: "https://gswiki.play.net/soul_golem",
   picture: "",
   level: 63,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: false,
   muggable: nil,

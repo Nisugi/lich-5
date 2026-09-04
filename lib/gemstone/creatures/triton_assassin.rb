@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "triton assassin",
-  noun: "",
+  noun: "assassin",
   url: "https://gswiki.play.net/triton_assassin",
   picture: "",
   level: 96,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

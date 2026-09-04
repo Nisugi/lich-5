@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "spectral triton protector",
-  noun: "",
+  noun: "protector",
   url: "https://gswiki.play.net/spectral_triton_protector",
   picture: "",
   level: 98,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

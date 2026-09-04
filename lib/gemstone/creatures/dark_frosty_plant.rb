@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "dark frosty plant",
-  noun: "",
+  noun: "plant",
   url: "https://gswiki.play.net/dark_frosty_plant",
   picture: "",
   level: 45,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "luminous arachnid",
-  noun: "",
+  noun: "arachnid",
   url: "https://gswiki.play.net/luminous_arachnid",
   picture: "",
   level: 15,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

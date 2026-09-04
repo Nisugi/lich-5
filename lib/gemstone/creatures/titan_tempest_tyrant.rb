@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "titan tempest tyrant",
-  noun: "",
+  noun: "tyrant",
   url: "https://gswiki.play.net/titan_tempest_tyrant",
   picture: "",
   level: 83,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

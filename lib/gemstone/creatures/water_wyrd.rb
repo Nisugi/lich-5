@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "water wyrd",
-  noun: "",
+  noun: "wyrd",
   url: "https://gswiki.play.net/water_wyrd",
   picture: "",
   level: 35,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: true,

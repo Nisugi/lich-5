@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "phantom",
-  noun: "",
+  noun: "phantom",
   url: "https://gswiki.play.net/phantom",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

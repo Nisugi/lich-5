@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "stone gargoyle",
-  noun: "",
+  noun: "gargoyle",
   url: "https://gswiki.play.net/stone_gargoyle",
   picture: "",
   level: 39,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: false,

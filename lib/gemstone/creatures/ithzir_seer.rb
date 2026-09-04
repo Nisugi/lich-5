@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Ithzir seer",
-  noun: "",
+  noun: "seer",
   url: "https://gswiki.play.net/ithzir_seer",
   picture: "",
   level: 97,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

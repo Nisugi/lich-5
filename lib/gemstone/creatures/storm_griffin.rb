@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "storm griffin",
-  noun: "",
+  noun: "griffin",
   url: "https://gswiki.play.net/storm_griffin",
   picture: "",
   level: 73,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

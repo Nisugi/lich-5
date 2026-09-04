@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "jungle troll",
-  noun: "",
+  noun: "troll",
   url: "https://gswiki.play.net/jungle_troll",
   picture: "",
   level: 26,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

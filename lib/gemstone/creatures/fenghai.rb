@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fenghai",
-  noun: "",
+  noun: "fenghai",
   url: "https://gswiki.play.net/fenghai",
   picture: "",
   level: 23,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

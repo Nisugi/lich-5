@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "banded rattlesnake",
-  noun: "",
+  noun: "rattlesnake",
   url: "https://gswiki.play.net/banded_rattlesnake",
   picture: "",
   level: 16,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

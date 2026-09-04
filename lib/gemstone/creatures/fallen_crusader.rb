@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fallen crusader",
-  noun: "",
+  noun: "crusader",
   url: "https://gswiki.play.net/fallen_crusader",
   picture: "",
   level: 97,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "crystal golem",
-  noun: "",
+  noun: "golem",
   url: "https://gswiki.play.net/crystal_golem",
   picture: "",
   level: 12,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: false,
   muggable: true,

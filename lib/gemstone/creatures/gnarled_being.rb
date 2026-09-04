@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "gnarled being",
-  noun: "",
+  noun: "being",
   url: "https://gswiki.play.net/gnarled_being",
   picture: "",
   level: 82,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: true,

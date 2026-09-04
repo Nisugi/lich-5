@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "darkly inked fetish master",
-  noun: "",
+  noun: "master",
   url: "https://gswiki.play.net/darkly_inked_fetish_master",
   picture: "",
   level: 104,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

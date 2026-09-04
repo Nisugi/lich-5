@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "horned basalt grotesque",
-  noun: "",
+  noun: "grotesque",
   url: "https://gswiki.play.net/horned_basalt_grotesque",
   picture: "",
   level: 105,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: nil,

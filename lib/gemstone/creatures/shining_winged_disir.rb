@@ -1,6 +1,6 @@
 {
   name: "Shining winged disir",
-  noun: "",
+  noun: "disir",
   url: "https://gswiki.play.net/Shining_winged_disir",
   picture: "",
   level: 114,
@@ -9,6 +9,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: nil,

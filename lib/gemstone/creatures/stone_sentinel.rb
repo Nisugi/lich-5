@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "stone sentinel",
-  noun: "",
+  noun: "sentinel",
   url: "https://gswiki.play.net/stone_sentinel",
   picture: "",
   level: 53,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: nil,

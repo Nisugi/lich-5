@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ghoul master",
-  noun: "",
+  noun: "master",
   url: "https://gswiki.play.net/ghoul_master",
   picture: "",
   level: 16,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

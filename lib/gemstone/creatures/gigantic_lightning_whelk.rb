@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "gigantic lightning whelk",
-  noun: "",
+  noun: "whelk",
   url: "https://gswiki.play.net/gigantic_lightning_whelk",
   picture: "",
   level: 107,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

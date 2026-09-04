@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mastodonic leopard",
-  noun: "",
+  noun: "leopard",
   url: "https://gswiki.play.net/mastodonic_leopard",
   picture: "",
   level: 44,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: nil,
   muggable: true,

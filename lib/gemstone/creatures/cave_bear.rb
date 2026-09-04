@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cave bear",
-  noun: "",
+  noun: "bear",
   url: "https://gswiki.play.net/cave_bear",
   picture: "",
   level: 21,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "triton magus",
-  noun: "",
+  noun: "magus",
   url: "https://gswiki.play.net/triton_magus",
   picture: "",
   level: 102,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "animated slush",
-  noun: "",
+  noun: "slush",
   url: "https://gswiki.play.net/animated_slush",
   picture: "",
   level: 54,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: nil,

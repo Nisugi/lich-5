@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "spectral woodsman",
-  noun: "",
+  noun: "woodsman",
   url: "https://gswiki.play.net/spectral_woodsman",
   picture: "",
   level: 35,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

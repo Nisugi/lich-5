@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fire elemental",
-  noun: "",
+  noun: "elemental",
   url: "https://gswiki.play.net/fire_elemental",
   picture: "",
   level: 60,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: nil,

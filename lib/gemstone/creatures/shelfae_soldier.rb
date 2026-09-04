@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shelfae soldier",
-  noun: "",
+  noun: "soldier",
   url: "https://gswiki.play.net/shelfae_soldier",
   picture: "",
   level: 7,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

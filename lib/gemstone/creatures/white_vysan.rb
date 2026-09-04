@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "white vysan",
-  noun: "",
+  noun: "vysan",
   url: "https://gswiki.play.net/white_vysan",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

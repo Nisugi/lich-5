@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "disfigured hive thrall",
-  noun: "",
+  noun: "thrall",
   url: "https://gswiki.play.net/disfigured_hive_thrall",
   picture: "",
   level: 104,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -149,14 +150,17 @@
     ],
     death: [],
     decay: [],
-    search: [],
+    search: [
+      "A disfigured hive thrall fidgets, one eye twitching as {pronoun} searches the shadows."
+    ],
     spell_prep: [],
     attacks: {
       attack: [
         "A disfigured hive thrall desperately thrusts {weapon} at you!",
         "Misshapen limbs flail as a disfigured hive thrall flings {pronoun} at you!",
         "Twisted desperation contorts a disfigured hive thrall's warped features as disfigured hive thrall tries to grab at you!",
-        "A disfigured hive thrall crushes you mercilessly!"
+        "A disfigured hive thrall crushes you mercilessly!",
+        "A disfigured hive thrall's eyes widen as {pronoun} topples forward, belching caustic bile at you!"
       ],
       bearhug: [
         "A disfigured hive thrall charges towards you and attempts to grasp you in a ferocious bearhug!"

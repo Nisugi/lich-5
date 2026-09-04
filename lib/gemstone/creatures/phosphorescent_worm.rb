@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "phosphorescent worm",
-  noun: "",
+  noun: "worm",
   url: "https://gswiki.play.net/phosphorescent_worm",
   picture: "",
   level: 16,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "dark orc",
-  noun: "",
+  noun: "orc",
   url: "https://gswiki.play.net/dark_orc",
   picture: "",
   level: 12,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: true,

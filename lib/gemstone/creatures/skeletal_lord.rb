@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "skeletal lord",
-  noun: "",
+  noun: "lord",
   url: "https://gswiki.play.net/skeletal_lord",
   picture: "",
   level: 41,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

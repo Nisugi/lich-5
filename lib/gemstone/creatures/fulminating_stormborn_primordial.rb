@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fulminating stormborn primordial",
-  noun: "",
+  noun: "primordial",
   url: "https://gswiki.play.net/fulminating_stormborn_primordial",
   picture: "",
   level: 109,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Ithzir janissary",
-  noun: "",
+  noun: "janissary",
   url: "https://gswiki.play.net/ithzir_janissary",
   picture: "",
   level: 92,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "minotaur warrior",
-  noun: "",
+  noun: "warrior",
   url: "https://gswiki.play.net/minotaur_warrior",
   picture: "",
   level: 76,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

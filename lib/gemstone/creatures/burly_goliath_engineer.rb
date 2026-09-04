@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "burly goliath engineer",
-  noun: "",
+  noun: "engineer",
   url: "https://gswiki.play.net/burly_goliath_engineer",
   picture: "",
   level: 115,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,
@@ -109,9 +110,14 @@
       "A burly goliath engineer lumbers north with a grim, purposeful look on {pronoun} face.",
       "A burly goliath engineer lumbers northwest with a grim, purposeful look on {pronoun} face."
     ],
-    death: [],
+    death: [
+      "A burly goliath engineer reaches out with a quavering hand before collapsing, lifeless, to the ground.",
+      "A burly goliath engineer's eyes roll up into {pronoun} head as {pronoun} body goes limp on the ground."
+    ],
     decay: [],
-    search: [],
+    search: [
+      "A burly goliath engineer scans the area methodically, eyes sharp and questioning."
+    ],
     spell_prep: [
       "A burly goliath engineer mutters a curt incantation, one hand's fingers performing a surprisingly deft dance.",
       "A burly goliath engineer impatiently snaps {pronoun} fingers at you!"

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "maw spore",
-  noun: "",
+  noun: "spore",
   url: "https://gswiki.play.net/maw_spore",
   picture: "",
   level: nil,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

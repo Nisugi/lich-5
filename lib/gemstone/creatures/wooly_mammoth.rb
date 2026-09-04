@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "wooly mammoth",
-  noun: "",
+  noun: "mammoth",
   url: "https://gswiki.play.net/wooly_mammoth",
   picture: "",
   level: 52,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

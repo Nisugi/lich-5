@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "crystal crab",
-  noun: "",
+  noun: "crab",
   url: "https://gswiki.play.net/crystal_crab",
   picture: "",
   level: 8,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: true,

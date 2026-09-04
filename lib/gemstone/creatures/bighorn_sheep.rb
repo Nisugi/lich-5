@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "bighorn sheep",
-  noun: "",
+  noun: "sheep",
   url: "https://gswiki.play.net/bighorn_sheep",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

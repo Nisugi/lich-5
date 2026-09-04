@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "corpulent kresh ravager",
-  noun: "",
+  noun: "ravager",
   url: "https://gswiki.play.net/corpulent_kresh_ravager",
   picture: "",
   level: 106,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: nil,
@@ -102,7 +103,9 @@
       "A corpulent kresh ravager's spasms, rolling over.  Its tiny legs kick at the air before going still.",
       "With a thunderous crash, a corpulent kresh ravager falls to the ground, tiny legs kicking at the air before going still."
     ],
-    decay: [],
+    decay: [
+      "A corpulent kresh ravager's vast abdomen deflates, oozing fluids as the ravager succumbs to rapid decay."
+    ],
     search: [],
     spell_prep: [],
     info: {

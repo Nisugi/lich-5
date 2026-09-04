@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "fanged goblin",
-  noun: "",
+  noun: "goblin",
   url: "https://gswiki.play.net/fanged_goblin",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

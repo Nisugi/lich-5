@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Ithzir herald",
-  noun: "",
+  noun: "herald",
   url: "https://gswiki.play.net/ithzir_herald",
   picture: "",
   level: 92,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

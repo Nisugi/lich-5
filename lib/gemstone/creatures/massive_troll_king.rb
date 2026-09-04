@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "massive troll king",
-  noun: "",
+  noun: "king",
   url: "https://gswiki.play.net/massive_troll_king",
   picture: "",
   level: 63,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: nil,

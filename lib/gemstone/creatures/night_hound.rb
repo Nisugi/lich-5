@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "night hound",
-  noun: "",
+  noun: "hound",
   url: "https://gswiki.play.net/night_hound",
   picture: "",
   level: 24,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

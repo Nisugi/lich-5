@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "scaly needle-toothed trenchling",
-  noun: "",
+  noun: "trenchling",
   url: "https://gswiki.play.net/scaly_needle-toothed_trenchling",
   picture: "",
   level: 107,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

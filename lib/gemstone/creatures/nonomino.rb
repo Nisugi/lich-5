@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "nonomino",
-  noun: "",
+  noun: "nonomino",
   url: "https://gswiki.play.net/nonomino",
   picture: "",
   level: 23,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "major spider",
-  noun: "",
+  noun: "spider",
   url: "https://gswiki.play.net/major_spider",
   picture: "",
   level: 20,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

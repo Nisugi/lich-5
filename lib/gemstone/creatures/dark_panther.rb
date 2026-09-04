@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "dark panther",
-  noun: "",
+  noun: "panther",
   url: "https://gswiki.play.net/dark_panther",
   picture: "",
   level: 22,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

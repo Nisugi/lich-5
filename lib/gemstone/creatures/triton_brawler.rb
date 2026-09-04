@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "triton brawler",
-  noun: "",
+  noun: "brawler",
   url: "https://gswiki.play.net/triton_brawler",
   picture: "",
   level: 98,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -164,7 +165,8 @@
     death: [
       "The triton brawler gurgles once and goes still, a wrathful look on {pronoun} face.",
       "A triton brawler's dreamy gaze goes lifeless.",
-      "A triton brawler slumps slowly, {pronoun} skin growing darker from lack of air."
+      "A triton brawler slumps slowly, {pronoun} skin growing darker from lack of air.",
+      "A triton brawler's eyes roll up into {pronoun} head as {pronoun} body goes limp on the ground."
     ],
     decay: [],
     search: [],

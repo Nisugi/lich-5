@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "sidewinder",
-  noun: "",
+  noun: "sidewinder",
   url: "https://gswiki.play.net/sidewinder",
   picture: "",
   level: 98,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "plains orc warrior",
-  noun: "",
+  noun: "warrior",
   url: "https://gswiki.play.net/plains_orc_warrior",
   picture: "",
   level: 16,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

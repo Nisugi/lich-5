@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "krolvin slaver",
-  noun: "",
+  noun: "slaver",
   url: "https://gswiki.play.net/krolvin_slaver",
   picture: "",
   level: 36,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -122,6 +123,9 @@
     ],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A krolvin slaver's features turn to a blackened scowl as {pronoun} struggles to regain {pronoun} composure."
+    ],
     attacks: {
       attack: [
         "A krolvin slaver swings {weapon} at you!",

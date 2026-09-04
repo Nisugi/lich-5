@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "pallid fog-cloaked kelpie",
-  noun: "",
+  noun: "kelpie",
   url: "https://gswiki.play.net/pallid_fog-cloaked_kelpie",
   picture: "",
   level: 112,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "nedum vereri",
-  noun: "",
+  noun: "vereri",
   url: "https://gswiki.play.net/nedum_vereri",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

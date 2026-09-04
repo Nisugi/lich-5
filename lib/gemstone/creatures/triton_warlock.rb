@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "triton warlock",
-  noun: "",
+  noun: "warlock",
   url: "https://gswiki.play.net/triton_warlock",
   picture: "",
   level: 94,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

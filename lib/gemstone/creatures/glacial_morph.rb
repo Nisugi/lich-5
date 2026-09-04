@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "glacial morph",
-  noun: "",
+  noun: "morph",
   url: "https://gswiki.play.net/glacial_morph",
   picture: "",
   level: 56,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: nil,

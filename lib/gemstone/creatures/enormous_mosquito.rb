@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "enormous mosquito",
-  noun: "",
+  noun: "mosquito",
   url: "https://gswiki.play.net/enormous_mosquito",
   picture: "",
   level: 22,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: true,

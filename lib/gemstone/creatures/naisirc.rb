@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "naisirc",
-  noun: "",
+  noun: "naisirc",
   url: "https://gswiki.play.net/naisirc",
   picture: "",
   level: 75,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

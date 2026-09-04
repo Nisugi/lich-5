@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Illoke jarl",
-  noun: "",
+  noun: "jarl",
   url: "https://gswiki.play.net/illoke_jarl",
   picture: "",
   level: 89,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

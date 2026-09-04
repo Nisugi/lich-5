@@ -1,6 +1,6 @@
 {
   name: "Eyeless black valravn",
-  noun: "",
+  noun: "valravn",
   url: "https://gswiki.play.net/Eyeless_black_valravn",
   picture: "",
   level: 112,
@@ -9,6 +9,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
@@ -151,7 +152,8 @@
       "An eyeless black valravn ruffles its feathers in a single, precise shake as it recovers its wits."
     ],
     search: [
-      "Shadows coil around the broken form of an eyeless black valravn, collapsing into a lightless sphere that erupts soundlessly, bathing the area in momentary darkness."
+      "Shadows coil around the broken form of an eyeless black valravn, collapsing into a lightless sphere that erupts soundlessly, bathing the area in momentary darkness.",
+      "An eyeless black valravn's eyeless gaze searches the shadows."
     ],
     info: {
       general: [

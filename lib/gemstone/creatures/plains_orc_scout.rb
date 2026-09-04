@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "plains orc scout",
-  noun: "",
+  noun: "scout",
   url: "https://gswiki.play.net/plains_orc_scout",
   picture: "",
   level: 17,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

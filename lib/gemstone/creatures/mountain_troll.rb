@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "mountain troll",
-  noun: "",
+  noun: "troll",
   url: "https://gswiki.play.net/mountain_troll",
   picture: "",
   level: 17,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

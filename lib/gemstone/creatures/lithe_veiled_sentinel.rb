@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lithe veiled sentinel",
-  noun: "",
+  noun: "sentinel",
   url: "https://gswiki.play.net/lithe_veiled_sentinel",
   picture: "",
   level: 96,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

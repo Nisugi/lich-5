@@ -1,6 +1,6 @@
 {
   name: "Quivering sanguine ooze",
-  noun: "",
+  noun: "ooze",
   url: "https://gswiki.play.net/Quivering_sanguine_ooze",
   picture: "",
   level: 107,
@@ -9,6 +9,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

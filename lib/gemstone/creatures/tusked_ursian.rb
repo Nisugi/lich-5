@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "tusked ursian",
-  noun: "",
+  noun: "ursian",
   url: "https://gswiki.play.net/tusked_ursian",
   picture: "",
   level: 37,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

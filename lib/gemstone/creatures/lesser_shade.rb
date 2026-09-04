@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser shade",
-  noun: "",
+  noun: "shade",
   url: "https://gswiki.play.net/lesser_shade",
   picture: "",
   level: 2,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: false,

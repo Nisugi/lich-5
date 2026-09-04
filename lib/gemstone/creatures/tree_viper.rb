@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "tree viper",
-  noun: "",
+  noun: "viper",
   url: "https://gswiki.play.net/tree_viper",
   picture: "",
   level: 24,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

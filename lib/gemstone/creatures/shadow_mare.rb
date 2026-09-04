@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shadow mare",
-  noun: "",
+  noun: "mare",
   url: "https://gswiki.play.net/shadow_mare",
   picture: "",
   level: 37,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

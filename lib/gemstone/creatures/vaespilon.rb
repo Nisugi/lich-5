@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "vaespilon",
-  noun: "",
+  noun: "vaespilon",
   url: "https://gswiki.play.net/vaespilon",
   picture: "",
   level: 93,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

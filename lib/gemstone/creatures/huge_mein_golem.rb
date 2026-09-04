@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "huge mein golem",
-  noun: "",
+  noun: "golem",
   url: "https://gswiki.play.net/huge_mein_golem",
   picture: "",
   level: 37,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: false,
   muggable: true,

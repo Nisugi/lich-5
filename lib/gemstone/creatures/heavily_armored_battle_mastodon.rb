@@ -1,6 +1,6 @@
 {
   name: "heavily armored battle mastodon",
-  noun: "",
+  noun: "mastodon",
   url: "https://gswiki.play.net/Heavily_armored_battle_mastodon",
   picture: "",
   level: 102,
@@ -9,6 +9,7 @@
   undead: false,
   blood: true,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,

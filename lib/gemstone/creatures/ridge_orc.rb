@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ridge orc",
-  noun: "",
+  noun: "orc",
   url: "https://gswiki.play.net/ridge_orc",
   picture: "",
   level: 4,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

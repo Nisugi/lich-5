@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "undertaker bat",
-  noun: "",
+  noun: "bat",
   url: "https://gswiki.play.net/undertaker_bat",
   picture: "",
   level: 36,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

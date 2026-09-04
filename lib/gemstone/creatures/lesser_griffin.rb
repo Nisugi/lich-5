@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser griffin",
-  noun: "",
+  noun: "griffin",
   url: "https://gswiki.play.net/lesser_griffin",
   picture: "",
   level: 69,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

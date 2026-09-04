@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ethereal mage apprentice",
-  noun: "",
+  noun: "apprentice",
   url: "https://gswiki.play.net/ethereal_mage_apprentice",
   picture: "",
   level: 54,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

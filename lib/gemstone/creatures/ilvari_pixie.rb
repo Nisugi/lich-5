@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Ilvari pixie",
-  noun: "",
+  noun: "pixie",
   url: "https://gswiki.play.net/ilvari_pixie",
   picture: "",
   level: 74,
@@ -10,6 +10,7 @@
   undead: false,
   blood: false,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

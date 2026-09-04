@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "skeletal soldier",
-  noun: "",
+  noun: "soldier",
   url: "https://gswiki.play.net/skeletal_soldier",
   picture: "",
   level: 34,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

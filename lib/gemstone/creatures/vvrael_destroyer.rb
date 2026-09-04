@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Vvrael destroyer",
-  noun: "",
+  noun: "destroyer",
   url: "https://gswiki.play.net/vvrael_destroyer",
   picture: "",
   level: 108,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: false,
   sympathy: false,
   muggable: true,
@@ -141,7 +142,8 @@
         "A Vvrael destroyer swings {weapon} at you!",
         "Tightening {pronoun} grip on {pronoun} black steel maul, a Vvrael destroyer strikes out at you with all of {pronoun} might!",
         "A Vvrael destroyer swings a crackling black steel maul at {target}!",
-        "A Vvrael destroyer leaps to {pronoun} feet!"
+        "A Vvrael destroyer leaps to {pronoun} feet!",
+        "A Vvrael destroyer's face contorts as {pronoun} unleashes a gutteral, deep-throated growl at you!"
       ],
       hurl: [
         "A Vvrael destroyer hurls {weapon} at {target}!"

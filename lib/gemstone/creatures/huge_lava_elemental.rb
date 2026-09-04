@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "huge lava elemental",
-  noun: "",
+  noun: "elemental",
   url: "https://gswiki.play.net/huge_lava_elemental",
   picture: "",
   level: 100,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: nil,
   sympathy: nil,
   muggable: nil,
@@ -21,7 +22,7 @@
     "Magical"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 300,
   speed: 7,
   height: 15,
   size: "huge",

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "striped gak",
-  noun: "",
+  noun: "gak",
   url: "https://gswiki.play.net/striped_gak",
   picture: "",
   level: 3,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

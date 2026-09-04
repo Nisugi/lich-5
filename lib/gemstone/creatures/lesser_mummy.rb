@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "lesser mummy",
-  noun: "",
+  noun: "mummy",
   url: "https://gswiki.play.net/lesser_mummy",
   picture: "",
   level: 6,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: nil,

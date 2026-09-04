@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Ithzir adept",
-  noun: "",
+  noun: "adept",
   url: "https://gswiki.play.net/ithzir_adept",
   picture: "",
   level: 96,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

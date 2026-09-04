@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "shelfae warlord",
-  noun: "",
+  noun: "warlord",
   url: "https://gswiki.play.net/shelfae_warlord",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: nil,
   muggable: false,

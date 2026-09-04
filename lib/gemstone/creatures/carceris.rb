@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "carceris",
-  noun: "",
+  noun: "carceris",
   url: "https://gswiki.play.net/carceris",
   picture: "",
   level: 25,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: nil,

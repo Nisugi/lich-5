@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "warrior shade",
-  noun: "",
+  noun: "shade",
   url: "https://gswiki.play.net/warrior_shade",
   picture: "",
   level: 48,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: nil,

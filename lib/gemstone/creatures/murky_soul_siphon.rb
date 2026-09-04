@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "murky soul siphon",
-  noun: "",
+  noun: "siphon",
   url: "https://gswiki.play.net/murky_soul_siphon",
   picture: "",
   level: 106,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

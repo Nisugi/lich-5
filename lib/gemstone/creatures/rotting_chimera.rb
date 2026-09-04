@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "rotting chimera",
-  noun: "",
+  noun: "chimera",
   url: "https://gswiki.play.net/rotting_chimera",
   picture: "",
   level: 46,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

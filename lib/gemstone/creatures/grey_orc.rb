@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "grey orc",
-  noun: "",
+  noun: "orc",
   url: "https://gswiki.play.net/grey_orc",
   picture: "",
   level: 14,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

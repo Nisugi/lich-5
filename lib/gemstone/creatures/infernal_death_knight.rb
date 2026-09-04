@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "infernal death knight",
-  noun: "",
+  noun: "knight",
   url: "https://gswiki.play.net/infernal_death_knight",
   picture: "",
   level: 104,
@@ -10,6 +10,7 @@
   undead: true,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

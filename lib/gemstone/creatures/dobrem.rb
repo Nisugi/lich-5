@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "dobrem",
-  noun: "",
+  noun: "dobrem",
   url: "https://gswiki.play.net/dobrem",
   picture: "",
   level: 28,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: nil,
   muggable: true,

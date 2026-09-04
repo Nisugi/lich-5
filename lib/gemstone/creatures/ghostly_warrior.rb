@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "ghostly warrior",
-  noun: "",
+  noun: "warrior",
   url: "https://gswiki.play.net/ghostly_warrior",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: false,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "greenwing hornet",
-  noun: "",
+  noun: "hornet",
   url: "https://gswiki.play.net/greenwing_hornet",
   picture: "",
   level: 18,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: false,

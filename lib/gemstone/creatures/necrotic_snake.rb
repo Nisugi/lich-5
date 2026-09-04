@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "necrotic snake",
-  noun: "",
+  noun: "snake",
   url: "https://gswiki.play.net/necrotic_snake",
   picture: "",
   level: 48,
@@ -10,6 +10,7 @@
   undead: true,
   blood: false,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

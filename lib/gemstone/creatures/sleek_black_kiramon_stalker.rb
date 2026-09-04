@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "sleek black kiramon stalker",
-  noun: "",
+  noun: "stalker",
   url: "https://gswiki.play.net/sleek_black_kiramon_stalker",
   picture: "",
   level: 108,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: nil,
+  limbs: nil,
   witherable: true,
   sympathy: false,
   muggable: true,
@@ -155,7 +156,8 @@
         "Without warning, a sleek black kiramon stalker glides from the shadows and twists fluidly to spear you with {pronoun} barbed stinger!",
         "A sleek black kiramon stalker attempts to kick dust at you, but is unable to kick up a sufficient amount of dust.",
         "A sleek black kiramon stalker manages to kick a large clump of dust at you!",
-        "A sleek black kiramon stalker grabs you by the head and twists violently. You hear a loud *CRACK* as your neck bones snap and your body goes limp!"
+        "A sleek black kiramon stalker grabs you by the head and twists violently. You hear a loud *CRACK* as your neck bones snap and your body goes limp!",
+        "A sleek black kiramon stalker's aim is slightly off, but {pronoun} still manages to inflict a flesh wound upon you!"
       ],
       bite: [
         "A sleek black kiramon stalker aims a preternaturally swift bite at you!",

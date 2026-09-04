@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "Sheruvian harbinger",
-  noun: "",
+  noun: "harbinger",
   url: "https://gswiki.play.net/sheruvian_harbinger",
   picture: "",
   level: 63,
@@ -10,6 +10,7 @@
   undead: false,
   blood: nil,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: false,

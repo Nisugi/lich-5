@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "spotted leaper",
-  noun: "",
+  noun: "leaper",
   url: "https://gswiki.play.net/spotted_leaper",
   picture: "",
   level: 4,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,

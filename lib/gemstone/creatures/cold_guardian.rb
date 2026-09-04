@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "cold guardian",
-  noun: "",
+  noun: "guardian",
   url: "https://gswiki.play.net/cold_guardian",
   picture: "",
   level: 34,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: false,
+  limbs: nil,
   witherable: false,
   sympathy: true,
   muggable: false,

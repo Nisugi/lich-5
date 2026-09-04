@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "triton dissembler",
-  noun: "",
+  noun: "dissembler",
   url: "https://gswiki.play.net/triton_dissembler",
   picture: "",
   level: 94,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: true,
   witherable: true,
   sympathy: true,
   muggable: true,

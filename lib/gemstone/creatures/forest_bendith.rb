@@ -1,7 +1,7 @@
 {
   schema_version: 3,
   name: "forest bendith",
-  noun: "",
+  noun: "bendith",
   url: "https://gswiki.play.net/forest_bendith",
   picture: "",
   level: 40,
@@ -10,6 +10,7 @@
   undead: false,
   blood: true,
   bones: true,
+  limbs: nil,
   witherable: true,
   sympathy: true,
   muggable: true,
