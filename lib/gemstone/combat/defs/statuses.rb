@@ -84,7 +84,13 @@ module Lich
                             /Reeling from the sonic onslaught, (?<target>.+?) staggers and falls over, writh(?:ing|es)/,
                             /(?<target>.+?) falls to the ground and rolls, trying to smother the flames/,
                             # round-5 period-form
-                            /(?<target>.+?) wobbles painfully and #{MK_PRE}(?:he|she|it)#{MK_POST} falls to the ground\./
+                            /(?<target>.+?) wobbles painfully and #{MK_PRE}(?:he|she|it)#{MK_POST} falls to the ground\./,
+                            # spine-crush knockdown flavor; often the ONLY
+                            # knockdown line printed (exchange evidence
+                            # 2026-09-03, 1.9k lines / 50+ creatures). The
+                            # "unconscious"/"in a deep slumber" tails file
+                            # as :sleeping, not here.
+                            /(?<target>.+?) slumps to the ground\./
                           ].freeze,
                           [
                             /(?<target>.+?) stands back up\./,
@@ -151,7 +157,14 @@ module Lich
             # Dispel landing - a spell stripped from the target (round-6:
             # 44k; follows the dispel/sigil_dispel flare + its SMR)
             StatusDef.new(:dispelled,
-                          [/A white glow rushes away from (?<target>[^.]+)\./].freeze,
+                          [
+                            /A white glow rushes away from (?<target>[^.]+)\./,
+                            # dispel-flare landing confirmation (exchange
+                            # evidence 2026-09-03: directly follows dispel/
+                            # sigil_dispel flares in all captured exchanges;
+                            # 13.4k lines / 50+ creatures)
+                            /(?<target>.+?) blinks and looks around in confusion for a moment\./
+                          ].freeze,
                           [].freeze),
 
             # Weapon knocked from the grip (round-6: 32k+ across spear/
@@ -297,6 +310,21 @@ module Lich
                             /(?<target>.+?) appears weak and feeble, #{MK_PRE}(?:his|her|its)#{MK_POST} movements sluggish\./
                           ].freeze,
                           [/(?<target>.+?) appears to recover some strength\./].freeze),
+
+            # Immolation-class burn: onset and per-round ticks observed in
+            # the 2026-09-03 exchanges (bursts-into-flame carries its own
+            # inline damage; continue-to-burn is the round tick); the
+            # shakes-off line is the expiry, printed even as death cleanup.
+            # add_status is idempotent so the tick re-add is safe.
+            StatusDef.new(:burning,
+                          [
+                            /Wisps of black smoke swirl around (?<target>.+?) and #{MK_PRE}(?:he|she|it)#{MK_POST} bursts into flame/,
+                            /The flames around (?<target>.+?) continue to burn!/
+                          ].freeze,
+                          [
+                            # 4.8k lines / 50+ creatures
+                            /(?<target>.+?) shakes off the effects of the flames\./
+                          ].freeze),
 
             # Remove-only, like :dispelled/:disarmed: creatures enter hiding
             # through per-creature flavor lines (creature messaging, not

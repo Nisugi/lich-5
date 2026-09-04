@@ -39,6 +39,10 @@ module Lich
             # :unaffected outcome's named-target fallback instead.
             AttackDef.new(:ewave, [/(?:An?|Some) (?<target>.+?) is buffeted by the (?:.+? ethereal (?:waves|sphere)|formless black (?:waves|sphere))(?: and is knocked to the ground)?\./].freeze),
             AttackDef.new(:natures_fury, [/The surroundings advance upon (?<target>.+?) with relentless fury!/].freeze),
+            # 711 Pain result line - names the spell the bare-gesture cast
+            # wrapper cannot (exchange evidence 2026-09-03: sits between
+            # "Warding failed!" and its damage; 17.9k lines / 50+ creatures)
+            AttackDef.new(:pain, [/(?<target>.+?) twists in great pain!/].freeze),
             AttackDef.new(:searing_light, [/The radiant burst of light engulfs (?<target>[^!]+)!/].freeze),
             AttackDef.new(:spikethorn, [/Dozens of long thorns suddenly grow out from the ground underneath (?<target>[^!]+)!/].freeze),
             AttackDef.new(:stone_fist, [/The (?:ground|floor) beneath (?<target>you|.+?) rumbles, then erupts in a shower of rubble that coalesces in to an? (?:enormous|large),? ?.*?hand(?: with .+? fingers)? in mid-air\./].freeze),
