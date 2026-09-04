@@ -113,7 +113,8 @@
     decay: [],
     search: [],
     spell_prep: [
-      "A burly goliath engineer mutters a curt incantation, one hand's fingers performing a surprisingly deft dance."
+      "A burly goliath engineer mutters a curt incantation, one hand's fingers performing a surprisingly deft dance.",
+      "A burly goliath engineer impatiently snaps {pronoun} fingers at you!"
     ],
     attacks: {
       attack: [

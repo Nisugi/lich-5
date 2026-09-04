@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 220,
-  speed: nil,
+  speed: 9,
   height: 5,
   size: "medium",
   areas: [
@@ -118,7 +118,8 @@
     ],
     death: [
       "The krolvin warrior rolls over on the floor and goes still.",
-      "The krolvin warrior rolls over on the ground and goes still."
+      "The krolvin warrior rolls over on the ground and goes still.",
+      "The krolvin warrior falls lifeless to the floor with a heavy thump."
     ],
     decay: [
       "A krolvin warrior's body decays into a pile of compost."

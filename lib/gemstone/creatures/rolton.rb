@@ -105,7 +105,8 @@
     arrival: [],
     flee: [
       "A rolton trots {direction}.",
-      "A rolton just went through some reinforced wooden gates."
+      "A rolton just went through some reinforced wooden gates.",
+      "A rolton bleats as {pronoun} slowly backs away."
     ],
     death: [
       "The rolton collapses to the ground, emits a final bleat, and dies.",

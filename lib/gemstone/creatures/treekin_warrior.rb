@@ -135,16 +135,20 @@
     ],
     decay: [
       "A treekin warrior decays into compost.",
-      "The layer of bark on a treekin warrior hardens and absorbs the attack!  The bark crackles as it crumbles to dust."
+      "The layer of bark on a treekin warrior hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
+      "The treekin warrior crumbles to the ground!"
     ],
-    search: [],
+    search: [
+      "A treekin warrior sheds a large number of leaves, as {pronoun} glances around apprehensively."
+    ],
     spell_prep: [],
     attacks: {
       attack: [
         "A treekin warrior lashes {weapon} at you!",
         "A treekin warrior pounds at you with a leafy fist!",
         "A treekin warrior raises a large root and slams it down at you!",
-        "A treekin warrior strikes out at you with all of {pronoun} might!"
+        "A treekin warrior strikes out at you with all of {pronoun} might!",
+        "A treekin warrior suddenly spits a gob of sap directly at you!"
       ]
     },
     info: {

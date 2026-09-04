@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 260,
-  speed: 10,
+  speed: 11,
   height: 5,
   size: "medium",
   areas: [
@@ -104,7 +104,9 @@
       "A zombie wails madly as {pronoun} limps {direction}.",
       "A zombie shambles {direction}."
     ],
-    death: [],
+    death: [
+      "The zombie falls to the ground, a lifeless lump of flesh."
+    ],
     decay: [],
     search: [
       "A zombie scans the area, {pronoun} eyes darting wildly about."

@@ -145,7 +145,9 @@
       "A triton combatant sweeps {pronoun} rusted steel hatchet out in an arc behind {pronoun}, {pronoun} eyes darting around as if seeking out {pronoun} next opponent."
     ],
     death: [
-      "The triton combatant gurgles once and goes still, a wrathful look on {pronoun} face."
+      "The triton combatant gurgles once and goes still, a wrathful look on {pronoun} face.",
+      "The triton combatant collapses to the floor with a splash, gurgling once with a wrathful look on {pronoun} face before expiring.",
+      "The triton combatant collapses to the ground with a splash, gurgling once with a wrathful look on {pronoun} face before expiring."
     ],
     decay: [],
     search: [],

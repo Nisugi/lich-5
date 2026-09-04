@@ -133,7 +133,8 @@
     attacks: {
       attack: [
         "A jungle troll chieftain swings {weapon} at you!",
-        "A jungle troll chieftain swings a vine-wrapped rusting bastard sword at {target}!"
+        "A jungle troll chieftain swings a vine-wrapped rusting bastard sword at {target}!",
+        "A jungle troll chieftain grunts, pointing at you!"
       ]
     },
     info: {

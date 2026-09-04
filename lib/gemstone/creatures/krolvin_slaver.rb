@@ -110,7 +110,8 @@
     flee: [
       "A krolvin slaver slinks {direction}.",
       "A krolvin slaver just went through an oaken hatchway.",
-      "A krolvin slaver just went through a starboard door."
+      "A krolvin slaver just went through a starboard door.",
+      "A krolvin slaver holds {pronoun} hands out in front of him as {pronoun} slowly backs away."
     ],
     death: [
       "The krolvin slaver's body goes stiff and cold as he dies.",
@@ -123,7 +124,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A krolvin slaver swings {weapon} at you!"
+        "A krolvin slaver swings {weapon} at you!",
+        "A krolvin slaver growls a curse and gestures at you!"
       ]
     },
     info: {

@@ -163,7 +163,8 @@
       "A lithe veiled sentinel strides in, eyes surveying the surroundings warily.",
       "A lithe veiled sentinel just arrived.",
       "A lithe veiled sentinel just came through a polished acacia archway.",
-      "A lithe veiled sentinel just came through a pair of high bronze double doors."
+      "A lithe veiled sentinel just came through a pair of high bronze double doors.",
+      "A lithe veiled sentinel staggers in, clutching at a seeping wound."
     ],
     flee: [
       "A lithe veiled sentinel just went through a polished acacia archway.",
@@ -180,6 +181,9 @@
       "A lithe veiled sentinel mumbles a silent and sibilant prayer, channeling blue-green energy down {pronoun} arms.",
       "A lithe veiled sentinel whispers, \"The priests will come for you soon.\""
     ],
+    stun_break: [
+      "A lithe veiled sentinel tears free from {pronoun} pacified state with a howl, as if ripped from the depths of a terrible nightmare!"
+    ],
     attacks: {
       attack: [
         "A lithe veiled sentinel delivers a vicious kick at you!",
@@ -193,7 +197,8 @@
         "A lithe veiled sentinel lashes out in an attempt to disarm your glowbark long bow, but you are too swift for {pronoun}!",
         "A lithe veiled sentinel lashes out in an attempt to disarm your ghezyte long bow, but you are too swift for {pronoun}!",
         "A lithe veiled sentinel lashes out in an attempt to disarm {target} storm surita staff, but {pronoun} is too swift for {pronoun}!",
-        "A lithe veiled sentinel lashes out in an attempt to disarm your slim short sword, but you are too swift for {pronoun}!"
+        "A lithe veiled sentinel lashes out in an attempt to disarm your slim short sword, but you are too swift for {pronoun}!",
+        "A lithe veiled sentinel spins into a deadly martial form, thrusting out a hand at you!"
       ]
     },
     info: {

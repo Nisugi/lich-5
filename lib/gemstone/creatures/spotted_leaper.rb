@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 51,
-  speed: nil,
+  speed: 10,
   height: 3,
   size: "medium",
   areas: [
@@ -104,7 +104,8 @@
     ],
     arrival: [],
     flee: [
-      "A spotted leaper bounds {direction}."
+      "A spotted leaper bounds {direction}.",
+      "A spotted leaper growls as {pronoun} slowly backs away."
     ],
     death: [
       "The spotted leaper collapses to the ground, emits a final snarl, and dies.",

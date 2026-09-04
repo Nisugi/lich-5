@@ -22,7 +22,7 @@
   ],
   bcs: nil,
   max_hp: 240,
-  speed: nil,
+  speed: 4,
   height: 6,
   size: "medium",
   areas: [
@@ -123,6 +123,9 @@
     search: [],
     spell_prep: [
       "An ice wraith gestures arcanely."
+    ],
+    stun_break: [
+      "The ice wraith shrugs off the cold."
     ],
     attacks: {
       attack: [

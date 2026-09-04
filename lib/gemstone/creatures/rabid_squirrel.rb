@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 36,
-  speed: nil,
+  speed: 6,
   height: 1,
   size: "small",
   areas: [
@@ -98,7 +98,8 @@
       "A rabid squirrel scampers in!"
     ],
     flee: [
-      "A rabid squirrel scampers {direction}."
+      "A rabid squirrel scampers {direction}.",
+      "A rabid squirrel chatters as {pronoun} slowly backs away."
     ],
     death: [
       "The rabid squirrel twitches its tail one last time and dies."

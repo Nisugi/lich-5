@@ -98,7 +98,8 @@
     flee: [
       "A roa'ter wormling slithers {direction}.",
       "A flashy roa'ter wormling slithers {direction}.",
-      "A dazzling roa'ter wormling slithers {direction}."
+      "A dazzling roa'ter wormling slithers {direction}.",
+      "The roa'ter wormling warily backs away."
     ],
     death: [
       "The wormling rolls over and dies."

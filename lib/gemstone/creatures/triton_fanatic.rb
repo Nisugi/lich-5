@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 300,
-  speed: 3,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -158,10 +158,13 @@
       "A triton fanatic goes limp as the last of {pronoun} life is crushed from {pronoun} by {target} unyielding bearhug!"
     ],
     decay: [],
-    search: [],
+    search: [
+      "A triton fanatic searches methodically through the environs."
+    ],
     spell_prep: [
       "A triton fanatic's eyes glow with silvery grey light, and then everything around you shimmers to match the argentine color.",
-      "A triton fanatic's eyes glow with silvery grey light, and a pillar of argentine radiance manifests around {target}."
+      "A triton fanatic's eyes glow with silvery grey light, and a pillar of argentine radiance manifests around {target}.",
+      "A triton fanatic steeples {pronoun} clawed fingers together, murmuring a quick incantation."
     ],
     attacks: {
       attack: [

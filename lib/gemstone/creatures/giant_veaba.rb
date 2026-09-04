@@ -114,6 +114,9 @@
     search: [],
     spell_prep: [],
     attacks: {
+      attack: [
+        "A giant veaba suddenly rears upward, then brings {pronoun} upper body rushing directly toward you!"
+      ],
       claw: [
         "A giant veaba claws at you!"
       ],

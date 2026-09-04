@@ -111,7 +111,8 @@
     attacks: {
       attack: [
         "A blubbery humpbacked merrow throws {pronoun} great head back, showing rows of terrible teeth as {pronoun} gurgles out the last words of {pronoun} spell!",
-        "A blubbery humpbacked merrow slams {pronoun} head into you!"
+        "A blubbery humpbacked merrow slams {pronoun} head into you!",
+        "A blubbery humpbacked merrow raises one ill-made limb to point at you!"
       ]
     },
     info: {

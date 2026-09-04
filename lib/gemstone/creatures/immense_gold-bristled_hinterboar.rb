@@ -24,7 +24,7 @@
   ],
   bcs: true,
   max_hp: 779,
-  speed: 3,
+  speed: 10,
   height: 25,
   size: "huge",
   attack_attributes: {
@@ -119,7 +119,8 @@
       "Heavy hoofbeats herald the arrival of an immense gold-bristled hinterboar.",
       "An immense gold-bristled hinterboar trots in with its tusks lifted skyward.  Its great hooves shake the ground with every step.",
       "An immense gold-bristled hinterboar just arrived.",
-      "An immense gold-bristled hinterboar trots in with {pronoun} {weapon}. Its great hooves shake the ground with every step."
+      "An immense gold-bristled hinterboar trots in with {pronoun} {weapon}. Its great hooves shake the ground with every step.",
+      "An immense gold-bristled hinterboar staggers in, squealing hoarsely with pain."
     ],
     flee: [
       "An immense gold-bristled hinterboar charges {direction}, shaking the ground with each hoofbeat.",
@@ -136,6 +137,9 @@
     search: [
       "An immense gold-bristled hinterboar puts its snout to the ground and snuffles for unseen prey.",
       "An immense gold-bristled hinterboar snuffles at the ground, trying to ferret out hidden threats."
+    ],
+    stand: [
+      "An immense gold-bristled hinterboar struggles to get to {pronoun} feet, {pronoun} hooves slipping until {pronoun} rights {reflexive}."
     ],
     attacks: {
       attack: [

@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 523,
-  speed: nil,
+  speed: 8,
   height: 5,
   size: "large",
   areas: [
@@ -138,9 +138,16 @@
       "A smouldering skeletal dreadsteed just came through a heavy steel portcullis.",
       "A smouldering skeletal dreadsteed just came through some vaulting grey stone doors.",
       "A smouldering skeletal dreadsteed charges in, carrying {target}.",
-      "A smouldering skeletal dreadsteed charges in, limping visibly."
+      "A smouldering skeletal dreadsteed charges in, limping visibly.",
+      "A smouldering skeletal dreadsteed canters in, ridden by an infernal death knight.",
+      "A smouldering skeletal dreadsteed limps in, {pronoun} ossified legs wobbling with the effort of carrying an infernal death knight.",
+      "A smouldering skeletal dreadsteed canters in, azure sparks flying from {pronoun} fiery mane."
     ],
-    flee: [],
+    flee: [
+      "A smouldering skeletal dreadsteed limps visibly as {pronoun} charges north.",
+      "A smouldering skeletal dreadsteed limps visibly as {pronoun} charges east.",
+      "A smouldering skeletal dreadsteed limps visibly as {pronoun} charges west."
+    ],
     death: [],
     decay: [],
     search: [

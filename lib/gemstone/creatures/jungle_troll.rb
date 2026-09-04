@@ -120,7 +120,10 @@
     flee: [
       "A jungle troll runs {direction}."
     ],
-    death: [],
+    death: [
+      "The jungle troll falls to the ground as the stillness of death overtakes {pronoun}.",
+      "The jungle troll falls to the floor as the stillness of death overtakes {pronoun}."
+    ],
     decay: [
       "A jungle troll decays into compost."
     ],

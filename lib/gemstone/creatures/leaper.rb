@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 88,
-  speed: nil,
+  speed: 10,
   height: 3,
   size: "medium",
   areas: [
@@ -105,7 +105,8 @@
     arrival: [],
     flee: [
       "A leaper bounds {direction}.",
-      "A leaper lopes {direction}, bounding up and down with {pronoun} powerful front legs!"
+      "A leaper lopes {direction}, bounding up and down with {pronoun} powerful front legs!",
+      "A leaper growls as {pronoun} slowly backs away."
     ],
     death: [
       "The leaper collapses to the ground, emits a final snarl, and dies.",

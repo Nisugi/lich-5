@@ -135,7 +135,8 @@
     attacks: {
       attack: [
         "A shan cleric swings {weapon} at you!",
-        "A shan cleric swings a spiked holy-water sprinkler at {target}!"
+        "A shan cleric swings a spiked holy-water sprinkler at {target}!",
+        "A shan cleric waves a hand dismissively at you!"
       ]
     },
     info: {

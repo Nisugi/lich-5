@@ -101,7 +101,8 @@
       "An Arachne servant just arrived."
     ],
     flee: [
-      "An Arachne servant heads {direction}."
+      "An Arachne servant heads {direction}.",
+      "An arachne servant looks tentative as {pronoun} backs away hissing, \"Repent! Lest Arachne strike thee down!\""
     ],
     death: [
       "The Arachne servant exhales a final curse and dies.",

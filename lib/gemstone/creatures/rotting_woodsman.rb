@@ -103,7 +103,9 @@
       "A rotting woodsman wails madly as he limps {direction}.",
       "A rotting woodsman shambles {direction}."
     ],
-    death: [],
+    death: [
+      "The rotting woodsman falls to the ground, a lifeless lump of flesh."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

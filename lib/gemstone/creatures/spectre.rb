@@ -142,7 +142,8 @@
     search: [],
     spell_prep: [
       "A spectre hisses an evil incantation!",
-      "A spectre utters a phrase of arcane magic."
+      "A spectre utters a phrase of arcane magic.",
+      "A spectre growls an evil incantation!"
     ],
     attacks: {
       attack: [

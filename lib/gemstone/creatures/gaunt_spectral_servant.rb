@@ -102,7 +102,8 @@
     ],
     attacks: {
       attack: [
-        "A gaunt spectral servant swings a crooked willow runestaff at you!"
+        "A gaunt spectral servant swings a crooked willow runestaff at you!",
+        "A gaunt spectral servant weakly points at you!"
       ]
     },
     info: {

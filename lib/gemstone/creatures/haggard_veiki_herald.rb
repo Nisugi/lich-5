@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: nil,
+  speed: 12,
   height: 13,
   size: "huge",
   areas: [
@@ -118,7 +118,8 @@
     ],
     attacks: {
       attack: [
-        "Hoisting {pronoun} zorchar khopesh high, a haggard Veiki herald strikes brutally at you!"
+        "Hoisting {pronoun} zorchar khopesh high, a haggard Veiki herald strikes brutally at you!",
+        "A haggard veiki herald touches {pronoun} palm to the ground, sending a charged pulse of energy directly toward you!"
       ]
     },
     info: {

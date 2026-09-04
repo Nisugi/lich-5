@@ -144,12 +144,17 @@
     ],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "An ashen patrician vampire tears free from {pronoun} unnatural slumber with a hoarse gasp."
+    ],
     attacks: {
       attack: [
         "An ashen patrician vampire swings {pronoun} {weapon} at your ghezyte long bow!",
         "An ashen patrician vampire swings {pronoun} {weapon} at your gleaming steel baselard!",
         "An ashen patrician vampire swings {pronoun} {weapon} at your smooth glowbark staff!",
-        "An ashen patrician vampire swings {pronoun} {weapon} at your glowbark long bow!"
+        "An ashen patrician vampire swings {pronoun} {weapon} at your glowbark long bow!",
+        "An ashen patrician vampire flicks a finger impatiently at you!",
+        "An ashen patrician vampire turns, blade spinning in {pronoun} hand toward you!"
       ],
       bite: [
         "An ashen patrician vampire snaps {pronoun} fingers with an artful flourish!"

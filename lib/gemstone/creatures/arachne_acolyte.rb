@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 190,
-  speed: nil,
+  speed: 8,
   height: 5,
   size: "medium",
   areas: [
@@ -144,7 +144,8 @@
       attack: [
         "An Arachne acolyte swings {weapon} at you!",
         "An arachne acolyte rushes in glowering insidiously!",
-        "An arachne acolyte swings a war hammer at you!"
+        "An arachne acolyte swings a war hammer at you!",
+        "An arachne acolyte glowers at you!"
       ]
     },
     info: {

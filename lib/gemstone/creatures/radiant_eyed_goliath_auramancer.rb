@@ -110,7 +110,8 @@
       attack: [
         "The radiant-eyed goliath auramancer attempts to jab you!",
         "A radiant-eyed goliath auramancer exhales slowly, rainbowed embers drifting on {pronoun} breath before winking out in the air.",
-        "The radiant-eyed goliath auramancer attempts to punch you!"
+        "The radiant-eyed goliath auramancer attempts to punch you!",
+        "A radiant-eyed goliath auramancer raises a glowing palm toward you!"
       ]
     },
     info: {

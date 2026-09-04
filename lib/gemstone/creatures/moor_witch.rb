@@ -118,7 +118,8 @@
         "A moor witch snaps {pronoun} head to the side in a vain attempt to clear {pronoun} thoughts."
       ],
       attack: [
-        "A moor witch swings {weapon} at you!"
+        "A moor witch swings {weapon} at you!",
+        "A moor witch screams an angry torrent of curses and points at you!"
       ]
     },
     info: {

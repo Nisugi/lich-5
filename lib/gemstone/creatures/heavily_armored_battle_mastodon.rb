@@ -152,6 +152,12 @@
       "A heavily armored battle mastodon snuffles at the air with {pronoun} trunk, the prehensile length curling about {reflexive} as {pronoun} chases after a scent."
     ],
 
+    spell_prep: [
+      "A heavily armored battle mastodon's eyes begin to glow purple."
+    ],
+    stun_break: [
+      "A heavily armored battle mastodon breaks free of the webbing, the strands insufficient to hold back {pronoun} sheer mass!"
+    ],
     attacks: {
       attack: [
         "A heavily armored battle mastodon raises {pronoun} trunk and slams {pronoun} down toward you!",

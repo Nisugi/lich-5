@@ -153,7 +153,8 @@
       ],
       attack: [
         "A triton warden swings a drake greatsword at you!",
-        "A triton warden swings an onyx-hafted black ora jeddart-axe at you!"
+        "A triton warden swings an onyx-hafted black ora jeddart-axe at you!",
+        "A triton warden places one hand on top of the other, crossing {pronoun} palms toward you!"
       ],
       fire: [
         "A triton warden fires {weapon} at you!",

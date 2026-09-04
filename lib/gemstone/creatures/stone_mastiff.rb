@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: 6,
+  speed: 8,
   height: 4,
   size: "large",
   areas: [
@@ -108,7 +108,8 @@
     ],
     flee: [
       "A stone mastiff barrels {direction}.",
-      "A stone mastiff crawls {direction}."
+      "A stone mastiff crawls {direction}.",
+      "A stone mastiff whimpers as {pronoun} slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The stone mastiff falls to the ground and dies.",
@@ -122,7 +123,13 @@
     stun_break: [
       "A stone mastiff shakes {pronoun} head violently as {pronoun} regains {pronoun} bearings!"
     ],
+    stand: [
+      "A stone mastiff growls as {pronoun} scrambles to {pronoun} feet!"
+    ],
     attacks: {
+      attack: [
+        "A stone mastiff bares {pronoun} teeth hungrily at you!"
+      ],
       claw: [
         "A stone mastiff claws at you!"
       ],

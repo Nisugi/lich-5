@@ -149,7 +149,8 @@
     flee: [],
     death: [],
     decay: [
-      "A monastic lich dissolves into a foul-smelling miasma."
+      "A monastic lich dissolves into a foul-smelling miasma.",
+      "The monastic lich seems to collapse in upon {reflexive}, leaving only a withered husk."
     ],
     search: [],
     spell_prep: [

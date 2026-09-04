@@ -148,7 +148,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A csetairi swings {weapon} at you!"
+        "A csetairi swings {weapon} at you!",
+        "A csetairi points two of {pronoun} four hands at you!"
       ]
     },
     info: {

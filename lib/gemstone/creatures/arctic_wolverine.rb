@@ -104,13 +104,17 @@
     ],
     flee: [
       "An arctic wolverine scampers {direction}, growling in pain.",
-      "An arctic wolverine scampers {direction}."
+      "An arctic wolverine scampers {direction}.",
+      "The arctic wolverine slowly backs away, {pronoun} teeth bared."
     ],
     death: [],
     decay: [],
     search: [],
     spell_prep: [],
     attacks: {
+      attack: [
+        "An arctic wolverine bares an impressive set of fangs at you!"
+      ],
       claw: [
         "An arctic wolverine claws at you!"
       ],

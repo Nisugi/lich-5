@@ -22,7 +22,7 @@
   ],
   bcs: nil,
   max_hp: 400,
-  speed: nil,
+  speed: 8,
   height: 6,
   size: "large",
   areas: [
@@ -100,6 +100,11 @@
     stand: [
       "A night mare throws {pronoun} head back and neighs, shaking off the stun!"
     ],
+    attacks: {
+      attack: [
+        "A night mare snorts at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

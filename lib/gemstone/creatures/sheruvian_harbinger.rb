@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: true,
   max_hp: 240,
-  speed: 12,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -152,7 +152,8 @@
     ],
     attacks: {
       attack: [
-        "A Sheruvian harbinger swings {weapon} at you!"
+        "A Sheruvian harbinger swings {weapon} at you!",
+        "A Sheruvian harbinger raises a pale arm at you!"
       ]
     },
     info: {

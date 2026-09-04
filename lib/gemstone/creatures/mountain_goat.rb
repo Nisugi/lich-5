@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 270,
-  speed: nil,
+  speed: 9,
   height: 3,
   size: "medium",
   areas: [
@@ -90,7 +90,8 @@
       "A mountain goat just arrived."
     ],
     flee: [
-      "A mountain goat trots {direction}."
+      "A mountain goat trots {direction}.",
+      "A mountain goat brays as {pronoun} slowly backs away."
     ],
     death: [
       "The mountain goat collapses to the ground, emits a final bray, and dies.",

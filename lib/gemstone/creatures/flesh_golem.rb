@@ -128,7 +128,8 @@
     flee: [],
     death: [
       "A flesh golem collapses in a heap, {pronoun} huge girth shaking the floor around {pronoun}.",
-      "A flesh golem collapses in a heap, {pronoun} huge girth shaking the ground around {pronoun}."
+      "A flesh golem collapses in a heap, {pronoun} huge girth shaking the ground around {pronoun}.",
+      "The flesh golem falls to the floor dead, {pronoun} husk still pulsating with a blinding white hue."
     ],
     decay: [],
     search: [],

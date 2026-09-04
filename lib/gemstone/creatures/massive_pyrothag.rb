@@ -127,6 +127,9 @@
     decay: [],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A massive pyrothag shrugs off the attempt to put {pronoun} to sleep!"
+    ],
     attacks: {
       attack: [
         "A massive pyrothag swings {weapon} at you!",

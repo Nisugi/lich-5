@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: true,
   max_hp: 122,
-  speed: 8,
+  speed: 9,
   height: 6,
   size: "medium",
   areas: [
@@ -91,7 +91,8 @@
     arrival: [],
     flee: [
       "An imposing elk trots {direction}.",
-      "An imposing elk trots {direction}, snorting to announce {pronoun} arrival!"
+      "An imposing elk trots {direction}, snorting to announce {pronoun} arrival!",
+      "An imposing elk snorts as {pronoun} slowly backs away."
     ],
     death: [
       "The imposing elk collapses to the ground, emits a final sigh, and dies.",

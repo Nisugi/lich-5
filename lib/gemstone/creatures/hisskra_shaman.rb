@@ -142,7 +142,8 @@
     ],
     attacks: {
       attack: [
-        "A hisskra shaman swings {weapon} at you!"
+        "A hisskra shaman swings {weapon} at you!",
+        "A hisskra shaman utters a single sibilant syllable while raising a clawed hand toward you!"
       ],
       claw: [
         "A hisskra shaman claws blindly at the air in front of {pronoun} as {pronoun} tries to regain {pronoun} bearings!"

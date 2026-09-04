@@ -115,7 +115,8 @@
       "A roiling crimson angargeist just went through a crumbling red stone maw.",
       "A roiling crimson angargeist just went through a breached red stone wall.",
       "A roiling crimson angargeist just went through a pocked red stone arch.",
-      "A roiling crimson angargeist just went through a pair of colossal red stone pillars."
+      "A roiling crimson angargeist just went through a pair of colossal red stone pillars.",
+      "A roiling crimson angargeist sends questing tentacles of ectoplasm toward the shadows, but {pronoun} find nothing and retreat, quivering anxiously."
     ],
     arrival: [
       "A roiling crimson angargeist just came through a pocked red stone arch.",

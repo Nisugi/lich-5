@@ -152,6 +152,11 @@
       "A winged viper hisses an arcane phrase in an unfamiliar sibilant language.",
       "A winged viper hisses loudly and soars higher in the air."
     ],
+    attacks: {
+      attack: [
+        "A winged viper flips {pronoun} body around, flicking {pronoun} tongue at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

@@ -91,9 +91,15 @@
     flee: [],
     death: [],
     decay: [],
-    search: [],
+    search: [
+      "An algae-draped merrow oracle narrows glowing eyes suspiciously, a low, wet growl in the back of {pronoun} throat as {pronoun} scans the shadows."
+    ],
     spell_prep: [],
     attacks: {
+      attack: [
+        "An algae-draped merrow oracle splays a webbed claw toward you!",
+        "An algae-draped merrow oracle twitches {pronoun} webbed fingers, hardening a crescent-shaped patch of air before sending {pronoun} whistling toward you!"
+      ],
       bolt: [
         "An algae-draped merrow oracle hurls a chunk of ice at {target}!"
       ],

@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: true,
   max_hp: 403,
-  speed: nil,
+  speed: 12,
   height: 9,
   size: "large",
   areas: [

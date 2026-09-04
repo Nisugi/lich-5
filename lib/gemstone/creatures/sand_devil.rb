@@ -176,7 +176,8 @@
     attacks: {
       attack: [
         "A sand devil pounds at you with {pronoun} fist!",
-        "A sand devil shoots strands of webbing at you!"
+        "A sand devil shoots strands of webbing at you!",
+        "A sand devil waves {pronoun} silver wand at you."
       ],
       claw: [
         "A sand devil claws at {target}!"

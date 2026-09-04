@@ -152,7 +152,8 @@
         "A greater orc thrusts with a spear at {target}!",
         "A greater orc rushes forward and then at the last moment skids to a stop.",
         "A greater orc swings a mace at {target}!",
-        "A greater orc swings a short sword at {target}!"
+        "A greater orc swings a short sword at {target}!",
+        "A greater orc hunches {pronoun} shoulders and glares at you."
       ]
     },
     info: {

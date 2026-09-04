@@ -123,6 +123,9 @@
     transmogs: nil
   },
   messaging: {
+    stun_break: [
+      "The reiver struggles in vain to shake off the magic."
+    ],
     attacks: {
       attack: [
         "A reiver pounds at you with {pronoun} fist!",
@@ -154,7 +157,9 @@
     decay: [
       "A reiver turns to dust."
     ],
-    search: [],
+    search: [
+      "The reiver looks around a bit."
+    ],
     spell_prep: [],
     info: {
       general: [],

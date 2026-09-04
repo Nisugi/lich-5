@@ -99,7 +99,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A Grimswarm troll skirmisher thrusts with a rapier at you!"
+        "A Grimswarm troll skirmisher thrusts with a rapier at you!",
+        "A Grimswarm troll skirmisher manages to kick a large clump of sand at you!"
       ],
       fire: [
         "A Grimswarm troll skirmisher fires {weapon} at you!"

@@ -98,7 +98,8 @@
     ],
     arrival: [],
     flee: [
-      "A dobrem lopes {direction}!"
+      "A dobrem lopes {direction}!",
+      "A dobrem whimpers as {pronoun} slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The dobrem falls to the ground and dies.",
@@ -113,6 +114,9 @@
       "A dobrem shakes {pronoun} head violently while trying to regain {pronoun} bearings!"
     ],
     attacks: {
+      attack: [
+        "A dobrem lunges at you!"
+      ],
       claw: [
         "A dobrem claws at you!"
       ]

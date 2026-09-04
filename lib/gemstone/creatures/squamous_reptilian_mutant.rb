@@ -128,7 +128,8 @@
     flee: [
       "A squamous reptilian mutant just went through a pair of colossal red stone pillars.",
       "A squamous reptilian mutant just went through a ragged acid-pocked gash.",
-      "A squamous reptilian mutant just went through a pocked red stone arch."
+      "A squamous reptilian mutant just went through a pocked red stone arch.",
+      "A squamous reptilian mutant scuttles east, claws clenched over {pronoun} belly."
     ],
     arrival: [
       "A squamous reptilian mutant crawls in before rising into a lopsided crouch.",
@@ -142,7 +143,8 @@
         "A squamous reptilian mutant flails wildly with {pronoun} fists at you!",
         "A squamous reptilian mutant splays one gnarled claw and slashes at you!",
         "Hampered by {pronoun} deformities, a squamous reptilian mutant clumsily swings {weapon} at you!",
-        "A squamous reptilian mutant swings a shadow-drenched fist down at {target}!"
+        "A squamous reptilian mutant swings a shadow-drenched fist down at {target}!",
+        "A squamous reptilian mutant flaily wildly with {pronoun} fists at you!"
       ]
     },
     info: {

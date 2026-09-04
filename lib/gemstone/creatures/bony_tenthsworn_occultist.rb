@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: true,
   max_hp: 289,
-  speed: nil,
+  speed: 12,
   height: 4,
   size: "small",
   areas: [
@@ -115,6 +115,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attacks: {
+      attack: [
+        "A bony tenthsworn occultist directs a finger twined in crimson smoke at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

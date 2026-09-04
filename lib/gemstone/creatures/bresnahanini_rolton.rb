@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 44,
-  speed: nil,
+  speed: 13,
   height: 3,
   size: "medium",
   areas: [
@@ -101,7 +101,8 @@
     arrival: [],
     flee: [
       "A Bresnahanini rolton trots {direction}.",
-      "A bresnahanini rolton trots {direction}, snorting and scanning the area."
+      "A bresnahanini rolton trots {direction}, snorting and scanning the area.",
+      "A bresnahanini rolton bleats as {pronoun} slowly backs away."
     ],
     death: [
       "The Bresnahanini rolton collapses to the ground, emits a final bleat, and dies.",

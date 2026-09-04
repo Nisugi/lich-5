@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 160,
-  speed: nil,
+  speed: 11,
   height: 1,
   size: "tiny",
   areas: [
@@ -102,9 +102,13 @@
     ],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A spiked cavern urchin clatters {pronoun} spines together in a feeble attempt to shake off the stun."
+    ],
     attacks: {
       attack: [
-        "A spiked cavern urchin thrusts {pronoun} barbed spines at you!"
+        "A spiked cavern urchin thrusts {pronoun} barbed spines at you!",
+        "A spiked cavern urchin launches a barrage of spines, the barbs exploding outward at you!"
       ]
     },
     info: {

@@ -21,7 +21,7 @@
   ],
   bcs: nil,
   max_hp: 133,
-  speed: nil,
+  speed: 7,
   height: 7,
   size: "large",
   areas: [
@@ -143,6 +143,7 @@
       },
       miscellany: []
     },
-    triggers: {}
+    triggers: {},
+    frenzy: "A wraith spins in a frenzy and a strong wind whips around you."
   }
 }

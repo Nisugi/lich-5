@@ -94,7 +94,8 @@
       "A spotted gak charges in, flaring {pronoun} nostrils angrily!"
     ],
     flee: [
-      "A spotted gak gallops {direction}."
+      "A spotted gak gallops {direction}.",
+      "A spotted gak snorts as {pronoun} slowly backs away."
     ],
     death: [
       "The spotted gak collapses to the ground, emits a final bellow, and dies.",

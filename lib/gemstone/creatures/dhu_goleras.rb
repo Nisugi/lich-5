@@ -134,7 +134,8 @@
   messaging: {
     attacks: {
       attack: [
-        "A dhu goleras swings {weapon} at you!"
+        "A dhu goleras swings {weapon} at you!",
+        "A dhu goleras waves {pronoun} knobby grey fingers at you!"
       ],
       claw: [
         "A dhu goleras swipes at {pronoun} wide pus-filled eyes and claws hatefully at the air."

@@ -144,9 +144,16 @@
     ],
     arrival: [
       "A withered shadow-cloaked draugr lurches in, {pronoun} unliving body on the verge of collapse.",
-      "A withered shadow-cloaked draugr just came through a breached red stone wall."
+      "A withered shadow-cloaked draugr just came through a breached red stone wall.",
+      "A withered shadow-cloaked draugr unsteadily lumbers in, swathed in darkness."
     ],
     description: "Utterly immense, the draugr's humanoid shape is comprised wholly of inky shadows that drip and pool at its intangible feet.  Cruel eyes of frigid light glare from a face of sharp lines and malevolent angles.  The shade's arms are lightless and devoid of all but the most rudimentary features, but are massively thick and traced with intricate lines of blazing blue radiance.",
+    stand: [
+      "A withered shadow-cloaked draugr jerks up from the ground, {pronoun} joints bending at painful angles as {pronoun} rises into a standing position."
+    ],
+    stun_break: [
+      "A withered shadow-cloaked draugr rips free from the webbing, mummified muscles and tendons crackling with the effort!"
+    ],
     attacks: {
       attack: [
         "Wisps of shadow follow the arc of a withered shadow-cloaked draugr's arm as {pronoun} swings {weapon} at you!",

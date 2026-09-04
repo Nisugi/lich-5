@@ -117,7 +117,8 @@
     attacks: {
       attack: [
         "A shadow mare stomps at you with {pronoun} foot!",
-        "A shadow mare charges at you!"
+        "A shadow mare charges at you!",
+        "A shadow mare directs {pronoun} gaze at you!"
       ],
       bite: [
         "A shadow mare tries to bite you!"

@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 123,
-  speed: nil,
+  speed: 9,
   height: 6,
   size: "medium",
   areas: [
@@ -107,7 +107,8 @@
     arrival: [],
     flee: [
       "A great stag trots {direction}.",
-      "A great stag trots {direction}, snorting to announce {pronoun} arrival!"
+      "A great stag trots {direction}, snorting to announce {pronoun} arrival!",
+      "A great stag snorts as {pronoun} slowly backs away."
     ],
     death: [
       "The great stag collapses to the ground, emits a final sigh, and dies.",

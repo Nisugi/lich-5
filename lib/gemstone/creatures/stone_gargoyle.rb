@@ -101,7 +101,9 @@
       "A stone gargoyle heads {direction}.",
       "A stone gargoyle limps {direction}."
     ],
-    death: [],
+    death: [
+      "The stone gargoyle falls to the ground dead, {pronoun} stone hide still pulsating with a blinding white hue."
+    ],
     decay: [
       "A stone gargoyle crumbles to dust."
     ],

@@ -97,7 +97,8 @@
     arrival: [],
     flee: [
       "A velnalin trots {direction}.",
-      "A velnalin trots {direction}, snorting to announce {pronoun} arrival!"
+      "A velnalin trots {direction}, snorting to announce {pronoun} arrival!",
+      "A velnalin snorts as {pronoun} slowly backs away."
     ],
     death: [
       "The velnalin collapses to the ground, emits a final sigh, and dies.",

@@ -141,7 +141,8 @@
     attacks: {
       attack: [
         "A skayl swings {weapon} at you!",
-        "A skayl tries to ensnare you!"
+        "A skayl tries to ensnare you!",
+        "A skayl releases a wave of fiery red energy at you!"
       ]
     },
     info: {

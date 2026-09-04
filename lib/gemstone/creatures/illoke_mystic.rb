@@ -136,7 +136,8 @@
     ],
     attacks: {
       attack: [
-        "An Illoke mystic swings {weapon} at you!"
+        "An Illoke mystic swings {weapon} at you!",
+        "An Illoke mystic summons the wrath of {pronoun} god as {pronoun} gestures at you!"
       ],
       hurl: [
         "An Illoke mystic throws {weapon} at you!"

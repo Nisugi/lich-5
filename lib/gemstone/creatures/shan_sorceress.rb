@@ -114,7 +114,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A shan sorceress swings an oak runestaff at you!"
+        "A shan sorceress swings an oak runestaff at you!",
+        "A shan sorceress extends {pronoun} finger toward you!"
       ],
       hurl: [
         "A shan sorceress hurls {weapon} at you!"

@@ -131,7 +131,9 @@
       "The layer of bark on an Ilvari pixie hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust."
     ],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "An Ilvari pixie hands begin to glow."
+    ],
     attacks: {
       attack: [
         "An Ilvari pixie points precisely at you!",

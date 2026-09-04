@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: true,
   max_hp: 131,
-  speed: 17,
+  speed: 15,
   height: 3,
   size: "medium",
   areas: [
@@ -92,7 +92,8 @@
       "An ebon swine crashes into view!"
     ],
     flee: [
-      "An ebon swine trots {direction}."
+      "An ebon swine trots {direction}.",
+      "An ebon swine grunts as {pronoun} slowly backs away."
     ],
     death: [
       "The ebon swine lets out a final agonized squeal and dies.",

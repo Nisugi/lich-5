@@ -95,10 +95,17 @@
     transmogs: nil
   },
   messaging: {
+    stun_break: [
+      "A pallid fog-cloaked kelpie shakes off the unnatural slumber."
+    ],
     attacks: {
       attack: [
         "A pallid fog-cloaked kelpie barrels into a headlong charge at you, {pronoun} hooves leaving behind streamers of fog!",
-        "The pallid fog-cloaked kelpie barrels into you at full speed!"
+        "The pallid fog-cloaked kelpie barrels into you at full speed!",
+        "A pallid fog-cloaked kelpie gurgles out a strange syllable as {pronoun} levels a clammy finger at you!",
+        "A pallid fog-cloaked kelpie raises a threatening hoof as {pronoun} stares at you!",
+        "A pallid fog-cloaked kelpie raises a pallid hand and water spews forth from the palm, gushing toward you!",
+        "A pallid fog-cloaked kelpie bares {pronoun} blunt teeth, eyes rolling frantically as {pronoun} bites at you!"
       ]
     },
     stand: [

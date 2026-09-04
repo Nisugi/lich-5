@@ -118,6 +118,10 @@
     transmogs: nil
   },
   messaging: {
+    stun_break: [
+      "A flayed gigas disciple shakes off the magic.",
+      "A flayed gigas disciple rips free from {pronoun} slumber, lidless eyes going wide as if haunted by whatever nightmares lurked in {pronoun} sleep."
+    ],
     attacks: {
       attack: [
         "A flayed gigas disciple attempts to stamp you out with one great foot!",

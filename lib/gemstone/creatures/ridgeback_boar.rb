@@ -112,7 +112,8 @@
       "A ridgeback boar crawls {direction}.",
       "A ridgeback boar grunts and barrels {direction}.",
       "A ridgeback boar trots {direction}, grunting noisily!",
-      "A ridgeback boar trots {direction}, grunting noisily."
+      "A ridgeback boar trots {direction}, grunting noisily.",
+      "A ridgeback boar grunts as {pronoun} slowly backs away."
     ],
     death: [
       "The ridgeback boar collapses to the ground, emits a final squeal, and dies.",

@@ -143,6 +143,7 @@
       },
       miscellany: []
     },
-    triggers: {}
+    triggers: {},
+    frenzy: "A wind wraith whales away, consumed with bloodlust!"
   }
 }

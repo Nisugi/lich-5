@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 148,
-  speed: nil,
+  speed: 12,
   height: 2,
   size: "small",
   areas: [
@@ -106,7 +106,8 @@
     ],
     flee: [
       "A fire rat scampers {direction}.",
-      "A fire rat crawls {direction}."
+      "A fire rat crawls {direction}.",
+      "A fire rat squeaks as {pronoun} slowly backs away."
     ],
     death: [
       "The fire rat collapses to the ground, emits a final squeal, and dies.",

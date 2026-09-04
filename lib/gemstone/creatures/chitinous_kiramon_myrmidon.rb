@@ -131,7 +131,8 @@
       "A chitinous kiramon myrmidon hisses and clicks, cocking {pronoun} head curiously as if not entirely comprehending your death."
     ],
     stun_break: [
-      "A chitinous kiramon myrmidon spasms as {pronoun} tries to regain control of {pronoun} scattered senses."
+      "A chitinous kiramon myrmidon spasms as {pronoun} tries to regain control of {pronoun} scattered senses.",
+      "A chitinous kiramon myrmidon shakes off {pronoun} unconscious state."
     ],
     attacks: {
       attack: [

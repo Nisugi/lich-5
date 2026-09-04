@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 151,
-  speed: nil,
+  speed: 15,
   height: 6,
   size: "medium",
   areas: [
@@ -108,11 +108,15 @@
     ],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A neartofar orc strains to regain {pronoun} composure."
+    ],
     attacks: {
       attack: [
         "A Neartofar orc swings {weapon} at you!",
         "A Neartofar orc swings a rusted morning star at {target}!",
-        "A neartofar orc swings a rusted morning star at {target}!"
+        "A neartofar orc swings a rusted morning star at {target}!",
+        "A neartofar orc hunches {pronoun} shoulders and glares at you."
       ]
     },
     info: {

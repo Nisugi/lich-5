@@ -108,7 +108,8 @@
     flee: [
       "A caribou lopes {direction}.",
       "A caribou lopes {direction}, shuddering in pain.",
-      "A caribou lopes {direction}, shuddering in pain!"
+      "A caribou lopes {direction}, shuddering in pain!",
+      "The caribou slowly backs away and lowers {pronoun} antlers."
     ],
     death: [],
     decay: [],

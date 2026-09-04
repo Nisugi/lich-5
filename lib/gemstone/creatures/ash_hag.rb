@@ -23,7 +23,7 @@
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 6,
   height: 4,
   size: "medium",
   areas: [
@@ -128,8 +128,16 @@
       "An ash hag crumbles into a pile of ash."
     ],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "An ash hag utters a fiery incantation."
+    ],
+    stun_break: [
+      "An ash hag eyes burn with bright orange fire as {pronoun} tries to shake off the stun!"
+    ],
     attacks: {
+      attack: [
+        "An ash hag blows a cloud of ash at you!"
+      ],
       bite: [
         "An ash hag snaps {pronoun} fingers and blinks out of existence."
       ]

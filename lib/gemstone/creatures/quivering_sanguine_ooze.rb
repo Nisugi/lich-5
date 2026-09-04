@@ -130,7 +130,8 @@
     ],
     attacks: {
       attack: [
-        "A quivering sanguine ooze tries to strangle you with a glistening tendril!"
+        "A quivering sanguine ooze tries to strangle you with a glistening tendril!",
+        "A quivering sanguine ooze manifests a thick pseudopod and brings {pronoun} smashing down at you!"
       ]
     },
     info: {

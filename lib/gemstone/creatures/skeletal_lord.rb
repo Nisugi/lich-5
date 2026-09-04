@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 360,
-  speed: nil,
+  speed: 11,
   height: 6,
   size: "medium",
   areas: [
@@ -117,7 +117,8 @@
     ],
     death: [
       "The skeletal lord falls to the ground motionless.",
-      "The skeletal lord wails in terrifying pain one last time and lies still."
+      "The skeletal lord wails in terrifying pain one last time and lies still.",
+      "The skeletal lord falls to the floor dead, {pronoun} calcified bones still pulsating with a blinding white hue."
     ],
     decay: [],
     search: [],

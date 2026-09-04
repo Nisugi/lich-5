@@ -99,7 +99,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A treekin sapling rakes a branch at you!"
+        "A treekin sapling rakes a branch at you!",
+        "A treekin sapling lashes a root out at you!"
       ]
     },
     info: {

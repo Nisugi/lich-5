@@ -124,7 +124,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A huge steam elemental lashes out at you with a boiling tendril!"
+        "A huge steam elemental lashes out at you with a boiling tendril!",
+        "A huge steam elemental releases a wave of heat at you!"
       ],
       bolt: [
         "A huge steam elemental hurls a seething blast of steam at you!"

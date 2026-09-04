@@ -161,12 +161,14 @@
     decay: [
       "The layer of bark on a treekin druid hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
       "The layer of bark on a treekin druid hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust.",
-      "A treekin druid decays into compost."
+      "A treekin druid decays into compost.",
+      "The treekin druid crumbles to the ground!"
     ],
     search: [],
     spell_prep: [
       "A treekin druid gestures at you! Suddenly, roots spring from the ground and attempt to grab you!",
-      "A treekin druid gestures and then hurls a whirlwind of leaves at you!"
+      "A treekin druid gestures and then hurls a whirlwind of leaves at you!",
+      "A treekin druid groans an incantation."
     ],
     attacks: {
       attack: [

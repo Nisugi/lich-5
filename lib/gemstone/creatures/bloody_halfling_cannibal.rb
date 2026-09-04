@@ -24,7 +24,7 @@
   ],
   bcs: true,
   max_hp: 300,
-  speed: nil,
+  speed: 6,
   height: 3,
   size: "small",
   attack_attributes: {
@@ -127,7 +127,18 @@
     special_defenses: []
   },
   special_other: "",
-  abilities: [],
+  abilities: [
+    {
+      id: :frenzy,
+      name: "Frenzy",
+      type: :buff,
+      target: :self,
+      messaging: [
+        "A bloody halfling cannibal bares {pronoun} teeth in a mad parody of a grin as {pronoun} bloodlust rises!",
+        "A bloody halfling cannibal succumbs further to {pronoun} bloodlust as spittle drips from {pronoun} open mouth!"
+      ]
+    }
+  ],
   alchemy: [],
   equipment: [
     "a twisted obsidian dagger",
@@ -242,5 +253,6 @@
       },
       miscellany: []
     },
+    frenzy: "A bloody halfling cannibal bares {pronoun} teeth in a mad parody of a grin as {pronoun} bloodlust rises!"
   }
 }

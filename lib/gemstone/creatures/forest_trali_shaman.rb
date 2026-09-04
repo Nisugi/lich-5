@@ -156,7 +156,8 @@
     ],
     attacks: {
       attack: [
-        "A forest trali shaman swings {weapon} at you!"
+        "A forest trali shaman swings {weapon} at you!",
+        "A forest trali shaman opens {pronoun} eyes and gestures sharply at you!"
       ]
     },
     info: {

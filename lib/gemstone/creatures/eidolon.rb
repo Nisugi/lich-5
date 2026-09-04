@@ -127,7 +127,8 @@
       "An eidolon just went through an iron door."
     ],
     death: [
-      "An eidolon fades into oblivion."
+      "An eidolon fades into oblivion.",
+      "The eidolon falls to the floor dead, {pronoun} ethereal mist still pulsating with a blinding white hue."
     ],
     decay: [],
     search: [],

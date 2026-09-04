@@ -146,7 +146,8 @@
     ],
     decay: [
       "An emaciated hierophant crumbles to dust and blows away on the wind.",
-      "An emaciated hierophant suddenly dissolves into a puddle of viscous ooze."
+      "An emaciated hierophant suddenly dissolves into a puddle of viscous ooze.",
+      "An emaciated hierophant rapidly decays, flesh and bone crumbling to dust."
     ],
     search: [],
     spell_prep: [
@@ -154,7 +155,11 @@
       "An emaciated hierophant mumbles a silent prayer!",
       "An emaciated hierophant gestures, cracked lips moving in silent prayer as {pronoun} focuses, shaking the stun."
     ],
-    attacks: {},
+    attacks: {
+      attack: [
+        "An emaciated hierophant fans {pronoun} fingers wide and gestures at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

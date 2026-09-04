@@ -114,11 +114,18 @@
     death: [
       "The lava golem writhes in fiery agony and dies.",
       "The lava golem topples to the ground as the fire slowly leaves it.",
-      "A lava golem topples heavily to the ground!"
+      "A lava golem topples heavily to the ground!",
+      "The lava golem falls to the floor dead, {pronoun} husk still pulsating with a blinding white hue."
     ],
     decay: [],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "The lava golem shrugs off the blow, then the living lava that the lava golem is made of reforms {pronoun} missing right arm!",
+      "The lava golem shrugs off the blow, then the living lava that the lava golem is made of reforms {pronoun} missing left arm!",
+      "The lava golem shrugs off the blow, then the living lava that the lava golem is made of reforms {pronoun} missing right hand!",
+      "The lava golem shrugs off the blow, then the living lava that the lava golem is made of reforms {pronoun} missing left hand!"
+    ],
     attacks: {
       attack: [
         "A lava golem pounds at you with {pronoun} fist!",

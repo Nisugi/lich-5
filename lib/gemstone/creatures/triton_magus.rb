@@ -123,11 +123,14 @@
     ],
     arrival: [
       "A triton magus just arrived.",
-      "A triton magus slips into hiding."
+      "A triton magus slips into hiding.",
+      "A triton magus staggers in, dragging {reflexive} along with labored breaths."
     ],
     flee: [],
     death: [
-      "The triton magus gurgles once and goes still, a wrathful look on {pronoun} face."
+      "The triton magus gurgles once and goes still, a wrathful look on {pronoun} face.",
+      "The triton magus collapses to the floor with a splash, gurgling once with a wrathful look on {pronoun} face before expiring.",
+      "The triton magus collapses to the ground with a splash, gurgling once with a wrathful look on {pronoun} face before expiring."
     ],
     decay: [],
     search: [],
@@ -136,6 +139,9 @@
       "A triton magus closes {pronoun} eyes for a moment as {pronoun} slowly raises {pronoun} {weapon}. You hear and feel a resounding low thrumming sound just as a multitude of sharp pieces of debris splinter off from underfoot, savagely assailing the area!"
     ],
     attacks: {
+      attack: [
+        "A triton magus places one hand on top of the other, crossing {pronoun} palms toward you!"
+      ],
       fire: [
         "A triton magus fires {weapon} at you!"
       ],

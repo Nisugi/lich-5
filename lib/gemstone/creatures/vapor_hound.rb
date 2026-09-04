@@ -111,13 +111,18 @@
     decay: [
       "A vapor hound decays into a compost of fur and fangs."
     ],
-    search: [],
+    search: [
+      "The vapor hound sniffs at the air and growls low in the throat."
+    ],
     spell_prep: [],
     stun_break: [
       "A vapor hound howls in rage as {pronoun} shakes off the stun.",
       "A vapor hound howls silently in rage as {pronoun} shakes off the stun."
     ],
     attacks: {
+      attack: [
+        "A vapor hound opens {pronoun} mouth with a yawning sigh, letting out a blast of green vapors at you!"
+      ],
       bite: [
         "A vapor hound tries to bite you!"
       ]

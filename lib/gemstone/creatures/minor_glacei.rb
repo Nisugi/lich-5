@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 267,
-  speed: nil,
+  speed: 6,
   height: 5,
   size: "medium",
   areas: [
@@ -104,7 +104,8 @@
     attacks: {
       attack: [
         "A minor glacei lashes out at you!",
-        "A minor glacei strikes at you!"
+        "A minor glacei strikes at you!",
+        "A minor glacei focuses a wave of cold energy at you!"
       ]
     },
     info: {

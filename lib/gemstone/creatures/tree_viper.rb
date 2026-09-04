@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 230,
-  speed: nil,
+  speed: 9,
   height: 1,
   size: "medium",
   areas: [
@@ -116,7 +116,8 @@
       "A tree viper darts up a tree and slithers through the canopy, heading {direction}."
     ],
     death: [
-      "The tree viper twists and coils violently in its death throes, finally going still."
+      "The tree viper twists and coils violently in its death throes, finally going still.",
+      "The tree viper writhes in {pronoun} death throes, {pronoun} violent writhing causing {pronoun} to fall from {pronoun} perch."
     ],
     decay: [
       "A tree viper decays into a pile of scales and flesh."

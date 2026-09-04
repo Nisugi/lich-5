@@ -177,7 +177,8 @@
       "A brawny gigas shield-maiden rides {target} out, swaying with every heavy footfall."
     ],
     spell_prep: [
-      "A brawny gigas shield-maiden raises a fist to the heavens as {pronoun} eyes begin to glow like molten gold."
+      "A brawny gigas shield-maiden raises a fist to the heavens as {pronoun} eyes begin to glow like molten gold.",
+      "A brawny gigas shield-maiden's eyes begin to glow purple."
     ],
     death: [
       "A plaintive look passes across a brawny gigas shield-maiden's eyes like a fleeting shadow as {pronoun} goes still in death.",
@@ -232,7 +233,9 @@
         "A brawny gigas shield-maiden lashes out with a lucky shield bash!",
         "A brawny gigas shield-maiden lashes at you with an expert shield bash!",
         "A brawny gigas shield-maiden lashes at you with a skilled shield bash!",
-        "A brawny gigas shield-maiden lashes at you with a hard shield bash!"
+        "A brawny gigas shield-maiden lashes at you with a hard shield bash!",
+        "A brawny gigas shield-maiden brings {pronoun} fists together in a martial gesture toward you!",
+        "A brawny gigas shield-maiden raises a fist to {pronoun} chest and bows down at you."
       ],
       damage_resistance: [
         "In response to the vibrations, a brawny gigas shield-maiden's skin seems to discolor and harden, lending the shield-maiden unnatural durability!"

@@ -94,8 +94,15 @@
     ],
     spell_prep: [],
     stun_break: [
-      "A garish revenant buccaneer flickers momentarily into incorporeality, {pronoun} form glowing an ethereal blue as {pronoun} shakes off the stun!"
+      "A garish revenant buccaneer flickers momentarily into incorporeality, {pronoun} form glowing an ethereal blue as {pronoun} shakes off the stun!",
+      "A garish revenant buccaneer shakes off the unnatural slumber."
     ],
+    attacks: {
+      attack: [
+        "A garish revenant buccaneer shouts the final syllable of {pronoun} song, thrusting a hand toward you!",
+        "A garish revenant buccaneer unleashes a bolt of churning air at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

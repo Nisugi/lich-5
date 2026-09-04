@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 51,
-  speed: nil,
+  speed: 15,
   height: 3,
   size: "medium",
   areas: [
@@ -106,7 +106,8 @@
       "An urgh charges in, squealing an angry challenge!"
     ],
     flee: [
-      "An urgh trots {direction}."
+      "An urgh trots {direction}.",
+      "An urgh squeals as {pronoun} slowly backs away."
     ],
     death: [
       "The urgh collapses to the ground, emits a final squeal, and dies.",

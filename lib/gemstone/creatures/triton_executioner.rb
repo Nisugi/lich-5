@@ -141,7 +141,8 @@
       "A triton executioner hurtles {reflexive} at you with great speed, but flies slightly off center of {pronoun} target and tumbles to the water with a splash!"
     ],
     death: [
-      "The triton executioner gurgles once and goes still, a wrathful look on {pronoun} face."
+      "The triton executioner gurgles once and goes still, a wrathful look on {pronoun} face.",
+      "The triton executioner collapses to the floor with a splash, gurgling once with a wrathful look on {pronoun} face before expiring."
     ],
     decay: [],
     search: [],

@@ -157,13 +157,17 @@
       "A horned basalt grotesque withdraws, disengaging from you."
     ],
     death: [
-      "A horned basalt grotesque falls to the ground! You deftly regain your footing."
+      "A horned basalt grotesque falls to the ground! You deftly regain your footing.",
+      "A horned basalt grotesque stills, becoming nearly indistinguishable from a lifeless statue, but {pronoun} is betrayed by the dancing radiance in {pronoun} emerald eyes.",
+      "A horned basalt grotesque stills, becoming nearly indistinguishable from a lifeless statue, but {pronoun} is betrayed"
     ],
     decay: [
       "Cracks race across a horned basalt grotesque's carved stone physique, deepening into jagged chasms.  The grotesque crumbles swiftly, its composite pieces breaking into fine black powder."
     ],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "A horned basalt grotesque rumbles out a basso incantation, clenching one carved claw as {pronoun} eyes glow viridian."
+    ],
     attacks: {
       bolt: [
         "A horned basalt grotesque hurls a large boulder at {target}!"

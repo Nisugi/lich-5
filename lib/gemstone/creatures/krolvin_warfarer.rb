@@ -147,7 +147,9 @@
     description: [
       "As tall as the average human, the warfarer has the characteristic long-fingered hands and sturdy musculature that denote most of the krolvin race. The warfarer also sports the trademark grey-blue skin and thick, coarse, white hair covers his head and spreads across his shoulders and down his back."
     ],
-    arrival: [],
+    arrival: [
+      "A krolvin warfarer suddenly trots into view!"
+    ],
     flee: [
       "A krolvin warfarer stumps {direction}.",
       "A belligerent krolvin warfarer stumps {direction}."
@@ -160,6 +162,9 @@
     search: [],
     spell_prep: [
       "A krolvin warfarer gestures at {target}!"
+    ],
+    stun_break: [
+      "A krolvin warfarer fidgets and twitches {pronoun} lips as {pronoun} struggles to regain {pronoun} composure."
     ],
     attacks: {
       attack: [

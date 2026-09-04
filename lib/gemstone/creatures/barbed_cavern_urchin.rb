@@ -97,10 +97,14 @@
     ],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A barbed cavern urchin clatters {pronoun} spines together in a feeble attempt to shake off the stun."
+    ],
     attacks: {
       attack: [
         "A cavern urchin thrusts {pronoun} barbed spines at you!",
-        "A barbed cavern urchin thrusts {pronoun} barbed spines at you!"
+        "A barbed cavern urchin thrusts {pronoun} barbed spines at you!",
+        "A barbed cavern urchin launches a barrage of spines, the barbs exploding outward at you!"
       ]
     },
     info: {

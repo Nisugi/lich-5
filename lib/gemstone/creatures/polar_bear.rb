@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 409,
-  speed: nil,
+  speed: 16,
   height: 5,
   size: "huge",
   areas: [

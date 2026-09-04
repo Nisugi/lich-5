@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 69,
-  speed: nil,
+  speed: 30,
   height: 3,
   size: "medium",
   areas: [
@@ -121,7 +121,8 @@
     attacks: {
       attack: [
         "A snowy cockatrice screeches and strikes at you!",
-        "A snowy cockatrice attempts to kick dust at you, but is unable to kick up a sufficient amount of dust."
+        "A snowy cockatrice attempts to kick dust at you, but is unable to kick up a sufficient amount of dust.",
+        "A snowy cockatrice screeches as {pronoun} stares hatefully at you."
       ]
     },
     info: {

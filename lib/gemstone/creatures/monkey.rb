@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 86,
-  speed: nil,
+  speed: 9,
   height: 2,
   size: "small",
   areas: [
@@ -164,7 +164,8 @@
       "A brilliant violet monkey scampers out of sight!",
       "A stout bright orange monkey scampers {direction}.",
       "A stout bright orange monkey scampers out of sight!",
-      "A monkey just went through a cage door."
+      "A monkey just went through a cage door.",
+      "A monkey raises {pronoun} tail as {pronoun} slowly backs away."
     ],
     death: [
       "The monkey screeches one last time and dies.",

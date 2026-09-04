@@ -134,7 +134,8 @@
     ],
     search: [],
     spell_prep: [
-      "A sacristan spirit chants eerily for a moment before rising to {pronoun} feet!"
+      "A sacristan spirit chants eerily for a moment before rising to {pronoun} feet!",
+      "A sacristan spirit utters an arcane incantation."
     ],
     attacks: {
       attack: [

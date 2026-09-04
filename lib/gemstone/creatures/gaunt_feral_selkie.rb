@@ -136,11 +136,16 @@
     spell_prep: [
       "A gaunt feral selkie mutters an old, guttural chant as the surroundings grow terribly silent."
     ],
+    stun_break: [
+      "A gaunt feral selkie twists and writhes on the ground before managing to get {pronoun} feet under {pronoun}. {Pronoun} struggles back into a standing position."
+    ],
     attacks: {
       attack: [
         "A gaunt feral selkie balls up a grimy hand and takes a swing at you!",
         "Leading with {pronoun} shoulder, a gaunt feral selkie barrels into a charge at you!",
-        "Propelling {pronoun} forward with {pronoun} flippers, a gaunt feral selkie charges at you!"
+        "Propelling {pronoun} forward with {pronoun} flippers, a gaunt feral selkie charges at you!",
+        "A gaunt feral selkie holds a grimy hand out toward you!",
+        "A gaunt feral selkie unleashes a bolt of churning air at you!"
       ]
     },
     info: {

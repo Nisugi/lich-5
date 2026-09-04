@@ -180,7 +180,8 @@
     attacks: {
       attack: [
         "A siren swings {weapon} at you!",
-        "A siren tries to ensnare you!"
+        "A siren tries to ensnare you!",
+        "A siren gazes upon you lovingly and blows a soft kiss toward you."
       ]
     },
     info: {

@@ -123,7 +123,8 @@
     ],
     attacks: {
       attack: [
-        "A bog spectre tries to ensnare you!"
+        "A bog spectre tries to ensnare you!",
+        "A bog spectre waves a ghostly hand at you!"
       ],
       claw: [
         "A bog spectre claws at you!"

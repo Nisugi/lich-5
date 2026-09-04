@@ -23,7 +23,7 @@
   ],
   bcs: true,
   max_hp: 240,
-  speed: nil,
+  speed: 8,
   height: 9,
   size: "large",
   areas: [
@@ -139,7 +139,8 @@
     ],
     attacks: {
       attack: [
-        "An ice troll swings {weapon} at you!"
+        "An ice troll swings {weapon} at you!",
+        "An ice troll blows {pronoun} icy breath at you!"
       ],
       hurl: [
         "An ice troll hurls {weapon} at you!"

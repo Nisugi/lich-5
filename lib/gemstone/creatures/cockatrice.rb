@@ -117,11 +117,15 @@
     ],
     search: [],
     spell_prep: [],
+    stand: [
+      "A cockatrice screeches loudly as {pronoun} scrambles to {pronoun} feet!"
+    ],
     attacks: {
       attack: [
         "A cockatrice screeches and strikes at you!",
         "A cockatrice attempts to kick mud at you, but is unable to kick up a sufficient amount of mud.",
-        "A cockatrice attempts to kick water at you, but is unable to kick up a sufficient amount of water."
+        "A cockatrice attempts to kick water at you, but is unable to kick up a sufficient amount of water.",
+        "A cockatrice screeches as {pronoun} stares hatefully at you."
       ]
     },
     info: {

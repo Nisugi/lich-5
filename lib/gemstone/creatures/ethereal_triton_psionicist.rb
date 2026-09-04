@@ -141,7 +141,13 @@
     attacks: {
       attack: [
         "The ethereal triton psionicist attempts to jab you!",
-        "The ethereal triton psionicist attempts to punch you!"
+        "The ethereal triton psionicist attempts to punch you!",
+        "An ethereal triton psionicist levitates a jagged piece of rock at you!",
+        "An ethereal triton psionicist levitates a bundle of silver-streaked arrows at you!",
+        "An ethereal triton psionicist levitates a bundle of brackish green arrows at you!",
+        "An ethereal triton psionicist levitates a dried seaweed-wrapped longbow at you!",
+        "An ethereal triton psionicist levitates some silver coins at you!",
+        "An ethereal triton psionicist levitates a table leg at you!"
       ],
       creature_spell: [
         "An ethereal triton psionicist points a clawed finger toward {target}!"

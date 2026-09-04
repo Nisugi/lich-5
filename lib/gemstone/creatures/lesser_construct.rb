@@ -114,7 +114,9 @@
       "A lesser construct crawls {direction}.",
       "A lesser construct grumbles as it heads {direction}."
     ],
-    death: [],
+    death: [
+      "The lesser construct collapses, {pronoun} eyes fading to a lifeless gaze and stone shell cracking into a barely discernible form."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

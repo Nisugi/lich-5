@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 240,
-  speed: nil,
+  speed: 8,
   height: 6,
   size: "medium",
   areas: [
@@ -157,7 +157,8 @@
     ],
     arrival: [
       "An Ithzir initiate strides in, {pronoun} hands clasped before him.",
-      "An Ithzir initiate strides in."
+      "An Ithzir initiate strides in.",
+      "An Ithzir initiate staggers in, barely able to keep {pronoun} feet!"
     ],
     flee: [
       "An Ithzir initiate strides {direction}."
@@ -178,7 +179,9 @@
       attack: [
         "An Ithzir initiate places one palm on {pronoun} chest, and raises the other toward you!",
         "An Ithzir initiate swings {weapon} at you!",
-        "An Ithzir initiate swings a twisted crystal-tipped staff at {target}!"
+        "An Ithzir initiate swings a twisted crystal-tipped staff at {target}!",
+        "The Ithzir initiate cocks {pronoun} head at you.",
+        "The Ithzir initiate points at you."
       ]
     },
     info: {

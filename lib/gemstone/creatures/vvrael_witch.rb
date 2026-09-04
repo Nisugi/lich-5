@@ -165,6 +165,10 @@
       "A Vvrael witch whispers with an ominously soft voice.",
       "A Vvrael witch gestures gracefully, hurling ebon motes of anti-mana at you!"
     ],
+    stun_break: [
+      "A Vvrael witch shakes with black rage, shaking off the forces controlling {pronoun}!",
+      "A Vvrael witch shrugs off the magic!"
+    ],
     attacks: {
       attack: [
         "A Vvrael witch gestures gracefully, hurling ebon motes of anti-mana at you!",

@@ -112,9 +112,13 @@
     description: [
       "The minotaur warrior has the head of a bull while his muscular body is humanoid with thick arms and broad shoulders. Wearing a mish-mash of leather and chain armor, the fierce minotaur stomps about with hoofed feet brandishing its longsword at every possible foe."
     ],
-    arrival: [],
+    arrival: [
+      "A minotaur warrior releases an enormous bellow as {pronoun} charges in!"
+    ],
     flee: [],
-    death: [],
+    death: [
+      "The minotaur warrior twitches one final time before falling still upon the floor, a look of shock frozen upon {pronoun} face."
+    ],
     decay: [
       "The thick skin of a minotaur warrior falls in upon itself as his enormous form decays into a fine dust."
     ],

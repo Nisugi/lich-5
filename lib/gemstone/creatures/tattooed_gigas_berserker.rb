@@ -108,7 +108,18 @@
     special_defenses: []
   },
   special_other: "",
-  abilities: [],
+  abilities: [
+    {
+      id: :frenzy,
+      name: "Frenzy",
+      type: :buff,
+      target: :self,
+      messaging: [
+        "A tattooed gigas berserker flies into a wild rage, animalistic fury washing over {pronoun} features!",
+        "A tattooed gigas berserker falls deeper into bloodlust, gnashing {pronoun} teeth and clenching {pronoun} immense muscles!"
+      ]
+    }
+  ],
   alchemy: [],
   equipment: [
     "a suit of tanned boarhide adorned with crudely etched bronze disks",
@@ -169,6 +180,9 @@
     stand: [
       "A tattooed gigas berserker rolls to {pronoun} feet, with an eerily silent roar!"
     ],
+    spell_prep: [
+      "A tattooed gigas berserker's eyes begin to glow purple."
+    ],
     attacks: {
       attack: [
         "Froth bubbling on {pronoun} lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!",
@@ -212,6 +226,7 @@
       },
       miscellany: []
     },
+    frenzy: "A tattooed gigas berserker flies into a wild rage, animalistic fury washing over {pronoun} features!"
   }
 }
 

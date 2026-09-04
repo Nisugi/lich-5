@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 100,
-  speed: nil,
+  speed: 6,
   height: 3,
   size: "medium",
   areas: [
@@ -100,7 +100,8 @@
     ],
     arrival: [],
     flee: [
-      "A crazed canine rushes {direction}!"
+      "A crazed canine rushes {direction}!",
+      "A crazed canine whimpers as {pronoun} slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The crazed canine falls to the ground and dies.",

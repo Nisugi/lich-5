@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 28,
-  speed: nil,
+  speed: 15,
   height: 3,
   size: "medium",
   areas: [
@@ -94,7 +94,8 @@
       "A mountain rolton just arrived."
     ],
     flee: [
-      "A mountain rolton trots {direction}."
+      "A mountain rolton trots {direction}.",
+      "A mountain rolton bleats as {pronoun} slowly backs away."
     ],
     death: [
       "The mountain rolton collapses to the ground, emits a final bleat, and dies.",

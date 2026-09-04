@@ -123,13 +123,19 @@
     ],
     death: [
       "The ice golem writhes in cold agony and dies.",
-      "An ice golem topples heavily to the ground!"
+      "An ice golem topples heavily to the ground!",
+      "The ice golem falls to the ground dead, {pronoun} husk still pulsating with a blinding white hue."
     ],
     decay: [],
     search: [
       "An ice golem looks around apprehensively as {pronoun} starts to melt!"
     ],
     spell_prep: [],
+    stun_break: [
+      "The ice golem shrugs off the blow, then the living ice that the ice golem is made of reforms {pronoun} missing left arm!",
+      "The ice golem shrugs off the blow, then the living ice that the ice golem is made of reforms {pronoun} missing right arm!",
+      "The ice golem shrugs off the blow, then the living ice that the ice golem is made of reforms {pronoun} missing left hand!"
+    ],
     attacks: {
       attack: [
         "An ice golem pounds at you with {pronoun} fist!",

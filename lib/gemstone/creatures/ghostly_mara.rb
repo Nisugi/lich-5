@@ -118,11 +118,14 @@
     ],
     decay: [],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "A ghostly mara musically intones an arcane song."
+    ],
     attacks: {
       attack: [
         "A mara swings {weapon} at you!",
-        "A ghostly mara swings {weapon} at you!"
+        "A ghostly mara swings {weapon} at you!",
+        "A ghostly mara directs the sound of {pronoun} voice at you!"
       ]
     },
     info: {

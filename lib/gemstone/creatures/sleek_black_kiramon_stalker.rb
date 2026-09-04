@@ -144,13 +144,18 @@
     decay: [],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A sleek black kiramon stalker shakes off {pronoun} unconscious state."
+    ],
     attacks: {
       attack: [
         "A sleek black kiramon stalker skitters mercilessly forward to slash at you with a razor-sharp foreleg!",
         "A sleek black kiramon stalker twists fluidly to spear you with {pronoun} barbed stinger!",
         "Without warning, a sleek black kiramon stalker glides from the shadows and skitters mercilessly forward to slash at you with a razor-sharp foreleg!",
         "Without warning, a sleek black kiramon stalker glides from the shadows and twists fluidly to spear you with {pronoun} barbed stinger!",
-        "A sleek black kiramon stalker attempts to kick dust at you, but is unable to kick up a sufficient amount of dust."
+        "A sleek black kiramon stalker attempts to kick dust at you, but is unable to kick up a sufficient amount of dust.",
+        "A sleek black kiramon stalker manages to kick a large clump of dust at you!",
+        "A sleek black kiramon stalker grabs you by the head and twists violently. You hear a loud *CRACK* as your neck bones snap and your body goes limp!"
       ],
       bite: [
         "A sleek black kiramon stalker aims a preternaturally swift bite at you!",

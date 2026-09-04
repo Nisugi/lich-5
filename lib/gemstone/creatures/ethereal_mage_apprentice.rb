@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 240,
-  speed: nil,
+  speed: 10,
   height: 6,
   size: "medium",
   areas: [
@@ -124,7 +124,8 @@
     ],
     attacks: {
       attack: [
-        "An ethereal mage apprentice swings {weapon} at you!"
+        "An ethereal mage apprentice swings {weapon} at you!",
+        "An ethereal mage apprentice slowly extends {pronoun} hand toward you!"
       ],
       hurl: [
         "An ethereal mage apprentice hurls {weapon} at you!"

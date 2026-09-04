@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 200,
-  speed: nil,
+  speed: 8,
   height: 3,
   size: "medium",
   areas: [
@@ -116,7 +116,8 @@
       "A crested basilisk hisses and stomps {direction}.",
       "A combative crested basilisk hisses and stomps {direction}.",
       "A belligerent crested basilisk hisses and stomps {direction}.",
-      "A keen crested basilisk hisses and stomps {direction}."
+      "A keen crested basilisk hisses and stomps {direction}.",
+      "The crested basilisk comes up to you and sniffs you several times. A stricken look crosses {pronoun} visage and {pronoun} slowly backs away."
     ],
     death: [
       "The crested basilisk rolls over on its back, emits a final hiss and dies.",

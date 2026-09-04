@@ -102,7 +102,9 @@
       "A crazed zombie shambles {direction}.",
       "A crazed zombie wails madly as she limps {direction}."
     ],
-    death: [],
+    death: [
+      "The crazed zombie falls to the ground, a lifeless lump of flesh."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

@@ -132,7 +132,8 @@
     attacks: {
       attack: [
         "A greater faeroth pounds at you with {pronoun} fist!",
-        "A greater faeroth swings backward on {pronoun} arms, lips curled in a snarl."
+        "A greater faeroth swings backward on {pronoun} arms, lips curled in a snarl.",
+        "A greater faeroth bellows causing the air to distort, sending a shockwave at you!"
       ],
       bite: [
         "A greater faeroth tries to bite you!"

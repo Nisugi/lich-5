@@ -97,7 +97,8 @@
       attack: [
         "A writhing frost-glazed vine stabs at you with {pronoun} stinger!",
         "A writhing frost-glazed vine flings a length of vine towards you, but with a flash of incredible reflexes, you skip out of the way and the vine, trailing the rest of {pronoun} body, lands sprawling on the ground.",
-        "A writhing frost-glazed vine stabs at {target} with {pronoun} stinger!"
+        "A writhing frost-glazed vine stabs at {target} with {pronoun} stinger!",
+        "A writhing frost-glazed vine writhes around in a full circle before pointing a thin appendage at you!"
       ]
     },
     info: {

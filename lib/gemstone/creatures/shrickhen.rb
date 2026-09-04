@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 300,
-  speed: 6,
+  speed: 8,
   height: 5,
   size: "medium",
   areas: [
@@ -118,13 +118,18 @@
       "A shrickhen rushes in, {pronoun} form weaving and shaking as {pronoun} parts attempt to work together."
     ],
     flee: [],
-    death: [],
-    decay: [],
+    death: [
+      "A shrickhen's arms, legs and head separate from {pronoun} torso as the dissimilar parts finally fall still."
+    ],
+    decay: [
+      "A shrickhen's parts decay away."
+    ],
     search: [],
     spell_prep: [],
     attacks: {
       attack: [
-        "A shrickhen rushes {direction}, {pronoun} form weaving and shaking as {pronoun} parts attempt to work together."
+        "A shrickhen rushes {direction}, {pronoun} form weaving and shaking as {pronoun} parts attempt to work together.",
+        "A shrickhen screams furiously and points at you!"
       ],
       bite: [
         "A shrickhen tries to bite you!"

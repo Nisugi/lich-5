@@ -127,7 +127,8 @@
       "A triton dissembler just went down a carved marble staircase leading to the submerged dais."
     ],
     death: [
-      "The triton dissembler gurgles once and goes still, a wrathful look on {pronoun} face."
+      "The triton dissembler gurgles once and goes still, a wrathful look on {pronoun} face.",
+      "The triton dissembler collapses to the floor with a splash, gurgling once with a wrathful look on {pronoun} face before expiring."
     ],
     decay: [
       "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."

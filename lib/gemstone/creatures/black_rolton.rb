@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 28,
-  speed: nil,
+  speed: 15,
   height: 3,
   size: "medium",
   areas: [
@@ -95,7 +95,8 @@
     ],
     flee: [
       "A black rolton trots {direction}.",
-      "A black rolton just went through the barn door."
+      "A black rolton just went through the barn door.",
+      "A black rolton bleats as {pronoun} slowly backs away."
     ],
     death: [
       "The black rolton collapses to the ground, emits a final bleat, and dies.",

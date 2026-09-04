@@ -111,7 +111,8 @@
         "A stooped titan stormcaller gestures with a glowing hand at you!",
         "A stooped titan stormcaller twirls {pronoun} modwir staff theatrically before lashing out at you!",
         "A stooped titan stormcaller throws {pronoun} head back and thunder peals through the air as a gust of wind stirs {pronoun} hair. {pronoun} lip curls cruelly as lightning arcs down {pronoun} limbs.",
-        "A stooped titan stormcaller throws {pronoun} head back and thunder peals through the air as a gust of wind stirs {pronoun} hair. {target} lip curls cruelly as lightning arcs down {pronoun} limbs."
+        "A stooped titan stormcaller throws {pronoun} head back and thunder peals through the air as a gust of wind stirs {pronoun} hair. {target} lip curls cruelly as lightning arcs down {pronoun} limbs.",
+        "A stooped titan stormcaller unleashes a bolt of churning air at you!"
       ]
     },
     info: {

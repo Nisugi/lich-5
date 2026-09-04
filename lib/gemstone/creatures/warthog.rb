@@ -109,7 +109,8 @@
     flee: [
       "A warthog grunts and barrels {direction}.",
       "A warthog trots {direction}, grunting noisily.",
-      "A warthog trots {direction}, grunting noisily!"
+      "A warthog trots {direction}, grunting noisily!",
+      "A warthog snuffles as {pronoun} slowly backs away."
     ],
     death: [
       "The warthog collapses to the ground, emits a final snuffle, and dies.",

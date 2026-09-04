@@ -167,7 +167,8 @@
         "A shan ranger throws a diamond-hilted longsword at you!"
       ],
       attack: [
-        "A shan ranger swings {weapon} at you!"
+        "A shan ranger swings {weapon} at you!",
+        "A shan ranger nods at you!"
       ]
     },
     info: {

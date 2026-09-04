@@ -104,7 +104,8 @@
       "A skeletal soldier backs away with {pronoun} {weapon} dragging along the ground in front of {pronoun}."
     ],
     death: [
-      "The skeletal soldier struggles to rise to its feet, but soon lies still."
+      "The skeletal soldier struggles to rise to its feet, but soon lies still.",
+      "The skeletal soldier falls to the ground dead, {pronoun} calcified bones still pulsating with a blinding white hue."
     ],
     decay: [
       "A skeletal soldier crumbles to a fine white powder."

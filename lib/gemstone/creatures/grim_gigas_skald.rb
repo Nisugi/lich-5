@@ -24,7 +24,7 @@
   ],
   bcs: true,
   max_hp: 607,
-  speed: 8,
+  speed: 6,
   height: 28,
   size: "huge",
   attack_attributes: {
@@ -149,7 +149,8 @@
       "A grim gigas skald arrives, stiffly favoring one leg.",
       "A grim gigas skald just arrived.",
       "A grim gigas skald just came through a breached red stone wall.",
-      "A grim gigas skald just arrived, looking terrified."
+      "A grim gigas skald just arrived, looking terrified.",
+      "A grim gigas skald staggers in, looking to be on death's door."
     ],
     death: [
       "A grim gigas skald raises a hand as if to grasp for support as {pronoun} collapses, life going out of {pronoun} form.",

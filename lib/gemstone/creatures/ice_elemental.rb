@@ -85,7 +85,8 @@
     arrival: [],
     flee: [],
     death: [
-      "The ice elemental dissipates into a cool breeze that fades rapidly away."
+      "The ice elemental dissipates into a cool breeze that fades rapidly away.",
+      "The ice elemental falls to the ground dead, {pronoun} icy vapor still pulsating with a blinding white hue."
     ],
     decay: [],
     search: [],

@@ -122,7 +122,8 @@
     ],
     flee: [
       "A great boar grunts and barrels {direction}.",
-      "A great boar trots {direction}, grunting noisily."
+      "A great boar trots {direction}, grunting noisily.",
+      "A great boar grunts as {pronoun} slowly backs away."
     ],
     death: [
       "The great boar collapses to the ground, emits a final squeal, and dies.",

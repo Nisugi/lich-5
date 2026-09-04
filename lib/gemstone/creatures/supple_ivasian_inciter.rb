@@ -139,7 +139,8 @@
       "A supple Ivasian inciter just went through a sculpted stone arch."
     ],
     death: [
-      "The Ivasian inciter twitches violently, then dies."
+      "The Ivasian inciter twitches violently, then dies.",
+      "A supple ivasian inciter begins to mouth a desperate prayer, but death stifles {pronoun}."
     ],
     decay: [],
     search: [],
@@ -152,7 +153,8 @@
         "With a vicious flick of {pronoun} wrist, a supple Ivasian inciter lashes at you with {pronoun} leather whip!",
         "A supple Ivasian inciter throws {pronoun} head back in pleasure as {pronoun} completes {pronoun} incantation!",
         "A supple ivasian inciter throws {pronoun} head back in pleasure as {pronoun} completes {pronoun} incantation!",
-        "A supple ivasian inciter leaps forward and aims a series of lightning-swift kicks at you!"
+        "A supple ivasian inciter leaps forward and aims a series of lightning-swift kicks at you!",
+        "A supple ivasian inciter flicks {pronoun} fingers into a crude gesture at you!"
       ],
       hurl: [
         "Lean muscles knitting with intensity, a supple Ivasian inciter throws {weapon} at you!"

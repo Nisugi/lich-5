@@ -110,7 +110,8 @@
       "A coyote pads in so quietly that you barely notice."
     ],
     flee: [
-      "A coyote pads {direction}."
+      "A coyote pads {direction}.",
+      "A coyote whimpers as {pronoun} slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The coyote falls to the ground and dies.",

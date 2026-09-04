@@ -138,7 +138,9 @@
     decay: [
       "Decay rapidly races over a shambling lurk's form as it collapses into foul-smelling compost."
     ],
-    search: [],
+    search: [
+      "A shambling lurk mouths the air hungrily as {pronoun} searches the area."
+    ],
     spell_prep: [
       "A shambling lurk moans out a garbled spell."
     ],

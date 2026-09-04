@@ -107,11 +107,17 @@
     decay: [],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A silver-scaled cold wyrm shakes off the magic.",
+      "A silver-scaled cold wyrm tenses {pronoun} vast musculatures and breaks free of the bounds that root {pronoun} to the ground."
+    ],
     attacks: {
       attack: [
         "A silver-scaled cold wyrm lashes out with a scythe-like talon at {target}!",
         "A silver-scaled cold wyrm charges toward the nearby shadows, revealing you in your hiding place!",
-        "A silver-scaled cold wyrm charges toward the nearby shadows, revealing {target}, who was hidden!"
+        "A silver-scaled cold wyrm charges toward the nearby shadows, revealing {target}, who was hidden!",
+        "A silver-scaled cold wyrm swoops low and extends {pronoun} sinewy neck so {pronoun} can snap at you!",
+        "A silver-scaled cold wyrm folds {pronoun} wings against {pronoun} back and plummets down from the skies, aiming {pronoun} bulk at you!"
       ]
     },
     info: {

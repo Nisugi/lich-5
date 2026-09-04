@@ -141,7 +141,8 @@
       "Massive and imposing, the Illoke shaman towers over adventurers. It is more than three times the size of the largest giantman, with smooth grey skin and deep black eyes that glare out from under a heavy brow. The eyes regard potential victims with disdain, as if they were nothing more than an offering to be sacrificed. Chiseled deep into the forehead of the shaman, the symbol of Illoke glows red with power."
     ],
     arrival: [
-      "An Illoke shaman just came through an enormous arched doorway."
+      "An Illoke shaman just came through an enormous arched doorway.",
+      "An Illoke shaman rises out of the ground and shouts, \"Death to the invaders! You shall feel the cold grip of Illoke on your soft corpse!\""
     ],
     flee: [
       "An Illoke shaman sinks into the ground and flows {direction}."
@@ -163,7 +164,8 @@
       attack: [
         "An Illoke shaman pounds at you with {pronoun} fist!",
         "An Illoke shaman stomps at you with {pronoun} foot!",
-        "An Illoke shaman swings {weapon} at you!"
+        "An Illoke shaman swings {weapon} at you!",
+        "An Illoke shaman calls forth the wrath of {pronoun} god as {pronoun} points at you!"
       ],
       hurl: [
         "An Illoke shaman throws a large rock at you!",

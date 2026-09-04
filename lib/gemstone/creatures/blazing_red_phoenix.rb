@@ -159,7 +159,8 @@
         "A blazing red phoenix gnashes at you with a flaming maw!",
         "A blazing red phoenix tries to spear you with {pronoun} beak of flame!",
         "Fiery talons lash out at you as a blazing red phoenix dives on your position!",
-        "A blazing red phoenix rakes at you with a razor-sharp claw!"
+        "A blazing red phoenix rakes at you with a razor-sharp claw!",
+        "A blazing red phoenix flaps {pronoun} wings of flame at you!"
       ],
       hurl: [
         "A blazing red phoenix hurls {weapon} at you!"

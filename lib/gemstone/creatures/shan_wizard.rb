@@ -121,7 +121,9 @@
     arrival: [
       "A shan wizard ambles in muttering arcane phrases of magic!"
     ],
-    flee: [],
+    flee: [
+      "A shan wizard pads west."
+    ],
     death: [
       "The shan wizard twitches violently, then dies.",
       "The shan wizard yips in pain as {pronoun} falls to the ground motionless.",

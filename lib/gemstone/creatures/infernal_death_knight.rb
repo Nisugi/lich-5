@@ -162,7 +162,9 @@
         "An infernal death knight swings {pronoun} {weapon} at your golvern lance!",
         "An infernal death knight swings {pronoun} {weapon} at your short sword!",
         "An infernal death knight swings a massive black ora sword adorned with a trio of blue-black diamonds at {target}!",
-        "An infernal death knight swings {pronoun} {weapon} at {target} glowbark long bow!"
+        "An infernal death knight swings {pronoun} {weapon} at {target} glowbark long bow!",
+        "An infernal death knight ignites with spectral cerulean flames as {pronoun} splays a bony hand at you!",
+        "An infernal death knight raises {pronoun} skeletal knuckles into a boxer's stance and swings at you!"
       ]
     },
     info: {

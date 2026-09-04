@@ -122,7 +122,8 @@
     attacks: {
       attack: [
         "A whiptail charges at you with {pronoun} tusk!",
-        "A whiptail snaps at you with {pronoun} pincer!"
+        "A whiptail snaps at you with {pronoun} pincer!",
+        "A whiptail spins a web at you!"
       ],
       bite: [
         "A whiptail snaps at you with {pronoun} pincer!"

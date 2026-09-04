@@ -121,7 +121,9 @@
       "The body of a decaying Citadel guardsman collapses into a pile of dust which blows away in an errant breeze."
     ],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "A decaying citadel guardsman kneels and murmurs a short prayer before rising back to {pronoun} feet."
+    ],
     stun_break: [
       "A decaying citadel guardsman stumbles about trying to regain {pronoun} bearings!"
     ],

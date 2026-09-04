@@ -145,7 +145,8 @@
     search: [],
     spell_prep: [
       "A fallen crusader's eyes glow with silvery grey light, and then everything around you shimmers to match the argentine color.",
-      "A fallen crusader gestures sharply toward {target}!"
+      "A fallen crusader gestures sharply toward {target}!",
+      "A fallen crusader's eyes begin to glow purple."
     ],
     attacks: {
       attack: [

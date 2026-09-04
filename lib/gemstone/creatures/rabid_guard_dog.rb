@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 100,
-  speed: nil,
+  speed: 6,
   height: 3,
   size: "medium",
   areas: [
@@ -99,7 +99,8 @@
     ],
     arrival: [],
     flee: [
-      "A rabid guard dog rushes {direction}!"
+      "A rabid guard dog rushes {direction}!",
+      "A rabid guard dog whimpers as {pronoun} slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The guard dog falls to the ground and dies.",

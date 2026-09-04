@@ -113,10 +113,13 @@
       "A frenzied monk dissolves into a foul-smelling miasma.",
       "A nebulous frenzied monk dissolves into a foul-smelling miasma.",
       "An unyielding frenzied monk dissolves into a foul-smelling miasma.",
-      "An adroit frenzied monk dissolves into a foul-smelling miasma."
+      "An adroit frenzied monk dissolves into a foul-smelling miasma.",
+      "The frenzied monk seems to collapse in upon {reflexive}, leaving only a withered husk."
     ],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "A frenzied monk utters an arcane incantation."
+    ],
     stun_break: [
       "A frenzied monk's eyes flash with a baleful green light as {pronoun} shakes off the stun!"
     ],

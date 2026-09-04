@@ -106,13 +106,18 @@
     decay: [
       "A night hound decays into a compost of fur and fangs."
     ],
-    search: [],
+    search: [
+      "The night hound sniffs at the air and growls low in the throat."
+    ],
     spell_prep: [],
     stun_break: [
       "A night hound howls in rage as {pronoun} shakes off the stun.",
       "A night hound howls silently in rage as {pronoun} shakes off the stun."
     ],
     attacks: {
+      attack: [
+        "A night hound belches a dark cloud at you!"
+      ],
       claw: [
         "A night hound claws at you!"
       ],

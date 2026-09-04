@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 140,
-  speed: nil,
+  speed: 7,
   height: 7,
   size: "medium",
   areas: [

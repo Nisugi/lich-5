@@ -120,7 +120,8 @@
     ],
     flee: [
       "A kobold shepherd heads {direction}.",
-      "A kobold shepherd limps {direction}."
+      "A kobold shepherd limps {direction}.",
+      "A kobold shepherd cringes and backs away from you."
     ],
     death: [
       "The kobold shepherd howls in agony one last time and dies.",

@@ -135,7 +135,9 @@
       "A spectral monk fades into oblivion."
     ],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "A spectral monk utters an arcane incantation."
+    ],
     attacks: {
       attack: [
         "A spectral monk swings a long blackened scythe at you!",

@@ -102,12 +102,15 @@
     death: [],
     decay: [],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "A branded goliath diviner completes {pronoun} silent incantation and, without so much as a glance, flicks a finger at you!"
+    ],
     attacks: {
       attack: [
         "A branded goliath diviner raises a clenched fist, opening {pronoun} to reveal a small rune-etched stone pulsing with inner light. The stone hovers momentarily over {pronoun} palm before rising into the air, seeming to expand in every direction until {pronoun} is a pale hovering runestone wreathed in glowing colors!",
         "A branded goliath diviner throws {pronoun} arms skyward!",
-        "A branded goliath diviner raises a clenched fist, opening {pronoun} to reveal a small rune-etched stone pulsing with inner light. The stone hovers momentarily over his palm before rising into the air, seeming to expand in every direction until it is a pale hovering runestone wreathed in glowing colors!"
+        "A branded goliath diviner raises a clenched fist, opening {pronoun} to reveal a small rune-etched stone pulsing with inner light. The stone hovers momentarily over his palm before rising into the air, seeming to expand in every direction until it is a pale hovering runestone wreathed in glowing colors!",
+        "A branded goliath diviner conjures a swirling orb of hungry flame and hurls {pronoun} toward you!"
       ]
     },
     info: {

@@ -132,7 +132,8 @@
         "Tightening {pronoun} grip on {pronoun} gornar flail, an Ithzir champion strikes out at you with all of {pronoun} might!",
         "Tightening {pronoun} grip on {pronoun} steel maul, an Ithzir champion strikes out at you with all of {pronoun} might!",
         "An Ithzir champion exhales sharply, exerting mightily.",
-        "The Ithzir champion slams into you, and you are sent careening to the ground!"
+        "The Ithzir champion slams into you, and you are sent careening to the ground!",
+        "The Ithzir champion cocks {pronoun} head at you."
       ]
     },
     stand: [

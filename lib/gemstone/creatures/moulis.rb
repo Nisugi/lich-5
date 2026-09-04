@@ -119,11 +119,16 @@
     flee: [
       "A moulis moves northwest in a half-scuttling, half-stumbling manner, as {pronoun} appendages do not seem to be properly coordinated.",
       "A moulis moves northeast in a half-scuttling, half-stumbling manner, as {pronoun} appendages do not seem to be properly coordinated.",
-      "A moulis moves south in a half-scuttling, half-stumbling manner, as {pronoun} appendages do not seem to be properly coordinated."
+      "A moulis moves south in a half-scuttling, half-stumbling manner, as {pronoun} appendages do not seem to be properly coordinated.",
+      "A moulis scuttles west, {pronoun} appendages clacking and scraping as {pronoun} goes.",
+      "A moulis scuttles south, {pronoun} appendages clacking and scraping as {pronoun} goes.",
+      "A moulis scuttles east, {pronoun} appendages clacking and scraping as {pronoun} goes.",
+      "A moulis scuttles north, {pronoun} appendages clacking and scraping as {pronoun} goes."
     ],
     death: [
       "The moulis twitches violently, then dies.",
-      "The moulis flails wildly for a moment before going still, its appendages dropping lifelessly to the ground."
+      "The moulis flails wildly for a moment before going still, its appendages dropping lifelessly to the ground.",
+      "The moulis flails wildly for a moment before collapsing, {pronoun} appendages dropping lifelessly to the ground."
     ],
     decay: [
       "A moulis crumbles into a putrid compost.",
@@ -160,6 +165,7 @@
       },
       miscellany: []
     },
-    triggers: {}
+    triggers: {},
+    frenzy: "A moulis slides side to side in an agitated frenzy."
   }
 }

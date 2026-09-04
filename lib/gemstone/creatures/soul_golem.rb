@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 500,
-  speed: nil,
+  speed: 9,
   height: nil,
   size: "",
   areas: [
@@ -100,7 +100,9 @@
     ],
     arrival: [],
     flee: [],
-    death: [],
+    death: [
+      "The soul golem falls to the floor dead, {pronoun} husk still pulsating with a blinding white hue."
+    ],
     decay: [],
     search: [],
     spell_prep: [],

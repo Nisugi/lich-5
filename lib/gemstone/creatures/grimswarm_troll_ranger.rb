@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: nil,
-  speed: nil,
+  speed: 12,
   height: nil,
   size: "",
   areas: [],

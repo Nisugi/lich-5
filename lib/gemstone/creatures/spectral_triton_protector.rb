@@ -150,7 +150,8 @@
         "A spectral triton protector swings a drakar-beaded whip at {target}!",
         "A spectral triton protector swings a drake falchion at {target}!",
         "A spectral triton protector swings a black ora morning star at {target}!",
-        "A spectral triton protector swings an archaic black ora mace at {target}!"
+        "A spectral triton protector swings an archaic black ora mace at {target}!",
+        "A spectral triton protector manages to block with the exact angle needed to deflect the attack right back at you!"
       ],
       claw: [
         "A spectral triton protector claws at you!"

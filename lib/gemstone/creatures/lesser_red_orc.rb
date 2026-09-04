@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 100,
-  speed: nil,
+  speed: 12,
   height: 6,
   size: "medium",
   areas: [
@@ -100,7 +100,9 @@
     arrival: [],
     flee: [
       "A lesser red orc spins about and then runs {direction}.",
-      "A lesser red orc lopes {direction}."
+      "A lesser red orc lopes {direction}.",
+      "A lesser red orc shambles out from the shadows.",
+      "A lesser red orc begins to retreat backwards as {pronoun} gazes about through bloodshot eyes."
     ],
     death: [
       "A lesser red orc collapses in a red mess and dies.",

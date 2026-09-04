@@ -116,7 +116,8 @@
     ],
     flee: [
       "A monstrous direwolf stalks {direction}.",
-      "A monstrous direwolf stalks {direction}, growling in pain."
+      "A monstrous direwolf stalks {direction}, growling in pain.",
+      "A monstrous direwolf snarls as {pronoun} slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The monstrous direwolf rolls over and dies.",

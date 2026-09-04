@@ -122,7 +122,8 @@
       "A massive black boar crawls {direction}.",
       "A massive black boar grunts and barrels {direction}.",
       "A massive black boar trots {direction}, grunting noisily.",
-      "A massive black boar trots {direction}, grunting noisily!"
+      "A massive black boar trots {direction}, grunting noisily!",
+      "A massive black boar grunts as {pronoun} slowly backs away."
     ],
     death: [
       "The black boar lets out a final agonized squeal and dies.",
@@ -131,7 +132,9 @@
     decay: [
       "A massive black boar decays into a pile of fur and bone."
     ],
-    search: [],
+    search: [
+      "A massive black boar cocks {pronoun} head and peers about suspiciously."
+    ],
     spell_prep: [],
     attacks: {
       attack: [

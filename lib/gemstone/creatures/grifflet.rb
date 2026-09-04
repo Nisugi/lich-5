@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 260,
-  speed: nil,
+  speed: 9,
   height: nil,
   size: "large",
   areas: [
@@ -120,6 +120,9 @@
     ],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A grifflet regains {pronoun} composure and begins moving again."
+    ],
     info: {
       general: [],
       class_tips: {

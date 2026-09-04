@@ -127,7 +127,8 @@
     ],
     attacks: {
       attack: [
-        "A bog wraith tries to ensnare you!"
+        "A bog wraith tries to ensnare you!",
+        "A bog wraith scratches {pronoun} clawed hand at you!"
       ],
       claw: [
         "A bog wraith claws at you!"

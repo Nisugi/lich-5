@@ -153,21 +153,25 @@
       "A triton radical strides in, a wary look on {pronoun} face.",
       "A triton radical strides in, gliding swiftly through the water with a wary look on {pronoun} face.",
       "A triton radical just arrived.",
-      "A triton radical just came through a crumbling arch."
+      "A triton radical just came through a crumbling arch.",
+      "A triton radical staggers in, dragging {reflexive} along with labored breaths."
     ],
     flee: [
       "A triton radical just went through a crumbling arch.",
       "A triton radical just went across a wide stone causeway."
     ],
     death: [
-      "The triton radical gurgles once and goes still, a wrathful look on {pronoun} face."
+      "The triton radical gurgles once and goes still, a wrathful look on {pronoun} face.",
+      "The triton radical collapses to the floor with a splash, gurgling once with a wrathful look on {pronoun} face before expiring.",
+      "The triton radical collapses to the ground with a splash, gurgling once with a wrathful look on {pronoun} face before expiring."
     ],
     decay: [
       "The siren's soft aura fades and her flesh crumbles to reveal the corpse of a hideous scaled creature, which then quickly decays away."
     ],
     search: [],
     spell_prep: [
-      "A triton radical's eyes glow with silvery grey light, and then everything around you shimmers to match the argentine color."
+      "A triton radical's eyes glow with silvery grey light, and then everything around you shimmers to match the argentine color.",
+      "A triton radical steeples {pronoun} clawed fingers together, murmuring a quick incantation."
     ],
     attacks: {
       attack: [

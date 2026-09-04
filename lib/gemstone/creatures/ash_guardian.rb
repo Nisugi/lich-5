@@ -143,7 +143,8 @@
         "An ash guardian swings {weapon} at you!",
         "An ash guardian tries to ensnare you!",
         "An ash guardian attempts to kick dust at you, but is unable to kick up a sufficient amount of dust.",
-        "An ash guardian lashes at you with a mediocre shield bash!"
+        "An ash guardian lashes at you with a mediocre shield bash!",
+        "An ash guardian manages to kick a large clump of dust at you!"
       ]
     },
     info: {

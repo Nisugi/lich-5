@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 245,
-  speed: nil,
+  speed: 8,
   height: 4,
   size: "medium",
   areas: [
@@ -139,7 +139,8 @@
     ],
     attacks: {
       attack: [
-        "A lich qyn'arj gestures with rotting mottled wings at you!"
+        "A lich qyn'arj gestures with rotting mottled wings at you!",
+        "A lich qyn'arj opens {pronoun} skeletal jaws wide and bares {pronoun} fangs at you!"
       ],
       bite: [
         "A lich qyn'arj tries to bite you!"

@@ -92,7 +92,11 @@
       "A bighorn sheep charges in, snorting in pain!"
     ],
     flee: [
-      "A bighorn sheep charges {direction}, snorting in pain."
+      "A bighorn sheep charges {direction}, snorting in pain.",
+      "A bighorn sheep lowers {pronoun} head and charges east.",
+      "A bighorn sheep lowers {pronoun} head and charges south.",
+      "A bighorn sheep lowers {pronoun} head and charges west.",
+      "A bighorn sheep lowers {pronoun} head and charges north."
     ],
     death: [
       "A bighorn sheep collapses, {pronoun} head dropping heavily to the ground as {pronoun} goes still.",

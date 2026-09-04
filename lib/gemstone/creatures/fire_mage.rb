@@ -140,7 +140,9 @@
     ],
     flee: [
       "A fire mage crawls {direction}.",
-      "A fire mage walks {direction}."
+      "A fire mage walks {direction}.",
+      "A fire mage strides south, leaving traces of fire in the air.",
+      "A fire mage strides north, leaving traces of fire in the air."
     ],
     death: [
       "The fire mage goes limp and {pronoun} falls over as the fire slowly fades from {pronoun} eyes.",

@@ -111,7 +111,8 @@
     ],
     arrival: [],
     flee: [
-      "A giant marmot waddles {direction}."
+      "A giant marmot waddles {direction}.",
+      "A giant marmot snorfles as {pronoun} slowly backs away."
     ],
     death: [
       "The giant marmot collapses to the ground, emits a final squeal, and dies.",
@@ -122,7 +123,9 @@
     decay: [
       "A giant marmot decays into a pile of hair and bone."
     ],
-    search: [],
+    search: [
+      "A giant marmot sits up on {pronoun} hind legs and peers about."
+    ],
     spell_prep: [],
     info: {
       general: [],

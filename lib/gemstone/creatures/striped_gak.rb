@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 90,
-  speed: nil,
+  speed: 10,
   height: 4,
   size: "large",
   areas: [
@@ -94,7 +94,8 @@
       "A striped gak charges in, flaring {pronoun} nostrils angrily!"
     ],
     flee: [
-      "A striped gak gallops {direction}."
+      "A striped gak gallops {direction}.",
+      "A striped gak snorts as {pronoun} slowly backs away."
     ],
     death: [
       "The striped gak collapses to the ground, emits a final bellow, and dies.",

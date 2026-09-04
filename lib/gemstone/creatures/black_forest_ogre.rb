@@ -207,7 +207,8 @@
         "A black forest ogre swings a rust-covered dhara at {target}!",
         "A black forest ogre tries to stomp on you, but misses!",
         "A black forest ogre swings {pronoun} head back and forth in a frenzied attempt to find a way out of {pronoun} predicament.",
-        "A black forest ogre swings a closed fist at {target}!"
+        "A black forest ogre swings a closed fist at {target}!",
+        "A black forest ogre unleashes a bolt of churning air at you!"
       ],
       hurl: [
         "A black forest ogre throws {weapon} at you!",

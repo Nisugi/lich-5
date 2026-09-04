@@ -146,7 +146,8 @@
         "The murky soul siphon thrusts unexpectedly with {pronoun} right arm!",
         "The murky soul siphon slashes {pronoun} left arm across {target} body!",
         "The murky soul siphon slashes {pronoun} right arm across {target} body!",
-        "The murky soul siphon thrusts unexpectedly with {pronoun} left arm!"
+        "The murky soul siphon thrusts unexpectedly with {pronoun} left arm!",
+        "A murky soul siphon rears back before thrusting one bladed arm at you!"
       ],
       claw: [
         "A murky soul siphon rakes at you with {pronoun} bladed forearms!",

@@ -108,7 +108,8 @@
     death: [
       "The steam dervish falls to the ground, leaking steam profusely.",
       "The steam dervish fumes with rage as she crumples to the ground!  Hot steam sprays out from her severed right leg thrashing on the ground!",
-      "The steam dervish fumes with rage as he crumples to the ground!  Hot steam sprays out from his severed left leg thrashing on the ground!"
+      "The steam dervish fumes with rage as he crumples to the ground!  Hot steam sprays out from his severed left leg thrashing on the ground!",
+      "The steam dervish exhales {pronoun} last breath directly at you!"
     ],
     decay: [
       "Thin blue lines of magical energy crackle over the body of a phantasmal bestial swordsman before he dissolves, leaving a puddle of liquid and the smell of ozone in the air.",

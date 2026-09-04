@@ -102,7 +102,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A shan shaman swings an ivory-hilted khopesh at you!"
+        "A shan shaman swings an ivory-hilted khopesh at you!",
+        "A shan shaman waves a hand dismissively at you!"
       ]
     },
     info: {

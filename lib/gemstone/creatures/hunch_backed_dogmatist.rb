@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 387,
-  speed: nil,
+  speed: 14,
   height: 4,
   size: "medium",
   areas: [
@@ -133,7 +133,10 @@
       "A hunch-backed dogmatist trots in with {pronoun} hands clasped together!",
       "A hunch-backed dogmatist trots in with {pronoun} {weapon}!"
     ],
-    flee: [],
+    flee: [
+      "A hunch-backed dogmatist clasps {pronoun} hands together and trots east.",
+      "A hunch-backed dogmatist clasps {pronoun} hands together and trots west."
+    ],
     death: [],
     decay: [
       "A hunch-backed dogmatist crumbles in upon {reflexive}, {pronoun} skin flaking away as if {pronoun} only served as an outer shell."
@@ -142,6 +145,15 @@
     spell_prep: [
       "A hunch-backed dogmatist mutters a harsh rite."
     ],
+    stand: [
+      "The hunch-backed dogmatist rises to {pronoun} knees. \"Why hast ye forsaken me m'lady, served you well I did!\" beckons the dogmatist in a desperate prayer.",
+      "The hunch-backed dogmatist rises to {pronoun} knees. \"Why hast ye forsaken me m'lord, served you well I did!\" beckons the dogmatist in a desperate prayer."
+    ],
+    attacks: {
+      attack: [
+        "A hunch-backed dogmatist nods {pronoun} head toward you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

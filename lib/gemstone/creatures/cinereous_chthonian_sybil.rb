@@ -110,10 +110,21 @@
     flee: [],
     death: [],
     decay: [],
-    search: [],
+    search: [
+      "A cinereous chthonian sybil turns slowly to scan the shadows with {pronoun} misty eyes."
+    ],
     spell_prep: [
       "A cinereous chthonian sybil gestures elegantly, {pronoun} bony fingers deftly weaving threads of scintillating mana into a spell."
     ],
+    stun_break: [
+      "A cinereous chthonian sybil shakes off the magic."
+    ],
+    attacks: {
+      attack: [
+        "A cinereous chthonian sybil rakes long fingers through the air, conjuring a wall of ebon flame that drinks the ambient light as {pronoun} roars toward you!",
+        "A cinereous chthonian sybil illuminates with fell light as {pronoun} raises an open hand toward you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

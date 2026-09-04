@@ -109,13 +109,18 @@
     decay: [
       "A storm hound decays into a compost of fur and fangs."
     ],
-    search: [],
+    search: [
+      "The storm hound sniffs at the air and growls low in the throat."
+    ],
     spell_prep: [],
     stun_break: [
       "A storm hound howls in rage as {pronoun} shakes off the stun.",
       "A storm hound howls silently in rage as {pronoun} shakes off the stun."
     ],
     attacks: {
+      attack: [
+        "A storm hound barks thunder and lightning at you!"
+      ],
       hurl: [
         "A storm hound hurls {weapon} at you!"
       ]

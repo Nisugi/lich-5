@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 240,
-  speed: nil,
+  speed: 6,
   height: 6,
   size: "medium",
   areas: [
@@ -168,7 +168,10 @@
         "An Ithzir adept swings {weapon} at you!",
         "An Ithzir adept thrusts {pronoun} palms out to {pronoun} sides!",
         "An Ithzir adept swings a twisted crystal-tipped staff at {target}!",
-        "An Ithzir adept thrusts both palms toward {target}!"
+        "An Ithzir adept thrusts both palms toward {target}!",
+        "An Ithzir adept unleashes a bolt of churning air at you!",
+        "The Ithzir adept points at you.",
+        "The Ithzir adept cocks {pronoun} head at you."
       ],
       hurl: [
         "An Ithzir adept hurls a chunk of ice at {target}!",
@@ -183,7 +186,9 @@
       "The Ithzir adept carries a bearing of absolute confidence, his piercing, pupil-less green eyes shrewdly taking in his surroundings. The Ithzir adept is slightly taller than a human, and while his humanoid form is similar to scores of other races, the hairless, blue-skinned body is nonetheless alien in its appearance. The adept wears a crisply-cut, silvery-blue tunic with high shoulders and a deep vee-neck. Emblazoned on the right breast of the tunic is a single green eye."
     ],
     arrival: [
-      "An Ithzir initiate strides in, {pronoun} hands clasped before {pronoun}."
+      "An Ithzir initiate strides in, {pronoun} hands clasped before {pronoun}.",
+      "An Ithzir adept suddenly appears out of nowhere!",
+      "An Ithzir adept staggers in, barely able to keep {pronoun} feet!"
     ],
     flee: [
       "An Ithzir adept walks {direction}.",

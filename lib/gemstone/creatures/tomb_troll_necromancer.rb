@@ -123,7 +123,8 @@
       attack: [
         "A tomb troll necromancer swings {weapon} at you!",
         "A tomb troll necromancer exhales the last of a virulent green mist.",
-        "A tomb troll necromancer exhales a virulent green mist toward you, but you are unaffected."
+        "A tomb troll necromancer exhales a virulent green mist toward you, but you are unaffected.",
+        "A tomb troll necromancer points forcefully at you!"
       ],
       pestilence: [
         "A tomb troll necromancer exhales a virulent green mist toward {target}, instantly infecting {target}. {target} convulses violently!"

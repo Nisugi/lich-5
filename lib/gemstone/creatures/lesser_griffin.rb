@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: 9,
+  speed: 8,
   height: 5,
   size: "large",
   areas: [
@@ -147,6 +147,9 @@
     ],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A lesser griffin regains {pronoun} composure and begins moving again."
+    ],
     attacks: {
       attack: [
         "A lesser griffin rakes at you with a razor-sharp claw!",

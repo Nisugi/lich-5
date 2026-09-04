@@ -21,7 +21,7 @@
   ],
   bcs: nil,
   max_hp: 365,
-  speed: 14,
+  speed: 7,
   height: 5,
   size: "medium",
   areas: [
@@ -112,7 +112,9 @@
     ],
     death: [],
     decay: [
-      "A banshee dissolves away."
+      "A banshee dissolves away.",
+      "The banshee slumps to the floor, exhales a sigh of relief, and begins to quickly decay away.",
+      "The banshee exhales a sigh of relief and begins to quickly decay away."
     ],
     search: [],
     spell_prep: [

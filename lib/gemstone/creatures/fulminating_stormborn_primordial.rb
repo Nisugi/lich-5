@@ -132,6 +132,12 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attacks: {
+      attack: [
+        "A fulminating stormborn primordial swirls, illuminating the surroundings harshly as {pronoun} sprays crackling sparks at you!",
+        "A fulminating stormborn primordial grows scintillatingly bright, arcs of electricity coalescing into a beam of blazing plasma that erupts toward you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

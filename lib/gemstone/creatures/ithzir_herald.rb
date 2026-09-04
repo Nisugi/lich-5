@@ -142,7 +142,9 @@
       attack: [
         "An Ithzir herald swings {weapon} at you!",
         "The Ithzir herald points at you for emphasis.",
-        "The Ithzir herald points at you."
+        "The Ithzir herald points at you.",
+        "An Ithzir herald directs {pronoun} alien song at you!",
+        "The Ithzir herald cocks {pronoun} head at you."
       ]
     },
     stand: [

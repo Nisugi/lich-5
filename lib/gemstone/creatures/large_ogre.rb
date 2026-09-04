@@ -155,7 +155,8 @@
       attack: [
         "A large ogre swings {weapon} at you!",
         "A large ogre thrusts with a spear at you!",
-        "A large ogre swings a mace at {target}!"
+        "A large ogre swings a mace at {target}!",
+        "A large ogre hunches down a bit and glares at you."
       ],
       hurl: [
         "A large ogre hurls {weapon} at {target}!"

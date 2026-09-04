@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 70,
-  speed: nil,
+  speed: 15,
   height: 6,
   size: "medium",
   areas: [
@@ -105,7 +105,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A ridge orc swings {weapon} at you!"
+        "A ridge orc swings {weapon} at you!",
+        "A ridge orc glares accusingly at you."
       ]
     },
     info: {

@@ -106,7 +106,8 @@
     ],
     flee: [
       "A waern runs {direction}.",
-      "A waern just went through an iron door."
+      "A waern just went through an iron door.",
+      "A waern whimpers as {pronoun} slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The waern rolls over and dies.",
@@ -122,9 +123,14 @@
     stun_break: [
       "A waern shakes {pronoun} head violently while trying to regain {pronoun} bearings!"
     ],
+    stand: [
+      "A waern growls as {pronoun} scrambles to {pronoun} feet!"
+    ],
     attacks: {
       attack: [
-        "A waern charges at you!"
+        "A waern charges at you!",
+        "A waern lunges at you!",
+        "A waern bares {pronoun} teeth hungrily at you!"
       ],
       claw: [
         "A waern claws at you!"

@@ -110,7 +110,8 @@
       "A glacial morph pounds south leaving small ice shards in {pronoun} wake."
     ],
     death: [
-      "A glacial morph topples over, {pronoun} ice chunks banging against one another."
+      "A glacial morph topples over, {pronoun} ice chunks banging against one another.",
+      "The glacial morph falls to the ground dead, {pronoun} icy surface still pulsating with a blinding white hue."
     ],
     decay: [],
     search: [],
@@ -122,7 +123,8 @@
         "A glacial morph pounds {pronoun} arms together, cracking and chipping the ice at the ends to form vicious spikes.",
         "The glacial morph attack slides right through {target} leaving no trace of a wound in {pronoun} path!",
         "A glacial morph swings an elongated block of ice at {target}!",
-        "The glacial morph's attack slides right through {target} leaving no trace of a wound in {pronoun} path!"
+        "The glacial morph's attack slides right through {target} leaving no trace of a wound in {pronoun} path!",
+        "A glacial morph heaves a block of ice at you!"
       ]
     },
     info: {

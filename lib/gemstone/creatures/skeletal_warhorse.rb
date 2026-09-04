@@ -109,11 +109,13 @@
       "A skeletal warhorse gallops {direction}.",
       "A skeletal warhorse just went through a soot-stained wooden door.",
       "A skeletal warhorse just went through some barn doors.",
-      "A skeletal warhorse just went through a stout wooden door."
+      "A skeletal warhorse just went through a stout wooden door.",
+      "A skeletal warhorse slowly trots east, whinnying in pain."
     ],
     death: [
       "The skeletal warhorse falls to the ground motionless.",
-      "The skeletal warhorse wails in terrifying pain one last time and lies still."
+      "The skeletal warhorse wails in terrifying pain one last time and lies still.",
+      "The skeletal warhorse falls to the ground dead, {pronoun} calcified bones still pulsating with a blinding white hue."
     ],
     decay: [],
     search: [],

@@ -130,13 +130,16 @@
     ],
     death: [
       "The stone giant rumbles in agony and goes still.",
-      "The stone giant shudders and goes still."
+      "The stone giant shudders and goes still.",
+      "The stone giant falls to the floor dead, {pronoun} stone hide still pulsating with a blinding white hue."
     ],
     decay: [
       "A stone giant sinks into the ground, leaving nothing behind."
     ],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "A stone giant rumbles an incantation."
+    ],
     stand: [
       "A stone giant throws {pronoun} head back and roars, shaking off the stun!",
       "A stone giant throws {pronoun} head back and roars silently, shaking off the stun!"

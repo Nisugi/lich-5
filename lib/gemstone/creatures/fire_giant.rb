@@ -117,6 +117,9 @@
     decay: [],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A fire giant eyes burn with bright orange fire as {pronoun} tries to shake off the stun!"
+    ],
     attacks: {
       attack: [
         "A fire giant points a flaming hand at you!",

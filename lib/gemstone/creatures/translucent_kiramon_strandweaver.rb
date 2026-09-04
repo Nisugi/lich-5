@@ -117,9 +117,15 @@
     spell_prep: [
       "A translucent kiramon strandweaver concentrates intently on you, and a pulse of pearlescent energy ripples toward you!"
     ],
+    stand: [
+      "A translucent kiramon strandweaver twists {pronoun} segmented abdomen, rolling onto {pronoun} front so that {pronoun} can rise to {pronoun} full height once more."
+    ],
     attacks: {
       attack: [
-        "A translucent kiramon strandweaver twists grotesquely, aiming {pronoun} spinnerets at you before shooting a clot of thick webbing!"
+        "A translucent kiramon strandweaver twists grotesquely, aiming {pronoun} spinnerets at you before shooting a clot of thick webbing!",
+        "A translucent kiramon strandweaver twitches {pronoun} antennae as {pronoun} focuses upon you!",
+        "A translucent kiramon strandweaver sprays an intricate mesh of clinging gossamer at you!",
+        "A translucent kiramon strandweaver concentrates for a moment while staring intently at you."
       ]
     },
     info: {

@@ -121,7 +121,8 @@
     ],
     decay: [
       "A muscular supplicant crumbles to dust and blows away on the wind.",
-      "A muscular supplicant suddenly dissolves into a puddle of viscous ooze."
+      "A muscular supplicant suddenly dissolves into a puddle of viscous ooze.",
+      "A muscular supplicant rapidly decays, flesh and bone crumbling to dust."
     ],
     search: [],
     spell_prep: [],

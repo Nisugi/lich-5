@@ -24,7 +24,7 @@
   ],
   bcs: true,
   max_hp: 367,
-  speed: 7,
+  speed: 6,
   height: 3,
   size: "small",
   attack_attributes: {
@@ -176,7 +176,8 @@
     ],
     search: [
       "A stunted halfling bloodspeaker licks her lips as she looks around, as if certain that she has missed something.",
-      "a stunted halfling bloodspeaker's sniffs the air, bulging eyes darting about wildly"
+      "a stunted halfling bloodspeaker's sniffs the air, bulging eyes darting about wildly",
+      "A stunted halfling bloodspeaker lets out a soft grunt as {pronoun} twists {pronoun} body to look around, the heavy scars of {pronoun} face tugging painfully."
     ],
 
 

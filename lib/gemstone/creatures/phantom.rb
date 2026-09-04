@@ -114,7 +114,9 @@
       "A phantom vanishes into thin air, leaving no trace behind."
     ],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "A phantom begins to moan an incantation!"
+    ],
     attacks: {
       attack: [
         "A phantom gestures at you!",

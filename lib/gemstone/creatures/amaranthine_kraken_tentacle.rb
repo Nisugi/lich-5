@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: nil,
   max_hp: 756,
-  speed: 8,
+  speed: 3,
   height: nil,
   size: "",
   areas: [
@@ -93,7 +93,8 @@
       attack: [
         "An amaranthine kraken tentacle crushes you mercilessly!",
         "An amaranthine kraken tentacle lashes out at your legs, flicking seawater in an arcing spray of droplets!",
-        "The amaranthine kraken tentacle slams into your lower back with a brutal thud!"
+        "The amaranthine kraken tentacle slams into your lower back with a brutal thud!",
+        "An amaranthine kraken tentacle whirls in a violent arc before slamming down toward you!"
       ]
     },
     info: {

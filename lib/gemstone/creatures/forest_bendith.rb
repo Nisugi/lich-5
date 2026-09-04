@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: 6,
+  speed: 7,
   height: 3,
   size: "small",
   areas: [
@@ -112,7 +112,8 @@
     ],
     flee: [],
     death: [
-      "The forest bendith's eyes grow dim as her lifeforce fades away."
+      "The forest bendith's eyes grow dim as her lifeforce fades away.",
+      "The forest bendith drops lifelessly to the ground."
     ],
     decay: [],
     search: [],

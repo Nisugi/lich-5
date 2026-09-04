@@ -188,7 +188,8 @@
         "An Illoke jarl stomps at you with {pronoun} foot!",
         "An Illoke jarl swings {weapon} at you!",
         "An Illoke jarl punches {pronoun} fist into the ground!",
-        "The Illoke jarl slams into you, and you are sent careening to the ground!"
+        "The Illoke jarl slams into you, and you are sent careening to the ground!",
+        "An Illoke jarl summons the wrath of {pronoun} god while pointing at you!"
       ],
       hurl: [
         "An Illoke jarl throws {weapon} at you!"

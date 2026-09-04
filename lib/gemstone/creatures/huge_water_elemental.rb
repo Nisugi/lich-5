@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: nil,
-  speed: nil,
+  speed: 8,
   height: nil,
   size: "",
   areas: [
@@ -117,7 +117,8 @@
     ],
     attacks: {
       attack: [
-        "A huge water elemental pounds at you with a churning aquatic fist!"
+        "A huge water elemental pounds at you with a churning aquatic fist!",
+        "A huge water elemental forms {pronoun} hands, palms outward toward you!"
       ]
     },
     info: {

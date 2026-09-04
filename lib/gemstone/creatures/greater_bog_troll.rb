@@ -135,7 +135,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A greater bog troll swings {weapon} at you!"
+        "A greater bog troll swings {weapon} at you!",
+        "A greater bog troll grunts, pointing at you!"
       ]
     },
     info: {

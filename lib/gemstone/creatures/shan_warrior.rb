@@ -119,7 +119,8 @@
     arrival: [],
     flee: [
       "A shan warrior pads {direction}.",
-      "A shan warrior limps {direction}."
+      "A shan warrior limps {direction}.",
+      "A shan warrior whimpers as {pronoun} slowly backs away, {pronoun} teeth bared."
     ],
     death: [
       "The shan warrior howls out one last time and dies.",

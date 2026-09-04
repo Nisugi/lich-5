@@ -120,6 +120,13 @@
     spell_prep: [
       "A huge air elemental whispers an incantation into the wind."
     ],
+    attacks: {
+      attack: [
+        "A huge air elemental unleashes a bolt of churning air at you!",
+        "A huge air elemental takes a deep breath, opens {pronoun} mouth and blows a forceful gust of air at you!",
+        "A huge air elemental spins rapidly at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

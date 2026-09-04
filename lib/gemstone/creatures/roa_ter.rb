@@ -119,7 +119,8 @@
     ],
     arrival: [],
     flee: [
-      "A roa'ter slithers {direction}."
+      "A roa'ter slithers {direction}.",
+      "The roa'ter warily backs away."
     ],
     death: [
       "The roa'ter rolls over and dies."

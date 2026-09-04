@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 40,
-  speed: nil,
+  speed: 15,
   height: 3,
   size: "small",
   areas: [
@@ -148,7 +148,8 @@
       attack: [
         "A kobold swings {weapon} at you!",
         "A kobold thrusts with a javelin at you!",
-        "A kobold swings a short sword at {target}!"
+        "A kobold swings a short sword at {target}!",
+        "A kobold looks fearfully at you!"
       ]
     },
     info: {

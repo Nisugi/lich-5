@@ -117,7 +117,9 @@
     attacks: {
       attack: [
         "A crackling lightning fiend launches a crackling blue and golden spark at you!",
-        "A crackling lightning fiend raises a luminous hand and sends a bolt of blue and golden lightning streaking toward you!"
+        "A crackling lightning fiend raises a luminous hand and sends a bolt of blue and golden lightning streaking toward you!",
+        "A crackling lightning fiend sends a crackling filament of energy toward you!",
+        "A crackling lightning fiend roils and whirls, spitting sparks of electricity before sending a jagged bolt streaking toward you!"
       ]
     },
     info: {

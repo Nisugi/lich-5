@@ -112,7 +112,8 @@
       attack: [
         "An Ithzir scout swings {weapon} at you!",
         "The Ithzir scout points at you for emphasis.",
-        "An Ithzir seer suddenly opens Ithzir scout eyes and stares directly at you!"
+        "An Ithzir seer suddenly opens Ithzir scout eyes and stares directly at you!",
+        "The Ithzir scout cocks {pronoun} head at you."
       ],
       hurl: [
         "An Ithzir scout throws {weapon} at you!"
@@ -127,7 +128,8 @@
     arrival: [
       "An Ithzir initiate strides in, {pronoun} hands clasped before him.",
       "An Ithzir scout fades into view while striking!",
-      "An Ithzir scout fades into view while attempting to strike, but fails to find an opening!"
+      "An Ithzir scout fades into view while attempting to strike, but fails to find an opening!",
+      "An Ithzir scout staggers in, barely able to keep {pronoun} feet!"
     ],
     flee: [
       "An Ithzir scout slowly backs away with {pronoun} steel broadsword brandished menacingly in front of {pronoun}."

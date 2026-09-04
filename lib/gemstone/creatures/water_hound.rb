@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 210,
-  speed: nil,
+  speed: 7,
   height: 3,
   size: "medium",
   areas: [
@@ -114,13 +114,18 @@
     decay: [
       "A water hound decays into a compost of fur and fangs."
     ],
-    search: [],
+    search: [
+      "The water hound sniffs at the air and growls low in the throat."
+    ],
     spell_prep: [],
     stun_break: [
       "A water hound howls in rage as {pronoun} shakes off the stun.",
       "A water hound howls silently in rage as {pronoun} shakes off the stun."
     ],
     attacks: {
+      attack: [
+        "A water hound belches a bolt of water at you!"
+      ],
       bite: [
         "A water hound tries to bite you!"
       ],

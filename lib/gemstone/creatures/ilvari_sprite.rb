@@ -120,11 +120,20 @@
       "The layer of bark on an Ilvari sprite hardens and absorbs the attack!  The bark crackles as it crumbles to dust.",
       "The layer of bark on an Ilvari sprite hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust."
     ],
-    search: [],
+    search: [
+      "An Ilvari sprite sheds a tear as {pronoun} glances around apprehensively."
+    ],
     spell_prep: [
       "An Ilvari sprite concentrates intently on you, and a pulse of pearlescent energy ripples toward you!",
       "An Ilvari sprite closes {pronoun} eyes in deep concentration..."
     ],
+    attacks: {
+      attack: [
+        "An Ilvari sprite blows a kiss at you!",
+        "An Ilvari sprite blows a handful of twinkling dust at you!",
+        "An Ilvari sprite blows a handful of chalky dust at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

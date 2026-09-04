@@ -118,13 +118,17 @@
       "Chaotic pulses of color explode through a gigantic lightning whelk's flesh like fireworks as it collapses.  It dies in a froth of bubbling mucus."
     ],
     decay: [],
-    search: [],
+    search: [
+      "A gigantic lightning whelk pulses softly, radiance pulsing through {pronoun} body as {pronoun} antennae scan the shadows.",
+      "A gigantic lightning whelk twitches {pronoun} antennae in opposite directions to scan the surroundings."
+    ],
     spell_prep: [],
     attacks: {
       attack: [
         "A gigantic lightning whelk slams {pronoun} head into you!",
         "The gigantic lightning whelk slams into {target}, who is sent careening headlong into a nearby group of combatants as {target} falls to the ground!",
-        "The gigantic lightning whelk slams into you, and you are sent careening into {target} as you fall to the ground!"
+        "The gigantic lightning whelk slams into you, and you are sent careening into {target} as you fall to the ground!",
+        "A gigantic lightning whelk rears back, emitting an awful gurgle. {Pronoun} opens {pronoun} mouth and spews a stream of clumpy white froth at you!"
       ]
     },
     info: {

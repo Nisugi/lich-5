@@ -19,7 +19,7 @@
   otherclass: [],
   bcs: true,
   max_hp: 255,
-  speed: nil,
+  speed: 14,
   height: 3,
   size: "large",
   areas: [
@@ -95,12 +95,15 @@
     arrival: [
       "A spectacled bear lumbers in!",
       "A spectacled bear slowly lumbers in, growling in pain!",
-      "A spectacled bear lumbers noisily into the area drooling hungrily!"
+      "A spectacled bear lumbers noisily into the area drooling hungrily!",
+      "A spectacled bear shudders and lumbers in, snarling in agony!"
     ],
     flee: [
       "A spectacled bear lumbers {direction}.",
       "A spectacled bear slowly lumbers {direction}, growling in pain.",
-      "A spectacled bear slowly backs away, {pronoun} teeth bared."
+      "A spectacled bear slowly backs away, {pronoun} teeth bared.",
+      "A spectacled bear shudders and lumbers south, snarling in agony.",
+      "A spectacled bear shudders and lumbers east, snarling in agony."
     ],
     death: [
       "The spectacled bear collapses heavily into a heap on the ground and dies.",

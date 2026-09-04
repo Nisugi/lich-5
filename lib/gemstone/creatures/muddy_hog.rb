@@ -96,7 +96,8 @@
       "A muddy hog barrels in!"
     ],
     flee: [
-      "A muddy hog trots {direction}."
+      "A muddy hog trots {direction}.",
+      "A muddy hog grunts as {pronoun} slowly backs away."
     ],
     death: [
       "The muddy hog collapses to the ground, emits a final squeal, and dies.",

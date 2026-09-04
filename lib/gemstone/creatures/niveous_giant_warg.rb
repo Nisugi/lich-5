@@ -175,7 +175,8 @@
         "Froth bubbling on {pronoun} lips, a tattooed gigas berserker swings {weapon} at you in a murderous arc!",
         "Lowering niveous giant warg head, an immense gold-bristled hinterboar barrels into a merciless charge at you!",
         "Murder in {pronoun} eyes, an immense gold-bristled hinterboar tries to gore you with {pronoun} tusks!",
-        "Rearing up on {pronoun} hind legs, an immense gold-bristled hinterboar stomps at you with {pronoun} huge hooves!"
+        "Rearing up on {pronoun} hind legs, an immense gold-bristled hinterboar stomps at you with {pronoun} huge hooves!",
+        "A niveous giant warg grabs you by the head and twists violently. You hear a loud *CRACK* as your neck bones snap and your body goes limp!"
       ],
       bite: [
         "A niveous giant warg lunges at you, maw slathering as {pronoun} tries to take a ferocious bite!",

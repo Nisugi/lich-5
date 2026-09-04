@@ -22,7 +22,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: 3,
+  speed: 8,
   height: 12,
   size: "huge",
   areas: [

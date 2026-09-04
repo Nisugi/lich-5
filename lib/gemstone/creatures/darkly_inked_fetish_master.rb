@@ -114,9 +114,13 @@
       "A darkly inked fetish master raises {pronoun} hands while emitting a dissonant sing-song rhythm, causing the tattoos along {pronoun} forearms and hands to flare to life with a dark light.",
       "A darkly inked fetish master mumbles a few words, {pronoun} voice small and quiet as tendrils of purple crawl along the tattoos lining {pronoun} forearms!"
     ],
+    stun_break: [
+      "A darkly inked fetish master wheezes raspily, unable to regain {pronoun} composure."
+    ],
     attacks: {
       attack: [
-        "A darkly inked fetish master swings a stout rotting wood staff at you!"
+        "A darkly inked fetish master swings a stout rotting wood staff at you!",
+        "A darkly inked fetish master claps {pronoun} palms together, momentarily uniting {pronoun} glowing tattoos before forcefully thrusting {pronoun} hands forward toward you!"
       ]
     },
     info: {

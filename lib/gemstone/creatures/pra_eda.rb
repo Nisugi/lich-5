@@ -117,11 +117,14 @@
       "A pra'eda decays away, leaving nothing behind."
     ],
     search: [],
-    spell_prep: [],
+    spell_prep: [
+      "A pra'eda growls out an ancient incantation."
+    ],
     attacks: {
       attack: [
         "A pra'eda swings {weapon} at you!",
-        "A pra'eda throw back {pronoun} head and howls!"
+        "A pra'eda throw back {pronoun} head and howls!",
+        "A pra'eda points {pronoun} hands at you!"
       ]
     },
     info: {

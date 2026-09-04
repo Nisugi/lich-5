@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 60,
-  speed: nil,
+  speed: 15,
   height: 2,
   size: "large",
   areas: [
@@ -100,7 +100,8 @@
     ],
     flee: [
       "A spotted gnarp trots {direction}.",
-      "A spotted gnarp just went through the barn door."
+      "A spotted gnarp just went through the barn door.",
+      "A spotted gnarp snorts as {pronoun} slowly backs away."
     ],
     death: [
       "The spotted gnarp collapses to the ground, emits a final cry, and dies.",

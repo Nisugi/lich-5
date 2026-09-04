@@ -102,7 +102,8 @@
       "A giant weasel scampers in!"
     ],
     flee: [
-      "A giant weasel scampers {direction}."
+      "A giant weasel scampers {direction}.",
+      "A giant weasel chitters as {pronoun} slowly backs away."
     ],
     death: [
       "The giant weasel collapses to the ground, emits a final cry, and dies.",

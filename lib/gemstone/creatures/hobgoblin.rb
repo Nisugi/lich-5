@@ -172,7 +172,8 @@
         "A hobgoblin swings {weapon} at you!",
         "A hobgoblin thrusts with a rapier at you!",
         "A hobgoblin swings a morning star at {target}!",
-        "A hobgoblin thrusts with a feather decorated bone spear at you!"
+        "A hobgoblin thrusts with a feather decorated bone spear at you!",
+        "A hobgoblin growls at you!"
       ]
     },
     info: {

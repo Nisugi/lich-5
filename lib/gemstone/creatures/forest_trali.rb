@@ -111,7 +111,9 @@
       "A forest trali collapses upon the ground and the life fades from {pronoun} eyes.",
       "A forest trali collapses upon the floor and the life fades from {pronoun} eyes."
     ],
-    decay: [],
+    decay: [
+      "A forest trali's body rapidly decays away."
+    ],
     search: [],
     spell_prep: [],
     attacks: {

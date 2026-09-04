@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 104,
-  speed: nil,
+  speed: 6,
   height: 5,
   size: "medium",
   areas: [
@@ -116,7 +116,8 @@
     death: [
       "The hobgoblin acolyte screams up at the heavens, then collapses and dies.",
       "The hobgoblin acolyte crumples to the ground and dies.",
-      "The hobgoblin acolyte struggles to utter a final prayer, then goes still."
+      "The hobgoblin acolyte struggles to utter a final prayer, then goes still.",
+      "The hobgoblin acolyte gasps a final prayer, then falls to the ground dead."
     ],
     decay: [
       "A hobgoblin acolyte decays into a pile of compost."

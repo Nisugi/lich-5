@@ -100,6 +100,11 @@
     decay: [],
     search: [],
     spell_prep: [],
+    attacks: {
+      attack: [
+        "A grey-plumed steelwing harpy whirls down toward you, gnashing {pronoun} teeth at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

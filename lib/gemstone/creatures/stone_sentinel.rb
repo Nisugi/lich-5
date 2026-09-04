@@ -149,7 +149,8 @@
         "A stone sentinel points at you!",
         "A stone sentinel pounds at a stone sentinel with {pronoun} fist!",
         "A stone sentinel pounds at {target} with {pronoun} fist!",
-        "A stone sentinel exhales a virulent green mist toward you, but you are unaffected."
+        "A stone sentinel exhales a virulent green mist toward you, but you are unaffected.",
+        "A stone sentinel opens {pronoun} mouth and spits a stone at you."
       ]
     },
     info: {

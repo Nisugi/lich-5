@@ -107,7 +107,13 @@
       "A red tsark looks around apprehensively as {pronoun} takes a step back."
     ],
     spell_prep: [],
+    stand: [
+      "A red tsark's long tail swishes around as {pronoun} scrambles to {pronoun} feet."
+    ],
     attacks: {
+      attack: [
+        "A red tsark opens {pronoun} mouth and spews liquid flames at you!"
+      ],
       bite: [
         "A red tsark tries to bite you!"
       ],

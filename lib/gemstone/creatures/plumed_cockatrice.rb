@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 123,
-  speed: nil,
+  speed: 11,
   height: 3,
   size: "medium",
   areas: [
@@ -119,7 +119,8 @@
     attacks: {
       attack: [
         "A plumed cockatrice screeches and strikes at you!",
-        "A plumed cockatrice attempts to kick dust at you, but is unable to kick up a sufficient amount of dust."
+        "A plumed cockatrice attempts to kick dust at you, but is unable to kick up a sufficient amount of dust.",
+        "A plumed cockatrice screeches as {pronoun} stares hatefully at you."
       ]
     },
     info: {

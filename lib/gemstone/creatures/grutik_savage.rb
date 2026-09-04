@@ -126,6 +126,9 @@
     ],
     search: [],
     spell_prep: [],
+    stun_break: [
+      "A grutik savage tries to shake off the stun."
+    ],
     attacks: {
       attack: [
         "A Grutik savage swings {weapon} at you!",

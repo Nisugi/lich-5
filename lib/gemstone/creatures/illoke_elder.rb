@@ -177,7 +177,8 @@
       attack: [
         "An Illoke elder pounds at you with {pronoun} fist!",
         "An Illoke elder stomps at you with {pronoun} foot!",
-        "An Illoke elder swings {weapon} at you!"
+        "An Illoke elder swings {weapon} at you!",
+        "An Illoke elder summons the wrath of {pronoun} god as {pronoun} gestures at you!"
       ],
       hurl: [
         "An Illoke elder throws {weapon} at you!"

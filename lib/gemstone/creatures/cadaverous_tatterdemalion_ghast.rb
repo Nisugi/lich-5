@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 325,
-  speed: 4,
+  speed: 6,
   height: 5,
   size: "medium",
   areas: [
@@ -151,7 +151,8 @@
         "A cadaverous tatterdemalion ghast exhales the last of a virulent green mist.",
         "A cadaverous tatterdemalion ghast exhales a virulent green mist toward you, but you are unaffected.",
         "A cadaverous tatterdemalion ghast exhales a virulent green mist toward {target}, but {pronoun} is unaffected.",
-        "A cadaverous tatterdemalion ghast slashes relentlessly at {target} with long, yellowed nails!"
+        "A cadaverous tatterdemalion ghast slashes relentlessly at {target} with long, yellowed nails!",
+        "A cadaverous tatterdemalion ghast grabs you by the head and twists violently. You hear a loud *CRACK* as your neck bones snap and your body goes limp!"
       ],
       pestilence: [
         "A cadaverous tatterdemalion ghast exhales a virulent green mist toward you, instantly infecting you. You convulse violently!"

@@ -21,7 +21,7 @@
   ],
   bcs: true,
   max_hp: 400,
-  speed: 8,
+  speed: 9,
   height: 2,
   size: "large",
   areas: [
@@ -102,7 +102,10 @@
     flee: [
       "A moor eagle flies {direction}."
     ],
-    death: [],
+    death: [
+      "The moor eagle flops about on the ground, {pronoun} thrashing finally ceasing in death.",
+      "The moor eagle augers into the ground, {pronoun} death spiral ending in a **THUD**."
+    ],
     decay: [
       "The moor eagle decays into a pile of feathers."
     ],

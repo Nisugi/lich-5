@@ -122,7 +122,8 @@
     spell_prep: [],
     attacks: {
       attack: [
-        "A mongrel kobold swings {weapon} at you!"
+        "A mongrel kobold swings {weapon} at you!",
+        "A mongrel kobold looks fearfully at you!"
       ]
     },
     info: {

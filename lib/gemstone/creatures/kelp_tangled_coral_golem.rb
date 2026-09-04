@@ -96,9 +96,19 @@
     flee: [],
     death: [],
     decay: [],
-    search: [],
+    search: [
+      "A kelp-tangled coral golem swivels slowly, clusters of coral creaking and clacking as {pronoun} featureless head pivots to scan the shadows."
+    ],
     spell_prep: [],
-    attacks: {},
+    attacks: {
+      attack: [
+        "A kelp-tangled coral golem lifts a dripping fist high overhead and drives {pronoun} down toward you!",
+        "A kelp-tangled coral golem reaches into {pronoun} chest cavity, coral clacking against coral noisily as {pronoun} fingers rummage about. {Pronoun} produces a tuna and hurls {pronoun} at you!",
+        "A kelp-tangled coral golem reaches into {pronoun} chest cavity, coral clacking against coral noisily as {pronoun} fingers rummage about. {Pronoun} produces a jellyfish and hurls {pronoun} at you!",
+        "A kelp-tangled coral golem reaches into {pronoun} chest cavity, coral clacking against coral noisily as {pronoun} fingers rummage about. {Pronoun} produces a squid and hurls {pronoun} at you!",
+        "A kelp-tangled coral golem reaches into {pronoun} chest cavity, coral clacking against coral noisily as {pronoun} fingers rummage about. {Pronoun} produces a barracuda and hurls {pronoun} at you!"
+      ]
+    },
     info: {
       general: [],
       class_tips: {

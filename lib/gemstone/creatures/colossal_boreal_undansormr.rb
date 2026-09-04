@@ -83,11 +83,18 @@
     flee: [
       "A colossal boreal undansormr just went through a pair of colossal red stone pillars.",
       "A colossal boreal undansormr just went through a ragged acid-pocked gash.",
-      "A colossal boreal undansormr just went through a crumbling red stone maw."
+      "A colossal boreal undansormr just went through a crumbling red stone maw.",
+      "A colossal boreal undansormr slithers north, sending tremors through the ground.",
+      "A colossal boreal undansormr slithers south, sending tremors through the ground.",
+      "A colossal boreal undansormr slithers east, sending tremors through the ground.",
+      "A colossal boreal undansormr slithers west, sending tremors through the ground."
     ],
     arrival: [
       "A colossal boreal undansormr just came through a break in the trees.",
       "A colossal boreal undansormr just came through a ragged acid-pocked gash."
+    ],
+    search: [
+      "A colossal boreal undansormr scans the surroundings with {pronoun} many eyes."
     ],
     attacks: {
       attack: [

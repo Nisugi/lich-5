@@ -89,7 +89,8 @@
     attacks: {
       attack: [
         "A shan bardess thrusts with a sonic lance at you!",
-        "A shan bardess thrusts with a fir-handled imflass lance at you!"
+        "A shan bardess thrusts with a fir-handled imflass lance at you!",
+        "A shan bardess directs {pronoun} guttural voice at you!"
       ]
     },
     stand: [

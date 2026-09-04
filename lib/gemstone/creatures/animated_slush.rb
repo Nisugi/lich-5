@@ -130,7 +130,9 @@
       "An animated slush ripples in, its mass wobbling slightly as it arrives."
     ],
     flee: [],
-    death: [],
+    death: [
+      "The animated slush falls to the ground dead, {pronoun} icy surface still pulsating with a blinding white hue."
+    ],
     decay: [],
     search: [],
     spell_prep: [

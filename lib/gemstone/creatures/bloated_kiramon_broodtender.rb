@@ -110,6 +110,9 @@
     decay: [],
     search: [],
     spell_prep: [],
+    stand: [
+      "A bloated kiramon broodtender braces {pronoun} weight with {pronoun} spindly legs and rises to {pronoun} full height, {pronoun} belly dragging grotesquely on the ground."
+    ],
     attacks: {
       attack: [
         "A bloated kiramon broodtender scuttles in a wary semicircle before lunging at you, pincers clacking!",

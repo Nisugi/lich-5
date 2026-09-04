@@ -188,12 +188,16 @@
       "A Vvrael warlock looks around apprehensively."
     ],
     spell_prep: [],
+    stun_break: [
+      "A Vvrael warlock shakes with black rage, shaking off the forces controlling him!"
+    ],
     attacks: {
       attack: [
         "A Vvrael warlock swings {weapon} at you!",
         "A Vvrael warlock swings a midnight black longsword at {target}!",
         "A Vvrael warlock swings a midnight black spiked whip at {target}!",
-        "A Vvrael warlock leaps to {pronoun} feet!"
+        "A Vvrael warlock leaps to {pronoun} feet!",
+        "A Vvrael warlock focuses a wave of black anti-mana at you!"
       ],
       hurl: [
         "A Vvrael warlock hurls {weapon} at you!"

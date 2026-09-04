@@ -136,7 +136,11 @@
       "A shining winged disir just went through a crumbling red stone maw.",
       "A shining winged disir just went through a breached red stone wall.",
       "A shining winged disir just went through a pocked red stone arch.",
-      "A shining winged disir just went through a pair of colossal red stone pillars."
+      "A shining winged disir just went through a pair of colossal red stone pillars.",
+      "A shining winged disir stalks west, {pronoun} radiant wings illuminating the way before {pronoun}.",
+      "A shining winged disir stalks south, {pronoun} radiant wings illuminating the way before {pronoun}.",
+      "A shining winged disir stalks north, {pronoun} radiant wings illuminating the way before {pronoun}.",
+      "A shining winged disir stalks east, {pronoun} radiant wings illuminating the way before {pronoun}."
     ],
     arrival: [
       "A shining winged disir just came through a pocked red stone arch.",

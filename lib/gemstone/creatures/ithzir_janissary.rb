@@ -153,7 +153,8 @@
     flee: [
       "An Ithzir janissary strides {direction}.",
       "An Ithzir janissary slowly backs away with {pronoun} handaxe brandished menacingly in front of {pronoun}.",
-      "An Ithzir janissary slowly backs away with {pronoun} crystal-edged handaxe brandished menacingly in front of {pronoun}."
+      "An Ithzir janissary slowly backs away with {pronoun} crystal-edged handaxe brandished menacingly in front of {pronoun}.",
+      "An Ithzir janissary strides out of thin air!"
     ],
     death: [
       "The Ithzir janissary vainly struggles to rise, then goes still.",

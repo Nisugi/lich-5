@@ -118,7 +118,8 @@
       "A plains orc scout wanders {direction}."
     ],
     death: [
-      "A plains orc scout collapses until all that is left is a few scraps of hide."
+      "A plains orc scout collapses until all that is left is a few scraps of hide.",
+      "A plains orc scout jerks one last time and expires."
     ],
     decay: [],
     search: [],
