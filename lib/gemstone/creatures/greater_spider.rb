@@ -20,7 +20,7 @@
     "Living"
   ],
   bcs: true,
-  max_hp: 90,
+  max_hp: 85,
   speed: 10,
   height: 3,
   size: "medium",

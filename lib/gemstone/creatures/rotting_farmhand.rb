@@ -20,7 +20,7 @@
     "Corporeal undead"
   ],
   bcs: true,
-  max_hp: 320,
+  max_hp: 300,
   speed: nil,
   height: 5,
   size: "medium",

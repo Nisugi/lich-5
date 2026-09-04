@@ -20,7 +20,7 @@
     "Magical"
   ],
   bcs: true,
-  max_hp: 326,
+  max_hp: 331,
   speed: 10,
   height: 10,
   size: "huge",

@@ -20,7 +20,7 @@
     "Living"
   ],
   bcs: true,
-  max_hp: 409,
+  max_hp: 400,
   speed: 16,
   height: 5,
   size: "huge",

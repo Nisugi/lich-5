@@ -18,7 +18,7 @@
   boss_type: nil,
   otherclass: [],
   bcs: true,
-  max_hp: 94,
+  max_hp: 100,
   speed: 7,
   height: 5,
   size: "medium",

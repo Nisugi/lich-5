@@ -21,7 +21,7 @@
     "Living"
   ],
   bcs: true,
-  max_hp: 509,
+  max_hp: 400,
   speed: nil,
   height: 2,
   size: "small",

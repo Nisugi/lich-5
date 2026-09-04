@@ -21,7 +21,7 @@
     "Element-based"
   ],
   bcs: true,
-  max_hp: 293,
+  max_hp: 262,
   speed: nil,
   height: 5,
   size: "medium",

@@ -23,7 +23,7 @@
     }
   ],
   bcs: true,
-  max_hp: 779,
+  max_hp: 600,
   speed: 10,
   height: 25,
   size: "huge",

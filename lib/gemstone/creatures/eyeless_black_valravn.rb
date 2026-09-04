@@ -25,7 +25,7 @@
     }
   ],
   bcs: true,
-  max_hp: 413,
+  max_hp: 388,
   speed: 6,
   height: 5,
   size: "medium",

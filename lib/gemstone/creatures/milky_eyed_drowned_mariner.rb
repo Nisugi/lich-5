@@ -20,7 +20,7 @@
     "Undead"
   ],
   bcs: nil,
-  max_hp: 370,
+  max_hp: 377,
   speed: nil,
   height: nil,
   size: "",

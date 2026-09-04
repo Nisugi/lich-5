@@ -20,7 +20,7 @@
     "Non-corporeal undead"
   ],
   bcs: nil,
-  max_hp: 264,
+  max_hp: 204,
   speed: nil,
   height: 5,
   size: "medium",

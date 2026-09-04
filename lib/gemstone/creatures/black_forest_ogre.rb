@@ -21,7 +21,7 @@
     "Boss"
   ],
   bcs: true,
-  max_hp: 313,
+  max_hp: 300,
   speed: 7,
   height: 10,
   size: "large",

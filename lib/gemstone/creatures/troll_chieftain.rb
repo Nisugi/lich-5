@@ -20,7 +20,7 @@
     "Living"
   ],
   bcs: true,
-  max_hp: nil,
+  max_hp: 300,
   speed: 8,
   height: 8,
   size: "large",

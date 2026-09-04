@@ -21,7 +21,7 @@
     "Extraplanar"
   ],
   bcs: true,
-  max_hp: 346,
+  max_hp: 300,
   speed: 4,
   height: 6,
   size: "medium",
