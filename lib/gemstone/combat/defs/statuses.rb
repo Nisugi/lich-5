@@ -38,6 +38,12 @@ module Lich
                             /(?<target>.+?) form is entangled in an unseen force that restricts .+? movement\./,
                             /(?<target>.+?) shakes in utter terror!/,
                             /An unseen force entangles you, restricting your movement!/,
+                            # 619 Moonbeam hold onset - pairs with the
+                            # "lunar light encircling ... fades away" remove
+                            # below (full-corpus sweep 2026-09-03: ~85k lines
+                            # across up to 26 creatures per moon variant;
+                            # only observed moons listed)
+                            /(?<target>.+?) is caught fast, the light of (?:Liabo|Lornon|Tilaok|the moon) arresting #{MK_PRE}(?:his|her|its)#{MK_POST} movements\./,
                             /You are pinned in place, unable to move\./,
                             /(?<target>.+?) is rooted in place!/
                           ].freeze,
@@ -244,7 +250,12 @@ module Lich
                             /You go limp as you are rendered unconscious!/,
                             /(?<target>.+?) slumps to the ground in an unconscious heap\./
                           ].freeze,
-                          [/(?<target>.+?) is awakened by (?<attacker>.+?)'s#{MK_POST} attack!/].freeze),
+                          [
+                            /(?<target>.+?) is awakened by (?<attacker>.+?)'s#{MK_POST} attack!/,
+                            # full-corpus sweep 2026-09-03: 1,256 lines
+                            # across 50+ creatures
+                            /(?<target>.+?) slowly comes back to consciousness\./
+                          ].freeze),
 
             StatusDef.new(:slowed,
                           [
@@ -297,7 +308,9 @@ module Lich
                           [].freeze,
                           [
                             /(?<target>.+?) is revealed from hiding\./,
-                            /(?<target>.+?) is forced out of hiding!/
+                            # both terminators live (sweep: period 2,200x/8,
+                            # bang 416x/5)
+                            /(?<target>.+?) is forced out of hiding[.!]/
                           ].freeze)
           ].freeze
 

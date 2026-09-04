@@ -210,7 +210,9 @@ module Lich
             # the creature telegraph and rapid-cast forms open their own
             # CS/TD rolls just like "gestures at"
             AttackDef.new(:cast, [
-              /(?<attacker>.+?) gestures at (?<target>[^.]+)\./,
+              # bang terminator is the inbound form ("gestures at you!",
+              # full-corpus sweep 2026-09-03: 839x across 21 creatures)
+              /(?<attacker>.+?) gestures at (?<target>[^.!]+)[.!]/,
               # untargeted AoE cast (round-6: 8.4k "Nisugi gestures.");
               # per-target events unfold under it via the switch logic.
               # Collides with the bare GESTURE emote, but that event never

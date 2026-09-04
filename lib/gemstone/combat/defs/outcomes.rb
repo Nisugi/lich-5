@@ -232,8 +232,12 @@ module Lich
               # Elemental no-effect on immune creatures - per-target line of
               # our elemental AoEs/flares (round-11/12 status candidate list:
               # plasma 5,983x/4, electricity 5,571x/5, cold 4,479x/7,
-              # heat 1,094x/4; only the four observed elements listed)
-              /(?<target>.+?) is unharmed by the (?:plasma|electricity|cold|heat)!/
+              # heat 1,094x/4, impact 34,531x/4 from the 2026-09-03
+              # full-corpus sweep; only observed elements listed)
+              /(?<target>.+?) is unharmed by the (?:plasma|electricity|cold|heat|impact)!/,
+              # holy-luminescence AoE no-effect (full-corpus sweep 2026-09-03:
+              # 1,239 lines across 50+ creatures)
+              /(?<target>.+?) endures the luminescence and is unscathed!/
             ].freeze),
             OutcomeDef.new(:fumble, [/d100 == 1 FUMBLE!/].freeze),
             OutcomeDef.new(:hindrance, [/\[Spell Hindrance for (?<armor>.+?) is (?<hindrance_amount>\d+)% with current Armor Use skill, d100= (?<roll>\d+)\]/].freeze),
