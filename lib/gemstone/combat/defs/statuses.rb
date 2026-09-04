@@ -311,6 +311,14 @@ module Lich
                           ].freeze,
                           [/(?<target>.+?) appears to recover some strength\./].freeze),
 
+            # 1625 Templar's Verdict defense-debuff rider: printed right
+            # after the violet-flame damage in every captured exchange
+            # (2026-09-03; 7.2k lines / 50+ creatures). Add-only - no
+            # expiry line observed yet.
+            StatusDef.new(:vulnerable,
+                          [/(?<target>.+?)'s#{MK_POST} defenses are diminished in the wake of the flames\./].freeze,
+                          [].freeze),
+
             # Immolation-class burn: onset and per-round ticks observed in
             # the 2026-09-03 exchanges (bursts-into-flame carries its own
             # inline damage; continue-to-burn is the round tick); the

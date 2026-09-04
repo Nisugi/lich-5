@@ -237,7 +237,12 @@ module Lich
               /(?<target>.+?) is unharmed by the (?:plasma|electricity|cold|heat|impact)!/,
               # holy-luminescence AoE no-effect (full-corpus sweep 2026-09-03:
               # 1,239 lines across 50+ creatures)
-              /(?<target>.+?) endures the luminescence and is unscathed!/
+              /(?<target>.+?) endures the luminescence and is unscathed!/,
+              # magic-avoid special defense (triton brawler): follows the
+              # gesture with NO roll printed, so like the troll-wraith
+              # immunity above it is the ONLY line that settles the cast
+              # (exchange evidence 2026-09-03; 21.7k lines)
+              /(?<target>.+?)'s#{MK_POST} face goes blank for a moment before returning to normal, as #{MK_PRE}(?:he|she|it)#{MK_POST} successfully avoids the effects of the magical attack!/
             ].freeze),
             OutcomeDef.new(:fumble, [/d100 == 1 FUMBLE!/].freeze),
             OutcomeDef.new(:hindrance, [/\[Spell Hindrance for (?<armor>.+?) is (?<hindrance_amount>\d+)% with current Armor Use skill, d100= (?<roll>\d+)\]/].freeze),
