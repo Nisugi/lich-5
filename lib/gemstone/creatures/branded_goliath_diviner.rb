@@ -33,7 +33,11 @@
     physical_attacks: [],
     bolt_spells: [],
     warding_spells: [],
-    offensive_spells: [],
+    offensive_spells: [
+      {
+        name: "Mystic Impedance (1708)"
+      }
+    ],
     maneuvers: [],
     special_abilities: [
       {
@@ -78,7 +82,27 @@
     special_defenses: []
   },
   special_other: nil,
-  abilities: [],
+  abilities: [
+    {
+      id: :mystic_impedance,
+      name: "Mystic Impedance (1708)",
+      type: :debuff,
+      target: :opponent,
+      typical_duration_s: 30,
+      effects: { blocks_spells_at_or_above: 15 },
+      dispellable: nil,
+      notes: "Golden runes onset, shows in the Debuffs dialog as " \
+             "\"Mystic Impedance\" (id 1708). Blocks the PREPARE of spells " \
+             "at or above the threshold; lower spells still prepare and " \
+             "cast normally. The threshold is an UPPER BOUND: 515 (level " \
+             "15) was observed blocked, so the cutoff is <= 15, but 14 is " \
+             "not confirmed safe. Duration 30s observed, matching the " \
+             "wiki's creature-cast duration (180s when player-cast). " \
+             "dispellable is nil, not false: the 1708 wiki page does not " \
+             "mention dispelling and no dispel-side page lists it, so it " \
+             "is unknown rather than known-negative."
+    }
+  ],
   alchemy: [],
   abilities_misc: [],
   equipment: [],
@@ -136,6 +160,13 @@
       },
       miscellany: []
     },
-    triggers: {}
+    triggers: {
+      mystic_impedance: [
+        "A dizzying array of golden runes surround and suffuse you before being absorbed into your body."
+      ],
+      mystic_impedance_end: [
+        "Golden runes enscribe themselves upon your body, quickly fading into nothingness."
+      ]
+    }
   }
 }
