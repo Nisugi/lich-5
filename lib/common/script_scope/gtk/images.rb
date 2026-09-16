@@ -171,7 +171,7 @@ module Lich
             changed!
             value
           end
-          alias set_pixbuf pixbuf=
+          def_setter :set_pixbuf, :pixbuf=
 
           def file=(path)
             @file = path && File.expand_path(path.to_s)
@@ -180,10 +180,11 @@ module Lich
             changed!
             path
           end
-          alias set_from_file file=
+          def_setter :set_from_file, :file=
 
           def set_from_pixbuf(value)
             self.pixbuf = value
+            self
           end
 
           def clear
