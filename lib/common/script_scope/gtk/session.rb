@@ -671,7 +671,7 @@ module Lich
             # script asked for it.
             #
             # Lich evals a script under its bare name, so its frames read
-            # "map:2466", not "…/map.lic:2466". Matching only ".lic:" found
+            # "map:2466", not ".../map.lic:2466". Matching only ".lic:" found
             # nothing and the location was silently dropped, which is how
             # "coerce must return [x, y]" went three rounds without ever
             # naming center_viewport_on.
@@ -694,7 +694,7 @@ module Lich
             backtrace.find { |frame| frame.include?('.lic:') }
           end
 
-          # "…/scripts/map.lic:2462:in 'block'" -> "map.lic:2462".
+          # ".../scripts/map.lic:2462:in 'block'" -> "map.lic:2462".
           def script_frame(frame)
             file, line, = frame.split(':in ').first.to_s.rpartition(':').values_at(0, 2)
             base = file.to_s.split(%r{[\\/]}).last

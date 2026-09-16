@@ -663,7 +663,7 @@ RSpec.describe 'GTK compatibility shim (slice four: box packing)' do
   # <a href=...> as literal text.
   describe 'use-markup from a Glade file' do
     let(:wiki) do
-      'Additional details: <a href="https://gswiki.play.net/x" title="x">'         'https://gswiki.play.net/x</a>'
+      'Additional details: <a href="https://gswiki.play.net/x" title="x">' + 'https://gswiki.play.net/x</a>'
     end
 
     it 'parses the markup rather than printing the tags' do
@@ -803,7 +803,7 @@ RSpec.describe 'GTK compatibility shim (slice four: box packing)' do
   end
 
   # Lich evals a script under its bare name, so its backtrace frames read
-  # "map:2466", not "…/map.lic:2466". Matching only ".lic:" found no frame at
+  # "map:2466", not ".../map.lic:2466". Matching only ".lic:" found no frame at
   # all and the error was reported with no location.
   describe 'naming the script frame in a Gtk.queue error' do
     let(:reporter) do

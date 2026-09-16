@@ -25,21 +25,24 @@ module Lich
         # by the pixbuf itself so a script holding one alive does not pin an
         # entry here, and so two pixbufs of the same file stay distinct.
         module PixbufSources
-          @sources = {}
+          # compare_by_identity is what keying on object_id was spelling by
+          # hand; it also does not leave an integer key behind once the pixbuf
+          # it named has been collected.
+          @sources = {}.compare_by_identity
           @mutex = Mutex.new
 
           class << self
             def record(pixbuf, path)
               return pixbuf unless pixbuf && path
 
-              @mutex.synchronize { @sources[pixbuf.object_id] = File.expand_path(path.to_s) }
+              @mutex.synchronize { @sources[pixbuf] = File.expand_path(path.to_s) }
               pixbuf
             end
 
             def path_for(pixbuf)
               return nil unless pixbuf
 
-              @mutex.synchronize { @sources[pixbuf.object_id] }
+              @mutex.synchronize { @sources[pixbuf] }
             end
 
             # A scaled pixbuf is a different object; it still shows the same
@@ -86,7 +89,7 @@ module Lich
             # save_to_buffer, which is deprecated but still present.
             def encode_png(pixbuf)
               pixbuf.save(nil, 'png')
-            rescue StandardError, ArgumentError
+            rescue StandardError
               begin
                 pixbuf.send(:save_to_buffer, 'png')
               rescue StandardError
@@ -169,7 +172,6 @@ module Lich
             @file = PixbufSources.path_for(value)
             @natural = nil
             changed!
-            value
           end
           def_setter :set_pixbuf, :pixbuf=
 
@@ -178,7 +180,6 @@ module Lich
             @pixbuf = nil
             @natural = nil
             changed!
-            path
           end
           def_setter :set_from_file, :file=
 
@@ -501,6 +502,8 @@ module Lich
           def size(path)
             return nil unless path && File.file?(path)
 
+            # rubocop:disable Custom/AsciiOnlySource -- the formats' own magic
+            # bytes; there is no ASCII spelling of them.
             File.open(path, 'rb') do |io|
               header = io.read(24).to_s
               return png_size(header) if header.start_with?("\x89PNG\r\n\x1A\n".b)
@@ -509,6 +512,7 @@ module Lich
               io.rewind
               return jpeg_size(io) if header.start_with?("\xFF\xD8".b)
             end
+            # rubocop:enable Custom/AsciiOnlySource
             nil
           rescue StandardError
             nil

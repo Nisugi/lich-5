@@ -158,12 +158,12 @@ module Lich
         # one-sided margins -- and collapsing them to a single number put a
         # 100px indent on all four sides of the widget.
         margin: property(union(
-          integer(min: 0, max: 512),
-          record(
-            top: property(integer(min: 0, max: 512)), right: property(integer(min: 0, max: 512)),
-            bottom: property(integer(min: 0, max: 512)), left: property(integer(min: 0, max: 512))
-          )
-        )),
+                           integer(min: 0, max: 512),
+                           record(
+                             top: property(integer(min: 0, max: 512)), right: property(integer(min: 0, max: 512)),
+                             bottom: property(integer(min: 0, max: 512)), left: property(integer(min: 0, max: 512))
+                           )
+                         )),
         width: property(GEOMETRY),
         height: property(GEOMETRY),
         emphasis: property(enum(*EMPHASES)),
@@ -286,8 +286,8 @@ module Lich
             # write (they compute `upper - page_size`, which only the viewer
             # knows).
             scroll_position: property(record(
-              x: property(GEOMETRY), y: property(GEOMETRY), bottom: property(BOOL)
-            ), scope: :viewer),
+                                        x: property(GEOMETRY), y: property(GEOMETRY), bottom: property(BOOL)
+                                      ), scope: :viewer),
           },
           children: :many,
           # `upper` and `page_size` are the content extent and the visible
@@ -300,11 +300,11 @@ module Lich
             # horizontal half was a constructor default. Optional, so a
             # client that reports only the vertical axis stays valid.
             scrolled: event(record(
-              position: property(GEOMETRY, required: true),
-              upper: property(GEOMETRY), page_size: property(GEOMETRY),
-              position_x: property(GEOMETRY), upper_x: property(GEOMETRY),
-              page_size_x: property(GEOMETRY)
-            )),
+                              position: property(GEOMETRY, required: true),
+                              upper: property(GEOMETRY), page_size: property(GEOMETRY),
+                              position_x: property(GEOMETRY), upper_x: property(GEOMETRY),
+                              page_size_x: property(GEOMETRY)
+                            )),
           }, value: nil,
         },
         divider: { properties: { label: property(SHORT) }, children: :none, events: {}, value: nil },
@@ -606,9 +606,9 @@ module Lich
         # A page must set key_events before it may emit one; the browser only
         # sends it when a script connected key-press-event.
         key: event(record(
-          keyval: property(IDENT, required: true),
-          modifiers: property(array(enum(:ctrl, :shift, :alt), max: 3), required: true)
-        ), lifecycle: true),
+                     keyval: property(IDENT, required: true),
+                     modifiers: property(array(enum(:ctrl, :shift, :alt), max: 3), required: true)
+                   ), lifecycle: true),
       }.freeze
 
       def schemas
