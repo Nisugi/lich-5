@@ -6,20 +6,20 @@ module Lich
   module WebUI
     # Machine-readable authority for SPEC-WEBUI-CONTRACT 2.5.0 SS10 and SS14.
     module Contract
-      VERSION = '2.15.3'
+      VERSION = '2.16.0'
       MAJOR_VERSION = 2
 
       TYPES = %i[
         page group stack columns grid tabs expander split overlay scroll divider
         text markdown log progress image
-        button toggle checkbox radio text_input password_input textarea number_input slider select
+        button toggle checkbox radio text_input password_input textarea number_input slider select nav
         table dialog composite
         menu menu_item
       ].freeze
 
       STRUCTURE_TYPES = TYPES.first(11).freeze
       DISPLAY_TYPES = TYPES.slice(11, 5).freeze
-      INPUT_TYPES = TYPES.slice(16, 10).freeze
+      INPUT_TYPES = TYPES.slice(16, 11).freeze
 
       TONES = %w[neutral positive caution danger].freeze
       EMPHASES = %w[normal strong subtle].freeze
@@ -140,6 +140,7 @@ module Lich
         number_input: %i[key tooltip disabled hidden align margin width tone sensitive],
         slider: %i[key tooltip disabled hidden align margin width tone],
         select: %i[key tooltip disabled hidden align margin width tone sensitive],
+        nav: %i[key tooltip disabled hidden align margin width height context_menu],
         table: %i[key disabled hidden align margin width height context_menu],
         dialog: %i[key width height tone],
         composite: %i[key tooltip hidden align margin width height context_menu],
@@ -418,6 +419,30 @@ module Lich
           }, children: :none,
           events: { change: event(record(value: property(string(:input_text), required: true))) },
           value: string(:input_text), value_scope: :viewer,
+        },
+        # 2.16: a selection list, which neither `tabs` nor `split` gives an
+        # author. `tabs` is flat and carries no per-item state; building a
+        # rail out of `split` plus buttons means hand-rolling the list and
+        # losing keyboard navigation and ARIA with it. An item may name a
+        # `section` to group under, carry a `detail` subtitle, a `status` the
+        # client renders as a marker, and a `badge` for a count.
+        #
+        # Sections are flat headers rather than nested items: selection stays
+        # one-dimensional, which is what makes arrow-key navigation and a
+        # single `selected` identifier work.
+        nav: {
+          properties: {
+            items: property(array(record(
+                                    id: property(IDENT, required: true),
+                                    label: property(SHORT, required: true),
+                                    section: property(SHORT), detail: property(SHORT),
+                                    status: property(enum(:none, :done, :current, :blocked), default: 'none'),
+                                    badge: property(SHORT), disabled: property(BOOL, default: false)
+                                  ), max: BOUNDS[:collection]), required: true),
+            selected: property(IDENT, scope: :viewer),
+          }, children: :none,
+          events: { select: event(record(id: property(IDENT, required: true))) },
+          value: IDENT, value_scope: :viewer,
         },
         table: { properties: {}, children: :none, events: {}, value: nil, special: :table },
         dialog: {

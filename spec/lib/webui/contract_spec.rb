@@ -4,11 +4,11 @@ require_relative '../../spec_helper'
 require 'webui/contract'
 
 RSpec.describe Lich::WebUI::Contract do
-  it 'declares exactly the locked 31-type vocabulary' do
+  it 'declares exactly the locked 32-type vocabulary' do
     expect(described_class::TYPES).to eq(%i[
                                            page group stack columns grid tabs expander split overlay scroll divider
                                            text markdown log progress image
-                                           button toggle checkbox radio text_input password_input textarea number_input slider select
+                                           button toggle checkbox radio text_input password_input textarea number_input slider select nav
                                            table dialog composite
                                            menu menu_item
                                          ])

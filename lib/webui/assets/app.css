@@ -23,6 +23,10 @@ button.danger { color: white; background: var(--danger); border: 1px solid var(-
 .webui-group { min-width: 0; margin: 0 0 14px; padding: 12px; border: 1px solid var(--border); border-radius: 5px; }
 .webui-group > legend { font-weight: 600; padding: 0 5px; }
 .webui-columns { display: grid; align-items: end; }
+/* `compact` packs a row rather than spacing it at the page gap. The
+   client set the class and nothing styled it, so the property was still
+   inert after it was read. */
+.webui-columns.compact { gap: 4px !important; align-items: center; }
 .webui-grid { display: grid; align-items: center; }
 .webui-grid > .field { min-width: 0; }
 /* A bare page is a script's own window: it fills the browser window. */
@@ -224,6 +228,48 @@ body:has(.webui-page.bare) { overflow: hidden; }
   opacity: .75;
   font-size: .92em;
 }
+
+/* nav: a selection rail. Sections are flat headers, items carry a status
+   marker, an optional subtitle and an optional badge. */
+.webui-nav > .nav-list { display: flex; flex-direction: column; gap: 1px; }
+.webui-nav > .nav-list:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.nav-section {
+  padding: 10px 10px 4px;
+  font-size: .82em;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  opacity: .6;
+}
+.nav-item {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.nav-item:hover { background: color-mix(in srgb, CanvasText 6%, transparent); }
+.nav-item[aria-selected="true"] { background: color-mix(in srgb, var(--accent) 18%, transparent); font-weight: 600; }
+.nav-item[aria-disabled="true"] { opacity: .5; cursor: default; }
+.nav-item-body { min-width: 0; }
+.nav-item-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nav-item-detail { font-size: .85em; opacity: .7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nav-item-badge {
+  min-width: 20px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: color-mix(in srgb, CanvasText 14%, transparent);
+  font-size: .82em;
+  text-align: center;
+}
+/* The marker is the status made visible; content only, so a screen reader
+   reads the label rather than a decorative glyph. */
+.nav-item-marker { text-align: center; opacity: .8; }
+.nav-item[data-status="done"] > .nav-item-marker::before { content: "¹3"; }
+.nav-item[data-status="current"] > .nav-item-marker::before { content: "B8"; }
+.nav-item[data-status="blocked"] > .nav-item-marker::before { content: "98"; opacity: .7; }
 
 .webui-table-wrap { overflow: auto; border: 1px solid var(--border); }
 /* A container the contract lets carry `disabled` has no native rendering
