@@ -328,4 +328,37 @@ RSpec.describe 'WebUI browser assets' do
     expect(css).to include('.webui-tabs.vertical')
     expect(css).not_to include('account-tabs-left')
   end
+
+  # The shim binds row-activated whenever a script connects to it -- ewaggle,
+  # repository and jinx all do -- and advertises cell editors through
+  # CellRendererText and CellRendererToggle. The client emitted neither event
+  # and rendered every cell as text, so both gestures were dead on arrival.
+  it 'activates a row on double-click and on Enter, as GTK does' do
+    expect(javascript).to include('emit(page, component, "row_activate", { row: row.key })')
+    expect(javascript).to include('tr.addEventListener("dblclick", activate)')
+    expect(javascript).to include('if (event.key === "Enter") { event.preventDefault(); activate(); }')
+  end
+
+  it 'builds a control for a column that declares an editor' do
+    expect(javascript).to include('if (column.editor && component.props.disabled !== true)')
+    expect(javascript).to include('function editorCell(page, component, row, column, value)')
+  end
+
+  it 'covers every editor type the validator accepts' do
+    %w[checkbox select number].each do |type|
+      expect(javascript).to include(%(editor.type === "#{type}"))
+    end
+    expect(javascript).to include('emit(page, component, "cell_edit", {')
+  end
+
+  # A cell_edit per keystroke would be a render per keystroke.
+  it 'sends the committed value rather than every keystroke' do
+    expect(javascript).to include('control.addEventListener("change", () => {')
+    expect(javascript).not_to include('control.addEventListener("input", () => send')
+  end
+
+  it 'leaves a disabled table inert' do
+    expect(javascript).to include('if (component.props.disabled !== true) emit(page, component, "row_activate"')
+    expect(javascript).to include('tr.tabIndex = component.props.disabled === true ? -1 : 0;')
+  end
 end

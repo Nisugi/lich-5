@@ -441,4 +441,64 @@ RSpec.describe Lich::WebUI::Runtime, 'review fixes' do
       expect(gtk.instance_variable_get(:@unsupported).keys.join).to include('viewer write of value')
     end
   end
+
+  # The gesture existed on both ends and nothing joined them: the shim binds
+  # row-activated and advertises editors, the client emitted neither. These
+  # assert the shim half reaches a script handler, so the two cannot drift
+  # apart again without one of them failing.
+  describe 'a tree view a script made interactive' do
+    let(:gtk) { Lich::Common::ScriptScope::Gtk }
+    let(:owner) { Struct.new(:name) { def at_exit(&_block) = true }.new('tree') }
+    let(:service) { Lich::WebUI::Service.new }
+    let(:session) { gtk::Session.new(owner, service: service) }
+
+    before do
+      gtk::Session.browser_open = proc { |_url, geometry:, on_start:, on_exit:| [geometry, on_exit]; on_start.call(1); true }
+      gtk::Session.browser_kill = proc { |_pid| nil }
+    end
+
+    after do
+      gtk::Session.browser_open = nil
+      gtk::Session.browser_kill = nil
+      session.shutdown
+      service.stop
+    end
+
+    it 'advertises an editor per column and delivers both gestures' do
+      fired = []
+      window = view = store = nil
+      session.sync do
+        window = gtk::Window.new('T')
+        store = gtk::ListStore.new(String, TrueClass)
+        %w[alpha beta].each_with_index do |value, index|
+          row = store.append
+          row[0] = value
+          row[1] = index.zero?
+        end
+        view = gtk::TreeView.new(store)
+        text = gtk::CellRendererText.new
+        text.editable = true
+        view.append_column(gtk::TreeViewColumn.new('Name', text, text: 0))
+        view.append_column(gtk::TreeViewColumn.new('On', gtk::CellRendererToggle.new, active: 1))
+        view.signal_connect('row-activated') { |_widget, path, _column| fired << [:activated, path.to_s] }
+        text.signal_connect('edited') { |_renderer, path, value| fired << [:edited, path, value] }
+        window.add(view)
+        window.show_all
+      end
+      session.commit
+      table = session.adapter.page_for(window.handle).last_render.tree.each.find { |node| node.type == :table }
+      row_key = table.props[:rows].first[:key]
+
+      expect(table.props[:columns].map { |column| column[:editor]&.fetch(:type) }).to eq(%w[text checkbox])
+
+      session.sync { view.send(:receive_event, :row_activate, Struct.new(:payload).new({ row: row_key })) }
+      session.sync do
+        view.send(:receive_event, :cell_edit,
+                  Struct.new(:payload).new({ row: row_key, column: 'c0', value: 'ALPHA' }))
+      end
+
+      expect(fired).to eq([[:activated, '0'], [:edited, '0', 'ALPHA']])
+      expect(store.to_enum(:each).map { |_model, _path, row| row[0] }).to eq(%w[ALPHA beta])
+    end
+  end
 end

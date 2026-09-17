@@ -292,6 +292,13 @@ body:has(.webui-page.bare) { overflow: hidden; }
    Long values -- a path, a command -- still ellipsize rather than wrap. */
 .webui-table th { white-space: nowrap; }
 .webui-table td { max-width: 38ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* An editable cell holds its control rather than text; the control fills the
+   cell so the column width still governs. */
+.webui-table td.editable-cell { padding: 2px 4px; }
+.webui-table td.editable-cell > input[type="text"],
+.webui-table td.editable-cell > input[type="number"],
+.webui-table td.editable-cell > select { width: 100%; min-height: 26px; }
+.webui-table tbody tr:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .webui-table tbody tr[aria-selected="true"] { background: color-mix(in srgb, var(--accent) 15%, transparent); }
 .row-actions { display: flex; justify-content: flex-end; gap: 6px; }
 .workflow-actions { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; }
