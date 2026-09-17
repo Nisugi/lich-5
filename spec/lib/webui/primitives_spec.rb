@@ -7,7 +7,7 @@ require 'webui'
 # flat and carries no per-item state; building a rail out of `split` plus
 # buttons means hand-rolling the list and losing keyboard navigation and ARIA
 # with it. That is the reason this is a primitive.
-RSpec.describe 'WebUI contract: nav' do
+RSpec.describe 'WebUI contract: navigation and selection primitives' do
   let(:validator) { Lich::WebUI::Validator.new }
   let(:context) { { owner: 'owner', page_id: 'page', cid: 'cid' } }
 
@@ -112,6 +112,66 @@ RSpec.describe 'WebUI contract: nav' do
       expect(css).to include('.nav-item[data-status="done"] > .nav-item-marker::before')
       expect(css).to include('.nav-item[data-status="current"] > .nav-item-marker::before')
       expect(css).to include('.nav-item[data-status="blocked"] > .nav-item-marker::before')
+    end
+  end
+
+  # A card is a group the viewer can choose. A new node type would duplicate
+  # everything a group already does -- label, border, children, collapsible --
+  # to add one piece of state, so the state lives on group instead.
+  describe 'a selectable group' do
+    def validate_group(props)
+      Lich::WebUI::Validator.new.validate_component!(
+        :group, props, owner: 'owner', page_id: 'page', cid: 'cid'
+      )
+    end
+
+    it 'carries a viewer-scoped selected state' do
+      validated = validate_group(label: 'Icemule', selectable: true, selected: true)
+
+      expect(validated).to include(selectable: true, selected: true)
+      expect(Lich::WebUI::Contract.schema(:group)[:properties][:selected][:scope]).to eq(:viewer)
+    end
+
+    it 'defaults to an ordinary group' do
+      validated = validate_group(label: 'Plain')
+
+      expect(validated[:selectable]).to be(false)
+      expect(validated[:selected]).to be(false)
+    end
+
+    it 'reports which way it was toggled' do
+      expect(Lich::WebUI::Contract.schema(:group)[:events]).to have_key(:select)
+    end
+
+    it 'is a control in the client, not just a border' do
+      javascript = File.read(File.join(Lich::WebUI::Service::ASSETS_DIR, 'app.js'))
+
+      expect(javascript).to include('group.setAttribute("role", "button")')
+      expect(javascript).to include('group.setAttribute("aria-pressed", String(selected))')
+      expect(javascript).to include('emit(page, component, "select", { selected: !selected })')
+    end
+  end
+
+  # A heading should not need a markup span wrapped round it to be one size
+  # larger. The vocabulary is Pango's, which the markup path already accepts,
+  # so `size:` and a markup span render identically.
+  describe 'text size' do
+    it 'accepts the type scale and refuses a relative nudge' do
+      validator = Lich::WebUI::Validator.new
+      context = { owner: 'owner', page_id: 'page', cid: 'cid' }
+
+      expect(validator.validate_component!(:text, { content: 'Heading', size: 'x-large' }, **context))
+        .to include(size: 'x-large')
+      # `smaller` and `larger` depend on context, which a first-class property
+      # should not.
+      expect { validator.validate_component!(:text, { content: 'x', size: 'larger' }, **context) }
+        .to raise_error(Lich::WebUI::SchemaViolationError)
+    end
+
+    it 'sets a font size rather than wrapping the content' do
+      javascript = File.read(File.join(Lich::WebUI::Service::ASSETS_DIR, 'app.js'))
+
+      expect(javascript).to include('text.style.fontSize = component.props.size')
     end
   end
 end

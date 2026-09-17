@@ -198,6 +198,10 @@ module Lich
         foreground color fgcolor background bgcolor size weight style underline font_desc font
       ].freeze
       MARKUP_SIZES = %w[xx-small x-small small medium large x-large xx-large smaller larger].freeze
+      # The subset of MARKUP_SIZES that reads as a type scale rather than a
+      # relative nudge: `smaller`/`larger` depend on context, which a
+      # first-class property should not.
+      TEXT_SIZES = %w[xx-small x-small small medium large x-large xx-large].freeze
       MARKUP_WEIGHTS = %w[ultralight light normal bold ultrabold heavy].freeze
       MARKUP_STYLES = %w[normal oblique italic].freeze
       MARKUP_UNDERLINES = %w[none single double low error].freeze
@@ -218,8 +222,18 @@ module Lich
           }, children: :many, events: {}, value: nil,
         },
         group: {
-          properties: { label: property(SHORT, required: true), collapsible: property(BOOL, default: false) },
-          children: :many, events: {}, value: nil,
+          # 2.16: `selectable` turns a group into a card -- a bordered block
+          # the viewer can choose. A new node type would duplicate everything
+          # a group already does (label, border, children, collapsible) to add
+          # one state, so the state goes here instead. `selected` is
+          # viewer-scoped, as every other selection in the contract is.
+          properties: {
+            label: property(SHORT, required: true), collapsible: property(BOOL, default: false),
+            selectable: property(BOOL, default: false), selected: property(BOOL, default: false, scope: :viewer)
+          },
+          children: :many,
+          events: { select: event(record(selected: property(BOOL, required: true))) },
+          value: nil,
         },
         stack: {
           properties: { gap: property(integer(min: 0, max: 64), default: 8) },
@@ -313,6 +327,11 @@ module Lich
           properties: {
             content: property(BODY, required: true), wrap: property(BOOL, default: true),
             markup: property(BODY),
+            # 2.16: a type scale, so a heading does not need a markup span
+            # wrapped round it to be one size larger. The vocabulary is
+            # Pango's own, which the markup path already accepts, so the two
+            # spellings agree rather than competing.
+            size: property(enum(*TEXT_SIZES)),
           },
           children: :none, events: {}, value: nil,
         },

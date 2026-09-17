@@ -229,6 +229,16 @@ body:has(.webui-page.bare) { overflow: hidden; }
   font-size: .92em;
 }
 
+/* A selectable group is a card: a bordered block the viewer can choose. */
+.webui-group.selectable { cursor: pointer; }
+.webui-group.selectable:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
+.webui-group.selectable:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.webui-group.selectable[aria-pressed="true"] {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.webui-group.selectable[aria-disabled="true"] { cursor: default; opacity: .6; }
+
 /* nav: a selection rail. Sections are flat headers, items carry a status
    marker, an optional subtitle and an optional badge. */
 .webui-nav > .nav-list { display: flex; flex-direction: column; gap: 1px; }

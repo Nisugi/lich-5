@@ -280,6 +280,22 @@
           "scope": "shared",
           "default": false
         },
+        "selectable": {
+          "shape": {
+            "kind": "boolean"
+          },
+          "required": false,
+          "scope": "shared",
+          "default": false
+        },
+        "selected": {
+          "shape": {
+            "kind": "boolean"
+          },
+          "required": false,
+          "scope": "viewer",
+          "default": false
+        },
         "key": {
           "shape": {
             "kind": "string",
@@ -441,6 +457,24 @@
       },
       "children": "many",
       "events": {
+        "select": {
+          "payload": {
+            "kind": "record",
+            "fields": {
+              "selected": {
+                "shape": {
+                  "kind": "boolean"
+                },
+                "required": true,
+                "scope": "shared"
+              }
+            },
+            "allow_extra": false
+          },
+          "terminal": false,
+          "lifecycle": false,
+          "structural": false
+        },
         "press": {
           "payload": {
             "kind": "record",
@@ -2398,6 +2432,22 @@
           "shape": {
             "kind": "string",
             "bound": "body_text"
+          },
+          "required": false,
+          "scope": "shared"
+        },
+        "size": {
+          "shape": {
+            "kind": "enum",
+            "values": [
+              "xx-small",
+              "x-small",
+              "small",
+              "medium",
+              "large",
+              "x-large",
+              "xx-large"
+            ]
           },
           "required": false,
           "scope": "shared"
