@@ -176,4 +176,73 @@ RSpec.describe 'GTK compatibility shim: walking a list store' do
       expect(contents).to eq(%w[ALPHA beta gamma])
     end
   end
+
+  # TreeStore was a bare ListStore subclass, so every hierarchy operation
+  # answered as though the rows were siblings. Each expectation below was
+  # checked against gtk3 3.24.52 rather than assumed.
+  describe 'a tree store' do
+    let(:tree) { gtk::TreeStore.new(String) }
+    let!(:root) { tree.append(nil).tap { |iter| iter[0] = 'root' } }
+    let!(:child) { tree.append(root).tap { |iter| iter[0] = 'child' } }
+    let!(:grandchild) { tree.append(child).tap { |iter| iter[0] = 'grand' } }
+    let!(:sibling) { tree.append(nil).tap { |iter| iter[0] = 'sibling' } }
+
+    # Was "0" -- the sibling index with every ancestor dropped.
+    it 'spells a path with every ancestor in it' do
+      expect(grandchild.path.to_s).to eq('0:0:0')
+      expect(child.path.to_s).to eq('0:0')
+      expect(sibling.path.to_s).to eq('1')
+    end
+
+    it 'resolves a path back to the row it names' do
+      expect(tree.get_iter(gtk::TreePath.new([0, 0, 0]))[0]).to eq('grand')
+    end
+
+    # Was the next row in the backing array, which for a row with children is
+    # its own first child -- so a walk descended instead of advancing.
+    it 'advances to the next sibling rather than into its own children' do
+      cursor = tree.iter_first
+
+      expect(cursor.next!).to be(true)
+      expect(cursor[0]).to eq('sibling')
+    end
+
+    it 'walks the top level and stops' do
+      seen = []
+      cursor = tree.iter_first
+      9.times do
+        seen << cursor[0]
+        break unless cursor.next!
+      end
+
+      expect(seen).to eq(%w[root sibling])
+    end
+
+    # Was immediate children only, leaving grandchildren pointing at a parent
+    # that no longer existed.
+    it 'takes the whole subtree when a row is removed' do
+      tree.remove(tree.iter_first)
+
+      expect(tree.to_enum(:each).map { |_model, _path, iter| iter[0] }).to eq(['sibling'])
+    end
+
+    it 'answers the questions a script walking a tree asks' do
+      expect(tree.iter_n_children(root)).to eq(1)
+      expect(tree.iter_n_children).to eq(2)
+      expect(tree.iter_has_child?(root)).to be(true)
+      expect(tree.iter_has_child?(grandchild)).to be(false)
+      expect(tree.iter_children(root)[0]).to eq('child')
+      expect(tree.iter_parent(grandchild)[0]).to eq('child')
+      expect(tree.iter_parent(root)).to be_nil
+    end
+
+    # The flat store is unchanged: it has no parents, so nothing above applies.
+    it 'leaves a flat list store alone' do
+      flat = gtk::ListStore.new(String)
+      %w[a b].each { |value| flat.append.tap { |iter| iter[0] = value } }
+
+      expect(flat.iter_first.path.to_s).to eq('0')
+      expect(flat.iter_after(flat.iter_first)[0]).to eq('b')
+    end
+  end
 end

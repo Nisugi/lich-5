@@ -1006,7 +1006,81 @@ module Lich
           end
         end
 
+        # A tree, not a flat list that happens to record a parent.
+        #
+        # This was a bare subclass, so every hierarchy operation answered as
+        # though the rows were siblings: a grandchild's path was "0" rather
+        # than "0:0:0", advancing an iter walked the backing array into its
+        # own descendants instead of to the next sibling, and removing a row
+        # deleted its children but left grandchildren pointing at a parent
+        # that no longer existed. Checked against gtk3 3.24.52, which answers
+        # "0:0:0", advances root to the next TOP-LEVEL row, and takes the
+        # whole subtree on remove.
         class TreeStore < ListStore
+          # Every ancestor index, outermost first, which is what a TreePath
+          # spells with colons.
+          def path_indices(iter)
+            indices = []
+            current = iter
+            while current
+              siblings = @rows.select { |row| row.parent_key == current.parent_key }
+              indices.unshift(siblings.index { |row| row.key == current.key } || 0)
+              current = current.parent_key && @rows.find { |row| row.key == current.parent_key }
+            end
+            indices
+          end
+
+          # The next row at the SAME level under the same parent. The flat
+          # implementation returned the following row in the backing array,
+          # which for a row with children is its own first child.
+          def iter_after(iter)
+            siblings = @rows.select { |row| row.parent_key == iter.parent_key }
+            index = siblings.index { |row| row.key == iter.key }
+            return nil unless index
+
+            dup_row(siblings[index + 1])
+          end
+
+          # Depth-first, so a subtree goes with the row that owns it rather
+          # than leaving orphans behind.
+          def remove(iter)
+            row = @rows.find { |candidate| candidate.key == iter.key }
+            return false unless row
+
+            descendants_of(row.key).each { |key| @rows.delete_if { |candidate| candidate.key == key } }
+            @rows.delete(row)
+            row_changed!
+            true
+          end
+
+          # How many children a row has, which GTK exposes and a script that
+          # walks a tree asks for.
+          def iter_n_children(iter = nil)
+            parent_key = iter&.key
+            @rows.count { |row| row.parent_key == parent_key }
+          end
+
+          def iter_has_child?(iter)
+            iter_n_children(iter).positive?
+          end
+
+          def iter_children(iter = nil)
+            dup_row(@rows.find { |row| row.parent_key == iter&.key })
+          end
+
+          def iter_parent(iter)
+            return nil unless iter.parent_key
+
+            dup_row(@rows.find { |row| row.key == iter.parent_key })
+          end
+
+          private
+
+          # Every key beneath +key+, at any depth.
+          def descendants_of(key)
+            direct = @rows.select { |row| row.parent_key == key }.map(&:key)
+            direct.flat_map { |child| [child] + descendants_of(child) }
+          end
         end
 
         class CellRenderer
