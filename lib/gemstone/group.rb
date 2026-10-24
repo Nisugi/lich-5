@@ -22,6 +22,7 @@ module Lich
       @@checked ||= false
       @@status  ||= :closed
       @@spell_cooldowns ||= {}
+      @@spell_active_until ||= {}
 
       # Clears all group members and resets the checked flag.
       # Does not change leader status.
@@ -254,6 +255,90 @@ module Lich
       # @return [Array<String>] member names that are off cooldown
       def self.spell_cooldown_ready(spell)
         members.map(&:noun).compact.select { |name| spell_cooldown_ready?(spell, name) }
+      end
+
+      # Starts a member's absorb cooldown (Barkskin): the lockout begins on
+      # the first hit the spell absorbs on them. Later hits on the same
+      # casting land while that cooldown is running and must not restart it.
+      #
+      # @param spell [Lich::Common::Spell] the spell that absorbed the hit
+      # @param name [String] the character it absorbed for
+      # @return [nil]
+      def self.record_absorb_cooldown(spell, name)
+        seconds = spell.absorb_cooldown
+        return nil if seconds.nil? || seconds <= 0 || name.nil?
+
+        store = (@@spell_cooldowns[spell.num] ||= {})
+        now = Time.now
+        current = store[name]
+        store[name] = now + seconds unless current && current > now
+        nil
+      end
+
+      # When each character's casting of a spell wears off, keyed by spell
+      # number then name: @@spell_active_until[605]["Grhim"]. Only kept for
+      # spells with an absorb cooldown, where a member can be off cooldown
+      # and still covered, so "ready" alone does not say a casting is wanted.
+      #
+      # @return [Hash] the active store
+      def self.spell_active_until
+        @@spell_active_until
+      end
+
+      # Records a spell landing on one character, lasting its normal duration.
+      #
+      # @param spell [Lich::Common::Spell] the spell that landed
+      # @param name [String] the character it landed on
+      # @return [nil]
+      def self.record_spell_active(spell, name)
+        return nil if spell.absorb_cooldown.nil? || name.nil?
+
+        (@@spell_active_until[spell.num] ||= {})[name] = Time.now + (spell.time_per.to_f * 60)
+        nil
+      end
+
+      # Records a group casting landing on every member it reaches. A member
+      # still on their absorb cooldown is not reached, so is left as they are.
+      #
+      # @param spell [Lich::Common::Spell] the spell that was group cast
+      # @return [nil]
+      def self.record_group_spell_active(spell)
+        return nil if spell.absorb_cooldown.nil?
+
+        # _members, not members: runs on the parser thread (see record_spell_cooldown)
+        _members.each do |member|
+          record_spell_active(spell, member.noun) if spell_cooldown_ready?(spell, member.noun)
+        end
+        nil
+      end
+
+      # Records a spell wearing off a character.
+      #
+      # @param spell [Lich::Common::Spell] the spell that ended
+      # @param name [String] the character it ended on
+      # @return [nil]
+      def self.clear_spell_active(spell, name)
+        @@spell_active_until[spell.num]&.delete(name)
+        nil
+      end
+
+      # Whether a member is still covered by a casting of the spell.
+      #
+      # @param spell [Lich::Common::Spell] the spell to check
+      # @param name [String] the member's name
+      # @return [Boolean]
+      def self.spell_active?(spell, name)
+        expires = @@spell_active_until.dig(spell.num, name)
+        !expires.nil? && expires > Time.now
+      end
+
+      # Names of the current group members a group casting would help now:
+      # off cooldown and not already covered.
+      #
+      # @param spell [Lich::Common::Spell] the spell to check
+      # @return [Array<String>] member names
+      def self.spell_wanted(spell)
+        spell_cooldown_ready(spell).reject { |name| spell_active?(spell, name) }
       end
 
       # Returns all PCs in the room who are not in the group.

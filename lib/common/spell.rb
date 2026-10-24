@@ -15,7 +15,7 @@ module Lich
       @@cost_list ||= Array.new
       @@load_mutex = Mutex.new
       @@after_stance = nil
-      attr_reader :num, :name, :timestamp, :msgup, :msgdn, :circle, :active, :type, :cast_proc, :real_time, :persist_on_death, :availability, :no_incant, :last_cast, :group_cooldown, :target_cooldown, :target_msgup
+      attr_reader :num, :name, :timestamp, :msgup, :msgdn, :circle, :active, :type, :cast_proc, :real_time, :persist_on_death, :availability, :no_incant, :last_cast, :group_cooldown, :target_cooldown, :absorb_cooldown, :target_msgup, :target_msgabsorb, :target_msgdn
       attr_accessor :stance, :channel
 
       @@prepare_regex = Regexp.union(
@@ -140,18 +140,23 @@ module Lich
         # with the third-person message that names them. Both are nil when the
         # spell declares no cooldown of that kind. See Group.spell_cooldown and
         # Group.spell_cooldown_ready?.
+        #
+        # An 'absorb' cooldown starts when the spell first absorbs a hit on a
+        # character (Barkskin), not when it is cast, paired with the
+        # third-person target-absorb message that names them.
         xml_spell.locate('cooldown').each { |xml_cooldown|
           case xml_cooldown['type'].to_s.downcase
           when 'group'
             @group_cooldown = xml_cooldown.text.to_i
           when 'target'
             @target_cooldown = xml_cooldown.text.to_i
+          when 'absorb'
+            @absorb_cooldown = xml_cooldown.text.to_i
           end
         }
-        @target_msgup = xml_spell.locate('message')
-                                 .select { |e| e['type'].to_s.downcase == 'target-start' }
-                                 .collect { |e| e.text }.join('$|^')
-        @target_msgup = nil if @target_msgup.empty?
+        @target_msgup = target_messages(xml_spell, 'target-start')
+        @target_msgabsorb = target_messages(xml_spell, 'target-absorb')
+        @target_msgdn = target_messages(xml_spell, 'target-end')
         @last_cast = Time.at(0)
         @timestamp = Time.now
         @timeleft = 0
@@ -160,6 +165,20 @@ module Lich
         @@list.push(self) unless @@list.find { |spell| spell.num == @num }
         # self # rubocop Lint/Void: self used in void context
       end
+
+      # Joins a spell's <message> elements of one type into a single
+      # alternation, or nil when it has none.
+      #
+      # @param xml_spell [REXML::Element] the spell's element
+      # @param type [String] the message type, e.g. 'target-start'
+      # @return [String, nil]
+      def target_messages(xml_spell, type)
+        msgs = xml_spell.locate('message')
+                        .select { |e| e['type'].to_s.downcase == type }
+                        .collect { |e| e.text }.join('$|^')
+        msgs.empty? ? nil : msgs
+      end
+      private :target_messages
 
       # Every line that answers a cast: the regex {#cast} waits on, exposed
       # so a caller that sends and confirms on its own terms can wait on
@@ -276,6 +295,19 @@ module Lich
       def Spell.target_upmsgs
         Spell.load unless @@loaded
         @@list.collect { |spell| spell.target_msgup }.compact
+      end
+
+      # Third-person messages for a spell absorbing a hit on someone else.
+      def Spell.target_absorbmsgs
+        Spell.load unless @@loaded
+        @@list.collect { |spell| spell.target_msgabsorb }.compact
+      end
+
+      # Third-person end messages, for spells that name the character they
+      # wear off of.
+      def Spell.target_dnmsgs
+        Spell.load unless @@loaded
+        @@list.collect { |spell| spell.target_msgdn }.compact
       end
 
       def Spell.dnmsgs
