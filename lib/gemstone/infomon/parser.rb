@@ -109,6 +109,9 @@ module Lich
           # union would match every line, so fall back to a pattern that
           # matches nothing.
           SpellTargetUpMsgs = (Lich::Common::Spell.target_upmsgs.empty? ? /(?!)/ : /^#{Lich::Common::Spell.target_upmsgs.join('$|^')}$/o).freeze
+          # Third-person absorb and end messages (Barkskin), same fallback.
+          SpellTargetAbsorbMsgs = (Lich::Common::Spell.target_absorbmsgs.empty? ? /(?!)/ : /^#{Lich::Common::Spell.target_absorbmsgs.join('$|^')}$/o).freeze
+          SpellTargetDnMsgs = (Lich::Common::Spell.target_dnmsgs.empty? ? /(?!)/ : /^#{Lich::Common::Spell.target_dnmsgs.join('$|^')}$/o).freeze
           SpellsongRenewed = /^Your songs? renews?/.freeze
 
           # Enhancive parsing patterns - from INVENTORY ENHANCIVE TOTALS command
@@ -137,7 +140,7 @@ module Lich
                       ExprEnd, SkillStart, Skill, SpellRanks, SkillEnd, PSMStart, PSM, PSMEnd, Levelup, SpellsSolo,
                       Citizenship, NoCitizenship, Society, NoSociety, SleepActive, SleepNoActive, BindActive,
                       BindNoActive, SilenceActive, SilenceNoActive, CalmActive, CalmNoActive, CutthroatActiveStart,
-                      CutthroatNoActive, SpellUpMsgs, SpellTargetUpMsgs, SpellDnMsgs, Warcries, NoWarcries, SocietyJoin, SocietyStep,
+                      CutthroatNoActive, SpellUpMsgs, SpellTargetUpMsgs, SpellTargetAbsorbMsgs, SpellTargetDnMsgs, SpellDnMsgs, Warcries, NoWarcries, SocietyJoin, SocietyStep,
                       SocietyResign, LearnPSM, UnlearnPSM, LostTechnique, LearnTechnique, UnlearnTechnique,
                       Resource, Suffused, VolnFavor, GigasArtifactFragments, RedsteelMarks, TicketGeneral, TicketGold,
                       TicketBlackscrip, TicketBloodscrip, TicketEtherealScrip, TicketSoulShards, TicketRaikhen, TicketAevit,
@@ -676,7 +679,10 @@ module Lich
               # self-cast, or being on the receiving end) leaves the clause
               # out. That is the only notice the caster gets that a group
               # casting landed, so it is where the per-target cooldowns start.
-              Group.record_spell_cooldown(spell) if line.include?('your group')
+              if line.include?('your group')
+                Group.record_spell_cooldown(spell)
+                Group.record_group_spell_active(spell)
+              end
               :ok
             when Pattern::SpellTargetUpMsgs
               # A spell landing on someone else, named in the third person.
@@ -687,7 +693,26 @@ module Lich
               spell = Spell.list.find do |s|
                 s.target_msgup && line =~ /^#{s.target_msgup}$/
               end
-              Group.record_target_cooldown(spell, target) if spell
+              if spell
+                Group.record_target_cooldown(spell, target)
+                Group.record_spell_active(spell, target)
+              end
+              :ok
+            when Pattern::SpellTargetAbsorbMsgs
+              # The first hit a spell absorbs on someone starts their absorb
+              # cooldown (Barkskin); later hits on the same casting do not.
+              target = Regexp.last_match(:noun)
+              spell = Spell.list.find do |s|
+                s.target_msgabsorb && line =~ /^#{s.target_msgabsorb}$/
+              end
+              Group.record_absorb_cooldown(spell, target) if spell
+              :ok
+            when Pattern::SpellTargetDnMsgs
+              target = Regexp.last_match(:noun)
+              spell = Spell.list.find do |s|
+                s.target_msgdn && line =~ /^#{s.target_msgdn}$/
+              end
+              Group.clear_spell_active(spell, target) if spell
               :ok
             when Pattern::SpellDnMsgs
               spell = Spell.list.find do |s|

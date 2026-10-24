@@ -683,8 +683,12 @@
    <spell availability='self-cast' name='Barkskin' number='605' type='defense'>
       <duration span='refreshable' multicastable='no'>1</duration>
       <cost type='mana'>5</cost>
-      <message type='start'>A knobby layer of bark swiftly forms on you\.</message>
-      <message type='end'>The knobby layer of bark on you creaks and twists briefly before disintegrating.\.</message>
+      <cooldown type='absorb'>300</cooldown>
+      <message type='start'>A knobby layer of bark swiftly forms (?:on you|over you and your group)\.</message>
+      <message type='end'>The knobby layer of bark on you creaks and twists briefly before disintegrating\.</message>
+      <message type='target-start'>A knobby layer of bark swiftly forms on (?&lt;noun&gt;[A-Z][a-z]+)\.</message>
+      <message type='target-absorb'>The layer of bark on (?&lt;noun&gt;[A-Z][a-z]+) hardens and absorbs the (?:attack|magical energy)!  The bark crackles(?:, but maintains its form| as it crumbles to dust)\.</message>
+      <message type='target-end'>The knobby layer of bark on (?&lt;noun&gt;[A-Z][a-z]+) creaks and twists briefly before disintegrating\.</message>
    </spell>
    <spell availability='self-cast' name='Phoen&apos;s Strength' number='606' type='offense'>
       <duration span='stackable' multicastable='yes'>(Spell[606].known? ? 120 : 20) + Spells.ranger</duration>

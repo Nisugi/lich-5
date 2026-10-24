@@ -260,3 +260,167 @@ RSpec.describe Lich::Common::Spell, 'cooldowns parsed from effect-list.xml' do
     end
   end
 end
+
+# Barkskin (605): the lockout starts on the first hit the bark absorbs, not
+# on the cast, so a member can be off cooldown and still covered. Group keeps
+# both, from the lines the caster sees: the group evoke, a third-person
+# casting, an absorb, and the bark wearing off.
+RSpec.describe Lich::Gemstone::Group, 'absorb cooldowns and coverage (Barkskin)' do
+  let(:bark) { Spell[605] }
+
+  def member(name)
+    double(noun: name, id: name.hash.to_s)
+  end
+
+  before do
+    Lich::Gemstone::Group.spell_cooldowns.clear
+    Lich::Gemstone::Group.spell_active_until.clear
+    grouped = [member('Grhim'), member('Painz')]
+    allow(Lich::Gemstone::Group).to receive(:_members).and_return(grouped)
+    allow(Lich::Gemstone::Group).to receive(:members).and_return(grouped)
+  end
+
+  after do
+    Lich::Gemstone::Group.spell_cooldowns.clear
+    Lich::Gemstone::Group.spell_active_until.clear
+  end
+
+  it 'starts the 5 minute cooldown on the first absorb' do
+    described_class.record_absorb_cooldown(bark, 'Grhim')
+    expect(described_class.spell_cooldown_left(bark, 'Grhim')).to be_within(2).of(300)
+  end
+
+  it 'does not restart the cooldown on a later absorb' do
+    described_class.record_absorb_cooldown(bark, 'Grhim')
+    described_class.spell_cooldowns[bark.num]['Grhim'] = Time.now + 100
+    described_class.record_absorb_cooldown(bark, 'Grhim')
+    expect(described_class.spell_cooldown_left(bark, 'Grhim')).to be_within(2).of(100)
+  end
+
+  it 'starts a fresh cooldown once the last one has run out' do
+    described_class.spell_cooldowns[bark.num] = { 'Grhim' => Time.now - 1 }
+    described_class.record_absorb_cooldown(bark, 'Grhim')
+    expect(described_class.spell_cooldown_left(bark, 'Grhim')).to be_within(2).of(300)
+  end
+
+  it 'covers every member off cooldown on a group casting, for the spell duration' do
+    described_class.record_group_spell_active(bark)
+    expect(described_class.spell_active?(bark, 'Grhim')).to be true
+    expect(described_class.spell_active_until[bark.num]['Grhim'] - Time.now).to be_within(2).of(60)
+  end
+
+  it 'does not cover a member still on cooldown, since the casting misses them' do
+    described_class.record_absorb_cooldown(bark, 'Painz')
+    described_class.record_group_spell_active(bark)
+    expect(described_class.spell_active?(bark, 'Painz')).to be false
+  end
+
+  it 'wants a member who is off cooldown and uncovered, even with another locked out' do
+    described_class.record_group_spell_active(bark)
+    described_class.record_absorb_cooldown(bark, 'Grhim')
+    described_class.clear_spell_active(bark, 'Painz')
+    expect(described_class.spell_wanted(bark)).to eq ['Painz']
+  end
+
+  it 'wants nobody while everyone is covered' do
+    described_class.record_group_spell_active(bark)
+    expect(described_class.spell_wanted(bark)).to be_empty
+  end
+
+  it 'tracks no coverage for a spell without an absorb cooldown' do
+    described_class.record_spell_active(Spell[215], 'Grhim')
+    expect(described_class.spell_active_until[215]).to be_nil
+  end
+end
+
+# The same, driven by the lines from the game (taken from Nisugi's logs).
+RSpec.describe Lich::Gemstone::Infomon::Parser, 'Barkskin messages' do
+  let(:bark) { Spell[605] }
+
+  def member(name)
+    double(noun: name, id: name.hash.to_s)
+  end
+
+  before do
+    allow(Lich::Gemstone::Infomon).to receive(:set)
+    allow(Lich::Gemstone::Spells).to receive(:require_cooldown)
+    allow(XMLData).to receive(:level).and_return(100)
+    allow(XMLData).to receive(:name).and_return('Nisugi')
+    grouped = [member('Grhim'), member('Painz')]
+    allow(Lich::Gemstone::Group).to receive(:_members).and_return(grouped)
+    allow(Lich::Gemstone::Group).to receive(:members).and_return(grouped)
+    Lich::Gemstone::Group.spell_cooldowns.clear
+    Lich::Gemstone::Group.spell_active_until.clear
+    bark.putdown
+  end
+
+  after do
+    Lich::Gemstone::Group.spell_cooldowns.clear
+    Lich::Gemstone::Group.spell_active_until.clear
+    bark.putdown
+  end
+
+  it 'puts Barkskin up on the caster from the group evoke' do
+    described_class.parse('A knobby layer of bark swiftly forms over you and your group.')
+    expect(bark.active?).to be true
+  end
+
+  it 'covers the group from the group evoke' do
+    described_class.parse('A knobby layer of bark swiftly forms over you and your group.')
+    expect(Lich::Gemstone::Group.spell_active?(bark, 'Grhim')).to be true
+    expect(Lich::Gemstone::Group.spell_wanted(bark)).to be_empty
+  end
+
+  it 'takes Barkskin down on the caster from the end message' do
+    described_class.parse('A knobby layer of bark swiftly forms on you.')
+    described_class.parse('The knobby layer of bark on you creaks and twists briefly before disintegrating.')
+    expect(bark.active?).to be false
+  end
+
+  it 'covers a member someone else cast it on' do
+    described_class.parse('A knobby layer of bark swiftly forms on Grhim.')
+    expect(Lich::Gemstone::Group.spell_active?(bark, 'Grhim')).to be true
+    expect(Lich::Gemstone::Group.spell_cooldown_ready?(bark, 'Grhim')).to be true
+  end
+
+  it 'starts the cooldown from a third-person absorb that holds' do
+    described_class.parse('The layer of bark on Grhim hardens and absorbs the attack!  The bark crackles, but maintains its form.')
+    expect(Lich::Gemstone::Group.spell_cooldown_left(bark, 'Grhim')).to be_within(2).of(300)
+  end
+
+  it 'starts the cooldown from a third-person absorb that crumbles' do
+    described_class.parse('The layer of bark on Grhim hardens and absorbs the magical energy!  The bark crackles as it crumbles to dust.')
+    expect(Lich::Gemstone::Group.spell_cooldown_ready?(bark, 'Grhim')).to be false
+  end
+
+  it 'uncovers a member when their bark wears off' do
+    described_class.parse('A knobby layer of bark swiftly forms over you and your group.')
+    described_class.parse('The knobby layer of bark on Painz creaks and twists briefly before disintegrating.')
+    expect(Lich::Gemstone::Group.spell_wanted(bark)).to eq ['Painz']
+  end
+
+  it 'ignores the bark on a pet, which has no capitalised name' do
+    described_class.parse('A knobby layer of bark swiftly forms on a hulking semi-melanistic panther.')
+    expect(Lich::Gemstone::Group.spell_active_until[bark.num]).to be_nil
+  end
+end
+
+RSpec.describe Lich::Common::Spell, 'Barkskin parsed from effect-list.xml' do
+  it "reads an absorb cooldown off a <cooldown type='absorb'> element" do
+    expect(Spell[605].absorb_cooldown).to eq 300
+    expect(Spell[605].target_cooldown).to be_nil
+    expect(Spell[605].group_cooldown).to be_nil
+  end
+
+  it 'leaves absorb_cooldown nil for a spell that declares none' do
+    expect(Spell[215].absorb_cooldown).to be_nil
+  end
+
+  it 'declares a :noun capture in every target-absorb and target-end message' do
+    msgs = described_class.target_absorbmsgs + described_class.target_dnmsgs
+    expect(msgs).not_to be_empty
+    msgs.each do |msg|
+      expect(Regexp.new(msg).names).to include('noun'), "missing (?<noun>) in: #{msg}"
+    end
+  end
+end
